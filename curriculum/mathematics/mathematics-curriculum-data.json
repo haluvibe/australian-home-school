@@ -8,25 +8,25 @@
           {
             "description": "Connect number names, numerals and their position in sequence from 0 to at least 20",
             "example": "matching the word 'seven' to the numeral 7 and knowing it comes after 6",
-            "khanAcademyUrl": "https://www.khanacademy.org/math/early-math/cc-early-math-counting/cc-early-math-counting-small-numbers/e/counting_with_small_numbers",
+            "khanAcademyUrl": "https://www.khanacademy.org/math/early-math/cc-early-math-counting-topic/cc-early-math-counting/e/counting-out-1-20-objects",
             "worksheetSlug": "number-names-0-20"
           },
           {
             "description": "Use subitising and counting strategies to quantify collections",
             "example": "instantly seeing 3 dots on a die and knowing it's 3 (subitising), or touching each block one by one while saying '1, 2, 3, 4, 5' to find the total (counting)",
-            "khanAcademyUrl": "https://www.khanacademy.org/math/early-math/cc-early-math-counting/cc-early-math-counting-objects/e/counting-objects-1",
+            "khanAcademyUrl": "https://www.khanacademy.org/math/early-math/cc-early-math-counting-topic/cc-early-math-count-object-topic/e/how-many-objects-1",
             "worksheetSlug": "subitising-counting"
           },
           {
             "description": "Compare the size of collections to at least 20",
             "example": "saying 'there are more red blocks than blue blocks' when comparing groups of 12 and 8",
-            "khanAcademyUrl": "https://www.khanacademy.org/math/early-math/cc-early-math-counting/cc-early-math-comparing-numbers/e/comparing-numbers-of-objects-1",
+            "khanAcademyUrl": "https://www.khanacademy.org/math/early-math/cc-early-math-counting-topic/cc-early-math-comparing-numbers/e/compare-groups-through-10",
             "worksheetSlug": "compare-collections"
           },
           {
             "description": "Partition and combine collections up to 10 in different ways",
             "example": "showing that 7 can be split into 3 and 4, or 5 and 2",
-            "khanAcademyUrl": "https://www.khanacademy.org/math/early-math/cc-early-math-add-sub-basics/cc-early-math-making-10/e/making-10-grids",
+            "khanAcademyUrl": "https://www.khanacademy.org/math/early-math/cc-early-math-add-sub-basics/cc-early-math-make-10/e/making-ten",
             "worksheetSlug": "partition-combine"
           },
           {
@@ -60,13 +60,13 @@
           {
             "description": "Use direct comparison to compare objects and events",
             "example": "placing two pencils side by side to see which is longer",
-            "khanAcademyUrl": "https://www.khanacademy.org/math/early-math/cc-early-math-measure-data-topic/cc-early-math-compare-size/e/comparing_size",
+            "khanAcademyUrl": "https://www.khanacademy.org/math/early-math/cc-early-math-measure-data-topic/cc-early-math-length-intro/e/which-has-more-",
             "worksheetSlug": "direct-comparison"
           },
           {
             "description": "Sequence and connect familiar events to the time of day",
             "example": "'we eat breakfast in the morning and dinner in the evening'",
-            "khanAcademyUrl": "https://www.khanacademy.org/math/early-math/cc-early-math-measure-data-topic/cc-early-math-time/e/telling-time-to-the-hour",
+            "khanAcademyUrl": "https://www.khanacademy.org/math/early-math/cc-early-math-measure-data-topic/cc-early-math-time/e/tell-time-to-hour-or-half-hour",
             "worksheetSlug": "time-of-day"
           }
         ]
@@ -94,7 +94,7 @@
           {
             "description": "Collect, sort and compare data in response to questions in familiar contexts",
             "example": "surveying classmates' favourite fruits and sorting the results into groups",
-            "khanAcademyUrl": "https://www.khanacademy.org/math/early-math/cc-early-math-measure-data-topic/cc-early-math-sort-count-objects/e/sort-and-count-objects",
+            "khanAcademyUrl": "https://www.khanacademy.org/math/early-math/cc-early-math-counting-topic/cc-early-math-comparing-numbers/e/sort-groups-by-count",
             "worksheetSlug": "collect-sort-data"
           }
         ]

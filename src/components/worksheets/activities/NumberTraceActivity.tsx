@@ -9,23 +9,28 @@ interface Props {
 export default function NumberTraceActivity({ data, number }: Props) {
   return (
     <ActivityBlock number={number} title={data.title} instruction={data.instruction}>
-      <div className="flex flex-wrap gap-4">
-        {data.numbers.map((n, i) => (
-          <div
-            key={i}
-            className="flex h-20 w-16 items-center justify-center rounded-xl border-2 border-dashed border-charcoal/20 bg-cream/50"
-          >
-            <span
-              className="font-display text-4xl font-bold text-charcoal/15"
-              style={{
-                WebkitTextStroke: "1.5px rgba(35, 95, 139, 0.3)",
-                color: "transparent",
-              }}
+      <div className="flex flex-wrap gap-3">
+        {data.numbers.map((n, i) => {
+          const isDouble = n >= 10;
+          return (
+            <div
+              key={i}
+              className={`flex items-center justify-center rounded-2xl border-[2.5px] border-dashed border-sage/35 bg-sage/[0.03] ${isDouble ? "h-[88px] w-[72px]" : "h-[88px] w-[60px]"}`}
             >
-              {n}
-            </span>
-          </div>
-        ))}
+              <span
+                className="select-none leading-none text-sage/30"
+                style={{
+                  fontFamily: "var(--font-outfit), 'Helvetica Neue', sans-serif",
+                  fontSize: isDouble ? "48px" : "56px",
+                  fontWeight: 700,
+                  letterSpacing: isDouble ? "-2px" : "0",
+                }}
+              >
+                {n}
+              </span>
+            </div>
+          );
+        })}
       </div>
     </ActivityBlock>
   );
