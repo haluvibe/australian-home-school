@@ -3190,30 +3190,296 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
     strand: "Space",
     description: "Describe the position and location of objects in relation to other objects and people",
     activities: [
+      // --- EASY: On, under, in ---
       {
         type: "circle-correct",
-        title: "Where Is It?",
-        instruction: "Read each description. Circle the correct position word.",
+        title: "On, Under, or In?",
+        instruction: "Circle the correct position word.",
         questions: [
-          { prompt: "The cat is ___ the table", options: ["under", "inside", "behind"] },
-          { prompt: "The bird is ___ the tree", options: ["on top of", "under", "beside"] },
-          { prompt: "The ball is ___ the box", options: ["next to", "inside", "above"] },
+          { prompt: "The cat is sitting ___ the chair.", options: ["On", "Under", "In"] },
+          { prompt: "The shoes are ___ the bed.", options: ["On", "Under", "In"] },
+          { prompt: "The toys are ___ the box.", options: ["On", "Under", "In"] },
+          { prompt: "The book is ___ the table.", options: ["On", "Under", "In"] },
+        ],
+      },
+      {
+        type: "matching",
+        title: "Match the Position",
+        instruction: "Draw a line to match each picture to the correct position word.",
+        leftItems: [
+          { label: "Bird on a branch", objects: [] },
+          { label: "Cat under a bed", objects: [] },
+          { label: "Ball in a box", objects: [] },
+        ],
+        rightItems: [
+          { label: "In", objects: [] },
+          { label: "On", objects: [] },
+          { label: "Under", objects: [] },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Where Is the Star?",
+        instruction: "Circle where the star is.",
+        questions: [
+          { prompt: "The star is ___ the cup.", options: ["On top of", "Under", "Inside"] },
+          { prompt: "The star is ___ the table.", options: ["On top of", "Under", "Next to"] },
+          { prompt: "The star is ___ the hat.", options: ["On top of", "Inside", "Behind"] },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "True or False: Position",
+        instruction: "If the cat is ON the chair, circle True or False.",
+        questions: [
+          { prompt: "The cat is under the chair.", options: ["True", "False"] },
+          { prompt: "The cat is on top of the chair.", options: ["True", "False"] },
+          { prompt: "The cat is inside the chair.", options: ["True", "False"] },
+        ],
+      },
+
+      // --- EASY: Next to, beside, between ---
+      {
+        type: "circle-correct",
+        title: "Next To and Beside",
+        instruction: "Circle the correct word.",
+        questions: [
+          { prompt: "The dog is ___ the child.", options: ["Beside", "Under", "On top of"] },
+          { prompt: "The apple is ___ the banana.", options: ["Inside", "Next to", "Under"] },
+          { prompt: "Mum is sitting ___ Dad.", options: ["Under", "Beside", "On top of"] },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Between",
+        instruction: "Circle what is BETWEEN the other two things.",
+        questions: [
+          { prompt: "Star, Heart, Apple — what is between the star and the apple?", options: ["Star", "Heart", "Apple"] },
+          { prompt: "Cat, Dog, Bird — what is between the cat and the bird?", options: ["Cat", "Dog", "Bird"] },
+          { prompt: "Red, Blue, Green — what is between red and green?", options: ["Red", "Blue", "Green"] },
         ],
       },
       {
         type: "matching",
         title: "Match Position Words",
-        instruction: "Draw a line to match the picture description to the correct word.",
-        left: ["A bird on a branch", "A cat under a bed", "A ball in a box", "A dog beside a child"],
-        right: ["inside", "beside", "on top of", "under"],
+        instruction: "Draw a line to match each sentence to the correct position word.",
+        leftItems: [
+          { label: "The cat sits ___ the dog", objects: [] },
+          { label: "The hat is ___ the head", objects: [] },
+          { label: "The mouse is ___ the table", objects: [] },
+          { label: "The apple is ___ the bowl", objects: [] },
+        ],
+        rightItems: [
+          { label: "In", objects: [] },
+          { label: "On top of", objects: [] },
+          { label: "Under", objects: [] },
+          { label: "Beside", objects: [] },
+        ],
+      },
+
+      // --- MEDIUM: In front of, behind, above, below ---
+      {
+        type: "circle-correct",
+        title: "In Front or Behind?",
+        instruction: "Circle the correct word.",
+        questions: [
+          { prompt: "The teacher is standing ___ the class.", options: ["In front of", "Behind", "Under"] },
+          { prompt: "The child is hiding ___ the tree.", options: ["In front of", "Behind", "On top of"] },
+          { prompt: "The car is parked ___ the house.", options: ["In front of", "Behind", "Inside"] },
+        ],
       },
       {
         type: "circle-correct",
-        title: "Left or Right?",
-        instruction: "Think about which side. Circle the answer.",
+        title: "Above or Below?",
+        instruction: "Circle the correct word.",
         questions: [
-          { prompt: "You write with your ___ hand (if right-handed)", options: ["left", "right"] },
-          { prompt: "Your heart is on your ___ side", options: ["left", "right"] },
+          { prompt: "The clouds are ___ us.", options: ["Above", "Below", "Beside"] },
+          { prompt: "The ground is ___ our feet.", options: ["Above", "Below", "Behind"] },
+          { prompt: "The bird is flying ___ the tree.", options: ["Above", "Below", "Inside"] },
+          { prompt: "The fish swims ___ the water.", options: ["Above", "Below", "In front of"] },
+        ],
+      },
+      {
+        type: "sorting",
+        title: "Sort: Above or Below?",
+        instruction: "Sort each thing. Is it usually ABOVE us or BELOW us?",
+        columns: ["Above Us", "Below Us"],
+        items: [
+          { label: "Sun" },
+          { label: "Grass" },
+          { label: "Stars" },
+          { label: "Floor" },
+          { label: "Clouds" },
+          { label: "Ants on the ground" },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "All the Position Words",
+        instruction: "Circle the best position word for each sentence.",
+        questions: [
+          { prompt: "The picture hangs ___ the fireplace.", options: ["Above", "Under", "Beside"] },
+          { prompt: "The rug is ___ the table.", options: ["On top of", "Under", "Behind"] },
+          { prompt: "The lamp is ___ the couch.", options: ["Under", "Next to", "In front of"] },
+          { prompt: "The dog sleeps ___ the door.", options: ["Above", "In front of", "On top of"] },
+        ],
+      },
+
+      // --- MEDIUM: Left and right ---
+      {
+        type: "circle-correct",
+        title: "Left or Right?",
+        instruction: "Circle the correct answer.",
+        questions: [
+          { prompt: "You write with your ___ hand (if right-handed).", options: ["Left", "Right"] },
+          { prompt: "Your heart is on your ___ side.", options: ["Left", "Right"] },
+          { prompt: "Hold up both hands. Your thumb points out on your ___ hand to make an L.", options: ["Left", "Right"] },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "What Is on the Left? What Is on the Right?",
+        instruction: "Star is on the LEFT. Heart is in the MIDDLE. Apple is on the RIGHT. Answer the questions.",
+        questions: [
+          { prompt: "What is on the left?", options: ["Star", "Heart", "Apple"] },
+          { prompt: "What is on the right?", options: ["Star", "Heart", "Apple"] },
+          { prompt: "What is in the middle?", options: ["Star", "Heart", "Apple"] },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Left, Right, or Middle?",
+        instruction: "Fish, Flower, Diamond, Butterfly, Star — they are in a line. Answer the questions.",
+        questions: [
+          { prompt: "What is on the far left?", options: ["Fish", "Diamond", "Star"] },
+          { prompt: "What is on the far right?", options: ["Fish", "Diamond", "Star"] },
+          { prompt: "What is in the middle?", options: ["Flower", "Diamond", "Butterfly"] },
+        ],
+      },
+
+      // --- HARDER: Giving directions ---
+      {
+        type: "circle-correct",
+        title: "Follow the Directions",
+        instruction: "Circle what you would find if you follow the direction.",
+        questions: [
+          { prompt: "Start at the Star. Move right. What do you find?", options: ["Heart (if heart is to the right)", "Nothing", "Apple"] },
+          { prompt: "Start at the door. Go forward. You are now ___.", options: ["Inside the room", "Behind the door", "On the roof"] },
+          { prompt: "Face the window. Turn around. You are now facing the ___.", options: ["Window", "Wall behind you", "Floor"] },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Where Would You Go?",
+        instruction: "Circle the best direction.",
+        questions: [
+          { prompt: "To get something from a high shelf, you reach ___.", options: ["Up", "Down", "Left"] },
+          { prompt: "To pick up something on the floor, you reach ___.", options: ["Up", "Down", "Behind"] },
+          { prompt: "To open a door on your right, you reach to the ___.", options: ["Left", "Right", "Up"] },
+        ],
+      },
+      {
+        type: "matching",
+        title: "Match Direction to Action",
+        instruction: "Draw a line to match each direction to what happens.",
+        leftItems: [
+          { label: "Go up", objects: [] },
+          { label: "Go down", objects: [] },
+          { label: "Go forward", objects: [] },
+          { label: "Turn around", objects: [] },
+        ],
+        rightItems: [
+          { label: "Face the other way", objects: [] },
+          { label: "Climb higher", objects: [] },
+          { label: "Walk straight ahead", objects: [] },
+          { label: "Move lower", objects: [] },
+        ],
+      },
+      {
+        type: "sequence",
+        title: "Follow the Path",
+        instruction: "Put these directions in order to get from the door to the desk. Write 1, 2, 3.",
+        items: [
+          { label: "Walk forward 5 steps" },
+          { label: "Turn left" },
+          { label: "Walk forward 2 steps to the desk" },
+        ],
+      },
+
+      // --- HARDER: Describing positions ---
+      {
+        type: "circle-correct",
+        title: "Describe the Position",
+        instruction: "A teddy is ON the shelf. A book is NEXT TO the teddy. A ball is UNDER the shelf. Circle the correct answer.",
+        questions: [
+          { prompt: "Where is the teddy?", options: ["On the shelf", "Under the shelf", "Next to the ball"] },
+          { prompt: "Where is the ball?", options: ["On the shelf", "Under the shelf", "Next to the teddy"] },
+          { prompt: "What is next to the teddy?", options: ["The ball", "The shelf", "The book"] },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Opposite Positions",
+        instruction: "Circle the OPPOSITE position word.",
+        questions: [
+          { prompt: "The opposite of UP is ___.", options: ["Down", "Left", "Behind"] },
+          { prompt: "The opposite of IN FRONT OF is ___.", options: ["Above", "Behind", "Under"] },
+          { prompt: "The opposite of LEFT is ___.", options: ["Up", "Down", "Right"] },
+          { prompt: "The opposite of ABOVE is ___.", options: ["Below", "Beside", "Behind"] },
+        ],
+      },
+
+      // --- CHALLENGE: Complex positions, maps ---
+      {
+        type: "circle-correct",
+        title: "Two Clues",
+        instruction: "Use both clues to work out where the object is.",
+        questions: [
+          { prompt: "It is ABOVE the table AND to the LEFT. Where is it?", options: ["On the top left", "Under the table", "To the right"] },
+          { prompt: "It is BEHIND the chair AND on the floor. Where is it?", options: ["On top of the chair", "On the floor behind the chair", "Inside the chair"] },
+          { prompt: "It is BETWEEN the cup and the plate AND on the table. Where is it?", options: ["Under the table", "On the table, in the middle", "Behind the plate"] },
+        ],
+      },
+      {
+        type: "sorting",
+        title: "Sort All the Position Words",
+        instruction: "Sort these words into the correct group.",
+        columns: ["Up/Down Words", "Side Words", "Front/Back Words"],
+        items: [
+          { label: "Above" },
+          { label: "Left" },
+          { label: "Behind" },
+          { label: "Below" },
+          { label: "Right" },
+          { label: "In front of" },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Position Challenge",
+        instruction: "Think carefully! Circle the best answer.",
+        questions: [
+          { prompt: "If you are facing north and turn right, you face ___.", options: ["East", "West", "South"] },
+          { prompt: "If a bird is above you and a worm is below you, you are ___.", options: ["In the middle", "On top", "Underground"] },
+          { prompt: "If you walk forward then turn around and walk forward, you end up ___.", options: ["Where you started", "Far away", "Turned around"] },
+          { prompt: "The opposite of 'inside' is ___.", options: ["Outside", "Under", "Above"] },
+        ],
+      },
+      {
+        type: "matching",
+        title: "Position Words Review",
+        instruction: "Draw a line to match each position word to its meaning.",
+        leftItems: [
+          { label: "Adjacent", objects: [] },
+          { label: "Beneath", objects: [] },
+          { label: "Above", objects: [] },
+          { label: "Between", objects: [] },
+        ],
+        rightItems: [
+          { label: "In the middle of two things", objects: [] },
+          { label: "Higher up", objects: [] },
+          { label: "Next to", objects: [] },
+          { label: "Under", objects: [] },
         ],
       },
     ],
@@ -3226,10 +3492,74 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
     strand: "Statistics",
     description: "Collect, sort and compare data in response to questions in familiar contexts",
     activities: [
+      // --- EASY: Sorting into groups ---
+      {
+        type: "sorting",
+        title: "Sort: Animals or Not Animals?",
+        instruction: "Sort each thing into the correct column.",
+        columns: ["Animals", "Not Animals"],
+        items: [
+          { label: "Fish", icon: "fish" },
+          { label: "Star", icon: "star" },
+          { label: "Butterfly", icon: "butterfly" },
+          { label: "Apple", icon: "apple" },
+          { label: "Flower", icon: "flower" },
+          { label: "Heart", icon: "heart" },
+        ],
+      },
+      {
+        type: "sorting",
+        title: "Sort by Colour",
+        instruction: "Sort each thing into the correct colour group.",
+        columns: ["Red Things", "Yellow Things", "Blue Things"],
+        items: [
+          { label: "Apple" },
+          { label: "Sun" },
+          { label: "Sky" },
+          { label: "Strawberry" },
+          { label: "Banana" },
+          { label: "Ocean" },
+        ],
+      },
+      {
+        type: "sorting",
+        title: "Sort: Big or Small?",
+        instruction: "Sort each animal into the correct column.",
+        columns: ["Big Animals", "Small Animals"],
+        items: [
+          { label: "Elephant" },
+          { label: "Ant" },
+          { label: "Horse" },
+          { label: "Mouse" },
+          { label: "Whale" },
+          { label: "Ladybug" },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "How Many in Each Group?",
+        instruction: "Look at: Star, Heart, Star, Apple, Star, Heart. Count each type.",
+        questions: [
+          { prompt: "How many stars?", options: ["2", "3", "4"] },
+          { prompt: "How many hearts?", options: ["1", "2", "3"] },
+          { prompt: "How many apples?", options: ["0", "1", "2"] },
+        ],
+      },
+
+      // --- EASY: Tally charts ---
       {
         type: "tally-chart",
-        title: "Count and Tally",
-        instruction: "Count each type of object. Make a tally mark for each one, then write the total.",
+        title: "Count and Tally — Stars and Hearts",
+        instruction: "Count each type. Make a tally mark for each one. Write the total.",
+        categories: [
+          { label: "Stars", icon: "star", count: 3 },
+          { label: "Hearts", icon: "heart", count: 5 },
+        ],
+      },
+      {
+        type: "tally-chart",
+        title: "Count and Tally — Four Objects",
+        instruction: "Count each type of object. Make tally marks and write the total.",
         categories: [
           { label: "Stars", icon: "star", count: 4 },
           { label: "Hearts", icon: "heart", count: 3 },
@@ -3238,8 +3568,62 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         ],
       },
       {
+        type: "circle-correct",
+        title: "Read the Tally Chart",
+        instruction: "Stars: 4, Hearts: 3, Fish: 5, Flowers: 2. Answer the questions.",
+        questions: [
+          { prompt: "Which has the MOST?", options: ["Stars", "Hearts", "Fish", "Flowers"] },
+          { prompt: "Which has the FEWEST?", options: ["Stars", "Hearts", "Fish", "Flowers"] },
+          { prompt: "How many stars and hearts together?", options: ["5", "7", "8"] },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "More Tally Questions",
+        instruction: "Stars: 4, Hearts: 3, Fish: 5, Flowers: 2. Answer the questions.",
+        questions: [
+          { prompt: "How many objects altogether?", options: ["12", "14", "16"] },
+          { prompt: "How many more fish than flowers?", options: ["2", "3", "4"] },
+          { prompt: "Are there more stars or hearts?", options: ["Stars", "Hearts", "Same"] },
+        ],
+      },
+
+      // --- MEDIUM: Collecting data ---
+      {
+        type: "tally-chart",
+        title: "Favourite Fruits",
+        instruction: "Ask 4 friends their favourite fruit. Make a tally mark for each answer.",
+        categories: [
+          { label: "Apple", icon: "apple", count: 0 },
+          { label: "Banana", icon: "star", count: 0 },
+          { label: "Strawberry", icon: "heart", count: 0 },
+        ],
+      },
+      {
+        type: "tally-chart",
+        title: "Count the Shapes",
+        instruction: "Count each shape. Make tally marks and write the total.",
+        categories: [
+          { label: "Circles", icon: "circle", count: 6 },
+          { label: "Squares", icon: "square", count: 4 },
+          { label: "Triangles", icon: "triangle", count: 3 },
+          { label: "Diamonds", icon: "diamond", count: 5 },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Read the Shape Tally",
+        instruction: "Circles: 6, Squares: 4, Triangles: 3, Diamonds: 5. Answer the questions.",
+        questions: [
+          { prompt: "Which shape is there the most of?", options: ["Circles", "Squares", "Triangles", "Diamonds"] },
+          { prompt: "Which shape is there the fewest of?", options: ["Circles", "Squares", "Triangles", "Diamonds"] },
+          { prompt: "How many shapes altogether?", options: ["16", "18", "20"] },
+          { prompt: "How many more circles than triangles?", options: ["2", "3", "4"] },
+        ],
+      },
+      {
         type: "sorting",
-        title: "Sort Into Groups",
+        title: "Sort Into Three Groups",
         instruction: "Sort these items into the correct groups.",
         columns: ["Fruit", "Animals", "Shapes"],
         items: [
@@ -3247,18 +3631,155 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
           { label: "Fish", icon: "fish" },
           { label: "Star", icon: "star" },
           { label: "Butterfly", icon: "butterfly" },
-          { label: "Heart", icon: "heart" },
+          { label: "Diamond", icon: "diamond" },
           { label: "Flower", icon: "flower" },
+        ],
+      },
+
+      // --- MEDIUM: Comparing data ---
+      {
+        type: "circle-correct",
+        title: "Compare Two Groups",
+        instruction: "Group A has 7 stars. Group B has 4 stars. Answer the questions.",
+        questions: [
+          { prompt: "Which group has more?", options: ["Group A", "Group B", "Same"] },
+          { prompt: "How many more does Group A have?", options: ["2", "3", "4"] },
+          { prompt: "How many altogether?", options: ["10", "11", "12"] },
+        ],
+      },
+      {
+        type: "tally-chart",
+        title: "Pets in Our Class",
+        instruction: "Here are the pets children in the class have. Make tally marks and write the total.",
+        categories: [
+          { label: "Dogs", icon: "heart", count: 8 },
+          { label: "Cats", icon: "star", count: 6 },
+          { label: "Fish", icon: "fish", count: 4 },
+          { label: "Birds", icon: "butterfly", count: 2 },
         ],
       },
       {
         type: "circle-correct",
-        title: "Answer the Questions",
-        instruction: "Use your tally chart from Activity 1 to answer these questions.",
+        title: "Pets Questions",
+        instruction: "Dogs: 8, Cats: 6, Fish: 4, Birds: 2. Answer the questions.",
         questions: [
-          { prompt: "Which item has the MOST?", options: ["Stars", "Hearts", "Fish", "Flowers"] },
-          { prompt: "Which item has the FEWEST?", options: ["Stars", "Hearts", "Fish", "Flowers"] },
-          { prompt: "How many stars and hearts together?", options: ["5", "7", "8"] },
+          { prompt: "What is the most popular pet?", options: ["Dogs", "Cats", "Fish", "Birds"] },
+          { prompt: "What is the least popular pet?", options: ["Dogs", "Cats", "Fish", "Birds"] },
+          { prompt: "How many children have dogs or cats?", options: ["12", "14", "16"] },
+          { prompt: "How many more dogs than birds?", options: ["4", "6", "8"] },
+        ],
+      },
+
+      // --- HARDER: Yes/No surveys ---
+      {
+        type: "tally-chart",
+        title: "Yes or No Survey: Do You Like Ice Cream?",
+        instruction: "Ask 6 friends: Do you like ice cream? Tally the Yes and No answers.",
+        categories: [
+          { label: "Yes", icon: "star", count: 0 },
+          { label: "No", icon: "heart", count: 0 },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Survey Results",
+        instruction: "5 children said Yes, 3 children said No. Answer the questions.",
+        questions: [
+          { prompt: "How many children were asked?", options: ["5", "8", "10"] },
+          { prompt: "Did more children say Yes or No?", options: ["Yes", "No", "Same"] },
+          { prompt: "How many more said Yes than No?", options: ["1", "2", "3"] },
+        ],
+      },
+      {
+        type: "sorting",
+        title: "Sort Foods: Healthy or Treat?",
+        instruction: "Sort each food into the correct column.",
+        columns: ["Healthy Food", "Treat Food"],
+        items: [
+          { label: "Apple" },
+          { label: "Lollipop" },
+          { label: "Carrot" },
+          { label: "Chocolate" },
+          { label: "Banana" },
+          { label: "Chips" },
+        ],
+      },
+
+      // --- HARDER: Reading data displays ---
+      {
+        type: "circle-correct",
+        title: "Reading a Picture Graph",
+        instruction: "Each star = 1 child. Walked to school: 5 stars. Drove: 3 stars. Bus: 2 stars.",
+        questions: [
+          { prompt: "How many children walked?", options: ["3", "5", "7"] },
+          { prompt: "How many children took the bus?", options: ["2", "3", "5"] },
+          { prompt: "How many children altogether?", options: ["8", "10", "12"] },
+          { prompt: "What was the most common way to get to school?", options: ["Walked", "Drove", "Bus"] },
+        ],
+      },
+      {
+        type: "tally-chart",
+        title: "Weather This Week",
+        instruction: "This week the weather was: Sunny, Sunny, Rainy, Sunny, Cloudy. Tally each type.",
+        categories: [
+          { label: "Sunny", icon: "star", count: 3 },
+          { label: "Rainy", icon: "diamond", count: 1 },
+          { label: "Cloudy", icon: "circle", count: 1 },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Weather Questions",
+        instruction: "Sunny: 3 days, Rainy: 1 day, Cloudy: 1 day. Answer the questions.",
+        questions: [
+          { prompt: "What was the most common weather?", options: ["Sunny", "Rainy", "Cloudy"] },
+          { prompt: "How many days of data?", options: ["3", "5", "7"] },
+          { prompt: "Were there more sunny days or rainy days?", options: ["Sunny", "Rainy", "Same"] },
+        ],
+      },
+
+      // --- CHALLENGE: Asking questions about data ---
+      {
+        type: "circle-correct",
+        title: "What Question Could We Ask?",
+        instruction: "We want to sort the class into groups. Circle the BEST question to ask.",
+        questions: [
+          { prompt: "To find out favourite colours, we should ask:", options: ["What is your favourite colour?", "Do you like red?", "How old are you?"] },
+          { prompt: "To find out how children get to school, we should ask:", options: ["Do you like school?", "How do you get to school?", "What is your name?"] },
+          { prompt: "To find out favourite animals, we should ask:", options: ["Do you have a pet?", "What is your favourite animal?", "How many legs do cats have?"] },
+        ],
+      },
+      {
+        type: "tally-chart",
+        title: "Favourite Colours",
+        instruction: "Red: 6, Blue: 8, Green: 4, Yellow: 2. Make tally marks and write totals.",
+        categories: [
+          { label: "Red", icon: "heart", count: 6 },
+          { label: "Blue", icon: "diamond", count: 8 },
+          { label: "Green", icon: "flower", count: 4 },
+          { label: "Yellow", icon: "star", count: 2 },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Favourite Colours Questions",
+        instruction: "Red: 6, Blue: 8, Green: 4, Yellow: 2. Answer the questions.",
+        questions: [
+          { prompt: "What is the most popular colour?", options: ["Red", "Blue", "Green", "Yellow"] },
+          { prompt: "What is the least popular colour?", options: ["Red", "Blue", "Green", "Yellow"] },
+          { prompt: "How many children chose red or blue?", options: ["12", "14", "16"] },
+          { prompt: "How many more chose blue than yellow?", options: ["4", "6", "8"] },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Data Challenge",
+        instruction: "Think carefully about data! Circle the best answer.",
+        questions: [
+          { prompt: "Why do we collect data?", options: ["To answer questions", "To draw pictures", "To count to 100"] },
+          { prompt: "What is a tally mark?", options: ["A type of counting mark", "A type of shape", "A colour"] },
+          { prompt: "If 10 children were asked and 6 said Yes, how many said No?", options: ["3", "4", "6"] },
+          { prompt: "Which is the best way to show how many of each fruit people like?", options: ["A tally chart", "A story", "A song"] },
         ],
       },
     ],

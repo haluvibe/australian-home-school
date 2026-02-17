@@ -43,7 +43,7 @@ export default async function WorksheetItemPage({ params }: PageProps) {
             </svg>
             All Worksheets
           </Link>
-          <PrintButton />
+          <PrintButton filename={`foundation-maths-${worksheet.slug}`} />
         </div>
       </div>
 

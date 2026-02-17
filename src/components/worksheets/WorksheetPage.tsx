@@ -30,13 +30,13 @@ export default function WorksheetPage({ title, strand, children }: WorksheetPage
           </h1>
         </div>
         <div className="flex gap-6 text-base text-charcoal-light">
-          <div className="flex items-center gap-2">
-            <span className="font-semibold text-charcoal">Name:</span>
-            <span className="inline-block w-40 border-b-2 border-dashed border-charcoal/30" />
+          <div className="flex items-end gap-2">
+            <span className="font-semibold leading-none text-charcoal">Name:</span>
+            <span className="mb-0.5 inline-block w-40 border-b-2 border-dashed border-charcoal/30" />
           </div>
-          <div className="flex items-center gap-2">
-            <span className="font-semibold text-charcoal">Date:</span>
-            <span className="inline-block w-28 border-b-2 border-dashed border-charcoal/30" />
+          <div className="flex items-end gap-2">
+            <span className="font-semibold leading-none text-charcoal">Date:</span>
+            <span className="mb-0.5 inline-block w-28 border-b-2 border-dashed border-charcoal/30" />
           </div>
         </div>
       </div>
