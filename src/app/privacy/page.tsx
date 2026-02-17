@@ -2,9 +2,9 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy — Australian Home School",
+  title: "Privacy Policy — Australian Home Schooling",
   description:
-    "Privacy policy for Australian Home School. Learn how we collect, use, and protect your personal information.",
+    "Privacy policy for Australian Home Schooling. Learn how we collect, use, and protect your personal information.",
 };
 
 const lastUpdated = "17 February 2026";
@@ -42,7 +42,7 @@ export default function PrivacyPage() {
                 Introduction
               </h2>
               <p className="mt-3 text-base leading-relaxed text-charcoal-light/85">
-                Australian Home School (&quot;we&quot;, &quot;our&quot;, or
+                Australian Home Schooling (&quot;we&quot;, &quot;our&quot;, or
                 &quot;us&quot;) is committed to protecting the privacy of our
                 users. This Privacy Policy explains how we collect, use,
                 disclose, and safeguard your information when you visit our

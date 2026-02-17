@@ -5,10 +5,10 @@ const footerLinks = {
     { label: "Curriculum Overview", href: "/curriculum" },
     { label: "Official Downloads", href: "https://www.australiancurriculum.edu.au/downloads/learning-areas", external: true },
   ],
-  Resources: [
-    { label: "Lesson Plans", href: "/resources/lesson-plans" },
-    { label: "Worksheets", href: "/resources/worksheets" },
-    { label: "Community", href: "/resources/community" },
+  "External Resources": [
+    { label: "Lesson Plans", href: "/external-resources/lesson-plans" },
+    { label: "Worksheets", href: "/external-resources/worksheets" },
+    { label: "Community", href: "/external-resources/community" },
   ],
   Company: [
     { label: "FAQ", href: "/faq" },
@@ -41,7 +41,7 @@ export default function Footer() {
                 </svg>
               </div>
               <span className="font-display text-lg font-semibold text-cream">
-                Australian Home School
+                Australian Home Schooling
               </span>
             </Link>
             <p className="mt-4 text-sm leading-relaxed text-cream/60">
@@ -84,7 +84,7 @@ export default function Footer() {
 
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-cream/10 pt-8 sm:flex-row">
           <p className="text-xs text-cream/50">
-            &copy; {new Date().getFullYear()} Australian Home School. All rights reserved.
+            &copy; {new Date().getFullYear()} Australian Home Schooling. All rights reserved.
           </p>
           <div className="flex gap-6">
             <Link href="/privacy" className="text-xs text-cream/50 transition-colors hover:text-cream/60">

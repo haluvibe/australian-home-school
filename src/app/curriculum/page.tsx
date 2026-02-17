@@ -1,11 +1,12 @@
 "use client";
 
 import { Suspense, useEffect, useState } from "react";
-import { useSearchParams } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import CurriculumYearCard from "@/components/CurriculumYearCard";
 import { subjects, primaryYears, secondaryYears } from "@/lib/curriculum-data";
 
 function CurriculumContent() {
+  const router = useRouter();
   const searchParams = useSearchParams();
   const subjectParam = searchParams.get("subject");
   const initialIndex = subjects.findIndex((s) => s.slug === subjectParam);
@@ -18,6 +19,13 @@ function CurriculumContent() {
     if (idx >= 0) setActiveSubject(idx);
   }, [subjectParam]);
   const current = subjects[activeSubject];
+
+  const handleSubjectChange = (index: number) => {
+    setActiveSubject(index);
+    router.push(`/curriculum?subject=${subjects[index].slug}`, {
+      scroll: false,
+    });
+  };
 
   const primaryData = current.years.filter((y) =>
     primaryYears.includes(y.yearLevel)
@@ -75,12 +83,11 @@ function CurriculumContent() {
             {subjects.map((subject, i) => (
               <button
                 key={subject.slug}
-                onClick={() => setActiveSubject(i)}
-                className={`relative px-5 py-4 text-base font-semibold transition-colors ${
-                  activeSubject === i
+                onClick={() => handleSubjectChange(i)}
+                className={`relative px-5 py-4 text-base font-semibold transition-colors ${activeSubject === i
                     ? "text-charcoal"
                     : "text-charcoal-light/70 hover:text-charcoal"
-                }`}
+                  }`}
               >
                 {subject.subject}
                 {activeSubject === i && (

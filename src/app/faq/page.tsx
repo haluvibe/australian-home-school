@@ -3,7 +3,7 @@ import FAQAccordion from "@/components/FAQAccordion";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "FAQ — Australian Home School",
+  title: "FAQ — Australian Home Schooling",
   description:
     "Frequently asked questions about homeschooling in Australia. Learn about registration, curriculum requirements, state regulations, and more.",
 };

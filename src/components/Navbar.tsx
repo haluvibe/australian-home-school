@@ -39,12 +39,12 @@ const curriculumSubjects = [
 ];
 
 const dropdowns: Record<string, DropdownConfig> = {
-  Resources: {
+  "External Resources": {
     tagline: "Everything you need\nto teach with confidence",
     items: [
       {
         label: "Lesson Plans",
-        href: "/resources/lesson-plans",
+        href: "/external-resources/lesson-plans",
         icon: (
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
             <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
@@ -57,7 +57,7 @@ const dropdowns: Record<string, DropdownConfig> = {
       },
       {
         label: "Worksheets",
-        href: "/resources/worksheets",
+        href: "/external-resources/worksheets",
         icon: (
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
             <rect x="3" y="3" width="7" height="7" />
@@ -69,7 +69,7 @@ const dropdowns: Record<string, DropdownConfig> = {
       },
       {
         label: "Community",
-        href: "/resources/community",
+        href: "/external-resources/community",
         icon: (
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
             <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
@@ -86,7 +86,7 @@ const dropdowns: Record<string, DropdownConfig> = {
 const navItems = [
   { label: "Home", href: "/" },
   { label: "Curriculum", href: "#", hasDropdown: true },
-  { label: "Resources", href: "#", hasDropdown: true },
+  { label: "External Resources", href: "#", hasDropdown: true },
   { label: "FAQ", href: "/faq" },
   { label: "Contact", href: "/contact" },
 ];
@@ -167,7 +167,7 @@ export default function Navbar() {
             </svg>
           </div>
           <span className="font-display text-lg font-semibold tracking-tight text-charcoal">
-            Australian Home School
+            Australian Home Schooling
           </span>
         </Link>
 

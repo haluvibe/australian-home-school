@@ -4,7 +4,7 @@ import ResourceCard from "@/components/ResourceCard";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Community Resources — Australian Home School",
+  title: "Community Resources — Australian Home Schooling",
   description:
     "A curated directory of homeschooling support groups, curriculum providers, and community resources across every Australian state and territory.",
 };
@@ -208,7 +208,7 @@ const sections: ResourceSection[] = [
       },
       {
         name: "HEWA Online Groups Directory",
-        url: "https://hewa.wa.edu.au/resources/online-groups/",
+        url: "https://hewa.wa.edu.au/external-resources/online-groups/",
         description:
           "HEWA\u2019s directory of online support groups across WA, including regional groups for Perth, Great Southern, Wheatbelt, and specialised groups for kids with extra needs.",
       },
@@ -224,22 +224,10 @@ const sections: ResourceSection[] = [
           "The Home Education Association\u2019s SA-specific page with registration support and state information. In SA, families apply for an exemption from school enrolment to home educate.",
       },
       {
-        name: "Home Education South Australia (HEASA)",
-        url: "http://heasa.org.au/",
-        description:
-          "A community organisation that coordinates social and educational activities including excursions, camps, workshops, and classes for SA home-educating families.",
-      },
-      {
         name: "SA Home Education Groups",
         url: "https://www.design-your-homeschool.com/homeschool-groups-sa-australia.html",
         description:
           "A directory of South Australian homeschool groups, including Adelaide-based meetups and regional support networks.",
-      },
-      {
-        name: "Bold Gorilla \u2014 Homeschooling SA",
-        url: "https://www.boldgorilla.com.au/homeschooling-sa",
-        description:
-          "A resource covering homeschooling options in South Australia with information on local support groups and getting started.",
       },
     ],
   },

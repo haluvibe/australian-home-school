@@ -57,7 +57,7 @@ const features = [
 const testimonials = [
   {
     quote:
-      "We were terrified about taking the leap into homeschooling. Australian Home School gave us the confidence and structure we needed while keeping the freedom we wanted.",
+      "We were terrified about taking the leap into homeschooling. Australian Home Schooling gave us the confidence and structure we needed while keeping the freedom we wanted.",
     name: "Sarah M.",
     location: "Byron Bay, NSW",
     initials: "SM",

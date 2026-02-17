@@ -1,9 +1,15 @@
 import englishData from "../../curriculum/english/english-curriculum-data.json";
 import mathematicsData from "../../curriculum/mathematics/mathematics-curriculum-data.json";
 
+export interface StrandItem {
+  description: string;
+  example?: string;
+  khanAcademyUrl?: string;
+}
+
 export interface StrandObjectives {
   strand: string;
-  items: string[];
+  items: (string | StrandItem)[];
 }
 
 export interface YearLevelData {

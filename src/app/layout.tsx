@@ -17,7 +17,7 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  title: "Australian Home School — Nurture Curiosity, Grow Together",
+  title: "Australian Home Schooling — Nurture Curiosity, Grow Together",
   description:
     "Australia's trusted homeschooling platform. Curriculum guides, lesson plans, worksheets, and a supportive community for families educating at home.",
 };
