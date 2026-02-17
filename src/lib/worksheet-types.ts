@@ -21,15 +21,18 @@ export interface CountObjectsData {
   type: "count-objects";
   title: string;
   instruction: string;
-  rows: { object: ObjectName; count: number }[];
+  rows?: { object: ObjectName; count: number }[];
+  groups?: { objects: ObjectName[]; label: string }[];
 }
 
 export interface MatchingData {
   type: "matching";
   title: string;
   instruction: string;
-  left: string[];
-  right: string[];
+  left?: string[];
+  right?: string[];
+  leftItems?: { label: string; objects: ObjectName[] }[];
+  rightItems?: { label: string; objects: ObjectName[] }[];
 }
 
 export interface CompareGroupsData {
@@ -72,7 +75,8 @@ export interface SequenceData {
   type: "sequence";
   title: string;
   instruction: string;
-  items: { label: string; icon?: ObjectName }[];
+  items?: { label: string; icon?: ObjectName }[];
+  sequences?: { items: number[]; answer: number[] }[];
 }
 
 export interface ShapeTraceData {

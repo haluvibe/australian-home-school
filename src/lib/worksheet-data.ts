@@ -297,32 +297,299 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
     strand: "Number",
     description: "Use subitising and counting strategies to quantify collections",
     activities: [
+      // --- EASY: Subitise tiny groups 1-3 ---
       {
         type: "count-objects",
-        title: "Count and Write",
-        instruction: "Count the objects in each row. Write the total in the box.",
+        title: "How Many Stars?",
+        instruction: "Look at the stars. Write how many in the box.",
         rows: [
+          { object: "star", count: 1 },
+          { object: "star", count: 2 },
           { object: "star", count: 3 },
-          { object: "apple", count: 5 },
-          { object: "heart", count: 7 },
-          { object: "fish", count: 4 },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Quick! How Many?",
+        instruction: "Look at the picture quickly. Circle the right number.",
+        questions: [
+          { prompt: "🍎", options: ["1", "2", "3"] },
+          { prompt: "🍎🍎🍎", options: ["2", "3", "4"] },
+          { prompt: "🍎🍎", options: ["1", "2", "3"] },
+        ],
+      },
+      {
+        type: "count-objects",
+        title: "How Many Hearts?",
+        instruction: "Count the hearts. Write the number.",
+        rows: [
+          { object: "heart", count: 2 },
+          { object: "heart", count: 3 },
+          { object: "heart", count: 1 },
         ],
       },
       {
         type: "matching",
-        title: "Match Dots to Numbers",
-        instruction: "Draw a line to match each dot pattern to the correct numeral.",
-        left: ["●", "● ●", "● ● ●", "● ● ● ●", "● ● ● ● ●"],
-        right: ["3", "5", "1", "4", "2"],
+        title: "Match Groups to Numbers",
+        instruction: "Draw a line from each group to the correct number.",
+        left: ["●", "● ●", "● ● ●"],
+        right: ["3", "1", "2"],
+      },
+      {
+        type: "count-objects",
+        title: "Count the Fish",
+        instruction: "How many fish? Write the number in the box.",
+        rows: [
+          { object: "fish", count: 3 },
+          { object: "fish", count: 1 },
+          { object: "fish", count: 2 },
+        ],
+      },
+      // --- EASY: Subitise groups of 4-5 ---
+      {
+        type: "count-objects",
+        title: "Count the Apples",
+        instruction: "Count the apples in each row. Write the total.",
+        rows: [
+          { object: "apple", count: 4 },
+          { object: "apple", count: 5 },
+          { object: "apple", count: 3 },
+        ],
       },
       {
         type: "circle-correct",
-        title: "How Many Do You See?",
-        instruction: "Look quickly! Circle how many you think there are.",
+        title: "Subitise! How Many Do You See?",
+        instruction: "Try to see the number WITHOUT counting one by one. Circle your answer.",
         questions: [
-          { prompt: "⭐⭐⭐", options: ["2", "3", "4"] },
-          { prompt: "⭐⭐⭐⭐⭐", options: ["4", "6", "5"] },
-          { prompt: "⭐⭐", options: ["2", "3", "1"] },
+          { prompt: "⭐⭐⭐⭐", options: ["3", "4", "5"] },
+          { prompt: "⭐⭐⭐⭐⭐", options: ["4", "5", "6"] },
+          { prompt: "⭐⭐⭐", options: ["2", "4", "3"] },
+        ],
+      },
+      {
+        type: "count-objects",
+        title: "Count the Flowers",
+        instruction: "Count each group of flowers. Write the number.",
+        rows: [
+          { object: "flower", count: 5 },
+          { object: "flower", count: 4 },
+          { object: "flower", count: 2 },
+        ],
+      },
+      {
+        type: "matching",
+        title: "Match Groups 1–5",
+        instruction: "Draw a line from each group to the matching number.",
+        left: ["● ●", "● ● ● ●", "● ● ● ● ●", "●", "● ● ●"],
+        right: ["5", "1", "2", "3", "4"],
+      },
+      {
+        type: "circle-correct",
+        title: "How Many Fingers?",
+        instruction: "If you hold up this many fingers, which number is it?",
+        questions: [
+          { prompt: "One whole hand", options: ["4", "5", "6"] },
+          { prompt: "Three fingers", options: ["2", "3", "4"] },
+          { prompt: "One finger", options: ["0", "1", "2"] },
+        ],
+      },
+      // --- MEDIUM: Count groups of 6-8 ---
+      {
+        type: "count-objects",
+        title: "Count the Butterflies",
+        instruction: "Count the butterflies carefully. Write the total.",
+        rows: [
+          { object: "butterfly", count: 6 },
+          { object: "butterfly", count: 7 },
+          { object: "butterfly", count: 5 },
+        ],
+      },
+      {
+        type: "count-objects",
+        title: "Count the Diamonds",
+        instruction: "Touch each diamond as you count. Write the total.",
+        rows: [
+          { object: "diamond", count: 8 },
+          { object: "diamond", count: 6 },
+          { object: "diamond", count: 7 },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Pick the Right Number",
+        instruction: "Count the objects. Circle the correct total.",
+        questions: [
+          { prompt: "🐟🐟🐟🐟🐟🐟", options: ["5", "6", "7"] },
+          { prompt: "🐟🐟🐟🐟🐟🐟🐟🐟", options: ["7", "8", "9"] },
+          { prompt: "🐟🐟🐟🐟🐟🐟🐟", options: ["6", "7", "8"] },
+        ],
+      },
+      {
+        type: "count-objects",
+        title: "Count the Hearts",
+        instruction: "How many hearts are there? Write the number.",
+        rows: [
+          { object: "heart", count: 7 },
+          { object: "heart", count: 8 },
+          { object: "heart", count: 6 },
+        ],
+      },
+      {
+        type: "matching",
+        title: "Match Groups to Numbers (Big!)",
+        instruction: "Draw a line to match each dot group to its number.",
+        left: ["● ● ● ● ●", "● ● ● ● ● ● ●", "● ● ● ● ● ●", "● ● ● ● ● ● ● ●"],
+        right: ["8", "5", "7", "6"],
+      },
+      // --- MEDIUM: Count groups of 9-12 ---
+      {
+        type: "count-objects",
+        title: "Count the Stars",
+        instruction: "Count each group carefully. Write the total.",
+        rows: [
+          { object: "star", count: 9 },
+          { object: "star", count: 10 },
+          { object: "star", count: 8 },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "How Many? (Getting Bigger!)",
+        instruction: "Count carefully and circle the right number.",
+        questions: [
+          { prompt: "🌸🌸🌸🌸🌸🌸🌸🌸🌸", options: ["8", "9", "10"] },
+          { prompt: "🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸", options: ["9", "10", "11"] },
+          { prompt: "🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸", options: ["10", "11", "12"] },
+        ],
+      },
+      {
+        type: "count-objects",
+        title: "Count the Apples",
+        instruction: "These are bigger groups! Count carefully.",
+        rows: [
+          { object: "apple", count: 11 },
+          { object: "apple", count: 9 },
+          { object: "apple", count: 12 },
+        ],
+      },
+      {
+        type: "count-objects",
+        title: "Count the Fish",
+        instruction: "Point to each fish as you count. Write the total.",
+        rows: [
+          { object: "fish", count: 10 },
+          { object: "fish", count: 12 },
+          { object: "fish", count: 11 },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Which Number Matches?",
+        instruction: "Count the group. Circle the matching number.",
+        questions: [
+          { prompt: "⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐", options: ["9", "10", "11"] },
+          { prompt: "⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐", options: ["11", "12", "13"] },
+          { prompt: "⭐⭐⭐⭐⭐⭐⭐⭐⭐", options: ["8", "9", "10"] },
+        ],
+      },
+      // --- HARDER: Count groups of 13-16 ---
+      {
+        type: "count-objects",
+        title: "Count the Flowers — Teen Numbers!",
+        instruction: "Count the flowers. Remember your teen numbers!",
+        rows: [
+          { object: "flower", count: 13 },
+          { object: "flower", count: 15 },
+          { object: "flower", count: 14 },
+        ],
+      },
+      {
+        type: "count-objects",
+        title: "Count the Hearts",
+        instruction: "Count slowly and carefully. Write the total.",
+        rows: [
+          { object: "heart", count: 14 },
+          { object: "heart", count: 16 },
+          { object: "heart", count: 13 },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Big Group Challenge",
+        instruction: "Count the objects. Circle the correct total.",
+        questions: [
+          { prompt: "🦋🦋🦋🦋🦋🦋🦋🦋🦋🦋🦋🦋🦋", options: ["12", "13", "14"] },
+          { prompt: "🦋🦋🦋🦋🦋🦋🦋🦋🦋🦋🦋🦋🦋🦋🦋", options: ["14", "15", "16"] },
+          { prompt: "🦋🦋🦋🦋🦋🦋🦋🦋🦋🦋🦋🦋🦋🦋", options: ["13", "14", "15"] },
+        ],
+      },
+      {
+        type: "count-objects",
+        title: "Count the Diamonds",
+        instruction: "Try counting in groups of 5 to help!",
+        rows: [
+          { object: "diamond", count: 15 },
+          { object: "diamond", count: 13 },
+          { object: "diamond", count: 16 },
+        ],
+      },
+      {
+        type: "matching",
+        title: "Match Big Groups",
+        instruction: "Count each group and match it to the correct number.",
+        left: ["13 stars", "15 stars", "10 stars", "16 stars"],
+        right: ["15", "10", "16", "13"],
+      },
+      // --- CHALLENGE: Count groups of 17-20 ---
+      {
+        type: "count-objects",
+        title: "Count the Stars — Nearly 20!",
+        instruction: "These are big groups! Count very carefully.",
+        rows: [
+          { object: "star", count: 17 },
+          { object: "star", count: 18 },
+          { object: "star", count: 20 },
+        ],
+      },
+      {
+        type: "count-objects",
+        title: "Count the Butterflies — Super Challenge!",
+        instruction: "Point to each one as you count. Write the total.",
+        rows: [
+          { object: "butterfly", count: 19 },
+          { object: "butterfly", count: 17 },
+          { object: "butterfly", count: 20 },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Counting Super Quiz",
+        instruction: "Answer each question by circling the right number.",
+        questions: [
+          { prompt: "What number comes after 17?", options: ["16", "18", "19"] },
+          { prompt: "If you have 15 apples and get 2 more, how many?", options: ["16", "17", "18"] },
+          { prompt: "How many fingers on 4 hands?", options: ["15", "20", "10"] },
+        ],
+      },
+      {
+        type: "compare-groups",
+        title: "Which Group Has More?",
+        instruction: "Count both groups. Circle the group that has MORE.",
+        pairs: [
+          { leftCount: 8, rightCount: 5, object: "star", question: "Which has more?" },
+          { leftCount: 6, rightCount: 9, object: "heart", question: "Which has more?" },
+          { leftCount: 10, rightCount: 10, object: "apple", question: "Which has more? Or are they equal?" },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Subitising & Counting Master Quiz",
+        instruction: "Answer these tricky questions!",
+        questions: [
+          { prompt: "If you see 5 dots instantly, that is called...", options: ["counting", "subitising", "adding"] },
+          { prompt: "What is the quickest way to know there are 3 objects?", options: ["Count 1, 2, 3", "Just see it!", "Guess"] },
+          { prompt: "Which is bigger: 14 or 17?", options: ["14", "17", "They are equal"] },
+          { prompt: "How many is two groups of 10?", options: ["10", "15", "20"] },
         ],
       },
     ],
@@ -335,33 +602,314 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
     strand: "Number",
     description: "Compare the size of collections to at least 20",
     activities: [
+      // --- EASY: Comparing tiny groups (1–5) ---
       {
         type: "compare-groups",
-        title: "Which Group Has More?",
+        title: "Which Group Has More? (Tiny Groups)",
         instruction: "Look at each pair. Circle the group that has MORE.",
         pairs: [
-          { leftCount: 5, rightCount: 3, object: "star", question: "Which group has more stars?" },
-          { leftCount: 4, rightCount: 7, object: "apple", question: "Which group has more apples?" },
-          { leftCount: 8, rightCount: 6, object: "heart", question: "Which group has more hearts?" },
+          { leftCount: 2, rightCount: 1, object: "star", question: "Which group has more stars?" },
+          { leftCount: 1, rightCount: 3, object: "apple", question: "Which group has more apples?" },
+          { leftCount: 3, rightCount: 2, object: "heart", question: "Which group has more hearts?" },
         ],
       },
       {
         type: "compare-groups",
-        title: "Which Group Has Fewer?",
+        title: "Which Group Has Fewer? (Tiny Groups)",
         instruction: "Look at each pair. Circle the group that has FEWER.",
         pairs: [
-          { leftCount: 6, rightCount: 9, object: "fish", question: "Which group has fewer fish?" },
-          { leftCount: 5, rightCount: 2, object: "flower", question: "Which group has fewer flowers?" },
+          { leftCount: 3, rightCount: 1, object: "fish", question: "Which group has fewer fish?" },
+          { leftCount: 2, rightCount: 4, object: "flower", question: "Which group has fewer flowers?" },
+          { leftCount: 5, rightCount: 3, object: "butterfly", question: "Which group has fewer butterflies?" },
+        ],
+      },
+      {
+        type: "count-objects",
+        title: "Count and Compare Stars",
+        instruction: "Count each group of stars. Write the number. Then circle the group with MORE.",
+        groups: [
+          { objects: Array(2).fill("star"), label: "Group A" },
+          { objects: Array(4).fill("star"), label: "Group B" },
+        ],
+      },
+      {
+        type: "count-objects",
+        title: "Count and Compare Hearts",
+        instruction: "Count each group of hearts. Write the number. Then circle the group with FEWER.",
+        groups: [
+          { objects: Array(5).fill("heart"), label: "Group A" },
+          { objects: Array(3).fill("heart"), label: "Group B" },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "More or Fewer?",
+        instruction: "Circle the correct answer.",
+        questions: [
+          { prompt: "2 apples and 4 apples — which is more?", options: ["2", "4"] },
+          { prompt: "5 stars and 3 stars — which is fewer?", options: ["5", "3"] },
+          { prompt: "1 fish and 1 fish — the groups are...", options: ["more", "fewer", "equal"] },
+        ],
+      },
+      {
+        type: "compare-groups",
+        title: "Same or Different?",
+        instruction: "Look at each pair. Are they the SAME number or DIFFERENT? Circle 'same' or 'different'.",
+        pairs: [
+          { leftCount: 3, rightCount: 3, object: "diamond", question: "Same or different?" },
+          { leftCount: 2, rightCount: 5, object: "star", question: "Same or different?" },
+          { leftCount: 4, rightCount: 4, object: "flower", question: "Same or different?" },
+        ],
+      },
+      {
+        type: "matching",
+        title: "Match Groups That Are Equal",
+        instruction: "Draw a line to match the groups that have the SAME number.",
+        leftItems: [
+          { label: "2 stars", objects: Array(2).fill("star") },
+          { label: "4 hearts", objects: Array(4).fill("heart") },
+          { label: "3 fish", objects: Array(3).fill("fish") },
+        ],
+        rightItems: [
+          { label: "3 apples", objects: Array(3).fill("apple") },
+          { label: "2 flowers", objects: Array(2).fill("flower") },
+          { label: "4 diamonds", objects: Array(4).fill("diamond") },
+        ],
+      },
+      {
+        type: "count-objects",
+        title: "Which Basket Has More Apples?",
+        instruction: "Count the apples in each basket. Write the number. Circle the basket with MORE apples.",
+        groups: [
+          { objects: Array(3).fill("apple"), label: "Basket A" },
+          { objects: Array(5).fill("apple"), label: "Basket B" },
+        ],
+      },
+
+      // --- MEDIUM: Comparing groups (1–10) ---
+      {
+        type: "compare-groups",
+        title: "Which Group Has More? (Up to 10)",
+        instruction: "Look at each pair. Circle the group that has MORE.",
+        pairs: [
+          { leftCount: 5, rightCount: 8, object: "star", question: "Which group has more stars?" },
+          { leftCount: 7, rightCount: 4, object: "apple", question: "Which group has more apples?" },
+          { leftCount: 6, rightCount: 9, object: "fish", question: "Which group has more fish?" },
+        ],
+      },
+      {
+        type: "compare-groups",
+        title: "Which Group Has Fewer? (Up to 10)",
+        instruction: "Look at each pair. Circle the group that has FEWER.",
+        pairs: [
+          { leftCount: 8, rightCount: 6, object: "heart", question: "Which group has fewer hearts?" },
+          { leftCount: 3, rightCount: 7, object: "butterfly", question: "Which group has fewer butterflies?" },
+          { leftCount: 10, rightCount: 5, object: "flower", question: "Which group has fewer flowers?" },
         ],
       },
       {
         type: "circle-correct",
         title: "More, Fewer, or Equal?",
-        instruction: "Circle the correct word for each pair.",
+        instruction: "Read each sentence. Circle the correct answer.",
         questions: [
-          { prompt: "3 stars and 3 hearts — the groups are...", options: ["more", "fewer", "equal"] },
-          { prompt: "5 fish and 8 fish — 5 is...", options: ["more", "fewer", "equal"] },
+          { prompt: "6 stars and 6 hearts — the groups are...", options: ["more", "fewer", "equal"] },
+          { prompt: "4 fish and 9 fish — 4 is...", options: ["more", "fewer", "equal"] },
           { prompt: "10 apples and 7 apples — 10 is...", options: ["more", "fewer", "equal"] },
+          { prompt: "8 flowers and 8 flowers — the groups are...", options: ["more", "fewer", "equal"] },
+        ],
+      },
+      {
+        type: "count-objects",
+        title: "Count and Compare Flowers",
+        instruction: "Count the flowers in each garden. Write the number. Circle the garden with MORE flowers.",
+        groups: [
+          { objects: Array(7).fill("flower"), label: "Garden A" },
+          { objects: Array(4).fill("flower"), label: "Garden B" },
+        ],
+      },
+      {
+        type: "count-objects",
+        title: "Count and Compare Fish",
+        instruction: "Count the fish in each pond. Write the number. Circle the pond with FEWER fish.",
+        groups: [
+          { objects: Array(6).fill("fish"), label: "Pond A" },
+          { objects: Array(9).fill("fish"), label: "Pond B" },
+        ],
+      },
+      {
+        type: "matching",
+        title: "Match More to Fewer",
+        instruction: "Draw a line from each group on the left to the group on the right that has FEWER.",
+        leftItems: [
+          { label: "8 stars", objects: Array(8).fill("star") },
+          { label: "6 hearts", objects: Array(6).fill("heart") },
+          { label: "10 apples", objects: Array(10).fill("apple") },
+        ],
+        rightItems: [
+          { label: "3 hearts", objects: Array(3).fill("heart") },
+          { label: "5 stars", objects: Array(5).fill("star") },
+          { label: "7 apples", objects: Array(7).fill("apple") },
+        ],
+      },
+      {
+        type: "compare-groups",
+        title: "Biggest Group",
+        instruction: "Look at all three groups. Circle the group that has the MOST.",
+        pairs: [
+          { leftCount: 4, rightCount: 9, object: "star", question: "Which has the most?" },
+          { leftCount: 7, rightCount: 3, object: "diamond", question: "Which has the most?" },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Which Number Is Bigger?",
+        instruction: "Circle the bigger number.",
+        questions: [
+          { prompt: "Which is bigger?", options: ["3", "8"] },
+          { prompt: "Which is bigger?", options: ["10", "6"] },
+          { prompt: "Which is bigger?", options: ["5", "9"] },
+          { prompt: "Which is bigger?", options: ["7", "2"] },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Which Number Is Smaller?",
+        instruction: "Circle the smaller number.",
+        questions: [
+          { prompt: "Which is smaller?", options: ["4", "7"] },
+          { prompt: "Which is smaller?", options: ["10", "1"] },
+          { prompt: "Which is smaller?", options: ["6", "3"] },
+          { prompt: "Which is smaller?", options: ["8", "5"] },
+        ],
+      },
+      {
+        type: "count-objects",
+        title: "Three Groups of Butterflies",
+        instruction: "Count the butterflies in each group. Write the numbers. Circle the group with the MOST.",
+        groups: [
+          { objects: Array(5).fill("butterfly"), label: "Group A" },
+          { objects: Array(8).fill("butterfly"), label: "Group B" },
+          { objects: Array(3).fill("butterfly"), label: "Group C" },
+        ],
+      },
+
+      // --- HARDER: Comparing bigger groups (up to 16) ---
+      {
+        type: "compare-groups",
+        title: "Which Group Has More? (Bigger Numbers)",
+        instruction: "Look at each pair. Circle the group that has MORE.",
+        pairs: [
+          { leftCount: 11, rightCount: 8, object: "star", question: "Which group has more stars?" },
+          { leftCount: 9, rightCount: 14, object: "heart", question: "Which group has more hearts?" },
+          { leftCount: 12, rightCount: 15, object: "apple", question: "Which group has more apples?" },
+        ],
+      },
+      {
+        type: "compare-groups",
+        title: "Which Group Has Fewer? (Bigger Numbers)",
+        instruction: "Look at each pair. Circle the group that has FEWER.",
+        pairs: [
+          { leftCount: 13, rightCount: 10, object: "fish", question: "Which group has fewer fish?" },
+          { leftCount: 7, rightCount: 12, object: "flower", question: "Which group has fewer flowers?" },
+          { leftCount: 16, rightCount: 11, object: "diamond", question: "Which group has fewer diamonds?" },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Compare Big Numbers",
+        instruction: "Circle the correct answer.",
+        questions: [
+          { prompt: "11 or 15 — which is more?", options: ["11", "15"] },
+          { prompt: "14 or 9 — which is fewer?", options: ["14", "9"] },
+          { prompt: "12 and 12 — they are...", options: ["more", "fewer", "equal"] },
+          { prompt: "16 or 13 — which is more?", options: ["16", "13"] },
+        ],
+      },
+      {
+        type: "count-objects",
+        title: "Count and Compare Stars (Bigger Groups)",
+        instruction: "Count the stars in each group. Write the number. Circle the group with MORE.",
+        groups: [
+          { objects: Array(11).fill("star"), label: "Group A" },
+          { objects: Array(14).fill("star"), label: "Group B" },
+        ],
+      },
+      {
+        type: "count-objects",
+        title: "Three Big Groups",
+        instruction: "Count each group. Write the numbers. Circle the group with the FEWEST.",
+        groups: [
+          { objects: Array(10).fill("heart"), label: "Group A" },
+          { objects: Array(6).fill("heart"), label: "Group B" },
+          { objects: Array(13).fill("heart"), label: "Group C" },
+        ],
+      },
+      {
+        type: "matching",
+        title: "Match Bigger to Smaller",
+        instruction: "Draw a line from each bigger group to its matching smaller group.",
+        leftItems: [
+          { label: "14 stars", objects: Array(14).fill("star") },
+          { label: "11 fish", objects: Array(11).fill("fish") },
+          { label: "16 flowers", objects: Array(16).fill("flower") },
+        ],
+        rightItems: [
+          { label: "9 fish", objects: Array(9).fill("fish") },
+          { label: "12 flowers", objects: Array(12).fill("flower") },
+          { label: "8 stars", objects: Array(8).fill("star") },
+        ],
+      },
+
+      // --- CHALLENGE: Comparing up to 20, ordering, reasoning ---
+      {
+        type: "compare-groups",
+        title: "Which Group Has More? (Up to 20)",
+        instruction: "Look at each pair. Circle the group that has MORE.",
+        pairs: [
+          { leftCount: 17, rightCount: 13, object: "star", question: "Which group has more stars?" },
+          { leftCount: 14, rightCount: 19, object: "apple", question: "Which group has more apples?" },
+          { leftCount: 20, rightCount: 16, object: "butterfly", question: "Which group has more butterflies?" },
+        ],
+      },
+      {
+        type: "compare-groups",
+        title: "Which Group Has Fewer? (Up to 20)",
+        instruction: "Look at each pair. Circle the group that has FEWER.",
+        pairs: [
+          { leftCount: 18, rightCount: 12, object: "heart", question: "Which group has fewer hearts?" },
+          { leftCount: 15, rightCount: 20, object: "diamond", question: "Which group has fewer diamonds?" },
+          { leftCount: 11, rightCount: 17, object: "fish", question: "Which group has fewer fish?" },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Compare Numbers to 20",
+        instruction: "Circle the correct answer.",
+        questions: [
+          { prompt: "18 or 13 — which is more?", options: ["18", "13"] },
+          { prompt: "20 or 15 — which is fewer?", options: ["20", "15"] },
+          { prompt: "17 or 17 — they are...", options: ["more", "fewer", "equal"] },
+          { prompt: "11 or 19 — which is more?", options: ["11", "19"] },
+        ],
+      },
+      {
+        type: "sequence",
+        title: "Order from Smallest to Biggest",
+        instruction: "Write these numbers in order from smallest to biggest.",
+        sequences: [
+          { items: [5, 2, 8], answer: [2, 5, 8] },
+          { items: [12, 7, 15], answer: [7, 12, 15] },
+          { items: [20, 3, 11], answer: [3, 11, 20] },
+        ],
+      },
+      {
+        type: "sequence",
+        title: "Order from Biggest to Smallest",
+        instruction: "Write these numbers in order from biggest to smallest.",
+        sequences: [
+          { items: [4, 9, 1], answer: [9, 4, 1] },
+          { items: [16, 8, 19], answer: [19, 16, 8] },
+          { items: [13, 20, 6], answer: [20, 13, 6] },
         ],
       },
     ],
@@ -374,33 +922,342 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
     strand: "Number",
     description: "Partition and combine collections up to 10 in different ways",
     activities: [
+      // --- EASY: Number bonds to 5 ---
       {
         type: "number-bonds",
-        title: "Number Bonds",
+        title: "Number Bonds to 3",
         instruction: "Fill in the missing number to complete each bond.",
         bonds: [
+          { total: 3, partA: 1, partB: null },
+          { total: 3, partA: null, partB: 1 },
+          { total: 3, partA: 2, partB: null },
+          { total: 3, partA: 0, partB: null },
+        ],
+      },
+      {
+        type: "number-bonds",
+        title: "Number Bonds to 4",
+        instruction: "Fill in the missing number to complete each bond.",
+        bonds: [
+          { total: 4, partA: 1, partB: null },
+          { total: 4, partA: null, partB: 2 },
+          { total: 4, partA: 3, partB: null },
+          { total: 4, partA: 0, partB: null },
+        ],
+      },
+      {
+        type: "number-bonds",
+        title: "Number Bonds to 5",
+        instruction: "Fill in the missing number to complete each bond.",
+        bonds: [
+          { total: 5, partA: 1, partB: null },
+          { total: 5, partA: null, partB: 3 },
+          { total: 5, partA: 4, partB: null },
           { total: 5, partA: 2, partB: null },
-          { total: 7, partA: null, partB: 4 },
+          { total: 5, partA: null, partB: 0 },
+        ],
+      },
+      {
+        type: "count-objects",
+        title: "Split the Stars",
+        instruction: "Count the stars in each part. Write how many in each part and the total.",
+        groups: [
+          { objects: Array(2).fill("star"), label: "Part A" },
+          { objects: Array(1).fill("star"), label: "Part B" },
+        ],
+      },
+      {
+        type: "count-objects",
+        title: "Split the Hearts",
+        instruction: "Count the hearts in each part. Write how many in each part and the total.",
+        groups: [
+          { objects: Array(3).fill("heart"), label: "Part A" },
+          { objects: Array(2).fill("heart"), label: "Part B" },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "How Many More to Make 5?",
+        instruction: "Circle the number that completes each sentence.",
+        questions: [
+          { prompt: "I have 1 star. I need ___ more to make 5.", options: ["3", "4", "2"] },
+          { prompt: "I have 3 apples. I need ___ more to make 5.", options: ["1", "2", "3"] },
+          { prompt: "I have 4 fish. I need ___ more to make 5.", options: ["0", "1", "2"] },
+          { prompt: "I have 0 flowers. I need ___ more to make 5.", options: ["4", "5", "3"] },
+        ],
+      },
+      {
+        type: "matching",
+        title: "Match Parts That Make 5",
+        instruction: "Draw a line to match the numbers that add up to 5.",
+        leftItems: [
+          { label: "1", objects: Array(1).fill("star") },
+          { label: "3", objects: Array(3).fill("star") },
+          { label: "0", objects: [] },
+          { label: "4", objects: Array(4).fill("star") },
+        ],
+        rightItems: [
+          { label: "2", objects: Array(2).fill("heart") },
+          { label: "5", objects: Array(5).fill("heart") },
+          { label: "4", objects: Array(4).fill("heart") },
+          { label: "1", objects: Array(1).fill("heart") },
+        ],
+      },
+      {
+        type: "count-objects",
+        title: "Two Groups Make 4",
+        instruction: "Count the objects in each group. Together they make 4!",
+        groups: [
+          { objects: Array(1).fill("apple"), label: "Group A" },
+          { objects: Array(3).fill("apple"), label: "Group B" },
+        ],
+      },
+
+      // --- MEDIUM: Number bonds to 7 ---
+      {
+        type: "number-bonds",
+        title: "Number Bonds to 6",
+        instruction: "Fill in the missing number to complete each bond.",
+        bonds: [
+          { total: 6, partA: 2, partB: null },
+          { total: 6, partA: null, partB: 1 },
+          { total: 6, partA: 4, partB: null },
+          { total: 6, partA: null, partB: 3 },
+          { total: 6, partA: 0, partB: null },
+        ],
+      },
+      {
+        type: "number-bonds",
+        title: "Number Bonds to 7",
+        instruction: "Fill in the missing number to complete each bond.",
+        bonds: [
+          { total: 7, partA: 3, partB: null },
+          { total: 7, partA: null, partB: 2 },
+          { total: 7, partA: 5, partB: null },
+          { total: 7, partA: null, partB: 6 },
+          { total: 7, partA: 4, partB: null },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Part-Part-Whole to 6",
+        instruction: "Circle the number that completes each equation.",
+        questions: [
+          { prompt: "2 + ___ = 6", options: ["3", "4", "5"] },
+          { prompt: "___ + 5 = 6", options: ["0", "1", "2"] },
+          { prompt: "3 + ___ = 6", options: ["2", "3", "4"] },
+          { prompt: "___ + 4 = 6", options: ["1", "2", "3"] },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Part-Part-Whole to 7",
+        instruction: "Circle the number that completes each equation.",
+        questions: [
+          { prompt: "3 + ___ = 7", options: ["3", "4", "5"] },
+          { prompt: "___ + 6 = 7", options: ["0", "1", "2"] },
+          { prompt: "5 + ___ = 7", options: ["1", "2", "3"] },
+          { prompt: "___ + 2 = 7", options: ["4", "5", "6"] },
+        ],
+      },
+      {
+        type: "matching",
+        title: "Match Parts That Make 7",
+        instruction: "Draw a line to match the numbers that add up to 7.",
+        leftItems: [
+          { label: "2", objects: Array(2).fill("fish") },
+          { label: "4", objects: Array(4).fill("fish") },
+          { label: "6", objects: Array(6).fill("fish") },
+        ],
+        rightItems: [
+          { label: "1", objects: Array(1).fill("butterfly") },
+          { label: "3", objects: Array(3).fill("butterfly") },
+          { label: "5", objects: Array(5).fill("butterfly") },
+        ],
+      },
+      {
+        type: "count-objects",
+        title: "Split the Flowers into Two Groups",
+        instruction: "Here are 6 flowers. Draw a line to split them into two groups. Write how many in each group.",
+        groups: [
+          { objects: Array(4).fill("flower"), label: "Part A" },
+          { objects: Array(2).fill("flower"), label: "Part B" },
+        ],
+      },
+      {
+        type: "count-objects",
+        title: "Split the Diamonds into Two Groups",
+        instruction: "Here are 7 diamonds. They are split into two groups. Count each group.",
+        groups: [
+          { objects: Array(5).fill("diamond"), label: "Part A" },
+          { objects: Array(2).fill("diamond"), label: "Part B" },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Ways to Make 6",
+        instruction: "Which of these makes 6? Circle the correct pair.",
+        questions: [
+          { prompt: "Which pair makes 6?", options: ["2 and 4", "2 and 3", "1 and 3"] },
+          { prompt: "Which pair makes 6?", options: ["5 and 2", "5 and 1", "4 and 4"] },
+          { prompt: "Which pair makes 6?", options: ["3 and 3", "4 and 1", "2 and 2"] },
+        ],
+      },
+
+      // --- HARDER: Number bonds to 9 ---
+      {
+        type: "number-bonds",
+        title: "Number Bonds to 8",
+        instruction: "Fill in the missing number to complete each bond.",
+        bonds: [
+          { total: 8, partA: 3, partB: null },
+          { total: 8, partA: null, partB: 2 },
+          { total: 8, partA: 5, partB: null },
+          { total: 8, partA: null, partB: 7 },
+          { total: 8, partA: 4, partB: null },
+        ],
+      },
+      {
+        type: "number-bonds",
+        title: "Number Bonds to 9",
+        instruction: "Fill in the missing number to complete each bond.",
+        bonds: [
+          { total: 9, partA: 4, partB: null },
+          { total: 9, partA: null, partB: 3 },
+          { total: 9, partA: 7, partB: null },
+          { total: 9, partA: null, partB: 8 },
+          { total: 9, partA: 6, partB: null },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Part-Part-Whole to 8",
+        instruction: "Circle the number that completes each equation.",
+        questions: [
+          { prompt: "3 + ___ = 8", options: ["4", "5", "6"] },
+          { prompt: "___ + 6 = 8", options: ["1", "2", "3"] },
+          { prompt: "7 + ___ = 8", options: ["0", "1", "2"] },
+          { prompt: "___ + 4 = 8", options: ["3", "4", "5"] },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Part-Part-Whole to 9",
+        instruction: "Circle the number that completes each equation.",
+        questions: [
+          { prompt: "5 + ___ = 9", options: ["3", "4", "5"] },
+          { prompt: "___ + 7 = 9", options: ["1", "2", "3"] },
+          { prompt: "6 + ___ = 9", options: ["2", "3", "4"] },
+          { prompt: "___ + 1 = 9", options: ["7", "8", "9"] },
+        ],
+      },
+      {
+        type: "matching",
+        title: "Match Parts That Make 9",
+        instruction: "Draw a line to match the numbers that add up to 9.",
+        leftItems: [
+          { label: "3", objects: Array(3).fill("apple") },
+          { label: "5", objects: Array(5).fill("apple") },
+          { label: "7", objects: Array(7).fill("apple") },
+        ],
+        rightItems: [
+          { label: "4", objects: Array(4).fill("diamond") },
+          { label: "2", objects: Array(2).fill("diamond") },
+          { label: "6", objects: Array(6).fill("diamond") },
+        ],
+      },
+      {
+        type: "count-objects",
+        title: "Two Groups Make 8",
+        instruction: "Count the objects in each group. Together they make 8!",
+        groups: [
+          { objects: Array(5).fill("star"), label: "Group A" },
+          { objects: Array(3).fill("star"), label: "Group B" },
+        ],
+      },
+      {
+        type: "count-objects",
+        title: "Two Groups Make 9",
+        instruction: "Count the objects in each group. Together they make 9!",
+        groups: [
+          { objects: Array(6).fill("butterfly"), label: "Group A" },
+          { objects: Array(3).fill("butterfly"), label: "Group B" },
+        ],
+      },
+
+      // --- CHALLENGE: Number bonds to 10, multiple ways ---
+      {
+        type: "number-bonds",
+        title: "Number Bonds to 10",
+        instruction: "Fill in the missing number to complete each bond.",
+        bonds: [
+          { total: 10, partA: 3, partB: null },
+          { total: 10, partA: null, partB: 5 },
+          { total: 10, partA: 8, partB: null },
+          { total: 10, partA: null, partB: 9 },
           { total: 10, partA: 6, partB: null },
-          { total: 8, partA: null, partB: 5 },
-          { total: 6, partA: 1, partB: null },
+          { total: 10, partA: null, partB: 4 },
         ],
       },
       {
         type: "matching",
         title: "Ways to Make 10",
         instruction: "Draw a line to match pairs that make 10 together.",
-        left: ["1", "3", "5", "2", "4"],
-        right: ["5", "8", "9", "6", "7"],
+        leftItems: [
+          { label: "1", objects: Array(1).fill("heart") },
+          { label: "3", objects: Array(3).fill("heart") },
+          { label: "5", objects: Array(5).fill("heart") },
+          { label: "2", objects: Array(2).fill("heart") },
+        ],
+        rightItems: [
+          { label: "5", objects: Array(5).fill("flower") },
+          { label: "8", objects: Array(8).fill("flower") },
+          { label: "9", objects: Array(9).fill("flower") },
+          { label: "7", objects: Array(7).fill("flower") },
+        ],
       },
       {
         type: "circle-correct",
-        title: "Part-Part-Whole",
+        title: "Part-Part-Whole to 10",
         instruction: "Circle the number that completes each equation.",
         questions: [
-          { prompt: "3 + ___ = 7", options: ["5", "4", "3"] },
-          { prompt: "___ + 6 = 9", options: ["2", "4", "3"] },
           { prompt: "4 + ___ = 10", options: ["5", "6", "7"] },
+          { prompt: "___ + 3 = 10", options: ["6", "7", "8"] },
+          { prompt: "9 + ___ = 10", options: ["0", "1", "2"] },
+          { prompt: "___ + 5 = 10", options: ["4", "5", "6"] },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Which Pair Makes 10?",
+        instruction: "Circle the pair of numbers that add up to 10.",
+        questions: [
+          { prompt: "Which pair makes 10?", options: ["6 and 4", "6 and 3", "6 and 5"] },
+          { prompt: "Which pair makes 10?", options: ["8 and 3", "8 and 1", "8 and 2"] },
+          { prompt: "Which pair makes 10?", options: ["7 and 4", "7 and 2", "7 and 3"] },
+          { prompt: "Which pair makes 10?", options: ["5 and 5", "5 and 4", "5 and 6"] },
+        ],
+      },
+      {
+        type: "count-objects",
+        title: "Split 10 Stars Two Ways",
+        instruction: "Here are 10 stars split into two groups. Count each group and write the numbers.",
+        groups: [
+          { objects: Array(7).fill("star"), label: "Group A" },
+          { objects: Array(3).fill("star"), label: "Group B" },
+        ],
+      },
+      {
+        type: "number-bonds",
+        title: "Mixed Number Bonds Challenge",
+        instruction: "Fill in the missing number to complete each bond.",
+        bonds: [
+          { total: 6, partA: null, partB: 4 },
+          { total: 8, partA: 5, partB: null },
+          { total: 10, partA: null, partB: 7 },
+          { total: 9, partA: 2, partB: null },
+          { total: 7, partA: null, partB: 1 },
+          { total: 10, partA: 0, partB: null },
         ],
       },
     ],
