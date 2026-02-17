@@ -287,6 +287,53 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
           { prompt: "Which number means 'none'?", options: ["1", "0", "10"] },
         ],
       },
+      // --- Improvement: Zero focus ---
+      {
+        type: "circle-correct",
+        title: "All About Zero",
+        instruction: "Zero means 'none' or 'nothing'. Circle the correct answer.",
+        questions: [
+          { prompt: "How many elephants are in your lunchbox right now?", options: ["0", "1", "2"] },
+          { prompt: "You have 3 lollies and eat them all. How many are left?", options: ["0", "1", "3"] },
+          { prompt: "Which picture shows zero stars? (A) ⭐⭐ (B) nothing (C) ⭐", options: ["A", "B", "C"] },
+          { prompt: "What number comes just before 1?", options: ["2", "0", "10"] },
+        ],
+      },
+      // --- Improvement: Free-writing practice ---
+      {
+        type: "open-response",
+        title: "Write Numbers from Memory",
+        instruction: "Without looking at any numbers, try to write the numerals. Take your time!",
+        prompts: [
+          { text: "Write the numbers 0 to 5 in order:", type: "lines", lines: 1 },
+          { text: "Write the numbers 6 to 10 in order:", type: "lines", lines: 1 },
+          { text: "Write the numbers 11 to 15 in order:", type: "lines", lines: 1 },
+          { text: "Write the numbers 16 to 20 in order:", type: "lines", lines: 1 },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Write the Number Word",
+        instruction: "Can you write the word for each number? Have a go!",
+        prompts: [
+          { text: "3 = _______________", type: "lines", lines: 1 },
+          { text: "7 = _______________", type: "lines", lines: 1 },
+          { text: "10 = _______________", type: "lines", lines: 1 },
+          { text: "15 = _______________", type: "lines", lines: 1 },
+        ],
+      },
+      // --- Try This at Home ---
+      {
+        type: "home-activity",
+        title: "Try This at Home!",
+        instruction: "Practise number names with these fun activities.",
+        suggestions: [
+          "Go on a number hunt around your house — find numbers on clocks, ovens, remote controls, and letterboxes. Read each number out loud.",
+          "Play 'What comes next?' — a parent says a number and the child says the next one in the sequence.",
+          "Write numbers 0–20 on cards and play snap, matching the numeral to the number word.",
+          "Count objects around the house (shoes by the door, spoons in the drawer) and write the numeral on a whiteboard.",
+        ],
+      },
     ],
   },
 
@@ -590,6 +637,116 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
           { prompt: "What is the quickest way to know there are 3 objects?", options: ["Count 1, 2, 3", "Just see it!", "Guess"] },
           { prompt: "Which is bigger: 14 or 17?", options: ["14", "17", "They are equal"] },
           { prompt: "How many is two groups of 10?", options: ["10", "15", "20"] },
+        ],
+      },
+      // --- Improvement: Ten-frame activities ---
+      {
+        type: "ten-frame",
+        title: "Ten-Frame: How Many Dots?",
+        instruction: "Look at each ten-frame. Count the dots and write the number in the box. Try to see the number without counting one by one!",
+        frames: [
+          { filled: 3 },
+          { filled: 5 },
+          { filled: 2 },
+        ],
+      },
+      {
+        type: "ten-frame",
+        title: "Ten-Frame: Bigger Numbers",
+        instruction: "These ten-frames have more dots. Write the number you see.",
+        frames: [
+          { filled: 7 },
+          { filled: 9 },
+          { filled: 6 },
+          { filled: 10 },
+        ],
+      },
+      {
+        type: "ten-frame",
+        title: "Ten-Frame: How Many Empty?",
+        instruction: "Count the EMPTY squares in each ten-frame. Write how many are empty.",
+        frames: [
+          { filled: 8 },
+          { filled: 4 },
+          { filled: 6 },
+        ],
+      },
+      {
+        type: "ten-frame",
+        title: "Ten-Frame: Quick Look!",
+        instruction: "Look at each ten-frame for just a moment. Can you tell how many WITHOUT counting? This is subitising!",
+        frames: [
+          { filled: 5 },
+          { filled: 3 },
+          { filled: 8 },
+          { filled: 10 },
+        ],
+      },
+      // --- Improvement: Dice pattern recognition ---
+      {
+        type: "circle-correct",
+        title: "Dice Dot Patterns",
+        instruction: "A dice has dot patterns. Can you recognise them WITHOUT counting? Circle the number.",
+        questions: [
+          { prompt: "⚀ (one dot in the middle)", options: ["1", "2", "3"] },
+          { prompt: "⚁ (two dots, one top-right, one bottom-left)", options: ["1", "2", "3"] },
+          { prompt: "⚂ (three dots in a diagonal line)", options: ["2", "3", "4"] },
+          { prompt: "⚃ (four dots, one in each corner)", options: ["3", "4", "5"] },
+          { prompt: "⚄ (five dots, four corners and one middle)", options: ["4", "5", "6"] },
+          { prompt: "⚅ (six dots, three on each side)", options: ["5", "6", "7"] },
+        ],
+      },
+      {
+        type: "matching",
+        title: "Match Dice to Numbers",
+        instruction: "Draw a line to match each dice face to the correct number.",
+        left: ["⚀", "⚂", "⚄", "⚅"],
+        right: ["5", "3", "1", "6"],
+      },
+      {
+        type: "circle-correct",
+        title: "Two Dice — How Many Altogether?",
+        instruction: "Imagine rolling two dice. Can you add the dot patterns together? Circle the total.",
+        questions: [
+          { prompt: "⚀ and ⚁ (1 and 2)", options: ["2", "3", "4"] },
+          { prompt: "⚂ and ⚂ (3 and 3)", options: ["5", "6", "7"] },
+          { prompt: "⚃ and ⚁ (4 and 2)", options: ["5", "6", "7"] },
+          { prompt: "⚄ and ⚀ (5 and 1)", options: ["5", "6", "7"] },
+        ],
+      },
+      // --- Improvement: Conceptual subitising (see groups within groups) ---
+      {
+        type: "circle-correct",
+        title: "Groups Within Groups",
+        instruction: "Sometimes you can see small groups inside a big group. This helps you count faster!",
+        questions: [
+          { prompt: "You see a group of 3 stars and a group of 2 stars. How many altogether?", options: ["4", "5", "6"] },
+          { prompt: "You see a full ten-frame (10) and 3 more. How many altogether?", options: ["12", "13", "14"] },
+          { prompt: "You see two groups of 5 dots. How many altogether?", options: ["8", "10", "12"] },
+          { prompt: "You see a group of 4 and a group of 4. How many altogether?", options: ["6", "8", "10"] },
+        ],
+      },
+      // --- Improvement: Open-ended drawing ---
+      {
+        type: "open-response",
+        title: "Draw a Ten-Frame",
+        instruction: "Draw your own ten-frame (a rectangle split into 10 boxes — 2 rows of 5). Then fill in dots.",
+        prompts: [
+          { text: "Draw a ten-frame showing 4:", type: "box" },
+          { text: "Draw a ten-frame showing 7:", type: "box" },
+          { text: "Draw a ten-frame showing 10:", type: "box" },
+        ],
+      },
+      // --- Try This at Home ---
+      {
+        type: "home-activity",
+        title: "Try This at Home!",
+        instruction: "Build subitising skills with these quick, fun activities.",
+        suggestions: [
+          "Make a ten-frame from an egg carton (cut to 10 holes) and use pom poms or buttons as counters. Flash different amounts and ask 'how many?'",
+          "Play dice games! Roll a dice and say the number as fast as you can without counting the dots.",
+          "Put small groups of objects (1–5) on a plate. Cover them, flash for 2 seconds, then cover again. How many did you see?",
+          "Play 'Fingers Flash' — hold up some fingers quickly, then hide. Your child says how many they saw.",
         ],
       },
     ],
@@ -910,6 +1067,51 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
           { items: [4, 9, 1], answer: [9, 4, 1] },
           { items: [16, 8, 19], answer: [19, 16, 8] },
           { items: [13, 20, 6], answer: [20, 13, 6] },
+        ],
+      },
+      // --- Improvement: "As many as" language ---
+      {
+        type: "circle-correct",
+        title: "As Many As",
+        instruction: "'As many as' means the same number. Circle the correct answer.",
+        questions: [
+          { prompt: "5 stars and 5 hearts — does the star group have as many as the heart group?", options: ["Yes", "No"] },
+          { prompt: "3 apples and 7 apples — does the first group have as many as the second?", options: ["Yes", "No"] },
+          { prompt: "8 fish and 8 fish — the groups have ___ each other.", options: ["More than", "Fewer than", "As many as"] },
+          { prompt: "12 flowers and 9 flowers — the first group has ___ the second.", options: ["More than", "Fewer than", "As many as"] },
+        ],
+      },
+      // --- Improvement: Draw to create equal groups ---
+      {
+        type: "open-response",
+        title: "Draw to Make Equal",
+        instruction: "Draw more objects so that both groups have the same number (as many as each other).",
+        prompts: [
+          { text: "Group A has 5 stars ⭐⭐⭐⭐⭐. Group B has 3 stars ⭐⭐⭐. Draw more stars in Group B:", type: "box" },
+          { text: "Group A has 4 hearts ❤️❤️❤️❤️. Group B has 7 hearts. Draw more hearts in Group A:", type: "box" },
+          { text: "Make both groups have 6. Group A has 6 fish. Draw 6 fish for Group B:", type: "box" },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Draw More or Fewer",
+        instruction: "Follow the instructions to draw the right number of objects.",
+        prompts: [
+          { text: "Draw a group that has MORE than 5 stars:", type: "box" },
+          { text: "Draw a group that has FEWER than 4 hearts:", type: "box" },
+          { text: "Draw two groups that have AS MANY AS each other:", type: "box" },
+        ],
+      },
+      // --- Try This at Home ---
+      {
+        type: "home-activity",
+        title: "Try This at Home!",
+        instruction: "Practise comparing with real objects around the house.",
+        suggestions: [
+          "Line up two groups of toys or snacks side by side. Ask: 'Which group has more? Which has fewer? How do you know?'",
+          "Give your child two handfuls of pasta. Ask them to count each and tell you which has more, fewer, or if they are equal.",
+          "Play 'Make it equal' — put 7 blocks in a row, then ask your child to make another row with as many as the first.",
+          "At the supermarket, compare items: 'There are 6 bananas and 4 apples. Which do we have more of?'",
         ],
       },
     ],
@@ -1260,6 +1462,53 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
           { total: 10, partA: 0, partB: null },
         ],
       },
+      // --- Improvement: Open-ended "show all ways" ---
+      {
+        type: "open-response",
+        title: "All the Ways to Make 8",
+        instruction: "How many different ways can you split 8 into two parts? Write as many as you can find!",
+        prompts: [
+          { text: "8 = ___ and ___", type: "lines", lines: 1 },
+          { text: "8 = ___ and ___", type: "lines", lines: 1 },
+          { text: "8 = ___ and ___", type: "lines", lines: 1 },
+          { text: "8 = ___ and ___", type: "lines", lines: 1 },
+          { text: "8 = ___ and ___", type: "lines", lines: 1 },
+          { text: "How many ways did you find? ___", type: "lines", lines: 1 },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "All the Ways to Make 10",
+        instruction: "10 is a very important number! Write all the ways you can split 10 into two parts.",
+        prompts: [
+          { text: "10 = ___ and ___     10 = ___ and ___", type: "lines", lines: 1 },
+          { text: "10 = ___ and ___     10 = ___ and ___", type: "lines", lines: 1 },
+          { text: "10 = ___ and ___     10 = ___ and ___", type: "lines", lines: 1 },
+          { text: "Did you find all 11 ways? (Hint: don't forget 0 + 10 and 10 + 0!)", type: "lines", lines: 1 },
+        ],
+      },
+      // --- Improvement: Draw to show partitioning ---
+      {
+        type: "open-response",
+        title: "Draw to Split",
+        instruction: "Draw circles to show each number split into two parts. There is no wrong answer!",
+        prompts: [
+          { text: "Split 6 into two groups (draw circles in two groups):", type: "box" },
+          { text: "Now split 6 a DIFFERENT way:", type: "box" },
+        ],
+      },
+      // --- Try This at Home ---
+      {
+        type: "home-activity",
+        title: "Try This at Home!",
+        instruction: "Use real objects to explore how numbers can be split apart and put back together.",
+        suggestions: [
+          "Get 10 buttons, blocks, or snacks. Ask your child to split them into two groups as many different ways as they can.",
+          "Play 'Shake and Spill' — put 7 two-colour counters (or coins) in a cup, shake and tip out. How many heads? How many tails? That's a number bond!",
+          "Use a muffin tin with 10 holes. Put small objects in some holes. 'How many are filled? How many are empty? Together that makes 10!'",
+          "At dinner, share out items: '10 peas — 6 for you, how many for me?'",
+        ],
+      },
     ],
   },
 
@@ -1593,6 +1842,70 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
           { label: "10", objects: Array(10).fill("flower") },
         ],
       },
+      // --- Improvement: Equal sharing by 3 and 5 ---
+      {
+        type: "circle-correct",
+        title: "Share Between 3 Friends",
+        instruction: "Share these equally between 3 friends. How many does each friend get?",
+        questions: [
+          { prompt: "6 apples shared between 3 friends = ___ each", options: ["1", "2", "3"] },
+          { prompt: "9 stars shared between 3 friends = ___ each", options: ["2", "3", "4"] },
+          { prompt: "3 fish shared between 3 friends = ___ each", options: ["1", "2", "3"] },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Share Between 5 Friends",
+        instruction: "Share these equally between 5 friends. How many does each friend get?",
+        questions: [
+          { prompt: "5 lollies shared between 5 friends = ___ each", options: ["1", "2", "3"] },
+          { prompt: "10 stickers shared between 5 friends = ___ each", options: ["1", "2", "3"] },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Draw to Share Equally",
+        instruction: "Draw circles to show how you would share the objects equally.",
+        prompts: [
+          { text: "Share 6 strawberries between 3 plates (draw 3 circles for plates, then share the strawberries):", type: "box" },
+          { text: "Share 8 lollies between 2 children:", type: "box" },
+          { text: "Share 10 biscuits between 5 friends:", type: "box" },
+        ],
+      },
+      // --- Improvement: Represent — draw and write number sentences ---
+      {
+        type: "open-response",
+        title: "Draw and Write the Number Sentence",
+        instruction: "Read each story. Draw a picture to show what happens. Then write the number sentence.",
+        prompts: [
+          { text: "Tom has 3 apples. Mum gives him 4 more. Draw it. Number sentence: ___ + ___ = ___", type: "box" },
+          { text: "There are 7 birds on a fence. 2 fly away. Draw it. Number sentence: ___ − ___ = ___", type: "box" },
+          { text: "9 lollies shared equally between 3 friends. Draw it. Each friend gets: ___", type: "box" },
+        ],
+      },
+      // --- Improvement: More cross-out (take away from) activities ---
+      {
+        type: "count-objects",
+        title: "Cross Out to Take Away",
+        instruction: "Cross out the number shown, then count how many are left.",
+        rows: [
+          { object: "star", count: 8 },
+          { object: "apple", count: 10 },
+          { object: "heart", count: 6 },
+        ],
+      },
+      // --- Try This at Home ---
+      {
+        type: "home-activity",
+        title: "Try This at Home!",
+        instruction: "Use real situations to practise adding, taking away, and sharing.",
+        suggestions: [
+          "At snack time, share food equally: '12 grapes between 3 people — how many each?' Let your child do the sharing.",
+          "Play shop — add up prices of two items: '3 cents and 4 cents makes how much?'",
+          "Use building blocks: 'You have 8. Give me 3. How many do you have left?' Physically hand them over.",
+          "Write your own story problems together and draw pictures to solve them.",
+        ],
+      },
     ],
   },
 
@@ -1858,6 +2171,41 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
           { prompt: "How many objects are in the repeating unit of: Star, Heart, Star, Heart?", options: ["1", "2", "3"] },
           { prompt: "How many objects are in the repeating unit of: Apple, Apple, Fish, Apple, Apple, Fish?", options: ["2", "3", "4"] },
           { prompt: "If the pattern is Star, Heart, Apple and it repeats 4 times, how many objects total?", options: ["9", "12", "15"] },
+        ],
+      },
+      // --- Improvement: Non-visual pattern awareness ---
+      {
+        type: "circle-correct",
+        title: "Patterns Are Everywhere!",
+        instruction: "Patterns aren't just pictures — they can be sounds, actions, or colours too! Circle the correct answer.",
+        questions: [
+          { prompt: "Clap, stomp, clap, stomp, clap, ___ — what comes next?", options: ["Clap", "Stomp"] },
+          { prompt: "Red, blue, red, blue, red, ___ — what colour comes next?", options: ["Red", "Blue", "Green"] },
+          { prompt: "Loud, quiet, loud, quiet — what type of pattern is this?", options: ["AB pattern", "ABC pattern", "AAB pattern"] },
+          { prompt: "Big, big, small, big, big, small — what type of pattern is this?", options: ["AB pattern", "AAB pattern", "ABC pattern"] },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Create Your Own Pattern",
+        instruction: "Invent your own pattern! You can use shapes, colours, letters, or anything you like.",
+        prompts: [
+          { text: "Create an AB pattern (two things repeating):", type: "lines", lines: 1 },
+          { text: "Create an AAB pattern (two same, one different):", type: "lines", lines: 1 },
+          { text: "Create an ABC pattern (three different things):", type: "lines", lines: 1 },
+          { text: "Create your OWN pattern — any type you like!:", type: "lines", lines: 1 },
+        ],
+      },
+      // --- Try This at Home ---
+      {
+        type: "home-activity",
+        title: "Try This at Home!",
+        instruction: "Patterns are everywhere once you start looking!",
+        suggestions: [
+          "Make sound patterns: clap-clap-stomp, clap-clap-stomp. Can your child continue it? Can they make their own?",
+          "Use coloured pegs, beads, or LEGO bricks to make visual patterns on a string or in a line.",
+          "Go on a pattern hunt — look at floor tiles, fences, fabric, and wrapping paper. What repeating patterns can you spot?",
+          "Make a body movement pattern: jump-spin-jump-spin. Take turns creating patterns for each other to copy.",
         ],
       },
     ],
@@ -2206,6 +2554,47 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
           { prompt: "Which is taller: a door or a window?", options: ["Door", "Window"] },
         ],
       },
+      // --- Improvement: Define the attributes ---
+      {
+        type: "matching",
+        title: "What Does Each Measurement Word Mean?",
+        instruction: "Draw a line to match each measurement type to what it means.",
+        leftItems: [
+          { label: "Mass", objects: [] },
+          { label: "Length", objects: [] },
+          { label: "Capacity", objects: [] },
+          { label: "Duration", objects: [] },
+        ],
+        rightItems: [
+          { label: "How much time something takes", objects: [] },
+          { label: "How heavy something is", objects: [] },
+          { label: "How long or tall something is", objects: [] },
+          { label: "How much something can hold", objects: [] },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Explain in Your Own Words",
+        instruction: "Try to explain what each measurement word means. There is no wrong answer!",
+        prompts: [
+          { text: "Mass means:", type: "lines", lines: 1 },
+          { text: "Capacity means:", type: "lines", lines: 1 },
+          { text: "Length means:", type: "lines", lines: 1 },
+          { text: "Duration means:", type: "lines", lines: 1 },
+        ],
+      },
+      // --- Try This at Home ---
+      {
+        type: "home-activity",
+        title: "Try This at Home!",
+        instruction: "Measurement comes alive with hands-on exploring!",
+        suggestions: [
+          "Hold two different objects — one in each hand. Which feels heavier? That's comparing mass!",
+          "Fill a cup with water. Pour it into a bowl. Which container holds more? That's exploring capacity!",
+          "Lie string along different objects (your arm, a book, the table). Cut the string to match. Compare the strings — that's measuring length!",
+          "Time how long it takes to brush your teeth versus tying your shoes. Which takes longer? That's duration!",
+        ],
+      },
     ],
   },
 
@@ -2519,6 +2908,41 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
           { prompt: "To compare which box is heavier, you should ___", options: ["Measure them with a ruler", "Hold one in each hand", "Fill them with water"] },
           { prompt: "To compare which cup holds more, you should ___", options: ["Put them side by side", "Weigh them", "Fill one and pour into the other"] },
           { prompt: "To compare which is taller, two friends should ___", options: ["Stand back to back", "Sit down", "Hold hands"] },
+        ],
+      },
+      // --- Improvement: Comparing events explicitly ---
+      {
+        type: "circle-correct",
+        title: "Comparing Events",
+        instruction: "Events are things that happen. We can compare how long events take!",
+        questions: [
+          { prompt: "Which EVENT takes longer: brushing your teeth or sleeping all night?", options: ["Brushing teeth", "Sleeping all night"] },
+          { prompt: "Which EVENT is quicker: eating one grape or eating a whole dinner?", options: ["Eating one grape", "Eating dinner"] },
+          { prompt: "Which EVENT takes longer: walking to the letterbox or driving to the shops?", options: ["Walking to letterbox", "Driving to shops"] },
+          { prompt: "Put these EVENTS in order from quickest to longest: clapping once, reading a book, cooking dinner.", options: ["Clap, book, cooking", "Cooking, book, clap", "Book, clap, cooking"] },
+        ],
+      },
+      // --- Improvement: Open-ended comparison reasoning ---
+      {
+        type: "open-response",
+        title: "How Would You Compare?",
+        instruction: "For each pair, write HOW you would compare them. What would you do?",
+        prompts: [
+          { text: "Two sticks — how would you find which is longer?", type: "lines", lines: 2 },
+          { text: "Two bags — how would you find which is heavier?", type: "lines", lines: 2 },
+          { text: "Two jugs — how would you find which holds more water?", type: "lines", lines: 2 },
+        ],
+      },
+      // --- Try This at Home ---
+      {
+        type: "home-activity",
+        title: "Try This at Home!",
+        instruction: "Direct comparison means putting things next to each other to compare. Try these!",
+        suggestions: [
+          "Find two shoes in the house. Put them heel-to-heel. Which is longer? That's direct comparison of length!",
+          "Hold an apple in one hand and a banana in the other. Which feels heavier? That's direct comparison of mass!",
+          "Get two different cups. Fill one with water and pour it into the other. Does it overflow or not fill up? That's comparing capacity!",
+          "Time yourself doing two activities (star jumps vs hopping). Which took longer? That's comparing duration!",
         ],
       },
     ],
@@ -2861,6 +3285,39 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
           { label: "7", objects: [] },
         ],
       },
+      // --- Improvement: Connect events TO times of day ---
+      {
+        type: "open-response",
+        title: "Why Does It Happen Then?",
+        instruction: "Write WHY each activity happens at that time of day.",
+        prompts: [
+          { text: "We eat breakfast in the morning because:", type: "lines", lines: 2 },
+          { text: "We go to sleep at night because:", type: "lines", lines: 2 },
+          { text: "We eat lunch in the middle of the day because:", type: "lines", lines: 2 },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "My Day",
+        instruction: "Write or draw 3 things YOU do at each time of day.",
+        prompts: [
+          { text: "In the morning, I:", type: "lines", lines: 2 },
+          { text: "In the afternoon, I:", type: "lines", lines: 2 },
+          { text: "At night, I:", type: "lines", lines: 2 },
+        ],
+      },
+      // --- Try This at Home ---
+      {
+        type: "home-activity",
+        title: "Try This at Home!",
+        instruction: "Help your child understand how daily events connect to times of day.",
+        suggestions: [
+          "Make a visual daily timetable together — draw or stick pictures of activities in morning, afternoon, and night columns.",
+          "Throughout the day, narrate the time: 'It's morning, so we eat breakfast. It's the afternoon, so we have a rest.'",
+          "Before bed, ask your child to retell their day in order: 'First I woke up, then I had breakfast, then...'",
+          "Play 'When do we...?' — name an activity and your child says the time of day it happens.",
+        ],
+      },
     ],
   },
 
@@ -3180,6 +3637,96 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
           { prompt: "How many circles?", options: ["1", "2", "3"] },
         ],
       },
+      // --- Improvement: 3D shapes ---
+      {
+        type: "circle-correct",
+        title: "3D Shapes: Sphere, Cube, Cone, Cylinder",
+        instruction: "3D shapes are solid — you can hold them! Circle the correct name.",
+        questions: [
+          { prompt: "A ball is shaped like a ___", options: ["Sphere", "Cube", "Cylinder"] },
+          { prompt: "A dice/box is shaped like a ___", options: ["Sphere", "Cube", "Cone"] },
+          { prompt: "An ice cream cone is shaped like a ___", options: ["Cylinder", "Sphere", "Cone"] },
+          { prompt: "A tin of beans is shaped like a ___", options: ["Cube", "Cylinder", "Cone"] },
+        ],
+      },
+      {
+        type: "matching",
+        title: "Match 3D Shapes to Real Things",
+        instruction: "Draw a line to match each 3D shape to something in real life.",
+        leftItems: [
+          { label: "Sphere (ball shape)", objects: [] },
+          { label: "Cube (box shape)", objects: [] },
+          { label: "Cylinder (can shape)", objects: [] },
+          { label: "Cone (pointed shape)", objects: [] },
+        ],
+        rightItems: [
+          { label: "Party hat", objects: [] },
+          { label: "Tennis ball", objects: [] },
+          { label: "Tissue box", objects: [] },
+          { label: "Drink bottle", objects: [] },
+        ],
+      },
+      {
+        type: "sorting",
+        title: "Sort: Flat (2D) or Solid (3D)?",
+        instruction: "Sort each shape. Is it flat (you can draw it) or solid (you can hold it)?",
+        columns: ["Flat (2D)", "Solid (3D)"],
+        items: [
+          { label: "Circle" },
+          { label: "Sphere" },
+          { label: "Square" },
+          { label: "Cube" },
+          { label: "Triangle" },
+          { label: "Cone" },
+          { label: "Rectangle" },
+          { label: "Cylinder" },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "3D Shape Properties",
+        instruction: "Circle the correct answer about 3D shapes.",
+        questions: [
+          { prompt: "Which 3D shape can roll?", options: ["Cube", "Sphere", "Both"] },
+          { prompt: "Which 3D shape has flat faces that are all squares?", options: ["Sphere", "Cube", "Cone"] },
+          { prompt: "Which 3D shape has a point at the top?", options: ["Cylinder", "Sphere", "Cone"] },
+          { prompt: "Which 3D shape has two flat circle faces?", options: ["Cylinder", "Cube", "Cone"] },
+        ],
+      },
+      // --- Improvement: Give reasoning ---
+      {
+        type: "open-response",
+        title: "Explain WHY It's That Shape",
+        instruction: "Name the shape and explain HOW you know. For example: 'It is a triangle because it has 3 sides and 3 corners.'",
+        prompts: [
+          { text: "A stop sign is an octagon because:", type: "lines", lines: 2 },
+          { text: "A clock face is a circle because:", type: "lines", lines: 2 },
+          { text: "A slice of pizza is a triangle because:", type: "lines", lines: 2 },
+          { text: "A book cover is a rectangle because:", type: "lines", lines: 2 },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Draw and Describe",
+        instruction: "Draw each shape. Then write how many sides and corners it has.",
+        prompts: [
+          { text: "Draw a triangle. It has ___ sides and ___ corners.", type: "box" },
+          { text: "Draw a rectangle. It has ___ sides and ___ corners.", type: "box" },
+          { text: "Draw a shape with NO sides and NO corners. It is called a ___.", type: "box" },
+        ],
+      },
+      // --- Try This at Home ---
+      {
+        type: "home-activity",
+        title: "Try This at Home!",
+        instruction: "Shapes are everywhere! Explore them with your hands and eyes.",
+        suggestions: [
+          "Go on a shape hunt — find circles, squares, triangles, and rectangles around the house. Take photos or draw what you find!",
+          "Find 3D shapes in the kitchen: a ball (sphere), a cereal box (rectangular prism), a can (cylinder), an ice cream cone (cone).",
+          "Make shapes with playdough, sticks, or pipe cleaners. How many sides? How many corners?",
+          "Play 'Guess My Shape' — describe a shape using sides and corners, and your child guesses what it is.",
+        ],
+      },
     ],
   },
 
@@ -3459,10 +4006,10 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         title: "Position Challenge",
         instruction: "Think carefully! Circle the best answer.",
         questions: [
-          { prompt: "If you are facing north and turn right, you face ___.", options: ["East", "West", "South"] },
           { prompt: "If a bird is above you and a worm is below you, you are ___.", options: ["In the middle", "On top", "Underground"] },
           { prompt: "If you walk forward then turn around and walk forward, you end up ___.", options: ["Where you started", "Far away", "Turned around"] },
           { prompt: "The opposite of 'inside' is ___.", options: ["Outside", "Under", "Above"] },
+          { prompt: "If the ball is behind you, you need to ___ to see it.", options: ["Look up", "Turn around", "Look down"] },
         ],
       },
       {
@@ -3470,7 +4017,7 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         title: "Position Words Review",
         instruction: "Draw a line to match each position word to its meaning.",
         leftItems: [
-          { label: "Adjacent", objects: [] },
+          { label: "Beside", objects: [] },
           { label: "Beneath", objects: [] },
           { label: "Above", objects: [] },
           { label: "Between", objects: [] },
@@ -3480,6 +4027,51 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
           { label: "Higher up", objects: [] },
           { label: "Next to", objects: [] },
           { label: "Under", objects: [] },
+        ],
+      },
+      // --- Improvement: First-person spatial language ("in relation to people") ---
+      {
+        type: "circle-correct",
+        title: "Where Am I?",
+        instruction: "Imagine YOU are in these places. Circle the correct answer about YOUR position.",
+        questions: [
+          { prompt: "You are standing behind a chair. The chair is ___ you.", options: ["Behind", "In front of", "Above"] },
+          { prompt: "You are sitting under a tree. The tree is ___ you.", options: ["Under", "Above", "Behind"] },
+          { prompt: "You are standing between two friends. You are in the ___.", options: ["Front", "Middle", "Back"] },
+          { prompt: "You are lying on your bed. The bed is ___ you.", options: ["Above", "Below", "Beside"] },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Describe Where YOU Are",
+        instruction: "Look around the room you are in right now. Write about your position using position words.",
+        prompts: [
+          { text: "I am sitting ___ the table.", type: "lines", lines: 1 },
+          { text: "The door is ___ me.", type: "lines", lines: 1 },
+          { text: "The floor is ___ me.", type: "lines", lines: 1 },
+          { text: "Something that is beside me is:", type: "lines", lines: 1 },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Describe Your Bedroom",
+        instruction: "Think about your bedroom. Use position words to describe where things are.",
+        prompts: [
+          { text: "My bed is:", type: "lines", lines: 2 },
+          { text: "My toys are:", type: "lines", lines: 2 },
+          { text: "The window is:", type: "lines", lines: 2 },
+        ],
+      },
+      // --- Try This at Home ---
+      {
+        type: "home-activity",
+        title: "Try This at Home!",
+        instruction: "Position and location are best learnt by moving your body!",
+        suggestions: [
+          "Play Simon Says with position words: 'Simon says stand BEHIND the chair', 'Simon says put your hands ABOVE your head', 'Simon says sit UNDER the table.'",
+          "Hide a toy and give position clues: 'It's ON something, NEXT TO a book, ABOVE the floor.' Can your child find it?",
+          "Set up an obstacle course: 'Go OVER the cushion, UNDER the table, AROUND the chair, and BETWEEN the two boxes.'",
+          "Describe where things are in photos or picture books together, using as many position words as you can.",
         ],
       },
     ],
@@ -3780,6 +4372,87 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
           { prompt: "What is a tally mark?", options: ["A type of counting mark", "A type of shape", "A colour"] },
           { prompt: "If 10 children were asked and 6 said Yes, how many said No?", options: ["3", "4", "6"] },
           { prompt: "Which is the best way to show how many of each fruit people like?", options: ["A tally chart", "A story", "A song"] },
+        ],
+      },
+      // --- Improvement: More data collection (hands-on) ---
+      {
+        type: "open-response",
+        title: "Collect Your Own Data!",
+        instruction: "Go and find out! Ask people or look around your home to collect this data.",
+        prompts: [
+          { text: "Ask 5 people: What is your favourite fruit? Write their answers here:", type: "lines", lines: 3 },
+          { text: "Which fruit was chosen the most? ___", type: "lines", lines: 1 },
+          { text: "Which fruit was chosen the least? ___", type: "lines", lines: 1 },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Count Things in Your Home",
+        instruction: "Walk around your home and count these things. Write the numbers.",
+        prompts: [
+          { text: "How many doors? ___", type: "lines", lines: 1 },
+          { text: "How many windows? ___", type: "lines", lines: 1 },
+          { text: "How many chairs? ___", type: "lines", lines: 1 },
+          { text: "Which did you find the most of? ___", type: "lines", lines: 1 },
+          { text: "Which did you find the fewest of? ___", type: "lines", lines: 1 },
+        ],
+      },
+      {
+        type: "tally-chart",
+        title: "Survey: How Do You Get to School?",
+        instruction: "Ask friends or family: How do children get to school? Make a tally for each answer.",
+        categories: [
+          { label: "Walk", icon: "star", count: 0 },
+          { label: "Car", icon: "heart", count: 0 },
+          { label: "Bus", icon: "diamond", count: 0 },
+          { label: "Bike", icon: "flower", count: 0 },
+        ],
+      },
+      // --- Improvement: Picture graph ---
+      {
+        type: "circle-correct",
+        title: "Read the Picture Graph",
+        instruction: "Each ⭐ means 1 child.\n🍎 Apples: ⭐⭐⭐⭐⭐⭐\n🍌 Bananas: ⭐⭐⭐\n🍓 Strawberries: ⭐⭐⭐⭐⭐⭐⭐⭐\n🍊 Oranges: ⭐⭐",
+        questions: [
+          { prompt: "How many children chose apples?", options: ["5", "6", "7"] },
+          { prompt: "How many children chose strawberries?", options: ["6", "7", "8"] },
+          { prompt: "Which fruit is the most popular?", options: ["Apples", "Bananas", "Strawberries", "Oranges"] },
+          { prompt: "Which fruit is the least popular?", options: ["Apples", "Bananas", "Strawberries", "Oranges"] },
+          { prompt: "How many more chose strawberries than bananas?", options: ["3", "5", "8"] },
+          { prompt: "How many children were asked altogether?", options: ["17", "19", "21"] },
+        ],
+      },
+      // --- Improvement: "What does data tell us?" reasoning ---
+      {
+        type: "circle-correct",
+        title: "What Can We Learn from Data?",
+        instruction: "Think about what the data tells us. Circle the best answer.",
+        questions: [
+          { prompt: "If most children walk to school, what does that tell us?", options: ["The school is probably close by", "Nobody drives cars", "Walking is faster"] },
+          { prompt: "If 8 children like strawberries and only 2 like oranges, we can say:", options: ["Strawberries are more popular", "Oranges taste bad", "Everyone likes strawberries"] },
+          { prompt: "If it was sunny 5 days and rainy 2 days, we can say:", options: ["It was a mostly sunny week", "It never rains", "The sun is better"] },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Think About Data",
+        instruction: "Answer these questions about collecting and using data.",
+        prompts: [
+          { text: "Why is it useful to collect data? (What can we learn?)", type: "lines", lines: 2 },
+          { text: "Think of a question you could ask your friends to collect data:", type: "lines", lines: 2 },
+          { text: "How would you show the answers? (e.g., tally chart, picture graph)", type: "lines", lines: 2 },
+        ],
+      },
+      // --- Try This at Home ---
+      {
+        type: "home-activity",
+        title: "Try This at Home!",
+        instruction: "Data is all about asking questions and finding out answers!",
+        suggestions: [
+          "Run a family survey: 'What is everyone's favourite dinner?' Make a tally chart together and discuss the results.",
+          "Count the colours of cars that pass your house in 10 minutes. Sort them and find which colour is most common.",
+          "Make a picture graph using stickers or stamps — each sticker represents one person's answer to your question.",
+          "Look at the weather each day for a week. Record sunny/rainy/cloudy on a chart. At the end, discuss: 'What was the most common weather this week?'",
         ],
       },
     ],

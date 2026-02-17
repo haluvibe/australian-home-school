@@ -93,6 +93,27 @@ export interface TallyChartData {
   categories: { label: string; icon: ObjectName; count: number }[];
 }
 
+export interface TenFrameData {
+  type: "ten-frame";
+  title: string;
+  instruction: string;
+  frames: { filled: number; total?: number }[];
+}
+
+export interface OpenResponseData {
+  type: "open-response";
+  title: string;
+  instruction: string;
+  prompts: { text: string; type?: "lines" | "box"; lines?: number }[];
+}
+
+export interface HomeActivityData {
+  type: "home-activity";
+  title: string;
+  instruction: string;
+  suggestions: string[];
+}
+
 export type ActivityData =
   | NumberTraceData
   | CountObjectsData
@@ -104,7 +125,10 @@ export type ActivityData =
   | CircleCorrectData
   | SequenceData
   | ShapeTraceData
-  | TallyChartData;
+  | TallyChartData
+  | TenFrameData
+  | OpenResponseData
+  | HomeActivityData;
 
 export interface WorksheetItem {
   slug: string;

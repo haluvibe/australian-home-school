@@ -10,6 +10,9 @@ import CircleCorrectActivity from "./activities/CircleCorrectActivity";
 import SequenceActivity from "./activities/SequenceActivity";
 import ShapeTraceActivity from "./activities/ShapeTraceActivity";
 import TallyChartActivity from "./activities/TallyChartActivity";
+import TenFrameActivity from "./activities/TenFrameActivity";
+import OpenResponseActivity from "./activities/OpenResponseActivity";
+import HomeActivityActivity from "./activities/HomeActivityActivity";
 
 interface Props {
   activity: ActivityData;
@@ -40,6 +43,12 @@ export default function ActivityRenderer({ activity, number }: Props) {
       return <ShapeTraceActivity data={activity} number={number} />;
     case "tally-chart":
       return <TallyChartActivity data={activity} number={number} />;
+    case "ten-frame":
+      return <TenFrameActivity data={activity} number={number} />;
+    case "open-response":
+      return <OpenResponseActivity data={activity} number={number} />;
+    case "home-activity":
+      return <HomeActivityActivity data={activity} number={number} />;
     default:
       return null;
   }
