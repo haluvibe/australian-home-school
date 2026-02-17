@@ -31,11 +31,10 @@ export default function CurriculumYearCard({
 
   return (
     <div
-      className={`rounded-2xl border transition-all duration-300 ${
-        isOpen
+      className={`rounded-2xl border transition-all duration-300 ${isOpen
           ? "border-charcoal/10 bg-warm-white shadow-sm"
           : "border-charcoal/[0.06] bg-transparent hover:border-charcoal/10"
-      }`}
+        }`}
     >
       <button
         className="flex w-full items-start justify-between gap-4 px-5 py-4 text-left sm:px-6 sm:py-5"
@@ -49,9 +48,8 @@ export default function CurriculumYearCard({
               : year.yearLevel.replace("Year ", "")}
           </span>
           <span
-            className={`font-display text-lg font-medium transition-colors ${
-              isOpen ? "text-charcoal" : "text-charcoal-light"
-            }`}
+            className={`font-display text-lg font-medium transition-colors ${isOpen ? "text-charcoal" : "text-charcoal-light"
+              }`}
           >
             {year.yearLevel}
           </span>
@@ -68,20 +66,18 @@ export default function CurriculumYearCard({
             ))}
           </div>
           <div
-            className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-full transition-all duration-300 ${
-              isOpen
+            className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-full transition-all duration-300 ${isOpen
                 ? "bg-terracotta text-white"
                 : "bg-sand/60 text-charcoal-light"
-            }`}
+              }`}
           >
             <svg
               width="14"
               height="14"
               viewBox="0 0 14 14"
               fill="none"
-              className={`transition-transform duration-300 ${
-                isOpen ? "rotate-45" : ""
-              }`}
+              className={`transition-transform duration-300 ${isOpen ? "rotate-45" : ""
+                }`}
             >
               <path
                 d="M7 1v12M1 7h12"
@@ -123,25 +119,61 @@ export default function CurriculumYearCard({
                   <div key={strandGroup.strand}>
                     <div className="flex items-center gap-2">
                       <span
-                        className={`inline-flex rounded-md px-3 py-1 text-sm font-semibold ${
-                          strandColors[strandGroup.strand] ||
+                        className={`inline-flex rounded-md px-3 py-1 text-sm font-semibold ${strandColors[strandGroup.strand] ||
                           "bg-charcoal/[0.06] text-charcoal"
-                        }`}
+                          }`}
                       >
                         {strandGroup.strand}
                       </span>
                     </div>
                     <ul className="mt-2 space-y-2.5 pl-1">
                       {strandGroup.items.map((item, i) => {
-                        const parts = item.split(" — e.g. ");
-                        const objective = parts[0];
-                        const example = parts[1];
+                        let description = "";
+                        let example = "";
+                        let khanUrl = "";
+
+                        if (typeof item === "string") {
+                          const parts = item.split(" — e.g. ");
+                          description = parts[0];
+                          example = parts[1];
+                        } else {
+                          description = item.description;
+                          example = item.example || "";
+                          khanUrl = item.khanAcademyUrl || "";
+                        }
+
                         return (
                           <li key={i} className="flex items-start gap-2.5">
                             <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-charcoal/40" />
                             <div>
                               <span className="text-base leading-relaxed text-charcoal">
-                                {annotateText(objective, subject)}
+                                {annotateText(description, subject)}
+                                {khanUrl && (
+                                  <a
+                                    href={khanUrl}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="ml-2 inline-flex items-center text-terracotta hover:text-terracotta-dark"
+                                    title="Learn on Khan Academy"
+                                  >
+                                    <svg
+                                      xmlns="http://www.w3.org/2000/svg"
+                                      width="14"
+                                      height="14"
+                                      viewBox="0 0 24 24"
+                                      fill="none"
+                                      stroke="currentColor"
+                                      strokeWidth="2"
+                                      strokeLinecap="round"
+                                      strokeLinejoin="round"
+                                      className="translate-y-[1px]"
+                                    >
+                                      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                                      <polyline points="15 3 21 3 21 9" />
+                                      <line x1="10" y1="14" x2="21" y2="3" />
+                                    </svg>
+                                  </a>
+                                )}
                               </span>
                               {example && (
                                 <span className="mt-0.5 block text-base italic leading-relaxed text-charcoal-light">
