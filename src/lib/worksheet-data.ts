@@ -37,9 +37,9 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         title: "Which Number Is This?",
         instruction: "Look at the group of objects. Circle the correct number.",
         questions: [
-          { prompt: "How many? ⭐⭐", options: ["1", "2", "3"] },
-          { prompt: "How many? ⭐⭐⭐⭐", options: ["3", "5", "4"] },
-          { prompt: "How many? ⭐", options: ["0", "1", "2"] },
+          { prompt: "How many stars?", promptIcon: "star", options: ["1", "2", "3"] },
+          { prompt: "How many stars?", promptIcon: "star", options: ["3", "5", "4"] },
+          { prompt: "How many stars?", promptIcon: "star", options: ["0", "1", "2"] },
         ],
       },
       {
@@ -440,6 +440,18 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
           { prompt: "One finger", options: ["0", "1", "2"] },
         ],
       },
+      // --- BRIDGE: Ten-frame introduction ---
+      {
+        type: "ten-frame",
+        title: "Using a Ten Frame",
+        instruction: "A ten frame helps us count. Count the filled circles and write the number.",
+        frames: [
+          { filled: 5 },
+          { filled: 4 },
+          { filled: 6 },
+        ],
+      },
+
       // --- MEDIUM: Count groups of 6-8 ---
       {
         type: "count-objects",
@@ -1606,6 +1618,39 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         ],
       },
 
+      // --- BRIDGE: Adding to 6 ---
+      {
+        type: "count-objects",
+        title: "Picture Addition — Flowers",
+        instruction: "Count both groups of flowers. Write the total.",
+        groups: [
+          { objects: Array(3).fill("flower"), label: "Group A" },
+          { objects: Array(3).fill("flower"), label: "Group B" },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Add Up to 6",
+        instruction: "Circle the correct answer.",
+        questions: [
+          { prompt: "2 + 4 = ___", options: ["5", "6", "7"] },
+          { prompt: "3 + 3 = ___", options: ["5", "6", "7"] },
+          { prompt: "5 + 1 = ___", options: ["5", "6", "7"] },
+          { prompt: "4 + 2 = ___", options: ["5", "6", "7"] },
+        ],
+      },
+      {
+        type: "number-bonds",
+        title: "Adding Bonds to 6",
+        instruction: "Fill in the missing number. The two parts add up to 6.",
+        bonds: [
+          { total: 6, partA: 3, partB: null },
+          { total: 6, partA: 1, partB: null },
+          { total: 6, partA: 4, partB: null },
+          { total: 6, partA: 2, partB: null },
+        ],
+      },
+
       // --- MEDIUM: Adding and subtracting to 7 ---
       {
         type: "count-objects",
@@ -2225,12 +2270,12 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         instruction: "Sort each item into the correct column. Is it heavy or light?",
         columns: ["Heavy", "Light"],
         items: [
-          { label: "Feather" },
-          { label: "Car" },
+          { label: "Feather", icon: "feather" },
+          { label: "Car", icon: "car" },
           { label: "Leaf" },
-          { label: "Elephant" },
-          { label: "Butterfly" },
-          { label: "Rock" },
+          { label: "Elephant", icon: "elephant" },
+          { label: "Butterfly", icon: "butterfly" },
+          { label: "Rock", icon: "rock" },
         ],
       },
       {
@@ -2238,8 +2283,8 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         title: "Which Is Heavier?",
         instruction: "Circle the heavier item.",
         questions: [
-          { prompt: "A cat or a mouse?", options: ["Cat", "Mouse"] },
-          { prompt: "A book or a feather?", options: ["Book", "Feather"] },
+          { prompt: "A cat or a mouse?", optionIcons: ["cat", "mouse"], options: ["Cat", "Mouse"] },
+          { prompt: "A book or a feather?", optionIcons: ["book", "feather"], options: ["Book", "Feather"] },
           { prompt: "A bike or a truck?", options: ["Bike", "Truck"] },
         ],
       },
@@ -2249,7 +2294,7 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         instruction: "Circle the lighter item.",
         questions: [
           { prompt: "A brick or a balloon?", options: ["Brick", "Balloon"] },
-          { prompt: "A dog or an ant?", options: ["Dog", "Ant"] },
+          { prompt: "A dog or an ant?", optionIcons: ["dog", "ant"], options: ["Dog", "Ant"] },
           { prompt: "A pillow or a table?", options: ["Pillow", "Table"] },
         ],
       },
@@ -2261,12 +2306,12 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         instruction: "Sort each item into the correct column.",
         columns: ["Full", "Empty"],
         items: [
-          { label: "Glass of water" },
-          { label: "Empty cup" },
-          { label: "Bucket of sand" },
+          { label: "Glass of water", icon: "cup" },
+          { label: "Empty cup", icon: "cup" },
+          { label: "Bucket of sand", icon: "bucket" },
           { label: "Empty lunchbox" },
           { label: "Full bathtub" },
-          { label: "Empty bottle" },
+          { label: "Empty bottle", icon: "bottle" },
         ],
       },
       {
@@ -2274,7 +2319,7 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         title: "Which Holds More?",
         instruction: "Circle the container that holds MORE.",
         questions: [
-          { prompt: "A cup or a bucket?", options: ["Cup", "Bucket"] },
+          { prompt: "A cup or a bucket?", optionIcons: ["cup", "bucket"], options: ["Cup", "Bucket"] },
           { prompt: "A spoon or a bowl?", options: ["Spoon", "Bowl"] },
           { prompt: "A swimming pool or a bathtub?", options: ["Swimming pool", "Bathtub"] },
         ],
@@ -2297,9 +2342,9 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         instruction: "Circle the correct answer.",
         questions: [
           { prompt: "A bus is ___", options: ["Long", "Short"] },
-          { prompt: "A pencil is ___", options: ["Long", "Short"] },
+          { prompt: "A pencil is ___", promptIcon: "pencil", options: ["Long", "Short"] },
           { prompt: "A train is ___", options: ["Long", "Short"] },
-          { prompt: "An ant is ___", options: ["Long", "Short"] },
+          { prompt: "An ant is ___", promptIcon: "ant", options: ["Long", "Short"] },
         ],
       },
       {
@@ -2307,7 +2352,7 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         title: "Which Is Longer?",
         instruction: "Circle the longer item.",
         questions: [
-          { prompt: "A snake or a worm?", options: ["Snake", "Worm"] },
+          { prompt: "A snake or a worm?", optionIcons: ["snake"], options: ["Snake", "Worm"] },
           { prompt: "A ruler or a rubber?", options: ["Ruler", "Rubber"] },
           { prompt: "A scarf or a sock?", options: ["Scarf", "Sock"] },
         ],
@@ -2350,6 +2395,19 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         ],
       },
 
+      // --- BRIDGE: Introducing "in between" before 3-category sorting ---
+      {
+        type: "circle-correct",
+        title: "Heavy, Light, or In Between?",
+        instruction: "Some things are not heavy and not light — they are in between! Circle the best answer.",
+        questions: [
+          { prompt: "A watermelon is ___", promptIcon: "watermelon", options: ["Heavy", "In between", "Light"] },
+          { prompt: "A feather is ___", promptIcon: "feather", options: ["Heavy", "In between", "Light"] },
+          { prompt: "A book is ___", promptIcon: "book", options: ["Heavy", "In between", "Light"] },
+          { prompt: "A car is ___", promptIcon: "car", options: ["Heavy", "In between", "Light"] },
+        ],
+      },
+
       // --- MEDIUM: Comparing mass ---
       {
         type: "sorting",
@@ -2357,11 +2415,11 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         instruction: "Sort each item into the correct column.",
         columns: ["Heavy", "Medium", "Light"],
         items: [
-          { label: "Horse" },
-          { label: "Apple" },
+          { label: "Horse", icon: "horse" },
+          { label: "Apple", icon: "apple" },
           { label: "Coin" },
           { label: "Chair" },
-          { label: "Pencil" },
+          { label: "Pencil", icon: "pencil" },
           { label: "Washing machine" },
         ],
       },
@@ -2370,9 +2428,9 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         title: "Order by Mass",
         instruction: "Put these in order from lightest to heaviest. Write 1, 2, 3.",
         items: [
-          { label: "Elephant" },
-          { label: "Cat" },
-          { label: "Mouse" },
+          { label: "Elephant", icon: "elephant" },
+          { label: "Cat", icon: "cat" },
+          { label: "Mouse", icon: "mouse" },
         ],
       },
 
@@ -2396,9 +2454,9 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         title: "Order by How Much They Hold",
         instruction: "Put these in order from holds the least to holds the most. Write 1, 2, 3.",
         items: [
-          { label: "Bucket" },
-          { label: "Cup" },
-          { label: "Spoon" },
+          { label: "Bucket", icon: "bucket" },
+          { label: "Cup", icon: "cup" },
+          { label: "Spoon", icon: "spoon" },
         ],
       },
 
@@ -2409,12 +2467,12 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         instruction: "Sort each thing into the correct column.",
         columns: ["Tall", "Short"],
         items: [
-          { label: "Giraffe" },
-          { label: "Mouse" },
-          { label: "Tree" },
-          { label: "Flower" },
-          { label: "Building" },
-          { label: "Cup" },
+          { label: "Giraffe", icon: "giraffe" },
+          { label: "Mouse", icon: "mouse" },
+          { label: "Tree", icon: "tree" },
+          { label: "Flower", icon: "flower" },
+          { label: "Building", icon: "house" },
+          { label: "Cup", icon: "cup" },
         ],
       },
       {
@@ -2422,9 +2480,9 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         title: "Order by Height",
         instruction: "Put these in order from shortest to tallest. Write 1, 2, 3.",
         items: [
-          { label: "Ant" },
+          { label: "Ant", icon: "ant" },
           { label: "Child" },
-          { label: "House" },
+          { label: "House", icon: "house" },
         ],
       },
 
@@ -2478,9 +2536,9 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         title: "Heaviest to Lightest",
         instruction: "Put these in order from heaviest to lightest. Write 1, 2, 3.",
         items: [
-          { label: "Feather" },
-          { label: "Brick" },
-          { label: "Apple" },
+          { label: "Feather", icon: "feather" },
+          { label: "Brick", icon: "rock" },
+          { label: "Apple", icon: "apple" },
         ],
       },
       {
@@ -2488,8 +2546,8 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         title: "Longest to Shortest",
         instruction: "Put these in order from longest to shortest. Write 1, 2, 3.",
         items: [
-          { label: "Pencil" },
-          { label: "Bus" },
+          { label: "Pencil", icon: "pencil" },
+          { label: "Bus", icon: "car" },
           { label: "Your finger" },
         ],
       },
@@ -2510,9 +2568,9 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         title: "Measurement Thinking",
         instruction: "Circle the best answer.",
         questions: [
-          { prompt: "To find out how heavy a watermelon is, I would use a ___", options: ["Ruler", "Scales", "Cup"] },
+          { prompt: "To find out how heavy a watermelon is, I would use a ___", promptIcon: "watermelon", options: ["Ruler", "Scales", "Cup"] },
           { prompt: "To find out how long a table is, I would use a ___", options: ["Ruler", "Scales", "Clock"] },
-          { prompt: "To find out how much a bottle holds, I would ___", options: ["Weigh it", "Fill it with water", "Measure it with a ruler"] },
+          { prompt: "To find out how much a bottle holds, I would ___", promptIcon: "bottle", options: ["Weigh it", "Fill it with water", "Measure it with a ruler"] },
           { prompt: "To find out how long it takes to run, I would use a ___", options: ["Ruler", "Scales", "Clock"] },
         ],
       },
@@ -2521,9 +2579,9 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         title: "True or False?",
         instruction: "Circle True or False for each statement.",
         questions: [
-          { prompt: "A feather is heavier than a horse.", options: ["True", "False"] },
-          { prompt: "A bucket holds more water than a cup.", options: ["True", "False"] },
-          { prompt: "A pencil is longer than a train.", options: ["True", "False"] },
+          { prompt: "A feather is heavier than a horse.", promptIcon: "feather", options: ["True", "False"] },
+          { prompt: "A bucket holds more water than a cup.", promptIcon: "bucket", options: ["True", "False"] },
+          { prompt: "A pencil is longer than a train.", promptIcon: "pencil", options: ["True", "False"] },
           { prompt: "Brushing your teeth takes longer than sleeping all night.", options: ["True", "False"] },
         ],
       },
@@ -2533,13 +2591,13 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         instruction: "Sort each item into the correct column.",
         columns: ["Heavy", "Light", "Long", "Short"],
         items: [
-          { label: "Elephant" },
-          { label: "Ant" },
+          { label: "Elephant", icon: "elephant" },
+          { label: "Ant", icon: "ant" },
           { label: "River" },
           { label: "Coin" },
           { label: "Train" },
           { label: "Marble" },
-          { label: "Feather" },
+          { label: "Feather", icon: "feather" },
           { label: "Highway" },
         ],
       },
@@ -2611,7 +2669,7 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         title: "Which Is Longer?",
         instruction: "Circle the LONGER item in each pair.",
         questions: [
-          { prompt: "A pencil or a crayon?", options: ["Pencil", "Crayon"] },
+          { prompt: "A pencil or a crayon?", optionIcons: ["pencil"], options: ["Pencil", "Crayon"] },
           { prompt: "A shoe or a sock?", options: ["Shoe", "Sock"] },
           { prompt: "Your arm or your hand?", options: ["Arm", "Hand"] },
         ],
@@ -2621,9 +2679,9 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         title: "Which Is Shorter?",
         instruction: "Circle the SHORTER item in each pair.",
         questions: [
-          { prompt: "A bus or a car?", options: ["Bus", "Car"] },
-          { prompt: "A worm or a snake?", options: ["Worm", "Snake"] },
-          { prompt: "A spoon or a broom?", options: ["Spoon", "Broom"] },
+          { prompt: "A bus or a car?", optionIcons: ["car"], options: ["Bus", "Car"] },
+          { prompt: "A worm or a snake?", optionIcons: ["snake"], options: ["Worm", "Snake"] },
+          { prompt: "A spoon or a broom?", optionIcons: ["spoon"], options: ["Spoon", "Broom"] },
         ],
       },
       {
@@ -2647,9 +2705,9 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         title: "Which Is Taller?",
         instruction: "Circle the TALLER one.",
         questions: [
-          { prompt: "A tree or a flower?", options: ["Tree", "Flower"] },
-          { prompt: "A giraffe or a dog?", options: ["Giraffe", "Dog"] },
-          { prompt: "A house or a kennel?", options: ["House", "Kennel"] },
+          { prompt: "A tree or a flower?", optionIcons: ["tree", "flower"], options: ["Tree", "Flower"] },
+          { prompt: "A giraffe or a dog?", optionIcons: ["giraffe", "dog"], options: ["Giraffe", "Dog"] },
+          { prompt: "A house or a kennel?", optionIcons: ["house"], options: ["House", "Kennel"] },
         ],
       },
       {
@@ -2657,8 +2715,8 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         title: "Which Is Shorter (Height)?",
         instruction: "Circle the one that is NOT as tall.",
         questions: [
-          { prompt: "A cat or a horse?", options: ["Cat", "Horse"] },
-          { prompt: "A cup or a bottle?", options: ["Cup", "Bottle"] },
+          { prompt: "A cat or a horse?", optionIcons: ["cat", "horse"], options: ["Cat", "Horse"] },
+          { prompt: "A cup or a bottle?", optionIcons: ["cup", "bottle"], options: ["Cup", "Bottle"] },
           { prompt: "A child or a dad?", options: ["Child", "Dad"] },
         ],
       },
@@ -2669,9 +2727,9 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         title: "Which Is Heavier?",
         instruction: "Circle the HEAVIER item in each pair.",
         questions: [
-          { prompt: "A watermelon or a grape?", options: ["Watermelon", "Grape"] },
+          { prompt: "A watermelon or a grape?", optionIcons: ["watermelon", "grape"], options: ["Watermelon", "Grape"] },
           { prompt: "A brick or a sponge?", options: ["Brick", "Sponge"] },
-          { prompt: "A dog or an ant?", options: ["Dog", "Ant"] },
+          { prompt: "A dog or an ant?", optionIcons: ["dog", "ant"], options: ["Dog", "Ant"] },
         ],
       },
       {
@@ -2680,8 +2738,8 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         instruction: "Circle the LIGHTER item in each pair.",
         questions: [
           { prompt: "A balloon or a bowling ball?", options: ["Balloon", "Bowling ball"] },
-          { prompt: "A leaf or a book?", options: ["Leaf", "Book"] },
-          { prompt: "A feather or an egg?", options: ["Feather", "Egg"] },
+          { prompt: "A leaf or a book?", optionIcons: ["book"], options: ["Leaf", "Book"] },
+          { prompt: "A feather or an egg?", optionIcons: ["feather"], options: ["Feather", "Egg"] },
         ],
       },
       {
@@ -2692,10 +2750,10 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         items: [
           { label: "Bag of rice" },
           { label: "Cotton ball" },
-          { label: "Rock" },
+          { label: "Rock", icon: "rock" },
           { label: "Tissue" },
-          { label: "Backpack full of books" },
-          { label: "Petal" },
+          { label: "Backpack full of books", icon: "book" },
+          { label: "Petal", icon: "flower" },
         ],
       },
 
@@ -2705,7 +2763,7 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         title: "Which Holds More?",
         instruction: "Circle the container that HOLDS MORE.",
         questions: [
-          { prompt: "A bucket or a cup?", options: ["Bucket", "Cup"] },
+          { prompt: "A bucket or a cup?", optionIcons: ["bucket", "cup"], options: ["Bucket", "Cup"] },
           { prompt: "A bath or a sink?", options: ["Bath", "Sink"] },
           { prompt: "A swimming pool or a paddling pool?", options: ["Swimming pool", "Paddling pool"] },
         ],
@@ -2750,7 +2808,7 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         instruction: "Put these in order from shortest to longest. Write 1, 2, 3.",
         items: [
           { label: "Caterpillar" },
-          { label: "Snake" },
+          { label: "Snake", icon: "snake" },
           { label: "Worm" },
         ],
       },
@@ -2759,9 +2817,9 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         title: "Order by Height: Shortest to Tallest",
         instruction: "Put these in order from shortest to tallest. Write 1, 2, 3.",
         items: [
-          { label: "Sunflower" },
+          { label: "Sunflower", icon: "flower" },
           { label: "Grass" },
-          { label: "Tree" },
+          { label: "Tree", icon: "tree" },
         ],
       },
       {
@@ -2771,7 +2829,7 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         items: [
           { label: "Coin" },
           { label: "Bag of potatoes" },
-          { label: "Apple" },
+          { label: "Apple", icon: "apple" },
         ],
       },
 
@@ -2808,9 +2866,9 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         instruction: "Write 1 for smallest, 2 for middle, 3 for biggest.",
         columns: ["Smallest (1)", "Middle (2)", "Biggest (3)"],
         items: [
-          { label: "Mouse" },
-          { label: "Cat" },
-          { label: "Elephant" },
+          { label: "Mouse", icon: "mouse" },
+          { label: "Cat", icon: "cat" },
+          { label: "Elephant", icon: "elephant" },
         ],
       },
 
@@ -2844,10 +2902,10 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         title: "Order 4 Animals by Size",
         instruction: "Put these in order from smallest to biggest. Write 1, 2, 3, 4.",
         items: [
-          { label: "Ant" },
-          { label: "Cat" },
-          { label: "Horse" },
-          { label: "Mouse" },
+          { label: "Ant", icon: "ant" },
+          { label: "Cat", icon: "cat" },
+          { label: "Horse", icon: "horse" },
+          { label: "Mouse", icon: "mouse" },
         ],
       },
       {
@@ -2866,9 +2924,9 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         title: "Order 4 Containers by Capacity",
         instruction: "Put these in order from holds the least to holds the most. Write 1, 2, 3, 4.",
         items: [
-          { label: "Teaspoon" },
-          { label: "Bucket" },
-          { label: "Cup" },
+          { label: "Teaspoon", icon: "spoon" },
+          { label: "Bucket", icon: "bucket" },
+          { label: "Cup", icon: "cup" },
           { label: "Swimming pool" },
         ],
       },
@@ -2984,12 +3042,12 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         instruction: "Sort each activity. Does it happen in the morning or at night?",
         columns: ["Morning", "Night"],
         items: [
-          { label: "Wake up" },
-          { label: "Go to sleep" },
-          { label: "Eat breakfast" },
-          { label: "Put on pyjamas" },
-          { label: "Brush teeth (morning)" },
-          { label: "Read a bedtime story" },
+          { label: "Wake up", icon: "sun" },
+          { label: "Go to sleep", icon: "moon" },
+          { label: "Eat breakfast", icon: "sun" },
+          { label: "Put on pyjamas", icon: "moon" },
+          { label: "Brush teeth (morning)", icon: "sun" },
+          { label: "Read a bedtime story", icon: "moon" },
         ],
       },
       {
@@ -3227,12 +3285,12 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         instruction: "Sort each time. Is it usually light or dark outside?",
         columns: ["Light Outside", "Dark Outside"],
         items: [
-          { label: "Lunchtime" },
-          { label: "Midnight" },
-          { label: "Morning tea" },
-          { label: "Bedtime" },
-          { label: "After school" },
-          { label: "Very early morning (3am)" },
+          { label: "Lunchtime", icon: "sun" },
+          { label: "Midnight", icon: "moon" },
+          { label: "Morning tea", icon: "sun" },
+          { label: "Bedtime", icon: "moon" },
+          { label: "After school", icon: "sun" },
+          { label: "Very early morning (3am)", icon: "moon" },
         ],
       },
       {
@@ -3413,10 +3471,22 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         title: "Name That Shape!",
         instruction: "Circle the correct name for each shape.",
         questions: [
-          { prompt: "● — This shape is a ___", options: ["Square", "Circle", "Triangle"] },
-          { prompt: "■ — This shape is a ___", options: ["Rectangle", "Circle", "Square"] },
-          { prompt: "▲ — This shape is a ___", options: ["Triangle", "Diamond", "Square"] },
-          { prompt: "◆ — This shape is a ___", options: ["Circle", "Triangle", "Diamond"] },
+          { prompt: "This shape is a ___", promptIcon: "circle", options: ["Square", "Circle", "Triangle"] },
+          { prompt: "This shape is a ___", promptIcon: "square", options: ["Rectangle", "Circle", "Square"] },
+          { prompt: "This shape is a ___", promptIcon: "triangle", options: ["Triangle", "Diamond", "Square"] },
+          { prompt: "This shape is a ___", promptIcon: "diamond", options: ["Circle", "Triangle", "Diamond"] },
+        ],
+      },
+
+      // --- BRIDGE: Introducing sides ---
+      {
+        type: "circle-correct",
+        title: "Does It Have Sides?",
+        instruction: "Sides are the straight lines that make a shape. Does this shape have straight sides?",
+        questions: [
+          { prompt: "Circle", promptIcon: "circle", options: ["Yes, it has sides", "No sides (it is round)"] },
+          { prompt: "Square", promptIcon: "square", options: ["Yes, it has sides", "No sides (it is round)"] },
+          { prompt: "Triangle", promptIcon: "triangle", options: ["Yes, it has sides", "No sides (it is round)"] },
         ],
       },
 
@@ -3426,9 +3496,9 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         title: "Count the Sides",
         instruction: "How many sides does each shape have?",
         questions: [
-          { prompt: "Triangle", options: ["2", "3", "4"] },
-          { prompt: "Square", options: ["3", "4", "5"] },
-          { prompt: "Circle", options: ["0", "1", "2"] },
+          { prompt: "Triangle", promptIcon: "triangle", options: ["2", "3", "4"] },
+          { prompt: "Square", promptIcon: "square", options: ["3", "4", "5"] },
+          { prompt: "Circle", promptIcon: "circle", options: ["0", "1", "2"] },
           { prompt: "Rectangle", options: ["3", "4", "5"] },
         ],
       },
@@ -3437,10 +3507,10 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         title: "Count the Corners",
         instruction: "How many corners (points) does each shape have?",
         questions: [
-          { prompt: "Triangle", options: ["2", "3", "4"] },
-          { prompt: "Square", options: ["3", "4", "5"] },
-          { prompt: "Circle", options: ["0", "1", "2"] },
-          { prompt: "Diamond", options: ["3", "4", "5"] },
+          { prompt: "Triangle", promptIcon: "triangle", options: ["2", "3", "4"] },
+          { prompt: "Square", promptIcon: "square", options: ["3", "4", "5"] },
+          { prompt: "Circle", promptIcon: "circle", options: ["0", "1", "2"] },
+          { prompt: "Diamond", promptIcon: "diamond", options: ["3", "4", "5"] },
         ],
       },
       {
@@ -3477,11 +3547,11 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         instruction: "Sort each shape into the correct column.",
         columns: ["Straight Sides", "Round (No Sides)"],
         items: [
-          { label: "Circle" },
-          { label: "Triangle" },
-          { label: "Square" },
+          { label: "Circle", icon: "circle" },
+          { label: "Triangle", icon: "triangle" },
+          { label: "Square", icon: "square" },
           { label: "Rectangle" },
-          { label: "Diamond" },
+          { label: "Diamond", icon: "diamond" },
         ],
       },
       {
@@ -3490,11 +3560,11 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         instruction: "Sort each shape by how many sides it has.",
         columns: ["0 Sides", "3 Sides", "4 Sides"],
         items: [
-          { label: "Circle" },
-          { label: "Triangle" },
-          { label: "Square" },
+          { label: "Circle", icon: "circle" },
+          { label: "Triangle", icon: "triangle" },
+          { label: "Square", icon: "square" },
           { label: "Rectangle" },
-          { label: "Diamond" },
+          { label: "Diamond", icon: "diamond" },
         ],
       },
       {
@@ -3637,16 +3707,29 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
           { prompt: "How many circles?", options: ["1", "2", "3"] },
         ],
       },
-      // --- Improvement: 3D shapes ---
+      // --- BRIDGE: Flat vs solid shapes ---
+      {
+        type: "circle-correct",
+        title: "Flat or Solid?",
+        instruction: "Flat shapes are like drawings on paper. Solid shapes are like real things you can hold. Circle the answer.",
+        questions: [
+          { prompt: "A drawing of a circle is ___", options: ["Flat", "Solid"] },
+          { prompt: "A ball you can hold is ___", options: ["Flat", "Solid"] },
+          { prompt: "A square on paper is ___", options: ["Flat", "Solid"] },
+          { prompt: "A box you can pick up is ___", options: ["Flat", "Solid"] },
+        ],
+      },
+
+      // --- HARDER: 3D shapes ---
       {
         type: "circle-correct",
         title: "3D Shapes: Sphere, Cube, Cone, Cylinder",
         instruction: "3D shapes are solid — you can hold them! Circle the correct name.",
         questions: [
-          { prompt: "A ball is shaped like a ___", options: ["Sphere", "Cube", "Cylinder"] },
-          { prompt: "A dice/box is shaped like a ___", options: ["Sphere", "Cube", "Cone"] },
-          { prompt: "An ice cream cone is shaped like a ___", options: ["Cylinder", "Sphere", "Cone"] },
-          { prompt: "A tin of beans is shaped like a ___", options: ["Cube", "Cylinder", "Cone"] },
+          { prompt: "A ball is shaped like a ___", promptIcon: "sphere", options: ["Sphere", "Cube", "Cylinder"] },
+          { prompt: "A dice/box is shaped like a ___", promptIcon: "cube", options: ["Sphere", "Cube", "Cone"] },
+          { prompt: "An ice cream cone is shaped like a ___", promptIcon: "cone", options: ["Cylinder", "Sphere", "Cone"] },
+          { prompt: "A tin of beans is shaped like a ___", promptIcon: "cylinder", options: ["Cube", "Cylinder", "Cone"] },
         ],
       },
       {
@@ -3654,10 +3737,10 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         title: "Match 3D Shapes to Real Things",
         instruction: "Draw a line to match each 3D shape to something in real life.",
         leftItems: [
-          { label: "Sphere (ball shape)", objects: [] },
-          { label: "Cube (box shape)", objects: [] },
-          { label: "Cylinder (can shape)", objects: [] },
-          { label: "Cone (pointed shape)", objects: [] },
+          { label: "Sphere (ball shape)", objects: ["sphere"] },
+          { label: "Cube (box shape)", objects: ["cube"] },
+          { label: "Cylinder (can shape)", objects: ["cylinder"] },
+          { label: "Cone (pointed shape)", objects: ["cone"] },
         ],
         rightItems: [
           { label: "Party hat", objects: [] },
@@ -3672,14 +3755,14 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         instruction: "Sort each shape. Is it flat (you can draw it) or solid (you can hold it)?",
         columns: ["Flat (2D)", "Solid (3D)"],
         items: [
-          { label: "Circle" },
-          { label: "Sphere" },
-          { label: "Square" },
-          { label: "Cube" },
-          { label: "Triangle" },
-          { label: "Cone" },
+          { label: "Circle", icon: "circle" },
+          { label: "Sphere", icon: "sphere" },
+          { label: "Square", icon: "square" },
+          { label: "Cube", icon: "cube" },
+          { label: "Triangle", icon: "triangle" },
+          { label: "Cone", icon: "cone" },
           { label: "Rectangle" },
-          { label: "Cylinder" },
+          { label: "Cylinder", icon: "cylinder" },
         ],
       },
       {
@@ -3687,10 +3770,10 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         title: "3D Shape Properties",
         instruction: "Circle the correct answer about 3D shapes.",
         questions: [
-          { prompt: "Which 3D shape can roll?", options: ["Cube", "Sphere", "Both"] },
-          { prompt: "Which 3D shape has flat faces that are all squares?", options: ["Sphere", "Cube", "Cone"] },
-          { prompt: "Which 3D shape has a point at the top?", options: ["Cylinder", "Sphere", "Cone"] },
-          { prompt: "Which 3D shape has two flat circle faces?", options: ["Cylinder", "Cube", "Cone"] },
+          { prompt: "Which 3D shape can roll?", optionIcons: ["cube", "sphere"], options: ["Cube", "Sphere", "Both"] },
+          { prompt: "Which 3D shape has flat faces that are all squares?", optionIcons: ["sphere", "cube", "cone"], options: ["Sphere", "Cube", "Cone"] },
+          { prompt: "Which 3D shape has a point at the top?", optionIcons: ["cylinder", "sphere", "cone"], options: ["Cylinder", "Sphere", "Cone"] },
+          { prompt: "Which 3D shape has two flat circle faces?", optionIcons: ["cylinder", "cube", "cone"], options: ["Cylinder", "Cube", "Cone"] },
         ],
       },
       // --- Improvement: Give reasoning ---
@@ -3743,10 +3826,10 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         title: "On, Under, or In?",
         instruction: "Circle the correct position word.",
         questions: [
-          { prompt: "The cat is sitting ___ the chair.", options: ["On", "Under", "In"] },
+          { prompt: "The cat is sitting ___ the chair.", promptIcon: "cat", options: ["On", "Under", "In"] },
           { prompt: "The shoes are ___ the bed.", options: ["On", "Under", "In"] },
-          { prompt: "The toys are ___ the box.", options: ["On", "Under", "In"] },
-          { prompt: "The book is ___ the table.", options: ["On", "Under", "In"] },
+          { prompt: "The toys are ___ the box.", promptIcon: "teddy", options: ["On", "Under", "In"] },
+          { prompt: "The book is ___ the table.", promptIcon: "book", options: ["On", "Under", "In"] },
         ],
       },
       {
@@ -3769,9 +3852,9 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         title: "Where Is the Star?",
         instruction: "Circle where the star is.",
         questions: [
-          { prompt: "The star is ___ the cup.", options: ["On top of", "Under", "Inside"] },
-          { prompt: "The star is ___ the table.", options: ["On top of", "Under", "Next to"] },
-          { prompt: "The star is ___ the hat.", options: ["On top of", "Inside", "Behind"] },
+          { prompt: "The star is ___ the cup.", promptIcon: "star", options: ["On top of", "Under", "Inside"] },
+          { prompt: "The star is ___ the table.", promptIcon: "star", options: ["On top of", "Under", "Next to"] },
+          { prompt: "The star is ___ the hat.", promptIcon: "star", options: ["On top of", "Inside", "Behind"] },
         ],
       },
       {
@@ -3791,8 +3874,8 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         title: "Next To and Beside",
         instruction: "Circle the correct word.",
         questions: [
-          { prompt: "The dog is ___ the child.", options: ["Beside", "Under", "On top of"] },
-          { prompt: "The apple is ___ the banana.", options: ["Inside", "Next to", "Under"] },
+          { prompt: "The dog is ___ the child.", promptIcon: "dog", options: ["Beside", "Under", "On top of"] },
+          { prompt: "The apple is ___ the banana.", promptIcon: "apple", options: ["Inside", "Next to", "Under"] },
           { prompt: "Mum is sitting ___ Dad.", options: ["Under", "Beside", "On top of"] },
         ],
       },
@@ -3842,8 +3925,8 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         questions: [
           { prompt: "The clouds are ___ us.", options: ["Above", "Below", "Beside"] },
           { prompt: "The ground is ___ our feet.", options: ["Above", "Below", "Behind"] },
-          { prompt: "The bird is flying ___ the tree.", options: ["Above", "Below", "Inside"] },
-          { prompt: "The fish swims ___ the water.", options: ["Above", "Below", "In front of"] },
+          { prompt: "The bird is flying ___ the tree.", promptIcon: "bird", options: ["Above", "Below", "Inside"] },
+          { prompt: "The fish swims ___ the water.", promptIcon: "fish", options: ["Above", "Below", "In front of"] },
         ],
       },
       {
@@ -3852,12 +3935,12 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         instruction: "Sort each thing. Is it usually ABOVE us or BELOW us?",
         columns: ["Above Us", "Below Us"],
         items: [
-          { label: "Sun" },
+          { label: "Sun", icon: "sun" },
           { label: "Grass" },
-          { label: "Stars" },
+          { label: "Stars", icon: "star" },
           { label: "Floor" },
           { label: "Clouds" },
-          { label: "Ants on the ground" },
+          { label: "Ants on the ground", icon: "ant" },
         ],
       },
       {
@@ -3901,6 +3984,18 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
           { prompt: "What is on the far left?", options: ["Fish", "Diamond", "Star"] },
           { prompt: "What is on the far right?", options: ["Fish", "Diamond", "Star"] },
           { prompt: "What is in the middle?", options: ["Flower", "Diamond", "Butterfly"] },
+        ],
+      },
+
+      // --- BRIDGE: Simple one-step directions ---
+      {
+        type: "circle-correct",
+        title: "One-Step Directions",
+        instruction: "Follow the simple direction. Circle the answer.",
+        questions: [
+          { prompt: "Look UP. What do you see?", options: ["The ceiling", "The floor", "Your shoes"] },
+          { prompt: "Turn to your RIGHT. What might you see?", options: ["The wall or a friend", "Your feet", "The sky"] },
+          { prompt: "Reach DOWN. What can you touch?", options: ["The ceiling", "The floor", "The clouds"] },
         ],
       },
 
@@ -3959,9 +4054,9 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         title: "Describe the Position",
         instruction: "A teddy is ON the shelf. A book is NEXT TO the teddy. A ball is UNDER the shelf. Circle the correct answer.",
         questions: [
-          { prompt: "Where is the teddy?", options: ["On the shelf", "Under the shelf", "Next to the ball"] },
-          { prompt: "Where is the ball?", options: ["On the shelf", "Under the shelf", "Next to the teddy"] },
-          { prompt: "What is next to the teddy?", options: ["The ball", "The shelf", "The book"] },
+          { prompt: "Where is the teddy?", promptIcon: "teddy", options: ["On the shelf", "Under the shelf", "Next to the ball"] },
+          { prompt: "Where is the ball?", promptIcon: "ball", options: ["On the shelf", "Under the shelf", "Next to the teddy"] },
+          { prompt: "What is next to the teddy?", promptIcon: "book", options: ["The ball", "The shelf", "The book"] },
         ],
       },
       {
@@ -4105,11 +4200,11 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         instruction: "Sort each thing into the correct colour group.",
         columns: ["Red Things", "Yellow Things", "Blue Things"],
         items: [
-          { label: "Apple" },
-          { label: "Sun" },
+          { label: "Apple", icon: "apple" },
+          { label: "Sun", icon: "sun" },
           { label: "Sky" },
           { label: "Strawberry" },
-          { label: "Banana" },
+          { label: "Banana", icon: "banana" },
           { label: "Ocean" },
         ],
       },
@@ -4119,10 +4214,10 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         instruction: "Sort each animal into the correct column.",
         columns: ["Big Animals", "Small Animals"],
         items: [
-          { label: "Elephant" },
-          { label: "Ant" },
-          { label: "Horse" },
-          { label: "Mouse" },
+          { label: "Elephant", icon: "elephant" },
+          { label: "Ant", icon: "ant" },
+          { label: "Horse", icon: "horse" },
+          { label: "Mouse", icon: "mouse" },
           { label: "Whale" },
           { label: "Ladybug" },
         ],
@@ -4187,7 +4282,7 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         instruction: "Ask 4 friends their favourite fruit. Make a tally mark for each answer.",
         categories: [
           { label: "Apple", icon: "apple", count: 0 },
-          { label: "Banana", icon: "star", count: 0 },
+          { label: "Banana", icon: "banana", count: 0 },
           { label: "Strawberry", icon: "heart", count: 0 },
         ],
       },
@@ -4244,10 +4339,10 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         title: "Pets in Our Class",
         instruction: "Here are the pets children in the class have. Make tally marks and write the total.",
         categories: [
-          { label: "Dogs", icon: "heart", count: 8 },
-          { label: "Cats", icon: "star", count: 6 },
+          { label: "Dogs", icon: "dog", count: 8 },
+          { label: "Cats", icon: "cat", count: 6 },
           { label: "Fish", icon: "fish", count: 4 },
-          { label: "Birds", icon: "butterfly", count: 2 },
+          { label: "Birds", icon: "bird", count: 2 },
         ],
       },
       {
@@ -4288,11 +4383,11 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         instruction: "Sort each food into the correct column.",
         columns: ["Healthy Food", "Treat Food"],
         items: [
-          { label: "Apple" },
+          { label: "Apple", icon: "apple" },
           { label: "Lollipop" },
           { label: "Carrot" },
           { label: "Chocolate" },
-          { label: "Banana" },
+          { label: "Banana", icon: "banana" },
           { label: "Chips" },
         ],
       },
@@ -4314,7 +4409,7 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         title: "Weather This Week",
         instruction: "This week the weather was: Sunny, Sunny, Rainy, Sunny, Cloudy. Tally each type.",
         categories: [
-          { label: "Sunny", icon: "star", count: 3 },
+          { label: "Sunny", icon: "sun", count: 3 },
           { label: "Rainy", icon: "diamond", count: 1 },
           { label: "Cloudy", icon: "circle", count: 1 },
         ],
@@ -4403,23 +4498,29 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         instruction: "Ask friends or family: How do children get to school? Make a tally for each answer.",
         categories: [
           { label: "Walk", icon: "star", count: 0 },
-          { label: "Car", icon: "heart", count: 0 },
-          { label: "Bus", icon: "diamond", count: 0 },
+          { label: "Car", icon: "car", count: 0 },
+          { label: "Bus", icon: "car", count: 0 },
           { label: "Bike", icon: "flower", count: 0 },
         ],
       },
       // --- Improvement: Picture graph ---
       {
-        type: "circle-correct",
-        title: "Read the Picture Graph",
-        instruction: "Each ⭐ means 1 child.\n🍎 Apples: ⭐⭐⭐⭐⭐⭐\n🍌 Bananas: ⭐⭐⭐\n🍓 Strawberries: ⭐⭐⭐⭐⭐⭐⭐⭐\n🍊 Oranges: ⭐⭐",
+        type: "picture-graph",
+        title: "Favourite Fruits Picture Graph",
+        instruction: "Each picture means 1 child chose that fruit. Count the pictures and answer the questions.",
+        rows: [
+          { label: "Apples", icon: "apple", count: 6 },
+          { label: "Bananas", icon: "banana", count: 3 },
+          { label: "Strawberries", icon: "heart", count: 8 },
+          { label: "Oranges", icon: "star", count: 2 },
+        ],
         questions: [
-          { prompt: "How many children chose apples?", options: ["5", "6", "7"] },
-          { prompt: "How many children chose strawberries?", options: ["6", "7", "8"] },
-          { prompt: "Which fruit is the most popular?", options: ["Apples", "Bananas", "Strawberries", "Oranges"] },
-          { prompt: "Which fruit is the least popular?", options: ["Apples", "Bananas", "Strawberries", "Oranges"] },
-          { prompt: "How many more chose strawberries than bananas?", options: ["3", "5", "8"] },
-          { prompt: "How many children were asked altogether?", options: ["17", "19", "21"] },
+          "How many children chose apples? ___",
+          "How many children chose strawberries? ___",
+          "Which fruit is the most popular? ___",
+          "Which fruit is the least popular? ___",
+          "How many more chose strawberries than bananas? ___",
+          "How many children were asked altogether? ___",
         ],
       },
       // --- Improvement: "What does data tell us?" reasoning ---

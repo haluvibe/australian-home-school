@@ -8,7 +8,40 @@ export type ObjectName =
   | "square"
   | "triangle"
   | "diamond"
-  | "butterfly";
+  | "butterfly"
+  | "cat"
+  | "dog"
+  | "mouse"
+  | "elephant"
+  | "bird"
+  | "ant"
+  | "giraffe"
+  | "horse"
+  | "snake"
+  | "sun"
+  | "moon"
+  | "tree"
+  | "pencil"
+  | "cup"
+  | "book"
+  | "car"
+  | "house"
+  | "ball"
+  | "teddy"
+  | "clock"
+  | "bucket"
+  | "bed"
+  | "feather"
+  | "rock"
+  | "banana"
+  | "spoon"
+  | "bottle"
+  | "watermelon"
+  | "grape"
+  | "sphere"
+  | "cube"
+  | "cone"
+  | "cylinder";
 
 export interface NumberTraceData {
   type: "number-trace";
@@ -68,7 +101,20 @@ export interface CircleCorrectData {
   type: "circle-correct";
   title: string;
   instruction: string;
-  questions: { prompt: string; options: string[]; }[];
+  questions: {
+    prompt: string;
+    promptIcon?: ObjectName;
+    options: string[];
+    optionIcons?: ObjectName[];
+  }[];
+}
+
+export interface PictureGraphData {
+  type: "picture-graph";
+  title: string;
+  instruction: string;
+  rows: { label: string; icon: ObjectName; count: number }[];
+  questions: string[];
 }
 
 export interface SequenceData {
@@ -128,7 +174,8 @@ export type ActivityData =
   | TallyChartData
   | TenFrameData
   | OpenResponseData
-  | HomeActivityData;
+  | HomeActivityData
+  | PictureGraphData;
 
 export interface WorksheetItem {
   slug: string;

@@ -43,7 +43,20 @@ export default async function WorksheetItemPage({ params }: PageProps) {
             </svg>
             All Worksheets
           </Link>
-          <PrintButton filename={`foundation-maths-${worksheet.slug}`} />
+          <div className="flex items-center gap-3">
+            <Link
+              href="/contact"
+              className="inline-flex items-center gap-2 rounded-full border border-charcoal/10 bg-white px-4 py-3 text-sm font-medium text-charcoal-light transition-all duration-200 hover:border-terracotta/30 hover:text-terracotta"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" />
+                <line x1="12" y1="9" x2="12" y2="13" />
+                <line x1="12" y1="17" x2="12.01" y2="17" />
+              </svg>
+              Report a Mistake
+            </Link>
+            <PrintButton filename={`foundation-maths-${worksheet.slug}`} />
+          </div>
         </div>
       </div>
 

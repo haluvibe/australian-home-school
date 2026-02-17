@@ -96,6 +96,36 @@ export default function TermsPage() {
 
             <div>
               <h2 className="font-display text-2xl font-semibold text-charcoal">
+                AI-Generated Content Disclaimer
+              </h2>
+              <div className="mt-3 rounded-xl border border-terracotta/20 bg-terracotta/[0.04] px-5 py-3.5">
+                <p className="text-base font-medium leading-relaxed text-charcoal">
+                  All content on this Site, including worksheets, curriculum
+                  summaries, activity descriptions, and educational materials,
+                  has been generated with the assistance of artificial
+                  intelligence (AI). While we review content for quality, AI-generated
+                  material can contain mistakes, inaccuracies, or
+                  outdated information.
+                </p>
+                <p className="mt-2 text-base leading-relaxed text-charcoal-light/85">
+                  We encourage parents and educators to review all materials
+                  before use and to verify any information against official
+                  curriculum documents from the Australian Curriculum,
+                  Assessment and Reporting Authority (ACARA). If you spot an
+                  error, please{" "}
+                  <Link
+                    href="/contact"
+                    className="font-medium text-terracotta underline decoration-terracotta/30 transition-colors hover:text-terracotta-dark hover:decoration-terracotta"
+                  >
+                    report it to us
+                  </Link>{" "}
+                  so we can correct it.
+                </p>
+              </div>
+            </div>
+
+            <div>
+              <h2 className="font-display text-2xl font-semibold text-charcoal">
                 Educational Information Disclaimer
               </h2>
               <div className="mt-3 rounded-xl border border-charcoal/[0.06] bg-cream/50 px-5 py-3.5">

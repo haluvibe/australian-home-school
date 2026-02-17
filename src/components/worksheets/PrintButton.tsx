@@ -13,7 +13,7 @@ export default function PrintButton({ filename = "worksheet" }: PrintButtonProps
   const [progress, setProgress] = useState("");
 
   async function handleDownload() {
-    const worksheetEl = document.querySelector(".worksheet-page");
+    const worksheetEl = document.querySelector(".worksheet-page") as HTMLElement;
     if (!worksheetEl) return;
 
     setGenerating(true);
@@ -27,31 +27,43 @@ export default function PrintButton({ filename = "worksheet" }: PrintButtonProps
       const contentWidth = a4Width - marginX * 2;
       const contentHeight = a4Height - marginY * 2;
 
+      // Fix rendering width to A4 proportions for consistent captures.
+      // 794px = 210mm at 96 DPI. With scale: 2, this gives ~192 effective DPI.
+      const fixedWidth = 794;
+      const originalWidth = worksheetEl.style.width;
+      const originalMaxWidth = worksheetEl.style.maxWidth;
+      const originalPadding = worksheetEl.style.padding;
+      worksheetEl.style.width = `${fixedWidth}px`;
+      worksheetEl.style.maxWidth = `${fixedWidth}px`;
+      worksheetEl.style.padding = "24px 40px";
+
+      // Wait for reflow
+      await new Promise((r) => setTimeout(r, 50));
+
       const pdf = new jsPDF({ orientation: "portrait", unit: "mm", format: "a4" });
 
-      // Capture the header first
+      // Capture header
       const headerEl = worksheetEl.querySelector(".worksheet-page > div:first-child") as HTMLElement;
-      // Get all activity blocks
       const activityBlocks = worksheetEl.querySelectorAll(".activity-block");
 
-      // Capture header
       setProgress("Preparing header...");
       const headerCanvas = await html2canvas(headerEl, {
         scale: 2,
         useCORS: true,
         backgroundColor: "#ffffff",
+        width: fixedWidth,
       });
 
-      const headerImg = headerCanvas.toDataURL("image/jpeg", 0.92);
+      const headerImg = headerCanvas.toDataURL("image/png");
       const headerWidthMm = contentWidth;
       const headerHeightMm = (headerCanvas.height / headerCanvas.width) * headerWidthMm;
 
-      pdf.addImage(headerImg, "JPEG", marginX, marginY, headerWidthMm, headerHeightMm);
+      pdf.addImage(headerImg, "PNG", marginX, marginY, headerWidthMm, headerHeightMm);
 
-      let currentY = marginY + headerHeightMm + 4; // 4mm gap after header
-      let pageNum = 0;
+      let currentY = marginY + headerHeightMm + 4;
+      let pageNum = 1;
 
-      // Capture each activity block individually
+      // Capture each activity block individually for clean pagination
       for (let i = 0; i < activityBlocks.length; i++) {
         setProgress(`Activity ${i + 1} of ${activityBlocks.length}...`);
         const block = activityBlocks[i] as HTMLElement;
@@ -60,32 +72,41 @@ export default function PrintButton({ filename = "worksheet" }: PrintButtonProps
           scale: 2,
           useCORS: true,
           backgroundColor: "#ffffff",
+          width: fixedWidth - 80, // Account for page padding
         });
 
-        const blockImg = blockCanvas.toDataURL("image/jpeg", 0.92);
+        const blockImg = blockCanvas.toDataURL("image/png");
         const blockWidthMm = contentWidth;
         const blockHeightMm = (blockCanvas.height / blockCanvas.width) * blockWidthMm;
 
-        // Check if this block fits on the current page
+        // If block doesn't fit on current page, start a new one
         if (currentY + blockHeightMm > a4Height - marginY) {
-          // Start a new page
+          // Add page number to current page
+          addPageNumber(pdf, pageNum, marginX, a4Width, a4Height);
           pdf.addPage();
           pageNum++;
           currentY = marginY;
         }
 
-        pdf.addImage(blockImg, "JPEG", marginX, currentY, blockWidthMm, blockHeightMm);
-        currentY += blockHeightMm + 3; // 3mm gap between blocks
+        pdf.addImage(blockImg, "PNG", marginX, currentY, blockWidthMm, blockHeightMm);
+        currentY += blockHeightMm + 3;
 
-        // Yield to browser to prevent freeze
+        // Yield to browser
         await new Promise((r) => setTimeout(r, 10));
       }
+
+      // Add page number to final page
+      addPageNumber(pdf, pageNum, marginX, a4Width, a4Height);
+
+      // Restore original styles
+      worksheetEl.style.width = originalWidth;
+      worksheetEl.style.maxWidth = originalMaxWidth;
+      worksheetEl.style.padding = originalPadding;
 
       setProgress("Saving PDF...");
       pdf.save(`${filename}.pdf`);
     } catch (err) {
       console.error("PDF generation failed:", err);
-      // Fallback to browser print
       window.print();
     } finally {
       setGenerating(false);
@@ -104,7 +125,7 @@ export default function PrintButton({ filename = "worksheet" }: PrintButtonProps
           <svg className="h-[18px] w-[18px] animate-spin" viewBox="0 0 24 24" fill="none">
             <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2.5" strokeDasharray="31.4 31.4" strokeLinecap="round" />
           </svg>
-          {progress || "Generating PDF…"}
+          {progress || "Generating PDF..."}
         </>
       ) : (
         <>
@@ -128,4 +149,11 @@ export default function PrintButton({ filename = "worksheet" }: PrintButtonProps
       )}
     </button>
   );
+}
+
+function addPageNumber(pdf: jsPDF, pageNum: number, marginX: number, pageWidth: number, pageHeight: number) {
+  pdf.setFontSize(9);
+  pdf.setTextColor(160, 160, 160);
+  pdf.text(`Page ${pageNum}`, pageWidth / 2, pageHeight - 6, { align: "center" });
+  pdf.text("Australian Home Schooling", pageWidth - marginX, pageHeight - 6, { align: "right" });
 }

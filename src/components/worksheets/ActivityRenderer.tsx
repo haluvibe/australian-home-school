@@ -13,6 +13,7 @@ import TallyChartActivity from "./activities/TallyChartActivity";
 import TenFrameActivity from "./activities/TenFrameActivity";
 import OpenResponseActivity from "./activities/OpenResponseActivity";
 import HomeActivityActivity from "./activities/HomeActivityActivity";
+import PictureGraphActivity from "./activities/PictureGraphActivity";
 
 interface Props {
   activity: ActivityData;
@@ -49,6 +50,8 @@ export default function ActivityRenderer({ activity, number }: Props) {
       return <OpenResponseActivity data={activity} number={number} />;
     case "home-activity":
       return <HomeActivityActivity data={activity} number={number} />;
+    case "picture-graph":
+      return <PictureGraphActivity data={activity} number={number} />;
     default:
       return null;
   }
