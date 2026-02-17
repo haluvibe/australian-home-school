@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import type { YearLevelData } from "@/lib/curriculum-data";
 import { annotateText } from "@/lib/glossary";
 
@@ -132,6 +133,8 @@ export default function CurriculumYearCard({
                         let example = "";
                         let khanUrl = "";
 
+                        let worksheetSlug = "";
+
                         if (typeof item === "string") {
                           const parts = item.split(" — e.g. ");
                           description = parts[0];
@@ -140,6 +143,7 @@ export default function CurriculumYearCard({
                           description = item.description;
                           example = item.example || "";
                           khanUrl = item.khanAcademyUrl || "";
+                          worksheetSlug = item.worksheetSlug || "";
                         }
 
                         return (
@@ -148,37 +152,64 @@ export default function CurriculumYearCard({
                             <div>
                               <span className="text-base leading-relaxed text-charcoal">
                                 {annotateText(description, subject)}
-                                {khanUrl && (
-                                  <a
-                                    href={khanUrl}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="ml-2 inline-flex items-center text-terracotta hover:text-terracotta-dark"
-                                    title="Learn on Khan Academy"
-                                  >
-                                    <svg
-                                      xmlns="http://www.w3.org/2000/svg"
-                                      width="14"
-                                      height="14"
-                                      viewBox="0 0 24 24"
-                                      fill="none"
-                                      stroke="currentColor"
-                                      strokeWidth="2"
-                                      strokeLinecap="round"
-                                      strokeLinejoin="round"
-                                      className="translate-y-[1px]"
-                                    >
-                                      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-                                      <polyline points="15 3 21 3 21 9" />
-                                      <line x1="10" y1="14" x2="21" y2="3" />
-                                    </svg>
-                                  </a>
-                                )}
                               </span>
                               {example && (
                                 <span className="mt-0.5 block text-base italic leading-relaxed text-charcoal-light">
                                   e.g. {example}
                                 </span>
+                              )}
+                              {khanUrl && (
+                                <a
+                                  href={khanUrl}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="mt-1.5 flex items-center gap-2 rounded-lg border border-terracotta/15 bg-terracotta/[0.04] px-3 py-1.5 text-sm transition-colors hover:bg-terracotta/[0.08]"
+                                >
+                                  <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="13"
+                                    height="13"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    strokeWidth="2"
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    className="shrink-0 text-terracotta"
+                                  >
+                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                                    <polyline points="15 3 21 3 21 9" />
+                                    <line x1="10" y1="14" x2="21" y2="3" />
+                                  </svg>
+                                  <span>
+                                    <span className="font-medium text-terracotta">Khan Academy</span>
+                                    <span className="ml-1.5 text-charcoal-light/70">{new URL(khanUrl).pathname.split("/").filter(Boolean).slice(1).join(" › ")}</span>
+                                  </span>
+                                </a>
+                              )}
+                              {worksheetSlug && (
+                                <Link
+                                  href={`/worksheets/mathematics/foundation/${worksheetSlug}`}
+                                  className="mt-1.5 flex items-center gap-2 rounded-lg border border-sage/15 bg-sage/[0.04] px-3 py-1.5 text-sm transition-colors hover:bg-sage/[0.08]"
+                                >
+                                  <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="13"
+                                    height="13"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    strokeWidth="2"
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    className="shrink-0 text-sage-dark"
+                                  >
+                                    <polyline points="6 9 6 2 18 2 18 9" />
+                                    <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2" />
+                                    <rect x="6" y="14" width="12" height="8" />
+                                  </svg>
+                                  <span className="font-medium text-sage-dark">Printable Worksheet</span>
+                                </Link>
                               )}
                             </div>
                           </li>

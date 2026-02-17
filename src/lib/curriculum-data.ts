@@ -5,6 +5,7 @@ export interface StrandItem {
   description: string;
   example?: string;
   khanAcademyUrl?: string;
+  worksheetSlug?: string;
 }
 
 export interface StrandObjectives {
