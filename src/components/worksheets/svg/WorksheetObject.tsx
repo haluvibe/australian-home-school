@@ -1,5 +1,25 @@
 import type { ObjectName } from "@/lib/worksheet-types";
 
+const SUN_RAYS = [0, 45, 90, 135, 180, 225, 270, 315].map((angle) => {
+  const rad = (angle * Math.PI) / 180;
+  return {
+    angle,
+    x1: Math.round((24 + Math.cos(rad) * 14) * 10) / 10,
+    y1: Math.round((24 + Math.sin(rad) * 14) * 10) / 10,
+    x2: Math.round((24 + Math.cos(rad) * 20) * 10) / 10,
+    y2: Math.round((24 + Math.sin(rad) * 20) * 10) / 10,
+  };
+});
+
+const CLOCK_MARKERS = [12, 3, 6, 9].map((n) => {
+  const angle = ((n - 3) * 30 * Math.PI) / 180;
+  return {
+    n,
+    cx: Math.round((24 + Math.cos(angle) * 15) * 10) / 10,
+    cy: Math.round((24 + Math.sin(angle) * 15) * 10) / 10,
+  };
+});
+
 interface WorksheetObjectProps {
   name: ObjectName;
   size?: number;
@@ -238,14 +258,9 @@ export default function WorksheetObject({ name, size = 48, className = "" }: Wor
       return (
         <svg {...props}>
           <circle cx="24" cy="24" r="10" fill="#FAC098" stroke="#235F8B" strokeWidth="2" />
-          {[0, 45, 90, 135, 180, 225, 270, 315].map((angle) => {
-            const rad = (angle * Math.PI) / 180;
-            const x1 = 24 + Math.cos(rad) * 14;
-            const y1 = 24 + Math.sin(rad) * 14;
-            const x2 = 24 + Math.cos(rad) * 20;
-            const y2 = 24 + Math.sin(rad) * 20;
-            return <line key={angle} x1={x1} y1={y1} x2={x2} y2={y2} stroke="#FAC098" strokeWidth="3" strokeLinecap="round" />;
-          })}
+          {SUN_RAYS.map((ray) => (
+            <line key={ray.angle} x1={ray.x1} y1={ray.y1} x2={ray.x2} y2={ray.y2} stroke="#FAC098" strokeWidth="3" strokeLinecap="round" />
+          ))}
         </svg>
       );
     case "moon":
@@ -345,12 +360,9 @@ export default function WorksheetObject({ name, size = 48, className = "" }: Wor
           <circle cx="24" cy="24" r="2" fill="#235F8B" />
           <line x1="24" y1="24" x2="24" y2="12" stroke="#235F8B" strokeWidth="2.5" strokeLinecap="round" />
           <line x1="24" y1="24" x2="34" y2="20" stroke="#235F8B" strokeWidth="2" strokeLinecap="round" />
-          {[12, 3, 6, 9].map((n) => {
-            const angle = ((n - 3) * 30 * Math.PI) / 180;
-            const x = 24 + Math.cos(angle) * 15;
-            const y = 24 + Math.sin(angle) * 15;
-            return <circle key={n} cx={x} cy={y} r="1.5" fill="#235F8B" />;
-          })}
+          {CLOCK_MARKERS.map((m) => (
+            <circle key={m.n} cx={m.cx} cy={m.cy} r="1.5" fill="#235F8B" />
+          ))}
         </svg>
       );
     case "bucket":

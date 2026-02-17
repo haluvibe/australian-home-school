@@ -4005,7 +4005,7 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         title: "Follow the Directions",
         instruction: "Circle what you would find if you follow the direction.",
         questions: [
-          { prompt: "Start at the Star. Move right. What do you find?", options: ["Heart (if heart is to the right)", "Nothing", "Apple"] },
+          { prompt: "Star, Heart, Apple are in a line. Start at the Star. Move right. What do you find?", options: ["Heart", "Apple", "Star"] },
           { prompt: "Start at the door. Go forward. You are now ___.", options: ["Inside the room", "Behind the door", "On the roof"] },
           { prompt: "Face the window. Turn around. You are now facing the ___.", options: ["Window", "Wall behind you", "Floor"] },
         ],

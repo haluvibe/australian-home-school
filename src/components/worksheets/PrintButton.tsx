@@ -1,8 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import html2canvas from "html2canvas-pro";
-import { jsPDF } from "jspdf";
 
 interface PrintButtonProps {
   filename?: string;
@@ -19,6 +17,11 @@ export default function PrintButton({ filename = "worksheet" }: PrintButtonProps
     setGenerating(true);
 
     try {
+      const [{ default: html2canvas }, { jsPDF }] = await Promise.all([
+        import("html2canvas-pro"),
+        import("jspdf"),
+      ]);
+
       // A4 dimensions in mm
       const a4Width = 210;
       const a4Height = 297;
@@ -151,7 +154,7 @@ export default function PrintButton({ filename = "worksheet" }: PrintButtonProps
   );
 }
 
-function addPageNumber(pdf: jsPDF, pageNum: number, marginX: number, pageWidth: number, pageHeight: number) {
+function addPageNumber(pdf: InstanceType<typeof import("jspdf").jsPDF>, pageNum: number, marginX: number, pageWidth: number, pageHeight: number) {
   pdf.setFontSize(9);
   pdf.setTextColor(160, 160, 160);
   pdf.text(`Page ${pageNum}`, pageWidth / 2, pageHeight - 6, { align: "center" });

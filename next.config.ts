@@ -1,7 +1,9 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  experimental: {
+    optimizePackageImports: ["jspdf", "html2canvas-pro"],
+  },
 };
 
 export default nextConfig;

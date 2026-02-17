@@ -187,7 +187,7 @@ export default function Navbar() {
                       : "text-charcoal-light hover:text-charcoal"
                   }`}
                   onClick={() =>
-                    setOpenDropdown(openDropdown === item.label ? null : item.label)
+                    setOpenDropdown(prev => prev === item.label ? null : item.label)
                   }
                 >
                   {item.label}
@@ -233,7 +233,7 @@ export default function Navbar() {
           {/* Mobile hamburger */}
           <button
             className="flex h-10 w-10 items-center justify-center rounded-lg lg:hidden"
-            onClick={() => setMobileOpen(!mobileOpen)}
+            onClick={() => setMobileOpen(prev => !prev)}
             aria-label="Toggle menu"
           >
             <div className="relative h-5 w-5">
@@ -382,7 +382,7 @@ export default function Navbar() {
                   <button
                     className="flex w-full items-center justify-between rounded-lg px-3 py-3 text-[15px] font-medium text-charcoal-light"
                     onClick={() =>
-                      setOpenDropdown(openDropdown === item.label ? null : item.label)
+                      setOpenDropdown(prev => prev === item.label ? null : item.label)
                     }
                   >
                     {item.label}

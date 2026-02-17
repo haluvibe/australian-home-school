@@ -85,7 +85,7 @@ export default function GlossaryTerm({ term, definition }: GlossaryTermProps) {
         ref={triggerRef}
         type="button"
         className="cursor-help border-b border-dashed border-charcoal/30 text-inherit transition-colors hover:border-terracotta hover:text-terracotta"
-        onClick={() => setOpen(!open)}
+        onClick={() => setOpen(prev => !prev)}
         onMouseEnter={() => setOpen(true)}
         onMouseLeave={() => setOpen(false)}
         aria-label={`Definition of ${term}`}

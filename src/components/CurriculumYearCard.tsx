@@ -39,7 +39,7 @@ export default function CurriculumYearCard({
     >
       <button
         className="flex w-full items-start justify-between gap-4 px-5 py-4 text-left sm:px-6 sm:py-5"
-        onClick={() => setIsOpen(!isOpen)}
+        onClick={() => setIsOpen(prev => !prev)}
         aria-expanded={isOpen}
       >
         <div className="flex items-center gap-3">
