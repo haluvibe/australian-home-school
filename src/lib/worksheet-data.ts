@@ -1270,34 +1270,327 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
     strand: "Number",
     description: "Represent adding to, taking away from, and equal sharing with collections to at least 10",
     activities: [
+      // --- EASY: Adding tiny numbers (totals to 5) ---
       {
         type: "count-objects",
-        title: "Picture Addition",
-        instruction: "Count all the objects in each row. Write the total.",
-        rows: [
-          { object: "star", count: 3 },
-          { object: "apple", count: 6 },
-          { object: "heart", count: 8 },
+        title: "Add the Stars Together",
+        instruction: "Count the stars in each group. Write the total when you put them together.",
+        groups: [
+          { objects: Array(1).fill("star"), label: "Group A" },
+          { objects: Array(2).fill("star"), label: "Group B" },
+        ],
+      },
+      {
+        type: "count-objects",
+        title: "Add the Hearts Together",
+        instruction: "Count the hearts in each group. How many altogether?",
+        groups: [
+          { objects: Array(2).fill("heart"), label: "Group A" },
+          { objects: Array(2).fill("heart"), label: "Group B" },
         ],
       },
       {
         type: "circle-correct",
-        title: "Take Away",
-        instruction: "Solve each subtraction problem.",
+        title: "Simple Adding",
+        instruction: "Circle the correct answer.",
         questions: [
-          { prompt: "5 apples, take away 2 = ___", options: ["3", "2", "4"] },
-          { prompt: "8 stars, take away 3 = ___", options: ["6", "4", "5"] },
-          { prompt: "10 fish, take away 4 = ___", options: ["5", "6", "7"] },
+          { prompt: "1 apple and 1 more apple = ___", options: ["1", "2", "3"] },
+          { prompt: "2 stars and 1 more star = ___", options: ["2", "3", "4"] },
+          { prompt: "1 fish and 2 more fish = ___", options: ["2", "3", "4"] },
+          { prompt: "2 hearts and 2 more hearts = ___", options: ["3", "4", "5"] },
+        ],
+      },
+      {
+        type: "count-objects",
+        title: "Add the Apples Together",
+        instruction: "Put both groups together. How many apples altogether?",
+        groups: [
+          { objects: Array(3).fill("apple"), label: "Group A" },
+          { objects: Array(2).fill("apple"), label: "Group B" },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Easy Take Away",
+        instruction: "Circle the correct answer.",
+        questions: [
+          { prompt: "3 stars, take away 1 = ___", options: ["1", "2", "3"] },
+          { prompt: "4 apples, take away 2 = ___", options: ["1", "2", "3"] },
+          { prompt: "5 hearts, take away 1 = ___", options: ["3", "4", "5"] },
+          { prompt: "3 fish, take away 2 = ___", options: ["0", "1", "2"] },
+        ],
+      },
+      {
+        type: "count-objects",
+        title: "Cross Out and Count",
+        instruction: "There are 4 flowers. Cross out 1. How many are left?",
+        rows: [
+          { object: "flower", count: 4 },
         ],
       },
       {
         type: "number-bonds",
-        title: "Equal Sharing",
-        instruction: "Share equally! If you have the total, how many does each group get?",
+        title: "Adding Bonds to 5",
+        instruction: "Fill in the missing number. The two parts add up to the total.",
         bonds: [
+          { total: 3, partA: 1, partB: null },
+          { total: 4, partA: 2, partB: null },
+          { total: 5, partA: 3, partB: null },
+          { total: 5, partA: 1, partB: null },
+        ],
+      },
+      {
+        type: "matching",
+        title: "Match the Addition",
+        instruction: "Draw a line to match each addition to its answer.",
+        leftItems: [
+          { label: "1 + 1", objects: [] },
+          { label: "2 + 1", objects: [] },
+          { label: "1 + 3", objects: [] },
+          { label: "2 + 3", objects: [] },
+        ],
+        rightItems: [
+          { label: "4", objects: Array(4).fill("diamond") },
+          { label: "3", objects: Array(3).fill("diamond") },
+          { label: "5", objects: Array(5).fill("diamond") },
+          { label: "2", objects: Array(2).fill("diamond") },
+        ],
+      },
+
+      // --- MEDIUM: Adding and subtracting to 7 ---
+      {
+        type: "count-objects",
+        title: "Picture Addition — Stars",
+        instruction: "Count both groups of stars. Write the total.",
+        groups: [
+          { objects: Array(4).fill("star"), label: "Group A" },
+          { objects: Array(3).fill("star"), label: "Group B" },
+        ],
+      },
+      {
+        type: "count-objects",
+        title: "Picture Addition — Fish",
+        instruction: "How many fish altogether?",
+        groups: [
+          { objects: Array(5).fill("fish"), label: "Group A" },
+          { objects: Array(2).fill("fish"), label: "Group B" },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Add Up to 7",
+        instruction: "Circle the correct answer.",
+        questions: [
+          { prompt: "3 + 4 = ___", options: ["6", "7", "8"] },
+          { prompt: "5 + 2 = ___", options: ["6", "7", "8"] },
+          { prompt: "6 + 1 = ___", options: ["6", "7", "8"] },
+          { prompt: "4 + 2 = ___", options: ["5", "6", "7"] },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Take Away (Up to 7)",
+        instruction: "Circle the correct answer.",
+        questions: [
+          { prompt: "6 butterflies, take away 2 = ___", options: ["3", "4", "5"] },
+          { prompt: "7 stars, take away 3 = ___", options: ["3", "4", "5"] },
+          { prompt: "5 apples, take away 4 = ___", options: ["1", "2", "3"] },
+          { prompt: "7 diamonds, take away 1 = ___", options: ["5", "6", "7"] },
+        ],
+      },
+      {
+        type: "count-objects",
+        title: "Cross Out and Count — Hearts",
+        instruction: "There are 7 hearts. Cross out 3. How many are left?",
+        rows: [
+          { object: "heart", count: 7 },
+        ],
+      },
+      {
+        type: "number-bonds",
+        title: "Adding Bonds to 7",
+        instruction: "Fill in the missing number.",
+        bonds: [
+          { total: 6, partA: 3, partB: null },
+          { total: 7, partA: 4, partB: null },
+          { total: 6, partA: null, partB: 5 },
+          { total: 7, partA: null, partB: 2 },
+        ],
+      },
+      {
+        type: "matching",
+        title: "Match the Subtraction",
+        instruction: "Draw a line to match each subtraction to its answer.",
+        leftItems: [
+          { label: "5 − 2", objects: [] },
+          { label: "6 − 3", objects: [] },
+          { label: "7 − 6", objects: [] },
+          { label: "7 − 4", objects: [] },
+        ],
+        rightItems: [
+          { label: "3", objects: Array(3).fill("heart") },
+          { label: "1", objects: Array(1).fill("heart") },
+          { label: "3", objects: Array(3).fill("heart") },
+          { label: "3", objects: Array(3).fill("heart") },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Share Between 2",
+        instruction: "Share these equally between 2 friends. How many does each friend get?",
+        questions: [
+          { prompt: "4 apples shared between 2 = ___", options: ["1", "2", "3"] },
+          { prompt: "6 stars shared between 2 = ___", options: ["2", "3", "4"] },
+          { prompt: "2 fish shared between 2 = ___", options: ["1", "2", "3"] },
+        ],
+      },
+
+      // --- HARDER: Adding and subtracting to 10 ---
+      {
+        type: "count-objects",
+        title: "Picture Addition — Butterflies",
+        instruction: "Count both groups. How many butterflies altogether?",
+        groups: [
+          { objects: Array(6).fill("butterfly"), label: "Group A" },
+          { objects: Array(4).fill("butterfly"), label: "Group B" },
+        ],
+      },
+      {
+        type: "count-objects",
+        title: "Picture Addition — Flowers",
+        instruction: "Put both groups of flowers together. Write the total.",
+        groups: [
+          { objects: Array(5).fill("flower"), label: "Group A" },
+          { objects: Array(5).fill("flower"), label: "Group B" },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Add Up to 10",
+        instruction: "Circle the correct answer.",
+        questions: [
+          { prompt: "6 + 4 = ___", options: ["9", "10", "11"] },
+          { prompt: "8 + 2 = ___", options: ["9", "10", "11"] },
+          { prompt: "7 + 3 = ___", options: ["9", "10", "11"] },
+          { prompt: "5 + 4 = ___", options: ["8", "9", "10"] },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Take Away (Up to 10)",
+        instruction: "Circle the correct answer.",
+        questions: [
+          { prompt: "8 stars, take away 3 = ___", options: ["4", "5", "6"] },
+          { prompt: "10 apples, take away 4 = ___", options: ["5", "6", "7"] },
+          { prompt: "9 hearts, take away 5 = ___", options: ["3", "4", "5"] },
+          { prompt: "10 fish, take away 7 = ___", options: ["2", "3", "4"] },
+        ],
+      },
+      {
+        type: "count-objects",
+        title: "Cross Out and Count — Stars",
+        instruction: "There are 9 stars. Cross out 4. How many are left?",
+        rows: [
+          { object: "star", count: 9 },
+        ],
+      },
+      {
+        type: "number-bonds",
+        title: "Adding and Subtracting Bonds to 10",
+        instruction: "Fill in the missing number.",
+        bonds: [
+          { total: 9, partA: 5, partB: null },
+          { total: 10, partA: null, partB: 3 },
+          { total: 8, partA: 6, partB: null },
+          { total: 10, partA: null, partB: 8 },
+          { total: 9, partA: null, partB: 6 },
+        ],
+      },
+      {
+        type: "matching",
+        title: "Match Additions to 10",
+        instruction: "Draw a line to match each addition to its answer.",
+        leftItems: [
+          { label: "6 + 3", objects: [] },
+          { label: "5 + 5", objects: [] },
+          { label: "7 + 1", objects: [] },
+        ],
+        rightItems: [
+          { label: "10", objects: Array(10).fill("star") },
+          { label: "8", objects: Array(8).fill("star") },
+          { label: "9", objects: Array(9).fill("star") },
+        ],
+      },
+
+      // --- CHALLENGE: Sharing equally, mixed problems ---
+      {
+        type: "circle-correct",
+        title: "Equal Sharing",
+        instruction: "Share these equally between 2 friends. How many does each friend get?",
+        questions: [
+          { prompt: "8 diamonds shared between 2 = ___", options: ["3", "4", "5"] },
+          { prompt: "10 flowers shared between 2 = ___", options: ["4", "5", "6"] },
+          { prompt: "6 butterflies shared between 2 = ___", options: ["2", "3", "4"] },
+          { prompt: "10 stars shared between 2 = ___", options: ["4", "5", "6"] },
+        ],
+      },
+      {
+        type: "number-bonds",
+        title: "Equal Sharing Bonds",
+        instruction: "Share equally into 2 groups. Fill in the missing numbers.",
+        bonds: [
+          { total: 4, partA: null, partB: null },
           { total: 6, partA: null, partB: null },
           { total: 8, partA: null, partB: null },
           { total: 10, partA: null, partB: null },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Add or Take Away?",
+        instruction: "Read each story. Circle the correct answer.",
+        questions: [
+          { prompt: "Sam has 3 apples. Mum gives him 4 more. How many now?", options: ["6", "7", "8"] },
+          { prompt: "Lily has 8 stars. She gives 3 to her friend. How many left?", options: ["4", "5", "6"] },
+          { prompt: "There are 5 fish. 5 more swim over. How many now?", options: ["8", "9", "10"] },
+          { prompt: "There are 9 flowers. 6 blow away. How many left?", options: ["2", "3", "4"] },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Mixed Challenge",
+        instruction: "Circle the correct answer for each problem.",
+        questions: [
+          { prompt: "4 + 5 = ___", options: ["8", "9", "10"] },
+          { prompt: "10 − 6 = ___", options: ["3", "4", "5"] },
+          { prompt: "7 + 3 = ___", options: ["9", "10", "11"] },
+          { prompt: "9 − 4 = ___", options: ["4", "5", "6"] },
+        ],
+      },
+      {
+        type: "count-objects",
+        title: "Share 10 Apples Equally",
+        instruction: "Share 10 apples equally into 2 baskets. Draw them and write how many in each.",
+        groups: [
+          { objects: Array(5).fill("apple"), label: "Basket A" },
+          { objects: Array(5).fill("apple"), label: "Basket B" },
+        ],
+      },
+      {
+        type: "matching",
+        title: "Story Problems Match",
+        instruction: "Draw a line to match each story to the correct number sentence.",
+        leftItems: [
+          { label: "3 + 2", objects: [] },
+          { label: "8 − 5", objects: [] },
+          { label: "6 + 4", objects: [] },
+          { label: "10 − 3", objects: [] },
+        ],
+        rightItems: [
+          { label: "7", objects: Array(7).fill("flower") },
+          { label: "5", objects: Array(5).fill("flower") },
+          { label: "3", objects: Array(3).fill("flower") },
+          { label: "10", objects: Array(10).fill("flower") },
         ],
       },
     ],
@@ -1310,32 +1603,261 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
     strand: "Algebra",
     description: "Copy and continue repeating patterns",
     activities: [
+      // --- EASY: AB patterns (unit length 2) ---
       {
         type: "pattern",
-        title: "Continue the Pattern",
+        title: "Continue the Star-Heart Pattern",
         instruction: "Look at the pattern. Draw what comes next in the empty boxes.",
         rows: [
-          { sequence: ["star", "heart", "star", "heart", "star", null, null], unitLength: 2 },
-          { sequence: ["apple", "apple", "fish", "apple", "apple", null, null], unitLength: 3 },
-          { sequence: ["circle", "square", "triangle", "circle", "square", null, null], unitLength: 3 },
+          { sequence: ["star", "heart", "star", "heart", null, null], unitLength: 2 },
+        ],
+      },
+      {
+        type: "pattern",
+        title: "Continue the Apple-Fish Pattern",
+        instruction: "What comes next? Draw the objects in the empty boxes.",
+        rows: [
+          { sequence: ["apple", "fish", "apple", "fish", null, null], unitLength: 2 },
+        ],
+      },
+      {
+        type: "pattern",
+        title: "Continue the Flower-Butterfly Pattern",
+        instruction: "Keep the pattern going! Fill in the empty boxes.",
+        rows: [
+          { sequence: ["flower", "butterfly", "flower", "butterfly", null, null], unitLength: 2 },
         ],
       },
       {
         type: "circle-correct",
-        title: "Find the Repeating Unit",
-        instruction: "What part of the pattern repeats? Circle the answer.",
+        title: "What Comes Next? (AB Patterns)",
+        instruction: "Circle what comes next in each pattern.",
         questions: [
-          { prompt: "🔴🔵🔴🔵🔴🔵 — the repeating unit is:", options: ["🔴🔵", "🔴🔵🔴", "🔴"] },
-          { prompt: "⭐🌙⭐🌙⭐🌙 — the repeating unit is:", options: ["⭐", "⭐🌙", "🌙⭐🌙"] },
-          { prompt: "🟢🟢🔴🟢🟢🔴 — the repeating unit is:", options: ["🟢🔴", "🟢🟢🔴", "🟢"] },
+          { prompt: "Star, Heart, Star, Heart, Star, ___", options: ["Star", "Heart"] },
+          { prompt: "Apple, Fish, Apple, Fish, ___", options: ["Apple", "Fish"] },
+          { prompt: "Diamond, Flower, Diamond, Flower, ___", options: ["Diamond", "Flower"] },
         ],
       },
       {
         type: "pattern",
-        title: "Create Your Own Pattern",
-        instruction: "Create a pattern using these shapes. Draw it in the boxes.",
+        title: "Copy the Pattern",
+        instruction: "Look at the pattern on top. Copy it exactly in the empty boxes below.",
         rows: [
-          { sequence: [null, null, null, null, null, null, null], unitLength: 2 },
+          { sequence: ["star", "diamond", "star", "diamond", null, null, null, null], unitLength: 2 },
+        ],
+      },
+      {
+        type: "matching",
+        title: "Match the Pattern to What Comes Next",
+        instruction: "Draw a line to match each pattern to the object that comes next.",
+        leftItems: [
+          { label: "Star, Heart, Star, Heart, ___", objects: ["star", "heart", "star", "heart"] },
+          { label: "Fish, Apple, Fish, Apple, ___", objects: ["fish", "apple", "fish", "apple"] },
+          { label: "Flower, Diamond, Flower, Diamond, ___", objects: ["flower", "diamond", "flower", "diamond"] },
+        ],
+        rightItems: [
+          { label: "Fish", objects: ["fish"] },
+          { label: "Star", objects: ["star"] },
+          { label: "Flower", objects: ["flower"] },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Which Is the Repeating Part?",
+        instruction: "Circle the part that repeats over and over.",
+        questions: [
+          { prompt: "Star, Heart, Star, Heart — what repeats?", options: ["Star, Heart", "Star, Star", "Heart"] },
+          { prompt: "Apple, Fish, Apple, Fish — what repeats?", options: ["Apple", "Apple, Fish", "Fish, Apple, Fish"] },
+        ],
+      },
+      {
+        type: "pattern",
+        title: "Two AB Patterns",
+        instruction: "Continue both patterns. Fill in the empty boxes.",
+        rows: [
+          { sequence: ["heart", "star", "heart", "star", null, null], unitLength: 2 },
+          { sequence: ["circle", "triangle", "circle", "triangle", null, null], unitLength: 2 },
+        ],
+      },
+
+      // --- MEDIUM: AAB and ABB patterns (unit length 3) ---
+      {
+        type: "pattern",
+        title: "Star-Star-Heart Pattern",
+        instruction: "This pattern has two stars then one heart. Continue the pattern.",
+        rows: [
+          { sequence: ["star", "star", "heart", "star", "star", null, null, null], unitLength: 3 },
+        ],
+      },
+      {
+        type: "pattern",
+        title: "Apple-Apple-Fish Pattern",
+        instruction: "Continue the pattern. Fill in the empty boxes.",
+        rows: [
+          { sequence: ["apple", "apple", "fish", "apple", "apple", null, null, null], unitLength: 3 },
+        ],
+      },
+      {
+        type: "pattern",
+        title: "Flower-Butterfly-Butterfly Pattern",
+        instruction: "What comes next? Fill in the empty boxes.",
+        rows: [
+          { sequence: ["flower", "butterfly", "butterfly", "flower", "butterfly", null, null, null], unitLength: 3 },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "What Comes Next? (Longer Patterns)",
+        instruction: "Circle what comes next in each pattern.",
+        questions: [
+          { prompt: "Star, Star, Heart, Star, Star, ___", options: ["Star", "Heart"] },
+          { prompt: "Apple, Fish, Fish, Apple, Fish, ___", options: ["Apple", "Fish"] },
+          { prompt: "Diamond, Diamond, Flower, Diamond, Diamond, ___", options: ["Diamond", "Flower"] },
+        ],
+      },
+      {
+        type: "pattern",
+        title: "Two Longer Patterns",
+        instruction: "Continue both patterns.",
+        rows: [
+          { sequence: ["heart", "heart", "diamond", "heart", "heart", null, null, null], unitLength: 3 },
+          { sequence: ["fish", "star", "star", "fish", "star", null, null, null], unitLength: 3 },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Find the Repeating Unit (Longer)",
+        instruction: "Circle the part that repeats.",
+        questions: [
+          { prompt: "Star, Star, Heart, Star, Star, Heart — what repeats?", options: ["Star, Heart", "Star, Star, Heart", "Star, Star"] },
+          { prompt: "Apple, Fish, Fish, Apple, Fish, Fish — what repeats?", options: ["Apple, Fish, Fish", "Apple, Fish", "Fish, Fish"] },
+          { prompt: "Heart, Heart, Star, Heart, Heart, Star — what repeats?", options: ["Heart, Star", "Heart, Heart, Star", "Heart, Heart"] },
+        ],
+      },
+      {
+        type: "matching",
+        title: "Match Patterns to Their Repeating Unit",
+        instruction: "Draw a line to match each pattern to the part that repeats.",
+        leftItems: [
+          { label: "Star, Star, Heart, Star, Star, Heart", objects: ["star", "star", "heart"] },
+          { label: "Fish, Apple, Fish, Apple", objects: ["fish", "apple"] },
+          { label: "Diamond, Flower, Flower, Diamond, Flower, Flower", objects: ["diamond", "flower", "flower"] },
+        ],
+        rightItems: [
+          { label: "Fish, Apple", objects: ["fish", "apple"] },
+          { label: "Star, Star, Heart", objects: ["star", "star", "heart"] },
+          { label: "Diamond, Flower, Flower", objects: ["diamond", "flower", "flower"] },
+        ],
+      },
+
+      // --- HARDER: ABC patterns (unit length 3) and spotting errors ---
+      {
+        type: "pattern",
+        title: "Three-Object Pattern",
+        instruction: "This pattern uses three different objects. Continue the pattern.",
+        rows: [
+          { sequence: ["star", "heart", "apple", "star", "heart", null, null, null], unitLength: 3 },
+        ],
+      },
+      {
+        type: "pattern",
+        title: "Shape Pattern",
+        instruction: "Continue the shape pattern. Fill in the empty boxes.",
+        rows: [
+          { sequence: ["circle", "square", "triangle", "circle", "square", null, null, null], unitLength: 3 },
+        ],
+      },
+      {
+        type: "pattern",
+        title: "Fish-Flower-Diamond Pattern",
+        instruction: "Keep the pattern going!",
+        rows: [
+          { sequence: ["fish", "flower", "diamond", "fish", "flower", null, null, null], unitLength: 3 },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "What Comes Next? (ABC Patterns)",
+        instruction: "Circle what comes next.",
+        questions: [
+          { prompt: "Star, Heart, Apple, Star, Heart, ___", options: ["Star", "Heart", "Apple"] },
+          { prompt: "Circle, Square, Triangle, Circle, ___", options: ["Circle", "Square", "Triangle"] },
+          { prompt: "Fish, Flower, Diamond, Fish, Flower, Diamond, Fish, ___", options: ["Fish", "Flower", "Diamond"] },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Spot the Mistake!",
+        instruction: "One of these patterns has a mistake. Circle which one is WRONG.",
+        questions: [
+          { prompt: "Star, Heart, Star, Heart, Star, Star — is this correct?", options: ["Yes", "No — the last one should be Heart"] },
+          { prompt: "Apple, Apple, Fish, Apple, Fish, Fish — is this correct?", options: ["Yes", "No — it should be Apple, Apple, Fish"] },
+          { prompt: "Circle, Square, Circle, Square, Circle, Square — is this correct?", options: ["Yes, it is correct", "No, it has a mistake"] },
+        ],
+      },
+      {
+        type: "pattern",
+        title: "Two ABC Patterns",
+        instruction: "Continue both patterns.",
+        rows: [
+          { sequence: ["butterfly", "star", "heart", "butterfly", "star", null, null, null], unitLength: 3 },
+          { sequence: ["apple", "diamond", "flower", "apple", "diamond", null, null, null], unitLength: 3 },
+        ],
+      },
+
+      // --- CHALLENGE: Create patterns, mixed, longer sequences ---
+      {
+        type: "pattern",
+        title: "Create an AB Pattern",
+        instruction: "Choose two objects and create your own AB pattern. Draw it in the boxes.",
+        rows: [
+          { sequence: [null, null, null, null, null, null], unitLength: 2 },
+        ],
+      },
+      {
+        type: "pattern",
+        title: "Create an AAB Pattern",
+        instruction: "Choose objects and create an AAB pattern (two same, one different). Draw it.",
+        rows: [
+          { sequence: [null, null, null, null, null, null], unitLength: 3 },
+        ],
+      },
+      {
+        type: "pattern",
+        title: "Create an ABC Pattern",
+        instruction: "Use three different objects to create an ABC pattern.",
+        rows: [
+          { sequence: [null, null, null, null, null, null], unitLength: 3 },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Pattern Detective",
+        instruction: "Look at each pattern. Circle what the repeating unit is.",
+        questions: [
+          { prompt: "Heart, Star, Star, Heart, Star, Star — the unit is:", options: ["Heart, Star", "Heart, Star, Star", "Star, Star"] },
+          { prompt: "Fish, Fish, Fish, Apple, Fish, Fish, Fish, Apple — the unit is:", options: ["Fish, Apple", "Fish, Fish, Fish, Apple", "Fish, Fish, Fish"] },
+          { prompt: "Flower, Diamond, Flower, Diamond — the unit is:", options: ["Flower, Diamond", "Flower", "Diamond, Flower, Diamond"] },
+        ],
+      },
+      {
+        type: "pattern",
+        title: "Long Pattern Challenge",
+        instruction: "Continue each pattern to fill all the boxes.",
+        rows: [
+          { sequence: ["star", "heart", "star", "heart", null, null, null, null], unitLength: 2 },
+          { sequence: ["apple", "apple", "fish", "apple", "apple", null, null, null, null], unitLength: 3 },
+          { sequence: ["circle", "square", "triangle", "circle", null, null, null, null, null], unitLength: 3 },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Mixed Pattern Quiz",
+        instruction: "Answer each question about patterns.",
+        questions: [
+          { prompt: "How many objects are in the repeating unit of: Star, Heart, Star, Heart?", options: ["1", "2", "3"] },
+          { prompt: "How many objects are in the repeating unit of: Apple, Apple, Fish, Apple, Apple, Fish?", options: ["2", "3", "4"] },
+          { prompt: "If the pattern is Star, Heart, Apple and it repeats 4 times, how many objects total?", options: ["9", "12", "15"] },
         ],
       },
     ],
@@ -1348,20 +1870,43 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
     strand: "Measurement",
     description: "Identify the attributes of mass, capacity, length and duration",
     activities: [
+      // --- EASY: Introducing mass (heavy/light) ---
       {
         type: "sorting",
         title: "Heavy or Light?",
-        instruction: "Sort each item into the correct column.",
+        instruction: "Sort each item into the correct column. Is it heavy or light?",
         columns: ["Heavy", "Light"],
         items: [
           { label: "Feather" },
           { label: "Car" },
-          { label: "Book" },
           { label: "Leaf" },
-          { label: "Table" },
-          { label: "Pencil" },
+          { label: "Elephant" },
+          { label: "Butterfly" },
+          { label: "Rock" },
         ],
       },
+      {
+        type: "circle-correct",
+        title: "Which Is Heavier?",
+        instruction: "Circle the heavier item.",
+        questions: [
+          { prompt: "A cat or a mouse?", options: ["Cat", "Mouse"] },
+          { prompt: "A book or a feather?", options: ["Book", "Feather"] },
+          { prompt: "A bike or a truck?", options: ["Bike", "Truck"] },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Which Is Lighter?",
+        instruction: "Circle the lighter item.",
+        questions: [
+          { prompt: "A brick or a balloon?", options: ["Brick", "Balloon"] },
+          { prompt: "A dog or an ant?", options: ["Dog", "Ant"] },
+          { prompt: "A pillow or a table?", options: ["Pillow", "Table"] },
+        ],
+      },
+
+      // --- EASY: Introducing capacity (full/empty) ---
       {
         type: "sorting",
         title: "Full or Empty?",
@@ -1369,19 +1914,296 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         columns: ["Full", "Empty"],
         items: [
           { label: "Glass of water" },
-          { label: "Empty box" },
-          { label: "Bucket of sand" },
           { label: "Empty cup" },
+          { label: "Bucket of sand" },
+          { label: "Empty lunchbox" },
+          { label: "Full bathtub" },
+          { label: "Empty bottle" },
         ],
       },
+      {
+        type: "circle-correct",
+        title: "Which Holds More?",
+        instruction: "Circle the container that holds MORE.",
+        questions: [
+          { prompt: "A cup or a bucket?", options: ["Cup", "Bucket"] },
+          { prompt: "A spoon or a bowl?", options: ["Spoon", "Bowl"] },
+          { prompt: "A swimming pool or a bathtub?", options: ["Swimming pool", "Bathtub"] },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Which Holds Less?",
+        instruction: "Circle the container that holds LESS.",
+        questions: [
+          { prompt: "A teacup or a jug?", options: ["Teacup", "Jug"] },
+          { prompt: "An egg cup or a mug?", options: ["Egg cup", "Mug"] },
+          { prompt: "A thimble or a glass?", options: ["Thimble", "Glass"] },
+        ],
+      },
+
+      // --- EASY: Introducing length (long/short) ---
       {
         type: "circle-correct",
         title: "Long or Short?",
         instruction: "Circle the correct answer.",
         questions: [
-          { prompt: "A bus is ___", options: ["long", "short"] },
-          { prompt: "A pencil is ___", options: ["long", "short"] },
-          { prompt: "A train is ___", options: ["long", "short"] },
+          { prompt: "A bus is ___", options: ["Long", "Short"] },
+          { prompt: "A pencil is ___", options: ["Long", "Short"] },
+          { prompt: "A train is ___", options: ["Long", "Short"] },
+          { prompt: "An ant is ___", options: ["Long", "Short"] },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Which Is Longer?",
+        instruction: "Circle the longer item.",
+        questions: [
+          { prompt: "A snake or a worm?", options: ["Snake", "Worm"] },
+          { prompt: "A ruler or a rubber?", options: ["Ruler", "Rubber"] },
+          { prompt: "A scarf or a sock?", options: ["Scarf", "Sock"] },
+        ],
+      },
+
+      // --- MEDIUM: Introducing duration (quick/slow, long time/short time) ---
+      {
+        type: "circle-correct",
+        title: "Quick or Slow?",
+        instruction: "Circle whether each thing takes a long time or a short time.",
+        questions: [
+          { prompt: "Clapping your hands takes a ___", options: ["Long time", "Short time"] },
+          { prompt: "Growing a tree takes a ___", options: ["Long time", "Short time"] },
+          { prompt: "Blinking your eyes takes a ___", options: ["Long time", "Short time"] },
+          { prompt: "Baking a cake takes a ___", options: ["Long time", "Short time"] },
+        ],
+      },
+      {
+        type: "sorting",
+        title: "Quick or Takes a Long Time?",
+        instruction: "Sort each activity into the correct column.",
+        columns: ["Quick", "Takes a Long Time"],
+        items: [
+          { label: "Sneezing" },
+          { label: "Reading a book" },
+          { label: "Jumping once" },
+          { label: "Building a sandcastle" },
+          { label: "Waving hello" },
+          { label: "Cooking dinner" },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Which Takes Longer?",
+        instruction: "Circle the activity that takes LONGER.",
+        questions: [
+          { prompt: "Eating lunch or eating one chip?", options: ["Eating lunch", "Eating one chip"] },
+          { prompt: "Walking to school or tying your shoe?", options: ["Walking to school", "Tying your shoe"] },
+          { prompt: "Brushing your teeth or having a bath?", options: ["Brushing teeth", "Having a bath"] },
+        ],
+      },
+
+      // --- MEDIUM: Comparing mass ---
+      {
+        type: "sorting",
+        title: "Sort by Mass: Heavy, Medium, Light",
+        instruction: "Sort each item into the correct column.",
+        columns: ["Heavy", "Medium", "Light"],
+        items: [
+          { label: "Horse" },
+          { label: "Apple" },
+          { label: "Coin" },
+          { label: "Chair" },
+          { label: "Pencil" },
+          { label: "Washing machine" },
+        ],
+      },
+      {
+        type: "sequence",
+        title: "Order by Mass",
+        instruction: "Put these in order from lightest to heaviest. Write 1, 2, 3.",
+        items: [
+          { label: "Elephant" },
+          { label: "Cat" },
+          { label: "Mouse" },
+        ],
+      },
+
+      // --- MEDIUM: Comparing capacity ---
+      {
+        type: "sorting",
+        title: "Holds a Lot or Holds a Little?",
+        instruction: "Sort each container.",
+        columns: ["Holds a Lot", "Holds a Little"],
+        items: [
+          { label: "Swimming pool" },
+          { label: "Teaspoon" },
+          { label: "Fish tank" },
+          { label: "Egg cup" },
+          { label: "Washing machine" },
+          { label: "Thimble" },
+        ],
+      },
+      {
+        type: "sequence",
+        title: "Order by How Much They Hold",
+        instruction: "Put these in order from holds the least to holds the most. Write 1, 2, 3.",
+        items: [
+          { label: "Bucket" },
+          { label: "Cup" },
+          { label: "Spoon" },
+        ],
+      },
+
+      // --- MEDIUM: Comparing length ---
+      {
+        type: "sorting",
+        title: "Tall or Short?",
+        instruction: "Sort each thing into the correct column.",
+        columns: ["Tall", "Short"],
+        items: [
+          { label: "Giraffe" },
+          { label: "Mouse" },
+          { label: "Tree" },
+          { label: "Flower" },
+          { label: "Building" },
+          { label: "Cup" },
+        ],
+      },
+      {
+        type: "sequence",
+        title: "Order by Height",
+        instruction: "Put these in order from shortest to tallest. Write 1, 2, 3.",
+        items: [
+          { label: "Ant" },
+          { label: "Child" },
+          { label: "House" },
+        ],
+      },
+
+      // --- HARDER: Mixed measurement ---
+      {
+        type: "circle-correct",
+        title: "What Are We Measuring?",
+        instruction: "Circle what kind of measurement each question is about.",
+        questions: [
+          { prompt: "How heavy is the bag?", options: ["Mass", "Length", "Capacity"] },
+          { prompt: "How tall is the tree?", options: ["Mass", "Length", "Capacity"] },
+          { prompt: "How much water fits in the jug?", options: ["Mass", "Length", "Capacity"] },
+          { prompt: "How long does it take to walk to school?", options: ["Mass", "Duration", "Length"] },
+        ],
+      },
+      {
+        type: "matching",
+        title: "Match the Measurement Word",
+        instruction: "Draw a line to match each question to the right measurement word.",
+        leftItems: [
+          { label: "How heavy?", objects: [] },
+          { label: "How long?", objects: [] },
+          { label: "How much does it hold?", objects: [] },
+          { label: "How much time?", objects: [] },
+        ],
+        rightItems: [
+          { label: "Duration", objects: [] },
+          { label: "Capacity", objects: [] },
+          { label: "Mass", objects: [] },
+          { label: "Length", objects: [] },
+        ],
+      },
+      {
+        type: "sorting",
+        title: "Sort the Words",
+        instruction: "Sort each word into the measurement type it describes.",
+        columns: ["Mass", "Length", "Capacity"],
+        items: [
+          { label: "Heavy" },
+          { label: "Tall" },
+          { label: "Full" },
+          { label: "Light" },
+          { label: "Short" },
+          { label: "Empty" },
+        ],
+      },
+
+      // --- HARDER: Ordering three items ---
+      {
+        type: "sequence",
+        title: "Heaviest to Lightest",
+        instruction: "Put these in order from heaviest to lightest. Write 1, 2, 3.",
+        items: [
+          { label: "Feather" },
+          { label: "Brick" },
+          { label: "Apple" },
+        ],
+      },
+      {
+        type: "sequence",
+        title: "Longest to Shortest",
+        instruction: "Put these in order from longest to shortest. Write 1, 2, 3.",
+        items: [
+          { label: "Pencil" },
+          { label: "Bus" },
+          { label: "Your finger" },
+        ],
+      },
+      {
+        type: "sequence",
+        title: "Takes the Longest to the Quickest",
+        instruction: "Put these in order from takes the longest to the quickest. Write 1, 2, 3.",
+        items: [
+          { label: "Clapping once" },
+          { label: "Eating dinner" },
+          { label: "Sleeping all night" },
+        ],
+      },
+
+      // --- CHALLENGE: Real-world reasoning ---
+      {
+        type: "circle-correct",
+        title: "Measurement Thinking",
+        instruction: "Circle the best answer.",
+        questions: [
+          { prompt: "To find out how heavy a watermelon is, I would use a ___", options: ["Ruler", "Scales", "Cup"] },
+          { prompt: "To find out how long a table is, I would use a ___", options: ["Ruler", "Scales", "Clock"] },
+          { prompt: "To find out how much a bottle holds, I would ___", options: ["Weigh it", "Fill it with water", "Measure it with a ruler"] },
+          { prompt: "To find out how long it takes to run, I would use a ___", options: ["Ruler", "Scales", "Clock"] },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "True or False?",
+        instruction: "Circle True or False for each statement.",
+        questions: [
+          { prompt: "A feather is heavier than a horse.", options: ["True", "False"] },
+          { prompt: "A bucket holds more water than a cup.", options: ["True", "False"] },
+          { prompt: "A pencil is longer than a train.", options: ["True", "False"] },
+          { prompt: "Brushing your teeth takes longer than sleeping all night.", options: ["True", "False"] },
+        ],
+      },
+      {
+        type: "sorting",
+        title: "Big Measurement Sort",
+        instruction: "Sort each item into the correct column.",
+        columns: ["Heavy", "Light", "Long", "Short"],
+        items: [
+          { label: "Elephant" },
+          { label: "Ant" },
+          { label: "River" },
+          { label: "Coin" },
+          { label: "Train" },
+          { label: "Marble" },
+          { label: "Feather" },
+          { label: "Highway" },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Mixed Measurement Challenge",
+        instruction: "Circle the correct answer.",
+        questions: [
+          { prompt: "Which is heavier: a bag of flour or a bag of feathers the same size?", options: ["Flour", "Feathers", "They weigh the same"] },
+          { prompt: "Which holds more: a bath or a sink?", options: ["Bath", "Sink"] },
+          { prompt: "Which takes longer: a TV show or a movie?", options: ["TV show", "Movie"] },
+          { prompt: "Which is taller: a door or a window?", options: ["Door", "Window"] },
         ],
       },
     ],
@@ -1394,35 +2216,309 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
     strand: "Measurement",
     description: "Use direct comparison to compare objects and events",
     activities: [
+      // --- EASY: Comparing length (longer/shorter) ---
       {
         type: "circle-correct",
-        title: "Longer or Shorter?",
-        instruction: "Circle the correct answer for each pair.",
+        title: "Which Is Longer?",
+        instruction: "Circle the LONGER item in each pair.",
         questions: [
-          { prompt: "A ruler or a paperclip — which is LONGER?", options: ["ruler", "paperclip"] },
-          { prompt: "A crayon or a bus — which is SHORTER?", options: ["crayon", "bus"] },
-          { prompt: "Your arm or your finger — which is LONGER?", options: ["arm", "finger"] },
+          { prompt: "A pencil or a crayon?", options: ["Pencil", "Crayon"] },
+          { prompt: "A shoe or a sock?", options: ["Shoe", "Sock"] },
+          { prompt: "Your arm or your hand?", options: ["Arm", "Hand"] },
         ],
       },
       {
         type: "circle-correct",
-        title: "Heavier or Lighter?",
-        instruction: "Circle the HEAVIER item in each pair.",
+        title: "Which Is Shorter?",
+        instruction: "Circle the SHORTER item in each pair.",
         questions: [
-          { prompt: "A watermelon or a grape?", options: ["watermelon", "grape"] },
-          { prompt: "A brick or a sponge?", options: ["brick", "sponge"] },
-          { prompt: "A dog or an ant?", options: ["dog", "ant"] },
+          { prompt: "A bus or a car?", options: ["Bus", "Car"] },
+          { prompt: "A worm or a snake?", options: ["Worm", "Snake"] },
+          { prompt: "A spoon or a broom?", options: ["Spoon", "Broom"] },
         ],
       },
       {
         type: "sorting",
-        title: "Sort by Size",
+        title: "Long or Short?",
+        instruction: "Sort each item into the correct column.",
+        columns: ["Long", "Short"],
+        items: [
+          { label: "Train" },
+          { label: "Button" },
+          { label: "River" },
+          { label: "Ladybug" },
+          { label: "Skipping rope" },
+          { label: "Paper clip" },
+        ],
+      },
+
+      // --- EASY: Comparing height (taller/shorter) ---
+      {
+        type: "circle-correct",
+        title: "Which Is Taller?",
+        instruction: "Circle the TALLER one.",
+        questions: [
+          { prompt: "A tree or a flower?", options: ["Tree", "Flower"] },
+          { prompt: "A giraffe or a dog?", options: ["Giraffe", "Dog"] },
+          { prompt: "A house or a kennel?", options: ["House", "Kennel"] },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Which Is Shorter (Height)?",
+        instruction: "Circle the one that is NOT as tall.",
+        questions: [
+          { prompt: "A cat or a horse?", options: ["Cat", "Horse"] },
+          { prompt: "A cup or a bottle?", options: ["Cup", "Bottle"] },
+          { prompt: "A child or a dad?", options: ["Child", "Dad"] },
+        ],
+      },
+
+      // --- EASY: Comparing mass (heavier/lighter) ---
+      {
+        type: "circle-correct",
+        title: "Which Is Heavier?",
+        instruction: "Circle the HEAVIER item in each pair.",
+        questions: [
+          { prompt: "A watermelon or a grape?", options: ["Watermelon", "Grape"] },
+          { prompt: "A brick or a sponge?", options: ["Brick", "Sponge"] },
+          { prompt: "A dog or an ant?", options: ["Dog", "Ant"] },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Which Is Lighter?",
+        instruction: "Circle the LIGHTER item in each pair.",
+        questions: [
+          { prompt: "A balloon or a bowling ball?", options: ["Balloon", "Bowling ball"] },
+          { prompt: "A leaf or a book?", options: ["Leaf", "Book"] },
+          { prompt: "A feather or an egg?", options: ["Feather", "Egg"] },
+        ],
+      },
+      {
+        type: "sorting",
+        title: "Heavy or Light?",
+        instruction: "Sort each item into the correct column.",
+        columns: ["Heavy", "Light"],
+        items: [
+          { label: "Bag of rice" },
+          { label: "Cotton ball" },
+          { label: "Rock" },
+          { label: "Tissue" },
+          { label: "Backpack full of books" },
+          { label: "Petal" },
+        ],
+      },
+
+      // --- MEDIUM: Comparing capacity (holds more/less) ---
+      {
+        type: "circle-correct",
+        title: "Which Holds More?",
+        instruction: "Circle the container that HOLDS MORE.",
+        questions: [
+          { prompt: "A bucket or a cup?", options: ["Bucket", "Cup"] },
+          { prompt: "A bath or a sink?", options: ["Bath", "Sink"] },
+          { prompt: "A swimming pool or a paddling pool?", options: ["Swimming pool", "Paddling pool"] },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Which Holds Less?",
+        instruction: "Circle the container that HOLDS LESS.",
+        questions: [
+          { prompt: "A mug or a jug?", options: ["Mug", "Jug"] },
+          { prompt: "A teaspoon or a bowl?", options: ["Teaspoon", "Bowl"] },
+          { prompt: "A thimble or a glass?", options: ["Thimble", "Glass"] },
+        ],
+      },
+
+      // --- MEDIUM: Comparing duration ---
+      {
+        type: "circle-correct",
+        title: "Which Takes Longer?",
+        instruction: "Circle the activity that takes LONGER.",
+        questions: [
+          { prompt: "Brushing your teeth or having a shower?", options: ["Brushing teeth", "Having a shower"] },
+          { prompt: "Blinking or reading a book?", options: ["Blinking", "Reading a book"] },
+          { prompt: "Eating one biscuit or cooking a meal?", options: ["Eating one biscuit", "Cooking a meal"] },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Which Is Quicker?",
+        instruction: "Circle the activity that is QUICKER.",
+        questions: [
+          { prompt: "Clapping once or singing a song?", options: ["Clapping once", "Singing a song"] },
+          { prompt: "Jumping once or running a race?", options: ["Jumping once", "Running a race"] },
+          { prompt: "Sneezing or watching a movie?", options: ["Sneezing", "Watching a movie"] },
+        ],
+      },
+
+      // --- MEDIUM: Ordering by direct comparison ---
+      {
+        type: "sequence",
+        title: "Order by Length: Shortest to Longest",
+        instruction: "Put these in order from shortest to longest. Write 1, 2, 3.",
+        items: [
+          { label: "Caterpillar" },
+          { label: "Snake" },
+          { label: "Worm" },
+        ],
+      },
+      {
+        type: "sequence",
+        title: "Order by Height: Shortest to Tallest",
+        instruction: "Put these in order from shortest to tallest. Write 1, 2, 3.",
+        items: [
+          { label: "Sunflower" },
+          { label: "Grass" },
+          { label: "Tree" },
+        ],
+      },
+      {
+        type: "sequence",
+        title: "Order by Mass: Lightest to Heaviest",
+        instruction: "Put these in order from lightest to heaviest. Write 1, 2, 3.",
+        items: [
+          { label: "Coin" },
+          { label: "Bag of potatoes" },
+          { label: "Apple" },
+        ],
+      },
+
+      // --- HARDER: Mixed comparisons ---
+      {
+        type: "matching",
+        title: "Match the Comparison",
+        instruction: "Draw a line to match each pair to the correct comparison word.",
+        leftItems: [
+          { label: "Bus and bicycle", objects: [] },
+          { label: "Elephant and mouse", objects: [] },
+          { label: "Bucket and teacup", objects: [] },
+        ],
+        rightItems: [
+          { label: "Bus is longer", objects: [] },
+          { label: "Bucket holds more", objects: [] },
+          { label: "Elephant is heavier", objects: [] },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Compare Two Things",
+        instruction: "Circle the correct comparison.",
+        questions: [
+          { prompt: "A giraffe and a cat — the giraffe is ___", options: ["Taller", "Shorter", "Lighter"] },
+          { prompt: "A marble and a basketball — the marble is ___", options: ["Bigger", "Smaller", "Heavier"] },
+          { prompt: "A truck and a scooter — the truck is ___", options: ["Lighter", "Shorter", "Heavier"] },
+          { prompt: "A lake and a puddle — the lake holds ___", options: ["Less", "More", "The same"] },
+        ],
+      },
+      {
+        type: "sorting",
+        title: "Sort by Size: Smallest to Biggest",
         instruction: "Write 1 for smallest, 2 for middle, 3 for biggest.",
         columns: ["Smallest (1)", "Middle (2)", "Biggest (3)"],
         items: [
           { label: "Mouse" },
           { label: "Cat" },
           { label: "Elephant" },
+        ],
+      },
+
+      // --- HARDER: Comparing with reasoning ---
+      {
+        type: "circle-correct",
+        title: "How Would You Compare?",
+        instruction: "Circle the BEST way to compare each pair.",
+        questions: [
+          { prompt: "Two pieces of string — I would compare their ___", options: ["Length", "Mass", "Capacity"] },
+          { prompt: "Two rocks — I would compare their ___", options: ["Length", "Mass", "Capacity"] },
+          { prompt: "Two bottles — I would compare their ___", options: ["Length", "Mass", "Capacity"] },
+          { prompt: "Two sticks — I would compare their ___", options: ["Length", "Mass", "Capacity"] },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Same or Different?",
+        instruction: "Could these two things be the same? Circle the best answer.",
+        questions: [
+          { prompt: "Can two pencils be the same length?", options: ["Yes", "No"] },
+          { prompt: "Can two bags weigh the same?", options: ["Yes", "No"] },
+          { prompt: "Can a big box be lighter than a small box?", options: ["Yes", "No"] },
+          { prompt: "Can a short bottle hold more than a tall bottle?", options: ["Yes", "No"] },
+        ],
+      },
+
+      // --- CHALLENGE: Ordering 4 items, tricky comparisons ---
+      {
+        type: "sequence",
+        title: "Order 4 Animals by Size",
+        instruction: "Put these in order from smallest to biggest. Write 1, 2, 3, 4.",
+        items: [
+          { label: "Ant" },
+          { label: "Cat" },
+          { label: "Horse" },
+          { label: "Mouse" },
+        ],
+      },
+      {
+        type: "sequence",
+        title: "Order 4 Things by Length",
+        instruction: "Put these in order from shortest to longest. Write 1, 2, 3, 4.",
+        items: [
+          { label: "Your thumb" },
+          { label: "A bus" },
+          { label: "A ruler" },
+          { label: "A football field" },
+        ],
+      },
+      {
+        type: "sequence",
+        title: "Order 4 Containers by Capacity",
+        instruction: "Put these in order from holds the least to holds the most. Write 1, 2, 3, 4.",
+        items: [
+          { label: "Teaspoon" },
+          { label: "Bucket" },
+          { label: "Cup" },
+          { label: "Swimming pool" },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Tricky Comparisons",
+        instruction: "Think carefully! Circle the best answer.",
+        questions: [
+          { prompt: "A big balloon or a small rock — which is heavier?", options: ["Big balloon", "Small rock"] },
+          { prompt: "A tall thin glass or a short wide bowl — which might hold more?", options: ["The glass", "The bowl", "Hard to tell without checking"] },
+          { prompt: "A long piece of string or a short stick — which is heavier?", options: ["The string", "The stick", "You need to compare them to know"] },
+        ],
+      },
+      {
+        type: "matching",
+        title: "Match Objects to Comparisons",
+        instruction: "Draw a line to match each statement to the correct pair.",
+        leftItems: [
+          { label: "The ___ is taller", objects: [] },
+          { label: "The ___ is heavier", objects: [] },
+          { label: "The ___ holds more", objects: [] },
+          { label: "The ___ is longer", objects: [] },
+        ],
+        rightItems: [
+          { label: "Train vs car", objects: [] },
+          { label: "Giraffe vs rabbit", objects: [] },
+          { label: "Bath vs cup", objects: [] },
+          { label: "Bowling ball vs tennis ball", objects: [] },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Direct Comparison Challenge",
+        instruction: "Circle the correct answer.",
+        questions: [
+          { prompt: "To compare which ribbon is longer, you should ___", options: ["Hold them next to each other", "Weigh them", "Put water in them"] },
+          { prompt: "To compare which box is heavier, you should ___", options: ["Measure them with a ruler", "Hold one in each hand", "Fill them with water"] },
+          { prompt: "To compare which cup holds more, you should ___", options: ["Put them side by side", "Weigh them", "Fill one and pour into the other"] },
+          { prompt: "To compare which is taller, two friends should ___", options: ["Stand back to back", "Sit down", "Hold hands"] },
         ],
       },
     ],
@@ -1435,24 +2531,113 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
     strand: "Measurement",
     description: "Sequence and connect familiar events to the time of day",
     activities: [
+      // --- EASY: Morning activities ---
+      {
+        type: "circle-correct",
+        title: "What Do We Do in the Morning?",
+        instruction: "Circle the things you do in the MORNING.",
+        questions: [
+          { prompt: "Wake up", options: ["Morning", "Night"] },
+          { prompt: "Eat breakfast", options: ["Morning", "Night"] },
+          { prompt: "Put on pyjamas", options: ["Morning", "Night"] },
+          { prompt: "Get dressed for school", options: ["Morning", "Night"] },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "What Do We Do at Night?",
+        instruction: "Circle the things you do at NIGHT.",
+        questions: [
+          { prompt: "Go to sleep", options: ["Morning", "Night"] },
+          { prompt: "Eat breakfast", options: ["Morning", "Night"] },
+          { prompt: "Brush teeth before bed", options: ["Morning", "Night"] },
+          { prompt: "Read a bedtime story", options: ["Morning", "Night"] },
+        ],
+      },
       {
         type: "sorting",
+        title: "Morning or Night?",
+        instruction: "Sort each activity. Does it happen in the morning or at night?",
+        columns: ["Morning", "Night"],
+        items: [
+          { label: "Wake up" },
+          { label: "Go to sleep" },
+          { label: "Eat breakfast" },
+          { label: "Put on pyjamas" },
+          { label: "Brush teeth (morning)" },
+          { label: "Read a bedtime story" },
+        ],
+      },
+      {
+        type: "sequence",
+        title: "Morning Routine",
+        instruction: "Put these morning activities in order. Write 1, 2, 3.",
+        items: [
+          { label: "Eat breakfast" },
+          { label: "Wake up" },
+          { label: "Get dressed" },
+        ],
+      },
+
+      // --- EASY: Introducing afternoon ---
+      {
+        type: "circle-correct",
         title: "Morning, Afternoon, or Night?",
+        instruction: "Circle when each activity usually happens.",
+        questions: [
+          { prompt: "Eat lunch", options: ["Morning", "Afternoon", "Night"] },
+          { prompt: "Watch the sunset", options: ["Morning", "Afternoon", "Night"] },
+          { prompt: "Wake up", options: ["Morning", "Afternoon", "Night"] },
+          { prompt: "See the stars", options: ["Morning", "Afternoon", "Night"] },
+        ],
+      },
+      {
+        type: "sorting",
+        title: "Sort: Morning, Afternoon, or Night?",
         instruction: "Sort each activity into the correct time of day.",
         columns: ["Morning", "Afternoon", "Night"],
         items: [
           { label: "Eat breakfast" },
           { label: "Go to sleep" },
           { label: "Eat lunch" },
-          { label: "Brush teeth (bedtime)" },
-          { label: "Wake up" },
           { label: "Afternoon snack" },
+          { label: "Wake up" },
+          { label: "Brush teeth (bedtime)" },
+        ],
+      },
+      {
+        type: "matching",
+        title: "Match Activity to Time of Day",
+        instruction: "Draw a line to match each activity to when it happens.",
+        leftItems: [
+          { label: "Breakfast", objects: [] },
+          { label: "Lunch", objects: [] },
+          { label: "Dinner", objects: [] },
+          { label: "Bedtime story", objects: [] },
+        ],
+        rightItems: [
+          { label: "Night", objects: [] },
+          { label: "Morning", objects: [] },
+          { label: "Evening", objects: [] },
+          { label: "Middle of the day", objects: [] },
         ],
       },
       {
         type: "sequence",
-        title: "Put in Order",
-        instruction: "Number these events 1 to 4 in the order they happen during the day.",
+        title: "Meals in Order",
+        instruction: "Put these meals in the order they happen. Write 1, 2, 3.",
+        items: [
+          { label: "Dinner" },
+          { label: "Breakfast" },
+          { label: "Lunch" },
+        ],
+      },
+
+      // --- MEDIUM: Sequencing daily events ---
+      {
+        type: "sequence",
+        title: "Put the Day in Order",
+        instruction: "Number these events 1 to 4 in the order they happen.",
         items: [
           { label: "Eat dinner" },
           { label: "Wake up" },
@@ -1461,11 +2646,220 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         ],
       },
       {
+        type: "sequence",
+        title: "After School Routine",
+        instruction: "Put these after-school activities in order. Write 1, 2, 3.",
+        items: [
+          { label: "Have a snack" },
+          { label: "Walk home from school" },
+          { label: "Play outside" },
+        ],
+      },
+      {
+        type: "sequence",
+        title: "Bedtime Routine",
+        instruction: "Put these bedtime activities in order. Write 1, 2, 3, 4.",
+        items: [
+          { label: "Fall asleep" },
+          { label: "Put on pyjamas" },
+          { label: "Brush teeth" },
+          { label: "Read a story" },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "What Happens First?",
+        instruction: "Circle the activity that happens FIRST.",
+        questions: [
+          { prompt: "Eat dinner or eat breakfast?", options: ["Eat dinner", "Eat breakfast"] },
+          { prompt: "Go to bed or go to school?", options: ["Go to bed", "Go to school"] },
+          { prompt: "Eat lunch or wake up?", options: ["Eat lunch", "Wake up"] },
+          { prompt: "Afternoon play or morning lessons?", options: ["Afternoon play", "Morning lessons"] },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "What Happens Next?",
+        instruction: "Circle what usually happens NEXT.",
+        questions: [
+          { prompt: "After you wake up, you ___", options: ["Go to sleep", "Get dressed", "Eat dinner"] },
+          { prompt: "After school, you ___", options: ["Wake up", "Go home", "Eat breakfast"] },
+          { prompt: "After dinner, you ___", options: ["Eat lunch", "Have a bath", "Go to school"] },
+        ],
+      },
+
+      // --- MEDIUM: Days of the week ---
+      {
+        type: "sequence",
+        title: "Days of the Week",
+        instruction: "Put these days in the correct order. Write 1, 2, 3, 4.",
+        items: [
+          { label: "Wednesday" },
+          { label: "Monday" },
+          { label: "Thursday" },
+          { label: "Tuesday" },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "What Day Comes Next?",
+        instruction: "Circle the day that comes NEXT.",
+        questions: [
+          { prompt: "After Monday comes ___", options: ["Sunday", "Tuesday", "Wednesday"] },
+          { prompt: "After Friday comes ___", options: ["Thursday", "Saturday", "Sunday"] },
+          { prompt: "After Wednesday comes ___", options: ["Tuesday", "Thursday", "Friday"] },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Weekday or Weekend?",
+        instruction: "Circle whether each day is a weekday or a weekend day.",
+        questions: [
+          { prompt: "Saturday", options: ["Weekday", "Weekend"] },
+          { prompt: "Tuesday", options: ["Weekday", "Weekend"] },
+          { prompt: "Sunday", options: ["Weekday", "Weekend"] },
+          { prompt: "Friday", options: ["Weekday", "Weekend"] },
+        ],
+      },
+
+      // --- HARDER: Before and after, time language ---
+      {
+        type: "circle-correct",
+        title: "Before or After?",
+        instruction: "Circle the correct answer.",
+        questions: [
+          { prompt: "Breakfast happens ___ lunch.", options: ["Before", "After"] },
+          { prompt: "Dinner happens ___ lunch.", options: ["Before", "After"] },
+          { prompt: "Bedtime happens ___ dinner.", options: ["Before", "After"] },
+          { prompt: "Waking up happens ___ going to school.", options: ["Before", "After"] },
+        ],
+      },
+      {
         type: "matching",
-        title: "Match Activity to Time",
-        instruction: "Draw a line to match each activity with when it usually happens.",
-        left: ["Breakfast", "Lunch", "Dinner", "Brushing teeth"],
-        right: ["Night", "Morning", "Midday", "Evening"],
+        title: "Match Before and After",
+        instruction: "Draw a line to match each event to what happens right AFTER it.",
+        leftItems: [
+          { label: "Wake up", objects: [] },
+          { label: "Eat lunch", objects: [] },
+          { label: "Have a bath", objects: [] },
+        ],
+        rightItems: [
+          { label: "Put on pyjamas", objects: [] },
+          { label: "Get dressed", objects: [] },
+          { label: "Afternoon play", objects: [] },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Time Words",
+        instruction: "Circle the best time word for each sentence.",
+        questions: [
+          { prompt: "We eat breakfast in the ___", options: ["Morning", "Afternoon", "Night"] },
+          { prompt: "The sun goes down in the ___", options: ["Morning", "Evening", "Midnight"] },
+          { prompt: "We see stars at ___", options: ["Lunchtime", "Morning", "Night"] },
+          { prompt: "School starts in the ___", options: ["Morning", "Night", "Evening"] },
+        ],
+      },
+
+      // --- HARDER: Yesterday, today, tomorrow ---
+      {
+        type: "circle-correct",
+        title: "Yesterday, Today, or Tomorrow?",
+        instruction: "Circle the correct time word.",
+        questions: [
+          { prompt: "The day before today is called ___", options: ["Yesterday", "Today", "Tomorrow"] },
+          { prompt: "The day after today is called ___", options: ["Yesterday", "Today", "Tomorrow"] },
+          { prompt: "Right now is called ___", options: ["Yesterday", "Today", "Tomorrow"] },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "When Did It Happen?",
+        instruction: "Circle whether each thing happened yesterday, today, or will happen tomorrow.",
+        questions: [
+          { prompt: "I will go to the park after I sleep tonight.", options: ["Yesterday", "Today", "Tomorrow"] },
+          { prompt: "I ate breakfast this morning.", options: ["Yesterday", "Today", "Tomorrow"] },
+          { prompt: "I went swimming the day before today.", options: ["Yesterday", "Today", "Tomorrow"] },
+        ],
+      },
+
+      // --- CHALLENGE: Full day sequencing, seasons ---
+      {
+        type: "sequence",
+        title: "A Full Day — Start to Finish",
+        instruction: "Put these in order from the start of the day to the end. Write 1 to 6.",
+        items: [
+          { label: "Eat dinner" },
+          { label: "Wake up" },
+          { label: "Eat lunch" },
+          { label: "Go to bed" },
+          { label: "Go to school" },
+          { label: "Eat breakfast" },
+        ],
+      },
+      {
+        type: "sorting",
+        title: "Light Outside or Dark Outside?",
+        instruction: "Sort each time. Is it usually light or dark outside?",
+        columns: ["Light Outside", "Dark Outside"],
+        items: [
+          { label: "Lunchtime" },
+          { label: "Midnight" },
+          { label: "Morning tea" },
+          { label: "Bedtime" },
+          { label: "After school" },
+          { label: "Very early morning (3am)" },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Seasons of the Year",
+        instruction: "Circle the correct answer about seasons.",
+        questions: [
+          { prompt: "How many seasons are there in a year?", options: ["2", "4", "7"] },
+          { prompt: "Which season is the hottest in Australia?", options: ["Winter", "Summer", "Autumn"] },
+          { prompt: "Which season is the coldest in Australia?", options: ["Summer", "Spring", "Winter"] },
+          { prompt: "After autumn comes ___", options: ["Summer", "Winter", "Spring"] },
+        ],
+      },
+      {
+        type: "sequence",
+        title: "Seasons in Order",
+        instruction: "Put the Australian seasons in order starting from the hottest. Write 1, 2, 3, 4.",
+        items: [
+          { label: "Winter" },
+          { label: "Summer" },
+          { label: "Autumn" },
+          { label: "Spring" },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Time Challenge",
+        instruction: "Think carefully! Circle the best answer.",
+        questions: [
+          { prompt: "How many days are in a week?", options: ["5", "7", "10"] },
+          { prompt: "What meal do we eat in the evening?", options: ["Breakfast", "Lunch", "Dinner"] },
+          { prompt: "If today is Tuesday, what day was yesterday?", options: ["Monday", "Wednesday", "Sunday"] },
+          { prompt: "If today is Friday, what day is tomorrow?", options: ["Thursday", "Saturday", "Sunday"] },
+        ],
+      },
+      {
+        type: "matching",
+        title: "Match the Time Facts",
+        instruction: "Draw a line to match each question to its answer.",
+        leftItems: [
+          { label: "Days in a week?", objects: [] },
+          { label: "Meals in a day?", objects: [] },
+          { label: "Seasons in a year?", objects: [] },
+          { label: "The sun rises in the ___?", objects: [] },
+        ],
+        rightItems: [
+          { label: "Morning", objects: [] },
+          { label: "4", objects: [] },
+          { label: "3", objects: [] },
+          { label: "7", objects: [] },
+        ],
       },
     ],
   },
@@ -1477,9 +2871,60 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
     strand: "Space",
     description: "Name, create and sort familiar shapes and give reasoning",
     activities: [
+      // --- EASY: Learning shape names ---
       {
         type: "shape-trace",
-        title: "Trace the Shapes",
+        title: "Trace a Circle",
+        instruction: "Trace over the dotted circle. A circle is round with no sides!",
+        shapes: [
+          { name: "Circle", sides: 0 },
+          { name: "Circle", sides: 0 },
+          { name: "Circle", sides: 0 },
+        ],
+      },
+      {
+        type: "shape-trace",
+        title: "Trace a Square",
+        instruction: "Trace over the dotted square. A square has 4 equal sides!",
+        shapes: [
+          { name: "Square", sides: 4 },
+          { name: "Square", sides: 4 },
+          { name: "Square", sides: 4 },
+        ],
+      },
+      {
+        type: "shape-trace",
+        title: "Trace a Triangle",
+        instruction: "Trace over the dotted triangle. A triangle has 3 sides!",
+        shapes: [
+          { name: "Triangle", sides: 3 },
+          { name: "Triangle", sides: 3 },
+          { name: "Triangle", sides: 3 },
+        ],
+      },
+      {
+        type: "shape-trace",
+        title: "Trace a Rectangle",
+        instruction: "Trace over the dotted rectangle. A rectangle has 4 sides — 2 long and 2 short!",
+        shapes: [
+          { name: "Rectangle", sides: 4 },
+          { name: "Rectangle", sides: 4 },
+          { name: "Rectangle", sides: 4 },
+        ],
+      },
+      {
+        type: "shape-trace",
+        title: "Trace a Diamond",
+        instruction: "Trace over the dotted diamond. A diamond has 4 sides that look like a tilted square!",
+        shapes: [
+          { name: "Diamond", sides: 4 },
+          { name: "Diamond", sides: 4 },
+          { name: "Diamond", sides: 4 },
+        ],
+      },
+      {
+        type: "shape-trace",
+        title: "Trace All Five Shapes",
         instruction: "Trace over each dotted shape. Write its name below.",
         shapes: [
           { name: "Circle", sides: 0 },
@@ -1493,9 +2938,32 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         type: "matching",
         title: "Match Shape to Name",
         instruction: "Draw a line to match each shape to its name.",
-        left: ["▲", "●", "■", "◆"],
-        right: ["Circle", "Diamond", "Triangle", "Square"],
+        leftItems: [
+          { label: "▲", objects: ["triangle"] },
+          { label: "●", objects: ["circle"] },
+          { label: "■", objects: ["square"] },
+          { label: "◆", objects: ["diamond"] },
+        ],
+        rightItems: [
+          { label: "Circle", objects: [] },
+          { label: "Diamond", objects: [] },
+          { label: "Triangle", objects: [] },
+          { label: "Square", objects: [] },
+        ],
       },
+      {
+        type: "circle-correct",
+        title: "Name That Shape!",
+        instruction: "Circle the correct name for each shape.",
+        questions: [
+          { prompt: "● — This shape is a ___", options: ["Square", "Circle", "Triangle"] },
+          { prompt: "■ — This shape is a ___", options: ["Rectangle", "Circle", "Square"] },
+          { prompt: "▲ — This shape is a ___", options: ["Triangle", "Diamond", "Square"] },
+          { prompt: "◆ — This shape is a ___", options: ["Circle", "Triangle", "Diamond"] },
+        ],
+      },
+
+      // --- MEDIUM: Counting sides and corners ---
       {
         type: "circle-correct",
         title: "Count the Sides",
@@ -1504,6 +2972,212 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
           { prompt: "Triangle", options: ["2", "3", "4"] },
           { prompt: "Square", options: ["3", "4", "5"] },
           { prompt: "Circle", options: ["0", "1", "2"] },
+          { prompt: "Rectangle", options: ["3", "4", "5"] },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Count the Corners",
+        instruction: "How many corners (points) does each shape have?",
+        questions: [
+          { prompt: "Triangle", options: ["2", "3", "4"] },
+          { prompt: "Square", options: ["3", "4", "5"] },
+          { prompt: "Circle", options: ["0", "1", "2"] },
+          { prompt: "Diamond", options: ["3", "4", "5"] },
+        ],
+      },
+      {
+        type: "matching",
+        title: "Match Shape to Number of Sides",
+        instruction: "Draw a line to match each shape to how many sides it has.",
+        leftItems: [
+          { label: "Circle", objects: ["circle"] },
+          { label: "Triangle", objects: ["triangle"] },
+          { label: "Square", objects: ["square"] },
+        ],
+        rightItems: [
+          { label: "3 sides", objects: [] },
+          { label: "4 sides", objects: [] },
+          { label: "0 sides", objects: [] },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "True or False: Shape Facts",
+        instruction: "Circle True or False.",
+        questions: [
+          { prompt: "A triangle has 3 sides.", options: ["True", "False"] },
+          { prompt: "A circle has 4 corners.", options: ["True", "False"] },
+          { prompt: "A square has 4 equal sides.", options: ["True", "False"] },
+          { prompt: "A rectangle has 3 sides.", options: ["True", "False"] },
+        ],
+      },
+
+      // --- MEDIUM: Sorting shapes ---
+      {
+        type: "sorting",
+        title: "Sort: Has Straight Sides or Is Round",
+        instruction: "Sort each shape into the correct column.",
+        columns: ["Straight Sides", "Round (No Sides)"],
+        items: [
+          { label: "Circle" },
+          { label: "Triangle" },
+          { label: "Square" },
+          { label: "Rectangle" },
+          { label: "Diamond" },
+        ],
+      },
+      {
+        type: "sorting",
+        title: "Sort by Number of Sides",
+        instruction: "Sort each shape by how many sides it has.",
+        columns: ["0 Sides", "3 Sides", "4 Sides"],
+        items: [
+          { label: "Circle" },
+          { label: "Triangle" },
+          { label: "Square" },
+          { label: "Rectangle" },
+          { label: "Diamond" },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Which Shape Am I?",
+        instruction: "Read the clues. Circle the correct shape.",
+        questions: [
+          { prompt: "I have 3 sides and 3 corners. I am a ___", options: ["Square", "Triangle", "Circle"] },
+          { prompt: "I am round with no sides. I am a ___", options: ["Diamond", "Circle", "Rectangle"] },
+          { prompt: "I have 4 equal sides and 4 corners. I am a ___", options: ["Triangle", "Rectangle", "Square"] },
+          { prompt: "I have 4 sides — 2 long and 2 short. I am a ___", options: ["Square", "Rectangle", "Diamond"] },
+        ],
+      },
+
+      // --- HARDER: Shapes in real life ---
+      {
+        type: "matching",
+        title: "Shapes in Real Life",
+        instruction: "Draw a line to match each real-life thing to its shape.",
+        leftItems: [
+          { label: "Clock face", objects: [] },
+          { label: "Window", objects: [] },
+          { label: "Slice of pizza", objects: [] },
+          { label: "Kite", objects: [] },
+        ],
+        rightItems: [
+          { label: "Triangle", objects: ["triangle"] },
+          { label: "Circle", objects: ["circle"] },
+          { label: "Diamond", objects: ["diamond"] },
+          { label: "Rectangle", objects: ["square"] },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "What Shape Is It?",
+        instruction: "Circle the shape that matches each thing in real life.",
+        questions: [
+          { prompt: "A wheel is shaped like a ___", options: ["Square", "Circle", "Triangle"] },
+          { prompt: "A door is shaped like a ___", options: ["Triangle", "Circle", "Rectangle"] },
+          { prompt: "A sandwich cut in half diagonally is a ___", options: ["Circle", "Triangle", "Square"] },
+          { prompt: "A dice face is shaped like a ___", options: ["Square", "Circle", "Triangle"] },
+        ],
+      },
+      {
+        type: "sorting",
+        title: "Sort Real Things by Shape",
+        instruction: "Sort each real-life thing into the correct shape column.",
+        columns: ["Circle", "Square/Rectangle", "Triangle"],
+        items: [
+          { label: "Coin" },
+          { label: "Book" },
+          { label: "Roof of a house" },
+          { label: "Pizza" },
+          { label: "Television" },
+          { label: "Yield sign" },
+        ],
+      },
+
+      // --- HARDER: Comparing shapes ---
+      {
+        type: "circle-correct",
+        title: "Same or Different?",
+        instruction: "Are these two shapes the same or different?",
+        questions: [
+          { prompt: "A square and a rectangle — are they the same shape?", options: ["Yes, the same", "No, different"] },
+          { prompt: "A big circle and a small circle — are they the same shape?", options: ["Yes, the same shape", "No, different shapes"] },
+          { prompt: "A triangle and a diamond — are they the same?", options: ["Yes, the same", "No, different"] },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "What Is Different?",
+        instruction: "Circle what is DIFFERENT about these shapes.",
+        questions: [
+          { prompt: "A square and a rectangle both have 4 sides. What is different?", options: ["Number of corners", "The side lengths", "They are the same"] },
+          { prompt: "A big triangle and a small triangle. What is different?", options: ["Number of sides", "The size", "The shape name"] },
+          { prompt: "A circle and a square. What is different?", options: ["One has sides, one doesn't", "They are the same", "Both have 4 sides"] },
+        ],
+      },
+
+      // --- CHALLENGE: Creating and describing shapes ---
+      {
+        type: "shape-trace",
+        title: "Draw Your Own Shapes",
+        instruction: "In each box, draw the shape named. Make them big and clear!",
+        shapes: [
+          { name: "Circle", sides: 0 },
+          { name: "Triangle", sides: 3 },
+          { name: "Square", sides: 4 },
+          { name: "Rectangle", sides: 4 },
+          { name: "Diamond", sides: 4 },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Shape Riddles",
+        instruction: "Solve each shape riddle. Circle the answer.",
+        questions: [
+          { prompt: "I have fewer sides than a square but more than a circle. What am I?", options: ["Triangle", "Rectangle", "Diamond"] },
+          { prompt: "I look like a square but I'm tilted on my side. What am I?", options: ["Triangle", "Circle", "Diamond"] },
+          { prompt: "I have the same number of sides as a square, but my sides are not all equal. What am I?", options: ["Rectangle", "Triangle", "Circle"] },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Shape Challenge",
+        instruction: "Think carefully! Circle the best answer.",
+        questions: [
+          { prompt: "How many triangles can you make from a square cut diagonally?", options: ["1", "2", "4"] },
+          { prompt: "If you cut a rectangle in half, what shapes could you get?", options: ["Two squares", "Two rectangles", "Both are possible"] },
+          { prompt: "Which shape can roll?", options: ["Square", "Triangle", "Circle"] },
+          { prompt: "Which shape is the strongest for building?", options: ["Circle", "Triangle", "Diamond"] },
+        ],
+      },
+      {
+        type: "matching",
+        title: "Shape Properties Match",
+        instruction: "Draw a line to match each description to the correct shape.",
+        leftItems: [
+          { label: "No sides, no corners", objects: [] },
+          { label: "3 sides, 3 corners", objects: [] },
+          { label: "4 equal sides, 4 corners", objects: [] },
+          { label: "4 sides (2 long, 2 short)", objects: [] },
+        ],
+        rightItems: [
+          { label: "Rectangle", objects: [] },
+          { label: "Circle", objects: [] },
+          { label: "Square", objects: [] },
+          { label: "Triangle", objects: [] },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "How Many Shapes Can You See?",
+        instruction: "A house drawing has a square body, a triangle roof, a rectangle door, and 2 circle windows. How many of each?",
+        questions: [
+          { prompt: "How many squares?", options: ["1", "2", "3"] },
+          { prompt: "How many triangles?", options: ["0", "1", "2"] },
+          { prompt: "How many rectangles?", options: ["1", "2", "3"] },
+          { prompt: "How many circles?", options: ["1", "2", "3"] },
         ],
       },
     ],
