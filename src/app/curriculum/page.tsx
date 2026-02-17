@@ -45,7 +45,7 @@ function CurriculumContent() {
 
         <div className="relative mx-auto max-w-7xl px-5 pb-10 pt-14 sm:px-6 sm:pb-14 sm:pt-28 lg:px-8 lg:pb-16 lg:pt-32">
           <div className="max-w-3xl">
-            <span className="inline-flex items-center gap-2 rounded-full border border-sage/20 bg-sage/5 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-sage-dark">
+            <span className="inline-flex items-center gap-2 rounded-full border border-sage/20 bg-sage/5 px-4 py-1.5 text-sm font-semibold uppercase tracking-wider text-charcoal">
               <span className="h-1.5 w-1.5 rounded-full bg-sage-dark" />
               Australian Curriculum V9
             </span>
@@ -76,10 +76,10 @@ function CurriculumContent() {
               <button
                 key={subject.slug}
                 onClick={() => setActiveSubject(i)}
-                className={`relative px-5 py-4 text-sm font-semibold transition-colors sm:text-base ${
+                className={`relative px-5 py-4 text-base font-semibold transition-colors ${
                   activeSubject === i
                     ? "text-charcoal"
-                    : "text-charcoal-light/60 hover:text-charcoal-light"
+                    : "text-charcoal-light/70 hover:text-charcoal"
                 }`}
               >
                 {subject.subject}
@@ -98,11 +98,11 @@ function CurriculumContent() {
                 <h2 className="font-display text-2xl font-semibold text-charcoal sm:text-3xl">
                   Primary School
                 </h2>
-                <span className="rounded-full bg-sage/10 px-3 py-1 text-xs font-medium text-sage-dark">
+                <span className="rounded-full bg-sage/10 px-3 py-1 text-sm font-medium text-charcoal">
                   Foundation &ndash; Year 6
                 </span>
               </div>
-              <p className="mt-2 max-w-2xl text-sm text-charcoal-light/80 sm:text-base">
+              <p className="mt-2 max-w-2xl text-base text-charcoal-light">
                 The foundation years of the {current.subject} curriculum build
                 core skills progressively from Foundation through Year 6.
               </p>
@@ -125,11 +125,11 @@ function CurriculumContent() {
                 <h2 className="font-display text-2xl font-semibold text-charcoal sm:text-3xl">
                   Secondary School
                 </h2>
-                <span className="rounded-full bg-terracotta/10 px-3 py-1 text-xs font-medium text-terracotta-dark">
+                <span className="rounded-full bg-terracotta/10 px-3 py-1 text-sm font-medium text-terracotta-dark">
                   Year 7 &ndash; Year 10
                 </span>
               </div>
-              <p className="mt-2 max-w-2xl text-sm text-charcoal-light/80 sm:text-base">
+              <p className="mt-2 max-w-2xl text-base text-charcoal-light">
                 In the secondary years, {current.subject} curriculum extends
                 skills and introduces more complex concepts.
               </p>
@@ -152,7 +152,7 @@ function CurriculumContent() {
                   <h3 className="font-display text-lg font-semibold text-charcoal">
                     Official Curriculum Documents
                   </h3>
-                  <p className="mt-1 text-sm text-charcoal-light/80">
+                  <p className="mt-1 text-base text-charcoal-light">
                     Download the full {current.subject} curriculum documents from
                     ACARA, the Australian Curriculum, Assessment and Reporting
                     Authority.
@@ -162,7 +162,7 @@ function CurriculumContent() {
                   href={current.downloadUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex shrink-0 items-center gap-2 rounded-full bg-charcoal px-6 py-3 text-sm font-semibold text-cream transition-all duration-200 hover:bg-terracotta hover:shadow-lg hover:shadow-terracotta/20"
+                  className="inline-flex shrink-0 items-center gap-2 rounded-full bg-charcoal px-6 py-3 text-base font-semibold text-cream transition-all duration-200 hover:bg-terracotta hover:shadow-lg hover:shadow-terracotta/20"
                 >
                   Download from ACARA
                   <svg

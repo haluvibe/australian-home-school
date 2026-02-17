@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import type { YearLevelData } from "@/lib/curriculum-data";
+import { annotateText } from "@/lib/glossary";
 
 interface CurriculumYearCardProps {
   year: YearLevelData;
@@ -11,14 +12,14 @@ interface CurriculumYearCardProps {
 
 const strandColors: Record<string, string> = {
   Number: "bg-terracotta/10 text-terracotta-dark",
-  Algebra: "bg-sage/10 text-sage-dark",
-  Measurement: "bg-golden/15 text-golden",
-  Space: "bg-charcoal/[0.06] text-charcoal",
-  Statistics: "bg-terracotta-light/15 text-terracotta",
-  Probability: "bg-sage-light/15 text-sage-dark",
+  Algebra: "bg-sage/10 text-charcoal",
+  Measurement: "bg-golden/15 text-terracotta-dark",
+  Space: "bg-charcoal/[0.08] text-charcoal",
+  Statistics: "bg-terracotta-light/15 text-terracotta-dark",
+  Probability: "bg-sage-light/15 text-charcoal",
   Language: "bg-terracotta/10 text-terracotta-dark",
-  Literature: "bg-sage/10 text-sage-dark",
-  Literacy: "bg-golden/15 text-golden",
+  Literature: "bg-sage/10 text-charcoal",
+  Literacy: "bg-golden/15 text-terracotta-dark",
 };
 
 export default function CurriculumYearCard({
@@ -42,7 +43,7 @@ export default function CurriculumYearCard({
         aria-expanded={isOpen}
       >
         <div className="flex items-center gap-3">
-          <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-terracotta/10 text-sm font-semibold text-terracotta">
+          <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-terracotta/10 text-base font-semibold text-terracotta">
             {year.yearLevel === "Foundation"
               ? "F"
               : year.yearLevel.replace("Year ", "")}
@@ -60,7 +61,7 @@ export default function CurriculumYearCard({
             {year.strands.map((strand) => (
               <span
                 key={strand}
-                className="rounded-full bg-sage/10 px-2.5 py-0.5 text-xs font-medium text-sage-dark"
+                className="rounded-full bg-sage/10 px-3 py-0.5 text-sm font-medium text-charcoal"
               >
                 {strand}
               </span>
@@ -108,7 +109,7 @@ export default function CurriculumYearCard({
               {year.strands.map((strand) => (
                 <span
                   key={strand}
-                  className="rounded-full bg-sage/10 px-2.5 py-0.5 text-xs font-medium text-sage-dark"
+                  className="rounded-full bg-sage/10 px-3 py-0.5 text-sm font-medium text-charcoal"
                 >
                   {strand}
                 </span>
@@ -122,7 +123,7 @@ export default function CurriculumYearCard({
                   <div key={strandGroup.strand}>
                     <div className="flex items-center gap-2">
                       <span
-                        className={`inline-flex rounded-md px-2.5 py-1 text-xs font-semibold ${
+                        className={`inline-flex rounded-md px-3 py-1 text-sm font-semibold ${
                           strandColors[strandGroup.strand] ||
                           "bg-charcoal/[0.06] text-charcoal"
                         }`}
@@ -130,26 +131,37 @@ export default function CurriculumYearCard({
                         {strandGroup.strand}
                       </span>
                     </div>
-                    <ul className="mt-2 space-y-1.5 pl-1">
-                      {strandGroup.items.map((item, i) => (
-                        <li
-                          key={i}
-                          className="flex items-start gap-2.5 text-[15px] leading-relaxed text-charcoal-light/90"
-                        >
-                          <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-charcoal/20" />
-                          {item}
-                        </li>
-                      ))}
+                    <ul className="mt-2 space-y-2.5 pl-1">
+                      {strandGroup.items.map((item, i) => {
+                        const parts = item.split(" — e.g. ");
+                        const objective = parts[0];
+                        const example = parts[1];
+                        return (
+                          <li key={i} className="flex items-start gap-2.5">
+                            <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-charcoal/40" />
+                            <div>
+                              <span className="text-base leading-relaxed text-charcoal">
+                                {annotateText(objective, subject)}
+                              </span>
+                              {example && (
+                                <span className="mt-0.5 block text-base italic leading-relaxed text-charcoal-light">
+                                  e.g. {example}
+                                </span>
+                              )}
+                            </div>
+                          </li>
+                        );
+                      })}
                     </ul>
                   </div>
                 ))}
               </div>
             ) : year.description ? (
               <div>
-                <h4 className="text-xs font-semibold uppercase tracking-wider text-charcoal/40">
+                <h4 className="text-sm font-semibold uppercase tracking-wider text-charcoal/60">
                   What students learn in {subject}
                 </h4>
-                <p className="mt-2 text-[15px] leading-relaxed text-charcoal-light/85">
+                <p className="mt-2 text-base leading-relaxed text-charcoal">
                   {year.description}
                 </p>
               </div>
@@ -157,7 +169,7 @@ export default function CurriculumYearCard({
 
             {/* Achievement Standard */}
             <details className="group rounded-xl border border-sage/15 bg-sage/[0.04]">
-              <summary className="cursor-pointer select-none px-5 py-4 text-xs font-semibold uppercase tracking-wider text-sage-dark">
+              <summary className="cursor-pointer select-none px-5 py-4 text-sm font-semibold uppercase tracking-wider text-charcoal">
                 Achievement Standard
                 <svg
                   width="12"
@@ -175,7 +187,7 @@ export default function CurriculumYearCard({
                   />
                 </svg>
               </summary>
-              <p className="px-5 pb-4 text-[14px] leading-relaxed text-charcoal-light/80">
+              <p className="px-5 pb-4 text-base leading-relaxed text-charcoal-light">
                 {year.achievementStandard}
               </p>
             </details>

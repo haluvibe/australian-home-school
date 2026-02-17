@@ -10,44 +10,44 @@ export const metadata: Metadata = {
 
 const faqItems = [
   {
-    question: "When is the earliest I can enrol my child for homeschooling?",
+    question: "When and where can I register my child for homeschooling?",
     answer: (
       <>
         <p>
-          Each Australian state and territory has different compulsory school ages and registration rules. Here&apos;s a breakdown of when you can start:
+          In Australia, homeschooling is managed at the state and territory level — each has its own registration body, compulsory age range, and process. You register directly with your state or territory&apos;s education authority. Education is compulsory from around age 5–6 until age 17 in most states.
         </p>
         <div className="mt-4 space-y-3">
           <div className="rounded-xl border border-charcoal/[0.06] bg-cream/50 px-5 py-3.5">
-            <p className="font-semibold text-charcoal">Tasmania — from age 5</p>
-            <p className="mt-1">TAS has the youngest compulsory start age. Register with the <a href="https://oer.tas.gov.au/home-education/" target="_blank" rel="noopener noreferrer" className="font-medium text-terracotta underline decoration-terracotta/30 hover:text-terracotta-dark hover:decoration-terracotta">Office of the Education Registrar</a>.</p>
+            <p className="font-semibold text-charcoal">New South Wales</p>
+            <p className="mt-1">Optional from age 5 (by 31 July cut-off), compulsory from age 6 until age 17. Register with the <a href="https://www.nsw.gov.au/education-and-training/home-schooling" target="_blank" rel="noopener noreferrer" className="font-medium text-terracotta underline decoration-terracotta/30 hover:text-terracotta-dark hover:decoration-terracotta">NSW Department of Education</a>.</p>
           </div>
           <div className="rounded-xl border border-charcoal/[0.06] bg-cream/50 px-5 py-3.5">
-            <p className="font-semibold text-charcoal">Western Australia — from ~age 5.5</p>
-            <p className="mt-1">Compulsory from the beginning of the year a child turns 5 years and 6 months. Register with the <a href="https://www.education.wa.edu.au/home-schooling" target="_blank" rel="noopener noreferrer" className="font-medium text-terracotta underline decoration-terracotta/30 hover:text-terracotta-dark hover:decoration-terracotta">WA Department of Education</a>.</p>
+            <p className="font-semibold text-charcoal">Victoria</p>
+            <p className="mt-1">Compulsory from the year a child turns 6 until age 17. Register with the <a href="https://www2.vrqa.vic.gov.au/home-education" target="_blank" rel="noopener noreferrer" className="font-medium text-terracotta underline decoration-terracotta/30 hover:text-terracotta-dark hover:decoration-terracotta">Victorian Registration and Qualifications Authority (VRQA)</a>.</p>
           </div>
           <div className="rounded-xl border border-charcoal/[0.06] bg-cream/50 px-5 py-3.5">
-            <p className="font-semibold text-charcoal">New South Wales — from age 5</p>
-            <p className="mt-1">Optional registration available from when a child turns 5 (by 31 July cut-off). Compulsory from age 6. Register with the <a href="https://www.nsw.gov.au/education-and-training/home-schooling" target="_blank" rel="noopener noreferrer" className="font-medium text-terracotta underline decoration-terracotta/30 hover:text-terracotta-dark hover:decoration-terracotta">NSW Department of Education</a>.</p>
+            <p className="font-semibold text-charcoal">Queensland</p>
+            <p className="mt-1">Registration available from age 5.5, compulsory from age 6.5 until age 17 (compulsory participation phase from 16 to 17). Register with <a href="https://education.qld.gov.au/schools-educators/other-education/home-education" target="_blank" rel="noopener noreferrer" className="font-medium text-terracotta underline decoration-terracotta/30 hover:text-terracotta-dark hover:decoration-terracotta">Queensland Home Education Unit</a>.</p>
           </div>
           <div className="rounded-xl border border-charcoal/[0.06] bg-cream/50 px-5 py-3.5">
-            <p className="font-semibold text-charcoal">Queensland — from age 5.5</p>
-            <p className="mt-1">Registration available from age 5 years and 6 months, before the compulsory age of 6.5. Register with <a href="https://education.qld.gov.au/schools-educators/other-education/home-education" target="_blank" rel="noopener noreferrer" className="font-medium text-terracotta underline decoration-terracotta/30 hover:text-terracotta-dark hover:decoration-terracotta">Queensland Home Education</a>.</p>
+            <p className="font-semibold text-charcoal">Western Australia</p>
+            <p className="mt-1">Compulsory from the year a child turns 5.5 until age 17.5. Register with the <a href="https://www.education.wa.edu.au/home-schooling" target="_blank" rel="noopener noreferrer" className="font-medium text-terracotta underline decoration-terracotta/30 hover:text-terracotta-dark hover:decoration-terracotta">WA Department of Education</a>.</p>
           </div>
           <div className="rounded-xl border border-charcoal/[0.06] bg-cream/50 px-5 py-3.5">
-            <p className="font-semibold text-charcoal">Victoria — from age 6</p>
-            <p className="mt-1">Registration begins the year a child turns 6. Register with the <a href="https://www2.vrqa.vic.gov.au/home-education" target="_blank" rel="noopener noreferrer" className="font-medium text-terracotta underline decoration-terracotta/30 hover:text-terracotta-dark hover:decoration-terracotta">VRQA</a>.</p>
+            <p className="font-semibold text-charcoal">South Australia</p>
+            <p className="mt-1">Compulsory from age 6 until age 17. Apply via the <a href="https://www.sa.gov.au/topics/education-and-learning/schools/alternative-schooling/home-education" target="_blank" rel="noopener noreferrer" className="font-medium text-terracotta underline decoration-terracotta/30 hover:text-terracotta-dark hover:decoration-terracotta">SA Department for Education</a>.</p>
           </div>
           <div className="rounded-xl border border-charcoal/[0.06] bg-cream/50 px-5 py-3.5">
-            <p className="font-semibold text-charcoal">South Australia — from age 6</p>
-            <p className="mt-1">Registration aligns with compulsory school age. Apply via the <a href="https://www.sa.gov.au/topics/education-and-learning/schools/alternative-schooling/home-education" target="_blank" rel="noopener noreferrer" className="font-medium text-terracotta underline decoration-terracotta/30 hover:text-terracotta-dark hover:decoration-terracotta">SA Department for Education</a>.</p>
+            <p className="font-semibold text-charcoal">Tasmania</p>
+            <p className="mt-1">Compulsory from age 5 until age 17 — the youngest start age in Australia. Register with the <a href="https://oer.tas.gov.au/home-education/" target="_blank" rel="noopener noreferrer" className="font-medium text-terracotta underline decoration-terracotta/30 hover:text-terracotta-dark hover:decoration-terracotta">Office of the Education Registrar</a>.</p>
           </div>
           <div className="rounded-xl border border-charcoal/[0.06] bg-cream/50 px-5 py-3.5">
-            <p className="font-semibold text-charcoal">Northern Territory — from age 6</p>
-            <p className="mt-1">Registration valid for one calendar year and must be renewed annually. Register with the <a href="https://nt.gov.au/learning/primary-and-secondary-students/home-education" target="_blank" rel="noopener noreferrer" className="font-medium text-terracotta underline decoration-terracotta/30 hover:text-terracotta-dark hover:decoration-terracotta">NT Department of Education</a>.</p>
+            <p className="font-semibold text-charcoal">Northern Territory</p>
+            <p className="mt-1">Compulsory from age 6 until age 17. Registration is valid for one calendar year and must be renewed. Register with the <a href="https://nt.gov.au/learning/primary-and-secondary-students/home-education" target="_blank" rel="noopener noreferrer" className="font-medium text-terracotta underline decoration-terracotta/30 hover:text-terracotta-dark hover:decoration-terracotta">NT Department of Education</a>.</p>
           </div>
           <div className="rounded-xl border border-charcoal/[0.06] bg-cream/50 px-5 py-3.5">
-            <p className="font-semibold text-charcoal">ACT — from age 6</p>
-            <p className="mt-1">Compulsory education begins at age 6. Register with the <a href="https://www.act.gov.au/education-and-training/find-a-school-and-enrol/home-education-home-schooling" target="_blank" rel="noopener noreferrer" className="font-medium text-terracotta underline decoration-terracotta/30 hover:text-terracotta-dark hover:decoration-terracotta">ACT Education Directorate</a>.</p>
+            <p className="font-semibold text-charcoal">ACT</p>
+            <p className="mt-1">Compulsory from age 6 until age 17 (or completion of Year 12, whichever comes first). Register with the <a href="https://www.act.gov.au/education-and-training/find-a-school-and-enrol/home-education-home-schooling" target="_blank" rel="noopener noreferrer" className="font-medium text-terracotta underline decoration-terracotta/30 hover:text-terracotta-dark hover:decoration-terracotta">ACT Education Directorate</a>.</p>
           </div>
         </div>
         <p className="mt-4 text-sm text-charcoal-light/70">
