@@ -1,0 +1,483 @@
+[
+  {
+    "yearLevel": "Foundation",
+    "objectives": [
+      {
+        "strand": "Language",
+        "items": [
+          "Listen for and identify rhymes, letter patterns and sounds (phonemes) in words",
+          "Orally blend and segment phonemes in single-syllable words",
+          "Name the letters of the English alphabet",
+          "Know and use the most common sounds (phonemes) represented by letters (graphs)",
+          "Use words and phrases from learning and texts in spoken and written communication",
+          "Form letters legibly",
+          "Spell most consonant-vowel-consonant words",
+          "Experiment with capital letters and full stops"
+        ]
+      },
+      {
+        "strand": "Literature",
+        "items": [
+          "Listen to texts and retell stories",
+          "Make connections between characters, settings and events in texts",
+          "Connect characters, settings and events to personal experiences",
+          "Identify connections between print and images in texts",
+          "Create short written texts that retell stories using words and images"
+        ]
+      },
+      {
+        "strand": "Literacy",
+        "items": [
+          "Interact with others and create short spoken texts",
+          "Share thoughts and preferences with an audience",
+          "Retell events and report information or key ideas to an audience",
+          "Read words including consonant-vowel-consonant words and some high-frequency words",
+          "Read, view and comprehend texts",
+          "Retell, report information and state thoughts, feelings and key ideas in writing"
+        ]
+      }
+    ],
+    "achievementStandard": "By the end of Foundation, students listen to texts, interact with others and create short spoken texts, including retelling stories. They share thoughts and preferences, retell events and report information or key ideas to an audience. They use language features including words and phrases from learning and texts. They listen for and identify rhymes, letter patterns and sounds (phonemes) in words. They orally blend and segment phonemes in single-syllable words. They read, view and comprehend texts, making connections between characters, settings and events, and to personal experiences. They identify the language features of texts including connections between print and images. They name the letters of the English alphabet and know and use the most common sounds (phonemes) represented by these letters (graphs). They read words including consonant\u2013vowel\u2013consonant words and some high-frequency words. They create short written texts, including retelling stories using words and images where appropriate. They retell, report information and state their thoughts, feelings and key ideas. They use words and phrases from learning and texts. They form letters, spell most consonant\u2013vowel\u2013consonant words and experiment with capital letters and full stops.",
+    "strands": [
+      "Language",
+      "Literature",
+      "Literacy"
+    ]
+  },
+  {
+    "yearLevel": "Year 1",
+    "objectives": [
+      {
+        "strand": "Language",
+        "items": [
+          "Blend short vowels, common long vowels, consonants and digraphs to read one-syllable words",
+          "Read one- and two-syllable words with common letter patterns",
+          "Use topic-specific vocabulary in spoken and written texts",
+          "Write simple sentences with sentence boundary punctuation",
+          "Use capital letters for proper nouns",
+          "Write words using unjoined upper-case and lower-case letters",
+          "Spell most one- and two-syllable words with common letter patterns and common grammatical morphemes",
+          "Spell an increasing number of high-frequency words"
+        ]
+      },
+      {
+        "strand": "Literature",
+        "items": [
+          "Listen to and create short spoken texts including recounts of stories",
+          "Share ideas and retell or adapt familiar stories",
+          "Make connections between the depiction of characters, settings and events, and personal experiences",
+          "Create short written texts including recounts of stories with events and characters",
+          "Include informative or imaginative ideas with a small number of details from learnt topics, topics of interest or texts"
+        ]
+      },
+      {
+        "strand": "Literacy",
+        "items": [
+          "Interact with others to recount or report on events or experiences",
+          "Express opinions using a small number of details from learnt topics, topics of interest or texts",
+          "Sequence ideas and use features of voice in spoken texts",
+          "Read, view and comprehend texts, monitoring meaning",
+          "Identify text structures of familiar narrative and informative texts",
+          "Identify language features and visual features of texts",
+          "Read an increasing number of high-frequency words",
+          "Use sentence boundary punctuation to read with developing phrasing and fluency",
+          "Report information and experiences, and express opinions in writing",
+          "Create short written and/or multimodal texts"
+        ]
+      }
+    ],
+    "achievementStandard": "By the end of Year 1, students interact with others, and listen to and create short spoken texts including recounts of stories. They share ideas and retell or adapt familiar stories, recount or report on events or experiences, and express opinions using a small number of details from learnt topics, topics of interest or texts. They sequence ideas and use language features including topic-specific vocabulary and features of voice. They read, view and comprehend texts, monitoring meaning and making connections between the depiction of characters, settings and events, and to personal experiences. They identify the text structures of familiar narrative and informative texts, and their language features and visual features. They blend short vowels, common long vowels, consonants and digraphs to read one-syllable words. They read one- and two-syllable words with common letter patterns, and an increasing number of high-frequency words. They use sentence boundary punctuation to read with developing phrasing and fluency. They create short written and/or multimodal texts including recounts of stories with events and characters. They report information and experiences, and express opinions. Ideas in their texts may be informative or imaginative and include a small number of details from learnt topics, topics of interest or texts. They write simple sentences with sentence boundary punctuation and capital letters for proper nouns. They use topic-specific vocabulary. They write words using unjoined upper-case and lower-case letters. They spell most one- and two-syllable words with common letter patterns and common grammatical morphemes, and an increasing number of high-frequency words.",
+    "strands": [
+      "Language",
+      "Literature",
+      "Literacy"
+    ]
+  },
+  {
+    "yearLevel": "Year 2",
+    "objectives": [
+      {
+        "strand": "Language",
+        "items": [
+          "Use phonic and morphemic knowledge to read unfamiliar words",
+          "Use grammatical patterns to read unfamiliar words",
+          "Read most high-frequency words",
+          "Use topic-specific vocabulary in writing",
+          "Punctuate simple and compound sentences",
+          "Write words using consistently legible unjoined letters",
+          "Spell words with regular spelling patterns",
+          "Use phonic and morphemic knowledge to attempt spelling words with less common patterns"
+        ]
+      },
+      {
+        "strand": "Literature",
+        "items": [
+          "Listen to and create spoken texts including stories",
+          "Identify how ideas are presented through characters and events",
+          "Create written texts including stories to adapt an idea or narrate for audiences",
+          "Share ideas, topic knowledge and appreciation of texts"
+        ]
+      },
+      {
+        "strand": "Literacy",
+        "items": [
+          "Interact with others to recount, inform or express an opinion",
+          "Include details from learnt topics, topics of interest or texts",
+          "Organise and link ideas in spoken texts",
+          "Use language features including features of voice",
+          "Read, view and comprehend texts, identifying literal and inferred meaning",
+          "Describe how similar topics and information are presented through narrative and informative text structures",
+          "Identify language features and visual features of texts",
+          "Use punctuation for phrasing and fluency when reading",
+          "Create written and/or multimodal texts to inform or express an opinion",
+          "Use text structures to organise and link ideas for a purpose"
+        ]
+      }
+    ],
+    "achievementStandard": "By the end of Year 2, students interact with others, and listen to and create spoken texts including stories. They share ideas, topic knowledge and appreciation of texts when they recount, inform or express an opinion, including details from learnt topics, topics of interest or texts. They organise and link ideas, and use language features including topic-specific vocabulary and features of voice. They read, view and comprehend texts, identifying literal and inferred meaning, and how ideas are presented through characters and events. They describe how similar topics and information are presented through the structure of narrative and informative texts, and identify their language features and visual features. They use phonic and morphemic knowledge, and grammatical patterns to read unfamiliar words and most high-frequency words. They use punctuation for phrasing and fluency. They create written and/or multimodal texts including stories to inform, express an opinion, adapt an idea or narrate for audiences. They use text structures to organise and link ideas for a purpose. They punctuate simple and compound sentences. They use topic-specific vocabulary. They write words using consistently legible unjoined letters. They spell words with regular spelling patterns, and use phonic and morphemic knowledge to attempt to spell words with less common patterns.",
+    "strands": [
+      "Language",
+      "Literature",
+      "Literacy"
+    ]
+  },
+  {
+    "yearLevel": "Year 3",
+    "objectives": [
+      {
+        "strand": "Language",
+        "items": [
+          "Read fluently using phonic, morphemic and grammatical knowledge to read multisyllabic words with more complex letter patterns",
+          "Use topic-specific vocabulary and literary devices in texts",
+          "Use compound sentences in writing",
+          "Write texts using letters that are accurately formed and consistent in size",
+          "Spell multisyllabic words using phonic and morphemic knowledge",
+          "Spell high-frequency words correctly"
+        ]
+      },
+      {
+        "strand": "Literature",
+        "items": [
+          "Listen to and create spoken and/or multimodal texts including stories",
+          "Describe how stories are developed through characters and/or events",
+          "Identify literal meaning and explain inferred meaning in texts",
+          "Describe language features of texts including literary devices",
+          "Create written and/or multimodal texts including stories to narrate",
+          "Include relevant details from learnt topics, topics of interest or texts"
+        ]
+      },
+      {
+        "strand": "Literacy",
+        "items": [
+          "Interact with others to relate ideas, express opinions, preferences and appreciation of texts",
+          "Group, logically sequence and link ideas in spoken texts",
+          "Use visual features and features of voice in spoken texts",
+          "Read, view and comprehend texts, recognising their purpose and audience",
+          "Describe how texts are structured and presented",
+          "Describe how visual features extend meaning",
+          "Create written and/or multimodal texts to inform, explain or argue for audiences",
+          "Use text structures including paragraphs to organise and link ideas",
+          "Use visual features in multimodal texts"
+        ]
+      }
+    ],
+    "achievementStandard": "By the end of Year 3, students interact with others, and listen to and create spoken and/or multimodal texts including stories. They relate ideas; express opinion, preferences and appreciation of texts; and include relevant details from learnt topics, topics of interest or texts. They group, logically sequence and link ideas. They use language features including topic-specific vocabulary, and/or visual features and features of voice. They read, view and comprehend texts, recognising their purpose and audience. They identify literal meaning and explain inferred meaning. They describe how stories are developed through characters and/or events. They describe how texts are structured and presented. They describe the language features of texts including topic-specific vocabulary and literary devices, and how visual features extend meaning. They read fluently, using phonic, morphemic and grammatical knowledge to read multisyllabic words with more complex letter patterns. They create written and/or multimodal texts including stories to inform, narrate, explain or argue for audiences, relating ideas including relevant details from learnt topics, topics of interest or texts. They use text structures including paragraphs, and language features including compound sentences, topic-specific vocabulary and literary devices, and/or visual features. They write texts using letters that are accurately formed and consistent in size. They spell multisyllabic words using phonic and morphemic knowledge, and high-frequency words.",
+    "strands": [
+      "Language",
+      "Literature",
+      "Literacy"
+    ]
+  },
+  {
+    "yearLevel": "Year 4",
+    "objectives": [
+      {
+        "strand": "Language",
+        "items": [
+          "Read fluently and accurately, integrating phonic, morphemic, grammatical and punctuation knowledge",
+          "Use subjective and objective language appropriately",
+          "Use topic-specific vocabulary and literary devices",
+          "Use complex sentences in writing",
+          "Write texts using clearly formed letters with developing fluency",
+          "Spell words including multisyllabic and multimorphemic words with irregular spelling patterns, using phonic, morphemic and grammatical knowledge"
+        ]
+      },
+      {
+        "strand": "Literature",
+        "items": [
+          "Listen to and create spoken and/or multimodal texts including stories",
+          "Describe how ideas are developed through characters and events",
+          "Describe how texts reflect contexts",
+          "Describe how literary devices and visual features shape meaning",
+          "Create written and/or multimodal texts including stories, developing ideas using details from learnt topics, topics of interest or texts"
+        ]
+      },
+      {
+        "strand": "Literacy",
+        "items": [
+          "Interact with others to share and extend ideas, opinions and information with audiences",
+          "Use text structures to organise and link ideas in spoken texts",
+          "Use visual features and features of voice in spoken texts",
+          "Read, view and comprehend texts created to inform, influence and/or engage audiences",
+          "Describe the characteristic features of different text structures",
+          "Use paragraphs to organise and link ideas in writing",
+          "Use visual features in multimodal texts",
+          "Create written and/or multimodal texts for purposes and audiences"
+        ]
+      }
+    ],
+    "achievementStandard": "By the end of Year 4, students interact with others, and listen to and create spoken and/or multimodal texts including stories. They share and extend ideas, opinions and information with audiences, using relevant details from learnt topics, topics of interest or texts. They use text structures to organise and link ideas. They use language features including subjective and objective language, topic-specific vocabulary and literary devices, and/or visual features and features of voice. They read, view and comprehend texts created to inform, influence and/or engage audiences. They describe how ideas are developed including through characters and events, and how texts reflect contexts. They describe the characteristic features of different text structures. They describe how language features including literary devices, and visual features shape meaning. They read fluently and accurately, integrating phonic, morphemic, grammatical and punctuation knowledge. They create written and/or multimodal texts including stories for purposes and audiences, where they develop ideas using details from learnt topics, topics of interest or texts. They use paragraphs to organise and link ideas. They use language features including complex sentences, topic-specific vocabulary and literary devices, and/or visual features. They write texts using clearly formed letters with developing fluency. They spell words including multisyllabic and multimorphemic words with irregular spelling patterns, using phonic, morphemic and grammatical knowledge.",
+    "strands": [
+      "Language",
+      "Literature",
+      "Literacy"
+    ]
+  },
+  {
+    "yearLevel": "Year 5",
+    "objectives": [
+      {
+        "strand": "Language",
+        "items": [
+          "Use topic-specific vocabulary and literary devices in spoken and written texts",
+          "Use complex sentences and varied tenses in writing",
+          "Use language features including multimodal features in texts",
+          "Spell using phonic, morphemic and grammatical knowledge"
+        ]
+      },
+      {
+        "strand": "Literature",
+        "items": [
+          "Listen to and create spoken and/or multimodal texts including literary texts",
+          "Explain how ideas are developed through characters, settings and/or events",
+          "Explain how texts reflect contexts",
+          "Explain how literary devices and visual features contribute to the effect and meaning of a text",
+          "Create written and/or multimodal texts including literary texts, developing and expanding on ideas with supporting details from topics or texts"
+        ]
+      },
+      {
+        "strand": "Literacy",
+        "items": [
+          "Interact with others to share, develop and expand on ideas and opinions, using supporting details from topics or texts",
+          "Use different text structures to organise, develop and link ideas in spoken texts",
+          "Use features of voice and multimodal features in spoken texts",
+          "Read, view and comprehend texts created to inform, influence and/or engage audiences",
+          "Explain how characteristic text structures support the purpose of texts",
+          "Create written and/or multimodal texts for particular purposes and audiences",
+          "Use paragraphs to organise, develop and link ideas in writing"
+        ]
+      }
+    ],
+    "achievementStandard": "By the end of Year 5, students interact with others, and listen to and create spoken and/or multimodal texts including literary texts. For particular purposes and audiences, they share, develop and expand on ideas and opinions, using supporting details from topics or texts. They use different text structures to organise, develop and link ideas. They use language features including topic-specific vocabulary and literary devices, and/or multimodal features and features of voice. They read, view and comprehend texts created to inform, influence and/or engage audiences. They explain how ideas are developed including through characters, settings and/or events, and how texts reflect contexts. They explain how characteristic text structures support the purpose of texts. They explain how language features including literary devices, and visual features contribute to the effect and meaning of a text. They create written and/or multimodal texts, including literary texts, for particular purposes and audiences, developing and expanding on ideas with supporting details from topics or texts. They use paragraphs to organise, develop and link ideas. They use language features including complex sentences, tenses, topic-specific vocabulary and literary devices, and/or multimodal features. They spell using phonic, morphemic and grammatical knowledge.",
+    "strands": [
+      "Language",
+      "Literature",
+      "Literacy"
+    ]
+  },
+  {
+    "yearLevel": "Year 6",
+    "objectives": [
+      {
+        "strand": "Language",
+        "items": [
+          "Use and vary topic-specific vocabulary and literary devices in spoken and written texts",
+          "Use and vary sentence structures in writing",
+          "Use and vary language features including multimodal features",
+          "Spell using phonic, morphemic and grammatical knowledge"
+        ]
+      },
+      {
+        "strand": "Literature",
+        "items": [
+          "Listen to and create spoken and/or multimodal texts including literary texts",
+          "Identify similarities and differences in how ideas are presented and developed through characters, settings and/or events",
+          "Identify how texts reflect contexts",
+          "Explain how literary devices and visual features influence audiences",
+          "Create written and/or multimodal texts including literary texts, developing, explaining and elaborating on relevant ideas from topics or texts"
+        ]
+      },
+      {
+        "strand": "Literacy",
+        "items": [
+          "Interact with others to share, develop, explain and elaborate on ideas from topics or texts",
+          "Use and vary text structures to organise, develop and link ideas in spoken texts",
+          "Use and vary features of voice and multimodal features in spoken texts",
+          "Read, view and comprehend different texts created to inform, influence and/or engage audiences",
+          "Identify how texts have similar and different text structures to reflect purpose",
+          "Create written and/or multimodal texts for particular purposes and audiences",
+          "Use text structures and vary paragraphs to organise, develop and link ideas in writing"
+        ]
+      }
+    ],
+    "achievementStandard": "By the end of Year 6, students interact with others, and listen to and create spoken and/or multimodal texts including literary texts. For particular purposes and audiences, they share, develop, explain and elaborate on ideas from topics or texts. They use and vary text structures to organise, develop and link ideas. They use and vary language features including topic-specific vocabulary and literary devices, and/or multimodal features and features of voice. They read, view and comprehend different texts created to inform, influence and/or engage audiences. They identify similarities and differences in how ideas are presented and developed including through characters, settings and/or events, and how texts reflect contexts. They identify how texts have similar and different text structures to reflect purpose. They explain how language features including literary devices, and visual features influence audiences. They create written and/or multimodal texts, including literary texts, for particular purposes and audiences, developing, explaining and elaborating on relevant ideas from topics or texts. They use text structures and vary paragraphs to organise, develop and link ideas. They use and vary language features including sentence structures, topic-specific vocabulary and literary devices, and/or multimodal features. They spell using phonic, morphemic and grammatical knowledge.",
+    "strands": [
+      "Language",
+      "Literature",
+      "Literacy"
+    ]
+  },
+  {
+    "yearLevel": "Year 7",
+    "objectives": [
+      {
+        "strand": "Language",
+        "items": [
+          "Adopt language features including literary devices in spoken and written texts",
+          "Adopt multimodal features and features of voice in spoken texts",
+          "Identify how language features including literary devices and visual features shape meaning"
+        ]
+      },
+      {
+        "strand": "Literature",
+        "items": [
+          "Listen to and create spoken and/or multimodal texts including literary texts",
+          "Identify how ideas are portrayed in texts",
+          "Identify how texts are influenced by contexts",
+          "Identify the aesthetic qualities of texts",
+          "Create written and/or multimodal texts including literary texts, expressing and expanding on ideas with evidence"
+        ]
+      },
+      {
+        "strand": "Literacy",
+        "items": [
+          "Interact with others to discuss, express and expand ideas with evidence",
+          "Adopt text structures to organise, develop and link ideas in spoken texts",
+          "Read, view and comprehend texts created to inform, influence and/or engage audiences",
+          "Identify how text structures shape meaning",
+          "Create written and/or multimodal texts for different purposes and audiences",
+          "Adopt text structures to organise, develop and link ideas in writing",
+          "Adopt literary devices and multimodal features in written texts"
+        ]
+      }
+    ],
+    "achievementStandard": "By the end of Year 7, students interact with others, and listen to and create spoken and/or multimodal texts including literary texts. With different purposes and for audiences, they discuss, express and expand ideas with evidence. They adopt text structures to organise, develop and link ideas. They adopt language features including literary devices, and/or multimodal features and features of voice. They read, view and comprehend texts created to inform, influence and/or engage audiences. They identify how ideas are portrayed and how texts are influenced by contexts. They identify the aesthetic qualities of texts. They identify how text structures, language features including literary devices and visual features shape meaning. They create written and/or multimodal texts, including literary texts, for different purposes and audiences, expressing and expanding on ideas with evidence. They adopt text structures to organise, develop and link ideas. They adopt language features including literary devices, and/or multimodal features.",
+    "strands": [
+      "Language",
+      "Literature",
+      "Literacy"
+    ]
+  },
+  {
+    "yearLevel": "Year 8",
+    "objectives": [
+      {
+        "strand": "Language",
+        "items": [
+          "Select and vary language features including literary devices in spoken and written texts",
+          "Select and vary multimodal features and features of voice in spoken texts",
+          "Explain the effects of language features including intertextual references, literary devices and visual features"
+        ]
+      },
+      {
+        "strand": "Literature",
+        "items": [
+          "Listen to and create spoken and/or multimodal texts including literary texts",
+          "Explain how ideas are represented in texts",
+          "Explain how texts reflect or challenge contexts",
+          "Explain the aesthetic qualities of texts",
+          "Create written and/or multimodal texts including literary texts, expressing and advancing ideas with supporting evidence"
+        ]
+      },
+      {
+        "strand": "Literacy",
+        "items": [
+          "Interact with others to discuss, express and elaborate on ideas with supporting evidence",
+          "Select and vary text structures to organise, develop and link ideas in spoken texts",
+          "Read, view and comprehend a range of texts created to inform, influence and/or engage audiences",
+          "Explain how text structures shape meaning",
+          "Create written and/or multimodal texts for different purposes and audiences",
+          "Select and vary text structures to organise, develop and link ideas in writing",
+          "Select and vary literary devices and multimodal features in written texts"
+        ]
+      }
+    ],
+    "achievementStandard": "By the end of Year 8, students interact with others, and listen to and create spoken and/or multimodal texts including literary texts. With different purposes and for audiences, they discuss, express and elaborate on ideas with supporting evidence. They select and vary text structures to organise, develop and link ideas. They select and vary language features including literary devices, and/or multimodal features and features of voice. They read, view and comprehend a range of texts created to inform, influence and/or engage audiences. They explain how ideas are represented and how texts reflect or challenge contexts. They explain the aesthetic qualities of texts. They explain how text structures shape meaning. They explain the effects of language features including intertextual references and literary devices, and visual features. They create written and/or multimodal texts, including literary texts for different purposes and audiences, expressing and advancing ideas with supporting evidence. They select and vary text structures to organise, develop and link ideas. They select and vary language features including literary devices, and/or multimodal features.",
+    "strands": [
+      "Language",
+      "Literature",
+      "Literacy"
+    ]
+  },
+  {
+    "yearLevel": "Year 9",
+    "objectives": [
+      {
+        "strand": "Language",
+        "items": [
+          "Select and experiment with language features including literary devices in spoken and written texts",
+          "Experiment with multimodal features and features of voice in spoken texts",
+          "Analyse the effects of language features including literary devices, intertextual references and multimodal features"
+        ]
+      },
+      {
+        "strand": "Literature",
+        "items": [
+          "Listen to and create spoken and multimodal texts including literary texts",
+          "Analyse representations of people, places, events and concepts in texts",
+          "Analyse how texts respond to contexts",
+          "Analyse the aesthetic qualities of texts",
+          "Create written and multimodal texts including literary texts, expressing and expanding ideas, shaping meaning and providing substantiation"
+        ]
+      },
+      {
+        "strand": "Literacy",
+        "items": [
+          "Interact with others to discuss and expand on ideas, shaping meaning and providing substantiation",
+          "Select and experiment with text structures to organise and develop ideas in spoken texts",
+          "Read, view and comprehend a range of texts created to inform, influence and/or engage audiences",
+          "Analyse the effects of text structures on meaning",
+          "Create written and multimodal texts for a range of purposes and audiences",
+          "Select and experiment with text structures to organise, develop and link ideas in writing",
+          "Select and experiment with literary devices and multimodal features in written texts"
+        ]
+      }
+    ],
+    "achievementStandard": "By the end of Year 9, students interact with others, and listen to and create spoken and multimodal texts including literary texts. With a range of purposes and for audiences, they discuss and expand on ideas, shaping meaning and providing substantiation. They select and experiment with text structures to organise and develop ideas. They select and experiment with language features including literary devices, and experiment with multimodal features and features of voice. They read, view and comprehend a range of texts created to inform, influence and/or engage audiences. They analyse representations of people, places, events and concepts, and how texts respond to contexts. They analyse the aesthetic qualities of texts. They analyse the effects of text structures, and language features including literary devices, intertextual references, and multimodal features. They create written and multimodal texts, including literary texts, for a range of purposes and audiences, expressing and expanding ideas, shaping meaning and providing substantiation. They select and experiment with text structures to organise, develop and link ideas. They select and experiment with language features including literary devices, and experiment with multimodal features.",
+    "strands": [
+      "Language",
+      "Literature",
+      "Literacy"
+    ]
+  },
+  {
+    "yearLevel": "Year 10",
+    "objectives": [
+      {
+        "strand": "Language",
+        "items": [
+          "Select, vary and experiment with language features including rhetorical and literary devices in spoken and written texts",
+          "Experiment with multimodal features and features of voice in spoken texts",
+          "Analyse the effects of language features including literary devices, intertextual connections and multimodal features, and their contribution to aesthetic qualities"
+        ]
+      },
+      {
+        "strand": "Literature",
+        "items": [
+          "Listen to and create spoken and multimodal texts including literary texts",
+          "Analyse and evaluate representations of people, places, events and concepts in texts",
+          "Analyse how interpretations of texts may be influenced by readers and viewers",
+          "Create written and multimodal texts including literary texts, expressing ideas and representations, making connections and providing substantiation"
+        ]
+      },
+      {
+        "strand": "Literacy",
+        "items": [
+          "Interact with others to discuss ideas and responses to representations, making connections and providing substantiation",
+          "Select and experiment with text structures to organise and develop ideas in spoken texts",
+          "Read, view and comprehend a range of texts created to inform, influence and engage audiences",
+          "Analyse the effects of text structures on meaning",
+          "Create written and multimodal texts for a range of purposes and audiences",
+          "Select and experiment with text structures to organise, develop and link ideas and representations in writing",
+          "Select, vary and experiment with literary devices and multimodal features in written texts"
+        ]
+      }
+    ],
+    "achievementStandard": "By the end of Year 10, students interact with others, and listen to and create spoken and multimodal texts including literary texts. With a range of purposes and for audiences, they discuss ideas and responses to representations, making connections and providing substantiation. They select and experiment with text structures to organise and develop ideas. They select, vary and experiment with language features including rhetorical and literary devices, and experiment with multimodal features and features of voice. They read, view and comprehend a range of texts created to inform, influence and engage audiences. They analyse and evaluate representations of people, places, events and concepts, and how interpretations of these may be influenced by readers and viewers. They analyse the effects of text structures, and language features including literary devices, intertextual connections, and multimodal features, and their contribution to the aesthetic qualities of texts. They create written and multimodal texts, including literary texts, for a range of purposes and audiences, expressing ideas and representations, making connections and providing substantiation. They select and experiment with text structures to organise, develop and link ideas and representations. They select, vary and experiment with language features including literary devices, and experiment with multimodal features.",
+    "strands": [
+      "Language",
+      "Literature",
+      "Literacy"
+    ]
+  }
+]

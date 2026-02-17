@@ -14,12 +14,10 @@ interface DropdownConfig {
   items: DropdownItem[];
 }
 
-const AC_DOWNLOADS_URL = "https://www.australiancurriculum.edu.au/downloads/learning-areas";
-
 const curriculumSubjects = [
   {
     label: "English",
-    href: `${AC_DOWNLOADS_URL}#accordion-9869db6018-item-6689c0bc06`,
+    href: "/curriculum?subject=english",
     icon: (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
@@ -29,7 +27,7 @@ const curriculumSubjects = [
   },
   {
     label: "Mathematics",
-    href: `${AC_DOWNLOADS_URL}#accordion-9869db6018-item-7860571ccc`,
+    href: "/curriculum?subject=mathematics",
     icon: (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <line x1="12" y1="2" x2="12" y2="22" />
@@ -37,17 +35,6 @@ const curriculumSubjects = [
         <path d="M4 4l4 4M16 4l4 4M4 16l4 4M16 16l4 4" />
       </svg>
     ),
-  },
-];
-
-const curriculumSections = [
-  {
-    title: "Primary (F\u20136)",
-    description: "Foundation to Year 6",
-  },
-  {
-    title: "Secondary (7\u201310)",
-    description: "Year 7 to Year 10",
   },
 ];
 
@@ -288,11 +275,9 @@ export default function Navbar() {
             </p>
             <div className="flex flex-1 gap-3">
               {curriculumSubjects.map((subject) => (
-                <a
+                <Link
                   key={subject.label}
                   href={subject.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
                   className="group flex flex-1 items-center gap-4 rounded-2xl border border-transparent px-5 py-4 transition-all duration-200 hover:border-sand hover:bg-cream"
                   onClick={() => setOpenDropdown(null)}
                 >
@@ -301,7 +286,7 @@ export default function Navbar() {
                   </div>
                   <div>
                     <span className="text-[15px] font-medium text-charcoal">{subject.label}</span>
-                    <p className="text-xs text-charcoal-light/60">F&ndash;10 Curriculum Downloads</p>
+                    <p className="text-xs text-charcoal-light/60">Foundation &ndash; Year 10</p>
                   </div>
                   <svg
                     width="16"
@@ -310,9 +295,15 @@ export default function Navbar() {
                     fill="none"
                     className="ml-auto text-charcoal/20 transition-all duration-200 group-hover:translate-x-0.5 group-hover:text-terracotta"
                   >
-                    <path d="M5 3l2-2m0 0l2 2m-2-2v8M3 9v3a1 1 0 001 1h8a1 1 0 001-1V9" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                    <path
+                      d="M6 4l4 4-4 4"
+                      stroke="currentColor"
+                      strokeWidth="1.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
                   </svg>
-                </a>
+                </Link>
               ))}
             </div>
           </div>
@@ -423,17 +414,15 @@ export default function Navbar() {
                     {item.label === "Curriculum" ? (
                       <div className="space-y-1 pb-2 pl-4">
                         {curriculumSubjects.map((subject) => (
-                          <a
+                          <Link
                             key={subject.label}
                             href={subject.href}
-                            target="_blank"
-                            rel="noopener noreferrer"
                             className="flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm text-charcoal-light transition-colors hover:bg-cream hover:text-terracotta"
                             onClick={() => setMobileOpen(false)}
                           >
                             <span className="text-charcoal/30">{subject.icon}</span>
                             {subject.label}
-                          </a>
+                          </Link>
                         ))}
                       </div>
                     ) : (

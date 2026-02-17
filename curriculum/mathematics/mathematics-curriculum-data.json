@@ -1,0 +1,603 @@
+[
+  {
+    "yearLevel": "Foundation",
+    "objectives": [
+      {
+        "strand": "Number",
+        "items": [
+          "Connect number names, numerals and their position in sequence from 0 to at least 20",
+          "Use subitising and counting strategies to quantify collections",
+          "Compare the size of collections to at least 20",
+          "Partition and combine collections up to 10 in different ways",
+          "Represent adding to, taking away from, and equal sharing with collections to at least 10"
+        ]
+      },
+      {
+        "strand": "Algebra",
+        "items": [
+          "Copy and continue repeating patterns"
+        ]
+      },
+      {
+        "strand": "Measurement",
+        "items": [
+          "Identify the attributes of mass, capacity, length and duration",
+          "Use direct comparison to compare objects and events",
+          "Sequence and connect familiar events to the time of day"
+        ]
+      },
+      {
+        "strand": "Space",
+        "items": [
+          "Name, create and sort familiar shapes and give reasoning",
+          "Describe the position and location of objects in relation to other objects and people"
+        ]
+      },
+      {
+        "strand": "Statistics",
+        "items": [
+          "Collect, sort and compare data in response to questions in familiar contexts"
+        ]
+      }
+    ],
+    "achievementStandard": "By the end of Foundation Year, students make connections between number names, numerals and position in the sequence of numbers from zero to at least 20. They use subitising and counting strategies to quantify collections. Students compare the size of collections to at least 20. They partition and combine collections up to 10 in different ways, representing these with numbers. Students represent practical situations that involve quantifying, equal sharing, adding to and taking away from collections to at least 10. They copy and continue repeating patterns. Students identify the attributes of mass, capacity, length and duration, and use direct comparison strategies to compare objects and events. They sequence and connect familiar events to the time of day. Students name, create and sort familiar shapes and give their reasoning. They describe the position and the location of themselves and objects in relation to other objects and people within a familiar space. Students collect, sort and compare data in response to questions in familiar contexts.",
+    "strands": ["Number", "Algebra", "Measurement", "Space", "Statistics"]
+  },
+  {
+    "yearLevel": "Year 1",
+    "objectives": [
+      {
+        "strand": "Number",
+        "items": [
+          "Connect number names, numerals and quantities; order numbers to at least 120",
+          "Partition two-digit numbers into tens and ones",
+          "Skip count in twos, fives or tens to at least 120",
+          "Solve addition and subtraction problems with numbers to 20",
+          "Solve practical problems involving equal sharing and grouping"
+        ]
+      },
+      {
+        "strand": "Algebra",
+        "items": [
+          "Create skip counting and repeating patterns, identifying the repeating unit"
+        ]
+      },
+      {
+        "strand": "Measurement",
+        "items": [
+          "Compare and order objects and events by length, mass, capacity and duration",
+          "Measure length of shapes and objects using uniform informal units"
+        ]
+      },
+      {
+        "strand": "Space",
+        "items": [
+          "Make, compare and classify shapes and objects using obvious features",
+          "Give and follow directions to move people and objects within a space"
+        ]
+      },
+      {
+        "strand": "Statistics",
+        "items": [
+          "Collect and record categorical data, create one-to-one displays, and compare data using frequencies"
+        ]
+      }
+    ],
+    "achievementStandard": "By the end of Year 1, students connect number names, numerals and quantities, and order numbers to at least 120. They demonstrate how one- and two-digit numbers can be partitioned in different ways and that two-digit numbers can be partitioned into tens and ones. Students partition collections into equal groups and skip count in twos, fives or tens to quantify collections to at least 120. They solve problems involving addition and subtraction of numbers to 20 and use mathematical modelling to solve practical problems involving addition, subtraction, equal sharing and grouping, using calculation strategies. Students use numbers, symbols and objects to create skip counting and repeating patterns, identifying the repeating unit. They compare and order objects and events based on the attributes of length, mass, capacity and duration, communicating reasoning. Students measure the length of shapes and objects using uniform informal units. They make, compare and classify shapes and objects using obvious features. Students give and follow directions to move people and objects within a space. They collect and record categorical data, create one-to-one displays, and compare and discuss the data using frequencies.",
+    "strands": ["Number", "Algebra", "Measurement", "Space", "Statistics"]
+  },
+  {
+    "yearLevel": "Year 2",
+    "objectives": [
+      {
+        "strand": "Number",
+        "items": [
+          "Order and represent numbers to at least 1,000",
+          "Apply place value to partition, rearrange and rename two- and three-digit numbers",
+          "Recall addition and subtraction facts within 20",
+          "Recall multiplication facts for twos",
+          "Solve practical additive and multiplicative problems, including money transactions",
+          "Identify and represent halves, quarters and eighths in measurement contexts"
+        ]
+      },
+      {
+        "strand": "Algebra",
+        "items": [
+          "Describe and continue patterns that increase or decrease by a constant amount",
+          "Identify missing elements in patterns"
+        ]
+      },
+      {
+        "strand": "Measurement",
+        "items": [
+          "Measure and compare shapes and objects using uniform informal units",
+          "Read time on an analog clock to the hour, half hour and quarter hour",
+          "Determine the number of days between events using a calendar"
+        ]
+      },
+      {
+        "strand": "Space",
+        "items": [
+          "Compare and classify shapes, describing features using formal spatial terms",
+          "Locate and identify positions of features in two-dimensional representations",
+          "Move position by following directions and pathways"
+        ]
+      },
+      {
+        "strand": "Statistics",
+        "items": [
+          "Collect, record, represent and interpret categorical data in response to questions"
+        ]
+      }
+    ],
+    "achievementStandard": "By the end of Year 2, students order and represent numbers to at least 1000, apply knowledge of place value to partition, rearrange and rename two- and three-digit numbers in terms of their parts, and regroup partitioned numbers to assist in calculations. They use mathematical modelling to solve practical additive and multiplicative problems, including money transactions, representing the situation and choosing calculation strategies. Students identify and represent part-whole relationships of halves, quarters and eighths in measurement contexts. They describe and continue patterns that increase and decrease additively by a constant amount and identify missing elements in the pattern. Students recall and demonstrate proficiency with addition and subtraction facts within 20 and multiplication facts for twos. They use uniform informal units to measure and compare shapes and objects. Students determine the number of days between events using a calendar and read time on an analog clock to the hour, half hour and quarter hour. They compare and classify shapes, describing features using formal spatial terms. Students locate and identify positions of features in two-dimensional representations and move position by following directions and pathways. They use a range of methods to collect, record, represent and interpret categorical data in response to questions.",
+    "strands": ["Number", "Algebra", "Measurement", "Space", "Statistics"]
+  },
+  {
+    "yearLevel": "Year 3",
+    "objectives": [
+      {
+        "strand": "Number",
+        "items": [
+          "Order and represent natural numbers beyond 10,000",
+          "Partition two- and three-digit numbers in different ways to assist in calculations",
+          "Apply single-digit addition and related subtraction facts to two- and three-digit problems",
+          "Solve problems involving single-digit multiplication and division",
+          "Recall multiplication facts for 2s, 3s, 4s, 5s and 10s",
+          "Represent unit fractions and their multiples in different ways",
+          "Make estimates and determine reasonableness of financial calculations"
+        ]
+      },
+      {
+        "strand": "Algebra",
+        "items": [
+          "Find unknown values in number sentences involving addition and subtraction",
+          "Create algorithms to investigate numbers and explore simple patterns"
+        ]
+      },
+      {
+        "strand": "Measurement",
+        "items": [
+          "Use familiar metric units to estimate, compare and measure attributes of objects",
+          "Identify angles as measures of turn and compare them to right angles",
+          "Estimate and compare duration using formal units of time",
+          "Represent money values in different ways"
+        ]
+      },
+      {
+        "strand": "Space",
+        "items": [
+          "Make, compare and classify objects using key features",
+          "Interpret and create two-dimensional representations of familiar environments"
+        ]
+      },
+      {
+        "strand": "Statistics",
+        "items": [
+          "Conduct guided statistical investigations with categorical and discrete numerical data",
+          "Record, represent and compare collected data"
+        ]
+      },
+      {
+        "strand": "Probability",
+        "items": [
+          "Identify and describe outcomes and the likelihood of everyday events",
+          "Conduct repeated chance experiments and discuss variation in results"
+        ]
+      }
+    ],
+    "achievementStandard": "By the end of Year 3, students order and represent natural numbers beyond 10\u2009000. They partition, rearrange and regroup two- and three-digit numbers in different ways to assist in calculations. Students extend and use single-digit addition and related subtraction facts and apply additive strategies to model and solve problems involving two- and three-digit numbers. They use mathematical modelling to solve practical problems involving single-digit multiplication and division, recalling multiplication facts for twos, threes, fours, fives and tens, and using a range of strategies. Students represent unit fractions and their multiples in different ways. They make estimates and determine the reasonableness of financial and other calculations. Students find unknown values in number sentences involving addition and subtraction. They create algorithms to investigate numbers and explore simple patterns. Students use familiar metric units when estimating, comparing and measuring the attributes of objects and events. They identify angles as measures of turn and compare them to right angles. Students estimate and compare measures of duration using formal units of time. They represent money values in different ways. Students make, compare and classify objects using key features. They interpret and create two-dimensional representations of familiar environments. Students conduct guided statistical investigations involving categorical and discrete numerical data and interpret their results in terms of the context. They record, represent and compare data they have collected. Students use practical activities, observation or experiment to identify and describe outcomes and the likelihood of everyday events explaining reasoning. They conduct repeated chance experiments and discuss variation in results.",
+    "strands": ["Number", "Algebra", "Measurement", "Space", "Statistics", "Probability"]
+  },
+  {
+    "yearLevel": "Year 4",
+    "objectives": [
+      {
+        "strand": "Number",
+        "items": [
+          "Represent tenths and hundredths in decimal form",
+          "Multiply natural numbers by multiples of 10",
+          "Add, subtract, multiply and divide numbers efficiently using known facts",
+          "Use rounding and estimation to check the reasonableness of calculations",
+          "Use properties of odd and even numbers",
+          "Recognise equivalent fractions and connect fraction and decimal notations",
+          "Count and represent fractions on a number line",
+          "Solve financial and other practical problems using number sentences"
+        ]
+      },
+      {
+        "strand": "Algebra",
+        "items": [
+          "Find unknown values in equations involving addition and subtraction",
+          "Follow and create algorithms that generate sets of numbers and identify emerging patterns"
+        ]
+      },
+      {
+        "strand": "Measurement",
+        "items": [
+          "Use scaled instruments to measure length, mass, capacity and temperature",
+          "Measure and approximate perimeters and areas",
+          "Convert between units of time when solving duration problems",
+          "Compare angles relative to a right angle using angle names"
+        ]
+      },
+      {
+        "strand": "Space",
+        "items": [
+          "Represent and approximate shapes and objects in the environment",
+          "Create and interpret grid references",
+          "Identify line and rotational symmetry in plane shapes; create symmetrical patterns"
+        ]
+      },
+      {
+        "strand": "Statistics",
+        "items": [
+          "Create many-to-one data displays and assess suitability of displays for representing data",
+          "Discuss the shape of distributions and variation in data",
+          "Use surveys and digital tools to generate data in statistical investigations"
+        ]
+      },
+      {
+        "strand": "Probability",
+        "items": [
+          "Order events or outcomes in terms of likelihood",
+          "Identify whether events are independent or dependent",
+          "Conduct repeated chance experiments and describe variation in results"
+        ]
+      }
+    ],
+    "achievementStandard": "By the end of Year 4, students use their understanding of place value to represent tenths and hundredths in decimal form and to multiply natural numbers by multiples of 10. They use mathematical modelling to solve financial and other practical problems, formulating the problem using number sentences, solving the problem choosing efficient strategies and interpreting the results in terms of the situation. Students use their proficiency with addition and multiplication facts to add and subtract, multiply and divide numbers efficiently. They choose rounding and estimation strategies to determine whether results of calculations are reasonable. Students use the properties of odd and even numbers. They recognise equivalent fractions and make connections between fraction and decimal notations. Students count and represent fractions on a number line. They find unknown values in numerical equations involving addition and subtraction. Students follow and create algorithms that generate sets of numbers and identify emerging patterns. They use scaled instruments and appropriate units to measure length, mass, capacity and temperature. Students measure and approximate perimeters and areas. They convert between units of time when solving problems involving duration. Students compare angles relative to a right angle using angle names. They represent and approximate shapes and objects in the environment. Students create and interpret grid references. They identify line and rotational symmetry in plane shapes and create symmetrical patterns. Students create many-to-one data displays, assess the suitability of displays for representing data and discuss the shape of distributions and variation in data. They use surveys and digital tools to generate categorical or discrete numerical data in statistical investigations and communicate their findings in context. Students order events or the outcomes of chance experiments in terms of likelihood and identify whether events are independent or dependent. They conduct repeated chance experiments and describe the variation in results.",
+    "strands": ["Number", "Algebra", "Measurement", "Space", "Statistics", "Probability"]
+  },
+  {
+    "yearLevel": "Year 5",
+    "objectives": [
+      {
+        "strand": "Number",
+        "items": [
+          "Write and order decimals, including decimals greater than one",
+          "Express natural numbers as products of factors; identify multiples",
+          "Add and subtract fractions with same or related denominators",
+          "Represent common percentages and connect them to fractions and decimals",
+          "Multiply large numbers by one- and two-digit numbers",
+          "Divide by single-digit numbers",
+          "Check the reasonableness of calculations using estimation",
+          "Solve financial and other practical problems using mathematical modelling"
+        ]
+      },
+      {
+        "strand": "Algebra",
+        "items": [
+          "Find unknown values in equations involving multiplication and division",
+          "Create and use algorithms to identify patterns in factors and multiples"
+        ]
+      },
+      {
+        "strand": "Measurement",
+        "items": [
+          "Choose and use appropriate metric units to measure length, mass and capacity",
+          "Solve problems involving perimeter and area",
+          "Convert between 12- and 24-hour time",
+          "Estimate, construct and measure angles in degrees"
+        ]
+      },
+      {
+        "strand": "Space",
+        "items": [
+          "Use grid coordinates to locate and move positions",
+          "Connect objects to their two-dimensional nets",
+          "Perform and describe transformations; identify symmetries"
+        ]
+      },
+      {
+        "strand": "Statistics",
+        "items": [
+          "Plan and conduct statistical investigations with categorical and numerical data using digital tools",
+          "Identify the mode and interpret the shape of distributions",
+          "Interpret and compare data represented in line graphs"
+        ]
+      },
+      {
+        "strand": "Probability",
+        "items": [
+          "List possible outcomes of chance experiments",
+          "Estimate likelihoods; compare events with and without equally likely outcomes",
+          "Conduct repeated chance experiments"
+        ]
+      }
+    ],
+    "achievementStandard": "By the end of Year 5, students use place value to write and order decimals including decimals greater than one. They express natural numbers as products of factors and identify multiples. Students order and represent add and subtract fractions with the same or related denominators. They represent common percentages and connect them to their fraction and decimal equivalents. Students use their proficiency with multiplication facts and efficient calculation strategies to multiply large numbers by one- and two-digit numbers and divide by single-digit numbers. They check the reasonableness of their calculations using estimation. Students use mathematical modelling to solve financial and other practical problems, formulating and solving problems, choosing arithmetic operations and interpreting results in terms of the situation. They apply properties of numbers and operations to find unknown values in numerical equations involving multiplication and division. Students create and use algorithms to identify and explain patterns in the factors and multiples of numbers. They choose and use appropriate metric units to measure the attributes of length, mass and capacity, and to solve problems involving perimeter and area. Students convert between 12- and 24-hour time. They estimate, construct and measure angles in degrees. Students use grid coordinates to locate and move positions. They connect objects to their two-dimensional nets. Students perform and describe the results of transformations and identify any symmetries. They plan and conduct statistical investigations that collect nominal and ordinal categorical and discrete numerical data using digital tools. Students identify the mode and interpret the shape of distributions of data in context. They interpret and compare data represented in line graphs. Students conduct repeated chance experiments, list the possible outcomes, estimate likelihoods and make comparisons between those with and without equally likely outcomes.",
+    "strands": ["Number", "Algebra", "Measurement", "Space", "Statistics", "Probability"]
+  },
+  {
+    "yearLevel": "Year 6",
+    "objectives": [
+      {
+        "strand": "Number",
+        "items": [
+          "Use integers to represent points on a number line and in the Cartesian plane",
+          "Solve problems using properties of prime, composite and square numbers",
+          "Order common fractions; add and subtract fractions with related denominators",
+          "Use all 4 operations with decimals",
+          "Connect decimal representations of measurements to the metric system",
+          "Find a fraction, decimal or percentage of a quantity",
+          "Solve financial and practical problems involving percentages and rational numbers"
+        ]
+      },
+      {
+        "strand": "Algebra",
+        "items": [
+          "Find unknown values in equations involving combinations of arithmetic operations",
+          "Identify and explain rules used to create growing patterns",
+          "Create and use algorithms to generate sets of numbers using a rule"
+        ]
+      },
+      {
+        "strand": "Measurement",
+        "items": [
+          "Interpret and use timetables",
+          "Convert between common units of length, mass and capacity",
+          "Use the formula for the area of a rectangle to solve problems",
+          "Use angle properties to solve problems"
+        ]
+      },
+      {
+        "strand": "Space",
+        "items": [
+          "Identify the parallel cross-section for right prisms",
+          "Create tessellating patterns using combinations of transformations",
+          "Locate an ordered pair in any one of the 4 quadrants on the Cartesian plane"
+        ]
+      },
+      {
+        "strand": "Statistics",
+        "items": [
+          "Compare distributions of discrete, continuous numerical and ordinal categorical data sets",
+          "Critique arguments presented in the media based on statistics"
+        ]
+      },
+      {
+        "strand": "Probability",
+        "items": [
+          "Assign probabilities using common fractions, decimals and percentages",
+          "Conduct simulations using digital tools to generate and record outcomes",
+          "Compare observed frequencies to expected frequencies"
+        ]
+      }
+    ],
+    "achievementStandard": "By the end of Year 6, students use integers to represent points on a number line and in the Cartesian plane. They solve problems using the properties of prime, composite and square numbers. Students order common fractions, giving reasons, and add and subtract fractions with related denominators. They use all 4 operations with decimals and connect decimal representations of measurements to the metric system. Students solve problems involving finding a fraction, decimal or percentage of a quantity and use estimation to find approximate solutions to problems involving rational numbers and percentages. They use mathematical modelling to solve financial and other practical problems involving percentages and rational numbers, formulating and solving the problem, and justifying choices. Students find unknown values in numerical equations involving combinations of arithmetic operations. They identify and explain rules used to create growing patterns. Students create and use algorithms to generate sets of numbers, using a rule. They interpret and use timetables. Students convert between common units of length, mass and capacity. They use the formula for the area of a rectangle and angle properties to solve problems. Students identify the parallel cross-section for right prisms. They create tessellating patterns using combinations of transformations. Students locate an ordered pair in any one of the 4 quadrants on the Cartesian plane. They compare distributions of discrete and continuous numerical and ordinal categorical data sets as part of their statistical investigations, using digital tools. Students critique arguments presented in the media based on statistics. They assign probabilities using common fractions, decimal and percentages. Students conduct simulations using digital tools, to generate and record the outcomes from many trials of a chance experiment. They compare observed frequencies to the expected frequencies of the outcomes of chance experiments.",
+    "strands": ["Number", "Algebra", "Measurement", "Space", "Statistics", "Probability"]
+  },
+  {
+    "yearLevel": "Year 7",
+    "objectives": [
+      {
+        "strand": "Number",
+        "items": [
+          "Represent natural numbers in expanded form and as products of prime factors using exponent notation",
+          "Solve problems involving squares and square roots of perfect squares",
+          "Solve addition and subtraction problems with integers",
+          "Use all 4 operations with positive fractions and decimals",
+          "Choose between equivalent representations of rational numbers and percentages",
+          "Solve practical problems involving ratios, percentages in financial contexts"
+        ]
+      },
+      {
+        "strand": "Algebra",
+        "items": [
+          "Use algebraic expressions to represent situations and describe relationships between variables",
+          "Substitute values into formulas to determine unknown values",
+          "Solve linear equations with natural number solutions",
+          "Create tables of values related to algebraic expressions and describe the effect of variation"
+        ]
+      },
+      {
+        "strand": "Measurement",
+        "items": [
+          "Use formulas for areas of triangles and parallelograms",
+          "Calculate volumes of rectangular and triangular prisms",
+          "Describe relationships between radius, diameter and circumference of a circle",
+          "Apply angle relationships and the sum of angles in a triangle to solve problems"
+        ]
+      },
+      {
+        "strand": "Space",
+        "items": [
+          "Classify polygons according to their features",
+          "Represent objects two-dimensionally in different ways",
+          "Use coordinates to describe transformations of points in the plane"
+        ]
+      },
+      {
+        "strand": "Statistics",
+        "items": [
+          "Plan and conduct statistical investigations with discrete and continuous numerical data",
+          "Interpret shape of distribution and summary statistics; identify possible outliers",
+          "Decide which measure of central tendency is most suitable and explain reasoning"
+        ]
+      },
+      {
+        "strand": "Probability",
+        "items": [
+          "List sample spaces for single-step experiments",
+          "Assign probabilities to outcomes and predict relative frequencies",
+          "Conduct experiments and simulations; explain differences between predicted and observed results"
+        ]
+      }
+    ],
+    "achievementStandard": "By the end of Year 7, students represent natural numbers in expanded form and as products of prime factors, using exponent notation. They solve problems involving squares of numbers and square roots of perfect square numbers. Students solve problems involving addition and subtraction of integers. They use all 4 operations in calculations involving positive fractions and decimals, choosing efficient calculation strategies. Students choose between equivalent representations of rational numbers and percentages to assist in calculations. They use mathematical modelling to solve practical problems involving rational numbers, percentages and ratios in financial and other applied contexts, justifying choices of representation. Students use algebraic expressions to represent situations, describe the relationships between variables from authentic data and substitute values into formulas to determine unknown values. They solve linear equations with natural number solutions. Students create tables of values related to algebraic expressions and formulas, and describe the effect of variation. They apply knowledge of angle relationships and the sum of angles in a triangle to solve problems, giving reasons. Students use formulas for the areas of triangles and parallelograms and the volumes of rectangular and triangular prisms to solve problems. They describe the relationships between the radius, diameter and circumference of a circle. Students classify polygons according to their features and create an algorithm designed to sort and classify shapes. They represent objects two-dimensionally in different ways, describing the usefulness of these representations. Students use coordinates to describe transformations of points in the plane. They plan and conduct statistical investigations involving discrete and continuous numerical data, using appropriate displays. Students interpret data in terms of the shape of distribution and summary statistics, identifying possible outliers. They decide which measure of central tendency is most suitable and explain their reasoning. Students list sample spaces for single step experiments, assign probabilities to outcomes and predict relative frequencies for related events. They conduct repeated single-step chance experiments and run simulations using digital tools, giving reasons for differences between predicted and observed results.",
+    "strands": ["Number", "Algebra", "Measurement", "Space", "Statistics", "Probability"]
+  },
+  {
+    "yearLevel": "Year 8",
+    "objectives": [
+      {
+        "strand": "Number",
+        "items": [
+          "Recognise irrational numbers and terminating or recurring decimals",
+          "Apply exponent laws to calculations with positive integer exponents",
+          "Solve problems involving the 4 operations with integers and positive rational numbers",
+          "Solve practical problems involving ratios, percentages and rates in financial contexts"
+        ]
+      },
+      {
+        "strand": "Algebra",
+        "items": [
+          "Rearrange, expand and factorise linear expressions",
+          "Graph linear relations",
+          "Solve linear equations with rational solutions and one-variable inequalities",
+          "Use mathematical modelling to solve problems using linear relations"
+        ]
+      },
+      {
+        "strand": "Measurement",
+        "items": [
+          "Solve problems involving perimeter and area of composite shapes",
+          "Calculate the volume of right prisms",
+          "Use Pythagoras' theorem to solve problems involving right-angle triangles",
+          "Use formulas for the area and circumference of circles",
+          "Solve duration problems involving 12- and 24-hour cycles across multiple time zones"
+        ]
+      },
+      {
+        "strand": "Space",
+        "items": [
+          "Use 3 dimensions to locate and describe position",
+          "Identify conditions for congruency and similarity in shapes",
+          "Apply properties of quadrilaterals to solve problems"
+        ]
+      },
+      {
+        "strand": "Statistics",
+        "items": [
+          "Conduct statistical investigations and explain implications of sampling",
+          "Analyse and describe the distribution of data",
+          "Compare variation in random samples of different sizes from a given population"
+        ]
+      },
+      {
+        "strand": "Probability",
+        "items": [
+          "Represent combinations of 2 events with tables and diagrams",
+          "Determine probabilities of compound events to solve practical problems",
+          "Conduct experiments and simulations for compound events using digital tools"
+        ]
+      }
+    ],
+    "achievementStandard": "By the end of Year 8, students recognise irrational numbers and terminating or recurring decimals. They apply the exponent laws to calculations with numbers involving positive integer exponents. Students solve problems involving the 4 operations with integers and positive rational numbers. They use mathematical modelling to solve practical problems involving ratios, percentages and rates in measurement and financial contexts. Students apply algebraic properties to rearrange, expand and factorise linear expressions. They graph linear relations and solve linear equations with rational solutions and one-variable inequalities, graphically and algebraically. Students use mathematical modelling to solve problems using linear relations, interpreting and reviewing the model in context. They make and test conjectures involving linear relations using digital tools. Students use appropriate metric units when solving measurement problems involving the perimeter and area of composite shapes, and volume of right prisms. They use Pythagoras\u2019 theorem to solve measurement problems involving unknown lengths of right-angle triangles. Students use formulas to solve problems involving the area and circumference of circles. They solve problems of duration involving 12- and 24-hour cycles across multiple time zones. Students use 3 dimensions to locate and describe position. They identify conditions for congruency and similarity in shapes and create and test algorithms designed to test for congruency and similarity. Students apply the properties of quadrilaterals to solve problems. They conduct statistical investigations and explain the implications of obtaining data through sampling. Students analyse and describe the distribution of data. They compare the variation in distributions of random samples of the same and different size from a given population with respect to shape, measures of central tendency and range. Students represent the possible combinations of 2 events with tables and diagrams, and determine related probabilities to solve practical problems. They conduct experiments and simulations using digital tools to determine related probabilities of compound events.",
+    "strands": ["Number", "Algebra", "Measurement", "Space", "Statistics", "Probability"]
+  },
+  {
+    "yearLevel": "Year 9",
+    "objectives": [
+      {
+        "strand": "Number",
+        "items": [
+          "Use rational and irrational numbers to solve problems",
+          "Extend and apply exponent laws with positive integers to variables",
+          "Express small and large numbers in scientific notation"
+        ]
+      },
+      {
+        "strand": "Algebra",
+        "items": [
+          "Expand binomial products",
+          "Factorise monic quadratic expressions",
+          "Find the distance between 2 points on the Cartesian plane",
+          "Find the gradient and midpoint of a line segment",
+          "Graph quadratic functions",
+          "Solve monic quadratic equations with integer roots algebraically",
+          "Describe the effects of parameter variation on functions and relations"
+        ]
+      },
+      {
+        "strand": "Measurement",
+        "items": [
+          "Solve problems involving the surface area and volume of right prisms and cylinders",
+          "Determine percentage errors in measurements",
+          "Apply Pythagoras' theorem and trigonometric ratios to solve right-angled triangle problems"
+        ]
+      },
+      {
+        "strand": "Space",
+        "items": [
+          "Solve problems involving ratio, similarity and scale in two-dimensional situations",
+          "Apply the enlargement transformation to images of shapes and objects",
+          "Design and test algorithms based on geometric constructions or theorems"
+        ]
+      },
+      {
+        "strand": "Statistics",
+        "items": [
+          "Compare and analyse distributions of multiple numerical data sets",
+          "Describe features using summary statistics and shape of distributions; consider effect of outliers",
+          "Explain how sampling techniques and representation can support or question conclusions"
+        ]
+      },
+      {
+        "strand": "Probability",
+        "items": [
+          "Determine sets of outcomes for compound events and represent them in various ways",
+          "Assign probabilities to outcomes of compound events",
+          "Design and conduct experiments or simulations for combined events using digital tools"
+        ]
+      }
+    ],
+    "achievementStandard": "By the end of Year 9, students recognise and use rational and irrational numbers to solve problems. They extend and apply the exponent laws with positive integers to variables. Students expand binomial products, and factorise monic quadratic expressions. They find the distance between 2 points on the Cartesian plane, and the gradient and midpoint of a line segment. Students use mathematical modelling to solve problems involving change in financial and other applied contexts, choosing to use linear and quadratic functions. They graph quadratic functions and solve monic quadratic equations with integer roots algebraically. Students describe the effects of variation of parameters on functions and relations, using digital tools, and make connections between their graphical and algebraic representations. They apply formulas to solve problems involving the surface area and volume of right prisms and cylinders. Students solve problems involving ratio, similarity and scale in two-dimensional situations. They determine percentage errors in measurements. Students apply Pythagoras\u2019 theorem and use trigonometric ratios to solve problems involving right-angled triangles. They use mathematical modelling to solve practical problems involving direct proportion, ratio and scale, evaluating the model and communicating their methods and findings. Students express small and large numbers in scientific notation. They apply the enlargement transformation to images of shapes and objects, and interpret results. Students design, use and test algorithms based on geometric constructions or theorems. They compare and analyse the distributions of multiple numerical data sets, choose representations, describe features of these data sets using summary statistics and the shape of distributions, and consider the effect of outliers. Students explain how sampling techniques and representation can be used to support or question conclusions or to promote a point of view. They determine sets of outcomes for compound events and represent these in various ways. Students assign probabilities to the outcomes of compound events. They design and conduct experiments or simulations for combined events using digital tools.",
+    "strands": ["Number", "Algebra", "Measurement", "Space", "Statistics", "Probability"]
+  },
+  {
+    "yearLevel": "Year 10",
+    "objectives": [
+      {
+        "strand": "Number",
+        "items": [
+          "Recognise the effect of approximations of real numbers in repeated calculations",
+          "Interpret and use logarithmic scales representing small or large quantities"
+        ]
+      },
+      {
+        "strand": "Algebra",
+        "items": [
+          "Solve problems involving growth and decay using linear, quadratic and exponential functions",
+          "Solve simultaneous linear equations and linear inequalities in 2 variables graphically",
+          "Make and test conjectures involving functions and relations using digital tools"
+        ]
+      },
+      {
+        "strand": "Measurement",
+        "items": [
+          "Solve problems involving surface area and volume of composite objects",
+          "Apply Pythagoras' theorem and trigonometry to practical right-angled triangle problems",
+          "Identify the impact of measurement errors on accuracy of results",
+          "Solve practical problems involving proportion and scaling"
+        ]
+      },
+      {
+        "strand": "Space",
+        "items": [
+          "Use deductive reasoning, theorems and algorithms to solve spatial problems",
+          "Interpret networks used to represent practical situations and describe connectedness"
+        ]
+      },
+      {
+        "strand": "Statistics",
+        "items": [
+          "Plan and conduct statistical investigations involving bivariate data",
+          "Represent distributions using tables and scatter plots; comment on possible association",
+          "Analyse inferences and conclusions in the media, noting potential sources of bias",
+          "Compare distributions of continuous numerical data using various displays"
+        ]
+      },
+      {
+        "strand": "Probability",
+        "items": [
+          "Apply conditional probability to solve problems involving compound events",
+          "Design and conduct simulations involving conditional probability using digital tools"
+        ]
+      }
+    ],
+    "achievementStandard": "By the end of Year 10,\u00a0students\u00a0recognise\u00a0the effect of\u00a0approximations of\u00a0real\u00a0numbers in\u00a0repeated\u00a0calculations.\u00a0They\u00a0use mathematical modelling to solve problems involving\u00a0growth and decay in financial and other applied situations, applying\u00a0linear,\u00a0quadratic\u00a0and exponential functions as appropriate, and solve\u00a0related equations, numerically and graphically. Students make and test conjectures involving functions and relations using digital tools. They\u00a0solve problems involving simultaneous linear equations and linear inequalities in 2 variables graphically and justify solutions. Students interpret and\u00a0use\u00a0logarithmic scales\u00a0representing small or large\u00a0quantities or change in applied\u00a0contexts. They\u00a0solve\u00a0 measurement problems involving surface area and volume of composite objects. Students apply\u00a0Pythagoras\u2019 theorem and trigonometry to solve practical problems involving right-angled triangles. They identify the\u00a0impact of measurement errors on the accuracy of results. Students\u00a0use mathematical modelling to solve practical problems involving\u00a0proportion and scaling, evaluating and modifying models, and reporting assumptions, methods and findings. They use\u00a0deductive reasoning, theorems\u00a0and algorithms to\u00a0solve\u00a0spatial\u00a0problems.\u00a0Students\u00a0interpret networks used to\u00a0represent practical situations and describe connectedness. They\u00a0plan and\u00a0conduct\u00a0statistical\u00a0investigations involving bivariate\u00a0data. Students represent the distribution of data involving 2 variables, using tables and\u00a0scatter plots,\u00a0and\u00a0comment on\u00a0possible association.\u00a0They\u00a0analyse\u00a0inferences\u00a0and\u00a0conclusions\u00a0in the media, noting potential sources of bias.\u00a0Students\u00a0compare the distribution of\u00a0continuous numerical\u00a0data,\u00a0using various displays, and discuss distributions in terms of centre, spread, shape and outliers.\u00a0They apply conditional probability\u00a0to solve problems involving compound events.\u00a0Students\u00a0design and\u00a0conduct\u00a0simulations\u00a0involving\u00a0conditional probability, using digital tools.",
+    "strands": ["Number", "Algebra", "Measurement", "Space", "Statistics", "Probability"]
+  }
+]

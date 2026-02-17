@@ -2,9 +2,8 @@ import Link from "next/link";
 
 const footerLinks = {
   Curriculum: [
-    { label: "English", href: "https://www.australiancurriculum.edu.au/downloads/learning-areas#accordion-9869db6018-item-6689c0bc06", external: true },
-    { label: "Mathematics", href: "https://www.australiancurriculum.edu.au/downloads/learning-areas#accordion-9869db6018-item-7860571ccc", external: true },
-    { label: "All Learning Areas", href: "https://www.australiancurriculum.edu.au/downloads/learning-areas", external: true },
+    { label: "Curriculum Overview", href: "/curriculum" },
+    { label: "Official Downloads", href: "https://www.australiancurriculum.edu.au/downloads/learning-areas", external: true },
   ],
   Resources: [
     { label: "Lesson Plans", href: "/resources/lesson-plans" },
