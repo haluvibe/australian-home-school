@@ -53,6 +53,7 @@ export interface NumberTraceData {
   type: "number-trace";
   title: string;
   instruction: string;
+  parentTip?: string;
   numbers: number[];
 }
 
@@ -60,6 +61,7 @@ export interface CountObjectsData {
   type: "count-objects";
   title: string;
   instruction: string;
+  parentTip?: string;
   rows?: { object: ObjectName; count: number }[];
   groups?: { objects: ObjectName[]; label: string }[];
 }
@@ -68,6 +70,7 @@ export interface MatchingData {
   type: "matching";
   title: string;
   instruction: string;
+  parentTip?: string;
   left?: string[];
   right?: string[];
   leftItems?: { label: string; objects: ObjectName[] }[];
@@ -78,6 +81,7 @@ export interface CompareGroupsData {
   type: "compare-groups";
   title: string;
   instruction: string;
+  parentTip?: string;
   pairs: { leftCount: number; rightCount: number; object: ObjectName; question: string }[];
 }
 
@@ -85,6 +89,7 @@ export interface NumberBondsData {
   type: "number-bonds";
   title: string;
   instruction: string;
+  parentTip?: string;
   bonds: { total: number; partA: number | null; partB: number | null }[];
 }
 
@@ -92,6 +97,7 @@ export interface PatternData {
   type: "pattern";
   title: string;
   instruction: string;
+  parentTip?: string;
   rows: { sequence: (ObjectName | null)[]; unitLength: number }[];
 }
 
@@ -99,6 +105,7 @@ export interface SortingData {
   type: "sorting";
   title: string;
   instruction: string;
+  parentTip?: string;
   columns: string[];
   items: { label: string; icon?: ObjectName }[];
 }
@@ -107,6 +114,7 @@ export interface CircleCorrectData {
   type: "circle-correct";
   title: string;
   instruction: string;
+  parentTip?: string;
   questions: {
     prompt: string;
     promptIcon?: ObjectName;
@@ -120,6 +128,7 @@ export interface PictureGraphData {
   type: "picture-graph";
   title: string;
   instruction: string;
+  parentTip?: string;
   rows: { label: string; icon: ObjectName; count: number }[];
   questions: string[];
 }
@@ -128,6 +137,7 @@ export interface SequenceData {
   type: "sequence";
   title: string;
   instruction: string;
+  parentTip?: string;
   items?: { label: string; icon?: ObjectName }[];
   sequences?: { items: number[]; answer: number[] }[];
 }
@@ -136,6 +146,7 @@ export interface ShapeTraceData {
   type: "shape-trace";
   title: string;
   instruction: string;
+  parentTip?: string;
   shapes: { name: string; sides: number }[];
 }
 
@@ -143,6 +154,7 @@ export interface TallyChartData {
   type: "tally-chart";
   title: string;
   instruction: string;
+  parentTip?: string;
   categories: { label: string; icon: ObjectName; count: number }[];
 }
 
@@ -184,10 +196,17 @@ export type ActivityData =
   | HomeActivityData
   | PictureGraphData;
 
+export interface LearningGuide {
+  concept: string;
+  activation: string;
+  check: string;
+}
+
 export interface WorksheetItem {
   slug: string;
   title: string;
   strand: string;
   description: string;
+  learningGuide?: LearningGuide;
   activities: ActivityData[];
 }

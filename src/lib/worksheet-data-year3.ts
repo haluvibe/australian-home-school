@@ -1,511 +1,564 @@
 import type { WorksheetItem } from "./worksheet-types";
 
 export const year3MathsWorksheets: WorksheetItem[] = [
-  // ── WS 1: Numbers Beyond 10,000 ──────────────────────────
+  // ══════════════════════════════════════════════════════════════
+  // WS 1: Numbers Beyond 10,000
+  // ══════════════════════════════════════════════════════════════
   {
     slug: "numbers-beyond-10000",
     title: "Numbers Beyond 10,000",
     strand: "Number",
-    description:
-      "Order and represent natural numbers beyond 10,000",
+    description: "Order and represent natural numbers beyond 10,000",
     activities: [
-      // ─── Easy (~30 activities) ───
-      {
-        type: "number-trace",
-        title: "Trace Four-Digit Numbers",
-        instruction: "Trace each number carefully. Say the number out loud as you write it!",
-        numbers: [1000, 2500, 3750, 5000, 7500, 8000],
-      },
-      {
-        type: "number-trace",
-        title: "Trace More Four-Digit Numbers",
-        instruction: "Trace these numbers. Can you read each one?",
-        numbers: [1234, 2468, 3690, 4567, 6789],
-      },
-      {
-        type: "sequence",
-        title: "Count by 1,000s",
-        instruction: "Fill in the missing numbers. Count by thousands!",
-        sequences: [
-          { items: [1000, 2000, 0, 4000, 5000], answer: [3000] },
-          { items: [5000, 0, 7000, 8000, 0], answer: [6000, 9000] },
-          { items: [0, 3000, 4000, 0, 6000], answer: [2000, 5000] },
-        ],
-      },
-      {
-        type: "sequence",
-        title: "Count by 1,000s — Different Starts",
-        instruction: "Keep counting by thousands!",
-        sequences: [
-          { items: [3000, 4000, 0, 6000, 0], answer: [5000, 7000] },
-          { items: [0, 2000, 3000, 0, 5000], answer: [1000, 4000] },
-          { items: [6000, 0, 8000, 0, 10000], answer: [7000, 9000] },
-        ],
-      },
-      {
-        type: "matching",
-        title: "Match Number Words to Numerals",
-        instruction: "Draw a line from each number word to its numeral.",
-        left: ["three thousand five hundred", "eight thousand two hundred", "five thousand and sixty", "ten thousand"],
-        right: ["10000", "3500", "5060", "8200"],
-      },
-      {
-        type: "matching",
-        title: "Match More Number Words",
-        instruction: "Draw a line from each number word to its numeral.",
-        left: ["six thousand four hundred", "two thousand and nine", "nine thousand seven hundred", "four thousand three hundred fifty"],
-        right: ["4350", "6400", "9700", "2009"],
-      },
-      {
-        type: "circle-correct",
-        title: "Read the Number",
-        instruction: "Circle the correct way to read each number.",
-        questions: [
-          { prompt: "4500", options: ["four thousand five hundred", "forty-five hundred", "four hundred fifty"] },
-          { prompt: "7030", options: ["seven hundred thirty", "seven thousand and thirty", "seventy thousand three"] },
-          { prompt: "6008", options: ["six thousand and eight", "six hundred and eight", "sixty thousand eight"] },
-        ],
-      },
-      {
-        type: "circle-correct",
-        title: "Read These Numbers Too",
-        instruction: "Circle the correct way to say each number.",
-        questions: [
-          { prompt: "3200", options: ["three thousand two hundred", "thirty-two hundred", "three hundred twenty"] },
-          { prompt: "9001", options: ["nine thousand and one", "nine hundred one", "ninety thousand one"] },
-          { prompt: "5500", options: ["five thousand five hundred", "fifty-five hundred", "five hundred fifty"] },
-        ],
-      },
-      {
-        type: "count-objects",
-        title: "Count the Groups of Thousands",
-        instruction: "Each star represents 1,000. Count the stars and write the total.",
-        rows: [
-          { object: "star", count: 3 },
-          { object: "star", count: 5 },
-          { object: "star", count: 7 },
-          { object: "star", count: 9 },
-        ],
-      },
-      {
-        type: "count-objects",
-        title: "Count More Thousands",
-        instruction: "Each apple represents 1,000. Count the apples and write the total.",
-        rows: [
-          { object: "apple", count: 4 },
-          { object: "apple", count: 6 },
-          { object: "apple", count: 8 },
-          { object: "apple", count: 10 },
-        ],
-      },
-      {
-        type: "circle-correct",
-        title: "Which Number Is Bigger?",
-        instruction: "Circle the bigger number in each pair.",
-        questions: [
-          { prompt: "Which is bigger?", options: ["2500", "2050"] },
-          { prompt: "Which is bigger?", options: ["4100", "4010"] },
-          { prompt: "Which is bigger?", options: ["6300", "6030"] },
-          { prompt: "Which is bigger?", options: ["8700", "8070"] },
-        ],
-      },
-      {
-        type: "circle-correct",
-        title: "Which Number Is Smaller?",
-        instruction: "Circle the smaller number in each pair.",
-        questions: [
-          { prompt: "Which is smaller?", options: ["1200", "1020"] },
-          { prompt: "Which is smaller?", options: ["3450", "3540"] },
-          { prompt: "Which is smaller?", options: ["5600", "5060"] },
-          { prompt: "Which is smaller?", options: ["7890", "7980"] },
-        ],
-      },
-      {
-        type: "number-bonds",
-        title: "Place Value: Thousands and Hundreds",
-        instruction: "Split each number into thousands and the rest. Example: 3500 = 3000 + 500.",
-        bonds: [
-          { total: 2500, partA: 2000, partB: null },
-          { total: 4300, partA: null, partB: 300 },
-          { total: 6100, partA: 6000, partB: null },
-          { total: 7800, partA: null, partB: 800 },
-          { total: 5600, partA: 5000, partB: null },
-          { total: 9200, partA: null, partB: 200 },
-        ],
-      },
-      {
-        type: "number-bonds",
-        title: "More Place Value Practice",
-        instruction: "Split each number into thousands and the rest.",
-        bonds: [
-          { total: 1700, partA: 1000, partB: null },
-          { total: 3400, partA: null, partB: 400 },
-          { total: 5900, partA: 5000, partB: null },
-          { total: 8100, partA: null, partB: 100 },
-          { total: 4600, partA: 4000, partB: null },
-          { total: 6500, partA: null, partB: 500 },
-        ],
-      },
-      {
-        type: "matching",
-        title: "Match Expanded Form",
-        instruction: "Draw a line to match each number to its expanded form.",
-        left: ["5280", "3046", "7100", "2915"],
-        right: ["7000 + 100", "2000 + 900 + 10 + 5", "5000 + 200 + 80", "3000 + 40 + 6"],
-      },
-      {
-        type: "sequence",
-        title: "Count by 500s",
-        instruction: "Fill in the missing numbers. Count by five hundreds!",
-        sequences: [
-          { items: [500, 1000, 0, 2000, 2500], answer: [1500] },
-          { items: [3000, 0, 4000, 4500, 0], answer: [3500, 5000] },
-          { items: [0, 1500, 2000, 0, 3000], answer: [1000, 2500] },
-        ],
-      },
-      {
-        type: "open-response",
-        title: "Write the Number",
-        instruction: "Write each number word as a numeral.",
-        prompts: [
-          { text: "Two thousand four hundred = ___", type: "lines", lines: 1 },
-          { text: "Six thousand and fifty = ___", type: "lines", lines: 1 },
-          { text: "Nine thousand nine hundred = ___", type: "lines", lines: 1 },
-          { text: "Four thousand three hundred twenty-one = ___", type: "lines", lines: 1 },
-        ],
-      },
-      {
-        type: "open-response",
-        title: "Write More Numbers",
-        instruction: "Write each number word as a numeral.",
-        prompts: [
-          { text: "Seven thousand = ___", type: "lines", lines: 1 },
-          { text: "One thousand eight hundred = ___", type: "lines", lines: 1 },
-          { text: "Five thousand and five = ___", type: "lines", lines: 1 },
-          { text: "Three thousand six hundred ninety = ___", type: "lines", lines: 1 },
-        ],
-      },
-      {
-        type: "sorting",
-        title: "Sort: Less Than or Greater Than 5,000",
-        instruction: "Sort each number into the correct column.",
-        columns: ["Less than 5,000", "Greater than 5,000"],
-        items: [
-          { label: "3,200" },
-          { label: "6,800" },
-          { label: "4,999" },
-          { label: "5,001" },
-          { label: "2,750" },
-          { label: "8,400" },
-        ],
-      },
-      {
-        type: "circle-correct",
-        title: "Odd or Even?",
-        instruction: "Circle whether each number is odd or even.",
-        questions: [
-          { prompt: "4,500", options: ["Odd", "Even"] },
-          { prompt: "3,271", options: ["Odd", "Even"] },
-          { prompt: "6,048", options: ["Odd", "Even"] },
-          { prompt: "8,133", options: ["Odd", "Even"] },
-        ],
-      },
-      // ─── Medium (~25 activities) ───
-      {
-        type: "number-trace",
-        title: "Trace Numbers Near 10,000",
-        instruction: "Trace these larger numbers. Say each one as you write.",
-        numbers: [8250, 9130, 9500, 9999, 10000],
-      },
-      {
-        type: "circle-correct",
-        title: "Which Is the Largest?",
-        instruction: "Circle the largest number in each group.",
-        questions: [
-          { prompt: "Which is the largest?", options: ["3275", "3725", "3572"] },
-          { prompt: "Which is the largest?", options: ["8910", "8190", "8901"] },
-          { prompt: "Which is the largest?", options: ["5432", "5423", "5342"] },
-          { prompt: "Which is the largest?", options: ["7089", "7908", "7890"] },
-        ],
-      },
-      {
-        type: "circle-correct",
-        title: "Which Is the Smallest?",
-        instruction: "Circle the smallest number in each group.",
-        questions: [
-          { prompt: "Which is the smallest?", options: ["4052", "4520", "4025"] },
-          { prompt: "Which is the smallest?", options: ["7098", "7908", "7089"] },
-          { prompt: "Which is the smallest?", options: ["6201", "6210", "6012"] },
-          { prompt: "Which is the smallest?", options: ["3987", "3789", "3978"] },
-        ],
-      },
-      {
-        type: "sequence",
-        title: "Count by 100s Beyond 1,000",
-        instruction: "Fill in the missing numbers. Count by hundreds!",
-        sequences: [
-          { items: [2100, 2200, 0, 2400, 2500], answer: [2300] },
-          { items: [4500, 0, 4700, 4800, 0], answer: [4600, 4900] },
-          { items: [0, 7200, 7300, 0, 7500], answer: [7100, 7400] },
-        ],
-      },
-      {
-        type: "sequence",
-        title: "Count by 100s — More Practice",
-        instruction: "Fill in the missing numbers.",
-        sequences: [
-          { items: [3600, 3700, 0, 3900, 4000], answer: [3800] },
-          { items: [8100, 0, 8300, 8400, 0], answer: [8200, 8500] },
-          { items: [0, 5800, 5900, 0, 6100], answer: [5700, 6000] },
-        ],
-      },
-      {
-        type: "circle-correct",
-        title: "Order Three Numbers",
-        instruction: "Which list shows the numbers from smallest to largest?",
-        questions: [
-          { prompt: "4500, 4050, 4250", options: ["4050, 4250, 4500", "4500, 4250, 4050", "4250, 4050, 4500"] },
-          { prompt: "6800, 6080, 6008", options: ["6008, 6080, 6800", "6800, 6080, 6008", "6080, 6008, 6800"] },
-          { prompt: "9100, 9010, 9110", options: ["9010, 9100, 9110", "9110, 9100, 9010", "9100, 9010, 9110"] },
-        ],
-      },
-      {
-        type: "number-bonds",
-        title: "Place Value to 10,000",
-        instruction: "Split each number into its parts.",
-        bonds: [
-          { total: 5830, partA: 5000, partB: null },
-          { total: 7260, partA: null, partB: 260 },
-          { total: 9450, partA: 9000, partB: null },
-          { total: 8170, partA: null, partB: 170 },
-          { total: 6540, partA: 6000, partB: null },
-          { total: 3890, partA: null, partB: 890 },
-        ],
-      },
-      {
-        type: "matching",
-        title: "Match Numbers to Number Lines",
-        instruction: "Draw a line to match each number to where it belongs.",
-        left: ["2500", "5000", "7500", "10000"],
-        right: ["Three quarters of the way to 10,000", "Halfway to 10,000", "All the way to 10,000", "A quarter of the way to 10,000"],
-      },
-      {
-        type: "circle-correct",
-        title: "Round to the Nearest 1,000",
-        instruction: "Circle the nearest thousand for each number.",
-        questions: [
-          { prompt: "3,200 rounds to...", options: ["3,000", "4,000", "2,000"] },
-          { prompt: "6,800 rounds to...", options: ["6,000", "7,000", "8,000"] },
-          { prompt: "4,500 rounds to...", options: ["4,000", "5,000", "4,500"] },
-          { prompt: "8,150 rounds to...", options: ["8,000", "9,000", "7,000"] },
-        ],
-      },
-      {
-        type: "circle-correct",
-        title: "Round More Numbers",
-        instruction: "Circle the nearest thousand.",
-        questions: [
-          { prompt: "1,900 rounds to...", options: ["1,000", "2,000", "3,000"] },
-          { prompt: "5,499 rounds to...", options: ["5,000", "6,000", "4,000"] },
-          { prompt: "7,501 rounds to...", options: ["7,000", "8,000", "9,000"] },
-          { prompt: "2,250 rounds to...", options: ["2,000", "3,000", "1,000"] },
-        ],
-      },
-      {
-        type: "open-response",
-        title: "Write the Number Word",
-        instruction: "Write each numeral as a number word.",
-        prompts: [
-          { text: "4,730 = ___", type: "lines", lines: 1 },
-          { text: "8,015 = ___", type: "lines", lines: 1 },
-          { text: "6,200 = ___", type: "lines", lines: 1 },
-          { text: "9,999 = ___", type: "lines", lines: 1 },
-        ],
-      },
-      {
-        type: "matching",
-        title: "Match Expanded Form — Medium",
-        instruction: "Draw a line to match each number to its expanded form.",
-        left: ["4,608", "7,350", "2,091", "8,500"],
-        right: ["2000 + 90 + 1", "8000 + 500", "4000 + 600 + 8", "7000 + 300 + 50"],
-      },
-      {
-        type: "open-response",
-        title: "1,000 More and 1,000 Less",
-        instruction: "Write the number that is 1,000 more and 1,000 less.",
-        prompts: [
-          { text: "1,000 more than 4,500 = ___", type: "lines", lines: 1 },
-          { text: "1,000 less than 7,200 = ___", type: "lines", lines: 1 },
-          { text: "1,000 more than 8,999 = ___", type: "lines", lines: 1 },
-          { text: "1,000 less than 3,100 = ___", type: "lines", lines: 1 },
-        ],
-      },
-      {
-        type: "sorting",
-        title: "Sort Numbers Smallest to Largest",
-        instruction: "Write 1st to 6th to sort these from smallest to largest.",
-        columns: ["Smallest to Largest"],
-        items: [
-          { label: "8,400" },
-          { label: "2,100" },
-          { label: "5,700" },
-          { label: "9,300" },
-          { label: "1,600" },
-          { label: "6,050" },
-        ],
-      },
-      // ─── Hard (~20 activities) ───
-      {
-        type: "number-trace",
-        title: "Trace Numbers Beyond 10,000",
-        instruction: "Trace these five-digit numbers carefully!",
-        numbers: [10500, 12000, 15750, 18000, 20000],
-      },
-      {
-        type: "number-trace",
-        title: "Trace More Five-Digit Numbers",
-        instruction: "Keep practising! Trace these large numbers.",
-        numbers: [11250, 13500, 16000, 19500, 25000],
-      },
-      {
-        type: "sequence",
-        title: "Count by 1,000s Beyond 10,000",
-        instruction: "Fill in the missing numbers.",
-        sequences: [
-          { items: [10000, 11000, 0, 13000, 14000], answer: [12000] },
-          { items: [15000, 0, 17000, 18000, 0], answer: [16000, 19000] },
-          { items: [0, 12000, 13000, 0, 15000], answer: [11000, 14000] },
-        ],
-      },
-      {
-        type: "sequence",
-        title: "Count by 2,500s",
-        instruction: "Fill in the missing numbers.",
-        sequences: [
-          { items: [2500, 5000, 0, 10000, 12500], answer: [7500] },
-          { items: [5000, 0, 10000, 12500, 0], answer: [7500, 15000] },
-          { items: [0, 7500, 10000, 0, 15000], answer: [5000, 12500] },
-        ],
-      },
-      {
-        type: "circle-correct",
-        title: "Order Three Numbers (Beyond 10,000)",
-        instruction: "Which list shows the numbers from smallest to largest?",
-        questions: [
-          { prompt: "12500, 10800, 11200", options: ["10800, 11200, 12500", "12500, 11200, 10800", "11200, 10800, 12500"] },
-          { prompt: "15000, 14950, 15100", options: ["14950, 15000, 15100", "15100, 15000, 14950", "15000, 14950, 15100"] },
-          { prompt: "20000, 18500, 19250", options: ["18500, 19250, 20000", "20000, 19250, 18500", "19250, 18500, 20000"] },
-        ],
-      },
-      {
-        type: "circle-correct",
-        title: "Compare Five-Digit Numbers",
-        instruction: "Circle the correct answer.",
-        questions: [
-          { prompt: "Which is bigger: 14,200 or 14,020?", options: ["14,200", "14,020"] },
-          { prompt: "Which is smaller: 18,900 or 19,800?", options: ["18,900", "19,800"] },
-          { prompt: "Which is bigger: 20,000 or 19,999?", options: ["20,000", "19,999"] },
-          { prompt: "Which is smaller: 11,500 or 11,050?", options: ["11,500", "11,050"] },
-        ],
-      },
-      {
-        type: "matching",
-        title: "Match Big Numbers to Words",
-        instruction: "Draw a line to match each numeral to its word form.",
-        left: ["12,500", "15,000", "18,300", "20,000"],
-        right: ["fifteen thousand", "twenty thousand", "twelve thousand five hundred", "eighteen thousand three hundred"],
-      },
-      {
-        type: "number-bonds",
-        title: "Place Value Beyond 10,000",
-        instruction: "Split each number into ten-thousands and the rest.",
-        bonds: [
-          { total: 13500, partA: 10000, partB: null },
-          { total: 16200, partA: null, partB: 6200 },
-          { total: 18750, partA: 10000, partB: null },
-          { total: 14080, partA: null, partB: 4080 },
-          { total: 19900, partA: 10000, partB: null },
-          { total: 11350, partA: null, partB: 1350 },
-        ],
-      },
-      {
-        type: "open-response",
-        title: "Place on the Number Line",
-        instruction: "Write the number that belongs in each position.",
-        prompts: [
-          { text: "Halfway between 8,000 and 10,000 = ___", type: "lines", lines: 1 },
-          { text: "Halfway between 10,000 and 20,000 = ___", type: "lines", lines: 1 },
-          { text: "Halfway between 5,000 and 15,000 = ___", type: "lines", lines: 1 },
-          { text: "Just before 10,000 = ___", type: "lines", lines: 1 },
-        ],
-      },
-      {
-        type: "open-response",
-        title: "Order from Smallest to Largest",
-        instruction: "Write these numbers in order from smallest to largest.",
-        prompts: [
-          { text: "15,000    12,500    18,000    11,000\nOrder: ___", type: "lines", lines: 1 },
-          { text: "9,999    10,001    10,000    9,900\nOrder: ___", type: "lines", lines: 1 },
-          { text: "20,000    15,500    17,250    13,800\nOrder: ___", type: "lines", lines: 1 },
-        ],
-      },
-      {
-        type: "open-response",
-        title: "Big Number Challenge",
-        instruction: "Answer each question about big numbers.",
-        prompts: [
-          { text: "What is 1,000 more than 9,500? ___", type: "lines", lines: 1 },
-          { text: "What is 1,000 less than 15,000? ___", type: "lines", lines: 1 },
-          { text: "What is 100 more than 9,950? ___", type: "lines", lines: 1 },
-          { text: "Write three numbers between 10,000 and 20,000: ___", type: "lines", lines: 1 },
-        ],
-      },
-      {
-        type: "circle-correct",
-        title: "True or False — Big Numbers",
-        instruction: "Circle True or False for each statement.",
-        questions: [
-          { prompt: "10,000 is bigger than 9,999", options: ["True", "False"] },
-          { prompt: "15,000 is halfway between 10,000 and 20,000", options: ["True", "False"] },
-          { prompt: "20,000 has five digits", options: ["True", "False"] },
-          { prompt: "11,000 is one thousand more than 10,000", options: ["True", "False"] },
-        ],
-      },
-      {
-        type: "open-response",
-        title: "Write Numbers in Words — Hard",
-        instruction: "Write each numeral in words.",
-        prompts: [
-          { text: "12,450 = ___", type: "lines", lines: 1 },
-          { text: "17,008 = ___", type: "lines", lines: 1 },
-          { text: "20,000 = ___", type: "lines", lines: 1 },
-          { text: "15,555 = ___", type: "lines", lines: 1 },
-        ],
-      },
-      {
-        type: "open-response",
-        title: "Number Puzzles",
-        instruction: "Solve each puzzle.",
-        prompts: [
-          { text: "I am a five-digit number. My digits add up to 5. I am 10,000 + 4,000 + 1,000. What am I? ___", type: "lines", lines: 1 },
-          { text: "I am between 11,000 and 12,000. My tens digit is 5. My ones digit is 0. I could be: ___", type: "lines", lines: 1 },
-          { text: "Write the largest four-digit number you can: ___", type: "lines", lines: 1 },
-          { text: "Write the smallest five-digit number you can: ___", type: "lines", lines: 1 },
-        ],
-      },
-      {
-        type: "home-activity",
-        title: "Home Activity: Big Number Hunt",
-        instruction: "Find big numbers all around you!",
-        suggestions: [
-          "Look for numbers beyond 10,000 in newspapers or on the internet. Write down 5 that you find.",
-          "Check how far it is to a nearby town in metres. Is it more than 10,000?",
-          "Write the numbers from 10,000 to 20,000 counting by 1,000s.",
-          "Find a five-digit number on a food packet or a receipt. Read it to someone.",
-        ],
-      },
+      // ─── Easy ───
+      { type: "number-trace", title: "Trace Four-Digit Numbers", instruction: "Trace each number carefully. Say the number out loud as you write it!", numbers: [1000, 2500, 3750, 5000, 7500, 8000] },
+      { type: "number-trace", title: "Trace More Four-Digit Numbers", instruction: "Trace these numbers. Can you read each one?", numbers: [1234, 2468, 3690, 4567, 6789] },
+      { type: "number-trace", title: "Trace Round Thousands", instruction: "Trace these important round numbers.", numbers: [1000, 2000, 3000, 4000, 5000, 6000, 7000, 8000, 9000, 10000] },
+      { type: "sequence", title: "Count by 1,000s", instruction: "Fill in the missing numbers. Count by thousands!", sequences: [{ items: [1000, 2000, 0, 4000, 5000], answer: [3000] }, { items: [5000, 0, 7000, 8000, 0], answer: [6000, 9000] }, { items: [0, 3000, 4000, 0, 6000], answer: [2000, 5000] }] },
+      { type: "sequence", title: "Count by 1,000s — Different Starts", instruction: "Keep counting by thousands!", sequences: [{ items: [3000, 4000, 0, 6000, 0], answer: [5000, 7000] }, { items: [0, 2000, 3000, 0, 5000], answer: [1000, 4000] }, { items: [6000, 0, 8000, 0, 10000], answer: [7000, 9000] }] },
+      { type: "sequence", title: "Count by 500s", instruction: "Fill in the missing numbers.", sequences: [{ items: [500, 1000, 0, 2000, 2500], answer: [1500] }, { items: [3000, 0, 4000, 4500, 0], answer: [3500, 5000] }, { items: [0, 1500, 2000, 0, 3000], answer: [1000, 2500] }] },
+      { type: "matching", title: "Match Number Words to Numerals", instruction: "Draw a line from each number word to its numeral.", left: ["three thousand five hundred", "eight thousand two hundred", "five thousand and sixty", "ten thousand"], right: ["10000", "3500", "5060", "8200"] },
+      { type: "matching", title: "Match More Number Words", instruction: "Draw a line from each number word to its numeral.", left: ["six thousand four hundred", "two thousand and nine", "nine thousand seven hundred", "four thousand three fifty"], right: ["4350", "6400", "9700", "2009"] },
+      { type: "matching", title: "Match Expanded Form", instruction: "Match each number to its expanded form.", left: ["5280", "3046", "7100", "2915"], right: ["7000 + 100", "2000 + 900 + 10 + 5", "5000 + 200 + 80", "3000 + 40 + 6"] },
+      { type: "circle-correct", title: "Read the Number", instruction: "Circle the correct way to read each number.", questions: [{ prompt: "4500", options: ["four thousand five hundred", "forty-five hundred", "four hundred fifty"] }, { prompt: "7030", options: ["seven hundred thirty", "seven thousand and thirty", "seventy thousand three"] }, { prompt: "6008", options: ["six thousand and eight", "six hundred and eight", "sixty thousand eight"] }] },
+      { type: "circle-correct", title: "Read These Numbers Too", instruction: "Circle the correct way to say each number.", questions: [{ prompt: "3200", options: ["three thousand two hundred", "thirty-two hundred", "three hundred twenty"] }, { prompt: "9001", options: ["nine thousand and one", "nine hundred one", "ninety thousand one"] }, { prompt: "5500", options: ["five thousand five hundred", "fifty-five hundred", "five hundred fifty"] }] },
+      { type: "count-objects", title: "Count Groups of Thousands", instruction: "Each star represents 1,000. Count the stars and write the total.", rows: [{ object: "star", count: 3 }, { object: "star", count: 5 }, { object: "star", count: 7 }, { object: "star", count: 9 }] },
+      { type: "count-objects", title: "Count More Thousands", instruction: "Each apple represents 1,000. Count and write the total.", rows: [{ object: "apple", count: 4 }, { object: "apple", count: 6 }, { object: "apple", count: 8 }, { object: "apple", count: 10 }] },
+      { type: "circle-correct", title: "Which Number Is Bigger?", instruction: "Circle the bigger number.", questions: [{ prompt: "Which is bigger?", options: ["2500", "2050"] }, { prompt: "Which is bigger?", options: ["4100", "4010"] }, { prompt: "Which is bigger?", options: ["6300", "6030"] }, { prompt: "Which is bigger?", options: ["8700", "8070"] }] },
+      { type: "circle-correct", title: "Which Number Is Smaller?", instruction: "Circle the smaller number.", questions: [{ prompt: "Which is smaller?", options: ["1200", "1020"] }, { prompt: "Which is smaller?", options: ["3450", "3540"] }, { prompt: "Which is smaller?", options: ["5600", "5060"] }, { prompt: "Which is smaller?", options: ["7890", "7980"] }] },
+      { type: "number-bonds", title: "Place Value: Thousands and Hundreds", instruction: "Split each number. Example: 3500 = 3000 + 500.", bonds: [{ total: 2500, partA: 2000, partB: null }, { total: 4300, partA: null, partB: 300 }, { total: 6100, partA: 6000, partB: null }, { total: 7800, partA: null, partB: 800 }, { total: 5600, partA: 5000, partB: null }, { total: 9200, partA: null, partB: 200 }] },
+      { type: "number-bonds", title: "More Place Value Practice", instruction: "Split each number into thousands and the rest.", bonds: [{ total: 1700, partA: 1000, partB: null }, { total: 3400, partA: null, partB: 400 }, { total: 5900, partA: 5000, partB: null }, { total: 8100, partA: null, partB: 100 }, { total: 4600, partA: 4000, partB: null }, { total: 6500, partA: null, partB: 500 }] },
+      { type: "open-response", title: "Write the Number", instruction: "Write each number word as a numeral.", prompts: [{ text: "Two thousand four hundred = ___", type: "lines", lines: 1 }, { text: "Six thousand and fifty = ___", type: "lines", lines: 1 }, { text: "Nine thousand nine hundred = ___", type: "lines", lines: 1 }, { text: "Four thousand three hundred twenty-one = ___", type: "lines", lines: 1 }] },
+      { type: "open-response", title: "Write More Numbers", instruction: "Write each number word as a numeral.", prompts: [{ text: "Seven thousand = ___", type: "lines", lines: 1 }, { text: "One thousand eight hundred = ___", type: "lines", lines: 1 }, { text: "Five thousand and five = ___", type: "lines", lines: 1 }, { text: "Three thousand six hundred ninety = ___", type: "lines", lines: 1 }] },
+      { type: "sorting", title: "Sort: Less Than or Greater Than 5,000", instruction: "Sort each number.", columns: ["Less than 5,000", "Greater than 5,000"], items: [{ label: "3,200" }, { label: "6,800" }, { label: "4,999" }, { label: "5,001" }, { label: "2,750" }, { label: "8,400" }] },
+      { type: "circle-correct", title: "Odd or Even?", instruction: "Circle whether each number is odd or even.", questions: [{ prompt: "4,500", options: ["Odd", "Even"] }, { prompt: "3,271", options: ["Odd", "Even"] }, { prompt: "6,048", options: ["Odd", "Even"] }, { prompt: "8,133", options: ["Odd", "Even"] }] },
+      // ─── Medium ───
+      { type: "number-trace", title: "Trace Numbers Near 10,000", instruction: "Trace these larger numbers.", numbers: [8250, 9130, 9500, 9999, 10000] },
+      { type: "circle-correct", title: "Which Is the Largest?", instruction: "Circle the largest number.", questions: [{ prompt: "Which is the largest?", options: ["3275", "3725", "3572"] }, { prompt: "Which is the largest?", options: ["8910", "8190", "8901"] }, { prompt: "Which is the largest?", options: ["5432", "5423", "5342"] }, { prompt: "Which is the largest?", options: ["7089", "7908", "7890"] }] },
+      { type: "circle-correct", title: "Which Is the Smallest?", instruction: "Circle the smallest number.", questions: [{ prompt: "Which is the smallest?", options: ["4052", "4520", "4025"] }, { prompt: "Which is the smallest?", options: ["7098", "7908", "7089"] }, { prompt: "Which is the smallest?", options: ["6201", "6210", "6012"] }, { prompt: "Which is the smallest?", options: ["3987", "3789", "3978"] }] },
+      { type: "sequence", title: "Count by 100s Beyond 1,000", instruction: "Fill in the missing numbers.", sequences: [{ items: [2100, 2200, 0, 2400, 2500], answer: [2300] }, { items: [4500, 0, 4700, 4800, 0], answer: [4600, 4900] }, { items: [0, 7200, 7300, 0, 7500], answer: [7100, 7400] }] },
+      { type: "sequence", title: "Count by 100s — More Practice", instruction: "Fill in the missing numbers.", sequences: [{ items: [3600, 3700, 0, 3900, 4000], answer: [3800] }, { items: [8100, 0, 8300, 8400, 0], answer: [8200, 8500] }, { items: [0, 5800, 5900, 0, 6100], answer: [5700, 6000] }] },
+      { type: "circle-correct", title: "Order Three Numbers", instruction: "Which list is smallest to largest?", questions: [{ prompt: "4500, 4050, 4250", options: ["4050, 4250, 4500", "4500, 4250, 4050", "4250, 4050, 4500"] }, { prompt: "6800, 6080, 6008", options: ["6008, 6080, 6800", "6800, 6080, 6008", "6080, 6008, 6800"] }, { prompt: "9100, 9010, 9110", options: ["9010, 9100, 9110", "9110, 9100, 9010", "9100, 9010, 9110"] }] },
+      { type: "number-bonds", title: "Place Value to 10,000", instruction: "Split each number.", bonds: [{ total: 5830, partA: 5000, partB: null }, { total: 7260, partA: null, partB: 260 }, { total: 9450, partA: 9000, partB: null }, { total: 8170, partA: null, partB: 170 }, { total: 6540, partA: 6000, partB: null }, { total: 3890, partA: null, partB: 890 }] },
+      { type: "matching", title: "Match Numbers to Number Lines", instruction: "Draw a line to match.", left: ["2500", "5000", "7500", "10000"], right: ["Three quarters to 10,000", "Halfway to 10,000", "All the way to 10,000", "A quarter to 10,000"] },
+      { type: "matching", title: "Match Expanded Form — Medium", instruction: "Match.", left: ["4,608", "7,350", "2,091", "8,500"], right: ["2000 + 90 + 1", "8000 + 500", "4000 + 600 + 8", "7000 + 300 + 50"] },
+      { type: "circle-correct", title: "Round to the Nearest 1,000", instruction: "Circle the nearest thousand.", questions: [{ prompt: "3,200 rounds to...", options: ["3,000", "4,000", "2,000"] }, { prompt: "6,800 rounds to...", options: ["6,000", "7,000", "8,000"] }, { prompt: "4,500 rounds to...", options: ["4,000", "5,000", "4,500"] }, { prompt: "8,150 rounds to...", options: ["8,000", "9,000", "7,000"] }] },
+      { type: "circle-correct", title: "Round More Numbers", instruction: "Circle the nearest thousand.", questions: [{ prompt: "1,900 rounds to...", options: ["1,000", "2,000", "3,000"] }, { prompt: "5,499 rounds to...", options: ["5,000", "6,000", "4,000"] }, { prompt: "7,501 rounds to...", options: ["7,000", "8,000", "9,000"] }, { prompt: "2,250 rounds to...", options: ["2,000", "3,000", "1,000"] }] },
+      { type: "open-response", title: "Write the Number Word", instruction: "Write each numeral as a number word.", prompts: [{ text: "4,730 = ___", type: "lines", lines: 1 }, { text: "8,015 = ___", type: "lines", lines: 1 }, { text: "6,200 = ___", type: "lines", lines: 1 }, { text: "9,999 = ___", type: "lines", lines: 1 }] },
+      { type: "open-response", title: "1,000 More and 1,000 Less", instruction: "Write the number.", prompts: [{ text: "1,000 more than 4,500 = ___", type: "lines", lines: 1 }, { text: "1,000 less than 7,200 = ___", type: "lines", lines: 1 }, { text: "1,000 more than 8,999 = ___", type: "lines", lines: 1 }, { text: "1,000 less than 3,100 = ___", type: "lines", lines: 1 }] },
+      { type: "sorting", title: "Sort Numbers in Order", instruction: "Sort from smallest to largest.", columns: ["Smallest to Largest"], items: [{ label: "8,400" }, { label: "2,100" }, { label: "5,700" }, { label: "9,300" }, { label: "1,600" }, { label: "6,050" }] },
+      { type: "circle-correct", title: "100 More or 100 Less", instruction: "Circle the answer.", questions: [{ prompt: "100 more than 4,900 = ?", options: ["4,800", "5,000", "5,100"] }, { prompt: "100 less than 3,050 = ?", options: ["2,950", "3,150", "3,040"] }, { prompt: "100 more than 9,900 = ?", options: ["9,800", "10,000", "10,100"] }, { prompt: "100 less than 6,000 = ?", options: ["5,000", "5,900", "5,990"] }] },
+      // ─── Hard ───
+      { type: "number-trace", title: "Trace Numbers Beyond 10,000", instruction: "Trace these five-digit numbers!", numbers: [10500, 12000, 15750, 18000, 20000] },
+      { type: "number-trace", title: "Trace More Five-Digit Numbers", instruction: "Keep practising!", numbers: [11250, 13500, 16000, 19500, 25000] },
+      { type: "sequence", title: "Count by 1,000s Beyond 10,000", instruction: "Fill in the missing numbers.", sequences: [{ items: [10000, 11000, 0, 13000, 14000], answer: [12000] }, { items: [15000, 0, 17000, 18000, 0], answer: [16000, 19000] }, { items: [0, 12000, 13000, 0, 15000], answer: [11000, 14000] }] },
+      { type: "sequence", title: "Count by 2,500s", instruction: "Fill in the missing numbers.", sequences: [{ items: [2500, 5000, 0, 10000, 12500], answer: [7500] }, { items: [5000, 0, 10000, 12500, 0], answer: [7500, 15000] }, { items: [0, 7500, 10000, 0, 15000], answer: [5000, 12500] }] },
+      { type: "circle-correct", title: "Order Beyond 10,000", instruction: "Which list is smallest to largest?", questions: [{ prompt: "12500, 10800, 11200", options: ["10800, 11200, 12500", "12500, 11200, 10800", "11200, 10800, 12500"] }, { prompt: "15000, 14950, 15100", options: ["14950, 15000, 15100", "15100, 15000, 14950", "15000, 14950, 15100"] }, { prompt: "20000, 18500, 19250", options: ["18500, 19250, 20000", "20000, 19250, 18500", "19250, 18500, 20000"] }] },
+      { type: "circle-correct", title: "Compare Five-Digit Numbers", instruction: "Circle the correct answer.", questions: [{ prompt: "Which is bigger: 14,200 or 14,020?", options: ["14,200", "14,020"] }, { prompt: "Which is smaller: 18,900 or 19,800?", options: ["18,900", "19,800"] }, { prompt: "Which is bigger: 20,000 or 19,999?", options: ["20,000", "19,999"] }, { prompt: "Which is smaller: 11,500 or 11,050?", options: ["11,500", "11,050"] }] },
+      { type: "matching", title: "Match Big Numbers to Words", instruction: "Match each numeral to its word form.", left: ["12,500", "15,000", "18,300", "20,000"], right: ["fifteen thousand", "twenty thousand", "twelve thousand five hundred", "eighteen thousand three hundred"] },
+      { type: "number-bonds", title: "Place Value Beyond 10,000", instruction: "Split each number.", bonds: [{ total: 13500, partA: 10000, partB: null }, { total: 16200, partA: null, partB: 6200 }, { total: 18750, partA: 10000, partB: null }, { total: 14080, partA: null, partB: 4080 }, { total: 19900, partA: 10000, partB: null }, { total: 11350, partA: null, partB: 1350 }] },
+      { type: "open-response", title: "Place on the Number Line", instruction: "Write the number that belongs in each position.", prompts: [{ text: "Halfway between 8,000 and 10,000 = ___", type: "lines", lines: 1 }, { text: "Halfway between 10,000 and 20,000 = ___", type: "lines", lines: 1 }, { text: "Halfway between 5,000 and 15,000 = ___", type: "lines", lines: 1 }, { text: "Just before 10,000 = ___", type: "lines", lines: 1 }] },
+      { type: "open-response", title: "Order from Smallest to Largest", instruction: "Write these numbers in order.", prompts: [{ text: "15,000    12,500    18,000    11,000\nOrder: ___", type: "lines", lines: 1 }, { text: "9,999    10,001    10,000    9,900\nOrder: ___", type: "lines", lines: 1 }, { text: "20,000    15,500    17,250    13,800\nOrder: ___", type: "lines", lines: 1 }] },
+      { type: "open-response", title: "Big Number Challenge", instruction: "Answer each question.", prompts: [{ text: "What is 1,000 more than 9,500? ___", type: "lines", lines: 1 }, { text: "What is 1,000 less than 15,000? ___", type: "lines", lines: 1 }, { text: "What is 100 more than 9,950? ___", type: "lines", lines: 1 }, { text: "Write three numbers between 10,000 and 20,000: ___", type: "lines", lines: 1 }] },
+      { type: "circle-correct", title: "True or False — Big Numbers", instruction: "Circle True or False.", questions: [{ prompt: "10,000 is bigger than 9,999", options: ["True", "False"] }, { prompt: "15,000 is halfway between 10,000 and 20,000", options: ["True", "False"] }, { prompt: "20,000 has five digits", options: ["True", "False"] }, { prompt: "11,000 is one thousand more than 10,000", options: ["True", "False"] }] },
+      { type: "open-response", title: "Write Numbers in Words — Hard", instruction: "Write each numeral in words.", prompts: [{ text: "12,450 = ___", type: "lines", lines: 1 }, { text: "17,008 = ___", type: "lines", lines: 1 }, { text: "20,000 = ___", type: "lines", lines: 1 }, { text: "15,555 = ___", type: "lines", lines: 1 }] },
+      { type: "open-response", title: "Number Puzzles", instruction: "Solve each puzzle.", prompts: [{ text: "I am between 11,000 and 12,000. My tens digit is 5 and my ones digit is 0. I could be: ___", type: "lines", lines: 1 }, { text: "Write the largest four-digit number: ___", type: "lines", lines: 1 }, { text: "Write the smallest five-digit number: ___", type: "lines", lines: 1 }, { text: "I am 2,000 more than 13,000. What am I? ___", type: "lines", lines: 1 }] },
+      { type: "home-activity", title: "Home Activity: Big Number Hunt", instruction: "Find big numbers all around you!", suggestions: ["Look for numbers beyond 10,000 in newspapers or on the internet. Write down 5 that you find.", "Check how far it is to a nearby town in metres. Is it more than 10,000?", "Write the numbers from 10,000 to 20,000 counting by 1,000s.", "Find a five-digit number on a food packet or a receipt. Read it to someone."] },
     ],
   },
+
+  // ══════════════════════════════════════════════════════════════
+  // WS 2: Partition for Calculation
+  // ══════════════════════════════════════════════════════════════
+  {
+    slug: "partition-for-calculation",
+    title: "Partition for Calculation",
+    strand: "Number",
+    description: "Partition two- and three-digit numbers in different ways to assist in calculations",
+    activities: [
+      // ─── Easy ───
+      { type: "number-bonds", title: "Split into Hundreds, Tens and Ones", instruction: "Partition each number. Example: 347 = 300 + 40 + 7.", bonds: [{ total: 256, partA: 200, partB: null }, { total: 483, partA: null, partB: 83 }, { total: 175, partA: 100, partB: null }, { total: 629, partA: null, partB: 29 }, { total: 341, partA: 300, partB: null }, { total: 807, partA: null, partB: 7 }] },
+      { type: "number-bonds", title: "More Partitioning Practice", instruction: "Partition each number into hundreds and the rest.", bonds: [{ total: 538, partA: 500, partB: null }, { total: 762, partA: null, partB: 62 }, { total: 294, partA: 200, partB: null }, { total: 416, partA: null, partB: 16 }, { total: 853, partA: 800, partB: null }, { total: 670, partA: null, partB: 70 }] },
+      { type: "number-bonds", title: "Two-Digit Partitioning", instruction: "Partition each two-digit number into tens and ones.", bonds: [{ total: 45, partA: 40, partB: null }, { total: 73, partA: null, partB: 3 }, { total: 86, partA: 80, partB: null }, { total: 29, partA: null, partB: 9 }, { total: 51, partA: 50, partB: null }, { total: 64, partA: null, partB: 4 }] },
+      { type: "matching", title: "Match Partitions to Numbers", instruction: "Draw a line to match each partition to the correct number.", left: ["400 + 30 + 5", "200 + 60 + 8", "700 + 10 + 2", "500 + 90 + 1"], right: ["591", "712", "435", "268"] },
+      { type: "matching", title: "Match More Partitions", instruction: "Draw a line to match.", left: ["300 + 80 + 6", "600 + 50 + 3", "100 + 40 + 9", "800 + 20 + 7"], right: ["149", "827", "386", "653"] },
+      { type: "matching", title: "Match Expanded Form to Numbers", instruction: "Match.", left: ["600 + 40 + 2", "300 + 70 + 5", "900 + 10 + 8", "200 + 50"], right: ["250", "918", "375", "642"] },
+      { type: "circle-correct", title: "Which Partition Is Correct?", instruction: "Circle the correct partition for each number.", questions: [{ prompt: "362", options: ["300 + 60 + 2", "300 + 62 + 0", "360 + 20"] }, { prompt: "509", options: ["500 + 9", "500 + 90", "50 + 9"] }, { prompt: "741", options: ["700 + 40 + 1", "740 + 10", "700 + 401"] }, { prompt: "198", options: ["100 + 90 + 8", "190 + 80", "10 + 98"] }] },
+      { type: "circle-correct", title: "More Correct Partitions", instruction: "Circle the correct partition.", questions: [{ prompt: "425", options: ["400 + 20 + 5", "420 + 50", "400 + 205"] }, { prompt: "603", options: ["600 + 3", "600 + 30", "60 + 3"] }, { prompt: "890", options: ["800 + 90", "89 + 0", "80 + 90"] }, { prompt: "217", options: ["200 + 10 + 7", "210 + 70", "20 + 17"] }] },
+      { type: "circle-correct", title: "Pick the Right Expanded Form", instruction: "Circle the correct expanded form.", questions: [{ prompt: "546", options: ["500 + 40 + 6", "540 + 60", "500 + 406"] }, { prompt: "308", options: ["300 + 8", "300 + 80", "30 + 8"] }, { prompt: "971", options: ["900 + 70 + 1", "970 + 10", "900 + 701"] }, { prompt: "452", options: ["400 + 50 + 2", "450 + 20", "40 + 52"] }] },
+      { type: "open-response", title: "Write the Partition", instruction: "Write each number in expanded form.", prompts: [{ text: "472 = ___ + ___ + ___", type: "lines", lines: 1 }, { text: "815 = ___ + ___ + ___", type: "lines", lines: 1 }, { text: "263 = ___ + ___ + ___", type: "lines", lines: 1 }, { text: "907 = ___ + ___", type: "lines", lines: 1 }] },
+      { type: "open-response", title: "More Expanded Form", instruction: "Write each number in expanded form.", prompts: [{ text: "684 = ___", type: "lines", lines: 1 }, { text: "150 = ___", type: "lines", lines: 1 }, { text: "739 = ___", type: "lines", lines: 1 }, { text: "402 = ___", type: "lines", lines: 1 }] },
+      { type: "count-objects", title: "Count Hundreds, Tens, Ones", instruction: "Each apple = 100, each star = 10, each heart = 1. Write the total.", rows: [{ object: "apple", count: 3 }, { object: "star", count: 5 }, { object: "heart", count: 2 }] },
+      { type: "count-objects", title: "More Place Value Counting", instruction: "Each flower = 100, each fish = 10, each butterfly = 1. Write the total.", rows: [{ object: "flower", count: 4 }, { object: "fish", count: 3 }, { object: "butterfly", count: 6 }] },
+      { type: "sorting", title: "Sort: Two-Digit or Three-Digit?", instruction: "Sort each number.", columns: ["Two-digit", "Three-digit"], items: [{ label: "45" }, { label: "362" }, { label: "87" }, { label: "503" }, { label: "19" }, { label: "741" }] },
+      // ─── Medium ───
+      { type: "number-bonds", title: "Partition in Different Ways", instruction: "Split each number a different way. Example: 347 = 340 + 7 or 300 + 47.", bonds: [{ total: 265, partA: 260, partB: null }, { total: 384, partA: null, partB: 84 }, { total: 527, partA: 520, partB: null }, { total: 416, partA: null, partB: 16 }, { total: 653, partA: 650, partB: null }, { total: 192, partA: null, partB: 92 }] },
+      { type: "number-bonds", title: "More Non-Standard Partitions", instruction: "Split each number — not the usual way!", bonds: [{ total: 345, partA: 340, partB: null }, { total: 478, partA: null, partB: 78 }, { total: 562, partA: 500, partB: null }, { total: 691, partA: null, partB: 91 }, { total: 823, partA: 820, partB: null }, { total: 237, partA: null, partB: 37 }] },
+      { type: "number-bonds", title: "Partition with Multiples of 10", instruction: "Split each number into a multiple of 10 and the rest.", bonds: [{ total: 473, partA: 470, partB: null }, { total: 286, partA: null, partB: 6 }, { total: 541, partA: 540, partB: null }, { total: 698, partA: null, partB: 8 }, { total: 352, partA: 350, partB: null }, { total: 817, partA: null, partB: 7 }] },
+      { type: "circle-correct", title: "Which Partition Helps?", instruction: "Which partition would be most helpful for the calculation?", questions: [{ prompt: "365 + 20 = ?  Partition 365 as...", options: ["360 + 5", "300 + 65", "365 + 0"] }, { prompt: "248 + 50 = ?  Partition 248 as...", options: ["200 + 48", "240 + 8", "248 + 0"] }, { prompt: "473 − 70 = ?  Partition 473 as...", options: ["470 + 3", "400 + 73", "473 + 0"] }, { prompt: "586 − 6 = ?  Partition 586 as...", options: ["580 + 6", "500 + 86", "586 + 0"] }] },
+      { type: "circle-correct", title: "Pick the Best Partition", instruction: "Which partition makes the calculation easiest?", questions: [{ prompt: "327 + 40 = ?  Partition 327 as...", options: ["320 + 7", "300 + 27", "327 + 0"] }, { prompt: "594 − 90 = ?  Partition 594 as...", options: ["590 + 4", "500 + 94", "594 + 0"] }, { prompt: "461 + 8 = ?  Partition 461 as...", options: ["460 + 1", "400 + 61", "461 + 0"] }, { prompt: "835 − 5 = ?  Partition 835 as...", options: ["830 + 5", "800 + 35", "835 + 0"] }] },
+      { type: "circle-correct", title: "Which Is NOT a Correct Partition?", instruction: "Circle the partition that does NOT equal the number.", questions: [{ prompt: "456", options: ["400 + 56", "450 + 60", "400 + 50 + 6"] }, { prompt: "329", options: ["300 + 29", "320 + 9", "300 + 20 + 90"] }, { prompt: "781", options: ["700 + 81", "780 + 1", "708 + 1"] }] },
+      { type: "circle-correct", title: "Both Ways Are Right", instruction: "Both partitions equal the same number. What is it?", questions: [{ prompt: "300 + 40 + 5 = 340 + 5 = ?", options: ["345", "350", "335"] }, { prompt: "200 + 60 + 8 = 260 + 8 = ?", options: ["268", "278", "258"] }, { prompt: "500 + 30 + 1 = 530 + 1 = ?", options: ["531", "501", "530"] }] },
+      { type: "matching", title: "Match Helpful Partitions", instruction: "Match each problem to the most helpful partition.", left: ["356 + 30", "482 − 2", "619 + 200", "745 − 40"], right: ["480 + 2", "740 + 5", "350 + 6", "600 + 19"] },
+      { type: "open-response", title: "Partition Two Ways", instruction: "Write each number in two different ways.", prompts: [{ text: "358:\nWay 1: 300 + 50 + 8\nWay 2: ___", type: "lines", lines: 1 }, { text: "472:\nWay 1: 400 + 70 + 2\nWay 2: ___", type: "lines", lines: 1 }, { text: "619:\nWay 1: 600 + 10 + 9\nWay 2: ___", type: "lines", lines: 1 }, { text: "845:\nWay 1: 800 + 40 + 5\nWay 2: ___", type: "lines", lines: 1 }] },
+      { type: "open-response", title: "More Two-Way Partitions", instruction: "Write each number in two different ways.", prompts: [{ text: "263:\nStandard: ___\nNon-standard: ___", type: "lines", lines: 1 }, { text: "591:\nStandard: ___\nNon-standard: ___", type: "lines", lines: 1 }, { text: "724:\nStandard: ___\nNon-standard: ___", type: "lines", lines: 1 }] },
+      { type: "sorting", title: "Sort: Standard or Non-Standard?", instruction: "Sort each partition.", columns: ["Standard (H + T + O)", "Non-standard"], items: [{ label: "300 + 40 + 5" }, { label: "340 + 5" }, { label: "200 + 60 + 8" }, { label: "260 + 8" }, { label: "500 + 10 + 7" }, { label: "510 + 7" }] },
+      // ─── Hard ───
+      { type: "open-response", title: "Partition and Calculate", instruction: "Partition the numbers to help you add or subtract. Show your working.", prompts: [{ text: "245 + 130 = ?\nPartition: 245 = 200 + 40 + 5, 130 = 100 + 30\nAnswer: ___", type: "lines", lines: 2 }, { text: "368 + 220 = ?\nPartition and solve: ___", type: "lines", lines: 2 }, { text: "475 − 150 = ?\nPartition and solve: ___", type: "lines", lines: 2 }, { text: "693 − 280 = ?\nPartition and solve: ___", type: "lines", lines: 2 }] },
+      { type: "open-response", title: "More Partition Calculations", instruction: "Use partitioning to solve.", prompts: [{ text: "356 + 230 = ?\nWorking: ___", type: "lines", lines: 2 }, { text: "582 − 160 = ?\nWorking: ___", type: "lines", lines: 2 }, { text: "427 + 350 = ?\nWorking: ___", type: "lines", lines: 2 }, { text: "814 − 400 = ?\nWorking: ___", type: "lines", lines: 2 }] },
+      { type: "number-bonds", title: "Build Numbers from Parts", instruction: "Add the parts together to find the total.", bonds: [{ total: 385, partA: 300, partB: null }, { total: 462, partA: 400, partB: null }, { total: 719, partA: 700, partB: null }, { total: 237, partA: 200, partB: null }, { total: 544, partA: 500, partB: null }, { total: 896, partA: 800, partB: null }] },
+      { type: "circle-correct", title: "Partition to Solve", instruction: "Use partitioning to work out the answer.", questions: [{ prompt: "356 + 30 = ?", options: ["376", "386", "396"] }, { prompt: "482 − 200 = ?", options: ["282", "292", "272"] }, { prompt: "615 + 70 = ?", options: ["675", "685", "695"] }, { prompt: "947 − 40 = ?", options: ["907", "917", "903"] }] },
+      { type: "circle-correct", title: "Quick Partition Mental Maths", instruction: "Use partitioning in your head.", questions: [{ prompt: "250 + 130 = ?", options: ["370", "380", "390"] }, { prompt: "460 − 230 = ?", options: ["220", "230", "240"] }, { prompt: "375 + 200 = ?", options: ["555", "575", "585"] }, { prompt: "690 − 350 = ?", options: ["330", "340", "350"] }] },
+      { type: "open-response", title: "Word Problems with Partitioning", instruction: "Solve by partitioning.", prompts: [{ text: "A farmer has 365 sheep. He buys 230 more. How many now?", type: "lines", lines: 2 }, { text: "A school has 548 students. 120 are away. How many at school?", type: "lines", lines: 2 }, { text: "Mia saved $275. She earned $150 more. How much does she have?", type: "lines", lines: 2 }] },
+      { type: "open-response", title: "Partition Challenge", instruction: "Can you partition each number in three different ways?", prompts: [{ text: "456:\n1. 400 + 50 + 6\n2. ___\n3. ___", type: "lines", lines: 2 }, { text: "789:\n1. 700 + 80 + 9\n2. ___\n3. ___", type: "lines", lines: 2 }] },
+      { type: "home-activity", title: "Home Activity: Partition Practice", instruction: "Practise splitting numbers at home!", suggestions: ["Pick any three-digit number. Split it into hundreds, tens and ones.", "Now split the same number a different way (e.g. 347 = 340 + 7).", "Use partitioning to add the cost of two items at the shops.", "Find a three-digit page number in a book. How many ways can you partition it?"] },
+    ],
+  },
+
+  // ══════════════════════════════════════════════════════════════
+  // WS 3: Apply Addition & Subtraction
+  // ══════════════════════════════════════════════════════════════
+  {
+    slug: "apply-addition-subtraction",
+    title: "Apply Addition & Subtraction",
+    strand: "Number",
+    description: "Apply single-digit addition and related subtraction facts to two- and three-digit problems",
+    activities: [
+      // ─── Easy ───
+      { type: "number-bonds", title: "Single-Digit Facts Review", instruction: "Fill in the missing number. Be quick!", bonds: [{ total: 13, partA: 6, partB: null }, { total: 15, partA: null, partB: 7 }, { total: 11, partA: 4, partB: null }, { total: 16, partA: null, partB: 9 }, { total: 14, partA: 8, partB: null }, { total: 12, partA: null, partB: 5 }] },
+      { type: "number-bonds", title: "More Single-Digit Facts", instruction: "Fill in the missing number.", bonds: [{ total: 17, partA: 9, partB: null }, { total: 11, partA: null, partB: 8 }, { total: 18, partA: 9, partB: null }, { total: 13, partA: null, partB: 4 }, { total: 15, partA: 6, partB: null }, { total: 12, partA: null, partB: 3 }] },
+      { type: "number-bonds", title: "Subtraction Facts", instruction: "Fill in the missing number.", bonds: [{ total: 14, partA: 9, partB: null }, { total: 16, partA: null, partB: 7 }, { total: 13, partA: 5, partB: null }, { total: 15, partA: null, partB: 6 }, { total: 17, partA: 8, partB: null }, { total: 11, partA: null, partB: 2 }] },
+      { type: "matching", title: "Link Small Facts to Big Problems", instruction: "Match each small fact to the related big problem.", left: ["6 + 7 = 13", "8 + 5 = 13", "9 + 4 = 13", "7 + 6 = 13"], right: ["90 + 40 = 130", "60 + 70 = 130", "70 + 60 = 130", "80 + 50 = 130"] },
+      { type: "matching", title: "More Fact Connections", instruction: "Match each small fact to the related big problem.", left: ["3 + 5 = 8", "7 + 4 = 11", "6 + 8 = 14", "9 + 6 = 15"], right: ["90 + 60 = 150", "30 + 50 = 80", "60 + 80 = 140", "70 + 40 = 110"] },
+      { type: "circle-correct", title: "Use the Fact to Solve", instruction: "Use the small fact to help.", questions: [{ prompt: "If 6 + 7 = 13, then 60 + 70 = ?", options: ["120", "130", "140"] }, { prompt: "If 8 + 5 = 13, then 80 + 50 = ?", options: ["120", "130", "140"] }, { prompt: "If 9 − 4 = 5, then 90 − 40 = ?", options: ["40", "50", "60"] }, { prompt: "If 15 − 8 = 7, then 150 − 80 = ?", options: ["60", "70", "80"] }] },
+      { type: "circle-correct", title: "More Fact Extensions", instruction: "Use the small fact to help.", questions: [{ prompt: "If 3 + 5 = 8, then 30 + 50 = ?", options: ["70", "80", "90"] }, { prompt: "If 7 + 4 = 11, then 70 + 40 = ?", options: ["100", "110", "120"] }, { prompt: "If 12 − 5 = 7, then 120 − 50 = ?", options: ["60", "70", "80"] }, { prompt: "If 14 − 6 = 8, then 140 − 60 = ?", options: ["70", "80", "90"] }] },
+      { type: "circle-correct", title: "Even More Extensions", instruction: "Circle the answer.", questions: [{ prompt: "If 5 + 9 = 14, then 50 + 90 = ?", options: ["130", "140", "150"] }, { prompt: "If 4 + 8 = 12, then 40 + 80 = ?", options: ["110", "120", "130"] }, { prompt: "If 16 − 7 = 9, then 160 − 70 = ?", options: ["80", "90", "100"] }, { prompt: "If 11 − 3 = 8, then 110 − 30 = ?", options: ["70", "80", "90"] }] },
+      { type: "open-response", title: "Write the Related Facts", instruction: "Write the tens fact for each single-digit fact.", prompts: [{ text: "5 + 8 = 13, so 50 + 80 = ___", type: "lines", lines: 1 }, { text: "7 + 6 = 13, so 70 + 60 = ___", type: "lines", lines: 1 }, { text: "9 − 3 = 6, so 90 − 30 = ___", type: "lines", lines: 1 }, { text: "16 − 9 = 7, so 160 − 90 = ___", type: "lines", lines: 1 }] },
+      { type: "open-response", title: "Write More Related Facts", instruction: "Write the tens fact.", prompts: [{ text: "4 + 7 = 11, so 40 + 70 = ___", type: "lines", lines: 1 }, { text: "8 + 6 = 14, so 80 + 60 = ___", type: "lines", lines: 1 }, { text: "13 − 7 = 6, so 130 − 70 = ___", type: "lines", lines: 1 }, { text: "18 − 9 = 9, so 180 − 90 = ___", type: "lines", lines: 1 }] },
+      { type: "sequence", title: "Tens Addition Patterns", instruction: "Fill in the missing numbers.", sequences: [{ items: [30, 60, 0, 120, 150], answer: [90] }, { items: [40, 0, 120, 160, 0], answer: [80, 200] }] },
+      { type: "sequence", title: "Tens Subtraction Patterns", instruction: "Fill in the missing numbers.", sequences: [{ items: [150, 120, 0, 60, 30], answer: [90] }, { items: [180, 0, 120, 90, 0], answer: [150, 60] }] },
+      // ─── Medium ───
+      { type: "number-bonds", title: "Extend to Hundreds", instruction: "Use the fact to fill in the missing number.", bonds: [{ total: 130, partA: 60, partB: null }, { total: 150, partA: null, partB: 70 }, { total: 120, partA: 50, partB: null }, { total: 140, partA: null, partB: 60 }, { total: 160, partA: 90, partB: null }, { total: 110, partA: null, partB: 40 }] },
+      { type: "number-bonds", title: "More Hundreds Extensions", instruction: "Fill in the missing number.", bonds: [{ total: 170, partA: 80, partB: null }, { total: 130, partA: null, partB: 50 }, { total: 180, partA: 90, partB: null }, { total: 110, partA: null, partB: 30 }, { total: 140, partA: 70, partB: null }, { total: 150, partA: null, partB: 90 }] },
+      { type: "circle-correct", title: "Tens Addition", instruction: "Circle the correct answer.", questions: [{ prompt: "60 + 80 = ?", options: ["130", "140", "150"] }, { prompt: "70 + 50 = ?", options: ["110", "120", "130"] }, { prompt: "90 + 40 = ?", options: ["120", "130", "140"] }, { prompt: "80 + 70 = ?", options: ["140", "150", "160"] }] },
+      { type: "circle-correct", title: "Tens Subtraction", instruction: "Circle the correct answer.", questions: [{ prompt: "150 − 80 = ?", options: ["60", "70", "80"] }, { prompt: "130 − 50 = ?", options: ["70", "80", "90"] }, { prompt: "160 − 90 = ?", options: ["60", "70", "80"] }, { prompt: "120 − 40 = ?", options: ["70", "80", "90"] }] },
+      { type: "open-response", title: "Show the Connection", instruction: "Write the small fact and the big fact.", prompts: [{ text: "8 + 5 = ___, so 280 + 50 = ___", type: "lines", lines: 1 }, { text: "7 + 6 = ___, so 170 + 60 = ___", type: "lines", lines: 1 }, { text: "9 + 4 = ___, so 390 + 40 = ___", type: "lines", lines: 1 }, { text: "15 − 8 = ___, so 350 − 80 = ___", type: "lines", lines: 1 }] },
+      { type: "open-response", title: "More Connections", instruction: "Write the small fact and the big fact.", prompts: [{ text: "6 + 9 = ___, so 460 + 90 = ___", type: "lines", lines: 1 }, { text: "5 + 7 = ___, so 250 + 70 = ___", type: "lines", lines: 1 }, { text: "13 − 6 = ___, so 530 − 60 = ___", type: "lines", lines: 1 }, { text: "17 − 9 = ___, so 670 − 90 = ___", type: "lines", lines: 1 }] },
+      { type: "matching", title: "Match Extended Facts", instruction: "Match each fact to its extended version.", left: ["4 + 9 = 13", "7 + 8 = 15", "6 + 5 = 11", "8 + 3 = 11"], right: ["60 + 50 = 110", "40 + 90 = 130", "80 + 30 = 110", "70 + 80 = 150"] },
+      { type: "number-bonds", title: "Bridge to Three Digits", instruction: "Use your facts to find the missing number.", bonds: [{ total: 230, partA: 160, partB: null }, { total: 310, partA: null, partB: 80 }, { total: 420, partA: 350, partB: null }, { total: 540, partA: null, partB: 60 }, { total: 610, partA: 540, partB: null }, { total: 730, partA: null, partB: 50 }] },
+      { type: "circle-correct", title: "Add Tens to Three-Digit Numbers", instruction: "Circle the answer.", questions: [{ prompt: "230 + 40 = ?", options: ["260", "270", "280"] }, { prompt: "450 + 80 = ?", options: ["520", "530", "540"] }, { prompt: "670 + 60 = ?", options: ["720", "730", "740"] }, { prompt: "380 + 50 = ?", options: ["420", "430", "440"] }] },
+      { type: "circle-correct", title: "Subtract Tens from Three-Digit Numbers", instruction: "Circle the answer.", questions: [{ prompt: "340 − 70 = ?", options: ["260", "270", "280"] }, { prompt: "520 − 40 = ?", options: ["470", "480", "490"] }, { prompt: "610 − 50 = ?", options: ["550", "560", "570"] }, { prompt: "830 − 90 = ?", options: ["730", "740", "750"] }] },
+      { type: "sorting", title: "Sort: Addition or Subtraction Fact?", instruction: "Sort each problem.", columns: ["Addition", "Subtraction"], items: [{ label: "60 + 70 = 130" }, { label: "150 − 80 = 70" }, { label: "40 + 90 = 130" }, { label: "120 − 50 = 70" }, { label: "80 + 30 = 110" }, { label: "160 − 70 = 90" }] },
+      // ─── Hard ───
+      { type: "circle-correct", title: "Solve Three-Digit Problems", instruction: "Use your single-digit facts to help.", questions: [{ prompt: "345 + 30 = ?", options: ["365", "375", "385"] }, { prompt: "572 + 8 = ?", options: ["578", "580", "582"] }, { prompt: "486 − 60 = ?", options: ["416", "426", "436"] }, { prompt: "731 − 9 = ?", options: ["720", "722", "728"] }] },
+      { type: "circle-correct", title: "More Three-Digit Problems", instruction: "Circle the answer.", questions: [{ prompt: "258 + 40 = ?", options: ["288", "298", "308"] }, { prompt: "463 + 7 = ?", options: ["468", "470", "473"] }, { prompt: "694 − 80 = ?", options: ["604", "614", "624"] }, { prompt: "537 − 5 = ?", options: ["530", "532", "535"] }] },
+      { type: "circle-correct", title: "Challenge Three-Digit Problems", instruction: "Circle the answer.", questions: [{ prompt: "178 + 60 = ?", options: ["228", "238", "248"] }, { prompt: "395 + 9 = ?", options: ["394", "404", "414"] }, { prompt: "821 − 50 = ?", options: ["761", "771", "781"] }, { prompt: "456 − 8 = ?", options: ["448", "452", "446"] }] },
+      { type: "open-response", title: "Solve and Explain", instruction: "Solve each problem. Write which small fact helped you.", prompts: [{ text: "267 + 50 = ___  (I used: ___ + ___ = ___)", type: "lines", lines: 2 }, { text: "483 − 70 = ___  (I used: ___ − ___ = ___)", type: "lines", lines: 2 }, { text: "156 + 200 = ___  (I used: ___ + ___ = ___)", type: "lines", lines: 2 }] },
+      { type: "open-response", title: "More Explain Your Thinking", instruction: "Solve and explain.", prompts: [{ text: "374 + 60 = ___  (I used: ___)", type: "lines", lines: 2 }, { text: "852 − 30 = ___  (I used: ___)", type: "lines", lines: 2 }, { text: "619 + 8 = ___  (I used: ___)", type: "lines", lines: 2 }] },
+      { type: "open-response", title: "Word Problems", instruction: "Solve each word problem.", prompts: [{ text: "Sam had 345 stickers. He got 50 more. How many now?", type: "lines", lines: 2 }, { text: "A library had 682 books. 70 were returned. How many left?", type: "lines", lines: 2 }, { text: "Ella ran 456 metres then another 30 metres. How far?", type: "lines", lines: 2 }] },
+      { type: "circle-correct", title: "True or False", instruction: "Circle True or False.", questions: [{ prompt: "If 6 + 8 = 14, then 360 + 80 = 440", options: ["True", "False"] }, { prompt: "If 9 − 5 = 4, then 490 − 50 = 440", options: ["True", "False"] }, { prompt: "If 7 + 7 = 14, then 270 + 70 = 350", options: ["True", "False"] }, { prompt: "If 13 − 6 = 7, then 830 − 60 = 770", options: ["True", "False"] }] },
+      { type: "open-response", title: "Create Your Own Problems", instruction: "Write your own problems using facts you know.", prompts: [{ text: "My small fact: ___ + ___ = ___\nMy big problem: ___ + ___ = ___", type: "lines", lines: 2 }, { text: "My small fact: ___ − ___ = ___\nMy big problem: ___ − ___ = ___", type: "lines", lines: 2 }] },
+      { type: "home-activity", title: "Home Activity: Fact Connections", instruction: "Practise connecting small facts to big problems!", suggestions: ["Write 5 single-digit addition facts. Now make each one into a tens fact (e.g. 6 + 7 becomes 60 + 70).", "Pick a three-digit number and add a multiple of 10. What small fact helped?", "Play mental maths: ask a family member to give you a two-digit + one-digit problem.", "Can you use 8 + 5 = 13 to work out 380 + 50?"] },
+    ],
+  },
+
+  // ══════════════════════════════════════════════════════════════
+  // WS 4: Single-Digit Multiplication & Division
+  // ══════════════════════════════════════════════════════════════
+  {
+    slug: "single-digit-multiplication-division",
+    title: "Multiplication & Division Problems",
+    strand: "Number",
+    description: "Solve problems involving single-digit multiplication and division",
+    activities: [
+      // ─── Easy ───
+      { type: "count-objects", title: "Count the Groups", instruction: "Count the groups of objects. Write the total.", rows: [{ object: "apple", count: 12 }, { object: "star", count: 15 }, { object: "fish", count: 18 }, { object: "heart", count: 20 }] },
+      { type: "count-objects", title: "More Groups to Count", instruction: "Count the objects. Write the total.", rows: [{ object: "flower", count: 10 }, { object: "butterfly", count: 16 }, { object: "bird", count: 14 }, { object: "ball", count: 24 }] },
+      { type: "matching", title: "Match Groups to Multiplications", instruction: "Draw a line to match.", left: ["3 groups of 4", "5 groups of 2", "2 groups of 6", "4 groups of 5"], right: ["20", "12", "10", "12"] },
+      { type: "matching", title: "More Groups to Match", instruction: "Draw a line to match.", left: ["2 groups of 8", "4 groups of 3", "3 groups of 5", "5 groups of 4"], right: ["15", "16", "20", "12"] },
+      { type: "circle-correct", title: "What Multiplication?", instruction: "Circle the correct multiplication.", questions: [{ prompt: "4 groups of 3", options: ["4 × 3 = 12", "4 + 3 = 7", "3 × 3 = 9"] }, { prompt: "5 groups of 5", options: ["5 + 5 = 10", "5 × 5 = 25", "5 × 4 = 20"] }, { prompt: "6 groups of 2", options: ["6 + 2 = 8", "6 × 3 = 18", "6 × 2 = 12"] }, { prompt: "3 groups of 7", options: ["3 × 7 = 21", "3 + 7 = 10", "7 × 7 = 49"] }] },
+      { type: "circle-correct", title: "More Multiplications", instruction: "Circle the correct multiplication.", questions: [{ prompt: "2 groups of 9", options: ["2 × 9 = 18", "2 + 9 = 11", "9 × 9 = 81"] }, { prompt: "4 groups of 4", options: ["4 + 4 = 8", "4 × 4 = 16", "4 × 3 = 12"] }, { prompt: "3 groups of 6", options: ["3 × 6 = 18", "3 + 6 = 9", "6 × 6 = 36"] }, { prompt: "5 groups of 3", options: ["5 × 3 = 15", "5 + 3 = 8", "3 × 3 = 9"] }] },
+      { type: "circle-correct", title: "Repeated Addition or Multiplication?", instruction: "Circle the matching multiplication.", questions: [{ prompt: "4 + 4 + 4 = ?", options: ["3 × 4 = 12", "4 × 4 = 16", "3 + 4 = 7"] }, { prompt: "5 + 5 + 5 + 5 = ?", options: ["4 × 5 = 20", "5 × 5 = 25", "4 + 5 = 9"] }, { prompt: "2 + 2 + 2 + 2 + 2 = ?", options: ["5 × 2 = 10", "2 × 2 = 4", "5 + 2 = 7"] }] },
+      { type: "number-bonds", title: "Multiplication as Bonds", instruction: "Fill in the missing number.", bonds: [{ total: 12, partA: 3, partB: null }, { total: 20, partA: null, partB: 4 }, { total: 15, partA: 5, partB: null }, { total: 18, partA: null, partB: 9 }, { total: 10, partA: 2, partB: null }, { total: 24, partA: null, partB: 8 }] },
+      { type: "matching", title: "Repeated Addition to Multiplication", instruction: "Match.", left: ["3 + 3 + 3 + 3", "6 + 6", "5 + 5 + 5", "2 + 2 + 2 + 2 + 2"], right: ["5 × 2", "4 × 3", "2 × 6", "3 × 5"] },
+      { type: "open-response", title: "Draw the Groups", instruction: "Draw groups of objects for each multiplication.", prompts: [{ text: "Draw 3 groups of 4 stars. Total = ___", type: "box" }, { text: "Draw 2 groups of 5 hearts. Total = ___", type: "box" }, { text: "Draw 4 groups of 3 circles. Total = ___", type: "box" }] },
+      // ─── Medium ───
+      { type: "number-bonds", title: "Share Equally", instruction: "Share the total into equal groups. How many in each group?", bonds: [{ total: 12, partA: 3, partB: null }, { total: 20, partA: null, partB: 5 }, { total: 15, partA: 5, partB: null }, { total: 18, partA: null, partB: 3 }, { total: 24, partA: 4, partB: null }, { total: 16, partA: null, partB: 4 }] },
+      { type: "number-bonds", title: "More Equal Sharing", instruction: "Share the total equally.", bonds: [{ total: 30, partA: 5, partB: null }, { total: 14, partA: null, partB: 7 }, { total: 21, partA: 3, partB: null }, { total: 36, partA: null, partB: 9 }, { total: 28, partA: 4, partB: null }, { total: 40, partA: null, partB: 8 }] },
+      { type: "circle-correct", title: "Division Facts", instruction: "Circle the correct answer.", questions: [{ prompt: "12 shared into 4 equal groups = ?", options: ["2", "3", "4"] }, { prompt: "20 shared into 5 equal groups = ?", options: ["3", "4", "5"] }, { prompt: "18 shared into 3 equal groups = ?", options: ["5", "6", "7"] }, { prompt: "24 shared into 6 equal groups = ?", options: ["3", "4", "5"] }] },
+      { type: "circle-correct", title: "More Division Facts", instruction: "Circle the correct answer.", questions: [{ prompt: "30 shared into 5 equal groups = ?", options: ["5", "6", "7"] }, { prompt: "16 shared into 4 equal groups = ?", options: ["3", "4", "5"] }, { prompt: "21 shared into 3 equal groups = ?", options: ["6", "7", "8"] }, { prompt: "40 shared into 8 equal groups = ?", options: ["4", "5", "6"] }] },
+      { type: "matching", title: "Match Division to Answers", instruction: "Draw a line to match.", left: ["12 ÷ 3", "20 ÷ 4", "15 ÷ 5", "18 ÷ 2"], right: ["3", "5", "9", "4"] },
+      { type: "matching", title: "Link Multiplication and Division", instruction: "Match related facts.", left: ["3 × 4 = 12", "5 × 6 = 30", "2 × 9 = 18", "4 × 7 = 28"], right: ["28 ÷ 4 = 7", "12 ÷ 3 = 4", "18 ÷ 2 = 9", "30 ÷ 5 = 6"] },
+      { type: "circle-correct", title: "Fact Families", instruction: "Circle the fact that belongs in the same family.", questions: [{ prompt: "3 × 5 = 15", options: ["15 ÷ 3 = 5", "15 − 3 = 12", "15 + 3 = 18"] }, { prompt: "4 × 6 = 24", options: ["24 ÷ 6 = 4", "24 − 6 = 18", "24 + 6 = 30"] }, { prompt: "2 × 8 = 16", options: ["16 ÷ 8 = 2", "16 − 8 = 8", "16 + 8 = 24"] }] },
+      { type: "circle-correct", title: "Choose the Operation", instruction: "Is it multiplication or division?", questions: [{ prompt: "5 shelves with 6 books each. How many books?", options: ["5 × 6", "30 ÷ 5", "5 + 6"] }, { prompt: "40 lollies shared among 8 children", options: ["40 × 8", "40 ÷ 8", "40 − 8"] }, { prompt: "9 tables, 4 chairs at each", options: ["9 × 4", "9 ÷ 4", "9 + 4"] }, { prompt: "27 cards dealt to 3 players", options: ["27 × 3", "27 ÷ 3", "27 − 3"] }] },
+      { type: "open-response", title: "Write the Fact Family", instruction: "Write all 4 facts for each set of numbers.", prompts: [{ text: "3, 5, 15\n___ × ___ = ___\n___ × ___ = ___\n___ ÷ ___ = ___\n___ ÷ ___ = ___", type: "lines", lines: 4 }, { text: "4, 6, 24\n___ × ___ = ___\n___ × ___ = ___\n___ ÷ ___ = ___\n___ ÷ ___ = ___", type: "lines", lines: 4 }] },
+      { type: "sorting", title: "Sort: Multiplication or Division?", instruction: "Sort each problem.", columns: ["Multiplication", "Division"], items: [{ label: "3 groups of 4" }, { label: "12 shared into 3 groups" }, { label: "5 rows of 6" }, { label: "20 split into 4 equal piles" }, { label: "2 bags of 8 lollies" }, { label: "18 pencils in 3 cups" }] },
+      // ─── Hard ───
+      { type: "open-response", title: "Multiplication Word Problems", instruction: "Solve each problem. Show your working.", prompts: [{ text: "There are 8 spiders. Each spider has 8 legs. How many legs altogether?", type: "lines", lines: 2 }, { text: "A car has 4 wheels. How many wheels on 7 cars?", type: "lines", lines: 2 }, { text: "There are 6 bags with 5 oranges in each. How many oranges altogether?", type: "lines", lines: 2 }] },
+      { type: "open-response", title: "More Multiplication Word Problems", instruction: "Solve each problem.", prompts: [{ text: "A packet has 9 biscuits. How many biscuits in 3 packets?", type: "lines", lines: 2 }, { text: "There are 5 shelves with 8 books on each. How many books?", type: "lines", lines: 2 }, { text: "A garden has 4 rows with 7 flowers in each row. How many flowers?", type: "lines", lines: 2 }] },
+      { type: "open-response", title: "Division Word Problems", instruction: "Solve each problem. Show your working.", prompts: [{ text: "24 biscuits are shared equally among 4 children. How many each?", type: "lines", lines: 2 }, { text: "There are 30 pencils put into bundles of 5. How many bundles?", type: "lines", lines: 2 }, { text: "A baker has 21 muffins. She puts 3 in each box. How many boxes?", type: "lines", lines: 2 }] },
+      { type: "open-response", title: "More Division Word Problems", instruction: "Solve each problem.", prompts: [{ text: "36 eggs are packed into boxes of 6. How many boxes?", type: "lines", lines: 2 }, { text: "28 children form teams of 4. How many teams?", type: "lines", lines: 2 }, { text: "45 apples are shared equally among 5 baskets. How many per basket?", type: "lines", lines: 2 }] },
+      { type: "open-response", title: "Mixed Word Problems", instruction: "Decide: is it multiplication or division? Then solve.", prompts: [{ text: "6 children each bring 4 cupcakes. How many cupcakes? (× or ÷) ___", type: "lines", lines: 2 }, { text: "32 stickers shared among 8 friends. How many each? (× or ÷) ___", type: "lines", lines: 2 }, { text: "3 teams of 9 players. How many players? (× or ÷) ___", type: "lines", lines: 2 }] },
+      { type: "home-activity", title: "Home Activity: Groups at Home", instruction: "Find groups and sharing problems at home!", suggestions: ["Set the table for dinner. If 4 people each need a knife, fork and spoon, how many pieces of cutlery?", "Share 20 grapes equally among your family. How many each?", "Count how many legs in your house (people + pets). Use multiplication!", "Put toys into equal groups. Write the multiplication and division facts."] },
+    ],
+  },
+
+  // ══════════════════════════════════════════════════════════════
+  // WS 5: Times Tables 2s, 3s, 4s, 5s and 10s
+  // ══════════════════════════════════════════════════════════════
+  {
+    slug: "times-tables-2-3-4-5-10",
+    title: "Times Tables: 2s, 3s, 4s, 5s & 10s",
+    strand: "Number",
+    description: "Recall multiplication facts for 2s, 3s, 4s, 5s and 10s",
+    activities: [
+      // ─── Easy ───
+      { type: "sequence", title: "Count by 2s", instruction: "Fill in the missing numbers.", sequences: [{ items: [2, 4, 0, 8, 10], answer: [6] }, { items: [12, 0, 16, 18, 0], answer: [14, 20] }, { items: [0, 22, 24, 0, 28], answer: [20, 26] }] },
+      { type: "sequence", title: "Count by 10s", instruction: "Fill in the missing numbers.", sequences: [{ items: [10, 20, 0, 40, 50], answer: [30] }, { items: [60, 0, 80, 90, 0], answer: [70, 100] }, { items: [0, 110, 120, 0, 140], answer: [100, 130] }] },
+      { type: "sequence", title: "Count by 2s — Different Starts", instruction: "Fill in the missing numbers.", sequences: [{ items: [6, 8, 0, 12, 14], answer: [10] }, { items: [18, 0, 22, 24, 0], answer: [20, 26] }] },
+      { type: "number-bonds", title: "2 Times Table", instruction: "Fill in the missing number.", bonds: [{ total: 6, partA: 2, partB: null }, { total: 14, partA: null, partB: 7 }, { total: 10, partA: 2, partB: null }, { total: 18, partA: null, partB: 9 }, { total: 16, partA: 2, partB: null }, { total: 24, partA: null, partB: 12 }] },
+      { type: "number-bonds", title: "10 Times Table", instruction: "Fill in the missing number.", bonds: [{ total: 30, partA: 10, partB: null }, { total: 70, partA: null, partB: 7 }, { total: 50, partA: 10, partB: null }, { total: 90, partA: null, partB: 9 }, { total: 110, partA: 10, partB: null }, { total: 120, partA: null, partB: 12 }] },
+      { type: "circle-correct", title: "Quick 2s and 10s", instruction: "Circle the correct answer.", questions: [{ prompt: "2 × 6 = ?", options: ["10", "12", "14"] }, { prompt: "10 × 4 = ?", options: ["30", "40", "50"] }, { prompt: "2 × 9 = ?", options: ["16", "18", "20"] }, { prompt: "10 × 8 = ?", options: ["70", "80", "90"] }] },
+      { type: "circle-correct", title: "More 2s and 10s", instruction: "Circle the correct answer.", questions: [{ prompt: "2 × 11 = ?", options: ["20", "22", "24"] }, { prompt: "10 × 11 = ?", options: ["100", "110", "120"] }, { prompt: "2 × 7 = ?", options: ["12", "14", "16"] }, { prompt: "10 × 5 = ?", options: ["40", "50", "60"] }] },
+      { type: "matching", title: "Match 2s Facts", instruction: "Match each multiplication to its answer.", left: ["2 × 3", "2 × 5", "2 × 8", "2 × 12"], right: ["24", "6", "16", "10"] },
+      { type: "open-response", title: "Write the 2 Times Table", instruction: "Write the 2 times table from 2 × 1 to 2 × 12.", prompts: [{ text: "2 × 1 = ___\n2 × 2 = ___\n2 × 3 = ___\n2 × 4 = ___\n2 × 5 = ___\n2 × 6 = ___", type: "lines", lines: 6 }, { text: "2 × 7 = ___\n2 × 8 = ___\n2 × 9 = ___\n2 × 10 = ___\n2 × 11 = ___\n2 × 12 = ___", type: "lines", lines: 6 }] },
+      // ─── Medium ───
+      { type: "sequence", title: "Count by 3s", instruction: "Fill in the missing numbers.", sequences: [{ items: [3, 6, 0, 12, 15], answer: [9] }, { items: [18, 0, 24, 27, 0], answer: [21, 30] }, { items: [0, 33, 36, 0, 42], answer: [30, 39] }] },
+      { type: "sequence", title: "Count by 5s", instruction: "Fill in the missing numbers.", sequences: [{ items: [5, 10, 0, 20, 25], answer: [15] }, { items: [30, 0, 40, 45, 0], answer: [35, 50] }, { items: [0, 55, 60, 0, 70], answer: [50, 65] }] },
+      { type: "sequence", title: "Count by 4s", instruction: "Fill in the missing numbers.", sequences: [{ items: [4, 8, 0, 16, 20], answer: [12] }, { items: [24, 0, 32, 36, 0], answer: [28, 40] }, { items: [0, 44, 48, 0, 56], answer: [40, 52] }] },
+      { type: "number-bonds", title: "3 Times Table", instruction: "Fill in the missing number.", bonds: [{ total: 9, partA: 3, partB: null }, { total: 15, partA: null, partB: 5 }, { total: 21, partA: 3, partB: null }, { total: 27, partA: null, partB: 9 }, { total: 33, partA: 3, partB: null }, { total: 36, partA: null, partB: 12 }] },
+      { type: "number-bonds", title: "4 Times Table", instruction: "Fill in the missing number.", bonds: [{ total: 8, partA: 4, partB: null }, { total: 16, partA: null, partB: 4 }, { total: 20, partA: 4, partB: null }, { total: 28, partA: null, partB: 7 }, { total: 36, partA: 4, partB: null }, { total: 48, partA: null, partB: 12 }] },
+      { type: "number-bonds", title: "5 Times Table", instruction: "Fill in the missing number.", bonds: [{ total: 15, partA: 5, partB: null }, { total: 25, partA: null, partB: 5 }, { total: 35, partA: 5, partB: null }, { total: 45, partA: null, partB: 9 }, { total: 55, partA: 5, partB: null }, { total: 60, partA: null, partB: 12 }] },
+      { type: "matching", title: "Match Times Tables to Answers", instruction: "Draw a line to match.", left: ["3 × 7", "5 × 6", "4 × 8", "10 × 7"], right: ["70", "21", "32", "30"] },
+      { type: "matching", title: "Match More Facts", instruction: "Draw a line to match.", left: ["3 × 9", "4 × 6", "5 × 8", "3 × 12"], right: ["40", "27", "36", "24"] },
+      { type: "circle-correct", title: "Quick 3s and 5s", instruction: "Circle the answer.", questions: [{ prompt: "3 × 8 = ?", options: ["21", "24", "27"] }, { prompt: "5 × 7 = ?", options: ["30", "35", "40"] }, { prompt: "3 × 11 = ?", options: ["30", "33", "36"] }, { prompt: "5 × 9 = ?", options: ["40", "45", "50"] }] },
+      { type: "circle-correct", title: "Quick 4s", instruction: "Circle the answer.", questions: [{ prompt: "4 × 5 = ?", options: ["16", "20", "24"] }, { prompt: "4 × 9 = ?", options: ["32", "36", "40"] }, { prompt: "4 × 11 = ?", options: ["40", "44", "48"] }, { prompt: "4 × 7 = ?", options: ["24", "28", "32"] }] },
+      { type: "open-response", title: "Write the 5 Times Table", instruction: "Write the 5 times table from 5 × 1 to 5 × 12.", prompts: [{ text: "5 × 1 = ___\n5 × 2 = ___\n5 × 3 = ___\n5 × 4 = ___\n5 × 5 = ___\n5 × 6 = ___", type: "lines", lines: 6 }, { text: "5 × 7 = ___\n5 × 8 = ___\n5 × 9 = ___\n5 × 10 = ___\n5 × 11 = ___\n5 × 12 = ___", type: "lines", lines: 6 }] },
+      { type: "sorting", title: "Sort: Which Times Table?", instruction: "Sort each answer.", columns: ["3 times table", "4 times table", "5 times table"], items: [{ label: "15" }, { label: "16" }, { label: "25" }, { label: "12" }, { label: "20" }, { label: "27" }] },
+      // ─── Hard ───
+      { type: "circle-correct", title: "Mixed Times Tables", instruction: "Circle the correct answer.", questions: [{ prompt: "4 × 7 = ?", options: ["24", "28", "32"] }, { prompt: "3 × 9 = ?", options: ["24", "27", "30"] }, { prompt: "5 × 8 = ?", options: ["35", "40", "45"] }, { prompt: "10 × 12 = ?", options: ["110", "120", "130"] }] },
+      { type: "circle-correct", title: "More Mixed Facts", instruction: "Circle the correct answer.", questions: [{ prompt: "3 × 12 = ?", options: ["33", "36", "39"] }, { prompt: "4 × 12 = ?", options: ["44", "48", "52"] }, { prompt: "5 × 11 = ?", options: ["50", "55", "60"] }, { prompt: "2 × 12 = ?", options: ["22", "24", "26"] }] },
+      { type: "number-bonds", title: "Speed Round: Mixed Facts", instruction: "Fill in the missing number as fast as you can!", bonds: [{ total: 21, partA: 3, partB: null }, { total: 40, partA: null, partB: 8 }, { total: 36, partA: 4, partB: null }, { total: 50, partA: null, partB: 10 }, { total: 18, partA: 2, partB: null }, { total: 30, partA: null, partB: 6 }, { total: 45, partA: 5, partB: null }, { total: 70, partA: null, partB: 7 }] },
+      { type: "number-bonds", title: "More Speed Round", instruction: "Fill in quickly!", bonds: [{ total: 24, partA: 4, partB: null }, { total: 35, partA: null, partB: 7 }, { total: 27, partA: 3, partB: null }, { total: 60, partA: null, partB: 6 }, { total: 16, partA: 2, partB: null }, { total: 40, partA: null, partB: 4 }] },
+      { type: "open-response", title: "Division Facts from Times Tables", instruction: "Use your times tables knowledge to solve.", prompts: [{ text: "If 3 × 8 = 24, then 24 ÷ 3 = ___", type: "lines", lines: 1 }, { text: "If 4 × 7 = 28, then 28 ÷ 4 = ___", type: "lines", lines: 1 }, { text: "If 5 × 9 = 45, then 45 ÷ 5 = ___", type: "lines", lines: 1 }, { text: "If 10 × 6 = 60, then 60 ÷ 10 = ___", type: "lines", lines: 1 }] },
+      { type: "open-response", title: "Times Tables Word Problems", instruction: "Solve using your times tables.", prompts: [{ text: "3 rows of 8 chairs. How many chairs?", type: "lines", lines: 1 }, { text: "4 packets with 5 biscuits each. How many biscuits?", type: "lines", lines: 1 }, { text: "50 stickers shared among 10 children. How many each?", type: "lines", lines: 1 }, { text: "36 crayons sorted into groups of 4. How many groups?", type: "lines", lines: 1 }] },
+      { type: "circle-correct", title: "Which Fact Is Wrong?", instruction: "One fact is WRONG. Circle it.", questions: [{ prompt: "Which is wrong?", options: ["3 × 5 = 15", "3 × 6 = 18", "3 × 7 = 24"] }, { prompt: "Which is wrong?", options: ["4 × 8 = 32", "4 × 9 = 34", "4 × 10 = 40"] }, { prompt: "Which is wrong?", options: ["5 × 4 = 20", "5 × 5 = 30", "5 × 6 = 30"] }] },
+      { type: "home-activity", title: "Home Activity: Times Tables Practise", instruction: "Practise your times tables every day!", suggestions: ["Write out the 3 and 4 times tables from memory. Check your answers.", "Play 'Times Table Tennis' — bounce a ball and say the next fact each time.", "Time yourself: how fast can you say the 5 times table from 5 × 1 to 5 × 12?", "Ask a family member to quiz you on mixed 2s, 3s, 4s, 5s and 10s facts."] },
+    ],
+  },
+
+  // ══════════════════════════════════════════════════════════════
+  // WS 6: Unit Fractions & Multiples
+  // ══════════════════════════════════════════════════════════════
+  {
+    slug: "unit-fractions-multiples",
+    title: "Unit Fractions & Their Multiples",
+    strand: "Number",
+    description: "Represent unit fractions and their multiples in different ways",
+    activities: [
+      // ─── Easy ───
+      { type: "circle-correct", title: "What Is a Unit Fraction?", instruction: "A unit fraction has 1 on top. Circle the unit fractions.", questions: [{ prompt: "Which is a unit fraction?", options: ["1/2", "2/3", "3/4"] }, { prompt: "Which is a unit fraction?", options: ["2/5", "1/4", "3/8"] }, { prompt: "Which is a unit fraction?", options: ["4/5", "3/3", "1/3"] }, { prompt: "Which is a unit fraction?", options: ["1/8", "5/8", "7/8"] }] },
+      { type: "circle-correct", title: "More Unit Fractions", instruction: "Circle the unit fraction.", questions: [{ prompt: "Which is a unit fraction?", options: ["1/6", "3/6", "5/6"] }, { prompt: "Which is a unit fraction?", options: ["4/10", "1/10", "7/10"] }, { prompt: "Which is a unit fraction?", options: ["1/5", "2/5", "4/5"] }] },
+      { type: "matching", title: "Match Fractions to Meanings", instruction: "Draw a line to match.", left: ["1/2", "1/3", "1/4", "1/5"], right: ["one of five equal parts", "one of two equal parts", "one of four equal parts", "one of three equal parts"] },
+      { type: "matching", title: "Match More Fractions", instruction: "Draw a line to match.", left: ["1/6", "1/8", "1/10", "1/100"], right: ["one of ten equal parts", "one of six equal parts", "one of a hundred equal parts", "one of eight equal parts"] },
+      { type: "circle-correct", title: "How Many Equal Parts?", instruction: "Circle the correct answer.", questions: [{ prompt: "A pizza cut into 3 equal parts — each part is...", options: ["1/2", "1/3", "1/4"] }, { prompt: "A ribbon cut into 5 equal parts — each part is...", options: ["1/3", "1/4", "1/5"] }, { prompt: "A cake cut into 8 equal parts — each part is...", options: ["1/4", "1/6", "1/8"] }, { prompt: "A bar split into 4 equal parts — each part is...", options: ["1/2", "1/3", "1/4"] }] },
+      { type: "circle-correct", title: "Bigger or Smaller Unit Fraction?", instruction: "Circle the bigger fraction.", questions: [{ prompt: "Which is bigger?", options: ["1/2", "1/4"] }, { prompt: "Which is bigger?", options: ["1/3", "1/6"] }, { prompt: "Which is bigger?", options: ["1/5", "1/10"] }, { prompt: "Which is bigger?", options: ["1/4", "1/8"] }] },
+      { type: "sorting", title: "Sort: Unit Fraction or Not?", instruction: "Sort each fraction.", columns: ["Unit fraction", "Not a unit fraction"], items: [{ label: "1/3" }, { label: "2/5" }, { label: "1/8" }, { label: "3/4" }, { label: "1/2" }, { label: "5/6" }] },
+      { type: "open-response", title: "Draw the Fraction", instruction: "Divide each shape and shade the correct fraction.", prompts: [{ text: "Draw a circle. Divide it into 2 equal parts. Shade 1/2.", type: "box" }, { text: "Draw a rectangle. Divide it into 4 equal parts. Shade 1/4.", type: "box" }, { text: "Draw a rectangle. Divide it into 3 equal parts. Shade 1/3.", type: "box" }] },
+      { type: "number-bonds", title: "Fractions of a Whole", instruction: "How many unit fractions make a whole?", bonds: [{ total: 2, partA: 1, partB: null }, { total: 3, partA: 1, partB: null }, { total: 4, partA: 1, partB: null }, { total: 5, partA: 1, partB: null }, { total: 8, partA: 1, partB: null }, { total: 10, partA: 1, partB: null }] },
+      // ─── Medium ───
+      { type: "matching", title: "Match Fraction Words to Symbols", instruction: "Draw a line to match.", left: ["two quarters", "three fifths", "two thirds", "five eighths"], right: ["2/3", "5/8", "2/4", "3/5"] },
+      { type: "matching", title: "More Fraction Matching", instruction: "Draw a line to match.", left: ["three quarters", "four fifths", "two eighths", "six tenths"], right: ["2/8", "6/10", "3/4", "4/5"] },
+      { type: "circle-correct", title: "How Much Is Shaded?", instruction: "Circle the fraction that shows how much is shaded.", questions: [{ prompt: "Circle split into 4 parts, 3 shaded", options: ["1/4", "2/4", "3/4"] }, { prompt: "Rectangle split into 3 parts, 2 shaded", options: ["1/3", "2/3", "3/3"] }, { prompt: "Bar split into 5 parts, 4 shaded", options: ["2/5", "3/5", "4/5"] }, { prompt: "Square split into 8 parts, 5 shaded", options: ["3/8", "5/8", "7/8"] }] },
+      { type: "circle-correct", title: "More Shaded Fractions", instruction: "Circle the correct fraction.", questions: [{ prompt: "Bar split into 6 parts, 2 shaded", options: ["1/6", "2/6", "4/6"] }, { prompt: "Circle split into 4 parts, 1 shaded", options: ["1/4", "2/4", "3/4"] }, { prompt: "Rectangle split into 10 parts, 7 shaded", options: ["3/10", "7/10", "10/10"] }] },
+      { type: "circle-correct", title: "Equivalent or Not?", instruction: "Circle whether these fractions are equal.", questions: [{ prompt: "Is 2/4 the same as 1/2?", options: ["Yes", "No"] }, { prompt: "Is 3/6 the same as 1/2?", options: ["Yes", "No"] }, { prompt: "Is 2/3 the same as 3/4?", options: ["Yes", "No"] }, { prompt: "Is 4/8 the same as 1/2?", options: ["Yes", "No"] }] },
+      { type: "number-bonds", title: "Parts of a Fraction", instruction: "How many parts shaded and unshaded?", bonds: [{ total: 4, partA: 3, partB: null }, { total: 5, partA: null, partB: 3 }, { total: 8, partA: 5, partB: null }, { total: 6, partA: null, partB: 2 }, { total: 10, partA: 7, partB: null }, { total: 3, partA: null, partB: 1 }] },
+      { type: "open-response", title: "Write the Fraction", instruction: "Write the fraction shown.", prompts: [{ text: "3 out of 4 parts shaded = ___", type: "lines", lines: 1 }, { text: "5 out of 8 parts shaded = ___", type: "lines", lines: 1 }, { text: "2 out of 3 parts shaded = ___", type: "lines", lines: 1 }, { text: "7 out of 10 parts shaded = ___", type: "lines", lines: 1 }] },
+      { type: "sorting", title: "Sort: More or Less Than Half?", instruction: "Sort each fraction.", columns: ["Less than 1/2", "Equal to 1/2", "More than 1/2"], items: [{ label: "1/4" }, { label: "3/4" }, { label: "2/4" }, { label: "1/3" }, { label: "2/3" }, { label: "5/8" }] },
+      // ─── Hard ───
+      { type: "open-response", title: "Shade the Fractions", instruction: "Shade the correct amount.", prompts: [{ text: "Shade 3/4 of the circle (4 equal parts)", type: "box" }, { text: "Shade 2/3 of the rectangle (3 equal parts)", type: "box" }, { text: "Shade 5/8 of the bar (8 equal parts)", type: "box" }, { text: "Shade 1/5 of the strip (5 equal parts)", type: "box" }] },
+      { type: "open-response", title: "Fraction Word Problems", instruction: "Solve each problem.", prompts: [{ text: "A chocolate bar has 8 pieces. You eat 3/8. How many pieces did you eat?", type: "lines", lines: 1 }, { text: "There are 12 eggs. 1/4 are broken. How many are broken?", type: "lines", lines: 1 }, { text: "A race is 10 km. You have run 3/5 of it. How many km have you run?", type: "lines", lines: 1 }] },
+      { type: "open-response", title: "More Fraction Word Problems", instruction: "Solve each problem.", prompts: [{ text: "A cake is cut into 6 pieces. Tom ate 2/6. How many pieces did Tom eat?", type: "lines", lines: 1 }, { text: "A class has 20 students. 1/4 have brown hair. How many?", type: "lines", lines: 1 }, { text: "A pizza has 8 slices. 5/8 have been eaten. How many are left?", type: "lines", lines: 1 }] },
+      { type: "circle-correct", title: "Order Fractions", instruction: "Circle the largest fraction.", questions: [{ prompt: "Which is largest?", options: ["1/4", "1/2", "1/8"] }, { prompt: "Which is largest?", options: ["2/5", "3/5", "1/5"] }, { prompt: "Which is smallest?", options: ["3/4", "1/4", "2/4"] }, { prompt: "Which is smallest?", options: ["5/8", "3/8", "7/8"] }] },
+      { type: "open-response", title: "Fraction Number Line", instruction: "Place these fractions on the number line.", prompts: [{ text: "Mark 1/2 on a line from 0 to 1", type: "box" }, { text: "Mark 1/4 and 3/4 on a line from 0 to 1", type: "box" }] },
+      { type: "open-response", title: "Create Your Own Fraction Problems", instruction: "Write your own fraction problems.", prompts: [{ text: "I have ___ objects. ___ of them are ___. That is the fraction ___.", type: "lines", lines: 2 }, { text: "Draw a shape. Divide it into ___ equal parts. Shade ___ of them.", type: "box" }] },
+      { type: "home-activity", title: "Home Activity: Fractions at Home", instruction: "Find fractions everywhere!", suggestions: ["Cut an apple into 4 equal pieces. Each piece is 1/4. Eat 3/4 — how many pieces?", "Pour water into a glass until it is about 1/2 full. Then 3/4 full.", "Draw a rectangle and divide it into 5 equal parts. Colour in 2/5.", "Share 12 crackers equally among 3 people. Each person gets 1/3. How many each?"] },
+    ],
+  },
+
+  // ══════════════════════════════════════════════════════════════
+  // WS 7: Estimate Financial Calculations
+  // ══════════════════════════════════════════════════════════════
+  {
+    slug: "estimate-financial-calculations",
+    title: "Estimate Financial Calculations",
+    strand: "Number",
+    description: "Make estimates and determine reasonableness of financial calculations",
+    activities: [
+      // ─── Easy ───
+      { type: "circle-correct", title: "Round to the Nearest Dollar", instruction: "Circle the best rounded amount.", questions: [{ prompt: "$4.95 rounds to about...", options: ["$4", "$5", "$6"] }, { prompt: "$2.10 rounds to about...", options: ["$2", "$3", "$4"] }, { prompt: "$7.50 rounds to about...", options: ["$7", "$8", "$9"] }, { prompt: "$9.85 rounds to about...", options: ["$9", "$10", "$11"] }] },
+      { type: "circle-correct", title: "Round More Prices", instruction: "Circle the best rounded amount.", questions: [{ prompt: "$1.20 rounds to about...", options: ["$1", "$2", "$3"] }, { prompt: "$3.75 rounds to about...", options: ["$3", "$4", "$5"] }, { prompt: "$6.40 rounds to about...", options: ["$6", "$7", "$8"] }, { prompt: "$8.90 rounds to about...", options: ["$8", "$9", "$10"] }] },
+      { type: "matching", title: "Match Prices to Estimates", instruction: "Draw a line to match.", left: ["$3.95", "$6.20", "$1.80", "$8.50"], right: ["about $2", "about $4", "about $9", "about $6"] },
+      { type: "matching", title: "Match More Prices", instruction: "Draw a line to match.", left: ["$5.10", "$2.95", "$7.60", "$4.45"], right: ["about $3", "about $5", "about $4", "about $8"] },
+      { type: "circle-correct", title: "About How Much?", instruction: "Circle the best estimate.", questions: [{ prompt: "A toy costs $4.85. About how much?", options: ["$4", "$5", "$6"] }, { prompt: "A book costs $11.95. About how much?", options: ["$11", "$12", "$13"] }, { prompt: "A pencil costs $0.95. About how much?", options: ["$0", "$1", "$2"] }] },
+      { type: "sorting", title: "Sort: About $5 or About $10?", instruction: "Sort each price.", columns: ["About $5", "About $10"], items: [{ label: "$4.80" }, { label: "$9.95" }, { label: "$5.20" }, { label: "$10.10" }, { label: "$4.50" }, { label: "$9.50" }] },
+      { type: "number-bonds", title: "Round and Add", instruction: "Round each price to the nearest dollar and add.", bonds: [{ total: 10, partA: 5, partB: null }, { total: 8, partA: null, partB: 5 }, { total: 15, partA: 7, partB: null }, { total: 12, partA: null, partB: 4 }] },
+      { type: "open-response", title: "Round These Prices", instruction: "Round each price to the nearest dollar.", prompts: [{ text: "$3.49 ≈ ___", type: "lines", lines: 1 }, { text: "$7.80 ≈ ___", type: "lines", lines: 1 }, { text: "$1.25 ≈ ___", type: "lines", lines: 1 }, { text: "$9.55 ≈ ___", type: "lines", lines: 1 }] },
+      // ─── Medium ───
+      { type: "circle-correct", title: "Estimate the Total Cost", instruction: "Round each price and estimate the total.", questions: [{ prompt: "$4.95 + $2.95 = about...", options: ["$6", "$8", "$10"] }, { prompt: "$3.10 + $6.85 = about...", options: ["$8", "$10", "$12"] }, { prompt: "$1.95 + $1.95 + $1.95 = about...", options: ["$4", "$6", "$8"] }, { prompt: "$5.50 + $4.50 = about...", options: ["$8", "$10", "$12"] }] },
+      { type: "circle-correct", title: "More Estimated Totals", instruction: "Estimate the total.", questions: [{ prompt: "$7.95 + $3.10 = about...", options: ["$10", "$11", "$12"] }, { prompt: "$2.50 + $2.50 + $2.50 = about...", options: ["$6", "$8", "$9"] }, { prompt: "$6.20 + $3.80 = about...", options: ["$9", "$10", "$11"] }] },
+      { type: "open-response", title: "Estimate Before You Calculate", instruction: "First estimate by rounding. Then work out the exact answer.", prompts: [{ text: "3 items at $4.95 each\nEstimate: about ___\nExact: ___", type: "lines", lines: 2 }, { text: "$7.25 + $2.80\nEstimate: about ___\nExact: ___", type: "lines", lines: 2 }, { text: "2 items at $3.50 each\nEstimate: about ___\nExact: ___", type: "lines", lines: 2 }] },
+      { type: "open-response", title: "More Estimate and Calculate", instruction: "Estimate first, then calculate.", prompts: [{ text: "$4.50 + $3.50 + $2.00\nEstimate: ___\nExact: ___", type: "lines", lines: 2 }, { text: "5 items at $1.95 each\nEstimate: ___\nExact: ___", type: "lines", lines: 2 }] },
+      { type: "circle-correct", title: "Enough Money?", instruction: "Do you have enough money?", questions: [{ prompt: "You have $10. Items cost $3.95 and $5.95.", options: ["Yes, enough", "No, not enough"] }, { prompt: "You have $20. Items cost $8.50, $6.50, $4.50.", options: ["Yes, enough", "No, not enough"] }, { prompt: "You have $5. Items cost $2.95 and $2.95.", options: ["Yes, enough", "No, not enough"] }] },
+      { type: "matching", title: "Match Estimates to Problems", instruction: "Match each shopping list to its estimated total.", left: ["$4.95 + $5.05", "$3.00 + $3.00 + $3.00", "$8.50 + $1.50", "$6.95 + $3.95"], right: ["about $10", "about $9", "about $11", "about $10"] },
+      { type: "number-bonds", title: "Estimate the Change", instruction: "You pay with $20. About how much change?", bonds: [{ total: 20, partA: 15, partB: null }, { total: 20, partA: null, partB: 12 }, { total: 20, partA: 18, partB: null }, { total: 20, partA: null, partB: 5 }] },
+      // ─── Hard ───
+      { type: "circle-correct", title: "Is the Answer Reasonable?", instruction: "Circle if it seems reasonable or not.", questions: [{ prompt: "3 items at $4.95 each = $14.85", options: ["Reasonable", "Too high", "Too low"] }, { prompt: "5 items at $2 each = $15", options: ["Reasonable", "Too high", "Too low"] }, { prompt: "$8.50 + $3.20 = $15.70", options: ["Reasonable", "Too high", "Too low"] }, { prompt: "4 items at $3.95 = $11.80", options: ["Reasonable", "Too high", "Too low"] }] },
+      { type: "circle-correct", title: "More Reasonableness Checks", instruction: "Is the answer reasonable?", questions: [{ prompt: "$6.50 + $4.50 = $11.00", options: ["Reasonable", "Too high", "Too low"] }, { prompt: "2 items at $9.95 = $14.90", options: ["Reasonable", "Too high", "Too low"] }, { prompt: "$12.00 − $3.50 = $8.50", options: ["Reasonable", "Too high", "Too low"] }] },
+      { type: "open-response", title: "Shopping Estimates", instruction: "Estimate whether you have enough money.", prompts: [{ text: "You have $20. You want: shoes $8.95, socks $3.50, hat $6.95.\nDo you have enough? ___", type: "lines", lines: 2 }, { text: "You have $15. You want 4 books at $3.95 each.\nDo you have enough? ___", type: "lines", lines: 2 }, { text: "You have $10. You want: drink $2.50, sandwich $4.95, fruit $1.80.\nDo you have enough? ___", type: "lines", lines: 2 }] },
+      { type: "open-response", title: "More Shopping Problems", instruction: "Estimate and solve.", prompts: [{ text: "Mum has $50. She buys: shirt $18.95, pants $24.50, belt $8.95.\nEstimate: ___\nDoes she have enough? ___", type: "lines", lines: 2 }, { text: "You have $25. You buy 3 toys at $7.95 each.\nEstimate: ___\nEnough? ___", type: "lines", lines: 2 }] },
+      { type: "open-response", title: "Create a Shopping Problem", instruction: "Make your own shopping estimation problem.", prompts: [{ text: "Choose 3 items and their prices:\nItem 1: ___ costs $___\nItem 2: ___ costs $___\nItem 3: ___ costs $___\nEstimated total: about $___\nExact total: $___", type: "lines", lines: 5 }] },
+      { type: "circle-correct", title: "Best Estimate Strategy", instruction: "Which is the best way to estimate?", questions: [{ prompt: "To estimate $4.95 + $5.05, round to...", options: ["$5 + $5 = $10", "$4 + $5 = $9", "$5 + $6 = $11"] }, { prompt: "To estimate 3 × $2.95, think...", options: ["3 × $3 = $9", "3 × $2 = $6", "3 × $4 = $12"] }, { prompt: "To estimate $19.95 + $9.95, round to...", options: ["$20 + $10 = $30", "$19 + $9 = $28", "$20 + $9 = $29"] }] },
+      { type: "home-activity", title: "Home Activity: Supermarket Estimator", instruction: "Practise estimating at the shops!", suggestions: ["Pick 3 items at the supermarket. Round each price and estimate the total.", "Challenge: keep a running total as you shop. Can you stay under $20?", "Look at a receipt. Were the prices close to whole dollar amounts?", "Play 'Guess the Total' before the cashier tells you the price."] },
+    ],
+  },
+
+  // ══════════════════════════════════════════════════════════════
+  // WS 8: Unknown Values (Add & Subtract)
+  // ══════════════════════════════════════════════════════════════
+  {
+    slug: "unknown-values-add-subtract",
+    title: "Unknown Values: Addition & Subtraction",
+    strand: "Algebra",
+    description: "Find unknown values in number sentences involving addition and subtraction",
+    activities: [
+      // ─── Easy ───
+      { type: "number-bonds", title: "Find the Missing Number (Addition)", instruction: "What number goes in the blank?", bonds: [{ total: 15, partA: null, partB: 8 }, { total: 18, partA: 9, partB: null }, { total: 23, partA: null, partB: 15 }, { total: 20, partA: 12, partB: null }, { total: 25, partA: null, partB: 17 }, { total: 30, partA: 14, partB: null }] },
+      { type: "number-bonds", title: "More Missing Addends", instruction: "What number goes in the blank?", bonds: [{ total: 12, partA: null, partB: 5 }, { total: 16, partA: 7, partB: null }, { total: 19, partA: null, partB: 11 }, { total: 22, partA: 13, partB: null }, { total: 27, partA: null, partB: 18 }, { total: 14, partA: 6, partB: null }] },
+      { type: "circle-correct", title: "What Goes in the Box?", instruction: "Circle the number that makes the sentence true.", questions: [{ prompt: "___ + 6 = 14", options: ["6", "7", "8"] }, { prompt: "9 + ___ = 17", options: ["6", "7", "8"] }, { prompt: "___ + 12 = 20", options: ["7", "8", "9"] }, { prompt: "15 + ___ = 22", options: ["5", "6", "7"] }] },
+      { type: "circle-correct", title: "More Missing Numbers", instruction: "Circle the correct number.", questions: [{ prompt: "___ + 8 = 15", options: ["5", "6", "7"] }, { prompt: "11 + ___ = 20", options: ["8", "9", "10"] }, { prompt: "___ + 14 = 25", options: ["10", "11", "12"] }, { prompt: "7 + ___ = 19", options: ["11", "12", "13"] }] },
+      { type: "matching", title: "Match Sentences to Missing Numbers", instruction: "Draw a line to match.", left: ["___ + 5 = 13", "7 + ___ = 16", "___ + 9 = 20", "6 + ___ = 18"], right: ["12", "8", "11", "9"] },
+      { type: "open-response", title: "Write the Missing Number", instruction: "Fill in the blank.", prompts: [{ text: "___ + 7 = 15. Missing number = ___", type: "lines", lines: 1 }, { text: "8 + ___ = 22. Missing number = ___", type: "lines", lines: 1 }, { text: "___ + 13 = 25. Missing number = ___", type: "lines", lines: 1 }, { text: "16 + ___ = 30. Missing number = ___", type: "lines", lines: 1 }] },
+      // ─── Medium ───
+      { type: "number-bonds", title: "Find the Missing Number (Subtraction)", instruction: "What number goes in the blank?", bonds: [{ total: 20, partA: null, partB: 7 }, { total: 25, partA: 16, partB: null }, { total: 30, partA: null, partB: 12 }, { total: 18, partA: 11, partB: null }, { total: 35, partA: null, partB: 19 }, { total: 22, partA: 13, partB: null }] },
+      { type: "number-bonds", title: "More Subtraction Unknowns", instruction: "What number goes in the blank?", bonds: [{ total: 28, partA: null, partB: 15 }, { total: 32, partA: 17, partB: null }, { total: 24, partA: null, partB: 9 }, { total: 40, partA: 23, partB: null }, { total: 19, partA: null, partB: 11 }, { total: 33, partA: 20, partB: null }] },
+      { type: "circle-correct", title: "What Goes in the Box? (Subtraction)", instruction: "Circle the number that makes the sentence true.", questions: [{ prompt: "___ − 5 = 13", options: ["17", "18", "19"] }, { prompt: "24 − ___ = 16", options: ["6", "7", "8"] }, { prompt: "___ − 9 = 21", options: ["28", "29", "30"] }, { prompt: "30 − ___ = 18", options: ["10", "11", "12"] }] },
+      { type: "circle-correct", title: "More Subtraction Boxes", instruction: "Circle the correct number.", questions: [{ prompt: "___ − 7 = 15", options: ["20", "21", "22"] }, { prompt: "35 − ___ = 20", options: ["13", "14", "15"] }, { prompt: "___ − 12 = 18", options: ["28", "29", "30"] }, { prompt: "28 − ___ = 19", options: ["7", "8", "9"] }] },
+      { type: "matching", title: "Match Sentences to Missing Numbers", instruction: "Draw a line to match.", left: ["___ + 8 = 20", "25 − ___ = 17", "14 + ___ = 23", "___ − 6 = 19"], right: ["25", "12", "8", "9"] },
+      { type: "matching", title: "More Matching", instruction: "Match each sentence to the missing number.", left: ["___ − 5 = 25", "18 + ___ = 30", "40 − ___ = 28", "___ + 11 = 35"], right: ["12", "30", "24", "12"] },
+      { type: "open-response", title: "Write Unknowns", instruction: "Find the missing number.", prompts: [{ text: "___ + 15 = 32. Missing number = ___", type: "lines", lines: 1 }, { text: "45 − ___ = 28. Missing number = ___", type: "lines", lines: 1 }, { text: "___ − 13 = 27. Missing number = ___", type: "lines", lines: 1 }, { text: "19 + ___ = 41. Missing number = ___", type: "lines", lines: 1 }] },
+      { type: "circle-correct", title: "Addition or Subtraction?", instruction: "What operation do you need to find the missing number?", questions: [{ prompt: "___ + 8 = 20. To find ___ you...", options: ["Subtract 8 from 20", "Add 8 to 20", "Multiply"] }, { prompt: "30 − ___ = 18. To find ___ you...", options: ["Subtract 18 from 30", "Add 18 and 30", "Multiply"] }, { prompt: "___ − 15 = 25. To find ___ you...", options: ["Add 15 and 25", "Subtract 15 from 25", "Divide"] }] },
+      // ─── Hard ───
+      { type: "open-response", title: "Find the Unknown (Bigger Numbers)", instruction: "Work out the missing number. Show your thinking.", prompts: [{ text: "___ + 35 = 72. Missing number = ___", type: "lines", lines: 2 }, { text: "84 − ___ = 49. Missing number = ___", type: "lines", lines: 2 }, { text: "___ + 28 = 65. Missing number = ___", type: "lines", lines: 2 }, { text: "93 − ___ = 57. Missing number = ___", type: "lines", lines: 2 }] },
+      { type: "open-response", title: "More Big Number Unknowns", instruction: "Find the missing number.", prompts: [{ text: "___ + 46 = 81. Missing number = ___", type: "lines", lines: 2 }, { text: "72 − ___ = 35. Missing number = ___", type: "lines", lines: 2 }, { text: "___ − 29 = 54. Missing number = ___", type: "lines", lines: 2 }] },
+      { type: "open-response", title: "Word Problems with Unknowns", instruction: "Write a number sentence and solve.", prompts: [{ text: "Tom has some marbles. He gets 15 more and now has 38. How many did he start with?\nNumber sentence: ___ + 15 = 38\nAnswer: ___", type: "lines", lines: 2 }, { text: "A jar had 50 lollies. Some were eaten and now there are 32. How many were eaten?\nNumber sentence: 50 − ___ = 32\nAnswer: ___", type: "lines", lines: 2 }] },
+      { type: "circle-correct", title: "Check Your Work", instruction: "Is the missing number correct?", questions: [{ prompt: "___ + 17 = 45. Answer: 28", options: ["Correct", "Incorrect"] }, { prompt: "60 − ___ = 35. Answer: 25", options: ["Correct", "Incorrect"] }, { prompt: "___ + 23 = 50. Answer: 37", options: ["Correct", "Incorrect"] }, { prompt: "82 − ___ = 46. Answer: 36", options: ["Correct", "Incorrect"] }] },
+      { type: "home-activity", title: "Home Activity: Mystery Numbers", instruction: "Create mystery number puzzles for your family!", suggestions: ["Write a number sentence with a blank: ___ + 15 = 32. Ask someone to solve it.", "Play 'I'm thinking of a number': I add 8 and get 25. What's my number?", "Make 5 different number sentences with blanks. Swap with a partner and solve.", "Use subtraction too: I subtract 7 and get 18. What did I start with?"] },
+    ],
+  },
+
+  // ══════════════════════════════════════════════════════════════
+  // WS 9: Algorithms & Patterns
+  // ══════════════════════════════════════════════════════════════
+  {
+    slug: "algorithms-patterns",
+    title: "Algorithms & Patterns",
+    strand: "Algebra",
+    description: "Create algorithms to investigate numbers and explore simple patterns",
+    activities: [
+      // ─── Easy ───
+      { type: "sequence", title: "Follow the Rule: Add 3", instruction: "Start at the given number and add 3 each time.", sequences: [{ items: [2, 5, 0, 11, 14], answer: [8] }, { items: [7, 0, 13, 16, 0], answer: [10, 19] }, { items: [0, 4, 7, 0, 13], answer: [1, 10] }] },
+      { type: "sequence", title: "Follow the Rule: Add 5", instruction: "Start at the given number and add 5 each time.", sequences: [{ items: [1, 6, 0, 16, 21], answer: [11] }, { items: [3, 0, 13, 18, 0], answer: [8, 23] }] },
+      { type: "sequence", title: "Follow the Rule: Subtract 4", instruction: "Start at the given number and subtract 4 each time.", sequences: [{ items: [40, 36, 0, 28, 24], answer: [32] }, { items: [52, 0, 44, 40, 0], answer: [48, 36] }, { items: [0, 56, 52, 0, 44], answer: [60, 48] }] },
+      { type: "sequence", title: "Follow the Rule: Subtract 3", instruction: "Subtract 3 each time.", sequences: [{ items: [30, 27, 0, 21, 18], answer: [24] }, { items: [45, 0, 39, 36, 0], answer: [42, 33] }] },
+      { type: "circle-correct", title: "What Is the Rule?", instruction: "Look at the pattern and circle the rule.", questions: [{ prompt: "5, 10, 15, 20, 25", options: ["Add 3", "Add 5", "Add 10"] }, { prompt: "30, 27, 24, 21, 18", options: ["Subtract 2", "Subtract 3", "Subtract 4"] }, { prompt: "4, 8, 12, 16, 20", options: ["Add 4", "Add 5", "Add 6"] }, { prompt: "100, 90, 80, 70, 60", options: ["Subtract 5", "Subtract 10", "Subtract 20"] }] },
+      { type: "circle-correct", title: "More Rules", instruction: "Circle the rule.", questions: [{ prompt: "2, 9, 16, 23, 30", options: ["Add 5", "Add 6", "Add 7"] }, { prompt: "50, 44, 38, 32, 26", options: ["Subtract 4", "Subtract 5", "Subtract 6"] }, { prompt: "1, 3, 5, 7, 9", options: ["Add 1", "Add 2", "Add 3"] }] },
+      { type: "matching", title: "Match Patterns to Rules", instruction: "Match.", left: ["3, 6, 9, 12, 15", "40, 35, 30, 25, 20", "1, 5, 9, 13, 17", "100, 91, 82, 73, 64"], right: ["Subtract 9", "Add 3", "Subtract 5", "Add 4"] },
+      { type: "pattern", title: "Continue the Shape Pattern", instruction: "What comes next in each pattern?", rows: [{ sequence: ["star", "heart", "star", "heart", "star", null], unitLength: 2 }, { sequence: ["apple", "apple", "fish", "apple", "apple", null], unitLength: 3 }, { sequence: ["circle", "square", "triangle", "circle", "square", null], unitLength: 3 }] },
+      { type: "pattern", title: "More Shape Patterns", instruction: "What comes next?", rows: [{ sequence: ["flower", "flower", "butterfly", "flower", "flower", null], unitLength: 3 }, { sequence: ["sun", "moon", "sun", "moon", "sun", null], unitLength: 2 }] },
+      // ─── Medium ───
+      { type: "open-response", title: "Write the Algorithm", instruction: "Write the step-by-step rule for each pattern.", prompts: [{ text: "Pattern: 2, 5, 8, 11, 14\nAlgorithm: Start at ___, add ___ each time", type: "lines", lines: 1 }, { text: "Pattern: 50, 45, 40, 35, 30\nAlgorithm: Start at ___, subtract ___ each time", type: "lines", lines: 1 }, { text: "Pattern: 1, 4, 7, 10, 13\nAlgorithm: Start at ___, add ___ each time", type: "lines", lines: 1 }] },
+      { type: "matching", title: "Match Algorithms to Patterns", instruction: "Match.", left: ["Start at 3, add 4", "Start at 100, subtract 10", "Start at 0, add 7", "Start at 45, subtract 5"], right: ["45, 40, 35, 30, 25", "0, 7, 14, 21, 28", "3, 7, 11, 15, 19", "100, 90, 80, 70, 60"] },
+      { type: "circle-correct", title: "What Comes Next?", instruction: "Follow the algorithm. What is the next number?", questions: [{ prompt: "Start at 6, add 5: 6, 11, 16, 21, ___", options: ["25", "26", "27"] }, { prompt: "Start at 80, subtract 7: 80, 73, 66, 59, ___", options: ["51", "52", "53"] }, { prompt: "Start at 3, add 6: 3, 9, 15, 21, ___", options: ["26", "27", "28"] }, { prompt: "Start at 99, subtract 9: 99, 90, 81, 72, ___", options: ["61", "62", "63"] }] },
+      { type: "open-response", title: "Follow My Algorithm", instruction: "Follow the algorithm and write the first 6 numbers.", prompts: [{ text: "Algorithm: Start at 4, add 6 each time.\nPattern: 4, ___, ___, ___, ___, ___", type: "lines", lines: 1 }, { text: "Algorithm: Start at 75, subtract 8 each time.\nPattern: 75, ___, ___, ___, ___, ___", type: "lines", lines: 1 }] },
+      { type: "sequence", title: "Two-Step Patterns", instruction: "Fill in the missing numbers.", sequences: [{ items: [2, 4, 8, 10, 0, 16], answer: [14] }, { items: [1, 3, 0, 9, 11, 15], answer: [5] }] },
+      // ─── Hard ───
+      { type: "open-response", title: "Create Your Own Algorithm", instruction: "Write an algorithm and then follow it to create a pattern.", prompts: [{ text: "My algorithm: Start at ___, add ___ each time.\nMy pattern: ___, ___, ___, ___, ___, ___", type: "lines", lines: 2 }, { text: "My algorithm: Start at ___, subtract ___ each time.\nMy pattern: ___, ___, ___, ___, ___, ___", type: "lines", lines: 2 }] },
+      { type: "open-response", title: "Guess My Rule", instruction: "Look at the pattern. Write the rule and the next 3 numbers.", prompts: [{ text: "Pattern: 7, 14, 21, 28, 35\nRule: ___\nNext 3: ___, ___, ___", type: "lines", lines: 2 }, { text: "Pattern: 64, 56, 48, 40, 32\nRule: ___\nNext 3: ___, ___, ___", type: "lines", lines: 2 }] },
+      { type: "circle-correct", title: "Odd One Out", instruction: "Which number does NOT follow the pattern?", questions: [{ prompt: "Pattern: 5, 10, 15, 20, 26, 30", options: ["26 does not belong", "30 does not belong", "They all belong"] }, { prompt: "Pattern: 3, 6, 9, 11, 15, 18", options: ["11 does not belong", "15 does not belong", "They all belong"] }] },
+      { type: "open-response", title: "Pattern Investigation", instruction: "Investigate these patterns.", prompts: [{ text: "Start at 1, add 2 each time: 1, 3, 5, 7, 9...\nAre these numbers odd or even? ___\nWill 20 appear in this pattern? Why? ___", type: "lines", lines: 3 }, { text: "Start at 2, add 2 each time: 2, 4, 6, 8, 10...\nAre these numbers odd or even? ___\nWill 15 appear in this pattern? Why? ___", type: "lines", lines: 3 }] },
+      { type: "home-activity", title: "Home Activity: Pattern Machines", instruction: "Build your own pattern machines!", suggestions: ["Write an algorithm: 'Start at 2, add 3 each time.' Follow it for 10 steps.", "Ask a family member to follow your algorithm. Do they get the same pattern?", "Make a mystery pattern. Can someone work out your rule?", "Try a two-step algorithm: 'Start at 1, double it, then add 1.' What happens?"] },
+    ],
+  },
+
+  // ══════════════════════════════════════════════════════════════
+  // WS 10: Metric Units — Estimate, Compare, Measure
+  // ══════════════════════════════════════════════════════════════
+  {
+    slug: "metric-units-estimate-compare",
+    title: "Metric Units: Estimate & Measure",
+    strand: "Measurement",
+    description: "Use familiar metric units to estimate, compare and measure attributes of objects",
+    activities: [
+      // ─── Easy ───
+      { type: "circle-correct", title: "Which Unit Would You Use?", instruction: "Circle the best unit to measure each object.", questions: [{ prompt: "Length of your pencil", options: ["centimetres", "metres", "kilometres"] }, { prompt: "Distance to the next town", options: ["centimetres", "metres", "kilometres"] }, { prompt: "Height of a door", options: ["centimetres", "metres", "kilometres"] }, { prompt: "Width of a book", options: ["centimetres", "metres", "kilometres"] }] },
+      { type: "circle-correct", title: "More Unit Choices", instruction: "Circle the best unit.", questions: [{ prompt: "Mass of a pencil", options: ["grams", "kilograms", "tonnes"] }, { prompt: "Mass of a person", options: ["grams", "kilograms", "tonnes"] }, { prompt: "Water in a cup", options: ["millilitres", "litres", "kilolitres"] }, { prompt: "Water in a swimming pool", options: ["millilitres", "litres", "kilolitres"] }] },
+      { type: "matching", title: "Match Objects to Measurements", instruction: "Draw a line to match.", left: ["A pencil", "A classroom", "Your hand span", "A swimming pool"], right: ["about 15 cm", "about 10 m", "about 25 m", "about 20 cm"] },
+      { type: "matching", title: "Match More Objects", instruction: "Draw a line to match.", left: ["An apple", "A bag of potatoes", "A glass of water", "A bucket of water"], right: ["about 5 kg", "about 150 g", "about 10 L", "about 250 mL"] },
+      { type: "sorting", title: "Sort by Unit", instruction: "Sort these items into the correct measurement unit column.", columns: ["Centimetres (cm)", "Metres (m)", "Kilometres (km)"], items: [{ label: "Width of a rubber" }, { label: "Length of a football field" }, { label: "Distance to Sydney" }, { label: "Height of a table" }, { label: "Length of your fingernail" }, { label: "A long car trip" }] },
+      { type: "sorting", title: "Sort by Mass Unit", instruction: "Sort these items.", columns: ["Grams (g)", "Kilograms (kg)"], items: [{ label: "A feather" }, { label: "A watermelon" }, { label: "A coin" }, { label: "A bag of flour" }, { label: "A pencil" }, { label: "A child" }] },
+      // ─── Medium ───
+      { type: "circle-correct", title: "Estimate the Length", instruction: "Circle the best estimate.", questions: [{ prompt: "Length of a school desk", options: ["60 cm", "6 m", "60 m"] }, { prompt: "Height of a Year 3 student", options: ["13 cm", "130 cm", "13 m"] }, { prompt: "Length of a car", options: ["40 cm", "4 m", "40 m"] }, { prompt: "Mass of an apple", options: ["15 g", "150 g", "1500 g"] }] },
+      { type: "circle-correct", title: "More Estimates", instruction: "Circle the best estimate.", questions: [{ prompt: "Width of a classroom", options: ["8 cm", "8 m", "80 m"] }, { prompt: "Mass of a cat", options: ["40 g", "4 kg", "40 kg"] }, { prompt: "Water in a bathtub", options: ["15 mL", "15 L", "150 L"] }, { prompt: "Height of a house", options: ["6 cm", "6 m", "60 m"] }] },
+      { type: "circle-correct", title: "Which Is Longer?", instruction: "Circle the longer measurement.", questions: [{ prompt: "Which is longer?", options: ["1 metre", "80 centimetres"] }, { prompt: "Which is longer?", options: ["2 kilometres", "1500 metres"] }, { prompt: "Which is heavier?", options: ["1 kilogram", "800 grams"] }, { prompt: "Which holds more?", options: ["1 litre", "500 millilitres"] }] },
+      { type: "circle-correct", title: "More Comparisons", instruction: "Circle the correct answer.", questions: [{ prompt: "Which is longer: 150 cm or 1 m?", options: ["150 cm", "1 m"] }, { prompt: "Which is heavier: 2 kg or 1500 g?", options: ["2 kg", "1500 g"] }, { prompt: "Which holds more: 3 L or 2500 mL?", options: ["3 L", "2500 mL"] }] },
+      { type: "open-response", title: "Estimate Then Measure", instruction: "Estimate the length first, then measure with a ruler.", prompts: [{ text: "Your pencil — Estimate: ___ cm, Measured: ___ cm", type: "lines", lines: 1 }, { text: "This worksheet (width) — Estimate: ___ cm, Measured: ___ cm", type: "lines", lines: 1 }, { text: "Your hand span — Estimate: ___ cm, Measured: ___ cm", type: "lines", lines: 1 }, { text: "A book — Estimate: ___ cm, Measured: ___ cm", type: "lines", lines: 1 }] },
+      { type: "matching", title: "Match Conversions", instruction: "Match.", left: ["1 metre", "1 kilometre", "1 kilogram", "1 litre"], right: ["1000 grams", "100 centimetres", "1000 millilitres", "1000 metres"] },
+      // ─── Hard ───
+      { type: "open-response", title: "Convert and Compare", instruction: "Answer each question.", prompts: [{ text: "How many centimetres in 1 metre? ___", type: "lines", lines: 1 }, { text: "How many metres in 1 kilometre? ___", type: "lines", lines: 1 }, { text: "How many grams in 1 kilogram? ___", type: "lines", lines: 1 }, { text: "How many millilitres in 1 litre? ___", type: "lines", lines: 1 }] },
+      { type: "open-response", title: "Conversion Problems", instruction: "Convert these measurements.", prompts: [{ text: "2 m = ___ cm", type: "lines", lines: 1 }, { text: "3 kg = ___ g", type: "lines", lines: 1 }, { text: "5 L = ___ mL", type: "lines", lines: 1 }, { text: "150 cm = ___ m and ___ cm", type: "lines", lines: 1 }] },
+      { type: "open-response", title: "Measurement Word Problems", instruction: "Solve each problem.", prompts: [{ text: "A table is 120 cm long. A desk is 90 cm long. How much longer is the table?", type: "lines", lines: 2 }, { text: "A bag of apples weighs 2 kg. A bag of oranges weighs 1500 g. Which is heavier?", type: "lines", lines: 2 }, { text: "A bottle holds 750 mL. How many bottles to make 3 litres?", type: "lines", lines: 2 }] },
+      { type: "circle-correct", title: "True or False — Measurement", instruction: "Circle True or False.", questions: [{ prompt: "100 cm = 1 m", options: ["True", "False"] }, { prompt: "1 kg = 100 g", options: ["True", "False"] }, { prompt: "1000 mL = 1 L", options: ["True", "False"] }, { prompt: "1 km = 100 m", options: ["True", "False"] }] },
+      { type: "home-activity", title: "Home Activity: Measure Around the House", instruction: "Find things to measure at home!", suggestions: ["Use a ruler to measure 5 objects in centimetres. Record your results.", "Estimate the height of a door in metres. Then measure to check.", "Weigh some fruit. How many grams does each piece weigh?", "How much water does your favourite cup hold? Estimate in millilitres."] },
+    ],
+  },
+
+  // ══════════════════════════════════════════════════════════════
+  // WS 11-19: Remaining worksheets (compact format)
+  // ══════════════════════════════════════════════════════════════
+
+  // WS 11: Angles & Right Angles
+  { slug: "angles-right-angles", title: "Angles & Right Angles", strand: "Measurement", description: "Identify angles as measures of turn and compare them to right angles", activities: [
+    { type: "circle-correct", title: "Find the Right Angle", instruction: "A right angle makes an 'L' shape. Circle the right angle.", questions: [{ prompt: "Which shows a right angle?", options: ["Corner of a book", "A pointy triangle", "A wide opening"] }, { prompt: "A clock at 3 o'clock shows...", options: ["A right angle", "Less than a right angle", "More than a right angle"] }, { prompt: "A door fully open is...", options: ["A right angle", "Less than a right angle", "More than a right angle"] }] },
+    { type: "circle-correct", title: "More Right Angles", instruction: "Circle the correct answer.", questions: [{ prompt: "The corner of a page is...", options: ["A right angle", "Less than a right angle", "More than a right angle"] }, { prompt: "The corner of a picture frame is...", options: ["A right angle", "Less than a right angle", "More than a right angle"] }, { prompt: "The hands at 1 o'clock show...", options: ["A right angle", "Less than a right angle", "More than a right angle"] }] },
+    { type: "matching", title: "Match Turns to Descriptions", instruction: "Draw a line to match.", left: ["Quarter turn", "Half turn", "Full turn", "Three-quarter turn"], right: ["360 degrees", "90 degrees", "270 degrees", "180 degrees"] },
+    { type: "sorting", title: "Sort the Angles", instruction: "Sort each angle.", columns: ["Less than a right angle", "A right angle", "More than a right angle"], items: [{ label: "Corner of a square" }, { label: "A slightly open door" }, { label: "A wide-open book" }, { label: "Corner of a rectangle" }, { label: "An almost-closed fan" }, { label: "An open pair of scissors" }] },
+    { type: "circle-correct", title: "Compare to a Right Angle", instruction: "Circle the correct comparison.", questions: [{ prompt: "A pointy triangle corner is...", options: ["Less than a right angle", "A right angle", "More than a right angle"] }, { prompt: "A straight line is the same as...", options: ["1 right angle", "2 right angles", "4 right angles"] }, { prompt: "A full turn is the same as...", options: ["1 right angle", "2 right angles", "4 right angles"] }, { prompt: "A clock at 6 o'clock shows...", options: ["Less than a right angle", "A right angle", "2 right angles (straight line)"] }] },
+    { type: "circle-correct", title: "More Angle Comparisons", instruction: "Circle the correct answer.", questions: [{ prompt: "How many right angles in a square?", options: ["2", "3", "4"] }, { prompt: "How many right angles in a rectangle?", options: ["2", "3", "4"] }, { prompt: "A quarter turn = ___ degrees", options: ["45", "90", "180"] }, { prompt: "A half turn = ___ degrees", options: ["90", "180", "360"] }] },
+    { type: "matching", title: "Match Angles to Objects", instruction: "Match.", left: ["Right angle", "Less than a right angle", "More than a right angle", "Straight angle"], right: ["An open book flat on a table", "The corner of a window", "The tip of a pizza slice", "A door opened very wide"] },
+    { type: "open-response", title: "Draw the Angles", instruction: "Draw an example of each type of angle.", prompts: [{ text: "Draw a right angle (90 degrees)", type: "box" }, { text: "Draw an angle smaller than a right angle", type: "box" }, { text: "Draw an angle bigger than a right angle", type: "box" }] },
+    { type: "open-response", title: "Angles Around You", instruction: "Find and describe angles in your classroom.", prompts: [{ text: "Name 2 things with right angles: ___", type: "lines", lines: 2 }, { text: "Name something with an angle less than a right angle: ___", type: "lines", lines: 1 }, { text: "Name something with an angle more than a right angle: ___", type: "lines", lines: 1 }] },
+    { type: "open-response", title: "Angle Challenge", instruction: "Answer these questions.", prompts: [{ text: "How many right angles do you turn through to face the opposite direction? ___", type: "lines", lines: 1 }, { text: "If you face north and make a quarter turn clockwise, which way do you face? ___", type: "lines", lines: 1 }, { text: "How many quarter turns to make a full turn? ___", type: "lines", lines: 1 }] },
+    { type: "circle-correct", title: "Clockwise or Anticlockwise?", instruction: "Circle the correct answer.", questions: [{ prompt: "Clock hands move...", options: ["Clockwise", "Anticlockwise"] }, { prompt: "If you turn left, you turn...", options: ["Clockwise", "Anticlockwise"] }, { prompt: "A quarter turn clockwise from North is...", options: ["East", "West", "South"] }] },
+    { type: "home-activity", title: "Home Activity: Angle Hunt", instruction: "Hunt for angles around your home!", suggestions: ["Find 5 right angles in your house (hint: look at corners of doors and books).", "Open a door just a little bit. Is the angle less than, equal to, or more than a right angle?", "Use two pencils to make different sized angles. Which ones are right angles?", "Turn around on the spot. A quarter turn is one right angle. How many right angles in a full turn?"] },
+  ]},
+
+  // WS 12: Duration — Formal Units of Time
+  { slug: "duration-formal-units", title: "Duration: Formal Units of Time", strand: "Measurement", description: "Estimate and compare duration using formal units of time", activities: [
+    { type: "matching", title: "Match Time Units", instruction: "Draw a line to match.", left: ["1 minute", "1 hour", "1 day", "1 week"], right: ["7 days", "60 seconds", "24 hours", "60 minutes"] },
+    { type: "circle-correct", title: "How Long Does It Take?", instruction: "Circle the best estimate.", questions: [{ prompt: "Brushing your teeth", options: ["2 seconds", "2 minutes", "2 hours"] }, { prompt: "A school day", options: ["6 minutes", "6 hours", "6 days"] }, { prompt: "Eating lunch", options: ["20 seconds", "20 minutes", "20 hours"] }, { prompt: "Watching a movie", options: ["2 minutes", "2 hours", "2 days"] }] },
+    { type: "circle-correct", title: "Seconds, Minutes or Hours?", instruction: "Circle the best unit.", questions: [{ prompt: "Clapping your hands once", options: ["seconds", "minutes", "hours"] }, { prompt: "Playing a board game", options: ["seconds", "minutes", "hours"] }, { prompt: "Sleeping at night", options: ["seconds", "minutes", "hours"] }, { prompt: "Singing a song", options: ["seconds", "minutes", "hours"] }] },
+    { type: "circle-correct", title: "More Time Estimates", instruction: "Circle the best estimate.", questions: [{ prompt: "Writing your name", options: ["5 seconds", "5 minutes", "5 hours"] }, { prompt: "A flight to another country", options: ["10 minutes", "10 hours", "10 days"] }, { prompt: "Running 100 metres", options: ["15 seconds", "15 minutes", "15 hours"] }] },
+    { type: "circle-correct", title: "Which Takes Longer?", instruction: "Circle the activity that takes longer.", questions: [{ prompt: "Which takes longer?", options: ["Reading a book (1 hour)", "Eating a snack (10 minutes)"] }, { prompt: "Which takes longer?", options: ["Walking to school (15 minutes)", "A school lesson (50 minutes)"] }, { prompt: "Which is shorter?", options: ["A weekend (2 days)", "A school week (5 days)"] }, { prompt: "Which is shorter?", options: ["Tying your shoes (30 seconds)", "Having a shower (10 minutes)"] }] },
+    { type: "sorting", title: "Sort by Duration", instruction: "Sort these activities.", columns: ["Seconds", "Minutes", "Hours"], items: [{ label: "Blinking" }, { label: "Doing homework" }, { label: "A car trip to another city" }, { label: "Tying a shoelace" }, { label: "A school assembly" }, { label: "Cooking dinner" }] },
+    { type: "matching", title: "Match Durations", instruction: "Match.", left: ["60 seconds", "60 minutes", "24 hours", "7 days"], right: ["1 week", "1 minute", "1 day", "1 hour"] },
+    { type: "open-response", title: "Work Out the Duration", instruction: "Calculate how long each activity takes.", prompts: [{ text: "School starts at 9:00 am and finishes at 3:00 pm. How many hours? ___", type: "lines", lines: 1 }, { text: "A movie starts at 2:30 pm and finishes at 4:00 pm. How long? ___", type: "lines", lines: 1 }, { text: "You started reading at 7:15 pm and stopped at 7:45 pm. How many minutes? ___", type: "lines", lines: 1 }, { text: "Recess is from 10:30 am to 10:50 am. How many minutes? ___", type: "lines", lines: 1 }] },
+    { type: "open-response", title: "More Duration Problems", instruction: "Calculate.", prompts: [{ text: "Lunch is from 12:30 pm to 1:15 pm. How many minutes? ___", type: "lines", lines: 1 }, { text: "A bus trip takes 45 minutes. If you leave at 8:00 am, when do you arrive? ___", type: "lines", lines: 1 }, { text: "A cake bakes for 1 hour 30 minutes. If it goes in at 3:00 pm, when is it ready? ___", type: "lines", lines: 1 }] },
+    { type: "circle-correct", title: "Convert Units of Time", instruction: "Circle the correct answer.", questions: [{ prompt: "How many minutes in 2 hours?", options: ["60", "120", "180"] }, { prompt: "How many seconds in 3 minutes?", options: ["120", "150", "180"] }, { prompt: "How many hours in 2 days?", options: ["24", "36", "48"] }, { prompt: "How many days in 2 weeks?", options: ["10", "12", "14"] }] },
+    { type: "circle-correct", title: "More Conversions", instruction: "Circle the correct answer.", questions: [{ prompt: "How many minutes in half an hour?", options: ["20", "30", "40"] }, { prompt: "How many seconds in 1 minute?", options: ["30", "60", "100"] }, { prompt: "How many hours in half a day?", options: ["6", "10", "12"] }] },
+    { type: "home-activity", title: "Home Activity: Time It!", instruction: "Time different activities at home!", suggestions: ["Time how long it takes you to brush your teeth. Was it more or less than 2 minutes?", "How long does it take to eat dinner? Estimate first, then check the clock.", "Time how long you can hold your breath. Was it more or less than a minute?", "Work out how many hours you are awake each day."] },
+  ]},
+
+  // WS 13: Money Representations
+  { slug: "money-representations", title: "Money Representations", strand: "Measurement", description: "Represent money values in different ways", activities: [
+    { type: "matching", title: "Match Coins to Values", instruction: "Draw a line to match.", left: ["$1 + $1 + $1", "$2 + $2", "50c + 50c", "$2 + $1 + 50c"], right: ["$3.50", "$4", "$1", "$3"] },
+    { type: "matching", title: "Match More Coins", instruction: "Draw a line to match.", left: ["$1 + 50c + 20c", "$2 + $2 + $1", "50c + 20c + 20c + 10c", "$5 + $2"], right: ["$1.00", "$7", "$1.70", "$5"] },
+    { type: "circle-correct", title: "Which Coins Make the Amount?", instruction: "Circle the set of coins that makes the given amount.", questions: [{ prompt: "$1.50", options: ["$1 + 50c", "$1 + $1", "50c + 50c + 50c + 50c"] }, { prompt: "$3.00", options: ["$2 + $2", "$2 + $1", "$1 + $1"] }, { prompt: "$5.00", options: ["$2 + $2 + $1", "$2 + $1 + $1", "$5 note"] }, { prompt: "$0.50", options: ["Two 20c + one 10c", "One 50c", "Both are correct"] }] },
+    { type: "circle-correct", title: "More Coin Combinations", instruction: "Circle the correct set.", questions: [{ prompt: "$2.50", options: ["$2 + 50c", "$1 + $1 + 50c", "Both are correct"] }, { prompt: "$4.00", options: ["$2 + $2", "Four $1 coins", "Both are correct"] }, { prompt: "$7.00", options: ["$5 + $2", "$5 + $1 + $1", "Both are correct"] }] },
+    { type: "open-response", title: "Show It Two Ways", instruction: "Write two different ways to make each amount.", prompts: [{ text: "$2.00\nWay 1: ___\nWay 2: ___", type: "lines", lines: 2 }, { text: "$3.50\nWay 1: ___\nWay 2: ___", type: "lines", lines: 2 }, { text: "$5.00\nWay 1: ___\nWay 2: ___", type: "lines", lines: 2 }] },
+    { type: "open-response", title: "Show Three Ways", instruction: "Write three different ways to make each amount.", prompts: [{ text: "$1.00\nWay 1: ___\nWay 2: ___\nWay 3: ___", type: "lines", lines: 3 }, { text: "$10.00\nWay 1: ___\nWay 2: ___\nWay 3: ___", type: "lines", lines: 3 }] },
+    { type: "circle-correct", title: "Same Amount, Different Coins", instruction: "Which two sets of coins are worth the same amount?", questions: [{ prompt: "Which equals $2?", options: ["Two $1 coins", "Four 50c coins", "Both are correct"] }, { prompt: "Which equals $1?", options: ["Two 50c coins", "Five 20c coins", "Both are correct"] }, { prompt: "Which equals $4?", options: ["Two $2 coins", "Four $1 coins", "Both are correct"] }] },
+    { type: "matching", title: "Match Amounts to Notes and Coins", instruction: "Draw a line to match.", left: ["$7.50", "$12.00", "$15.50", "$20.00"], right: ["$10 + $5 + 50c", "$5 + $2 + 50c", "$10 + $10", "$10 + $2"] },
+    { type: "open-response", title: "Making Change", instruction: "Write the fewest coins and notes needed.", prompts: [{ text: "$8.50 = ___", type: "lines", lines: 1 }, { text: "$13.00 = ___", type: "lines", lines: 1 }, { text: "$6.70 = ___", type: "lines", lines: 1 }, { text: "$17.50 = ___", type: "lines", lines: 1 }] },
+    { type: "open-response", title: "Calculate Change", instruction: "Work out the change.", prompts: [{ text: "You pay $10 for a $7.50 item. Change = ___", type: "lines", lines: 1 }, { text: "You pay $20 for a $13.00 item. Change = ___", type: "lines", lines: 1 }, { text: "You pay $5 for a $3.80 item. Change = ___", type: "lines", lines: 1 }] },
+    { type: "home-activity", title: "Home Activity: Coin Challenge", instruction: "Use real coins to explore money representations!", suggestions: ["How many different ways can you make $1 using coins? Try to find at least 3 ways.", "Grab a handful of coins. Count the total. Can you make the same total a different way?", "Play 'shopkeeper' and practise giving change using the fewest coins.", "Ask someone to show you $5. How did they make it? Show them a different way."] },
+  ]},
+
+  // WS 14: Classify 3D Objects
+  { slug: "classify-3d-objects", title: "Classify 3D Objects", strand: "Space", description: "Make, compare and classify objects using key features", activities: [
+    { type: "matching", title: "Match 3D Shapes to Names", instruction: "Draw a line to match.", left: ["A ball shape", "A box shape", "An ice-cream cone shape", "A can shape"], right: ["Cylinder", "Sphere", "Cube", "Cone"] },
+    { type: "circle-correct", title: "Name That Shape!", instruction: "Circle the correct name.", questions: [{ prompt: "A dice is shaped like a...", options: ["Sphere", "Cube", "Cylinder"] }, { prompt: "A football is shaped like a...", options: ["Cube", "Cone", "Sphere"] }, { prompt: "A tin of beans is shaped like a...", options: ["Cylinder", "Cube", "Cone"] }, { prompt: "A party hat is shaped like a...", options: ["Sphere", "Cylinder", "Cone"] }] },
+    { type: "circle-correct", title: "More Shape Names", instruction: "Circle the correct name.", questions: [{ prompt: "A cereal box is shaped like a...", options: ["Rectangular prism", "Cube", "Cylinder"] }, { prompt: "A Toblerone box is shaped like a...", options: ["Cube", "Triangular prism", "Cone"] }, { prompt: "A pyramid shape like in Egypt is a...", options: ["Square pyramid", "Triangular prism", "Cone"] }] },
+    { type: "matching", title: "Match Shapes to Features", instruction: "Draw a line to match.", left: ["Cube", "Cylinder", "Cone", "Triangular prism"], right: ["1 curved surface, 1 point", "6 flat faces, 12 edges", "2 circular faces, 1 curved surface", "5 faces, 2 triangular ends"] },
+    { type: "sorting", title: "Sort 3D Objects", instruction: "Sort these objects.", columns: ["Prisms", "Pyramids", "Neither"], items: [{ label: "Cube", icon: "cube" }, { label: "Square pyramid" }, { label: "Triangular prism" }, { label: "Sphere", icon: "sphere" }, { label: "Rectangular prism" }, { label: "Cone", icon: "cone" }] },
+    { type: "circle-correct", title: "How Many Faces?", instruction: "Circle the correct number.", questions: [{ prompt: "A cube has ___ faces", options: ["4", "6", "8"] }, { prompt: "A triangular prism has ___ faces", options: ["4", "5", "6"] }, { prompt: "A square pyramid has ___ faces", options: ["4", "5", "6"] }, { prompt: "A cylinder has ___ flat faces", options: ["0", "1", "2"] }] },
+    { type: "circle-correct", title: "Edges and Vertices", instruction: "Circle the correct answer.", questions: [{ prompt: "A cube has ___ edges", options: ["8", "10", "12"] }, { prompt: "A cube has ___ vertices (corners)", options: ["6", "8", "10"] }, { prompt: "A sphere has ___ edges", options: ["0", "1", "2"] }, { prompt: "A cone has ___ vertex (point)", options: ["0", "1", "2"] }] },
+    { type: "open-response", title: "Describe the Shape", instruction: "Write the number of faces, edges and vertices.", prompts: [{ text: "Cube: ___ faces, ___ edges, ___ vertices", type: "lines", lines: 1 }, { text: "Triangular prism: ___ faces, ___ edges, ___ vertices", type: "lines", lines: 1 }, { text: "Square pyramid: ___ faces, ___ edges, ___ vertices", type: "lines", lines: 1 }] },
+    { type: "open-response", title: "3D Shape Hunt", instruction: "Find objects that match each 3D shape.", prompts: [{ text: "An object shaped like a cube: ___", type: "lines", lines: 1 }, { text: "An object shaped like a cylinder: ___", type: "lines", lines: 1 }, { text: "An object shaped like a sphere: ___", type: "lines", lines: 1 }, { text: "An object shaped like a cone: ___", type: "lines", lines: 1 }] },
+    { type: "sorting", title: "Sort: Has Flat Faces or Curved Surfaces?", instruction: "Sort.", columns: ["Only flat faces", "Has curved surfaces"], items: [{ label: "Cube" }, { label: "Sphere" }, { label: "Cylinder" }, { label: "Rectangular prism" }, { label: "Cone" }, { label: "Triangular prism" }] },
+    { type: "home-activity", title: "Home Activity: 3D Shape Collection", instruction: "Collect 3D shapes from around your home!", suggestions: ["Find 3 objects that are prisms and 3 that are not prisms.", "Build a 3D shape from playdough or paper. Can you make a cube?", "Look in the kitchen. How many cylinders can you find?", "Sort your toys by their 3D shape. Which shape is the most common?"] },
+  ]},
+
+  // WS 15: 2D Representations
+  { slug: "2d-representations", title: "2D Representations of Environments", strand: "Space", description: "Interpret and create two-dimensional representations of familiar environments", activities: [
+    { type: "circle-correct", title: "Read the Map", instruction: "Look at the map description and circle the correct answer.", questions: [{ prompt: "On a map, the door is at the bottom. Where are the windows?", options: ["Top", "Bottom", "They are not shown"] }, { prompt: "The teacher's desk is in the front-left. Where is it on the map?", options: ["Top-left", "Bottom-left", "Centre"] }, { prompt: "A bird's-eye view means looking from...", options: ["The side", "Above", "Below"] }, { prompt: "On a classroom map, desks appear as...", options: ["Circles", "Rectangles", "Triangles"] }] },
+    { type: "matching", title: "Match Views to Descriptions", instruction: "Draw a line to match.", left: ["Bird's-eye view", "Side view", "Front view", "Map view"], right: ["Looking from the front", "Looking from above", "A flat drawing of a place", "Looking from the side"] },
+    { type: "circle-correct", title: "Classroom Map Questions", instruction: "Imagine a classroom map.", questions: [{ prompt: "If you walk from the door to the teacher's desk, you go...", options: ["Forward (towards the top)", "Backward", "Sideways"] }, { prompt: "The bookshelf is on the right of the map. In real life it is on your...", options: ["Left", "Right", "Behind you"] }, { prompt: "Two desks close together on the map are ___ in real life.", options: ["Close together", "Far apart", "On different floors"] }] },
+    { type: "circle-correct", title: "More Map Questions", instruction: "Answer about maps.", questions: [{ prompt: "On most maps, north is...", options: ["Up", "Down", "Left"] }, { prompt: "A key on a map tells you...", options: ["What the symbols mean", "How to lock the map", "Where the doors are"] }, { prompt: "Scale on a map helps you know...", options: ["Real distances", "Colours", "Names"] }] },
+    { type: "open-response", title: "Draw Your Classroom", instruction: "Draw a simple bird's-eye view map of your classroom.", prompts: [{ text: "Draw your classroom map here. Label the door, windows, desks, teacher's desk and bookshelf.", type: "box" }] },
+    { type: "open-response", title: "Draw Your Bedroom", instruction: "Draw a bird's-eye view of your bedroom.", prompts: [{ text: "Draw your bedroom from above. Label: bed, door, window, wardrobe.", type: "box" }] },
+    { type: "open-response", title: "Give Directions", instruction: "Using your classroom map, write directions.", prompts: [{ text: "How to get from the door to your desk:\n___", type: "lines", lines: 3 }, { text: "How to get from your desk to the bookshelf:\n___", type: "lines", lines: 3 }] },
+    { type: "open-response", title: "Map of the School", instruction: "Draw a simple map.", prompts: [{ text: "Draw a bird's-eye view of your school playground. Label at least 5 things.", type: "box" }] },
+    { type: "circle-correct", title: "True or False — Maps", instruction: "Circle True or False.", questions: [{ prompt: "A bird's-eye view shows what things look like from above", options: ["True", "False"] }, { prompt: "Objects look the same from above as from the side", options: ["True", "False"] }, { prompt: "A map uses symbols to represent real things", options: ["True", "False"] }] },
+    { type: "home-activity", title: "Home Activity: Map Maker", instruction: "Become a map maker at home!", suggestions: ["Draw a bird's-eye view map of your bedroom. Label all the furniture.", "Draw a map of your backyard. Include any trees, fences and paths.", "Give someone directions from one room to another. Can they follow your map?", "Make a treasure map of your house. Hide something and mark it with an X!"] },
+  ]},
+
+  // WS 16: Statistical Investigations — Categorical
+  { slug: "statistical-investigations-categorical", title: "Statistical Investigations", strand: "Statistics", description: "Conduct guided statistical investigations with categorical and discrete numerical data", activities: [
+    { type: "circle-correct", title: "What Is a Survey?", instruction: "Circle the correct answer.", questions: [{ prompt: "A survey is used to...", options: ["Collect information from people", "Draw pictures", "Read a book"] }, { prompt: "Which question is best for a survey?", options: ["What is your name?", "What is your favourite fruit?", "Why is the sky blue?"] }, { prompt: "How do you record survey answers?", options: ["In a tally chart", "On the floor", "In a story"] }] },
+    { type: "circle-correct", title: "Good Survey Questions", instruction: "Circle the best survey question.", questions: [{ prompt: "Which is a good survey question?", options: ["What is your favourite colour?", "Do you like things?", "Why?"] }, { prompt: "Which is a good survey question?", options: ["How do you get to school?", "What is 2 + 2?", "Tell me everything."] }] },
+    { type: "tally-chart", title: "Read the Tally Chart", instruction: "Count the tallies and write the total.", categories: [{ label: "Apples", icon: "apple", count: 7 }, { label: "Bananas", icon: "banana", count: 5 }, { label: "Grapes", icon: "grape", count: 9 }, { label: "Watermelon", icon: "watermelon", count: 3 }] },
+    { type: "tally-chart", title: "Another Tally Chart", instruction: "Count the tallies.", categories: [{ label: "Red", icon: "heart", count: 8 }, { label: "Blue", icon: "diamond", count: 6 }, { label: "Green", icon: "tree", count: 4 }, { label: "Yellow", icon: "sun", count: 10 }] },
+    { type: "picture-graph", title: "Favourite Sport Picture Graph", instruction: "Use the picture graph to answer the questions.", rows: [{ label: "Soccer", icon: "ball", count: 8 }, { label: "Swimming", icon: "fish", count: 5 }, { label: "Cricket", icon: "ball", count: 6 }, { label: "Tennis", icon: "ball", count: 3 }], questions: ["Which sport is the most popular?", "How many more students chose soccer than tennis?", "How many students were surveyed altogether?"] },
+    { type: "circle-correct", title: "Questions About Data", instruction: "Answer these questions.", questions: [{ prompt: "If 8 students like soccer and 3 like tennis, how many more like soccer?", options: ["3", "4", "5"] }, { prompt: "The most popular category is called the...", options: ["Mode", "Total", "Average"] }, { prompt: "Data in groups (like colours) is called...", options: ["Numerical data", "Categorical data", "Random data"] }] },
+    { type: "open-response", title: "Plan Your Own Survey", instruction: "Plan a survey.", prompts: [{ text: "My survey question: ___", type: "lines", lines: 1 }, { text: "The categories (choices) are: ___", type: "lines", lines: 2 }, { text: "I will ask ___ people.", type: "lines", lines: 1 }, { text: "I predict the most popular will be: ___", type: "lines", lines: 1 }] },
+    { type: "open-response", title: "Draw a Bar Graph", instruction: "Use this data to draw a bar graph: Cats = 6, Dogs = 9, Fish = 4, Birds = 3.", prompts: [{ text: "Draw your bar graph here. Don't forget to label the axes and give it a title!", type: "box" }] },
+    { type: "open-response", title: "Interpret Your Graph", instruction: "Answer questions about the bar graph you drew.", prompts: [{ text: "Which pet is the most popular? ___", type: "lines", lines: 1 }, { text: "Which pet is the least popular? ___", type: "lines", lines: 1 }, { text: "How many more dogs than fish? ___", type: "lines", lines: 1 }, { text: "How many pets altogether? ___", type: "lines", lines: 1 }] },
+    { type: "home-activity", title: "Home Activity: Family Survey", instruction: "Conduct a survey at home!", suggestions: ["Ask your family: What is your favourite dinner? Record the answers in a tally chart.", "Survey your neighbours about their favourite colour. Make a bar graph.", "Count how many of each type of vehicle pass your house in 10 minutes. Display the data.", "Ask 10 people their favourite season. Which season is the most popular?"] },
+  ]},
+
+  // WS 17: Record, Represent & Compare Data
+  { slug: "record-represent-compare-data", title: "Record, Represent & Compare Data", strand: "Statistics", description: "Record, represent and compare collected data", activities: [
+    { type: "tally-chart", title: "Make a Tally Chart", instruction: "Read the data and create tallies.", categories: [{ label: "Red cars", icon: "car", count: 8 }, { label: "Blue cars", icon: "car", count: 12 }, { label: "White cars", icon: "car", count: 6 }, { label: "Black cars", icon: "car", count: 10 }] },
+    { type: "circle-correct", title: "Read the Tally Chart", instruction: "Use the tally chart to answer.", questions: [{ prompt: "Which colour car was seen the most?", options: ["Red", "Blue", "White"] }, { prompt: "How many more blue cars than white cars?", options: ["4", "6", "8"] }, { prompt: "How many cars counted altogether?", options: ["32", "34", "36"] }] },
+    { type: "picture-graph", title: "Pets in Our Class", instruction: "Use the picture graph to answer.", rows: [{ label: "Dogs", icon: "dog", count: 9 }, { label: "Cats", icon: "cat", count: 7 }, { label: "Fish", icon: "fish", count: 4 }, { label: "Birds", icon: "bird", count: 3 }], questions: ["Which pet is the most popular?", "How many students have cats or dogs?", "How many more dogs than birds?", "How many pets were counted in total?"] },
+    { type: "matching", title: "Match Data to Best Display", instruction: "Match each type of data to the best display.", left: ["Favourite ice cream flavour", "Number of books read each week", "Types of trees in a park", "Heights of students"], right: ["Bar graph with numbers", "Picture graph", "Tally chart and bar graph", "Bar graph with measurements"] },
+    { type: "tally-chart", title: "Favourite Colours Tally", instruction: "Count the tallies.", categories: [{ label: "Red", icon: "heart", count: 6 }, { label: "Blue", icon: "diamond", count: 11 }, { label: "Green", icon: "tree", count: 5 }, { label: "Purple", icon: "flower", count: 8 }] },
+    { type: "circle-correct", title: "Compare Data Sets", instruction: "Answer about comparing data.", questions: [{ prompt: "Class A: 8 like apples, 5 like bananas. Class B: 6 like apples, 9 like bananas. Who likes bananas more?", options: ["Class A", "Class B"] }, { prompt: "If Class A has 13 votes and Class B has 15, which class surveyed more people?", options: ["Class A", "Class B"] }] },
+    { type: "open-response", title: "Compare Two Sets of Data", instruction: "Compare the results.", prompts: [{ text: "Class A: Apples 8, Bananas 5, Oranges 7\nClass B: Apples 6, Bananas 9, Oranges 5\nWhich fruit was most popular in each class?", type: "lines", lines: 2 }, { text: "Which class had more banana lovers? By how many?", type: "lines", lines: 1 }, { text: "If the classes combined, which fruit would be the overall favourite?", type: "lines", lines: 1 }] },
+    { type: "open-response", title: "Create a Display", instruction: "Use this data to create a picture graph or bar graph.", prompts: [{ text: "Monday = 3 books, Tuesday = 5, Wednesday = 2, Thursday = 6, Friday = 4.\nDraw your graph here. Include a title, labels and a key.", type: "box" }] },
+    { type: "open-response", title: "Write Questions About Data", instruction: "Write 3 questions that someone could answer using your graph.", prompts: [{ text: "Question 1: ___", type: "lines", lines: 1 }, { text: "Question 2: ___", type: "lines", lines: 1 }, { text: "Question 3: ___", type: "lines", lines: 1 }] },
+    { type: "home-activity", title: "Home Activity: Data Display", instruction: "Collect and display data at home!", suggestions: ["Count the types of food in your fridge (fruit, vegetables, dairy, etc.). Make a bar graph.", "Track the weather for a week using a tally chart. Display your results.", "Compare data with a friend or family member. Did you get similar results?", "Create a picture graph using stickers or drawings to show your data."] },
+  ]},
+
+  // WS 18: Likelihood of Everyday Events
+  { slug: "likelihood-everyday-events", title: "Likelihood of Everyday Events", strand: "Probability", description: "Identify and describe outcomes and the likelihood of everyday events", activities: [
+    { type: "matching", title: "Match Chance Words", instruction: "Draw a line to match.", left: ["The sun will rise tomorrow", "You will fly like a bird", "It will rain this week", "You will eat food today"], right: ["Certain", "Impossible", "Likely", "Certain"] },
+    { type: "circle-correct", title: "Certain, Likely, Unlikely or Impossible?", instruction: "Circle the correct word.", questions: [{ prompt: "A coin will land on heads or tails", options: ["Certain", "Likely", "Unlikely", "Impossible"] }, { prompt: "It will snow in summer in Australia", options: ["Certain", "Likely", "Unlikely", "Impossible"] }, { prompt: "You will grow taller this year", options: ["Certain", "Likely", "Unlikely", "Impossible"] }, { prompt: "A fish will climb a tree", options: ["Certain", "Likely", "Unlikely", "Impossible"] }] },
+    { type: "circle-correct", title: "More Likelihood", instruction: "Circle the correct word.", questions: [{ prompt: "You will blink in the next minute", options: ["Certain", "Likely", "Unlikely", "Impossible"] }, { prompt: "It will rain chocolate", options: ["Certain", "Likely", "Unlikely", "Impossible"] }, { prompt: "You will see a car today", options: ["Certain", "Likely", "Unlikely", "Impossible"] }, { prompt: "You will find a dinosaur at school", options: ["Certain", "Likely", "Unlikely", "Impossible"] }] },
+    { type: "sorting", title: "Sort by Likelihood", instruction: "Sort these events.", columns: ["Impossible", "Unlikely", "Likely", "Certain"], items: [{ label: "It gets dark tonight" }, { label: "You roll a 7 on a normal dice" }, { label: "You pick a red lolly from a bag of mixed lollies" }, { label: "A pig will fly" }, { label: "It will rain sometime this month" }, { label: "Your birthday comes once a year" }] },
+    { type: "circle-correct", title: "More or Less Likely?", instruction: "Circle the event that is MORE likely.", questions: [{ prompt: "Which is more likely?", options: ["Rolling a 6 on a dice", "Rolling an even number on a dice"] }, { prompt: "Which is more likely?", options: ["Picking a red ball from a bag of 10 red and 2 blue", "Picking a blue ball from the same bag"] }, { prompt: "Which is more likely?", options: ["It raining in winter", "It snowing in summer (in Australia)"] }] },
+    { type: "open-response", title: "Describe the Likelihood", instruction: "Use chance words to describe each event.", prompts: [{ text: "Pulling a red marble from a bag of all red marbles: ___", type: "lines", lines: 1 }, { text: "Rolling a number less than 7 on a normal dice: ___", type: "lines", lines: 1 }, { text: "Flipping a coin and getting heads: ___", type: "lines", lines: 1 }, { text: "Finding a dinosaur at school tomorrow: ___", type: "lines", lines: 1 }] },
+    { type: "open-response", title: "Create Your Own Examples", instruction: "Write one event for each chance word.", prompts: [{ text: "Certain: ___", type: "lines", lines: 1 }, { text: "Likely: ___", type: "lines", lines: 1 }, { text: "Unlikely: ___", type: "lines", lines: 1 }, { text: "Impossible: ___", type: "lines", lines: 1 }] },
+    { type: "circle-correct", title: "Even Chance", instruction: "Circle the correct answer.", questions: [{ prompt: "Flipping a fair coin has...", options: ["Even chance of heads or tails", "More chance of heads", "More chance of tails"] }, { prompt: "A spinner with 2 equal sections (red and blue) has...", options: ["Even chance of red or blue", "More chance of red", "More chance of blue"] }] },
+    { type: "open-response", title: "Chance on a Number Line", instruction: "Place each event on the chance line.", prompts: [{ text: "Draw a line from Impossible to Certain. Mark where these go:\n- The sun rising tomorrow\n- Rolling a 6 on a dice\n- It raining today\n- A dog talking", type: "box" }] },
+    { type: "home-activity", title: "Home Activity: Chance at Home", instruction: "Explore chance around your home!", suggestions: ["Think of 3 things that are certain to happen today. Write them down.", "Think of something impossible. Why is it impossible?", "Talk about the weather. Is it likely or unlikely to rain tomorrow?", "Flip a coin 10 times. How many times did you get heads? Was it close to 5?"] },
+  ]},
+
+  // WS 19: Chance Experiments & Variation
+  { slug: "chance-experiments-variation", title: "Chance Experiments & Variation", strand: "Probability", description: "Conduct repeated chance experiments and discuss variation in results", activities: [
+    { type: "circle-correct", title: "What Could Happen?", instruction: "Circle all the possible outcomes.", questions: [{ prompt: "When you flip a coin, you could get...", options: ["Heads or tails", "Heads, tails or sides", "Only heads"] }, { prompt: "When you roll a dice, you could get...", options: ["1, 2, 3, 4, 5 or 6", "Any number", "Only 6"] }, { prompt: "When you pick from a bag of red and blue marbles, you could get...", options: ["Red or blue", "Only red", "Green"] }] },
+    { type: "circle-correct", title: "More Possible Outcomes", instruction: "Circle the correct answer.", questions: [{ prompt: "A spinner with 4 colours could land on...", options: ["Any of the 4 colours", "Only the biggest section", "Always the same colour"] }, { prompt: "Picking a card from a deck, you could get...", options: ["Any card", "Only a king", "Only red cards"] }] },
+    { type: "tally-chart", title: "Record Dice Rolls", instruction: "Roll a dice 20 times. Record each number.", categories: [{ label: "Rolled 1", icon: "dice-1", count: 0 }, { label: "Rolled 2", icon: "dice-2", count: 0 }, { label: "Rolled 3", icon: "dice-3", count: 0 }, { label: "Rolled 4", icon: "dice-4", count: 0 }, { label: "Rolled 5", icon: "dice-5", count: 0 }, { label: "Rolled 6", icon: "dice-6", count: 0 }] },
+    { type: "circle-correct", title: "Did Everyone Get the Same?", instruction: "Think about what happens when everyone does the same experiment.", questions: [{ prompt: "If 5 students each flip a coin 10 times, will they all get the same results?", options: ["No — results vary each time", "Yes — it's always the same", "Only sometimes"] }, { prompt: "If you roll a dice 30 times, will each number come up exactly 5 times?", options: ["Probably not exactly", "Yes, always", "Never close to 5"] }, { prompt: "Why do results vary?", options: ["Because chance is random", "Because the dice is broken", "Because we counted wrong"] }] },
+    { type: "circle-correct", title: "More About Variation", instruction: "Circle the best answer.", questions: [{ prompt: "If you flip a coin 100 times, you'd expect about...", options: ["50 heads and 50 tails", "100 heads", "75 heads and 25 tails"] }, { prompt: "If you roll a dice 60 times, each number should come up about...", options: ["10 times", "30 times", "60 times"] }, { prompt: "More trials usually means results are...", options: ["Closer to what we expect", "More random", "Less useful"] }] },
+    { type: "open-response", title: "Compare Two Experiments", instruction: "Imagine two students each flipped a coin 20 times.", prompts: [{ text: "Student A: 12 heads, 8 tails\nStudent B: 9 heads, 11 tails\nDid they get the same results? Why or why not?", type: "lines", lines: 3 }, { text: "If they each flipped 100 times, would their results be more similar? Why?", type: "lines", lines: 2 }] },
+    { type: "open-response", title: "Coin Flip Experiment", instruction: "Flip a coin 20 times. Record your results.", prompts: [{ text: "Heads: ___ times\nTails: ___ times\nTotal flips: 20", type: "lines", lines: 2 }, { text: "Were the results equal? ___\nWhy do you think that happened? ___", type: "lines", lines: 2 }] },
+    { type: "open-response", title: "Spinner Experiment", instruction: "If a spinner has 3 equal sections (red, blue, green), predict and then test.", prompts: [{ text: "Prediction: I think ___ will come up the most because ___", type: "lines", lines: 2 }, { text: "After 30 spins:\nRed: ___  Blue: ___  Green: ___", type: "lines", lines: 1 }, { text: "Was my prediction correct? ___\nWhy did the results vary? ___", type: "lines", lines: 2 }] },
+    { type: "open-response", title: "Design Your Own Experiment", instruction: "Design a chance experiment.", prompts: [{ text: "My experiment: ___\nPossible outcomes: ___\nI will repeat it ___ times.\nI predict: ___", type: "lines", lines: 4 }] },
+    { type: "circle-correct", title: "Fair or Unfair?", instruction: "Is the game fair?", questions: [{ prompt: "Player A wins on heads, Player B wins on tails. Is it fair?", options: ["Yes, fair", "No, unfair"] }, { prompt: "Player A wins on 1 or 2, Player B wins on 3, 4, 5 or 6. Is it fair?", options: ["Yes, fair", "No, unfair"] }, { prompt: "A spinner with equal red and blue sections. Red wins. Is it fair?", options: ["Yes, fair", "No, unfair"] }] },
+    { type: "home-activity", title: "Home Activity: Experiment at Home", instruction: "Try chance experiments with your family!", suggestions: ["Flip a coin 30 times and record heads/tails. Compare with a family member's results.", "Roll a dice 30 times. Did every number come up the same amount? Why not?", "Put 3 different coloured objects in a bag. Pull one out 20 times (put it back each time). Record the results.", "Discuss: if you did the experiment again, would you get the exact same results?"] },
+  ]},
 ];
 
 export function getYear3Worksheet(

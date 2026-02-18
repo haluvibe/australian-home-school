@@ -62,7 +62,11 @@ export default async function WorksheetItemPage({ params }: PageProps) {
 
       {/* Worksheet content */}
       <div className="bg-cream py-6 print:bg-white print:py-0">
-        <WorksheetPage title={worksheet.title} strand={worksheet.strand}>
+        <WorksheetPage
+          title={worksheet.title}
+          strand={worksheet.strand}
+          learningGuide={worksheet.learningGuide}
+        >
           {worksheet.activities.map((activity, i) => (
             <ActivityRenderer key={i} activity={activity} number={i + 1} />
           ))}

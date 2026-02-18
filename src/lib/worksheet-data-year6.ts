@@ -3295,3 +3295,1259 @@ export const year6MathsWorksheets: WorksheetItem[] = [
       },
     ],
   },
+
+  // ── WS 16: Tessellations & Transformations ────────────────
+  {
+    slug: "tessellations-transformations",
+    title: "Tessellations & Transformations",
+    strand: "Space",
+    description:
+      "Create tessellating patterns using combinations of transformations",
+    activities: [
+      // ─── Easy ───
+      {
+        type: "sorting",
+        title: "Does It Tessellate?",
+        instruction: "Sort each shape into the correct column.",
+        columns: ["Tessellates (no gaps)", "Does Not Tessellate"],
+        items: [
+          { label: "Square", icon: "square" },
+          { label: "Circle", icon: "circle" },
+          { label: "Triangle", icon: "triangle" },
+          { label: "Regular hexagon" },
+          { label: "Regular pentagon" },
+          { label: "Rectangle" },
+        ],
+      },
+      {
+        type: "matching",
+        title: "Match Transformation Types",
+        instruction: "Draw a line to match each transformation to its description.",
+        left: ["Translation", "Rotation", "Reflection"],
+        right: ["Flipping over a line", "Sliding in one direction", "Turning around a point"],
+      },
+      {
+        type: "circle-correct",
+        title: "Name the Transformation",
+        instruction: "Circle the correct transformation.",
+        questions: [
+          { prompt: "A shape slides 4 units right without turning", options: ["Translation", "Rotation", "Reflection"] },
+          { prompt: "A shape flips over a horizontal line", options: ["Translation", "Rotation", "Reflection"] },
+          { prompt: "A shape turns 180° around a point", options: ["Translation", "Rotation", "Reflection"] },
+          { prompt: "A shape is a mirror image of the original", options: ["Translation", "Rotation", "Reflection"] },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "More Transformation Names",
+        instruction: "Circle the correct transformation.",
+        questions: [
+          { prompt: "A shape moves down 3 units", options: ["Translation", "Rotation", "Reflection"] },
+          { prompt: "A shape turns 90° clockwise", options: ["Translation", "Rotation", "Reflection"] },
+          { prompt: "A shape flips over a vertical line", options: ["Translation", "Rotation", "Reflection"] },
+          { prompt: "A pattern uses slides and flips", options: ["Translation only", "Reflection only", "Combined transformations"] },
+        ],
+      },
+      {
+        type: "sorting",
+        title: "Sort the Transformations",
+        instruction: "Sort each description into the correct transformation type.",
+        columns: ["Translation (slide)", "Rotation (turn)", "Reflection (flip)"],
+        items: [
+          { label: "Move right 5 units" },
+          { label: "Turn 90° clockwise" },
+          { label: "Mirror over the y-axis" },
+          { label: "Slide down 3 units" },
+          { label: "Turn 180°" },
+          { label: "Flip over a horizontal line" },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Tessellation Basics",
+        instruction: "Answer each question about tessellations.",
+        prompts: [
+          { text: "What does 'tessellate' mean? ___", type: "lines", lines: 2 },
+          { text: "Name 3 regular shapes that tessellate: ___", type: "lines", lines: 1 },
+          { text: "Why can't circles tessellate? ___", type: "lines", lines: 2 },
+        ],
+      },
+      // ─── Medium ───
+      {
+        type: "open-response",
+        title: "Describe the Tessellation",
+        instruction: "Describe what transformations create each tessellation.",
+        prompts: [
+          { text: "A row of squares side by side: ___", type: "lines", lines: 1 },
+          { text: "Triangles alternating up and down: ___", type: "lines", lines: 1 },
+          { text: "A hexagonal tiling: ___", type: "lines", lines: 1 },
+          { text: "A brick wall pattern: ___", type: "lines", lines: 2 },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Rotation Angles",
+        instruction: "Circle the correct rotation angle.",
+        questions: [
+          { prompt: "A quarter turn is:", options: ["45°", "90°", "180°"] },
+          { prompt: "A half turn is:", options: ["90°", "180°", "270°"] },
+          { prompt: "A full turn is:", options: ["180°", "270°", "360°"] },
+          { prompt: "A three-quarter turn is:", options: ["180°", "270°", "300°"] },
+        ],
+      },
+      {
+        type: "matching",
+        title: "Match Tessellation to Shapes",
+        instruction: "Draw a line to match each tessellation description to the shapes used.",
+        left: ["Bathroom floor", "Honeycomb pattern", "Soccer ball pattern"],
+        right: ["Hexagons and pentagons", "Squares", "Hexagons"],
+      },
+      {
+        type: "open-response",
+        title: "Angles at a Vertex",
+        instruction: "For shapes to tessellate, angles at each meeting point must sum to 360°.",
+        prompts: [
+          { text: "A square has angles of 90°. How many meet at each vertex? ___ (because ___ × 90° = 360°)", type: "lines", lines: 1 },
+          { text: "An equilateral triangle has angles of 60°. How many meet at each vertex? ___", type: "lines", lines: 1 },
+          { text: "A regular hexagon has angles of 120°. How many meet at each vertex? ___", type: "lines", lines: 1 },
+          { text: "A regular pentagon has angles of 108°. Can pentagons tessellate? ___", type: "lines", lines: 2 },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Transformation Coordinates",
+        instruction: "Describe each transformation using coordinates.",
+        prompts: [
+          { text: "Translate the shape at (2, 3) by 4 units right. New position: ___", type: "lines", lines: 1 },
+          { text: "Reflect the point (3, 1) over the y-axis. New position: ___", type: "lines", lines: 1 },
+          { text: "Rotate a square 90° clockwise around the origin. What happens to its position? ___", type: "lines", lines: 2 },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Properties of Transformations",
+        instruction: "Circle the correct answer.",
+        questions: [
+          { prompt: "Which transformation changes orientation (left/right)?", options: ["Translation", "Rotation", "Reflection"] },
+          { prompt: "Which transformation keeps the shape facing the same way?", options: ["Translation", "Rotation", "Reflection"] },
+          { prompt: "Which transformations keep the shape the same size?", options: ["Only translation", "Only rotation", "All three"] },
+          { prompt: "A glide reflection combines:", options: ["Translation + reflection", "Rotation + reflection", "Two translations"] },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Tessellation in Real Life",
+        instruction: "Name real-life examples of each tessellation type.",
+        prompts: [
+          { text: "Square tessellation example: ___", type: "lines", lines: 1 },
+          { text: "Triangular tessellation example: ___", type: "lines", lines: 1 },
+          { text: "Hexagonal tessellation example: ___", type: "lines", lines: 1 },
+          { text: "Semi-regular tessellation example: ___", type: "lines", lines: 1 },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Tessellation True or False",
+        instruction: "Circle TRUE or FALSE.",
+        questions: [
+          { prompt: "All quadrilaterals can tessellate", options: ["TRUE", "FALSE"] },
+          { prompt: "Only regular polygons can tessellate", options: ["TRUE", "FALSE"] },
+          { prompt: "Rectangles tessellate using only translations", options: ["TRUE", "FALSE"] },
+          { prompt: "A tessellation has no gaps or overlaps", options: ["TRUE", "FALSE"] },
+        ],
+      },
+      // ─── Hard ───
+      {
+        type: "open-response",
+        title: "Design a Tessellation",
+        instruction: "Create tessellating patterns.",
+        prompts: [
+          { text: "Create a tessellation using only equilateral triangles.", type: "box" },
+          { text: "Create a tessellation using squares and triangles combined.", type: "box" },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Describe Your Design",
+        instruction: "Explain the transformations in your tessellations above.",
+        prompts: [
+          { text: "What transformations did you use in your triangle tessellation? ___", type: "lines", lines: 2 },
+          { text: "What transformations did you use in your combined tessellation? ___", type: "lines", lines: 2 },
+          { text: "Could you create the same pattern using only translations? Explain: ___", type: "lines", lines: 2 },
+        ],
+      },
+      {
+        type: "home-activity",
+        title: "Home Activity: Tessellation Art",
+        instruction: "Create beautiful tessellation art at home!",
+        suggestions: [
+          "Cut out identical shapes from cardboard and tile a piece of paper with no gaps.",
+          "Look at floor tiles, brick walls or fabric patterns. Spot tessellations!",
+          "Create a tessellation design using two different shapes.",
+          "Use an online tessellation tool to experiment with shapes and transformations.",
+          "Design wrapping paper using a tessellating pattern.",
+        ],
+      },
+    ],
+  },
+
+  // ── WS 17: Cartesian Plane — All 4 Quadrants ──────────────
+  {
+    slug: "cartesian-plane-quadrants",
+    title: "Cartesian Plane — All 4 Quadrants",
+    strand: "Space",
+    description:
+      "Locate an ordered pair in any one of the 4 quadrants on the Cartesian plane",
+    activities: [
+      // ─── Easy ───
+      {
+        type: "sorting",
+        title: "Sort Points by Quadrant",
+        instruction: "Sort each ordered pair into the correct quadrant.",
+        columns: ["Quadrant 1 (+, +)", "Quadrant 2 (−, +)", "Quadrant 3 (−, −)", "Quadrant 4 (+, −)"],
+        items: [
+          { label: "(3, 4)" },
+          { label: "(-2, 5)" },
+          { label: "(-4, -3)" },
+          { label: "(5, -1)" },
+          { label: "(-1, 2)" },
+          { label: "(2, -6)" },
+          { label: "(-3, -5)" },
+          { label: "(4, 7)" },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Which Quadrant?",
+        instruction: "Circle the quadrant where each point is located.",
+        questions: [
+          { prompt: "(-5, 3)", options: ["1", "2", "3", "4"] },
+          { prompt: "(4, -2)", options: ["1", "2", "3", "4"] },
+          { prompt: "(-1, -7)", options: ["1", "2", "3", "4"] },
+          { prompt: "(6, 1)", options: ["1", "2", "3", "4"] },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "More Quadrant Questions",
+        instruction: "Circle the quadrant.",
+        questions: [
+          { prompt: "(8, -4)", options: ["1", "2", "3", "4"] },
+          { prompt: "(-3, 6)", options: ["1", "2", "3", "4"] },
+          { prompt: "(2, 9)", options: ["1", "2", "3", "4"] },
+          { prompt: "(-7, -2)", options: ["1", "2", "3", "4"] },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "On an Axis or In a Quadrant?",
+        instruction: "Circle the correct location.",
+        questions: [
+          { prompt: "(0, 5) is:", options: ["On the x-axis", "On the y-axis", "In Quadrant 1"] },
+          { prompt: "(-3, 0) is:", options: ["On the x-axis", "On the y-axis", "In Quadrant 2"] },
+          { prompt: "(0, 0) is:", options: ["On the x-axis", "On the y-axis", "At the origin"] },
+          { prompt: "(4, 0) is:", options: ["On the x-axis", "On the y-axis", "In Quadrant 4"] },
+        ],
+      },
+      {
+        type: "matching",
+        title: "Match Sign Pattern to Quadrant",
+        instruction: "Draw a line to match each sign pattern to its quadrant.",
+        left: ["(+, +)", "(−, +)", "(−, −)", "(+, −)"],
+        right: ["Quadrant 4", "Quadrant 2", "Quadrant 1", "Quadrant 3"],
+      },
+      // ─── Medium ───
+      {
+        type: "open-response",
+        title: "Write the Coordinates",
+        instruction: "Write an ordered pair in each location.",
+        prompts: [
+          { text: "A point in Quadrant 1: ( ___ , ___ )", type: "lines", lines: 1 },
+          { text: "A point in Quadrant 2: ( ___ , ___ )", type: "lines", lines: 1 },
+          { text: "A point in Quadrant 3: ( ___ , ___ )", type: "lines", lines: 1 },
+          { text: "A point in Quadrant 4: ( ___ , ___ )", type: "lines", lines: 1 },
+          { text: "A point on the x-axis: ( ___ , ___ )", type: "lines", lines: 1 },
+        ],
+      },
+      {
+        type: "matching",
+        title: "Match Points to Descriptions",
+        instruction: "Draw a line to match each point to its description.",
+        left: ["(0, 5)", "(-3, 0)", "(4, -2)", "(-1, -4)"],
+        right: ["Quadrant 4", "On the y-axis", "On the x-axis", "Quadrant 3"],
+      },
+      {
+        type: "open-response",
+        title: "Translate the Point",
+        instruction: "Move as described and write the new coordinates.",
+        prompts: [
+          { text: "Start at (2, 3). Move 5 units left: ( ___ , ___ )", type: "lines", lines: 1 },
+          { text: "Start at (-1, 4). Move 3 units down: ( ___ , ___ )", type: "lines", lines: 1 },
+          { text: "Start at (0, -2). Move 4 right and 3 up: ( ___ , ___ )", type: "lines", lines: 1 },
+          { text: "Start at (-3, -1). Move 6 right and 5 up: ( ___ , ___ )", type: "lines", lines: 1 },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Reflect the Point",
+        instruction: "Reflect each point over the specified axis.",
+        prompts: [
+          { text: "Reflect (3, 2) over the x-axis: ( ___ , ___ )", type: "lines", lines: 1 },
+          { text: "Reflect (3, 2) over the y-axis: ( ___ , ___ )", type: "lines", lines: 1 },
+          { text: "Reflect (-4, 1) over the x-axis: ( ___ , ___ )", type: "lines", lines: 1 },
+          { text: "Reflect (-4, 1) over the y-axis: ( ___ , ___ )", type: "lines", lines: 1 },
+        ],
+      },
+      {
+        type: "sorting",
+        title: "Sort Points by Location",
+        instruction: "Sort each point into the correct location.",
+        columns: ["On the x-axis", "On the y-axis", "In a quadrant"],
+        items: [
+          { label: "(0, 4)" },
+          { label: "(3, -2)" },
+          { label: "(-5, 0)" },
+          { label: "(7, 0)" },
+          { label: "(0, -6)" },
+          { label: "(-1, -3)" },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Describe the Movement",
+        instruction: "Describe how to move from the first point to the second.",
+        prompts: [
+          { text: "From (1, 2) to (4, 5): move ___ right and ___ up", type: "lines", lines: 1 },
+          { text: "From (3, -1) to (-2, -1): move ___ left", type: "lines", lines: 1 },
+          { text: "From (-3, 4) to (-3, -2): move ___ down", type: "lines", lines: 1 },
+          { text: "From (0, 0) to (-4, 3): move ___ left and ___ up", type: "lines", lines: 1 },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Symmetry on the Plane",
+        instruction: "Circle the correct answer.",
+        questions: [
+          { prompt: "If (3, 5) is reflected over the y-axis, the new x-coordinate is:", options: ["3", "-3", "5"] },
+          { prompt: "If (3, 5) is reflected over the x-axis, the new y-coordinate is:", options: ["5", "-5", "3"] },
+          { prompt: "If (-2, 4) is reflected over both axes, the new point is:", options: ["(2, -4)", "(-2, -4)", "(2, 4)"] },
+        ],
+      },
+      // ─── Hard ───
+      {
+        type: "open-response",
+        title: "Draw a Shape on the Cartesian Plane",
+        instruction: "Plot these points and connect them. What shape?",
+        prompts: [
+          { text: "Points: (2, 3), (-2, 3), (-2, -3), (2, -3). Shape: ___", type: "box" },
+          { text: "Points: (0, 4), (-3, 0), (0, -4), (3, 0). Shape: ___", type: "box" },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Find the Missing Vertex",
+        instruction: "Find the coordinates of the missing corner.",
+        prompts: [
+          { text: "Rectangle corners: (1, 2), (5, 2), (5, -1) and ( ___ , ___ ).", type: "lines", lines: 1 },
+          { text: "Square corners: (-3, 3), (3, 3), (3, -3) and ( ___ , ___ ).", type: "lines", lines: 1 },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Coordinate Challenge",
+        instruction: "Solve these coordinate geometry problems.",
+        prompts: [
+          { text: "What is the midpoint of (-4, 2) to (2, 2)? ___", type: "lines", lines: 1 },
+          { text: "A point (5, 2) is reflected over both axes. It becomes ( ___ , ___ ).", type: "lines", lines: 1 },
+          { text: "Distance between (-3, 0) and (5, 0) on the x-axis: ___", type: "lines", lines: 1 },
+        ],
+      },
+      {
+        type: "home-activity",
+        title: "Home Activity: Coordinate Treasure Hunt",
+        instruction: "Use coordinates to explore!",
+        suggestions: [
+          "Draw a Cartesian plane. Plot at least 2 points in each quadrant.",
+          "Create a treasure map using coordinate clues.",
+          "Play battleship using all 4 quadrants.",
+          "Draw a picture by connecting plotted points.",
+          "Challenge a friend to recreate a coordinate art picture from your instructions.",
+        ],
+      },
+    ],
+  },
+
+  // ── WS 18: Compare Distributions ──────────────────────────
+  {
+    slug: "compare-distributions",
+    title: "Compare Distributions",
+    strand: "Statistics",
+    description:
+      "Compare distributions of discrete, continuous numerical and ordinal categorical data sets",
+    activities: [
+      // ─── Easy ───
+      {
+        type: "tally-chart",
+        title: "Tally the Results",
+        instruction: "A class voted for their favourite sport. Complete the tally chart.",
+        categories: [
+          { label: "Cricket", icon: "ball", count: 7 },
+          { label: "Football", icon: "ball", count: 12 },
+          { label: "Swimming", icon: "fish", count: 5 },
+          { label: "Tennis", icon: "ball", count: 8 },
+        ],
+      },
+      {
+        type: "picture-graph",
+        title: "Favourite Pets",
+        instruction: "Use the picture graph to answer the questions.",
+        rows: [
+          { label: "Dogs", icon: "dog", count: 8 },
+          { label: "Cats", icon: "cat", count: 6 },
+          { label: "Fish", icon: "fish", count: 3 },
+          { label: "Birds", icon: "bird", count: 5 },
+        ],
+        questions: [
+          "Which pet is the most popular?",
+          "How many more students chose dogs than fish?",
+          "How many students were surveyed in total?",
+        ],
+      },
+      {
+        type: "tally-chart",
+        title: "Favourite Fruits",
+        instruction: "Complete the tally chart for favourite fruits.",
+        categories: [
+          { label: "Apple", icon: "apple", count: 9 },
+          { label: "Banana", icon: "banana", count: 11 },
+          { label: "Grapes", icon: "grape", count: 6 },
+          { label: "Watermelon", icon: "watermelon", count: 4 },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Calculate the Mean",
+        instruction: "Find the mean (average) of each data set.",
+        prompts: [
+          { text: "Data: 4, 6, 8, 10, 12. Mean = ___", type: "lines", lines: 1 },
+          { text: "Data: 3, 5, 7, 9, 11. Mean = ___", type: "lines", lines: 1 },
+          { text: "Data: 10, 20, 30, 40, 50. Mean = ___", type: "lines", lines: 1 },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Find the Median and Mode",
+        instruction: "Find the median and mode.",
+        prompts: [
+          { text: "Data: 3, 5, 5, 7, 9. Median = ___. Mode = ___.", type: "lines", lines: 1 },
+          { text: "Data: 2, 4, 4, 4, 8, 10. Median = ___. Mode = ___.", type: "lines", lines: 1 },
+          { text: "Data: 12, 15, 18, 20, 25. Median = ___. Mode = ___.", type: "lines", lines: 1 },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Find the Range",
+        instruction: "Find the range (highest − lowest).",
+        prompts: [
+          { text: "Data: 5, 8, 12, 15, 20. Range = ___", type: "lines", lines: 1 },
+          { text: "Data: 22, 35, 40, 55, 68. Range = ___", type: "lines", lines: 1 },
+          { text: "Data: 3, 3, 7, 9, 11, 15. Range = ___", type: "lines", lines: 1 },
+        ],
+      },
+      {
+        type: "matching",
+        title: "Match Statistic to Description",
+        instruction: "Draw a line to match each statistic to what it tells you.",
+        left: ["Mean", "Median", "Mode", "Range"],
+        right: ["Most common value", "Middle value when ordered", "Spread of the data", "Average value"],
+      },
+      {
+        type: "circle-correct",
+        title: "Data Display Questions",
+        instruction: "Circle the best display for each purpose.",
+        questions: [
+          { prompt: "Showing exact vote counts:", options: ["Bar graph", "Pie chart", "Line graph"] },
+          { prompt: "Showing change over time:", options: ["Bar graph", "Pie chart", "Line graph"] },
+          { prompt: "Showing parts of a whole:", options: ["Bar graph", "Pie chart", "Line graph"] },
+        ],
+      },
+      // ─── Medium ───
+      {
+        type: "open-response",
+        title: "Compare Two Classes",
+        instruction: "Class A scores: 65, 70, 72, 75, 80, 82, 85, 90.\nClass B scores: 55, 60, 75, 78, 80, 85, 88, 95.",
+        prompts: [
+          { text: "Range of Class A: ___", type: "lines", lines: 1 },
+          { text: "Range of Class B: ___", type: "lines", lines: 1 },
+          { text: "Which class has greater spread? ___", type: "lines", lines: 1 },
+          { text: "Which class performed more consistently? Explain:", type: "lines", lines: 2 },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Interpret the Data",
+        instruction: "Based on the class data above.",
+        questions: [
+          { prompt: "Higher median score?", options: ["Class A", "Class B", "The same"] },
+          { prompt: "Highest individual score?", options: ["Class A", "Class B", "The same"] },
+          { prompt: "Lowest individual score?", options: ["Class A", "Class B", "The same"] },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Compare Two Sports Teams",
+        instruction: "Team A scores: 3, 5, 2, 4, 6, 3, 5, 4.\nTeam B scores: 1, 7, 0, 8, 2, 6, 3, 5.",
+        prompts: [
+          { text: "Team A mean = ___. Team B mean = ___.", type: "lines", lines: 1 },
+          { text: "Team A range = ___. Team B range = ___.", type: "lines", lines: 1 },
+          { text: "Which team is more consistent? ___", type: "lines", lines: 2 },
+        ],
+      },
+      // ─── Hard ───
+      {
+        type: "open-response",
+        title: "Describe the Distribution",
+        instruction: "Heights (cm): 140, 142, 145, 145, 148, 150, 150, 152, 155, 160.",
+        prompts: [
+          { text: "Describe the distribution (shape, spread, centre):", type: "lines", lines: 3 },
+          { text: "What if a 180 cm student joined? What is this called?", type: "lines", lines: 2 },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Choosing the Right Average",
+        instruction: "Explain which average is best.",
+        prompts: [
+          { text: "House prices: $400K, $420K, $450K, $480K, $2M. Which average and why?", type: "lines", lines: 2 },
+          { text: "Shoe sizes sold in a shop. Which average and why?", type: "lines", lines: 2 },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Outlier Questions",
+        instruction: "Circle the correct answer.",
+        questions: [
+          { prompt: "An outlier is:", options: ["Most common value", "Value far from the rest", "Middle value"] },
+          { prompt: "Data: 5, 6, 7, 8, 50. The outlier is:", options: ["5", "7", "50"] },
+          { prompt: "Outliers affect the ___ most:", options: ["Mean", "Median", "Mode"] },
+        ],
+      },
+      {
+        type: "home-activity",
+        title: "Home Activity: Data Collector",
+        instruction: "Collect and compare data at home!",
+        suggestions: [
+          "Survey your family about their favourite meal. Display in a bar graph.",
+          "Record temperature each day for a week. Describe the distribution.",
+          "Compare page counts of 5 books. Find the range and median.",
+          "Calculate mean, median and mode of ages in your family.",
+        ],
+      },
+    ],
+  },
+
+  // ── WS 19: Critique Media Statistics ──────────────────────
+  {
+    slug: "critique-media-statistics",
+    title: "Critique Media Statistics",
+    strand: "Statistics",
+    description:
+      "Critique arguments presented in the media based on statistics",
+    activities: [
+      // ─── Easy ───
+      {
+        type: "circle-correct",
+        title: "Is This a Good Claim?",
+        instruction: "Circle whether the evidence sounds strong or weak.",
+        questions: [
+          { prompt: "'9 out of 10 dentists recommend our toothpaste' — only 10 dentists asked", options: ["Strong", "Weak"] },
+          { prompt: "'Most Australians prefer our brand' — survey of 5,000 people across all states", options: ["Strong", "Weak"] },
+          { prompt: "'Our school is the best' — one student won a prize", options: ["Strong", "Weak"] },
+          { prompt: "'Crime has increased' — based on 10 years of police data", options: ["Strong", "Weak"] },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "More Claim Evaluation",
+        instruction: "Circle whether the evidence sounds strong or weak.",
+        questions: [
+          { prompt: "'This diet works!' — tested on 3 people for 1 week", options: ["Strong", "Weak"] },
+          { prompt: "'Students are reading more' — based on 5 years of library data", options: ["Strong", "Weak"] },
+          { prompt: "'Everyone loves our product' — 100% approval in a company survey", options: ["Strong", "Weak"] },
+          { prompt: "'Exercise reduces stress' — study of 2,000 people over 2 years", options: ["Strong", "Weak"] },
+        ],
+      },
+      {
+        type: "matching",
+        title: "Match the Problem",
+        instruction: "Match each statistical problem to its name.",
+        left: ["Only 5 people surveyed", "Graph starts at 95 not 0", "Only one side shown", "People pushed to answer a certain way"],
+        right: ["Biased question", "Small sample size", "Misleading graph", "One-sided argument"],
+      },
+      {
+        type: "sorting",
+        title: "Sort: Reliable or Unreliable Source?",
+        instruction: "Sort each source.",
+        columns: ["More Reliable", "Less Reliable"],
+        items: [
+          { label: "Government health statistics" },
+          { label: "One person's social media post" },
+          { label: "University research study" },
+          { label: "An advertisement" },
+          { label: "Census data" },
+          { label: "A friend's opinion" },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "What Makes a Survey Reliable?",
+        instruction: "Answer each question.",
+        prompts: [
+          { text: "Why is a larger sample size better? ___", type: "lines", lines: 2 },
+          { text: "Why should a survey include diverse people? ___", type: "lines", lines: 2 },
+          { text: "What is a 'biased' question? Give an example: ___", type: "lines", lines: 2 },
+        ],
+      },
+      // ─── Medium ───
+      {
+        type: "open-response",
+        title: "Question the Claim",
+        instruction: "Write one question to check if each claim is reliable.",
+        prompts: [
+          { text: "Claim: '80% of kids love our cereal!'\nQuestion: ___", type: "lines", lines: 2 },
+          { text: "Claim: 'Test scores have dropped this year.'\nQuestion: ___", type: "lines", lines: 2 },
+          { text: "Claim: 'This is the safest car on the road.'\nQuestion: ___", type: "lines", lines: 2 },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Spot the Problem",
+        instruction: "Circle the main problem.",
+        questions: [
+          { prompt: "'4 out of 5 kids prefer our drink' — company paid for survey", options: ["Small sample", "Bias", "Missing data"] },
+          { prompt: "Graph shows sales 'doubled' but y-axis goes from 98 to 102", options: ["Small sample", "Misleading scale", "Missing data"] },
+          { prompt: "'Average house price is $1.2M' — suburb has a few mansions", options: ["Outliers affect mean", "Small sample", "Bias"] },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "More Problem Spotting",
+        instruction: "Circle the main issue.",
+        questions: [
+          { prompt: "'90% agree!' — online poll anyone could take multiple times", options: ["Self-selection bias", "Small sample", "Misleading graph"] },
+          { prompt: "Bar graph where one bar is wider than the other", options: ["Misleading visual", "Small sample", "Biased question"] },
+          { prompt: "'Crime is skyrocketing' — based on one month", options: ["Cherry-picked data", "Small sample", "Misleading graph"] },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Misleading Graphs",
+        instruction: "Explain how each technique can be misleading.",
+        prompts: [
+          { text: "Starting the y-axis at a number other than 0: ___", type: "lines", lines: 2 },
+          { text: "Using pictures of different sizes instead of bars: ___", type: "lines", lines: 2 },
+          { text: "Leaving out data points that don't support the argument: ___", type: "lines", lines: 2 },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Rewrite the Claim",
+        instruction: "Rewrite each misleading claim to make it more honest.",
+        prompts: [
+          { text: "Original: 'Everyone loves our product!' Better: ___", type: "lines", lines: 2 },
+          { text: "Original: 'Test scores have skyrocketed!' Better: ___", type: "lines", lines: 2 },
+          { text: "Original: '9 out of 10 recommend us!' Better: ___", type: "lines", lines: 2 },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Sample Size Matters",
+        instruction: "Circle the more reliable sample size for each survey.",
+        questions: [
+          { prompt: "Survey about favourite food:", options: ["Ask 5 friends", "Ask 500 random people"] },
+          { prompt: "Survey about exercise habits:", options: ["Survey 10 gym members", "Survey 1,000 adults randomly"] },
+          { prompt: "Testing a new medicine:", options: ["Test on 20 people", "Test on 5,000 people"] },
+          { prompt: "Student satisfaction survey:", options: ["Ask the top 3 students", "Ask 100 random students"] },
+        ],
+      },
+      {
+        type: "sorting",
+        title: "Sort: Biased or Unbiased Question?",
+        instruction: "Sort each survey question.",
+        columns: ["Biased", "Unbiased"],
+        items: [
+          { label: "Don't you agree our school is the best?" },
+          { label: "How would you rate our school? (1-5)" },
+          { label: "Why do you love our cereal so much?" },
+          { label: "Which cereal do you prefer? (list options)" },
+          { label: "Do you support this obviously good policy?" },
+          { label: "What is your opinion on this policy?" },
+        ],
+      },
+      // ─── Hard ───
+      {
+        type: "open-response",
+        title: "Write Your Critique",
+        instruction: "Write a critique explaining why someone should be cautious.",
+        prompts: [
+          { text: "Claim: 'Our app improved test scores by 50%!' Study tested 8 students over 2 weeks.\nCritique:", type: "lines", lines: 3 },
+          { text: "Claim: 'Eating chocolate makes you smarter!' Countries with more chocolate sales have more Nobel Prize winners.\nCritique:", type: "lines", lines: 3 },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Correlation vs Causation",
+        instruction: "Explain why correlation does not mean causation.",
+        prompts: [
+          { text: "Ice cream sales and drowning rates both rise in summer. Does ice cream cause drowning? ___", type: "lines", lines: 3 },
+          { text: "Students who eat breakfast get better grades. Does breakfast cause better grades? ___", type: "lines", lines: 3 },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Design a Fair Survey",
+        instruction: "Design a fair survey about screen time.",
+        prompts: [
+          { text: "Write 3 unbiased questions: ___", type: "lines", lines: 3 },
+          { text: "How many people would you survey and why? ___", type: "lines", lines: 2 },
+          { text: "How would you make your sample representative? ___", type: "lines", lines: 2 },
+        ],
+      },
+      {
+        type: "home-activity",
+        title: "Home Activity: Media Detective",
+        instruction: "Find and critique statistics in the real world!",
+        suggestions: [
+          "Find a statistic in a newspaper or online ad. Write down the claim.",
+          "Ask: How many people surveyed? Who paid? Is the graph fair?",
+          "Rewrite a misleading claim to make it more honest.",
+          "Create your own fair survey question about a topic you care about.",
+          "Find an ad using statistics. List 3 reasons it might be misleading.",
+        ],
+      },
+    ],
+  },
+
+  // ── WS 20: Assign Probabilities ───────────────────────────
+  {
+    slug: "assign-probabilities",
+    title: "Assign Probabilities",
+    strand: "Probability",
+    description:
+      "Assign probabilities using common fractions, decimals and percentages",
+    activities: [
+      // ─── Easy ───
+      {
+        type: "matching",
+        title: "Match Probability Words to Numbers",
+        instruction: "Draw a line to match each probability word to its number.",
+        left: ["Impossible", "Unlikely", "Even chance", "Certain"],
+        right: ["1 or 100%", "0 or 0%", "1/2 or 50%", "1/4 or 25%"],
+      },
+      {
+        type: "open-response",
+        title: "Write the Probability (Fractions)",
+        instruction: "Write the probability as a fraction.",
+        prompts: [
+          { text: "Rolling a 3 on a standard die: ___", type: "lines", lines: 1 },
+          { text: "Flipping heads on a coin: ___", type: "lines", lines: 1 },
+          { text: "Drawing a red card from a deck (26/52): ___", type: "lines", lines: 1 },
+          { text: "Rolling an even number on a die: ___", type: "lines", lines: 1 },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "More Probability Fractions",
+        instruction: "Write the probability as a fraction.",
+        prompts: [
+          { text: "Rolling a number > 4 on a die: ___", type: "lines", lines: 1 },
+          { text: "Drawing a heart from a deck (13/52): ___", type: "lines", lines: 1 },
+          { text: "Rolling a 7 on a standard die: ___", type: "lines", lines: 1 },
+          { text: "Landing on any number on a die: ___", type: "lines", lines: 1 },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Probability Quick Check",
+        instruction: "Circle the correct probability.",
+        questions: [
+          { prompt: "P(heads on a coin) = ?", options: ["0", "1/2", "1"] },
+          { prompt: "P(rolling a 5 on a die) = ?", options: ["1/5", "1/6", "5/6"] },
+          { prompt: "P(rain on a sunny day) is closest to:", options: ["0", "1/2", "1"] },
+          { prompt: "P(sun rises tomorrow) is closest to:", options: ["0", "1/2", "1"] },
+        ],
+      },
+      {
+        type: "sorting",
+        title: "Sort: Impossible to Certain",
+        instruction: "Sort each event by likelihood.",
+        columns: ["Impossible", "Unlikely", "Even chance", "Likely", "Certain"],
+        items: [
+          { label: "Rolling a 7 on a die" },
+          { label: "Flipping heads" },
+          { label: "Rain sometime this year" },
+          { label: "Rolling a 1 on a die" },
+          { label: "Sun sets tonight" },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Probability Number Line",
+        instruction: "Explain what each probability means.",
+        prompts: [
+          { text: "P = 0 means: ___", type: "lines", lines: 1 },
+          { text: "P = 1/2 means: ___", type: "lines", lines: 1 },
+          { text: "P = 1 means: ___", type: "lines", lines: 1 },
+          { text: "Where would P = 1/4 go? ___", type: "lines", lines: 1 },
+        ],
+      },
+      // ─── Medium ───
+      {
+        type: "matching",
+        title: "Match Fractions, Decimals & Percentages",
+        instruction: "Match each probability in its three forms.",
+        left: ["1/4", "1/2", "3/4", "1/5"],
+        right: ["0.5 = 50%", "0.75 = 75%", "0.2 = 20%", "0.25 = 25%"],
+      },
+      {
+        type: "open-response",
+        title: "Convert Probabilities",
+        instruction: "Write each probability as fraction, decimal AND percentage.",
+        prompts: [
+          { text: "5 red out of 20. P(red) = ___ = ___ = ___%", type: "lines", lines: 1 },
+          { text: "3 blue out of 8. P(blue) = ___ = ___ = ___%", type: "lines", lines: 1 },
+          { text: "2 green out of 10. P(green) = ___ = ___ = ___%", type: "lines", lines: 1 },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "More Conversions",
+        instruction: "Convert each probability to all three forms.",
+        prompts: [
+          { text: "P = 1/8. Decimal: ___. Percentage: ___%", type: "lines", lines: 1 },
+          { text: "P = 0.6. Fraction: ___. Percentage: ___%", type: "lines", lines: 1 },
+          { text: "P = 40%. Fraction: ___. Decimal: ___", type: "lines", lines: 1 },
+          { text: "P = 3/10. Decimal: ___. Percentage: ___%", type: "lines", lines: 1 },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Spinner Probabilities",
+        instruction: "Spinner has 8 sections: 3 red, 2 blue, 2 green, 1 yellow.",
+        prompts: [
+          { text: "P(red) = ___ = ___ = ___%", type: "lines", lines: 1 },
+          { text: "P(blue) = ___ = ___ = ___%", type: "lines", lines: 1 },
+          { text: "P(yellow) = ___ = ___ = ___%", type: "lines", lines: 1 },
+          { text: "P(not red) = ___ = ___ = ___%", type: "lines", lines: 1 },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Complementary Events",
+        instruction: "P(not happening) = 1 − P(happening).",
+        questions: [
+          { prompt: "P(rain) = 0.3. P(no rain) = ?", options: ["0.3", "0.7", "1.3"] },
+          { prompt: "P(win) = 1/4. P(not win) = ?", options: ["1/4", "3/4", "4/4"] },
+          { prompt: "P(heads) = 50%. P(tails) = ?", options: ["25%", "50%", "75%"] },
+        ],
+      },
+      // ─── Hard ───
+      {
+        type: "circle-correct",
+        title: "Compare Probabilities",
+        instruction: "Circle the more likely event.",
+        questions: [
+          { prompt: "More likely?", options: ["P = 1/3", "P = 0.4"] },
+          { prompt: "More likely?", options: ["P = 25%", "P = 1/3"] },
+          { prompt: "More likely?", options: ["P = 0.6", "P = 55%"] },
+          { prompt: "More likely?", options: ["P = 3/8", "P = 0.35"] },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Probability Problems",
+        instruction: "Solve each problem.",
+        prompts: [
+          { text: "Bag: 3 red, 5 blue, 2 green. P(blue) = ___ (all 3 forms)", type: "lines", lines: 2 },
+          { text: "Spinner 1–8. P(number > 5) = ___", type: "lines", lines: 1 },
+          { text: "Bag: 4 red, 6 blue. Add 2 red. P(red) now = ___", type: "lines", lines: 2 },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Probability Reasoning",
+        instruction: "Explain your thinking.",
+        prompts: [
+          { text: "If P(event) = 0, what does that tell you? ___", type: "lines", lines: 2 },
+          { text: "If P(event) = 1, what does that tell you? ___", type: "lines", lines: 2 },
+          { text: "Can a probability be greater than 1? ___", type: "lines", lines: 2 },
+        ],
+      },
+      {
+        type: "home-activity",
+        title: "Home Activity: Probability Games",
+        instruction: "Explore probability at home!",
+        suggestions: [
+          "Flip a coin 20 times. What fraction were heads?",
+          "Put coloured counters in a bag. Predict then test.",
+          "Roll a die 30 times. Compare fraction of 6s to 1/6.",
+          "Design a spinner: blue 50%, red 25%, green 25%.",
+          "Play a card game and calculate probabilities.",
+        ],
+      },
+    ],
+  },
+
+  // ── WS 21: Simulations with Digital Tools ─────────────────
+  {
+    slug: "simulations-digital-tools",
+    title: "Simulations with Digital Tools",
+    strand: "Probability",
+    description:
+      "Conduct simulations using digital tools to generate and record outcomes",
+    activities: [
+      // ─── Easy ───
+      {
+        type: "matching",
+        title: "Match the Simulation Tool",
+        instruction: "Match each experiment to a good simulation tool.",
+        left: ["Rolling a die 1,000 times", "Flipping a coin 500 times", "Drawing from a deck", "Spinning a spinner"],
+        right: ["Online spinner tool", "Spreadsheet random numbers", "Coin flip app", "Card shuffle program"],
+      },
+      {
+        type: "circle-correct",
+        title: "Why Use Simulations?",
+        instruction: "Circle the best reason.",
+        questions: [
+          { prompt: "Why simulate 1,000 coin flips digitally?", options: ["Faster", "More fun", "Coins are expensive"] },
+          { prompt: "Most useful when:", options: ["Few results needed", "Many results quickly", "You prefer paper"] },
+          { prompt: "Reliable with:", options: ["10 trials", "50 trials", "1,000 trials"] },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "More Simulation Questions",
+        instruction: "Circle the correct answer.",
+        questions: [
+          { prompt: "A 'trial' is:", options: ["One run of the experiment", "The final answer", "The tool used"] },
+          { prompt: "More trials means:", options: ["Less reliable", "More reliable", "No difference"] },
+          { prompt: "Random number generators produce:", options: ["Predictable", "Unpredictable", "Only even numbers"] },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Simulation Vocabulary",
+        instruction: "Define each term.",
+        prompts: [
+          { text: "Simulation: ___", type: "lines", lines: 2 },
+          { text: "Trial: ___", type: "lines", lines: 1 },
+          { text: "Random: ___", type: "lines", lines: 1 },
+          { text: "Frequency: ___", type: "lines", lines: 1 },
+        ],
+      },
+      {
+        type: "sorting",
+        title: "Sort: When to Simulate?",
+        instruction: "Sort each situation.",
+        columns: ["Good to Simulate", "Better Done Physically"],
+        items: [
+          { label: "1,000 coin flips" },
+          { label: "5 coin flips" },
+          { label: "Rolling a die 500 times" },
+          { label: "Drawing 1 card" },
+          { label: "10,000 random events" },
+          { label: "Flipping a coin once" },
+        ],
+      },
+      // ─── Medium ───
+      {
+        type: "tally-chart",
+        title: "Record Simulation Results",
+        instruction: "30 die rolls produced these results.",
+        categories: [
+          { label: "Rolled 1", icon: "dice-1", count: 4 },
+          { label: "Rolled 2", icon: "dice-2", count: 6 },
+          { label: "Rolled 3", icon: "dice-3", count: 5 },
+          { label: "Rolled 4", icon: "dice-4", count: 3 },
+          { label: "Rolled 5", icon: "dice-5", count: 7 },
+          { label: "Rolled 6", icon: "dice-6", count: 5 },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Analyse the Simulation",
+        instruction: "Use the die simulation results above.",
+        prompts: [
+          { text: "Most rolled number: ___", type: "lines", lines: 1 },
+          { text: "Least rolled number: ___", type: "lines", lines: 1 },
+          { text: "Fraction of 6s: ___", type: "lines", lines: 1 },
+          { text: "Expected per number in 30 rolls: ___", type: "lines", lines: 1 },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Coin Flip Analysis",
+        instruction: "100 coin flips: 53 heads, 47 tails.",
+        prompts: [
+          { text: "Fraction that were heads: ___", type: "lines", lines: 1 },
+          { text: "Percentage that were tails: ___", type: "lines", lines: 1 },
+          { text: "Close to expected? Explain: ___", type: "lines", lines: 2 },
+          { text: "Would 1,000 flips be closer to 50/50? Why? ___", type: "lines", lines: 2 },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Spinner Simulation",
+        instruction: "4 equal sections (A–D) spun 80 times: A=22, B=18, C=21, D=19.",
+        prompts: [
+          { text: "Expected per section: ___", type: "lines", lines: 1 },
+          { text: "Sections above expected: ___", type: "lines", lines: 1 },
+          { text: "Spinner likely fair? ___", type: "lines", lines: 2 },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Predict Before Simulating",
+        instruction: "Before running a simulation, predict the results.",
+        prompts: [
+          { text: "If you flip a coin 100 times, predict: Heads ≈ ___ Tails ≈ ___", type: "lines", lines: 1 },
+          { text: "If you roll a die 60 times, predict how many 3s: ≈ ___", type: "lines", lines: 1 },
+          { text: "If a spinner has 5 equal sections spun 100 times, predict per section: ≈ ___", type: "lines", lines: 1 },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Interpreting Simulation Data",
+        instruction: "Circle the best interpretation.",
+        questions: [
+          { prompt: "50 coin flips: 28 heads. The coin is:", options: ["Definitely unfair", "Probably fair", "Cannot tell from 50 flips"] },
+          { prompt: "1000 coin flips: 520 heads. The coin is:", options: ["Definitely unfair", "Probably fair", "Cannot tell"] },
+          { prompt: "Die rolled 12 times, no 6s. The die is:", options: ["Unfair", "Could be fair (too few trials)", "Broken"] },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Plan a Simulation Step by Step",
+        instruction: "Write out the steps for running a digital simulation.",
+        prompts: [
+          { text: "Step 1 (choose your question): ___", type: "lines", lines: 1 },
+          { text: "Step 2 (choose your tool): ___", type: "lines", lines: 1 },
+          { text: "Step 3 (decide number of trials): ___", type: "lines", lines: 1 },
+          { text: "Step 4 (run and record): ___", type: "lines", lines: 1 },
+          { text: "Step 5 (analyse results): ___", type: "lines", lines: 1 },
+        ],
+      },
+      // ─── Hard ───
+      {
+        type: "open-response",
+        title: "Design Your Own Simulation",
+        instruction: "Plan a simulation.",
+        prompts: [
+          { text: "Question to answer: ___", type: "lines", lines: 1 },
+          { text: "Tool: ___", type: "lines", lines: 1 },
+          { text: "Number of trials and why: ___", type: "lines", lines: 2 },
+          { text: "How to record and display: ___", type: "lines", lines: 2 },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Evaluate a Simulation",
+        instruction: "A student rolled a die 10 times and got 4 sixes. They said it was unfair.",
+        prompts: [
+          { text: "Is 10 trials enough? Explain: ___", type: "lines", lines: 2 },
+          { text: "How many trials would you recommend? ___", type: "lines", lines: 1 },
+          { text: "Expected 6s in 600 rolls: ___", type: "lines", lines: 1 },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Compare Physical and Digital",
+        instruction: "Compare physical experiments vs simulations.",
+        prompts: [
+          { text: "Advantage of digital: ___", type: "lines", lines: 2 },
+          { text: "Disadvantage of digital: ___", type: "lines", lines: 2 },
+          { text: "When prefer physical? ___", type: "lines", lines: 2 },
+        ],
+      },
+      {
+        type: "home-activity",
+        title: "Home Activity: Digital Experiments",
+        instruction: "Run simulations at home!",
+        suggestions: [
+          "Use an online dice roller for 100 rolls. Record results.",
+          "Use a spreadsheet for 50 random numbers (1–6).",
+          "Use a coin flip app for 200 flips. Close to 50%?",
+          "Compare results from 20, 100 and 500 trials.",
+          "Ask a parent to help find a free simulation tool.",
+        ],
+      },
+    ],
+  },
+
+  // ── WS 22: Observed vs Expected Frequencies ───────────────
+  {
+    slug: "observed-vs-expected-frequencies",
+    title: "Observed vs Expected Frequencies",
+    strand: "Probability",
+    description:
+      "Compare observed frequencies to expected frequencies",
+    activities: [
+      // ─── Easy ───
+      {
+        type: "open-response",
+        title: "Calculate Expected Frequency",
+        instruction: "Calculate the expected number of times each outcome occurs.",
+        prompts: [
+          { text: "Fair coin flipped 100 times. Expected heads = ___", type: "lines", lines: 1 },
+          { text: "Fair die rolled 60 times. Expected 3s = ___", type: "lines", lines: 1 },
+          { text: "4-section spinner, 80 spins. Expected per section = ___", type: "lines", lines: 1 },
+          { text: "5 colours, 200 draws. Expected per colour = ___", type: "lines", lines: 1 },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "More Expected Frequencies",
+        instruction: "Calculate expected frequency.",
+        prompts: [
+          { text: "Die rolled 120 times. Expected 6s = ___", type: "lines", lines: 1 },
+          { text: "Coin flipped 50 times. Expected tails = ___", type: "lines", lines: 1 },
+          { text: "3-section spinner, 90 spins. Expected per section = ___", type: "lines", lines: 1 },
+          { text: "4 colours, 100 draws. Expected per colour = ___", type: "lines", lines: 1 },
+        ],
+      },
+      {
+        type: "matching",
+        title: "Match Expected to Experiment",
+        instruction: "Match each experiment to its expected result.",
+        left: ["Coin 50 times", "Die 120 times", "3-spinner 90 times", "4 colours 200 times"],
+        right: ["30 per section", "25 heads", "20 per number", "50 per colour"],
+      },
+      {
+        type: "circle-correct",
+        title: "Expected Frequency Check",
+        instruction: "Circle the correct expected frequency.",
+        questions: [
+          { prompt: "Die 30 times. Expected 1s:", options: ["3", "5", "6"] },
+          { prompt: "Coin 200 times. Expected heads:", options: ["50", "100", "200"] },
+          { prompt: "5-spinner 100 times. Per section:", options: ["10", "20", "25"] },
+          { prompt: "8 colours 160 draws. Per colour:", options: ["16", "20", "80"] },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Using the Formula",
+        instruction: "Expected = trials × probability.",
+        prompts: [
+          { text: "P(heads) = 1/2, 80 flips. Expected heads = ___", type: "lines", lines: 1 },
+          { text: "P(even) = 1/2, 60 rolls. Expected even = ___", type: "lines", lines: 1 },
+          { text: "P(red) = 1/4, 100 draws. Expected red = ___", type: "lines", lines: 1 },
+          { text: "P(A) = 3/8, 80 spins. Expected A = ___", type: "lines", lines: 1 },
+        ],
+      },
+      // ─── Medium ───
+      {
+        type: "open-response",
+        title: "Compare Observed and Expected",
+        instruction: "Die rolled 60 times. Expected per number = 10.\nObserved: 1→8, 2→12, 3→10, 4→15, 5→7, 6→8.",
+        prompts: [
+          { text: "Above expected: ___", type: "lines", lines: 1 },
+          { text: "Below expected: ___", type: "lines", lines: 1 },
+          { text: "Die unfair? Explain: ___", type: "lines", lines: 2 },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Is This Expected?",
+        instruction: "Fair coin, 100 flips.",
+        questions: [
+          { prompt: "52 heads, 48 tails", options: ["Expected", "Unexpected"] },
+          { prompt: "85 heads, 15 tails", options: ["Expected", "Unexpected"] },
+          { prompt: "47 heads, 53 tails", options: ["Expected", "Unexpected"] },
+          { prompt: "70 heads, 30 tails", options: ["Expected", "Unexpected"] },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "More Expected vs Unexpected",
+        instruction: "Die rolled 60 times (expected 10 per number).",
+        questions: [
+          { prompt: "11 threes", options: ["Expected", "Unexpected"] },
+          { prompt: "2 fives", options: ["Expected", "Unexpected"] },
+          { prompt: "9 ones", options: ["Expected", "Unexpected"] },
+          { prompt: "25 sixes", options: ["Expected", "Unexpected"] },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Spinner Analysis",
+        instruction: "4 equal sections, 100 spins: A=28, B=22, C=26, D=24.",
+        prompts: [
+          { text: "Expected per section: ___", type: "lines", lines: 1 },
+          { text: "Above expected: ___", type: "lines", lines: 1 },
+          { text: "Spinner likely fair? ___", type: "lines", lines: 2 },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Comparing Trial Sizes",
+        instruction: "Think about how trial count affects results.",
+        prompts: [
+          { text: "10 flips, 7 heads. Coin unfair? ___", type: "lines", lines: 2 },
+          { text: "1,000 flips, 700 heads. Coin unfair? ___", type: "lines", lines: 2 },
+          { text: "Why is the second more convincing? ___", type: "lines", lines: 2 },
+        ],
+      },
+      // ─── Hard ───
+      {
+        type: "open-response",
+        title: "Investigate the Results",
+        instruction: "3 equal sections (R, B, G), 90 spins: R=35, B=25, G=30.",
+        prompts: [
+          { text: "Expected per colour: ___", type: "lines", lines: 1 },
+          { text: "Most observed? Significantly more? ___", type: "lines", lines: 2 },
+          { text: "Spinner unfair? What would help decide? ___", type: "lines", lines: 2 },
+          { text: "With 900 spins, closer to expected? Explain: ___", type: "lines", lines: 2 },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Law of Large Numbers",
+        instruction: "Explain in your own words.",
+        prompts: [
+          { text: "What happens to observed frequencies with more trials? ___", type: "lines", lines: 2 },
+          { text: "Why is this useful? Give an example: ___", type: "lines", lines: 2 },
+          { text: "Why does a casino rely on this law? ___", type: "lines", lines: 2 },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Design an Investigation",
+        instruction: "Design an experiment to test if a coin is fair.",
+        prompts: [
+          { text: "How many flips? ___", type: "lines", lines: 1 },
+          { text: "Results that suggest fair: ___", type: "lines", lines: 2 },
+          { text: "Results that suggest unfair: ___", type: "lines", lines: 2 },
+          { text: "How to display results: ___", type: "lines", lines: 1 },
+        ],
+      },
+      {
+        type: "home-activity",
+        title: "Home Activity: Frequency Investigator",
+        instruction: "Test whether your results match expected!",
+        suggestions: [
+          "Flip a coin 50 times. Compare to expected 25 heads.",
+          "Roll a die 36 times. Each number about 6 times?",
+          "Try with 100 rolls. Closer to expected?",
+          "Discuss: why do more trials give closer results?",
+          "Create a table: expected vs observed for your experiment.",
+        ],
+      },
+    ],
+  },
+];
+
+export function getYear6Worksheet(
+  slug: string
+): WorksheetItem | undefined {
+  return year6MathsWorksheets.find((w) => w.slug === slug);
+}

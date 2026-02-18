@@ -7,12 +7,19 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
     title: "Number Names & Numerals 0–20",
     strand: "Number",
     description: "Connect number names, numerals and their position in sequence from 0 to 20",
+    learningGuide: {
+      concept: "We are moving from counting to 5, all the way to 20. The 'Teen' numbers are the hardest because they don't follow a simple pattern.",
+      activation:
+        "The Ten-Frame Flash! Draw a grid of 10 boxes. Fill it with spoons/counters. Then place 3 outside. Say 'Ten and three... Thirteen!' Do this for 11-19.",
+      check: "Can they count to 20 without skipping '15'? Do they know that '14' is a 1 and a 4?",
+    },
     activities: [
       // --- EASY: Trace & recognise 0-5 ---
       {
         type: "number-trace",
         title: "Trace Numbers 0–5",
         instruction: "Use your pencil to trace over each dotted number. Say the number out loud!",
+        parentTip: "Watch for pencil grip. 'Nip, flip, and grip' is a good phrase to help them hold it correctly.",
         numbers: [0, 1, 2, 3, 4, 5],
       },
       {
@@ -102,6 +109,7 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         type: "number-trace",
         title: "Trace Numbers 6–10",
         instruction: "Trace over each dotted number carefully. Try to stay on the lines!",
+        parentTip: "6 and 9 are often confused. Remind them: '6 curls at the bottom, 9 curls at the top'.",
         numbers: [6, 7, 8, 9, 10],
       },
       {
@@ -250,6 +258,7 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         type: "number-trace",
         title: "Trace Numbers 11–15",
         instruction: "These are the teen numbers! Trace each one carefully.",
+        parentTip: "Teens are tricky! 'Thirteen' sounds like 'Three', but 'Eleven' and 'Twelve' are special words. Practice these three the most.",
         numbers: [11, 12, 13, 14, 15],
       },
       {

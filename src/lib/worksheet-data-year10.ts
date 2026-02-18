@@ -2702,6 +2702,7 @@ export const year10MathsWorksheets: WorksheetItem[] = [
     description:
       "Identify the impact of measurement errors on accuracy and solve practical problems involving proportion and scaling",
     activities: [
+      // --- EASY: Foundations of measurement error & proportion ---
       {
         type: "sorting",
         title: "Absolute vs Relative Error",
@@ -2720,60 +2721,520 @@ export const year10MathsWorksheets: WorksheetItem[] = [
         ],
       },
       {
-        type: "circle-correct",
-        title: "Reasonable Precision",
+        type: "matching",
+        title: "Measurement Tool & Precision",
         instruction:
-          "Circle the most appropriate level of precision for each measurement scenario.",
+          "Draw a line from each measuring tool to the level of precision it typically provides.",
+        left: [
+          "30 cm plastic ruler",
+          "Vernier caliper",
+          "Micrometer screw gauge",
+          "Kitchen scales",
+          "Laboratory balance",
+        ],
+        right: [
+          "±0.5 mm",
+          "±0.05 mm",
+          "±0.005 mm",
+          "±1 g",
+          "±0.01 g",
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Identify Absolute Error",
+        instruction:
+          "Circle the correct absolute error for each measurement.",
         questions: [
           {
-            prompt: "Measuring the length of a football field",
-            options: ["to the nearest metre", "to the nearest millimetre", "to the nearest kilometre"],
+            prompt: "True value = 25.0 cm, Measured value = 25.3 cm",
+            options: ["0.3 cm", "0.03 cm", "3 cm"],
           },
           {
-            prompt: "Measuring ingredients for a chemistry experiment",
-            options: ["to the nearest 0.1 g", "to the nearest kg", "to the nearest 100 g"],
+            prompt: "True value = 100 g, Measured value = 98.5 g",
+            options: ["1.5 g", "15 g", "0.15 g"],
           },
           {
-            prompt: "Measuring the distance between two cities on a map (scale 1:100,000)",
-            options: ["to the nearest km", "to the nearest metre", "to the nearest 100 km"],
+            prompt: "True value = 50.0 mL, Measured value = 50.8 mL",
+            options: ["0.8 mL", "8 mL", "0.08 mL"],
           },
           {
-            prompt: "A cube has side measured as 10 cm ± 0.1 cm. The percentage error in its volume is approximately:",
-            options: ["3%", "1%", "0.1%"],
+            prompt: "True value = 3.60 s, Measured value = 3.55 s",
+            options: ["0.05 s", "0.5 s", "5 s"],
           },
         ],
       },
       {
-        type: "open-response",
-        title: "Design an Experiment",
+        type: "circle-correct",
+        title: "Calculate Percentage Error",
         instruction:
-          "Consider measurement errors and proportion in the following scenarios.",
+          "Circle the correct percentage error. Use: percentage error = (absolute error ÷ true value) × 100%.",
+        questions: [
+          {
+            prompt: "Absolute error = 0.5 cm, True value = 10.0 cm",
+            options: ["5%", "0.5%", "50%"],
+          },
+          {
+            prompt: "Absolute error = 2 g, True value = 250 g",
+            options: ["0.8%", "8%", "0.08%"],
+          },
+          {
+            prompt: "Absolute error = 0.3 s, True value = 15.0 s",
+            options: ["2%", "0.2%", "20%"],
+          },
+          {
+            prompt: "Absolute error = 1.5 mL, True value = 50 mL",
+            options: ["3%", "0.3%", "30%"],
+          },
+        ],
+      },
+      {
+        type: "matching",
+        title: "Scenario & Best Measuring Tool",
+        instruction:
+          "Draw a line from each scenario to the most appropriate measuring tool.",
+        left: [
+          "Diameter of a coin",
+          "Volume of water in a beaker",
+          "Mass of a chemical sample (0.01 g precision needed)",
+          "Length of a garden bed",
+          "Thickness of a wire",
+        ],
+        right: [
+          "Vernier caliper",
+          "Measuring cylinder",
+          "Laboratory balance",
+          "Tape measure",
+          "Micrometer screw gauge",
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Significant Figures",
+        instruction:
+          "Circle the correct number of significant figures in each measurement.",
+        questions: [
+          {
+            prompt: "0.00340 kg",
+            options: ["3 significant figures", "5 significant figures", "6 significant figures"],
+          },
+          {
+            prompt: "12,500 m (trailing zeros not significant)",
+            options: ["3 significant figures", "5 significant figures", "4 significant figures"],
+          },
+          {
+            prompt: "6.020 × 10³ mL",
+            options: ["4 significant figures", "3 significant figures", "1 significant figure"],
+          },
+          {
+            prompt: "0.105 s",
+            options: ["3 significant figures", "4 significant figures", "2 significant figures"],
+          },
+        ],
+      },
+      {
+        type: "sorting",
+        title: "Reasonable vs Unreasonable Precision",
+        instruction:
+          "Sort each measurement into the correct column: Reasonable Precision or Unreasonable Precision.",
+        columns: ["Reasonable Precision", "Unreasonable Precision"],
+        items: [
+          { label: "Height of a door: 2.04 m" },
+          { label: "Distance to the shops: 1.23456 km" },
+          { label: "Mass of a bag of flour: 1.0 kg" },
+          { label: "Length of a pencil: 17.34821 cm" },
+          { label: "Water in a swimming pool: 50,000 L" },
+          { label: "Temperature of a room: 22.347219°C" },
+          { label: "Diameter of a bolt: 8.02 mm" },
+          { label: "Distance between cities: 347.00000 km" },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Upper and Lower Bounds",
+        instruction:
+          "Circle the correct upper and lower bounds for each measurement.",
+        questions: [
+          {
+            prompt: "A length is 24 cm, measured to the nearest cm. The lower and upper bounds are:",
+            options: ["23.5 cm and 24.5 cm", "23 cm and 25 cm", "24.0 cm and 24.9 cm"],
+          },
+          {
+            prompt: "A mass is 3.5 kg, measured to the nearest 0.1 kg. The lower and upper bounds are:",
+            options: ["3.45 kg and 3.55 kg", "3.0 kg and 4.0 kg", "3.4 kg and 3.6 kg"],
+          },
+          {
+            prompt: "A time is 12.0 s, measured to the nearest 0.1 s. The lower and upper bounds are:",
+            options: ["11.95 s and 12.05 s", "11.5 s and 12.5 s", "11.9 s and 12.1 s"],
+          },
+          {
+            prompt: "A distance is 200 m, measured to the nearest 10 m. The lower and upper bounds are:",
+            options: ["195 m and 205 m", "190 m and 210 m", "199 m and 201 m"],
+          },
+        ],
+      },
+
+      // --- MEDIUM: Error propagation, scaling & proportion ---
+      {
+        type: "circle-correct",
+        title: "Error Propagation in Addition",
+        instruction:
+          "When adding or subtracting measurements, absolute errors add. Circle the correct combined error.",
+        questions: [
+          {
+            prompt: "Length A = 12.0 cm ± 0.2 cm, Length B = 8.0 cm ± 0.3 cm. Total length error is:",
+            options: ["±0.5 cm", "±0.1 cm", "±0.25 cm"],
+          },
+          {
+            prompt: "Mass of container = 150 g ± 2 g, Mass of contents = 340 g ± 3 g. Total mass error is:",
+            options: ["±5 g", "±2.5 g", "±1 g"],
+          },
+          {
+            prompt: "Distance A = 4.5 km ± 0.1 km, Distance B = 3.2 km ± 0.1 km. Total distance error is:",
+            options: ["±0.2 km", "±0.1 km", "±0.05 km"],
+          },
+          {
+            prompt: "Time 1 = 6.2 s ± 0.05 s, Time 2 = 3.8 s ± 0.05 s. Difference in time has error:",
+            options: ["±0.1 s", "±0.05 s", "±0.025 s"],
+          },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Error Propagation in Multiplication",
+        instruction:
+          "When multiplying or dividing, percentage errors add. Circle the correct combined percentage error.",
+        questions: [
+          {
+            prompt: "Length = 20 cm ± 2% and Width = 10 cm ± 3%. The percentage error in the area is:",
+            options: ["5%", "6%", "2.5%"],
+          },
+          {
+            prompt: "Speed = distance ÷ time. Distance has 4% error, time has 1% error. Speed percentage error is:",
+            options: ["5%", "3%", "4%"],
+          },
+          {
+            prompt: "Density = mass ÷ volume. Mass has 1% error, volume has 2% error. Density percentage error is:",
+            options: ["3%", "2%", "0.5%"],
+          },
+          {
+            prompt: "Force = mass × acceleration. Mass has 2% error, acceleration has 3% error. Force percentage error is:",
+            options: ["5%", "6%", "1%"],
+          },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Error in Area Calculations",
+        instruction:
+          "Circle the correct answer for each area-related error problem.",
+        questions: [
+          {
+            prompt: "A rectangle is 8.0 cm ± 0.1 cm by 5.0 cm ± 0.1 cm. The percentage error in the area is approximately:",
+            options: ["3.25%", "2%", "1.25%"],
+          },
+          {
+            prompt: "A square has side 12.0 cm ± 0.2 cm. The percentage error in its area is approximately:",
+            options: ["3.3%", "1.7%", "0.8%"],
+          },
+          {
+            prompt: "A circle has radius 7.0 cm ± 0.1 cm. The percentage error in its area is approximately:",
+            options: ["2.9%", "1.4%", "0.7%"],
+          },
+          {
+            prompt: "A triangle has base 10.0 cm ± 0.2 cm and height 6.0 cm ± 0.1 cm. The percentage error in its area is approximately:",
+            options: ["3.7%", "1.5%", "5%"],
+          },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Error in Volume Calculations",
+        instruction:
+          "Circle the correct answer for each volume-related error problem.",
+        questions: [
+          {
+            prompt: "A cube has side 10 cm ± 0.1 cm (1% error). The percentage error in its volume is approximately:",
+            options: ["3%", "1%", "0.1%"],
+          },
+          {
+            prompt: "A cuboid is 5.0 cm ± 1% by 4.0 cm ± 2% by 3.0 cm ± 1%. The percentage error in its volume is approximately:",
+            options: ["4%", "2%", "1.3%"],
+          },
+          {
+            prompt: "A cylinder has radius 3.0 cm ± 2% and height 10.0 cm ± 1%. The percentage error in its volume is approximately:",
+            options: ["5%", "3%", "2%"],
+          },
+          {
+            prompt: "A sphere has radius 6.0 cm ± 0.5%. The percentage error in its volume is approximately:",
+            options: ["1.5%", "0.5%", "3%"],
+          },
+        ],
+      },
+      {
+        type: "sequence",
+        title: "Steps to Calculate Percentage Error",
+        instruction:
+          "Put the steps for calculating percentage error in the correct order.",
+        items: [
+          { label: "Identify the measured value and the true (accepted) value" },
+          { label: "Calculate the absolute error: |measured value − true value|" },
+          { label: "Divide the absolute error by the true value" },
+          { label: "Multiply the result by 100 to convert to a percentage" },
+          { label: "State the percentage error with appropriate significant figures" },
+          { label: "Consider whether the error is acceptable for the context" },
+        ],
+      },
+      {
+        type: "matching",
+        title: "Map Scale & Real Distance",
+        instruction:
+          "Draw a line from each map measurement to the correct real-world distance.",
+        left: [
+          "4 cm on a 1:25,000 map",
+          "6 cm on a 1:50,000 map",
+          "2.5 cm on a 1:100,000 map",
+          "10 cm on a 1:10,000 map",
+          "3 cm on a 1:200,000 map",
+        ],
+        right: [
+          "1 km",
+          "3 km",
+          "2.5 km",
+          "1 km",
+          "6 km",
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Scale Drawing Calculations",
+        instruction:
+          "Circle the correct answer for each scale drawing problem.",
+        questions: [
+          {
+            prompt: "A room is 6 m long. On a 1:50 scale drawing, the length should be:",
+            options: ["12 cm", "120 cm", "1.2 cm"],
+          },
+          {
+            prompt: "On a 1:200 plan, a wall measures 3.5 cm. The real length of the wall is:",
+            options: ["7 m", "70 m", "0.7 m"],
+          },
+          {
+            prompt: "A model car is built at 1:24 scale. If the model is 18 cm long, the real car is:",
+            options: ["4.32 m", "43.2 m", "0.432 m"],
+          },
+          {
+            prompt: "An architect's plan uses 1:100 scale. A garden measuring 15 m by 8 m appears on the plan as:",
+            options: ["15 cm by 8 cm", "1.5 cm by 0.8 cm", "150 cm by 80 cm"],
+          },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Direct Proportion Problems",
+        instruction:
+          "Circle the correct answer for each proportion problem.",
+        questions: [
+          {
+            prompt: "If 5 kg of apples cost $12, then 8 kg of apples cost:",
+            options: ["$19.20", "$15.00", "$20.00"],
+          },
+          {
+            prompt: "A car uses 7 L of fuel per 100 km. For a 350 km trip, the fuel needed is:",
+            options: ["24.5 L", "50 L", "21 L"],
+          },
+          {
+            prompt: "A recipe for 4 people uses 300 g of flour. For 10 people, the flour needed is:",
+            options: ["750 g", "600 g", "1,200 g"],
+          },
+          {
+            prompt: "A tap fills a 60 L tank in 20 minutes. At the same rate, it fills a 90 L tank in:",
+            options: ["30 minutes", "45 minutes", "40 minutes"],
+          },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Inverse Proportion Problems",
+        instruction:
+          "Circle the correct answer for each inverse proportion problem.",
+        questions: [
+          {
+            prompt: "6 workers can complete a job in 10 days. How long would 4 workers take?",
+            options: ["15 days", "12 days", "8 days"],
+          },
+          {
+            prompt: "A car travelling at 80 km/h takes 3 hours for a journey. At 60 km/h, the journey takes:",
+            options: ["4 hours", "3.5 hours", "2.25 hours"],
+          },
+          {
+            prompt: "12 pipes fill a pool in 6 hours. To fill it in 4 hours, the number of pipes needed is:",
+            options: ["18", "8", "24"],
+          },
+          {
+            prompt: "A gear with 40 teeth turning at 120 rpm drives a gear with 60 teeth. The driven gear turns at:",
+            options: ["80 rpm", "180 rpm", "100 rpm"],
+          },
+        ],
+      },
+      {
+        type: "sorting",
+        title: "Direct vs Inverse Proportion",
+        instruction:
+          "Sort each scenario into the correct column: Direct Proportion or Inverse Proportion.",
+        columns: ["Direct Proportion", "Inverse Proportion"],
+        items: [
+          { label: "More workers → less time to finish a job" },
+          { label: "More hours worked → more wages earned" },
+          { label: "Higher speed → less travel time for same distance" },
+          { label: "More items purchased → higher total cost" },
+          { label: "Wider pipe → less time to fill a tank" },
+          { label: "Longer side of a rectangle → larger area (width fixed)" },
+          { label: "More people sharing a pizza → smaller slice each" },
+          { label: "Greater distance → more fuel used (same car)" },
+        ],
+      },
+
+      // --- HARD: Applied problems & extended reasoning ---
+      {
+        type: "open-response",
+        title: "Map Measurement with Error Propagation",
+        instruction:
+          "Show all working and state your answer with its error range.",
         prompts: [
           {
             text: "A map has scale 1:25,000. You measure a lake's length on the map as 8.4 cm ± 0.2 cm. Calculate the real length of the lake and the range of possible actual lengths due to the measurement error.",
             type: "lines",
             lines: 6,
           },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Cube Volume with Percentage Error",
+        instruction:
+          "Show all working. Explain your reasoning clearly.",
+        prompts: [
           {
-            text: "You measure a cube's side as 5.0 cm ± 0.1 cm. Calculate the volume and explain why the percentage error in the volume (about 6%) is much larger than the percentage error in the side measurement (2%). What general rule applies?",
+            text: "You measure a cube's side as 5.0 cm ± 0.1 cm. (a) Calculate the volume of the cube. (b) Calculate the percentage error in the side measurement. (c) Calculate the percentage error in the volume. (d) Explain why the percentage error in the volume (about 6%) is three times the percentage error in the side measurement (2%).",
             type: "lines",
             lines: 8,
           },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Reducing Measurement Error",
+        instruction:
+          "Describe a practical method and explain the mathematics behind it.",
+        prompts: [
           {
-            text: "Design a method to measure the thickness of a single sheet of paper as accurately as possible, given that a ruler only measures to the nearest millimetre. Explain how your method reduces the impact of measurement error.",
+            text: "Design a method to measure the thickness of a single sheet of paper as accurately as possible, given that a ruler only measures to the nearest millimetre. Explain how your method reduces the percentage error in the measurement.",
             type: "lines",
             lines: 6,
           },
         ],
       },
       {
+        type: "open-response",
+        title: "Scaling Problem — Model to Real Life",
+        instruction:
+          "Show all working for each part.",
+        prompts: [
+          {
+            text: "An architect builds a 1:150 scale model of a building. (a) The model is 24 cm tall. How tall is the real building in metres? (b) A window on the model is 0.8 cm wide. What is the real window width in metres? (c) The floor area on the model is 32 cm². What is the real floor area in m²? (Hint: area scales by the square of the scale factor.)",
+            type: "lines",
+            lines: 8,
+          },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Comparing Measuring Methods",
+        instruction:
+          "Evaluate the two methods and justify which is more accurate.",
+        prompts: [
+          {
+            text: "Two students measure the length of a corridor. Student A uses a 30 cm ruler (±0.5 mm) and measures in 10 segments. Student B uses a 5 m tape measure (±2 mm) and measures in 2 segments. (a) What is the maximum total error for each student? (b) Which student's method is more accurate and why? (c) Suggest how Student A could reduce their total error.",
+            type: "lines",
+            lines: 8,
+          },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "True or False — Measurement Properties",
+        instruction:
+          "Circle True or False for each statement about measurement and error.",
+        questions: [
+          {
+            prompt: "Doubling all measurements in a rectangle doubles the area.",
+            options: ["False — it quadruples the area", "True"],
+          },
+          {
+            prompt: "Percentage error is always positive.",
+            options: ["True", "False"],
+          },
+          {
+            prompt: "When multiplying two measurements, you add the absolute errors.",
+            options: ["False — you add the percentage errors", "True"],
+          },
+          {
+            prompt: "Using a more precise instrument always eliminates measurement error.",
+            options: ["False — it reduces but does not eliminate error", "True"],
+          },
+          {
+            prompt: "If a cube's side has 2% error, the volume has 6% error.",
+            options: ["True", "False"],
+          },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Real-World Proportion Problem",
+        instruction:
+          "Read the problem carefully, show all working, and give your answer in context.",
+        prompts: [
+          {
+            text: "A school needs to mix cordial for sports day. The ratio of cordial concentrate to water is 1:4. (a) How much concentrate is needed for 15 litres of drink? (b) If they have 2 litres of concentrate, how many litres of drink can they make? (c) 120 students each need 250 mL. How much concentrate is needed in total?",
+            type: "lines",
+            lines: 8,
+          },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Error in Indirect Measurement",
+        instruction:
+          "Show all working and discuss the sources of error.",
+        prompts: [
+          {
+            text: "To find the height of a tree, you stand 20 m from its base (measured ± 0.5 m) and use a clinometer to measure the angle of elevation as 35° ± 1°. Using height = distance × tan(angle): (a) Calculate the estimated height. (b) Calculate the height using the upper bounds (20.5 m and 36°) and lower bounds (19.5 m and 34°). (c) What is the range of possible heights? (Hint: tan 34° ≈ 0.6745, tan 35° ≈ 0.7002, tan 36° ≈ 0.7265.)",
+            type: "lines",
+            lines: 8,
+          },
+        ],
+      },
+
+      // --- HOME: Hands-on investigation ---
+      {
         type: "home-activity",
-        title: "Measurement & Scaling at Home",
-        instruction: "Explore measurement errors and proportional reasoning in everyday life.",
+        title: "Measurement Precision Experiment",
+        instruction: "Investigate how measurement technique affects accuracy and precision.",
         suggestions: [
-          "Measure the same object 10 times with a ruler and record each result. Calculate the mean, range, and percentage variation. What does this tell you about measurement uncertainty?",
-          "Find a map of your local area. Use the scale to estimate the distance from your home to school or a local landmark. Then check with a mapping app — how close was your estimate?",
-          "Measure the dimensions of a room to calculate its area. Then estimate the percentage error if each measurement is off by 1 cm.",
+          "Choose an object at home (e.g. a book or table). Measure its length 10 times with a ruler, recording each result to the nearest millimetre. Calculate the mean, range, and percentage variation. What does this tell you about measurement uncertainty?",
+          "Now measure the same object using a different method (e.g. a tape measure or string and ruler). Compare the two sets of results — which method was more precise? Which do you think was more accurate? Explain your reasoning.",
+          "Measure the dimensions of a room to calculate its area. Then estimate the percentage error if each measurement is off by 1 cm. How does the room size affect the percentage error?",
+        ],
+      },
+      {
+        type: "home-activity",
+        title: "Map and Scaling Investigation",
+        instruction: "Explore proportional reasoning and scale in the real world.",
+        suggestions: [
+          "Find a map of your local area (printed or online). Use the scale to estimate the straight-line distance from your home to three different locations. Then check with a mapping app — how close were your estimates?",
+          "Choose a small object (e.g. a toy car or figurine). Measure its dimensions and calculate the scale factor compared to the real object. If the real car is 4.5 m long and the model is 18 cm, what is the scale ratio?",
+          "Draw a scale plan of your bedroom using a scale of 1:20. Include the positions of furniture. Calculate the real area of your room from your drawing and compare it to a direct measurement.",
         ],
       },
     ],
@@ -2787,24 +3248,117 @@ export const year10MathsWorksheets: WorksheetItem[] = [
     description:
       "Use deductive reasoning, theorems and algorithms to solve spatial problems and construct geometric proofs",
     activities: [
+      // --- EASY: Theorem identification & basic angle problems ---
       {
         type: "matching",
-        title: "Theorem Match",
+        title: "Theorem Name → Description",
         instruction:
-          "Draw a line from each theorem to its description.",
+          "Draw a line from each theorem to its correct description.",
         left: [
           "Angle sum of a triangle",
           "Exterior angle theorem",
-          "Opposite angles (vertically)",
-          "Angle sum of a quadrilateral",
+          "Vertically opposite angles",
           "Angles on a straight line",
+          "Angle sum of a quadrilateral",
         ],
         right: [
-          "Vertically opposite angles are equal",
-          "Interior angles add to 360°",
           "Interior angles add to 180°",
-          "Adjacent angles sum to 180°",
           "Equals the sum of the two non-adjacent interior angles",
+          "Vertically opposite angles are equal",
+          "Adjacent angles on a straight line sum to 180°",
+          "Interior angles add to 360°",
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Angle Sum of a Triangle",
+        instruction:
+          "Circle the correct missing angle in each triangle.",
+        questions: [
+          {
+            prompt: "Triangle with angles 50° and 70°. The third angle is:",
+            options: ["60°", "80°", "110°"],
+          },
+          {
+            prompt: "Triangle with angles 90° and 35°. The third angle is:",
+            options: ["45°", "55°", "65°"],
+          },
+          {
+            prompt: "Triangle with angles 120° and 25°. The third angle is:",
+            options: ["35°", "45°", "215°"],
+          },
+          {
+            prompt: "Equilateral triangle. Each angle is:",
+            options: ["45°", "60°", "90°"],
+          },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Angles on a Straight Line",
+        instruction:
+          "Circle the correct missing angle on each straight line.",
+        questions: [
+          {
+            prompt: "One angle is 110°. The adjacent angle is:",
+            options: ["70°", "80°", "110°"],
+          },
+          {
+            prompt: "One angle is 45°. The adjacent angle is:",
+            options: ["45°", "135°", "145°"],
+          },
+          {
+            prompt: "Two equal angles on a straight line. Each is:",
+            options: ["60°", "90°", "180°"],
+          },
+          {
+            prompt: "Three angles on a straight line: 60°, 80°, and x. x is:",
+            options: ["20°", "40°", "60°"],
+          },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Vertically Opposite Angles",
+        instruction:
+          "Two straight lines cross. Circle the correct answer.",
+        questions: [
+          {
+            prompt: "One angle is 72°. The vertically opposite angle is:",
+            options: ["72°", "108°", "144°"],
+          },
+          {
+            prompt: "One angle is 135°. The vertically opposite angle is:",
+            options: ["45°", "90°", "135°"],
+          },
+          {
+            prompt: "One angle is 90°. The adjacent angle is:",
+            options: ["45°", "90°", "180°"],
+          },
+          {
+            prompt: "One angle is 58°. The adjacent angle (not vertically opposite) is:",
+            options: ["58°", "122°", "302°"],
+          },
+        ],
+      },
+      {
+        type: "matching",
+        title: "Angle Relationship → Rule Name",
+        instruction:
+          "Draw a line from each angle relationship to its rule.",
+        left: [
+          "Alternate angles (Z-angles)",
+          "Co-interior angles (C-angles)",
+          "Corresponding angles (F-angles)",
+          "Vertically opposite angles",
+          "Supplementary angles",
+        ],
+        right: [
+          "Are equal (parallel lines)",
+          "Sum to 180° (parallel lines)",
+          "Are equal (parallel lines, same side)",
+          "Are equal (two intersecting lines)",
+          "Sum to 180° (straight line)",
         ],
       },
       {
@@ -2819,59 +3373,445 @@ export const year10MathsWorksheets: WorksheetItem[] = [
           { label: "Angles in a triangle sum to 180°" },
           { label: "The quadrilateral contains 2 × 180° = 360° of angles" },
           { label: "Therefore angles in a quadrilateral sum to 360°" },
-          { label: "The diagonal creates two triangles that share no angles" },
+          { label: "The diagonal creates two triangles whose angles together make up the quadrilateral's angles" },
         ],
       },
       {
         type: "circle-correct",
-        title: "Valid Proof Steps",
+        title: "Co-interior Angles (Parallel Lines)",
         instruction:
-          "Circle the VALID reasoning in each scenario.",
+          "Parallel lines are cut by a transversal. Circle the correct co-interior angle.",
         questions: [
           {
-            prompt: "In triangle ABC, angle A = 50° and angle B = 70°. Therefore angle C equals:",
-            options: ["60° (angles in a triangle sum to 180°)", "70° (isosceles triangle)", "110° (exterior angle)"],
+            prompt: "One co-interior angle is 65°. The other is:",
+            options: ["65°", "115°", "125°"],
           },
           {
-            prompt: "Two parallel lines cut by a transversal create alternate angles that are:",
-            options: ["Equal", "Supplementary (sum to 180°)", "Complementary (sum to 90°)"],
+            prompt: "One co-interior angle is 110°. The other is:",
+            options: ["70°", "80°", "110°"],
           },
           {
-            prompt: "An exterior angle of a triangle is 130°. The two non-adjacent interior angles could be:",
-            options: ["80° and 50°", "130° and 50°", "65° and 65° only"],
+            prompt: "One co-interior angle is 90°. The other is:",
+            options: ["45°", "90°", "180°"],
           },
           {
-            prompt: "In a regular hexagon, each interior angle measures:",
+            prompt: "One co-interior angle is 138°. The other is:",
+            options: ["42°", "48°", "138°"],
+          },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Alternate Angles (Parallel Lines)",
+        instruction:
+          "Parallel lines are cut by a transversal. Circle the correct alternate angle.",
+        questions: [
+          {
+            prompt: "One alternate angle is 55°. The other alternate angle is:",
+            options: ["55°", "125°", "135°"],
+          },
+          {
+            prompt: "One alternate angle is 128°. The other alternate angle is:",
+            options: ["52°", "62°", "128°"],
+          },
+          {
+            prompt: "A transversal crosses two parallel lines. One angle is 73°. The corresponding angle is:",
+            options: ["73°", "107°", "117°"],
+          },
+          {
+            prompt: "One alternate angle is x and the co-interior angle on the same side is 140°. x equals:",
+            options: ["40°", "50°", "140°"],
+          },
+        ],
+      },
+
+      // --- MEDIUM: Polygon angles, proofs & congruence ---
+      {
+        type: "circle-correct",
+        title: "Exterior Angle Theorem",
+        instruction:
+          "Use the exterior angle theorem to circle the correct answer.",
+        questions: [
+          {
+            prompt: "The two non-adjacent interior angles are 45° and 65°. The exterior angle is:",
+            options: ["90°", "110°", "120°"],
+          },
+          {
+            prompt: "The exterior angle is 130° and one non-adjacent interior angle is 80°. The other is:",
+            options: ["40°", "50°", "60°"],
+          },
+          {
+            prompt: "The exterior angle is 144° and the two non-adjacent interior angles are equal. Each is:",
+            options: ["36°", "72°", "108°"],
+          },
+          {
+            prompt: "In an isosceles triangle, the exterior angle at the apex is 100°. Each base angle is:",
+            options: ["40°", "50°", "80°"],
+          },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Interior Angles of Regular Polygons",
+        instruction:
+          "Circle the correct interior angle for each regular polygon. Use: interior angle = (n − 2) × 180° ÷ n.",
+        questions: [
+          {
+            prompt: "Equilateral triangle (3 sides):",
+            options: ["60°", "90°", "120°"],
+          },
+          {
+            prompt: "Square (4 sides):",
+            options: ["60°", "90°", "120°"],
+          },
+          {
+            prompt: "Regular pentagon (5 sides):",
+            options: ["100°", "108°", "120°"],
+          },
+          {
+            prompt: "Regular hexagon (6 sides):",
+            options: ["108°", "120°", "135°"],
+          },
+          {
+            prompt: "Regular octagon (8 sides):",
             options: ["120°", "135°", "144°"],
+          },
+          {
+            prompt: "Regular decagon (10 sides):",
+            options: ["140°", "144°", "150°"],
+          },
+        ],
+      },
+      {
+        type: "matching",
+        title: "Regular Polygon → Interior Angle",
+        instruction:
+          "Draw a line from each regular polygon to its interior angle measure.",
+        left: [
+          "Equilateral triangle",
+          "Square",
+          "Regular pentagon",
+          "Regular hexagon",
+          "Regular octagon",
+          "Regular decagon",
+        ],
+        right: [
+          "60°",
+          "90°",
+          "108°",
+          "120°",
+          "135°",
+          "144°",
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Angle Sum of Polygons",
+        instruction:
+          "Circle the correct angle sum for each polygon. Use: angle sum = (n − 2) × 180°.",
+        questions: [
+          {
+            prompt: "Triangle (3 sides):",
+            options: ["180°", "270°", "360°"],
+          },
+          {
+            prompt: "Quadrilateral (4 sides):",
+            options: ["180°", "360°", "540°"],
+          },
+          {
+            prompt: "Pentagon (5 sides):",
+            options: ["360°", "540°", "720°"],
+          },
+          {
+            prompt: "Hexagon (6 sides):",
+            options: ["540°", "720°", "900°"],
+          },
+          {
+            prompt: "Heptagon (7 sides):",
+            options: ["720°", "900°", "1080°"],
+          },
+          {
+            prompt: "Octagon (8 sides):",
+            options: ["900°", "1080°", "1260°"],
+          },
+        ],
+      },
+      {
+        type: "sequence",
+        title: "Proof: Quadrilateral Angles Sum to 360°",
+        instruction:
+          "Put these proof steps in the correct order to prove that the interior angles of any quadrilateral sum to 360°.",
+        items: [
+          { label: "Let ABCD be any quadrilateral." },
+          { label: "Draw diagonal AC, dividing the quadrilateral into triangles ABC and ACD." },
+          { label: "The angle sum of triangle ABC is 180° (angle sum of a triangle)." },
+          { label: "The angle sum of triangle ACD is 180° (angle sum of a triangle)." },
+          { label: "The angles of the two triangles together make up all four interior angles of ABCD." },
+          { label: "Therefore the angle sum of quadrilateral ABCD = 180° + 180° = 360°. □" },
+        ],
+      },
+      {
+        type: "sequence",
+        title: "Proof: Exterior Angles of Any Convex Polygon Sum to 360°",
+        instruction:
+          "Put these proof steps in the correct order.",
+        items: [
+          { label: "Let the convex polygon have n sides, so it has n interior angles." },
+          { label: "At each vertex, the interior angle + exterior angle = 180° (angles on a straight line)." },
+          { label: "Summing over all n vertices: sum of interior angles + sum of exterior angles = n × 180°." },
+          { label: "The interior angle sum of an n-sided polygon is (n − 2) × 180°." },
+          { label: "Substituting: (n − 2) × 180° + sum of exterior angles = n × 180°." },
+          { label: "Sum of exterior angles = n × 180° − (n − 2) × 180° = 2 × 180° = 360°. □" },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Valid vs Invalid Reasoning",
+        instruction:
+          "Circle whether each piece of reasoning is VALID or INVALID.",
+        questions: [
+          {
+            prompt: "'Two angles in a triangle are 60° each, so it must be equilateral.'",
+            options: ["Valid — third angle is also 60°", "Invalid — sides could differ"],
+          },
+          {
+            prompt: "'All squares are rectangles, so all rectangles are squares.'",
+            options: ["Valid — they are equivalent", "Invalid — converse is not necessarily true"],
+          },
+          {
+            prompt: "'Angles in a triangle sum to 180°, so a right-angled triangle has two acute angles.'",
+            options: ["Valid — the other two must sum to 90°", "Invalid — one could be obtuse"],
+          },
+          {
+            prompt: "'Alternate angles are equal, so these two lines must be parallel.'",
+            options: ["Valid — this is the converse of the alternate angle theorem", "Invalid — alternate angles only apply to parallel lines"],
+          },
+          {
+            prompt: "'A polygon has interior angle sum 720°, so it has 6 sides.'",
+            options: ["Valid — (n−2)×180° = 720° gives n = 6", "Invalid — could have more sides"],
+          },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Congruence Conditions",
+        instruction:
+          "Circle the correct congruence condition that justifies each pair of triangles being congruent.",
+        questions: [
+          {
+            prompt: "Three pairs of equal sides are known:",
+            options: ["SSS", "SAS", "ASA", "RHS"],
+          },
+          {
+            prompt: "Two sides and the included angle are equal:",
+            options: ["SSS", "SAS", "ASA", "RHS"],
+          },
+          {
+            prompt: "Two angles and the included side are equal:",
+            options: ["SSS", "SAS", "ASA", "RHS"],
+          },
+          {
+            prompt: "Both triangles are right-angled, with equal hypotenuse and one equal side:",
+            options: ["SSS", "SAS", "ASA", "RHS"],
+          },
+          {
+            prompt: "Two sides and a non-included angle are equal (ambiguous case):",
+            options: ["SSS — always congruent", "SAS — always congruent", "Not necessarily congruent (SSA is not a valid condition)", "RHS — always congruent"],
+          },
+        ],
+      },
+      {
+        type: "matching",
+        title: "Congruence Condition → Description",
+        instruction:
+          "Draw a line from each congruence condition to its description.",
+        left: [
+          "SSS",
+          "SAS",
+          "ASA",
+          "AAS",
+          "RHS",
+        ],
+        right: [
+          "Three pairs of corresponding sides are equal",
+          "Two sides and the included angle are equal",
+          "Two angles and the included side are equal",
+          "Two angles and a non-included side are equal",
+          "Right angle, hypotenuse, and one other side are equal",
+        ],
+      },
+      {
+        type: "sorting",
+        title: "Sufficient vs Insufficient for Congruence",
+        instruction:
+          "Sort each set of information: is it Sufficient or Insufficient to prove two triangles are congruent?",
+        columns: ["Sufficient", "Insufficient"],
+        items: [
+          { label: "Three pairs of equal sides (SSS)" },
+          { label: "Three pairs of equal angles (AAA)" },
+          { label: "Two sides and the included angle (SAS)" },
+          { label: "Two sides and a non-included angle (SSA)" },
+          { label: "Two angles and the included side (ASA)" },
+          { label: "One side and one angle only" },
+          { label: "Right angle, hypotenuse, and one side (RHS)" },
+          { label: "Two angles and a non-included side (AAS)" },
+        ],
+      },
+
+      // --- HARD: Proofs, multi-step problems & applications ---
+      {
+        type: "open-response",
+        title: "Prove the Pentagon Angle Sum",
+        instruction:
+          "Write a step-by-step deductive proof.",
+        prompts: [
+          {
+            text: "Prove that the interior angle sum of any pentagon is 540°. (Hint: from one vertex, draw diagonals to divide the pentagon into triangles. How many triangles are formed?)",
+            type: "lines",
+            lines: 8,
           },
         ],
       },
       {
         type: "open-response",
-        title: "Construct a Proof",
+        title: "Exterior Angle Theorem — Find the Angles",
         instruction:
-          "Write a step-by-step deductive proof for each geometric statement.",
+          "Show your deductive reasoning, stating the theorem used at each step.",
         prompts: [
           {
-            text: "Prove that the angle sum of any pentagon is 540°. (Hint: divide the pentagon into triangles using diagonals from one vertex.)",
+            text: "In triangle PQR, the exterior angle at R is 140°. If angle P = 55°, find angle Q and angle PRQ.",
             type: "lines",
-            lines: 8,
+            lines: 6,
           },
           {
-            text: "In triangle PQR, the exterior angle at R is 140°. If angle P = 55°, find angle Q and angle R. Show your deductive reasoning, stating the theorem used at each step.",
+            text: "In triangle XYZ, the exterior angle at Z is 126°. The interior angles at X and Y are in the ratio 2 : 5. Find all three interior angles.",
+            type: "lines",
+            lines: 6,
+          },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Isosceles Triangle Proof",
+        instruction:
+          "Use deductive reasoning and congruence to construct a proof.",
+        prompts: [
+          {
+            text: "Prove that the base angles of an isosceles triangle are equal. (Hint: let triangle ABC have AB = AC. Draw the angle bisector from A to BC, meeting BC at M. Show triangles ABM and ACM are congruent.)",
+            type: "lines",
+            lines: 10,
+          },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Multi-Step Parallel Lines Problem",
+        instruction:
+          "Find all unknown angles, showing your reasoning and stating each theorem used.",
+        prompts: [
+          {
+            text: "Two parallel lines are cut by two transversals. At one intersection, the angle is 52°. At the other intersection on the same parallel line, the angle between the two transversals is 74°. Find all remaining angles at both intersections and the angle where the two transversals meet between the parallel lines. State each theorem you use.",
+            type: "lines",
+            lines: 10,
+          },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Interior Angle Formula Proof",
+        instruction:
+          "Prove the general formula for interior angles of a regular polygon.",
+        prompts: [
+          {
+            text: "Prove that each interior angle of a regular n-sided polygon is (n − 2) × 180° ÷ n. Start from the fact that from one vertex you can draw (n − 3) diagonals, creating (n − 2) triangles.",
             type: "lines",
             lines: 8,
           },
         ],
       },
       {
+        type: "circle-correct",
+        title: "True or False — Geometric Properties",
+        instruction:
+          "Circle TRUE or FALSE for each statement.",
+        questions: [
+          {
+            prompt: "The exterior angles of any convex polygon sum to 360°.",
+            options: ["True", "False"],
+          },
+          {
+            prompt: "All equilateral triangles are similar to each other.",
+            options: ["True", "False"],
+          },
+          {
+            prompt: "If two triangles have all three angles equal (AAA), they must be congruent.",
+            options: ["True — same shape means same size", "False — they are similar but not necessarily congruent"],
+          },
+          {
+            prompt: "A regular polygon with interior angle 140° has 9 sides.",
+            options: ["True — (n−2)×180°÷n = 140° gives n = 9", "False — it gives a different value of n"],
+          },
+          {
+            prompt: "The angle sum of a polygon with 12 sides is 1800°.",
+            options: ["True — (12−2)×180° = 1800°", "False — the sum is different"],
+          },
+          {
+            prompt: "Co-interior angles between parallel lines are equal.",
+            options: ["True", "False — they are supplementary (sum to 180°)"],
+          },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Construct a Proof for a Diagram",
+        instruction:
+          "Write a deductive proof for the following geometric scenario.",
+        prompts: [
+          {
+            text: "In quadrilateral ABCD, AB is parallel to DC and AD is parallel to BC (i.e. ABCD is a parallelogram). Prove that opposite angles are equal — that is, prove angle A = angle C and angle B = angle D. (Hint: draw a diagonal and use alternate angles.)",
+            type: "lines",
+            lines: 10,
+          },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Real-World Deductive Reasoning",
+        instruction:
+          "Apply geometric theorems to real-world structures.",
+        prompts: [
+          {
+            text: "A bridge truss is made of equilateral triangles. Explain why this shape is structurally strong by discussing the properties of equilateral triangles (angle measures, rigidity). If a truss section has 6 equilateral triangles meeting at a central point, verify that the angles at that point sum to 360°.",
+            type: "lines",
+            lines: 8,
+          },
+          {
+            text: "An architect designs a building with a regular octagonal floor plan. Calculate the interior angle at each corner. If they want to add a straight corridor from one corner to the opposite corner, how many sides does the corridor cross? Explain your reasoning.",
+            type: "lines",
+            lines: 8,
+          },
+        ],
+      },
+
+      // --- HOME: Real-world exploration ---
+      {
         type: "home-activity",
-        title: "Geometry Around You",
-        instruction: "Apply geometric reasoning to structures and shapes in your environment.",
+        title: "Geometry in the Built Environment",
+        instruction: "Explore geometric reasoning in structures around you.",
         suggestions: [
-          "Find a tiled floor or wall with a tessellation pattern. Identify the shapes used and verify that the angles meeting at each vertex sum to 360°.",
-          "Look at the roof structure of a building. Identify any triangles and estimate the angles. Do they sum to approximately 180°?",
-          "Find a regular polygon in architecture (hexagonal tiles, octagonal signs). Calculate what each interior angle should be and verify with a protractor or estimation.",
+          "Walk around your neighbourhood and photograph or sketch five different polygon shapes in buildings, signs and structures. For each, state the polygon name, number of sides, and calculate the expected interior angle sum.",
+          "Find a roof structure or bridge that uses triangles. Estimate the angles in each triangle and check they sum to approximately 180°. Why do engineers prefer triangles for load-bearing structures?",
+          "Find a tiled floor, wall or pavement. Identify the shapes used in the tessellation. At each vertex where tiles meet, measure or estimate the angles and verify they sum to 360°.",
+        ],
+      },
+      {
+        type: "home-activity",
+        title: "Tessellation Investigation",
+        instruction: "Investigate which regular polygons tessellate and why.",
+        suggestions: [
+          "Try to tessellate (tile a flat surface with no gaps or overlaps) using only equilateral triangles, then only squares, then only regular hexagons. Which ones work? For each, explain why by calculating how many polygons meet at a vertex and verifying the angles sum to 360°.",
+          "Explain why regular pentagons (interior angle 108°) do not tessellate on their own. What happens when you try to fit them together at a vertex?",
+          "Research a semi-regular tessellation that uses two different regular polygon types. Sketch the pattern and verify the angle sum at each vertex is 360°.",
         ],
       },
     ],
@@ -2885,89 +3825,587 @@ export const year10MathsWorksheets: WorksheetItem[] = [
     description:
       "Interpret networks used to represent practical situations and describe connectedness, paths and circuits",
     activities: [
+      // ─── EASY ───────────────────────────────────────────────────
+
+      // E1 — matching: network term → definition
       {
         type: "matching",
-        title: "Network Terms",
+        title: "Network Vocabulary",
         instruction:
-          "Draw a line from each network term to its definition.",
+          "Draw a line from each network term to its correct definition.",
         left: [
           "Vertex (node)",
           "Edge",
           "Degree of a vertex",
-          "Euler path",
+          "Path",
+          "Circuit",
           "Connected graph",
         ],
         right: [
-          "A path that uses every edge exactly once",
-          "The number of edges meeting at a vertex",
-          "There is a path between every pair of vertices",
-          "A line connecting two vertices",
-          "A point where edges meet",
+          "A route that starts and ends at the same vertex without repeating edges",
+          "The number of edges that meet at a vertex",
+          "A graph where every pair of vertices is joined by at least one path",
+          "A line or link connecting two vertices",
+          "A point in a network where edges meet",
+          "A route from one vertex to another without repeating edges",
         ],
       },
+
+      // E2 — circle-correct: degree of a vertex
+      {
+        type: "circle-correct",
+        title: "Degree of a Vertex",
+        instruction:
+          "Circle the correct degree for the described vertex.",
+        questions: [
+          {
+            prompt: "Vertex A is connected to vertices B, C, and D by one edge each",
+            options: ["3", "2", "4"],
+          },
+          {
+            prompt: "Vertex P has edges to Q, R, S, T, and also a loop back to itself",
+            options: ["6 (a loop counts as 2)", "5", "4"],
+          },
+          {
+            prompt: "Vertex X is connected to Y by two separate edges, and to Z by one edge",
+            options: ["3", "2", "4"],
+          },
+          {
+            prompt: "An isolated vertex with no edges",
+            options: ["0", "1", "undefined"],
+          },
+        ],
+      },
+
+      // E3 — circle-correct: count vertices and edges
+      {
+        type: "circle-correct",
+        title: "Counting Vertices & Edges",
+        instruction:
+          "Circle the correct count of vertices and edges for each network description.",
+        questions: [
+          {
+            prompt: "A triangle (three points connected in a cycle)",
+            options: ["3 vertices, 3 edges", "3 vertices, 6 edges", "6 vertices, 3 edges"],
+          },
+          {
+            prompt: "A square (four points connected in a cycle)",
+            options: ["4 vertices, 4 edges", "4 vertices, 8 edges", "8 vertices, 4 edges"],
+          },
+          {
+            prompt: "A square with both diagonals drawn",
+            options: ["4 vertices, 6 edges", "4 vertices, 4 edges", "6 vertices, 6 edges"],
+          },
+          {
+            prompt: "Five cities where every pair is directly connected by a road",
+            options: ["5 vertices, 10 edges", "5 vertices, 5 edges", "10 vertices, 5 edges"],
+          },
+        ],
+      },
+
+      // E4 — matching: real-world situation → network type
+      {
+        type: "matching",
+        title: "Real-World Networks",
+        instruction:
+          "Match each real-world situation to the type of network it best represents.",
+        left: [
+          "Road map between towns with distances",
+          "One-way street system",
+          "Facebook friendships",
+          "Web pages with hyperlinks",
+          "Water pipe network with flow capacities",
+        ],
+        right: [
+          "Directed graph (digraph)",
+          "Undirected weighted graph",
+          "Undirected unweighted graph",
+          "Directed graph (digraph)",
+          "Weighted directed graph",
+        ],
+      },
+
+      // E5 — sorting: connected vs disconnected graphs
+      {
+        type: "sorting",
+        title: "Connected or Disconnected?",
+        instruction:
+          "Sort each graph description into Connected or Disconnected.",
+        columns: ["Connected", "Disconnected"],
+        items: [
+          { label: "A triangle with all 3 vertices joined" },
+          { label: "Four vertices forming a square" },
+          { label: "Vertices A–B–C in a line, plus vertex D with no edges" },
+          { label: "Two separate triangles that share no vertices" },
+          { label: "A star shape: one central vertex joined to 5 outer vertices" },
+          { label: "Vertices P–Q connected, and vertices R–S connected, but no edge between the two pairs" },
+        ],
+      },
+
+      // E6 — circle-correct: identify paths vs circuits
+      {
+        type: "circle-correct",
+        title: "Path or Circuit?",
+        instruction:
+          "Circle whether each route is a Path (starts and ends at different vertices), a Circuit (starts and ends at the same vertex), or Neither. Assume no edge is repeated unless stated.",
+        questions: [
+          {
+            prompt: "A → B → C → D",
+            options: ["Path", "Circuit", "Neither"],
+          },
+          {
+            prompt: "A → B → C → D → A",
+            options: ["Circuit", "Path", "Neither"],
+          },
+          {
+            prompt: "P → Q → R → Q → S (edge Q–R is used twice)",
+            options: ["Neither — an edge is repeated", "Path", "Circuit"],
+          },
+          {
+            prompt: "X → Y → Z → X",
+            options: ["Circuit", "Path", "Neither"],
+          },
+        ],
+      },
+
+      // E7 — circle-correct: is this a tree?
+      {
+        type: "circle-correct",
+        title: "Is It a Tree?",
+        instruction:
+          "A tree is a connected graph with no circuits. Circle whether each description is a tree.",
+        questions: [
+          {
+            prompt: "A graph with 4 vertices and 3 edges that is connected and has no circuits",
+            options: ["Yes — it is a tree", "No — not a tree"],
+          },
+          {
+            prompt: "A triangle (3 vertices, 3 edges)",
+            options: ["No — it contains a circuit", "Yes — it is a tree"],
+          },
+          {
+            prompt: "A graph with 5 vertices and 4 edges that is connected",
+            options: ["Yes — it is a tree (n vertices, n − 1 edges, connected)", "No — not a tree"],
+          },
+          {
+            prompt: "Two separate edges (A–B and C–D) with no connection between them",
+            options: ["No — it is not connected", "Yes — it is a tree"],
+          },
+        ],
+      },
+
+      // E8 — sorting: planar vs non-planar descriptions
+      {
+        type: "sorting",
+        title: "Planar or Non-Planar?",
+        instruction:
+          "A planar graph can be drawn on a flat surface with no edges crossing. Sort each graph.",
+        columns: ["Planar", "Non-Planar"],
+        items: [
+          { label: "A triangle (K₃)" },
+          { label: "A square with one diagonal" },
+          { label: "The complete graph on 5 vertices (K₅) — every vertex connected to every other" },
+          { label: "A tree with 6 vertices" },
+          { label: "The complete bipartite graph K₃,₃ — 3 houses each connected to 3 utilities" },
+          { label: "A single cycle of 8 vertices" },
+        ],
+      },
+
+      // ─── MEDIUM ─────────────────────────────────────────────────
+
+      // M1 — circle-correct: Euler path possible?
       {
         type: "circle-correct",
         title: "Euler Path Possible?",
         instruction:
-          "For each network description, circle whether an Euler path is possible. (An Euler path exists if a graph has exactly 0 or 2 vertices of odd degree.)",
+          "An Euler path uses every edge exactly once. It exists when a connected graph has exactly 0 or 2 vertices of odd degree. Circle the correct answer.",
         questions: [
           {
-            prompt: "A triangle (3 vertices, each degree 2)",
-            options: ["Yes — Euler circuit exists", "No — impossible", "Yes — Euler path but not circuit"],
+            prompt: "Vertex degrees: 2, 2, 2, 2 (a square)",
+            options: ["Yes — Euler circuit exists (0 odd-degree vertices)", "Yes — Euler path only", "No — impossible"],
           },
           {
-            prompt: "A graph with vertices of degree: 3, 3, 2, 2",
-            options: ["Yes — Euler path (start/end at odd vertices)", "No — impossible", "Yes — Euler circuit exists"],
+            prompt: "Vertex degrees: 3, 3, 2, 2",
+            options: ["Yes — Euler path exists (exactly 2 odd-degree vertices)", "No — impossible", "Yes — Euler circuit exists"],
           },
           {
-            prompt: "A graph with vertices of degree: 3, 3, 3, 3",
-            options: ["No — four odd-degree vertices", "Yes — Euler circuit", "Yes — Euler path"],
+            prompt: "Vertex degrees: 1, 1, 2, 2, 2",
+            options: ["Yes — Euler path exists (exactly 2 odd-degree vertices)", "Yes — Euler circuit exists", "No — impossible"],
           },
           {
-            prompt: "A square with one diagonal (vertices of degree: 3, 3, 2, 2)",
-            options: ["Yes — Euler path exists", "No — impossible", "Yes — Euler circuit exists"],
+            prompt: "Vertex degrees: 3, 3, 3, 1",
+            options: ["No — 4 odd-degree vertices", "Yes — Euler path exists", "Yes — Euler circuit exists"],
           },
         ],
       },
+
+      // M2 — circle-correct: Euler circuit possible?
+      {
+        type: "circle-correct",
+        title: "Euler Circuit Possible?",
+        instruction:
+          "An Euler circuit uses every edge exactly once and returns to the start. It exists when every vertex has even degree and the graph is connected. Circle the correct answer.",
+        questions: [
+          {
+            prompt: "Vertex degrees: 4, 2, 4, 2",
+            options: ["Yes — Euler circuit exists (all even degrees)", "Yes — Euler path only", "No — impossible"],
+          },
+          {
+            prompt: "Vertex degrees: 2, 2, 2 (a triangle)",
+            options: ["Yes — Euler circuit exists (all even degrees)", "No — impossible", "Yes — Euler path only"],
+          },
+          {
+            prompt: "Vertex degrees: 3, 3, 2, 2, 2",
+            options: ["No — Euler circuit impossible (has 2 odd-degree vertices; Euler path exists instead)", "Yes — Euler circuit exists", "No — neither path nor circuit"],
+          },
+          {
+            prompt: "Vertex degrees: 4, 4, 4, 4",
+            options: ["Yes — Euler circuit exists (all even degrees)", "No — impossible", "Yes — Euler path only"],
+          },
+        ],
+      },
+
+      // M3 — circle-correct: count odd/even degree vertices
+      {
+        type: "circle-correct",
+        title: "Odd & Even Degree Vertices",
+        instruction:
+          "Count the number of odd-degree and even-degree vertices in each graph. Circle the correct count.",
+        questions: [
+          {
+            prompt: "A triangle: vertex degrees 2, 2, 2",
+            options: ["0 odd, 3 even", "3 odd, 0 even", "1 odd, 2 even"],
+          },
+          {
+            prompt: "A square with one diagonal: vertex degrees 3, 3, 2, 2",
+            options: ["2 odd, 2 even", "4 odd, 0 even", "0 odd, 4 even"],
+          },
+          {
+            prompt: "K₄ (complete graph on 4 vertices): vertex degrees 3, 3, 3, 3",
+            options: ["4 odd, 0 even", "0 odd, 4 even", "2 odd, 2 even"],
+          },
+          {
+            prompt: "A path graph P₅ (5 vertices in a line): vertex degrees 1, 2, 2, 2, 1",
+            options: ["2 odd, 3 even", "0 odd, 5 even", "5 odd, 0 even"],
+          },
+        ],
+      },
+
+      // M4 — sequence: Dijkstra's shortest-path algorithm
       {
         type: "sequence",
-        title: "Trace the Shortest Path",
+        title: "Shortest Path Algorithm",
         instruction:
-          "Put the steps in order to find the shortest path in a weighted network using common sense (greedy approach).",
+          "Put the steps of Dijkstra's shortest-path algorithm in the correct order.",
         items: [
-          { label: "Identify the start and end vertices" },
-          { label: "List all possible paths between start and end" },
-          { label: "For each path, add up the weights (distances) of all edges" },
-          { label: "Compare the total weights" },
-          { label: "Select the path with the smallest total weight" },
-          { label: "Verify by checking if any shortcut exists" },
+          { label: "Set the distance to the start vertex as 0, and all others as infinity" },
+          { label: "Mark the start vertex as 'current'" },
+          { label: "For the current vertex, calculate the tentative distance to each unvisited neighbour" },
+          { label: "If a tentative distance is less than the previously recorded distance, update it" },
+          { label: "Mark the current vertex as 'visited' (it will not be checked again)" },
+          { label: "Select the unvisited vertex with the smallest tentative distance as the new current vertex" },
+          { label: "Repeat steps 3–6 until the destination vertex is marked as visited" },
+          { label: "Read off the shortest distance and trace back the path" },
         ],
       },
+
+      // M5 — sequence: algorithm for finding Euler path
+      {
+        type: "sequence",
+        title: "Finding an Euler Path",
+        instruction:
+          "Put the steps in order to find an Euler path in a connected graph with exactly 2 odd-degree vertices.",
+        items: [
+          { label: "Check that the graph is connected" },
+          { label: "Find all vertex degrees and confirm exactly 0 or 2 are odd" },
+          { label: "If 2 odd-degree vertices exist, start at one of them" },
+          { label: "Travel along edges, choosing a bridge only when no other option exists" },
+          { label: "Cross off each edge as you use it" },
+          { label: "Continue until all edges have been traversed" },
+          { label: "You should finish at the other odd-degree vertex (for a path) or back at the start (for a circuit)" },
+        ],
+      },
+
+      // M6 — matching: graph property → Euler path/circuit/neither
+      {
+        type: "matching",
+        title: "Euler Classification",
+        instruction:
+          "Match each set of vertex degrees to whether the connected graph has an Euler circuit, Euler path (not circuit), or neither.",
+        left: [
+          "Degrees: 2, 2, 2, 2",
+          "Degrees: 3, 3, 2, 2",
+          "Degrees: 3, 3, 3, 3",
+          "Degrees: 4, 4, 2, 2, 2",
+          "Degrees: 1, 1, 2",
+        ],
+        right: [
+          "Euler path (not circuit) — exactly 2 odd-degree vertices",
+          "Euler circuit — all vertices have even degree",
+          "Neither — 4 odd-degree vertices",
+          "Euler circuit — all vertices have even degree",
+          "Euler path (not circuit) — exactly 2 odd-degree vertices",
+        ],
+      },
+
+      // M7 — circle-correct: Hamiltonian path questions
+      {
+        type: "circle-correct",
+        title: "Hamiltonian Paths",
+        instruction:
+          "A Hamiltonian path visits every vertex exactly once. Circle the correct answer for each question.",
+        questions: [
+          {
+            prompt: "Does a complete graph K₅ (5 vertices, every pair connected) have a Hamiltonian path?",
+            options: ["Yes — you can visit all 5 vertices in sequence", "No — some vertices must be revisited"],
+          },
+          {
+            prompt: "A path graph P₄ (4 vertices in a line: A–B–C–D). Does a Hamiltonian path exist?",
+            options: ["Yes — A → B → C → D visits every vertex exactly once", "No — impossible"],
+          },
+          {
+            prompt: "True or false: Every graph with a Hamiltonian circuit also has a Hamiltonian path.",
+            options: ["True — removing the last edge of the circuit gives a Hamiltonian path", "False — they are unrelated"],
+          },
+          {
+            prompt: "True or false: Every graph with an Euler circuit also has a Hamiltonian circuit.",
+            options: ["False — Euler and Hamiltonian conditions are independent", "True — Euler implies Hamiltonian"],
+          },
+        ],
+      },
+
+      // M8 — circle-correct: minimum spanning tree concepts
+      {
+        type: "circle-correct",
+        title: "Minimum Spanning Trees",
+        instruction:
+          "A minimum spanning tree (MST) connects all vertices with the smallest total edge weight and no circuits. Circle the correct answer.",
+        questions: [
+          {
+            prompt: "A connected graph has 6 vertices. How many edges does its spanning tree have?",
+            options: ["5", "6", "4"],
+          },
+          {
+            prompt: "In Prim's algorithm, at each step you add:",
+            options: ["The cheapest edge connecting a vertex in the tree to a vertex not yet in the tree", "The globally cheapest edge remaining", "Any edge to an unvisited vertex"],
+          },
+          {
+            prompt: "In Kruskal's algorithm, at each step you add:",
+            options: ["The cheapest remaining edge that does not form a circuit", "The cheapest edge from the current vertex", "Any edge to an unvisited vertex"],
+          },
+          {
+            prompt: "A graph has 8 vertices. Can its MST contain a circuit?",
+            options: ["No — a spanning tree never contains a circuit", "Yes — if it reduces total weight", "Only if the graph is planar"],
+          },
+        ],
+      },
+
+      // M9 — matching: vertex degrees → Euler possibility
+      {
+        type: "matching",
+        title: "Vertex Degrees & Euler Paths",
+        instruction:
+          "Match each scenario to the correct conclusion. Remember: 0 odd-degree vertices → Euler circuit; 2 odd-degree vertices → Euler path; any other count → neither. The graph must also be connected.",
+        left: [
+          "0 odd-degree vertices, graph is connected",
+          "2 odd-degree vertices, graph is connected",
+          "4 odd-degree vertices, graph is connected",
+          "0 odd-degree vertices, graph is disconnected",
+          "2 odd-degree vertices, graph is disconnected",
+        ],
+        right: [
+          "Neither Euler path nor circuit (disconnected)",
+          "Euler circuit exists",
+          "Euler path exists (but not a circuit)",
+          "Neither Euler path nor circuit (too many odd-degree vertices)",
+          "Neither Euler path nor circuit (disconnected)",
+        ],
+      },
+
+      // M10 — sorting: weighted edges — shortest vs longest path
+      {
+        type: "sorting",
+        title: "Shortest vs Longest Path",
+        instruction:
+          "A network has vertices A, B, C, D, E with weighted edges: A–B = 3, A–C = 7, B–C = 2, B–D = 5, C–D = 1, C–E = 4, D–E = 6. Sort each route from A to E into Short (total ≤ 10) or Long (total > 10).",
+        columns: ["Short (≤ 10)", "Long (> 10)"],
+        items: [
+          { label: "A → B → C → E (3 + 2 + 4 = 9)" },
+          { label: "A → B → C → D → E (3 + 2 + 1 + 6 = 12)" },
+          { label: "A → C → E (7 + 4 = 11)" },
+          { label: "A → B → D → E (3 + 5 + 6 = 14)" },
+          { label: "A → C → D → E (7 + 1 + 6 = 14)" },
+          { label: "A → B → C, then back? No — only count simple paths above" },
+        ],
+      },
+
+      // ─── HARD ───────────────────────────────────────────────────
+
+      // H1 — open-response: draw network and find shortest path
       {
         type: "open-response",
-        title: "Model a Real Network",
+        title: "Shortest Route Problem",
         instruction:
-          "Create a network model for a real-world situation.",
+          "Draw the network and find the shortest route.",
         prompts: [
           {
-            text: "Draw a network representing 5 houses (A–E) connected by paths with these distances: A–B = 3 km, A–C = 5 km, B–C = 2 km, B–D = 4 km, C–D = 3 km, C–E = 6 km, D–E = 2 km. Find the shortest route from A to E.",
+            text: "Six towns A–F are connected by roads with these distances (km): A–B = 4, A–C = 2, B–C = 1, B–D = 5, C–D = 8, C–E = 10, D–E = 2, D–F = 6, E–F = 3. (a) Draw the weighted network. (b) Find the shortest route from A to F. Show your working by listing all reasonable paths and their total distances. (Hint: consider A → C → B → D → E → F = 2 + 1 + 5 + 2 + 3 = 13 km — can you find a shorter one?)",
             type: "box",
-          },
-          {
-            text: "A delivery driver must visit 4 locations and return to base. Draw a network to represent this situation. Can the driver find a route that travels each road exactly once? Explain using Euler path theory.",
-            type: "lines",
-            lines: 8,
           },
         ],
       },
+
+      // H2 — open-response: delivery driver Euler path problem
+      {
+        type: "open-response",
+        title: "Delivery Driver – Euler Path",
+        instruction:
+          "Solve this Euler path problem. Show all working.",
+        prompts: [
+          {
+            text: "A postal worker must walk along every street in a small neighbourhood exactly once. The streets form a network with vertices A, B, C, D, E and edges: A–B, A–C, A–D, B–C, B–D, C–D, D–E. (a) Write down the degree of each vertex. (b) How many vertices have odd degree? (c) Explain whether an Euler path or Euler circuit exists. (d) If an Euler path exists, find one and write out the route.",
+            type: "lines",
+            lines: 12,
+          },
+        ],
+      },
+
+      // H3 — open-response: Königsberg bridge problem
+      {
+        type: "open-response",
+        title: "The Königsberg Bridge Problem",
+        instruction:
+          "Investigate the famous problem that started graph theory.",
+        prompts: [
+          {
+            text: "The city of Königsberg had 4 land masses (A, B, C, D) connected by 7 bridges: A–B (2 bridges), A–C (2 bridges), A–D (1 bridge), B–D (1 bridge), C–D (1 bridge). (a) Draw a network with vertices for land masses and edges for bridges. (b) Write down the degree of each vertex. (c) How many odd-degree vertices are there? (d) Explain why it is impossible to walk across each bridge exactly once. (e) What is the minimum number of bridges you would need to add or remove to make an Euler circuit possible?",
+            type: "lines",
+            lines: 14,
+          },
+        ],
+      },
+
+      // H4 — open-response: design a road network (MST)
+      {
+        type: "open-response",
+        title: "Design a Road Network",
+        instruction:
+          "Design and analyse a road network using minimum spanning trees.",
+        prompts: [
+          {
+            text: "A developer is planning roads between 6 new housing estates (V₁ to V₆). The possible roads and costs (in $000s) are: V₁–V₂ = 120, V₁–V₃ = 200, V₂–V₃ = 80, V₂–V₄ = 150, V₃–V₄ = 90, V₃–V₅ = 110, V₄–V₅ = 70, V₄–V₆ = 130, V₅–V₆ = 100. (a) Draw the weighted network. (b) Use Kruskal's algorithm to find the minimum spanning tree: list edges in ascending weight order and select each if it doesn't form a circuit. Show each step. (c) What is the total cost of the minimum spanning tree? (d) How many edges does the MST have? Explain why this equals n − 1 = 5.",
+            type: "lines",
+            lines: 14,
+          },
+        ],
+      },
+
+      // H5 — open-response: social network analysis
+      {
+        type: "open-response",
+        title: "Social Network Analysis",
+        instruction:
+          "Model and analyse a social network.",
+        prompts: [
+          {
+            text: "In a class of 7 students (A–G), the following friendships exist: A–B, A–C, A–D, B–C, B–E, C–D, C–F, D–G, E–F, F–G. (a) Draw the friendship network. (b) Find the degree of each vertex. Which student has the most connections? (c) Is the network connected? Justify your answer. (d) Can you find a Hamiltonian path (visiting every student exactly once)? Write one out. (e) The sum of all vertex degrees should equal twice the number of edges. Verify this for the network.",
+            type: "lines",
+            lines: 12,
+          },
+        ],
+      },
+
+      // H6 — circle-correct: true/false about network properties
+      {
+        type: "circle-correct",
+        title: "True or False: Network Properties",
+        instruction:
+          "Circle True or False for each statement about networks.",
+        questions: [
+          {
+            prompt: "The sum of all vertex degrees in any graph equals twice the number of edges.",
+            options: ["True", "False"],
+          },
+          {
+            prompt: "A connected graph with n vertices and n − 1 edges must be a tree.",
+            options: ["True", "False"],
+          },
+          {
+            prompt: "Every Euler circuit is also an Euler path.",
+            options: ["True — a circuit is a special case of a path that returns to the start", "False"],
+          },
+          {
+            prompt: "A graph can have exactly 1 vertex of odd degree.",
+            options: ["False — the number of odd-degree vertices is always even (Handshaking Lemma)", "True"],
+          },
+          {
+            prompt: "A tree with 10 vertices has exactly 9 edges.",
+            options: ["True", "False"],
+          },
+          {
+            prompt: "If a connected graph has all vertices of even degree, it must have an Euler circuit.",
+            options: ["True", "False"],
+          },
+        ],
+      },
+
+      // H7 — open-response: minimum spanning tree problem
+      {
+        type: "open-response",
+        title: "Minimum Spanning Tree – Cable Network",
+        instruction:
+          "Find the minimum spanning tree for a cable network.",
+        prompts: [
+          {
+            text: "An internet provider needs to connect 5 buildings (A–E) using the least cable. Available connections and cable lengths (m): A–B = 50, A–C = 80, A–D = 120, B–C = 40, B–D = 70, B–E = 90, C–D = 60, C–E = 55, D–E = 45. (a) Draw the weighted graph. (b) Apply Kruskal's algorithm: list edges in weight order (B–C 40, D–E 45, A–B 50, C–E 55, C–D 60, B–D 70, A–C 80, B–E 90, A–D 120), and select each if it doesn't create a circuit. Show each step. (c) Draw the MST and state its total cable length. (d) How many edges were selected? Explain why this equals n − 1 = 4.",
+            type: "lines",
+            lines: 14,
+          },
+        ],
+      },
+
+      // H8 — open-response: critical path analysis
+      {
+        type: "open-response",
+        title: "Critical Path Analysis",
+        instruction:
+          "Apply network analysis to a simple project.",
+        prompts: [
+          {
+            text: "A student project has these tasks and durations: A (2 days, no prerequisites), B (3 days, no prerequisites), C (4 days, requires A), D (2 days, requires A and B), E (3 days, requires C), F (1 day, requires D and E). (a) Draw an activity network (directed graph) showing task dependencies. (b) Find the earliest start time for each task. (c) What is the minimum total project duration? (d) Identify the critical path — the longest path through the network. Verify by checking all paths: A → C → E → F = 2 + 4 + 3 + 1 = 10 days; A → D → F = 2 + 2 + 1 = 5 days; B → D → F = 3 + 2 + 1 = 6 days. The critical path is A → C → E → F = 10 days.",
+            type: "lines",
+            lines: 14,
+          },
+        ],
+      },
+
+      // ─── HOME ───────────────────────────────────────────────────
+
+      // HOME 1 — home room network
       {
         type: "home-activity",
-        title: "Networks in Daily Life",
-        instruction: "Identify and analyse networks in the world around you.",
+        title: "Home Room Network",
+        instruction: "Create and analyse a network of your home.",
         suggestions: [
-          "Draw a network map of your home — rooms are vertices, doorways are edges. Is the network connected? Can you walk through every doorway exactly once?",
-          "Look at a local bus or train route map. Identify vertices (stops) and edges (routes). Which stop has the highest degree?",
-          "Map out your social network of close friends and family. Who is connected to whom? Is the network fully connected?",
+          "Draw a floor plan of your home. Represent each room (including hallways and outdoors) as a vertex, and each doorway or opening as an edge.",
+          "Write down the degree of each vertex. Which room has the most connections?",
+          "Is your home network connected? (Can you reach every room from every other room?)",
+          "Determine whether an Euler path exists — can you walk through every doorway exactly once? Check by counting odd-degree vertices.",
+          "If an Euler path is possible, find one and record the route. If not, explain which doorways you would need to add or remove.",
+        ],
+      },
+
+      // HOME 2 — transport network analysis
+      {
+        type: "home-activity",
+        title: "Transport Network Investigation",
+        instruction: "Analyse a real transport network in your area.",
+        suggestions: [
+          "Find a local bus, train, or cycling route map. Identify 8–12 stops or stations as vertices and the routes connecting them as edges.",
+          "Draw the transport network. Label each edge with the approximate travel time (in minutes) between stops.",
+          "Calculate the degree of each vertex. Which station is the busiest hub?",
+          "Using your weighted network, find the shortest travel-time route between two stations that are not directly connected.",
+          "Does an Euler path or circuit exist in your transport network? Explain your reasoning using vertex degrees.",
         ],
       },
     ],
@@ -2981,6 +4419,7 @@ export const year10MathsWorksheets: WorksheetItem[] = [
     description:
       "Plan and conduct statistical investigations involving bivariate data, representing distributions with scatter plots",
     activities: [
+      // --- EASY: Correlation basics & variable identification ---
       {
         type: "matching",
         title: "Correlation Type Match",
@@ -3002,8 +4441,56 @@ export const year10MathsWorksheets: WorksheetItem[] = [
         ],
       },
       {
+        type: "circle-correct",
+        title: "Positive or Negative Correlation",
+        instruction:
+          "Circle the correct correlation direction for each scenario.",
+        questions: [
+          {
+            prompt: "As temperature increases, ice cream sales increase. This is:",
+            options: ["Positive correlation", "Negative correlation", "No correlation"],
+          },
+          {
+            prompt: "As the age of a car increases, its resale value decreases. This is:",
+            options: ["Negative correlation", "Positive correlation", "No correlation"],
+          },
+          {
+            prompt: "As altitude increases, air temperature generally decreases. This is:",
+            options: ["Negative correlation", "Positive correlation", "No correlation"],
+          },
+          {
+            prompt: "As hours of study increase, exam marks tend to increase. This is:",
+            options: ["Positive correlation", "Negative correlation", "No correlation"],
+          },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Strong or Weak Correlation",
+        instruction:
+          "Circle whether each description suggests a strong or weak correlation.",
+        questions: [
+          {
+            prompt: "Data points cluster very tightly around an upward-sloping line:",
+            options: ["Strong correlation", "Weak correlation", "No correlation"],
+          },
+          {
+            prompt: "Data points are widely scattered but show a slight downward trend:",
+            options: ["Weak correlation", "Strong correlation", "No correlation"],
+          },
+          {
+            prompt: "Almost every increase in x leads to a predictable decrease in y:",
+            options: ["Strong correlation", "Weak correlation", "No correlation"],
+          },
+          {
+            prompt: "Points form a rough cloud with only a vague upward drift:",
+            options: ["Weak correlation", "Strong correlation", "No correlation"],
+          },
+        ],
+      },
+      {
         type: "sorting",
-        title: "Classify the Correlation",
+        title: "Classify the Correlation Strength",
         instruction:
           "Sort each scenario into the correct column: Strong, Weak, or No Correlation.",
         columns: ["Strong Correlation", "Weak Correlation", "No Correlation"],
@@ -3016,11 +4503,99 @@ export const year10MathsWorksheets: WorksheetItem[] = [
           { label: "Number of pets vs maths score" },
           { label: "Distance driven vs fuel used" },
           { label: "Hours of sleep vs number of siblings" },
+          { label: "Rainfall vs umbrella sales" },
+        ],
+      },
+      {
+        type: "matching",
+        title: "Variable Pairs & Expected Correlation",
+        instruction:
+          "Draw a line from each variable pair to the expected correlation direction.",
+        left: [
+          "Hours of exercise per week & fitness level",
+          "Number of cigarettes smoked & lung capacity",
+          "Shoe size & IQ",
+          "Advertising spend & product sales",
+          "Distance from equator & average temperature",
+        ],
+        right: [
+          "No correlation expected",
+          "Positive — more exercise, higher fitness",
+          "Negative — more cigarettes, lower lung capacity",
+          "Positive — more advertising, more sales",
+          "Negative — further from equator, lower temperature",
         ],
       },
       {
         type: "circle-correct",
-        title: "Best Line of Fit",
+        title: "Independent vs Dependent Variable",
+        instruction:
+          "Circle the correct identification of the independent variable (the one we control or expect to influence the other).",
+        questions: [
+          {
+            prompt: "Investigating how study time affects exam results. The independent variable is:",
+            options: ["Study time (hours)", "Exam result (%)", "Student name"],
+          },
+          {
+            prompt: "Testing whether temperature affects plant growth. The independent variable is:",
+            options: ["Temperature (°C)", "Plant height (cm)", "Type of soil"],
+          },
+          {
+            prompt: "Exploring the link between age and reaction time. The independent variable is:",
+            options: ["Age (years)", "Reaction time (ms)", "Number of trials"],
+          },
+          {
+            prompt: "Does distance from school affect travel time? The independent variable is:",
+            options: ["Distance from school (km)", "Travel time (minutes)", "Mode of transport"],
+          },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Reading Scatter Plot Axes",
+        instruction:
+          "Circle the correct answer about what each axis represents on a scatter plot.",
+        questions: [
+          {
+            prompt: "The horizontal axis (x-axis) of a scatter plot typically shows:",
+            options: ["The independent variable", "The dependent variable", "The frequency"],
+          },
+          {
+            prompt: "The vertical axis (y-axis) of a scatter plot typically shows:",
+            options: ["The dependent variable", "The independent variable", "The sample size"],
+          },
+          {
+            prompt: "On a scatter plot of 'Hours of sunlight vs Plant growth', the x-axis should show:",
+            options: ["Hours of sunlight", "Plant growth (cm)", "Number of plants"],
+          },
+          {
+            prompt: "Each point on a scatter plot represents:",
+            options: ["One data pair (one observation of both variables)", "The average of all data", "A single variable measurement"],
+          },
+        ],
+      },
+      {
+        type: "sorting",
+        title: "Categorical vs Numerical Bivariate Data",
+        instruction:
+          "Sort each variable pair into the correct column: both variables are numerical (suitable for a scatter plot) or at least one is categorical (not suitable for a scatter plot).",
+        columns: ["Both Numerical (scatter plot)", "Includes Categorical (not scatter plot)"],
+        items: [
+          { label: "Height (cm) vs Weight (kg)" },
+          { label: "Favourite sport vs Gender" },
+          { label: "Temperature (°C) vs Rainfall (mm)" },
+          { label: "Eye colour vs Hair colour" },
+          { label: "Age (years) vs Reaction time (ms)" },
+          { label: "Brand of phone vs Satisfaction rating (1–5)" },
+          { label: "Hours of screen time vs Hours of sleep" },
+          { label: "State of residence vs Annual income ($)" },
+        ],
+      },
+
+      // --- MEDIUM: Line of best fit, predictions & interpretation ---
+      {
+        type: "circle-correct",
+        title: "Line of Best Fit Properties",
         instruction:
           "Circle the correct statement about lines of best fit.",
         questions: [
@@ -3037,36 +4612,431 @@ export const year10MathsWorksheets: WorksheetItem[] = [
             options: ["Slopes downward from left to right", "Slopes upward from left to right", "Is horizontal"],
           },
           {
-            prompt: "Using a line of best fit to predict values far outside the data range is called:",
-            options: ["Extrapolation (and is unreliable)", "Interpolation (and is reliable)", "Correlation (and is valid)"],
+            prompt: "A line of best fit is most useful when:",
+            options: [
+              "There is a clear linear trend in the data",
+              "The data points form a curved pattern",
+              "There is no correlation between the variables",
+            ],
           },
           {
-            prompt: "Correlation does NOT prove:",
-            options: ["Causation", "Association", "A pattern in the data"],
+            prompt: "If the data has no correlation, a line of best fit:",
+            options: [
+              "Is not meaningful and should not be drawn",
+              "Should still be drawn through the middle",
+              "Will always be perfectly horizontal",
+            ],
+          },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Interpolation vs Extrapolation",
+        instruction:
+          "Circle the correct answer about using a line of best fit for predictions.",
+        questions: [
+          {
+            prompt: "Using a line of best fit to predict a value within the range of the collected data is called:",
+            options: ["Interpolation", "Extrapolation", "Correlation"],
+          },
+          {
+            prompt: "Using a line of best fit to predict a value beyond the range of the collected data is called:",
+            options: ["Extrapolation", "Interpolation", "Regression"],
+          },
+          {
+            prompt: "Which type of prediction is generally more reliable?",
+            options: [
+              "Interpolation, because the trend is supported by nearby data",
+              "Extrapolation, because it extends the known pattern",
+              "Both are equally reliable",
+            ],
+          },
+          {
+            prompt: "Data was collected for students who studied between 1 and 6 hours. Predicting the mark of a student who studied 12 hours is:",
+            options: [
+              "Extrapolation and may be unreliable",
+              "Interpolation and is reliable",
+              "Not possible with a line of best fit",
+            ],
+          },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Correlation vs Causation",
+        instruction:
+          "Circle the correct answer about the difference between correlation and causation.",
+        questions: [
+          {
+            prompt: "Correlation means:",
+            options: [
+              "Two variables tend to change together in a predictable pattern",
+              "One variable directly causes the other to change",
+              "The variables are always related by a formula",
+            ],
+          },
+          {
+            prompt: "Causation means:",
+            options: [
+              "A change in one variable directly produces a change in the other",
+              "Two variables happen to change at the same time",
+              "The correlation coefficient is close to 1",
+            ],
+          },
+          {
+            prompt: "Ice cream sales and drowning rates both increase in summer. This is an example of:",
+            options: [
+              "Correlation without causation — a third variable (hot weather) drives both",
+              "Causation — ice cream causes drowning",
+              "No correlation at all",
+            ],
+          },
+          {
+            prompt: "A randomised controlled experiment can help establish:",
+            options: ["Causation", "Only correlation", "Neither correlation nor causation"],
+          },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Identifying Outliers",
+        instruction:
+          "Circle the correct answer about outliers in scatter plots.",
+        questions: [
+          {
+            prompt: "An outlier on a scatter plot is:",
+            options: [
+              "A data point that lies far from the overall pattern of the other points",
+              "The point closest to the line of best fit",
+              "Any point on the x-axis",
+            ],
+          },
+          {
+            prompt: "What effect can an outlier have on a line of best fit?",
+            options: [
+              "It can pull the line toward itself, making the fit less accurate for the rest of the data",
+              "It has no effect on the line of best fit",
+              "It always improves the accuracy of the line",
+            ],
+          },
+          {
+            prompt: "Before removing an outlier, you should:",
+            options: [
+              "Investigate whether it is a data entry error or a genuine unusual observation",
+              "Always remove it because outliers are mistakes",
+              "Ignore it completely",
+            ],
+          },
+          {
+            prompt: "A student recorded the heights and weights of 20 classmates. One point is far from all others. The best first step is:",
+            options: [
+              "Check whether the data was recorded correctly for that student",
+              "Delete the point immediately",
+              "Draw the line of best fit through it",
+            ],
+          },
+        ],
+      },
+      {
+        type: "sequence",
+        title: "Steps in a Bivariate Investigation",
+        instruction:
+          "Put the steps for conducting a bivariate data investigation in the correct order.",
+        items: [
+          { label: "Formulate a question about the relationship between two numerical variables" },
+          { label: "Plan data collection: decide on sample size, method, and how to record both variables" },
+          { label: "Collect the data systematically, recording paired values" },
+          { label: "Organise the data in a table of ordered pairs" },
+          { label: "Construct a scatter plot with the independent variable on the x-axis" },
+          { label: "Describe the association: direction, form, and strength" },
+          { label: "Draw a line of best fit if the trend is approximately linear" },
+          { label: "Use the line to make predictions (interpolation) and draw conclusions" },
+        ],
+      },
+      {
+        type: "matching",
+        title: "Scatter Plot Pattern Match",
+        instruction:
+          "Draw a line from each scatter plot description to its correlation type.",
+        left: [
+          "Points rise steeply from left to right in a tight band",
+          "Points fall gradually from left to right with wide scatter",
+          "Points form a random cloud with no trend",
+          "Points fall steeply from left to right in a tight band",
+          "Points rise gradually from left to right with wide scatter",
+        ],
+        right: [
+          "Strong positive correlation",
+          "Weak negative correlation",
+          "No correlation",
+          "Strong negative correlation",
+          "Weak positive correlation",
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Predict Using a Line of Best Fit",
+        instruction:
+          "Use the described line of best fit to circle the best prediction.",
+        questions: [
+          {
+            prompt: "A line of best fit for 'Hours studied (x) vs Exam mark (y)' passes through (2, 50) and (6, 80). Predict the mark for 4 hours of study:",
+            options: ["65", "55", "75"],
+          },
+          {
+            prompt: "Using the same line, predict the mark for 5 hours of study:",
+            options: ["72.5", "60", "80"],
+          },
+          {
+            prompt: "The line of best fit for 'Temperature (x) vs Hot drinks sold (y)' passes through (10°C, 60) and (30°C, 20). Predict sales at 20°C:",
+            options: ["40", "50", "30"],
+          },
+          {
+            prompt: "Using the same line, would you trust a prediction for sales at 50°C?",
+            options: [
+              "No — 50°C is far outside the data range (extrapolation)",
+              "Yes — the line can be extended indefinitely",
+              "Yes — as long as we use the equation",
+            ],
+          },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Interpreting r-values",
+        instruction:
+          "The correlation coefficient (r) measures the strength and direction of a linear association. Circle the correct interpretation.",
+        questions: [
+          {
+            prompt: "An r-value of +0.95 indicates:",
+            options: ["Strong positive linear correlation", "Weak positive correlation", "No correlation"],
+          },
+          {
+            prompt: "An r-value of −0.82 indicates:",
+            options: ["Strong negative linear correlation", "Weak negative correlation", "Strong positive correlation"],
+          },
+          {
+            prompt: "An r-value of +0.15 indicates:",
+            options: ["Weak positive correlation (close to no linear relationship)", "Strong positive correlation", "Perfect correlation"],
+          },
+          {
+            prompt: "An r-value of 0 indicates:",
+            options: [
+              "No linear correlation (but a non-linear relationship may still exist)",
+              "A perfect negative correlation",
+              "The data has no variability",
+            ],
+          },
+          {
+            prompt: "An r-value of −1 indicates:",
+            options: [
+              "A perfect negative linear correlation — all points lie exactly on a downward line",
+              "No correlation",
+              "A weak negative correlation",
+            ],
+          },
+        ],
+      },
+      {
+        type: "sorting",
+        title: "Valid vs Invalid Conclusions",
+        instruction:
+          "Sort each conclusion into the correct column: Valid or Invalid based on scatter plot data.",
+        columns: ["Valid Conclusion", "Invalid Conclusion"],
+        items: [
+          { label: "There is a positive association between hours studied and exam marks" },
+          { label: "Studying more hours causes higher exam marks" },
+          { label: "As temperature increases, hot drink sales tend to decrease" },
+          { label: "Hot weather causes people to stop drinking hot drinks entirely" },
+          { label: "There appears to be no linear relationship between shoe size and IQ" },
+          { label: "Countries that eat more chocolate win more Nobel Prizes, so chocolate makes people smarter" },
+          { label: "The data suggests a strong negative correlation between car age and resale value" },
+          { label: "Since ice cream sales and sunburn rates are correlated, eating ice cream causes sunburn" },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Confounding (Third) Variables",
+        instruction:
+          "Circle the most likely confounding variable that could explain the observed correlation.",
+        questions: [
+          {
+            prompt: "Correlation: cities with more fire stations have more crime. The confounding variable is likely:",
+            options: ["City population size", "Number of firefighters", "Colour of fire trucks"],
+          },
+          {
+            prompt: "Correlation: children who eat breakfast score higher on tests. A possible confounding variable is:",
+            options: [
+              "Overall family socioeconomic status and home support",
+              "The brand of cereal eaten",
+              "The colour of the breakfast bowl",
+            ],
+          },
+          {
+            prompt: "Correlation: people who sleep more tend to weigh less. A confounding variable could be:",
+            options: [
+              "Overall health habits (exercise, diet, stress levels)",
+              "Pillow type",
+              "Bedroom wall colour",
+            ],
+          },
+          {
+            prompt: "Correlation: countries with higher chocolate consumption per capita have more Nobel Prize winners. The confounding variable is likely:",
+            options: [
+              "National wealth and investment in education and research",
+              "Type of chocolate preferred",
+              "Average temperature of the country",
+            ],
+          },
+        ],
+      },
+
+      // --- HARD: Extended response & critical analysis ---
+      {
+        type: "open-response",
+        title: "Design a Bivariate Investigation",
+        instruction:
+          "Design a detailed bivariate data investigation.",
+        prompts: [
+          {
+            text: "Design a statistical investigation to test whether there is a relationship between the number of hours people exercise per week and their resting heart rate. In your response, describe: (a) the variables and which is independent/dependent, (b) how you would collect data (sample size, method, potential bias), (c) what you would expect the scatter plot to look like and what correlation you predict, (d) how you would draw and use a line of best fit, and (e) whether finding a correlation would prove that exercise causes a lower resting heart rate. Explain your reasoning.",
+            type: "lines",
+            lines: 12,
           },
         ],
       },
       {
         type: "open-response",
-        title: "Collect and Analyse Data",
+        title: "Analyse a Dataset",
         instruction:
-          "Design a bivariate data investigation.",
+          "Analyse the following bivariate dataset and describe the association.",
         prompts: [
           {
-            text: "Design a statistical investigation to test whether there is a relationship between the number of hours people exercise per week and their resting heart rate. Describe: (a) how you would collect data, (b) what you would expect the scatter plot to look like, (c) what type of correlation you predict, and (d) whether correlation would prove that exercise causes lower heart rate.",
+            text: "A teacher recorded the number of hours each student spent on their phone per day and their average test score:\n\nPhone hours: 1, 2, 2, 3, 3, 4, 4, 5, 6, 7\nTest score:   88, 82, 85, 75, 78, 70, 65, 60, 55, 50\n\n(a) What type of correlation does this data suggest? (b) Estimate the strength of the correlation (strong, moderate, or weak). (c) If you drew a line of best fit, would its gradient be positive or negative? (d) Predict the test score for a student who uses their phone for 3.5 hours per day. (e) Would it be appropriate to predict the score for a student who uses their phone for 15 hours per day? Why or why not?",
             type: "lines",
             lines: 10,
           },
         ],
       },
       {
+        type: "open-response",
+        title: "Correlation vs Causation Explained",
+        instruction:
+          "Explain the difference between correlation and causation using examples.",
+        prompts: [
+          {
+            text: "Using your own examples, explain the difference between correlation and causation. Include: (a) one example where two variables are correlated AND one causes the other, (b) one example where two variables are correlated but neither causes the other (identify the confounding variable), and (c) an explanation of why scientists use controlled experiments rather than observational studies to establish causation.",
+            type: "lines",
+            lines: 10,
+          },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Critique a Study's Conclusions",
+        instruction:
+          "Read the study summary and critique its conclusions.",
+        prompts: [
+          {
+            text: "A newspaper reports: 'A study of 500 adults found that people who drink more coffee tend to live longer. Researchers concluded that coffee extends your lifespan.' Critique this conclusion by addressing: (a) Does correlation prove causation here? (b) What confounding variables might explain this relationship? (c) What type of study would be needed to establish whether coffee actually extends lifespan? (d) How might the sample or data collection method affect the reliability of the findings?",
+            type: "lines",
+            lines: 10,
+          },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Compare Two Scatter Plots",
+        instruction:
+          "Compare two bivariate datasets and their scatter plots.",
+        prompts: [
+          {
+            text: "Two investigations were conducted at a school:\n\nInvestigation A — Hours of sleep vs Reaction time (ms):\nSleep: 5, 6, 6, 7, 7, 8, 8, 9, 9, 10\nReaction: 420, 380, 400, 340, 350, 300, 310, 270, 280, 250\n\nInvestigation B — Hours of TV vs Reaction time (ms):\nTV: 1, 2, 2, 3, 3, 4, 5, 5, 6, 7\nReaction: 310, 280, 350, 300, 370, 320, 290, 340, 360, 300\n\n(a) Describe the correlation you would expect in each investigation. (b) Which investigation would likely show a stronger correlation? Explain why. (c) For the investigation with the stronger correlation, describe what the line of best fit would look like. (d) Can either investigation prove causation? Why or why not?",
+            type: "lines",
+            lines: 12,
+          },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "True or False — Statistics Concepts",
+        instruction:
+          "Circle TRUE or FALSE for each statement about bivariate data and scatter plots.",
+        questions: [
+          {
+            prompt: "A correlation coefficient (r) can have a value of 1.5.",
+            options: ["FALSE — r always lies between −1 and +1", "TRUE"],
+          },
+          {
+            prompt: "A scatter plot can only show positive correlations.",
+            options: ["FALSE — scatter plots can show positive, negative, or no correlation", "TRUE"],
+          },
+          {
+            prompt: "If r = 0, there is definitely no relationship between the variables.",
+            options: ["FALSE — r = 0 means no linear relationship, but a non-linear relationship may exist", "TRUE"],
+          },
+          {
+            prompt: "Interpolation is more reliable than extrapolation.",
+            options: ["TRUE — interpolation predicts within the data range where the trend is supported", "FALSE"],
+          },
+          {
+            prompt: "An outlier should always be removed from a dataset.",
+            options: ["FALSE — outliers should be investigated before deciding whether to keep or remove them", "TRUE"],
+          },
+          {
+            prompt: "The independent variable is placed on the x-axis of a scatter plot.",
+            options: ["TRUE", "FALSE"],
+          },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Collect Data and Predict",
+        instruction:
+          "Plan a real data collection and make predictions.",
+        prompts: [
+          {
+            text: "You want to investigate whether there is a relationship between the distance students live from school and the time it takes them to travel to school. (a) Which variable is independent and which is dependent? (b) Describe how you would collect data from at least 15 students. (c) What type of correlation do you predict? Explain your reasoning. (d) Sketch what you think the scatter plot might look like (describe it in words). (e) Identify one potential source of bias in your data collection and how you would minimise it.",
+            type: "lines",
+            lines: 10,
+          },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Identify Confounding Variables",
+        instruction:
+          "Identify and explain confounding variables in real-world correlations.",
+        prompts: [
+          {
+            text: "For each of the following correlations, identify at least one confounding variable and explain how it could account for the observed relationship:\n\n(a) Students who eat breakfast tend to get better grades.\n(b) Countries with more televisions per household have longer life expectancies.\n(c) People who own more books tend to earn higher salaries.\n(d) Suburbs with more parks have lower rates of obesity.\n\nFor one of these examples, describe how you could design a study to test whether the relationship is causal rather than just a correlation.",
+            type: "lines",
+            lines: 12,
+          },
+        ],
+      },
+
+      // --- HOME: Real-world data collection ---
+      {
         type: "home-activity",
-        title: "Data Investigation at Home",
-        instruction: "Collect your own bivariate data and analyse it.",
+        title: "Collect Bivariate Data at Home",
+        instruction: "Collect your own bivariate data and create a scatter plot.",
         suggestions: [
           "Record the temperature and the number of people at a local park over several days. Create a scatter plot — is there a correlation?",
           "Survey family members: compare their height with their arm span. Plot the data and describe the association.",
           "Track your screen time and hours of sleep for a week. Create a scatter plot and describe any pattern you observe.",
+          "Measure the length and width of 10 different leaves from the same type of tree. Plot the data and describe the association.",
+        ],
+      },
+      {
+        type: "home-activity",
+        title: "Find Correlations in Daily Life",
+        instruction: "Look for examples of correlation (and possible causation) in your everyday life and in the media.",
+        suggestions: [
+          "Find a news article that claims one thing causes another. Identify whether the evidence shows correlation or causation. What confounding variables might be involved?",
+          "Over a week, record two variables you think might be related (e.g., time spent outdoors vs mood rating 1–10). Create a scatter plot and describe what you find.",
+          "Look at the nutrition labels on 10 food items. Plot sugar content vs calorie count. Is there a correlation? Is it what you expected?",
+          "Ask five people to estimate how far they live from the nearest shop (in km) and how often they visit per week. Plot the data and describe any pattern.",
         ],
       },
     ],
@@ -3080,9 +5050,10 @@ export const year10MathsWorksheets: WorksheetItem[] = [
     description:
       "Analyse inferences and conclusions in the media, identifying potential sources of bias and misleading representations",
     activities: [
+      // ─── EASY ─────────────────────────────────────────────────────
       {
         type: "sorting",
-        title: "Misleading vs Fair Representations",
+        title: "Misleading vs Fair Graph Techniques",
         instruction:
           "Sort each data presentation technique into the correct column: Misleading or Fair.",
         columns: ["Misleading", "Fair"],
@@ -3092,15 +5063,227 @@ export const year10MathsWorksheets: WorksheetItem[] = [
           { label: "Pie chart where slices add to 100%" },
           { label: "3D pie chart that distorts slice sizes" },
           { label: "Graph with evenly spaced time intervals" },
-          { label: "Graph with uneven time intervals on x-axis" },
-          { label: "Survey results noting the sample size was 1000" },
+          { label: "Graph with uneven time intervals on the x-axis" },
+          { label: "Survey results noting the sample size was 1 000" },
           { label: "Survey headline with no sample size mentioned" },
           { label: "Cherry-picked data points to support a claim" },
+          { label: "Using a pictograph where each icon represents a different amount" },
+        ],
+      },
+      {
+        type: "matching",
+        title: "Misleading Technique → Why It's Problematic",
+        instruction:
+          "Draw a line from each misleading technique to the reason it distorts data.",
+        left: [
+          "Truncated y-axis",
+          "3D pie chart",
+          "Cherry-picked time frame",
+          "Unlabelled axes",
+          "Dual y-axes with different scales",
+        ],
+        right: [
+          "Makes small differences look dramatic",
+          "Distorts the relative size of slices due to perspective",
+          "Hides the overall trend by showing only favourable data",
+          "The reader cannot tell what the graph actually measures",
+          "Makes two unrelated variables appear to move together",
         ],
       },
       {
         type: "circle-correct",
-        title: "Valid Conclusions",
+        title: "Spot the Problem — Graphs",
+        instruction:
+          "Circle the main problem with each graph description.",
+        questions: [
+          {
+            prompt: "A bar chart comparing company profits starts its y-axis at $9.5 million instead of $0.",
+            options: [
+              "The truncated axis exaggerates the differences between bars",
+              "Bar charts should never show money",
+              "There is no problem — this is standard practice",
+            ],
+          },
+          {
+            prompt: "A pie chart has five slices that add up to 120%.",
+            options: [
+              "Pie chart percentages must total 100%; these slices overlap or are incorrect",
+              "Pie charts always add to more than 100%",
+              "The chart just needs a bigger circle",
+            ],
+          },
+          {
+            prompt: "A line graph of 'yearly rainfall' uses data from only January to March.",
+            options: [
+              "Three months is not a full year — the graph cherry-picks a seasonal period",
+              "Rainfall can only be measured annually",
+              "Line graphs should not be used for rainfall data",
+            ],
+          },
+          {
+            prompt: "A pictograph uses one icon = 10 units in the first row but one icon = 50 units in the second row.",
+            options: [
+              "Inconsistent icon scales make the comparison meaningless",
+              "Pictographs are always accurate",
+              "The second row is just more important",
+            ],
+          },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Sample Size & Representativeness",
+        instruction:
+          "Circle the BEST critique of each survey's sampling method.",
+        questions: [
+          {
+            prompt: "A toothpaste brand surveys 5 dentists and claims '4 out of 5 dentists recommend our product.'",
+            options: [
+              "The sample size is far too small to generalise",
+              "Dentists always agree with brands",
+              "5 is a perfect sample size for dentists",
+            ],
+          },
+          {
+            prompt: "A political poll interviews 2 000 people, all from one suburb in Sydney.",
+            options: [
+              "The sample is not representative of the whole country — it's geographically biased",
+              "2 000 people is always a good sample",
+              "Sydney is the capital, so it represents everyone",
+            ],
+          },
+          {
+            prompt: "An online survey asks visitors to a fitness website whether they exercise daily.",
+            options: [
+              "The sample is biased — people on a fitness website are more likely to exercise",
+              "Online surveys are always reliable",
+              "Everyone who visits a fitness website exercises daily",
+            ],
+          },
+          {
+            prompt: "A school surveys every student in Years 7–12 about canteen food preferences.",
+            options: [
+              "This is a reasonable census of the school — the results apply to this school's students",
+              "You can never trust surveys done in schools",
+              "Only Year 12 opinions matter",
+            ],
+          },
+        ],
+      },
+      {
+        type: "sorting",
+        title: "Biased vs Unbiased Sampling Methods",
+        instruction:
+          "Sort each sampling method into the correct column: Biased or Unbiased.",
+        columns: ["Biased", "Unbiased"],
+        items: [
+          { label: "Randomly selecting names from the full electoral roll" },
+          { label: "Surveying only people who volunteer to respond" },
+          { label: "Selecting every 10th person from a complete class list" },
+          { label: "Asking only your friends for their opinions" },
+          { label: "Stratified random sample across age groups and regions" },
+          { label: "Surveying shoppers at one luxury store" },
+          { label: "Phone poll using randomly generated landline numbers only" },
+          { label: "Posting a poll on a partisan political Facebook page" },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Mean, Median, or Mode — Which Is Best?",
+        instruction:
+          "Circle the BEST measure of centre for each data set.",
+        questions: [
+          {
+            prompt: "House prices in a suburb: $450k, $470k, $480k, $490k, $3.2 million",
+            options: [
+              "Median — the extreme outlier ($3.2 m) would inflate the mean",
+              "Mean — it uses every value",
+              "Mode — it is the most common measure",
+            ],
+          },
+          {
+            prompt: "Shoe sizes sold in a shop last week: 8, 9, 9, 9, 10, 10, 11",
+            options: [
+              "Mode — the shop needs to know the most popular size to restock",
+              "Mean — the average shoe size is most useful",
+              "Median — it splits the data in half",
+            ],
+          },
+          {
+            prompt: "Test scores evenly spread from 55 to 95 with no outliers",
+            options: [
+              "Mean — the data is symmetric with no outliers, so mean and median are similar and the mean uses all values",
+              "Mode — the most common score matters most",
+              "None — you cannot summarise test scores",
+            ],
+          },
+          {
+            prompt: "Annual salaries at a startup: $60k, $62k, $65k, $65k, $900k (CEO)",
+            options: [
+              "Median — the CEO's salary is an extreme outlier that skews the mean",
+              "Mean — it accounts for the CEO",
+              "Mode — $65k appears twice",
+            ],
+          },
+        ],
+      },
+      {
+        type: "matching",
+        title: "Measure of Centre → When to Use It",
+        instruction:
+          "Draw a line from each measure of centre to the scenario where it is most appropriate.",
+        left: [
+          "Mean",
+          "Median",
+          "Mode",
+          "Mean after removing outliers",
+          "Weighted mean",
+        ],
+        right: [
+          "Symmetric data with no extreme outliers",
+          "Data with outliers or a skewed distribution",
+          "Finding the most frequently occurring category",
+          "Data set with one or two obvious anomalies you can justify excluding",
+          "Combining averages from groups of different sizes (e.g. exam components worth different percentages)",
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Who Was Asked? — Identify the Audience",
+        instruction:
+          "Circle the statement that correctly identifies a problem with who was surveyed.",
+        questions: [
+          {
+            prompt: "A car magazine survey finds that 90% of people think cars are better than public transport.",
+            options: [
+              "The readers of a car magazine are biased towards cars",
+              "90% is too high to be real",
+              "Magazines cannot conduct surveys",
+            ],
+          },
+          {
+            prompt: "A soft-drink company surveys teenagers at a music festival about their favourite drinks.",
+            options: [
+              "Festival-goers are not representative of all teenagers, and the setting may bias answers toward soft drinks",
+              "Teenagers always prefer soft drinks",
+              "The sample is perfectly representative",
+            ],
+          },
+          {
+            prompt: "A government health survey randomly selects 5 000 households across all states and territories.",
+            options: [
+              "This is a well-designed sample — random selection across regions reduces bias",
+              "Government surveys are always biased",
+              "5 000 households is too small for a country",
+            ],
+          },
+        ],
+      },
+
+      // ─── MEDIUM ───────────────────────────────────────────────────
+      {
+        type: "circle-correct",
+        title: "Valid Conclusions from Survey Data",
         instruction:
           "Circle the VALID conclusion that can be drawn from each scenario.",
         questions: [
@@ -3109,61 +5292,452 @@ export const year10MathsWorksheets: WorksheetItem[] = [
             options: [
               "Invalid — the sample is not representative of all Australians",
               "Valid — 80% is a large majority",
-              "Valid — students are a good sample",
+              "Valid — students are a good sample of the population",
             ],
           },
           {
+            prompt: "A nationwide random survey of 10 000 adults finds that 62% support renewable energy. Margin of error: ±2%.",
+            options: [
+              "Valid — a large random sample with a stated margin of error supports the conclusion that a majority of adults support renewable energy",
+              "Invalid — you need to survey everyone",
+              "Invalid — margins of error mean the results are unreliable",
+            ],
+          },
+          {
+            prompt: "A company surveys its own employees and finds 95% are satisfied. Headline: 'Workers love their jobs.'",
+            options: [
+              "Invalid — employees may feel pressured to give positive responses, and one company does not represent all workers",
+              "Valid — 95% is nearly everyone",
+              "Valid — employees know best about their own jobs",
+            ],
+          },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Identify Confounding Variables",
+        instruction:
+          "Circle the most likely confounding variable in each scenario.",
+        questions: [
+          {
+            prompt: "A study finds that children who eat breakfast score higher on maths tests.",
+            options: [
+              "Household income — families who can afford breakfast may also provide more educational support",
+              "Breakfast directly improves maths ability",
+              "Children who eat breakfast are naturally smarter",
+            ],
+          },
+          {
+            prompt: "Towns with more police officers have higher crime rates.",
+            options: [
+              "Population size — larger towns have both more police and more crime",
+              "Police cause crime",
+              "Crime data must be wrong",
+            ],
+          },
+          {
+            prompt: "People who own more books tend to live longer.",
+            options: [
+              "Socioeconomic status — wealthier people can afford both books and better healthcare",
+              "Reading books extends your lifespan",
+              "There is no connection at all",
+            ],
+          },
+          {
+            prompt: "Countries that consume more chocolate win more Nobel Prizes.",
+            options: [
+              "Wealth and education levels — richer countries can afford both chocolate and research funding",
+              "Chocolate makes people smarter",
+              "Nobel Prize winners eat more chocolate to celebrate",
+            ],
+          },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Correlation vs Causation in Media Claims",
+        instruction:
+          "Circle the correct interpretation of each media claim.",
+        questions: [
+          {
             prompt: "A graph shows ice cream sales and drowning rates both increase in summer.",
             options: [
-              "Both are caused by a third variable (hot weather), not by each other",
+              "Both are caused by a third variable (hot weather) — correlation does not mean causation",
               "Ice cream sales cause drownings",
               "We should ban ice cream to prevent drownings",
             ],
           },
           {
-            prompt: "A company reports: 'Our product is preferred by 3 out of 4 dentists' based on a survey of 4 dentists.",
+            prompt: "'Countries that spend more on education have higher GDP.'",
             options: [
-              "The sample size is too small to be meaningful",
-              "The claim is statistically valid",
-              "75% of all dentists prefer this product",
+              "There is a correlation, but wealthier countries can afford to spend more on both — the direction of causation is unclear",
+              "Spending on education directly causes GDP growth",
+              "GDP has nothing to do with education",
             ],
           },
           {
-            prompt: "A news article states average income rose 15%, but the median income fell 2%.",
+            prompt: "'People who sleep with their shoes on are more likely to wake up with a headache.'",
             options: [
-              "A few very high earners likely raised the average while most people earned less",
-              "Everyone earned more money",
-              "The statistics must be wrong",
+              "A confounding variable (such as alcohol consumption) likely causes both behaviours",
+              "Sleeping with shoes on causes headaches",
+              "This proves shoes are bad for your health",
+            ],
+          },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Misleading Percentages",
+        instruction:
+          "Circle the correct response to each percentage claim.",
+        questions: [
+          {
+            prompt: "An ad claims: 'Our cereal has 50% less sugar!' But it was reduced from 2 g per serve to 1 g per serve.",
+            options: [
+              "The percentage is technically correct but the absolute reduction is tiny — only 1 gram",
+              "50% less is always a big deal",
+              "The claim is false because 1 g is still sugar",
+            ],
+          },
+          {
+            prompt: "A headline states: 'Disease X cases doubled!' Cases went from 2 to 4 in a city of 1 million.",
+            options: [
+              "The percentage increase (100%) sounds alarming, but the absolute numbers are extremely small and statistically insignificant",
+              "Doubling is always dangerous",
+              "The headline is completely accurate and not misleading at all",
+            ],
+          },
+          {
+            prompt: "A politician says unemployment dropped from 5.0% to 4.8% and calls it 'a massive improvement.'",
+            options: [
+              "A 0.2 percentage point drop may be within the margin of error and is a modest change, not 'massive'",
+              "Any decrease in unemployment is massive",
+              "Unemployment statistics are never accurate",
+            ],
+          },
+          {
+            prompt: "A supplement company claims their product 'triples your chance of recovery' — from 1% to 3%.",
+            options: [
+              "The relative increase is large (200%), but the absolute increase is only 2 percentage points — still a 97% chance of not recovering",
+              "Tripling your chance is always significant",
+              "The product must be very effective",
+            ],
+          },
+        ],
+      },
+      {
+        type: "sequence",
+        title: "Steps to Evaluate a Statistical Claim",
+        instruction:
+          "Put the steps for critically evaluating a statistical claim into the correct order.",
+        items: [
+          { label: "Read the claim and identify the specific statistic being used" },
+          { label: "Ask: Who collected the data and do they have a vested interest?" },
+          { label: "Check the sample — how large is it and is it representative?" },
+          { label: "Identify whether correlation or causation is being claimed" },
+          { label: "Look for confounding variables that could explain the result" },
+          { label: "Check whether absolute or relative numbers are being used (and which is more informative)" },
+          { label: "Consider what information is missing (margin of error, time period, comparison group)" },
+          { label: "Form your own conclusion based on the evidence, not just the headline" },
+        ],
+      },
+      {
+        type: "matching",
+        title: "Logical Fallacy → Example",
+        instruction:
+          "Draw a line from each logical fallacy to its correct example.",
+        left: [
+          "Cherry-picking",
+          "False cause",
+          "Hasty generalisation",
+          "Appeal to authority",
+          "Straw man",
+        ],
+        right: [
+          "Showing only the three months where sales rose and hiding the nine months where they fell",
+          "Claiming that a rooster crowing causes the sun to rise because it happens every morning",
+          "Concluding all teenagers are reckless drivers after seeing one accident involving a teen",
+          "Claiming a statistic is true because a celebrity endorses it, despite no scientific backing",
+          "Exaggerating an opponent's argument to make it easier to attack (e.g. 'You want to cut the budget? So you want children to starve?')",
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Headline vs Reality",
+        instruction:
+          "Circle the response that best describes the gap between the headline and the actual data.",
+        questions: [
+          {
+            prompt: "Headline: 'Teen Screen Time SKYROCKETS!' Data: Average daily screen time for teens rose from 6.8 hours to 7.1 hours over 2 years.",
+            options: [
+              "The headline is sensationalised — a 0.3-hour increase over 2 years is modest, not a 'skyrocket'",
+              "Any increase in screen time is a crisis",
+              "The headline is accurate because the number went up",
+            ],
+          },
+          {
+            prompt: "Headline: 'MAJORITY of residents oppose the new park.' Survey: 52% opposed, 48% supported, margin of error ±4%.",
+            options: [
+              "The result is within the margin of error, so there may be no real majority either way",
+              "52% is a clear majority",
+              "Margins of error can be ignored",
+            ],
+          },
+          {
+            prompt: "Headline: 'Miracle Fruit Cuts Cancer Risk by 50%!' Study: Participants who ate the fruit daily for 10 years had a 0.02% cancer rate vs 0.04% in the control group.",
+            options: [
+              "The relative reduction is 50%, but the absolute risk was already tiny — the benefit is minimal in practice",
+              "50% is a huge reduction, so everyone should eat the fruit",
+              "The study proves the fruit cures cancer",
+            ],
+          },
+        ],
+      },
+      {
+        type: "sorting",
+        title: "Questions to Ask About a Statistic",
+        instruction:
+          "Sort each item into the correct column: Important Question to Ask or Not Particularly Relevant.",
+        columns: ["Important Question to Ask", "Not Particularly Relevant"],
+        items: [
+          { label: "How large was the sample?" },
+          { label: "What colour was the graph?" },
+          { label: "Who funded or commissioned the study?" },
+          { label: "Was the sample randomly selected?" },
+          { label: "What font was used in the report?" },
+          { label: "What is the margin of error?" },
+          { label: "Were confounding variables controlled for?" },
+          { label: "Is the percentage a relative change or an absolute change?" },
+          { label: "What was the time period of the study?" },
+          { label: "How many pages is the report?" },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Effect of Outliers on Mean vs Median",
+        instruction:
+          "Circle the correct statement about how outliers affect each measure.",
+        questions: [
+          {
+            prompt: "Data set: 12, 14, 15, 16, 17, 98. What happens to the mean vs the median?",
+            options: [
+              "The outlier (98) pulls the mean up significantly, but the median stays near 15.5",
+              "Both the mean and median are equally affected",
+              "The median is more affected than the mean",
+            ],
+          },
+          {
+            prompt: "A company reports the 'average salary' is $120 000. Which is most likely true?",
+            options: [
+              "A few executives earning very high salaries have inflated the mean — the median salary is probably much lower",
+              "Most employees earn close to $120 000",
+              "The mean and median are the same in any salary data",
+            ],
+          },
+          {
+            prompt: "If you remove the single highest value from a data set, which measure changes more?",
+            options: [
+              "The mean — because it uses every value in its calculation",
+              "The median — because it depends on the middle value",
+              "Neither changes — they are both resistant to change",
+            ],
+          },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Absolute vs Relative Change",
+        instruction:
+          "Circle the response that correctly interprets each claim using absolute and relative change.",
+        questions: [
+          {
+            prompt: "A charity says donations rose 200% — from $50 to $150.",
+            options: [
+              "The relative increase is large (200%), but the absolute increase is only $100 — context matters",
+              "200% always means a huge amount of money",
+              "This claim is false because $150 is not 200% of $50",
+            ],
+          },
+          {
+            prompt: "A headline says 'Shark attacks up 50%!' Last year: 2 attacks. This year: 3 attacks.",
+            options: [
+              "The relative change (50%) sounds alarming, but the absolute change is just 1 extra attack — the risk remains extremely low",
+              "A 50% increase in shark attacks is a major public safety crisis",
+              "Shark attack statistics are always unreliable",
+            ],
+          },
+          {
+            prompt: "A drug reduces heart attack risk by 25%. The control group had a 4% risk; the drug group had a 3% risk.",
+            options: [
+              "The relative risk reduction is 25%, but the absolute reduction is only 1 percentage point — 100 people would need to take the drug to prevent 1 heart attack",
+              "25% risk reduction means the drug prevents a quarter of all heart attacks globally",
+              "A 1 percentage point difference proves the drug does not work",
+            ],
+          },
+        ],
+      },
+
+      // ─── HARD ─────────────────────────────────────────────────────
+      {
+        type: "open-response",
+        title: "Critique a Truncated Y-Axis Bar Chart",
+        instruction:
+          "Analyse the following scenario and write a detailed critique.",
+        prompts: [
+          {
+            text: "A news headline states: 'Crime has DOUBLED!' The bar chart shows crime incidents going from 498 to 512, but the y-axis starts at 490. Explain: (a) why the truncated y-axis makes the increase look much larger than it is, (b) what the actual percentage increase is, (c) how the graph should be presented fairly, and (d) why a reader who only glances at the chart might be misled.",
+            type: "lines",
+            lines: 10,
+          },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Evaluate a Media Claim About Violent Crime",
+        instruction:
+          "Critically evaluate the following media claim.",
+        prompts: [
+          {
+            text: "A social media post claims: 'Australia is getting more dangerous — violent crime rose 8% last year!' List at least 5 questions you would ask before accepting or rejecting this claim. Consider: sample and data source, definition of 'violent crime', population growth, historical trends, and whether reporting rates have changed.",
+            type: "lines",
+            lines: 10,
+          },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Analyse a Misleading Advertisement Statistic",
+        instruction:
+          "Write a critical analysis of the following advertisement.",
+        prompts: [
+          {
+            text: "A weight-loss supplement ad claims: '95% of users lost weight in just 4 weeks!' In small print, the study had 20 participants, was funded by the supplement company, had no control group, and 'weight loss' was defined as losing at least 100 grams. Write a critical analysis covering: (a) why the sample size is a problem, (b) why the funding source matters, (c) why a control group is needed, and (d) why the definition of 'weight loss' is misleading.",
+            type: "lines",
+            lines: 10,
+          },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Compare Two News Sources Reporting the Same Data",
+        instruction:
+          "Analyse how the same data can be framed differently.",
+        prompts: [
+          {
+            text: "Two news outlets report on the same employment data. Source A headline: 'Economy booming — 50 000 new jobs created!' Source B headline: 'Job crisis deepens — unemployment still above 5%.' Both are citing the same government report. Explain: (a) how each source selected different aspects of the data to support its narrative, (b) what additional context a reader would need, (c) which framing (if either) is more honest, and (d) how you would write a balanced headline.",
+            type: "lines",
+            lines: 10,
+          },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Design a Fair Survey",
+        instruction:
+          "Apply your knowledge of sampling and bias to design an unbiased survey.",
+        prompts: [
+          {
+            text: "You want to find out whether students in your state support later school start times. Design a fair survey by describing: (a) your target population and sample size, (b) your sampling method and why it reduces bias, (c) at least 3 unbiased survey questions (avoid leading questions), (d) how you would report the results honestly, including margin of error and limitations.",
+            type: "lines",
+            lines: 12,
+          },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "True or False — Statistical Literacy",
+        instruction:
+          "Circle TRUE or FALSE for each statement.",
+        questions: [
+          {
+            prompt: "A correlation of 0.95 between two variables proves that one causes the other.",
+            options: [
+              "FALSE — correlation measures association, not causation, no matter how strong",
+              "TRUE — a high correlation always means causation",
+            ],
+          },
+          {
+            prompt: "If a graph's y-axis starts at a value other than 0, it is always misleading.",
+            options: [
+              "FALSE — sometimes starting above 0 is appropriate (e.g. showing small changes in temperature), but it should be clearly labelled",
+              "TRUE — the y-axis must always start at 0",
+            ],
+          },
+          {
+            prompt: "A larger sample size generally gives more reliable results.",
+            options: [
+              "TRUE — larger samples reduce the effect of random variation, assuming the sampling method is unbiased",
+              "FALSE — sample size does not matter if the questions are good",
+            ],
+          },
+          {
+            prompt: "The median is always a better measure of centre than the mean.",
+            options: [
+              "FALSE — the best measure depends on the data; the mean is preferred for symmetric data without outliers",
+              "TRUE — the median is always more accurate",
+            ],
+          },
+          {
+            prompt: "If a study is funded by a company with a financial interest in the results, the findings should be treated with extra scrutiny.",
+            options: [
+              "TRUE — funding sources can create conflicts of interest, and the methodology should be examined carefully",
+              "FALSE — who funds a study has no effect on its validity",
             ],
           },
         ],
       },
       {
         type: "open-response",
-        title: "Critique a Media Graph",
+        title: "Rewrite a Misleading Headline",
         instruction:
-          "Analyse the following media claims critically.",
+          "Rewrite each misleading headline to be accurate and fair.",
         prompts: [
           {
-            text: "A news headline states: 'Crime has DOUBLED!' The bar chart shows crime incidents going from 498 to 512, but the y-axis starts at 490. Explain at least 3 ways this graph is misleading and describe how it should be presented fairly.",
+            text: "Misleading headline: 'DEADLY new disease sweeps the nation — cases up 300%!' Reality: Cases rose from 3 to 12 nationwide (population 26 million), the disease is rarely fatal, and the increase is partly due to improved testing. Rewrite the headline to be accurate, then explain in 2–3 sentences why the original was misleading.",
             type: "lines",
-            lines: 8,
+            lines: 6,
           },
           {
-            text: "A social media post claims: 'Australia is getting more dangerous — violent crime rose 8% last year!' Research question: what additional information would you need to evaluate this claim? List at least 4 questions you would ask before accepting or rejecting it.",
+            text: "Misleading headline: 'Students today are the worst readers in history!' Reality: Average reading scores dropped by 2 points on a 500-point scale compared to 10 years ago, while participation in the assessment increased by 15% (including more students with learning difficulties). Rewrite the headline to be accurate, then explain why the original was misleading.",
             type: "lines",
-            lines: 8,
+            lines: 6,
           },
         ],
       },
+      {
+        type: "open-response",
+        title: "Why 'Average' Can Be Misleading",
+        instruction:
+          "Explain how the word 'average' can be used to mislead.",
+        prompts: [
+          {
+            text: "A real estate agent says: 'The average home in this suburb sold for $1.2 million last year.' There were 10 sales: nine homes sold for between $600k and $750k, and one waterfront mansion sold for $6 million. (a) Calculate the approximate mean and median sale prices. (b) Explain why the agent chose to report the mean. (c) Which measure would be more useful for a buyer looking at typical homes in the suburb? (d) How could the agent present the data honestly?",
+            type: "lines",
+            lines: 10,
+          },
+        ],
+      },
+
+      // ─── HOME ─────────────────────────────────────────────────────
       {
         type: "home-activity",
         title: "Media Literacy Challenge",
         instruction: "Critically examine statistics used in the media.",
         suggestions: [
-          "Find a graph or statistic in a news article or advertisement. Identify at least 2 potential sources of bias or misleading presentation. How would you improve it?",
-          "Watch a news segment that uses statistics. Write down the claim, the evidence, and any information that is missing (sample size, methodology, etc.).",
-          "Compare how two different news sources report on the same statistic (e.g. employment, housing prices). Note the differences in framing.",
+          "Find a graph or statistic in a news article, advertisement, or social media post. Identify at least 3 potential sources of bias or misleading presentation (e.g. truncated axis, small sample, missing context). Write down how you would improve the presentation.",
+          "Watch a news segment that uses statistics. Record: the claim, the evidence given, and any missing information (sample size, methodology, who funded the research, margin of error). Rate the claim's reliability out of 10 and justify your rating.",
+          "Compare how two different news sources report on the same statistic (e.g. employment, housing prices, crime rates). Note the differences in framing, headline language, and which data each source chose to highlight or omit.",
+        ],
+      },
+      {
+        type: "home-activity",
+        title: "Create Your Own Fair Infographic",
+        instruction:
+          "Apply what you have learned to create an honest, well-designed infographic.",
+        suggestions: [
+          "Choose a topic you care about (sport, environment, music, gaming, etc.) and find real data from a reliable source (ABS, government report, reputable news outlet).",
+          "Create a hand-drawn or digital infographic that presents the data fairly: use a y-axis starting at 0 (or clearly label it if not), include sample sizes and sources, use consistent scales, and avoid cherry-picking.",
+          "Write a short paragraph underneath your infographic explaining the design choices you made and why they help the reader understand the data honestly.",
         ],
       },
     ],
@@ -3177,29 +5751,195 @@ export const year10MathsWorksheets: WorksheetItem[] = [
     description:
       "Apply conditional probability to solve problems involving compound events, using tree diagrams and two-way tables",
     activities: [
+      // --- EASY: Foundations of probability language & basic calculations ---
       {
         type: "matching",
         title: "Probability Type Match",
         instruction:
-          "Draw a line from each scenario to the correct probability type.",
+          "Draw a line from each probability type to its description.",
         left: [
-          "P(rain tomorrow)",
-          "P(drawing a red card then a black card without replacement)",
-          "P(rolling 6 given the roll is even)",
-          "P(heads and tails in two flips)",
-          "P(passing given studied 3+ hours)",
+          "Simple probability",
+          "Compound event (independent)",
+          "Compound event (dependent)",
+          "Conditional probability",
         ],
         right: [
-          "Compound event (dependent)",
-          "Simple probability",
-          "Conditional probability",
-          "Compound event (independent)",
-          "Conditional probability",
+          "The probability of a single outcome occurring",
+          "Two or more events where one outcome does not affect the other",
+          "Two or more events where one outcome changes the likelihood of the other",
+          "The probability of an event occurring given that another event has already occurred",
         ],
       },
       {
         type: "circle-correct",
-        title: "Correct Tree Diagram Paths",
+        title: "Independent vs Dependent Events",
+        instruction:
+          "Circle whether each pair of events is independent or dependent.",
+        questions: [
+          {
+            prompt: "Flipping a coin and rolling a die",
+            options: ["Independent", "Dependent"],
+          },
+          {
+            prompt: "Drawing two cards from a deck without replacement",
+            options: ["Dependent", "Independent"],
+          },
+          {
+            prompt: "The weather today and whether you carry an umbrella",
+            options: ["Dependent", "Independent"],
+          },
+          {
+            prompt: "Rolling a die twice",
+            options: ["Independent", "Dependent"],
+          },
+          {
+            prompt: "Choosing a team captain, then choosing a vice-captain from the remaining players",
+            options: ["Dependent", "Independent"],
+          },
+          {
+            prompt: "Spinning a spinner and flipping a coin",
+            options: ["Independent", "Dependent"],
+          },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Basic Single-Event Probabilities",
+        instruction:
+          "Circle the correct probability for each event.",
+        questions: [
+          {
+            prompt: "P(rolling a 4 on a standard die)",
+            options: ["1/6", "1/4", "4/6"],
+          },
+          {
+            prompt: "P(drawing a heart from a standard 52-card deck)",
+            options: ["13/52 = 1/4", "4/52 = 1/13", "1/2"],
+          },
+          {
+            prompt: "P(flipping heads on a fair coin)",
+            options: ["1/2", "1/3", "1/4"],
+          },
+          {
+            prompt: "P(rolling an even number on a standard die)",
+            options: ["3/6 = 1/2", "2/6 = 1/3", "4/6 = 2/3"],
+          },
+        ],
+      },
+      {
+        type: "matching",
+        title: "Probability Notation Match",
+        instruction:
+          "Draw a line from each notation to its meaning.",
+        left: [
+          "P(A|B)",
+          "P(A ∩ B)",
+          "P(A ∪ B)",
+          "P(A')",
+          "P(A) × P(B)",
+        ],
+        right: [
+          "Probability of A given that B has occurred",
+          "Probability of both A and B occurring",
+          "Probability of A or B (or both) occurring",
+          "Probability of A not occurring",
+          "P(A and B) when A and B are independent",
+        ],
+      },
+      {
+        type: "sorting",
+        title: "Independent vs Dependent Pairs",
+        instruction:
+          "Sort each event pair into Independent or Dependent.",
+        columns: ["Independent", "Dependent"],
+        items: [
+          { label: "Tossing two separate coins" },
+          { label: "Drawing 2 marbles from a bag without replacement" },
+          { label: "Rolling a die, then spinning a spinner" },
+          { label: "Picking a card, not replacing it, then picking another" },
+          { label: "Two different students' test scores (no copying)" },
+          { label: "Choosing a sock, then choosing another sock from the same drawer" },
+          { label: "Flipping a coin 5 times (each flip)" },
+          { label: "Rain today and rain tomorrow in the same city" },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Sample Space Size",
+        instruction:
+          "Circle the correct total number of outcomes in each sample space.",
+        questions: [
+          {
+            prompt: "Rolling two standard dice",
+            options: ["36", "12", "6"],
+          },
+          {
+            prompt: "Flipping two coins",
+            options: ["4", "2", "3"],
+          },
+          {
+            prompt: "Flipping three coins",
+            options: ["8", "6", "3"],
+          },
+          {
+            prompt: "Rolling a die and flipping a coin",
+            options: ["12", "8", "7"],
+          },
+          {
+            prompt: "Drawing 1 card from a standard deck then flipping a coin",
+            options: ["104", "54", "52"],
+          },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Complementary Events: P(A') = 1 − P(A)",
+        instruction:
+          "Circle the correct complementary probability.",
+        questions: [
+          {
+            prompt: "P(rolling a 6) = 1/6, so P(not rolling a 6) =",
+            options: ["5/6", "1/6", "6/6"],
+          },
+          {
+            prompt: "P(rain) = 0.3, so P(no rain) =",
+            options: ["0.7", "0.3", "1.3"],
+          },
+          {
+            prompt: "P(drawing a spade) = 1/4, so P(not a spade) =",
+            options: ["3/4", "1/4", "1/2"],
+          },
+          {
+            prompt: "P(winning a raffle) = 0.02, so P(not winning) =",
+            options: ["0.98", "0.02", "0.50"],
+          },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "'At Least One' Using the Complement",
+        instruction:
+          "Circle the correct probability. Hint: P(at least one) = 1 − P(none).",
+        questions: [
+          {
+            prompt: "P(at least one head in 2 coin flips). P(no heads) = (1/2)² = 1/4, so P(at least one head) =",
+            options: ["3/4", "1/4", "1/2"],
+          },
+          {
+            prompt: "P(at least one 6 in 2 dice rolls). P(no 6) = (5/6)² = 25/36, so P(at least one 6) =",
+            options: ["11/36", "1/36", "25/36"],
+          },
+          {
+            prompt: "P(at least one red marble when drawing 2 with replacement from a bag of 3 red and 7 blue). P(no red) = (7/10)² = 49/100, so P(at least one red) =",
+            options: ["51/100", "49/100", "9/100"],
+          },
+        ],
+      },
+
+      // --- MEDIUM: Tree diagrams, two-way tables & compound calculations ---
+      {
+        type: "circle-correct",
+        title: "Tree Diagram — Marbles Without Replacement",
         instruction:
           "A bag contains 3 red and 2 blue marbles. Two are drawn without replacement. Circle the correct probability for each outcome.",
         questions: [
@@ -3209,25 +5949,93 @@ export const year10MathsWorksheets: WorksheetItem[] = [
           },
           {
             prompt: "P(Blue second | Red first) =",
-            options: ["2/4", "2/5", "3/4"],
+            options: ["2/4 = 1/2", "2/5", "3/4"],
           },
           {
             prompt: "P(Red then Blue) =",
-            options: ["3/5 × 2/4 = 6/20", "3/5 × 2/5 = 6/25", "1/2 × 1/2 = 1/4"],
+            options: ["3/5 × 2/4 = 6/20 = 3/10", "3/5 × 2/5 = 6/25", "1/2 × 1/2 = 1/4"],
           },
           {
-            prompt: "P(Both same colour) =",
+            prompt: "P(Both same colour) = P(RR) + P(BB) =",
             options: [
-              "P(RR) + P(BB) = 6/20 + 2/20 = 8/20",
-              "P(RR) + P(BB) = 9/25 + 4/25 = 13/25",
+              "(3/5 × 2/4) + (2/5 × 1/4) = 6/20 + 2/20 = 8/20 = 2/5",
+              "(3/5)² + (2/5)² = 9/25 + 4/25 = 13/25",
               "1/2",
             ],
           },
         ],
       },
       {
+        type: "circle-correct",
+        title: "Reading a Two-Way Table",
+        instruction:
+          "Use the two-way table below. 200 students were surveyed about sport and music.\n\n|              | Plays Sport | No Sport | Total |\n|--------------|-------------|----------|-------|\n| Plays Music  |     45      |    30    |  75   |\n| No Music     |     80      |    45    | 125   |\n| Total        |    125      |    75    | 200   |\n\nCircle the correct answer.",
+        questions: [
+          {
+            prompt: "P(plays sport) =",
+            options: ["125/200 = 5/8", "80/200 = 2/5", "45/200"],
+          },
+          {
+            prompt: "P(plays music and plays sport) =",
+            options: ["45/200 = 9/40", "75/200", "125/200"],
+          },
+          {
+            prompt: "P(plays music | plays sport) =",
+            options: ["45/125 = 9/25", "45/200", "75/125"],
+          },
+          {
+            prompt: "P(plays sport | plays music) =",
+            options: ["45/75 = 3/5", "45/200", "125/200"],
+          },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "P(A and B) for Independent Events",
+        instruction:
+          "For independent events, P(A and B) = P(A) × P(B). Circle the correct answer.",
+        questions: [
+          {
+            prompt: "P(heads on coin 1 AND heads on coin 2) =",
+            options: ["1/2 × 1/2 = 1/4", "1/2 + 1/2 = 1", "1/2"],
+          },
+          {
+            prompt: "P(rolling a 3 AND then rolling a 5) on two dice =",
+            options: ["1/6 × 1/6 = 1/36", "2/6 = 1/3", "1/6 + 1/6 = 2/6"],
+          },
+          {
+            prompt: "A spinner has P(red) = 0.4. Two independent spins. P(red both times) =",
+            options: ["0.4 × 0.4 = 0.16", "0.4 + 0.4 = 0.8", "0.4"],
+          },
+          {
+            prompt: "P(rain on Monday) = 0.3, P(rain on Tuesday, independent) = 0.5. P(rain both days) =",
+            options: ["0.3 × 0.5 = 0.15", "0.3 + 0.5 = 0.8", "0.5 − 0.3 = 0.2"],
+          },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "P(A and B) for Dependent Events",
+        instruction:
+          "For dependent events, P(A and B) = P(A) × P(B|A). Circle the correct answer.",
+        questions: [
+          {
+            prompt: "A bag has 4 red and 6 blue marbles. P(red first, then red second without replacement) =",
+            options: ["4/10 × 3/9 = 12/90 = 2/15", "4/10 × 4/10 = 16/100", "(4/10)² = 4/25"],
+          },
+          {
+            prompt: "A deck has 52 cards. P(Ace first, then Ace second without replacement) =",
+            options: ["4/52 × 3/51 = 12/2652 = 1/221", "4/52 × 4/52 = 1/169", "4/52 + 3/51"],
+          },
+          {
+            prompt: "A jar has 5 green and 3 yellow sweets. P(green then yellow, without replacement) =",
+            options: ["5/8 × 3/7 = 15/56", "5/8 × 3/8 = 15/64", "3/8 × 5/7 = 15/56"],
+          },
+        ],
+      },
+      {
         type: "sequence",
-        title: "Calculate Compound Probability",
+        title: "Steps to Calculate Using the Complement",
         instruction:
           "Put the steps in order to find P(at least one head in 3 coin flips).",
         items: [
@@ -3239,31 +6047,259 @@ export const year10MathsWorksheets: WorksheetItem[] = [
         ],
       },
       {
-        type: "open-response",
-        title: "Design a Game of Chance",
+        type: "sequence",
+        title: "Steps to Complete a Two-Way Table",
         instruction:
-          "Apply conditional probability to design and analyse a game.",
-        prompts: [
+          "Put the steps in order to complete a two-way table and find a conditional probability.",
+        items: [
+          { label: "Write in the known values from the problem" },
+          { label: "Use row and column totals to find missing cells (total − known = unknown)" },
+          { label: "Check that all rows and columns add to their totals" },
+          { label: "Identify the condition — this tells you which row or column to focus on" },
+          { label: "Divide the target cell by the row or column total for the condition" },
+        ],
+      },
+      {
+        type: "matching",
+        title: "Scenario → Calculation Method",
+        instruction:
+          "Draw a line from each probability scenario to the correct calculation method.",
+        left: [
+          "P(at least one 6 in four rolls of a die)",
+          "P(two aces in a row from a deck, no replacement)",
+          "P(heads and rolling a 3, coin and die)",
+          "P(rain tomorrow given it rained today)",
+          "P(red or blue marble from a bag of 3 red, 4 blue, 2 green)",
+        ],
+        right: [
+          "1 − P(no 6 in four rolls) = 1 − (5/6)⁴",
+          "P(1st ace) × P(2nd ace | 1st ace) = 4/52 × 3/51",
+          "P(heads) × P(3) = 1/2 × 1/6 (independent)",
+          "Use conditional probability: P(rain tomorrow | rain today)",
+          "P(red) + P(blue) = 3/9 + 4/9 = 7/9 (mutually exclusive)",
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Conditional Probability from a Two-Way Table",
+        instruction:
+          "120 Year 10 students were surveyed.\n\n|              | Likes Maths | Doesn't Like Maths | Total |\n|--------------|-------------|--------------------|-------|\n| Likes Science|     35      |        15          |  50   |\n| No Science   |     20      |        50          |  70   |\n| Total        |     55      |        65          | 120   |\n\nCircle the correct answer.",
+        questions: [
           {
-            text: "A medical test is 95% accurate (correctly identifies a condition when present) and has a 3% false positive rate. If 1 in 100 people have the condition, complete a two-way table for 10,000 people and calculate: (a) P(has condition | tests positive), (b) Why is this result surprising? Explain in plain language.",
-            type: "lines",
-            lines: 10,
+            prompt: "P(likes maths | likes science) =",
+            options: ["35/50 = 7/10", "35/120", "55/120"],
           },
           {
-            text: "Design a simple carnival game using two spins of a spinner (or two draws from a bag). Set the prizes so the game operator makes a profit on average. Show the probability calculations that prove the game is profitable. The game should still be fun and feel winnable!",
+            prompt: "P(likes science | likes maths) =",
+            options: ["35/55 = 7/11", "35/120", "50/120"],
+          },
+          {
+            prompt: "P(doesn't like maths | doesn't like science) =",
+            options: ["50/70 = 5/7", "50/120", "65/120"],
+          },
+          {
+            prompt: "Are 'likes maths' and 'likes science' independent? Check: does P(maths | science) = P(maths)?",
+            options: [
+              "No: P(maths | science) = 7/10 ≠ P(maths) = 55/120 ≈ 0.458",
+              "Yes: both are about school subjects",
+              "Cannot be determined",
+            ],
+          },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "With Replacement vs Without Replacement",
+        instruction:
+          "A bag contains 6 red and 4 blue marbles. Circle the correct probability for each scenario.",
+        questions: [
+          {
+            prompt: "P(red then red) WITH replacement =",
+            options: ["6/10 × 6/10 = 36/100 = 9/25", "6/10 × 5/9 = 30/90 = 1/3", "6/10 × 6/9"],
+          },
+          {
+            prompt: "P(red then red) WITHOUT replacement =",
+            options: ["6/10 × 5/9 = 30/90 = 1/3", "6/10 × 6/10 = 9/25", "6/10 × 6/9 = 36/90"],
+          },
+          {
+            prompt: "P(blue then red) WITH replacement =",
+            options: ["4/10 × 6/10 = 24/100 = 6/25", "4/10 × 6/9 = 24/90", "4/10 × 5/9"],
+          },
+          {
+            prompt: "P(blue then red) WITHOUT replacement =",
+            options: ["4/10 × 6/9 = 24/90 = 4/15", "4/10 × 6/10 = 6/25", "4/10 × 5/9 = 20/90"],
+          },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Tree Diagram Rules",
+        instruction:
+          "Circle the correct statement about tree diagrams.",
+        questions: [
+          {
+            prompt: "To find the probability of a specific path through a tree diagram, you:",
+            options: ["Multiply the probabilities along the branches", "Add the probabilities along the branches", "Subtract the probabilities"],
+          },
+          {
+            prompt: "To find the probability of multiple different outcomes (e.g., P(one red and one blue in any order)), you:",
+            options: ["Add the probabilities of each path that gives that outcome", "Multiply the probabilities of each path", "Choose the largest probability"],
+          },
+          {
+            prompt: "The probabilities on all branches from a single node must:",
+            options: ["Add to 1", "Multiply to 1", "Be equal"],
+          },
+          {
+            prompt: "In a 'without replacement' tree diagram, the denominators on the second set of branches are:",
+            options: ["One less than the first set", "The same as the first set", "Always halved"],
+          },
+        ],
+      },
+
+      // --- HARD: Extended problems & deeper reasoning ---
+      {
+        type: "open-response",
+        title: "Medical Test: False Positive Problem",
+        instruction:
+          "Use a two-way table to solve this real-world conditional probability problem.",
+        prompts: [
+          {
+            text: "A medical test is 95% accurate (correctly identifies a condition when present) and has a 3% false positive rate (positive result when condition is absent). If 1 in 100 people have the condition, complete a two-way table for 10,000 people:\n\n• 100 people have the condition → 95 test positive (true positive), 5 test negative (false negative)\n• 9,900 don't have it → 297 test positive (false positive), 9,603 test negative (true negative)\n\n(a) Calculate P(has condition | tests positive) = 95 / (95 + 297). Show your working.\n(b) Why is this result surprising? Explain in plain language why a positive test doesn't mean you're likely to have the condition.",
             type: "lines",
             lines: 10,
           },
         ],
       },
       {
+        type: "open-response",
+        title: "Design a Profitable Carnival Game",
+        instruction:
+          "Apply compound probability to design and analyse a game of chance.",
+        prompts: [
+          {
+            text: "Design a simple carnival game using two spins of a spinner (or two draws from a bag). The game costs $2 to play.\n\n(a) Describe your game and its rules.\n(b) List all possible outcomes and their probabilities.\n(c) Assign prizes to each outcome.\n(d) Calculate the expected value for the player per game.\n(e) Show that the game operator makes a profit on average.\n(f) Explain why the game still feels fun and winnable despite being profitable for the operator.",
+            type: "lines",
+            lines: 12,
+          },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "The Monty Hall Problem",
+        instruction:
+          "Analyse this famous probability puzzle using conditional reasoning.",
+        prompts: [
+          {
+            text: "In a game show, there are 3 doors. Behind one is a car; behind the other two are goats. You pick a door. The host (who knows where the car is) opens a different door to reveal a goat, then asks if you want to switch.\n\n(a) What is P(car behind your original door)? What is P(car behind one of the other two doors)?\n(b) After the host opens a goat door, what is P(car behind the remaining door)?\n(c) Should you switch? Explain why switching gives you a 2/3 chance of winning.\n(d) Many people believe it's 50/50. Explain clearly why that intuition is wrong.",
+            type: "lines",
+            lines: 10,
+          },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Weather Probability — Dependent Events",
+        instruction:
+          "Solve a compound probability problem involving dependent events.",
+        prompts: [
+          {
+            text: "In a certain city, the probability of rain on any given day is 0.3. However, if it rained the previous day, the probability of rain increases to 0.5.\n\n(a) Draw a tree diagram for two consecutive days (Day 1 and Day 2).\n(b) Calculate P(rain on both days) = P(rain Day 1) × P(rain Day 2 | rain Day 1) = 0.3 × 0.5. Show your working.\n(c) Calculate P(rain on exactly one of the two days). Consider both paths: rain-then-dry and dry-then-rain.\n(d) Calculate P(no rain on either day) = P(dry Day 1) × P(dry Day 2 | dry Day 1) = 0.7 × 0.7. Verify that all four outcome probabilities sum to 1.",
+            type: "lines",
+            lines: 10,
+          },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Quality Control — Two Machines",
+        instruction:
+          "Apply conditional probability to a manufacturing scenario.",
+        prompts: [
+          {
+            text: "A factory has two machines. Machine A produces 60% of all items and has a 4% defect rate. Machine B produces 40% of items and has a 6% defect rate.\n\n(a) Complete a two-way table for 1,000 items:\n• Machine A: 600 items → 24 defective, 576 good\n• Machine B: 400 items → 24 defective, 376 good\n\n(b) What is the overall defect rate? (48/1000 = 4.8%)\n(c) If an item is found to be defective, what is the probability it came from Machine A? Calculate P(Machine A | defective) = 24/48 = 1/2.\n(d) Is P(defective | Machine A) the same as P(Machine A | defective)? Explain why or why not.",
+            type: "lines",
+            lines: 10,
+          },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "True or False — Probability Properties",
+        instruction:
+          "Circle True or False for each statement about probability.",
+        questions: [
+          {
+            prompt: "P(A|B) is always equal to P(B|A)",
+            options: ["False", "True"],
+          },
+          {
+            prompt: "If A and B are independent, then P(A|B) = P(A)",
+            options: ["True", "False"],
+          },
+          {
+            prompt: "P(A ∪ B) = P(A) + P(B) is always true",
+            options: ["False — only true if A and B are mutually exclusive", "True"],
+          },
+          {
+            prompt: "P(A ∩ B) ≤ P(A) and P(A ∩ B) ≤ P(B)",
+            options: ["True", "False"],
+          },
+          {
+            prompt: "The probability of any event is between 0 and 1 inclusive",
+            options: ["True", "False"],
+          },
+          {
+            prompt: "For dependent events: P(A and B) = P(A) × P(B)",
+            options: ["False — this formula only works for independent events", "True"],
+          },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Sports Probability — Best-of-3 Series",
+        instruction:
+          "Calculate compound probabilities for a sports scenario.",
+        prompts: [
+          {
+            text: "Team A has a 0.6 probability of winning any individual game against Team B (assume games are independent).\n\n(a) In a best-of-3 series (first to 2 wins), list all possible sequences of outcomes (e.g., AA, ABA, BAA, ABB, BAB, BB).\n(b) Calculate the probability of each sequence.\n  • P(AA) = 0.6 × 0.6 = 0.36\n  • P(ABA) = 0.6 × 0.4 × 0.6 = 0.144\n  • P(BAA) = 0.4 × 0.6 × 0.6 = 0.144\n  • P(ABB) = 0.6 × 0.4 × 0.4 = 0.096\n  • P(BAB) = 0.4 × 0.6 × 0.4 = 0.096\n  • P(BB) = 0.4 × 0.4 = 0.16\n(c) P(Team A wins series) = 0.36 + 0.144 + 0.144 = 0.648. Verify P(Team B wins) = 0.352 and check they sum to 1.\n(d) Is Team A's series advantage (0.648) larger or smaller than their single-game advantage (0.6)? Explain why.",
+            type: "lines",
+            lines: 10,
+          },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Why P(A|B) ≠ P(B|A)",
+        instruction:
+          "Explain a key concept in conditional probability with a clear example.",
+        prompts: [
+          {
+            text: "Using this data about 200 people:\n\n|              | Left-handed | Right-handed | Total |\n|--------------|-------------|--------------|-------|\n| Plays guitar |      8      |      32      |  40   |\n| No guitar    |     12      |     148      | 160   |\n| Total        |     20      |     180      | 200   |\n\n(a) Calculate P(left-handed | plays guitar) = 8/40 = 1/5 = 0.2\n(b) Calculate P(plays guitar | left-handed) = 8/20 = 2/5 = 0.4\n(c) These are clearly different! Explain in your own words why P(A|B) ≠ P(B|A) in general.\n(d) Give a real-life example where confusing P(A|B) with P(B|A) could lead to a wrong conclusion.",
+            type: "lines",
+            lines: 8,
+          },
+        ],
+      },
+
+      // --- HOME: Hands-on experiments & real-world exploration ---
+      {
         type: "home-activity",
-        title: "Probability Experiments",
-        instruction: "Explore conditional probability with hands-on experiments.",
+        title: "Probability Experiments at Home",
+        instruction: "Explore conditional and compound probability with hands-on experiments.",
         suggestions: [
-          "Use a deck of cards. Draw 2 cards without replacement, 20 times. Record how often you get 2 of the same suit. Compare your experimental result with the theoretical probability.",
-          "Play the Monty Hall problem: use 3 cups and a coin. Play 30 rounds — 15 always switching, 15 always staying. Compare your win rates. Do the results match the theory?",
-          "Roll two dice 36 times and record the sums. Create a frequency table and compare it to the theoretical probability distribution.",
+          "Card experiment: Draw 2 cards without replacement from a standard deck, 30 times. Record how often both are the same suit. Compare your result to the theoretical probability: P(same suit) = 13/52 × 12/51 × 4 suits = 4/17 ≈ 0.235.",
+          "Monty Hall experiment: Use 3 cups and a small object. Have a family member play the host. Do 30 rounds: always switch for 15 rounds, always stay for 15 rounds. Record your wins for each strategy. Does your data support the theoretical 2/3 win rate for switching?",
+          "Dice experiment: Roll two dice 50 times. Record how often you get at least one 6. Compare to the theoretical P(at least one 6) = 1 − (5/6)² = 11/36 ≈ 0.306. Discuss why your experimental result might differ from the theory.",
+        ],
+      },
+      {
+        type: "home-activity",
+        title: "Real-World Conditional Probability",
+        instruction: "Find and analyse conditional probability in everyday life.",
+        suggestions: [
+          "Research a real-world example of conditional probability (e.g., medical testing accuracy, weather forecasting, spam email filtering). Explain what the 'condition' is and why P(A|B) ≠ P(B|A) matters in that context.",
+          "Create a two-way table using data from your family or class (e.g., favourite subject vs favourite sport, pet owners vs birth month). Calculate at least two conditional probabilities from your table and explain what they mean.",
+          "Find a news article that mentions a probability or statistic. Identify whether it involves simple, compound, or conditional probability. Explain whether the article interprets the probability correctly.",
         ],
       },
     ],
