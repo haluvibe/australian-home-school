@@ -202,11 +202,27 @@ export interface LearningGuide {
   check: string;
 }
 
+export interface LessonPart {
+  title: string;
+  script: string; // What to SAY
+  action?: string; // What to DO
+}
+
+export interface Lesson {
+  title: string;
+  objective: string;
+  materials: string[];
+  intro: LessonPart;
+  mainActivity: LessonPart;
+  wrapUp: LessonPart;
+}
+
 export interface WorksheetItem {
   slug: string;
   title: string;
   strand: string;
   description: string;
   learningGuide?: LearningGuide;
+  lesson?: Lesson;
   activities: ActivityData[];
 }

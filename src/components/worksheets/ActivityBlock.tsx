@@ -40,7 +40,7 @@ export default function ActivityBlock({ number, title, instruction, parentTip, c
           </svg>
           <div className="flex-1">
             <span className="mb-0.5 block text-xs font-bold uppercase tracking-wider text-blue-500/80">
-              Teacher Tip
+              Tip
             </span>
             <span className="leading-relaxed">{parentTip}</span>
           </div>

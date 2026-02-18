@@ -66,6 +66,7 @@ export default async function WorksheetItemPage({ params }: PageProps) {
           title={worksheet.title}
           strand={worksheet.strand}
           learningGuide={worksheet.learningGuide}
+          lesson={worksheet.lesson}
         >
           {worksheet.activities.map((activity, i) => (
             <ActivityRenderer key={i} activity={activity} number={i + 1} />
