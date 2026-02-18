@@ -136,6 +136,44 @@ export const year1EnglishWorksheets: WorksheetItem[] = [
           "Play I Spy with blends: I spy something that starts with /st/ (star, stool, step).",
         ],
       },
+      {
+        type: "matching" as const,
+        title: "Match the Digraph to Its Word",
+        instruction:
+          "Draw a line from each digraph or blend on the left to a word on the right that begins with it.",
+        parentTip:
+          "Ask your child to say the sound aloud before looking at the word options — this keeps it a phonics task rather than a visual matching puzzle.",
+        left: ["sh-", "ch-", "th-", "bl-", "cr-"],
+        right: ["three", "crab", "chip", "black", "shop"],
+      },
+      {
+        type: "sequence" as const,
+        title: "Build a Blend Word — Put the Letters in Order",
+        instruction:
+          "Rearrange the letters to spell a real word that starts with the blend or digraph shown. Write the complete word on the line.",
+        parentTip:
+          "Say each sound as your child places each letter. Blend left to right once all letters are in position.",
+        items: [
+          { label: "sh + o + p = ______  (where you buy things)" },
+          { label: "cl + a + p = ______  (hands together to make noise)" },
+          { label: "st + o + p = ______  (do not go any further)" },
+          { label: "th + i + n = ______  (not fat)" },
+          { label: "cr + a + b = ______  (a sea creature with claws)" },
+        ],
+      },
+      {
+        type: "open-response" as const,
+        title: "Write Sentences with Blend and Digraph Words",
+        instruction:
+          "Choose one blend word and one digraph word from the box. Write a sentence using each word. Remember: capital letter at the start and a full stop at the end.",
+        parentTip:
+          "Encourage your child to say each sentence aloud before writing it. Oral rehearsal improves the quality and length of written sentences.",
+        prompts: [
+          { text: "Word box: shop, chip, three, blue, stop, crab, clap, shed, thin", type: "lines" as const, lines: 1 },
+          { text: "My sentence using a blend word:", type: "lines" as const, lines: 2 },
+          { text: "My sentence using a digraph word:", type: "lines" as const, lines: 2 },
+        ],
+      },
     ],
   },
 
@@ -259,6 +297,53 @@ export const year1EnglishWorksheets: WorksheetItem[] = [
           "Play Sight Word Snap or Memory using homemade cards.",
           "Write a sight word in sand, salt or flour for a tactile spelling experience.",
           "Hide sight word cards around the house — your child reads the word before putting it in a jar.",
+        ],
+      },
+      {
+        type: "sorting" as const,
+        title: "Sort Sight Words: Can I Sound It Out?",
+        instruction:
+          "Some sight words can be sounded out phonically (like 'can' and 'in'). Others have tricky spellings that must be memorised (like 'said' and 'the'). Sort each word into the correct column.",
+        parentTip:
+          "This activity builds phonics awareness alongside sight word knowledge — both skills work together in fluent reading.",
+        columns: ["Can sound it out", "Must memorise it"],
+        items: [
+          { label: "can" },
+          { label: "said" },
+          { label: "in" },
+          { label: "the" },
+          { label: "it" },
+          { label: "was" },
+          { label: "at" },
+          { label: "they" },
+          { label: "go" },
+          { label: "have" },
+        ],
+      },
+      {
+        type: "sequence" as const,
+        title: "Put the Sight Words in Alphabetical Order",
+        instruction:
+          "Write these sight words in alphabetical order (A to Z) by looking at the first letter of each word.",
+        parentTip:
+          "Sing the alphabet slowly while your child points to each first letter — this makes the ordering strategy concrete and audible.",
+        items: [
+          { label: "they, and, was, go, have, is, come, the" },
+          { label: "1. ______  2. ______  3. ______  4. ______" },
+          { label: "5. ______  6. ______  7. ______  8. ______" },
+        ],
+      },
+      {
+        type: "open-response" as const,
+        title: "Sight Word Story",
+        instruction:
+          "Use as many sight words from the box as you can in a short story of 3 to 4 sentences. Circle every sight word you used.",
+        parentTip:
+          "Count the circled words together at the end. Using sight words in context is the most powerful way to cement them in long-term memory.",
+        prompts: [
+          { text: "Word box: the, and, said, was, they, have, come, is, go, my", type: "lines" as const, lines: 1 },
+          { text: "My short story:", type: "lines" as const, lines: 5 },
+          { text: "How many sight words did I use? ______", type: "lines" as const, lines: 1 },
         ],
       },
     ],
@@ -392,6 +477,55 @@ export const year1EnglishWorksheets: WorksheetItem[] = [
           "Dictate 2 to 3 sentences for your child to write — then swap and you write what they dictate.",
         ],
       },
+      {
+        type: "sorting" as const,
+        title: "Sort by Ending Punctuation",
+        instruction:
+          "Read each sentence and sort it into the correct column based on what punctuation mark it needs at the end.",
+        parentTip:
+          "Read each sentence aloud with your child. The voice naturally rises for a question and drops for a statement — this helps them feel which punctuation fits.",
+        columns: ["Needs a full stop .", "Needs a question mark ?", "Needs an exclamation mark !"],
+        items: [
+          { label: "The bird sat in the tree" },
+          { label: "Where is my lunch box" },
+          { label: "Watch out for the bee" },
+          { label: "My favourite colour is green" },
+          { label: "Can you help me please" },
+          { label: "We won the race" },
+          { label: "How old are you" },
+          { label: "That was so surprising" },
+        ],
+      },
+      {
+        type: "sequence" as const,
+        title: "Unscramble the Sentence",
+        instruction:
+          "The words in each sentence are in the wrong order. Write them in the correct order to make a complete sentence. Do not forget the capital letter and the full stop.",
+        parentTip:
+          "Ask your child to say the sentence aloud in different orders until it sounds right. This builds an ear for sentence grammar.",
+        items: [
+          { label: "fast / dog / ran / the → ________________________________" },
+          { label: "likes / my / fish / cat → ________________________________" },
+          { label: "we / to / park / went / the → ________________________________" },
+          { label: "hat / red / big / a / wore / she → ________________________________" },
+        ],
+      },
+      {
+        type: "circle-correct" as const,
+        title: "Which Punctuation Mark Fits?",
+        instruction:
+          "Circle the correct punctuation mark to end each sentence.",
+        parentTip:
+          "Read each sentence together with expression. The tone of voice tells you which mark is needed.",
+        questions: [
+          { prompt: "The sun is shining today", options: [".", "?", "!"] },
+          { prompt: "What is your name", options: [".", "?", "!"] },
+          { prompt: "Look out — there is a spider", options: [".", "?", "!"] },
+          { prompt: "She has a blue bag", options: [".", "?", "!"] },
+          { prompt: "Did you see that", options: [".", "?", "!"] },
+          { prompt: "I love my dog so much", options: [".", "?", "!"] },
+        ],
+      },
     ],
   },
 
@@ -512,6 +646,53 @@ export const year1EnglishWorksheets: WorksheetItem[] = [
           "Ask your child to draw the most important event from the story and explain their choice.",
         ],
       },
+      {
+        type: "circle-correct" as const,
+        title: "True or False?",
+        instruction:
+          "Read each statement about the story. Circle TRUE if it matches the story, or FALSE if it does not.",
+        parentTip:
+          "Encourage your child to point to the sentence in the story that supports each answer before circling.",
+        questions: [
+          { prompt: "Rex is a little dog.", options: ["TRUE", "FALSE"] },
+          { prompt: "Rex found a big stick.", options: ["TRUE", "FALSE"] },
+          { prompt: "Rex dropped the stick when Sam asked.", options: ["TRUE", "FALSE"] },
+          { prompt: "Sam laughed at the end of the story.", options: ["TRUE", "FALSE"] },
+          { prompt: "Sam and Rex were at a beach.", options: ["TRUE", "FALSE"] },
+        ],
+      },
+      {
+        type: "matching" as const,
+        title: "Match the Question to Its Answer",
+        instruction:
+          "Draw a line from each question on the left to its answer on the right. Use the story to help you.",
+        parentTip:
+          "This activity practises the skill of locating specific information in a text — a key reading strategy for Year 1 and beyond.",
+        left: [
+          "Who is the dog?",
+          "What did Rex find?",
+          "What did Sam say?",
+          "How did Sam feel at the end?",
+        ],
+        right: [
+          "He laughed.",
+          "Rex",
+          "Drop it!",
+          "A big stick",
+        ],
+      },
+      {
+        type: "open-response" as const,
+        title: "Draw and Write: The Story in Your Head",
+        instruction:
+          "Draw your favourite moment from the story. Then write one sentence to describe what is happening in your picture.",
+        parentTip:
+          "Drawing before writing helps children organise their thoughts. Accept any moment from the story — there is no single right answer.",
+        prompts: [
+          { text: "Draw your favourite moment from the story:", type: "box" as const },
+          { text: "My sentence about the picture:", type: "lines" as const, lines: 2 },
+        ],
+      },
     ],
   },
 
@@ -628,6 +809,51 @@ export const year1EnglishWorksheets: WorksheetItem[] = [
           "Write a letter from a favourite book character to another character.",
         ],
       },
+      {
+        type: "sorting" as const,
+        title: "Sort Words into the Story Parts",
+        instruction:
+          "A story has three parts: a Beginning (who and where), a Middle (the problem or event), and an End (how it finishes). Sort each sentence strip into the correct story part.",
+        parentTip:
+          "Read each sentence together and ask: 'Is this introducing the story, is something happening, or is it finishing up?' This builds structural awareness of narrative.",
+        columns: ["Beginning", "Middle", "End"],
+        items: [
+          { label: "Once there was a small red dragon who lived in a cave." },
+          { label: "The dragon tried and tried but could not find his way home." },
+          { label: "At last, a friendly bird showed him the path back." },
+          { label: "One day, the dragon flew too far and got lost in the clouds." },
+          { label: "The dragon lived happily ever after in his cosy cave." },
+          { label: "The cave was deep in a tall green mountain." },
+        ],
+      },
+      {
+        type: "circle-correct" as const,
+        title: "Choose the Best Describing Word",
+        instruction:
+          "Circle the describing word that best fits each sentence. Think about what makes the most sense and sounds most interesting.",
+        parentTip:
+          "There is sometimes more than one reasonable answer. The discussion about why one word works better than another is the most valuable part of this activity.",
+        questions: [
+          { prompt: "The ___ cat climbed the tree.", options: ["tiny", "purple", "wooden"] },
+          { prompt: "She wore a ___ dress to the party.", options: ["sparkling", "sleeping", "fast"] },
+          { prompt: "The ___ giant stomped through the forest.", options: ["enormous", "quiet", "tasty"] },
+          { prompt: "He found a ___ shell on the beach.", options: ["striped", "running", "heavy"] },
+          { prompt: "A ___ wind blew through the window.", options: ["cold", "yellow", "happy"] },
+        ],
+      },
+      {
+        type: "open-response" as const,
+        title: "Story Beginning: Set the Scene",
+        instruction:
+          "Write a strong opening sentence for each story idea. Include the character's name and one describing word to set the scene.",
+        parentTip:
+          "Model a strong opening together first: 'Tiny Mia the mouse crept across the dark kitchen floor.' Then let your child try their own.",
+        prompts: [
+          { text: "Story idea: A dragon who cannot breathe fire", type: "lines" as const, lines: 2 },
+          { text: "Story idea: A girl who finds a magic door", type: "lines" as const, lines: 2 },
+          { text: "Story idea: A robot who wants a friend", type: "lines" as const, lines: 2 },
+        ],
+      },
     ],
   },
 
@@ -739,6 +965,54 @@ export const year1EnglishWorksheets: WorksheetItem[] = [
           "Play 20 Questions — one person thinks of something, others ask yes/no questions to guess.",
           "Take turns telling a story — one sentence each. See where it goes!",
           "Listen to an audiobook or podcast episode together, then discuss what you heard.",
+        ],
+      },
+      {
+        type: "sorting" as const,
+        title: "Good Speaker or Needs Improving?",
+        instruction:
+          "Read each behaviour. Sort it into the column that describes a good speaker or a behaviour to improve.",
+        parentTip:
+          "Approach this positively — frame the 'needs improving' column as things we all work on, not things to feel bad about.",
+        columns: ["Good speaker behaviour", "Needs improving"],
+        items: [
+          { label: "Looks at the audience while talking" },
+          { label: "Mumbles and looks at the floor" },
+          { label: "Speaks loudly enough for everyone to hear" },
+          { label: "Talks over other people" },
+          { label: "Waits for their turn to speak" },
+          { label: "Uses complete sentences" },
+          { label: "Talks very fast with no pauses" },
+          { label: "Listens while others are speaking" },
+        ],
+      },
+      {
+        type: "circle-correct" as const,
+        title: "Good Listening or Not?",
+        instruction:
+          "Read each scenario. Circle L if the person is being a good listener, or N if they are not listening well.",
+        parentTip:
+          "Discuss each scenario together after circling. Ask: 'What could that person do differently to be a better listener?'",
+        questions: [
+          { prompt: "Mia looks at her book while her friend is talking.", options: ["L", "N"] },
+          { prompt: "Jack nods and looks at the speaker.", options: ["L", "N"] },
+          { prompt: "Tom keeps interrupting before his friend finishes.", options: ["L", "N"] },
+          { prompt: "Zara asks a question about what was just said.", options: ["L", "N"] },
+          { prompt: "Leo walks away while his parent is giving instructions.", options: ["L", "N"] },
+          { prompt: "Ava waits quietly and then repeats back what she heard.", options: ["L", "N"] },
+        ],
+      },
+      {
+        type: "open-response" as const,
+        title: "Tell Me About Your Day",
+        instruction:
+          "Practise speaking in complete sentences by answering these questions about your day. Say your answer aloud first, then write it.",
+        parentTip:
+          "Model a complete sentence answer yourself before asking your child. This demonstrates the expectation: 'Today I felt excited because we went to the park' rather than just 'excited'.",
+        prompts: [
+          { text: "Something I did today was:", type: "lines" as const, lines: 2 },
+          { text: "I felt _______________ today because:", type: "lines" as const, lines: 2 },
+          { text: "Something I want to tell someone about today:", type: "lines" as const, lines: 2 },
         ],
       },
     ],
@@ -864,6 +1138,46 @@ export const year1EnglishWorksheets: WorksheetItem[] = [
           "Play Word Builder: give your child a syllable (e.g. 'bas-') and they add a second syllable to make a word.",
         ],
       },
+      {
+        type: "matching" as const,
+        title: "Match the Syllable Halves",
+        instruction:
+          "Draw a line to join the two syllables that make a real word.",
+        parentTip:
+          "Say each half aloud before combining. If the blended result sounds like a real word your child knows, it is probably correct.",
+        left: ["rab-", "gar-", "win-", "bas-", "pen-"],
+        right: ["-cil", "-ket", "-bit", "-den", "-ter"],
+      },
+      {
+        type: "circle-correct" as const,
+        title: "How Many Syllables?",
+        instruction:
+          "Clap each word and circle the correct number of syllables.",
+        parentTip:
+          "Place a hand under the chin — each time the jaw drops for a vowel sound, that is one syllable. This physical cue is very reliable for young learners.",
+        questions: [
+          { prompt: "basket", options: ["1", "2", "3"] },
+          { prompt: "dog", options: ["1", "2", "3"] },
+          { prompt: "umbrella", options: ["1", "2", "3"] },
+          { prompt: "garden", options: ["1", "2", "3"] },
+          { prompt: "sun", options: ["1", "2", "3"] },
+          { prompt: "finger", options: ["1", "2", "3"] },
+        ],
+      },
+      {
+        type: "open-response" as const,
+        title: "Write Your Own Two-Syllable Words",
+        instruction:
+          "Think of two-syllable words for each category. Write the word and draw the syllable split line.",
+        parentTip:
+          "If your child is stuck, suggest they think of an animal, a food, or something in the house. Everyday vocabulary is full of two-syllable words.",
+        prompts: [
+          { text: "A two-syllable animal: ________ | ________", type: "lines" as const, lines: 1 },
+          { text: "A two-syllable food: ________ | ________", type: "lines" as const, lines: 1 },
+          { text: "A two-syllable thing in a classroom: ________ | ________", type: "lines" as const, lines: 1 },
+          { text: "Write a sentence using one of your two-syllable words:", type: "lines" as const, lines: 2 },
+        ],
+      },
     ],
   },
 
@@ -977,6 +1291,62 @@ export const year1EnglishWorksheets: WorksheetItem[] = [
           "Pause before turning each page and ask: 'What do you think we will see on the next page?'",
           "Watch the first 5 minutes of a new show together, then predict what will happen before watching more.",
           "After a prediction turns out wrong, ask: 'What clue in the text tells us what really happened?'",
+        ],
+      },
+      {
+        type: "sorting" as const,
+        title: "Good Prediction or Wild Guess?",
+        instruction:
+          "Read each prediction about the story of Rex the dog. Sort each one into the correct column — is it a good prediction (based on clues) or a wild guess (no evidence)?",
+        parentTip:
+          "A good prediction does not have to be correct — it just has to be based on something in the text or picture. This is the key concept to reinforce.",
+        columns: ["Good prediction (has a clue)", "Wild guess (no evidence)"],
+        items: [
+          { label: "Rex will run away because the story says he loves to run." },
+          { label: "Rex will turn into a cat." },
+          { label: "Sam will laugh because Sam seems to find Rex funny." },
+          { label: "A rocket ship will land in the park." },
+          { label: "Rex will find another stick because he loves sticks." },
+          { label: "Sam will go to space next." },
+        ],
+      },
+      {
+        type: "circle-correct" as const,
+        title: "Which Prediction Uses a Clue?",
+        instruction:
+          "Read the story opening, then circle the prediction that is best supported by clues in the text.",
+        parentTip:
+          "Read each mini-story snippet aloud together before attempting the questions. Discuss what clues are visible in the text.",
+        questions: [
+          {
+            prompt: "Lily looked at the dark clouds and grabbed her umbrella. She stepped outside. What will happen next?",
+            options: ["It will rain.", "She will fly away.", "A dragon appears."],
+          },
+          {
+            prompt: "Tom opened his lunchbox and frowned. It was empty! What will Tom probably do?",
+            options: ["Tom will go to sleep.", "Tom will look for food.", "Tom will build a rocket."],
+          },
+          {
+            prompt: "The puppy heard a strange noise behind the bush. Its ears pricked up. What will the puppy do?",
+            options: ["The puppy will swim.", "The puppy will investigate the bush.", "The puppy will read a book."],
+          },
+          {
+            prompt: "Mia had been practising her dance for weeks. The big show was tomorrow. How does Mia probably feel?",
+            options: ["Bored", "Nervous and excited", "Sleepy"],
+          },
+        ],
+      },
+      {
+        type: "open-response" as const,
+        title: "Draw and Write Your Prediction",
+        instruction:
+          "Choose a book you are reading. Stop at an exciting moment. Draw what you think will happen next, then write one sentence explaining your prediction.",
+        parentTip:
+          "Ask your child to identify the specific clue that led to their prediction. Naming the clue is the skill — the picture makes the thinking visible.",
+        prompts: [
+          { text: "Draw what you think will happen next:", type: "box" as const },
+          { text: "My prediction in one sentence:", type: "lines" as const, lines: 2 },
+          { text: "The clue I used:", type: "lines" as const, lines: 2 },
         ],
       },
     ],

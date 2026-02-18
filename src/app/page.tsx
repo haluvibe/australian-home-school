@@ -10,20 +10,33 @@ import { year7MathsWorksheets } from "@/lib/worksheet-data-year7";
 import { year8MathsWorksheets } from "@/lib/worksheet-data-year8";
 import { year9MathsWorksheets } from "@/lib/worksheet-data-year9";
 import { year10MathsWorksheets } from "@/lib/worksheet-data-year10";
+import { foundationEnglishWorksheets } from "@/lib/worksheet-data-english-foundation";
+import { year1EnglishWorksheets } from "@/lib/worksheet-data-english-year1";
+import { year2EnglishWorksheets } from "@/lib/worksheet-data-english-year2";
+import { year3EnglishWorksheets } from "@/lib/worksheet-data-english-year3";
+import { year4EnglishWorksheets } from "@/lib/worksheet-data-english-year4";
+import { year5EnglishWorksheets } from "@/lib/worksheet-data-english-year5";
+import { year6EnglishWorksheets } from "@/lib/worksheet-data-english-year6";
+import { year7EnglishWorksheets } from "@/lib/worksheet-data-english-year7";
+import { year8EnglishWorksheets } from "@/lib/worksheet-data-english-year8";
+import { year9EnglishWorksheets } from "@/lib/worksheet-data-english-year9";
+import { year10EnglishWorksheets } from "@/lib/worksheet-data-english-year10";
 import WorksheetObject from "@/components/worksheets/svg/WorksheetObject";
 
-const worksheetsByYearLevel = [foundationMathsWorksheets, year1MathsWorksheets, year2MathsWorksheets, year3MathsWorksheets, year4MathsWorksheets, year5MathsWorksheets, year6MathsWorksheets, year7MathsWorksheets, year8MathsWorksheets, year9MathsWorksheets, year10MathsWorksheets];
+const mathsWorksheetsByYearLevel = [foundationMathsWorksheets, year1MathsWorksheets, year2MathsWorksheets, year3MathsWorksheets, year4MathsWorksheets, year5MathsWorksheets, year6MathsWorksheets, year7MathsWorksheets, year8MathsWorksheets, year9MathsWorksheets, year10MathsWorksheets];
+const englishWorksheetsByYearLevel = [foundationEnglishWorksheets, year1EnglishWorksheets, year2EnglishWorksheets, year3EnglishWorksheets, year4EnglishWorksheets, year5EnglishWorksheets, year6EnglishWorksheets, year7EnglishWorksheets, year8EnglishWorksheets, year9EnglishWorksheets, year10EnglishWorksheets];
+const allWorksheetsByYearLevel = [...mathsWorksheetsByYearLevel, ...englishWorksheetsByYearLevel];
 
-const totalWorksheets = worksheetsByYearLevel.reduce(
+const totalWorksheets = allWorksheetsByYearLevel.reduce(
   (sum, ws) => sum + ws.length,
   0
 );
 
-const allActivities = worksheetsByYearLevel.flatMap((ws) =>
+const allActivities = allWorksheetsByYearLevel.flatMap((ws) =>
   ws.flatMap((w) => w.activities)
 );
 const activityTypeCount = new Set(allActivities.map((a) => a.type)).size;
-const yearLevelCount = worksheetsByYearLevel.length;
+const yearLevelCount = mathsWorksheetsByYearLevel.length;
 
 const featuredSlugs = [
   "number-names-0-20",

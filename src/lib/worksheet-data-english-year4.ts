@@ -150,6 +150,36 @@ export const year4EnglishWorksheets: WorksheetItem[] = [
           "Write a short paragraph about your day using only strong, precise vocabulary — no nice, good or said allowed.",
         ],
       },
+      {
+        type: "circle-correct" as const,
+        title: "Synonym or Antonym?",
+        instruction:
+          "Read each pair. Circle S if the words are synonyms (similar meaning) or A if they are antonyms (opposite meaning).",
+        parentTip:
+          "Ask your child to use both words in sentences to confirm their relationship.",
+        questions: [
+          { prompt: "enormous — tiny", options: ["S", "A"] },
+          { prompt: "swift — fast", options: ["S", "A"] },
+          { prompt: "brave — timid", options: ["S", "A"] },
+          { prompt: "weary — tired", options: ["S", "A"] },
+          { prompt: "furious — calm", options: ["S", "A"] },
+          { prompt: "amusing — funny", options: ["S", "A"] },
+        ],
+      },
+      {
+        type: "home-activity" as const,
+        title: "Vocabulary Builder",
+        instruction:
+          "Try these activities to grow your vocabulary away from the worksheet.",
+        parentTip:
+          "A wide vocabulary is one of the strongest predictors of reading comprehension — invest in it daily.",
+        suggestions: [
+          "Open a book to any page. Find three adjectives and look up their antonyms in a dictionary.",
+          "Play synonym tennis: one person says a word, the other says a synonym. Keep going without repeating!",
+          "Replace all uses of 'nice', 'good' and 'big' in your next piece of writing with stronger synonyms.",
+          "Keep a My Best Words notebook — add one new word per day with its meaning and a sentence.",
+        ],
+      },
     ],
   },
   {
@@ -291,6 +321,37 @@ export const year4EnglishWorksheets: WorksheetItem[] = [
           { text: "3. She smiled.\nAnswer:", type: "lines", lines: 3 },
         ],
       },
+      {
+        type: "matching" as const,
+        title: "Match the Conjunction to Its Function",
+        instruction:
+          "Draw a line to match each conjunction to what it shows.",
+        parentTip:
+          "Review the Time / Reason / Contrast categories before matching.",
+        left: ["because", "although", "until", "while", "since", "even though"],
+        right: [
+          "contrast — the ideas are opposite",
+          "time — one thing happens at the same time",
+          "reason — explains why",
+          "contrast — same as although",
+          "time — one thing ends then another starts",
+          "reason — another way to say because",
+        ],
+      },
+      {
+        type: "home-activity" as const,
+        title: "Conjunction Challenge",
+        instruction:
+          "Look for complex sentences in everyday reading and practise writing your own.",
+        parentTip:
+          "Newspaper articles and chapter books are full of complex sentences — they are great hunting grounds!",
+        suggestions: [
+          "Find a complex sentence in a book you are reading and identify the main clause and subordinate clause.",
+          "Set a timer for 2 minutes and write as many different complex sentences as you can using a new conjunction each time.",
+          "Say a simple sentence out loud, then challenge a family member to extend it using a conjunction.",
+          "Highlight all the conjunctions in a paragraph from a library book — which ones appear most often?",
+        ],
+      },
     ],
   },
   {
@@ -420,6 +481,37 @@ export const year4EnglishWorksheets: WorksheetItem[] = [
           { text: "Dialogue:", type: "box", lines: 10 },
         ],
       },
+      {
+        type: "sorting" as const,
+        title: "Sort the Dialogue Sentences",
+        instruction:
+          "Read each sentence. Sort it into the correct column — it either has correct dialogue punctuation or contains an error.",
+        parentTip:
+          "Ask your child to explain what rule each correct example follows and what error each incorrect example contains.",
+        columns: ["Correct punctuation", "Contains an error"],
+        items: [
+          { label: "\"Let's go,\" said Tom." },
+          { label: "\"where is the library\" asked Sam." },
+          { label: "\"I love rainy days,\" she whispered." },
+          { label: "\"Watch out!\" yelled the coach." },
+          { label: "\"the dog is missing said Mia.\"" },
+          { label: "\"Are you ready?\" he asked." },
+        ],
+      },
+      {
+        type: "home-activity" as const,
+        title: "Dialogue in the Wild",
+        instruction:
+          "Find and write dialogue in everyday reading and speaking.",
+        parentTip:
+          "Point out speech marks in any book you read together — this builds natural awareness of the convention.",
+        suggestions: [
+          "Find a page of dialogue in a favourite novel and copy two lines, then check your punctuation against the original.",
+          "Write four speech bubbles for characters in a comic or magazine photo, then convert them to prose with speech marks.",
+          "Record a short real conversation with a family member, then write it up using dialogue punctuation.",
+          "Read a play script aloud and notice how it handles spoken words differently from prose dialogue.",
+        ],
+      },
     ],
   },
   {
@@ -542,6 +634,36 @@ export const year4EnglishWorksheets: WorksheetItem[] = [
           },
         ],
       },
+      {
+        type: "circle-correct" as const,
+        title: "Fact or Opinion — Signal Words",
+        instruction:
+          "Read each sentence. Circle whether it is a Fact or an Opinion, and identify the signal word or clue.",
+        parentTip:
+          "Ask your child to explain their reasoning — the process of justifying matters more than the answer.",
+        questions: [
+          { prompt: "I believe sharks are the most misunderstood creatures in the ocean.", options: ["Fact", "Opinion"] },
+          { prompt: "Sharks have been on Earth for over 450 million years.", options: ["Fact", "Opinion"] },
+          { prompt: "In my view, zoos should be banned.", options: ["Fact", "Opinion"] },
+          { prompt: "Australia has the world's largest cattle station.", options: ["Fact", "Opinion"] },
+          { prompt: "Summer is clearly the best time of year to visit the Gold Coast.", options: ["Fact", "Opinion"] },
+          { prompt: "The Sydney Harbour Bridge was completed in 1932.", options: ["Fact", "Opinion"] },
+        ],
+      },
+      {
+        type: "home-activity" as const,
+        title: "Media Fact Detective",
+        instruction:
+          "Practise spotting facts and opinions in real-world media.",
+        parentTip:
+          "Media literacy is a critical 21st-century skill — weaving it into everyday reading habits builds lifelong critical thinking.",
+        suggestions: [
+          "Watch a short news clip together and call out 'fact' or 'opinion' after each key statement.",
+          "Find a letters-to-the-editor section in a newspaper and highlight all opinion signal words.",
+          "Read a product advertisement and sort every sentence into fact or opinion.",
+          "Write your own 'balanced' paragraph on a topic — include exactly three facts and two opinions, clearly labelled.",
+        ],
+      },
     ],
   },
   {
@@ -644,6 +766,35 @@ export const year4EnglishWorksheets: WorksheetItem[] = [
             type: "lines",
             lines: 3,
           },
+        ],
+      },
+      {
+        type: "sequence" as const,
+        title: "Put the Persuasive Paragraph in Order",
+        instruction:
+          "These sentences belong to a PEEL paragraph but they are scrambled. Number them 1 to 5 in the correct order.",
+        parentTip:
+          "Ask your child to identify which sentence is the Point, Evidence, Explanation and Link.",
+        items: [
+          { label: "Research from health organisations confirms that physical activity improves concentration in children." },
+          { label: "Clearly, daily exercise should be a non-negotiable part of every child's school day." },
+          { label: "This is significant because a focused, healthy student is far better equipped to learn." },
+          { label: "All primary school students should participate in at least 30 minutes of physical activity every day." },
+          { label: "Furthermore, when students move their bodies, they return to classwork refreshed and engaged." },
+        ],
+      },
+      {
+        type: "home-activity" as const,
+        title: "Persuasion in Real Life",
+        instruction:
+          "Find and practise persuasion beyond the worksheet.",
+        parentTip:
+          "Persuasion is everywhere — recognising it builds critical thinking about what we read and hear.",
+        suggestions: [
+          "Read a letter to the editor in a newspaper and identify the PEEL structure.",
+          "Choose something you want permission for and write a PEEL paragraph to persuade your parent.",
+          "Watch a TV advertisement and identify the persuasive techniques — emotion, statistics, celebrity, repetition.",
+          "Write a counter-argument to your own PEEL paragraph — then decide which side is more convincing.",
         ],
       },
     ],
@@ -775,6 +926,38 @@ export const year4EnglishWorksheets: WorksheetItem[] = [
           "Describe your breakfast using only the five senses — no telling us what food it was, only what it looked, smelled, tasted, felt and sounded like!",
         ],
       },
+      {
+        type: "matching" as const,
+        title: "Match the Figure of Speech to Its Example",
+        instruction:
+          "Draw a line to match each type of figurative language to the correct example.",
+        parentTip:
+          "Ask your child to explain the comparison in each metaphor or simile — who or what is being compared to what?",
+        left: ["Simile", "Metaphor", "Imagery (sight)", "Imagery (sound)", "Imagery (touch)"],
+        right: [
+          "The bonfire crackled and spat into the night.",
+          "Her hair was spun gold in the afternoon light.",
+          "The leaves shivered in the icy wind.",
+          "As brave as a lion.",
+          "The ocean is a restless giant.",
+        ],
+      },
+      {
+        type: "circle-correct" as const,
+        title: "Simile or Metaphor?",
+        instruction:
+          "Read each phrase. Circle whether it is a simile (uses like/as) or a metaphor (says it IS something else).",
+        parentTip:
+          "The key test: does the phrase use 'like' or 'as'? If yes, it's a simile. If not, it's a metaphor.",
+        questions: [
+          { prompt: "The classroom was a beehive of noise.", options: ["Simile", "Metaphor"] },
+          { prompt: "She ran as fast as a cheetah.", options: ["Simile", "Metaphor"] },
+          { prompt: "His words were daggers.", options: ["Simile", "Metaphor"] },
+          { prompt: "The fog rolled in like a grey blanket.", options: ["Simile", "Metaphor"] },
+          { prompt: "Time is a river.", options: ["Simile", "Metaphor"] },
+          { prompt: "As quiet as a sleeping cat.", options: ["Simile", "Metaphor"] },
+        ],
+      },
     ],
   },
   {
@@ -872,6 +1055,36 @@ export const year4EnglishWorksheets: WorksheetItem[] = [
         instruction:
           "Write a short paragraph (5 to 6 sentences) about a typical day at your home. Use at least five different subject pronouns — I, you, he, she, we, they. Underline each pronoun and circle the matching verb.",
         prompts: [{ text: "My paragraph:", type: "box", lines: 10 }],
+      },
+      {
+        type: "circle-correct" as const,
+        title: "Pronoun–Verb Agreement Quick-fire",
+        instruction:
+          "Circle the correct verb form for each pronoun.",
+        parentTip:
+          "Read each option aloud — the correct one should sound natural in spoken English.",
+        questions: [
+          { prompt: "I ___ going to the shops.", options: ["am", "is", "are"] },
+          { prompt: "She ___ finished her homework.", options: ["have", "has", "had"] },
+          { prompt: "They ___ playing in the garden.", options: ["is", "was", "are"] },
+          { prompt: "He ___ not understand the question.", options: ["do", "does", "doing"] },
+          { prompt: "We ___ excited about the trip.", options: ["is", "was", "are"] },
+          { prompt: "It ___ raining for three hours.", options: ["have been", "has been", "were"] },
+        ],
+      },
+      {
+        type: "home-activity" as const,
+        title: "Grammar in the Wild",
+        instruction:
+          "Find and fix pronoun–verb agreement in everyday language.",
+        parentTip:
+          "Gentle correction through modelling — repeating the correct form naturally — is more effective than direct correction.",
+        suggestions: [
+          "Listen to conversations during the day — do you ever hear a pronoun–verb agreement error? What would the correct form be?",
+          "Write five sentences about your family using a different pronoun each time (I, you, he, she, we, they).",
+          "Find a paragraph in a library book and underline every pronoun — then check each verb agrees.",
+          "Make up ten deliberately incorrect sentences and challenge a family member to find and fix them all.",
+        ],
       },
     ],
   },
@@ -986,6 +1199,39 @@ export const year4EnglishWorksheets: WorksheetItem[] = [
             type: "lines",
             lines: 14,
           },
+        ],
+      },
+      {
+        type: "sorting" as const,
+        title: "Sort the Text Features",
+        instruction:
+          "Sort each text feature into the correct column — does it help the reader NAVIGATE the text or UNDERSTAND the content?",
+        parentTip:
+          "Discuss the difference: navigation features help you find information; explanatory features help you understand it.",
+        columns: ["Helps navigation", "Helps understanding"],
+        items: [
+          { label: "Table of contents" },
+          { label: "Diagram with labels" },
+          { label: "Heading" },
+          { label: "Caption below a photo" },
+          { label: "Subheading" },
+          { label: "Bold key term" },
+          { label: "Index" },
+          { label: "Glossary definition" },
+        ],
+      },
+      {
+        type: "home-activity" as const,
+        title: "Text Feature Spotter",
+        instruction:
+          "Go on a text feature safari in real non-fiction materials.",
+        parentTip:
+          "Non-fiction reading is a skill — explicitly noticing text features builds the habit of purposeful reading.",
+        suggestions: [
+          "Find a non-fiction book and list every different text feature you can spot in one chapter.",
+          "Compare two non-fiction texts on the same topic — which uses text features more effectively? Why?",
+          "Design a contents page for a non-fiction book about yourself — what headings and subheadings would you use?",
+          "Look at an online news article and identify at least four text features — headings, photos, captions, pull quotes.",
         ],
       },
     ],

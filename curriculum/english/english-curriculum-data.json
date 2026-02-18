@@ -5,35 +5,108 @@
       {
         "strand": "Language",
         "items": [
-          "Listen for and identify rhymes, letter patterns and sounds (phonemes) in words",
-          "Orally blend and segment phonemes in single-syllable words",
-          "Name the letters of the English alphabet",
-          "Know and use the most common sounds (phonemes) represented by letters (graphs)",
-          "Use words and phrases from learning and texts in spoken and written communication",
-          "Form letters legibly",
-          "Spell most consonant-vowel-consonant words",
-          "Experiment with capital letters and full stops"
+          {
+            "description": "Listen for and identify rhymes, letter patterns and sounds (phonemes) in words",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-k-reading-foundational-skills",
+            "worksheetSlug": "rhyme-time"
+          },
+          {
+            "description": "Orally blend and segment phonemes in single-syllable words",
+            "khanAcademyUrl": "https://learn.khanacademy.org/khan-academy-kids/",
+            "worksheetSlug": "syllables"
+          },
+          {
+            "description": "Name the letters of the English alphabet",
+            "khanAcademyUrl": "https://learn.khanacademy.org/khan-academy-kids/",
+            "worksheetSlug": "letter-recognition"
+          },
+          {
+            "description": "Know and use the most common sounds (phonemes) represented by letters (graphs)",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-k-reading-foundational-skills",
+            "worksheetSlug": "beginning-sounds"
+          },
+          {
+            "description": "Use words and phrases from learning and texts in spoken and written communication",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-k-language",
+            "worksheetSlug": "describing-my-world"
+          },
+          {
+            "description": "Form letters legibly",
+            "khanAcademyUrl": "https://learn.khanacademy.org/khan-academy-kids/",
+            "worksheetSlug": "letter-recognition"
+          },
+          {
+            "description": "Spell most consonant-vowel-consonant words",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-k-reading-foundational-skills",
+            "worksheetSlug": "cvc-words"
+          },
+          {
+            "description": "Experiment with capital letters and full stops",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-k-language",
+            "worksheetSlug": "communicating-ideas"
+          }
         ]
       },
       {
         "strand": "Literature",
         "items": [
-          "Listen to texts and retell stories",
-          "Make connections between characters, settings and events in texts",
-          "Connect characters, settings and events to personal experiences",
-          "Identify connections between print and images in texts",
-          "Create short written texts that retell stories using words and images"
+          {
+            "description": "Listen to texts and retell stories",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-k-reading-literature",
+            "worksheetSlug": "story-retell"
+          },
+          {
+            "description": "Make connections between characters, settings and events in texts",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-k-reading-literature",
+            "worksheetSlug": "story-retell"
+          },
+          {
+            "description": "Connect characters, settings and events to personal experiences",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-k-reading-literature"
+          },
+          {
+            "description": "Identify connections between print and images in texts",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-k-reading-informational-text"
+          },
+          {
+            "description": "Create short written texts that retell stories using words and images",
+            "khanAcademyUrl": "https://learn.khanacademy.org/khan-academy-kids/",
+            "worksheetSlug": "story-retell"
+          }
         ]
       },
       {
         "strand": "Literacy",
         "items": [
-          "Interact with others and create short spoken texts",
-          "Share thoughts and preferences with an audience",
-          "Retell events and report information or key ideas to an audience",
-          "Read words including consonant-vowel-consonant words and some high-frequency words",
-          "Read, view and comprehend texts",
-          "Retell, report information and state thoughts, feelings and key ideas in writing"
+          {
+            "description": "Interact with others and create short spoken texts",
+            "khanAcademyUrl": "https://learn.khanacademy.org/khan-academy-kids/",
+            "worksheetSlug": "communicating-ideas"
+          },
+          {
+            "description": "Share thoughts and preferences with an audience",
+            "khanAcademyUrl": "https://learn.khanacademy.org/khan-academy-kids/",
+            "worksheetSlug": "communicating-ideas"
+          },
+          {
+            "description": "Retell events and report information or key ideas to an audience",
+            "khanAcademyUrl": "https://learn.khanacademy.org/khan-academy-kids/",
+            "worksheetSlug": "story-retell"
+          },
+          {
+            "description": "Read words including consonant-vowel-consonant words and some high-frequency words",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-k-reading-foundational-skills",
+            "worksheetSlug": "cvc-words"
+          },
+          {
+            "description": "Read, view and comprehend texts",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-k-reading-literature"
+          },
+          {
+            "description": "Retell, report information and state thoughts, feelings and key ideas in writing",
+            "khanAcademyUrl": "https://learn.khanacademy.org/khan-academy-kids/",
+            "worksheetSlug": "communicating-ideas"
+          }
         ]
       }
     ],
@@ -50,39 +123,129 @@
       {
         "strand": "Language",
         "items": [
-          "Blend short vowels, common long vowels, consonants and digraphs to read one-syllable words",
-          "Read one- and two-syllable words with common letter patterns",
-          "Use topic-specific vocabulary in spoken and written texts",
-          "Write simple sentences with sentence boundary punctuation",
-          "Use capital letters for proper nouns",
-          "Write words using unjoined upper-case and lower-case letters",
-          "Spell most one- and two-syllable words with common letter patterns and common grammatical morphemes",
-          "Spell an increasing number of high-frequency words"
+          {
+            "description": "Blend short vowels, common long vowels, consonants and digraphs to read one-syllable words",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-1st-reading-foundational-skills",
+            "worksheetSlug": "blends-and-digraphs"
+          },
+          {
+            "description": "Read one- and two-syllable words with common letter patterns",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-1st-reading-foundational-skills",
+            "worksheetSlug": "two-syllable-words"
+          },
+          {
+            "description": "Use topic-specific vocabulary in spoken and written texts",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-1st-grade-language"
+          },
+          {
+            "description": "Write simple sentences with sentence boundary punctuation",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-1st-grade-language",
+            "worksheetSlug": "sentence-punctuation"
+          },
+          {
+            "description": "Use capital letters for proper nouns",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-1st-grade-language",
+            "worksheetSlug": "sentence-punctuation"
+          },
+          {
+            "description": "Write words using unjoined upper-case and lower-case letters",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-1st-reading-foundational-skills"
+          },
+          {
+            "description": "Spell most one- and two-syllable words with common letter patterns and common grammatical morphemes",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-1st-reading-foundational-skills",
+            "worksheetSlug": "sight-words"
+          },
+          {
+            "description": "Spell an increasing number of high-frequency words",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-1st-reading-foundational-skills",
+            "worksheetSlug": "sight-words"
+          }
         ]
       },
       {
         "strand": "Literature",
         "items": [
-          "Listen to and create short spoken texts including recounts of stories",
-          "Share ideas and retell or adapt familiar stories",
-          "Make connections between the depiction of characters, settings and events, and personal experiences",
-          "Create short written texts including recounts of stories with events and characters",
-          "Include informative or imaginative ideas with a small number of details from learnt topics, topics of interest or texts"
+          {
+            "description": "Listen to and create short spoken texts including recounts of stories",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-1st-reading-literature",
+            "worksheetSlug": "speaking-and-listening"
+          },
+          {
+            "description": "Share ideas and retell or adapt familiar stories",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-1st-reading-literature",
+            "worksheetSlug": "speaking-and-listening"
+          },
+          {
+            "description": "Make connections between the depiction of characters, settings and events, and personal experiences",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-1st-reading-literature",
+            "worksheetSlug": "reading-comprehension"
+          },
+          {
+            "description": "Create short written texts including recounts of stories with events and characters",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-1st-reading-literature",
+            "worksheetSlug": "creative-writing"
+          },
+          {
+            "description": "Include informative or imaginative ideas with a small number of details from learnt topics, topics of interest or texts",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-1st-grade-language",
+            "worksheetSlug": "creative-writing"
+          }
         ]
       },
       {
         "strand": "Literacy",
         "items": [
-          "Interact with others to recount or report on events or experiences",
-          "Express opinions using a small number of details from learnt topics, topics of interest or texts",
-          "Sequence ideas and use features of voice in spoken texts",
-          "Read, view and comprehend texts, monitoring meaning",
-          "Identify text structures of familiar narrative and informative texts",
-          "Identify language features and visual features of texts",
-          "Read an increasing number of high-frequency words",
-          "Use sentence boundary punctuation to read with developing phrasing and fluency",
-          "Report information and experiences, and express opinions in writing",
-          "Create short written and/or multimodal texts"
+          {
+            "description": "Interact with others to recount or report on events or experiences",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-1st-reading-informational-text",
+            "worksheetSlug": "speaking-and-listening"
+          },
+          {
+            "description": "Express opinions using a small number of details from learnt topics, topics of interest or texts",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-1st-reading-informational-text",
+            "worksheetSlug": "speaking-and-listening"
+          },
+          {
+            "description": "Sequence ideas and use features of voice in spoken texts",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-1st-grade-language",
+            "worksheetSlug": "speaking-and-listening"
+          },
+          {
+            "description": "Read, view and comprehend texts, monitoring meaning",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-1st-reading-literature",
+            "worksheetSlug": "reading-comprehension"
+          },
+          {
+            "description": "Identify text structures of familiar narrative and informative texts",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-1st-reading-informational-text",
+            "worksheetSlug": "reading-comprehension"
+          },
+          {
+            "description": "Identify language features and visual features of texts",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-1st-reading-literature",
+            "worksheetSlug": "reading-comprehension"
+          },
+          {
+            "description": "Read an increasing number of high-frequency words",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-1st-reading-foundational-skills",
+            "worksheetSlug": "sight-words"
+          },
+          {
+            "description": "Use sentence boundary punctuation to read with developing phrasing and fluency",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-1st-reading-foundational-skills",
+            "worksheetSlug": "sentence-punctuation"
+          },
+          {
+            "description": "Report information and experiences, and express opinions in writing",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-1st-grade-language",
+            "worksheetSlug": "creative-writing"
+          },
+          {
+            "description": "Create short written and/or multimodal texts",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-1st-grade-language",
+            "worksheetSlug": "creative-writing"
+          }
         ]
       }
     ],
@@ -99,38 +262,120 @@
       {
         "strand": "Language",
         "items": [
-          "Use phonic and morphemic knowledge to read unfamiliar words",
-          "Use grammatical patterns to read unfamiliar words",
-          "Read most high-frequency words",
-          "Use topic-specific vocabulary in writing",
-          "Punctuate simple and compound sentences",
-          "Write words using consistently legible unjoined letters",
-          "Spell words with regular spelling patterns",
-          "Use phonic and morphemic knowledge to attempt spelling words with less common patterns"
+          {
+            "description": "Use phonic and morphemic knowledge to read unfamiliar words",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-2nd-reading-foundational-skills",
+            "worksheetSlug": "long-vowel-patterns"
+          },
+          {
+            "description": "Use grammatical patterns to read unfamiliar words",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-2nd-grade-language",
+            "worksheetSlug": "nouns-verbs-adjectives"
+          },
+          {
+            "description": "Read most high-frequency words",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-2nd-reading-foundational-skills",
+            "worksheetSlug": "high-frequency-words-year2"
+          },
+          {
+            "description": "Use topic-specific vocabulary in writing",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-2nd-grade-language"
+          },
+          {
+            "description": "Punctuate simple and compound sentences",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-2nd-grade-language",
+            "worksheetSlug": "joining-words-conjunctions"
+          },
+          {
+            "description": "Write words using consistently legible unjoined letters",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-2nd-reading-foundational-skills"
+          },
+          {
+            "description": "Spell words with regular spelling patterns",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-2nd-reading-foundational-skills",
+            "worksheetSlug": "word-endings-ing-ed-er"
+          },
+          {
+            "description": "Use phonic and morphemic knowledge to attempt spelling words with less common patterns",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-2nd-reading-foundational-skills",
+            "worksheetSlug": "long-vowel-patterns"
+          }
         ]
       },
       {
         "strand": "Literature",
         "items": [
-          "Listen to and create spoken texts including stories",
-          "Identify how ideas are presented through characters and events",
-          "Create written texts including stories to adapt an idea or narrate for audiences",
-          "Share ideas, topic knowledge and appreciation of texts"
+          {
+            "description": "Listen to and create spoken texts including stories",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-2nd-reading-literature",
+            "worksheetSlug": "story-writing-beginning-middle-end"
+          },
+          {
+            "description": "Identify how ideas are presented through characters and events",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-2nd-reading-literature",
+            "worksheetSlug": "reading-comprehension-main-idea"
+          },
+          {
+            "description": "Create written texts including stories to adapt an idea or narrate for audiences",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-2nd-reading-literature",
+            "worksheetSlug": "story-writing-beginning-middle-end"
+          },
+          {
+            "description": "Share ideas, topic knowledge and appreciation of texts",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-2nd-reading-literature"
+          }
         ]
       },
       {
         "strand": "Literacy",
         "items": [
-          "Interact with others to recount, inform or express an opinion",
-          "Include details from learnt topics, topics of interest or texts",
-          "Organise and link ideas in spoken texts",
-          "Use language features including features of voice",
-          "Read, view and comprehend texts, identifying literal and inferred meaning",
-          "Describe how similar topics and information are presented through narrative and informative text structures",
-          "Identify language features and visual features of texts",
-          "Use punctuation for phrasing and fluency when reading",
-          "Create written and/or multimodal texts to inform or express an opinion",
-          "Use text structures to organise and link ideas for a purpose"
+          {
+            "description": "Interact with others to recount, inform or express an opinion",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-2nd-reading-informational-text"
+          },
+          {
+            "description": "Include details from learnt topics, topics of interest or texts",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-2nd-reading-informational-text",
+            "worksheetSlug": "reading-comprehension-main-idea"
+          },
+          {
+            "description": "Organise and link ideas in spoken texts",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-2nd-grade-language"
+          },
+          {
+            "description": "Use language features including features of voice",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-2nd-grade-language"
+          },
+          {
+            "description": "Read, view and comprehend texts, identifying literal and inferred meaning",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-2nd-reading-literature",
+            "worksheetSlug": "reading-comprehension-main-idea"
+          },
+          {
+            "description": "Describe how similar topics and information are presented through narrative and informative text structures",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-2nd-reading-informational-text",
+            "worksheetSlug": "reading-comprehension-main-idea"
+          },
+          {
+            "description": "Identify language features and visual features of texts",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-2nd-grade-language",
+            "worksheetSlug": "nouns-verbs-adjectives"
+          },
+          {
+            "description": "Use punctuation for phrasing and fluency when reading",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-2nd-grade-language",
+            "worksheetSlug": "joining-words-conjunctions"
+          },
+          {
+            "description": "Create written and/or multimodal texts to inform or express an opinion",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-2nd-grade-language",
+            "worksheetSlug": "story-writing-beginning-middle-end"
+          },
+          {
+            "description": "Use text structures to organise and link ideas for a purpose",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-2nd-grade-language",
+            "worksheetSlug": "story-writing-beginning-middle-end"
+          }
         ]
       }
     ],
@@ -147,37 +392,115 @@
       {
         "strand": "Language",
         "items": [
-          "Read fluently using phonic, morphemic and grammatical knowledge to read multisyllabic words with more complex letter patterns",
-          "Use topic-specific vocabulary and literary devices in texts",
-          "Use compound sentences in writing",
-          "Write texts using letters that are accurately formed and consistent in size",
-          "Spell multisyllabic words using phonic and morphemic knowledge",
-          "Spell high-frequency words correctly"
+          {
+            "description": "Read fluently using phonic, morphemic and grammatical knowledge to read multisyllabic words with more complex letter patterns",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-3rd-reading-foundational-skills",
+            "worksheetSlug": "prefixes-un-re"
+          },
+          {
+            "description": "Use topic-specific vocabulary and literary devices in texts",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-3rd-grade-language",
+            "worksheetSlug": "expanded-noun-groups-adverbs"
+          },
+          {
+            "description": "Use compound sentences in writing",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-3rd-grade-language",
+            "worksheetSlug": "commas-in-lists"
+          },
+          {
+            "description": "Write texts using letters that are accurately formed and consistent in size",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-3rd-grade-language"
+          },
+          {
+            "description": "Spell multisyllabic words using phonic and morphemic knowledge",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-3rd-reading-foundational-skills",
+            "worksheetSlug": "suffixes-ness-ful-less"
+          },
+          {
+            "description": "Spell high-frequency words correctly",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-3rd-grade-language"
+          }
         ]
       },
       {
         "strand": "Literature",
         "items": [
-          "Listen to and create spoken and/or multimodal texts including stories",
-          "Describe how stories are developed through characters and/or events",
-          "Identify literal meaning and explain inferred meaning in texts",
-          "Describe language features of texts including literary devices",
-          "Create written and/or multimodal texts including stories to narrate",
-          "Include relevant details from learnt topics, topics of interest or texts"
+          {
+            "description": "Listen to and create spoken and/or multimodal texts including stories",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-3rd-reading-literature",
+            "worksheetSlug": "writing-a-recount"
+          },
+          {
+            "description": "Describe how stories are developed through characters and/or events",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-3rd-reading-literature",
+            "worksheetSlug": "reading-comprehension-inference"
+          },
+          {
+            "description": "Identify literal meaning and explain inferred meaning in texts",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-3rd-reading-literature",
+            "worksheetSlug": "reading-comprehension-inference"
+          },
+          {
+            "description": "Describe language features of texts including literary devices",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-3rd-grade-language",
+            "worksheetSlug": "expanded-noun-groups-adverbs"
+          },
+          {
+            "description": "Create written and/or multimodal texts including stories to narrate",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-3rd-reading-literature",
+            "worksheetSlug": "writing-a-recount"
+          },
+          {
+            "description": "Include relevant details from learnt topics, topics of interest or texts",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-3rd-reading-informational-text",
+            "worksheetSlug": "writing-a-recount"
+          }
         ]
       },
       {
         "strand": "Literacy",
         "items": [
-          "Interact with others to relate ideas, express opinions, preferences and appreciation of texts",
-          "Group, logically sequence and link ideas in spoken texts",
-          "Use visual features and features of voice in spoken texts",
-          "Read, view and comprehend texts, recognising their purpose and audience",
-          "Describe how texts are structured and presented",
-          "Describe how visual features extend meaning",
-          "Create written and/or multimodal texts to inform, explain or argue for audiences",
-          "Use text structures including paragraphs to organise and link ideas",
-          "Use visual features in multimodal texts"
+          {
+            "description": "Interact with others to relate ideas, express opinions, preferences and appreciation of texts",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-3rd-reading-informational-text"
+          },
+          {
+            "description": "Group, logically sequence and link ideas in spoken texts",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-3rd-grade-language",
+            "worksheetSlug": "writing-a-recount"
+          },
+          {
+            "description": "Use visual features and features of voice in spoken texts",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-3rd-grade-language"
+          },
+          {
+            "description": "Read, view and comprehend texts, recognising their purpose and audience",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-3rd-reading-informational-text",
+            "worksheetSlug": "reading-comprehension-inference"
+          },
+          {
+            "description": "Describe how texts are structured and presented",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-3rd-reading-informational-text",
+            "worksheetSlug": "reading-comprehension-inference"
+          },
+          {
+            "description": "Describe how visual features extend meaning",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-3rd-reading-informational-text"
+          },
+          {
+            "description": "Create written and/or multimodal texts to inform, explain or argue for audiences",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-3rd-grade-language",
+            "worksheetSlug": "writing-a-recount"
+          },
+          {
+            "description": "Use text structures including paragraphs to organise and link ideas",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-3rd-grade-language",
+            "worksheetSlug": "apostrophes-for-contractions"
+          },
+          {
+            "description": "Use visual features in multimodal texts",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-3rd-reading-informational-text"
+          }
         ]
       }
     ],
@@ -194,35 +517,105 @@
       {
         "strand": "Language",
         "items": [
-          "Read fluently and accurately, integrating phonic, morphemic, grammatical and punctuation knowledge",
-          "Use subjective and objective language appropriately",
-          "Use topic-specific vocabulary and literary devices",
-          "Use complex sentences in writing",
-          "Write texts using clearly formed letters with developing fluency",
-          "Spell words including multisyllabic and multimorphemic words with irregular spelling patterns, using phonic, morphemic and grammatical knowledge"
+          {
+            "description": "Read fluently and accurately, integrating phonic, morphemic, grammatical and punctuation knowledge",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-4th-reading-foundational-skills"
+          },
+          {
+            "description": "Use subjective and objective language appropriately",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-4th-grade-language",
+            "worksheetSlug": "fact-vs-opinion"
+          },
+          {
+            "description": "Use topic-specific vocabulary and literary devices",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-4th-grade-language",
+            "worksheetSlug": "simile-metaphor-imagery"
+          },
+          {
+            "description": "Use complex sentences in writing",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-4th-grade-language",
+            "worksheetSlug": "complex-sentences-conjunctions"
+          },
+          {
+            "description": "Write texts using clearly formed letters with developing fluency",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-4th-grade-language"
+          },
+          {
+            "description": "Spell words including multisyllabic and multimorphemic words with irregular spelling patterns, using phonic, morphemic and grammatical knowledge",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-4th-grade-language",
+            "worksheetSlug": "synonyms-antonyms"
+          }
         ]
       },
       {
         "strand": "Literature",
         "items": [
-          "Listen to and create spoken and/or multimodal texts including stories",
-          "Describe how ideas are developed through characters and events",
-          "Describe how texts reflect contexts",
-          "Describe how literary devices and visual features shape meaning",
-          "Create written and/or multimodal texts including stories, developing ideas using details from learnt topics, topics of interest or texts"
+          {
+            "description": "Listen to and create spoken and/or multimodal texts including stories",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-4th-reading-literature",
+            "worksheetSlug": "text-features-nonfiction"
+          },
+          {
+            "description": "Describe how ideas are developed through characters and events",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-4th-reading-literature",
+            "worksheetSlug": "text-features-nonfiction"
+          },
+          {
+            "description": "Describe how texts reflect contexts",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-4th-reading-literature"
+          },
+          {
+            "description": "Describe how literary devices and visual features shape meaning",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-4th-reading-literature",
+            "worksheetSlug": "simile-metaphor-imagery"
+          },
+          {
+            "description": "Create written and/or multimodal texts including stories, developing ideas using details from learnt topics, topics of interest or texts",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-4th-reading-literature",
+            "worksheetSlug": "persuasive-opinion-paragraphs"
+          }
         ]
       },
       {
         "strand": "Literacy",
         "items": [
-          "Interact with others to share and extend ideas, opinions and information with audiences",
-          "Use text structures to organise and link ideas in spoken texts",
-          "Use visual features and features of voice in spoken texts",
-          "Read, view and comprehend texts created to inform, influence and/or engage audiences",
-          "Describe the characteristic features of different text structures",
-          "Use paragraphs to organise and link ideas in writing",
-          "Use visual features in multimodal texts",
-          "Create written and/or multimodal texts for purposes and audiences"
+          {
+            "description": "Interact with others to share and extend ideas, opinions and information with audiences",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-4th-reading-informational-text",
+            "worksheetSlug": "fact-vs-opinion"
+          },
+          {
+            "description": "Use text structures to organise and link ideas in spoken texts",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-4th-grade-language"
+          },
+          {
+            "description": "Use visual features and features of voice in spoken texts",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-4th-grade-language"
+          },
+          {
+            "description": "Read, view and comprehend texts created to inform, influence and/or engage audiences",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-4th-reading-informational-text",
+            "worksheetSlug": "fact-vs-opinion"
+          },
+          {
+            "description": "Describe the characteristic features of different text structures",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-4th-reading-informational-text",
+            "worksheetSlug": "text-features-nonfiction"
+          },
+          {
+            "description": "Use paragraphs to organise and link ideas in writing",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-4th-grade-language",
+            "worksheetSlug": "persuasive-opinion-paragraphs"
+          },
+          {
+            "description": "Use visual features in multimodal texts",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-4th-reading-informational-text"
+          },
+          {
+            "description": "Create written and/or multimodal texts for purposes and audiences",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-4th-grade-language",
+            "worksheetSlug": "persuasive-opinion-paragraphs"
+          }
         ]
       }
     ],
@@ -239,32 +632,94 @@
       {
         "strand": "Language",
         "items": [
-          "Use topic-specific vocabulary and literary devices in spoken and written texts",
-          "Use complex sentences and varied tenses in writing",
-          "Use language features including multimodal features in texts",
-          "Spell using phonic, morphemic and grammatical knowledge"
+          {
+            "description": "Use topic-specific vocabulary and literary devices in spoken and written texts",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-5th-grade-language",
+            "worksheetSlug": "figurative-language-etymology"
+          },
+          {
+            "description": "Use complex sentences and varied tenses in writing",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-5th-grade-language",
+            "worksheetSlug": "verb-tenses-consistency"
+          },
+          {
+            "description": "Use language features including multimodal features in texts",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-5th-reading-informational-text",
+            "worksheetSlug": "media-literacy-images-layout"
+          },
+          {
+            "description": "Spell using phonic, morphemic and grammatical knowledge",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-5th-grade-language",
+            "worksheetSlug": "figurative-language-etymology"
+          }
         ]
       },
       {
         "strand": "Literature",
         "items": [
-          "Listen to and create spoken and/or multimodal texts including literary texts",
-          "Explain how ideas are developed through characters, settings and/or events",
-          "Explain how texts reflect contexts",
-          "Explain how literary devices and visual features contribute to the effect and meaning of a text",
-          "Create written and/or multimodal texts including literary texts, developing and expanding on ideas with supporting details from topics or texts"
+          {
+            "description": "Listen to and create spoken and/or multimodal texts including literary texts",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-5th-reading-literature"
+          },
+          {
+            "description": "Explain how ideas are developed through characters, settings and/or events",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-5th-reading-literature",
+            "worksheetSlug": "inferencing-theme-point-of-view"
+          },
+          {
+            "description": "Explain how texts reflect contexts",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-5th-reading-literature",
+            "worksheetSlug": "inferencing-theme-point-of-view"
+          },
+          {
+            "description": "Explain how literary devices and visual features contribute to the effect and meaning of a text",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-5th-reading-literature",
+            "worksheetSlug": "figurative-language-etymology"
+          },
+          {
+            "description": "Create written and/or multimodal texts including literary texts, developing and expanding on ideas with supporting details from topics or texts",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-5th-grade-language",
+            "worksheetSlug": "expository-writing"
+          }
         ]
       },
       {
         "strand": "Literacy",
         "items": [
-          "Interact with others to share, develop and expand on ideas and opinions, using supporting details from topics or texts",
-          "Use different text structures to organise, develop and link ideas in spoken texts",
-          "Use features of voice and multimodal features in spoken texts",
-          "Read, view and comprehend texts created to inform, influence and/or engage audiences",
-          "Explain how characteristic text structures support the purpose of texts",
-          "Create written and/or multimodal texts for particular purposes and audiences",
-          "Use paragraphs to organise, develop and link ideas in writing"
+          {
+            "description": "Interact with others to share, develop and expand on ideas and opinions, using supporting details from topics or texts",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-5th-reading-informational-text",
+            "worksheetSlug": "persuasive-arguments-counterarguments"
+          },
+          {
+            "description": "Use different text structures to organise, develop and link ideas in spoken texts",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-5th-grade-language"
+          },
+          {
+            "description": "Use features of voice and multimodal features in spoken texts",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-5th-reading-informational-text",
+            "worksheetSlug": "media-literacy-images-layout"
+          },
+          {
+            "description": "Read, view and comprehend texts created to inform, influence and/or engage audiences",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-5th-reading-informational-text",
+            "worksheetSlug": "reading-comprehension-informational"
+          },
+          {
+            "description": "Explain how characteristic text structures support the purpose of texts",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-5th-reading-informational-text",
+            "worksheetSlug": "reading-comprehension-informational"
+          },
+          {
+            "description": "Create written and/or multimodal texts for particular purposes and audiences",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-5th-grade-language",
+            "worksheetSlug": "expository-writing"
+          },
+          {
+            "description": "Use paragraphs to organise, develop and link ideas in writing",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-5th-grade-language",
+            "worksheetSlug": "expository-writing"
+          }
         ]
       }
     ],
@@ -281,32 +736,92 @@
       {
         "strand": "Language",
         "items": [
-          "Use and vary topic-specific vocabulary and literary devices in spoken and written texts",
-          "Use and vary sentence structures in writing",
-          "Use and vary language features including multimodal features",
-          "Spell using phonic, morphemic and grammatical knowledge"
+          {
+            "description": "Use and vary topic-specific vocabulary and literary devices in spoken and written texts",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-6th-grade-language",
+            "worksheetSlug": "connotation-vs-denotation"
+          },
+          {
+            "description": "Use and vary sentence structures in writing",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-6th-grade-language",
+            "worksheetSlug": "modal-verbs-passive-voice"
+          },
+          {
+            "description": "Use and vary language features including multimodal features",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-6th-reading-informational-text",
+            "worksheetSlug": "evaluating-arguments"
+          },
+          {
+            "description": "Spell using phonic, morphemic and grammatical knowledge",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-6th-grade-language"
+          }
         ]
       },
       {
         "strand": "Literature",
         "items": [
-          "Listen to and create spoken and/or multimodal texts including literary texts",
-          "Identify similarities and differences in how ideas are presented and developed through characters, settings and/or events",
-          "Identify how texts reflect contexts",
-          "Explain how literary devices and visual features influence audiences",
-          "Create written and/or multimodal texts including literary texts, developing, explaining and elaborating on relevant ideas from topics or texts"
+          {
+            "description": "Listen to and create spoken and/or multimodal texts including literary texts",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-6th-reading-literature"
+          },
+          {
+            "description": "Identify similarities and differences in how ideas are presented and developed through characters, settings and/or events",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-6th-reading-literature",
+            "worksheetSlug": "themes-across-texts"
+          },
+          {
+            "description": "Identify how texts reflect contexts",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-6th-reading-literature",
+            "worksheetSlug": "themes-across-texts"
+          },
+          {
+            "description": "Explain how literary devices and visual features influence audiences",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-6th-reading-literature",
+            "worksheetSlug": "analysing-authors-craft"
+          },
+          {
+            "description": "Create written and/or multimodal texts including literary texts, developing, explaining and elaborating on relevant ideas from topics or texts",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-6th-grade-language",
+            "worksheetSlug": "research-report-writing"
+          }
         ]
       },
       {
         "strand": "Literacy",
         "items": [
-          "Interact with others to share, develop, explain and elaborate on ideas from topics or texts",
-          "Use and vary text structures to organise, develop and link ideas in spoken texts",
-          "Use and vary features of voice and multimodal features in spoken texts",
-          "Read, view and comprehend different texts created to inform, influence and/or engage audiences",
-          "Identify how texts have similar and different text structures to reflect purpose",
-          "Create written and/or multimodal texts for particular purposes and audiences",
-          "Use text structures and vary paragraphs to organise, develop and link ideas in writing"
+          {
+            "description": "Interact with others to share, develop, explain and elaborate on ideas from topics or texts",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-6th-reading-informational-text",
+            "worksheetSlug": "evaluating-arguments"
+          },
+          {
+            "description": "Use and vary text structures to organise, develop and link ideas in spoken texts",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-6th-grade-language"
+          },
+          {
+            "description": "Use and vary features of voice and multimodal features in spoken texts",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-6th-grade-language"
+          },
+          {
+            "description": "Read, view and comprehend different texts created to inform, influence and/or engage audiences",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-6th-reading-informational-text",
+            "worksheetSlug": "evaluating-arguments"
+          },
+          {
+            "description": "Identify how texts have similar and different text structures to reflect purpose",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-6th-reading-informational-text",
+            "worksheetSlug": "persuasive-essay-structure"
+          },
+          {
+            "description": "Create written and/or multimodal texts for particular purposes and audiences",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-6th-grade-language",
+            "worksheetSlug": "persuasive-essay-structure"
+          },
+          {
+            "description": "Use text structures and vary paragraphs to organise, develop and link ideas in writing",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-6th-grade-language",
+            "worksheetSlug": "persuasive-essay-structure"
+          }
         ]
       }
     ],
@@ -323,31 +838,90 @@
       {
         "strand": "Language",
         "items": [
-          "Adopt language features including literary devices in spoken and written texts",
-          "Adopt multimodal features and features of voice in spoken texts",
-          "Identify how language features including literary devices and visual features shape meaning"
+          {
+            "description": "Adopt language features including literary devices in spoken and written texts",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-7th-grade-language",
+            "worksheetSlug": "cohesive-devices-text-flow"
+          },
+          {
+            "description": "Adopt multimodal features and features of voice in spoken texts",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-7th-reading-informational-text",
+            "worksheetSlug": "visual-literacy-multimodal"
+          },
+          {
+            "description": "Identify how language features including literary devices and visual features shape meaning",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-7th-reading-literature",
+            "worksheetSlug": "poetry-analysis"
+          }
         ]
       },
       {
         "strand": "Literature",
         "items": [
-          "Listen to and create spoken and/or multimodal texts including literary texts",
-          "Identify how ideas are portrayed in texts",
-          "Identify how texts are influenced by contexts",
-          "Identify the aesthetic qualities of texts",
-          "Create written and/or multimodal texts including literary texts, expressing and expanding on ideas with evidence"
+          {
+            "description": "Listen to and create spoken and/or multimodal texts including literary texts",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-7th-reading-literature",
+            "worksheetSlug": "short-story-style-purpose"
+          },
+          {
+            "description": "Identify how ideas are portrayed in texts",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-7th-reading-literature",
+            "worksheetSlug": "analytical-paragraph-structure"
+          },
+          {
+            "description": "Identify how texts are influenced by contexts",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-7th-reading-literature",
+            "worksheetSlug": "short-story-style-purpose"
+          },
+          {
+            "description": "Identify the aesthetic qualities of texts",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-7th-reading-literature",
+            "worksheetSlug": "poetry-analysis"
+          },
+          {
+            "description": "Create written and/or multimodal texts including literary texts, expressing and expanding on ideas with evidence",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-7th-grade-language",
+            "worksheetSlug": "analytical-paragraph-structure"
+          }
         ]
       },
       {
         "strand": "Literacy",
         "items": [
-          "Interact with others to discuss, express and expand ideas with evidence",
-          "Adopt text structures to organise, develop and link ideas in spoken texts",
-          "Read, view and comprehend texts created to inform, influence and/or engage audiences",
-          "Identify how text structures shape meaning",
-          "Create written and/or multimodal texts for different purposes and audiences",
-          "Adopt text structures to organise, develop and link ideas in writing",
-          "Adopt literary devices and multimodal features in written texts"
+          {
+            "description": "Interact with others to discuss, express and expand ideas with evidence",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-7th-reading-informational-text",
+            "worksheetSlug": "register-formal-informal"
+          },
+          {
+            "description": "Adopt text structures to organise, develop and link ideas in spoken texts",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-7th-grade-language"
+          },
+          {
+            "description": "Read, view and comprehend texts created to inform, influence and/or engage audiences",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-7th-reading-informational-text",
+            "worksheetSlug": "complex-sentences-clauses"
+          },
+          {
+            "description": "Identify how text structures shape meaning",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-7th-reading-informational-text",
+            "worksheetSlug": "analytical-paragraph-structure"
+          },
+          {
+            "description": "Create written and/or multimodal texts for different purposes and audiences",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-7th-grade-language",
+            "worksheetSlug": "analytical-paragraph-structure"
+          },
+          {
+            "description": "Adopt text structures to organise, develop and link ideas in writing",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-7th-grade-language",
+            "worksheetSlug": "cohesive-devices-text-flow"
+          },
+          {
+            "description": "Adopt literary devices and multimodal features in written texts",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-7th-reading-literature",
+            "worksheetSlug": "visual-literacy-multimodal"
+          }
         ]
       }
     ],
@@ -364,31 +938,89 @@
       {
         "strand": "Language",
         "items": [
-          "Select and vary language features including literary devices in spoken and written texts",
-          "Select and vary multimodal features and features of voice in spoken texts",
-          "Explain the effects of language features including intertextual references, literary devices and visual features"
+          {
+            "description": "Select and vary language features including literary devices in spoken and written texts",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-8th-grade-language",
+            "worksheetSlug": "syntax-for-effect"
+          },
+          {
+            "description": "Select and vary multimodal features and features of voice in spoken texts",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-8th-reading-informational-text"
+          },
+          {
+            "description": "Explain the effects of language features including intertextual references, literary devices and visual features",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-8th-reading-literature",
+            "worksheetSlug": "symbolism-and-allegory"
+          }
         ]
       },
       {
         "strand": "Literature",
         "items": [
-          "Listen to and create spoken and/or multimodal texts including literary texts",
-          "Explain how ideas are represented in texts",
-          "Explain how texts reflect or challenge contexts",
-          "Explain the aesthetic qualities of texts",
-          "Create written and/or multimodal texts including literary texts, expressing and advancing ideas with supporting evidence"
+          {
+            "description": "Listen to and create spoken and/or multimodal texts including literary texts",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-8th-reading-literature",
+            "worksheetSlug": "analytical-essay-writing"
+          },
+          {
+            "description": "Explain how ideas are represented in texts",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-8th-reading-literature",
+            "worksheetSlug": "how-texts-position-readers"
+          },
+          {
+            "description": "Explain how texts reflect or challenge contexts",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-8th-reading-literature",
+            "worksheetSlug": "intertextuality"
+          },
+          {
+            "description": "Explain the aesthetic qualities of texts",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-8th-reading-literature",
+            "worksheetSlug": "symbolism-and-allegory"
+          },
+          {
+            "description": "Create written and/or multimodal texts including literary texts, expressing and advancing ideas with supporting evidence",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-8th-grade-language",
+            "worksheetSlug": "analytical-essay-writing"
+          }
         ]
       },
       {
         "strand": "Literacy",
         "items": [
-          "Interact with others to discuss, express and elaborate on ideas with supporting evidence",
-          "Select and vary text structures to organise, develop and link ideas in spoken texts",
-          "Read, view and comprehend a range of texts created to inform, influence and/or engage audiences",
-          "Explain how text structures shape meaning",
-          "Create written and/or multimodal texts for different purposes and audiences",
-          "Select and vary text structures to organise, develop and link ideas in writing",
-          "Select and vary literary devices and multimodal features in written texts"
+          {
+            "description": "Interact with others to discuss, express and elaborate on ideas with supporting evidence",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-8th-reading-informational-text",
+            "worksheetSlug": "comparative-analysis"
+          },
+          {
+            "description": "Select and vary text structures to organise, develop and link ideas in spoken texts",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-8th-grade-language"
+          },
+          {
+            "description": "Read, view and comprehend a range of texts created to inform, influence and/or engage audiences",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-8th-reading-informational-text",
+            "worksheetSlug": "research-and-evaluating-sources"
+          },
+          {
+            "description": "Explain how text structures shape meaning",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-8th-reading-informational-text",
+            "worksheetSlug": "how-texts-position-readers"
+          },
+          {
+            "description": "Create written and/or multimodal texts for different purposes and audiences",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-8th-grade-language",
+            "worksheetSlug": "analytical-essay-writing"
+          },
+          {
+            "description": "Select and vary text structures to organise, develop and link ideas in writing",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-8th-grade-language",
+            "worksheetSlug": "analytical-essay-writing"
+          },
+          {
+            "description": "Select and vary literary devices and multimodal features in written texts",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-8th-reading-literature",
+            "worksheetSlug": "syntax-for-effect"
+          }
         ]
       }
     ],
@@ -405,31 +1037,91 @@
       {
         "strand": "Language",
         "items": [
-          "Select and experiment with language features including literary devices in spoken and written texts",
-          "Experiment with multimodal features and features of voice in spoken texts",
-          "Analyse the effects of language features including literary devices, intertextual references and multimodal features"
+          {
+            "description": "Select and experiment with language features including literary devices in spoken and written texts",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-9th-10th-grade-language",
+            "worksheetSlug": "rhetorical-devices"
+          },
+          {
+            "description": "Experiment with multimodal features and features of voice in spoken texts",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-9th-10th-grade-language",
+            "worksheetSlug": "multimodal-analysis"
+          },
+          {
+            "description": "Analyse the effects of language features including literary devices, intertextual references and multimodal features",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-9th-10th-reading-literature",
+            "worksheetSlug": "rhetorical-devices"
+          }
         ]
       },
       {
         "strand": "Literature",
         "items": [
-          "Listen to and create spoken and multimodal texts including literary texts",
-          "Analyse representations of people, places, events and concepts in texts",
-          "Analyse how texts respond to contexts",
-          "Analyse the aesthetic qualities of texts",
-          "Create written and multimodal texts including literary texts, expressing and expanding ideas, shaping meaning and providing substantiation"
+          {
+            "description": "Listen to and create spoken and multimodal texts including literary texts",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-9th-10th-reading-literature",
+            "worksheetSlug": "extended-analytical-response"
+          },
+          {
+            "description": "Analyse representations of people, places, events and concepts in texts",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-9th-10th-reading-literature",
+            "worksheetSlug": "critical-literacy-power-and-representation"
+          },
+          {
+            "description": "Analyse how texts respond to contexts",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-9th-10th-reading-literature",
+            "worksheetSlug": "australian-literature-and-identity"
+          },
+          {
+            "description": "Analyse the aesthetic qualities of texts",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-9th-10th-reading-literature",
+            "worksheetSlug": "extended-analytical-response"
+          },
+          {
+            "description": "Create written and multimodal texts including literary texts, expressing and expanding ideas, shaping meaning and providing substantiation",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-9th-10th-grade-language",
+            "worksheetSlug": "personal-and-reflective-writing"
+          }
         ]
       },
       {
         "strand": "Literacy",
         "items": [
-          "Interact with others to discuss and expand on ideas, shaping meaning and providing substantiation",
-          "Select and experiment with text structures to organise and develop ideas in spoken texts",
-          "Read, view and comprehend a range of texts created to inform, influence and/or engage audiences",
-          "Analyse the effects of text structures on meaning",
-          "Create written and multimodal texts for a range of purposes and audiences",
-          "Select and experiment with text structures to organise, develop and link ideas in writing",
-          "Select and experiment with literary devices and multimodal features in written texts"
+          {
+            "description": "Interact with others to discuss and expand on ideas, shaping meaning and providing substantiation",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-9th-10th-reading-informational-text",
+            "worksheetSlug": "formal-presentations-and-debate"
+          },
+          {
+            "description": "Select and experiment with text structures to organise and develop ideas in spoken texts",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-9th-10th-grade-language",
+            "worksheetSlug": "formal-presentations-and-debate"
+          },
+          {
+            "description": "Read, view and comprehend a range of texts created to inform, influence and/or engage audiences",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-9th-10th-reading-informational-text",
+            "worksheetSlug": "multimodal-analysis"
+          },
+          {
+            "description": "Analyse the effects of text structures on meaning",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-9th-10th-reading-informational-text",
+            "worksheetSlug": "extended-analytical-response"
+          },
+          {
+            "description": "Create written and multimodal texts for a range of purposes and audiences",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-9th-10th-grade-language",
+            "worksheetSlug": "personal-and-reflective-writing"
+          },
+          {
+            "description": "Select and experiment with text structures to organise, develop and link ideas in writing",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-9th-10th-grade-language",
+            "worksheetSlug": "extended-analytical-response"
+          },
+          {
+            "description": "Select and experiment with literary devices and multimodal features in written texts",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-9th-10th-reading-literature",
+            "worksheetSlug": "rhetorical-devices"
+          }
         ]
       }
     ],
@@ -446,30 +1138,85 @@
       {
         "strand": "Language",
         "items": [
-          "Select, vary and experiment with language features including rhetorical and literary devices in spoken and written texts",
-          "Experiment with multimodal features and features of voice in spoken texts",
-          "Analyse the effects of language features including literary devices, intertextual connections and multimodal features, and their contribution to aesthetic qualities"
+          {
+            "description": "Select, vary and experiment with language features including rhetorical and literary devices in spoken and written texts",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-9th-10th-grade-language",
+            "worksheetSlug": "rhetorical-devices-stylistic-choices"
+          },
+          {
+            "description": "Experiment with multimodal features and features of voice in spoken texts",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-9th-10th-grade-language"
+          },
+          {
+            "description": "Analyse the effects of language features including literary devices, intertextual connections and multimodal features, and their contribution to aesthetic qualities",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-9th-10th-reading-literature",
+            "worksheetSlug": "close-reading-literary-devices"
+          }
         ]
       },
       {
         "strand": "Literature",
         "items": [
-          "Listen to and create spoken and multimodal texts including literary texts",
-          "Analyse and evaluate representations of people, places, events and concepts in texts",
-          "Analyse how interpretations of texts may be influenced by readers and viewers",
-          "Create written and multimodal texts including literary texts, expressing ideas and representations, making connections and providing substantiation"
+          {
+            "description": "Listen to and create spoken and multimodal texts including literary texts",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-9th-10th-reading-literature",
+            "worksheetSlug": "extended-essay-writing"
+          },
+          {
+            "description": "Analyse and evaluate representations of people, places, events and concepts in texts",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-9th-10th-reading-literature",
+            "worksheetSlug": "ideology-and-representation"
+          },
+          {
+            "description": "Analyse how interpretations of texts may be influenced by readers and viewers",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-9th-10th-reading-literature",
+            "worksheetSlug": "comparative-text-analysis"
+          },
+          {
+            "description": "Create written and multimodal texts including literary texts, expressing ideas and representations, making connections and providing substantiation",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-9th-10th-grade-language",
+            "worksheetSlug": "extended-essay-writing"
+          }
         ]
       },
       {
         "strand": "Literacy",
         "items": [
-          "Interact with others to discuss ideas and responses to representations, making connections and providing substantiation",
-          "Select and experiment with text structures to organise and develop ideas in spoken texts",
-          "Read, view and comprehend a range of texts created to inform, influence and engage audiences",
-          "Analyse the effects of text structures on meaning",
-          "Create written and multimodal texts for a range of purposes and audiences",
-          "Select and experiment with text structures to organise, develop and link ideas and representations in writing",
-          "Select, vary and experiment with literary devices and multimodal features in written texts"
+          {
+            "description": "Interact with others to discuss ideas and responses to representations, making connections and providing substantiation",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-9th-10th-reading-informational-text",
+            "worksheetSlug": "oral-language-formal-discussion"
+          },
+          {
+            "description": "Select and experiment with text structures to organise and develop ideas in spoken texts",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-9th-10th-grade-language",
+            "worksheetSlug": "oral-language-formal-discussion"
+          },
+          {
+            "description": "Read, view and comprehend a range of texts created to inform, influence and engage audiences",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-9th-10th-reading-informational-text",
+            "worksheetSlug": "evaluating-sources-synthesising-research"
+          },
+          {
+            "description": "Analyse the effects of text structures on meaning",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-9th-10th-reading-informational-text",
+            "worksheetSlug": "comparative-text-analysis"
+          },
+          {
+            "description": "Create written and multimodal texts for a range of purposes and audiences",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-9th-10th-grade-language",
+            "worksheetSlug": "extended-essay-writing"
+          },
+          {
+            "description": "Select and experiment with text structures to organise, develop and link ideas and representations in writing",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-9th-10th-grade-language",
+            "worksheetSlug": "grammar-for-effect-syntax"
+          },
+          {
+            "description": "Select, vary and experiment with literary devices and multimodal features in written texts",
+            "khanAcademyUrl": "https://www.khanacademy.org/ela/cc-9th-10th-reading-literature",
+            "worksheetSlug": "close-reading-literary-devices"
+          }
         ]
       }
     ],

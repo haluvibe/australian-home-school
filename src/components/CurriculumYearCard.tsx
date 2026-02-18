@@ -194,7 +194,7 @@ export default function CurriculumYearCard({
                               )}
                               {worksheetSlug && (
                                 <Link
-                                  href={`/worksheets/mathematics/${yearLevelToPath(year.yearLevel)}/${worksheetSlug}`}
+                                  href={`/worksheets/${subject.toLowerCase()}/${yearLevelToPath(year.yearLevel)}/${worksheetSlug}`}
                                   className="mt-1.5 flex items-center gap-2 rounded-lg border border-sage/15 bg-sage/[0.04] px-3 py-1.5 text-sm transition-colors hover:bg-sage/[0.08]"
                                 >
                                   <svg

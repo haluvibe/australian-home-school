@@ -72,7 +72,7 @@ export const year5EnglishWorksheets: WorksheetItem[] = [
     },
     activities: [
       {
-        type: "matching",
+        type: "matching" as const,
         title: "Match the Figurative Language Type",
         instruction:
           "Draw a line to match each example with the correct type of figurative language.",
@@ -94,7 +94,7 @@ export const year5EnglishWorksheets: WorksheetItem[] = [
         ],
       },
       {
-        type: "open-response",
+        type: "open-response" as const,
         title: "Crack the Root Word Code",
         instruction:
           "Use the meaning of the root word to work out the meaning of each English word. Then write one more word that uses the same root.",
@@ -122,13 +122,70 @@ export const year5EnglishWorksheets: WorksheetItem[] = [
         ],
       },
       {
-        type: "open-response",
+        type: "open-response" as const,
         title: "Write with Figurative Language",
         instruction:
           "Write a short paragraph (4 to 5 sentences) about a storm, a sporting event or a busy day. Include at least one idiom, one example of hyperbole and one example of personification. Label each in the margin.",
         prompts: [
           { text: "My topic:", type: "lines", lines: 1 },
           { text: "My paragraph:", type: "box", lines: 12 },
+        ],
+      },
+      {
+        type: "sorting" as const,
+        title: "Sort the Root Word Families",
+        instruction:
+          "Sort each word into the column that matches its Latin or Greek root. Use the root meanings to help you: PORT (carry), AUD (hear), GRAPH (write), DICT (say or tell).",
+        parentTip:
+          "If your child is unsure, encourage them to say the word aloud and identify the part that sounds like the root. Connecting the sound of a root to its meaning is a powerful independent vocabulary strategy.",
+        columns: ["PORT (carry)", "AUD (hear)", "GRAPH (write)", "DICT (say or tell)"],
+        items: [
+          { label: "export" },
+          { label: "audience" },
+          { label: "autograph" },
+          { label: "dictate" },
+          { label: "portable" },
+          { label: "audible" },
+          { label: "paragraph" },
+          { label: "contradict" },
+          { label: "import" },
+          { label: "inaudible" },
+          { label: "photograph" },
+          { label: "predict" },
+        ],
+      },
+      {
+        type: "circle-correct" as const,
+        title: "Name That Figurative Language",
+        instruction:
+          "Read each sentence. Circle the type of figurative language it contains.",
+        parentTip:
+          "Ask your child to explain the literal meaning and the intended meaning for each example — this distinction shows whether they have truly grasped the technique rather than just memorised a label.",
+        questions: [
+          {
+            prompt: "The thunder clapped its hands with delight.",
+            options: ["Simile", "Personification", "Hyperbole", "Idiom"],
+          },
+          {
+            prompt: "I am so tired I could sleep for a thousand years.",
+            options: ["Metaphor", "Idiom", "Hyperbole", "Simile"],
+          },
+          {
+            prompt: "Her laughter was music to his ears.",
+            options: ["Personification", "Idiom", "Simile", "Hyperbole"],
+          },
+          {
+            prompt: "The new student was a fish out of water.",
+            options: ["Hyperbole", "Personification", "Idiom", "Simile"],
+          },
+          {
+            prompt: "His voice was as rough as gravel.",
+            options: ["Metaphor", "Simile", "Idiom", "Personification"],
+          },
+          {
+            prompt: "The stars winked at us through the clouds.",
+            options: ["Simile", "Hyperbole", "Personification", "Idiom"],
+          },
         ],
       },
     ],
@@ -199,7 +256,7 @@ export const year5EnglishWorksheets: WorksheetItem[] = [
     },
     activities: [
       {
-        type: "open-response",
+        type: "open-response" as const,
         title: "Spot the Tense Shift",
         instruction:
           "Read the paragraph below. Find and underline every verb. Then circle the verbs that are the wrong tense. Rewrite the paragraph with consistent past tense.",
@@ -212,7 +269,7 @@ export const year5EnglishWorksheets: WorksheetItem[] = [
         ],
       },
       {
-        type: "circle-correct",
+        type: "circle-correct" as const,
         title: "Choose the Correct Tense Form",
         instruction:
           "Circle the verb form that keeps the tense consistent with the rest of the sentence.",
@@ -240,11 +297,50 @@ export const year5EnglishWorksheets: WorksheetItem[] = [
         ],
       },
       {
-        type: "open-response",
+        type: "open-response" as const,
         title: "Write a Consistent Paragraph",
         instruction:
           "Write a paragraph of 6 to 8 sentences about an adventure — real or imagined. Choose past tense and stick with it throughout. Underline every verb when you have finished.",
         prompts: [{ text: "My adventure paragraph:", type: "box", lines: 14 }],
+      },
+      {
+        type: "matching" as const,
+        title: "Match the Tense to Its Name",
+        instruction:
+          "Draw a line to match each example sentence with the correct verb tense name.",
+        parentTip:
+          "Read each sentence aloud with your child before matching — hearing the tense often makes it easier to identify than reading silently.",
+        left: [
+          "She runs to school every day.",
+          "He was reading when the phone rang.",
+          "They will arrive tomorrow.",
+          "We have visited that museum before.",
+          "The dog barked all night.",
+          "I am writing a story right now.",
+        ],
+        right: [
+          "Simple present",
+          "Past continuous",
+          "Simple future",
+          "Present perfect",
+          "Simple past",
+          "Present continuous",
+        ],
+      },
+      {
+        type: "sequence" as const,
+        title: "Order the Tense Timeline",
+        instruction:
+          "Number these sentences 1 to 5 to put them in the correct order from earliest to latest in time, based on the tense and time clues in each sentence.",
+        parentTip:
+          "Encourage your child to underline the time clue words first — such as ago, last weekend, already, right now, next Friday — before deciding on the order.",
+        items: [
+          { label: "She will present her project to the class next Friday." },
+          { label: "She has already written the introduction." },
+          { label: "She was researching her topic last weekend." },
+          { label: "She chose her topic two weeks ago." },
+          { label: "She is editing the final draft right now." },
+        ],
       },
     ],
   },
@@ -314,7 +410,7 @@ export const year5EnglishWorksheets: WorksheetItem[] = [
     },
     activities: [
       {
-        type: "circle-correct",
+        type: "circle-correct" as const,
         title: "Choose Who, Which or That",
         instruction:
           "Circle the correct relative pronoun to complete each sentence.",
@@ -342,7 +438,7 @@ export const year5EnglishWorksheets: WorksheetItem[] = [
         ],
       },
       {
-        type: "open-response",
+        type: "open-response" as const,
         title: "Combine the Sentences",
         instruction:
           "Combine each pair of sentences into one sentence using a relative clause with who, which or that.",
@@ -370,7 +466,7 @@ export const year5EnglishWorksheets: WorksheetItem[] = [
         ],
       },
       {
-        type: "open-response",
+        type: "open-response" as const,
         title: "Write Your Own Relative Clauses",
         instruction:
           "Write six sentences about people or places you know. Each sentence must contain a relative clause using who, which or that. Label each clause in the margin — D for defining or ND for non-defining.",
@@ -381,6 +477,53 @@ export const year5EnglishWorksheets: WorksheetItem[] = [
           { text: "4.", type: "lines", lines: 2 },
           { text: "5.", type: "lines", lines: 2 },
           { text: "6.", type: "lines", lines: 2 },
+        ],
+      },
+      {
+        type: "sorting" as const,
+        title: "Sort: Defining or Non-defining?",
+        instruction:
+          "Sort each sentence into the correct column. Defining relative clauses tell us which specific person or thing — no commas needed. Non-defining relative clauses add extra information — commas required.",
+        parentTip:
+          "A useful test: if you can remove the clause and still know which person or thing is meant, it is likely non-defining. If removing it makes the sentence unclear, it is defining.",
+        columns: ["Defining (no commas)", "Non-defining (uses commas)"],
+        items: [
+          { label: "The car that is parked outside belongs to our neighbour." },
+          { label: "My grandmother, who lives in Perth, is visiting next month." },
+          { label: "The student who scored highest received a certificate." },
+          { label: "The Great Barrier Reef, which stretches 2,300 km, is under threat." },
+          { label: "Athletes who train daily improve faster than those who do not." },
+          { label: "Our dog, which we rescued two years ago, loves the beach." },
+        ],
+      },
+      {
+        type: "open-response" as const,
+        title: "Expand and Improve",
+        instruction:
+          "Rewrite each simple sentence by adding a relative clause to make it more precise and interesting. Choose who, which or that correctly and decide whether commas are needed.",
+        parentTip:
+          "Remind your child that a relative clause should add meaningful information — not just any clause. Ask: Does this clause help the reader understand more clearly?",
+        prompts: [
+          {
+            text: "1. The explorer made an important discovery.\nExpanded:",
+            type: "lines",
+            lines: 3,
+          },
+          {
+            text: "2. The library has a new reading room.\nExpanded:",
+            type: "lines",
+            lines: 3,
+          },
+          {
+            text: "3. My teacher gave us extra homework.\nExpanded:",
+            type: "lines",
+            lines: 3,
+          },
+          {
+            text: "4. The documentary was very interesting.\nExpanded:",
+            type: "lines",
+            lines: 3,
+          },
         ],
       },
     ],
@@ -456,7 +599,7 @@ export const year5EnglishWorksheets: WorksheetItem[] = [
     },
     activities: [
       {
-        type: "open-response",
+        type: "open-response" as const,
         title: "Making Inferences",
         instruction:
           "Read the extract below. Answer each question using evidence from the text and your own knowledge. Write your reasoning.",
@@ -479,7 +622,7 @@ export const year5EnglishWorksheets: WorksheetItem[] = [
         ],
       },
       {
-        type: "sorting",
+        type: "sorting" as const,
         title: "Sort: Topic or Theme?",
         instruction:
           "A topic is what a story is about. A theme is the message or big idea. Sort each statement into the correct column.",
@@ -494,7 +637,7 @@ export const year5EnglishWorksheets: WorksheetItem[] = [
         ],
       },
       {
-        type: "open-response",
+        type: "open-response" as const,
         title: "Theme Statement for Your Reading Book",
         instruction:
           "Write a theme statement for your current or most recently finished reading book. Support it with two pieces of evidence from the text.",
@@ -503,6 +646,56 @@ export const year5EnglishWorksheets: WorksheetItem[] = [
           { text: "Theme statement (a full sentence that expresses the big idea):", type: "lines", lines: 3 },
           { text: "Evidence 1 from the text:", type: "lines", lines: 3 },
           { text: "Evidence 2 from the text:", type: "lines", lines: 3 },
+        ],
+      },
+      {
+        type: "circle-correct" as const,
+        title: "Identify the Point of View",
+        instruction:
+          "Read each short extract. Circle the point of view from which it is narrated.",
+        parentTip:
+          "Point of view affects what a reader is allowed to know. Ask your child: What would change if this passage was told from a different character's perspective? This deepens understanding of authorial choice.",
+        questions: [
+          {
+            prompt: "I crept along the hallway, my heart hammering. I did not know what I would find behind the door.",
+            options: ["First person", "Third person limited", "Third person omniscient"],
+          },
+          {
+            prompt: "Sara felt nervous as she stepped onto the stage, though the audience had no idea she was trembling inside.",
+            options: ["First person", "Third person limited", "Third person omniscient"],
+          },
+          {
+            prompt: "In the kitchen, Mum worried about the bills. Meanwhile, upstairs, Dad was pretending everything was fine. Neither of them knew the other was afraid.",
+            options: ["First person", "Third person limited", "Third person omniscient"],
+          },
+          {
+            prompt: "Marcus grabbed his bag and ran. He had no way of knowing that the parcel he carried would change everything.",
+            options: ["First person", "Third person limited", "Third person omniscient"],
+          },
+        ],
+      },
+      {
+        type: "matching" as const,
+        title: "Match the Literary Term",
+        instruction:
+          "Draw a line to match each literary term with its correct definition.",
+        parentTip:
+          "Encourage your child to cover the right column, read each term aloud, and try to recall the definition before looking — this active retrieval strategy strengthens memory.",
+        left: [
+          "Inference",
+          "Theme",
+          "First person point of view",
+          "Third person omniscient",
+          "Topic",
+          "Third person limited",
+        ],
+        right: [
+          "The central message or big idea of a text",
+          "A conclusion drawn from clues in the text and background knowledge",
+          "What a story is about (not the message)",
+          "Narrated using 'I'; told from one character's direct perspective",
+          "Narrated using 'he/she'; the narrator knows all characters' thoughts",
+          "Narrated using 'he/she'; only one character's thoughts are known",
         ],
       },
     ],
@@ -578,7 +771,7 @@ export const year5EnglishWorksheets: WorksheetItem[] = [
     },
     activities: [
       {
-        type: "open-response",
+        type: "open-response" as const,
         title: "Label the Paragraph Structure",
         instruction:
           "Read the model paragraph below. Label each part of the information sandwich structure — TS for topic sentence, E for evidence, EX for explanation, CS for concluding statement.",
@@ -591,7 +784,7 @@ export const year5EnglishWorksheets: WorksheetItem[] = [
         ],
       },
       {
-        type: "open-response",
+        type: "open-response" as const,
         title: "Plan Your Paragraph",
         instruction:
           "Use the information sandwich planner to organise your ideas before writing.",
@@ -605,11 +798,76 @@ export const year5EnglishWorksheets: WorksheetItem[] = [
         ],
       },
       {
-        type: "open-response",
+        type: "open-response" as const,
         title: "Write Your Expository Paragraph",
         instruction:
           "Use your planner to write your full expository paragraph. Include at least two transition words. Underline each transition word when you have finished.",
         prompts: [{ text: "My paragraph:", type: "box", lines: 14 }],
+      },
+      {
+        type: "sorting" as const,
+        title: "Sort the Transition Words",
+        instruction:
+          "Sort each transition word or phrase into the correct column based on its purpose in expository writing.",
+        parentTip:
+          "Transition words are the glue of expository writing. After sorting, challenge your child to use one from each column in a sentence about any topic they are currently studying.",
+        columns: ["Adding information", "Cause and effect", "Contrasting", "Concluding"],
+        items: [
+          { label: "furthermore" },
+          { label: "as a result" },
+          { label: "however" },
+          { label: "in conclusion" },
+          { label: "in addition" },
+          { label: "therefore" },
+          { label: "on the other hand" },
+          { label: "overall" },
+          { label: "moreover" },
+          { label: "consequently" },
+          { label: "although" },
+          { label: "to summarise" },
+        ],
+      },
+      {
+        type: "circle-correct" as const,
+        title: "Choose the Best Topic Sentence",
+        instruction:
+          "Read each set of sentences. Circle the one that would make the best topic sentence for an expository paragraph.",
+        parentTip:
+          "A strong topic sentence states the main idea clearly without giving away all the details. It should make the reader want to read on to find out more.",
+        questions: [
+          {
+            prompt: "Choose the best topic sentence for a paragraph about coral reefs:",
+            options: [
+              "Coral reefs are found in warm, shallow water.",
+              "Coral reefs are among the most biodiverse ecosystems on Earth, yet they face serious threats from climate change.",
+              "Some coral has bleached due to warm water.",
+            ],
+          },
+          {
+            prompt: "Choose the best topic sentence for a paragraph about reading:",
+            options: [
+              "Reading is good.",
+              "Many students read books at school.",
+              "Reading regularly builds vocabulary, improves concentration and develops empathy.",
+            ],
+          },
+          {
+            prompt: "Choose the best topic sentence for a paragraph about sleep:",
+            options: [
+              "Getting enough sleep each night is essential for a child's physical and mental health.",
+              "Children should go to bed at a reasonable time.",
+              "Sleep is when the body rests.",
+            ],
+          },
+          {
+            prompt: "Choose the best topic sentence for a paragraph about renewable energy:",
+            options: [
+              "Solar panels use the sun.",
+              "Wind turbines are tall.",
+              "Renewable energy sources such as solar and wind power offer a cleaner alternative to fossil fuels.",
+            ],
+          },
+        ],
       },
     ],
   },
@@ -680,7 +938,7 @@ export const year5EnglishWorksheets: WorksheetItem[] = [
     },
     activities: [
       {
-        type: "open-response",
+        type: "open-response" as const,
         title: "Identify the Argument Structure",
         instruction:
           "Read the paragraph below. Label each part — A for argument, CA for counterargument and R for rebuttal.",
@@ -693,7 +951,7 @@ export const year5EnglishWorksheets: WorksheetItem[] = [
         ],
       },
       {
-        type: "open-response",
+        type: "open-response" as const,
         title: "Plan Your Argument",
         instruction:
           "Choose a topic and plan your persuasive paragraph using the argument structure below.",
@@ -710,11 +968,63 @@ export const year5EnglishWorksheets: WorksheetItem[] = [
         ],
       },
       {
-        type: "open-response",
+        type: "open-response" as const,
         title: "Write Your Persuasive Paragraph",
         instruction:
           "Use your plan to write a persuasive paragraph that includes your argument, a counterargument and a strong rebuttal.",
         prompts: [{ text: "My persuasive paragraph:", type: "box", lines: 14 }],
+      },
+      {
+        type: "matching" as const,
+        title: "Match the Persuasive Language Technique",
+        instruction:
+          "Draw a line to match each sentence with the persuasive language technique it uses.",
+        parentTip:
+          "Recognising these techniques in texts they read will help your child use them deliberately in their own persuasive writing — and spot when others are using them on them.",
+        left: [
+          "Nine out of ten experts agree that sleep is critical for learning.",
+          "Surely no reasonable person would want children to suffer.",
+          "We all want our children to have the best possible future, don't we?",
+          "The evidence is clear, the science is settled, and the time to act is now.",
+          "If we do nothing, the consequences will be catastrophic.",
+        ],
+        right: [
+          "Rhetorical question",
+          "Appeal to authority / statistics",
+          "Emotive language",
+          "Rule of three",
+          "Appeal to shared values",
+        ],
+      },
+      {
+        type: "circle-correct" as const,
+        title: "Strong Argument or Weak Argument?",
+        instruction:
+          "Read each argument. Circle whether it is strong (well supported with evidence or reasoning) or weak (unsupported opinion or logical flaw).",
+        parentTip:
+          "Discuss with your child why an argument without evidence is easy to dismiss. This develops the habit of always asking: What is the evidence for this claim?",
+        questions: [
+          {
+            prompt: "Everyone knows that homework is useless. It should be abolished immediately.",
+            options: ["Strong — well supported", "Weak — unsupported opinion"],
+          },
+          {
+            prompt: "A 2023 study by researchers at the University of Melbourne found that students who completed 30 minutes of homework per night performed 15% better on standardised tests.",
+            options: ["Strong — well supported", "Weak — unsupported opinion"],
+          },
+          {
+            prompt: "We should protect the environment because nature is nice and it would be sad if animals died.",
+            options: ["Strong — well supported", "Weak — vague and unsupported"],
+          },
+          {
+            prompt: "Reducing single-use plastics is essential because they take up to 500 years to break down and currently make up over 80% of marine debris, threatening thousands of ocean species.",
+            options: ["Strong — well supported", "Weak — unsupported opinion"],
+          },
+          {
+            prompt: "My friend agrees with me, so my argument must be right.",
+            options: ["Strong — uses evidence", "Weak — logical flaw (appeal to one opinion)"],
+          },
+        ],
       },
     ],
   },
@@ -789,7 +1099,7 @@ export const year5EnglishWorksheets: WorksheetItem[] = [
     },
     activities: [
       {
-        type: "open-response",
+        type: "open-response" as const,
         title: "Analyse a Media Text",
         instruction:
           "Look at the description of an advertisement below. Answer each question about the design choices the creator made.",
@@ -817,7 +1127,7 @@ export const year5EnglishWorksheets: WorksheetItem[] = [
         ],
       },
       {
-        type: "open-response",
+        type: "open-response" as const,
         title: "Design Your Own Poster",
         instruction:
           "Plan and sketch a simple poster or advertisement on a topic of your choice. Then write an explanation of three design choices you made.",
@@ -830,7 +1140,7 @@ export const year5EnglishWorksheets: WorksheetItem[] = [
         ],
       },
       {
-        type: "home-activity",
+        type: "home-activity" as const,
         title: "Media Critic for a Week",
         instruction:
           "Try these activities during the week to keep developing your media literacy.",
@@ -840,6 +1150,71 @@ export const year5EnglishWorksheets: WorksheetItem[] = [
           "Find a magazine or newspaper advertisement and write down three design choices the creator made. For each one, explain what effect it has on the audience.",
           "Compare the front page of two different newspapers on the same day. What is the main story on each? What images did they choose? What does the difference tell you about each newspaper's audience or point of view?",
           "Notice five logos this week — on food packaging, vehicles or signs. For each one, consider: what does the colour choice communicate? What mood does the shape or font create?",
+        ],
+      },
+      {
+        type: "sorting" as const,
+        title: "Sort the Design Techniques",
+        instruction:
+          "Sort each design feature into the correct column based on its primary purpose in a media text.",
+        parentTip:
+          "Remind your child that one design feature can serve multiple purposes — a large image might both attract attention and evoke emotion. Encourage them to think about the dominant purpose.",
+        columns: ["Attract attention", "Evoke emotion", "Build credibility", "Guide the reader's eye"],
+        items: [
+          { label: "Bold, oversized headline" },
+          { label: "A photograph of a smiling child" },
+          { label: "Expert quote with name and title" },
+          { label: "Arrows pointing to key information" },
+          { label: "Bright contrasting colours" },
+          { label: "Statistics and percentages" },
+          { label: "Close-up image of a person's face" },
+          { label: "Numbered steps or bullet points" },
+          { label: "A logo from a well-known organisation" },
+          { label: "White space isolating a key message" },
+          { label: "A dramatic before-and-after image" },
+          { label: "A countdown timer or deadline" },
+        ],
+      },
+      {
+        type: "circle-correct" as const,
+        title: "Reading Design Choices",
+        instruction:
+          "Read each description of a design choice. Circle the most likely reason the creator made that choice.",
+        parentTip:
+          "There is rarely a single correct answer in media analysis — what matters is whether your child can justify their response with reasoning. Accept well-reasoned alternatives.",
+        questions: [
+          {
+            prompt: "A charity poster uses a dark, desaturated colour scheme with a single beam of light in the centre.",
+            options: [
+              "To make the poster easy to print cheaply",
+              "To create a sense of hope emerging from hardship",
+              "Because those were the only colours available",
+            ],
+          },
+          {
+            prompt: "A news website places its most important story in the top-left corner of the page.",
+            options: [
+              "Because most readers scan pages from top-left to bottom-right",
+              "Because the story was too short to go anywhere else",
+              "To hide it from casual readers",
+            ],
+          },
+          {
+            prompt: "An advertisement for a children's breakfast cereal uses a large cartoon character and bold primary colours.",
+            options: [
+              "To appeal to adult shoppers who find cartoons nostalgic",
+              "To target children by using visuals that are familiar and exciting to them",
+              "Because the designer preferred cartoon art",
+            ],
+          },
+          {
+            prompt: "A documentary about climate change opens with sweeping aerial footage of a dying coral reef, with no words for the first 30 seconds.",
+            options: [
+              "To save time on writing a script",
+              "To create an emotional impact before presenting any facts",
+              "Because footage of coral reefs is free to use",
+            ],
+          },
         ],
       },
     ],
@@ -915,7 +1290,7 @@ export const year5EnglishWorksheets: WorksheetItem[] = [
     },
     activities: [
       {
-        type: "open-response",
+        type: "open-response" as const,
         title: "Skim and Summarise",
         instruction:
           "Read the passage below. First skim it quickly (30 seconds). Then read it carefully. Write a three-sentence summary in your own words.",
@@ -928,7 +1303,7 @@ export const year5EnglishWorksheets: WorksheetItem[] = [
         ],
       },
       {
-        type: "open-response",
+        type: "open-response" as const,
         title: "Scan for Specific Information",
         instruction:
           "Scan the passage above to find the answers as quickly as you can. Do not re-read the whole text — move your eyes to find the specific information.",
@@ -939,7 +1314,7 @@ export const year5EnglishWorksheets: WorksheetItem[] = [
         ],
       },
       {
-        type: "open-response",
+        type: "open-response" as const,
         title: "Evaluate the Author's Purpose",
         instruction:
           "Answer these questions about the author's purpose and point of view in the passage above.",
@@ -959,6 +1334,46 @@ export const year5EnglishWorksheets: WorksheetItem[] = [
             type: "lines",
             lines: 3,
           },
+        ],
+      },
+      {
+        type: "matching" as const,
+        title: "Match the Reading Strategy to Its Purpose",
+        instruction:
+          "Draw a line to match each reading strategy with the situation where a reader would use it.",
+        parentTip:
+          "Metacognition — knowing which strategy to use and when — is a hallmark of skilled readers. Practise asking your child: What strategy would you use if you needed to find a specific date in a long article?",
+        left: [
+          "Skimming",
+          "Scanning",
+          "Summarising",
+          "Evaluating",
+          "Close reading",
+          "Inferencing",
+        ],
+        right: [
+          "You want to find a specific name or statistic quickly",
+          "You need to check whether a source is reliable and why it was written",
+          "You want to understand every detail of a complex section of text",
+          "You want to capture the main idea of a passage in your own words",
+          "You read quickly to get the general topic before deciding whether to read further",
+          "You use clues in the text to work out what the author implies but does not state",
+        ],
+      },
+      {
+        type: "sequence" as const,
+        title: "Order the Research Process",
+        instruction:
+          "A student is researching a topic for an informational report. Number these steps 1 to 6 to show the most logical order for using reading strategies effectively.",
+        parentTip:
+          "Discuss with your child that real research rarely follows a perfectly linear path — readers often loop back to earlier steps. This activity teaches the ideal process as a starting point.",
+        items: [
+          { label: "Skim several sources quickly to decide which ones are most relevant." },
+          { label: "Evaluate each source for reliability, author purpose and potential bias." },
+          { label: "Choose a research question or topic to investigate." },
+          { label: "Scan chosen sources for specific facts and evidence to support your points." },
+          { label: "Summarise key information from each source in your own words." },
+          { label: "Close-read the most important sections to fully understand the detail." },
         ],
       },
     ],

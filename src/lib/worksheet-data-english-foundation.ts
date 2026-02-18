@@ -124,6 +124,52 @@ export const foundationEnglishWorksheets: WorksheetItem[] = [
           "Clap once for each syllable in a word, then find a rhyme for it.",
         ],
       },
+      {
+        type: "sorting" as const,
+        title: "Sort the Rhyming Families",
+        instruction:
+          "Read each word. Write it in the correct rhyming family column.",
+        parentTip:
+          "Say each word aloud and stress the ending sound to help your child hear the rhyme family.",
+        columns: ["-at family", "-og family", "-un family"],
+        items: [
+          { label: "cat" },
+          { label: "dog" },
+          { label: "sun" },
+          { label: "bat" },
+          { label: "log" },
+          { label: "bun" },
+          { label: "mat" },
+          { label: "fog" },
+          { label: "run" },
+        ],
+      },
+      {
+        type: "matching" as const,
+        title: "Match the Rhyming Pairs",
+        instruction:
+          "Draw a line to match each word on the left to the word it rhymes with on the right.",
+        parentTip:
+          "Use this as a second, harder set — the endings are less familiar than cat/hat.",
+        left: ["king", "cake", "nose", "light", "door"],
+        right: ["night", "ring", "more", "rose", "snake"],
+      },
+      {
+        type: "circle-correct" as const,
+        title: "Which Word Rhymes?",
+        instruction:
+          "Circle the word that rhymes with the first word in each row.",
+        parentTip:
+          "Cover the options and say the first word aloud — then reveal options one at a time.",
+        questions: [
+          { prompt: "bed", options: ["bat", "red", "big"] },
+          { prompt: "pin", options: ["pan", "pit", "bin"] },
+          { prompt: "hop", options: ["hat", "mop", "hip"] },
+          { prompt: "lake", options: ["lock", "line", "cake"] },
+          { prompt: "call", options: ["ball", "bell", "bill"] },
+          { prompt: "bee", options: ["bar", "tree", "bat"] },
+        ],
+      },
     ],
   },
 
@@ -258,6 +304,32 @@ export const foundationEnglishWorksheets: WorksheetItem[] = [
           "Sing the alphabet song and pause at a letter — ask what sound that letter makes.",
         ],
       },
+      {
+        type: "matching" as const,
+        title: "Match the Letter to Its Sound Word",
+        instruction:
+          "Draw a line to match each beginning sound on the left to a picture word that starts with it on the right.",
+        parentTip:
+          "Say the sound (not the letter name) and the word together: /s/... sun. /m/... moon.",
+        left: ["/s/", "/m/", "/t/", "/f/", "/h/", "/r/"],
+        right: ["hat", "rainbow", "moon", "sun", "table", "fish"],
+      },
+      {
+        type: "circle-correct" as const,
+        title: "What Is the Beginning Sound?",
+        instruction:
+          "Listen to each word. Circle the letter that shows its beginning sound.",
+        parentTip:
+          "Say each word slowly, stretching the first sound: sssock, mmmat. Let your child circle before you confirm.",
+        questions: [
+          { prompt: "sock", options: ["/s/", "/m/", "/t/"] },
+          { prompt: "mat", options: ["/b/", "/m/", "/f/"] },
+          { prompt: "pen", options: ["/t/", "/p/", "/s/"] },
+          { prompt: "dog", options: ["/d/", "/b/", "/g/"] },
+          { prompt: "fan", options: ["/f/", "/v/", "/p/"] },
+          { prompt: "hat", options: ["/m/", "/h/", "/t/"] },
+        ],
+      },
     ],
   },
 
@@ -382,6 +454,44 @@ export const foundationEnglishWorksheets: WorksheetItem[] = [
           "Write a letter in the air with your finger and ask your child to guess which letter.",
           "Trace letters in a tray of flour, sand or salt for a tactile experience.",
           "Look at food packaging and spot uppercase and lowercase letters together.",
+        ],
+      },
+      {
+        type: "matching" as const,
+        title: "Match the Second Half of the Alphabet",
+        instruction:
+          "Draw a line to match each uppercase letter on the left to its lowercase twin on the right.",
+        parentTip:
+          "After matching, ask your child to say the letter name and its sound for each pair.",
+        left: ["I", "J", "K", "L", "M", "N", "O", "P"],
+        right: ["n", "l", "p", "k", "o", "j", "m", "i"],
+      },
+      {
+        type: "sorting" as const,
+        title: "Uppercase or Lowercase?",
+        instruction:
+          "Sort each letter into the correct column — uppercase (capital) or lowercase (small).",
+        parentTip:
+          "If your child is unsure, look for the letter on a cereal box or book to confirm.",
+        columns: ["Uppercase", "Lowercase"],
+        items: [
+          { label: "A" }, { label: "b" }, { label: "C" },
+          { label: "d" }, { label: "E" }, { label: "f" },
+          { label: "G" }, { label: "h" }, { label: "I" },
+          { label: "j" },
+        ],
+      },
+      {
+        type: "sequence" as const,
+        title: "Put the Letters in Alphabetical Order",
+        instruction:
+          "Write each group of letters in alphabetical order.",
+        parentTip:
+          "Sing the alphabet song together first to help your child identify which letter comes first.",
+        items: [
+          { label: "D, B, A, C → ___, ___, ___, ___" },
+          { label: "H, E, G, F → ___, ___, ___, ___" },
+          { label: "K, I, L, J → ___, ___, ___, ___" },
         ],
       },
     ],
@@ -510,6 +620,47 @@ export const foundationEnglishWorksheets: WorksheetItem[] = [
           "Use bath letters or fridge magnets to build and blend CVC words together.",
         ],
       },
+      {
+        type: "sorting" as const,
+        title: "Sort by Middle Vowel Sound",
+        instruction:
+          "Listen to the middle sound in each word. Sort it into the correct vowel column.",
+        parentTip:
+          "Say each word slowly: /c/-/a/-/t/. Stretch the middle vowel sound slightly to make it audible.",
+        columns: ["/a/ (cat)", "/i/ (big)", "/o/ (mop)", "/u/ (cup)"],
+        items: [
+          { label: "hat" }, { label: "sit" }, { label: "hot" }, { label: "run" },
+          { label: "man" }, { label: "tip" }, { label: "top" }, { label: "sun" },
+        ],
+      },
+      {
+        type: "sequence" as const,
+        title: "Put the Sounds in Order to Make a Word",
+        instruction:
+          "The sounds are mixed up. Write them in the correct order to spell the CVC word.",
+        parentTip:
+          "Say each sound out loud as you point to it — then blend to check the word sounds right.",
+        items: [
+          { label: "/t/ /a/ /c/ → Write the word: ______" },
+          { label: "/u/ /b/ /s/ → Write the word: ______" },
+          { label: "/e/ /p/ /n/ → Write the word: ______" },
+          { label: "/g/ /o/ /d/ → Write the word: ______" },
+          { label: "/n/ /u/ /r/ → Write the word: ______" },
+        ],
+      },
+      {
+        type: "open-response" as const,
+        title: "Draw and Write CVC Words",
+        instruction:
+          "Draw a picture of each word. Then write the word underneath.",
+        parentTip:
+          "Let your child draw first — this helps them visualise the word before writing it.",
+        prompts: [
+          { text: "Draw and write: cat", type: "box" as const },
+          { text: "Draw and write: bed", type: "box" as const },
+          { text: "Draw and write: cup", type: "box" as const },
+        ],
+      },
     ],
   },
 
@@ -630,6 +781,45 @@ export const foundationEnglishWorksheets: WorksheetItem[] = [
           "Listen to a favourite song and clap along to the syllable beats in the lyrics.",
         ],
       },
+      {
+        type: "circle-correct" as const,
+        title: "How Many Syllables?",
+        instruction:
+          "Clap the syllables in each word. Circle the correct number.",
+        parentTip:
+          "Use the chin-drop method: place a hand under the chin and count each time it drops.",
+        questions: [
+          { prompt: "bird", options: ["1", "2", "3"] },
+          { prompt: "rainbow", options: ["1", "2", "3"] },
+          { prompt: "banana", options: ["1", "2", "3"] },
+          { prompt: "hat", options: ["1", "2", "3"] },
+          { prompt: "turtle", options: ["1", "2", "3"] },
+          { prompt: "umbrella", options: ["1", "2", "3"] },
+        ],
+      },
+      {
+        type: "matching" as const,
+        title: "Match the Word to Its Syllable Count",
+        instruction:
+          "Draw a line from each word to the number that shows how many syllables it has.",
+        parentTip:
+          "Clap each word together before drawing the line to confirm the count.",
+        left: ["sun", "monkey", "elephant", "dog", "penguin", "crocodile"],
+        right: ["3", "1", "2", "3", "2", "1"],
+      },
+      {
+        type: "sequence" as const,
+        title: "Order from Fewest to Most Syllables",
+        instruction:
+          "Write the words in order — fewest syllables first, most syllables last.",
+        parentTip:
+          "Clap each word before sorting. Encourage your child to say the order aloud.",
+        items: [
+          { label: "butterfly, cat, rabbit → ___, ___, ___" },
+          { label: "elephant, sun, turtle → ___, ___, ___" },
+          { label: "dog, penguin, crocodile → ___, ___, ___" },
+        ],
+      },
     ],
   },
 
@@ -743,6 +933,43 @@ export const foundationEnglishWorksheets: WorksheetItem[] = [
           "At dinner, describe each food item: The carrot is long, orange and crunchy.",
           "Read a picture book together and collect all the describing words on the pages.",
           "Go on a texture walk — touch things and describe them: rough, smooth, bumpy, soft.",
+        ],
+      },
+      {
+        type: "sorting" as const,
+        title: "Sort the Describing Words",
+        instruction:
+          "Sort each describing word into the correct column based on what it describes.",
+        parentTip:
+          "Talk through each word together: Is 'fluffy' a colour, a size, or a texture?",
+        columns: ["Colour", "Size", "Texture"],
+        items: [
+          { label: "red" }, { label: "big" }, { label: "rough" },
+          { label: "blue" }, { label: "tiny" }, { label: "smooth" },
+          { label: "yellow" }, { label: "huge" }, { label: "fluffy" },
+        ],
+      },
+      {
+        type: "matching" as const,
+        title: "Match the Describing Word to the Object",
+        instruction:
+          "Draw a line to match each describing word to the object it best describes.",
+        parentTip:
+          "Discuss why the match makes sense — this builds vocabulary precision.",
+        left: ["fluffy", "sharp", "sour", "heavy", "tiny"],
+        right: ["lemon", "rock", "kitten", "ant", "knife"],
+      },
+      {
+        type: "open-response" as const,
+        title: "Describe It!",
+        instruction:
+          "Choose an object from around your home. Draw it and write three describing words.",
+        parentTip:
+          "Prompt: What colour is it? How big is it? What does it feel like?",
+        prompts: [
+          { text: "Draw your object here:", type: "box" as const },
+          { text: "Write three describing words for your object:", type: "lines" as const, lines: 2 },
+          { text: "Write a sentence: My object is ____________________________", type: "lines" as const, lines: 2 },
         ],
       },
     ],
@@ -859,6 +1086,51 @@ export const foundationEnglishWorksheets: WorksheetItem[] = [
           "Ask your child to read the pictures in a wordless picture book and make up a story.",
         ],
       },
+      {
+        type: "circle-correct" as const,
+        title: "Story Knowledge Check",
+        instruction:
+          "Circle the correct answer for each question about stories.",
+        parentTip:
+          "Discuss each answer together — the goal is to build story language, not to test.",
+        questions: [
+          { prompt: "Which part of a story introduces the characters and setting?", options: ["Beginning", "Middle", "End"] },
+          { prompt: "Where does the exciting problem usually happen?", options: ["Beginning", "Middle", "End"] },
+          { prompt: "What do we call the people or animals in a story?", options: ["Settings", "Characters", "Events"] },
+          { prompt: "The place where a story happens is called the...", options: ["Plot", "Setting", "Character"] },
+          { prompt: "When does the problem usually get solved?", options: ["Beginning", "Middle", "End"] },
+        ],
+      },
+      {
+        type: "sorting" as const,
+        title: "Beginning, Middle or End?",
+        instruction:
+          "Read each story event. Sort it into the correct column.",
+        parentTip:
+          "Use a familiar story your child knows — connect the events to one they've read.",
+        columns: ["Beginning", "Middle", "End"],
+        items: [
+          { label: "The characters are introduced and we find out where the story happens." },
+          { label: "The problem is solved and everyone is happy." },
+          { label: "Something goes wrong and the characters must fix it." },
+          { label: "We meet the main character for the first time." },
+          { label: "The story finishes and the characters go home." },
+          { label: "The most exciting part happens." },
+        ],
+      },
+      {
+        type: "open-response" as const,
+        title: "My Favourite Character",
+        instruction:
+          "Think of a character from a story you love. Draw them and write about them.",
+        parentTip:
+          "Ask: What do they look like? What do they do in the story? Are they brave, funny, kind?",
+        prompts: [
+          { text: "Draw your favourite character:", type: "box" as const },
+          { text: "My character's name is: ___________________________", type: "lines" as const, lines: 1 },
+          { text: "Write one sentence about what your character does in the story:", type: "lines" as const, lines: 2 },
+        ],
+      },
     ],
   },
 
@@ -971,6 +1243,47 @@ export const foundationEnglishWorksheets: WorksheetItem[] = [
           "Write a birthday card or letter to a family member or friend.",
           "Keep a drawing and writing journal — draw one thing each day and write one word or sentence about it.",
           "Leave notes for each other around the house — draw pictures and write labels.",
+        ],
+      },
+      {
+        type: "circle-correct" as const,
+        title: "What Makes Good Writing?",
+        instruction:
+          "Circle YES if the idea helps make good writing, or NO if it does not.",
+        parentTip:
+          "Discuss each answer — the aim is to build awareness of the writing process.",
+        questions: [
+          { prompt: "Think about what you want to say before you write.", options: ["YES", "NO"] },
+          { prompt: "Skip spaces between words so it looks neat.", options: ["YES", "NO"] },
+          { prompt: "Draw a picture first to plan your ideas.", options: ["YES", "NO"] },
+          { prompt: "Use a capital letter at the start of your name.", options: ["YES", "NO"] },
+          { prompt: "Write as fast as you can without thinking.", options: ["YES", "NO"] },
+        ],
+      },
+      {
+        type: "sequence" as const,
+        title: "The Writing Process — Put the Steps in Order",
+        instruction:
+          "Number these writing steps 1, 2, 3, 4 to show the correct order.",
+        parentTip:
+          "Talk through each step together before numbering — this builds awareness of writing as a process.",
+        items: [
+          { label: "Share your writing with someone — read it aloud." },
+          { label: "Think about your idea and talk about it." },
+          { label: "Check your writing — does it make sense?" },
+          { label: "Draw a picture and write your words." },
+        ],
+      },
+      {
+        type: "open-response" as const,
+        title: "My News",
+        instruction:
+          "Draw a picture of something that happened recently. Then write about it.",
+        parentTip:
+          "Talk about the event together first — oral rehearsal improves written output significantly.",
+        prompts: [
+          { text: "Draw a picture of your news:", type: "box" as const },
+          { text: "Write about it. Start with: Today / Yesterday / On the weekend...", type: "lines" as const, lines: 3 },
         ],
       },
     ],
