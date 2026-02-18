@@ -1,36 +1,102 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Australian Home School
 
-## Getting Started.
+A free, AI-powered homeschooling resource platform for Australian parents. No sign-ups, no subscriptions. Built with Next.js and the official Australian Curriculum V9.
 
-First, run the development server:
+## What It Does
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+Translates the official Australian Curriculum V9 into plain-English, parent-friendly language and pairs it with printable, curriculum-aligned worksheets.
+
+### Curriculum Browser
+
+- Covers **English** and **Mathematics**, Foundation through Year 10
+- Organised by strand:
+  - Mathematics: Number, Algebra, Measurement, Space, Statistics
+  - English: Language, Literature, Literacy
+- Each objective includes a plain-English description, a real-world example, a Khan Academy link, and an optional link to a practice worksheet
+
+### Worksheets
+
+- 90+ printable worksheets for Mathematics (Foundation through Year 10)
+- 15 activity types: NumberTrace, CountObjects, Matching, CompareGroups, NumberBonds, Pattern, Sorting, CircleCorrect, Sequence, ShapeTrace, TallyChart, TenFrame, PictureGraph, OpenResponse, HomeActivity
+- Each worksheet includes a lesson plan view with a full teaching script and a learning guide with concept explanation and checkpoint questions
+- Print-optimised A4 layout with PDF export
+
+### External Resources
+
+- Curated links to Twinkl, Teach Starter, K5 Learning, and others
+- Organised by category: multi-subject, English/literacy, maths, early learning, generators
+
+### FAQ
+
+- State-by-state homeschool registration info
+- Planning templates and guidance for parents
+
+---
+
+## Curriculum Data
+
+The Australian Curriculum V9 data lives in the `curriculum/` directory:
+
+```
+curriculum/
+  english/
+    english-curriculum-data.json
+    glossary.json
+  mathematics/
+    mathematics-curriculum-data.json
+    glossary.json
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+src/
+  app/                    # Pages (App Router)
+    curriculum/           # Curriculum browser
+    worksheets/           # Worksheet hub and individual pages
+    external-resources/   # Curated external links
+    faq/                  # FAQ and registration info
+  components/             # Shared components (Navbar, Footer, CurriculumYearCard, worksheets/)
+  lib/                    # Data types and loaders
+    curriculum-data.ts
+    worksheet-types.ts
+    worksheet-data.ts
+curriculum/               # Australian Curriculum V9 JSON data files
+```
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## Tech Stack
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Framework:** Next.js 16 with Turbopack, App Router, React Server Components
+- **Styling:** Tailwind CSS v4 with `@theme inline` block
+- **Fonts:** Fraunces (display), Outfit (body)
+- **Language:** TypeScript
+- **Rendering:** Static site generation (`generateStaticParams`) for all worksheet pages
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Colour Palette
 
-## Deploy on Vercel
+`cream`, `terracotta`, `sage`, `sand`, `charcoal`, `golden`
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Adding a New Year Level
+
+1. Create `src/lib/worksheet-data-yearN.ts` with the worksheet definitions
+2. Import it in `src/lib/worksheet-data.ts`
+3. Add the array to `worksheetsByYearLevel` in `src/app/page.tsx`
+
+Landing page stats (total worksheets, activity types, year levels) auto-update from that array.
+
+---
+
+## Getting Started
+
+```bash
+npm install
+npm run dev
+```
+
+Open [http://localhost:3000](http://localhost:3000).
