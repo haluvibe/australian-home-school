@@ -8,6 +8,30 @@ export const year5MathsWorksheets: WorksheetItem[] = [
     strand: "Number",
     description:
       "Write and order decimals, including decimals greater than one",
+    lesson: {
+      title: "Decimals Are Just Parts of a Whole",
+      objective: "Read, write and order decimal numbers including those greater than one, using place value understanding.",
+      materials: [
+        "A ruler (30 cm)",
+        "Paper and pencil",
+        "A glass of water and a measuring jug (if available)",
+      ],
+      intro: {
+        title: "What Lives Between the Whole Numbers?",
+        script: "Look at this ruler. We can see 1 centimetre, 2 centimetres, 3 centimetres. But what about the tiny lines in between? Those are tenths of a centimetre. 1.4 means one whole centimetre and four of those tiny parts. Decimals are just a way of writing amounts that are not quite a whole number.",
+        action: "Hold up the ruler and point to the millimetre marks. Show 1.4 cm physically. Ask your child to find 2.7 cm on the ruler and describe what they see.",
+      },
+      mainActivity: {
+        title: "Read, Write and Order",
+        script: "Let us write some decimals together. The digit before the dot tells us whole numbers. The digit after the dot tells us tenths. So 3.5 is three wholes and five tenths. Now, which is bigger: 3.5 or 3.8? Both have three wholes, so we compare the tenths. Eight tenths is more than five tenths, so 3.8 is bigger. Let us order a few together before you try the worksheet.",
+        action: "Write five decimals on paper: 0.3, 1.1, 0.9, 2.4, 1.7. Work together to put them in order from smallest to largest. Use the ruler to verify by pointing to each on the scale. Model think-aloud: 'I look at the whole number first, then the tenths.'",
+      },
+      wrapUp: {
+        title: "Explain It Back",
+        script: "Before you start the worksheet, tell me: how do you decide which decimal is bigger when the whole number parts are the same? And what does the digit after the decimal point mean?",
+        action: "Listen for the child to mention tenths and place value. If they are unsure, revisit the ruler one more time. Confirm they can write decimals from dictation before they begin.",
+      },
+    },
     activities: [
       // ─── Easy: Tenths (activities 1–25) ───
       {
@@ -519,6 +543,30 @@ export const year5MathsWorksheets: WorksheetItem[] = [
     strand: "Number",
     description:
       "Express natural numbers as products of factors; identify multiples",
+    lesson: {
+      title: "Breaking Numbers Apart — Factors and Multiples",
+      objective: "Find factor pairs of natural numbers and identify multiples of numbers up to 12.",
+      materials: [
+        "24 small objects (buttons, dried beans, coins)",
+        "Paper and pencil",
+        "A 12x12 multiplication grid (hand-drawn is fine)",
+      ],
+      intro: {
+        title: "Can You Share These Equally?",
+        script: "Here are 12 buttons. I want to put them into equal groups. Can I make groups of 2? Let us try. Yes! That gives 6 groups. Can I make groups of 3? Yes, 4 groups. Can I make groups of 5? No — I have 2 left over. The numbers that share 12 with nothing left over are called FACTORS of 12.",
+        action: "Tip out 12 objects and physically try grouping by 1, 2, 3, 4, 5, 6. Record each result. Emphasise that factors come in pairs: 2 and 6, 3 and 4.",
+      },
+      mainActivity: {
+        title: "Factor Pairs and Multiples",
+        script: "Every factor has a partner. Two times six equals twelve, so 2 and 6 are BOTH factors of 12. Now, multiples are the opposite idea. A multiple of 3 is any number you can reach by multiplying 3 by something: 3, 6, 9, 12, 15 and so on. Think of the 3 times table going on forever.",
+        action: "Ask your child to find all factor pairs of 18 using the objects. Then write the first 10 multiples of 4 and the first 10 multiples of 6 on paper. Circle the numbers that appear in both lists — these are common multiples. Discuss why 12 and 24 appear in both.",
+      },
+      wrapUp: {
+        title: "Factor or Multiple?",
+        script: "Quick check — is 8 a factor of 24? How do you know? Is 24 a multiple of 8? How are those two questions connected?",
+        action: "Child should explain that if 8 divides 24 evenly it is a factor, and that being a factor of 24 means 24 is a multiple of 8. They are the same relationship seen from different directions.",
+      },
+    },
     activities: [
       // ─── Easy: Identifying factors (activities 1–25) ───
       {
@@ -994,6 +1042,30 @@ export const year5MathsWorksheets: WorksheetItem[] = [
     strand: "Number",
     description:
       "Add and subtract fractions with same or related denominators",
+    lesson: {
+      title: "Fractions Are Parts — Add the Parts!",
+      objective: "Add and subtract fractions that share the same denominator, understanding that the denominator stays the same.",
+      materials: [
+        "One piece of paper (to fold into equal parts)",
+        "Scissors",
+        "Pencil and paper for recording",
+      ],
+      intro: {
+        title: "A Fraction Story",
+        script: "Imagine a pizza cut into 8 equal slices. You eat 3 slices and I eat 2 slices. How many slices did we eat altogether? Three eighths plus two eighths — we just add the tops: three plus two equals five. Five eighths. The bottom number stays because the slices are still the same size.",
+        action: "Fold a piece of paper into 8 equal sections and label each 1/8. Physically move 3 sections to one side and 2 to another. Push them together and count. Make the visual concrete before any symbols.",
+      },
+      mainActivity: {
+        title: "Add and Subtract the Numerators",
+        script: "The denominator — the bottom number — tells us the size of each piece. When the pieces are the same size, adding fractions is easy: just add the pieces. Three eighths plus two eighths equals five eighths. Subtracting works the same way: five eighths minus two eighths equals three eighths. The bottom never changes when denominators are the same.",
+        action: "Write out five addition and five subtraction examples on paper. Model the first two together, narrating each step. Then let your child solve the rest while you observe. Use the paper folding as a check if needed.",
+      },
+      wrapUp: {
+        title: "Say It in Words",
+        script: "Tell me in your own words: when we add fractions with the same denominator, what do we add and what do we leave alone? And why does the denominator not change?",
+        action: "Child should explain that we add the numerators because we are counting the pieces, and the denominator stays because the size of each piece has not changed. Correct gently if they say the denominators add together.",
+      },
+    },
     activities: [
       // ─── Easy: Same denominators (activities 1–25) ───
       {
@@ -1417,6 +1489,30 @@ export const year5MathsWorksheets: WorksheetItem[] = [
     strand: "Number",
     description:
       "Represent common percentages and connect them to fractions and decimals",
+    lesson: {
+      title: "Percent Means Out of One Hundred",
+      objective: "Connect common percentages to their fraction and decimal equivalents and convert between all three forms.",
+      materials: [
+        "10x10 grid drawn on paper (100 squares)",
+        "Coloured pencils or crayons",
+        "Pencil and paper",
+      ],
+      intro: {
+        title: "The Hundred Square",
+        script: "Here is a grid with 100 squares. If I colour 50 of them in, what fraction of the grid is coloured? Fifty out of a hundred — or 50/100. We can simplify that to one half. And percent just means 'out of 100', so 50 coloured squares is also 50%. All three — one half, 0.5 and 50% — mean exactly the same thing.",
+        action: "Draw a 10x10 grid together. Shade 50 squares. Write 50/100, then 1/2, then 0.5, then 50% beside it. Repeat with 25 squares and 10 squares to build the pattern.",
+      },
+      mainActivity: {
+        title: "The Key Equivalences",
+        script: "There are a few really important ones to learn. Fifty percent is one half, which is 0.5. Twenty-five percent is one quarter, which is 0.25. Ten percent is one tenth, which is 0.1. Seventy-five percent is three quarters, which is 0.75. Once you know these building blocks, you can figure out lots of others.",
+        action: "Make a three-column reference table together: Percentage, Fraction, Decimal. Fill in 10%, 25%, 50%, 75%, 100%. Use the grid to shade and verify each one. Then quiz your child orally: 'What fraction is 25%? What decimal is 75%?' before they attempt the worksheet.",
+      },
+      wrapUp: {
+        title: "Three Ways to Say It",
+        script: "If I say 25%, can you give me the fraction and the decimal straight away? And if I say 0.5, what percentage is that? And what fraction?",
+        action: "Child should convert fluently between all three forms for the key benchmarks. If unsure on any, return to the shaded grid together.",
+      },
+    },
     activities: [
       // ─── Easy: Common equivalences (activities 1–25) ───
       {
@@ -1849,6 +1945,29 @@ export const year5MathsWorksheets: WorksheetItem[] = [
     strand: "Number",
     description:
       "Multiply large numbers by one- and two-digit numbers",
+    lesson: {
+      title: "Split, Multiply, Add Back Together",
+      objective: "Multiply a 3-digit number by a 1- or 2-digit number using a place-value strategy and the standard algorithm.",
+      materials: [
+        "Paper and pencil",
+        "A pack of playing cards (number cards 2-9)",
+      ],
+      intro: {
+        title: "Breaking a Number Apart to Multiply",
+        script: "Here is a trick for big multiplication. Say we need to find 34 times 3. Instead of panicking, we split 34 into 30 and 4. Then: 30 times 3 equals 90, and 4 times 3 equals 12. Now add them back: 90 plus 12 equals 102. That is the answer! We used place value to make a hard problem into two easy ones.",
+        action: "Write 34 x 3 on paper. Show the split: 30 + 4. Do each partial product. Add the parts. Then try 56 x 4 together before moving to 3-digit numbers.",
+      },
+      mainActivity: {
+        title: "Partial Products and the Standard Algorithm",
+        script: "Now we can do the same with bigger numbers. Take 246 times 3. Split: 200 times 3 is 600. 40 times 3 is 120. 6 times 3 is 18. Add: 600 plus 120 plus 18 equals 738. When you feel confident, we can write this as a column multiplication. The method is the same — we just write it more neatly.",
+        action: "Work through three examples (3-digit by 1-digit) using partial products written out in full. Then show the same three using the vertical algorithm side by side. Draw lines connecting each partial product to where it appears in the vertical algorithm to show they are identical.",
+      },
+      wrapUp: {
+        title: "Estimate First, Then Check",
+        script: "Before you do the worksheet, try this habit: always estimate first. For 246 times 3, round to 250 times 3 equals 750. Our answer was 738 — very close! Estimating first tells you if your answer makes sense.",
+        action: "Give one final problem and ask your child to estimate before calculating. Verify that the estimate and the calculated answer are in the same ballpark.",
+      },
+    },
     activities: [
       // ─── Easy: Multiply by single digit (activities 1–25) ───
       {
@@ -2255,6 +2374,30 @@ export const year5MathsWorksheets: WorksheetItem[] = [
     strand: "Number",
     description:
       "Divide by single-digit numbers",
+    lesson: {
+      title: "Dividing by Sharing Equally",
+      objective: "Divide 2- and 3-digit numbers by single-digit numbers, including problems with remainders.",
+      materials: [
+        "36 small objects (buttons, dried pasta or coins)",
+        "Paper and pencil",
+        "4 small containers or labelled sections on a piece of paper",
+      ],
+      intro: {
+        title: "Sharing Into Equal Groups",
+        script: "Here are 36 buttons. We want to share them equally among 4 people. Let us deal them out one at a time — one for you, one for you, one for you, one for you — until they are all gone. How many did each person get? Nine! So 36 divided by 4 equals 9. Division is just equal sharing.",
+        action: "Physically share 36 objects into 4 containers. Then try 36 divided by 5 — show that 7 remain with a remainder of 1. Discuss what remainder means in real life.",
+      },
+      mainActivity: {
+        title: "Short Division Step by Step",
+        script: "For bigger numbers, we use short division — sometimes called the bus stop method. Take 84 divided by 4. I start with the hundreds or tens first: 8 divided by 4 equals 2. Write 2 above. Then 4 divided by 4 equals 1. Write 1. Answer: 21. If there is a remainder it gets carried over to the next digit. Let me show you with 97 divided by 4.",
+        action: "Write out the bus stop layout for three examples: 84 / 4, 97 / 4, and 156 / 6. Work step by step narrating each digit. Then have your child attempt two examples while you observe.",
+      },
+      wrapUp: {
+        title: "Check by Multiplying",
+        script: "Here is a great trick to check your division: multiply your answer by the divisor. If we said 84 divided by 4 equals 21, then 21 times 4 should give us back 84. Try it! Does it work?",
+        action: "Child checks one completed division by multiplying back. This reinforces the inverse relationship between multiplication and division.",
+      },
+    },
     activities: [
       // ─── Easy: Basic division (activities 1–25) ───
       {
@@ -2662,6 +2805,29 @@ export const year5MathsWorksheets: WorksheetItem[] = [
     strand: "Number",
     description:
       "Check the reasonableness of calculations using estimation",
+    lesson: {
+      title: "Does That Answer Make Sense?",
+      objective: "Round numbers to make quick estimates and use estimates to check whether a calculated answer is reasonable.",
+      materials: [
+        "A supermarket receipt or junk mail catalogue",
+        "Paper and pencil",
+      ],
+      intro: {
+        title: "The Estimate Challenge",
+        script: "Look at this shopping receipt. Before I add up all the prices exactly, let me estimate. This item is about $3, this one about $5, this one about $2. So roughly $10 altogether. The exact total is $9.85. My estimate was close! Estimation is not about getting it exactly right — it is about being in the right neighbourhood so you can spot a big mistake.",
+        action: "Use a receipt with 4-6 items. Round each price to the nearest dollar together, then add the rounded prices. Compare to the actual total. Discuss how close the estimate was.",
+      },
+      mainActivity: {
+        title: "Round First, Then Calculate",
+        script: "The strategy is simple: round each number to the nearest 10 or 100, do the simpler sum in your head, then compare to the exact answer. If your estimate is 300 and your calculated answer is 3000, something went wrong! Let us try a few together.",
+        action: "Write five calculations on paper: 47 + 38, 193 - 56, 4 x 68, 312 + 289, 95 - 41. For each, first estimate by rounding, record the estimate, then calculate exactly. Compare and discuss.",
+      },
+      wrapUp: {
+        title: "Catch the Mistake",
+        script: "I am going to tell you someone's answer and you tell me if it is reasonable. They said 48 plus 35 equals 193. Does that sound right to you? How do you know so quickly?",
+        action: "Give two or three unreasonable answers and two reasonable ones. Child should use rounding to identify the unreasonable ones without actually calculating. Praise quick reasoning.",
+      },
+    },
     activities: [
       // ─── Easy: Rounding to estimate (activities 1–25) ───
       {
@@ -3035,6 +3201,30 @@ export const year5MathsWorksheets: WorksheetItem[] = [
     strand: "Number",
     description:
       "Solve financial and other practical problems using mathematical modelling",
+    lesson: {
+      title: "Planning With Money",
+      objective: "Use addition, subtraction, multiplication and percentages to solve real-world financial problems.",
+      materials: [
+        "Coins and notes (or paper cut-outs of money)",
+        "Paper and pencil",
+        "A simple price list you write together (e.g., items for an imaginary shop)",
+      ],
+      intro: {
+        title: "Running a Mini Shop",
+        script: "Let us set up an imaginary market stall. We have four items: a book for $4.50, a pen for $1.20, a notebook for $3.00 and a ruler for $2.80. A customer gives you $10. What change do they get if they buy just the book and the pen? Can you work that out?",
+        action: "Write up the price list together. Use play money or drawn coins to make the context real. Let your child physically work out the change from $10 for the first purchase.",
+      },
+      mainActivity: {
+        title: "Budget, Spend, Save",
+        script: "Mathematical modelling means using maths to plan something real. Imagine you have $20 to spend. You want to buy three items. First, add up the cost. Then check: is it within budget? If not, what do you leave out? This is exactly how families plan their spending.",
+        action: "Give your child a budget of $20 and the price list. Ask them to choose items to buy without going over budget. Then extend: what if there is a 10% discount on one item? How much does that save? Model the 10% calculation if needed.",
+      },
+      wrapUp: {
+        title: "Explain Your Choices",
+        script: "Tell me about the choices you made. Why did you pick those items? How did you make sure you stayed within the $20 budget? Is there anything you could not afford that you would have liked?",
+        action: "Child explains their reasoning. Focus on the mathematical decisions, not just the arithmetic. Ask follow-up questions: how much money is left over? What is that as a fraction of the budget?",
+      },
+    },
     activities: [
       // ─── Easy: Simple money problems (activities 1–25) ───
       {
@@ -3373,6 +3563,30 @@ export const year5MathsWorksheets: WorksheetItem[] = [
     strand: "Algebra",
     description:
       "Find unknown values in equations involving multiplication and division",
+    lesson: {
+      title: "The Mystery Number",
+      objective: "Use inverse operations to find unknown values in multiplication and division equations.",
+      materials: [
+        "A small cup or container (to hide objects)",
+        "20 small objects (buttons, coins)",
+        "Paper and pencil",
+      ],
+      intro: {
+        title: "Guess What Is Hidden",
+        script: "I have hidden some buttons under this cup. If I add 5 more to the cup, there will be 12 altogether. How many are hiding? We need to find the mystery number. We call it an unknown. Mathematicians write it as a box or a letter: 12 = box + 5, so box equals 7. Let us find unknowns using multiplication now.",
+        action: "Hide 7 objects under a cup. Tell your child that you put some objects under the cup and then 5 more beside it — 12 total. Ask them to figure out the hidden number by working backwards.",
+      },
+      mainActivity: {
+        title: "Working Backwards Using Inverses",
+        script: "If 6 times a mystery number equals 42, I can find the mystery by dividing: 42 divided by 6 equals 7. Division is the opposite of multiplication — it undoes it. Similarly, if a mystery number divided by 3 equals 8, I undo the division by multiplying: 8 times 3 equals 24. We always ask: what operation do I need to reverse?",
+        action: "Write six equations on paper, alternating between missing factors and missing dividends. Do the first two together, narrating the inverse operation. Watch your child solve the remaining four. Prompt with 'What is the opposite of multiplying?' if stuck.",
+      },
+      wrapUp: {
+        title: "Make Your Own Mystery",
+        script: "Now you write an equation with a mystery number for me to solve. Make it tricky! Then tell me how you know your equation is correct — how would you check my answer?",
+        action: "Child creates an equation and provides the solution method. This reversal of roles deepens understanding. Check that they use multiplication to verify a division result and vice versa.",
+      },
+    },
     activities: [
       // ─── Easy: Missing factors (activities 1–25) ───
       {
@@ -3748,6 +3962,30 @@ export const year5MathsWorksheets: WorksheetItem[] = [
     strand: "Algebra",
     description:
       "Create and use algorithms to identify patterns in factors and multiples",
+    lesson: {
+      title: "Patterns Are Hiding in the Times Tables",
+      objective: "Discover and describe patterns in multiples and factors, and write a step-by-step algorithm to find them.",
+      materials: [
+        "Paper and pencil",
+        "A hundred chart (draw a 10x10 grid and number 1-100)",
+        "Two different coloured pencils",
+      ],
+      intro: {
+        title: "The Sieve of Eratosthenes",
+        script: "A long time ago, a mathematician called Eratosthenes discovered a beautiful method for finding prime numbers — numbers with only two factors: 1 and themselves. He used a sieve, like a strainer. We start at 2, the first prime, and cross out every second number after it. Then go to the next uncrossed number — 3 — and cross out every third number. What you are left with are the primes!",
+        action: "Give your child the hundred chart. Together, circle 2 and cross out all multiples of 2. Then circle 3 and cross out all multiples of 3. Continue with 5, 7. The remaining uncrossed numbers are primes. Count them together.",
+      },
+      mainActivity: {
+        title: "Writing an Algorithm",
+        script: "An algorithm is just a set of steps that always works. We can write our sieve as a step-by-step recipe. Step 1: start at 2. Step 2: circle it. Step 3: cross out all its multiples. Step 4: move to the next uncircled number. Step 5: repeat. See how a pattern becomes a repeatable process? Let us also look at patterns in the 9 times table — add the digits of each multiple and see what you notice.",
+        action: "Have your child write out the 9 times table to 9x10. For each multiple, add the digits (18: 1+8=9, 27: 2+7=9). Discuss the pattern. Then write the algorithm for the digit-sum test as a numbered list of instructions.",
+      },
+      wrapUp: {
+        title: "Test the Algorithm",
+        script: "Let us test your algorithm. Is 63 a multiple of 9? Use the digit-sum rule to check without dividing. Does it work? What about 72? What about 45?",
+        action: "Child applies the digit-sum algorithm to three new numbers. Verify each by dividing on paper. Reinforce that the algorithm is a reliable pattern they can use as a tool.",
+      },
+    },
     activities: [
       // ─── Easy: Patterns in multiplication tables (activities 1–25) ───
       {
@@ -4123,6 +4361,31 @@ export const year5MathsWorksheets: WorksheetItem[] = [
     strand: "Measurement",
     description:
       "Choose and use appropriate metric units to measure length, mass and capacity",
+    lesson: {
+      title: "Choosing the Right Unit",
+      objective: "Identify appropriate metric units for length, mass and capacity, and convert between units within each measure.",
+      materials: [
+        "A ruler and a tape measure",
+        "Kitchen scales",
+        "A 1-litre measuring jug",
+        "Various household objects to measure",
+      ],
+      intro: {
+        title: "Would You Weigh an Elephant in Grams?",
+        script: "If I told you an elephant weighs 4,000,000 grams, would that be useful? It is correct but it is not very helpful! We would say 4 tonnes or 4000 kilograms instead. Choosing the right unit matters — it makes our measurements easy to understand. Let us look at all the metric units we have and figure out which ones fit which jobs.",
+        action: "Put three objects on the table: a pencil, a bag of flour, and a jug of water. Ask your child which unit they would use to measure each: mm/cm/m/km for length, g/kg for mass, mL/L for capacity. Discuss why.",
+      },
+      mainActivity: {
+        title: "Measure and Convert",
+        script: "In the metric system everything is connected by powers of 10, which makes converting easy. 1 kilometre equals 1000 metres. 1 metre equals 100 centimetres. 1 kilogram equals 1000 grams. 1 litre equals 1000 millilitres. To convert from a bigger unit to a smaller one, multiply by 1000 or 100. To go from small to large, divide.",
+        action: "Measure the length of the table in cm and convert to m. Weigh a cup of flour in grams and state it in kg. Fill the jug to 500 mL and say it as a fraction of a litre. Write each conversion step out explicitly.",
+      },
+      wrapUp: {
+        title: "Convert These",
+        script: "Quick fire round! 3.5 km equals how many metres? 2500 g equals how many kilograms? 750 mL equals what fraction of a litre? How did you work each one out?",
+        action: "Child answers and explains the operation used (multiply or divide). If they hesitate, prompt: 'Are we going to a bigger or smaller unit?' to guide the direction of the conversion.",
+      },
+    },
     activities: [
       // ─── Easy: Choose the right unit (activities 1–25) ───
       {
@@ -4470,6 +4733,31 @@ export const year5MathsWorksheets: WorksheetItem[] = [
     strand: "Measurement",
     description:
       "Solve problems involving perimeter and area",
+    lesson: {
+      title: "Around the Edge or Covering the Surface?",
+      objective: "Distinguish between perimeter and area, calculate each for rectangles and L-shaped figures, and solve related word problems.",
+      materials: [
+        "String or a long piece of wool",
+        "Ruler",
+        "1-cm grid paper (draw a grid on paper)",
+        "Pencil",
+      ],
+      intro: {
+        title: "The Fence and the Grass",
+        script: "Imagine you have a garden. The FENCE goes all the way around the edge — that is the perimeter. The GRASS covers the inside — that is the area. They are completely different measurements. Let me show you with this piece of string.",
+        action: "Use the string to outline a rectangle on the table (e.g., 30 cm x 20 cm). Ask your child to measure the string — that is the perimeter. Then count grid squares inside the rectangle on paper to find the area. Contrast the two clearly.",
+      },
+      mainActivity: {
+        title: "Formulas and L-Shapes",
+        script: "For rectangles, perimeter equals 2 times length plus 2 times width. Area equals length times width. Let us practise. A rectangle 6 cm by 4 cm has a perimeter of 2 times 6 plus 2 times 4 equals 20 cm, and an area of 6 times 4 equals 24 square centimetres. For an L-shape, we split it into two rectangles, find each area, and add them together.",
+        action: "Draw three shapes on grid paper: a 5x3 rectangle, a 7x4 rectangle, and an L-shape. Calculate perimeter and area for the first two together, then guide your child to split and calculate the L-shape. Encourage them to label sides and show all working.",
+      },
+      wrapUp: {
+        title: "What Are the Units?",
+        script: "Here is a key question: perimeter is measured in centimetres, but area is measured in square centimetres. Why are the units different? What does that tell you about what each measurement means?",
+        action: "Child explains that perimeter is a length (one-dimensional), while area covers a flat surface (two-dimensional). If they are unsure, use the string and grid visual again.",
+      },
+    },
     activities: [
       // ─── Easy: Understanding perimeter (activities 1–25) ───
       {
@@ -4814,6 +5102,29 @@ export const year5MathsWorksheets: WorksheetItem[] = [
     title: "12-Hour and 24-Hour Time",
     strand: "Measurement",
     description: "Convert between 12- and 24-hour time",
+    lesson: {
+      title: "The Clock That Never Resets",
+      objective: "Read and convert times between 12-hour and 24-hour formats, understanding why the 24-hour system is used.",
+      materials: [
+        "An analogue clock or clock face drawn on paper",
+        "Paper and pencil",
+      ],
+      intro: {
+        title: "Why Does the Army Use Different Times?",
+        script: "Have you ever noticed that train timetables and digital clocks on computers often show times like 14:30 or 23:00? That is 24-hour time. It is used because it removes confusion between AM and PM. If a train leaves at 8:00, is that morning or evening? With 24-hour time, there is no confusion: 08:00 is morning, 20:00 is evening.",
+        action: "Show a train timetable (real or made-up). Point to 14:30 and ask your child what they think it means. Let them puzzle for a moment before explaining the 24-hour system.",
+      },
+      mainActivity: {
+        title: "The Rule for Converting",
+        script: "For AM times, it is easy: they stay the same in 24-hour time. 7:00 AM is 07:00. For PM times, add 12 to the hour: 3:00 PM becomes 3 plus 12 equals 15:00. Midnight is 00:00 and noon is 12:00. That is the only rule you need to remember. To go backwards — from 24-hour to 12-hour — subtract 12 from any hour that is 13 or more.",
+        action: "Write a list of 10 times: five AM times and five PM times. Convert each to 24-hour time together, narrating the rule each time. Then reverse the process from 10 24-hour times back to 12-hour. Draw an arrow diagram showing the conversion both ways.",
+      },
+      wrapUp: {
+        title: "Set the Schedule",
+        script: "I am going to read out a schedule in 12-hour time and you write it in 24-hour time: school starts at 8:50 AM, lunch is at 12:30 PM, after-school club is at 4:15 PM, dinner is at 6:30 PM, bedtime is at 8:00 PM. Ready?",
+        action: "Dictate the five times. Child writes each in 24-hour format. Check together and discuss any errors.",
+      },
+    },
     activities: [
       // ─── Easy (activities 1–25) ───
       { type: "matching", title: "Match 12-Hour to 24-Hour (Morning)", instruction: "Draw a line to match each time.", left: ["7:00 AM", "9:30 AM", "11:15 AM", "12:00 PM"], right: ["12:00", "07:00", "11:15", "09:30"] },
@@ -4932,6 +5243,30 @@ export const year5MathsWorksheets: WorksheetItem[] = [
     title: "Angles in Degrees",
     strand: "Measurement",
     description: "Estimate, construct and measure angles in degrees",
+    lesson: {
+      title: "How Open Is the Gap?",
+      objective: "Identify, estimate and classify angles as acute, right, obtuse or straight, and find missing angles using the fact that angles on a straight line sum to 180 degrees.",
+      materials: [
+        "Two pencils or rulers (to form angles)",
+        "Paper and pencil",
+        "A protractor if available (not required)",
+      ],
+      intro: {
+        title: "Angles Are Everywhere",
+        script: "Place two pencils flat on the table with one end touching. The opening between them is an angle. When the pencils form a perfect L-shape, that is exactly 90 degrees — a right angle. Close them up a bit — now it is acute, less than 90. Open them past the L-shape — now it is obtuse, between 90 and 180. Open them all the way flat — that is a straight angle, exactly 180 degrees.",
+        action: "Use two pencils or rulers to physically demonstrate each angle type. Have your child judge whether each angle is acute, right or obtuse as you change the opening. Then name everyday examples: a door ajar, a book open, a ramp.",
+      },
+      mainActivity: {
+        title: "Estimating and Calculating",
+        script: "Estimating angles is a skill. Before measuring, ask: is it bigger or smaller than 90? Closer to 45 or 90? That gives a sensible estimate. And here is a useful fact: angles on a straight line add up to 180 degrees. So if one angle is 65 degrees, the other must be 180 minus 65 equals 115 degrees.",
+        action: "Draw five angles on paper. For each, your child estimates the type and size, then you reveal or measure the actual size together. Then write three examples of supplementary angles (summing to 180) and practise finding the missing angle.",
+      },
+      wrapUp: {
+        title: "Find the Missing Angle",
+        script: "If one angle on a straight line is 70 degrees, what is the other? If a right angle is split into two parts and one part is 35 degrees, what is the other? How did you figure those out?",
+        action: "Child solves and explains using 'angles on a straight line = 180' or 'angles in a right angle = 90'. Reinforce the idea of subtraction as the method.",
+      },
+    },
     activities: [
       // ─── Easy (activities 1–25) ───
       { type: "sorting", title: "Sort the Angles (A)", instruction: "Sort each angle into the correct type.", columns: ["Acute (less than 90°)", "Right (90°)", "Obtuse (more than 90°)"], items: [{ label: "45°" }, { label: "90°" }, { label: "120°" }, { label: "30°" }, { label: "90°" }, { label: "150°" }, { label: "75°" }, { label: "135°" }] },
@@ -5049,6 +5384,30 @@ export const year5MathsWorksheets: WorksheetItem[] = [
     title: "Grid Coordinates",
     strand: "Space",
     description: "Use grid coordinates to locate and move positions",
+    lesson: {
+      title: "Along the Corridor, Then Up the Stairs",
+      objective: "Read and write grid coordinates in the form (x, y), locate points on a coordinate grid, and describe movements between points.",
+      materials: [
+        "Graph paper or a hand-drawn grid (at least 8x8)",
+        "Pencil and ruler",
+        "A small object like a button to use as a marker",
+      ],
+      intro: {
+        title: "Finding Your Location",
+        script: "Imagine this grid is a town. Streets go across (left and right) and avenues go up and down. If I want to find the library at 3 across and 5 up, I walk along 3 streets first, then go up 5 avenues. We always go across first, then up. That is the rule for coordinates: across first, up second. We write it as (3, 5).",
+        action: "Draw a simple 8x8 grid and label the x and y axes 0-8. Place a button at (3, 5) and say the coordinate aloud. Then give your child a coordinate to find: (6, 2). Watch whether they go across first. If not, use the memory trick 'along the corridor, then up the stairs'.",
+      },
+      mainActivity: {
+        title: "Plot, Read and Move",
+        script: "I am going to call out coordinates and you place a dot on each one. Then we will connect them and see what shape we get. After that, I will describe a movement — like 'move 3 right and 2 up' — and you tell me the new coordinate.",
+        action: "Call out four coordinates that form a rectangle. Child plots each, then connects them. Then choose one point and describe a movement: '2 right, 3 up — what is the new coordinate?' Repeat with three movements. Model the first one by physically moving your finger on the grid.",
+      },
+      wrapUp: {
+        title: "Describe the Journey",
+        script: "You are at the point (2, 3) and you need to reach (7, 6). How far right do you move? How far up do you move? And if I asked you to go to (5, 1) from (2, 4), which direction is the vertical movement and how many steps?",
+        action: "Child calculates the differences in x and y coordinates. Introduce the language of positive (right/up) and negative (left/down) movement informally if they are ready.",
+      },
+    },
     activities: [
       // ─── Easy (activities 1–25) ───
       { type: "matching", title: "Match Points to Coordinates (A)", instruction: "Draw a line from each description to its coordinate.", left: ["Right 3, up 2", "Right 5, up 4", "Right 1, up 6", "Right 4, up 1"], right: ["(4, 1)", "(3, 2)", "(1, 6)", "(5, 4)"] },
@@ -5164,6 +5523,31 @@ export const year5MathsWorksheets: WorksheetItem[] = [
     title: "3D Objects and Their Nets",
     strand: "Space",
     description: "Connect objects to their two-dimensional nets",
+    lesson: {
+      title: "Unfolding a Box",
+      objective: "Identify 3D objects by their properties and visualise how they unfold into 2D nets.",
+      materials: [
+        "An empty cereal box or tissue box",
+        "Scissors",
+        "Paper and pencil",
+        "Sellotape",
+      ],
+      intro: {
+        title: "What Is Inside the Box?",
+        script: "Look at this cereal box. It is a 3D shape called a rectangular prism. It has 6 faces, 12 edges and 8 corners — we call those vertices. What if I cut along the edges and flatten it out completely? What shape would that make? That flat unfolded shape is called a NET.",
+        action: "Carefully cut along the edges of the cereal box and unfold it completely. Lay it flat on the table. Count the faces (6 rectangles). Discuss: if we fold this back up, does it become the box again? Try it.",
+      },
+      mainActivity: {
+        title: "Faces, Edges and Nets",
+        script: "Different shapes have different nets. A cube has 6 square faces, and there are 11 different ways to arrange those 6 squares as a net. A triangular pyramid has 4 triangular faces. A cylinder has 2 circles and 1 rectangle. Knowing the faces tells you what the net must contain.",
+        action: "Draw three nets on paper: a simple cross-shaped net for a cube (1 row of 4, 1 above, 1 below the second), a net for a triangular pyramid (a triangle with 3 triangles attached), and a net for a cylinder (2 circles and a rectangle). Ask your child to identify which 3D shape each net folds into before cutting and testing.",
+      },
+      wrapUp: {
+        title: "How Many Faces?",
+        script: "Tell me: a rectangular prism has how many faces? What shapes are they? A triangular prism has how many faces and what shapes? If I hand you a net made of two triangles and three rectangles, what 3D shape would it make?",
+        action: "Child answers from memory. If unsure, allow them to refer to the unfolded shapes. Reinforce that the faces of the net become the faces of the 3D object.",
+      },
+    },
     activities: [
       // ─── Easy (activities 1–25) ───
       { type: "matching", title: "Match 3D Shapes to Names", instruction: "Draw a line from each description to its name.", left: ["6 square faces", "1 circular base + curved surface", "2 circular faces + curved surface", "4 triangular faces"], right: ["Cylinder", "Cube", "Triangular pyramid", "Cone"] },
@@ -5283,6 +5667,30 @@ export const year5MathsWorksheets: WorksheetItem[] = [
     title: "Transformations & Symmetry",
     strand: "Space",
     description: "Perform and describe transformations; identify symmetries",
+    lesson: {
+      title: "Flip, Slide and Turn",
+      objective: "Perform and describe reflections, rotations and translations, and identify lines of symmetry in shapes and patterns.",
+      materials: [
+        "A small cardboard cut-out of a simple shape (arrow or letter F)",
+        "Mirror (from a bathroom cabinet or compact mirror)",
+        "Paper and pencil",
+      ],
+      intro: {
+        title: "Three Moves That Do Not Change the Shape",
+        script: "Here is an arrow cut from cardboard. I can do three things with it without changing what it looks like. I can SLIDE it across the table — that is a translation. I can FLIP it over — that is a reflection. I can TURN it around — that is a rotation. The shape stays the same, only its position or orientation changes.",
+        action: "Physically demonstrate each transformation with the cardboard cut-out. Use the letter F because it looks different when flipped, making reflections very obvious. Have your child try each transformation and name it.",
+      },
+      mainActivity: {
+        title: "Symmetry and Transformations on Paper",
+        script: "A shape has a LINE OF SYMMETRY if you can fold it perfectly in half and both halves match. A square has 4 lines of symmetry. A rectangle has 2. An equilateral triangle has 3. Let us draw some shapes and find their lines of symmetry. Then we will describe a transformation using the language: reflect across, rotate by, translate by.",
+        action: "Draw a square, a rectangle, an equilateral triangle and a regular pentagon. For each, have your child draw all lines of symmetry. Then draw a shape on grid paper and describe a translation (e.g., 3 right, 2 up) and have the child draw the translated image.",
+      },
+      wrapUp: {
+        title: "Describe the Move",
+        script: "I am going to move this shape, and I want you to describe exactly what I did using the correct word: translation, reflection or rotation. Ready? Watch carefully.",
+        action: "Perform three transformations with the cardboard shape one at a time. Child names each and describes it precisely. If they say 'flipped' prompt for 'reflection'. Build the mathematical vocabulary.",
+      },
+    },
     activities: [
       // ─── Easy (activities 1–25) ───
       { type: "sorting", title: "Symmetrical or Not? (A)", instruction: "Sort each shape.", columns: ["Symmetrical", "Not symmetrical"], items: [{ label: "Square", icon: "square" }, { label: "Circle", icon: "circle" }, { label: "Heart", icon: "heart" }, { label: "Scalene triangle", icon: "triangle" }, { label: "Star", icon: "star" }, { label: "Diamond", icon: "diamond" }] },
@@ -5399,6 +5807,30 @@ export const year5MathsWorksheets: WorksheetItem[] = [
     title: "Statistical Investigations",
     strand: "Statistics",
     description: "Plan and conduct statistical investigations with categorical and numerical data using digital tools",
+    lesson: {
+      title: "Asking a Good Question and Finding the Answer",
+      objective: "Plan a statistical investigation, collect data by survey, organise results in a tally chart and graph, and interpret findings.",
+      materials: [
+        "Paper and pencil",
+        "Ruler (for drawing tables and graphs)",
+        "Coloured pencils",
+      ],
+      intro: {
+        title: "Statistics Starts With Curiosity",
+        script: "Every statistical investigation starts with a question. Not just any question — a question we can answer by collecting data. For example: which is the most popular fruit in our household? We cannot answer that by thinking — we need to ask people and record their answers. That is what statisticians do.",
+        action: "Brainstorm five possible investigation questions with your child. Guide them to pick one that is genuinely answerable (not 'what is the best fruit in the world' but 'what is our favourite fruit'). This models the planning stage.",
+      },
+      mainActivity: {
+        title: "Collect, Record and Display",
+        script: "Now we plan how to collect the data. We need to decide: who will we survey? What choices will we give them? How will we record the answers? A tally chart is a great tool — every time someone chooses an option, we make a mark. Five marks make a bundle, which makes counting easier. After collecting, we make a graph to display our results.",
+        action: "Create a simple tally chart together and survey household members (or imagine responses). Tally the results, then convert to a bar graph on paper. Label the axes, give the graph a title. Ask your child to write one sentence interpreting the result.",
+      },
+      wrapUp: {
+        title: "What Did the Data Tell Us?",
+        script: "Looking at our graph, what was the most popular answer? What was the least popular? If you were going to share these results with someone who had not seen the graph, what would you tell them?",
+        action: "Child gives a verbal summary of the investigation findings. Prompt with: 'What would you say was the conclusion?' Reinforce that the data should answer the original question.",
+      },
+    },
     activities: [
       // ─── Easy (activities 1–25) ───
       { type: "sorting", title: "Categorical or Numerical? (A)", instruction: "Sort each type of data.", columns: ["Categorical data", "Numerical data"], items: [{ label: "Favourite colour" }, { label: "Height in cm" }, { label: "Eye colour" }, { label: "Number of pets" }, { label: "Type of pet" }, { label: "Temperature in °C" }] },
@@ -5515,6 +5947,29 @@ export const year5MathsWorksheets: WorksheetItem[] = [
     title: "Mode and Distributions",
     strand: "Statistics",
     description: "Identify the mode and interpret the shape of distributions",
+    lesson: {
+      title: "What Appears Most Often?",
+      objective: "Find the mode of a data set and use it to describe what is typical in a distribution.",
+      materials: [
+        "A bag of mixed-colour objects (buttons, blocks or similar) with at least one colour appearing most often",
+        "Paper and pencil",
+      ],
+      intro: {
+        title: "The Most Popular Answer",
+        script: "Let us tip out all these buttons. I notice there are several red ones, a few blue ones, and just one green one. If I had to describe this collection in one word, I would say 'mostly red'. In statistics, the value that appears most often is called the MODE. It tells us what is most typical in our data.",
+        action: "Tip out 20 mixed-colour objects. Sort them into colour groups. Count each group. Identify the mode together. Confirm: 'The mode is the colour with the biggest group.'",
+      },
+      mainActivity: {
+        title: "Finding the Mode in Numbers",
+        script: "Mode works for number data too. Look at these test scores: 7, 8, 9, 8, 7, 8, 10. Let me sort them: 7, 7, 8, 8, 8, 9, 10. The number 8 appears three times — more than any other. So 8 is the mode. Sometimes there are two modes if two values tie. Sometimes there is no mode if every value is different.",
+        action: "Write three data sets on paper. First: find the mode. Second: a set with two modes. Third: a set with no mode. Work through each together. Discuss what 'no mode' means practically.",
+      },
+      wrapUp: {
+        title: "Is the Mode Always Useful?",
+        script: "Our button data had a mode of red. Does knowing that tell you anything useful about the bag? What if I told you there was one red button and one of every other colour — would there still be a mode? What does the mode NOT tell you?",
+        action: "Guide a discussion about the limits of mode. It shows the most common value but not spread or average. This critical thinking builds statistical reasoning beyond just calculation.",
+      },
+    },
     activities: [
       // ─── Easy (activities 1–25) ───
       { type: "circle-correct", title: "Find the Mode (A)", instruction: "The mode is the most common value. Circle the mode.", questions: [{ prompt: "3, 5, 5, 7, 5, 8, 2", options: ["3", "5", "7"] }, { prompt: "red, blue, red, green, red, blue", options: ["red", "blue", "green"] }, { prompt: "12, 15, 12, 18, 15, 12", options: ["12", "15", "18"] }, { prompt: "A, B, C, B, A, B, C", options: ["A", "B", "C"] }] },
@@ -5631,6 +6086,30 @@ export const year5MathsWorksheets: WorksheetItem[] = [
     title: "Reading Line Graphs",
     strand: "Statistics",
     description: "Interpret and compare data represented in line graphs",
+    lesson: {
+      title: "The Story Behind the Line",
+      objective: "Read values from a line graph, identify trends (increasing, decreasing, flat) and compare two data sets on the same graph.",
+      materials: [
+        "Paper and pencil",
+        "Ruler",
+        "Coloured pencils (two colours)",
+      ],
+      intro: {
+        title: "A Line Graph Tells a Story",
+        script: "Imagine tracking how tall you are every year since you were born. If we put each measurement on a graph and connect the dots, we get a line. When the line goes up, you are growing. When it flattens out, your growth slowed down. The line tells a story about change over time. That is what line graphs are perfect for.",
+        action: "Together, draw a simple line graph showing imaginary daily temperatures for one week (Mon-Sun): 18, 22, 25, 23, 20, 17, 19. Plot each point and connect with a ruler. Ask: which day was hottest? When was it cooling down?",
+      },
+      mainActivity: {
+        title: "Reading and Comparing",
+        script: "To read a value, find the point on the line, go straight across to the vertical axis, and read the number. To compare two lines, look at where one is higher than the other. The steeper the line, the faster the change.",
+        action: "Add a second data set to the same graph (perhaps temperatures from a different city: 15, 18, 20, 22, 21, 16, 14). Use a different colour. Ask: on which days was City A warmer? When were they similar? Which city had a bigger temperature change?",
+      },
+      wrapUp: {
+        title: "Write the Story",
+        script: "Looking at our graph, tell me the story it shows. Describe what happened to the temperature across the week. Use words like 'increased', 'decreased', 'peaked', 'was steady'. Pretend you are a weather reporter.",
+        action: "Child gives a verbal or short written description of the trends. Prompt with: 'What was the overall pattern?' and 'Were there any sudden changes?' to develop analytical language.",
+      },
+    },
     activities: [
       // ─── Easy (activities 1–25) ───
       { type: "matching", title: "Match Graph Features (A)", instruction: "Draw a line from each graph feature to its meaning.", left: ["Line going up", "Line going down", "Flat line", "Steep line"], right: ["No change", "Increasing", "Rapid change", "Decreasing"] },
@@ -5747,6 +6226,31 @@ export const year5MathsWorksheets: WorksheetItem[] = [
     title: "Listing Possible Outcomes",
     strand: "Probability",
     description: "List possible outcomes of chance experiments",
+    lesson: {
+      title: "What Could Possibly Happen?",
+      objective: "List all possible outcomes of a chance experiment and identify impossible outcomes.",
+      materials: [
+        "One standard six-sided die",
+        "A coin",
+        "A bag with 3 differently coloured objects inside (e.g., one red, one blue, one green button)",
+        "Paper and pencil",
+      ],
+      intro: {
+        title: "Before We Roll — What Might Happen?",
+        script: "Before we roll this die, let me ask: what are all the possible things that could happen? We could get a 1, a 2, a 3, a 4, a 5 or a 6. Nothing else! Those six possibilities are called the OUTCOMES. Now here is a question: could we roll a 7? No — that is impossible. Could we roll an even number? Yes — 2, 4 or 6. Listing all outcomes helps us think clearly about chance.",
+        action: "Roll the die once. Before each roll, ask your child to name all possible outcomes. After rolling, discuss: was that outcome on our list? This reinforces the difference between possible and impossible.",
+      },
+      mainActivity: {
+        title: "Systematic Listing",
+        script: "The trick to listing outcomes is being systematic — making sure you have not missed any. For a coin flip: heads or tails, two outcomes. For the bag of buttons: red, blue or green, three outcomes. What if I flip the coin AND roll the die? Now there are 2 times 6 equals 12 possible outcomes. Let us list them all.",
+        action: "Together, list all outcomes for a coin-and-die experiment: Heads-1, Heads-2, Heads-3, Heads-4, Heads-5, Heads-6, Tails-1 ... Tails-6. Show how to be organised using a table with H and T as rows and 1-6 as columns. Count all 12.",
+      },
+      wrapUp: {
+        title: "How Many Outcomes?",
+        script: "If a spinner has 4 sections and a bag has 2 coloured balls, how many possible outcomes are there in total if I spin AND pick? How did you work that out? Is there a shortcut?",
+        action: "Guide child to see that multiplying the number of outcomes for each event gives the total: 4 times 2 equals 8. This is the multiplication principle for counting outcomes.",
+      },
+    },
     activities: [
       // ─── Easy (activities 1–25) ───
       { type: "count-objects", title: "Outcomes of Rolling a Die", instruction: "A standard die has 6 faces. Count the dots.", rows: [{ object: "dice-1", count: 1 }, { object: "dice-2", count: 2 }, { object: "dice-3", count: 3 }, { object: "dice-4", count: 4 }, { object: "dice-5", count: 5 }, { object: "dice-6", count: 6 }] },
@@ -5863,6 +6367,30 @@ export const year5MathsWorksheets: WorksheetItem[] = [
     title: "Estimating Likelihoods",
     strand: "Probability",
     description: "Estimate likelihoods; compare events with and without equally likely outcomes",
+    lesson: {
+      title: "How Likely Is That?",
+      objective: "Use likelihood language (impossible, unlikely, even chance, likely, certain) and simple fractions to describe and compare the probability of events.",
+      materials: [
+        "A bag with 10 objects: 5 red, 3 blue, 2 green (e.g., blocks or buttons)",
+        "Paper and pencil",
+        "A number line drawn 0 to 1",
+      ],
+      intro: {
+        title: "The Probability Scale",
+        script: "Imagine a line from 0 to 1. Zero means impossible — it will never happen. One means certain — it will definitely happen. Right in the middle, at one half, means even chance — like flipping a coin. We can place any event somewhere on this line based on how likely it is.",
+        action: "Draw the 0-to-1 number line on paper. Label 0 as 'Impossible', 0.5 as 'Even Chance' and 1 as 'Certain'. Read out five events and ask your child to place each on the line: the sun rises tomorrow, it snows in summer in Darwin, you flip heads on a coin, you roll a 6 on a die, you pick a red from our bag.",
+      },
+      mainActivity: {
+        title: "Probability as a Fraction",
+        script: "When all outcomes are equally likely, probability equals the number of favourable outcomes divided by the total number of outcomes. In our bag there are 10 objects and 5 are red. So the probability of picking red is 5 out of 10, which simplifies to one half. The probability of green is 2 out of 10, which is one fifth.",
+        action: "Using the bag, calculate the probability of picking each colour as a fraction. Simplify where possible. Then place each fraction on the number line drawn earlier. Discuss: red and blue are not equally likely. Red is more likely. Green is least likely.",
+      },
+      wrapUp: {
+        title: "Compare Two Events",
+        script: "Which is more likely: rolling a 3 on a die, or picking a red from the bag? How did you decide? Can you express each as a fraction and compare them?",
+        action: "Child writes 1/6 for rolling a 3 and 1/2 for picking red. Compare: 1/2 is bigger than 1/6. Picking red is more likely. Confirm by placing both on the number line.",
+      },
+    },
     activities: [
       // ─── Easy (activities 1–25) ───
       { type: "sorting", title: "Sort by Likelihood (A)", instruction: "Sort each event.", columns: ["Impossible", "Unlikely", "Likely", "Certain"], items: [{ label: "The sun will rise tomorrow" }, { label: "Snow in Darwin in summer" }, { label: "You will eat food today" }, { label: "Rolling a 10 on a standard die" }, { label: "A coin lands on heads" }, { label: "It will rain sometime this month" }] },
@@ -5979,6 +6507,30 @@ export const year5MathsWorksheets: WorksheetItem[] = [
     title: "Repeated Chance Experiments",
     strand: "Probability",
     description: "Conduct repeated chance experiments",
+    lesson: {
+      title: "The More You Try, the Closer You Get",
+      objective: "Conduct a chance experiment with many trials, record results using tallies, and compare experimental results to theoretical probability.",
+      materials: [
+        "A coin",
+        "A standard die",
+        "Paper and pencil for tally recording",
+      ],
+      intro: {
+        title: "The Fair Coin Debate",
+        script: "If I flip this coin 10 times, should I get exactly 5 heads and 5 tails? In theory, yes — there is a 50/50 chance each time. But in practice, I might get 7 heads and 3 tails. Does that mean the coin is unfair? Not at all! With only 10 flips, variation is normal. But watch what happens when we do it 100 times.",
+        action: "Flip the coin 10 times together. Record results in a tally chart. Discuss the result — how close was it to 5/5? Then flip 10 more times and add to the tally. Continue until you have 30 flips. Is it closer to 15/15 now?",
+      },
+      mainActivity: {
+        title: "Expected vs Actual",
+        script: "The theoretical probability of heads is 1 out of 2. So in 20 flips, we EXPECT about 10 heads. But the actual result might differ. The important idea is: with MORE trials, our actual results get CLOSER to the expected. This is one of the big ideas in probability.",
+        action: "Roll the die 30 times. Before starting, ask: how many times do we expect each number to appear? (30 divided by 6 equals 5.) Record the tally. Compare actual vs expected for each number. Discuss which numbers were over or under. This is the experimental vs theoretical distinction.",
+      },
+      wrapUp: {
+        title: "What Would Happen With 600 Rolls?",
+        script: "If we rolled the die 600 times instead of 30, would the results be closer to or further from 100 for each number? And does getting three 6s in a row mean the next roll is less likely to be a 6? How can you be sure?",
+        action: "Child explains that more trials bring results closer to the expected probability, and that each roll is independent — past results do not change future probabilities. These are foundational probability concepts.",
+      },
+    },
     activities: [
       // ─── Easy (activities 1–25) ───
       { type: "tally-chart", title: "Coin Flip Results (A)", instruction: "These are results from flipping a coin 20 times.", categories: [{ label: "Heads", icon: "circle", count: 11 }, { label: "Tails", icon: "circle", count: 9 }] },

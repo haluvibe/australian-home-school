@@ -13,6 +13,30 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         "The Ten-Frame Flash! Draw a grid of 10 boxes. Fill it with spoons/counters. Then place 3 outside. Say 'Ten and three... Thirteen!' Do this for 11-19.",
       check: "Can they count to 20 without skipping '15'? Do they know that '14' is a 1 and a 4?",
     },
+    lesson: {
+      title: "Let's Count to 20!",
+      objective: "Connect spoken number names to written numerals from 0 to 20, with extra focus on the tricky teen numbers.",
+      materials: [
+        "20 small objects (spoons, blocks, or coins)",
+        "A strip of paper with 20 boxes drawn on it",
+        "Number cards 0–20 (write numbers on scraps of paper)",
+      ],
+      intro: {
+        title: "The Number Path",
+        script: "Let's go on a number adventure! We're going to count all the way to 20 today. Can you help me? We'll put one object in each box as we count — ready? One, two, three... let's go!",
+        action: "Lay out the paper strip. Count aloud together while placing one object in each box. Point to each object as you say the number. When you reach 10, pause: 'We made it to 10! Now we keep going to 20.'",
+      },
+      mainActivity: {
+        title: "Flip the Card",
+        script: "Now I'll show you a number card. Can you tell me what number it is? If you get it right, it goes face-up. We'll keep working on any we're not sure of yet — that's how we learn!",
+        action: "Shuffle the 0–20 cards. Hold each up one at a time. When a teen number appears, say: 'This tricky one is thirteen — a one and a three. Can you say it? Thir-teen.' Spend extra time on 11–19. Group the teen numbers together and notice: 'They all end in -teen!'",
+      },
+      wrapUp: {
+        title: "Write It From Memory",
+        script: "You're amazing at this! Now let's see if we can write some numbers from memory. I'll say a number, and you write it as big and bold as you can. Let's start with an easy one: write 3. Now write 7. Now the big one — write 14!",
+        action: "Call out 5–6 numbers for the child to write. Begin with 1–5, then 6–10, then attempt one or two teen numbers. Celebrate every correct digit, even if the whole number needs more practice.",
+      },
+    },
     activities: [
       // --- EASY: Trace & recognise 0-5 ---
       {
@@ -825,6 +849,30 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
     title: "Subitising & Counting",
     strand: "Number",
     description: "Use subitising and counting strategies to quantify collections",
+    lesson: {
+      title: "Quick Look — How Many?",
+      objective: "Instantly recognise small quantities without counting one by one, and use smart counting strategies for bigger groups.",
+      materials: [
+        "A regular dice",
+        "Dot cards (draw 1–6 dots in different arrangements on index cards or scraps of paper)",
+        "15–20 small objects (blocks, coins, grapes)",
+      ],
+      intro: {
+        title: "The Flash Game",
+        script: "I'm going to show you something for just one second — so eyes ready! How many dots did you see? Don't count them — just look and trust what your brain says. That's a special skill called subitising!",
+        action: "Hold up a dot card for 1 second then turn it face-down. Ask 'How many?' Let your child answer, then reveal the card to check. Start with 1–3 dots arranged simply (like a dice face). Build up to 4 and 5. Celebrate when they 'just know' without counting.",
+      },
+      mainActivity: {
+        title: "Make Your Own Dot Card",
+        script: "Let's roll the dice! Whatever number comes up, you draw that many dots on a card — but here's the challenge: arrange them so someone could see the number quickly without counting. Can you make it easy for your brain?",
+        action: "Take turns rolling the dice. Your child draws dots for the number that comes up, then you draw the same number a different way. Compare: 'Which arrangement is easier to see at a glance?' Discuss why some arrangements (like a dice pattern) are easier to read than random dots.",
+      },
+      wrapUp: {
+        title: "Count On From 10",
+        script: "Now let's count a bigger group. I'll put out a pile of objects — your job is to make a group of 10 first, then count the rest. Ready? Group your 10... now count on: ten, eleven, twelve...",
+        action: "Put out 13–17 objects. Help your child group exactly 10 and set them aside. Then count on from 10 together, touching each remaining object. This bridges subitising (knowing 10 instantly) with counting on.",
+      },
+    },
     activities: [
       // --- EASY: Subitise tiny groups 1-3 (10 activities) ---
       {
@@ -1810,6 +1858,29 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
     title: "Compare Collections",
     strand: "Number",
     description: "Compare the size of collections to at least 20",
+    lesson: {
+      title: "More, Fewer or the Same?",
+      objective: "Compare two groups of objects and describe which has more, fewer, or whether they are the same.",
+      materials: [
+        "Two sets of small objects in two different colours (e.g. 10 red buttons and 10 blue buttons)",
+        "Two plates or pieces of paper as sorting areas",
+      ],
+      intro: {
+        title: "Two Teams",
+        script: "I have two teams! The red team and the blue team. Who has more players? Let's find out — I'll put one on each team's plate at a time. One for red, one for blue, one for red, one for blue...",
+        action: "Place objects on two plates alternately. Make the groups noticeably different first (e.g. 4 vs 9). Ask: 'Which plate has more? How can you tell?' Let your child guess before counting. Then count each group to confirm.",
+      },
+      mainActivity: {
+        title: "Line Them Up",
+        script: "Here's a brilliant trick for comparing — line them up in two rows, matching each one up! One here, one there, one here, one there. Now which row has some left over? That group has more! And the shorter row? Fewer!",
+        action: "Practice one-to-one matching in two rows. Try equal groups (same amount) so they discover 'the same'. Try groups that differ by just 1 so they have to look carefully. Use the words: more, fewer, the same, equal. Let your child create their own groups to compare.",
+      },
+      wrapUp: {
+        title: "Tell Me the Story",
+        script: "Now YOU set it up! Put some on each plate — make sure one plate has more and one has fewer. Then tell me about it: 'The red plate has ___ and the blue plate has ___, so the red plate has MORE.'",
+        action: "Your child creates unequal groups and narrates the comparison. Prompt with: 'How do you know which has more?' Any valid strategy is great — counting, lining up, or just looking.",
+      },
+    },
     activities: [
       // --- EASY: Comparing tiny groups (1–5) ---
       {
@@ -2779,6 +2850,30 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
     title: "Partition & Combine",
     strand: "Number",
     description: "Partition and combine collections up to 10 in different ways",
+    lesson: {
+      title: "Split It and Join It!",
+      objective: "Break a number into two parts in lots of different ways, then put the parts back together.",
+      materials: [
+        "10 small objects (grapes, blocks, coins — anything you have)",
+        "2 small bowls or cups",
+        "Paper and pencil for recording",
+      ],
+      intro: {
+        title: "The Sharing Trick",
+        script: "I have 5 grapes and two bowls. I need to share them between the bowls — but I don't have to share them equally! Let's try: I'll put 1 here and 4 there. Is that still 5? Let's count to check! Now let's try a different way...",
+        action: "Place 5 objects and distribute them between two bowls (1 and 4). Count both bowls together, then write '1 and 4 makes 5' on paper. Rearrange to 2 and 3, then 0 and 5. Each time, write the combination down. Ask: 'How many different ways can we split 5?'",
+      },
+      mainActivity: {
+        title: "How Many Ways?",
+        script: "Let's try with 6! Every time we find a new way to split 6, we'll write it down. How many different ways can we find? I bet there are more than you think!",
+        action: "Give your child 6 objects and two bowls. Explore all the splits together (0+6, 1+5, 2+4, 3+3 and their reverses). Record each one. Then try with 7 or 8 if they're keen. Look at the list together — what do you notice?",
+      },
+      wrapUp: {
+        title: "Put It Back Together",
+        script: "Now let's combine! I'll put 3 in one bowl and 2 in another. Before we tip them out — can you guess how many altogether? Then let's check by counting!",
+        action: "Set up two bowls with different amounts. Your child predicts the total, then tips them together and counts. Do this 3–4 times. Emphasise the language: 'We split it apart to explore, then joined it back together to find the total.'",
+      },
+    },
     activities: [
       // =============================================
       // --- EASY: Number bonds to 5 ---
@@ -3914,6 +4009,29 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
     title: "Adding, Subtracting & Sharing",
     strand: "Number",
     description: "Represent adding to, taking away from, and equal sharing with collections to at least 10",
+    lesson: {
+      title: "Add, Take Away and Share!",
+      objective: "Act out adding to a group, taking away from a group, and sharing objects equally between two or three people.",
+      materials: [
+        "10–12 small objects (grapes, blocks, coins — whatever is handy)",
+        "3–4 small plates or cups",
+      ],
+      intro: {
+        title: "Maths Story Time",
+        script: "I'm going to tell you a maths story, and I need you to act it out with these objects. Ready? There were 4 birds sitting on a fence. Then 3 more birds flew in and joined them. How many birds are on the fence now? Can you show me?",
+        action: "Your child places 4 objects, then adds 3 more one at a time while you narrate. Count together. Then tell a 'taking away' story: '7 birds on a fence... oh no, 2 flew away! How many are left?' Your child removes 2 and counts what remains.",
+      },
+      mainActivity: {
+        title: "Fair Shares",
+        script: "Now let's try sharing! I have 8 strawberries and I need to share them between 2 people so each person gets EXACTLY the same — completely fair. Can you deal them out, one at a time — one for you, one for me?",
+        action: "Distribute 8 objects across 2 plates one at a time ('one for you, one for me'). Count each plate — is it fair? Try 6 between 2, then 9 between 3 plates. If there's a leftover, discuss: 'Is that fair? What do we do with it?'",
+      },
+      wrapUp: {
+        title: "Your Turn to Tell a Story",
+        script: "Now YOU make up a maths story for me! It can be about adding, taking away, or sharing. I'll act it out with the objects — so make sure your story is clear!",
+        action: "Your child invents simple stories. Act them out with objects. Encourage mathematical language: more, fewer, total, equal, left over, share. Swap roles if they enjoy it.",
+      },
+    },
     activities: [
       // --- EASY: Adding tiny numbers (totals to 5) ---
       {
@@ -4862,6 +4980,29 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
     title: "Repeating Patterns",
     strand: "Algebra",
     description: "Copy and continue repeating patterns",
+    lesson: {
+      title: "What Comes Next?",
+      objective: "Spot the repeating unit in a pattern, then copy, continue and create patterns of your own.",
+      materials: [
+        "Coloured blocks, buttons, or coins (at least 2 colours, 5 of each)",
+        "Coloured pencils and paper",
+      ],
+      intro: {
+        title: "Spot the Pattern",
+        script: "Watch what I'm making... red, blue, red, blue, red... What do you notice? What do you think comes next? That's right — it keeps repeating! That's called a pattern. The part that repeats is the secret ingredient.",
+        action: "Lay out a clear red-blue-red-blue pattern using objects. Point to each item and say it aloud. Pause before the 4th item and ask your child what comes next. Then try an ABB pattern (red-blue-blue-red-blue-blue) and ask what comes next again.",
+      },
+      mainActivity: {
+        title: "Copy It and Keep Going",
+        script: "I'll make a pattern and you copy it exactly. Once you've copied it, add three more to keep it going. The trick is figuring out the bit that repeats — that's the pattern's 'secret unit'.",
+        action: "Create a pattern with 2–3 full repeats. Your child copies it, then extends it by 3 more. Ask: 'What is the bit that keeps repeating?' Try patterns with 3 elements (ABC) once they're confident with AB and ABB.",
+      },
+      wrapUp: {
+        title: "Create Your Own",
+        script: "Now it's your turn to be the pattern maker! Design your own — you can use the objects, draw it, or even use claps and stamps. Draw it on paper so we remember it. Then I'll try to continue it!",
+        action: "Your child creates and draws their own pattern. You attempt to continue it (and deliberately make a mistake if you think they'll catch it!). Ask: 'What was the repeating part?' Let them correct you.",
+      },
+    },
     activities: [
       // --- EASY: AB patterns (unit length 2) ---
       {
@@ -5646,6 +5787,31 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
     title: "Mass, Capacity, Length & Duration",
     strand: "Measurement",
     description: "Identify the attributes of mass, capacity, length and duration",
+    lesson: {
+      title: "Heavy, Full, Long and Quick",
+      objective: "Notice and describe four measurement ideas: how heavy something is (mass), how much it holds (capacity), how long it is (length), and how long something takes (duration).",
+      materials: [
+        "Two objects with clearly different weights (e.g. a book and a feather or tissue)",
+        "Two containers of noticeably different sizes",
+        "A pencil and a long stick or ruler",
+        "A timer or clock with a second hand",
+      ],
+      intro: {
+        title: "What Are We Measuring?",
+        script: "Today we're going to be measurement detectives! There are four things we can measure — hold this book in one hand and this feather in the other. What do you notice? One is heavier. That's measuring MASS.",
+        action: "Work through each attribute one at a time with a concrete example. Mass: hold two objects. Capacity: look at two containers — which holds more? Length: hold up the pencil and a long stick side by side. Duration: clap slowly 10 times — was that a long time or a short time? Introduce the words: mass, capacity, length, duration.",
+      },
+      mainActivity: {
+        title: "Measurement Hunt",
+        script: "Let's explore the house! I'll call out a measurement type, and you find two things to compare. Ready? Find me something heavy and something light!",
+        action: "Take turns calling out an attribute. Your child finds two items and compares them using words: heavier/lighter, holds more/holds less, longer/shorter, takes longer/quicker. You model the language first, then encourage your child to use it.",
+      },
+      wrapUp: {
+        title: "Name That Attribute",
+        script: "I'm going to describe something — your job is to tell me which measurement word fits. 'This bag is so heavy!' What am I measuring? 'The bottle is full to the top!' What about that one?",
+        action: "Read 4–6 descriptions using the four attributes. Your child names which attribute you're talking about: mass, capacity, length or duration. Extend by asking: 'How would you compare it to something else?'",
+      },
+    },
     activities: [
       // --- EASY: Introducing mass (heavy/light) ---
       {
@@ -6601,6 +6767,29 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
     title: "Direct Comparison",
     strand: "Measurement",
     description: "Use direct comparison to compare objects and events",
+    lesson: {
+      title: "Which One Is Longer? Let's Check!",
+      objective: "Compare two objects side by side to find which is longer, taller or heavier — and explain how you know.",
+      materials: [
+        "5–6 objects of different sizes around the house (pencils, books, cups, toys)",
+        "A flat table surface for lining things up",
+      ],
+      intro: {
+        title: "The Tricky Mistake",
+        script: "Look — I have two pencils. Is this one longer? It looks longer, right? But wait — I need to line them up at the SAME end to be sure. Watch... aha! Now which is longer? We have to compare them directly — that's direct comparison!",
+        action: "Show two pencils misaligned so the shorter one appears longer. Then align them at one end. Discuss how we can only know for sure when we compare directly. Repeat with two books (height) and two objects of different weight (pick them up).",
+      },
+      mainActivity: {
+        title: "The Comparison Challenge",
+        script: "I'll pick two things, and you tell me which is longer, taller or heavier — and HOW you know. Remember, you have to compare them directly: side by side or in your hands.",
+        action: "Present pairs of objects. Your child compares and uses the words: longer, shorter, taller, heavier, lighter. Ask for reasoning: 'I know because when I lined them up...' Once they're confident with two objects, try ordering three objects from shortest to longest.",
+      },
+      wrapUp: {
+        title: "Order Three Things",
+        script: "Can you put these three things in order from shortest to longest? Take your time — line them all up carefully and check before you decide!",
+        action: "Provide 3 objects of different lengths. Your child orders them. Repeat with height. Ask: 'How did you decide the order?' Praise the method — lining up, comparing one pair at a time — not just the answer.",
+      },
+    },
     activities: [
       // =============================================
       // --- EASY: Comparing length (longer/shorter) ---
@@ -7555,6 +7744,30 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
     title: "Time of Day",
     strand: "Measurement",
     description: "Sequence and connect familiar events to the time of day",
+    lesson: {
+      title: "Morning, Afternoon, Evening, Night",
+      objective: "Put everyday events in the right order and connect them to the part of the day they happen in.",
+      materials: [
+        "4 sheets of paper labelled: Morning, Afternoon, Evening, Night",
+        "Paper strips or cards to write or draw daily events on",
+        "Pencils or markers",
+      ],
+      intro: {
+        title: "Tell Me Your Day",
+        script: "I want to hear all about your day! What was the very first thing you did when you woke up? And then what? Let's build your whole day out on the floor, in order — morning first, then afternoon, then evening, then night.",
+        action: "As your child describes their day, write or draw each event on a separate strip of paper. Lay them out in sequence. Ask questions to establish order: 'Did you eat breakfast before or after you got dressed?' Help them see the natural flow of the day.",
+      },
+      mainActivity: {
+        title: "Sort the Day",
+        script: "Here are some things people do every day — let's sort them into the right part of the day. Where does 'eating breakfast' go? What about 'going to bed'? And 'playing outside after lunch'?",
+        action: "Write or draw 8–10 daily events on separate strips: brush teeth, eat lunch, watch TV, go to bed, wake up, play outside, have dinner, have a bath. Your child sorts them under the Morning, Afternoon, Evening and Night labels. Some events may fit in more than one — that's a great discussion to have!",
+      },
+      wrapUp: {
+        title: "My Day in Four Drawings",
+        script: "Let's make a mini book about your day! You'll draw one thing you do in the morning, one in the afternoon, one in the evening, and one at night. Then we'll read it together.",
+        action: "Your child draws one event per time of day. Label each drawing together. Lay them in sequence and 'read' the book back: 'In the morning you... then in the afternoon...' This is a great keepsake too!",
+      },
+    },
     activities: [
       // --- EASY: Morning activities ---
       {
@@ -8585,6 +8798,30 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
     title: "Familiar Shapes",
     strand: "Space",
     description: "Name, create and sort familiar shapes and give reasoning",
+    lesson: {
+      title: "Circles, Squares, Triangles and Rectangles",
+      objective: "Name and describe familiar 2D shapes by their properties — the number of sides and corners.",
+      materials: [
+        "Cut-out shapes (draw and cut out a circle, square, triangle and rectangle — two of each)",
+        "Objects from around the house with those shapes",
+        "Paper and pencil for drawing",
+      ],
+      intro: {
+        title: "Shape Hunt",
+        script: "Shapes are everywhere — we just have to look! Can you find something in this room that's shaped like a circle? What about a square? Let's look around together. When you spot one, tell me: how do you KNOW it's that shape?",
+        action: "Walk around together identifying shapes in everyday objects (clock = circle, book = rectangle, roof of a drawing = triangle, tile = square). For each one found, ask: 'How do you know it's a _____?' Begin guiding them toward counting sides and corners.",
+      },
+      mainActivity: {
+        title: "Count the Sides and Corners",
+        script: "Here's the secret to knowing any shape — count its sides and corners! A triangle has 3 sides and 3 corners. Let's count together: one side, two sides, three sides. One corner, two corners, three corners. Now YOU try with the square!",
+        action: "Place each cut-out shape on the table. Your child counts sides and corners while you record: circle (0 sides, 0 corners), triangle (3, 3), square (4, 4), rectangle (4, 4). Discuss: 'A square and a rectangle both have 4 sides — so what's different?' (A square has equal sides; a rectangle has two longer and two shorter.)",
+      },
+      wrapUp: {
+        title: "Draw a Shape Picture",
+        script: "Here's a fun challenge: draw a picture using ONLY circles, squares, triangles and rectangles. It could be a house, a robot, a face — anything! As you draw each bit, tell me which shape you're using.",
+        action: "Your child draws a picture built from the four shapes. Ask them to name each shape as they add it. Count how many of each shape are in their finished picture.",
+      },
+    },
     activities: [
       // --- EASY: Learning shape names ---
       {
@@ -9656,6 +9893,30 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
     title: "Position & Location",
     strand: "Space",
     description: "Describe the position and location of objects in relation to other objects and people",
+    lesson: {
+      title: "Where Is It?",
+      objective: "Use position words to describe exactly where things are — and give and follow positional instructions.",
+      materials: [
+        "A small stuffed toy or favourite object to act as 'Teddy'",
+        "Boxes, chairs and everyday furniture to position Teddy around",
+        "Paper and pencil",
+      ],
+      intro: {
+        title: "Teddy's Hiding Spots",
+        script: "Teddy loves to play hide and describe! I'm going to put Teddy somewhere, and I want you to tell me exactly where Teddy is — not just 'over there', but using special words: ON, UNDER, BESIDE, IN FRONT OF, BEHIND, INSIDE. Ready?",
+        action: "Place the toy in different positions around the room (on the table, under the chair, beside the box, behind the door, inside a bag). After each position, your child describes it in a full sentence: 'Teddy is UNDER the table.' If they're unsure, say the sentence together.",
+      },
+      mainActivity: {
+        title: "You're the Director!",
+        script: "Now YOU'RE in charge! Tell me exactly where to put Teddy, using your position words. I'll follow your instructions exactly — so be very precise, because I'm going to listen carefully!",
+        action: "Your child gives verbal instructions. Follow them literally — if they say 'put Teddy there', ask 'Where is there? Can you use a position word?' Then swap — you give instructions for your child to follow. Make it silly: 'Put Teddy on top of YOUR head!'",
+      },
+      wrapUp: {
+        title: "Draw a Map",
+        script: "Let's draw a simple map of our table and show where Teddy is. Draw the table, draw Teddy, and write the word that tells us where Teddy is. Is Teddy ON the table? Or UNDER it?",
+        action: "Your child draws a simple diagram showing Teddy's position relative to one or two objects. Help them write the position word next to Teddy. This gently introduces spatial representation — a big concept!",
+      },
+    },
     activities: [
       // --- EASY: On, under, in (1 of 2) ---
       {
@@ -10674,6 +10935,30 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
     title: "Collect, Sort & Compare Data",
     strand: "Statistics",
     description: "Collect, sort and compare data in response to questions in familiar contexts",
+    lesson: {
+      title: "Let's Sort, Count and Find Out!",
+      objective: "Ask a question, collect data by sorting objects, and compare the groups to answer the question.",
+      materials: [
+        "A bag of mixed objects — anything works: buttons of different colours, a mix of toy animals and cars, or mixed coins",
+        "Paper and pencil",
+        "Labels or sticky notes for the categories",
+      ],
+      intro: {
+        title: "Start With a Question",
+        script: "Data starts with a question — something we're curious about! Look at this bag of mixed things. What question could we ask? I wonder... do we have more red ones or blue ones? That's what we're going to find out!",
+        action: "Tip out the mixed objects together and look at them. Help your child frame a comparison question about the collection (e.g. 'More animals or more cars?'). This is the most important step — show that maths begins with curiosity.",
+      },
+      mainActivity: {
+        title: "Sort, Count and Record",
+        script: "Let's sort everything into groups to answer our question. All the red ones here, all the blue ones there. Now count each group and write the number down. Which group has more?",
+        action: "Your child sorts the objects into two (or three) categories. Count each group together and write the number. Draw a simple picture graph on paper — one column per category, draw or tally each object. Compare the columns: 'Which column is taller? That group has more!'",
+      },
+      wrapUp: {
+        title: "Answer Our Question",
+        script: "Remember the question we asked at the start? Now we can answer it! We found out there are ___ red ones and ___ blue ones — so we have MORE ___. And we KNOW that because we sorted and counted!",
+        action: "Your child states the answer to the original question using the data. Ask one or two follow-ups: 'How many more does the bigger group have? How many are there altogether?' Celebrate: 'That's real data science — you collected information and used it to answer a question!'",
+      },
+    },
     activities: [
       // --- EASY: Sorting into groups ---
       {

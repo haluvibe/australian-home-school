@@ -8,6 +8,30 @@ export const year4MathsWorksheets: WorksheetItem[] = [
     strand: "Number",
     description:
       "Represent tenths and hundredths in decimal form",
+    lesson: {
+      title: "Cutting Things into Tenths and Hundredths",
+      objective: "Represent tenths and hundredths as decimals and connect fraction notation to decimal notation on a place value chart.",
+      materials: [
+        "A sheet of paper and scissors",
+        "A pencil and ruler",
+        "10 small coins or counters",
+      ],
+      intro: {
+        title: "Slicing the Strip",
+        script: "I am going to fold this piece of paper into 10 equal parts. Watch. Each part is one tenth — we write that as the fraction 1 over 10, or as the decimal 0.1. Now look — if I fold one of those ten strips into 10 smaller parts, I get hundredths. One hundredth is written 0.01. Let me show you how tiny that is compared to a whole.",
+        action: "Fold a strip of paper in half three times to get 8 sections, then fold once more to get 10 rough sections. Tear one section off and hold it up. Then fold that section into 10 tiny pieces to show a hundredth. Keep both visible throughout the intro.",
+      },
+      mainActivity: {
+        title: "Place the Decimal",
+        script: "Let us use a place value chart together. Ones go here, tenths go here — after the dot — and hundredths go even further right. I will show you a few fractions and you tell me what decimal they make. 3 tenths — where does the 3 go? After the point: 0.3. Good. Now 7 hundredths — that is 0.07. See how there is a zero in the tenths column? Now you try some.",
+        action: "Draw a simple place value chart on paper with columns: Ones | . | Tenths | Hundredths. Write fractions and ask the child to place digits. Do at least 6 examples together before the child works alone. Watch for confusion between 0.7 and 0.07.",
+      },
+      wrapUp: {
+        title: "Explain It Back",
+        script: "Tell me: what is the difference between 0.3 and 0.03? Use the chart to help you explain. And if I write 0.57, what does the 5 mean? What does the 7 mean?",
+        action: "Listen for the child to say tenths and hundredths with correct column positions. If they struggle, point to the chart and ask which column each digit is sitting in.",
+      },
+    },
     activities: [
       // ── EASY (approx 25 activities) ──
       {
@@ -686,6 +710,30 @@ export const year4MathsWorksheets: WorksheetItem[] = [
     strand: "Number",
     description:
       "Multiply natural numbers by multiples of 10",
+    lesson: {
+      title: "The Zero Shortcut — Multiplying by 10, 100 and Beyond",
+      objective: "Multiply whole numbers by 10, 20, 30, 100, and other multiples of 10 by understanding place value shifts.",
+      materials: [
+        "Paper and pencil",
+        "10 small objects (coins, blocks, or counters)",
+        "A simple place value chart drawn on paper",
+      ],
+      intro: {
+        title: "What Happens When We Times by 10?",
+        script: "Put 3 counters in front of you. That is 3 ones. Now imagine I give you 10 times as many — how many would you have? 30! Watch what happens on our place value chart: the 3 slides one column to the left and a zero fills the ones place. It is not magic — the number got 10 times bigger, so it moved one place to the left.",
+        action: "Draw a Tens | Ones chart. Write 3 in Ones. Then move the 3 to Tens and add a 0 in Ones to show 30. Repeat with 6 and 7 so the pattern is clear before moving on.",
+      },
+      mainActivity: {
+        title: "Slide and Multiply",
+        script: "Now let us try multiplying by multiples of 10 like 20, 30, or 400. Here is the trick: multiply the non-zero digits first, then count the zeros and add them to the end. So 4 times 30 — I do 4 times 3 which is 12, then I add one zero: 120. Let us try some together. You call out the answer.",
+        action: "Write 5 x 20, 6 x 30, 4 x 100, 7 x 200, and 3 x 400 on paper one at a time. Ask the child to say the answer aloud before writing it. Reinforce: multiply the digits, then count and attach the zeros.",
+      },
+      wrapUp: {
+        title: "Convince Me",
+        script: "Here is a tricky one: 8 times 50. Walk me through it step by step. Tell me what you do first, then what you do with the zero.",
+        action: "Ask the child to talk through the steps out loud, not just give the answer. If they get it right, try 7 x 300 as a bonus. Confirm they understand zeros come from the multiplier, not just being added randomly.",
+      },
+    },
     activities: [
       // ── EASY (approx 25 activities) ──
       {
@@ -1403,6 +1451,30 @@ export const year4MathsWorksheets: WorksheetItem[] = [
     strand: "Number",
     description:
       "Add, subtract, multiply and divide numbers efficiently using known facts",
+    lesson: {
+      title: "Work Smarter, Not Harder — Mental Maths Strategies",
+      objective: "Apply efficient mental strategies for addition, subtraction, multiplication and division including near doubles, bridging 10, and using inverse operations.",
+      materials: [
+        "Paper and pencil",
+        "A deck of playing cards (number cards only, Ace to 9)",
+        "10 small counters",
+      ],
+      intro: {
+        title: "The Speed Round",
+        script: "I am going to give you two ways to solve 47 plus 38. Way one: add the tens, then the ones, then put them together. Way two: round 38 up to 40, add that to 47 to get 87, then take away 2 to correct it. Both get 85. The second way is faster — that is what efficient means in maths. Today we look for the clever shortcut.",
+        action: "Write both methods on paper side by side. Solve aloud with the child. Then pose: 59 + 24. Ask them which strategy they would use and why. Validate both answers and celebrate efficiency.",
+      },
+      mainActivity: {
+        title: "Strategy Showdown",
+        script: "I will draw two cards — those are our two numbers. We are going to add them, then subtract the smaller from the larger, then I will give you a multiplication or division fact to use. You pick the strategy that feels fastest and talk me through it.",
+        action: "Draw pairs of cards and create problems. For addition/subtraction use two-digit numbers. For multiplication use facts up to 10x10 and then a related division. If child gets stuck, ask: is there a fact you already know that is close to this? Model making connections between related facts.",
+      },
+      wrapUp: {
+        title: "The Family Connection",
+        script: "If 6 times 8 is 48, what else do you know for free? Tell me at least three related facts using those same numbers.",
+        action: "Listen for: 8 x 6 = 48, 48 divided by 6 = 8, 48 divided by 8 = 6. Prompt if needed. Reinforce that knowing one fact gives you an entire fact family.",
+      },
+    },
     activities: [
       // ── EASY (approx 25 activities) ──
       {
@@ -2111,6 +2183,30 @@ export const year4MathsWorksheets: WorksheetItem[] = [
     strand: "Number",
     description:
       "Use rounding and estimation to check the reasonableness of calculations",
+    lesson: {
+      title: "Close Enough — The Power of a Good Estimate",
+      objective: "Round numbers to the nearest 10, 100 and 1000 and use estimation to check whether answers are reasonable.",
+      materials: [
+        "Paper and pencil",
+        "A number line drawn on paper (0 to 100 in intervals of 10)",
+        "A jar of small objects such as coins, pasta or buttons",
+      ],
+      intro: {
+        title: "The Jar Guess",
+        script: "Before we count these, take a look at this jar. Do not count them — just look and make an estimate. Is it closer to 10, 50 or 100? Tell me your guess and why. Now we will count and see how close you were. A good estimate is not random — you use what you can see to make a smart guess.",
+        action: "Put 30 to 50 small objects in a clear jar or bag. Let the child estimate without counting, then count together. Celebrate if they were within 10 or 20. Discuss their reasoning.",
+      },
+      mainActivity: {
+        title: "Round and Check",
+        script: "Here is how rounding works: look at the digit to the right of where you are rounding. If it is 5 or more, round up. If it is 4 or less, round down. Let us try 47 — rounded to the nearest 10 that is 50, because the ones digit is 7. Now I want you to round some numbers and then use your rounded numbers to estimate the answer to a calculation.",
+        action: "Write these on paper: round 63 to the nearest 10, round 148 to the nearest 100. Then pose: 62 + 29 — estimate first using rounding, then work out the exact answer. Compare. Ask: is your exact answer reasonable given your estimate?",
+      },
+      wrapUp: {
+        title: "Spot the Mistake",
+        script: "I am going to tell you a calculation and the answer someone got. You use estimation to tell me if it sounds right. 48 plus 53 — someone says the answer is 201. Does that sound right to you? How do you know?",
+        action: "Pose 3 or 4 calculations with deliberate wrong answers (ones that are wildly off). Child uses estimation to flag the mistakes. This builds the habit of checking answers.",
+      },
+    },
     activities: [
       // ── EASY (approx 25 activities) ──
       {
@@ -2822,6 +2918,29 @@ export const year4MathsWorksheets: WorksheetItem[] = [
     strand: "Number",
     description:
       "Use properties of odd and even numbers",
+    lesson: {
+      title: "Can You Share Them Equally? Odd and Even Numbers",
+      objective: "Identify odd and even numbers, apply rules for sums and differences of odd and even numbers, and use these properties to predict answers.",
+      materials: [
+        "20 small objects such as coins, blocks or buttons",
+        "Paper and pencil",
+      ],
+      intro: {
+        title: "The Pairing Test",
+        script: "Grab 8 coins and try to put them into pairs. Can you do it? Yes — 8 is even, because everything pairs up perfectly with nothing left over. Now try 7 coins. What happens? There is one left over with no partner — that means 7 is odd. Even numbers always pair up perfectly. Odd numbers always leave one behind.",
+        action: "Give the child handfuls of coins to test. Start with 8, then 7, then 12, then 15. Each time ask: is it odd or even? How do you know? Make sure they use pairing to confirm, not just memory.",
+      },
+      mainActivity: {
+        title: "Predict the Result",
+        script: "Here is something cool: even plus even always gives an even answer. Odd plus odd also gives even. But even plus odd gives odd! Let us test these rules. I will give you a pair of numbers and you predict whether the answer will be odd or even before we calculate.",
+        action: "Write these pairs and ask for predictions before calculating: 4 + 6, 3 + 5, 4 + 7, 9 + 3, 12 + 15, 21 + 19. After predicting, work out the answer and check the rule holds. Then try the same idea with subtraction.",
+      },
+      wrapUp: {
+        title: "Make a Rule",
+        script: "Tell me in your own words: how do you know if a big number like 374 is odd or even without counting? What is the trick?",
+        action: "The child should say to look at the ones digit. If they are unsure, walk through 374 together — the ones digit is 4, which is even, so 374 is even. Then test 561.",
+      },
+    },
     activities: [
       // ── EASY (approx 25 activities) ──
       {
@@ -3533,6 +3652,30 @@ export const year4MathsWorksheets: WorksheetItem[] = [
     strand: "Number",
     description:
       "Recognise equivalent fractions and connect fraction and decimal notations",
+    lesson: {
+      title: "Same Amount, Different Name — Equivalent Fractions",
+      objective: "Recognise and generate equivalent fractions by multiplying or dividing numerator and denominator by the same number, and connect common fractions to their decimal equivalents.",
+      materials: [
+        "Two identical pieces of paper",
+        "Pencil and ruler",
+        "Paper for writing",
+      ],
+      intro: {
+        title: "Two Ways to Say the Same Thing",
+        script: "Fold this piece of paper in half and shade one half. Now fold it in half again — how many parts do you have now? Four. How many are shaded? Two. So one half and two quarters are the same amount — they are equivalent. The paper did not change, just the number of pieces. That is what equivalent fractions means.",
+        action: "Fold and shade one piece of paper to show 1/2, then fold again to show 2/4. Do the same with 1/3 and 2/6. Keep both papers visible side by side. Let the child confirm the shaded area is the same size.",
+      },
+      mainActivity: {
+        title: "The Multiplication Rule",
+        script: "Here is the shortcut: if you multiply the top number and the bottom number by the same thing, you get an equivalent fraction. So 1 over 2, multiply both by 3 — you get 3 over 6. They are equal! Let us use this rule to find the missing number in some equivalent fraction pairs.",
+        action: "Write these on paper with a box for the missing number: 1/2 = ?/8, 2/3 = 4/?, 3/4 = ?/12, 5/10 = 1/?. Work through the first two together. The child does the last two. Then connect to decimals: 1/2 = 0.5, 1/4 = 0.25, 3/4 = 0.75.",
+      },
+      wrapUp: {
+        title: "Spot the Equivalent",
+        script: "Look at this list: 2/4, 1/2, 4/8, 3/6. Tell me — are all of these equivalent? How do you know?",
+        action: "Listen for the child to identify that all equal one half. Ask how they checked. Prompt: could you multiply or divide to prove it?",
+      },
+    },
     activities: [
       // ── EASY (approx 25 activities) ──
       {
@@ -4160,6 +4303,30 @@ export const year4MathsWorksheets: WorksheetItem[] = [
     strand: "Number",
     description:
       "Count and represent fractions on a number line",
+    lesson: {
+      title: "Fractions Live Between Whole Numbers Too",
+      objective: "Place fractions including halves, thirds and quarters on a number line and count forwards and backwards in fractions.",
+      materials: [
+        "A strip of paper about 30 cm long",
+        "A ruler and pencil",
+        "Coloured pencil or marker",
+      ],
+      intro: {
+        title: "Building the Number Line Together",
+        script: "Take this strip of paper and we are going to turn it into a number line. Mark 0 at one end and 1 at the other end. Now fold it in half — where does the fold land? That is one half, right in the middle. Mark it 1 over 2. Fractions are not just pieces of pie — they live on the number line between whole numbers.",
+        action: "Help the child fold and mark the strip. Draw marks at 0, 1/2, and 1. Then fold again to get quarters and mark those. Use a coloured pencil to make the fractions stand out.",
+      },
+      mainActivity: {
+        title: "Count Along the Line",
+        script: "Let us count in halves together, starting from zero. Zero, one half, one, one and a half, two — see how we just keep adding one half each time? Now I want you to do the same in thirds. Count from zero to two in thirds, naming each step as you go.",
+        action: "Draw a blank number line from 0 to 2 on paper. Ask the child to mark and label each third. Watch for confusion at the whole number points — confirm that 3/3 = 1 and 6/3 = 2. Then try placing mixed fractions like 1 and 3/4 on a 0-to-2 line.",
+      },
+      wrapUp: {
+        title: "Where Does It Go?",
+        script: "I am going to say a fraction and you point to where it would go on the number line. Ready? One and a half. Two thirds. Three quarters. Five quarters — careful with that last one!",
+        action: "Have the number line from 0 to 2 visible. Child points or marks each fraction. For 5 quarters, watch whether they recognise it is greater than 1. Ask: is it less or more than 1? How do you know?",
+      },
+    },
     activities: [
       // ── EASY (approx 25 activities) ──
       {
@@ -4788,6 +4955,30 @@ export const year4MathsWorksheets: WorksheetItem[] = [
     strand: "Number",
     description:
       "Solve financial and other practical problems using number sentences",
+    lesson: {
+      title: "Shopping Maths — Writing the Number Sentence First",
+      objective: "Translate word problems involving money and everyday contexts into number sentences, choose the correct operation, and solve efficiently.",
+      materials: [
+        "A handful of coins and small notes (or drawn amounts on paper)",
+        "Paper and pencil",
+        "A few household objects with price tags written on sticky notes",
+      ],
+      intro: {
+        title: "The Receipt Problem",
+        script: "Imagine you are at a market stall. You buy a pen for $2.50 and a notebook for $4.00. The person behind the counter says you owe $7.00. Wait — does that sound right? Let us write a number sentence: 2.50 plus 4.00 equals... 6.50. They made a mistake! Writing the number sentence first helps us check.",
+        action: "Set up 3 or 4 objects with hand-written price tags. Tell a short shopping story for each and write the number sentence on paper. Show that the number sentence is the tool that helps us think clearly.",
+      },
+      mainActivity: {
+        title: "Write It First, Solve It Second",
+        script: "For every problem I give you, your first job is to write the number sentence before you do any calculating. I do not want the answer first — I want the number sentence. Here we go: You have $20 and you spend $13.75. How much change do you get? Write the number sentence.",
+        action: "Give 5 word problems one at a time. After each one, check the number sentence before the calculation. Problems should include: find the total, find change, share equally, find cost of multiple items. Correct any wrong operations before the child solves.",
+      },
+      wrapUp: {
+        title: "The Shared Bill",
+        script: "Four friends buy a pizza that costs $24. They each pay the same amount. Write the number sentence and solve it. Then tell me: which operation did you use and why?",
+        action: "Listen for 24 divided by 4 = 6. Ask the child to explain why division is the right operation here, not addition or subtraction.",
+      },
+    },
     activities: [
       // ── EASY (approx 25 activities) ──
       {
@@ -5367,6 +5558,30 @@ export const year4MathsWorksheets: WorksheetItem[] = [
     strand: "Algebra",
     description:
       "Find unknown values in equations involving addition and subtraction",
+    lesson: {
+      title: "The Mystery Number — Solving for the Unknown",
+      objective: "Find missing values in addition and subtraction equations using inverse operations and the idea of balance.",
+      materials: [
+        "Paper and pencil",
+        "10 to 15 small objects such as blocks or coins",
+        "Two small containers or cups",
+      ],
+      intro: {
+        title: "The Hidden Pile",
+        script: "I have some blocks hidden in this cup, plus 5 more on the table, and altogether there are 12 blocks. How many are hidden? That is an unknown value problem. I write it as: box plus 5 equals 12. The box is the mystery. To find it, I use the opposite operation — I subtract 5 from 12 and get 7. Let me check: 7 plus 5 does equal 12. It works!",
+        action: "Put 7 blocks in a cup and 5 on the table. Tell the story then write the equation with a box for the unknown. Physically take the 5 away from 12 to find the hidden amount, then reveal the cup to confirm.",
+      },
+      mainActivity: {
+        title: "The Balance Method",
+        script: "Think of an equals sign as a balance scale — both sides must weigh the same. If I have 18 plus box equals 31, I need to find what makes both sides balance. I subtract 18 from 31: that is 13. Box equals 13. Now you try. I will write the equation and you find the unknown.",
+        action: "Write 6 equations with unknowns in different positions: box + 14 = 30, 25 + box = 41, 60 - box = 22, box - 17 = 35, box + 28 = 73, 90 - box = 54. Child solves using inverse operations. Check by substituting back in.",
+      },
+      wrapUp: {
+        title: "Check Your Work",
+        script: "After you find the unknown, how do you make sure your answer is right? Show me using one of the equations we just did.",
+        action: "Child substitutes their answer back into the original equation and confirms both sides are equal. Make sure this checking habit is established before moving to the worksheet.",
+      },
+    },
     activities: [
       // ── EASY ──
       {
@@ -5936,6 +6151,30 @@ export const year4MathsWorksheets: WorksheetItem[] = [
     strand: "Algebra",
     description:
       "Follow and create algorithms that generate sets of numbers and identify emerging patterns",
+    lesson: {
+      title: "The Number Machine — Rules That Make Patterns",
+      objective: "Follow step-by-step rules (algorithms) to generate number sequences and identify the rule behind an existing pattern.",
+      materials: [
+        "Paper and pencil",
+        "A ruler",
+        "Coloured pencils (optional)",
+      ],
+      intro: {
+        title: "What Is a Number Machine?",
+        script: "Imagine a machine that takes a number, does something to it, and spits out a new number. I put in 3 and out comes 7. I put in 5 and out comes 9. I put in 8 and out comes 12. Can you figure out what the machine is doing? The rule is: add 4. Every machine has a rule — and if you figure out the rule, you can predict any output.",
+        action: "Write a simple input-output table on paper. Draw a box in the middle labelled with a question mark for the rule. Reveal the rule after the child has guessed it. Do two or three examples with different rules: multiply by 2, subtract 3, and add 10.",
+      },
+      mainActivity: {
+        title: "Follow and Create",
+        script: "First, I will give you an algorithm — a set of steps — and you follow it to make a sequence. The rule is: start at 4, add 6 each time, stop after 6 numbers. Ready? Go. Now reverse it — I am going to show you a sequence and you figure out the rule. 2, 6, 18, 54... what is the rule?",
+        action: "Work through 3 follow-the-rule sequences together. Then show 3 sequences and ask the child to identify the rule. Start with adding/subtracting rules, then try a doubling or halving rule as a challenge. Write sequences in a table format.",
+      },
+      wrapUp: {
+        title: "Design Your Own",
+        script: "Now it is your turn to be the machine. Choose a secret rule, give me three input-output pairs, and I will try to guess the rule. Then we switch.",
+        action: "Let the child invent a rule and give you examples. Try to guess their rule, then give them one of yours. This builds their understanding that a rule must be consistent and testable.",
+      },
+    },
     activities: [
       // ── EASY ──
       {
@@ -6490,6 +6729,32 @@ export const year4MathsWorksheets: WorksheetItem[] = [
     strand: "Measurement",
     description:
       "Use scaled instruments to measure length, mass, capacity and temperature",
+    lesson: {
+      title: "Reading the Scale — Measurements All Around the House",
+      objective: "Read and interpret scales on rulers, measuring jugs, kitchen scales and thermometers, including scales that do not mark every value.",
+      materials: [
+        "A ruler",
+        "A kitchen measuring jug",
+        "Kitchen scales or a bathroom scale",
+        "A thermometer (optional)",
+        "Water",
+      ],
+      intro: {
+        title: "The Scale Reads Between the Lines",
+        script: "Look at this ruler. I can see the centimetre marks clearly, but what about those tiny lines in between? Those are millimetres — 10 of them fit in every centimetre. When an arrow or pointer falls between two labelled marks, I need to read how far between. Let me show you with this pencil.",
+        action: "Lay a pencil on the ruler so it ends between 14 and 15 cm. Point to the small divisions. Count them together: the pencil is at 14.7 cm. Then show water in the measuring jug between two 100 mL marks so the child practises reading between marked values.",
+      },
+      mainActivity: {
+        title: "Measure and Record",
+        script: "We are going to measure 4 things and record each reading. First, measure the length of this book. Then pour some water and read the jug. Then I want you to read the kitchen scale with this object on it. For each one, tell me the number and the unit — cm, mL, g or degrees.",
+        action: "Set up each measurement station. For each, ask the child to identify: what is the scale measuring, what are the labelled marks, how many divisions are between marks, and what is each division worth. Record readings on paper.",
+      },
+      wrapUp: {
+        title: "The Halfway Problem",
+        script: "If a scale goes from 200 g to 300 g and the pointer is exactly halfway between, what does it read? And if it is one quarter of the way from 300 to 400, what does it read?",
+        action: "Ask the child to explain their reasoning. The key idea is that they need to find the value of one division and then count up from the lower mark. Use the real scale to confirm if possible.",
+      },
+    },
     activities: [
       // ── EASY ──
       {
@@ -7083,6 +7348,31 @@ export const year4MathsWorksheets: WorksheetItem[] = [
     strand: "Measurement",
     description:
       "Measure and approximate perimeters and areas",
+    lesson: {
+      title: "Around the Outside, Inside the Shape — Perimeter and Area",
+      objective: "Distinguish between perimeter and area, measure perimeter by adding side lengths and calculate area by counting square units or multiplying.",
+      materials: [
+        "A ruler",
+        "1 cm grid paper or plain paper with a grid drawn on it",
+        "A pencil",
+        "A piece of string about 50 cm long",
+      ],
+      intro: {
+        title: "Fence vs Grass",
+        script: "Imagine you have a small garden. Perimeter is the fence around the outside — it is the total distance around the edge. Area is the grass inside the fence — how much space is inside. These are two completely different measurements. One measures a distance, the other measures a region. Let me use this string to show you.",
+        action: "Lay the string around a book to show perimeter. Then place the book on grid paper and count the squares inside to show area. Make sure the child sees both concepts with the same object to anchor the contrast.",
+      },
+      mainActivity: {
+        title: "Measure and Calculate",
+        script: "Draw a rectangle on this grid paper that is 5 squares wide and 3 squares tall. Now: what is the perimeter? Add up all four sides. What is the area? Count the squares inside, or use the shortcut: length times width. See if both methods give the same area.",
+        action: "Guide the child to draw two different rectangles and find both perimeter and area for each. Then draw an irregular shape on the grid and ask them to estimate the area by counting whole and partial squares.",
+      },
+      wrapUp: {
+        title: "Same Area, Different Perimeter?",
+        script: "Can you draw two different shapes that both have an area of 12 square centimetres but different perimeters? Try it and see.",
+        action: "Give the child grid paper and time to explore. If they are stuck, suggest a 3 by 4 rectangle vs a 2 by 6 rectangle. Calculate the perimeters together to confirm they differ.",
+      },
+    },
     activities: [
       // ── EASY ──
       {
@@ -7623,6 +7913,30 @@ export const year4MathsWorksheets: WorksheetItem[] = [
     strand: "Measurement",
     description:
       "Convert between units of time when solving duration problems",
+    lesson: {
+      title: "How Long Does It Take? Converting Units of Time",
+      objective: "Convert between seconds, minutes, hours and days, and calculate duration by finding the difference between start and end times.",
+      materials: [
+        "A clock or watch with a second hand or timer",
+        "Paper and pencil",
+        "A printed or hand-drawn blank clock face",
+      ],
+      intro: {
+        title: "The Timing Challenge",
+        script: "I am going to time you doing something — say the alphabet as fast as you can. Ready? Go! That took about 10 seconds. Now, how many times could you do that in one minute? There are 60 seconds in a minute, so about 6 times. Time is built in layers: seconds build into minutes, minutes into hours, hours into days. Let us learn all the conversion facts.",
+        action: "Actually time the child doing a short task with your phone or watch. Then use the result to make the conversion meaningful. Write the key conversions on paper: 60 seconds = 1 minute, 60 minutes = 1 hour, 24 hours = 1 day, 7 days = 1 week.",
+      },
+      mainActivity: {
+        title: "Start and Finish",
+        script: "Here is a duration problem: a movie starts at 2:15 pm and ends at 4:45 pm. How long is the movie? I do not subtract the numbers — I count up. From 2:15 to 3:15 is one hour. From 3:15 to 4:15 is another hour. From 4:15 to 4:45 is 30 more minutes. Total: 2 hours and 30 minutes.",
+        action: "Draw start and end times on the blank clock face. Model counting-on method. Then give 4 duration problems for the child to solve: a bike ride from 10:20 to 11:05, a lesson from 9:00 to 10:30, a car trip from 7:45 to 11:15, and converting 150 minutes to hours and minutes.",
+      },
+      wrapUp: {
+        title: "Plan the Day",
+        script: "If we start school at 9:00 am and do 4 sessions of 45 minutes each with a 15-minute break between each, what time do we finish? Work it out step by step.",
+        action: "This is a multi-step duration problem. Guide the child to add each session and break in order rather than trying to jump to the total. Confirm the answer together: 9:00 + 4 x 45 + 3 x 15 minutes.",
+      },
+    },
     activities: [
       // ── EASY ──
       {
@@ -8239,6 +8553,30 @@ export const year4MathsWorksheets: WorksheetItem[] = [
     strand: "Measurement",
     description:
       "Compare angles relative to a right angle using angle names",
+    lesson: {
+      title: "Bigger or Smaller Than a Right Angle?",
+      objective: "Identify acute, right, obtuse and straight angles by comparing them to a right angle reference, and use angle names correctly.",
+      materials: [
+        "A square piece of paper (or fold any paper into a right angle corner)",
+        "Paper and pencil",
+        "Books, door frames, table corners for finding real angles",
+      ],
+      intro: {
+        title: "The Corner Test",
+        script: "Tear off a corner of this piece of paper. That corner is a right angle — exactly 90 degrees. It is the angle of every square corner in the house. Now I am going to hold up this book at different angles and you tell me: is the angle of the opening bigger or smaller than our paper corner? If it is smaller, it is acute. If it is bigger but less than a straight line, it is obtuse.",
+        action: "Hold a book open at various angles. Child holds the paper corner next to it to compare. Label each angle together. Find examples in the room: acute angle of a door ajar, right angle of a window frame, obtuse angle of a book propped open.",
+      },
+      mainActivity: {
+        title: "Name and Draw",
+        script: "I am going to describe an angle and you draw it freehand — it does not have to be perfect, just clearly smaller or bigger than a right angle. Then name it. Here we go: draw an acute angle, draw a right angle, draw an obtuse angle, draw a straight angle.",
+        action: "Check each drawing using the paper corner. The acute must clearly be less than the corner, the obtuse must clearly be greater but not a straight line. Then reverse it: you draw an angle and the child names it.",
+      },
+      wrapUp: {
+        title: "Hunt the Angles",
+        script: "Walk around the room and find me one example each of an acute angle, a right angle and an obtuse angle. Tell me where you found each one.",
+        action: "Accompany the child on a quick walk of the room. Accept any valid examples. Watch for misconceptions such as calling all corners right angles regardless of their size.",
+      },
+    },
     activities: [
       // ── EASY ──
       {
@@ -8886,6 +9224,30 @@ export const year4MathsWorksheets: WorksheetItem[] = [
     strand: "Space",
     description:
       "Represent and approximate shapes and objects in the environment",
+    lesson: {
+      title: "The Shape Spotter — 2D and 3D All Around You",
+      objective: "Identify and name 2D and 3D shapes in the environment, describe their properties, and represent real objects using geometric shapes.",
+      materials: [
+        "A selection of household objects: tin can, cereal box, ball, cone-shaped cup, dice",
+        "Paper and pencil",
+        "A ruler",
+      ],
+      intro: {
+        title: "What Shape Hides Inside?",
+        script: "Look at this tin can. If you looked at it from above, what shape would you see? A circle. If you looked at it from the side, what would you see? A rectangle. The same object can look like different shapes depending on where you stand. 3D objects are made from 2D faces. Let us explore.",
+        action: "Hold up each household object in turn. Ask the child to name the 3D shape and then describe its 2D faces: how many faces, what shapes are they? Lay flat objects to trace their faces on paper.",
+      },
+      mainActivity: {
+        title: "Describe and Draw",
+        script: "Pick up the cereal box. It is a rectangular prism — also called a cuboid. How many faces does it have? How many are rectangles? Now I want you to draw a rough representation of it on paper — show that it is 3D by adding depth lines. Then describe it to me using the words: faces, edges, vertices.",
+        action: "Work through 3 objects together. For each: name the 3D shape, count faces, edges and vertices, and attempt a 3D sketch. For younger or hesitant drawers, tracing faces and assembling them is fine. Focus on the geometric vocabulary.",
+      },
+      wrapUp: {
+        title: "The Description Game",
+        script: "I am going to describe a shape and you tell me what it is. It has 6 faces, all the same size, 12 edges and 8 corners. What is it? Now you describe one and I will guess.",
+        action: "Accept any object from the earlier activity. If the child is stuck choosing one to describe, prompt them to count faces and edges slowly. Celebrate when the description is precise enough to identify the shape uniquely.",
+      },
+    },
     activities: [
       // ── EASY ──
       {
@@ -9485,6 +9847,30 @@ export const year4MathsWorksheets: WorksheetItem[] = [
     strand: "Space",
     description:
       "Create and interpret grid references",
+    lesson: {
+      title: "Reading the Map — How Grid References Work",
+      objective: "Read and write grid references using letter-number notation, and use grid references to describe and locate positions on a grid.",
+      materials: [
+        "Paper and pencil",
+        "A ruler",
+        "Small stickers or small objects to place on the grid",
+      ],
+      intro: {
+        title: "The Treasure Hunt Grid",
+        script: "We are going to make a grid and hide some treasure on it. The trick with grid references is: letters go across the bottom and numbers go up the side. You always say the letter first, then the number — like reading a sentence, across then up. So B3 means: go across to column B, then go up 3 rows. Let me show you.",
+        action: "Draw a 5 by 5 grid on paper with letters A to E along the bottom and numbers 1 to 5 up the side. Place a small sticker in one cell and ask the child to give the reference. Then you say a reference and they point to the cell. Do 5 rounds.",
+      },
+      mainActivity: {
+        title: "Place and Find",
+        script: "Now you are the map maker. Place these objects at these grid references: pencil at C4, rubber at A2, book at E3. I will look away and then use your grid to find each one. Then you use my grid to find my hidden objects.",
+        action: "Have the child place 4 objects at given references, then check each one by calling out the reference and seeing if they point to the right cell. Swap roles. Extend by asking: what object is between A2 and C2?",
+      },
+      wrapUp: {
+        title: "Directions on the Grid",
+        script: "If I am at B2 and I move 2 squares to the right and 1 square up, where do I end up? Try to work that out without looking at the grid first, then check.",
+        action: "This tests spatial reasoning as well as grid references. Ask 3 such movement questions. Then ask: what is 3 squares to the left of E4? Confirm by checking the grid together.",
+      },
+    },
     activities: [
       // ── EASY ──
       {
@@ -10019,6 +10405,31 @@ export const year4MathsWorksheets: WorksheetItem[] = [
     strand: "Space",
     description:
       "Identify line and rotational symmetry in plane shapes; create symmetrical patterns",
+    lesson: {
+      title: "Mirror Images and Spinning Shapes — Lines of Symmetry",
+      objective: "Identify lines of symmetry in shapes and patterns, distinguish between line and rotational symmetry, and create symmetrical designs.",
+      materials: [
+        "A small mirror or shiny spoon",
+        "Paper and pencil",
+        "Scissors",
+        "Coloured pencils or crayons",
+      ],
+      intro: {
+        title: "The Mirror Test",
+        script: "If I fold this piece of paper in half and both halves match perfectly, the fold line is a line of symmetry. Watch — I fold this heart shape and the two sides line up exactly. Now look at this letter B. Can I fold it so both halves match? What about the letter A? Some shapes have one line of symmetry, some have many, some have none.",
+        action: "Cut out simple shapes: a circle, a square, a rectangle, a triangle, and an irregular blob. For each, child predicts how many lines of symmetry then folds to check. Use the mirror to test as well by placing it on the shape.",
+      },
+      mainActivity: {
+        title: "Create and Count",
+        script: "Draw a large square on your paper. I want you to find all the lines of symmetry — draw them on the shape. A square has 4 lines: two through the midpoints of opposite sides, and two through opposite corners. Now draw a regular triangle and find its lines. Then I will show you rotational symmetry — a shape that looks the same when you spin it.",
+        action: "Draw shapes and ask the child to draw all lines of symmetry. For rotational symmetry, cut out a square and put a pencil through the centre, then spin it — mark how many times it looks the same in one full turn. A square has rotational symmetry of order 4.",
+      },
+      wrapUp: {
+        title: "Design a Symmetrical Pattern",
+        script: "Fold a piece of paper in half. Draw half a butterfly wing on the fold line. Cut it out and unfold it. What do you notice? The wings are identical — that is line symmetry. Can you design another symmetrical shape using this fold-and-cut method?",
+        action: "Supervise the folding and cutting. The child opens the folded paper to reveal a symmetrical shape. Ask: where is the line of symmetry? How many does this shape have?",
+      },
+    },
     activities: [
       // ── EASY ──
       {
@@ -10605,6 +11016,30 @@ export const year4MathsWorksheets: WorksheetItem[] = [
     strand: "Statistics",
     description:
       "Create many-to-one data displays and assess suitability of displays for representing data",
+    lesson: {
+      title: "One Symbol, Many Values — Reading Many-to-One Graphs",
+      objective: "Read and create picture graphs and column graphs where each symbol or unit represents more than one item, and decide when many-to-one scale is appropriate.",
+      materials: [
+        "Paper and pencil",
+        "A ruler",
+        "Coloured pencils",
+      ],
+      intro: {
+        title: "Why Not Draw All 100 Cars?",
+        script: "Imagine we wanted to make a picture graph showing how 80 students get to school. If each symbol meant 1 student, we would need to draw 80 symbols — that would take forever! Instead, we can say each symbol equals 5 students. So 16 symbols represent 80 students. This is called a many-to-one scale. It makes large data sets manageable.",
+        action: "Show a quick hand-drawn picture graph: 5 rows of stars where each star represents 4. Ask: if there are 6 stars in the row, how many students does that row represent? Work through this together until the child is comfortable with the multiplication.",
+      },
+      mainActivity: {
+        title: "Read and Create",
+        script: "Here is a column graph where each unit on the vertical axis represents 2. Read the values for each column by multiplying the height by 2. Now I want you to create your own graph. We collected data from our house — number of books in each room. Let us use a scale where each unit equals 5.",
+        action: "Give data to graph: Living room 15 books, kitchen 5, bedrooms 30, bathroom 0. Child decides the scale (each unit = 5), draws axes, labels them, and draws the columns. Check scale is consistent and the graph is titled and labelled.",
+      },
+      wrapUp: {
+        title: "Which Scale Is Better?",
+        script: "If our data went up to 500, should we use a scale of 1, 10, or 50? Explain your thinking. And if our data only went up to 6, would we need a many-to-one scale?",
+        action: "Listen for the idea that many-to-one scales are useful when data values are large. A scale of 1 is fine when all values are small. If the child is unsure, try drawing the same data both ways to show how impractical a scale of 1 becomes.",
+      },
+    },
     activities: [
       // ── EASY ──
       {
@@ -11208,6 +11643,30 @@ export const year4MathsWorksheets: WorksheetItem[] = [
     strand: "Statistics",
     description:
       "Discuss the shape of distributions and variation in data",
+    lesson: {
+      title: "What Does the Data Tell Us? Reading the Shape of a Graph",
+      objective: "Describe how data is spread, identify clusters and gaps, notice whether data is spread evenly or bunched, and use this to draw conclusions.",
+      materials: [
+        "Paper and pencil",
+        "A ruler",
+        "10 small objects for a quick data collection activity",
+      ],
+      intro: {
+        title: "Where Did All the Data Go?",
+        script: "Look at this dot plot I drew. Most dots are bunched in the middle and there are fewer on the edges. That is called a spread. When data bunches in one place, we call that a cluster. When there is a big gap with no data, that is a gap in the distribution. These words help us describe what the data shows without just reading off numbers.",
+        action: "Draw a simple dot plot on paper: a horizontal line with values 1 to 10, and dots stacked above: 1 dot at 3, 4 dots at 4, 6 dots at 5, 5 dots at 6, 1 dot at 7. Ask: where is the cluster? Is there variation? What does this tell us?",
+      },
+      mainActivity: {
+        title: "Collect and Describe",
+        script: "Let us collect some real data. I want you to count how many steps it takes you to walk from one wall to the other. Do it 10 times and record each count. Then we will plot all the values and describe the shape of our data together.",
+        action: "Have the child walk and count 10 times. Record values. Create a dot plot together. Ask: are the values spread out a lot or are they similar? Is there a cluster? Why might the values vary slightly each time? Connect variation to real-world imprecision.",
+      },
+      wrapUp: {
+        title: "Describe the Shape",
+        script: "Look at our dot plot. Use the words cluster, spread, variation and gap to describe what you see. Then tell me: what would the shape look like if everyone got exactly the same result every time?",
+        action: "Listen for accurate use of the vocabulary. If the child is unfamiliar with the words, have them written on paper as a reference. The key idea is that real data always shows some variation.",
+      },
+    },
     activities: [
       // ── EASY ──
       {
@@ -11761,6 +12220,29 @@ export const year4MathsWorksheets: WorksheetItem[] = [
     strand: "Statistics",
     description:
       "Use surveys and digital tools to generate data in statistical investigations",
+    lesson: {
+      title: "Ask a Better Question — Designing a Survey",
+      objective: "Plan and conduct a simple survey by choosing a clear question, collecting data using a tally chart, and representing results in a graph.",
+      materials: [
+        "Paper and pencil",
+        "A tally chart template drawn on paper",
+      ],
+      intro: {
+        title: "What Makes a Good Survey Question?",
+        script: "I want to find out what people like to eat for breakfast. Here are two questions I could ask. Question one: Do you eat breakfast? Question two: What do you usually eat for breakfast? Which question gives me better data? The second one — it gives me specific, useful answers. A good survey question is clear, neutral and gives you information you can actually count and display.",
+        action: "Write both questions on paper. Discuss: question one only gives yes or no — not very informative. Ask the child to suggest two more topics they would like to survey and help them craft a clear, specific question for each.",
+      },
+      mainActivity: {
+        title: "Design and Collect",
+        script: "We are going to design a mini survey together. Pick a question — something you are genuinely curious about. Plan the possible answers in a tally chart. Then ask at least 3 people in the house your question and record the results. If you cannot ask 3 people, we can make up some sensible responses together.",
+        action: "Help the child set up a tally chart with the question at the top and answer options listed. If the household is small, you can both respond and add a couple of imagined responses to get a useful data set. Record tallies together.",
+      },
+      wrapUp: {
+        title: "Display and Conclude",
+        script: "Now turn your tally chart into a column graph. When you are done, tell me one thing the data shows and one question it makes you want to ask next.",
+        action: "Check the graph for correct labelling and appropriate scale. The follow-up question is important — it models the idea that data often raises new questions. Praise curiosity as much as accuracy.",
+      },
+    },
     activities: [
       // ── EASY ──
       {
@@ -12344,6 +12826,31 @@ export const year4MathsWorksheets: WorksheetItem[] = [
     strand: "Probability",
     description:
       "Order events or outcomes in terms of likelihood",
+    lesson: {
+      title: "How Likely Is It? Ordering Events on a Probability Line",
+      objective: "Use probability language — impossible, unlikely, even chance, likely, certain — to describe and order events from least to most likely.",
+      materials: [
+        "Paper and pencil",
+        "A ruler",
+        "A coin",
+        "A dice",
+      ],
+      intro: {
+        title: "The Probability Line",
+        script: "Draw a long line across your paper. At the left end write impossible, at the right end write certain, and in the middle write even chance. Now I am going to say some events and you point to where they go on the line. The sun will rise tomorrow — where does that go? It will snow inside our house today — where does that go?",
+        action: "Draw the probability line together. After a few teacher-led examples, let the child place events. Use: flipping heads, rolling a 6, picking a red card from a pack, a dog barking outside. Discuss disagreements — there is often room for discussion on likelihood.",
+      },
+      mainActivity: {
+        title: "Order From Least to Most Likely",
+        script: "I am going to give you 5 events. Your job is to rank them from most unlikely to most certain, using our probability words. Here they are: rolling a 1 on a dice, rolling any number from 1 to 6, picking a vowel from A, E, I, O, U, X, Y, and picking a consonant. Put them in order and tell me which word — impossible through to certain — best fits each one.",
+        action: "Write the 5 events on slips of paper. Child physically orders the slips on a line. Then matches each to a probability word. Discuss: rolling any number 1 to 6 is certain. Picking a vowel is 5 out of 7 — likely. Picking a consonant is 2 out of 7 — unlikely.",
+      },
+      wrapUp: {
+        title: "Your Own Impossible and Certain",
+        script: "Tell me one thing that is definitely impossible and one thing that is definitely certain. Then come up with something that has an even chance — exactly half and half. How do you know it is even?",
+        action: "Accept any reasonable examples. For even chance, listen for the idea that there are equal numbers of favourable and unfavourable outcomes, like a fair coin.",
+      },
+    },
     activities: [
       // ── EASY ──
       {
@@ -12952,6 +13459,31 @@ export const year4MathsWorksheets: WorksheetItem[] = [
     strand: "Probability",
     description:
       "Identify whether events are independent or dependent",
+    lesson: {
+      title: "Does One Thing Change the Other? Independent and Dependent Events",
+      objective: "Identify whether two events are independent (one does not affect the other) or dependent (one changes the probability of the other).",
+      materials: [
+        "A bag or pillowcase",
+        "5 coloured blocks or 5 socks of two different colours",
+        "A coin",
+        "Paper and pencil",
+      ],
+      intro: {
+        title: "The Bag and the Coin",
+        script: "I am going to flip this coin. Now — does the result of the coin flip change what colour block I pull from this bag? No! They have nothing to do with each other. These are independent events — one does not affect the other. But now watch this: I put 3 red blocks and 2 blue blocks in the bag and pull one out without putting it back. Now does the chance of the next draw change? Yes — there are fewer blocks left. These are dependent events.",
+        action: "Physically demonstrate each scenario. For independent: flip coin and draw from bag separately. For dependent: draw from bag without replacing, then ask: has the chance changed? Count the remaining blocks to show the probabilities have shifted.",
+      },
+      mainActivity: {
+        title: "Sort the Events",
+        script: "I am going to describe 6 pairs of events and you tell me: independent or dependent? First — rolling a dice and flipping a coin. Second — pulling a card from a deck and then pulling another without replacing the first. Third — rolling two dice at the same time. Fourth — picking a name from a hat and not putting it back, then picking again.",
+        action: "Write the 6 pairs on paper, one at a time. Child classifies each with a reason. Listen for the key reasoning: if the first event changes what is available or possible for the second, they are dependent. If nothing changes, they are independent.",
+      },
+      wrapUp: {
+        title: "Replace or Not Replace?",
+        script: "If I replace the block after each draw, are the events independent or dependent? If I do not replace it? Tell me why replacing things makes the events independent.",
+        action: "This tests the core concept. Child should explain that replacing restores the original situation, so the second draw is unaffected. Not replacing removes a possibility, making the second draw dependent on the first.",
+      },
+    },
     activities: [
       // ── EASY ──
       {
@@ -13594,6 +14126,30 @@ export const year4MathsWorksheets: WorksheetItem[] = [
     strand: "Probability",
     description:
       "Conduct repeated chance experiments and describe variation in results",
+    lesson: {
+      title: "Flipping, Rolling, Repeating — Why Results Change Each Time",
+      objective: "Conduct repeated chance experiments, record results in tally charts, and explain why results vary between experiments even when conditions are the same.",
+      materials: [
+        "A coin",
+        "A standard six-sided dice",
+        "Paper and pencil for tally charts",
+      ],
+      intro: {
+        title: "The Prediction Problem",
+        script: "If I flip a coin 10 times, how many heads do you predict? You might say 5, because it is 50-50. Let us test it right now. We flip 10 times and record the results. Did we get exactly 5 heads? Probably not — and that is completely normal. The theoretical chance is half, but actual results vary. That is variation, and it is real and interesting.",
+        action: "Flip a coin 10 times together and record using tally marks. Compare to the prediction of 5. Discuss: is 4 heads a mistake? What about 7 heads? Both are possible just by chance.",
+      },
+      mainActivity: {
+        title: "Repeat and Compare",
+        script: "We are going to flip the coin 20 times and record results. Then we will do it again a second time and see if we get the same result. If we do, that would be surprising. Variation means results change, but over time, the pattern should move closer to what we expect: about half heads.",
+        action: "Do two separate sets of 20 flips, recording each in its own tally chart. Compare totals. Discuss: which set was closer to 10 heads? If time allows, combine both sets and see if 40 flips is closer to 20 heads. This introduces the idea that more trials = more reliable results.",
+      },
+      wrapUp: {
+        title: "Why Does It Vary?",
+        script: "If I flip a coin 100 times, would I get exactly 50 heads? Probably not. But would I be closer to 50 than if I only flipped it 10 times? Tell me why you think more flips gives a more reliable result.",
+        action: "Listen for the idea that each flip is random but over many flips, the results balance out more. This is a core statistical concept — do not worry if the child cannot fully articulate it. Affirm partial understanding and reinforce with the data from the activity.",
+      },
+    },
     activities: [
       // ── EASY ──
       {

@@ -8,6 +8,30 @@ export const year6MathsWorksheets: WorksheetItem[] = [
     strand: "Number",
     description:
       "Use integers to represent points on a number line and in the Cartesian plane",
+    lesson: {
+      title: "Crossing Zero",
+      objective: "Place positive and negative integers on a number line, and locate ordered pairs in the first quadrant of a Cartesian plane.",
+      materials: [
+        "A long strip of paper (at least 50 cm) or a ruler",
+        "Sticky notes or small squares of paper, pencil",
+        "A sheet of grid paper",
+      ],
+      intro: {
+        title: "The Temperature Game",
+        script: "Imagine it is a really cold morning — the thermometer says 3 degrees below zero. How do we write that? We write it as negative 3, like this: -3. Now imagine it warms up 5 degrees. Where do we end up? Let me show you on this number line I am making.",
+        action: "Lay the paper strip flat and mark 0 in the centre. Write -5, -4, -3, -2, -1 to the left and 1, 2, 3, 4, 5 to the right. Point to -3, then slide your finger right 5 spaces and land on 2. Ask your child to predict the answer before you finish moving.",
+      },
+      mainActivity: {
+        title: "Plot and Move",
+        script: "Place a sticky note on -4. Now move 6 steps to the right. Where do you land? Now start at 3 and move 5 steps to the left. Where are you now? Integers to the left of zero are negative — they are less than zero. Numbers to the right are positive.",
+        action: "Take turns calling out start points and jumps. Then switch to grid paper: draw x and y axes, number 0 to 6 on each. Call out coordinates like (3, 5) and have your child mark the dot. Keep it to the first quadrant for now — negative coordinates come on the harder worksheet activities.",
+      },
+      wrapUp: {
+        title: "Explain It Back",
+        script: "Can you show me where -2 sits on the number line? And what does it mean to have a negative number — what does negative tell us? Great. Now point to the coordinate (4, 2) on the grid — which number is across and which is up?",
+        action: "Listen for the child to describe negative as being less than zero or to the left. For coordinates, listen for x first, then y. Correct gently if they reverse the axes.",
+      },
+    },
     activities: [
       // ─── Easy: Integers on a number line ───
       {
@@ -642,6 +666,29 @@ export const year6MathsWorksheets: WorksheetItem[] = [
     strand: "Number",
     description:
       "Solve problems using properties of prime, composite and square numbers",
+    lesson: {
+      title: "Building Rectangles",
+      objective: "Distinguish prime numbers from composite numbers using rectangular arrays, and identify square numbers.",
+      materials: [
+        "Small objects for counting: coins, dried pasta, or buttons (about 30 of them)",
+        "Grid paper and pencil",
+      ],
+      intro: {
+        title: "Rectangle Challenge",
+        script: "Take 12 of these coins. How many different rectangles can you build using all 12 — no gaps, no leftovers? Try 1 by 12, 2 by 6, 3 by 4... Now try the same thing with 7 coins. What happens?",
+        action: "Let the child arrange the coins into rectangles. With 12, several arrangements are possible. With 7, only 1 by 7 works. Draw the rectangles on grid paper. The number of rectangles you can make equals the number of factor pairs.",
+      },
+      mainActivity: {
+        title: "Prime, Composite, or Square?",
+        script: "If a number can only make one rectangle (1 by itself), it is prime. If it makes more than one, it is composite. And if one of its rectangles is a perfect square — like 4 by 4 — then it is a square number. Let us test the numbers 2 to 20.",
+        action: "Work through numbers 2 to 20 together. For each one, try to build rectangles with the coins. Record in three columns: Prime, Composite, Square. Highlight that 4, 9, 16 are square because the sides are equal. Note that 1 is neither prime nor composite — it is a special case.",
+      },
+      wrapUp: {
+        title: "Stump Me",
+        script: "Pick any number from 2 to 30 and tell me whether it is prime, composite, or a square number. Explain how you know. Then I will pick one and you have 30 seconds to decide.",
+        action: "Let the child quiz you first, then quiz them. If they hesitate, suggest they think about whether the number has any divisors other than 1 and itself. Confirm answers by trying to build rectangles if needed.",
+      },
+    },
     activities: [
       // ─── Easy: Identify prime and composite ───
       {
@@ -1205,6 +1252,30 @@ export const year6MathsWorksheets: WorksheetItem[] = [
     strand: "Number",
     description:
       "Order common fractions; add and subtract fractions with related denominators",
+    lesson: {
+      title: "Same-Size Pieces",
+      objective: "Order fractions by finding a common denominator, then add and subtract fractions with related denominators.",
+      materials: [
+        "Two identical strips of paper, each about 30 cm long",
+        "Pencil, ruler, coloured pencils",
+        "Scrap paper for working out",
+      ],
+      intro: {
+        title: "Which Slice Is Bigger?",
+        script: "Which is bigger: one half or two fifths? It is hard to tell straight away because the pieces are different sizes. Watch what happens when I fold these two strips of paper to the same length but into different numbers of pieces.",
+        action: "Fold one strip into halves (1 crease) and the other into fifths (4 creases). Mark and shade fractions. Hold them side by side. Ask: which shaded part is larger? Then explain that to compare fractions we often rewrite them so the denominators match — tenths work for both halves and fifths.",
+      },
+      mainActivity: {
+        title: "Find the Common Denominator",
+        script: "To compare or add fractions, we need them to use the same size piece. One half is the same as five tenths. Two fifths is the same as four tenths. Now we can compare and add them easily. Let me show you the pattern.",
+        action: "Work through 2-3 examples together: convert both fractions to a common denominator, then add or subtract the numerators only. Stress: the denominators do NOT add together. Use the paper strips to verify answers visually before moving to abstract calculation. Focus on related denominators (e.g. thirds and sixths, quarters and eighths).",
+      },
+      wrapUp: {
+        title: "Talk Me Through It",
+        script: "Show me how you would work out three quarters plus one eighth. What is the first thing you check? Good — do they share a denominator? What do you change, and what stays the same?",
+        action: "Listen for the child to identify that only one fraction needs converting. If they try to add denominators, bring out the paper strips again to show why that gives a wrong answer.",
+      },
+    },
     activities: [
       // ─── Easy: Ordering fractions ───
       {
@@ -1739,6 +1810,30 @@ export const year6MathsWorksheets: WorksheetItem[] = [
     strand: "Number",
     description:
       "Use all 4 operations with decimals",
+    lesson: {
+      title: "Decimals in the Real World",
+      objective: "Add, subtract, multiply, and divide decimal numbers using written methods, with a focus on keeping place values aligned.",
+      materials: [
+        "Supermarket receipts or a hand-written shopping list with decimal prices",
+        "Pencil and paper",
+        "A calculator for checking only (not for working)",
+      ],
+      intro: {
+        title: "The Shopping Bill",
+        script: "Here is a shopping receipt. I want you to add up any three items and tell me the total. Then tell me how much change we would get from $20. Go ahead and work it out on paper.",
+        action: "Choose items with two decimal places (e.g. $3.45, $1.80, $6.99). Watch how the child lines up the numbers. If they do not align the decimal points, pause and point it out before they continue. The most common error with decimal addition is misaligned columns.",
+      },
+      mainActivity: {
+        title: "All Four Operations",
+        script: "Adding and subtracting decimals works just like whole numbers — line up the decimal points and the digits fall into place. Multiplying is similar: multiply normally, then count the decimal places in both numbers and put that many decimal places in the answer. Dividing — we can shift the decimal to make it a whole number division.",
+        action: "Model one worked example for each of the four operations. Use relatable contexts: adding prices, finding the difference in two measurements, multiplying a price by a quantity, dividing a total equally. Have the child do one practice problem for each operation before moving to the worksheet.",
+      },
+      wrapUp: {
+        title: "Check With the Calculator",
+        script: "Now use the calculator to check your working. If any answer is different, let us look at where the decimal ended up and figure out what happened.",
+        action: "Compare the child's written answers with calculator results. If there is a discrepancy, trace through the working together to find the error rather than simply correcting it.",
+      },
+    },
     activities: [
       // ─── Easy: Adding decimals ───
       {
@@ -2217,6 +2312,31 @@ export const year6MathsWorksheets: WorksheetItem[] = [
     strand: "Number",
     description:
       "Connect decimal representations of measurements to the metric system",
+    lesson: {
+      title: "The Decimal in the Ruler",
+      objective: "Understand how metric units are built on powers of ten, and write measurements as decimals using correct units.",
+      materials: [
+        "A ruler (metric) and a tape measure",
+        "Any small household objects to measure: a book, a pencil, a cup",
+        "Kitchen scales if available",
+        "Pencil and paper",
+      ],
+      intro: {
+        title: "Measure and Write It Two Ways",
+        script: "Measure the length of this book in centimetres. Now write that same measurement in metres. For example, 24 cm is the same as 0.24 m. The decimal point is doing the same job as the unit conversion. Everything in the metric system works in groups of ten, hundred, or thousand.",
+        action: "Measure 3-4 objects together. For each one, write the measurement in two or three units (e.g. mm, cm, m). Lay out the written forms side by side so the child sees the pattern: moving the decimal left increases the unit, moving it right decreases it.",
+      },
+      mainActivity: {
+        title: "Convert the Whole List",
+        script: "Here is the pattern: 1 km = 1000 m, 1 m = 100 cm, 1 cm = 10 mm. For mass: 1 kg = 1000 g. For capacity: 1 L = 1000 mL. So to convert 3500 mL to litres, I divide by 1000 and get 3.5 L. To convert 0.75 kg to grams I multiply by 1000 and get 750 g.",
+        action: "Write a list of 6-8 conversions across length, mass, and capacity. Do the first two together. Child works through the remaining ones while you observe. Encourage the child to identify whether they are multiplying or dividing by a power of ten before calculating.",
+      },
+      wrapUp: {
+        title: "Say the Rule",
+        script: "Tell me in your own words: when I convert from a big unit like metres to a smaller unit like centimetres, do I multiply or divide? Why? What about going from millilitres to litres?",
+        action: "Ask for the explanation verbally before the child attempts the worksheet. If they are unsure, refer back to the ruler and count how many millimetres fit in one centimetre.",
+      },
+    },
     activities: [
       // ─── Easy: Length conversions ───
       {
@@ -2644,6 +2764,30 @@ export const year6MathsWorksheets: WorksheetItem[] = [
     strand: "Number",
     description:
       "Find a fraction, decimal or percentage of a quantity",
+    lesson: {
+      title: "Three Ways to Say the Same Thing",
+      objective: "Find a fraction, decimal, and percentage of a given quantity and recognise that all three forms represent the same proportion.",
+      materials: [
+        "A bag of 20 small objects (e.g. dried beans, coins, or buttons)",
+        "Pencil and paper",
+        "A calculator for checking",
+      ],
+      intro: {
+        title: "Count Out the Fraction",
+        script: "Here are 20 beans. I want one quarter of them. How many is that? Now: one quarter is the same as 0.25, and it is also the same as 25%. So 25% of 20 is the same calculation. Let me show you that all three give the same answer.",
+        action: "Count out 5 beans (one quarter of 20). Write on paper: 1/4 of 20 = 5, 0.25 x 20 = 5, 25% of 20 = 5. Let the child see that the calculation is identical — the fraction, decimal, and percentage are just different names for the same proportion.",
+      },
+      mainActivity: {
+        title: "Try All Three Forms",
+        script: "To find a fraction of a number, divide by the denominator then multiply by the numerator. To find a decimal, multiply. To find a percentage, convert to a decimal first: 30% becomes 0.30, then multiply. Let us try 30% of 60.",
+        action: "Work through 2-3 examples with different quantities. Vary the whole amount: 80, 150, 250. Ask the child to convert between forms first (fraction to decimal to percentage) then apply it. After 2 guided examples let them work through 3 independently while you observe.",
+      },
+      wrapUp: {
+        title: "Which Is Easiest?",
+        script: "Of the three forms — fraction, decimal, percentage — which one do you find easiest to calculate with? Can you show me two different ways to find 75% of 200?",
+        action: "Listen for valid strategies: 75% as 3/4 (divide by 4 then multiply by 3), or as 0.75 x 200. Both are correct. Encourage flexibility rather than insisting on one method.",
+      },
+    },
     activities: [
       // ─── Easy: Fractions of a quantity ───
       {
@@ -3045,6 +3189,30 @@ export const year6MathsWorksheets: WorksheetItem[] = [
     strand: "Number",
     description:
       "Solve financial and practical problems involving percentages and rational numbers",
+    lesson: {
+      title: "Sale Price and GST",
+      objective: "Solve real-life financial problems using percentages, including calculating discounts, sale prices, and percentage increases.",
+      materials: [
+        "Old catalogues, junk mail, or a hand-written list of 5 items with made-up prices",
+        "Pencil and paper",
+        "Calculator for checking",
+      ],
+      intro: {
+        title: "The 20% Off Sale",
+        script: "This item is normally $80 and it is 20% off. What do you think the sale price is? How would you work that out? Tell me your strategy before you calculate.",
+        action: "Listen to the child's approach. Common strategies: find 20% and subtract it, or find 80% directly (multiplying by 0.8). Both are valid. If they are unsure how to start, ask what 10% of $80 is, then double it to get 20%.",
+      },
+      mainActivity: {
+        title: "Sale, GST, and Profit",
+        script: "Finding a discount: calculate the percentage, then subtract. Finding GST (10% added): find 10% and add it. Finding a percentage increase: new amount divided by original, times 100. Let me work through one of each with you.",
+        action: "Write three headings on paper: Discount, Tax Added, Percentage Change. Model one example under each. For Percentage Change, use a story: a house bought for $400 000 sold for $460 000 — what percentage increase is that? Do one guided example per category, then give the child two to complete independently.",
+      },
+      wrapUp: {
+        title: "Explain the Catalogue",
+        script: "Pick any item from the catalogue and imagine it is 15% off. Tell me the new price. Now tell me: if I wanted to add 10% GST back onto the sale price, what would I pay?",
+        action: "Have the child talk through each step aloud. Watch for the common error of taking 15% off and then calculating GST on the original price rather than the discounted price.",
+      },
+    },
     activities: [
       // ─── Easy: Simple discounts ───
       {
@@ -3409,6 +3577,29 @@ export const year6MathsWorksheets: WorksheetItem[] = [
     strand: "Algebra",
     description:
       "Find unknown values in equations involving combinations of arithmetic operations",
+    lesson: {
+      title: "What Is the Missing Number?",
+      objective: "Use inverse operations to find unknown values in equations that involve more than one arithmetic operation.",
+      materials: [
+        "Small pieces of paper or sticky notes to act as the unknown",
+        "Pencil and paper",
+      ],
+      intro: {
+        title: "The Covered Number",
+        script: "I am thinking of a number. I double it and add 3, and I get 11. What was my number? I will write it like this: 2 x ? + 3 = 11. The ? is what we are finding. How would you start to undo what I did?",
+        action: "Write the equation on paper with a square or blank for the unknown. Model using a sticky note to cover the unknown. Guide the child to work backwards: undo the last operation first (subtract 3, then divide by 2). Show each step explicitly.",
+      },
+      mainActivity: {
+        title: "Undo the Operations",
+        script: "The key idea is inverse operations: addition undoes subtraction, multiplication undoes division. We work backwards from the answer. I will show you three more examples with two operations each, then you will try some.",
+        action: "Write 4-6 two-step equations covering all operation combinations. Model the first two using the backwards-working strategy, showing each inverse step. For the remaining equations, the child attempts independently. Check by substituting the answer back into the original equation.",
+      },
+      wrapUp: {
+        title: "Make Up Your Own",
+        script: "Your turn to write a mystery equation for me. Think of a number, do two things to it, and write the result. I will work backwards to find your number — then we swap.",
+        action: "Let the child create an equation. Solve it aloud using inverse operations, explaining each step. Then ask the child to solve one you write. This reinforces the concept that the method works in both directions.",
+      },
+    },
     activities: [
       // ─── Easy: One-step unknowns ───
       {
@@ -3815,6 +4006,29 @@ export const year6MathsWorksheets: WorksheetItem[] = [
     strand: "Algebra",
     description:
       "Identify and explain rules used to create growing patterns",
+    lesson: {
+      title: "The Growing Staircase",
+      objective: "Find the rule for a growing pattern, express it in words and as an equation, and use it to find any term.",
+      materials: [
+        "Matchsticks, toothpicks, or small sticks (about 30)",
+        "Pencil, paper, ruler",
+      ],
+      intro: {
+        title: "Build the Staircase",
+        script: "Let us build a staircase. Step 1 has 1 toothpick. Step 2 has 3. Step 3 has 6. Can you see what is happening? Build step 4 and count how many toothpicks you need. Do you notice a pattern in the number of new sticks we add each time?",
+        action: "Build the first three steps side by side on the table. Let the child build step 4 and count. Then record in a table: Step number and total toothpicks. Ask: how many extra sticks did we add each time?",
+      },
+      mainActivity: {
+        title: "Write the Rule",
+        script: "A growing pattern has a rule. For this staircase, we add one more stick each time. Some patterns add the same number every step — those are linear. The rule lets us work out any step without building all the steps in between. Let us find the rule for a simpler pattern first: 3, 6, 9, 12...",
+        action: "Write a table with Position and Value columns for the pattern 3, 6, 9, 12. Ask: what do you multiply the position by to get the value? Establish the rule as Value = 3 x Position. Then try a pattern with a starting offset: 5, 8, 11, 14 (rule: Value = 3 x Position + 2). The child writes the rule in words and as an equation.",
+      },
+      wrapUp: {
+        title: "Predict Without Building",
+        script: "Using your rule, what would step 10 look like without building it? How confident are you? Let us check by extending the table step by step.",
+        action: "Have the child apply the rule to find the 10th term and then verify by extending the table. If they get different answers, compare them to find where the rule went wrong.",
+      },
+    },
     activities: [
       // ─── Easy: Number patterns ───
       {
@@ -4182,6 +4396,29 @@ export const year6MathsWorksheets: WorksheetItem[] = [
     strand: "Algebra",
     description:
       "Create and use algorithms to generate sets of numbers using a rule",
+    lesson: {
+      title: "Follow the Recipe",
+      objective: "Understand that an algorithm is a set of step-by-step instructions, then create and follow algorithms to generate sequences of numbers.",
+      materials: [
+        "Pencil and paper",
+        "A simple recipe card or instruction sheet from home as a discussion prop",
+      ],
+      intro: {
+        title: "Instructions That Always Work",
+        script: "A recipe is an algorithm — a series of steps you follow in order to get a result every time. Maths has algorithms too. Here is one: Start with 2. Multiply by 3. Subtract 1. Write the result. Now repeat starting from that result. What numbers do you get?",
+        action: "Show the recipe card briefly as a visual anchor. Write the maths algorithm on paper. Run through the first three steps together: 2 -> 5 -> 14 -> 41... Point out that the algorithm is clear and repeatable — anyone following it gets the same set of numbers.",
+      },
+      mainActivity: {
+        title: "Write Your Own Algorithm",
+        script: "Now let us write an algorithm that generates the multiples of 7. What would the steps be? Start at 0. Add 7. Write the result. Repeat. Simple! Try writing an algorithm that generates only even numbers starting from 4.",
+        action: "Guide the child to write the steps as a numbered list. Test the algorithm by following it for 5 iterations. Then challenge them to write an algorithm that generates square numbers (start at 1, add the next odd number each time). Check whether their algorithm actually works by running it.",
+      },
+      wrapUp: {
+        title: "Swap Algorithms",
+        script: "Write an algorithm that creates a sequence of numbers, but do not tell me what it generates. I will follow your steps and try to figure out the pattern. Then swap — you follow mine.",
+        action: "Each of you writes a secret algorithm. Follow each other's instructions exactly. Discuss: was the algorithm clear enough to follow without extra explanation? Could it be simplified?",
+      },
+    },
     activities: [
       // ─── Easy: Follow the algorithm ───
       {
@@ -4511,6 +4748,30 @@ export const year6MathsWorksheets: WorksheetItem[] = [
     strand: "Measurement",
     description:
       "Interpret and use timetables",
+    lesson: {
+      title: "Plan the Journey",
+      objective: "Read a timetable to find departure and arrival times, calculate elapsed time, and plan a journey using multiple services.",
+      materials: [
+        "Pencil and paper",
+        "A clock or watch",
+        "An analogue clock face drawn on paper if no clock is available",
+      ],
+      intro: {
+        title: "The Missing Bus",
+        script: "Imagine you need to get to the library by 10:30 am. The bus leaves at 9:45, 10:05, and 10:20. The trip takes 18 minutes. Which bus should you catch? Let me draw a simple timetable and we can figure it out together.",
+        action: "Draw a timetable with 3 bus times and one destination column showing arrival times (add 18 minutes to each). Ask the child to identify which departure would get them there by 10:30. Work through it together before revealing the answer.",
+      },
+      mainActivity: {
+        title: "Calculate Elapsed Time",
+        script: "To find how long a journey takes, subtract the departure time from the arrival time. When working with hours and minutes, remember there are 60 minutes in an hour, not 100. So 10:15 minus 9:45 is 30 minutes, not 70.",
+        action: "Write 4-5 time problems on paper: find the duration of a journey, the earliest possible departure, or the latest arrival if a connection must be caught. Work through the first two together using the clock or drawn clock face to count forward. The child attempts the remaining problems independently.",
+      },
+      wrapUp: {
+        title: "Plan a Day Out",
+        script: "If we left home at 8:50 am, caught a train that takes 25 minutes, had 1 hour and 15 minutes at the museum, then took a 20-minute bus home, what time would we get back? Walk me through your working.",
+        action: "Listen for the child to add each segment in order, handling the minute-to-hour boundary correctly. If they get an incorrect total, ask them to show the working on the clock face.",
+      },
+    },
     activities: [
       // ─── Easy: Reading a timetable ───
       {
@@ -4870,6 +5131,31 @@ export const year6MathsWorksheets: WorksheetItem[] = [
     strand: "Measurement",
     description:
       "Convert between common units of length, mass and capacity",
+    lesson: {
+      title: "The Conversion Machine",
+      objective: "Convert between units of length, mass, and capacity using multiplication and division by powers of ten.",
+      materials: [
+        "A tape measure or ruler",
+        "Kitchen scales",
+        "A measuring jug",
+        "Pencil and paper",
+      ],
+      intro: {
+        title: "Two Labels, Same Amount",
+        script: "Fill this jug to 500 mL. How many litres is that? Half a litre — 0.5 L. The water did not change, just the label we put on it. Let me weigh this bag of flour: it says 1.5 kg on the packet. How many grams is that?",
+        action: "Use real objects wherever possible — jug, scales, ruler. Let the child physically measure, then convert. The hands-on experience makes the abstract conversion meaningful. Record each measurement in two units side by side.",
+      },
+      mainActivity: {
+        title: "Multiply or Divide?",
+        script: "The trick is knowing the direction. Going from a large unit to a smaller unit means more of them, so we multiply. Going from small to large means fewer, so we divide. Kilometres to metres: multiply by 1000. Metres to kilometres: divide by 1000.",
+        action: "Write a conversion reference chart together: km/m/cm/mm, kg/g, L/mL, with the x1000 or x100 arrows between them. Then give the child 8-10 conversion problems mixing all three measurement types. Encourage them to check the chart before deciding to multiply or divide.",
+      },
+      wrapUp: {
+        title: "Without the Chart",
+        script: "Cover up the chart. Convert 3.25 km to metres. Now convert 850 g to kilograms. Tell me your thinking: how did you know which operation to use?",
+        action: "Ask the child to verbalise the rule before calculating. After two or three problems without the chart, they should be able to recall the direction confidently.",
+      },
+    },
     activities: [
       // ─── Easy: Length conversions ───
       {
@@ -5241,6 +5527,30 @@ export const year6MathsWorksheets: WorksheetItem[] = [
     strand: "Measurement",
     description:
       "Use the formula for the area of a rectangle to solve problems",
+    lesson: {
+      title: "How Much Carpet?",
+      objective: "Apply the formula Area = length x width to calculate the area of rectangles, and use it to solve practical problems including finding a missing dimension.",
+      materials: [
+        "A tape measure",
+        "Paper and pencil",
+        "Several flat rectangular objects: a book, a placemat, a piece of paper",
+      ],
+      intro: {
+        title: "Count the Squares",
+        script: "Here is a book. Let me place centimetre squares along this edge — there are 21. Now along this edge — there are 15. How many squares cover the whole cover? I could count them all, or I could multiply: 21 times 15. That is what the area formula does for us.",
+        action: "Use the ruler to measure the book cover in cm. Draw a small grid on paper to show what multiplying the two sides counts. Make sure the child sees that area is about covering a surface, not just a perimeter.",
+      },
+      mainActivity: {
+        title: "Measure and Calculate",
+        script: "Area = length x width. That is all there is to it. Let us measure this room (or this tabletop) and calculate the area. Then let us work backwards: if the area is 48 square metres and one side is 8 metres, what is the other side?",
+        action: "Measure 2-3 rectangular surfaces. Record length, width, and calculated area. Then give the child 2 problems where one dimension is missing and area is given — they need to divide. Introduce the idea that composite shapes can be split into rectangles and areas added together.",
+      },
+      wrapUp: {
+        title: "The Tiling Problem",
+        script: "We want to tile this floor with 30 cm tiles. The floor is 3.6 m by 2.4 m. How many tiles do we need? Explain each step to me as you work through it.",
+        action: "This requires converting units, finding area, and dividing. Let the child attempt it with prompts if needed. Accept either exact or rounded-up answers and discuss which is more practical (you cannot buy part of a tile).",
+      },
+    },
     activities: [
       // ─── Easy: Understanding area ───
       {
@@ -5592,6 +5902,31 @@ export const year6MathsWorksheets: WorksheetItem[] = [
     strand: "Measurement",
     description:
       "Use angle properties to solve problems",
+    lesson: {
+      title: "Angles Add Up",
+      objective: "Use the properties of angles on a straight line, around a point, and inside triangles and quadrilaterals to find unknown angles.",
+      materials: [
+        "A protractor",
+        "Plain paper and pencil",
+        "Ruler",
+        "Scissors (optional, for cutting angles from paper)",
+      ],
+      intro: {
+        title: "The Straight Line Secret",
+        script: "Draw a straight line, then draw a ray coming off it. We now have two angles on one side of the line. Use the protractor to measure both. What do they add up to? Try it with a different ray. What do you notice every time?",
+        action: "Let the child draw 2-3 different straight-line angle pairs and measure each. They should discover that the angles always sum to 180 degrees. Then draw intersecting lines and have them measure all four angles to see that angles around a point sum to 360 degrees.",
+      },
+      mainActivity: {
+        title: "Find the Unknown Angle",
+        script: "If one angle on a straight line is 65 degrees, the other must be 180 minus 65 — which is 115 degrees. You can find missing angles without measuring by using the angle sum rules. Let us try with a triangle: all three angles of a triangle add up to 180 degrees. So if two angles are 70 and 55, the third must be...",
+        action: "Write 6 angle problems on paper: two straight-line problems, two triangle problems, and two involving quadrilaterals (angle sum 360 degrees). Do the first of each type together. Child works through the remaining problems independently while you observe their working.",
+      },
+      wrapUp: {
+        title: "Draw and Solve",
+        script: "Draw your own triangle and measure two of the angles with the protractor. Now use the angle sum rule to predict the third angle. Measure it and see how close you were.",
+        action: "The child draws a triangle, measures two angles, calculates the third, then checks by measuring. A small discrepancy of 1-2 degrees is due to drawing and measuring error, which is worth discussing.",
+      },
+    },
     activities: [
       // ─── Easy: Types of angles ───
       {
@@ -5966,6 +6301,31 @@ export const year6MathsWorksheets: WorksheetItem[] = [
     strand: "Space",
     description:
       "Identify the parallel cross-section for right prisms",
+    lesson: {
+      title: "What Is Inside?",
+      objective: "Identify and name right prisms, and determine the shape of a cross-section taken parallel to the base.",
+      materials: [
+        "Household items that are prisms: a cereal box (rectangular prism), a can of soup (cylinder), a triangular doorstop or wedge if available",
+        "Plasticine or playdough (enough to form a small shape)",
+        "Pencil and paper",
+        "Scissors",
+      ],
+      intro: {
+        title: "Slice the Shape",
+        script: "If I sliced through this cereal box horizontally — parallel to the bottom — what shape would the cut face be? What if I sliced it halfway up? Or near the top? Does the shape change? A right prism is a 3D shape where the cross-section stays the same all the way through.",
+        action: "Hold the cereal box and mime cutting it horizontally at different heights. Ask for predictions at each height. If you have plasticine, make a small triangular prism and cut it to reveal the triangular cross-section. Let the child handle the shapes.",
+      },
+      mainActivity: {
+        title: "Name the Prism, Name the Cross-Section",
+        script: "A prism is named by its cross-section. A triangular prism has a triangular cross-section. A rectangular prism has a rectangular cross-section. A cylinder is a special case — its cross-section is a circle. The cross-section is always parallel to the two identical end faces.",
+        action: "Draw or name 5-6 prisms. For each, the child draws the cross-section shape and names both the prism and the cross-section. Include: triangular prism, rectangular prism, pentagonal prism, hexagonal prism, and cylinder. If stuck, suggest the child look at the end faces of the shape.",
+      },
+      wrapUp: {
+        title: "Describe from the Outside",
+        script: "I will describe a shape and you tell me what the cross-section looks like. It has 5 rectangular faces and 2 identical end faces with 5 sides. What is it? What would the slice look like?",
+        action: "Describe 2-3 prisms verbally without naming them. The child identifies the prism name and the cross-section. Then swap: child describes a shape for you to identify.",
+      },
+    },
     activities: [
       // ─── Easy: Identifying prisms ───
       {
@@ -6293,6 +6653,31 @@ export const year6MathsWorksheets: WorksheetItem[] = [
     strand: "Space",
     description:
       "Create tessellating patterns using combinations of transformations",
+    lesson: {
+      title: "Shapes That Fit Together",
+      objective: "Understand what makes a shape tessellate, and create tessellating patterns using reflection, rotation, and translation.",
+      materials: [
+        "Plain paper and pencil",
+        "Scissors",
+        "A cardboard template of a simple shape (cut a square or triangle from a cereal box)",
+        "Coloured pencils",
+      ],
+      intro: {
+        title: "No Gaps Allowed",
+        script: "A tessellation is a pattern of shapes that covers a flat surface with no gaps and no overlaps — like bathroom tiles or a beehive. Look around the room. Can you spot any tessellating patterns? What shapes do you see?",
+        action: "Look together for real-world tessellations: floor tiles, brick walls, fabric patterns. Ask the child to predict which shapes from a list (triangle, circle, regular pentagon, square, hexagon) would tessellate. They may be surprised that circles do not tessellate.",
+      },
+      mainActivity: {
+        title: "Transform and Tile",
+        script: "Squares and equilateral triangles tessellate on their own. But we can create much more interesting tiles by transforming a starting shape. I will show you the slide, flip, and turn — translation, reflection, rotation — and we will use them to make a custom tile that still tessellates.",
+        action: "Cut a square from cardboard. Cut a notch from one side and tape it to the opposite side (this creates a tile that still tessellates by translation). Trace the tile repeatedly, sliding it across the paper. Colour the resulting pattern. Then try rotating a triangle tile to create a pattern. Label each transformation used.",
+      },
+      wrapUp: {
+        title: "Name the Moves",
+        script: "Look at the pattern we made. Point to a place where I slid the shape. Point to where I flipped it. Point to where I turned it. Can you use the words translation, reflection, and rotation to describe what happened?",
+        action: "Ask the child to point to and label at least one example of each transformation in the finished pattern. If the pattern only shows translation, prompt them to try a reflection next time.",
+      },
+    },
     activities: [
       // ─── Easy ───
       {
@@ -6648,6 +7033,30 @@ export const year6MathsWorksheets: WorksheetItem[] = [
     strand: "Space",
     description:
       "Locate an ordered pair in any one of the 4 quadrants on the Cartesian plane",
+    lesson: {
+      title: "The Four-Quadrant Map",
+      objective: "Plot and read ordered pairs in all four quadrants of a Cartesian plane, understanding the sign of each coordinate.",
+      materials: [
+        "Grid paper and pencil",
+        "Ruler",
+        "Coloured pencils (four colours, one per quadrant)",
+      ],
+      intro: {
+        title: "Extend the Map",
+        script: "We have used the Cartesian plane before with positive coordinates. But the axes can extend in both directions — left and down as well as right and up. What do you think happens to the x value when we go left of zero? What about the y value when we go below zero?",
+        action: "Draw a Cartesian plane on grid paper with both axes running from -6 to 6. Label the four quadrants: top-right is Quadrant 1 (both positive), top-left is Quadrant 2 (x negative, y positive), bottom-left is Quadrant 3 (both negative), bottom-right is Quadrant 4 (x positive, y negative).",
+      },
+      mainActivity: {
+        title: "Plot, Connect, and Guess",
+        script: "The rules are the same as before: the first number tells you how far to go across (positive = right, negative = left), and the second number tells you how far up or down (positive = up, negative = down). Always start from zero, always go across first.",
+        action: "Call out 10-12 ordered pairs spread across all four quadrants. The child plots each point. Then give a connect-the-dots secret shape: provide the points in order and the child joins them to reveal a picture. For additional practice, the child hides a shape and you plot their coordinates.",
+      },
+      wrapUp: {
+        title: "Describe the Location",
+        script: "Point to any dot on the grid. I will read the coordinates. Then I will name coordinates and you point to the location. Finally, tell me: how do you know which quadrant a point is in just from looking at the signs of the coordinates?",
+        action: "Focus on the child being able to describe the sign rules verbally. A point like (-3, 4) should be described as: x is negative so we go left, y is positive so we go up — that puts it in Quadrant 2.",
+      },
+    },
     activities: [
       // ─── Easy ───
       {
@@ -6986,6 +7395,30 @@ export const year6MathsWorksheets: WorksheetItem[] = [
     strand: "Statistics",
     description:
       "Compare distributions of discrete, continuous numerical and ordinal categorical data sets",
+    lesson: {
+      title: "Two Teams, One Question",
+      objective: "Calculate and compare mean, median, mode, and range for two data sets, and use these measures to make comparisons.",
+      materials: [
+        "A dice",
+        "Pencil and paper",
+        "A ruler for drawing dot plots",
+      ],
+      intro: {
+        title: "Which Team Is Better?",
+        script: "Team A scored 3, 7, 2, 9, 4 in five matches. Team B scored 6, 5, 6, 5, 8. Which team is better? At first glance it might be hard to say. Let us calculate the mean for each team and see if that settles it.",
+        action: "Write both data sets on paper. Work out the mean for each together (Team A: 25 / 5 = 5, Team B: 30 / 5 = 6). Then order each set and find the median. Discuss: does knowing the mean and median change your opinion of which team is stronger?",
+      },
+      mainActivity: {
+        title: "Mean, Median, Mode, Range",
+        script: "The mean is the average. The median is the middle value when sorted. The mode is the most common value. The range tells us the spread. Two data sets can have the same mean but very different ranges — one might be very consistent while the other is all over the place.",
+        action: "Roll the dice 10 times for yourself and 10 times for the child. Record each set. Calculate mean, median, mode, and range for both. Draw a simple dot plot for each. Compare: who had a higher mean? Who was more consistent (smaller range)? This makes the statistics meaningful and personal.",
+      },
+      wrapUp: {
+        title: "Describe the Difference",
+        script: "Looking at both our data sets, write two sentences comparing them. Use at least two of the words: mean, median, mode, range. Which measure tells us the most useful thing about the difference between our results?",
+        action: "Read the child's sentences. If they only mention mean, prompt them to consider range. Discuss when each measure is most useful (median for skewed data, range for comparing consistency).",
+      },
+    },
     activities: [
       // ─── Easy ───
       {
@@ -7317,6 +7750,29 @@ export const year6MathsWorksheets: WorksheetItem[] = [
     strand: "Statistics",
     description:
       "Critique arguments presented in the media based on statistics",
+    lesson: {
+      title: "Does the Graph Tell the Truth?",
+      objective: "Spot misleading statistics in media claims by examining sample size, missing context, scale manipulation, and cherry-picked data.",
+      materials: [
+        "Pencil and paper",
+        "A newspaper, junk mail, or printed advertisement if available (any that mention numbers or statistics)",
+      ],
+      intro: {
+        title: "The Shrinking Bar Chart",
+        script: "I am going to show you two bar graphs. They display exactly the same data — but they look completely different. Why might someone choose to draw a graph this way? Could a graph be technically correct but still mislead you?",
+        action: "Draw two bar graphs on paper showing the same two values (say 98 and 100). In the first, start the y-axis at 0 — the bars look almost the same height. In the second, start the y-axis at 96 — now one bar looks twice as tall. Ask the child which graph is more honest and why.",
+      },
+      mainActivity: {
+        title: "Read the Small Print",
+        script: "When you see a statistic in the media, ask five questions: How many people were surveyed? Who were they? Who paid for the study? What was not shown? Does the percentage mean what they say it means? A headline like 9 out of 10 dentists agree sounds convincing — until you ask how many dentists were asked.",
+        action: "Find 2-3 statistical claims from junk mail, a news printout, or claims you make up. For each one, work through the five questions together. Write a one-sentence verdict: trustworthy, misleading, or not enough information. Discuss the difference between a lie and a misleading truth.",
+      },
+      wrapUp: {
+        title: "Write the Headline",
+        script: "Here is a true set of data. Can you write one headline that makes it sound impressive, and a second headline that makes the same data sound unimpressive? Both must be technically true.",
+        action: "Provide a data set such as: a new medicine reduced headache frequency from 10 per month to 9 per month. The child writes two headlines. Discuss: is a 10% reduction impressive or not? Context matters.",
+      },
+    },
     activities: [
       // ─── Easy ───
       {
@@ -7719,6 +8175,31 @@ export const year6MathsWorksheets: WorksheetItem[] = [
     strand: "Probability",
     description:
       "Assign probabilities using common fractions, decimals and percentages",
+    lesson: {
+      title: "How Likely Is It?",
+      objective: "Assign numerical probabilities to events using fractions, decimals, and percentages, and place them on a probability scale from 0 to 1.",
+      materials: [
+        "A standard six-sided dice",
+        "A coin",
+        "A bag with coloured objects (e.g. 3 red, 2 blue, 1 yellow counters or balls of paper)",
+        "Pencil and paper",
+      ],
+      intro: {
+        title: "The Probability Scale",
+        script: "Probability is a number from 0 to 1. A probability of 0 means impossible. A probability of 1 means certain. Exactly in the middle is 0.5 — equally likely to happen or not happen. Where would you put the probability of rolling a 3 on this dice?",
+        action: "Draw a number line from 0 to 1 and label it: 0 = impossible, 0.5 = even chance, 1 = certain. Ask the child to point to where several events sit before calculating: getting heads on a coin, rolling a number bigger than 4, pulling a red counter from the bag.",
+      },
+      mainActivity: {
+        title: "Calculate and Convert",
+        script: "To calculate a probability, count the favourable outcomes and divide by the total possible outcomes. For the bag: 3 red out of 6 total — probability of red is 3/6, which simplifies to 1/2, which equals 0.5, which equals 50%. All three say the same thing.",
+        action: "Work out probabilities for 5-6 events using the dice, coin, and bag. Write each probability as a fraction first, then convert to a decimal and a percentage. Verify conversions. Ask the child to place each result on the number line.",
+      },
+      wrapUp: {
+        title: "Design a Fair Game",
+        script: "I want to design a bag game where the probability of winning is exactly 1 in 4. How many counters of each colour should I put in? Is there more than one way to do it?",
+        action: "Let the child explore multiple valid solutions (e.g. 1 red and 3 blue, 2 red and 6 blue). Discuss: does the total number of counters change the probability? Help them see that only the ratio matters.",
+      },
+    },
     activities: [
       // ─── Easy ───
       {
@@ -8087,6 +8568,31 @@ export const year6MathsWorksheets: WorksheetItem[] = [
     strand: "Probability",
     description:
       "Conduct simulations using digital tools to generate and record outcomes",
+    lesson: {
+      title: "Trial and Tally",
+      objective: "Understand what a simulation is, conduct a hands-on simulation, and compare results across many trials to theoretical probability.",
+      materials: [
+        "A coin",
+        "A six-sided dice",
+        "Pencil and paper for tallying",
+        "A calculator or spreadsheet if a device is available",
+      ],
+      intro: {
+        title: "What Would Really Happen?",
+        script: "If I flip this coin 10 times, how many heads do you predict? Let us try it. Write down each result. Did you get exactly 5 heads? Probably not — and that is fine. Probability tells us what to expect over a large number of trials, not exactly what will happen.",
+        action: "Flip the coin 10 times together, tallying heads and tails. Record the result as a fraction. Ask: what would happen if we flipped it 100 times? Would it be closer to 50/50? This motivates why simulations use large numbers of trials.",
+      },
+      mainActivity: {
+        title: "Run the Simulation",
+        script: "A simulation is when we use a model — a coin, a dice, a computer — to imitate a real situation and collect data. We run it many times to get reliable results. Let us simulate rolling a dice 60 times and see how close each number gets to its expected frequency of 10.",
+        action: "Roll the dice 60 times. Record in a tally chart. Calculate how often each number came up as a fraction and percentage. Compare to the expected 1/6 for each. Discuss: which numbers were over-represented? Under-represented? Would 600 rolls give results closer to 1/6? This introduces the law of large numbers.",
+      },
+      wrapUp: {
+        title: "Explain the Gap",
+        script: "Our dice landed on 4 eight times but the expected frequency was 10. Does that mean the dice is unfair? How would you design a test to check whether a dice is fair?",
+        action: "Listen for the child to suggest increasing the number of trials. Guide them toward the idea that a larger sample gives more reliable results. Discuss how digital tools (computers) can run thousands of simulations quickly, which is why they are useful.",
+      },
+    },
     activities: [
       // ─── Easy ───
       {
@@ -8458,6 +8964,30 @@ export const year6MathsWorksheets: WorksheetItem[] = [
     strand: "Probability",
     description:
       "Compare observed frequencies to expected frequencies",
+    lesson: {
+      title: "Expected Versus Actual",
+      objective: "Calculate expected frequency using probability, conduct an experiment, compare observed and expected results, and explain why they differ.",
+      materials: [
+        "A six-sided dice",
+        "A coin",
+        "Pencil, paper, and a ruler for making a comparison table",
+      ],
+      intro: {
+        title: "The Prediction",
+        script: "If I roll this dice 30 times, how many times do you expect to see a 6? The probability of rolling a 6 is 1 in 6. So the expected frequency is 30 divided by 6, which is 5 times. But what actually happens when we roll it 30 times?",
+        action: "Have the child calculate the expected frequency before rolling: 30 x (1/6) = 5. Then roll the dice 30 times together and tally. Record the observed frequency for each number. The child fills in the table: Expected frequency (5 for each number) versus Observed frequency (what actually happened).",
+      },
+      mainActivity: {
+        title: "Compare and Explain",
+        script: "Expected frequency tells us what we predict. Observed frequency tells us what actually happened. They are almost never exactly the same. The bigger the difference, the more we wonder: was it just chance, or is something unusual happening? Let us also try this with the coin.",
+        action: "Flip the coin 40 times. Expected: 20 heads, 20 tails. Record observed results. Calculate the difference between expected and observed for both experiments. Then combine results: pool two sets of 30 dice rolls and check whether the combined observed results are closer to expected. This demonstrates that more trials = more reliable results.",
+      },
+      wrapUp: {
+        title: "Write the Report",
+        script: "Write 3-4 sentences describing what you found. Was the dice fair? How do you know? What would you need to do to be more confident in your answer?",
+        action: "Read the child's written response. Look for: comparison of observed to expected, acknowledgement that variation is normal, and a suggestion that more trials would increase confidence. Guide them to avoid saying the dice is unfair just because one number appeared more often in a small sample.",
+      },
+    },
     activities: [
       // ─── Easy ───
       {

@@ -6,10 +6,13 @@ import { year3MathsWorksheets } from "@/lib/worksheet-data-year3";
 import { year4MathsWorksheets } from "@/lib/worksheet-data-year4";
 import { year5MathsWorksheets } from "@/lib/worksheet-data-year5";
 import { year6MathsWorksheets } from "@/lib/worksheet-data-year6";
+import { year7MathsWorksheets } from "@/lib/worksheet-data-year7";
+import { year8MathsWorksheets } from "@/lib/worksheet-data-year8";
+import { year9MathsWorksheets } from "@/lib/worksheet-data-year9";
 import { year10MathsWorksheets } from "@/lib/worksheet-data-year10";
 import WorksheetObject from "@/components/worksheets/svg/WorksheetObject";
 
-const worksheetsByYearLevel = [foundationMathsWorksheets, year1MathsWorksheets, year2MathsWorksheets, year3MathsWorksheets, year4MathsWorksheets, year5MathsWorksheets, year6MathsWorksheets, year10MathsWorksheets];
+const worksheetsByYearLevel = [foundationMathsWorksheets, year1MathsWorksheets, year2MathsWorksheets, year3MathsWorksheets, year4MathsWorksheets, year5MathsWorksheets, year6MathsWorksheets, year7MathsWorksheets, year8MathsWorksheets, year9MathsWorksheets, year10MathsWorksheets];
 
 const totalWorksheets = worksheetsByYearLevel.reduce(
   (sum, ws) => sum + ws.length,

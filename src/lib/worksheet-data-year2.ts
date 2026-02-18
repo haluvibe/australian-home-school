@@ -8,6 +8,31 @@ export const year2MathsWorksheets: WorksheetItem[] = [
     strand: "Number",
     description:
       "Order and represent numbers to at least 1,000",
+    lesson: {
+      title: "Numbers Past 100",
+      objective: "Read, write and order three-digit numbers up to 1,000 by understanding hundreds, tens and ones.",
+      materials: [
+        "100 small objects (dried pasta, buttons, blocks)",
+        "3 small containers or bowls",
+        "Paper and pencil",
+        "A number line drawn on a strip of paper (0 to 1000 in hundreds)",
+      ],
+      intro: {
+        title: "The Big Count",
+        script: "Look at all these — how many do you think there are? Take a guess! Now let me show you a faster way to think about big numbers. Watch — I am going to put them into groups of ten.",
+        action: "Tip out the 100 objects. Let the child guess the total. Then together group them into 10s, then group the 10s into one big group of 100. Place it in a bowl labelled HUNDREDS.",
+      },
+      mainActivity: {
+        title: "Build a Number",
+        script: "I am going to call out a number — say, three hundred and forty-two — and you are going to show it to me using our bowls. Three hundreds, four tens, two ones. Then we write it: 342. The first digit tells us hundreds, the middle tells us tens, the last tells us ones.",
+        action: "Call out 2-3 three-digit numbers. Child places objects in the three bowls (hundreds, tens, ones) and writes the number. Then draw a simple number line from 0 to 1000 and place numbers on it together.",
+      },
+      wrapUp: {
+        title: "Biggest and Smallest",
+        script: "Can you tell me — which of these numbers is biggest? How do you know? What does the first digit tell us?",
+        action: "Write three numbers on paper (e.g. 204, 420, 240). Child orders them from smallest to largest and explains reasoning.",
+      },
+    },
     activities: [
       // ─── Easy: Numbers 100–300 ───
       {
@@ -1062,6 +1087,31 @@ export const year2MathsWorksheets: WorksheetItem[] = [
     strand: "Number",
     description:
       "Apply place value to partition, rearrange and rename two- and three-digit numbers",
+    lesson: {
+      title: "Breaking Numbers Apart",
+      objective: "Partition three-digit numbers into hundreds, tens and ones and rename them in multiple ways.",
+      materials: [
+        "Paddlepop sticks or straws",
+        "Rubber bands",
+        "Paper",
+        "Pencil",
+      ],
+      intro: {
+        title: "The Bundle Trick",
+        script: "Watch what I do with these straws. I bundle ten together — that is one ten. Now I bundle ten bundles — that is one hundred! So 100 is really just 10 tens. Crazy, right?",
+        action: "Bundle straws into 10s with rubber bands, then bundle 10 bundles into a group of 100. Show the child physically. Let them hold the different bundles.",
+      },
+      mainActivity: {
+        title: "Make and Break",
+        script: "Let me make the number 253. That is 2 hundreds, 5 tens and 3 ones. Now here is the tricky question — how many tens are in 253 altogether? Well, 2 hundreds is the same as 20 tens, so there are 25 tens! Let us check.",
+        action: "Build 253 with straw bundles. Guide the child to see that 2 hundreds can be 20 individual bundles of ten. Practice with 346 and 120. Write the expanded forms: 200 + 50 + 3.",
+      },
+      wrapUp: {
+        title: "Rename It",
+        script: "Tell me everything you know about the number 470. How many hundreds? How many tens altogether? Can you say it a different way?",
+        action: "Child explains 470 in multiple ways (e.g. 4 hundreds 7 tens; 47 tens). Write each version they name. Praise creative thinking.",
+      },
+    },
     activities: [
       // ─── Easy: Two-digit place value review ───
       {
@@ -1822,6 +1872,31 @@ export const year2MathsWorksheets: WorksheetItem[] = [
     strand: "Number",
     description:
       "Recall addition and subtraction facts within 20",
+    lesson: {
+      title: "Facts in a Flash",
+      objective: "Quickly recall addition and subtraction facts within 20 using number bonds and think strategies.",
+      materials: [
+        "20 small objects (coins, buttons, dried beans)",
+        "Two small cups or hands",
+        "Paper and pencil",
+        "A piece of string or rope to make a number line on the floor",
+      ],
+      intro: {
+        title: "The Magic Ten Frame",
+        script: "Let me show you something. I have ten fingers. That is my secret weapon for adding and subtracting. Watch — I want to add 8 and 6. I put up 8 fingers. How many more do I need to get to 10? Two more! So I use 2 of the 6 to make 10, and I still have 4 left over. So 8 plus 6 is 14. Did you follow that?",
+        action: "Demonstrate making ten using fingers slowly. Show child each step. Then repeat with 7 + 5 and have child try with their own fingers.",
+      },
+      mainActivity: {
+        title: "Cups and Counters",
+        script: "Put 13 beans in front of you. Now hide some under the cup. I can see 8. How many are hiding? Can you figure it out without counting all of them? What do you know about 13 that might help?",
+        action: "Hide varying amounts under a cup, leaving the remainder visible. Start with totals of 10, then 12-20. Child uses known facts to find the hidden amount. Record the number sentence each time.",
+      },
+      wrapUp: {
+        title: "Tell Me Fast",
+        script: "I am going to say a number sentence and you tell me the answer as fast as you can. Ready? 7 plus 8... 15 minus 6... 9 plus 9. How did your brain figure it out?",
+        action: "Rapid-fire 5-6 facts. Child answers. Afterwards, ask them to explain one strategy they used. Celebrate any thinking they can articulate.",
+      },
+    },
     activities: [
       // ─── Easy: Addition facts to 10 ───
       {
@@ -2618,6 +2693,30 @@ export const year2MathsWorksheets: WorksheetItem[] = [
     strand: "Number",
     description:
       "Recall multiplication facts for twos",
+    lesson: {
+      title: "Counting in Pairs",
+      objective: "Skip count by 2s and connect skip counting to multiplication facts for 2.",
+      materials: [
+        "10 pairs of socks (or shoes, or gloves)",
+        "Paper and pencil",
+        "A number line drawn to 20",
+      ],
+      intro: {
+        title: "Socks in Pairs",
+        script: "How many socks do we have here? I am not going to count them one by one — that takes forever. Watch — I count the PAIRS: 2, 4, 6, 8... Every time I say a number, I am counting one whole pair. Three pairs is 6 socks. Four pairs is 8. Can you keep going?",
+        action: "Lay out 5 pairs of socks. Count them together in 2s, touching each pair. Then scramble and repeat. Ask the child to take over counting the next set.",
+      },
+      mainActivity: {
+        title: "Groups of Two",
+        script: "Let me write this as a multiplication: 3 groups of 2 is 3 times 2, which equals 6. We say three twos are six. Can you make me 4 groups of 2 with the socks? How many is that altogether?",
+        action: "Child forms groups of 2 from various objects. Write the multiplication sentence for each (e.g. 4 x 2 = 8). Mark each answer on the number line to show the skip-counting jumps.",
+      },
+      wrapUp: {
+        title: "The Two Times Chant",
+        script: "Let us say the two times table together. One two is two, two twos are four, three twos are six... Now you say it while I clap the beat. See if you can go all the way to ten twos!",
+        action: "Recite the 2x table together rhythmically. Child tries solo. Mark off on fingers as they go. Stop at 10 x 2.",
+      },
+    },
     activities: [
       // ─── Easy: Skip counting by 2 ───
       {
@@ -3372,6 +3471,31 @@ export const year2MathsWorksheets: WorksheetItem[] = [
     strand: "Number",
     description:
       "Solve practical additive and multiplicative problems, including money transactions",
+    lesson: {
+      title: "The Home Shop",
+      objective: "Recognise Australian coins and notes and solve simple addition and change problems using real money.",
+      materials: [
+        "Real Australian coins and notes (or printed play money)",
+        "3-5 household items with a price label stuck on (use sticky notes — e.g. apple 50c, pencil $1.20)",
+        "A small basket or bag",
+        "Paper and pencil",
+      ],
+      intro: {
+        title: "Coin Sorting",
+        script: "Tip out all the coins. Can you sort them into groups — all the 5 cents together, all the 10 cents, and so on? Now let me quiz you — which coin is worth most? Which is smallest? Does smallest always mean least valuable?",
+        action: "Tip out coins. Child sorts into groups by type. Ask questions about value vs size. Hold up coins and confirm names and values together.",
+      },
+      mainActivity: {
+        title: "Shopping at Home",
+        script: "You are the shopper and I am the shopkeeper. Pick one item from the shop. How much does it cost? Now choose the right coins to pay for it exactly. If you do not have the exact coins, give me a bit more and I will give you change.",
+        action: "Take turns buying 3-4 items. Encourage exact payment first, then overpaying and working out change. For change, model counting up from the price to the amount given.",
+      },
+      wrapUp: {
+        title: "Total It Up",
+        script: "If you bought the apple AND the pencil, how much did you spend altogether? How much change would you get from $2?",
+        action: "Write out the addition sum together. Work through the change problem. Ask child to explain the strategy they used to add the prices.",
+      },
+    },
     activities: [
       // ─── Easy: Recognising and counting coins ───
       {
@@ -4007,6 +4131,32 @@ export const year2MathsWorksheets: WorksheetItem[] = [
     strand: "Number",
     description:
       "Identify and represent halves, quarters and eighths in measurement contexts",
+    lesson: {
+      title: "Fair Shares",
+      objective: "Fold and identify halves, quarters and eighths and understand that equal sharing creates fractions.",
+      materials: [
+        "4 sheets of paper (same size)",
+        "Scissors",
+        "A piece of string or ribbon",
+        "A banana or piece of bread (optional, to illustrate sharing)",
+        "Pencil and coloured pencils",
+      ],
+      intro: {
+        title: "The Sharing Problem",
+        script: "Imagine you have one piece of cake and two people want some. How do we make it fair? We cut it into two equal pieces. Each person gets one HALF. What if four people want some? Now we need four equal pieces — we call each one a QUARTER.",
+        action: "Fold one sheet of paper in half, then in half again to show quarters. Open it out to show the four equal sections. Let child feel that all four sections are the same size.",
+      },
+      mainActivity: {
+        title: "Fold and Label",
+        script: "Fold your paper in half. Good. Now fold it in half again. Open it up — how many sections? Yes, four equal pieces. Each section is one quarter. Let us colour one quarter. If we colour two quarters, what do we call that? Right — a half! Now fold one more time — how many sections now? Eight! Each tiny section is one eighth.",
+        action: "Child folds paper into halves, quarters then eighths. They label each section with the fraction (1/2, 1/4, 1/8). Colour to show that 2/4 = 1/2 and 4/8 = 1/2.",
+      },
+      wrapUp: {
+        title: "Which Is More?",
+        script: "Which is bigger — one half or one quarter? How do you know? What about one quarter compared to one eighth?",
+        action: "Child uses their folded paper to compare. Ask them to point to the sections. Guide them to see that more folds makes smaller pieces.",
+      },
+    },
     activities: [
       // ─── Easy: Halves ───
       {
@@ -4712,6 +4862,30 @@ export const year2MathsWorksheets: WorksheetItem[] = [
     strand: "Algebra",
     description:
       "Describe and continue patterns that increase or decrease by a constant amount",
+    lesson: {
+      title: "Growing and Shrinking",
+      objective: "Identify and describe the constant in increasing and decreasing number patterns and continue them.",
+      materials: [
+        "30 small objects (blocks, coins, buttons)",
+        "Paper and pencil",
+        "A ruler or straight stick",
+      ],
+      intro: {
+        title: "The Staircase",
+        script: "Watch me build a staircase with these blocks. First step: 2 blocks. Second step: 4 blocks. Third step: 6 blocks. What do you notice? Yes — each step goes up by 2. The pattern grows! What would the next step be?",
+        action: "Build a visual staircase using blocks in groups of 2, 4, 6, 8. Point to each and ask the child to predict before you place the next row.",
+      },
+      mainActivity: {
+        title: "My Own Pattern",
+        script: "Now you build a growing staircase — but you choose the rule! You could go up by 3 each time, or by 5. Tell me your rule BEFORE you build. Then I will try to figure out what comes next.",
+        action: "Child decides on a rule and builds a short staircase (4-5 steps). Write the numbers in a row. Then have them build a SHRINKING staircase starting at 20 and going down by 2 each step.",
+      },
+      wrapUp: {
+        title: "Name the Rule",
+        script: "I will write a pattern and you tell me the rule. 5, 10, 15, 20 — what is the rule? 30, 27, 24, 21 — what is happening here? Is it going up or down? By how much?",
+        action: "Write 3 patterns on paper. Child identifies each as increasing or decreasing and states the constant. Praise them for explaining their reasoning out loud.",
+      },
+    },
     activities: [
       // ─── Easy: Adding a constant ───
       {
@@ -5330,6 +5504,31 @@ export const year2MathsWorksheets: WorksheetItem[] = [
     strand: "Algebra",
     description:
       "Identify missing elements in patterns",
+    lesson: {
+      title: "What Is Missing?",
+      objective: "Find missing numbers in a pattern by identifying the rule and reasoning forward or backward.",
+      materials: [
+        "Index cards or small pieces of paper",
+        "Pencil",
+        "20 small objects (counters or blocks)",
+        "Sticky notes",
+      ],
+      intro: {
+        title: "The Hidden Number",
+        script: "I am going to lay out a number pattern but cover one number with a sticky note. Your job is to figure out what is hiding underneath without peeking. Ready? The pattern is 3, 6, ?, 12, 15. What is hiding?",
+        action: "Write a simple skip-counting pattern on cards. Place a sticky note over one card. Give child time to think. Ask them to explain HOW they figured it out, not just what the answer is.",
+      },
+      mainActivity: {
+        title: "Detectives Find the Gap",
+        script: "You are a pattern detective. A pattern detective first finds the rule — what is the number going up or down by — then uses the rule to fill the gap. Let us try: 20, 17, 14, ?, 8. First — what is the rule? Good, it goes down by 3. So what is missing?",
+        action: "Write 4-5 patterns with one or two numbers missing (gaps in different positions — beginning, middle, end). Include both increasing and decreasing patterns. Child explains rule before answering.",
+      },
+      wrapUp: {
+        title: "Make Me Guess",
+        script: "Now it is your turn to stump me! Write a pattern and leave out one number. I have to guess what is missing. Make it tricky!",
+        action: "Child writes a pattern and covers one number. You think out loud about the rule and find the missing number. Let them correct you if you get it wrong. Swap roles 2-3 times.",
+      },
+    },
     activities: [
       // ─── Easy: Simple missing numbers ───
       {
@@ -6040,6 +6239,33 @@ export const year2MathsWorksheets: WorksheetItem[] = [
     strand: "Measurement",
     description:
       "Measure and compare shapes and objects using uniform informal units",
+    lesson: {
+      title: "How Long Is It?",
+      objective: "Measure objects using uniform informal units and understand why units must be the same size to compare fairly.",
+      materials: [
+        "A collection of paperclips (at least 20)",
+        "A pencil",
+        "A book",
+        "A shoe",
+        "Dried pasta pieces or popsicle sticks (all same length)",
+        "Paper and pencil for recording",
+      ],
+      intro: {
+        title: "The Unfair Ruler",
+        script: "Watch me measure this pencil with my fingers. It is four fingers long. Now I measure it again with YOUR fingers. Wait — we got a different number! Are we both right? Why did we get different answers for the same pencil?",
+        action: "Measure the same pencil using your hand span, then the child's hand span. Record both numbers. Discuss why they differ. Establish that a fair measurement uses units that are all the SAME size.",
+      },
+      mainActivity: {
+        title: "Paperclip Ruler",
+        script: "Paperclips are all the same size — they are a fair unit. Let us measure the pencil in paperclips. Lay them end to end with no gaps and no overlaps. Count carefully. Now measure the book. Which is longer? How many paperclips longer?",
+        action: "Child measures 4-5 items using paperclips. Record results in a table (item, measurement). Emphasise no gaps, no overlaps. Then compare two items and calculate the difference.",
+      },
+      wrapUp: {
+        title: "Estimate First",
+        script: "Before we measure, let us guess! How many paperclips long do you think my shoe is? Write your estimate. Now measure. How close were you?",
+        action: "Child estimates then measures two items. Discuss the gap between estimate and measurement. Ask: what would you do differently next time to estimate better?",
+      },
+    },
     activities: [
       // ─── Easy: Counting units ───
       {
@@ -6633,6 +6859,32 @@ export const year2MathsWorksheets: WorksheetItem[] = [
     strand: "Measurement",
     description:
       "Read time on an analog clock to the hour, half hour and quarter hour",
+    lesson: {
+      title: "Clock Hands",
+      objective: "Read an analog clock to the hour, half hour and quarter hour by understanding what each hand does.",
+      materials: [
+        "An analog clock (wall clock or wristwatch)",
+        "Two strips of card (one short, one long) and a paper fastener to make a model clock",
+        "Paper plate (optional base for model clock)",
+        "Pencil and marker",
+        "Paper for recording",
+      ],
+      intro: {
+        title: "Two Hands, Two Jobs",
+        script: "Look at this clock. It has two hands — a short one and a long one. They each have a different job. The short hand is the HOUR hand. It moves slowly and points to the hour. The long hand is the MINUTE hand. When the minute hand points straight up — to 12 — it means exactly on the hour.",
+        action: "Point to each hand on a real clock. Move the minute hand on a model clock to show 12, 6, 3 and 9 while explaining what each position means. Let the child point to and move the hands.",
+      },
+      mainActivity: {
+        title: "Show Me the Time",
+        script: "I am going to say a time and you set our model clock to show it. Three o clock. Great — the short hand points to 3, the long hand points to 12. Now half past five. The minute hand goes to 6, the short hand goes BETWEEN 5 and 6. Half past means the minute hand has gone halfway around.",
+        action: "Call out times: o clock, half past, quarter past and quarter to. Child sets the model clock. Do 6-8 examples. Then swap: child sets the time and you read it aloud.",
+      },
+      wrapUp: {
+        title: "What Time Is It Now?",
+        script: "Look at our real clock. What time does it say right now? Is the minute hand pointing to 12, 6, 3 or 9? What does that mean? Tell me the time in words.",
+        action: "Child reads the real clock. Ask at different points in the lesson if possible (start, middle, end). Record the time on paper each time. Check child can use the words: o clock, half past, quarter past, quarter to.",
+      },
+    },
     activities: [
       // ─── Easy: O'clock times ───
       {
@@ -7284,6 +7536,31 @@ export const year2MathsWorksheets: WorksheetItem[] = [
     strand: "Measurement",
     description:
       "Determine the number of days between events using a calendar",
+    lesson: {
+      title: "Reading the Calendar",
+      objective: "Navigate a monthly calendar and count the number of days between two dates.",
+      materials: [
+        "A real monthly calendar (current month)",
+        "Pencil",
+        "Sticky notes or small stickers",
+        "Paper for recording",
+      ],
+      intro: {
+        title: "The Calendar Hunt",
+        script: "Grab our calendar. Can you find today? Great. What day of the week is it? Now find next Saturday. How many days away is it? Let us count together.",
+        action: "Open the calendar to the current month. Point to today. Ask child to locate specific days. Count days together by touching each date square. Establish that weeks have 7 days.",
+      },
+      mainActivity: {
+        title: "How Many Days Between?",
+        script: "I am going to mark two events on the calendar. Event one: our family movie night, on the 5th. Event two: the library book is due, on the 18th. How many days apart are they? You can count the squares between them.",
+        action: "Place sticky note markers on two dates. Child counts squares between them. Do this 3-4 times with different pairs of dates. For harder pairs, guide child to count week-by-week (each row is 7 days) then add leftover days.",
+      },
+      wrapUp: {
+        title: "Plan Our Week",
+        script: "If today is the 3rd and we want to do something on the 10th, how long do we have to wait? What about from the 15th to the end of the month?",
+        action: "Write 2-3 word problems on paper using this month's dates. Child solves by pointing to and counting on the calendar. Ask them to record the answer as a number sentence.",
+      },
+    },
     activities: [
       // ─── Easy: Days of the week ───
       {
@@ -7926,6 +8203,32 @@ export const year2MathsWorksheets: WorksheetItem[] = [
     strand: "Space",
     description:
       "Compare and classify shapes, describing features using formal spatial terms",
+    lesson: {
+      title: "Shape Detectives",
+      objective: "Identify and classify 2D shapes by counting sides and corners and using terms like parallel and right angle.",
+      materials: [
+        "Paper and pencil",
+        "A ruler",
+        "Scissors",
+        "Objects around the house with clear shapes (book, coaster, picture frame, tin lid)",
+        "Sticky notes for labelling",
+      ],
+      intro: {
+        title: "Sides and Corners",
+        script: "Pick up this book. It is a rectangle. How many sides does it have? Let us count the edges: 1, 2, 3, 4. Now how many corners — the pointy places where two sides meet? Four corners too. Let us check a triangle shape. Does it have the same number of sides and corners?",
+        action: "Gather 4-5 household objects with clear 2D shapes visible on their face. Child counts sides and corners of each. Record in a simple table: shape name, sides, corners.",
+      },
+      mainActivity: {
+        title: "Sort the Shapes",
+        script: "Now we are going to sort these shapes. Some shapes have sides that are the same length — we call those regular shapes. Some have a special corner called a right angle — that is a corner that is exactly like the corner of a piece of paper. Let us test each shape.",
+        action: "Child uses the corner of a piece of paper as a right-angle checker. They test each shape in the collection. Sort into groups: has right angles, no right angles. Then sort by number of sides.",
+      },
+      wrapUp: {
+        title: "Mystery Shape",
+        script: "I am going to describe a shape and you tell me what it is. It has 4 sides, all the same length, and 4 right angles. What is it? Now you describe a shape and I will guess.",
+        action: "Do 3-4 descriptions for the child to identify. Then child invents one description and you guess. Use formal terms: sides, corners, right angles, equal, parallel (sides that never meet).",
+      },
+    },
     activities: [
       // ─── Easy: Identifying shapes ───
       {
@@ -8608,6 +8911,31 @@ export const year2MathsWorksheets: WorksheetItem[] = [
     strand: "Space",
     description:
       "Locate and identify positions of features in two-dimensional representations",
+    lesson: {
+      title: "Where Is It on the Map?",
+      objective: "Use grid references to locate and describe positions on a simple 2D map.",
+      materials: [
+        "A piece of paper ruled into a 4x4 grid",
+        "Small stickers or drawn symbols (tree, house, school, shop)",
+        "Pencil",
+        "Ruler",
+      ],
+      intro: {
+        title: "Our Backyard Map",
+        script: "Maps use a grid to help us find things quickly. Look at this grid. The columns are labelled with letters across the bottom: A, B, C, D. The rows are numbered up the side: 1, 2, 3, 4. To find a spot, we say the letter first, then the number. So A1 is this corner. Can you point to C3?",
+        action: "Draw a simple 4x4 grid together. Label columns A-D along the bottom and rows 1-4 up the side. Place a sticker at B2. Practice calling out grid references and child points to the correct square.",
+      },
+      mainActivity: {
+        title: "Build Our Map",
+        script: "Let us put things on our map. Place the tree at A1, the house at C3, the school at D2 and the shop at B4. Now I will ask you questions: what is at C3? What is in square B4? Is the tree closer to the house or the school?",
+        action: "Child places stickers at the called-out references. You ask location questions and the child answers using grid references. Then child places objects and gives you the references to find.",
+      },
+      wrapUp: {
+        title: "Give Me Directions",
+        script: "If I am at the house at C3 and I want to get to the shop at B4, describe how to get there using the grid. Do I move left or right? Up or down?",
+        action: "Child describes movement between two points using direction and grid language. Extend to asking about features that share a row or column.",
+      },
+    },
     activities: [
       // ─── Easy: Simple grid positions ───
       {
@@ -9201,6 +9529,31 @@ export const year2MathsWorksheets: WorksheetItem[] = [
     strand: "Space",
     description:
       "Move position by following directions and pathways",
+    lesson: {
+      title: "Follow the Path",
+      objective: "Follow and give step-by-step directions using forward, back, left, right and turns.",
+      materials: [
+        "A clear floor space (hallway or living room)",
+        "5-6 objects to use as landmarks (cushion, book, cup, shoe)",
+        "Paper and pencil",
+        "Optional: sticky tape to mark a grid on the floor",
+      ],
+      intro: {
+        title: "Robot Walking",
+        script: "You are a robot and I am the programmer. Robots only understand simple commands: forward one step, turn left, turn right, go back. I will program you now — forward 3, turn right, forward 2. Go! Did you end up where I expected?",
+        action: "Stand up and give child step-by-step directions. Child walks the path exactly. Start simple (3 steps, 1 turn). Build to more complex paths (5 steps, 2 turns). Laugh when they make a mistake — it is part of the learning.",
+      },
+      mainActivity: {
+        title: "Write the Directions",
+        script: "Now you program me! Set up a course using these objects and write down the directions to get from start to finish. Remember: forward, back, left, right, turn. Then I will follow your directions exactly. If I go wrong, it means your directions need fixing!",
+        action: "Child arranges a simple obstacle course and writes the step-by-step directions on paper. You follow them precisely. If directions are ambiguous or wrong, discuss what to change. Then swap roles.",
+      },
+      wrapUp: {
+        title: "Map It Out",
+        script: "Let us draw a bird's-eye view map of the path you just made. Where does it start? Which way does it go? Mark the turns with arrows.",
+        action: "Child draws a top-down sketch of the pathway with arrows showing direction. Label start and finish. Compare the drawn map to the actual floor path.",
+      },
+    },
     activities: [
       // ─── Easy: Direction words ───
       {
@@ -9832,6 +10185,31 @@ export const year2MathsWorksheets: WorksheetItem[] = [
     strand: "Statistics",
     description:
       "Collect, record, represent and interpret categorical data",
+    lesson: {
+      title: "Our Favourite Things Survey",
+      objective: "Collect categorical data using tally marks, display it in a bar graph and answer questions about it.",
+      materials: [
+        "Paper and pencil",
+        "Ruler",
+        "Coloured pencils",
+        "A list of 4-5 category options (e.g. favourite fruit: apple, banana, orange, grapes, mango)",
+      ],
+      intro: {
+        title: "Tally Marks",
+        script: "Before we can make a graph, we need to collect information — we call that data. And we need a quick way to record it. Watch — I use tally marks. Each line is one vote. When I get to five, I draw a line across the four: that bundle of five is easy to count. Try making tally marks for the number 8.",
+        action: "Demonstrate tally marks up to 10 on paper. Child practises making tallies for 6, 9, 12. Confirm they understand the bundles of five.",
+      },
+      mainActivity: {
+        title: "Survey Time",
+        script: "We are going to survey our family — or just ourselves with some imaginary friends! The question is: what is your favourite fruit? For each answer, add a tally mark. When we are done, count up each category.",
+        action: "Child draws a tally table with 4-5 categories. Collect 10+ responses (ask family members, or make them up together). Count tallies. Then draw a bar graph: horizontal axis is categories, vertical axis is number of votes. Child colours the bars.",
+      },
+      wrapUp: {
+        title: "What Does the Graph Tell Us?",
+        script: "Look at our graph. Which fruit got the most votes? Which got fewest? How many more votes did the winner get than the least popular? What would you tell someone about what our survey found?",
+        action: "Ask 3-4 interpretation questions pointing to the bar graph. Child answers and explains. Encourage full sentences: apple got 5 votes, which was the most popular.",
+      },
+    },
     activities: [
       // ─── Easy: Tally charts ───
       {
@@ -10561,6 +10939,31 @@ export const year2MathsWorksheets: WorksheetItem[] = [
     title: "Data Collection & Interpretation",
     strand: "Statistics",
     description: "Collect, organise and interpret categorical data in response to questions",
+    lesson: {
+      title: "Ask a Question, Collect the Data",
+      objective: "Formulate a question, collect categorical data, organise it in a table and interpret the results.",
+      materials: [
+        "Paper and pencil",
+        "Ruler",
+        "Coloured pencils",
+        "A list of people to survey (household members, or a list of imaginary responses)",
+      ],
+      intro: {
+        title: "Start with a Question",
+        script: "All data collection starts with a question. A good question for data has a few possible answers — not just yes or no. For example: what is your favourite season? The answers could be summer, autumn, winter or spring. That gives us four categories to collect data about.",
+        action: "Brainstorm 2-3 possible survey questions together. Evaluate each: how many categories would it create? Is it interesting? Let the child choose which question they want to investigate.",
+      },
+      mainActivity: {
+        title: "Collect, Record, Display",
+        script: "Now let us collect real answers. Ask everyone in the house. If we do not have enough people, we can think about what our friends might say and make it up together. Record each answer as a tally mark. When we are done, count the totals and make a table.",
+        action: "Child conducts the survey and records tally marks. They total each category, then create a neat data table (category, tally, total). Finally they draw a simple picture graph or bar graph to display results.",
+      },
+      wrapUp: {
+        title: "What Did We Find Out?",
+        script: "Look at your data. What was the most common answer? Was anything surprising? If you asked 10 different people, do you think you would get the same results?",
+        action: "Child presents their findings in 2-3 spoken sentences. Guide them to say the question, the most common answer, and one interesting observation. Write these sentences down together as a conclusion.",
+      },
+    },
     activities: [
       // ─── Easy: Collecting data ───
       {

@@ -8,6 +8,30 @@ export const year10MathsWorksheets: WorksheetItem[] = [
     strand: "Number",
     description:
       "Recognise the effect of approximations in repeated calculations and interpret logarithmic scales for small or large quantities",
+    lesson: {
+      title: "Logarithmic Scales and the Power of Ten",
+      objective: "Understand what a logarithmic scale is, why we use it, and how to read values from one — including the Richter scale and pH scale.",
+      materials: [
+        "Paper and pencil",
+        "A calculator",
+        "A ruler",
+      ],
+      intro: {
+        title: "Why Normal Scales Break Down",
+        script: "Here is a challenge. I want to draw a number line that goes from 1 to 1,000,000. If I mark 1 at one end and 1,000,000 at the other, where would I put 1,000? It would be so close to zero you could barely see it. That is the problem with huge ranges of numbers. Scientists solve this by using a logarithmic scale — instead of marking equal gaps between numbers, they mark equal gaps between powers of ten.",
+        action: "Draw a straight line on paper. Mark 10^0 = 1, 10^1 = 10, 10^2 = 100, 10^3 = 1000, 10^4 = 10,000, 10^5 = 100,000, 10^6 = 1,000,000 at equal spacing. Point out that each step multiplies by 10. This is a logarithmic scale.",
+      },
+      mainActivity: {
+        title: "Reading the Richter and pH Scales",
+        script: "The Richter scale for earthquakes is logarithmic. A magnitude 5 earthquake is not twice as strong as a magnitude 4 — it is ten times as strong. A magnitude 6 is one hundred times stronger than a magnitude 4. Let us work through this together. I will do the first one, then you try the next.",
+        action: "Work through on paper: How many times stronger is a magnitude 7 than a magnitude 4? Answer: 10^(7-4) = 10^3 = 1000 times. Now pH: pH 3 is 10 times more acidic than pH 4. Ask the child: how many times more acidic is pH 1 than pH 4? Answer: 10^3 = 1000 times. Then move to approximations: if a calculator gives 2.999999, discuss why rounding matters and how repeated rounding errors accumulate.",
+      },
+      wrapUp: {
+        title: "The Key Idea in Your Own Words",
+        script: "Before we finish — can you explain to me in one or two sentences why scientists use a logarithmic scale instead of a regular one? And give me one real-world example where you would need it.",
+        action: "Listen for the idea that logarithmic scales handle enormous ranges of values compactly. Prompt if needed: think about comparing the size of a bacterium to the size of the Earth, or comparing very loud and very quiet sounds.",
+      },
+    },
     activities: [
       // --- EASY: Scientific notation & conversions ---
       {
@@ -642,6 +666,29 @@ export const year10MathsWorksheets: WorksheetItem[] = [
     strand: "Algebra",
     description:
       "Solve problems involving growth and decay using linear, quadratic and exponential functions in financial and applied contexts",
+    lesson: {
+      title: "Exponential Growth and Decay in the Real World",
+      objective: "Recognise exponential growth and decay functions, identify the rate of change from an equation, and apply them to financial and real-world problems.",
+      materials: [
+        "Paper and pencil",
+        "A calculator",
+      ],
+      intro: {
+        title: "Your Money vs a Tree",
+        script: "Imagine you plant a tree that grows by 1 metre every year. After 10 years it is 10 metres. That is linear growth — steady, equal amounts each time. Now imagine a bank account that grows by 8% each year. In year one you earn a little interest. In year two you earn interest on a larger amount. Each year the growth is bigger than the last. That is exponential growth — and it is very different from linear.",
+        action: "Write two columns on paper. Column A: linear — start at 100, add 8 each year for 5 years. Column B: exponential — start at 100, multiply by 1.08 each year for 5 years. Calculate both and compare. Emphasise that exponential growth accelerates over time.",
+      },
+      mainActivity: {
+        title: "Working With the Formula",
+        script: "The exponential function we use is A = P times r to the power of n. P is the starting amount, r is the multiplier for each period, and n is the number of periods. If something grows by 8% per year, r is 1.08. If it decays by 18% per year — like a car losing value — r is 0.82. Let me work through one, then you try one.",
+        action: "Parent example: A car costs $15,000 and loses 18% of its value each year. After 3 years: A = 15000 x 0.82^3. Calculate step by step: 0.82^3 = 0.551, so A = 15000 x 0.551 = $8,265. Child attempts: An investment of $5,000 grows at 6% per year. What is it worth after 4 years? (Answer: 5000 x 1.06^4 = approximately $6,312). Check with calculator.",
+      },
+      wrapUp: {
+        title: "Spot the Pattern",
+        script: "How do you tell from an equation whether something is growing or decaying? Look at the equation P = 2000 times 0.82 to the power of n — what does the 0.82 tell you? Now look at y = 3 to the power of x — is this growth or decay, and how do you know?",
+        action: "Child explains the rule: r greater than 1 means growth, r between 0 and 1 means decay. If they are confident, extend: ask what happens when r equals exactly 1, and what that would mean in a real-world context.",
+      },
+    },
     activities: [
       // --- EASY: Recognise growth vs decay ---
       {
@@ -1278,6 +1325,30 @@ export const year10MathsWorksheets: WorksheetItem[] = [
     strand: "Algebra",
     description:
       "Solve simultaneous linear equations and linear inequalities in 2 variables graphically and algebraically",
+    lesson: {
+      title: "Simultaneous Equations and Inequalities",
+      objective: "Solve a pair of simultaneous linear equations using substitution and elimination, and interpret the solution as the intersection point of two lines.",
+      materials: [
+        "Paper and pencil",
+        "A ruler",
+        "Graph paper or a printed grid (or draw one on blank paper)",
+      ],
+      intro: {
+        title: "Two Clues, One Answer",
+        script: "Imagine I tell you two things: a coffee and a muffin together cost $7, and two coffees cost $6. From those two clues you can figure out exactly what each item costs. That is the idea behind simultaneous equations — you have two equations and two unknowns, and together they pin down one exact answer.",
+        action: "Write the two equations on paper: C + M = 7 and 2C = 6. Solve the second equation first (C = 3), then substitute into the first (M = 4). Discuss: one equation alone gives infinitely many possibilities, but two equations together give exactly one answer.",
+      },
+      mainActivity: {
+        title: "Substitution and Elimination — Side by Side",
+        script: "There are two main algebraic methods. Substitution: rearrange one equation to get one variable by itself, then plug it into the other equation. Elimination: add or subtract the two equations to cancel out one variable. I will work through one using substitution, then we will try elimination together.",
+        action: "Substitution example: y = x + 1 and y = 2x - 3. Substitute: x + 1 = 2x - 3, so x = 4, y = 5. Verify by plugging back in. Elimination example: x + y = 8 and x - y = 2. Add the equations: 2x = 10, x = 5, y = 3. Child attempts: solve x + 2y = 10 and x - y = 1 using either method. For inequalities, introduce: graph y > x + 1 by drawing y = x + 1 as a dashed line and shading above it.",
+      },
+      wrapUp: {
+        title: "What Does the Solution Mean?",
+        script: "If I draw both equations as lines on a graph, the solution is the point where they cross. Can you explain why two parallel lines would have no solution? And what would it mean if the two equations were actually the same line?",
+        action: "Child explains: parallel lines never cross so no solution exists; identical lines cross everywhere so there are infinitely many solutions. Prompt: how could you tell just from looking at the equations whether two lines are parallel?",
+      },
+    },
     activities: [
       // --- EASY: Foundations & terminology ---
       {
@@ -2146,6 +2217,30 @@ export const year10MathsWorksheets: WorksheetItem[] = [
     strand: "Algebra",
     description:
       "Make and test conjectures involving functions and relations using digital tools and algebraic reasoning",
+    lesson: {
+      title: "Functions, Relations and Making Conjectures",
+      objective: "Classify equations as linear, quadratic or exponential; understand the difference between a function and a relation; and practise making and testing mathematical conjectures.",
+      materials: [
+        "Paper and pencil",
+        "A calculator",
+        "Graph paper or blank paper for sketching",
+      ],
+      intro: {
+        title: "What Is a Function?",
+        script: "A function is a rule that takes every input and gives back exactly one output. Think of a vending machine: you press a button and you get one specific item. If pressing the same button sometimes gave you a chocolate bar and sometimes gave you chips, it would not be a function. In maths, if you put in an x-value and get back more than one y-value, it is not a function — it is just a relation.",
+        action: "Draw a simple mapping diagram: inputs 1, 2, 3 mapping to outputs 4, 5, 6 (function). Then draw one where input 2 maps to both 5 and 7 (not a function). Use the vertical line test rule: if a vertical line can cross the graph more than once at any point, it is not a function.",
+      },
+      mainActivity: {
+        title: "Classify and Conjecture",
+        script: "Let us practise classifying functions. Linear functions make straight lines and have the form y = mx + b. Quadratic functions make parabolas and have an x-squared term. Exponential functions have the variable in the exponent, like y = 2 to the power of x. Here is a conjecture to test: does doubling the coefficient in front of x in a quadratic always make the parabola narrower? Let us check.",
+        action: "Sketch or calculate values for y = x^2 and y = 2x^2 using x = -2, -1, 0, 1, 2. Compare the y-values. Confirm the conjecture is true. Then ask the child to form and test their own conjecture: for example, does changing the constant in y = x^2 + c shift the parabola up or down? Child picks values of c and tests. Practise classifying: y = 3x - 7 (linear), y = x^2 + 4x - 5 (quadratic), y = 5^x (exponential).",
+      },
+      wrapUp: {
+        title: "Your Own Conjecture",
+        script: "I want you to make up one conjecture about any function type we looked at today. State it clearly — something like: I think that when the coefficient of x is negative in a linear function, the line always slopes downward. Then test it with two examples.",
+        action: "Child states a conjecture, tests it, and explains whether it holds. If they are finding it easy, push further: can they find a conjecture that turns out to be false? That is equally valid mathematically.",
+      },
+    },
     activities: [
       // --- EASY: Classify and identify function types ---
       {
@@ -3088,6 +3183,31 @@ export const year10MathsWorksheets: WorksheetItem[] = [
     strand: "Measurement",
     description:
       "Solve problems involving surface area and volume of composite objects by decomposing them into known shapes",
+    lesson: {
+      title: "Surface Area and Volume of Composite Shapes",
+      objective: "Decompose a composite 3D object into simpler known shapes, then calculate the total volume and exposed surface area by combining the parts.",
+      materials: [
+        "Paper and pencil",
+        "A calculator",
+        "A ruler",
+        "Any household objects with composite shapes — a cereal box, a can, a pencil case",
+      ],
+      intro: {
+        title: "Breaking Things Apart",
+        script: "Most real objects are not perfect cubes or perfect cylinders. A silo on a farm might be a cylinder with a cone on top. A room might be an L-shape. The trick for finding volume and surface area of these composite objects is to break them into shapes you already know, calculate each part separately, then combine the results. This is exactly what architects and engineers do.",
+        action: "Pick up a household object like a cereal box. Point out it is a rectangular prism. Now describe a composite shape: imagine a box with a half-cylinder lid on top (like a Quonset hut). Sketch it and label the parts: rectangular prism below and half-cylinder on top.",
+      },
+      mainActivity: {
+        title: "Calculate a Composite Object",
+        script: "Here is our object: a shed that is a rectangular prism 4 m wide, 3 m deep, 2 m tall, with a triangular prism roof on top that is 1 m tall at its peak. I will calculate the volume step by step, then you calculate the surface area.",
+        action: "Parent works volume: prism = 4 x 3 x 2 = 24 m^3. Triangular prism roof: cross-section area = 0.5 x 4 x 1 = 2 m^2, times depth 3 = 6 m^3. Total volume = 30 m^3. Child calculates surface area: be careful to exclude the internal joining face between prism and roof. Walk through which faces are visible and count only those. Key rule: when two shapes join, that shared face is NOT exposed surface area.",
+      },
+      wrapUp: {
+        title: "The Joining Face Rule",
+        script: "What is the most common mistake people make when finding the surface area of a composite shape? Can you explain in your own words why we subtract the joining face, and give me an example?",
+        action: "Child explains: the joining face is inside the object, not on the surface, so it is not painted or exposed. If they are confident, ask: if you stacked two identical cubes on top of each other, how many faces are hidden? (Answer: 2 — one from each cube at the join.)",
+      },
+    },
     activities: [
       // --- EASY: Identify shapes, formulas and units ---
       {
@@ -3911,6 +4031,30 @@ export const year10MathsWorksheets: WorksheetItem[] = [
     strand: "Measurement",
     description:
       "Apply Pythagoras' theorem and trigonometry to solve practical problems involving right-angled triangles",
+    lesson: {
+      title: "Pythagoras and Trigonometry in Practice",
+      objective: "Apply Pythagoras' theorem to find a missing side, and use SOH CAH TOA to find unknown angles and sides in right-angled triangles.",
+      materials: [
+        "Paper and pencil",
+        "A scientific calculator (or phone calculator in scientific mode)",
+        "A ruler",
+      ],
+      intro: {
+        title: "The Problem of the Leaning Ladder",
+        script: "A 5-metre ladder leans against a wall. The base of the ladder is 2 metres from the wall. How high up the wall does the ladder reach? You cannot measure it directly — but you can calculate it exactly using Pythagoras. The ladder, the wall, and the ground form a right-angled triangle, and that triangle follows a rule: the square of the longest side always equals the sum of the squares of the other two sides.",
+        action: "Draw the triangle: label the hypotenuse 5 m, the base 2 m, and the height as h. Write: h^2 + 2^2 = 5^2. Calculate: h^2 = 25 - 4 = 21, h = sqrt(21) = approximately 4.58 m. Check on calculator.",
+      },
+      mainActivity: {
+        title: "SOH CAH TOA — Finding Angles and Sides",
+        script: "Once we know the triangle is right-angled, we can use trigonometry to find angles too. SOH means sine equals opposite over hypotenuse. CAH means cosine equals adjacent over hypotenuse. TOA means tangent equals opposite over adjacent. Let me work a full example, then you try one.",
+        action: "Parent example: a ramp rises 1.5 m over a horizontal distance of 6 m. Find the angle of incline. Draw the triangle, label sides. tan(angle) = 1.5/6 = 0.25. Angle = arctan(0.25) = 14.0 degrees. Show on calculator: use the inverse tan button (tan^-1 or atan). Child example: a 10 m flagpole casts a shadow of 8 m. Find the angle of elevation of the sun. (Answer: tan^-1(10/8) = approximately 51.3 degrees.)",
+      },
+      wrapUp: {
+        title: "Name the Sides First",
+        script: "The most common mistake with trig is mixing up the opposite and adjacent sides. Can you tell me: for a given angle theta, which side is opposite, which is adjacent, and which is the hypotenuse? And how do you decide which trig ratio to use for a given problem?",
+        action: "Child labels sides on a fresh triangle with angle theta marked. They explain the selection rule: if you know opposite and want hypotenuse, use sine. If you know adjacent and want hypotenuse, use cosine. If you know both legs and want the angle, use tangent. Prompt with a real scenario if they need a hint.",
+      },
+    },
     activities: [
       // --- EASY: Trig ratio definitions & Pythagoras basics ---
       {
@@ -4768,6 +4912,31 @@ export const year10MathsWorksheets: WorksheetItem[] = [
     strand: "Measurement",
     description:
       "Identify the impact of measurement errors on accuracy and solve practical problems involving proportion and scaling",
+    lesson: {
+      title: "Measurement Errors and Scaling",
+      objective: "Distinguish between absolute and relative (percentage) error, understand how errors compound through calculations, and solve proportion and scaling problems.",
+      materials: [
+        "Paper and pencil",
+        "A ruler",
+        "A calculator",
+        "Any small household object to measure",
+      ],
+      intro: {
+        title: "How Wrong Is Your Measurement?",
+        script: "Every physical measurement has some error — the ruler might not be perfectly aligned, you might read between the markings, or the tool itself might not be perfectly accurate. There are two ways to describe how wrong a measurement is. Absolute error tells you the raw gap: your measurement was 2 millimetres too long. Relative error tells you how big that error is compared to what you were measuring: 2 mm on a 10 mm object is a 20% error, but 2 mm on a 10 metre object is almost nothing.",
+        action: "Measure a small object (e.g., a book) with a ruler. Record your measurement. Then calculate: if the true length is 1 mm longer than you measured, what is the absolute error? What is the relative error as a percentage? Absolute = 1 mm. Relative = (1 / measured length) x 100%.",
+      },
+      mainActivity: {
+        title: "Errors That Multiply — and Scaling Maps",
+        script: "Here is a nasty fact: when you multiply measurements together to find area or volume, errors compound. If you measure each side of a cube and each side is 2% too long, the volume error is not 2% — it is closer to 6%, because you cube the length. I will work through a scaling problem first, then we will look at compounding errors.",
+        action: "Scaling: a map has a scale of 1:50,000. A road is 3.6 cm on the map. Real distance = 3.6 x 50,000 = 180,000 cm = 1.8 km. Child attempts: scale 1:25,000, distance on map 5.2 cm. Answer: 1.3 km. Compounding errors: if length is measured as 10 cm with a 1% error (0.1 cm), area = length^2 = approximately 100 cm^2 with an error of about 2 x 10 x 0.1 = 2 cm^2, which is a 2% error. Discuss: why do engineers build in tolerances?",
+      },
+      wrapUp: {
+        title: "The Difference Between Absolute and Relative",
+        script: "Which is more useful — absolute error or relative error — and when would you prefer each? Give me an example where a small absolute error is actually a huge relative error.",
+        action: "Child explains: relative error is more meaningful when comparing errors across different sized quantities. A good example: measuring the diameter of a human hair versus the length of a room — the same 0.1 mm absolute error is enormous for hair measurement but negligible for the room.",
+      },
+    },
     activities: [
       // --- EASY: Foundations of measurement error & proportion ---
       {
@@ -5645,6 +5814,30 @@ export const year10MathsWorksheets: WorksheetItem[] = [
     strand: "Space",
     description:
       "Use deductive reasoning, theorems and algorithms to solve spatial problems and construct geometric proofs",
+    lesson: {
+      title: "Geometric Theorems and Deductive Proof",
+      objective: "Understand how geometric proofs work by chaining known theorems together; practise writing a clear deductive argument for angle and triangle problems.",
+      materials: [
+        "Paper and pencil",
+        "A ruler",
+        "A protractor (if available, otherwise paper-fold to make right angles)",
+      ],
+      intro: {
+        title: "Why Proof Matters",
+        script: "In maths, we do not just say something is true because it looks true in a diagram — we have to prove it. A proof is a logical chain of steps, where each step follows from something we already know is true. Geometry has a set of theorems — proven rules — that we can quote in our working. Let me show you how a simple chain of reasoning works.",
+        action: "Draw two straight lines crossing each other. Label the four angles a, b, c, d going round. Ask: what do angles a and b add to? (180 degrees, angles on a straight line.) What do angles a and c add to? (Also 180 degrees.) So what must b equal? (c — they are equal.) This is the vertically opposite angles theorem, and you just proved it from scratch.",
+      },
+      mainActivity: {
+        title: "Writing a Proof",
+        script: "A proof has a specific format. You state what you are given, you state what you want to prove, and then you write numbered steps. Each step states what is true and in brackets you give the reason — the theorem or fact that justifies it. I will write a proof for the exterior angle theorem, then you write one for an isosceles triangle property.",
+        action: "Parent models proof: Given triangle ABC, extend side BC to point D. Prove that angle ACD equals angle ABC plus angle BAC. Step 1: angle ABC + angle BAC + angle ACB = 180 (angle sum of triangle). Step 2: angle ACB + angle ACD = 180 (angles on a straight line). Step 3: therefore angle ACD = angle ABC + angle BAC. Child attempt: given triangle PQR with PQ = PR (isosceles), prove that angle PQR = angle PRQ. Hint: use the base angles of isosceles triangle theorem or draw the axis of symmetry.",
+      },
+      wrapUp: {
+        title: "Explain the Chain",
+        script: "What makes a proof valid? Can you tell me the difference between just calculating an answer and writing a proper proof? And what happens if one step in the chain is wrong?",
+        action: "Child explains: a proof must give a reason for every step, not just a numerical answer. If one step is invalid the whole proof collapses. Prompt: think about a chain of dominoes — each one knocks the next. The proof only works if every link holds.",
+      },
+    },
     activities: [
       // --- EASY: Theorem identification & basic angle problems ---
       {
@@ -6523,6 +6716,29 @@ export const year10MathsWorksheets: WorksheetItem[] = [
     strand: "Space",
     description:
       "Interpret networks used to represent practical situations and describe connectedness, paths and circuits",
+    lesson: {
+      title: "Networks, Paths and Circuits",
+      objective: "Understand the vocabulary of graph theory — vertices, edges, degree, paths and circuits — and apply it to practical problems such as routing and traversal.",
+      materials: [
+        "Paper and pencil",
+        "A pencil (for drawing network diagrams)",
+      ],
+      intro: {
+        title: "Your Town as a Network",
+        script: "Imagine you are a postie who has to deliver to every street in a neighbourhood. You want to drive every street exactly once without backtracking. Is that possible? This is a real problem in mathematics called graph theory, and it was first solved by the mathematician Euler in 1736. He called it the Konigsberg Bridge Problem. The secret is to look at how many paths meet at each intersection.",
+        action: "Draw a simple network with 5 circles (vertices) connected by lines (edges). Label the vertices A to E. Count the edges connecting to each vertex — this is called the degree of the vertex. Write next to each vertex: degree = number of edges. Odd-degree vertices are the key to whether a path through every edge is possible.",
+      },
+      mainActivity: {
+        title: "Paths, Circuits and Euler's Rule",
+        script: "A path visits each edge exactly once. A circuit does the same but returns to the start. Euler discovered that: if a network has zero vertices with odd degree, you can complete a circuit through every edge. If it has exactly two vertices with odd degree, you can complete a path — but you must start at one odd vertex and end at the other. If it has more than two odd-degree vertices, no such path exists. Let me map out a small network and check.",
+        action: "Draw a network: vertices A, B, C, D with edges A-B, B-C, C-D, D-A, A-C. Degrees: A=3, B=2, C=3, D=2. Two odd-degree vertices (A and C). So an Euler path exists starting at A and ending at C. Trace it: A-B-C-A-D-C or another valid route. Child attempts: draw their own network with 4 vertices, count degrees, predict whether a path or circuit exists, then try to trace it.",
+      },
+      wrapUp: {
+        title: "Euler in the Real World",
+        script: "Can you think of two real situations where finding an efficient path through a network matters? And if I gave you a network with four odd-degree vertices, what does Euler's rule tell you?",
+        action: "Child gives real examples (rubbish truck route, airline hub connections, phone network design). They state: four odd-degree vertices means no Euler path exists through every edge. Prompt: what would you have to do to make it work? (Add or remove edges to change the degrees.)",
+      },
+    },
     activities: [
       // ─── EASY ───────────────────────────────────────────────────
 
@@ -7422,6 +7638,31 @@ export const year10MathsWorksheets: WorksheetItem[] = [
     strand: "Statistics",
     description:
       "Plan and conduct statistical investigations involving bivariate data, representing distributions with scatter plots",
+    lesson: {
+      title: "Scatter Plots, Correlation and Lines of Best Fit",
+      objective: "Create and interpret scatter plots for bivariate data, describe the strength and direction of correlation, and sketch a line of best fit.",
+      materials: [
+        "Paper and pencil",
+        "A ruler",
+        "Graph paper or blank paper with hand-drawn axes",
+        "A calculator",
+      ],
+      intro: {
+        title: "Two Variables, One Story",
+        script: "Statistics usually looks at one variable at a time — like average height. But bivariate statistics looks at two variables together and asks: is there a relationship between them? For example: does more study time tend to lead to higher test scores? Does temperature affect ice cream sales? We investigate this by plotting both variables on the same graph — one on each axis — and looking at the pattern of dots.",
+        action: "Draw two axes on paper. Label x-axis: hours of study (0 to 10), y-axis: test score (0 to 100). Plot these five fictional data points: (1, 40), (3, 55), (5, 65), (7, 75), (9, 88). Stand back and look at the pattern. Ask: what do you notice about the relationship between study time and score?",
+      },
+      mainActivity: {
+        title: "Describing Correlation and Drawing a Line of Best Fit",
+        script: "We describe a scatter plot by its direction and strength. Positive correlation means both variables increase together. Negative correlation means as one increases, the other decreases. Strong correlation means the dots cluster tightly near a line. Weak correlation means the dots are spread out. Now let us draw the line of best fit — it goes through the middle of the data, with roughly equal numbers of points above and below.",
+        action: "Using the scatter plot already drawn, place a ruler so it passes through the middle of the cluster with approximately equal points above and below. Draw the line. Estimate where the line crosses x = 4 and read off the predicted score. Discuss: the line of best fit lets you make predictions. Child attempts: a new dataset showing temperature vs hot chocolate sales: (5, 90), (10, 80), (15, 65), (20, 40), (25, 20). Child plots, identifies negative correlation, draws line of best fit, predicts sales at 12 degrees.",
+      },
+      wrapUp: {
+        title: "Correlation Is Not Causation",
+        script: "Here is something important: just because two things correlate does not mean one causes the other. Ice cream sales and drowning rates both rise in summer — does eating ice cream cause drowning? What is actually going on there? Can you think of another example where two things correlate but one does not cause the other?",
+        action: "Child explains the confounding variable idea: a third factor (hot weather) causes both. They give their own example. Prompt if needed: shoe size and reading ability both increase with age in children — age is the confounding variable, not shoe size.",
+      },
+    },
     activities: [
       // --- EASY: Correlation basics & variable identification ---
       {
@@ -8341,6 +8582,30 @@ export const year10MathsWorksheets: WorksheetItem[] = [
     strand: "Statistics",
     description:
       "Analyse inferences and conclusions in the media, identifying potential sources of bias and misleading representations",
+    lesson: {
+      title: "Spotting Bias and Misleading Statistics in the Media",
+      objective: "Identify common techniques used to distort statistical information in media and advertising, and evaluate the fairness of data representations.",
+      materials: [
+        "Paper and pencil",
+        "A ruler",
+        "Access to a newspaper, magazine, or printed online article (optional but useful)",
+      ],
+      intro: {
+        title: "The Graph That Lied",
+        script: "Imagine a headline says: Unemployment drops by 50%! Beside it is a bar chart. You look at the chart and the bar really does look dramatically shorter. But then you look at the y-axis — it starts at 95%, not 0%. The bar went from 98% to 96% employment. That is a real drop of only 2 percentage points, but the chart makes it look enormous. This is one of the most common tricks used to mislead people with statistics, and once you can spot it, you will never be fooled again.",
+        action: "Draw two bar charts on paper side by side showing the same data (values of 97 and 99). In the first chart, start the y-axis at 0. In the second, start at 95. Compare how dramatically different the bars look even though the data is identical. Discuss: this is not illegal, but is it honest?",
+      },
+      mainActivity: {
+        title: "A Toolkit of Misleading Techniques",
+        script: "Let us go through the main techniques used to mislead with data. First: truncated y-axis — starting the axis at a value other than zero to exaggerate differences. Second: cherry-picking data — showing only the time period that supports your argument. Third: misleading sample — surveying only the people most likely to give you the answer you want. Fourth: correlation presented as causation — claiming that because two things happened together, one caused the other. For each one I will give you an example, then you explain why it is misleading.",
+        action: "Work through each technique: (1) A company shows share price over the last 3 months — a big rise — but hides the 2-year downward trend before that. (2) A chocolate company surveys people leaving a chocolate shop about whether they love chocolate. (3) A news story says screen time causes poor sleep in teenagers — but maybe tired teenagers watch more screens, or maybe a third factor affects both. For each, child explains the flaw. Then child invents their own example of one misleading technique.",
+      },
+      wrapUp: {
+        title: "Be the Critical Reader",
+        script: "Next time you see a statistic in a headline or an advertisement, what three questions should you ask before you believe it? Think about the source, the sample, and the way the data is displayed.",
+        action: "Child lists their three questions (suggested: Who conducted the study and do they have a financial interest? How was the sample chosen and is it representative? Does the graph start at zero and show the full picture?). Praise critical thinking — this skill applies well beyond maths.",
+      },
+    },
     activities: [
       // ─── EASY ─────────────────────────────────────────────────────
       {
@@ -9324,6 +9589,30 @@ export const year10MathsWorksheets: WorksheetItem[] = [
     strand: "Probability",
     description:
       "Apply conditional probability to solve problems involving compound events, using tree diagrams and two-way tables",
+    lesson: {
+      title: "Conditional Probability and Compound Events",
+      objective: "Calculate conditional probabilities, use tree diagrams to solve multi-step probability problems, and read probabilities from two-way tables.",
+      materials: [
+        "Paper and pencil",
+        "A calculator",
+        "Two coins or a six-sided die (optional, for demonstration)",
+      ],
+      intro: {
+        title: "When the First Event Changes Everything",
+        script: "Simple probability assumes nothing has happened yet. But conditional probability asks: given that something has already happened, what is the probability of the next thing? For example: a bag has 5 red balls and 3 blue balls. The chance of picking a red ball first is 5 out of 8. But if I have already picked a red ball and do not replace it, the chance the second ball is also red is now 4 out of 7 — because the bag has changed. The condition changes the probability.",
+        action: "Draw a bag with 5 R and 3 B. Calculate P(first red) = 5/8. Then remove one red and recalculate P(second red | first was red) = 4/7. Compare the two values. Introduce notation: P(A | B) is read as the probability of A given B has already occurred.",
+      },
+      mainActivity: {
+        title: "Tree Diagrams and Two-Way Tables",
+        script: "A tree diagram is the best tool for multi-step probability problems. You draw branches for each possible outcome, write the probability on each branch, and then multiply along the branches to find the probability of a combined outcome. A two-way table is useful when you have survey data about two overlapping categories. I will work through one of each, then you try one.",
+        action: "Tree diagram: a bag has 3 red and 2 blue balls. Draw without replacement. First branch: P(R) = 3/5, P(B) = 2/5. Second branch from R: P(R|R) = 2/4, P(B|R) = 2/4. Second branch from B: P(R|B) = 3/4, P(B|B) = 1/4. Multiply along branches to get P(R then R) = 3/5 x 2/4 = 6/20 = 3/10. Two-way table: 50 students surveyed. 30 play sport, 20 do not. 15 play sport and study music. 5 do not play sport but study music. Fill in the table and calculate: P(studies music | plays sport) = 15/30 = 1/2. Child attempts a similar tree diagram with their own bag of objects.",
+      },
+      wrapUp: {
+        title: "Independent vs Dependent Events",
+        script: "What is the difference between independent events and dependent events? If I flip a coin twice, does the result of the first flip affect the second? What about drawing cards without replacing them?",
+        action: "Child explains: for independent events the probability does not change (coin flips, dice rolls, drawing with replacement). For dependent events the first outcome changes the probabilities for the next (drawing without replacement). If confident, introduce the multiplication rule: P(A and B) = P(A) x P(B|A), and show it works for both cases.",
+      },
+    },
     activities: [
       // --- EASY: Foundations of probability language & basic calculations ---
       {
