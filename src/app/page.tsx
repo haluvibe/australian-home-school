@@ -39,8 +39,9 @@ export default function Home() {
           />
           {/* Animated floating orbs */}
           <div className="animate-drift absolute right-[10%] top-[15%] h-[350px] w-[350px] rounded-full bg-terracotta/20 blur-[100px]" />
-          <div className="animate-drift-slow absolute -left-[5%] bottom-[10%] h-[450px] w-[450px] rounded-full bg-sage/15 blur-[120px]" />
+          <div className="animate-drift-slow absolute -left-[5%] bottom-[10%] h-[450px] w-[450px] rounded-full bg-eucalyptus/15 blur-[120px]" />
           <div className="animate-float absolute right-[40%] top-[60%] h-[200px] w-[200px] rounded-full bg-golden/20 blur-[80px]" />
+          <div className="animate-float-reverse absolute left-[35%] top-[20%] h-[250px] w-[250px] rounded-full bg-eucalyptus/10 blur-[90px]" />
           {/* Dot grid texture */}
           <div
             className="absolute inset-0 opacity-[0.08]"
@@ -95,7 +96,7 @@ export default function Home() {
                 </span>
               </h1>
 
-              <p className="animate-fade-up delay-200 mt-5 max-w-xl text-lg leading-relaxed text-cream/70 sm:mt-6 sm:text-xl">
+              <p className="animate-fade-up delay-200 mt-5 max-w-xl text-lg leading-relaxed text-cream/85 sm:mt-6 sm:text-xl">
                 The Australian Curriculum is comprehensive &mdash; but it
                 wasn&apos;t written for parents. We break it down into
                 clear objectives and printable worksheets, year by year.
@@ -145,7 +146,7 @@ export default function Home() {
                           className={`flex-1 px-3 py-2.5 text-center text-xs font-semibold ${
                             i === 0
                               ? "bg-terracotta text-white"
-                              : "bg-cream/50 text-charcoal/40"
+                              : "bg-cream/50 text-charcoal/55"
                           }`}
                         >
                           {year}
@@ -164,7 +165,7 @@ export default function Home() {
                           <span className="text-sm font-semibold text-charcoal">
                             Number
                           </span>
-                          <span className="rounded-full bg-terracotta/10 px-2 py-0.5 text-[10px] font-semibold text-terracotta">
+                          <span className="rounded-full bg-terracotta/10 px-2 py-0.5 text-[11px] font-semibold text-terracotta">
                             5 worksheets
                           </span>
                         </div>
@@ -181,7 +182,7 @@ export default function Home() {
                                 height="14"
                                 viewBox="0 0 16 16"
                                 fill="none"
-                                className="mt-0.5 shrink-0 text-sage"
+                                className="mt-0.5 shrink-0 text-eucalyptus"
                               >
                                 <path
                                   d="M4 8l3 3 5-5"
@@ -191,7 +192,7 @@ export default function Home() {
                                   strokeLinejoin="round"
                                 />
                               </svg>
-                              <span className="text-xs leading-relaxed text-charcoal/60">
+                              <span className="text-xs leading-relaxed text-charcoal/75">
                                 {obj}
                               </span>
                             </div>
@@ -207,7 +208,7 @@ export default function Home() {
                           <span className="text-sm font-semibold text-charcoal">
                             {strand}
                           </span>
-                          <span className="rounded-full bg-terracotta/10 px-2 py-0.5 text-[10px] font-semibold text-terracotta">
+                          <span className="rounded-full bg-terracotta/10 px-2 py-0.5 text-[11px] font-semibold text-terracotta">
                             {strand === "Measurement" ? "3" : strand === "Space" ? "2" : "1"} worksheet{strand === "Algebra" || strand === "Statistics" ? "" : "s"}
                           </span>
                         </div>
@@ -220,8 +221,14 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Diagonal bottom edge */}
-        <div className="absolute bottom-0 left-0 right-0 h-24 bg-cream" style={{ clipPath: "polygon(0 60%, 100% 0%, 100% 100%, 0% 100%)" }} />
+        {/* Fade out gradient effects before wave */}
+        <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-40" style={{ background: "linear-gradient(to bottom, transparent, #235F8B)" }} />
+        {/* Organic wave bottom edge */}
+        <div className="absolute -bottom-px left-0 right-0">
+          <svg viewBox="0 0 1440 80" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" className="block h-16 w-full sm:h-20">
+            <path d="M0 40C240 10 480 60 720 35C960 10 1200 55 1440 30V80H0V40Z" fill="#FAF6F4" />
+          </svg>
+        </div>
       </section>
 
       {/* ── 2. Why Level Up ─────────────────────────────────────── */}
@@ -268,7 +275,7 @@ export default function Home() {
                 <br />
                 We&apos;re just here to help.
               </h3>
-              <p className="mt-3 text-[15px] leading-relaxed text-charcoal-light/85">
+              <p className="mt-3 text-[15px] leading-relaxed text-charcoal-light">
                 You have the passion to teach your child. We use AI to generate
                 the guides, worksheets, and resources to help you do it.
               </p>
@@ -282,7 +289,7 @@ export default function Home() {
 
             {/* Card 2 */}
             <div className="group flex flex-col rounded-2xl border border-charcoal/[0.08] bg-warm-white p-6 shadow-lg shadow-charcoal/[0.03] transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-charcoal/[0.06] sm:p-8">
-              <div className="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-sage/15 text-sage transition-colors duration-300 group-hover:bg-sage group-hover:text-white">
+              <div className="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-eucalyptus/15 text-eucalyptus transition-colors duration-300 group-hover:bg-eucalyptus group-hover:text-white">
                 <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
                   <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
@@ -291,7 +298,7 @@ export default function Home() {
               <h3 className="mt-6 font-display text-xl font-semibold text-charcoal">
                 Clarity over complexity
               </h3>
-              <p className="mt-3 text-[15px] leading-relaxed text-charcoal-light/85">
+              <p className="mt-3 text-[15px] leading-relaxed text-charcoal-light">
                 The Australian Curriculum is world-class, but it wasn&apos;t
                 designed for parents. We transform educator standards into
                 accessible, engaging family resources.
@@ -320,7 +327,7 @@ export default function Home() {
               <h3 className="mt-6 font-display text-xl font-semibold text-charcoal">
                 More signal, less noise.
               </h3>
-              <p className="mt-3 text-[15px] leading-relaxed text-charcoal-light/85">
+              <p className="mt-3 text-[15px] leading-relaxed text-charcoal-light">
                 Guides, worksheets, and resources mapped directly to the
                 Australian Curriculum V9 &mdash; so you get better outcomes,
                 faster, and stay closely aligned.
@@ -334,6 +341,14 @@ export default function Home() {
               </div>
             </div>
           </div>
+        </div>
+        {/* Fade out gradient effects before wave */}
+        <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-40" style={{ background: "linear-gradient(to bottom, transparent, #FAF6F4)" }} />
+        {/* Organic wave → charcoal */}
+        <div className="absolute -bottom-px left-0 right-0">
+          <svg viewBox="0 0 1440 80" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" className="block h-16 w-full sm:h-20">
+            <path d="M0 50C180 20 360 65 600 30C840 -5 1080 50 1440 25V80H0V50Z" fill="#235F8B" />
+          </svg>
         </div>
       </section>
 
@@ -372,17 +387,17 @@ export default function Home() {
               <h3 className="mt-6 font-display text-xl font-semibold text-charcoal">
                 Pick a subject &amp; year level
               </h3>
-              <p className="mt-3 text-[15px] leading-relaxed text-charcoal/60">
+              <p className="mt-3 text-[15px] leading-relaxed text-charcoal/75">
                 Choose your child&apos;s subject and year level. Foundation
                 through Year 10 across Mathematics and English.
               </p>
               <div className="mt-6 flex flex-wrap gap-1.5">
                 {["Foundation", "Year 1", "Year 2", "Year 3"].map((y) => (
-                  <span key={y} className="rounded-full border border-terracotta/20 bg-terracotta/10 px-2.5 py-1 text-[11px] font-semibold text-terracotta">
+                  <span key={y} className="rounded-full border border-terracotta/20 bg-terracotta/10 px-2.5 py-1 text-xs font-semibold text-terracotta">
                     {y}
                   </span>
                 ))}
-                <span className="rounded-full border border-charcoal/10 px-2.5 py-1 text-[11px] font-medium text-charcoal/40">
+                <span className="rounded-full border border-charcoal/10 px-2.5 py-1 text-xs font-medium text-charcoal/55">
                   +7 more
                 </span>
               </div>
@@ -390,21 +405,21 @@ export default function Home() {
 
             {/* Step 2 */}
             <div className="group relative rounded-2xl border border-white/20 bg-white p-6 shadow-xl shadow-black/15 transition-all duration-300 hover:shadow-2xl sm:p-8">
-              <div className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-sage/15 font-display text-xl font-bold text-sage">
+              <div className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-eucalyptus/15 font-display text-xl font-bold text-eucalyptus">
                 2
               </div>
               <h3 className="mt-6 font-display text-xl font-semibold text-charcoal">
                 See exactly what to teach
               </h3>
-              <p className="mt-3 text-[15px] leading-relaxed text-charcoal/60">
+              <p className="mt-3 text-[15px] leading-relaxed text-charcoal/75">
                 Every year level broken down by strand with plain-language
                 objectives. No jargon, no guesswork.
               </p>
-              <div className="mt-6 rounded-lg border border-sage/20 bg-sage/[0.08] p-3">
-                <div className="text-[11px] font-semibold uppercase tracking-wider text-sage">
+              <div className="mt-6 rounded-lg border border-eucalyptus/20 bg-eucalyptus/[0.08] p-3">
+                <div className="text-xs font-semibold uppercase tracking-wider text-eucalyptus">
                   Number &middot; Foundation
                 </div>
-                <div className="mt-1 text-sm text-charcoal/70">
+                <div className="mt-1 text-sm text-charcoal/80">
                   Connect number names, numerals and quantities to at least 20
                 </div>
               </div>
@@ -418,7 +433,7 @@ export default function Home() {
               <h3 className="mt-6 font-display text-xl font-semibold text-charcoal">
                 Print and teach
               </h3>
-              <p className="mt-3 text-[15px] leading-relaxed text-charcoal/60">
+              <p className="mt-3 text-[15px] leading-relaxed text-charcoal/75">
                 Each topic links to free printable worksheets built for
                 repetition and mastery. No screens, no subscriptions.
               </p>
@@ -428,7 +443,7 @@ export default function Home() {
                   <WorksheetObject name="apple" size={28} />
                   <WorksheetObject name="apple" size={28} />
                 </div>
-                <span className="text-sm text-charcoal/40">=</span>
+                <span className="text-sm text-charcoal/55">=</span>
                 <div className="flex h-10 w-10 items-center justify-center rounded-xl border-2 border-dashed border-golden/40 font-display text-lg font-semibold text-golden">
                   3
                 </div>
@@ -436,10 +451,18 @@ export default function Home() {
             </div>
           </div>
         </div>
+        {/* Fade out gradient effects before wave */}
+        <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-40" style={{ background: "linear-gradient(to bottom, transparent, #235F8B)" }} />
+        {/* Organic wave → eucalyptus */}
+        <div className="absolute -bottom-px left-0 right-0">
+          <svg viewBox="0 0 1440 80" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" className="block h-16 w-full sm:h-20">
+            <path d="M0 30C300 55 500 15 750 45C1000 75 1200 20 1440 40V80H0V30Z" fill="#7a9e8b" />
+          </svg>
+        </div>
       </section>
 
       {/* ── 4. Worksheet Showcase ───────────────────────────────── */}
-      <section className="relative overflow-hidden py-20 sm:py-28 lg:py-36" style={{ background: "linear-gradient(170deg, #6b917e 0%, #5d8371 50%, #507564 100%)" }}>
+      <section className="relative overflow-hidden py-20 sm:py-28 lg:py-36" style={{ background: "linear-gradient(170deg, #7a9e8b 0%, #6b917e 40%, #507564 100%)" }}>
         <div className="pointer-events-none absolute inset-0">
           <div className="grain-overlay absolute inset-0 opacity-20" />
           <div
@@ -461,7 +484,7 @@ export default function Home() {
             <h2 className="mt-5 font-display text-3xl font-semibold tracking-tight text-white sm:text-4xl lg:text-5xl">
               {totalWorksheets} free worksheets and counting
             </h2>
-            <p className="mt-4 text-base text-white/75 sm:text-lg">
+            <p className="mt-4 text-base text-white/85 sm:text-lg">
               Curriculum-aligned, AI-generated, and designed for learning
               through repetition. New worksheets added regularly.
             </p>
@@ -478,7 +501,7 @@ export default function Home() {
                 <span className="font-display text-3xl font-semibold text-terracotta sm:text-4xl">
                   {stat.value}
                 </span>
-                <span className="text-xs text-charcoal/70 sm:text-sm">
+                <span className="text-xs text-charcoal/80 sm:text-sm">
                   {stat.label}
                 </span>
               </div>
@@ -506,7 +529,7 @@ export default function Home() {
                         <WorksheetObject key={j} name="star" size={22} />
                       ))}
                     </div>
-                    <span className="text-xs font-medium text-charcoal/50">{row.label}</span>
+                    <span className="text-xs font-medium text-charcoal/65">{row.label}</span>
                   </div>
                 ))}
               </div>
@@ -535,8 +558,8 @@ export default function Home() {
                   <WorksheetObject name="triangle" size={22} />
                   <WorksheetObject name="circle" size={22} />
                   <WorksheetObject name="triangle" size={22} />
-                  <div className="flex h-6 w-6 items-center justify-center rounded-md border-2 border-dashed border-charcoal/20 text-xs text-charcoal/30">?</div>
-                  <div className="flex h-6 w-6 items-center justify-center rounded-md border-2 border-dashed border-charcoal/20 text-xs text-charcoal/30">?</div>
+                  <div className="flex h-6 w-6 items-center justify-center rounded-md border-2 border-dashed border-charcoal/25 text-xs text-charcoal/45">?</div>
+                  <div className="flex h-6 w-6 items-center justify-center rounded-md border-2 border-dashed border-charcoal/25 text-xs text-charcoal/45">?</div>
                 </div>
                 <div className="mt-2 flex items-center gap-1.5">
                   <WorksheetObject name="heart" size={22} />
@@ -544,7 +567,7 @@ export default function Home() {
                   <WorksheetObject name="star" size={22} />
                   <WorksheetObject name="heart" size={22} />
                   <WorksheetObject name="heart" size={22} />
-                  <div className="flex h-6 w-6 items-center justify-center rounded-md border-2 border-dashed border-charcoal/20 text-xs text-charcoal/30">?</div>
+                  <div className="flex h-6 w-6 items-center justify-center rounded-md border-2 border-dashed border-charcoal/25 text-xs text-charcoal/45">?</div>
                 </div>
               </div>
               <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-terracotta">
@@ -574,9 +597,9 @@ export default function Home() {
                       <WorksheetObject name="fish" size={20} />
                       <WorksheetObject name="fish" size={20} />
                     </div>
-                    <span className="text-xs font-medium text-charcoal/50">3</span>
+                    <span className="text-xs font-medium text-charcoal/65">3</span>
                   </div>
-                  <div className="flex h-8 w-8 items-center justify-center rounded-full border-2 border-dashed border-charcoal/20 text-sm font-semibold text-charcoal/30">?</div>
+                  <div className="flex h-8 w-8 items-center justify-center rounded-full border-2 border-dashed border-charcoal/25 text-sm font-semibold text-charcoal/45">?</div>
                   <div className="flex flex-col items-center gap-1">
                     <div className="flex gap-1">
                       <WorksheetObject name="fish" size={20} />
@@ -585,10 +608,10 @@ export default function Home() {
                       <WorksheetObject name="fish" size={20} />
                       <WorksheetObject name="fish" size={20} />
                     </div>
-                    <span className="text-xs font-medium text-charcoal/50">5</span>
+                    <span className="text-xs font-medium text-charcoal/65">5</span>
                   </div>
                 </div>
-                <div className="mt-1 flex justify-center gap-3 text-[11px] text-charcoal/40">
+                <div className="mt-1 flex justify-center gap-3 text-xs text-charcoal/55">
                   <span>more</span>
                   <span>less</span>
                   <span>equal</span>
@@ -614,6 +637,14 @@ export default function Home() {
               </svg>
             </Link>
           </div>
+        </div>
+        {/* Fade out gradient effects before wave */}
+        <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-40" style={{ background: "linear-gradient(to bottom, transparent, #507564)" }} />
+        {/* Organic wave → charcoal */}
+        <div className="absolute -bottom-px left-0 right-0">
+          <svg viewBox="0 0 1440 80" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" className="block h-16 w-full sm:h-20">
+            <path d="M0 45C200 15 450 60 720 25C990 -10 1250 50 1440 35V80H0V45Z" fill="#235F8B" />
+          </svg>
         </div>
       </section>
 
@@ -643,13 +674,13 @@ export default function Home() {
 
         <div className="relative mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
           <div className="text-center">
-            <span className="inline-flex items-center gap-2 rounded-full border border-terracotta/30 bg-terracotta/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-terracotta-light">
+            <span className="inline-flex items-center gap-2 rounded-full border border-terracotta/30 bg-terracotta/10 px-5 py-2 text-sm font-semibold uppercase tracking-wider text-terracotta-light">
               What&apos;s Inside
             </span>
             <h2 className="mt-5 font-display text-3xl font-semibold tracking-tight text-cream sm:text-4xl lg:text-5xl">
               Mathematics and English.<br className="sm:hidden" />{" "}Foundation to Year 10.
             </h2>
-            <p className="mx-auto mt-4 max-w-2xl text-base text-cream/60 sm:text-lg">
+            <p className="mx-auto mt-5 max-w-2xl text-lg leading-relaxed text-cream/90 sm:text-xl">
               Australia&apos;s first home schooling resource built entirely with AI.
               <br />
               Plain-English curriculum guides, printable worksheets, and resources for every year level.
@@ -676,35 +707,43 @@ export default function Home() {
               <Link
                 key={card.subject}
                 href={card.href}
-                className="group relative overflow-hidden rounded-2xl border border-cream/[0.08] bg-cream/[0.04] p-6 backdrop-blur-sm transition-all duration-300 hover:border-cream/15 hover:bg-cream/[0.07] sm:p-8 lg:p-10"
+                className="group relative overflow-hidden rounded-2xl border border-white/20 bg-white p-6 shadow-2xl shadow-black/20 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-black/30 sm:p-8 lg:p-10"
               >
-                {/* Hover glow */}
-                <div className={`absolute -right-20 -top-20 h-[200px] w-[200px] rounded-full bg-${card.accent}/10 opacity-0 blur-3xl transition-opacity duration-500 group-hover:opacity-100`} />
-                <h3 className="relative font-display text-3xl font-semibold text-cream">
+                <h3 className="relative font-display text-3xl font-semibold text-charcoal">
                   {card.subject}
                 </h3>
                 <div className="relative mt-5 flex flex-wrap gap-2">
                   {card.strands.map((s) => (
-                    <span key={s} className="rounded-full bg-cream/[0.08] px-3 py-1.5 text-xs font-medium text-cream/70 transition-colors duration-300 group-hover:bg-cream/[0.12]">
+                    <span key={s} className="rounded-full border border-eucalyptus/20 bg-eucalyptus/10 px-3 py-1.5 text-xs font-semibold text-eucalyptus-dark">
                       {s}
                     </span>
                   ))}
                 </div>
-                <p className="relative mt-5 text-sm text-cream/40">
-                  Foundation &ndash; Year 10
-                </p>
-                <svg
-                  width="20"
-                  height="20"
-                  viewBox="0 0 20 20"
-                  fill="none"
-                  className="absolute bottom-6 right-6 text-cream/10 transition-all duration-300 group-hover:translate-x-1 group-hover:text-terracotta/50 sm:bottom-8 sm:right-8 lg:bottom-10 lg:right-10"
-                >
-                  <path d="M5 10h10m0 0l-4-4m4 4l-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
+                <div className="relative mt-5 flex items-center justify-between">
+                  <p className="text-sm text-charcoal/60">
+                    Foundation &ndash; Year 10
+                  </p>
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 20 20"
+                    fill="none"
+                    className="text-eucalyptus/40 transition-all duration-300 group-hover:translate-x-1 group-hover:text-eucalyptus"
+                  >
+                    <path d="M5 10h10m0 0l-4-4m4 4l-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </div>
               </Link>
             ))}
           </div>
+        </div>
+        {/* Fade out gradient effects before wave */}
+        <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-40" style={{ background: "linear-gradient(to bottom, transparent, #235F8B)" }} />
+        {/* Organic wave → cream */}
+        <div className="absolute -bottom-px left-0 right-0">
+          <svg viewBox="0 0 1440 80" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" className="block h-16 w-full sm:h-20">
+            <path d="M0 35C160 60 400 10 680 45C960 80 1200 15 1440 40V80H0V35Z" fill="#FAF6F4" />
+          </svg>
         </div>
       </section>
 
@@ -716,7 +755,7 @@ export default function Home() {
             className="absolute inset-0"
             style={{
               background:
-                "radial-gradient(ellipse 60% 60% at 50% 50%, rgba(228,156,149,0.20) 0%, transparent 60%), radial-gradient(ellipse 40% 40% at 30% 30%, rgba(250,192,152,0.15) 0%, transparent 40%), radial-gradient(ellipse 40% 40% at 70% 70%, rgba(146,171,211,0.10) 0%, transparent 40%)",
+                "radial-gradient(ellipse 60% 60% at 50% 50%, rgba(228,156,149,0.18) 0%, transparent 60%), radial-gradient(ellipse 40% 40% at 30% 30%, rgba(107,145,126,0.12) 0%, transparent 40%), radial-gradient(ellipse 40% 40% at 70% 70%, rgba(250,192,152,0.12) 0%, transparent 40%)",
             }}
           />
           {/* Dot pattern */}
@@ -724,7 +763,7 @@ export default function Home() {
             className="absolute inset-0 opacity-[0.05]"
             style={{
               backgroundImage:
-                "radial-gradient(circle, #235F8B 1px, transparent 1px)",
+                "radial-gradient(circle, #5d8371 1px, transparent 1px)",
               backgroundSize: "24px 24px",
             }}
           />
@@ -737,7 +776,7 @@ export default function Home() {
           <h2 className="mt-6 font-display text-4xl font-semibold tracking-tight text-charcoal sm:text-5xl lg:text-6xl">
             Australia&apos;s first home schooling resource built entirely with AI.
           </h2>
-          <p className="mx-auto mt-5 max-w-lg text-base text-charcoal-light/85 sm:mt-6 sm:text-lg">
+          <p className="mx-auto mt-5 max-w-lg text-base text-charcoal-light sm:mt-6 sm:text-lg">
             No accounts. No subscriptions. No cost.
             <br />
             Just free, curriculum-aligned guides and worksheets.
