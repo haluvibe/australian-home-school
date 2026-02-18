@@ -102,3 +102,69 @@ See `year2-audit-findings.md` for full details.
 - Year 2 is the FIRST year level where count-objects counts exceed double digits
 - The renderer has no cap or grouping -- it renders every object individually
 - Counts of 100+ in count-objects are unsuitable for the current component
+
+## Year 3 Audit Findings (2026-02-18)
+See `year3-audit-findings.md` for full details.
+
+### Key Data Quality Issues Found
+- Line 798: "Fractions That Make a Whole" -- 4 bonds with BOTH partA and partB null (unsolvable)
+- 28 matching activities with duplicate right-side values (second-worst after Year 4)
+- Line 520: right has TRIPLE duplicate "7" in division matching
+- Line 858: right has TRIPLE duplicate "about $20" in estimation matching
+- Line 1891: Mode/Median/Mean/Range matching -- ALL beyond Year 3 (introduced Year 7)
+- Line 1896: "What percentage scored under 6?" -- percentages beyond Year 3
+- Line 1897-1898: "Find the Mode" and "Find the Mean" activities -- significantly above Year 3
+- Line 1029: "Growing Pattern Sequences" title says "each term grows by same amount" but third seq is x2
+
+### Curriculum Coverage
+- All 19 Year 3 ACARA maths objectives have corresponding worksheets (100% slug coverage)
+- 6 strands: Number (7), Algebra (2), Measurement (4), Space (2), Statistics (2), Probability (2)
+- Total: 1,839 activities across 19 worksheets (~97 per worksheet)
+
+### Learning Guide / Lesson Coverage
+- 0 of 19 worksheets have learningGuide data
+- 0 of 19 worksheets have lesson data
+
+### Cross-Year Pattern Update: Matching Duplicates
+- Year 3 has 28 instances of matching duplicates (second-worst after Year 4 at 14+)
+- Confirmed in ALL audited year levels: Foundation, Year 2, Year 3, Year 4, Year 6
+
+### Cross-Year Pattern: Content Beyond Year Level
+- Year 3 statistics worksheets include Mode, Median, Mean, Range (Year 7 concepts)
+- This is the most severe year-level mismatch found in any audit so far
+- Year 6 also had content pushing beyond level but less dramatically
+
+### Activity Count Methodology Note
+- When counting activities via regex, /type: "..."/ matches prompt type:"lines" and type:"box" too
+- Must filter for known activity types only to get accurate counts
+- Earlier Year 3 estimate of 3,566 was inflated; correct count is 1,839
+
+## Year 10 Audit Findings (2026-02-18)
+See `year10-audit-findings.md` for full details.
+
+### Key Data Quality Issues Found
+- 4 True/False answer key errors (first option marked as correct answer but mathematically WRONG):
+  - L237: "Magnitude 8 = twice magnitude 4" (TRUE, should be FALSE -- 10,000x)
+  - L866: "Exponential growth = same amount added" (TRUE, should be FALSE -- that's linear)
+  - L868: "Compound > simple always" (TRUE, should be FALSE at n=1)
+  - L869: "Negative base exponential" (TRUE, should be FALSE at Year 10)
+- 8 matching activities with duplicate right-side values
+- 1 ACARA objective missing worksheetSlug: "Compare distributions of continuous data"
+
+### Curriculum Coverage
+- 15 of 16 ACARA objectives have worksheetSlugs (93.75% coverage)
+- 6 strands: Number (2), Algebra (3), Measurement (4), Space (2), Statistics (4), Probability (2)
+- 12 worksheets with 695 activities (avg ~58 per worksheet)
+
+### Pedagogical Patterns
+- Easy -> Medium -> Hard progression (consistent with all year levels)
+- Heavy use of open-response (252 activities) -- appropriate for Year 10
+- Some content extends beyond Year 10 (Sine/Cosine Rule, Bayes, Permutations)
+- Rule of 72 vs Rule of 70 inconsistency within same worksheet
+- 23 tally-chart activities feel juvenile for Year 10 students
+
+### Cross-Year Pattern Updates
+- Matching duplicates: 8 instances in Year 10 (LESS than Year 3/4 but still present)
+- True/False errors: NEW pattern not seen in other year levels
+- Learning guide/lesson gap: 0/12 for both -- consistent with Years 2-6
+- No inappropriate activity types (number-trace, count-objects etc.) -- correct

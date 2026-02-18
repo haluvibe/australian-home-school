@@ -328,6 +328,11 @@
             "example": "surveying favourite sports, making a bar graph, and saying 'soccer was the most popular'",
             "khanAcademyUrl": "https://www.khanacademy.org/math/cc-2nd-grade-math/cc-2nd-measurement-data/cc-2nd-bar-graphs/e/reading-bar-graphs-1",
             "worksheetSlug": "categorical-data-bar-graphs"
+          },
+          {
+            "description": "Collect data in response to questions and interpret results",
+            "example": "conducting a class survey, recording tallies, and explaining what the data shows",
+            "worksheetSlug": "data-collection-and-interpretation"
           }
         ]
       }
@@ -1340,7 +1345,8 @@
           },
           {
             "description": "Compare distributions of continuous numerical data using various displays",
-            "example": "using box plots to compare marathon times between age groups"
+            "example": "using box plots to compare marathon times between age groups",
+            "worksheetSlug": "media-bias-statistical-analysis"
           }
         ]
       },

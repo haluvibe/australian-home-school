@@ -23,23 +23,23 @@ export const year2MathsWorksheets: WorksheetItem[] = [
         numbers: [210, 235, 256, 278, 300],
       },
       {
-        type: "count-objects",
-        title: "Count the Stars (100s)",
-        instruction: "Count the stars in each row. Write the number in the box.",
-        rows: [
-          { object: "star", count: 100 },
-          { object: "star", count: 120 },
-          { object: "star", count: 150 },
+        type: "open-response",
+        title: "Write the Numbers (100–200)",
+        instruction: "Write each number in the box and read it aloud. Then use blocks or counters to show the hundreds, tens and ones.",
+        prompts: [
+          { text: "Write 100 in digits. How many hundreds, tens and ones?", type: "box" },
+          { text: "Write 120 in digits. How many tens are in 120?", type: "box" },
+          { text: "Write 150 in digits. Is 150 closer to 100 or 200?", type: "box" },
         ],
       },
       {
-        type: "count-objects",
-        title: "Count the Apples (100s)",
-        instruction: "Count the apples in each row. Write the total.",
-        rows: [
-          { object: "apple", count: 110 },
-          { object: "apple", count: 140 },
-          { object: "apple", count: 200 },
+        type: "open-response",
+        title: "Write the Numbers (100–200) Part 2",
+        instruction: "Write each number and complete the sentences.",
+        prompts: [
+          { text: "110 = ___ hundred and ___ tens", type: "lines", lines: 1 },
+          { text: "140 = ___ hundred and ___ tens", type: "lines", lines: 1 },
+          { text: "200 = ___ hundreds, ___ tens, ___ ones", type: "lines", lines: 1 },
         ],
       },
       {
@@ -157,13 +157,13 @@ export const year2MathsWorksheets: WorksheetItem[] = [
         ],
       },
       {
-        type: "count-objects",
-        title: "Count the Hearts (Big Groups)",
-        instruction: "Count the hearts carefully. Write the total.",
-        rows: [
-          { object: "heart", count: 130 },
-          { object: "heart", count: 175 },
-          { object: "heart", count: 250 },
+        type: "open-response",
+        title: "Numbers 130 to 250",
+        instruction: "Write each number and answer the questions.",
+        prompts: [
+          { text: "130 = ___ hundreds, ___ tens, ___ ones", type: "lines", lines: 1 },
+          { text: "175 = ___ hundreds, ___ tens, ___ ones", type: "lines", lines: 1 },
+          { text: "250 = ___ hundreds, ___ tens, ___ ones", type: "lines", lines: 1 },
         ],
       },
       {
@@ -191,13 +191,13 @@ export const year2MathsWorksheets: WorksheetItem[] = [
         numbers: [525, 563, 600, 647, 700],
       },
       {
-        type: "count-objects",
-        title: "Count the Flowers (300s–500s)",
-        instruction: "Count the flowers in each row. Write the total.",
-        rows: [
-          { object: "flower", count: 310 },
-          { object: "flower", count: 425 },
-          { object: "flower", count: 500 },
+        type: "open-response",
+        title: "Numbers 310 to 500",
+        instruction: "Write each number in expanded form (hundreds + tens + ones).",
+        prompts: [
+          { text: "310 = ___ + ___ + ___", type: "lines", lines: 1 },
+          { text: "425 = ___ + ___ + ___", type: "lines", lines: 1 },
+          { text: "500 = ___ + ___ + ___", type: "lines", lines: 1 },
         ],
       },
       {
@@ -299,13 +299,13 @@ export const year2MathsWorksheets: WorksheetItem[] = [
         ],
       },
       {
-        type: "count-objects",
-        title: "Count the Butterflies (Medium)",
-        instruction: "Count each group carefully. Write the total.",
-        rows: [
-          { object: "butterfly", count: 350 },
-          { object: "butterfly", count: 475 },
-          { object: "butterfly", count: 600 },
+        type: "open-response",
+        title: "Numbers 350 to 600",
+        instruction: "Write each number in expanded form and say it aloud.",
+        prompts: [
+          { text: "350 = ___ hundreds + ___ tens + ___ ones", type: "lines", lines: 1 },
+          { text: "475 = ___ hundreds + ___ tens + ___ ones", type: "lines", lines: 1 },
+          { text: "600 = ___ hundreds + ___ tens + ___ ones", type: "lines", lines: 1 },
         ],
       },
       {
@@ -343,13 +343,13 @@ export const year2MathsWorksheets: WorksheetItem[] = [
         numbers: [915, 950, 975, 990, 1000],
       },
       {
-        type: "count-objects",
-        title: "Count the Diamonds (Large Numbers)",
-        instruction: "Count each group. Write the total.",
-        rows: [
-          { object: "diamond", count: 750 },
-          { object: "diamond", count: 825 },
-          { object: "diamond", count: 999 },
+        type: "open-response",
+        title: "Numbers 750 to 999",
+        instruction: "Write each number in words and in expanded form.",
+        prompts: [
+          { text: "750 in words: ___. Expanded: ___ + ___ + ___", type: "lines", lines: 1 },
+          { text: "825 in words: ___. Expanded: ___ + ___ + ___", type: "lines", lines: 1 },
+          { text: "999 in words: ___. Expanded: ___ + ___ + ___", type: "lines", lines: 1 },
         ],
       },
       {
@@ -551,7 +551,7 @@ export const year2MathsWorksheets: WorksheetItem[] = [
         sequences: [
           { items: [500, 505, 0, 515, 520], answer: [510] },
           { items: [560, 0, 570, 575, 0], answer: [565, 580] },
-          { items: [0, 990, 995, 0, 1000], answer: [985, 1000] },
+          { items: [0, 990, 995, 0, 1005], answer: [985, 1000] },
         ],
       },
       {
@@ -715,6 +715,7 @@ export const year2MathsWorksheets: WorksheetItem[] = [
         type: "open-response",
         title: "Round to the Nearest 100",
         instruction: "Round each number to the nearest hundred.",
+        parentTip: "Extension activity — rounding is a Year 3 skill. Use this for enrichment if your child is ready.",
         prompts: [
           { text: "345 rounded to nearest 100 = ___", type: "lines", lines: 1 },
           { text: "672 rounded to nearest 100 = ___", type: "lines", lines: 1 },
@@ -727,16 +728,17 @@ export const year2MathsWorksheets: WorksheetItem[] = [
         title: "Nearest Hundred",
         instruction: "Circle the nearest hundred.",
         questions: [
-          { prompt: "Which hundred is 378 closest to?", options: ["300", "400", "350"] },
+          { prompt: "Which hundred is 378 closest to?", options: ["200", "300", "400"] },
           { prompt: "Which hundred is 512 closest to?", options: ["400", "500", "600"] },
-          { prompt: "Which hundred is 749 closest to?", options: ["700", "750", "800"] },
-          { prompt: "Which hundred is 950 closest to?", options: ["900", "1000", "950"] },
+          { prompt: "Which hundred is 749 closest to?", options: ["600", "700", "800"] },
+          { prompt: "Which hundred is 950 closest to?", options: ["800", "900", "1000"] },
         ],
       },
       {
         type: "matching",
         title: "Match to the Nearest 10",
         instruction: "Match each number to the nearest ten.",
+        parentTip: "Extension activity — rounding is a Year 3 skill. Use this for enrichment if your child is ready.",
         left: ["213", "487", "655", "991"],
         right: ["990", "210", "490", "660"],
       },
@@ -754,6 +756,7 @@ export const year2MathsWorksheets: WorksheetItem[] = [
         type: "circle-correct",
         title: "Even or Odd?",
         instruction: "Circle EVEN or ODD for each number.",
+        parentTip: "Extension activity — odd/even classification is not an explicit Year 2 ACARA objective. Use for enrichment if your child is ready.",
         questions: [
           { prompt: "356", options: ["Even", "Odd"] },
           { prompt: "743", options: ["Even", "Odd"] },
@@ -765,6 +768,7 @@ export const year2MathsWorksheets: WorksheetItem[] = [
         type: "sorting",
         title: "Even and Odd Numbers",
         instruction: "Sort these 3-digit numbers into even and odd.",
+        parentTip: "Extension activity — odd/even classification is not an explicit Year 2 ACARA objective. Use for enrichment if your child is ready.",
         columns: ["Even", "Odd"],
         items: [
           { label: "234" },
@@ -1168,25 +1172,25 @@ export const year2MathsWorksheets: WorksheetItem[] = [
       },
       // ─── Medium: Three-digit place value ───
       {
-        type: "count-objects",
-        title: "Count Hundreds, Tens and Ones",
-        instruction: "Count the hundred blocks, ten rods and single ones. Write the total.",
-        rows: [
-          { object: "square", count: 135 },
-          { object: "square", count: 247 },
-          { object: "square", count: 308 },
-          { object: "square", count: 460 },
+        type: "open-response",
+        title: "Represent Three-Digit Numbers",
+        instruction: "For each number, write how many hundreds, tens and ones. Draw base-ten blocks if you can.",
+        prompts: [
+          { text: "135 = ___ hundreds, ___ tens, ___ ones", type: "lines", lines: 1 },
+          { text: "247 = ___ hundreds, ___ tens, ___ ones", type: "lines", lines: 1 },
+          { text: "308 = ___ hundreds, ___ tens, ___ ones", type: "lines", lines: 1 },
+          { text: "460 = ___ hundreds, ___ tens, ___ ones", type: "lines", lines: 1 },
         ],
       },
       {
-        type: "count-objects",
-        title: "More Hundreds, Tens and Ones",
-        instruction: "Count carefully and write the total.",
-        rows: [
-          { object: "star", count: 152 },
-          { object: "star", count: 319 },
-          { object: "star", count: 504 },
-          { object: "star", count: 270 },
+        type: "open-response",
+        title: "More Three-Digit Numbers",
+        instruction: "Write the expanded form for each number.",
+        prompts: [
+          { text: "152 = ___ + ___ + ___", type: "lines", lines: 1 },
+          { text: "319 = ___ + ___ + ___", type: "lines", lines: 1 },
+          { text: "504 = ___ + ___ + ___", type: "lines", lines: 1 },
+          { text: "270 = ___ + ___ + ___", type: "lines", lines: 1 },
         ],
       },
       {
@@ -1870,8 +1874,8 @@ export const year2MathsWorksheets: WorksheetItem[] = [
         type: "matching",
         title: "Match Additions to Answers (to 10)",
         instruction: "Draw a line to match each addition to its answer.",
-        left: ["4 + 6", "3 + 5", "7 + 2", "1 + 9"],
-        right: ["9", "10", "8", "10"],
+        left: ["4 + 6", "3 + 5", "7 + 2", "2 + 9"],
+        right: ["9", "10", "8", "11"],
       },
       {
         type: "circle-correct",
@@ -1948,8 +1952,8 @@ export const year2MathsWorksheets: WorksheetItem[] = [
         type: "matching",
         title: "Match Additions to Answers (11–15)",
         instruction: "Draw a line to match each addition to its answer.",
-        left: ["9 + 4", "7 + 8", "6 + 5", "8 + 5"],
-        right: ["11", "13", "13", "15"],
+        left: ["7 + 5", "7 + 8", "6 + 5", "8 + 5"],
+        right: ["12", "15", "11", "13"],
       },
       {
         type: "circle-correct",
@@ -2033,11 +2037,15 @@ export const year2MathsWorksheets: WorksheetItem[] = [
         ],
       },
       {
-        type: "matching",
+        type: "circle-correct",
         title: "Match Subtractions (10–15)",
-        instruction: "Draw a line to match each subtraction to its answer.",
-        left: ["12 − 5", "14 − 6", "11 − 3", "15 − 7"],
-        right: ["8", "7", "8", "8"],
+        instruction: "Circle the correct answer for each subtraction.",
+        questions: [
+          { prompt: "12 − 5 = ?", options: ["6", "7", "8"] },
+          { prompt: "14 − 6 = ?", options: ["7", "8", "9"] },
+          { prompt: "11 − 3 = ?", options: ["7", "8", "9"] },
+          { prompt: "15 − 7 = ?", options: ["7", "8", "9"] },
+        ],
       },
       {
         type: "circle-correct",
@@ -2265,11 +2273,18 @@ export const year2MathsWorksheets: WorksheetItem[] = [
         ],
       },
       {
-        type: "matching",
-        title: "Match Equal Additions",
-        instruction: "Match additions that give the same answer.",
-        left: ["8 + 6", "9 + 5", "7 + 7", "10 + 4"],
-        right: ["14", "14", "14", "14"],
+        type: "sorting",
+        title: "Sort: Equals 14 or Not?",
+        instruction: "Sort these additions. Which ones equal 14?",
+        columns: ["Equals 14", "Does not equal 14"],
+        items: [
+          { label: "8 + 6" },
+          { label: "9 + 5" },
+          { label: "7 + 7" },
+          { label: "10 + 4" },
+          { label: "6 + 9" },
+          { label: "8 + 7" },
+        ],
       },
       {
         type: "sorting",
@@ -3155,6 +3170,7 @@ export const year2MathsWorksheets: WorksheetItem[] = [
         type: "sequence",
         title: "Doubling Chain",
         instruction: "Each number is double the one before. Fill in the missing numbers.",
+        parentTip: "Extension activity — doubling chains beyond ×2 facts extend into Year 3 territory. Use for enrichment if your child is ready.",
         sequences: [
           { items: [1, 2, 0, 8, 16], answer: [4] },
           { items: [3, 0, 12, 24, 0], answer: [6, 48] },
@@ -3532,8 +3548,8 @@ export const year2MathsWorksheets: WorksheetItem[] = [
         type: "matching",
         title: "Match Items to Their Cost",
         instruction: "Match each item to how much it costs.",
-        left: ["Pencil 50c + Ruler 50c", "3 apples at $2 each", "Book $4 + Pen $3", "2 drinks at $3 each"],
-        right: ["$6", "$1", "$7", "$6"],
+        left: ["Pencil 50c + Ruler 50c", "3 apples at $2 each", "Book $4 + Pen $3", "2 drinks at $2 each"],
+        right: ["$6", "$1", "$7", "$4"],
       },
       {
         type: "open-response",
@@ -3706,8 +3722,8 @@ export const year2MathsWorksheets: WorksheetItem[] = [
         type: "matching",
         title: "Match Change Amounts",
         instruction: "Match the price and money given to the correct change.",
-        left: ["Pay $10, costs $6", "Pay $5, costs $3", "Pay $20, costs $14", "Pay $10, costs $4"],
-        right: ["$2", "$4", "$6", "$6"],
+        left: ["Pay $10, costs $6", "Pay $5, costs $3", "Pay $20, costs $14", "Pay $10, costs $3"],
+        right: ["$4", "$2", "$6", "$7"],
       },
       {
         type: "number-bonds",
@@ -4275,6 +4291,39 @@ export const year2MathsWorksheets: WorksheetItem[] = [
           { text: "A rope is 24 metres long. An eighth of it is cut off. How long is the piece cut off?", type: "lines", lines: 2 },
           { text: "Half of the 20 children in the class are girls. How many boys are there?", type: "lines", lines: 2 },
         ],
+      },
+      {
+        type: "open-response",
+        title: "Halves in Real Life",
+        instruction: "Think about cutting or sharing things in real life. Draw and write your answers.",
+        prompts: [
+          { text: "You have a 20 cm ribbon. You cut it in half. How long is each piece?", type: "box" },
+          { text: "A water bottle holds 500 mL. You drink half. How much is left?", type: "box" },
+          { text: "A loaf of bread is 40 cm long. Dad cuts it in half for sandwiches. How long is each half?", type: "box" },
+        ],
+        parentTip: "Use a real ruler or measuring tape to act out the ribbon problem. This connects fractions to measurement.",
+      },
+      {
+        type: "open-response",
+        title: "Quarters in Real Life",
+        instruction: "Answer these questions about sharing into quarters.",
+        prompts: [
+          { text: "A 1-metre string is cut into 4 equal pieces. How long is each piece?", type: "box" },
+          { text: "A jug holds 1 litre (1000 mL). You pour out a quarter. How many mL did you pour?", type: "box" },
+          { text: "A pizza is cut into 4 equal slices. If you eat 1 slice, what fraction have you eaten?", type: "box" },
+        ],
+        parentTip: "Use a real piece of string and a ruler to act out the string problem together.",
+      },
+      {
+        type: "open-response",
+        title: "Eighths in Real Life",
+        instruction: "Some things can be split into 8 equal parts. Try these.",
+        prompts: [
+          { text: "A sandwich is cut into 8 equal squares. You eat 2 squares. What fraction is left?", type: "box" },
+          { text: "A 16 cm piece of ribbon is cut into 8 equal pieces. How long is each piece?", type: "box" },
+          { text: "Mum has a 24-piece chocolate bar. She splits it equally into 8 portions. How many pieces in each portion?", type: "box" },
+        ],
+        parentTip: "Fold a piece of paper in half, then in half again, then again to show eighths physically.",
       },
       {
         type: "home-activity",
@@ -5879,8 +5928,8 @@ export const year2MathsWorksheets: WorksheetItem[] = [
         type: "matching",
         title: "Match Patterns to Their Missing Numbers",
         instruction: "Match each pattern to the number that fills the blank.",
-        left: ["4, 8, ___, 16", "25, ___, 15, 10", "6, ___, 18, 24", "90, 80, ___, 60"],
-        right: ["20", "12", "70", "12"],
+        left: ["4, 8, ___, 16", "25, ___, 15, 10", "7, ___, 21, 28", "90, 80, ___, 60"],
+        right: ["20", "12", "70", "14"],
       },
       {
         type: "count-objects",
@@ -6154,8 +6203,8 @@ export const year2MathsWorksheets: WorksheetItem[] = [
         type: "matching",
         title: "Match Length Differences",
         instruction: "Match each pair to the difference in their lengths.",
-        left: ["8 cubes and 5 cubes", "12 cubes and 7 cubes", "15 cubes and 10 cubes", "20 cubes and 14 cubes"],
-        right: ["6 cubes", "3 cubes", "5 cubes", "5 cubes"],
+        left: ["8 cubes and 5 cubes", "12 cubes and 7 cubes", "15 cubes and 11 cubes", "20 cubes and 14 cubes"],
+        right: ["6 cubes", "3 cubes", "5 cubes", "4 cubes"],
       },
       {
         type: "open-response",
@@ -7468,11 +7517,15 @@ export const year2MathsWorksheets: WorksheetItem[] = [
         ],
       },
       {
-        type: "matching",
+        type: "circle-correct",
         title: "Match Months to Days",
-        instruction: "Match each month to how many days it has.",
-        left: ["January", "February", "June", "March"],
-        right: ["31 days", "30 days", "28 or 29 days", "31 days"],
+        instruction: "Circle the correct number of days for each month.",
+        questions: [
+          { prompt: "January", options: ["28 days", "30 days", "31 days"] },
+          { prompt: "February (most years)", options: ["28 days", "29 days", "30 days"] },
+          { prompt: "June", options: ["29 days", "30 days", "31 days"] },
+          { prompt: "March", options: ["28 days", "30 days", "31 days"] },
+        ],
       },
       {
         type: "sequence",
@@ -8425,8 +8478,8 @@ export const year2MathsWorksheets: WorksheetItem[] = [
         type: "matching",
         title: "Match 3D Shape to its Face Shape",
         instruction: "Match each 3D shape to the 2D shape that forms its face.",
-        left: ["Cube", "Cylinder", "Cone", "Pyramid"],
-        right: ["Circle", "Square", "Triangle", "Square"],
+        left: ["Cube", "Triangular Prism", "Cone", "Pyramid"],
+        right: ["Square", "Rectangle", "Circle", "Triangle"],
       },
       {
         type: "circle-correct",
@@ -10233,8 +10286,8 @@ export const year2MathsWorksheets: WorksheetItem[] = [
         type: "matching",
         title: "Match Categories to Totals",
         instruction: "Match each category to its total.",
-        left: ["Red: 4, Blue: 6", "Dogs: 7, Cats: 3", "Summer: 8, Winter: 4", "Apples: 5, Pears: 7"],
-        right: ["12 total", "12 total", "10 total", "10 total"],
+        left: ["Red: 4, Blue: 6", "Dogs: 7, Cats: 4", "Summer: 8, Winter: 5", "Apples: 5, Pears: 7"],
+        right: ["11 total", "10 total", "13 total", "12 total"],
       },
       {
         type: "number-bonds",
@@ -10499,6 +10552,151 @@ export const year2MathsWorksheets: WorksheetItem[] = [
           { name: "Square (grid cell)", sides: 4 },
           { name: "Triangle (arrow)", sides: 3 },
         ],
+      },
+    ],
+  },
+  // ── WS 16: Data Collection & Interpretation ─────────────────────────
+  {
+    slug: "data-collection-and-interpretation",
+    title: "Data Collection & Interpretation",
+    strand: "Statistics",
+    description: "Collect, organise and interpret categorical data in response to questions",
+    activities: [
+      // ─── Easy: Collecting data ───
+      {
+        type: "tally-chart",
+        title: "Class Survey: Favourite Season",
+        instruction: "Ask 10 people (family or classmates) which season they like best. Record each answer with a tally mark.",
+        categories: [
+          { label: "Summer", icon: "sun", count: 0 },
+          { label: "Autumn", icon: "tree", count: 0 },
+          { label: "Winter", icon: "star", count: 0 },
+          { label: "Spring", icon: "flower", count: 0 },
+        ],
+        parentTip: "Help your child conduct this survey by asking family members or friends. Count the tallies together.",
+      },
+      {
+        type: "open-response",
+        title: "Plan Your Survey Question",
+        instruction: "Think of a question you could ask your friends or family. Write it down.",
+        prompts: [
+          { text: "My survey question is:", type: "lines", lines: 2 },
+          { text: "I will ask ___ people. I want to find out:", type: "lines", lines: 2 },
+          { text: "I think the most popular answer will be:", type: "box" },
+        ],
+        parentTip: "Encourage your child to think of a genuine question they are curious about — favourite food, pet, sport, etc.",
+      },
+      {
+        type: "tally-chart",
+        title: "My Own Survey",
+        instruction: "Conduct your survey from above. Record the results here as tally marks.",
+        categories: [
+          { label: "Answer 1", icon: "star", count: 0 },
+          { label: "Answer 2", icon: "heart", count: 0 },
+          { label: "Answer 3", icon: "circle", count: 0 },
+          { label: "Answer 4", icon: "square", count: 0 },
+        ],
+        parentTip: "This open-ended survey gives children ownership of their statistical investigation.",
+      },
+      // ─── Medium: Representing data ───
+      {
+        type: "picture-graph",
+        title: "What Are We Reading?",
+        instruction: "This picture graph shows what types of books Year 2 students are reading. Answer the questions below.",
+        rows: [
+          { label: "Picture books", icon: "book", count: 7 },
+          { label: "Chapter books", icon: "book", count: 4 },
+          { label: "Comics", icon: "book", count: 6 },
+          { label: "Non-fiction", icon: "book", count: 3 },
+        ],
+        questions: [
+          "Which type of book is most popular?",
+          "How many more students read picture books than chapter books?",
+          "How many students were surveyed in total?",
+          "Which type of book is least popular?",
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Reading the Graph",
+        instruction: "Use the picture graph above to answer these questions in full sentences.",
+        prompts: [
+          { text: "The most popular type of book is ___ because ___", type: "lines", lines: 2 },
+          { text: "If 2 more students started reading comics, the new total would be:", type: "box" },
+          { text: "What question do you think the students were asked to create this graph?", type: "lines", lines: 2 },
+        ],
+      },
+      {
+        type: "sorting",
+        title: "Sort the Data",
+        instruction: "Sort these items into the correct category based on how they would be collected as data.",
+        columns: ["You can count it", "You cannot count it"],
+        items: [
+          { label: "Number of books read", icon: "book" },
+          { label: "Favourite colour", icon: "circle" },
+          { label: "Number of pets at home", icon: "cat" },
+          { label: "Best sport", icon: "ball" },
+          { label: "Number of siblings", icon: "butterfly" },
+          { label: "Favourite food", icon: "apple" },
+        ],
+      },
+      // ─── Hard: Interpreting data ───
+      {
+        type: "tally-chart",
+        title: "Playground Equipment Survey",
+        instruction: "20 students were asked: \"What is your favourite playground equipment?\" Count the tallies and answer the questions.",
+        categories: [
+          { label: "Swing", icon: "butterfly", count: 8 },
+          { label: "Slide", icon: "triangle", count: 5 },
+          { label: "Climbing frame", icon: "square", count: 4 },
+          { label: "Sandpit", icon: "bucket", count: 3 },
+        ],
+        parentTip: "Ask your child to explain what each tally mark means and why we group them in fives.",
+      },
+      {
+        type: "open-response",
+        title: "What Does the Data Tell Us?",
+        instruction: "Use the playground survey to answer these questions.",
+        prompts: [
+          { text: "How many students chose the swing OR the slide? Show your working.", type: "box" },
+          { text: "If 5 more students join the survey and they all choose the climbing frame, what is the new climbing frame total?", type: "box" },
+          { text: "What does this data tell the school about what equipment students enjoy?", type: "lines", lines: 3 },
+          { text: "Is this a fair survey? Why or why not?", type: "lines", lines: 2 },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "True or False?",
+        instruction: "Circle TRUE or FALSE for each statement about the playground survey.",
+        questions: [
+          { prompt: "More students chose the swing than any other equipment.", options: ["TRUE", "FALSE"] },
+          { prompt: "The slide and sandpit together have the same total as the swing.", options: ["TRUE", "FALSE"] },
+          { prompt: "Exactly half the students chose the swing.", options: ["TRUE", "FALSE"] },
+          { prompt: "The sandpit was the least popular choice.", options: ["TRUE", "FALSE"] },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Plan Your Own Graph",
+        instruction: "Plan a bar graph you could draw for your survey results.",
+        prompts: [
+          { text: "My graph title:", type: "box" },
+          { text: "The categories (what I am measuring) are:", type: "lines", lines: 2 },
+          { text: "The tallest bar will be for ___ because:", type: "lines", lines: 2 },
+          { text: "One thing my data shows that surprised me:", type: "lines", lines: 2 },
+        ],
+      },
+      {
+        type: "home-activity",
+        title: "Data Detectives at Home",
+        instruction: "Be a data detective! Collect and record real data in your home.",
+        suggestions: [
+          "Count how many of each type of food are in your pantry (tins, packets, fresh). Make a tally chart.",
+          "Survey your family: what is your favourite meal? Record results and decide which meal wins.",
+          "Count the colours of cars that drive past your house in 10 minutes. Which colour is most common?",
+          "Look at a page in a book. Count how many times each vowel (A, E, I, O, U) appears. Which vowel is most common?",
+        ],
+        parentTip: "Data collection at home makes statistics feel real and purposeful. Encourage your child to ask their own questions and display the results.",
       },
     ],
   },
