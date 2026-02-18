@@ -211,6 +211,12 @@ export interface LessonPart {
   action?: string; // What to DO
 }
 
+export interface LessonResource {
+  title: string;
+  url: string;
+  description: string;
+}
+
 export interface Lesson {
   title: string;
   objective: string;
@@ -218,6 +224,9 @@ export interface Lesson {
   intro: LessonPart;
   mainActivity: LessonPart;
   wrapUp: LessonPart;
+  parentTip?: string;
+  extension?: string;
+  resources?: LessonResource[];
 }
 
 export interface WorksheetItem {
@@ -228,4 +237,5 @@ export interface WorksheetItem {
   learningGuide?: LearningGuide;
   lesson?: Lesson;
   activities: ActivityData[];
+  nextSteps?: string[];
 }

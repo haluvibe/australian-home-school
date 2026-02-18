@@ -30,6 +30,13 @@ export const year9MathsWorksheets: WorksheetItem[] = [
         script: "A square paddock has an area of 50 square metres. What is the exact length of one side? Write it as a simplified surd.",
         action: "Child writes: side = sqrt(50) = 5 sqrt(2) metres. Ask them to explain why this cannot be written as a fraction. If they can also estimate 5 sqrt(2) is approximately 5 x 1.41 = 7.07 metres, they are well-prepared for the worksheet.",
       },
+      parentTip: "At Year 9, students are expected to simplify surds — a step up from Year 8 classification tasks. If your teenager can classify numbers confidently but struggles to simplify, check whether they know their perfect square times tables up to at least 144. That knowledge is the prerequisite. Encourage independent work on estimation tasks especially; estimation builds mathematical intuition that calculators cannot replace.",
+      extension: "Investigate the convergents of the continued fraction for sqrt(2): the sequence 1/1, 3/2, 7/5, 17/12, 41/29, 99/70... Each fraction is closer to sqrt(2) than the last. Calculate the first six convergents and verify by squaring each one. Find the rule for generating the next term from the previous two. This connects to AC9M9N01 and introduces the idea of rational approximation to irrational numbers.",
+      resources: [
+        { title: "Irrational Numbers — Khan Academy", url: "https://www.khanacademy.org/math/algebra/x2f8bb11595b61c86:irrational-numbers", description: "Lessons on classifying, simplifying and comparing irrational numbers and surds." },
+        { title: "Surds — Maths is Fun", url: "https://www.mathsisfun.com/surds.html", description: "Clear explanation of surds with simplification techniques and worked examples." },
+        { title: "NRICH Surds Problems", url: "https://nrich.maths.org/surds", description: "Challenging surd problems and investigations suitable for Year 9 students." },
+      ],
     },
     activities: [
       {
@@ -177,6 +184,7 @@ export const year9MathsWorksheets: WorksheetItem[] = [
         ],
       },
     ],
+    nextSteps: ["scientific-notation"],
   },
 
   {
@@ -207,6 +215,13 @@ export const year9MathsWorksheets: WorksheetItem[] = [
         script: "Light travels at 3 times 10 to the 8 metres per second. The distance from Earth to the Sun is 1.5 times 10 to the 11 metres. How many seconds does it take for light to travel from the Sun to Earth? Show me your calculation in scientific notation.",
         action: "Child calculates: time = distance / speed = (1.5 x 10^11) / (3 x 10^8) = 0.5 x 10^3 = 5 x 10^2 = 500 seconds. If they struggle with the division, show them: 1.5 / 3 = 0.5, then 10^11 / 10^8 = 10^3, then rewrite 0.5 x 10^3 as 5 x 10^2. This confirms they are ready for the worksheet.",
       },
+      parentTip: "Scientific notation is conceptually straightforward but students often make sign errors with the exponent, confusing very large and very small numbers. A useful check: if the original number is greater than 1, the exponent is positive; if it is between 0 and 1, the exponent is negative. Have your teenager state this rule aloud before every conversion until it becomes automatic. Real-world contexts like the size of a virus or the distance to a star make the notation feel purposeful.",
+      extension: "Research five measurements that span the full range of scientific notation: the diameter of a proton (about 10^-15 m), the wavelength of visible light (about 10^-7 m), the height of a person (about 10^0 m), the distance to the Moon (about 10^8 m), and the distance to the nearest star (about 10^16 m). Create a logarithmic scale diagram showing all five on a single number line, each labelled with scientific notation. This connects to AC9M9N02.",
+      resources: [
+        { title: "Scientific Notation — Khan Academy", url: "https://www.khanacademy.org/math/algebra/x2f8bb11595b61c86:scientific-notation", description: "Comprehensive lessons on writing, converting and calculating with scientific notation." },
+        { title: "Scientific Notation — Maths is Fun", url: "https://www.mathsisfun.com/numbers/scientific-notation.html", description: "Step-by-step guide to scientific notation with a converter tool and worked examples." },
+        { title: "GeoGebra Calculator", url: "https://www.geogebra.org/calculator", description: "Use GeoGebra to perform and verify scientific notation calculations." },
+      ],
     },
     activities: [
       {
@@ -346,6 +361,7 @@ export const year9MathsWorksheets: WorksheetItem[] = [
         ],
       },
     ],
+    nextSteps: ["exponent-laws"],
   },
 
   {
@@ -376,6 +392,13 @@ export const year9MathsWorksheets: WorksheetItem[] = [
         script: "Simplify this: (3x squared y) times (2x cubed y to the 4). Tell me what you multiply first, then how you handle the exponents.",
         action: "Child works: 3 x 2 = 6 (coefficients), x^2 x x^3 = x^5 (add exponents), y x y^4 = y^5. Answer: 6x^5 y^5. If they hesitate on the coefficients, remind them: coefficients are just numbers, they multiply normally. Once they can handle a multi-variable expression fluently, they are ready for the worksheet.",
       },
+      parentTip: "Year 9 exponent work involves more complex combinations of laws, and this is where students who memorised rules without understanding start to struggle. If your teenager makes systematic errors, ask them to rebuild the rule from scratch using a specific numerical example — for instance, show why a^m divided by a^n equals a^(m-n) using 2^5 divided by 2^3. This reconstruction habit is more durable than re-memorising the rule.",
+      extension: "Use Desmos to graph y = 2^x, y = 3^x and y = (1/2)^x on the same axes. Write observations about what changes and what stays the same across the three graphs. Then investigate: what value of the base makes the graph steepest for x greater than 0? What happens when the base is between 0 and 1? Predict the shape of y = (0.1)^x before graphing it. This connects to AC9M9A03 and exploration with digital tools.",
+      resources: [
+        { title: "Exponent Rules — Khan Academy", url: "https://www.khanacademy.org/math/algebra/x2f8bb11595b61c86:exponents-radicals", description: "In-depth lessons on all exponent laws including negative and fractional exponents." },
+        { title: "Exponent Laws — Maths is Fun", url: "https://www.mathsisfun.com/algebra/exponent-laws.html", description: "Visual summary of exponent laws with worked examples and practice exercises." },
+        { title: "Desmos Graphing Calculator", url: "https://www.desmos.com/calculator", description: "Explore exponential functions graphically and investigate the effect of changing the base." },
+      ],
     },
     activities: [
       {
@@ -518,6 +541,7 @@ export const year9MathsWorksheets: WorksheetItem[] = [
         ],
       },
     ],
+    nextSteps: ["expand-binomial-products"],
   },
 
   {
@@ -548,6 +572,13 @@ export const year9MathsWorksheets: WorksheetItem[] = [
         script: "I will give you three expressions. Without doing full FOIL, can you identify which is a perfect square and which is difference of two squares, and write the answer directly? Open bracket x plus 10 close bracket squared. Then (x plus 7) times (x minus 7). Then (x minus 4) times (x plus 2).",
         action: "Child should answer: (x+10)^2 = x^2 + 20x + 100 (perfect square), (x+7)(x-7) = x^2 - 49 (difference of squares), (x-4)(x+2) = x^2 - 2x - 8 (general FOIL). Once they can identify the pattern first, they are ready for the worksheet.",
       },
+      parentTip: "Expanding binomial products is a pivotal skill in Year 9 — errors here cascade through quadratics, factorising and beyond. Rather than just correcting errors, ask your teenager to draw an area model for each expansion: a rectangle split into four sections. Visual checking catches sign errors that pattern-matching misses. Allow enough time for this topic; a solid foundation here saves considerable effort later in the course.",
+      extension: "Use the area model to derive the three special products: (a+b)^2 = a^2 + 2ab + b^2, (a-b)^2 = a^2 - 2ab + b^2, and (a+b)(a-b) = a^2 - b^2. Then use these identities to mentally calculate 99^2 as (100-1)^2, 51^2 as (50+1)^2, and 43 times 57 as (50-7)(50+7). Verify with a calculator. This connects to AC9M9A01 and powerful mental computation strategies built on algebraic structure.",
+      resources: [
+        { title: "Multiplying Binomials — Khan Academy", url: "https://www.khanacademy.org/math/algebra/x2f8bb11595b61c86:expanding-factoring-polynomials/x2f8bb11595b61c86:expand-binomials/v/multiplying-binomials", description: "Video lessons on expanding binomial products using the distributive property and FOIL." },
+        { title: "Binomial Expansion — Maths is Fun", url: "https://www.mathsisfun.com/algebra/binomial-theorem.html", description: "Explanation of binomial products with the area model and special product identities." },
+        { title: "GeoGebra Algebra", url: "https://www.geogebra.org/algebra", description: "Verify algebraic expansions and explore the area model for binomial products interactively." },
+      ],
     },
     activities: [
       {
@@ -680,6 +711,7 @@ export const year9MathsWorksheets: WorksheetItem[] = [
         ],
       },
     ],
+    nextSteps: ["factorise-monic-quadratics"],
   },
 
   {
@@ -709,6 +741,13 @@ export const year9MathsWorksheets: WorksheetItem[] = [
         script: "If x squared plus 5x plus 4 equals zero, factorise the left side. What values of x make the expression equal to zero?",
         action: "Child factorises: (x+1)(x+4) = 0. Explains: if (x+1) = 0 then x = -1; if (x+4) = 0 then x = -4. These are the two solutions. Introduce the zero product property: if two things multiply to zero, at least one of them must be zero. Once they can find both solutions, they are ready for the worksheet.",
       },
+      parentTip: "Factorising quadratics requires students to hold multiple constraints simultaneously — the pair must multiply to c AND add to b — and many teenagers find this genuinely difficult at first. Rather than rushing, suggest your child write out all factor pairs of c systematically before checking which pair sums to b. This methodical approach avoids the frustration of random trial and error. Once they crack a few, the satisfaction is usually its own motivation.",
+      extension: "Investigate the relationship between roots and factorised form: if x^2 + bx + c = (x+p)(x+q), the solutions to x^2 + bx + c = 0 are x = -p and x = -q. Use Desmos to graph five different monic quadratics, identify where they cross the x-axis, and verify that the x-intercepts match the solutions found by factorising. This connects to AC9M9A02 and graphical interpretation of algebraic solutions.",
+      resources: [
+        { title: "Factoring Quadratics — Khan Academy", url: "https://www.khanacademy.org/math/algebra/x2f8bb11595b61c86:quadratics-multiplying-factoring/x2f8bb11595b61c86:factoring-quadratics-perfect-squares/v/factoring-simple-quadratics", description: "Lessons on factorising monic quadratics by finding factor pairs that sum to the middle coefficient." },
+        { title: "Factoring Quadratics — Maths is Fun", url: "https://www.mathsisfun.com/algebra/factoring-quadratics.html", description: "Step-by-step method for factorising quadratics with systematic factor pair tables." },
+        { title: "Desmos Graphing Calculator", url: "https://www.desmos.com/calculator", description: "Graph quadratics and verify that x-intercepts match the solutions found by factorising." },
+      ],
     },
     activities: [
       {
@@ -841,6 +880,7 @@ export const year9MathsWorksheets: WorksheetItem[] = [
         ],
       },
     ],
+    nextSteps: ["solve-quadratic-equations"],
   },
 
   {
@@ -871,6 +911,13 @@ export const year9MathsWorksheets: WorksheetItem[] = [
         script: "The product of two consecutive integers is 56. If the smaller integer is n, then n times (n plus 1) equals 56. Expand that, rearrange to equal zero, factorise, and find both integers.",
         action: "Child writes: n(n+1) = 56, n^2 + n = 56, n^2 + n - 56 = 0. Factorise: (n+8)(n-7) = 0. Solutions: n = -8 or n = 7. Since we want consecutive integers, n = 7 gives 7 and 8 (check: 7 x 8 = 56). Once they can set up and solve from a word problem, they are ready for the worksheet.",
       },
+      parentTip: "Solving quadratics is a milestone moment — suddenly algebra produces two answers instead of one, which can feel strange. Emphasise to your teenager that both solutions are valid and should be checked by substituting back into the original equation. If they can factorise but keep forgetting to set each factor to zero, write the null factor law (if AB = 0 then A = 0 or B = 0) prominently at the top of every working page until the habit is automatic.",
+      extension: "Model a projectile problem: a ball is thrown upward and its height in metres is given by h = -5t^2 + 20t + 1.5, where t is time in seconds. Find when the ball hits the ground by solving -5t^2 + 20t + 1.5 = 0. Use Desmos to graph the function and verify your answer visually. Compare the time to reach maximum height with the total flight time and explain the relationship. This connects to AC9M9A04 and mathematical modelling with quadratics.",
+      resources: [
+        { title: "Solving Quadratic Equations — Khan Academy", url: "https://www.khanacademy.org/math/algebra/x2f8bb11595b61c86:quadratics-multiplying-factoring", description: "Lessons on solving quadratic equations by factorising and applying the null factor law." },
+        { title: "Quadratic Equations — Maths is Fun", url: "https://www.mathsisfun.com/algebra/quadratic-equation.html", description: "Explanation of quadratic equations and solution methods with worked examples." },
+        { title: "Desmos Graphing Calculator", url: "https://www.desmos.com/calculator", description: "Graph quadratic functions to find roots visually and verify algebraic solutions." },
+      ],
     },
     activities: [
       {
@@ -997,6 +1044,7 @@ export const year9MathsWorksheets: WorksheetItem[] = [
         ],
       },
     ],
+    nextSteps: ["distance-gradient-midpoint"],
   },
 
   {
@@ -1029,6 +1077,13 @@ export const year9MathsWorksheets: WorksheetItem[] = [
         script: "For the segment from A(1, 3) to B(5, 3), calculate the gradient, midpoint, and distance. Then tell me: what is special about this line based on the gradient you found?",
         action: "Child works: gradient = (3-3)/(5-1) = 0 (horizontal line), midpoint = (3, 3), distance = 4. Child should recognise that gradient = 0 means a horizontal line. Once they can interpret each result geometrically, they are ready for the worksheet.",
       },
+      parentTip: "Coordinate geometry introduces three separate formulas in one lesson, and teenagers often confuse them under pressure. Help your child create a personal reference card with each formula, one worked example and a memory hook, and allow them to use it freely until they no longer need it. Relying on a well-organised reference is a legitimate mathematical skill, not a weakness — the goal is to gradually phase out the card as confidence grows.",
+      extension: "Use Google Maps to find the approximate coordinates (latitude and longitude) of three Australian cities such as Sydney, Melbourne and Brisbane. Calculate the straight-line distance between each pair using the distance formula, treating latitude and longitude as a coordinate grid. Compare your distances with the actual road distances and discuss why they always differ. This connects to AC9M9SP01 and real-world spatial reasoning.",
+      resources: [
+        { title: "Distance and Midpoint — Khan Academy", url: "https://www.khanacademy.org/math/geometry/hs-geo-analytic-geometry/hs-geo-distance-and-midpoints/v/distance-formula", description: "Lessons on the distance formula, midpoint formula and gradient in coordinate geometry." },
+        { title: "Gradient — Maths is Fun", url: "https://www.mathsisfun.com/gradient.html", description: "Explanation of gradient with examples including positive, negative and zero slope." },
+        { title: "GeoGebra Geometry", url: "https://www.geogebra.org/geometry", description: "Plot points and segments and measure distance and gradient between them interactively." },
+      ],
     },
     activities: [
       {
@@ -1156,6 +1211,7 @@ export const year9MathsWorksheets: WorksheetItem[] = [
         ],
       },
     ],
+    nextSteps: ["graphing-quadratic-functions"],
   },
 
   {
@@ -1188,6 +1244,13 @@ export const year9MathsWorksheets: WorksheetItem[] = [
         script: "A ball is thrown upward and its height in metres after t seconds is h equals negative 5t squared plus 20t. What is the maximum height? And when does the ball hit the ground? Tell me your strategy before you calculate.",
         action: "Child identifies: x-intercepts (ground hits) when h = 0: -5t^2 + 20t = 0, -5t(t - 4) = 0, so t = 0 or t = 4. Maximum at t = 2 (midpoint), h = -5(4) + 20(2) = -20 + 40 = 20 m. Once they can find the vertex and intercepts of a real-world parabola, they are ready for the worksheet.",
       },
+      parentTip: "Graphing parabolas combines algebra and geometry, and many Year 9 students find the link between the equation and the shape non-obvious at first. Encourage your teenager to always find and plot the vertex and x-intercepts first, then fill in a few extra points symmetrically around the axis of symmetry. Using Desmos to check a hand-drawn graph builds confidence and helps students identify where their sketches went wrong without feeling judged.",
+      extension: "Open Desmos and type y = a(x - h)^2 + k with sliders for a, h and k. Investigate what each parameter controls individually: change only a, then only h, then only k, and record your observations. Write a parameter guide in plain English. Then without Desmos, write the equation of a parabola that passes through (0, 0), (4, 0) and (2, -4) and verify your answer using Desmos. This connects to AC9M9A05.",
+      resources: [
+        { title: "Quadratic Functions — Khan Academy", url: "https://www.khanacademy.org/math/algebra/x2f8bb11595b61c86:quadratic-functions-equations", description: "Comprehensive lessons on graphing parabolas, finding vertices and understanding quadratic functions." },
+        { title: "Quadratic Function Graphs — Maths is Fun", url: "https://www.mathsisfun.com/algebra/quadratic-equation-graph.html", description: "Visual guide to parabolas with key features and how equation parameters affect the graph." },
+        { title: "Desmos Graphing Calculator", url: "https://www.desmos.com/calculator", description: "Explore quadratic functions with sliders to investigate how a, h and k affect the parabola shape." },
+      ],
     },
     activities: [
       {
@@ -1318,6 +1381,7 @@ export const year9MathsWorksheets: WorksheetItem[] = [
         ],
       },
     ],
+    nextSteps: ["trig-ratios-right-triangles"],
   },
 
   {
@@ -1349,6 +1413,13 @@ export const year9MathsWorksheets: WorksheetItem[] = [
         script: "A 6 metre ladder leans against a wall and makes a 60 degree angle with the ground. How high up the wall does it reach? Draw a diagram first, label the sides, then choose the correct trig ratio.",
         action: "Child draws the triangle: ladder is the hypotenuse (6 m), angle with ground is 60 degrees, unknown is the height (opposite). SOH: sin 60 = opposite/6, opposite = 6 x sin 60 = 6 x 0.866 = 5.20 m (to 2 decimal places). If they cannot label the diagram correctly, practise identifying opposite and adjacent for one more example before starting the worksheet.",
       },
+      parentTip: "Trigonometry introduces a genuinely new idea — using ratios to link angles and side lengths — and many teenagers feel overwhelmed at first. The memory aid SOH-CAH-TOA helps, but make sure your child knows which sides are opposite and adjacent relative to the angle in question, not the right angle. Labelling all three sides before applying any formula prevents the most common errors, so insist on this step every time.",
+      extension: "Make a simple clinometer using a protractor, a piece of string and a small weight. Go outside and measure the angle of elevation to a tree or building, then measure the horizontal distance to its base. Use trigonometry to calculate the height. Repeat from a different distance and compare results. Calculate your percentage error relative to the measured or known height. This connects to AC9M9M01 and experimental mathematics.",
+      resources: [
+        { title: "Trigonometry — Khan Academy", url: "https://www.khanacademy.org/math/geometry/hs-geo-trig", description: "Lessons on sine, cosine, tangent and applying trig ratios to find sides and angles." },
+        { title: "Trigonometry — Maths is Fun", url: "https://www.mathsisfun.com/trigonometry.html", description: "Introduction to trigonometry with SOH-CAH-TOA, worked examples and practice problems." },
+        { title: "GeoGebra Geometry", url: "https://www.geogebra.org/geometry", description: "Construct right triangles and explore how sine, cosine and tangent ratios change as the angle changes." },
+      ],
     },
     activities: [
       {
@@ -1469,6 +1540,7 @@ export const year9MathsWorksheets: WorksheetItem[] = [
         ],
       },
     ],
+    nextSteps: ["surface-area-volume-prisms-cylinders"],
   },
 
   {
@@ -1502,6 +1574,13 @@ export const year9MathsWorksheets: WorksheetItem[] = [
         script: "Container A is a cylinder with radius 5 cm and height 8 cm. Container B is a cube with side 8 cm. Which holds more water? Calculate both volumes and tell me the difference.",
         action: "Child calculates: Cylinder V = pi x 25 x 8 = 628 cm cubed. Cube V = 8 x 8 x 8 = 512 cm cubed. Cylinder holds more by 116 cm cubed (roughly). Once they can compare and communicate their reasoning clearly, they are ready for the worksheet.",
       },
+      parentTip: "Surface area problems require students to account for every face systematically — a step many teenagers skip when rushing. Encourage your child to always draw and label the net of each solid before calculating; unfolding the 3D shape into a flat diagram makes it almost impossible to miss a face. Volume and surface area involve different formulas, so labelling which is which in working prevents confusion between the two.",
+      extension: "Measure the dimensions of an actual cylindrical drinks can at home. Calculate its surface area and volume. Then investigate: is there a more material-efficient design with the same volume? Explore three alternative combinations of radius and height. Calculate the surface area for each and identify which uses the least material. Discuss why commercial cans are not perfectly optimised. This connects to AC9M9M03 and real-world optimisation thinking.",
+      resources: [
+        { title: "Surface Area and Volume — Khan Academy", url: "https://www.khanacademy.org/math/geometry/hs-geo-solids", description: "Lessons on surface area and volume of prisms, cylinders and composite solids." },
+        { title: "Surface Area — Maths is Fun", url: "https://www.mathsisfun.com/geometry/surface-area.html", description: "Surface area formulas for common 3D shapes with interactive diagrams and examples." },
+        { title: "GeoGebra 3D Calculator", url: "https://www.geogebra.org/3d", description: "Visualise and measure 3D solids including prisms and cylinders interactively." },
+      ],
     },
     activities: [
       {
@@ -1624,6 +1703,7 @@ export const year9MathsWorksheets: WorksheetItem[] = [
         right: ["s^3","(1/2) b h l","pi r^2 h","(1/3) pi r^2 h","l x w x h"],
       },
     ],
+    nextSteps: ["similarity-scale-enlargement"],
   },
 
   {
@@ -1655,6 +1735,13 @@ export const year9MathsWorksheets: WorksheetItem[] = [
         script: "A person who is 1.8 metres tall casts a shadow 2.4 metres long. At the same time, a tree casts a shadow 16 metres long. How tall is the tree? Set up a proportion and solve.",
         action: "Child writes: 1.8 / 2.4 = h / 16, so h = 1.8 x 16 / 2.4 = 28.8 / 2.4 = 12 metres. Discuss why this works: the two triangles (person plus shadow, tree plus shadow) are similar because the sun angle is the same. Once they can set up and solve the proportion, they are ready for the worksheet.",
       },
+      parentTip: "Year 9 similarity builds on Year 8 congruence and requires students to work confidently with scale factors. A common error is applying the linear scale factor to area — remind your child that if the linear scale factor is k, areas scale by k squared. If scale problems feel dry, give them a real map of Australia and ask them to calculate actual distances between cities using the printed map scale; suddenly the concept has genuine purpose.",
+      extension: "Find a photograph of a tall structure such as the Sydney Harbour Bridge or the Melbourne Arts Centre spire. Print it and measure the height of a person standing near the structure and the height of the structure in the photo. Use the scale factor (real person height divided by photo person height) to estimate the real height of the structure. Research the actual height and calculate your percentage error. This connects to AC9M9SP02 and proportional reasoning.",
+      resources: [
+        { title: "Similar Triangles — Khan Academy", url: "https://www.khanacademy.org/math/geometry/hs-geo-similarity", description: "Lessons on similarity conditions, scale factors and applications of similar triangles." },
+        { title: "Similar Figures — Maths is Fun", url: "https://www.mathsisfun.com/geometry/similar.html", description: "Explanation of similar figures with scale factors and worked examples." },
+        { title: "GeoGebra Geometry", url: "https://www.geogebra.org/geometry", description: "Create scaled enlargements and reductions and verify scale factors by measuring lengths." },
+      ],
     },
     activities: [
       {
@@ -1769,6 +1856,7 @@ export const year9MathsWorksheets: WorksheetItem[] = [
         ],
       },
     ],
+    nextSteps: ["compound-events-probability"],
   },
 
   {
@@ -1800,6 +1888,13 @@ export const year9MathsWorksheets: WorksheetItem[] = [
         script: "Two 6-sided dice are rolled. Without drawing a full 36-outcome table, can you tell me: what is the probability that both dice show the same number? Use reasoning, not listing.",
         action: "Child reasons: for any result on the first die (6 possibilities), only 1 of the 6 second-die outcomes matches. So P(same) = 6/36 = 1/6. Alternatively, P(not same) = 5/6. If they do list all 36, that is fine too — guide them to see the pattern. Once they can work with both methods, they are ready for the worksheet.",
       },
+      parentTip: "Compound probability at Year 9 introduces tree diagrams for dependent and independent events. Teenagers often confuse with-replacement and without-replacement scenarios — the distinction changes whether probabilities remain constant or shift. Before any calculation, have your child state clearly: does the first outcome affect the second? Making this a verbal habit before every multi-stage problem prevents the most systematic errors in this topic.",
+      extension: "Investigate conditional probability using real data: research the approximate proportion of left-handed people in the Australian population and whether this proportion differs between males and females. Calculate P(left-handed given male) and P(left-handed given female) from the data. Discuss what equal or unequal probabilities would mean about the relationship between handedness and gender. This connects to AC9M9P02 and statistical literacy.",
+      resources: [
+        { title: "Compound Probability — Khan Academy", url: "https://www.khanacademy.org/math/statistics-probability/probability-library/compound-probability-of-independent-events-using-the-multiplication-rule/v/independent-events-1", description: "Lessons on compound events, tree diagrams and the multiplication rule for independent events." },
+        { title: "Probability — Maths is Fun", url: "https://www.mathsisfun.com/data/probability.html", description: "Comprehensive guide to probability including conditional probability and tree diagrams." },
+        { title: "NRICH Probability", url: "https://nrich.maths.org/probability", description: "Engaging probability investigations and simulations including compound event scenarios." },
+      ],
     },
     activities: [
       {
@@ -1913,6 +2008,7 @@ export const year9MathsWorksheets: WorksheetItem[] = [
         ],
       },
     ],
+    nextSteps: ["comparing-data-sets"],
   },
 
   {
@@ -1943,6 +2039,13 @@ export const year9MathsWorksheets: WorksheetItem[] = [
         script: "Here is a data set with an outlier: 12, 14, 15, 13, 16, 14, 15, 47, 13, 14. Find the mean with and without the outlier. Which measure, mean or median, gives a better picture of a typical value in this data set? Why?",
         action: "Child calculates: mean with outlier = 173/10 = 17.3. Mean without outlier = 126/9 = 14. Median = 14 (middle value, unaffected). Child should explain: the median is more resistant to outliers and gives a better picture of a typical value here. Once they can articulate this comparison clearly, they are ready for the worksheet.",
       },
+      parentTip: "Data analysis at Year 9 requires students to go beyond calculating statistics to comparing distributions and drawing conclusions — this is harder than it looks. Encourage your teenager to always write a comparison sentence that names both data sets (for example: Group A had a higher median than Group B, suggesting...). If they struggle with box plots, have them construct one by hand from a small data set first; building a display develops interpretation skills much faster than just reading one.",
+      extension: "Download one month of daily maximum temperature data for two Australian cities from the Bureau of Meteorology website (bom.gov.au). Calculate the mean, median, range and interquartile range for each city. Create side-by-side box plots on the same scale. Write a paragraph comparing the two distributions, commenting on centre, spread and any outliers. This connects to AC9M9ST01 and AC9M9ST02 using authentic real-world Australian data.",
+      resources: [
+        { title: "Box Plots — Khan Academy", url: "https://www.khanacademy.org/math/statistics-probability/summarizing-quantitative-data/box-whisker-plots/v/box-and-whisker-plots", description: "Lessons on creating and interpreting box plots and comparing data distributions." },
+        { title: "Box Plot — Maths is Fun", url: "https://www.mathsisfun.com/data/box-plot.html", description: "Explanation of box plots with step-by-step construction and interpretation guide." },
+        { title: "Desmos Statistics", url: "https://www.desmos.com/", description: "Use Desmos to create statistical displays and explore summary statistics from real data sets." },
+      ],
     },
     activities: [
       {

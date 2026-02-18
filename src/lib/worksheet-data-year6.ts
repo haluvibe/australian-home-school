@@ -31,6 +31,13 @@ export const year6MathsWorksheets: WorksheetItem[] = [
         script: "Can you show me where -2 sits on the number line? And what does it mean to have a negative number — what does negative tell us? Great. Now point to the coordinate (4, 2) on the grid — which number is across and which is up?",
         action: "Listen for the child to describe negative as being less than zero or to the left. For coordinates, listen for x first, then y. Correct gently if they reverse the axes.",
       },
+      parentTip: "Negative numbers can be genuinely confusing at first because they feel abstract. Using a real thermometer or checking a weather app together works wonders — seeing -3°C on a screen makes it concrete. If your child mixes up the x and y axes on the Cartesian plane, a simple trick is 'along the corridor before up the stairs': x first, then y.",
+      extension: "Create a simple map of your home on grid paper and choose a reference point as the origin. Label rooms or furniture with coordinates. Then introduce the idea of moving objects: 'If the table is at (3, 2) and we slide it 2 units left, where does it go?' This extends into translations in Space.",
+      resources: [
+        { title: "Integers on a Number Line — Khan Academy", url: "https://www.khanacademy.org/math/cc-sixth-grade-math/cc-6th-factors-and-multiples/cc-6th-negative-numbers/v/negative-numbers-introduction", description: "Short video introducing negative numbers with a number line." },
+        { title: "Negative Numbers — Maths is Fun", url: "https://www.mathsisfun.com/numbers/negative-numbers.html", description: "Clear explanation of negative numbers with interactive examples." },
+        { title: "Coordinate Plane — Khan Academy", url: "https://www.khanacademy.org/math/cc-sixth-grade-math/cc-6th-negative-number-topic/cc-6th-coordinate-plane/v/the-coordinate-plane", description: "Video lesson on reading and plotting coordinates." },
+      ],
     },
     activities: [
       // ─── Easy: Integers on a number line ───
@@ -657,6 +664,7 @@ export const year6MathsWorksheets: WorksheetItem[] = [
         ],
       },
     ],
+    nextSteps: ["prime-composite-square-numbers"],
   },
 
   // ── WS 2: Prime, Composite & Square Numbers ──────────────
@@ -688,6 +696,13 @@ export const year6MathsWorksheets: WorksheetItem[] = [
         script: "Pick any number from 2 to 30 and tell me whether it is prime, composite, or a square number. Explain how you know. Then I will pick one and you have 30 seconds to decide.",
         action: "Let the child quiz you first, then quiz them. If they hesitate, suggest they think about whether the number has any divisors other than 1 and itself. Confirm answers by trying to build rectangles if needed.",
       },
+      parentTip: "Children often assume 1 is a prime number — it is not, and knowing why matters. Take a moment to explain that prime numbers must have exactly two distinct factors, and 1 only has one. Also, square numbers can be tricky to spot without visuals, so building them with counters or dot grid paper is worth the time.",
+      extension: "Introduce the Sieve of Eratosthenes: write out numbers 1 to 100 on a grid, then cross out multiples of 2, 3, 5, and 7 in order. The numbers that survive are all prime. Time how long it takes and discuss why you only need to check divisors up to 10 for numbers under 100.",
+      resources: [
+        { title: "Prime Numbers — Khan Academy", url: "https://www.khanacademy.org/math/cc-fourth-grade-math/imp-factors-multiples-and-patterns/imp-prime-and-composite-numbers/v/prime-numbers", description: "Video explaining prime and composite numbers with examples." },
+        { title: "Prime Numbers — Maths is Fun", url: "https://www.mathsisfun.com/prime-numbers.html", description: "Interactive prime number tool and clear written explanation." },
+        { title: "Square Numbers — Maths is Fun", url: "https://www.mathsisfun.com/square-numbers.html", description: "Explanation of square numbers with visual dot arrays." },
+      ],
     },
     activities: [
       // ─── Easy: Identify prime and composite ───
@@ -1243,6 +1258,7 @@ export const year6MathsWorksheets: WorksheetItem[] = [
         ],
       },
     ],
+    nextSteps: ["order-add-subtract-fractions"],
   },
 
   // ── WS 3: Fractions — Order, Add & Subtract ──────────────
@@ -1275,6 +1291,13 @@ export const year6MathsWorksheets: WorksheetItem[] = [
         script: "Show me how you would work out three quarters plus one eighth. What is the first thing you check? Good — do they share a denominator? What do you change, and what stays the same?",
         action: "Listen for the child to identify that only one fraction needs converting. If they try to add denominators, bring out the paper strips again to show why that gives a wrong answer.",
       },
+      parentTip: "The biggest misconception with adding fractions is adding the denominators — for example, thinking 1/2 + 1/3 = 2/5. If you see this, stop and use paper strips or draw fraction bars to show that adding denominators makes no sense. Finding a common denominator is the key step; let your child discover the least common denominator rather than always telling them.",
+      extension: "Challenge your child to create a recipe that uses fractional quantities and then scale it up by 1.5 times. For example, if a recipe needs 3/4 cup of flour, how much do you need for 1.5 batches? This connects adding and multiplying fractions to a real-world context they can actually cook.",
+      resources: [
+        { title: "Adding and Subtracting Fractions — Khan Academy", url: "https://www.khanacademy.org/math/cc-fifth-grade-math/cc-5th-fractions-topic/cc-5th-adding-subtracting-fractions/v/adding-fractions-with-unlike-denominators", description: "Step-by-step video for adding fractions with different denominators." },
+        { title: "Fractions — Maths is Fun", url: "https://www.mathsisfun.com/fractions.html", description: "Comprehensive guide to fractions with worked examples." },
+        { title: "NRICH: Fractions Activities", url: "https://nrich.maths.org/fractions", description: "Engaging fraction puzzles and problems for Year 6 level." },
+      ],
     },
     activities: [
       // ─── Easy: Ordering fractions ───
@@ -1801,6 +1824,7 @@ export const year6MathsWorksheets: WorksheetItem[] = [
         ],
       },
     ],
+    nextSteps: ["four-operations-decimals"],
   },
 
   // ── WS 4: Four Operations with Decimals ───────────────────
@@ -1833,6 +1857,13 @@ export const year6MathsWorksheets: WorksheetItem[] = [
         script: "Now use the calculator to check your working. If any answer is different, let us look at where the decimal ended up and figure out what happened.",
         action: "Compare the child's written answers with calculator results. If there is a discrepancy, trace through the working together to find the error rather than simply correcting it.",
       },
+      parentTip: "The most common decimal error children make is misaligning the decimal point when adding or subtracting. Encourage your child to write numbers in columns first and draw the decimal point column as a vertical line before starting. For multiplication, explain that you can ignore the decimal temporarily, multiply whole numbers, then count the decimal places in both factors to place the point correctly.",
+      extension: "Find a supermarket receipt or catalogue and let your child calculate the total cost of a small shopping list, applying a 10% discount to each item. They will need to multiply decimals and add the results — real-world practice that makes the arithmetic meaningful.",
+      resources: [
+        { title: "Decimals — Khan Academy", url: "https://www.khanacademy.org/math/cc-sixth-grade-math/cc-6th-arithmetic-operations/cc-6th-dividing-decimals/v/dividing-decimals", description: "Video lessons on decimal operations including division." },
+        { title: "Decimals — Maths is Fun", url: "https://www.mathsisfun.com/decimals.html", description: "Clear explanation of decimal place value and operations." },
+        { title: "Decimal Arithmetic — Maths is Fun", url: "https://www.mathsisfun.com/multiplying-decimals.html", description: "Worked examples for multiplying and dividing decimals." },
+      ],
     },
     activities: [
       // ─── Easy: Adding decimals ───
@@ -2303,6 +2334,7 @@ export const year6MathsWorksheets: WorksheetItem[] = [
         ],
       },
     ],
+    nextSteps: ["decimal-metric-connections"],
   },
 
   // ── WS 5: Decimal Metric Connections ──────────────────────
@@ -2336,6 +2368,13 @@ export const year6MathsWorksheets: WorksheetItem[] = [
         script: "Tell me in your own words: when I convert from a big unit like metres to a smaller unit like centimetres, do I multiply or divide? Why? What about going from millilitres to litres?",
         action: "Ask for the explanation verbally before the child attempts the worksheet. If they are unsure, refer back to the ruler and count how many millimetres fit in one centimetre.",
       },
+      parentTip: "Many children struggle to remember which direction to move the decimal when converting units — they know it is about powers of ten but get confused about multiply versus divide. A simple poster on the wall showing km → m → cm → mm with arrows saying ×1000, ×100, ×10 (and the reverse for dividing) gives a quick visual reference while the idea is being consolidated.",
+      extension: "Measure five items around your home in centimetres and record them. Then convert each measurement to metres, millimetres, and kilometres. Create a simple table and order the items by size. Discuss which unit is most sensible for each object — you would not describe the height of a door in kilometres.",
+      resources: [
+        { title: "Metric Units — Maths is Fun", url: "https://www.mathsisfun.com/measure/metric-length.html", description: "Guide to metric units of length with conversion examples." },
+        { title: "Converting Units — Khan Academy", url: "https://www.khanacademy.org/math/cc-sixth-grade-math/cc-6th-ratios-prop-topic/cc-6th-unit-conversion/v/unit-conversion", description: "Video on converting between metric units using multiplication." },
+        { title: "Measurement Conversions — Maths is Fun", url: "https://www.mathsisfun.com/measure/unit-conversion-tool.html", description: "Interactive tool for converting between metric and other units." },
+      ],
     },
     activities: [
       // ─── Easy: Length conversions ───
@@ -2755,6 +2794,7 @@ export const year6MathsWorksheets: WorksheetItem[] = [
         ],
       },
     ],
+    nextSteps: ["fraction-decimal-percentage-quantity"],
   },
 
   // ── WS 6: Fraction, Decimal or Percentage of a Quantity ───
@@ -2787,6 +2827,13 @@ export const year6MathsWorksheets: WorksheetItem[] = [
         script: "Of the three forms — fraction, decimal, percentage — which one do you find easiest to calculate with? Can you show me two different ways to find 75% of 200?",
         action: "Listen for valid strategies: 75% as 3/4 (divide by 4 then multiply by 3), or as 0.75 x 200. Both are correct. Encourage flexibility rather than insisting on one method.",
       },
+      parentTip: "Many children can convert between fractions, decimals, and percentages on paper but then freeze when asked to calculate 30% of a price. Encourage them to think of percentages as fractions of 100 — 30% is simply 30/100, which simplifies to 3/10. Building a habit of checking answers by two different methods (e.g. fraction method and decimal method) builds both confidence and accuracy.",
+      extension: "Find a department store sale catalogue online or in print. Choose five items that are on sale, and for each one: calculate the discount amount, the sale price, and express the saving as a fraction, decimal, and percentage. Then compare which item gives the best value for money relative to its full price.",
+      resources: [
+        { title: "Percentages — Khan Academy", url: "https://www.khanacademy.org/math/cc-sixth-grade-math/cc-6th-ratios-prop-topic/cc-6th-percent/v/representing-a-number-as-a-decimal-percent-and-fraction", description: "Video connecting fractions, decimals, and percentages." },
+        { title: "Percentages — Maths is Fun", url: "https://www.mathsisfun.com/percentage.html", description: "Worked examples calculating percentages of quantities." },
+        { title: "Fractions Decimals Percentages — Maths is Fun", url: "https://www.mathsisfun.com/fractions-decimals-percents.html", description: "Conversion table and explanation linking all three forms." },
+      ],
     },
     activities: [
       // ─── Easy: Fractions of a quantity ───
@@ -3180,6 +3227,7 @@ export const year6MathsWorksheets: WorksheetItem[] = [
         ],
       },
     ],
+    nextSteps: ["financial-problems-percentages"],
   },
 
   // ── WS 7: Financial Problems & Percentages ────────────────
@@ -3212,6 +3260,13 @@ export const year6MathsWorksheets: WorksheetItem[] = [
         script: "Pick any item from the catalogue and imagine it is 15% off. Tell me the new price. Now tell me: if I wanted to add 10% GST back onto the sale price, what would I pay?",
         action: "Have the child talk through each step aloud. Watch for the common error of taking 15% off and then calculating GST on the original price rather than the discounted price.",
       },
+      parentTip: "Financial mathematics is one of the most practically useful areas of the curriculum, so connect it to real life wherever possible. Show your child an actual receipt or bank statement and identify where percentages appear — GST, discounts, interest rates. A common mistake is applying a percentage increase or decrease to the wrong base amount, so always ask: 'Percentage of what?'",
+      extension: "Design a budget for an imaginary class fundraiser. Set a target of raising $500. Your child decides on 3 products to sell, sets a price with a profit margin of at least 20% above cost, and calculates how many of each they need to sell to meet the target. Present the plan in a simple table.",
+      resources: [
+        { title: "Percentages and Money — Khan Academy", url: "https://www.khanacademy.org/math/cc-sixth-grade-math/cc-6th-ratios-prop-topic/cc-6th-percent-word-problems/v/percent-word-problem-tax-and-tip", description: "Video on percentage word problems including discounts and tax." },
+        { title: "Percentage Discount — Maths is Fun", url: "https://www.mathsisfun.com/percentage-discount.html", description: "Step-by-step guide to calculating discounts and sale prices." },
+        { title: "Consumer Maths — ABC Education", url: "https://education.abc.net.au/home#!/digibook/2717880/money-and-financial-mathematics", description: "ABC Education resources on money and financial mathematics." },
+      ],
     },
     activities: [
       // ─── Easy: Simple discounts ───
@@ -3568,6 +3623,7 @@ export const year6MathsWorksheets: WorksheetItem[] = [
         ],
       },
     ],
+    nextSteps: ["unknown-values-combined-operations"],
   },
 
   // ── WS 8: Unknown Values & Combined Operations ───────────
@@ -3599,6 +3655,13 @@ export const year6MathsWorksheets: WorksheetItem[] = [
         script: "Your turn to write a mystery equation for me. Think of a number, do two things to it, and write the result. I will work backwards to find your number — then we swap.",
         action: "Let the child create an equation. Solve it aloud using inverse operations, explaining each step. Then ask the child to solve one you write. This reinforces the concept that the method works in both directions.",
       },
+      parentTip: "Children often find working backwards (using inverse operations) confusing at first because it feels counterintuitive. A helpful analogy is 'unwrapping a parcel': the last thing done to the unknown is the first thing you undo. If your child is stuck, encourage them to try a known number first — work through the equation forwards with a guess, see what comes out, then adjust. This builds intuition before the formal method.",
+      extension: "Write five 'mystery number' problems on index cards where two operations are applied (e.g. 'I think of a number, multiply by 3, then subtract 7, and I get 14 — what is my number?'). Shuffle the cards and time how long it takes to solve each one using inverse operations. Then create five problems of their own for you to solve.",
+      resources: [
+        { title: "Solving Equations — Khan Academy", url: "https://www.khanacademy.org/math/cc-sixth-grade-math/cc-6th-equations-and-inequalities/cc-6th-one-step-equations/v/simple-equations", description: "Video introducing solving simple equations with one variable." },
+        { title: "Equations — Maths is Fun", url: "https://www.mathsisfun.com/algebra/equations-solving.html", description: "Guide to solving equations using inverse operations." },
+        { title: "NRICH: Algebra Problems", url: "https://nrich.maths.org/algebra", description: "Challenging algebra puzzles suitable for Year 6." },
+      ],
     },
     activities: [
       // ─── Easy: One-step unknowns ───
@@ -3997,6 +4060,7 @@ export const year6MathsWorksheets: WorksheetItem[] = [
         ],
       },
     ],
+    nextSteps: ["rules-growing-patterns"],
   },
 
   // ── WS 9: Rules for Growing Patterns ──────────────────────
@@ -4028,6 +4092,13 @@ export const year6MathsWorksheets: WorksheetItem[] = [
         script: "Using your rule, what would step 10 look like without building it? How confident are you? Let us check by extending the table step by step.",
         action: "Have the child apply the rule to find the 10th term and then verify by extending the table. If they get different answers, compare them to find where the rule went wrong.",
       },
+      parentTip: "Pattern rules can be expressed in different but equally valid ways, so accept correct variations. For example, 'add 3 each time' and 'term = 3n + 1' are different ways to say the same thing — both should be celebrated. The key Year 6 skill is being able to state the rule and use it to find any term without building every step, so push gently toward that generalisation.",
+      extension: "Look at the pattern of square numbers (1, 4, 9, 16, 25...) and triangular numbers (1, 3, 6, 10, 15...). Find the rule for each, build the first five terms with counters, and then find the 10th term of each sequence. Draw both patterns on grid paper and describe what they have in common and what is different.",
+      resources: [
+        { title: "Patterns and Sequences — Khan Academy", url: "https://www.khanacademy.org/math/cc-sixth-grade-math/cc-6th-ratios-prop-topic/cc-6th-rates/v/introduction-to-ratios", description: "Introduction to using rules to describe sequences and ratios." },
+        { title: "Number Patterns — Maths is Fun", url: "https://www.mathsisfun.com/numberpatterns.html", description: "Examples of growing patterns and how to find their rules." },
+        { title: "NRICH: Pattern Puzzles", url: "https://nrich.maths.org/patterns", description: "Investigative pattern activities for upper primary students." },
+      ],
     },
     activities: [
       // ─── Easy: Number patterns ───
@@ -4387,6 +4458,7 @@ export const year6MathsWorksheets: WorksheetItem[] = [
         ],
       },
     ],
+    nextSteps: ["algorithms-generate-sets"],
   },
 
   // ── WS 10: Algorithms to Generate Sets ────────────────────
@@ -4418,6 +4490,13 @@ export const year6MathsWorksheets: WorksheetItem[] = [
         script: "Write an algorithm that creates a sequence of numbers, but do not tell me what it generates. I will follow your steps and try to figure out the pattern. Then swap — you follow mine.",
         action: "Each of you writes a secret algorithm. Follow each other's instructions exactly. Discuss: was the algorithm clear enough to follow without extra explanation? Could it be simplified?",
       },
+      parentTip: "The concept of an algorithm may be unfamiliar by name, but your child already uses them every day — think of a recipe or morning routine. The key Year 6 idea is that algorithms must be precise and unambiguous. A great dinner-table activity is to have your child explain how to make a sandwich in exact steps; if any step is unclear, pretend you cannot proceed. This builds the habit of precision that underpins computational thinking.",
+      extension: "Write a number algorithm that generates a sequence of at least 10 terms. Then create a second algorithm that generates the same sequence in a different way (e.g. the even numbers can be generated by 'start at 2, add 2 each time' or by 'multiply the position number by 2'). Explain why both algorithms produce the same output.",
+      resources: [
+        { title: "What is an Algorithm? — Khan Academy", url: "https://www.khanacademy.org/computing/computer-science/algorithms/intro-to-algorithms/v/what-are-algorithms", description: "Simple introduction to algorithms and computational thinking." },
+        { title: "Number Sequences — Maths is Fun", url: "https://www.mathsisfun.com/numberpatterns.html", description: "Examples of rules and sequences generated by algorithms." },
+        { title: "Algorithms and Patterns — ABC Education", url: "https://education.abc.net.au/home#!/digibook/2717880/algorithms", description: "ABC Education resources on computational thinking for students." },
+      ],
     },
     activities: [
       // ─── Easy: Follow the algorithm ───
@@ -4739,6 +4818,7 @@ export const year6MathsWorksheets: WorksheetItem[] = [
         ],
       },
     ],
+    nextSteps: ["timetables-interpret"],
   },
 
   // ── WS 11: Interpret and Use Timetables ───────────────────
@@ -4771,6 +4851,13 @@ export const year6MathsWorksheets: WorksheetItem[] = [
         script: "If we left home at 8:50 am, caught a train that takes 25 minutes, had 1 hour and 15 minutes at the museum, then took a 20-minute bus home, what time would we get back? Walk me through your working.",
         action: "Listen for the child to add each segment in order, handling the minute-to-hour boundary correctly. If they get an incorrect total, ask them to show the working on the clock face.",
       },
+      parentTip: "Reading timetables is a skill that develops with practice and real-world application. Use actual public transport apps or bus/train timetables from your local area — they are free online and far more motivating than abstract examples. The trickiest part is crossing the hour boundary (e.g. 11:50 to 12:20 is 30 minutes, not 70). A clock face drawn on paper helps children visualise this.",
+      extension: "Plan a full day trip using real timetables from your city or region. Your child must find a bus or train that gets them to a destination by a specific time, plan activities for a 3-hour window, and calculate the return journey. Write up the full itinerary with arrival and departure times and total travel time.",
+      resources: [
+        { title: "Reading Timetables — Maths is Fun", url: "https://www.mathsisfun.com/time.html", description: "Guide to reading and interpreting time, including AM and PM." },
+        { title: "Elapsed Time — Khan Academy", url: "https://www.khanacademy.org/math/cc-third-grade-math/cc-third-time/cc-third-telling-time/v/elapsed-time", description: "Video on calculating elapsed time between two times." },
+        { title: "Time and Measurement — ABC Education", url: "https://education.abc.net.au/home#!/digibook/2717880/measurement-and-geometry", description: "ABC Education resources on time and measurement." },
+      ],
     },
     activities: [
       // ─── Easy: Reading a timetable ───
@@ -5122,6 +5209,7 @@ export const year6MathsWorksheets: WorksheetItem[] = [
         ],
       },
     ],
+    nextSteps: ["convert-length-mass-capacity"],
   },
 
   // ── WS 12: Convert Length, Mass & Capacity ────────────────
@@ -5155,6 +5243,13 @@ export const year6MathsWorksheets: WorksheetItem[] = [
         script: "Cover up the chart. Convert 3.25 km to metres. Now convert 850 g to kilograms. Tell me your thinking: how did you know which operation to use?",
         action: "Ask the child to verbalise the rule before calculating. After two or three problems without the chart, they should be able to recall the direction confidently.",
       },
+      parentTip: "Measurement conversions are best learned by doing rather than memorising tables. Keep a small reference card on the fridge for the first few weeks, but aim to gradually wean your child off it by asking them to explain the reasoning rather than just look up the answer. If your child consistently divides when they should multiply (or vice versa), ask: 'Are we going to a bigger unit or a smaller unit?' Smaller units means more of them, so we multiply.",
+      extension: "Conduct a measurement scavenger hunt around the home. Give your child a list of 10 things to measure in a specified unit (e.g. 'the width of the front door in mm') and a second column where they must convert to a different unit. Compile the results in a table and order items from smallest to largest.",
+      resources: [
+        { title: "Metric Units of Length — Khan Academy", url: "https://www.khanacademy.org/math/cc-fourth-grade-math/cc-4th-measurement-topic/cc-4th-units-of-length/v/unit-conversion", description: "Video on converting between metric units of length." },
+        { title: "Measurement Conversions — Maths is Fun", url: "https://www.mathsisfun.com/measure/metric-length.html", description: "Complete guide to metric length, mass, and capacity conversions." },
+        { title: "Mass and Capacity — Maths is Fun", url: "https://www.mathsisfun.com/measure/metric-mass.html", description: "Guide to metric units of mass with conversion worked examples." },
+      ],
     },
     activities: [
       // ─── Easy: Length conversions ───
@@ -5518,6 +5613,7 @@ export const year6MathsWorksheets: WorksheetItem[] = [
         ],
       },
     ],
+    nextSteps: ["area-rectangle-formula"],
   },
 
   // ── WS 13: Area of a Rectangle ────────────────────────────
@@ -5550,6 +5646,13 @@ export const year6MathsWorksheets: WorksheetItem[] = [
         script: "We want to tile this floor with 30 cm tiles. The floor is 3.6 m by 2.4 m. How many tiles do we need? Explain each step to me as you work through it.",
         action: "This requires converting units, finding area, and dividing. Let the child attempt it with prompts if needed. Accept either exact or rounded-up answers and discuss which is more practical (you cannot buy part of a tile).",
       },
+      parentTip: "A very common mistake at this level is confusing area with perimeter. If your child is prone to this, pause before they begin and ask: 'Are we measuring around the edge or covering the inside?' Area is about covering — you might ask how many 1 cm tiles it would take to cover the shape. Using grid paper where they count squares before applying the formula helps consolidate the concept.",
+      extension: "Design a simple floor plan for a bedroom, study, or garden on grid paper (1 cm = 0.5 m). Include at least three separate rectangular regions (e.g. desk space, bed, wardrobe). Calculate the area of each region and the total floor area. Then decide: if carpet costs $25 per square metre, what is the total cost?",
+      resources: [
+        { title: "Area of Rectangles — Khan Academy", url: "https://www.khanacademy.org/math/cc-third-grade-math/cc-third-geometry/cc-third-area/v/introduction-to-area-and-unit-squares", description: "Video introducing area using unit squares and the rectangle formula." },
+        { title: "Area — Maths is Fun", url: "https://www.mathsisfun.com/area.html", description: "Explanation of area with formulas for rectangles and other shapes." },
+        { title: "Perimeter and Area — Maths is Fun", url: "https://www.mathsisfun.com/geometry/perimeter.html", description: "Compares perimeter and area to help avoid common confusion." },
+      ],
     },
     activities: [
       // ─── Easy: Understanding area ───
@@ -5893,6 +5996,7 @@ export const year6MathsWorksheets: WorksheetItem[] = [
         ],
       },
     ],
+    nextSteps: ["angle-properties"],
   },
 
   // ── WS 14: Angle Properties ───────────────────────────────
@@ -5926,6 +6030,13 @@ export const year6MathsWorksheets: WorksheetItem[] = [
         script: "Draw your own triangle and measure two of the angles with the protractor. Now use the angle sum rule to predict the third angle. Measure it and see how close you were.",
         action: "The child draws a triangle, measures two angles, calculates the third, then checks by measuring. A small discrepancy of 1-2 degrees is due to drawing and measuring error, which is worth discussing.",
       },
+      parentTip: "Angles on a straight line summing to 180° and angles around a point summing to 360° are rules children need to be able to recall quickly. A kinesthetic trick: have your child stand and turn a full circle — that is 360°. Half a turn is 180°. Tie this to real objects: a straight wall edge represents 180°, a clock face represents 360°. For triangles, tearing the three corners off a paper triangle and arranging them in a row to show a straight line (180°) is a memorable demonstration.",
+      extension: "Find five real-world photographs (architecture, bridges, furniture) and use a printed or traced image to estimate and label the key angles. For each image, identify at least one pair of supplementary angles (adding to 180°) or angles at a point. Check estimates with a protractor.",
+      resources: [
+        { title: "Angles — Khan Academy", url: "https://www.khanacademy.org/math/cc-fourth-grade-math/cc-4th-geometry-topic/cc-4th-angles/v/angle-basics", description: "Video introduction to angles, types, and measurement." },
+        { title: "Angles — Maths is Fun", url: "https://www.mathsisfun.com/angles.html", description: "Clear guide to angle types and properties with diagrams." },
+        { title: "Triangle Angle Sum — Maths is Fun", url: "https://www.mathsisfun.com/triangle.html", description: "Explanation of why triangle angles always sum to 180 degrees." },
+      ],
     },
     activities: [
       // ─── Easy: Types of angles ───
@@ -6292,6 +6403,7 @@ export const year6MathsWorksheets: WorksheetItem[] = [
         ],
       },
     ],
+    nextSteps: ["parallel-cross-sections"],
   },
 
   // ── WS 15: Parallel Cross-Sections of Right Prisms ───────
@@ -6325,6 +6437,13 @@ export const year6MathsWorksheets: WorksheetItem[] = [
         script: "I will describe a shape and you tell me what the cross-section looks like. It has 5 rectangular faces and 2 identical end faces with 5 sides. What is it? What would the slice look like?",
         action: "Describe 2-3 prisms verbally without naming them. The child identifies the prism name and the cross-section. Then swap: child describes a shape for you to identify.",
       },
+      parentTip: "Cross-sections are much easier to understand with actual objects in hand. Kitchen vegetables are perfect: a carrot cut at different angles gives different cross-sections, a cucumber is a right prism (circular cross-sections), and a block of cheese is a rectangular prism. Let your child predict the cross-section shape before you make the cut — prediction followed by checking is very effective for building geometric intuition.",
+      extension: "Build models of three different right prisms using card or cardboard (rectangular, triangular, pentagonal). Draw the net of each prism first, fold them up, and label every face. Then draw what the cross-section would look like if you sliced each model parallel to its base. Compare the cross-section shape to the base shape.",
+      resources: [
+        { title: "3D Shapes — Maths is Fun", url: "https://www.mathsisfun.com/geometry/prisms.html", description: "Guide to prisms including cross-sections and face properties." },
+        { title: "Cross Sections — Khan Academy", url: "https://www.khanacademy.org/math/cc-seventh-grade-math/cc-7th-geometry/cc-7th-slicing-geometric-shapes/v/ways-to-cut-a-cube", description: "Video on cross-sections of three-dimensional shapes." },
+        { title: "Geometric Solids — Maths is Fun", url: "https://www.mathsisfun.com/geometry/polyhedron.html", description: "Overview of 3D shapes including prisms and their properties." },
+      ],
     },
     activities: [
       // ─── Easy: Identifying prisms ───
@@ -6644,6 +6763,7 @@ export const year6MathsWorksheets: WorksheetItem[] = [
         ],
       },
     ],
+    nextSteps: ["tessellations-transformations"],
   },
 
   // ── WS 16: Tessellations & Transformations ────────────────
@@ -6677,6 +6797,13 @@ export const year6MathsWorksheets: WorksheetItem[] = [
         script: "Look at the pattern we made. Point to a place where I slid the shape. Point to where I flipped it. Point to where I turned it. Can you use the words translation, reflection, and rotation to describe what happened?",
         action: "Ask the child to point to and label at least one example of each transformation in the finished pattern. If the pattern only shows translation, prompt them to try a reflection next time.",
       },
+      parentTip: "Tessellations are a wonderful bridge between mathematics and art, and many children become highly engaged when they can see the creative potential. Encourage your child to notice tessellating patterns around the home — tiles, brick walls, fabric patterns. If they struggle to identify which transformation they used, suggest they trace the original shape and physically slide, flip, or turn it over the pattern to find the match.",
+      extension: "Create a Escheresque tessellation by starting with a rectangle, cutting a shape from one side, and taping it to the opposite side. The new shape will tessellate. Repeat with a different cut on the top-bottom pair. Trace this custom tile to create a full A4 tessellating pattern, then colour it using at least two colours. Identify every transformation type used.",
+      resources: [
+        { title: "Tessellations — Maths is Fun", url: "https://www.mathsisfun.com/geometry/tessellation.html", description: "Explanation of tessellating patterns with interactive examples." },
+        { title: "Transformations — Maths is Fun", url: "https://www.mathsisfun.com/geometry/transformations.html", description: "Guide to translation, reflection, and rotation with diagrams." },
+        { title: "NRICH: Tessellation Activities", url: "https://nrich.maths.org/tessellations", description: "Investigative tessellation problems for upper primary." },
+      ],
     },
     activities: [
       // ─── Easy ───
@@ -7024,6 +7151,7 @@ export const year6MathsWorksheets: WorksheetItem[] = [
         ],
       },
     ],
+    nextSteps: ["cartesian-plane-quadrants"],
   },
 
   // ── WS 17: Cartesian Plane — All 4 Quadrants ──────────────
@@ -7056,6 +7184,13 @@ export const year6MathsWorksheets: WorksheetItem[] = [
         script: "Point to any dot on the grid. I will read the coordinates. Then I will name coordinates and you point to the location. Finally, tell me: how do you know which quadrant a point is in just from looking at the signs of the coordinates?",
         action: "Focus on the child being able to describe the sign rules verbally. A point like (-3, 4) should be described as: x is negative so we go left, y is positive so we go up — that puts it in Quadrant 2.",
       },
+      parentTip: "This lesson extends the Cartesian plane to all four quadrants using negative coordinates, which is a significant step up from the first-quadrant work earlier. The sign rules for each quadrant (++, -+, --, +-) are worth making into a simple reference card. Watch for your child plotting (-3, 2) as if it is (3, 2) — a very common error. The phrase 'walk left for negative x, walk down for negative y' helps make it concrete.",
+      extension: "Plot the vertices of a simple shape (e.g. a rectangle or triangle) in all four quadrants, choosing points so the shape straddles the origin. Then reflect the shape in the x-axis by changing the sign of the y-coordinates of each point. Plot the reflection and describe what changed. Repeat with a reflection in the y-axis.",
+      resources: [
+        { title: "Coordinate Plane — Khan Academy", url: "https://www.khanacademy.org/math/cc-sixth-grade-math/cc-6th-negative-number-topic/cc-6th-coordinate-plane/v/the-coordinate-plane", description: "Video covering all four quadrants of the coordinate plane." },
+        { title: "Cartesian Plane — Maths is Fun", url: "https://www.mathsisfun.com/data/cartesian-coordinates.html", description: "Guide to the Cartesian plane with all four quadrants." },
+        { title: "Graphing Points — Khan Academy", url: "https://www.khanacademy.org/math/cc-sixth-grade-math/cc-6th-negative-number-topic/cc-6th-coordinate-plane/e/graphing-points", description: "Interactive practice plotting points in all four quadrants." },
+      ],
     },
     activities: [
       // ─── Easy ───
@@ -7386,6 +7521,7 @@ export const year6MathsWorksheets: WorksheetItem[] = [
         ],
       },
     ],
+    nextSteps: ["compare-distributions"],
   },
 
   // ── WS 18: Compare Distributions ──────────────────────────
@@ -7418,6 +7554,13 @@ export const year6MathsWorksheets: WorksheetItem[] = [
         script: "Looking at both our data sets, write two sentences comparing them. Use at least two of the words: mean, median, mode, range. Which measure tells us the most useful thing about the difference between our results?",
         action: "Read the child's sentences. If they only mention mean, prompt them to consider range. Discuss when each measure is most useful (median for skewed data, range for comparing consistency).",
       },
+      parentTip: "Statistics is an area where confident misconceptions are common. Many children think the mean (average) always tells the whole story, but a data set with one extreme value (outlier) can produce a misleading mean. When your child calculates and compares statistics, always ask: 'Does this number feel representative of the data?' If one number is very different from the others, talk about why median might be more useful.",
+      extension: "Collect two sets of real data — for example, daily high temperatures for a week in two different Australian cities from the Bureau of Meteorology website. Calculate the mean, median, mode, and range for each city. Write a short paragraph comparing the distributions and deciding which city has more consistent weather.",
+      resources: [
+        { title: "Mean, Median, Mode — Khan Academy", url: "https://www.khanacademy.org/math/cc-sixth-grade-math/cc-6th-data-statistics/cc-6th-mean-and-median/v/statistics-intro-mean-median-and-mode", description: "Video explaining mean, median, mode, and range with examples." },
+        { title: "Statistics — Maths is Fun", url: "https://www.mathsisfun.com/data/central-measures.html", description: "Clear explanation of measures of centre and spread." },
+        { title: "NRICH: Data Handling", url: "https://nrich.maths.org/statistics", description: "Statistical investigations and data comparison activities." },
+      ],
     },
     activities: [
       // ─── Easy ───
@@ -7741,6 +7884,7 @@ export const year6MathsWorksheets: WorksheetItem[] = [
         ],
       },
     ],
+    nextSteps: ["critique-media-statistics"],
   },
 
   // ── WS 19: Critique Media Statistics ──────────────────────
@@ -7772,6 +7916,13 @@ export const year6MathsWorksheets: WorksheetItem[] = [
         script: "Here is a true set of data. Can you write one headline that makes it sound impressive, and a second headline that makes the same data sound unimpressive? Both must be technically true.",
         action: "Provide a data set such as: a new medicine reduced headache frequency from 10 per month to 9 per month. The child writes two headlines. Discuss: is a 10% reduction impressive or not? Context matters.",
       },
+      parentTip: "Statistical literacy is one of the most transferable skills your child will develop. Make it a habit to pause when you encounter statistics in news headlines or advertisements together and ask: 'Where did this number come from? How big was the sample? Is the graph showing me what I think it is showing?' This critical habit takes time to develop but is enormously valuable. Praise your child when they spot something misleading — this is sophisticated thinking.",
+      extension: "Find three real news articles or advertisements online that use statistics (percentages, graphs, or averages). For each one, your child writes a brief evaluation: What claim is being made? What evidence is provided? What is missing? Could the data be presented in a more honest way? This becomes a media literacy portfolio entry.",
+      resources: [
+        { title: "Data and Statistics — Khan Academy", url: "https://www.khanacademy.org/math/cc-sixth-grade-math/cc-6th-data-statistics", description: "Khan Academy statistics unit including data interpretation." },
+        { title: "How to Lie with Statistics — Maths is Fun", url: "https://www.mathsisfun.com/data/misleading-graphs.html", description: "Examples of misleading graphs and how to spot them." },
+        { title: "Statistical Literacy — ABC Education", url: "https://education.abc.net.au/home#!/digibook/2717880/statistics", description: "ABC Education resources on interpreting statistical information." },
+      ],
     },
     activities: [
       // ─── Easy ───
@@ -8166,6 +8317,7 @@ export const year6MathsWorksheets: WorksheetItem[] = [
         ],
       },
     ],
+    nextSteps: ["assign-probabilities"],
   },
 
   // ── WS 20: Assign Probabilities ───────────────────────────
@@ -8199,6 +8351,13 @@ export const year6MathsWorksheets: WorksheetItem[] = [
         script: "I want to design a bag game where the probability of winning is exactly 1 in 4. How many counters of each colour should I put in? Is there more than one way to do it?",
         action: "Let the child explore multiple valid solutions (e.g. 1 red and 3 blue, 2 red and 6 blue). Discuss: does the total number of counters change the probability? Help them see that only the ratio matters.",
       },
+      parentTip: "Probability language is often confused with everyday language. When children say something is 'impossible', they may mean 'very unlikely'. Help your child distinguish between these by using the 0 to 1 scale — impossible is exactly 0, certain is exactly 1, and everything else sits between them. Rolling dice, drawing cards, or flipping coins together for a few minutes before the worksheet makes the abstract concrete.",
+      extension: "Design a spinner with six sections of different sizes. Label each section with a colour. Without measuring, estimate the probability of each colour as a fraction, decimal, and percentage. Then spin it 60 times and record results. Compare the observed frequencies to your probability estimates and discuss any differences.",
+      resources: [
+        { title: "Probability — Khan Academy", url: "https://www.khanacademy.org/math/cc-seventh-grade-math/cc-7th-probability-statistics/cc-7th-basic-prob/v/basic-probability", description: "Video on assigning probabilities using the 0 to 1 scale." },
+        { title: "Probability — Maths is Fun", url: "https://www.mathsisfun.com/probability.html", description: "Introduction to probability with fractions, decimals, and percentages." },
+        { title: "NRICH: Probability Activities", url: "https://nrich.maths.org/probability", description: "Hands-on probability investigations for Year 6 level." },
+      ],
     },
     activities: [
       // ─── Easy ───
@@ -8559,6 +8718,7 @@ export const year6MathsWorksheets: WorksheetItem[] = [
         ],
       },
     ],
+    nextSteps: ["simulations-digital-tools"],
   },
 
   // ── WS 21: Simulations with Digital Tools ─────────────────
@@ -8592,6 +8752,13 @@ export const year6MathsWorksheets: WorksheetItem[] = [
         script: "Our dice landed on 4 eight times but the expected frequency was 10. Does that mean the dice is unfair? How would you design a test to check whether a dice is fair?",
         action: "Listen for the child to suggest increasing the number of trials. Guide them toward the idea that a larger sample gives more reliable results. Discuss how digital tools (computers) can run thousands of simulations quickly, which is why they are useful.",
       },
+      parentTip: "Children are often surprised that experimental results do not exactly match theoretical probability — they expect that if the probability is 1/6, then in 60 rolls they will get exactly 10 of each number. Use this as a teaching moment: probability tells us what to expect on average over many, many trials, not a guaranteed result. The more trials, the closer the results tend to get to the theory. Running a simulation together and watching the results stabilise over 100+ trials is genuinely illuminating.",
+      extension: "Design a simulation to test whether a thumbtack is more likely to land point-up or point-down. Before starting, make a prediction and assign a probability. Drop the thumbtack 50 times and record results. Then pool results with another family member for a total of 100 trials. Has your estimate of the probability changed? What would happen with 1000 trials?",
+      resources: [
+        { title: "Probability and Simulations — Khan Academy", url: "https://www.khanacademy.org/math/cc-seventh-grade-math/cc-7th-probability-statistics/cc-7th-theoretical-and-experimental-probability/v/experimental-probability", description: "Video on experimental probability and running simulations." },
+        { title: "Experimental Probability — Maths is Fun", url: "https://www.mathsisfun.com/data/probability-events-types.html", description: "Explanation of theoretical vs experimental probability." },
+        { title: "NRICH: Probability Simulations", url: "https://nrich.maths.org/probability-simulations", description: "Interactive probability simulations and investigations." },
+      ],
     },
     activities: [
       // ─── Easy ───
@@ -8955,6 +9122,7 @@ export const year6MathsWorksheets: WorksheetItem[] = [
         ],
       },
     ],
+    nextSteps: ["observed-vs-expected-frequencies"],
   },
 
   // ── WS 22: Observed vs Expected Frequencies ───────────────
@@ -8987,6 +9155,13 @@ export const year6MathsWorksheets: WorksheetItem[] = [
         script: "Write 3-4 sentences describing what you found. Was the dice fair? How do you know? What would you need to do to be more confident in your answer?",
         action: "Read the child's written response. Look for: comparison of observed to expected, acknowledgement that variation is normal, and a suggestion that more trials would increase confidence. Guide them to avoid saying the dice is unfair just because one number appeared more often in a small sample.",
       },
+      parentTip: "This lesson brings together probability and data analysis, so it is one of the most conceptually rich in the unit. The key idea to reinforce is that variation in small samples is completely normal and does not mean anything is wrong. Children sometimes conclude that a fair coin is 'broken' if they flip 10 tails in a row. Discussing the law of large numbers informally — the more trials, the more the results even out — prepares them well for secondary school statistics.",
+      extension: "Research the actual probability of each outcome when rolling two dice and adding the results (there are 11 possible sums from 2 to 12, but they are not equally likely — 7 is the most likely). Build a theoretical frequency table for 72 rolls. Then conduct the experiment with 72 rolls and compare. Create a bar graph showing both theoretical and observed frequencies side by side.",
+      resources: [
+        { title: "Expected vs Observed Frequency — Khan Academy", url: "https://www.khanacademy.org/math/cc-seventh-grade-math/cc-7th-probability-statistics/cc-7th-theoretical-and-experimental-probability/e/comparing-theoretical-to-experimental-probabilites", description: "Practice comparing theoretical and experimental probability results." },
+        { title: "Probability — Maths is Fun", url: "https://www.mathsisfun.com/data/probability-events-conditional.html", description: "Advanced probability concepts including expected frequency." },
+        { title: "NRICH: Probability Experiments", url: "https://nrich.maths.org/probability-experiments", description: "Hands-on probability experiments with comparison of results." },
+      ],
     },
     activities: [
       // ─── Easy ───

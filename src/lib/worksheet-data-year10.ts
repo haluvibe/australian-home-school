@@ -31,6 +31,13 @@ export const year10MathsWorksheets: WorksheetItem[] = [
         script: "Before we finish — can you explain to me in one or two sentences why scientists use a logarithmic scale instead of a regular one? And give me one real-world example where you would need it.",
         action: "Listen for the idea that logarithmic scales handle enormous ranges of values compactly. Prompt if needed: think about comparing the size of a bacterium to the size of the Earth, or comparing very loud and very quiet sounds.",
       },
+      parentTip: "Logarithmic scales are one of those topics that can feel intimidating for parents who haven't done maths in a while — but you genuinely do not need to be an expert here. The key is to focus on the big idea: a logarithmic scale compresses enormous ranges of numbers into something manageable. Work alongside your teenager to draw the scale and calculate the Richter scale examples together. What you're listening for is whether they can explain the 'multiply by 10 each step' idea in their own words — that conceptual understanding matters far more than a formula.",
+      extension: "Explore the decibel scale for sound together: research the sound levels (in dB) of a whisper, a normal conversation, a concert, and a jet engine. Use the fact that an increase of 10 dB means 10 times the intensity to calculate how many times more intense a concert is than a whisper. Then plot the relationship between dB value and intensity on a number line, and discuss why the decibel system exists. This connects directly to the AC V9 Year 10 Number strand and real-world logarithmic applications.",
+      resources: [
+        { title: "Khan Academy — Logarithms Introduction", url: "https://www.khanacademy.org/math/algebra2/x2ec2f6f830c9fb89:logs/x2ec2f6f830c9fb89:log-intro/v/logarithms", description: "A clear, visual introduction to what logarithms mean and why they are useful." },
+        { title: "Maths is Fun — Logarithms", url: "https://www.mathsisfun.com/algebra/logarithms.html", description: "Friendly explanations and interactive examples for logarithms and their properties." },
+        { title: "3Blue1Brown — YouTube Channel", url: "https://www.youtube.com/@3blue1brown", description: "Visual, intuitive explanations of mathematical concepts including exponential and logarithmic thinking." },
+      ],
     },
     activities: [
       // --- EASY: Scientific notation & conversions ---
@@ -657,6 +664,7 @@ export const year10MathsWorksheets: WorksheetItem[] = [
         ],
       },
     ],
+    nextSteps: ["growth-decay-functions"],
   },
 
   // ── WS 2: Growth & Decay Functions ────────────────────────────
@@ -688,6 +696,13 @@ export const year10MathsWorksheets: WorksheetItem[] = [
         script: "How do you tell from an equation whether something is growing or decaying? Look at the equation P = 2000 times 0.82 to the power of n — what does the 0.82 tell you? Now look at y = 3 to the power of x — is this growth or decay, and how do you know?",
         action: "Child explains the rule: r greater than 1 means growth, r between 0 and 1 means decay. If they are confident, extend: ask what happens when r equals exactly 1, and what that would mean in a real-world context.",
       },
+      parentTip: "Exponential functions are genuinely tricky because our brains are wired to think linearly. The best thing you can do is keep coming back to real-world examples — compound interest, population growth, radioactive decay — rather than just practising the algebra. If your teenager can tell you why r must be greater than 1 for growth and between 0 and 1 for decay (not just that it must be), they have understood the concept. Try investing time in the graph — draw it together and notice how quickly exponential curves rise or fall.",
+      extension: "Use Desmos to explore the family of functions y = a times b to the power of x. Start with b = 2 and vary a (try 1, 2, 0.5). Then fix a = 1 and vary b (try 0.5, 1, 2, 3, 0.1). Write down what you notice about the y-intercept, the horizontal asymptote, and the steepness. Then research the 'rule of 70' in finance, which states that the doubling time in years is approximately 70 divided by the annual percentage growth rate. Verify this rule using your exponential function for a few different growth rates. This connects to AC V9 Year 10 Algebra.",
+      resources: [
+        { title: "Khan Academy — Exponential Growth and Decay", url: "https://www.khanacademy.org/math/algebra2/x2ec2f6f830c9fb89:exp/x2ec2f6f830c9fb89:exp-growth-decay/v/exponential-growth-functions", description: "Step-by-step video lessons on exponential growth and decay functions with worked examples." },
+        { title: "Desmos Graphing Calculator", url: "https://www.desmos.com/calculator", description: "Free online graphing tool — type y = a*(b^x) and use sliders to explore how a and b affect the graph." },
+        { title: "Maths is Fun — Exponential Growth and Decay", url: "https://www.mathsisfun.com/algebra/exponential-growth.html", description: "Clear explanations of exponential models with real-world examples including population and finance." },
+      ],
     },
     activities: [
       // --- EASY: Recognise growth vs decay ---
@@ -1316,6 +1331,7 @@ export const year10MathsWorksheets: WorksheetItem[] = [
         ],
       },
     ],
+    nextSteps: ["simultaneous-equations-inequalities"],
   },
 
   // ── WS 3: Simultaneous Equations & Linear Inequalities ────────
@@ -1348,6 +1364,13 @@ export const year10MathsWorksheets: WorksheetItem[] = [
         script: "If I draw both equations as lines on a graph, the solution is the point where they cross. Can you explain why two parallel lines would have no solution? And what would it mean if the two equations were actually the same line?",
         action: "Child explains: parallel lines never cross so no solution exists; identical lines cross everywhere so there are infinitely many solutions. Prompt: how could you tell just from looking at the equations whether two lines are parallel?",
       },
+      parentTip: "Simultaneous equations are a great topic for co-learning — you don't need to remember both methods to support your teenager effectively. In fact, having them teach you one method while you work through the other is an excellent strategy. The key conceptual check is whether they understand that the solution is the point where two lines intersect, and that this is why there is exactly one answer for non-parallel lines. If they can explain why parallel lines give no solution and identical lines give infinitely many solutions, they have genuine understanding rather than just procedural steps.",
+      extension: "Set up a real-world simultaneous equations problem using a household scenario: for example, compare two mobile phone plans (one with a higher monthly fee but cheaper calls, one with a lower fee but more expensive calls) and find the number of call minutes at which both plans cost the same. Write this as two equations, solve algebraically, then verify by graphing both lines in Desmos and confirming the solution is the intersection point. For the inequality extension, graph a system of two inequalities in Desmos and shade the feasible region — this is the foundation of linear programming, used in business and logistics. This connects to AC V9 Year 10 Algebra.",
+      resources: [
+        { title: "Khan Academy — Systems of Equations", url: "https://www.khanacademy.org/math/algebra/x2f8bb11595b61c86:systems-of-equations", description: "Comprehensive lessons on solving simultaneous equations by substitution, elimination, and graphing." },
+        { title: "Desmos — Graphing Linear Systems", url: "https://www.desmos.com/calculator", description: "Graph two equations simultaneously and find their intersection point visually." },
+        { title: "Maths is Fun — Simultaneous Equations", url: "https://www.mathsisfun.com/algebra/systems-linear-equations.html", description: "Clear worked examples for solving systems of equations with substitution and elimination methods." },
+      ],
     },
     activities: [
       // --- EASY: Foundations & terminology ---
@@ -2208,6 +2231,7 @@ export const year10MathsWorksheets: WorksheetItem[] = [
         ],
       },
     ],
+    nextSteps: ["conjectures-functions-relations"],
   },
 
   // ── WS 4: Conjectures with Functions & Relations ──────────────
@@ -2240,6 +2264,13 @@ export const year10MathsWorksheets: WorksheetItem[] = [
         script: "I want you to make up one conjecture about any function type we looked at today. State it clearly — something like: I think that when the coefficient of x is negative in a linear function, the line always slopes downward. Then test it with two examples.",
         action: "Child states a conjecture, tests it, and explains whether it holds. If they are finding it easy, push further: can they find a conjecture that turns out to be false? That is equally valid mathematically.",
       },
+      parentTip: "This lesson is about mathematical thinking as much as it is about functions — the ability to notice a pattern, state it clearly, and then test it is a genuine intellectual skill. You do not need to know whether a conjecture is true before your teenager tests it; in fact, it is more powerful if you genuinely don't know and work it out together. The key things to listen for are: Can they state the conjecture precisely rather than vaguely? Can they test it with more than one example? Do they understand that even one counterexample disproves a conjecture entirely? These habits reflect how mathematicians actually work.",
+      extension: "In Desmos, graph the family of quadratics y = x squared plus bx plus c for various values of b and c. Form and test at least three conjectures about what b and c control in the graph — for example, does c always determine the y-intercept, and does the axis of symmetry always sit at x = -b/2? Write each conjecture clearly, test it with at least four examples, and write a brief explanation of why the conjecture holds (or find a counterexample that disproves it). This connects to AC V9 Year 10 Algebra and the Mathematical Reasoning proficiency strand.",
+      resources: [
+        { title: "Desmos — Function Explorer", url: "https://www.desmos.com/calculator", description: "Use sliders to explore how parameters change graphs of linear, quadratic, and exponential functions." },
+        { title: "NRICH — Functions and Graphs", url: "https://nrich.maths.org/functions-and-graphs", description: "Rich mathematical tasks that develop deeper understanding of functions, relations, and mathematical reasoning." },
+        { title: "Khan Academy — Functions", url: "https://www.khanacademy.org/math/algebra2/x2ec2f6f830c9fb89:functions", description: "Video lessons and practice on function notation, domain, range, and classification of function types." },
+      ],
     },
     activities: [
       // --- EASY: Classify and identify function types ---
@@ -3174,6 +3205,7 @@ export const year10MathsWorksheets: WorksheetItem[] = [
         ],
       },
     ],
+    nextSteps: ["surface-area-volume-composites"],
   },
 
   // ── WS 5: Surface Area & Volume of Composites ────────────────
@@ -3207,6 +3239,13 @@ export const year10MathsWorksheets: WorksheetItem[] = [
         script: "What is the most common mistake people make when finding the surface area of a composite shape? Can you explain in your own words why we subtract the joining face, and give me an example?",
         action: "Child explains: the joining face is inside the object, not on the surface, so it is not painted or exposed. If they are confident, ask: if you stacked two identical cubes on top of each other, how many faces are hidden? (Answer: 2 — one from each cube at the join.)",
       },
+      parentTip: "The joining face rule is one of the most reliably confusing things in this topic — even adults get it wrong on first encounter. Rather than explaining the rule at the start, try asking your teenager to explain it to you after the activity: 'If we stick these two cubes together, how many faces disappear and why?' Hands-on work with cardboard nets or actual 3D objects (a cereal box combined with a prism made from paper) makes this idea click in a way that diagrams on paper often cannot. If they make a mistake on the surface area, resist the urge to correct immediately — ask them to count the exposed faces one at a time and see if they can find the error themselves.",
+      extension: "Design a packaging optimisation problem: you need to ship 24 cylindrical tins (each 10 cm in diameter and 15 cm tall) in a single rectangular box using the minimum cardboard. Work out the dimensions of the box for different arrangements (for example, 4 by 6 layout, 3 by 8 layout, or 2 by 12 layout in a single layer) and calculate the surface area of each box. Then find which arrangement uses the least cardboard. As a further extension, calculate the volume of wasted space (the gaps between cylinders) for each arrangement. This applies AC V9 Year 10 Measurement in a genuine design-and-optimisation context.",
+      resources: [
+        { title: "Maths is Fun — Surface Area", url: "https://www.mathsisfun.com/geometry/surface-area.html", description: "Clear formulas and worked examples for surface area of common 3D shapes." },
+        { title: "GeoGebra — 3D Calculator", url: "https://www.geogebra.org/3d", description: "Interactive 3D graphing tool to visualise and manipulate composite solid shapes." },
+        { title: "Khan Academy — Surface Area and Volume", url: "https://www.khanacademy.org/math/geometry/hs-geo-surface-area-volume", description: "Video lessons and exercises on finding surface area and volume of 3D shapes." },
+      ],
     },
     activities: [
       // --- EASY: Identify shapes, formulas and units ---
@@ -4022,6 +4061,7 @@ export const year10MathsWorksheets: WorksheetItem[] = [
         ],
       },
     ],
+    nextSteps: ["pythagoras-trigonometry"],
   },
 
   // ── WS 6: Pythagoras' Theorem & Trigonometry ──────────────────
@@ -4054,6 +4094,13 @@ export const year10MathsWorksheets: WorksheetItem[] = [
         script: "The most common mistake with trig is mixing up the opposite and adjacent sides. Can you tell me: for a given angle theta, which side is opposite, which is adjacent, and which is the hypotenuse? And how do you decide which trig ratio to use for a given problem?",
         action: "Child labels sides on a fresh triangle with angle theta marked. They explain the selection rule: if you know opposite and want hypotenuse, use sine. If you know adjacent and want hypotenuse, use cosine. If you know both legs and want the angle, use tangent. Prompt with a real scenario if they need a hint.",
       },
+      parentTip: "Trigonometry is one of those topics where a teenager can appear to be following along but not actually understand what is happening underneath. The real conceptual test is whether they can explain why SOH CAH TOA works — that it is based on the fact that all right-angled triangles with the same angles are similar, so the ratios of their sides are always constant regardless of the triangle's size. If they can articulate that idea, the rest is practice. For the calculator work, make sure they know the difference between sin and sin⁻¹ (arcsin) — this mix-up is one of the most common errors in assessments.",
+      extension: "Measure the height of a tall object near your home (a tree, a building, or a fence post) without climbing it, using only a tape measure and a protractor. Stand a measured distance from the base, use the protractor to measure the angle of elevation to the top, then calculate the height using tan(angle) = height divided by distance. If you can directly measure or estimate the actual height, compare your calculated answer to it and find the percentage error. Document your method, measurements, and calculation. This is a classic real-world application of AC V9 Year 10 Measurement and Pythagoras and Trigonometry.",
+      resources: [
+        { title: "Khan Academy — Trigonometry", url: "https://www.khanacademy.org/math/trigonometry", description: "Full coverage of right-triangle trigonometry including SOH CAH TOA and inverse trigonometric functions." },
+        { title: "Maths is Fun — Trigonometry", url: "https://www.mathsisfun.com/algebra/trigonometry.html", description: "Step-by-step explanations and interactive examples for sine, cosine, and tangent ratios." },
+        { title: "GeoGebra — Geometry Tools", url: "https://www.geogebra.org/geometry", description: "Draw and manipulate right-angled triangles to visually explore trigonometric ratios." },
+      ],
     },
     activities: [
       // --- EASY: Trig ratio definitions & Pythagoras basics ---
@@ -4903,6 +4950,7 @@ export const year10MathsWorksheets: WorksheetItem[] = [
         ],
       },
     ],
+    nextSteps: ["measurement-errors-proportion"],
   },
 
   // ── WS 7: Measurement Errors & Proportion ─────────────────────
@@ -4936,6 +4984,13 @@ export const year10MathsWorksheets: WorksheetItem[] = [
         script: "Which is more useful — absolute error or relative error — and when would you prefer each? Give me an example where a small absolute error is actually a huge relative error.",
         action: "Child explains: relative error is more meaningful when comparing errors across different sized quantities. A good example: measuring the diameter of a human hair versus the length of a room — the same 0.1 mm absolute error is enormous for hair measurement but negligible for the room.",
       },
+      parentTip: "Measurement error is a topic that rewards real physical experience over textbook problems. If you have a ruler and a tape measure at home, try measuring the same object multiple times with each — you will almost certainly get slightly different readings. This makes the abstract idea of absolute error concrete. The distinction between absolute and relative error is genuinely subtle, so do not rush past it. Ask your teenager to explain the difference to you using two very different-sized quantities — that comparison is what makes the concept click rather than just memorising definitions.",
+      extension: "Conduct a measurement investigation at home: choose a curved object (a bowl, a jar, or a cylindrical tin) and try to measure its circumference using at least two different methods — for example, wrapping a piece of string around it and measuring the string, and separately measuring the diameter with a ruler and calculating circumference as pi times diameter. Record each measurement and calculate the absolute and relative error of each method compared to the most accurate result. Discuss which method is most precise and why. This connects to AC V9 Year 10 Measurement and the concept of precision in scientific and engineering contexts.",
+      resources: [
+        { title: "Maths is Fun — Accuracy and Precision", url: "https://www.mathsisfun.com/accuracy-precision.html", description: "Clear explanation of the difference between accuracy, precision, absolute error, and relative error." },
+        { title: "NRICH — Measurement and Estimation Problems", url: "https://nrich.maths.org/measurement", description: "Rich tasks and investigations involving measurement, estimation, and analysis of error." },
+        { title: "Khan Academy — Rates and Proportional Relationships", url: "https://www.khanacademy.org/math/cc-seventh-grade-math/cc-7th-ratio-proportion", description: "Lessons on proportional reasoning, scale factors, and their real-world applications." },
+      ],
     },
     activities: [
       // --- EASY: Foundations of measurement error & proportion ---
@@ -5805,6 +5860,7 @@ export const year10MathsWorksheets: WorksheetItem[] = [
         ],
       },
     ],
+    nextSteps: ["deductive-reasoning-geometric-theorems"],
   },
 
   // ── WS 8: Deductive Reasoning & Geometric Theorems ────────────
@@ -5837,6 +5893,13 @@ export const year10MathsWorksheets: WorksheetItem[] = [
         script: "What makes a proof valid? Can you tell me the difference between just calculating an answer and writing a proper proof? And what happens if one step in the chain is wrong?",
         action: "Child explains: a proof must give a reason for every step, not just a numerical answer. If one step is invalid the whole proof collapses. Prompt: think about a chain of dominoes — each one knocks the next. The proof only works if every link holds.",
       },
+      parentTip: "Proof-writing is the part of mathematics that feels most foreign to many adults — and that is completely fine. Your role here is not to check whether the proof is technically correct but to check whether every step has a stated reason. Ask your teenager after each step: 'Why does that follow?' If they can answer every 'why' with a theorem name or a logical principle, the proof is structurally valid. The biggest misconception to watch for is treating 'it looks right from the diagram' as a justification — a proof must work from logic and stated theorems, not from visual appearance.",
+      extension: "Research and write a proof of the Pythagorean theorem using the geometric method involving four right-angled triangles arranged inside a square. Draw the diagram carefully, label all lengths using a, b, and c, and write a formal step-by-step proof showing that a squared plus b squared equals c squared. There are over 300 known proofs of Pythagoras's theorem — for a further challenge, find and understand a second proof method such as the algebraic area method. Documenting two different proofs side by side is an excellent exercise in seeing that the same truth can be established in multiple ways. This connects to AC V9 Year 10 Space and the Mathematical Reasoning proficiency.",
+      resources: [
+        { title: "Maths is Fun — Mathematical Proofs", url: "https://www.mathsisfun.com/geometry/proof.html", description: "Introduction to writing geometric proofs with examples and the correct format for step-by-step reasoning." },
+        { title: "NRICH — Proof and Reasoning", url: "https://nrich.maths.org/proof", description: "Challenging problems that develop formal mathematical reasoning and proof-writing skills." },
+        { title: "Khan Academy — Geometry: Introduction to Proofs", url: "https://www.khanacademy.org/math/geometry/hs-geo-congruence/hs-geo-proofs-intro/v/intro-to-proofs", description: "Video introduction to writing two-column geometric proofs with worked examples." },
+      ],
     },
     activities: [
       // --- EASY: Theorem identification & basic angle problems ---
@@ -6707,6 +6770,7 @@ export const year10MathsWorksheets: WorksheetItem[] = [
         ],
       },
     ],
+    nextSteps: ["networks-paths-connectedness"],
   },
 
   // ── WS 9: Networks, Paths & Connectedness ─────────────────────
@@ -6738,6 +6802,13 @@ export const year10MathsWorksheets: WorksheetItem[] = [
         script: "Can you think of two real situations where finding an efficient path through a network matters? And if I gave you a network with four odd-degree vertices, what does Euler's rule tell you?",
         action: "Child gives real examples (rubbish truck route, airline hub connections, phone network design). They state: four odd-degree vertices means no Euler path exists through every edge. Prompt: what would you have to do to make it work? (Add or remove edges to change the degrees.)",
       },
+      parentTip: "Graph theory (networks) often surprises teenagers because it feels like puzzle-solving rather than traditional mathematics — use that energy to your advantage. The key conceptual idea to check for is whether your teenager understands why vertex degree (odd or even) determines whether an Euler path or circuit is possible. This is a beautiful example of mathematical structure: you do not have to try every possible route if you can simply count the degrees. Encourage your teenager to draw their own networks from real situations — streets in a suburb, friends connected by shared interests — and apply Euler's rule as a genuine test.",
+      extension: "Map the street network in your local suburb as a mathematical graph, assigning a vertex to each intersection and an edge to each road segment between intersections. Count the degree of each vertex. Apply Euler's rule: is an Euler circuit possible through every street without travelling any road twice? If not, identify which vertices have odd degree and work out the minimum number of extra edge-traversals needed to make a complete route. This is a real instance of the Chinese Postman Problem, used by postal workers, rubbish truck planners, and street-sweeping services. This connects to AC V9 Year 10 Space and Networks.",
+      resources: [
+        { title: "Maths is Fun — Seven Bridges of Konigsberg", url: "https://www.mathsisfun.com/activity/seven-bridges-of-konigsberg.html", description: "The famous problem that started the field of graph theory, with an interactive exploration." },
+        { title: "GeoGebra — Graphing Tool", url: "https://www.geogebra.org/graphing", description: "Interactive tools for drawing and analysing mathematical graphs and network diagrams." },
+        { title: "NRICH — Network Games and Problems", url: "https://nrich.maths.org/networkgames", description: "Engaging problems and games involving network traversal, connectivity, and graph theory." },
+      ],
     },
     activities: [
       // ─── EASY ───────────────────────────────────────────────────
@@ -7629,6 +7700,7 @@ export const year10MathsWorksheets: WorksheetItem[] = [
         right: ["Solved computationally by Appel and Haken in 1976", "Edsger Dijkstra, 1956, for finding shortest paths", "Joseph Kruskal and Robert Prim, 1956–1957", "Euler's 1736 solution to the Königsberg Bridge Problem", "A classic NP-hard optimisation problem", "Kuratowski's 1930 characterisation theorem"],
       },
     ],
+    nextSteps: ["bivariate-data-scatter-plots"],
   },
 
   // ── WS 10: Bivariate Data & Scatter Plots ─────────────────────
@@ -7662,6 +7734,13 @@ export const year10MathsWorksheets: WorksheetItem[] = [
         script: "Here is something important: just because two things correlate does not mean one causes the other. Ice cream sales and drowning rates both rise in summer — does eating ice cream cause drowning? What is actually going on there? Can you think of another example where two things correlate but one does not cause the other?",
         action: "Child explains the confounding variable idea: a third factor (hot weather) causes both. They give their own example. Prompt if needed: shoe size and reading ability both increase with age in children — age is the confounding variable, not shoe size.",
       },
+      parentTip: "The 'correlation is not causation' idea is one of the most important critical thinking lessons in all of mathematics — it applies directly to how news stories, advertisements, and scientific claims are presented every day. If you can find a real news article together that makes a causal claim based on a correlation, that makes an excellent real-world extension of this lesson. The drawing of the line of best fit by hand, rather than using software, is also genuinely valuable — it builds intuition about what a best fit means before a calculator does it automatically in later years.",
+      extension: "Collect real bivariate data from a genuine source: visit the Australian Bureau of Statistics website (abs.gov.au) and find a dataset with two numerical variables — for example, median household income and educational attainment by region, or monthly rainfall and temperature data for two Australian cities. Plot the scatter graph by hand or in Desmos, describe the direction and strength of the correlation, draw or calculate a line of best fit, and use it to make a prediction. Discuss: is this prediction reliable? What are the limitations of the model? This connects to AC V9 Year 10 Statistics with real Australian data.",
+      resources: [
+        { title: "Desmos — Scatter Plot and Regression", url: "https://www.desmos.com/calculator", description: "Enter bivariate data into Desmos and fit a linear regression line to explore correlation visually." },
+        { title: "Khan Academy — Scatter Plots and Correlation", url: "https://www.khanacademy.org/math/statistics-probability/describing-relationships-quantitative-data", description: "Video lessons on scatter plots, correlation coefficients, and drawing lines of best fit." },
+        { title: "NRICH — Data and Statistics Investigations", url: "https://nrich.maths.org/data", description: "Rich tasks involving real data collection, analysis, and interpretation of bivariate relationships." },
+      ],
     },
     activities: [
       // --- EASY: Correlation basics & variable identification ---
@@ -8573,6 +8652,7 @@ export const year10MathsWorksheets: WorksheetItem[] = [
         ],
       },
     ],
+    nextSteps: ["media-bias-statistical-analysis"],
   },
 
   // ── WS 11: Media Bias & Statistical Analysis ──────────────────
@@ -8605,6 +8685,13 @@ export const year10MathsWorksheets: WorksheetItem[] = [
         script: "Next time you see a statistic in a headline or an advertisement, what three questions should you ask before you believe it? Think about the source, the sample, and the way the data is displayed.",
         action: "Child lists their three questions (suggested: Who conducted the study and do they have a financial interest? How was the sample chosen and is it representative? Does the graph start at zero and show the full picture?). Praise critical thinking — this skill applies well beyond maths.",
       },
+      parentTip: "This lesson is about something that matters every day in adult life — evaluating claims made with statistics. Encourage your teenager to bring in real examples: a graph from a news website, a claim in an advertisement, or a statistic from social media. Analysing real examples is far more powerful than textbook ones. Your role as a parent is not to know whether the statistic is correct, but to model the habit of asking sceptical questions alongside your teenager: Who collected this data? Why? Who benefits from this conclusion? What is missing from the picture? These questioning habits are genuinely critical life skills.",
+      extension: "Find three different graphs or statistics in current Australian news media — newspapers, news websites, or television news reports. For each one, write a brief analysis: identify the source and any potential conflicts of interest, describe the sample size and how it was collected, check whether any graph axes start at zero, identify any cherry-picking or misleading framing, and state whether you would trust the claim and why. Present your analysis as a short written report. This connects to AC V9 Year 10 Statistics and also to the General Capabilities strand on Critical and Creative Thinking.",
+      resources: [
+        { title: "Maths is Fun — Statistics Overview", url: "https://www.mathsisfun.com/data/index.html", description: "Comprehensive coverage of statistical concepts including graphs, sampling bias, and data interpretation." },
+        { title: "NRICH — Statistics and Probability", url: "https://nrich.maths.org/statistics", description: "Challenging problems that develop critical thinking about data, sampling methods, and statistical claims." },
+        { title: "Khan Academy — Statistical Study Design", url: "https://www.khanacademy.org/math/statistics-probability/designing-studies", description: "Lessons on observational studies, sampling methods, and the limitations of statistical conclusions." },
+      ],
     },
     activities: [
       // ─── EASY ─────────────────────────────────────────────────────
@@ -9580,6 +9667,7 @@ export const year10MathsWorksheets: WorksheetItem[] = [
         right: ["A measurement from a sample used to estimate a parameter", "A measurement describing the entire population", "The list from which a sample is drawn", "A subset selected from the population", "Collecting data from every member of the population", "The entire group being studied"],
       },
     ],
+    nextSteps: ["conditional-probability-compound-events"],
   },
 
   // ── WS 12: Conditional Probability & Compound Events ──────────
@@ -9612,6 +9700,13 @@ export const year10MathsWorksheets: WorksheetItem[] = [
         script: "What is the difference between independent events and dependent events? If I flip a coin twice, does the result of the first flip affect the second? What about drawing cards without replacing them?",
         action: "Child explains: for independent events the probability does not change (coin flips, dice rolls, drawing with replacement). For dependent events the first outcome changes the probabilities for the next (drawing without replacement). If confident, introduce the multiplication rule: P(A and B) = P(A) x P(B|A), and show it works for both cases.",
       },
+      parentTip: "Conditional probability is conceptually one of the most demanding topics in Year 10 — even many adults find it counterintuitive. The key is to slow down and always ask together: has the situation changed since the last event happened? With drawing without replacement, the bag physically changes. With a coin toss, it does not. Using real physical objects — actually pulling coloured counters from a bag — is far more effective than abstract calculation at first. If the notation P(A|B) feels confusing, translate it into plain English every time: the probability of A, given that B has already happened.",
+      extension: "Research and work through the Monty Hall Problem together: you are on a game show, there are three doors, and one hides a prize. You choose door 1. The host then opens door 3 (always revealing an empty door) and offers you the chance to switch to door 2. Should you switch? Most people say it makes no difference — but the mathematically correct answer is that switching wins two thirds of the time. Work out why using a tree diagram or a two-way table. Then simulate the problem by running 30 trials using three playing cards (one marked as the prize) and recording the win rate for switching versus staying. This is one of the most famous examples of conditional probability in action, and connects to AC V9 Year 10 Probability.",
+      resources: [
+        { title: "Khan Academy — Conditional Probability", url: "https://www.khanacademy.org/math/statistics-probability/probability-library/conditional-probability-independence/v/calculating-conditional-probability", description: "Clear video explanation of conditional probability with worked examples and tree diagrams." },
+        { title: "Maths is Fun — Conditional Probability", url: "https://www.mathsisfun.com/data/probability-events-conditional.html", description: "Friendly introduction to conditional probability with real-world examples and practice questions." },
+        { title: "NRICH — Probability Problems", url: "https://nrich.maths.org/probability", description: "Rich probability investigations including compound events, tree diagrams, and conditional reasoning." },
+      ],
     },
     activities: [
       // --- EASY: Foundations of probability language & basic calculations ---

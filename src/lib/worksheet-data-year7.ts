@@ -31,6 +31,13 @@ export const year7MathsWorksheets: WorksheetItem[] = [
         script: "Can you think of why we might need to break numbers into prime factors? It turns out it helps us find the highest common factor of two numbers — really useful when simplifying fractions. Tell me in your own words: what is a prime number, and what does an exponent tell us?",
         action: "Have your child explain both concepts aloud. Ask them to quickly write the prime factorisation of 30 without a tree. Check the answer is 2 times 3 times 5.",
       },
+      parentTip: "Factor trees are often a lightbulb moment, so if your child finds them satisfying let them run with larger numbers like 360 or 1024. If they are struggling to remember which numbers are prime, keep a short list visible on the desk — checking against a list is a legitimate strategy, not cheating. Year 7 students often confuse 1 as prime; gently remind them that 1 is neither prime nor composite.",
+      extension: "Challenge your student to use prime factorisation to find the Highest Common Factor (HCF) and Lowest Common Multiple (LCM) of three numbers at once — try 12, 18 and 30. They should list the prime factorisation of each, then identify shared and combined primes. As an extension to the extension, look up RSA encryption online: it uses the difficulty of factorising very large numbers to keep internet data safe.",
+      resources: [
+        { title: "Prime Factorisation — Khan Academy", url: "https://www.khanacademy.org/math/cc-sixth-grade-math/cc-6th-factors-and-multiples/cc-6th-prime-factorization/v/prime-factorization", description: "Clear video explanation of prime factorisation with worked examples and practice exercises." },
+        { title: "Prime Factorisation — Maths is Fun", url: "https://www.mathsisfun.com/prime-factorization.html", description: "Concise written guide to prime factorisation with an interactive factor tree tool." },
+        { title: "Factor Trees — NRICH Maths", url: "https://nrich.maths.org/factors-multiples-and-primes", description: "Rich investigative tasks involving factors, multiples and primes that extend beyond drill practice." },
+      ],
     },
     activities: [
       {
@@ -182,6 +189,7 @@ export const year7MathsWorksheets: WorksheetItem[] = [
         ],
       },
     ],
+    nextSteps: ["squares-square-roots", "integer-operations"],
   },
 
   // ── WS 2: Squares & Square Roots ─────────────────────────────
@@ -214,6 +222,13 @@ export const year7MathsWorksheets: WorksheetItem[] = [
         script: "If a square piece of land has an area of 144 square metres, what is the length of each side? How did you work that out? Now tell me: what is the difference between 3 squared and the square root of 9?",
         action: "Have your child answer the land question aloud (answer: 12 m). Listen for whether they correctly reverse-engineer the root. If they confuse squaring with doubling, draw the square again to reinforce the geometric picture.",
       },
+      parentTip: "A very common error at this level is confusing 'squaring' with 'doubling' — your student may write 6 squared as 12 instead of 36. When you spot this, return to the geometric picture: draw a 6 by 6 grid and count the squares. Also watch for calculator errors when they mistake the square root button for the square button. Letting them self-check with area diagrams builds lasting understanding.",
+      extension: "Investigate perfect square patterns by creating a table of n from 1 to 15 and calculating n squared. Plot the pairs on Desmos (https://www.desmos.com/calculator) and describe the shape of the curve. Then explore: between which two consecutive whole numbers does the square root of 50 lie? Can they narrow it down to one decimal place without a calculator by trial and improvement?",
+      resources: [
+        { title: "Squares and Square Roots — Khan Academy", url: "https://www.khanacademy.org/math/cc-sixth-grade-math/cc-6th-factors-and-multiples/cc-6th-square-root/v/introduction-to-square-roots", description: "Video introduction to square roots with visual area models and practice problems." },
+        { title: "Square Numbers — Maths is Fun", url: "https://www.mathsisfun.com/square-root.html", description: "Accessible explanation of squaring and square roots with worked examples and an interactive tool." },
+        { title: "Squares and Roots Grapher — Desmos", url: "https://www.desmos.com/calculator", description: "Free online graphing calculator to plot y = x squared and explore the visual relationship between squaring and roots." },
+      ],
     },
     activities: [
       {
@@ -351,6 +366,7 @@ export const year7MathsWorksheets: WorksheetItem[] = [
         ],
       },
     ],
+    nextSteps: ["integer-operations"],
   },
 
   // ── WS 3: Integer Operations ──────────────────────────────────
@@ -382,6 +398,13 @@ export const year7MathsWorksheets: WorksheetItem[] = [
         script: "The temperature was minus 6 degrees overnight. By midday it had risen 14 degrees. What is the midday temperature? Can you write that as an addition of integers and solve it without the number line?",
         action: "Have your child solve the temperature problem on paper. If they get it right without the line, ask them to try one more: a submarine at -80 m rises 35 m, what is its new depth? This mirrors the worksheet word problems.",
       },
+      parentTip: "Many Year 7 students find negative numbers counterintuitive, particularly subtracting a negative. If 5 minus negative 3 equals 8 causes confusion, the number line is your best friend: start at 5 and removing a negative means moving right. Keep a thermometer or a drawn number line nearby throughout this lesson. Be patient if your child needs several concrete examples before moving to abstract working; this concept is foundational for algebra.",
+      extension: "Explore integer operations using a real-world spreadsheet investigation. Open a spreadsheet such as Google Sheets and record daily minimum temperatures for your city over a week using the Bureau of Meteorology website. Calculate the temperature change each day using subtraction of integers, then find the weekly mean. This connects integer arithmetic to real data and introduces spreadsheet skills.",
+      resources: [
+        { title: "Adding and Subtracting Negative Numbers — Khan Academy", url: "https://www.khanacademy.org/math/cc-sixth-grade-math/cc-6th-negative-number-topic/cc-6th-add-sub-neg-numbers/v/adding-negative-numbers", description: "Step-by-step video lessons on adding and subtracting integers with number line models." },
+        { title: "Integers — Maths is Fun", url: "https://www.mathsisfun.com/positive-negative-integers.html", description: "Clear explanation of positive and negative integers with rules for addition and subtraction." },
+        { title: "Negative Number Activities — NRICH Maths", url: "https://nrich.maths.org/negative-numbers", description: "Engaging problem-solving tasks involving negative numbers for deeper understanding." },
+      ],
     },
     activities: [
       {
@@ -523,6 +546,7 @@ export const year7MathsWorksheets: WorksheetItem[] = [
         ],
       },
     ],
+    nextSteps: ["fractions-decimals-all-operations"],
   },
 
   // ── WS 4: Fractions & Decimals — All Four Operations ─────────
@@ -555,6 +579,13 @@ export const year7MathsWorksheets: WorksheetItem[] = [
         script: "Now back to the recipe. Three quarters of a cup times one and a half. Let us write one and a half as three halves. Three quarters times three halves equals nine eighths, which is one and one eighth cups. Does that make sense — a bit more than one cup? Now you try: a jacket costs sixty four dollars and eighty cents and is reduced by one quarter. What is the new price?",
         action: "Have your child work through the jacket problem independently. Watch for errors in decimal subtraction. Answer: $64.80 x 0.25 = $16.20 discount, so new price is $48.60. Use the calculator to verify after they have written a working solution.",
       },
+      parentTip: "Fractions and decimals together in one lesson can feel overwhelming. If your child is struggling, break the session into two parts: fractions first, then decimals. The most common errors are forgetting to find a common denominator before adding fractions, and misaligning decimal points when adding or subtracting. Keep encouraging them to estimate first before calculating. Year 7 students respond well when they understand the why, so link fraction division to asking how many of this fit into that.",
+      extension: "Design a scaled recipe project: take a real recipe that serves 4 and scale it to serve 7 using fraction and decimal arithmetic. Write all working by hand, then use a calculator to verify each step. Compare the amounts and think about what seven eighths of a cup looks like in practice. This brings fractions and decimals into a meaningful real-world context aligned to the Measurement strand.",
+      resources: [
+        { title: "Fractions — Khan Academy", url: "https://www.khanacademy.org/math/arithmetic/fraction-arithmetic", description: "Comprehensive video series covering all four operations with fractions, including mixed numbers." },
+        { title: "Fractions and Decimals — Maths is Fun", url: "https://www.mathsisfun.com/fractions.html", description: "Accessible guide to fractions with worked examples, interactive exercises, and links to decimal conversion." },
+        { title: "Fractions Problems — NRICH Maths", url: "https://nrich.maths.org/fractions", description: "Rich investigative problems involving fractions for students ready to go beyond procedural practice." },
+      ],
     },
     activities: [
       {
@@ -690,6 +721,7 @@ export const year7MathsWorksheets: WorksheetItem[] = [
         ],
       },
     ],
+    nextSteps: ["ratios-percentages-financial"],
   },
 
   // ── WS 5: Ratios, Percentages & Financial Maths ───────────────
@@ -722,6 +754,13 @@ export const year7MathsWorksheets: WorksheetItem[] = [
         script: "Look at this receipt or catalogue. Can you find a percentage discount? Can you work out the actual saving in dollars? And here is a ratio challenge: if orange juice and water are mixed 2 to 3 and we use 400 mL of juice, how much water do we need?",
         action: "Use a real receipt or catalogue item if available. For the ratio question, guide your child to find one part first: one part of juice is 400 divided by 2 equals 200 mL. Water is 3 parts, so 600 mL. If no catalogue is available, invent a price and discount together.",
       },
+      parentTip: "Ratios and percentages are topics where real-world shopping examples work brilliantly. If your child is disengaged, browse a supermarket catalogue or receipt together and identify actual percentage discounts. Watch for the common error of adding percentages without understanding the base: a 10% increase followed by a 10% decrease does not return to the original price. Financial maths at Year 7 is explicitly in the Australian Curriculum, making this excellent life preparation.",
+      extension: "Investigate the rule of 72, a shortcut used by financial planners to estimate how many years it takes to double an investment. Divide 72 by the annual interest rate to find the approximate doubling time. For example at 6% per year, money roughly doubles in 12 years. Have your student test this by calculating compound interest year by year in a table for a $1000 investment at 6% per year for 15 years, then compare the actual doubling point to the rule of 72 estimate.",
+      resources: [
+        { title: "Percentages — Khan Academy", url: "https://www.khanacademy.org/math/cc-seventh-grade-math/cc-7th-ratio-proportion/cc-7th-percent-problems/v/solving-percent-problems", description: "Video lessons on calculating percentages, percentage increase/decrease, and financial applications." },
+        { title: "Ratios — Maths is Fun", url: "https://www.mathsisfun.com/numbers/ratio.html", description: "Clear explanation of ratios with worked examples, simplification, and dividing quantities in a ratio." },
+        { title: "Percentages and Ratios — NRICH Maths", url: "https://nrich.maths.org/percentages", description: "Investigative tasks involving percentages and proportional reasoning for Year 7 level." },
+      ],
     },
     activities: [
       {
@@ -846,6 +885,7 @@ export const year7MathsWorksheets: WorksheetItem[] = [
         ],
       },
     ],
+    nextSteps: ["algebraic-expressions"],
   },
 
   // ── WS 6: Algebraic Expressions ──────────────────────────────
@@ -877,6 +917,13 @@ export const year7MathsWorksheets: WorksheetItem[] = [
         script: "I want you to write your own expression for this situation: you start with x books, buy 4 more, then give away 2. Write the expression and simplify it. Then evaluate it when x equals 10.",
         action: "Watch your child write x + 4 - 2 and simplify to x + 2. When x = 10, the answer is 12. If they struggle, prompt them to translate each phrase one at a time before combining. This directly mirrors the worksheet open-response questions.",
       },
+      parentTip: "Algebraic thinking is a big leap at Year 7. If your child resists using letters, reassure them it is just a shorthand for a number we do not know yet. The most common error is treating the variable as a label rather than a quantity. When they write 3a + 2a = 5a, ask them to read it aloud: three lots of a plus two lots of a equals five lots of a. That verbal rehearsal solidifies the concept. Avoid rushing to substitution before they are comfortable with the symbolic form.",
+      extension: "Use GeoGebra's Algebra view at https://www.geogebra.org/classic to enter an expression like 3x + 2 and explore what happens to its value as x changes using a slider. Then challenge your student to write three different expressions that all equal 20 when x equals 4. This connects symbolic manipulation to numerical reasoning and gives algebra a visual anchor.",
+      resources: [
+        { title: "Intro to Algebra — Khan Academy", url: "https://www.khanacademy.org/math/cc-sixth-grade-math/cc-6th-expressions-and-variables", description: "Video series introducing variables, expressions, and the language of algebra." },
+        { title: "Algebra Basics — Maths is Fun", url: "https://www.mathsisfun.com/algebra/index.html", description: "Friendly introduction to algebraic expressions, simplification, and substitution with interactive practice." },
+        { title: "Algebra Tiles — GeoGebra", url: "https://www.geogebra.org/m/XgWbZWmV", description: "Virtual algebra tiles for visualising like terms and simplification concretely." },
+      ],
     },
     activities: [
       {
@@ -1007,6 +1054,7 @@ export const year7MathsWorksheets: WorksheetItem[] = [
         ],
       },
     ],
+    nextSteps: ["linear-equations"],
   },
 
   // ── WS 7: Linear Equations ───────────────────────────────────
@@ -1038,6 +1086,13 @@ export const year7MathsWorksheets: WorksheetItem[] = [
         script: "Mia thinks of a number, doubles it, and adds 3. The result is 19. Can you write that as an equation and solve it? Write the equation first, then solve step by step, then check by substituting your answer back in.",
         action: "Your child should write 2n + 3 = 19, then solve to get n = 8, then verify: 2 times 8 plus 3 equals 19. If they jump straight to the answer without writing the equation, ask them to show the equation step so the habit is established.",
       },
+      parentTip: "The key habit to build with linear equations is always showing the inverse operation on both sides rather than moving numbers across the equals sign. If your child says I just move the 3 to the other side, gently reframe: we subtract 3 from both sides so the equation stays balanced. This matters enormously in later years. If two-step equations are challenging, slow down and do plenty of one-step practice first as fluency there is the essential prerequisite.",
+      extension: "Create a balance puzzle activity: write 10 equations on cards mixing one-step and two-step problems and swap with a parent or sibling to solve. Then use Desmos at https://www.desmos.com/calculator to graph two equations such as y = 2x + 3 and y = 7 and find where they intersect. That x-value is the solution to 2x + 3 = 7, linking equation solving to graphical reasoning and previewing Year 8 content.",
+      resources: [
+        { title: "Linear Equations — Khan Academy", url: "https://www.khanacademy.org/math/cc-seventh-grade-math/cc-7th-variables-expressions/cc-7th-two-step-equations-intro/v/why-we-do-the-same-thing-to-both-sides-simple-equations", description: "Video lessons on solving one-step and two-step linear equations using the balance method." },
+        { title: "Solving Equations — Maths is Fun", url: "https://www.mathsisfun.com/algebra/equations-solving.html", description: "Step-by-step guide to solving linear equations with worked examples and self-check exercises." },
+        { title: "Equation Solver — GeoGebra", url: "https://www.geogebra.org/calculator", description: "Interactive tool to solve and graph equations, helping students see the connection between algebra and geometry." },
+      ],
     },
     activities: [
       {
@@ -1169,6 +1224,7 @@ export const year7MathsWorksheets: WorksheetItem[] = [
         ],
       },
     ],
+    nextSteps: ["tables-of-values"],
   },
 
   // ── WS 8: Tables of Values & Variable Relationships ──────────
@@ -1201,6 +1257,13 @@ export const year7MathsWorksheets: WorksheetItem[] = [
         script: "Look at the rule y equals 10 minus x. As x gets bigger, what happens to y? And for y equals 5, does y change at all as x changes? Now describe in your own words: what is a table of values for, and how do you find the rule from a table?",
         action: "Have your child complete both answers verbally, then write one sentence each. Listen for key ideas: the coefficient controls whether the pattern grows or shrinks, and a constant rule produces a flat table. Ask them to make up one rule themselves and build a 5-row table you then have to guess.",
       },
+      parentTip: "Tables of values are the bridge between rules and graphs, so investing time here pays off strongly in later topics. If your child completes a table correctly but cannot identify the rule, encourage them to look at what changes by a constant amount as x increases — that constant is the coefficient of x. A common error is writing output values in the wrong order or miscounting the pattern. Having them read each row aloud reinforces the input-output relationship.",
+      extension: "Choose a real-world linear relationship to investigate, for example the cost of apples at $2.50 each or distance covered jogging at 8 km/h. Build a table of values, write the algebraic rule, and then plot the points on Desmos at https://www.desmos.com/calculator. Observe that a constant rate of change produces a straight line. Then find a non-linear example such as n squared or 2 to the power of n and compare the shape of the graph.",
+      resources: [
+        { title: "Tables of Values and Patterns — Khan Academy", url: "https://www.khanacademy.org/math/cc-sixth-grade-math/cc-6th-equations-and-inequalities/cc-6th-dependent-independent/v/dependent-and-independent-variables-exercise-example-1", description: "Videos on identifying relationships in tables of values and writing rules for patterns." },
+        { title: "Patterns and Sequences — Maths is Fun", url: "https://www.mathsisfun.com/algebra/sequences-series.html", description: "Introduction to patterns, sequences and finding rules, with worked examples." },
+        { title: "Function Grapher — Desmos", url: "https://www.desmos.com/calculator", description: "Free graphing tool to plot tables of values and visualise linear and non-linear relationships." },
+      ],
     },
     activities: [
       {
@@ -1330,6 +1393,7 @@ export const year7MathsWorksheets: WorksheetItem[] = [
         ],
       },
     ],
+    nextSteps: ["area-triangles-parallelograms"],
   },
 
   // ── WS 9: Area of Triangles & Parallelograms ─────────────────
@@ -1362,6 +1426,13 @@ export const year7MathsWorksheets: WorksheetItem[] = [
         script: "A shape is made from a rectangle that is 8 cm by 5 cm with a triangle on top. The triangle has the same base of 8 cm and a height of 3 cm. What is the total area? Break it into two parts and add them together.",
         action: "Have your child draw the composite shape and label the parts. They should calculate rectangle area (40 cm squared) plus triangle area (12 cm squared) to get 52 cm squared. Check they use the correct formula for each part and add the results rather than mixing the dimensions.",
       },
+      parentTip: "The most persistent error with triangle area is forgetting to halve: students often calculate base times height and stop there. A helpful reminder is that a triangle is exactly half of a parallelogram with the same base and height — draw the parallelogram around the triangle to make this visual. For parallelograms, watch that your student uses the perpendicular height and not the slant side. If they have access to scissors and grid paper, cutting and rearranging shapes into rectangles is a powerful concrete experience.",
+      extension: "Explore the area of composite shapes found in architecture or design. Search for a simple floorplan or house layout online, sketch it, and estimate the total floor area by breaking it into rectangles, triangles and parallelograms. Then use GeoGebra at https://www.geogebra.org/geometry to draw the shapes accurately and use the built-in area tool to check your estimates. Discuss sources of measurement error between your calculation and the tool.",
+      resources: [
+        { title: "Area of Triangles — Khan Academy", url: "https://www.khanacademy.org/math/cc-sixth-grade-math/cc-6th-geometry-topic/cc-6th-area-triangle/v/triangle-area-proofs", description: "Video proof and practice problems for calculating the area of triangles." },
+        { title: "Area of Parallelograms — Khan Academy", url: "https://www.khanacademy.org/math/cc-sixth-grade-math/cc-6th-geometry-topic/cc-6th-parallelogram-area/v/intuition-for-area-of-a-parallelogram", description: "Visual explanation of why the area formula for a parallelogram works, with practice." },
+        { title: "Area — Maths is Fun", url: "https://www.mathsisfun.com/area.html", description: "Reference page covering area formulas for all common shapes with interactive examples." },
+      ],
     },
     activities: [
       {
@@ -1485,6 +1556,7 @@ export const year7MathsWorksheets: WorksheetItem[] = [
         ],
       },
     ],
+    nextSteps: ["volume-of-prisms"],
   },
 
   // ── WS 10: Volume of Prisms ───────────────────────────────────
@@ -1518,6 +1590,13 @@ export const year7MathsWorksheets: WorksheetItem[] = [
         script: "A fish tank is 60 cm long, 30 cm wide, and 40 cm high. What is its volume in cm cubed? And how many litres of water will it hold? Remember: 1000 cm cubed equals 1 litre.",
         action: "Have your child calculate 60 x 30 x 40 = 72,000 cm cubed, then divide by 1000 for 72 litres. If they make an arithmetic error, encourage calculator use for the multiplication step while ensuring they set up the formula correctly by hand.",
       },
+      parentTip: "Volume is conceptually straightforward but unit errors are common: students frequently write cm squared instead of cm cubed, or forget to convert between cm cubed and litres. Make the unit explicit every time and say cubic centimetres aloud. Using actual boxes such as cereal boxes or shoeboxes to measure and calculate volume provides a powerful concrete anchor. At Year 7 the triangular prism formula can feel new, so emphasise it is simply the triangular base area multiplied by the length.",
+      extension: "Conduct a volume investigation using a rectangular container such as a lunchbox. Measure its internal dimensions with a ruler, calculate the theoretical volume in cm cubed, then convert to millilitres since 1 cm cubed equals 1 mL. Use a measuring jug to pour water in and check how many mL it actually holds. Compare the theoretical and experimental values and discuss why they might differ due to measurement error or wall thickness. Record all findings as a short written report.",
+      resources: [
+        { title: "Volume of Prisms — Khan Academy", url: "https://www.khanacademy.org/math/cc-seventh-grade-math/cc-7th-geometry/cc-7th-volume/v/volume-of-a-rectangular-prism-or-cuboid", description: "Video lessons on finding the volume of rectangular and triangular prisms with worked examples." },
+        { title: "Volume — Maths is Fun", url: "https://www.mathsisfun.com/cuboid.html", description: "Formula reference and worked examples for volume of rectangular and triangular prisms." },
+        { title: "3D Shapes — GeoGebra", url: "https://www.geogebra.org/3d", description: "Interactive 3D geometry tool to visualise prisms, rotate them, and explore dimensions." },
+      ],
     },
     activities: [
       {
@@ -1646,6 +1725,7 @@ export const year7MathsWorksheets: WorksheetItem[] = [
         ],
       },
     ],
+    nextSteps: ["circles-and-angles"],
   },
 
   // ── WS 11: Circles & Angle Relationships ─────────────────────
@@ -1680,6 +1760,13 @@ export const year7MathsWorksheets: WorksheetItem[] = [
         script: "A circular running track has a diameter of 80 metres. How far do you run in one lap? And: a triangle has angles in ratio 1 to 2 to 3. What are the three angles? Hint: the angles must add to 180.",
         action: "For the track: C = 3.14 x 80 = 251.2 m. For the triangle: 6 parts total, each part = 30, so angles are 30, 60 and 90 degrees. Have your child show both worked solutions in writing before moving to the worksheet.",
       },
+      parentTip: "The circle formulas for circumference and area are frequently mixed up — students will sometimes square the diameter rather than the radius, or use the radius in the circumference formula. A quick reminder: circumference uses diameter times pi and involves just one dimension; area uses radius squared and involves two dimensions. For angle relationships, large clear diagrams make a big difference. Let your child use a protractor to measure angles before calculating, which builds intuitive understanding alongside the abstract rules.",
+      extension: "Investigate where circles and angles appear in real architecture or design. Search for an image of the Melbourne Cricket Ground or the Sydney Harbour Bridge and estimate dimensions using any scale information provided. Calculate an estimated circumference or area based on those dimensions. Alternatively, use GeoGebra's geometry tools at https://www.geogebra.org/geometry to construct circles, measure arc lengths, and explore the relationship between a central angle and its arc.",
+      resources: [
+        { title: "Circles — Khan Academy", url: "https://www.khanacademy.org/math/cc-seventh-grade-math/cc-7th-geometry/cc-7th-area-circumference/v/parts-of-a-circle", description: "Video series on parts of a circle, circumference and area formulas with practice exercises." },
+        { title: "Circles and Pi — Maths is Fun", url: "https://www.mathsisfun.com/geometry/circle.html", description: "Clear guide to circle properties, circumference, diameter, radius and area with interactive diagrams." },
+        { title: "Geometry — GeoGebra", url: "https://www.geogebra.org/geometry", description: "Interactive geometry tool for constructing circles, measuring angles and exploring geometric relationships." },
+      ],
     },
     activities: [
       {
@@ -1815,6 +1902,7 @@ export const year7MathsWorksheets: WorksheetItem[] = [
         ],
       },
     ],
+    nextSteps: ["polygons-and-coordinates"],
   },
 
   // ── WS 12: Polygons & Coordinates ────────────────────────────
@@ -1847,6 +1935,13 @@ export const year7MathsWorksheets: WorksheetItem[] = [
         script: "A square has corners at (1,1), (3,1), (3,3) and (1,3). Translate it right 4 and up 2. Write the new coordinates. Then tell me: what transformation maps the point (2, 5) to minus 2, 5?",
         action: "Your child should write the new square coordinates as (5,3), (7,3), (7,5), (5,5). For the second question they should recognise it is a reflection in the y-axis. If they are unsure, have them check by plotting both points and looking for the mirror line.",
       },
+      parentTip: "Coordinate geometry and transformations are very visual topics — if your child is struggling, grid paper and coloured pencils are essential. Have them physically plot the original shape, apply the transformation by hand, and then plot the image. A common error with reflections is reflecting across the wrong axis or not maintaining equal distances from the mirror line. For translations, check they are moving every vertex by the same amount, not just one corner. Affirm their spatial reasoning even when calculations are imperfect.",
+      extension: "Create a transformation art project using GeoGebra's geometry tool at https://www.geogebra.org/geometry: design a simple polygon with 5 to 6 vertices, then apply a sequence of transformations such as translating, reflecting, then rotating to create a repeating pattern. Describe each transformation using precise mathematical language, for example reflect in the line x = 2 or rotate 90 degrees clockwise about the origin. Print or screenshot the result and annotate it with the transformation descriptions.",
+      resources: [
+        { title: "Transformations — Khan Academy", url: "https://www.khanacademy.org/math/cc-eighth-grade-math/cc-8th-geometry/cc-8th-transformations-intro/v/introduction-to-transformations", description: "Video introduction to translations, reflections and rotations with coordinate examples." },
+        { title: "Transformations — Maths is Fun", url: "https://www.mathsisfun.com/geometry/transformations.html", description: "Guide to the four types of geometric transformation with worked examples and interactive demonstrations." },
+        { title: "Transformations — GeoGebra", url: "https://www.geogebra.org/geometry", description: "Interactive geometry environment to perform, visualise and describe coordinate transformations." },
+      ],
     },
     activities: [
       {
@@ -1982,6 +2077,7 @@ export const year7MathsWorksheets: WorksheetItem[] = [
         ],
       },
     ],
+    nextSteps: ["data-investigation"],
   },
 
   // ── WS 13: Data Investigation & Statistics ───────────────────
@@ -2014,6 +2110,13 @@ export const year7MathsWorksheets: WorksheetItem[] = [
         script: "You are a researcher. Write one statistical question you could investigate using the people in this house or neighbourhood. What type of data would you collect? What graph would you draw? What conclusion might you reach?",
         action: "Have your child write a question, name the data type and a suitable graph, and predict one possible finding. This mirrors the worksheet open-response activity. If they choose a biased question, discuss together why it might not give useful data.",
       },
+      parentTip: "Statistical investigations are excellent for developing your child's ability to think critically about data, a genuine life skill. Encourage them to question data sources: who collected it and why, and could there be bias? If your child finds graph-drawing tedious, allow them to use Google Sheets which is itself a valuable digital literacy skill. The most important conceptual move here is distinguishing between a statistical question, one with variability in the answers, and a simple factual question with one correct answer.",
+      extension: "Run a real data investigation at home. Collect categorical data by surveying family members on a topic of your student's choosing, such as favourite breakfast food or preferred streaming service. Aim for at least 10 to 15 responses by including extended family if needed. Create both a frequency table and a bar or pie chart by hand, then write a paragraph summarising three findings. Discuss what conclusions can and cannot be drawn from such a small sample.",
+      resources: [
+        { title: "Data and Statistics — Khan Academy", url: "https://www.khanacademy.org/math/cc-sixth-grade-math/cc-6th-data-statistics", description: "Video lessons on collecting, displaying and interpreting statistical data including bar and dot plots." },
+        { title: "Data — Maths is Fun", url: "https://www.mathsisfun.com/data/index.html", description: "Reference guide to statistical graphs, data collection and analysis with interactive tools." },
+        { title: "Statistics Investigation — NRICH Maths", url: "https://nrich.maths.org/statistics", description: "Open-ended statistical investigation tasks designed to develop genuine inquiry and data literacy skills." },
+      ],
     },
     activities: [
       {
@@ -2145,6 +2248,7 @@ export const year7MathsWorksheets: WorksheetItem[] = [
         ],
       },
     ],
+    nextSteps: ["measures-of-centre"],
   },
 
   // ── WS 14: Measures of Centre & Spread ───────────────────────
@@ -2177,6 +2281,13 @@ export const year7MathsWorksheets: WorksheetItem[] = [
         script: "If a suburb has mostly houses worth $400,000 to $500,000 but one mansion worth $10 million, which measure would you use to describe the typical house price and why? What about the most popular shoe size in a shop? What measure would you use then?",
         action: "House prices: median (outlier skews the mean). Shoe sizes: mode (categorical-like, looking for the most common). Have your child write a one-sentence explanation for each choice. This directly prepares them for the sorting and open-response questions on the worksheet.",
       },
+      parentTip: "Mean, median and mode are often learned as isolated procedures rather than as tools for answering real questions. Help your child understand when to use each: mean for balanced numerical data, median when there are extreme values that would skew the mean, and mode when dealing with categories or finding the most popular item. If they are solid on the procedures, push the discussion to which measure is most useful here and why. The range is a natural next step and connects nicely to the concept of spread.",
+      extension: "Investigate real Australian data by visiting the Australian Bureau of Statistics website at abs.gov.au and finding a dataset such as median household income by state or average weekly earnings. Record the values for each state and territory, calculate the mean and median, find the range, and write two sentences interpreting what the spread tells you about variation across Australia. This connects statistical literacy to real civic data and the Statistics strand of the Australian Curriculum.",
+      resources: [
+        { title: "Measures of Central Tendency — Khan Academy", url: "https://www.khanacademy.org/math/cc-sixth-grade-math/cc-6th-data-statistics/cc-6th-mean-and-median/v/statistics-intro-mean-median-and-mode", description: "Video explanations of mean, median and mode with worked examples and guidance on when to use each." },
+        { title: "Mean, Median, Mode — Maths is Fun", url: "https://www.mathsisfun.com/mean.html", description: "Clear definitions and worked examples for mean, median, mode and range with practice problems." },
+        { title: "Average and Spread — NRICH Maths", url: "https://nrich.maths.org/averages", description: "Problem-solving tasks involving averages and spread that require students to reason about which measure is appropriate." },
+      ],
     },
     activities: [
       {
@@ -2312,6 +2423,7 @@ export const year7MathsWorksheets: WorksheetItem[] = [
         ],
       },
     ],
+    nextSteps: ["probability-sample-spaces"],
   },
 
   // ── WS 15: Probability — Sample Spaces ───────────────────────
@@ -2344,6 +2456,13 @@ export const year7MathsWorksheets: WorksheetItem[] = [
         script: "A bag has 4 red counters and 6 blue counters. What is the theoretical probability of picking red? If you picked a counter 50 times and replaced it each time, how many reds would you expect? Now roll the die 12 times and record results. Is every number showing up exactly twice? Why not?",
         action: "Have your child answer the bag question (4 out of 10, or 2 out of 5) and predict 50 x 0.4 = 20 reds. Then do the die-rolling experiment and compare results to the expected 2 of each number per 12 rolls. Discuss the variability. This directly prepares them for the worksheet design-an-experiment section.",
       },
+      parentTip: "Probability is one of those topics where intuition and mathematics regularly disagree, so embrace that tension. If your child is confident but wrong, run the experiment and let the data challenge their prediction — this is far more memorable than correction. Common misconceptions include the gambler's fallacy, believing past random outcomes affect future ones, and assuming experimental results will perfectly match theoretical probabilities with small sample sizes. Fun debates signal real engagement.",
+      extension: "Simulate probability experiments using a spreadsheet's RANDBETWEEN function to simulate rolling a die 100 times. Record the frequencies, calculate experimental probabilities, and compare them to the theoretical values. Then investigate: how many trials do you need before the experimental probabilities reliably approach the theoretical ones? Graph the experimental probability after every 10 trials to watch it converge toward the theoretical value as sample size increases.",
+      resources: [
+        { title: "Probability — Khan Academy", url: "https://www.khanacademy.org/math/cc-seventh-grade-math/cc-7th-probability-statistics/cc-7th-basic-prob/v/basic-probability", description: "Video lessons on theoretical and experimental probability, sample spaces and listing outcomes." },
+        { title: "Probability — Maths is Fun", url: "https://www.mathsisfun.com/data/probability.html", description: "Accessible guide to probability with worked examples, tree diagrams, and sample space exploration." },
+        { title: "Probability Activities — NRICH Maths", url: "https://nrich.maths.org/probability", description: "Investigative probability tasks including simulations and experiments for Year 7 level." },
+      ],
     },
     activities: [
       {

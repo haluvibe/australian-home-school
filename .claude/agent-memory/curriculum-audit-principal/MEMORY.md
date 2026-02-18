@@ -168,3 +168,27 @@ See `year10-audit-findings.md` for full details.
 - True/False errors: NEW pattern not seen in other year levels
 - Learning guide/lesson gap: 0/12 for both -- consistent with Years 2-6
 - No inappropriate activity types (number-trace, count-objects etc.) -- correct
+
+## Year 5 Audit Findings (2026-02-18)
+See `year5-audit-findings.md` for full details.
+
+### Key Data Quality Issues Found
+- Line 935: Halving sequence [100,50,25] with answer [12,6] -- 25/2=12.5 (mathematical error)
+- Line 1356: Number-bonds use JS division for fractions (3/8 evaluates to 0.375)
+- Line 4954: True/False answer key error (angles on straight line = 360, marked TRUE)
+- 29 matching activities with duplicate right-side values (WORST of any audited year)
+- Lines 4728, 4786: ALL 4 right values identical (correct math, broken UI)
+
+### Curriculum Coverage
+- 23/23 objectives covered (100%), 2,208 activities across 23 worksheets (~96 avg)
+- 6 strands: Number (8), Algebra (2), Measurement (4), Space (3), Statistics (3), Probability (3)
+
+### Extension Content
+- HCF/LCM/prime factorisation/divisibility (Year 6), thousandths (unlabelled)
+- Reflex/supplementary/complementary angles (Year 6-7), negative coordinates (Year 6)
+- Midpoints, interior angle formula (Year 7), time zones, GST (enrichment)
+
+### Cross-Year Updates
+- Matching duplicates: 29 in Year 5 (new worst), halving error identical to Year 4
+- JS fraction division in number-bonds is a NEW issue type
+- 0/23 learningGuide, 0/23 lesson data (consistent pattern)

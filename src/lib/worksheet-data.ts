@@ -23,7 +23,7 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
       ],
       intro: {
         title: "The Number Path",
-        script: "Let's go on a number adventure! We're going to count all the way to 20 today. Can you help me? We'll put one object in each box as we count — ready? One, two, three... let's go!",
+        script: "I am setting something up — watch carefully. I am going to put one of these objects in each box as I go. Can you count along with me and keep track? Ready? Here we go...",
         action: "Lay out the paper strip. Count aloud together while placing one object in each box. Point to each object as you say the number. When you reach 10, pause: 'We made it to 10! Now we keep going to 20.'",
       },
       mainActivity: {
@@ -33,9 +33,16 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
       },
       wrapUp: {
         title: "Write It From Memory",
-        script: "You're amazing at this! Now let's see if we can write some numbers from memory. I'll say a number, and you write it as big and bold as you can. Let's start with an easy one: write 3. Now write 7. Now the big one — write 14!",
+        script: "You're amazing at this! Now let's see if we can write some numbers from memory. I'll say a number, and you write it as big and bold as you can. Let's start with an easy one: write 3. Now write 7. Now the big one — write 14! Which number was hardest to write? What makes the teen numbers so tricky, do you think?",
         action: "Call out 5–6 numbers for the child to write. Begin with 1–5, then 6–10, then attempt one or two teen numbers. Celebrate every correct digit, even if the whole number needs more practice.",
       },
+      parentTip: "Teen numbers are the trickiest part of this lesson — children often say 'thirteen' for '30' and vice versa. Slow down, trace the digit shapes in the air together, and celebrate every correct recognition rather than rushing to the end.",
+      extension: "Make a number scavenger hunt around the house. Ask your child to find objects for the numbers 11–20 — for example, 13 pasta pieces, 16 buttons. Line them up in order and say each number name.",
+      resources: [
+        { title: "Khan Academy – Counting to 20", url: "https://www.khanacademy.org/math/cc-kindergarten-math/cc-kindergarten-counting", description: "Short video lessons on counting and recognising numbers up to 20." },
+        { title: "Maths is Fun – Number Names", url: "https://www.mathsisfun.com/numbers/counting-names-1000.html", description: "Clear explanations of number names with interactive practice." },
+        { title: "NRICH – Early Years Number Activities", url: "https://nrich.maths.org/early-years", description: "Playful number activities designed for young learners." },
+      ],
     },
     activities: [
       // --- EASY: Trace & recognise 0-5 ---
@@ -841,6 +848,7 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         ],
       },
     ],
+    nextSteps: ["subitising-counting", "compare-collections"],
   },
 
   // 2. Subitising and counting
@@ -868,10 +876,17 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         action: "Take turns rolling the dice. Your child draws dots for the number that comes up, then you draw the same number a different way. Compare: 'Which arrangement is easier to see at a glance?' Discuss why some arrangements (like a dice pattern) are easier to read than random dots.",
       },
       wrapUp: {
-        title: "Count On From 10",
-        script: "Now let's count a bigger group. I'll put out a pile of objects — your job is to make a group of 10 first, then count the rest. Ready? Group your 10... now count on: ten, eleven, twelve...",
-        action: "Put out 13–17 objects. Help your child group exactly 10 and set them aside. Then count on from 10 together, touching each remaining object. This bridges subitising (knowing 10 instantly) with counting on.",
+        title: "Make Me a Quick-Look Card",
+        script: "Before we finish, let us go back to our flash cards. Can you make me a dot card for the number 4 that would be really easy to see at a glance? Draw the dots so my brain can tell straight away without counting.",
+        action: "Child draws a dot arrangement for 4. Discuss why their arrangement works. Then ask: now make one for 7 — but remember, 7 dots all scattered is hard to read. Can you arrange them so they are easy to see? Praise any grouping strategy (e.g. 5 dots in a dice pattern plus 2 more).",
       },
+      parentTip: "Subitising is a natural skill but children need time to develop it — don't rush them to 'just count'. If your child needs to count every dot, that's perfectly fine; the goal is for them to eventually recognise small groups instantly through repeated exposure.",
+      extension: "Play 'Dot Flash' at dinner using a muffin tin. Drop a few grapes or raisins into some cups (keep it to 5 or fewer per cup) and quickly cover them. Ask your child how many they think are there before lifting the cover to check.",
+      resources: [
+        { title: "Khan Academy – Counting Small Numbers", url: "https://www.khanacademy.org/math/cc-kindergarten-math/cc-kindergarten-counting", description: "Foundational counting and subitising exercises for young learners." },
+        { title: "NRICH – Subitising Activities", url: "https://nrich.maths.org/early-years", description: "Research-backed activities to develop number sense and subitising." },
+        { title: "Maths is Fun – Counting", url: "https://www.mathsisfun.com/numbers/counting.html", description: "Simple and visual counting explanations suitable for Foundation learners." },
+      ],
     },
     activities: [
       // --- EASY: Subitise tiny groups 1-3 (10 activities) ---
@@ -1850,6 +1865,7 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         ],
       },
     ],
+    nextSteps: ["compare-collections", "partition-combine"],
   },
 
   // 3. Compare collections
@@ -1880,6 +1896,13 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         script: "Now YOU set it up! Put some on each plate — make sure one plate has more and one has fewer. Then tell me about it: 'The red plate has ___ and the blue plate has ___, so the red plate has MORE.'",
         action: "Your child creates unequal groups and narrates the comparison. Prompt with: 'How do you know which has more?' Any valid strategy is great — counting, lining up, or just looking.",
       },
+      parentTip: "Children often confuse 'more' with 'bigger size' — a large empty cup feels like 'more' even if it has fewer objects. Use the same-sized containers or lay objects side-by-side in rows to make comparisons fair and visual.",
+      extension: "Sort the cutlery drawer together. Make one pile of forks and one of spoons. Ask 'Which pile has more? How do you know?' Then add or remove items and compare again. Keep it playful — this is real maths!",
+      resources: [
+        { title: "Khan Academy – Comparing Numbers", url: "https://www.khanacademy.org/math/cc-kindergarten-math/cc-kindergarten-counting", description: "Video lessons comparing small quantities for kindergarten learners." },
+        { title: "NRICH – Comparing Collections", url: "https://nrich.maths.org/early-years", description: "Hands-on tasks to develop comparison and quantity vocabulary." },
+        { title: "Maths is Fun – Greater, Less or Equal", url: "https://www.mathsisfun.com/greater-less-equal.html", description: "Clear visual explanation of more, less, and equal concepts." },
+      ],
     },
     activities: [
       // --- EASY: Comparing tiny groups (1–5) ---
@@ -2842,6 +2865,7 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         ],
       },
     ],
+    nextSteps: ["partition-combine"],
   },
 
   // 4. Partition and combine
@@ -2865,7 +2889,7 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
       },
       mainActivity: {
         title: "How Many Ways?",
-        script: "Let's try with 6! Every time we find a new way to split 6, we'll write it down. How many different ways can we find? I bet there are more than you think!",
+        script: "Let's try with 6! Every time we find a new way to split 6, we'll write it down. How many different ways can we find? Let us find out how many ways there are — I wonder if we can find them all.",
         action: "Give your child 6 objects and two bowls. Explore all the splits together (0+6, 1+5, 2+4, 3+3 and their reverses). Record each one. Then try with 7 or 8 if they're keen. Look at the list together — what do you notice?",
       },
       wrapUp: {
@@ -2873,6 +2897,13 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         script: "Now let's combine! I'll put 3 in one bowl and 2 in another. Before we tip them out — can you guess how many altogether? Then let's check by counting!",
         action: "Set up two bowls with different amounts. Your child predicts the total, then tips them together and counts. Do this 3–4 times. Emphasise the language: 'We split it apart to explore, then joined it back together to find the total.'",
       },
+      parentTip: "Partitioning is the foundation of all future addition — if children can see that 5 is '3 and 2' or '4 and 1', mental arithmetic becomes intuitive. Use physical objects every time; abstract numbers come later. There is no rush.",
+      extension: "Play 'Sleeping Beans'. Put 5 dried beans in a cup. Secretly tip some into one hand and keep the rest in the cup. Show your child one amount and ask: 'How many are hiding?' Swap roles so your child gets to be the one hiding.",
+      resources: [
+        { title: "Khan Academy – Making Numbers", url: "https://www.khanacademy.org/math/cc-kindergarten-math/cc-kindergarten-add-subtract", description: "Interactive exercises on composing and decomposing small numbers." },
+        { title: "NRICH – Number Bond Activities", url: "https://nrich.maths.org/early-years", description: "Playful activities developing number bond fluency for young children." },
+        { title: "Maths is Fun – Number Bonds", url: "https://www.mathsisfun.com/numbers/number-bonds.html", description: "Visual and interactive number bond practice." },
+      ],
     },
     activities: [
       // =============================================
@@ -4001,6 +4032,7 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         ],
       },
     ],
+    nextSteps: ["add-subtract-share"],
   },
 
   // 5. Add, subtract, share
@@ -4031,6 +4063,13 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         script: "Now YOU make up a maths story for me! It can be about adding, taking away, or sharing. I'll act it out with the objects — so make sure your story is clear!",
         action: "Your child invents simple stories. Act them out with objects. Encourage mathematical language: more, fewer, total, equal, left over, share. Swap roles if they enjoy it.",
       },
+      parentTip: "At Foundation level, the words 'add', 'take away', and 'share' each need to be experienced physically before they become symbols. If your child is confused by the written question, act it out with objects first — every time. Concrete before abstract.",
+      extension: "Snack maths: at morning tea, share crackers or fruit between two teddies or toy figures. Ask 'How many each? Is it fair? What if we take one away — how many now?' Turn the maths into the game, not a separate activity.",
+      resources: [
+        { title: "Khan Academy – Addition and Subtraction", url: "https://www.khanacademy.org/math/cc-kindergarten-math/cc-kindergarten-add-subtract", description: "Foundation-level addition and subtraction video lessons and exercises." },
+        { title: "Maths is Fun – Addition", url: "https://www.mathsisfun.com/numbers/addition.html", description: "Friendly introduction to addition with visual supports." },
+        { title: "NRICH – Early Arithmetic", url: "https://nrich.maths.org/early-years", description: "Story-based and playful early addition and subtraction activities." },
+      ],
     },
     activities: [
       // --- EASY: Adding tiny numbers (totals to 5) ---
@@ -4972,6 +5011,7 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         ],
       },
     ],
+    nextSteps: ["repeating-patterns"],
   },
 
   // 6. Repeating patterns
@@ -4995,13 +5035,20 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
       mainActivity: {
         title: "Copy It and Keep Going",
         script: "I'll make a pattern and you copy it exactly. Once you've copied it, add three more to keep it going. The trick is figuring out the bit that repeats — that's the pattern's 'secret unit'.",
-        action: "Create a pattern with 2–3 full repeats. Your child copies it, then extends it by 3 more. Ask: 'What is the bit that keeps repeating?' Try patterns with 3 elements (ABC) once they're confident with AB and ABB.",
+        action: "Lay out at least 6 objects so the pattern's core repeats clearly at least twice — for example: red-blue-red-blue-red-blue. Your child copies it, then extends it by 3 more. Ask: 'What is the bit that keeps repeating?' Try patterns with 3 elements (ABC) once they're confident with AB and ABB.",
       },
       wrapUp: {
         title: "Create Your Own",
         script: "Now it's your turn to be the pattern maker! Design your own — you can use the objects, draw it, or even use claps and stamps. Draw it on paper so we remember it. Then I'll try to continue it!",
         action: "Your child creates and draws their own pattern. You attempt to continue it (and deliberately make a mistake if you think they'll catch it!). Ask: 'What was the repeating part?' Let them correct you.",
       },
+      parentTip: "Patterns feel obvious to adults but are a genuine discovery for young children. If your child breaks the pattern, don't immediately correct them — ask 'What comes next? Let's check by clapping it.' Rhythm helps enormously: clap-clap-stomp is easier to continue than looking at coloured blocks.",
+      extension: "Go on a 'pattern walk' around the home or garden. Look for stripes on clothing, tiles, fence palings, or brickwork. Point and say: 'What's the pattern unit here? What repeats?' Photograph patterns to make a family pattern book.",
+      resources: [
+        { title: "Khan Academy – Patterns", url: "https://www.khanacademy.org/math/cc-kindergarten-math/cc-kindergarten-geometry", description: "Kindergarten pattern recognition activities and exercises." },
+        { title: "NRICH – Pattern Activities", url: "https://nrich.maths.org/early-years", description: "Creative, open-ended pattern tasks for early years learners." },
+        { title: "Maths is Fun – Patterns", url: "https://www.mathsisfun.com/algebra/sequences-series.html", description: "Introduction to sequences and patterns with clear visuals." },
+      ],
     },
     activities: [
       // --- EASY: AB patterns (unit length 2) ---
@@ -5779,6 +5826,7 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         ],
       },
     ],
+    nextSteps: ["mass-capacity-length-duration"],
   },
 
   // 7. Mass, capacity, length, duration
@@ -5798,7 +5846,7 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
       ],
       intro: {
         title: "What Are We Measuring?",
-        script: "Today we're going to be measurement detectives! There are four things we can measure — hold this book in one hand and this feather in the other. What do you notice? One is heavier. That's measuring MASS.",
+        script: "Hold this book in one hand and this feather in the other. What do you notice? One feels different — what word would you use? Now look at these two containers. What is different about them? And these two things — which is longer? Today we are going to discover there are four different things we can measure, and you have already started noticing them.",
         action: "Work through each attribute one at a time with a concrete example. Mass: hold two objects. Capacity: look at two containers — which holds more? Length: hold up the pencil and a long stick side by side. Duration: clap slowly 10 times — was that a long time or a short time? Introduce the words: mass, capacity, length, duration.",
       },
       mainActivity: {
@@ -5811,6 +5859,13 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         script: "I'm going to describe something — your job is to tell me which measurement word fits. 'This bag is so heavy!' What am I measuring? 'The bottle is full to the top!' What about that one?",
         action: "Read 4–6 descriptions using the four attributes. Your child names which attribute you're talking about: mass, capacity, length or duration. Extend by asking: 'How would you compare it to something else?'",
       },
+      parentTip: "Children at this age use informal language like 'heavier' and 'bigger' interchangeably. Gently separate the vocabulary: 'heavy/light' is about mass, 'tall/short' is about length, 'full/empty' is about capacity. A brief demonstration with your kitchen scales or a clear measuring jug makes all the difference.",
+      extension: "Have a 'measurement kitchen' session. Fill different containers with water and ask 'Which holds more?' Then weigh a banana versus an apple in your hands. Finally, compare the height of two household objects. Three measurements, three conversations.",
+      resources: [
+        { title: "Khan Academy – Measurement", url: "https://www.khanacademy.org/math/cc-kindergarten-math/cc-kindergarten-measurement", description: "Kindergarten measurement concepts including length, weight and capacity." },
+        { title: "Maths is Fun – Measurement", url: "https://www.mathsisfun.com/measure/index.html", description: "Clear introductions to measuring length, weight and volume." },
+        { title: "NRICH – Early Measurement", url: "https://nrich.maths.org/early-years", description: "Hands-on early measurement activities and investigations." },
+      ],
     },
     activities: [
       // --- EASY: Introducing mass (heavy/light) ---
@@ -6759,6 +6814,7 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         ],
       },
     ],
+    nextSteps: ["direct-comparison"],
   },
 
   // 8. Direct comparison
@@ -6789,6 +6845,13 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         script: "Can you put these three things in order from shortest to longest? Take your time — line them all up carefully and check before you decide!",
         action: "Provide 3 objects of different lengths. Your child orders them. Repeat with height. Ask: 'How did you decide the order?' Praise the method — lining up, comparing one pair at a time — not just the answer.",
       },
+      parentTip: "Direct comparison is about understanding what 'fair' measurement means — you need to line objects up at the same starting point. If your child always starts from different ends, show them a running race start line as a real-world analogy: 'Everyone starts from the same spot, or it's not fair!'",
+      extension: "Measure your family's handspans. Draw around each hand on paper, cut them out, and line them up from the same baseline. Order them shortest to longest and talk about the differences. Whose hand is closest in size?",
+      resources: [
+        { title: "Khan Academy – Comparing Measurements", url: "https://www.khanacademy.org/math/cc-kindergarten-math/cc-kindergarten-measurement", description: "Video exercises on direct comparison of length and size." },
+        { title: "NRICH – Measuring and Comparing", url: "https://nrich.maths.org/early-years", description: "Investigative tasks exploring direct comparison for young learners." },
+        { title: "Maths is Fun – Length", url: "https://www.mathsisfun.com/measure/length.html", description: "Simple explanation of length measurement with visual examples." },
+      ],
     },
     activities: [
       // =============================================
@@ -7736,6 +7799,7 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         ],
       },
     ],
+    nextSteps: ["time-of-day"],
   },
 
   // 9. Time of day
@@ -7755,7 +7819,7 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
       intro: {
         title: "Tell Me Your Day",
         script: "I want to hear all about your day! What was the very first thing you did when you woke up? And then what? Let's build your whole day out on the floor, in order — morning first, then afternoon, then evening, then night.",
-        action: "As your child describes their day, write or draw each event on a separate strip of paper. Lay them out in sequence. Ask questions to establish order: 'Did you eat breakfast before or after you got dressed?' Help them see the natural flow of the day.",
+        action: "You are the scribe — write each event on a separate strip as your child describes it. Do not wait for them to write; the goal is to get their ideas down quickly. Lay them out in sequence. Ask questions to establish order: 'Did you eat breakfast before or after you got dressed?' Help them see the natural flow of the day.",
       },
       mainActivity: {
         title: "Sort the Day",
@@ -7767,6 +7831,13 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         script: "Let's make a mini book about your day! You'll draw one thing you do in the morning, one in the afternoon, one in the evening, and one at night. Then we'll read it together.",
         action: "Your child draws one event per time of day. Label each drawing together. Lay them in sequence and 'read' the book back: 'In the morning you... then in the afternoon...' This is a great keepsake too!",
       },
+      parentTip: "Children understand time through routine long before they can read a clock face. Anchor today's lesson to your own daily schedule — 'After breakfast we do maths, after lunch we rest' gives abstract time words a real meaning they can feel.",
+      extension: "Make a picture timetable for tomorrow. Draw or cut out pictures of 4–5 daily events (breakfast, play, lunch, reading, dinner) and put them in order on a strip of paper. Talk about what comes before and after each event.",
+      resources: [
+        { title: "Khan Academy – Time", url: "https://www.khanacademy.org/math/cc-kindergarten-math/cc-kindergarten-measurement", description: "Kindergarten time activities covering sequence and daily routines." },
+        { title: "Maths is Fun – Telling the Time", url: "https://www.mathsisfun.com/time.html", description: "Introduction to time, clocks and daily sequences." },
+        { title: "NRICH – Time Activities", url: "https://nrich.maths.org/early-years", description: "Playful early years tasks exploring sequence and time vocabulary." },
+      ],
     },
     activities: [
       // --- EASY: Morning activities ---
@@ -8790,6 +8861,7 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         ],
       },
     ],
+    nextSteps: ["familiar-shapes"],
   },
 
   // 10. Familiar shapes
@@ -8821,6 +8893,13 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         script: "Here's a fun challenge: draw a picture using ONLY circles, squares, triangles and rectangles. It could be a house, a robot, a face — anything! As you draw each bit, tell me which shape you're using.",
         action: "Your child draws a picture built from the four shapes. Ask them to name each shape as they add it. Count how many of each shape are in their finished picture.",
       },
+      parentTip: "Children often sort shapes by colour or size rather than by shape name — that's actually smart thinking! Guide them gently: 'I'm going to sort by shape today, not by colour.' Use physical 3D objects (blocks, food containers, balls) alongside flat 2D pictures so they see shapes in the real world.",
+      extension: "Go on a '3D shape hunt' in the kitchen. Find a tin (cylinder), a box (rectangular prism), a ball (sphere), and a dice (cube). Hold each one, talk about its faces, then sort them: 'Which ones roll? Which ones stack?'",
+      resources: [
+        { title: "Khan Academy – Shapes", url: "https://www.khanacademy.org/math/cc-kindergarten-math/cc-kindergarten-geometry", description: "Kindergarten geometry covering 2D and 3D shape recognition." },
+        { title: "Maths is Fun – Shapes", url: "https://www.mathsisfun.com/geometry/index.html", description: "Visual introductions to 2D and 3D shapes with interactive examples." },
+        { title: "NRICH – Shape Activities", url: "https://nrich.maths.org/early-years", description: "Creative shape explorations for early years learners." },
+      ],
     },
     activities: [
       // --- EASY: Learning shape names ---
@@ -9885,6 +9964,7 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         ],
       },
     ],
+    nextSteps: ["position-location"],
   },
 
   // 11. Position and location
@@ -9916,6 +9996,13 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         script: "Let's draw a simple map of our table and show where Teddy is. Draw the table, draw Teddy, and write the word that tells us where Teddy is. Is Teddy ON the table? Or UNDER it?",
         action: "Your child draws a simple diagram showing Teddy's position relative to one or two objects. Help them write the position word next to Teddy. This gently introduces spatial representation — a big concept!",
       },
+      parentTip: "Positional language develops through movement and play — not through worksheets alone. Before this lesson, play 'Simon Says' with position words: 'Simon says put the ball UNDER the chair, BEHIND the door, NEXT TO the cup.' This warm-up makes the lesson concepts click.",
+      extension: "Play 'Blindfold Robot'. Your child gives you movement instructions using positional words ('two steps forward, turn left, one step back') to guide you to a hidden toy. Then swap roles. This develops spatial reasoning and direction vocabulary together.",
+      resources: [
+        { title: "Khan Academy – Position and Direction", url: "https://www.khanacademy.org/math/cc-kindergarten-math/cc-kindergarten-geometry", description: "Kindergarten activities on position, direction and spatial language." },
+        { title: "NRICH – Spatial Reasoning", url: "https://nrich.maths.org/early-years", description: "Games and tasks building positional language and spatial awareness." },
+        { title: "Maths is Fun – Directions", url: "https://www.mathsisfun.com/geometry/direction.html", description: "Simple explanation of direction and position vocabulary." },
+      ],
     },
     activities: [
       // --- EASY: On, under, in (1 of 2) ---
@@ -10927,6 +11014,7 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         ],
       },
     ],
+    nextSteps: ["collect-sort-data"],
   },
 
   // 12. Collect, sort, compare data
@@ -10956,8 +11044,15 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
       wrapUp: {
         title: "Answer Our Question",
         script: "Remember the question we asked at the start? Now we can answer it! We found out there are ___ red ones and ___ blue ones — so we have MORE ___. And we KNOW that because we sorted and counted!",
-        action: "Your child states the answer to the original question using the data. Ask one or two follow-ups: 'How many more does the bigger group have? How many are there altogether?' Celebrate: 'That's real data science — you collected information and used it to answer a question!'",
+        action: "Your child states the answer to the original question using the data. Ask one or two follow-ups: 'How many more does the bigger group have? How many are there altogether?' Celebrate: 'You asked a question, collected clues, and found the answer — that is exactly how scientists and mathematicians work!'",
       },
+      parentTip: "Data collection is most meaningful when the question comes from the child. If they're not engaged, ask them to choose what to investigate: 'Do you want to find out what colour cars go past, or what everyone's favourite fruit is?' Their curiosity drives the learning.",
+      extension: "Run a family survey at dinner. Your child chooses a question (e.g. 'What is your favourite animal?'), asks each family member, and records answers using tally marks. Then you help them draw a simple picture graph together and read the results.",
+      resources: [
+        { title: "Khan Academy – Data and Graphs", url: "https://www.khanacademy.org/math/cc-kindergarten-math/cc-kindergarten-measurement", description: "Kindergarten data collection and simple graphing activities." },
+        { title: "NRICH – Data Handling", url: "https://nrich.maths.org/early-years", description: "Sorting, classifying and data activities for early years learners." },
+        { title: "Maths is Fun – Data", url: "https://www.mathsisfun.com/data/index.html", description: "Introduction to collecting, displaying and reading simple data." },
+      ],
     },
     activities: [
       // --- EASY: Sorting into groups ---

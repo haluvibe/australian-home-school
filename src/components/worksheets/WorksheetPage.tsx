@@ -157,6 +157,52 @@ export default function WorksheetPage({ title, strand, learningGuide, lesson, ch
                 </div>
               </section>
             </div>
+
+            {/* Parent Tip */}
+            {lesson.parentTip && (
+              <div className="mt-6 rounded-2xl border border-amber-200 bg-amber-50 p-5">
+                <div className="mb-2 flex items-center gap-2">
+                  <span className="text-xl">💡</span>
+                  <h3 className="font-display text-lg font-bold text-amber-900">Parent Tip</h3>
+                </div>
+                <p className="text-base leading-relaxed text-amber-800">{lesson.parentTip}</p>
+              </div>
+            )}
+
+            {/* Going Further */}
+            {lesson.extension && (
+              <div className="mt-4 rounded-2xl border border-sage/40 bg-sage/10 p-5">
+                <div className="mb-2 flex items-center gap-2">
+                  <span className="text-xl">🚀</span>
+                  <h3 className="font-display text-lg font-bold text-charcoal">Going Further</h3>
+                </div>
+                <p className="text-base leading-relaxed text-charcoal-light">{lesson.extension}</p>
+              </div>
+            )}
+
+            {/* Resources */}
+            {lesson.resources && lesson.resources.length > 0 && (
+              <div className="mt-4">
+                <div className="mb-3 flex items-center gap-2">
+                  <span className="text-xl">🔗</span>
+                  <h3 className="font-display text-lg font-bold text-charcoal">Helpful Resources</h3>
+                </div>
+                <div className="grid gap-3 sm:grid-cols-2">
+                  {lesson.resources.map((r, i) => (
+                    <a
+                      key={i}
+                      href={r.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group flex flex-col gap-1 rounded-xl border border-charcoal/10 bg-white p-4 shadow-sm transition-all hover:border-terracotta/30 hover:shadow-md"
+                    >
+                      <span className="text-sm font-bold text-terracotta group-hover:underline">{r.title}</span>
+                      <span className="text-xs leading-relaxed text-charcoal-light">{r.description}</span>
+                    </a>
+                  ))}
+                </div>
+              </div>
+            )}
           </div>
         </div>
       ) : (

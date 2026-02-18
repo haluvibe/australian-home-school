@@ -5,6 +5,7 @@ import { year1MathsWorksheets, getYear1Worksheet } from "@/lib/worksheet-data-ye
 import WorksheetPage from "@/components/worksheets/WorksheetPage";
 import ActivityRenderer from "@/components/worksheets/ActivityRenderer";
 import PrintButton from "@/components/worksheets/PrintButton";
+import NextStepsSection from "@/components/worksheets/NextStepsSection";
 
 interface PageProps {
   params: Promise<{ itemSlug: string }>;
@@ -28,6 +29,10 @@ export default async function WorksheetItemPage({ params }: PageProps) {
   const { itemSlug } = await params;
   const worksheet = getYear1Worksheet(itemSlug);
   if (!worksheet) notFound();
+
+  const nextStepWorksheets = (worksheet.nextSteps ?? [])
+    .map((slug) => year1MathsWorksheets.find((w) => w.slug === slug))
+    .filter((w): w is typeof worksheet => w !== undefined);
 
   return (
     <>
@@ -68,6 +73,7 @@ export default async function WorksheetItemPage({ params }: PageProps) {
           ))}
         </WorksheetPage>
       </div>
+      <NextStepsSection nextSteps={nextStepWorksheets} basePath="/worksheets/mathematics/year-1" />
     </>
   );
 }

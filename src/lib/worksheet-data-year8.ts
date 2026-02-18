@@ -31,6 +31,13 @@ export const year8MathsWorksheets: WorksheetItem[] = [
         script: "Okay, your turn to be the teacher. Tell me: what is the difference between a rational and an irrational number? And what is the difference between a terminating and a recurring decimal? Give me one example of each.",
         action: "Child explains both distinctions out loud and writes one example of each type (rational terminating, rational recurring, irrational) on paper. Correct any confusion gently. The child is now ready for the worksheet.",
       },
+      parentTip: "Teenagers often find abstract number classifications dry — try grounding this in curiosity rather than procedure. Ask your child to find the decimal for 1/7 on a calculator and describe what they notice; the sense of discovery usually lands better than a definition. If they seem disengaged, check whether they actually understand what a fraction represents first, since scope gaps often hide as motivation issues at this age.",
+      extension: "Have your student prove algebraically that 0.333... equals exactly 1/3 using the standard algebraic method (let x = 0.333..., multiply both sides by 10, subtract). Then challenge them to convert 0.142857142857... to a fraction the same way. This connects to Australian Curriculum V9 Year 8 Number strand (AC9M8N01) and develops algebraic reasoning alongside number sense.",
+      resources: [
+        { title: "Irrational Numbers — Khan Academy", url: "https://www.khanacademy.org/math/algebra/x2f8bb11595b61c86:irrational-numbers", description: "Video lessons and practice on classifying rational and irrational numbers with worked examples." },
+        { title: "Irrational Numbers — Maths is Fun", url: "https://www.mathsisfun.com/irrational-numbers.html", description: "Clear explanation of irrational numbers with examples including pi and square roots." },
+        { title: "Recurring Decimals — NRICH Maths", url: "https://nrich.maths.org/recur", description: "Investigative problems exploring recurring decimals and their fraction equivalents." },
+      ],
     },
     activities: [
       {
@@ -177,6 +184,7 @@ export const year8MathsWorksheets: WorksheetItem[] = [
         ],
       },
     ],
+    nextSteps: ["exponent-laws"],
   },
 
   // ── WS 2: Exponent Laws ───────────────────────────────────────
@@ -208,6 +216,13 @@ export const year8MathsWorksheets: WorksheetItem[] = [
         script: "Look at this expression: x cubed times x to the fourth, divided by x to the second, all raised to the power of two. Can you work through it step by step using the laws we learned? Tell me which law you are using at each step.",
         action: "Child works through the expression on paper, naming each law. The answer is x to the sixth. If they struggle, ask them to identify the operation first (multiplying? dividing? power of power?) before applying the rule.",
       },
+      parentTip: "The exponent laws trip many Year 8 students up because they look mechanical but require genuine understanding. If your teenager rushes through by memorising rules without understanding, pause and ask them to explain why the product law works using a numerical example like 2^3 times 2^4. Understanding the why prevents errors later and also makes scientific notation feel natural rather than arbitrary. Let them set their own pace through the practice.",
+      extension: "Investigate exponential growth using real data: look up Australia's population for three different census years and model it with an expression of the form a times b^n. Use Desmos (desmos.com) to plot the data points and find a curve that fits. Discuss whether the model is likely to hold into the future. This connects to AC9M8A04 and real-world mathematical modelling using digital tools.",
+      resources: [
+        { title: "Exponent Rules — Khan Academy", url: "https://www.khanacademy.org/math/algebra/x2f8bb11595b61c86:exponents-radicals", description: "Step-by-step lessons on all exponent laws including negative and zero exponents." },
+        { title: "Laws of Exponents — Maths is Fun", url: "https://www.mathsisfun.com/algebra/exponent-laws.html", description: "Visual summary of all exponent laws with interactive examples and practice problems." },
+        { title: "Desmos Graphing Calculator", url: "https://www.desmos.com/calculator", description: "Free online graphing tool for exploring and modelling exponential patterns visually." },
+      ],
     },
     activities: [
       {
@@ -351,6 +366,7 @@ export const year8MathsWorksheets: WorksheetItem[] = [
         ],
       },
     ],
+    nextSteps: ["integer-rational-operations"],
   },
 
   // ── WS 3: Integer & Rational Number Operations ────────────────
@@ -382,6 +398,13 @@ export const year8MathsWorksheets: WorksheetItem[] = [
         script: "I want you to make up one multiplication problem with integers and one division problem with fractions. Write them down, solve them, and then explain the sign rule you used.",
         action: "Child writes and solves their own examples. Check that they can articulate the sign rules in their own words. If they are unsure about fraction division, demonstrate the flip-and-multiply trick once more before moving to the worksheet.",
       },
+      parentTip: "Sign errors with integers are one of the most persistent issues in Year 8 and they rarely mean your child does not understand — they usually mean the student is rushing. Encourage them to write the sign separately before the number as an intermediate step. If they are resistant to slowing down, challenge them to mark their own work and find their own errors: teenagers respond well to autonomy and self-assessment.",
+      extension: "Create a number puzzle: design a multi-step calculation chain using integers and fractions whose final answer is exactly 0 (for example, start with -3, multiply by -4, add a fraction, divide by a negative). Write the chain out and swap with a family member to verify. This connects to AC9M8N03 and builds fluency with combined operations on rational numbers.",
+      resources: [
+        { title: "Negative Numbers — Khan Academy", url: "https://www.khanacademy.org/math/algebra-basics/basic-alg-foundations/alg-basics-negative-numbers/v/negative-numbers-introduction", description: "Introduction to operations with negative numbers including multiplication and division rules." },
+        { title: "Integers — Maths is Fun", url: "https://www.mathsisfun.com/integers.html", description: "Explanation of integers and the rules for all four operations with clear examples." },
+        { title: "Fractions — Khan Academy", url: "https://www.khanacademy.org/math/algebra-basics/basic-alg-foundations/alg-basics-fractions/v/adding-fractions", description: "Video lessons on adding, subtracting, multiplying and dividing fractions and mixed numbers." },
+      ],
     },
     activities: [
       {
@@ -523,6 +546,7 @@ export const year8MathsWorksheets: WorksheetItem[] = [
         ],
       },
     ],
+    nextSteps: ["percentages-rates-financial"],
   },
 
   // ── WS 4: Percentages, Rates & Financial Maths ────────────────
@@ -555,6 +579,13 @@ export const year8MathsWorksheets: WorksheetItem[] = [
         script: "Here is a challenge: Shop A offers 20% off a $90 item. Shop B offers $15 off the same item. Which shop gives the better deal? Work it out and explain your reasoning to me.",
         action: "Child calculates both: 20% of $90 = $18 off (pay $72) versus $15 off (pay $75). Shop A is better. If they get it right, ask: at what price would both deals be equal? (That is a great extension question.) Then they are ready for the worksheet.",
       },
+      parentTip: "Financial maths is one area where you can genuinely hand the learning to your teenager — let them analyse a real electricity bill, compare two phone plans, or calculate how long to save for something they want. Authentic stakes transform engagement. Note: the compound interest activity in this worksheet is an introductory preview beyond strict Year 8 scope; treat it as enrichment and do not stress if your child finds it challenging — simple interest is the Year 8 focus.",
+      extension: "Research and compare two savings accounts available to Australians under 18. Calculate the simple interest earned on $500 over 3 years in each account. Then work backwards: what interest rate would be needed to earn $100 in interest on $500 over two years? Use the simple interest formula I = PRT to find R. This connects to AC9M8N04 and real-world financial literacy.",
+      resources: [
+        { title: "Percentages — Khan Academy", url: "https://www.khanacademy.org/math/algebra-basics/basic-alg-foundations/alg-basics-ratios/v/introduction-to-percents", description: "Video lessons on percentage calculations including increase, decrease and reverse percentages." },
+        { title: "Percentage — Maths is Fun", url: "https://www.mathsisfun.com/percentage.html", description: "Clear explanations of percentage calculations with worked examples and practice problems." },
+        { title: "Simple Interest — Maths is Fun", url: "https://www.mathsisfun.com/money/interest.html", description: "Explanation of simple interest with formula, calculator and real-world examples." },
+      ],
     },
     activities: [
       {
@@ -691,6 +722,7 @@ export const year8MathsWorksheets: WorksheetItem[] = [
         ],
       },
     ],
+    nextSteps: ["expanding-factorising-linear"],
   },
 
   // ── WS 5: Expanding & Factorising Linear Expressions ─────────
@@ -722,6 +754,13 @@ export const year8MathsWorksheets: WorksheetItem[] = [
         script: "Here are two expressions: 3 open bracket x plus 5 close bracket and 3x plus 5. Are they the same? Expand the first one and compare.",
         action: "Child expands 3(x + 5) = 3x + 15, then sees it is NOT the same as 3x + 5. This is a key conceptual point. Discuss: the bracket means multiply EVERYTHING inside by 3. Once they can articulate this clearly, they are ready for the worksheet.",
       },
+      parentTip: "Algebra at Year 8 is often where the abstraction gap first opens up. If your teenager seems to get it during the lesson but makes errors on the worksheet, they may be pattern-matching rather than understanding the distributive law. Ask them to verify their expansion by substituting x = 2 into both the original and expanded forms — if the values match, the expansion is correct. This self-checking habit is more valuable than any shortcut.",
+      extension: "Use GeoGebra (geogebra.org) to model the distributive law visually: draw a rectangle of width (x + 3) and height 2 and show that its area equals 2x + 6. Then extend to a(b + c + d) with three terms and verify by choosing specific values. This connects to AC9M8A01 and the use of digital tools to verify algebraic reasoning.",
+      resources: [
+        { title: "Distributive Property — Khan Academy", url: "https://www.khanacademy.org/math/algebra-basics/basic-alg-foundations/alg-basics-distributive-property/v/the-distributive-property", description: "Video lessons on expanding brackets using the distributive property with worked examples." },
+        { title: "Expanding and Factorising — Maths is Fun", url: "https://www.mathsisfun.com/algebra/expanding-factorising.html", description: "Explanation of expanding brackets and factorising linear expressions with step-by-step examples." },
+        { title: "GeoGebra Algebra", url: "https://www.geogebra.org/algebra", description: "Free interactive algebra tools for exploring expressions and equations visually." },
+      ],
     },
     activities: [
       {
@@ -859,6 +898,7 @@ export const year8MathsWorksheets: WorksheetItem[] = [
         ],
       },
     ],
+    nextSteps: ["graphing-linear-relations"],
   },
 
   // ── WS 6: Graphing Linear Relations ──────────────────────────
@@ -891,6 +931,13 @@ export const year8MathsWorksheets: WorksheetItem[] = [
         script: "Without graphing, tell me: what is the gradient of y equals 3x minus 2? What is the y-intercept? Does this line go uphill or downhill from left to right?",
         action: "Child answers: gradient = 3 (steep uphill), y-intercept = -2 (line crosses y-axis at -2). Then ask them to write a new equation for a line with gradient -1 and y-intercept 4. Once they can do that confidently, they are ready for the worksheet.",
       },
+      parentTip: "Graphing is a topic where teenagers often know the mechanical steps but miss the meaning. Ask your child what the gradient tells you about the real-world situation — if y is distance and x is time, what does a steeper line mean? Connecting the graph to a story helps cement understanding. If they resist graphing by hand, let them use Desmos to check their work after drawing it first: using digital tools to verify is a genuine mathematical skill.",
+      extension: "Open Desmos (desmos.com/calculator) and type y = mx + b with sliders for m and b. Investigate: what happens when m is negative? When b is zero? What must be true about two lines for them to be parallel? Write a brief investigation report connecting what you see on screen to the algebra. This connects to AC9M8A02 and the use of digital tools for mathematical exploration.",
+      resources: [
+        { title: "Linear Equations and Graphs — Khan Academy", url: "https://www.khanacademy.org/math/algebra/x2f8bb11595b61c86:linear-equation-graphs", description: "Comprehensive lessons on graphing linear equations, slope and y-intercept." },
+        { title: "Straight Line Graph — Maths is Fun", url: "https://www.mathsisfun.com/algebra/line-equation-2points.html", description: "Explanation of straight-line graphs including gradient-intercept form with interactive diagrams." },
+        { title: "Desmos Graphing Calculator", url: "https://www.desmos.com/calculator", description: "Free graphing tool — type any linear equation and explore the graph interactively with sliders." },
+      ],
     },
     activities: [
       {
@@ -1025,6 +1072,7 @@ export const year8MathsWorksheets: WorksheetItem[] = [
         ],
       },
     ],
+    nextSteps: ["linear-equations-inequalities"],
   },
 
   // ── WS 7: Solving Linear Equations & Inequalities ────────────
@@ -1056,6 +1104,13 @@ export const year8MathsWorksheets: WorksheetItem[] = [
         script: "I am going to describe a problem and I want you to write it as an inequality and then solve it. You have $50. You buy a book for $x. You want to have more than $15 left over. Write the inequality and find the maximum price of the book.",
         action: "Child writes: 50 - x > 15, then solves to get x < 35. Discuss what this means in plain English. Once they can move comfortably between words and algebra, they are ready for the worksheet.",
       },
+      parentTip: "Solving equations is a critical skill and many teenagers develop bad habits — guessing or undoing steps out of order — that work on easy problems but fail on harder ones. Encourage your child to write every step on a separate line and state what operation they are performing. If they resist this structure, make it a personal challenge: how many steps in a row can they get right without an error? Personal bests tend to work better than insisting on neatness.",
+      extension: "Model a real-world inequality: your teenager has $120 to spend and wants to buy books at $15 each. Write and solve an inequality to find the maximum number they can buy. Then add a complication — postage costs $8 regardless of quantity — and update the inequality. Graph the solution set on a number line. This connects to AC9M8A03 and mathematical modelling with linear inequalities.",
+      resources: [
+        { title: "Linear Equations — Khan Academy", url: "https://www.khanacademy.org/math/algebra/x2f8bb11595b61c86:solve-equations-inequalities", description: "Lessons on solving one and two-step linear equations with worked examples and practice." },
+        { title: "Solving Equations — Maths is Fun", url: "https://www.mathsisfun.com/algebra/equations-solving.html", description: "Step-by-step guide to solving linear equations with a balance-scale visualisation." },
+        { title: "Inequalities — Khan Academy", url: "https://www.khanacademy.org/math/algebra/x2f8bb11595b61c86:solve-equations-inequalities/x2f8bb11595b61c86:inequalities/v/solving-inequalities", description: "Video lessons on solving and graphing linear inequalities on a number line." },
+      ],
     },
     activities: [
       {
@@ -1198,6 +1253,7 @@ export const year8MathsWorksheets: WorksheetItem[] = [
         ],
       },
     ],
+    nextSteps: ["perimeter-area-composite-shapes"],
   },
 
   // ── WS 8: Perimeter & Area of Composite Shapes ───────────────
@@ -1230,6 +1286,13 @@ export const year8MathsWorksheets: WorksheetItem[] = [
         script: "A running track has a rectangular middle section and a semicircle on each end. If I want to find the total perimeter of the track, what shapes do I need to consider and which formula do I need to remember?",
         action: "Child identifies: perimeter = two long straight sides + two semicircle circumferences (which together make one full circle). They write the formula and describe the strategy. Once confident, they are ready for the worksheet.",
       },
+      parentTip: "Composite shape problems require students to decompose shapes before calculating — this spatial thinking step is often skipped when teenagers rush. Encourage your child to always sketch the shape and draw the partition lines before writing any formula. A useful question when they are stuck: can you see any rectangles or triangles hidden inside this shape? Stepping back while they draw reduces anxiety and builds independence.",
+      extension: "Measure the floor area of two rooms in your home by breaking each into rectangles and triangles. Calculate the total floor area in square metres. Then research the current price of carpet per square metre online and calculate a realistic cost to carpet those rooms. Include a 10% waste allowance and discuss why waste allowances matter in real construction projects. This connects to AC9M8M01.",
+      resources: [
+        { title: "Area of Composite Figures — Khan Academy", url: "https://www.khanacademy.org/math/geometry/hs-geo-area-formulas-review", description: "Lessons and practice on calculating areas of composite and irregular shapes." },
+        { title: "Area — Maths is Fun", url: "https://www.mathsisfun.com/area.html", description: "Area formulas for all common shapes with interactive examples and practice." },
+        { title: "GeoGebra Geometry", url: "https://www.geogebra.org/geometry", description: "Free geometry tool for drawing and measuring composite shapes interactively." },
+      ],
     },
     activities: [
       {
@@ -1350,6 +1413,7 @@ export const year8MathsWorksheets: WorksheetItem[] = [
         ],
       },
     ],
+    nextSteps: ["volume-right-prisms"],
   },
 
   // ── WS 9: Volume of Right Prisms ─────────────────────────────
@@ -1382,6 +1446,13 @@ export const year8MathsWorksheets: WorksheetItem[] = [
         script: "A swimming pool is 25 metres long, 10 metres wide, and 1.8 metres deep. What is the volume in cubic metres? And knowing that one cubic metre equals 1000 litres, what is the capacity in litres?",
         action: "Child calculates: V = 25 x 10 x 1.8 = 450 m cubed = 450,000 litres. If they are unsure, remind them the cross-section of a rectangular pool is just length times width. Once they can explain why we multiply by height (or length), they are ready for the worksheet.",
       },
+      parentTip: "Volume is abstract until students build or handle physical examples. Before the lesson, find a few boxes at home and ask your child to estimate which has the greatest volume, then calculate to check. The physical act of measuring and calculating grounds the concept. If they confuse area and volume, draw attention to units: area uses square units (cm squared) and volume uses cubic units (cm cubed) — the units signal the dimension.",
+      extension: "Design a box to hold exactly 1 litre of water (1000 cubic centimetres). Find three different sets of dimensions (length by width by height) that would work. For each design, calculate the total surface area of cardboard needed. Identify which design uses the least material and explain why. This connects to AC9M8M02 and introduces the concept of optimisation in design contexts.",
+      resources: [
+        { title: "Volume of Prisms — Khan Academy", url: "https://www.khanacademy.org/math/geometry/hs-geo-solids/hs-geo-solids-intro/v/volume-of-a-box", description: "Video lessons on calculating volume of rectangular prisms and other right prisms." },
+        { title: "Volume — Maths is Fun", url: "https://www.mathsisfun.com/geometry/volume.html", description: "Volume formulas for prisms and other 3D shapes with worked examples." },
+        { title: "GeoGebra 3D Calculator", url: "https://www.geogebra.org/3d", description: "Interactive 3D geometry tool for visualising and measuring prisms and other solids." },
+      ],
     },
     activities: [
       {
@@ -1501,6 +1572,7 @@ export const year8MathsWorksheets: WorksheetItem[] = [
         ],
       },
     ],
+    nextSteps: ["pythagoras-theorem"],
   },
 
   // ── WS 10: Pythagoras' Theorem ────────────────────────────────
@@ -1534,6 +1606,13 @@ export const year8MathsWorksheets: WorksheetItem[] = [
         script: "I will give you three side lengths. Your job is to check whether they form a right-angled triangle. Try: 5, 7, 9. Does 5 squared plus 7 squared equal 9 squared?",
         action: "Child checks: 25 + 49 = 74, but 81 does not equal 74, so NO. Then try: 9, 12, 15 (yes: 81 + 144 = 225 = 15 squared). Once they can both find missing sides and check triples, they are ready for the worksheet.",
       },
+      parentTip: "Before any calculations, always have your teenager label the triangle first: H for hypotenuse (always opposite the right angle), and the two shorter sides. If they can consistently identify the hypotenuse, the formula almost applies itself. For teenagers who are bored by routine practice, suggest they investigate Pythagorean triples — sets of three whole numbers that satisfy the theorem — which turns it into an engaging number investigation.",
+      extension: "Use GeoGebra (geogebra.org) to construct a right-angled triangle and build a square on each of the three sides. Measure the areas of all three squares and verify that the two smaller squares sum to the largest. Drag the vertices and observe that the relationship always holds — this is a dynamic visual proof of the theorem. This connects to AC9M8SP02 and geometric reasoning using digital tools.",
+      resources: [
+        { title: "Pythagorean Theorem — Khan Academy", url: "https://www.khanacademy.org/math/geometry/hs-geo-trig/hs-geo-pyth-theorem/v/pythagorean-theorem", description: "Video lessons on Pythagoras theorem with applications to finding missing side lengths." },
+        { title: "Pythagoras Theorem — Maths is Fun", url: "https://www.mathsisfun.com/pythagoras.html", description: "Clear explanation of Pythagoras theorem with interactive diagrams and worked examples." },
+        { title: "GeoGebra Geometry", url: "https://www.geogebra.org/geometry", description: "Free geometry tool for constructing triangles and visually verifying Pythagoras theorem." },
+      ],
     },
     activities: [
       {
@@ -1664,6 +1743,7 @@ export const year8MathsWorksheets: WorksheetItem[] = [
         ],
       },
     ],
+    nextSteps: ["circle-area-circumference"],
   },
 
   // ── WS 11: Circle Area & Circumference ───────────────────────
@@ -1698,6 +1778,13 @@ export const year8MathsWorksheets: WorksheetItem[] = [
         script: "A large pizza has a diameter of 30 centimetres. What is its area? And if the crust goes around the outside, how long is the crust?",
         action: "Child calculates: r = 15, A = pi x 225 = 706.5 cm squared, C = 2 x pi x 15 = 94.2 cm. Once they can clearly distinguish between area (the surface of the pizza) and circumference (the crust), they are ready for the worksheet.",
       },
+      parentTip: "The two circle formulas are frequently confused because both involve pi and r. Help your teenager create a simple memory hook: circumference is a length (one-dimensional) so r appears once; area covers a surface (two-dimensional) so r is squared. Note that arc length and sector area activities in this worksheet go slightly beyond strict Year 8 scope — treat them as enrichment if your child is confident, or focus on the core area and circumference problems if consolidation is needed.",
+      extension: "Measure the circumference of three circular objects at home using string and a ruler. Calculate the diameter from each circumference using C equals pi times d. Compare your calculated diameter to a direct measurement across the object. Calculate the percentage error for each and discuss what caused the discrepancy. This connects to AC9M8M03 and experimental measurement skills.",
+      resources: [
+        { title: "Circles — Khan Academy", url: "https://www.khanacademy.org/math/geometry/hs-geo-circles", description: "Comprehensive lessons on circle area, circumference and related circle problems." },
+        { title: "Circle — Maths is Fun", url: "https://www.mathsisfun.com/geometry/circle.html", description: "Explanation of circle properties, area and circumference formulas with interactive diagrams." },
+        { title: "GeoGebra Geometry", url: "https://www.geogebra.org/geometry", description: "Draw and measure circles interactively to explore the relationship between radius and circumference." },
+      ],
     },
     activities: [
       {
@@ -1819,6 +1906,7 @@ export const year8MathsWorksheets: WorksheetItem[] = [
         ],
       },
     ],
+    nextSteps: ["congruence-similarity"],
   },
 
   // ── WS 12: Congruence & Similarity ───────────────────────────
@@ -1851,6 +1939,13 @@ export const year8MathsWorksheets: WorksheetItem[] = [
         script: "A model car is built to a scale of 1 to 20. The real car is 4 metres long. How long is the model in centimetres?",
         action: "Child converts: 4 m = 400 cm, model = 400 / 20 = 20 cm. Then ask the reverse: if the model wheel diameter is 3 cm, what is the real wheel diameter? (3 x 20 = 60 cm.) Once they are comfortable with scale factors in both directions, they are ready for the worksheet.",
       },
+      parentTip: "Students at Year 8 often confuse congruence and similarity when writing explanations. Encourage your child to always state which condition applies — SSS, SAS, AAS or RHS for congruence; equal angles and proportional sides for similarity — before claiming two shapes are related. Precision in mathematical language is a skill that pays off throughout senior mathematics and is worth practising even if it initially slows things down.",
+      extension: "Find a photograph of a building or landmark. Print it and use a ruler to measure two distances in the photo. Using similar triangles and a known real-world measurement (such as the height of a standard doorway at 2 metres), estimate an unknown dimension like the height of the building. Research the actual height and calculate your percentage error. This connects to AC9M8SP01 and real-world application of similarity.",
+      resources: [
+        { title: "Congruent Triangles — Khan Academy", url: "https://www.khanacademy.org/math/geometry/hs-geo-congruence", description: "Lessons on congruence conditions SSS, SAS, AAS and RHS for triangles." },
+        { title: "Congruent — Maths is Fun", url: "https://www.mathsisfun.com/geometry/congruent.html", description: "Explanation of congruence and the conditions for congruent triangles with examples." },
+        { title: "Similar Triangles — Maths is Fun", url: "https://www.mathsisfun.com/geometry/triangles-similar.html", description: "Clear explanation of similar triangles with scale factors and worked examples." },
+      ],
     },
     activities: [
       {
@@ -1978,6 +2073,7 @@ export const year8MathsWorksheets: WorksheetItem[] = [
         ],
       },
     ],
+    nextSteps: ["statistical-investigations"],
   },
 
   // ── WS 13: Statistical Investigations ────────────────────────
@@ -2009,6 +2105,13 @@ export const year8MathsWorksheets: WorksheetItem[] = [
         script: "If I wanted to investigate whether Year 8 students sleep enough for good school performance, what statistical question would I ask? What is a fair way to collect data? And what graph would best show the results?",
         action: "Child writes a statistical question (e.g. How many hours do Year 8 students sleep per night?), names a sampling method (random selection from the class roll), and chooses a graph type (histogram or box plot). Once they can design the basic investigation framework, they are ready for the worksheet.",
       },
+      parentTip: "Statistics is often taught as a set of calculations, but Year 8 students benefit most from focusing on interpretation — what does this data actually tell us? Encourage your teenager to always write a sentence explaining what each graph or statistic means in context, not just the number. If they are resistant to open-ended questions, frame it as: pretend you are a journalist writing a headline about this data — teenagers often respond well to real-world roles.",
+      extension: "Collect real data by surveying 10 people on one question such as hours of screen time per day or books read this year. Calculate the mean, median, mode and range. Display the data in both a dot plot and a histogram using Desmos (desmos.com) or graph paper. Write a paragraph analysing what the data shows, including a comment on any outliers. This connects to AC9M8ST01 and AC9M8ST02.",
+      resources: [
+        { title: "Statistics — Khan Academy", url: "https://www.khanacademy.org/math/algebra-basics/alg-basics-data-and-modeling", description: "Lessons on data displays, measures of centre and statistical reasoning for middle school." },
+        { title: "Data — Maths is Fun", url: "https://www.mathsisfun.com/data/", description: "Guides to mean, median, mode, histograms, box plots and other statistical concepts." },
+        { title: "NRICH Statistics", url: "https://nrich.maths.org/statistics", description: "Investigative statistical problems and data-handling challenges from Cambridge University." },
+      ],
     },
     activities: [
       {
@@ -2144,6 +2247,7 @@ export const year8MathsWorksheets: WorksheetItem[] = [
         ],
       },
     ],
+    nextSteps: ["compound-probability"],
   },
 
   // ── WS 14: Probability of Compound Events ────────────────────
@@ -2176,6 +2280,13 @@ export const year8MathsWorksheets: WorksheetItem[] = [
         script: "A spinner has three equal sections: Red, Blue, Green. It is spun twice. How many outcomes are there in total? What is the probability of getting Red both times?",
         action: "Child draws a 3x3 table (or tree diagram) showing 9 outcomes. P(Red, Red) = 1/9. If they struggle, remind them: 3 options for the first spin, 3 for the second, 3 x 3 = 9 total. Once they can set up the table and calculate correctly, they are ready for the worksheet.",
       },
+      parentTip: "Probability is a topic where intuition often misleads teenagers — many will insist a coin is due for heads after several tails. Rather than correcting them directly, set up the experiment and let the data do the convincing. For tree diagrams, ensure your child draws the full diagram before calculating any probabilities. Note that the conditional probability activity is a brief preview of Year 10 content — treat it as enrichment rather than a core Year 8 requirement.",
+      extension: "Simulate compound events: flip two coins 40 times and record all four possible outcomes (HH, HT, TH, TT). Tally the results and compare experimental probabilities to the theoretical values of 1/4 each. Discuss how many trials you would need for the experimental results to consistently come within 5% of theoretical. This connects to AC9M8P02 and statistical reasoning about probability and sample size.",
+      resources: [
+        { title: "Compound Probability — Khan Academy", url: "https://www.khanacademy.org/math/algebra-basics/alg-basics-data-and-modeling/alg-basics-probability/v/basic-probability", description: "Lessons on probability of compound events, tree diagrams and sample spaces." },
+        { title: "Probability — Maths is Fun", url: "https://www.mathsisfun.com/probability.html", description: "Explanation of probability including compound events, tree diagrams and Venn diagrams." },
+        { title: "NRICH Probability", url: "https://nrich.maths.org/probability", description: "Engaging probability investigations and problems including simulation-based activities." },
+      ],
     },
     activities: [
       {

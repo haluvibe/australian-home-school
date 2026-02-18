@@ -31,6 +31,13 @@ export const year5MathsWorksheets: WorksheetItem[] = [
         script: "Before you start the worksheet, tell me: how do you decide which decimal is bigger when the whole number parts are the same? And what does the digit after the decimal point mean?",
         action: "Listen for the child to mention tenths and place value. If they are unsure, revisit the ruler one more time. Confirm they can write decimals from dictation before they begin.",
       },
+      parentTip: "Decimals can feel abstract until your child can point to them on something physical — the ruler trick works brilliantly. If your child mixes up tenths and hundredths, slow right down and stay with tenths only for a session before introducing two decimal places.",
+      extension: "Ask your child to find five different measurements around the house (height of a book, width of a cup, length of a table) using a ruler or tape measure, record them as decimals, then order them from smallest to largest. Discuss how a small difference in the decimal part can mean a noticeable difference in real size.",
+      resources: [
+        { title: "Decimals on a Number Line — Khan Academy", url: "https://www.khanacademy.org/math/cc-fifth-grade-math/cc-5th-place-value-decimals-top/cc-5th-decimal-place-value/e/decimals-on-the-number-line-1", description: "Interactive exercises placing decimals on number lines, great for visual practice." },
+        { title: "Ordering Decimals — Maths is Fun", url: "https://www.mathsisfun.com/ordering_decimals.html", description: "Clear explanation with a visual grid method for comparing and ordering decimals." },
+        { title: "Decimal Detectives — NRICH", url: "https://nrich.maths.org/6Q397", description: "Engaging NRICH problems that challenge children to reason about decimal size and order." },
+      ],
     },
     activities: [
       // ─── Easy: Tenths (activities 1–25) ───
@@ -534,6 +541,7 @@ export const year5MathsWorksheets: WorksheetItem[] = [
       { type: "sorting", title: "Sort Decimals: Ascending (A)", instruction: "Sort from smallest to largest into three groups.", columns: ["Smallest group", "Middle group", "Largest group"], items: [{ label: "0.037" }, { label: "0.370" }, { label: "0.307" }, { label: "1.200" }, { label: "1.020" }, { label: "1.002" }] },
       { type: "open-response", title: "Create Your Own Decimal Problems", instruction: "Write and solve your own problems.", prompts: [{ text: "Make up three decimal numbers between 3.1 and 3.2. Order them.", type: "lines", lines: 2 }, { text: "Write a word problem that involves ordering three decimals. Solve it.", type: "box" }] },
     ],
+    nextSteps: ["factors-multiples", "percentages-fractions-decimals"],
   },
 
   // ── WS 2: Factors and Multiples ──────────────────────────────────
@@ -566,6 +574,13 @@ export const year5MathsWorksheets: WorksheetItem[] = [
         script: "Quick check — is 8 a factor of 24? How do you know? Is 24 a multiple of 8? How are those two questions connected?",
         action: "Child should explain that if 8 divides 24 evenly it is a factor, and that being a factor of 24 means 24 is a multiple of 8. They are the same relationship seen from different directions.",
       },
+      parentTip: "Many children confuse factors and multiples — it helps to anchor the language: factors are the numbers you multiply together (they go INTO the number), multiples are the results (they come OUT of the multiplication table). If your child is stuck, ask 'Can you divide 24 by that number with no remainder?' for factors, or 'Is it in the times table for that number?' for multiples.",
+      extension: "Challenge your child to find all the factors of a two-digit number of their choice, then find its prime factors using a factor tree. Compare the factor trees of two different numbers — can they find a common factor? This connects directly to the Year 5 strand on prime and composite numbers.",
+      resources: [
+        { title: "Factors and Multiples — Khan Academy", url: "https://www.khanacademy.org/math/cc-fifth-grade-math/cc-5th-fact-and-multiples/cc-5th-factors-multiples/v/finding-factors-of-a-number", description: "Short video introduction followed by interactive practice finding factors." },
+        { title: "Factors and Multiples — Maths is Fun", url: "https://www.mathsisfun.com/numbers/factors-multiples.html", description: "Concise explanation with examples distinguishing factors from multiples." },
+        { title: "Factors and Multiples Puzzle — NRICH", url: "https://nrich.maths.org/5468", description: "A rich puzzle where children place numbers on a grid using factor and multiple relationships." },
+      ],
     },
     activities: [
       // ─── Easy: Identifying factors (activities 1–25) ───
@@ -966,7 +981,7 @@ export const year5MathsWorksheets: WorksheetItem[] = [
       { type: "number-bonds", title: "Division Fact Bonds (C)", instruction: "If a × b = c, find the missing factor.", bonds: [{ total: 48, partA: 6, partB: null }, { total: 72, partA: 8, partB: null }, { total: 56, partA: 7, partB: null }, { total: 90, partA: 9, partB: null }, { total: 32, partA: 4, partB: null }, { total: 66, partA: 6, partB: null }] },
       { type: "circle-correct", title: "Multiples and Factors True/False", instruction: "Circle TRUE or FALSE.", questions: [{ prompt: "36 is a multiple of 9", options: ["TRUE", "FALSE"] }, { prompt: "9 is a factor of 36", options: ["TRUE", "FALSE"] }, { prompt: "15 is a factor of 5", options: ["TRUE", "FALSE"] }, { prompt: "All factors of a number are less than or equal to that number", options: ["TRUE", "FALSE"] }] },
       { type: "sorting", title: "Sort: Factor or Multiple?", instruction: "Sort each relationship as factor or multiple.", columns: ["Factor", "Multiple"], items: [{ label: "7 and 49 (7 is a ___ of 49)" }, { label: "63 and 7 (63 is a ___ of 7)" }, { label: "5 and 100 (5 is a ___ of 100)" }, { label: "100 and 5 (100 is a ___ of 5)" }] },
-      { type: "open-response", title: "Factor Ladders", instruction: "Use a factor ladder to find prime factors.", prompts: [{ text: "Factor ladder for 48: Start by dividing by 2 repeatedly. Write the prime factorisation: ___", type: "lines", lines: 3 }, { text: "Factor ladder for 90: ___", type: "lines", lines: 3 }, { text: "What is the HCF of 48 and 90? Use the prime factors:", type: "lines", lines: 2 }] },
+      { type: "open-response", title: "Factor Ladders", instruction: "Use a factor ladder to find prime factors.", parentTip: "Extension: Prime factorisation using factor ladders and factor trees is enrichment content beyond the core Year 5 curriculum. Great for students who enjoy number puzzles.", prompts: [{ text: "Factor ladder for 48: Start by dividing by 2 repeatedly. Write the prime factorisation: ___", type: "lines", lines: 3 }, { text: "Factor ladder for 90: ___", type: "lines", lines: 3 }, { text: "What is the HCF of 48 and 90? Use the prime factors:", type: "lines", lines: 2 }] },
       { type: "open-response", title: "Multiples in Problem Solving", instruction: "Use multiples to solve.", prompts: [{ text: "A school library adds 8 new books every Monday. After 6 Mondays: ___ books added. If it started with 120, total: ___", type: "lines", lines: 1 }, { text: "Chairs are arranged in rows of 9. For 108 students, how many rows? ___", type: "lines", lines: 1 }, { text: "What is the smallest number that is a multiple of 4, 6 and 10? ___", type: "lines", lines: 2 }] },
       { type: "sequence", sequences: [{ items: [6, 12, 18, 24], answer: [30, 36] }, { items: [7, 14, 21, 28], answer: [35, 42] }, { items: [11, 22, 33, 44], answer: [55, 66] }], title: "Multiple Sequences", instruction: "Continue each sequence of multiples." },
       { type: "picture-graph", title: "Student Scores: Multiples of 6", instruction: "Score = multiple of 6 earned in game. Each icon = 6 points.", rows: [{ label: "Round 1", icon: "star", count: 5 }, { label: "Round 2", icon: "star", count: 7 }, { label: "Round 3", icon: "star", count: 4 }, { label: "Round 4", icon: "star", count: 8 }], questions: ["Total score in points?", "Which round had the highest score?", "Average score per round?", "How many more in Round 2 vs Round 3?"] },
@@ -978,9 +993,9 @@ export const year5MathsWorksheets: WorksheetItem[] = [
       { type: "number-bonds", title: "Factor Pairs that Multiply to 60", instruction: "Fill in the missing factor.", bonds: [{ total: 60, partA: 4, partB: null }, { total: 60, partA: 5, partB: null }, { total: 60, partA: 6, partB: null }, { total: 60, partA: 10, partB: null }] },
       { type: "circle-correct", title: "Is it a Multiple? (B)", instruction: "Circle YES or NO.", questions: [{ prompt: "Is 54 a multiple of 6?", options: ["YES", "NO"] }, { prompt: "Is 85 a multiple of 9?", options: ["YES", "NO"] }, { prompt: "Is 96 a multiple of 8?", options: ["YES", "NO"] }, { prompt: "Is 112 a multiple of 7?", options: ["YES", "NO"] }] },
       { type: "sorting", title: "Classify Numbers: Prime, Composite, or Square", instruction: "Write each number in the correct column.", columns: ["Prime", "Composite", "Perfect Square"], items: [{ label: "4" }, { label: "7" }, { label: "9" }, { label: "11" }, { label: "25" }, { label: "15" }, { label: "36" }, { label: "13" }] },
-      { type: "open-response", title: "LCM in Real Life", instruction: "Use LCM to solve these problems.", prompts: [{ text: "A bus leaves every 8 minutes, a train every 12 minutes. Both leave at 9:00 am. When do they next leave together? ___", type: "lines", lines: 2 }, { text: "A lighthouse flashes every 6 seconds, another every 10 seconds. They flash together at 12:00:00. When next? ___", type: "lines", lines: 2 }] },
-      { type: "open-response", title: "HCF Applications", instruction: "Use HCF to solve.", prompts: [{ text: "You have 24 red beads and 36 blue beads. What is the largest equal group size with no beads left over? ___", type: "lines", lines: 2 }, { text: "A rectangular floor is 48 cm by 72 cm. What is the largest square tile that fits exactly? ___", type: "lines", lines: 2 }] },
-      { type: "sequence", title: "Multiples and Patterns (B)", instruction: "Find the pattern and continue.", sequences: [{ items: [3, 6, 12, 24], answer: [48, 96] }, { items: [100, 50, 25], answer: [12, 6] }, { items: [1, 4, 9, 16], answer: [25, 36] }] },
+      { type: "open-response", title: "LCM in Real Life", instruction: "Use LCM to solve these problems.", parentTip: "Extension: Lowest Common Multiple (LCM) and Highest Common Factor (HCF) are extension topics beyond the core Year 5 curriculum. These activities challenge students who are ready for deeper number work.", prompts: [{ text: "A bus leaves every 8 minutes, a train every 12 minutes. Both leave at 9:00 am. When do they next leave together? ___", type: "lines", lines: 2 }, { text: "A lighthouse flashes every 6 seconds, another every 10 seconds. They flash together at 12:00:00. When next? ___", type: "lines", lines: 2 }] },
+      { type: "open-response", title: "HCF Applications", instruction: "Use HCF to solve.", parentTip: "Extension: HCF applications are enrichment content. Skip or revisit once core multiplication and division facts are secure.", prompts: [{ text: "You have 24 red beads and 36 blue beads. What is the largest equal group size with no beads left over? ___", type: "lines", lines: 2 }, { text: "A rectangular floor is 48 cm by 72 cm. What is the largest square tile that fits exactly? ___", type: "lines", lines: 2 }] },
+      { type: "sequence", title: "Multiples and Patterns (B)", instruction: "Find the pattern and continue.", sequences: [{ items: [3, 6, 12, 24], answer: [48, 96] }, { items: [128, 64, 32], answer: [16, 8] }, { items: [1, 4, 9, 16], answer: [25, 36] }] },
       { type: "open-response", title: "Venn Diagram: Multiples", instruction: "Sort numbers into the Venn diagram.", prompts: [{ text: "Draw two overlapping circles: 'Multiples of 3' and 'Multiples of 4'. Place 12, 8, 9, 24, 15, 16, 6, 32 in correct sections.", type: "box" }, { text: "Which numbers belong in the overlap? What do they have in common?", type: "lines", lines: 2 }] },
       { type: "circle-correct", title: "Factor or Multiple? (B)", instruction: "Decide if the bold number is a factor OR multiple of the other.", questions: [{ prompt: "7 is a ___ of 49", options: ["factor", "multiple"] }, { prompt: "63 is a ___ of 7", options: ["factor", "multiple"] }, { prompt: "6 is a ___ of 2", options: ["factor", "multiple"] }, { prompt: "2 is a ___ of 6", options: ["factor", "multiple"] }] },
       { type: "compare-groups", title: "Which Has More Factors?", instruction: "Circle the number with more factors.", pairs: [{ leftCount: 6, rightCount: 8, object: "star", question: "18 (6 factors) vs 20 (6 factors) — which has more?" }, { leftCount: 4, rightCount: 9, object: "circle", question: "6 (4 factors) vs 36 (9 factors) — which has more?" }] },
@@ -1033,6 +1048,7 @@ export const year5MathsWorksheets: WorksheetItem[] = [
       { type: "circle-correct", title: "Factor or Multiple? (A)", instruction: "Is the first number a factor or multiple of the second?", questions: [{ prompt: "3 and 12: 3 is a ___ of 12", options: ["factor", "multiple"] }, { prompt: "15 and 5: 15 is a ___ of 5", options: ["factor", "multiple"] }, { prompt: "6 and 36: 6 is a ___ of 36", options: ["factor", "multiple"] }, { prompt: "40 and 8: 40 is a ___ of 8", options: ["factor", "multiple"] }] },
       { type: "open-response", title: "Create Your Own Factor Problems", instruction: "Write and solve your own factor and multiple problems.", prompts: [{ text: "Write a number between 50 and 100 with exactly 6 factors. What is it? List the factors.", type: "lines", lines: 2 }, { text: "Write a problem involving LCM. Solve it.", type: "box" }] },
     ],
+    nextSteps: ["add-subtract-fractions"],
   },
 
   // ── WS 3: Add and Subtract Fractions ──────────────────────────────────
@@ -1065,6 +1081,13 @@ export const year5MathsWorksheets: WorksheetItem[] = [
         script: "Tell me in your own words: when we add fractions with the same denominator, what do we add and what do we leave alone? And why does the denominator not change?",
         action: "Child should explain that we add the numerators because we are counting the pieces, and the denominator stays because the size of each piece has not changed. Correct gently if they say the denominators add together.",
       },
+      parentTip: "The most common mistake when adding fractions is adding the denominators — for example, writing 1/4 + 1/4 = 2/8. If you hear this, use a visual straight away: fold a piece of paper into quarters and shade one quarter, then another. How many quarters are shaded? Still four pieces in the whole, just two are shaded. The physical model clears it up faster than any explanation.",
+      extension: "Ask your child to find three pairs of fractions with different denominators that they can add by first converting to a common denominator (for example, 1/2 + 1/4, or 1/3 + 1/6). Let them use paper folding or fraction strips to verify. This previews the Year 5 and 6 skill of finding equivalent fractions as a tool.",
+      resources: [
+        { title: "Adding Fractions — Khan Academy", url: "https://www.khanacademy.org/math/cc-fifth-grade-math/cc-5th-fractions-topic/cc-5th-add-sub-fractions/v/adding-fractions-with-unlike-denominators-introduction", description: "Step-by-step video on adding fractions, starting with same denominators." },
+        { title: "Adding Fractions — Maths is Fun", url: "https://www.mathsisfun.com/fractions_addition.html", description: "Visual fraction bar diagrams that show why the numerators add but the denominator stays the same." },
+        { title: "Fractions on a Number Line — NRICH", url: "https://nrich.maths.org/6536", description: "NRICH tasks placing and combining fractions on a number line to build conceptual understanding." },
+      ],
     },
     activities: [
       // ─── Easy: Same denominators (activities 1–25) ───
@@ -1397,7 +1420,7 @@ export const year5MathsWorksheets: WorksheetItem[] = [
       { type: "open-response", title: "Add Fractions Same Denominator (B)", instruction: "Add.", prompts: [{ text: "2/7 + 4/7 = ___", type: "lines", lines: 1 }, { text: "3/10 + 5/10 = ___", type: "lines", lines: 1 }, { text: "1/9 + 7/9 = ___", type: "lines", lines: 1 }, { text: "4/12 + 5/12 = ___", type: "lines", lines: 1 }] },
       { type: "open-response", title: "Subtract Fractions Same Denominator (B)", instruction: "Subtract.", prompts: [{ text: "8/9 − 5/9 = ___", type: "lines", lines: 1 }, { text: "7/10 − 3/10 = ___", type: "lines", lines: 1 }, { text: "11/12 − 4/12 = ___", type: "lines", lines: 1 }, { text: "6/8 − 2/8 = ___", type: "lines", lines: 1 }] },
       { type: "number-bonds", title: "Fraction Bonds to 1 (A)", instruction: "What fraction must be added to make 1 whole?", bonds: [{ total: 4, partA: 1, partB: null }, { total: 6, partA: 5, partB: null }, { total: 8, partA: 3, partB: null }, { total: 10, partA: 7, partB: null }, { total: 5, partA: 2, partB: null }, { total: 3, partA: 1, partB: null }] },
-      { type: "matching", title: "Match Fraction Sums (A)", instruction: "Draw a line.", left: ["1/4 + 1/4", "2/5 + 3/5", "3/8 + 5/8", "1/6 + 3/6"], right: ["1", "2/4", "1", "4/6"] },
+      { type: "matching", title: "Match Fraction Sums (A)", instruction: "Draw a line.", left: ["1/4 + 1/4", "2/5 + 3/5", "1/8 + 2/8", "1/6 + 3/6"], right: ["1", "2/4", "4/6", "3/8"] },
       { type: "sorting", title: "Sort: Sum Greater or Less Than 1?", instruction: "Sort each addition.", columns: ["Less than 1", "Equal to 1", "Greater than 1"], items: [{ label: "1/3 + 1/3" }, { label: "4/5 + 1/5" }, { label: "3/4 + 1/2" }, { label: "2/6 + 3/6" }, { label: "5/8 + 2/8" }, { label: "7/10 + 5/10" }] },
       // ─── Additional Medium activities ───
       { type: "open-response", title: "Add Fractions Different Denominators (A)", instruction: "Find a common denominator and add.", prompts: [{ text: "1/3 + 1/6 = ___", type: "lines", lines: 2 }, { text: "1/4 + 1/8 = ___", type: "lines", lines: 2 }, { text: "2/5 + 1/10 = ___", type: "lines", lines: 2 }, { text: "1/2 + 1/3 = ___", type: "lines", lines: 2 }] },
@@ -1424,8 +1447,8 @@ export const year5MathsWorksheets: WorksheetItem[] = [
       { type: "open-response", title: "Mixed Number Word Problems", instruction: "Solve these fraction word problems.", prompts: [{ text: "A rope is 4 3/4 m. Another is 2 1/4 m. Total length: ___. Difference: ___", type: "lines", lines: 1 }, { text: "From a 6 m length, 2 2/3 m is cut. How much remains? ___", type: "lines", lines: 2 }, { text: "Divide 5 1/2 kg of rice equally into 4 bags: ___ kg each", type: "lines", lines: 2 }] },
       { type: "open-response", title: "Justify Fraction Statements", instruction: "Agree or disagree. Justify your answer.", prompts: [{ text: "1/2 + 1/2 = 2/4. Agree or disagree? ___. Explain:", type: "lines", lines: 2 }, { text: "A larger denominator always means a smaller fraction. Always true? ___. Give an example:", type: "lines", lines: 2 }] },
       // ─── Ninth round ───
-      { type: "matching", title: "Match Fractions to Equivalent Forms", instruction: "Match each fraction to its simplest form.", left: ["2/4", "3/9", "4/8", "6/10", "10/15"], right: ["1/3", "2/3", "1/2", "3/5", "1/2"] },
-      { type: "number-bonds", title: "Fractions that Make 1 (C)", instruction: "Find the missing fraction.", bonds: [{ total: 1, partA: null, partB: 3/8 }, { total: 1, partA: 5/12, partB: null }, { total: 1, partA: null, partB: 7/10 }, { total: 1, partA: 2/9, partB: null }] },
+      { type: "matching", title: "Match Fractions to Equivalent Forms", instruction: "Match each fraction to its simplest form.", left: ["2/4", "3/9", "6/8", "6/10", "10/15"], right: ["1/3", "2/3", "1/2", "3/5", "3/4"] },
+      { type: "open-response", title: "Fractions that Make 1 (C)", instruction: "Find the missing fraction to make 1 whole.", prompts: [{ text: "___ + 3/8 = 1. Missing fraction: ___", type: "lines", lines: 1 }, { text: "5/12 + ___ = 1. Missing fraction: ___", type: "lines", lines: 1 }, { text: "___ + 7/10 = 1. Missing fraction: ___", type: "lines", lines: 1 }, { text: "2/9 + ___ = 1. Missing fraction: ___", type: "lines", lines: 1 }] },
       { type: "circle-correct", title: "Simplest Form Check", instruction: "Circle the fraction that is already in simplest form.", questions: [{ prompt: "Which is in simplest form?", options: ["4/6", "2/3"] }, { prompt: "Which is in simplest form?", options: ["6/9", "2/3"] }, { prompt: "Which is in simplest form?", options: ["5/15", "1/3"] }, { prompt: "Which is in simplest form?", options: ["3/7", "9/21"] }] },
       { type: "sorting", title: "Order Fractions from Smallest to Largest", instruction: "Write in order from smallest to largest.", columns: ["Smallest", "Largest"], items: [{ label: "1/2, 1/3, 1/4, 1/5" }, { label: "3/4, 2/3, 5/6, 7/12" }, { label: "1 1/2, 1 1/3, 1 3/4, 1 2/5" }] },
       { type: "open-response", title: "Adding Fractions with Different Denominators", instruction: "Find common denominators and add.", prompts: [{ text: "1/3 + 1/4 = ___ + ___ = ___", type: "lines", lines: 1 }, { text: "3/4 + 1/6 = ___ + ___ = ___", type: "lines", lines: 1 }, { text: "2/5 + 3/10 = ___ + ___ = ___", type: "lines", lines: 1 }] },
@@ -1469,7 +1492,7 @@ export const year5MathsWorksheets: WorksheetItem[] = [
       { type: "open-response", title: "Add Mixed Numbers (B)", instruction: "Add mixed numbers with related denominators.", prompts: [{ text: "1 1/2 + 2 1/4 = ___", type: "lines", lines: 2 }, { text: "3 1/3 + 1 1/6 = ___", type: "lines", lines: 2 }, { text: "2 3/10 + 1 2/5 = ___", type: "lines", lines: 2 }] },
       { type: "circle-correct", title: "Add Fractions — Improper Results (A)", instruction: "Circle the correct simplified answer.", questions: [{ prompt: "3/4 + 5/4 = ?", options: ["8/4", "2", "1 1/4"] }, { prompt: "5/6 + 4/6 = ?", options: ["9/6", "1 3/6", "1 1/2"] }, { prompt: "7/8 + 5/8 = ?", options: ["12/8", "1 1/2", "1 4/8"] }, { prompt: "4/5 + 3/5 = ?", options: ["7/5", "1 2/5", "1 3/5"] }] },
       { type: "matching", title: "Match Fraction Calculations (C)", instruction: "Draw a line from each calculation to its answer.", left: ["1/2 + 1/4", "3/4 − 1/2", "5/6 − 1/3", "2/3 + 1/6"], right: ["5/6", "1/2", "3/4", "1/4"] },
-      { type: "matching", title: "Match Fraction Calculations (D)", instruction: "Match each calculation to its simplified answer.", left: ["1/3 + 1/6", "7/8 − 3/8", "3/5 + 1/10", "5/6 − 1/2"], right: ["1/3", "7/10", "1/2", "1/2"] },
+      { type: "matching", title: "Match Fraction Calculations (D)", instruction: "Match each calculation to its simplified answer.", left: ["1/3 + 1/6", "5/6 − 1/6", "3/5 + 1/10", "5/6 − 1/2"], right: ["1/3", "7/10", "1/2", "2/3"] },
       { type: "open-response", title: "Fraction Word Problems (C)", instruction: "Solve each problem.", prompts: [{ text: "Maria ate 3/8 of a pizza and Tom ate 1/4. How much did they eat altogether?", type: "lines", lines: 2 }, { text: "A ribbon is 7/10 m long. After cutting off 3/10 m, how much is left?", type: "lines", lines: 2 }] },
       { type: "open-response", title: "Fraction Word Problems (D)", instruction: "Solve and explain.", prompts: [{ text: "A tank is 5/6 full. Water fills 1/3 of the tank. How much water is in the tank after it is added? Is the tank overfull?", type: "lines", lines: 3 }, { text: "Jake has 3/4 of a litre of paint. He uses 1/3 of a litre. How much paint is left?", type: "lines", lines: 2 }] },
       { type: "picture-graph", title: "Fraction Parts Graph", instruction: "This graph shows fractions of a pizza eaten by each person.", rows: [{ label: "Ali", icon: "heart", count: 3 }, { label: "Ben", icon: "star", count: 2 }, { label: "Cara", icon: "flower", count: 4 }, { label: "Dan", icon: "diamond", count: 1 }], questions: ["If each icon = 1/8 of the pizza, what fraction did Ali eat?", "Who ate the most?", "What fraction did Ali and Ben eat together?", "What fraction of the pizza was eaten in total?"] },
@@ -1480,6 +1503,7 @@ export const year5MathsWorksheets: WorksheetItem[] = [
       { type: "open-response", title: "Challenge: Adding Three Fractions (B)", instruction: "Add all three fractions.", prompts: [{ text: "1/4 + 1/2 + 1/8 = ___", type: "lines", lines: 2 }, { text: "1/3 + 1/6 + 1/2 = ___", type: "lines", lines: 2 }, { text: "2/5 + 1/10 + 3/10 = ___", type: "lines", lines: 2 }] },
       { type: "open-response", title: "Create Your Own Fraction Equations (B)", instruction: "Write your own fraction equations.", prompts: [{ text: "Write an addition equation with answer 3/4: ___ + ___ = 3/4", type: "lines", lines: 1 }, { text: "Write a subtraction with answer 1/6: ___ − ___ = 1/6", type: "lines", lines: 1 }, { text: "Write an equation using mixed numbers: ___", type: "lines", lines: 2 }] },
     ],
+    nextSteps: ["percentages-fractions-decimals"],
   },
 
   // ── WS 4: Percentages, Fractions and Decimals ──────────────────────────────────
@@ -1512,6 +1536,13 @@ export const year5MathsWorksheets: WorksheetItem[] = [
         script: "If I say 25%, can you give me the fraction and the decimal straight away? And if I say 0.5, what percentage is that? And what fraction?",
         action: "Child should convert fluently between all three forms for the key benchmarks. If unsure on any, return to the shaded grid together.",
       },
+      parentTip: "Children often learn percentage, fraction, and decimal equivalences as three separate lists to memorise — which is exhausting and fragile. Instead, build from one anchor fact: 100% equals the whole (1.0 or 1). Everything else is a fraction of that. Fifty percent is literally 50 out of 100, so it is 50/100, which simplifies to 1/2, and as a decimal that is 0.5. Linking all three representations to the grid or to a shaded whole removes the need to memorise.",
+      extension: "Have your child create a 'conversion wheel' on paper: draw a circle divided into six segments and write equivalent percentages, fractions, and decimals in each segment (for example, 25% / 1/4 / 0.25). Then try some that are not on the standard list, such as 12.5% or 5%, and work out the equivalents together using what they already know.",
+      resources: [
+        { title: "Percentages — Maths is Fun", url: "https://www.mathsisfun.com/percentage.html", description: "Friendly explanation of percentages with worked examples converting to and from fractions and decimals." },
+        { title: "Fractions Decimals Percentages — Khan Academy", url: "https://www.khanacademy.org/math/cc-fifth-grade-math/cc-5th-fractions-topic/cc-5th-fractions-decimals/v/converting-fractions-to-decimals", description: "Video lessons on converting between all three representations with interactive practice." },
+        { title: "Fraction Decimal Percent — NRICH", url: "https://nrich.maths.org/6540", description: "Sorting and matching activities that develop fluency across percentage, decimal, and fraction forms." },
+      ],
     },
     activities: [
       // ─── Easy: Common equivalences (activities 1–25) ───
@@ -1936,6 +1967,7 @@ export const year5MathsWorksheets: WorksheetItem[] = [
       { type: "sorting", title: "Sort: Percentage Contexts", instruction: "Sort each context by whether the percentage increases or decreases the original amount.", columns: ["Increases amount", "Decreases amount", "No change"], items: [{ label: "10% discount" }, { label: "20% tip added" }, { label: "100% of original" }, { label: "15% price rise" }, { label: "50% off sale" }, { label: "5% tax added" }] },
       { type: "open-response", title: "Create Your Own Percentage Problems", instruction: "Write and solve your own percentage problems.", prompts: [{ text: "Write a problem involving a percentage discount. Solve it.", type: "box" }, { text: "Write a problem involving finding a percentage of an amount. Solve it.", type: "box" }] },
     ],
+    nextSteps: ["multiply-large-numbers"],
   },
 
   // ── WS 5: Multiply Large Numbers ──────────────────────────────────
@@ -1967,6 +1999,13 @@ export const year5MathsWorksheets: WorksheetItem[] = [
         script: "Before you do the worksheet, try this habit: always estimate first. For 246 times 3, round to 250 times 3 equals 750. Our answer was 738 — very close! Estimating first tells you if your answer makes sense.",
         action: "Give one final problem and ask your child to estimate before calculating. Verify that the estimate and the calculated answer are in the same ballpark.",
       },
+      parentTip: "If your child reaches for a calculator or rushes into the algorithm, gently pause them and say 'What is your estimate?' first. Estimating before calculating is a metacognitive habit — it means they have a sense of whether their answer is reasonable. Year 5 children who skip estimation often do not notice when they make an error. Celebrate the estimate as much as the exact answer.",
+      extension: "Challenge your child to investigate: how many times can a page of a book fit onto the dining table? Have them measure the book page and the table, then use multiplication to work out the answer without physically tiling the pages. This is a real-world application of multiplying larger numbers and is far more motivating than worksheet problems alone.",
+      resources: [
+        { title: "Multi-Digit Multiplication — Khan Academy", url: "https://www.khanacademy.org/math/cc-fifth-grade-math/cc-5th-mult-div-topic/cc-5th-multiplication/v/multiplication-5-2-digit-times-a-2-digit-number", description: "Step-by-step video teaching the standard algorithm for multi-digit multiplication." },
+        { title: "Long Multiplication — Maths is Fun", url: "https://www.mathsisfun.com/numbers/multiplication-long.html", description: "Clear layout of the long multiplication method with worked examples." },
+        { title: "Multiplication Mysteries — NRICH", url: "https://nrich.maths.org/2479", description: "Problem-solving tasks that require multi-digit multiplication thinking in context." },
+      ],
     },
     activities: [
       // ─── Easy: Multiply by single digit (activities 1–25) ───
@@ -2365,6 +2404,7 @@ export const year5MathsWorksheets: WorksheetItem[] = [
       { type: "open-response", title: "Mental Multiplication Strategies (A)", instruction: "Use mental strategies to calculate.", prompts: [{ text: "48 × 5 = 48 × 10 ÷ 2 = ___", type: "lines", lines: 1 }, { text: "99 × 6 = (100 − 1) × 6 = ___", type: "lines", lines: 1 }, { text: "25 × 8 = 25 × 4 × 2 = ___", type: "lines", lines: 1 }, { text: "37 × 4 = 40 × 4 − 3 × 4 = ___", type: "lines", lines: 1 }] },
       { type: "open-response", title: "Create Your Own Multiplication Problems", instruction: "Write and solve your own.", prompts: [{ text: "Write a real-life problem that requires multiplying a 3-digit number by a 2-digit number. Solve it.", type: "box" }, { text: "Write a problem involving millions. E.g. Australia's population times something. Solve it.", type: "box" }] },
     ],
+    nextSteps: ["divide-single-digit"],
   },
 
   // ── WS 6: Divide by Single-Digit ──────────────────────────────────
@@ -2397,6 +2437,13 @@ export const year5MathsWorksheets: WorksheetItem[] = [
         script: "Here is a great trick to check your division: multiply your answer by the divisor. If we said 84 divided by 4 equals 21, then 21 times 4 should give us back 84. Try it! Does it work?",
         action: "Child checks one completed division by multiplying back. This reinforces the inverse relationship between multiplication and division.",
       },
+      parentTip: "Children often treat division as a completely separate operation from multiplication, which makes it feel much harder than it is. Whenever your child finishes a division problem, make 'multiply to check' a non-negotiable habit rather than an optional extra. Once they internalise that division and multiplication are the same relationship viewed from opposite directions, both operations become far less daunting.",
+      extension: "Pose this open-ended challenge: 'Find three different ways to share 96 objects equally — what group sizes work?' Your child lists divisors of 96 (2, 3, 4, 6, 8, 12, 16, 24, 32, 48) and checks each. This connects division to factor-finding and builds number fluency in a concrete way.",
+      resources: [
+        { title: "Division — Khan Academy", url: "https://www.khanacademy.org/math/cc-fifth-grade-math/cc-5th-mult-div-topic/cc-5th-division/v/dividing-by-2-digits", description: "Video tutorial on dividing by a single digit with remainders, including the long division layout." },
+        { title: "Long Division — Maths is Fun", url: "https://www.mathsisfun.com/long_division.html", description: "Worked examples and a step-by-step layout for long division with a single-digit divisor." },
+        { title: "Division Problems — NRICH", url: "https://nrich.maths.org/4690", description: "Challenging division problems that encourage children to think flexibly about sharing and grouping." },
+      ],
     },
     activities: [
       // ─── Easy: Basic division (activities 1–25) ───
@@ -2404,15 +2451,15 @@ export const year5MathsWorksheets: WorksheetItem[] = [
         type: "matching",
         title: "Match Division Facts (A)",
         instruction: "Draw a line from each division to its answer.",
-        left: ["48 ÷ 6", "63 ÷ 7", "54 ÷ 9", "72 ÷ 8"],
-        right: ["9", "8", "6", "9"],
+        left: ["48 ÷ 6", "63 ÷ 7", "54 ÷ 9", "72 ÷ 6"],
+        right: ["9", "8", "6", "12"],
       },
       {
         type: "matching",
         title: "Match Division Facts (B)",
         instruction: "Draw a line from each division to its answer.",
-        left: ["36 ÷ 4", "56 ÷ 8", "81 ÷ 9", "42 ÷ 6"],
-        right: ["7", "9", "9", "7"],
+        left: ["36 ÷ 4", "56 ÷ 8", "64 ÷ 8", "48 ÷ 4"],
+        right: ["7", "9", "8", "12"],
       },
       {
         type: "number-bonds",
@@ -2718,7 +2765,7 @@ export const year5MathsWorksheets: WorksheetItem[] = [
       { type: "open-response", title: "Division with No Remainder (A)", instruction: "Divide.", prompts: [{ text: "84 ÷ 4 = ___", type: "lines", lines: 1 }, { text: "96 ÷ 3 = ___", type: "lines", lines: 1 }, { text: "125 ÷ 5 = ___", type: "lines", lines: 1 }, { text: "168 ÷ 7 = ___", type: "lines", lines: 1 }] },
       { type: "open-response", title: "Division with No Remainder (B)", instruction: "Divide.", prompts: [{ text: "144 ÷ 6 = ___", type: "lines", lines: 1 }, { text: "216 ÷ 8 = ___", type: "lines", lines: 1 }, { text: "189 ÷ 9 = ___", type: "lines", lines: 1 }, { text: "252 ÷ 4 = ___", type: "lines", lines: 1 }] },
       { type: "number-bonds", title: "Division Bonds (A)", instruction: "Find the quotient.", bonds: [{ total: 96, partA: 8, partB: null }, { total: 135, partA: 9, partB: null }, { total: 108, partA: 6, partB: null }, { total: 175, partA: 7, partB: null }, { total: 150, partA: 5, partB: null }, { total: 192, partA: 8, partB: null }] },
-      { type: "matching", title: "Match Divisions to Answers (A)", instruction: "Draw a line.", left: ["96 ÷ 3", "84 ÷ 7", "108 ÷ 9", "126 ÷ 6"], right: ["12", "32", "21", "12"] },
+      { type: "matching", title: "Match Divisions to Answers (A)", instruction: "Draw a line.", left: ["96 ÷ 3", "84 ÷ 7", "105 ÷ 7", "126 ÷ 6"], right: ["12", "32", "21", "15"] },
       // ─── Additional Medium activities ───
       { type: "open-response", title: "Division with Remainder (A)", instruction: "Divide. Write the remainder.", prompts: [{ text: "47 ÷ 5 = ___ r ___", type: "lines", lines: 1 }, { text: "83 ÷ 4 = ___ r ___", type: "lines", lines: 1 }, { text: "125 ÷ 8 = ___ r ___", type: "lines", lines: 1 }, { text: "200 ÷ 7 = ___ r ___", type: "lines", lines: 1 }] },
       { type: "open-response", title: "Division with Remainder (B)", instruction: "Divide with remainder.", prompts: [{ text: "159 ÷ 6 = ___ r ___", type: "lines", lines: 1 }, { text: "247 ÷ 9 = ___ r ___", type: "lines", lines: 1 }, { text: "311 ÷ 8 = ___ r ___", type: "lines", lines: 1 }, { text: "500 ÷ 3 = ___ r ___", type: "lines", lines: 1 }] },
@@ -2774,7 +2821,7 @@ export const year5MathsWorksheets: WorksheetItem[] = [
       },
       // ─── Extra Round ───
       { type: "number-trace", title: "Trace Division Numbers (A)", instruction: "Trace each number. These will be your divisors.", numbers: [2, 3, 4, 5, 6] },
-      { type: "matching", title: "Match Divisions to Quotients (C)", instruction: "Draw a line from each division to its quotient.", left: ["252 ÷ 6", "315 ÷ 7", "384 ÷ 8", "405 ÷ 9"], right: ["48", "42", "45", "45"] },
+      { type: "matching", title: "Match Divisions to Quotients (C)", instruction: "Draw a line from each division to its quotient.", left: ["252 ÷ 6", "315 ÷ 7", "384 ÷ 8", "360 ÷ 9"], right: ["48", "42", "45", "40"] },
       { type: "matching", title: "Match Divisions to Quotients (D)", instruction: "Match each division to its quotient.", left: ["1248 ÷ 4", "1425 ÷ 5", "1638 ÷ 6", "1449 ÷ 7"], right: ["285", "312", "273", "207"] },
       { type: "circle-correct", title: "Estimate the Quotient (B)", instruction: "Circle the best estimate.", questions: [{ prompt: "1999 ÷ 4 ≈ ?", options: ["400", "500", "600"] }, { prompt: "3150 ÷ 7 ≈ ?", options: ["400", "450", "500"] }, { prompt: "4780 ÷ 6 ≈ ?", options: ["700", "800", "900"] }, { prompt: "5490 ÷ 9 ≈ ?", options: ["500", "600", "700"] }] },
       { type: "circle-correct", title: "Remainder Quiz (A)", instruction: "Circle the correct remainder.", questions: [{ prompt: "73 ÷ 8 — remainder?", options: ["0", "1", "2"] }, { prompt: "100 ÷ 7 — remainder?", options: ["1", "2", "6"] }, { prompt: "200 ÷ 9 — remainder?", options: ["1", "2", "3"] }, { prompt: "365 ÷ 4 — remainder?", options: ["0", "1", "2"] }] },
@@ -2796,6 +2843,7 @@ export const year5MathsWorksheets: WorksheetItem[] = [
       { type: "open-response", title: "Inverse Operations (A)", instruction: "Use multiplication to check your division.", prompts: [{ text: "256 ÷ 8 = ___. Check: ___ × 8 = ___", type: "lines", lines: 1 }, { text: "504 ÷ 7 = ___. Check: ___ × 7 = ___", type: "lines", lines: 1 }, { text: "432 ÷ 6 = ___. Check: ___ × 6 = ___", type: "lines", lines: 1 }] },
       { type: "open-response", title: "Create Your Own Division Problems (B)", instruction: "Write and solve your own division problems.", prompts: [{ text: "Write a problem about sharing a large number equally. Solve it.", type: "box" }, { text: "Write a problem about grouping with a remainder. Solve it.", type: "box" }] },
     ],
+    nextSteps: ["estimation-reasonableness"],
   },
 
   // ── WS 7: Estimation and Reasonableness ──────────────────────────────────
@@ -2827,6 +2875,13 @@ export const year5MathsWorksheets: WorksheetItem[] = [
         script: "I am going to tell you someone's answer and you tell me if it is reasonable. They said 48 plus 35 equals 193. Does that sound right to you? How do you know so quickly?",
         action: "Give two or three unreasonable answers and two reasonable ones. Child should use rounding to identify the unreasonable ones without actually calculating. Praise quick reasoning.",
       },
+      parentTip: "Estimation is sometimes overlooked in home education because it feels less rigorous than exact calculation — but it is one of the most powerful mathematical habits a child can develop. Try to weave mental estimation into everyday life: at the supermarket, when cooking, when planning a journey. The more naturally your child rounds and estimates in real situations, the more automatic it becomes on paper.",
+      extension: "Give your child a shopping receipt (real or invented) and ask them to estimate the total without adding exactly — round each price to the nearest dollar, then add. Compare their estimate to the real total and discuss the difference. This is authentic, low-pressure practice that connects directly to the Australian Curriculum's emphasis on financial and practical numeracy.",
+      resources: [
+        { title: "Estimating — Maths is Fun", url: "https://www.mathsisfun.com/numbers/estimation.html", description: "Practical strategies for rounding and estimating with everyday examples." },
+        { title: "Rounding — Khan Academy", url: "https://www.khanacademy.org/math/cc-fifth-grade-math/cc-5th-place-value-decimals-top/cc-5th-rounding-decimals/v/rounding-decimals", description: "Video lessons on rounding whole numbers and decimals as a foundation for estimation." },
+        { title: "Estimating — NRICH", url: "https://nrich.maths.org/788", description: "NRICH Fermi problems that require thoughtful estimation using real-world quantities." },
+      ],
     },
     activities: [
       // ─── Easy: Rounding to estimate (activities 1–25) ───
@@ -2842,7 +2897,7 @@ export const year5MathsWorksheets: WorksheetItem[] = [
         title: "Round to the Nearest 10 (B)",
         instruction: "Match each number to its rounded value.",
         left: ["23", "68", "55", "11"],
-        right: ["10", "20", "60", "60"],
+        right: ["10", "20", "60", "70"],
       },
       {
         type: "circle-correct",
@@ -3112,7 +3167,7 @@ export const year5MathsWorksheets: WorksheetItem[] = [
       { type: "open-response", title: "Round and Estimate Addition (A)", instruction: "Round each number to the nearest 100, then estimate the sum.", prompts: [{ text: "348 + 251 ≈ ___ + ___ = ___", type: "lines", lines: 1 }, { text: "789 + 412 ≈ ___ + ___ = ___", type: "lines", lines: 1 }, { text: "1,234 + 2,567 ≈ ___ + ___ = ___", type: "lines", lines: 1 }, { text: "3,890 + 1,120 ≈ ___ + ___ = ___", type: "lines", lines: 1 }] },
       { type: "open-response", title: "Round and Estimate Addition (B)", instruction: "Estimate each sum.", prompts: [{ text: "672 + 318 ≈ ___", type: "lines", lines: 1 }, { text: "4,567 + 3,421 ≈ ___", type: "lines", lines: 1 }, { text: "899 + 1,050 ≈ ___", type: "lines", lines: 1 }, { text: "12,345 + 6,789 ≈ ___", type: "lines", lines: 1 }] },
       { type: "open-response", title: "Round and Estimate Subtraction", instruction: "Round then estimate each difference.", prompts: [{ text: "803 − 397 ≈ ___ − ___ = ___", type: "lines", lines: 1 }, { text: "5,621 − 2,890 ≈ ___ − ___ = ___", type: "lines", lines: 1 }, { text: "9,999 − 4,501 ≈ ___ − ___ = ___", type: "lines", lines: 1 }] },
-      { type: "matching", title: "Match Estimates to Calculations", instruction: "Draw a line from each calculation to its best estimate.", left: ["49 × 21", "98 × 5", "302 + 198", "1,995 ÷ 4"], right: ["500", "1,000", "500", "500"] },
+      { type: "matching", title: "Match Estimates to Calculations", instruction: "Draw a line from each calculation to its best estimate.", left: ["49 × 21", "98 × 5", "99 × 30", "3,102 − 1,095"], right: ["500", "1,000", "2,000", "3,000"] },
       { type: "number-bonds", title: "Rounding Bonds", instruction: "Round each number to the nearest 100.", bonds: [{ total: 400, partA: 382, partB: null }, { total: 700, partA: 651, partB: null }, { total: 1000, partA: 950, partB: null }, { total: 300, partA: 248, partB: null }, { total: 900, partA: 849, partB: null }, { total: 500, partA: 550, partB: null }] },
       // ─── Additional Medium activities ───
       { type: "open-response", title: "Round and Estimate Multiplication (A)", instruction: "Round each factor then estimate the product.", prompts: [{ text: "48 × 22 ≈ ___ × ___ = ___. Actual = 1,056. How close?", type: "lines", lines: 1 }, { text: "73 × 31 ≈ ___ × ___ = ___", type: "lines", lines: 1 }, { text: "199 × 5 ≈ ___ × ___ = ___", type: "lines", lines: 1 }, { text: "312 × 9 ≈ ___ × ___ = ___", type: "lines", lines: 1 }] },
@@ -3192,6 +3247,7 @@ export const year5MathsWorksheets: WorksheetItem[] = [
       { type: "open-response", title: "Estimation Reflection (A)", instruction: "Think about estimation.", prompts: [{ text: "When would you choose to round to the nearest 10? Give an example.", type: "lines", lines: 2 }, { text: "When would you choose to round to the nearest 1,000? Give an example.", type: "lines", lines: 2 }, { text: "Describe a situation where over-estimating is safer than under-estimating.", type: "lines", lines: 2 }] },
       { type: "open-response", title: "Create Your Own Estimation Problems (B)", instruction: "Write and solve estimation problems.", prompts: [{ text: "Write a real-life problem where estimating to the nearest 10 is most useful. Solve it.", type: "box" }, { text: "Write a problem involving millions where estimation is essential. Solve it.", type: "box" }] },
     ],
+    nextSteps: ["financial-modelling"],
   },
 
   // ── WS 8: Financial Modelling ──────────────────────────────────
@@ -3224,6 +3280,13 @@ export const year5MathsWorksheets: WorksheetItem[] = [
         script: "Tell me about the choices you made. Why did you pick those items? How did you make sure you stayed within the $20 budget? Is there anything you could not afford that you would have liked?",
         action: "Child explains their reasoning. Focus on the mathematical decisions, not just the arithmetic. Ask follow-up questions: how much money is left over? What is that as a fraction of the budget?",
       },
+      parentTip: "Financial maths is an area where real stakes make a huge difference to engagement. If your child seems uninterested in the budgeting scenario, let them plan something genuinely meaningful — a snack list for a weekend outing, a birthday wish list with a set budget, or ingredients for a recipe. The mathematics is identical but the motivation is real. Do not be tempted to correct their spending choices; focus entirely on whether their arithmetic is right.",
+      extension: "Extend the budgeting lesson by introducing GST: explain that in Australia, most purchases include a 10% tax built into the price. Ask your child to recalculate their shopping list by working out what 10% of each item costs and what the pre-tax price would be. This connects percentages to financial literacy in a very Australian context.",
+      resources: [
+        { title: "Money and Financial Maths — Khan Academy", url: "https://www.khanacademy.org/math/cc-fifth-grade-math/cc-5th-add-sub-decimals/cc-5th-add-decimals/v/adding-decimals", description: "Adding and subtracting decimals in money contexts, with worked video examples." },
+        { title: "Money — Maths is Fun", url: "https://www.mathsisfun.com/money.html", description: "Practical money problems including making change and calculating totals." },
+        { title: "Money Problems — NRICH", url: "https://nrich.maths.org/5765", description: "Real-world money problems that require multi-step reasoning and decision making." },
+      ],
     },
     activities: [
       // ─── Easy: Simple money problems (activities 1–25) ───
@@ -3554,6 +3617,7 @@ export const year5MathsWorksheets: WorksheetItem[] = [
       { type: "open-response", title: "Plan a School Fundraiser (A)", instruction: "Plan a fundraiser.", prompts: [{ text: "You sell cookies for $2 each. Each costs 80c to make. How many do you need to sell to make $50 profit?", type: "lines", lines: 3 }, { text: "Draw a simple income/expense table for your fundraiser.", type: "box" }] },
       { type: "open-response", title: "Create Your Own Financial Problems", instruction: "Write and solve financial problems.", prompts: [{ text: "Write a problem involving income, expenses and profit. Solve it.", type: "box" }, { text: "Write a problem involving a savings goal. Solve it.", type: "box" }] },
     ],
+    nextSteps: ["unknown-values-multiply-divide"],
   },
 
   // ── WS 9: Unknown Values (Multiply & Divide) ──────────────────────────────────
@@ -3586,6 +3650,13 @@ export const year5MathsWorksheets: WorksheetItem[] = [
         script: "Now you write an equation with a mystery number for me to solve. Make it tricky! Then tell me how you know your equation is correct — how would you check my answer?",
         action: "Child creates an equation and provides the solution method. This reversal of roles deepens understanding. Check that they use multiplication to verify a division result and vice versa.",
       },
+      parentTip: "When a child writes their own equation with a missing value, they are doing something mathematically sophisticated — they have to work backwards from an answer. If your child finds this difficult, it is usually because they have not yet internalised the inverse relationship between multiplication and division. Keep returning to the fact family idea: 4, 5, and 20 are a family — 4 x 5 = 20, 5 x 4 = 20, 20 / 4 = 5, 20 / 5 = 4. All four are the same relationship.",
+      extension: "Ask your child to create a set of five mystery number cards, each with an equation containing an unknown (for example, '? x 7 = 56' or '120 / ? = 15'). Swap cards with a family member and solve each other's puzzles. The card-making process itself requires a deep understanding of the relationship between multiplication and division.",
+      resources: [
+        { title: "Unknown Variables — Khan Academy", url: "https://www.khanacademy.org/math/cc-fifth-grade-math/cc-5th-algebraic-thinking/cc-5th-unknown-quantities/v/writing-expressions-with-variables", description: "Introduction to using letters and boxes for unknown quantities in equations." },
+        { title: "Equations — Maths is Fun", url: "https://www.mathsisfun.com/equations.html", description: "Explains how to solve simple equations by balancing both sides, with clear examples." },
+        { title: "Algebraic Thinking — NRICH", url: "https://nrich.maths.org/6908", description: "Rich tasks involving missing values and unknown quantities in multiplication and division contexts." },
+      ],
     },
     activities: [
       // ─── Easy: Missing factors (activities 1–25) ───
@@ -3626,15 +3697,15 @@ export const year5MathsWorksheets: WorksheetItem[] = [
         type: "matching",
         title: "Match Equations to Answers (A)",
         instruction: "Draw a line from each equation to the missing number.",
-        left: ["___ × 8 = 64", "7 × ___ = 49", "___ × 6 = 54", "9 × ___ = 81"],
-        right: ["9", "8", "7", "9"],
+        left: ["___ × 8 = 64", "7 × ___ = 49", "___ × 6 = 54", "9 × ___ = 54"],
+        right: ["9", "8", "7", "6"],
       },
       {
         type: "matching",
         title: "Match Equations to Answers (B)",
         instruction: "Draw a line from each equation to the missing number.",
-        left: ["___ × 5 = 40", "3 × ___ = 27", "___ × 7 = 63", "4 × ___ = 48"],
-        right: ["12", "8", "9", "9"],
+        left: ["___ × 5 = 40", "3 × ___ = 27", "___ × 7 = 77", "4 × ___ = 48"],
+        right: ["12", "8", "9", "11"],
       },
       {
         type: "circle-correct",
@@ -3743,8 +3814,8 @@ export const year5MathsWorksheets: WorksheetItem[] = [
         type: "matching",
         title: "Match Equations to Unknown Values",
         instruction: "Draw a line from each equation to the unknown value.",
-        left: ["___ ÷ 8 = 9", "___ × 6 = 78", "96 ÷ ___ = 12", "7 × ___ = 91"],
-        right: ["8", "72", "13", "13"],
+        left: ["___ ÷ 8 = 9", "___ × 6 = 90", "96 ÷ ___ = 12", "7 × ___ = 91"],
+        right: ["8", "72", "13", "15"],
       },
       {
         type: "number-bonds",
@@ -3874,8 +3945,8 @@ export const year5MathsWorksheets: WorksheetItem[] = [
       { type: "circle-correct", title: "Find the Missing Number (B)", instruction: "Circle the correct answer.", questions: [{ prompt: "___ ÷ 5 = 8", options: ["35", "40", "45"] }, { prompt: "72 ÷ ___ = 9", options: ["6", "7", "8"] }, { prompt: "___ ÷ 3 = 12", options: ["33", "36", "39"] }, { prompt: "56 ÷ ___ = 7", options: ["7", "8", "9"] }] },
       { type: "open-response", title: "Missing Numbers in Multiplication (A)", instruction: "Find the missing number.", prompts: [{ text: "___ × 8 = 64. Missing number: ___", type: "lines", lines: 1 }, { text: "5 × ___ = 45. Missing number: ___", type: "lines", lines: 1 }, { text: "___ × 12 = 60. Missing number: ___", type: "lines", lines: 1 }, { text: "7 × ___ = 84. Missing number: ___", type: "lines", lines: 1 }] },
       { type: "open-response", title: "Missing Numbers in Division (A)", instruction: "Find the missing number.", prompts: [{ text: "___ ÷ 4 = 9. Missing number: ___", type: "lines", lines: 1 }, { text: "63 ÷ ___ = 7. Missing number: ___", type: "lines", lines: 1 }, { text: "___ ÷ 8 = 7. Missing number: ___", type: "lines", lines: 1 }, { text: "96 ÷ ___ = 12. Missing number: ___", type: "lines", lines: 1 }] },
-      { type: "matching", title: "Match Equations to Answers (A)", instruction: "Draw a line.", left: ["___ × 7 = 42", "54 ÷ ___ = 9", "8 × ___ = 72", "___ ÷ 5 = 11"], right: ["9", "6", "6", "55"] },
-      { type: "matching", title: "Match Equations to Answers (B)", instruction: "Draw a line.", left: ["___ × 3 = 27", "80 ÷ ___ = 10", "___ × 6 = 48", "100 ÷ ___ = 25"], right: ["4", "9", "8", "8"] },
+      { type: "matching", title: "Match Equations to Answers (A)", instruction: "Draw a line.", left: ["___ × 7 = 35", "54 ÷ ___ = 9", "8 × ___ = 72", "___ ÷ 5 = 11"], right: ["9", "6", "5", "55"] },
+      { type: "matching", title: "Match Equations to Answers (B)", instruction: "Draw a line.", left: ["___ × 3 = 27", "80 ÷ ___ = 10", "___ × 6 = 42", "100 ÷ ___ = 25"], right: ["4", "9", "8", "7"] },
       // ─── Additional Medium activities ───
       { type: "open-response", title: "Missing Numbers in Mixed Operations", instruction: "Find the missing number.", prompts: [{ text: "___ × 5 + 3 = 28. Missing number: ___", type: "lines", lines: 1 }, { text: "4 × ___ − 6 = 26. Missing number: ___", type: "lines", lines: 1 }, { text: "(___ + 3) × 4 = 36. Missing number: ___", type: "lines", lines: 1 }, { text: "(50 − ___) ÷ 5 = 6. Missing number: ___", type: "lines", lines: 1 }] },
       { type: "circle-correct", title: "Which Equation Matches? (A)", instruction: "A number times 6 equals 42. Circle the equation.", questions: [{ prompt: "A number times 6 equals 42", options: ["n + 6 = 42", "n × 6 = 42", "n − 6 = 42"] }, { prompt: "48 divided by a number equals 8", options: ["48 ÷ n = 8", "48 × n = 8", "48 − n = 8"] }, { prompt: "Triple a number is 27", options: ["n + 3 = 27", "3n = 27", "n ÷ 3 = 27"] }] },
@@ -3895,7 +3966,7 @@ export const year5MathsWorksheets: WorksheetItem[] = [
       { type: "sorting", title: "Sort Equations by Operation Needed", instruction: "Sort to show which operation solves the equation.", columns: ["Use division", "Use multiplication", "Use subtraction", "Use addition"], items: [{ label: "n × 6 = 48" }, { label: "n ÷ 5 = 9" }, { label: "n + 17 = 30" }, { label: "n − 11 = 23" }, { label: "8n = 104" }, { label: "n/7 = 12" }] },
       { type: "open-response", title: "Write Your Own Equations", instruction: "Create equations with a missing value.", prompts: [{ text: "Write an equation where n = 9 using multiplication: ___", type: "lines", lines: 1 }, { text: "Write an equation where n = 24 using division: ___", type: "lines", lines: 1 }, { text: "Write a two-step equation: n = 5. ___", type: "lines", lines: 1 }, { text: "Ask a partner to solve your equation and check their answer:", type: "lines", lines: 2 }] },
       { type: "open-response", title: "Equations in Real Life (B)", instruction: "Write and solve equations for these situations.", prompts: [{ text: "Packs of pencils cost $4 each. Total cost is $32. How many packs? Equation: ___ Solution: ___", type: "lines", lines: 1 }, { text: "A number divided by 7 gives 12. Write the equation and solve it.", type: "lines", lines: 2 }, { text: "Three equal groups with 2 left over total 23. Write the equation.", type: "lines", lines: 2 }] },
-      { type: "sequence", sequences: [{ items: [3, 9, 27, 81], answer: [243, 729] }, { items: [2, 6, 18, 54], answer: [162, 486] }, { items: [100, 50, 25], answer: [13, 6] }], title: "Multiplication Sequences", instruction: "Continue each sequence." },
+      { type: "sequence", sequences: [{ items: [3, 9, 27, 81], answer: [243, 729] }, { items: [2, 6, 18, 54], answer: [162, 486] }, { items: [4, 12, 36, 108], answer: [324, 972] }], title: "Multiplication Sequences", instruction: "Continue each sequence." },
       { type: "picture-graph", title: "Equations Solved per Student", instruction: "Class results for a missing value worksheet.", rows: [{ label: "Group A", icon: "star", count: 8 }, { label: "Group B", icon: "star", count: 6 }, { label: "Group C", icon: "star", count: 9 }, { label: "Group D", icon: "star", count: 7 }, { label: "Group E", icon: "star", count: 10 }], questions: ["Total equations solved?", "Average per group?", "Which group solved the most?", "How many more did Group E solve than Group B?"] },
       { type: "tally-chart", title: "Types of Equations Practised", instruction: "Tally of equation types practised by students.", categories: [{ label: "n × a = b", icon: "star", count: 18 }, { label: "n ÷ a = b", icon: "star", count: 14 }, { label: "a × n + b = c", icon: "star", count: 9 }, { label: "Other", icon: "star", count: 5 }] },
       { type: "compare-groups", title: "Compare Missing Value Problems", instruction: "Estimate which is harder.", pairs: [{ leftCount: 6, rightCount: 42, object: "star", question: "n × 6 = 42 vs n + 6 = 42 — which is harder to solve?" }, { leftCount: 7, rightCount: 63, object: "circle", question: "n × 7 = 63 vs 7n + 7 = 63 — which is a two-step problem?" }] },
@@ -3933,7 +4004,7 @@ export const year5MathsWorksheets: WorksheetItem[] = [
       },
       // ─── Extra Round ───
       { type: "number-trace", title: "Trace Unknown Values (A)", instruction: "Trace each value. These are answers to missing-number equations.", numbers: [3, 4, 5, 6, 7] },
-      { type: "matching", title: "Match Equations to Solutions (C)", instruction: "Draw a line from each equation to its solution.", left: ["___ × 9 = 108", "144 ÷ ___ = 12", "___ × 11 = 132", "195 ÷ ___ = 15"], right: ["13", "12", "12", "12"] },
+      { type: "matching", title: "Match Equations to Solutions (C)", instruction: "Draw a line from each equation to its solution.", left: ["___ × 9 = 99", "144 ÷ ___ = 12", "___ × 11 = 154", "195 ÷ ___ = 15"], right: ["13", "12", "11", "14"] },
       { type: "matching", title: "Match Equations to Solutions (D)", instruction: "Match each equation to its solution.", left: ["n × 8 = 200", "n ÷ 7 = 14", "12 × n = 180", "n ÷ 13 = 10"], right: ["25", "15", "98", "130"] },
       { type: "circle-correct", title: "Find the Missing Number (C)", instruction: "Circle the correct answer.", questions: [{ prompt: "___ × 8 = 96", options: ["11", "12", "13"] }, { prompt: "144 ÷ ___ = 16", options: ["8", "9", "10"] }, { prompt: "___ × 7 = 91", options: ["11", "12", "13"] }, { prompt: "156 ÷ ___ = 12", options: ["11", "12", "13"] }] },
       { type: "circle-correct", title: "Find the Missing Number (D)", instruction: "Circle the correct value of n.", questions: [{ prompt: "5n = 65, n = ?", options: ["11", "13", "15"] }, { prompt: "n ÷ 6 = 15, n = ?", options: ["80", "90", "100"] }, { prompt: "8n = 104, n = ?", options: ["12", "13", "14"] }, { prompt: "n ÷ 9 = 11, n = ?", options: ["90", "99", "110"] }] },
@@ -3953,6 +4024,7 @@ export const year5MathsWorksheets: WorksheetItem[] = [
       { type: "open-response", title: "Create Your Own Equations (B)", instruction: "Write equations and challenge someone to solve them.", prompts: [{ text: "Write 3 equations with a missing factor. Solutions: ___, ___, ___", type: "lines", lines: 2 }, { text: "Write a two-step word problem involving a missing value. Solve it.", type: "box" }] },
       { type: "compare-groups", title: "Compare Equation Solutions (A)", instruction: "Compare the solutions to each pair of equations.", pairs: [{ leftCount: 8, rightCount: 9, object: "star", question: "n × 7 = 56 vs n × 8 = 72: are the solutions the same?" }, { leftCount: 6, rightCount: 6, object: "circle", question: "48 ÷ n = 8 vs 54 ÷ n = 9: same solution?" }] },
     ],
+    nextSteps: ["algorithms-factors-multiples"],
   },
 
   // ── WS 10: Algorithms — Factors and Multiples ──────────────────────────────────
@@ -3985,6 +4057,13 @@ export const year5MathsWorksheets: WorksheetItem[] = [
         script: "Let us test your algorithm. Is 63 a multiple of 9? Use the digit-sum rule to check without dividing. Does it work? What about 72? What about 45?",
         action: "Child applies the digit-sum algorithm to three new numbers. Verify each by dividing on paper. Reinforce that the algorithm is a reliable pattern they can use as a tool.",
       },
+      parentTip: "Number algorithms and divisibility rules are genuinely exciting for children who enjoy patterns — and less appealing to those who find rote learning tedious. Frame these rules as shortcuts that mathematicians discovered rather than more things to memorise. The digit-sum rule for 9 is particularly surprising and tends to hook children who are sceptical. Let your child verify it with several numbers before explaining why it works.",
+      extension: "Challenge your child to investigate: which numbers from 1 to 100 are divisible by both 3 and 4? First find all multiples of 3, then all multiples of 4, then find the overlap. Ask: what is the pattern in the numbers that appear in both lists? This connects to the concept of the lowest common multiple and to prime factorisation, which is Australian Curriculum Year 5 and 6 content.",
+      resources: [
+        { title: "Divisibility Rules — Maths is Fun", url: "https://www.mathsisfun.com/divisibility-rules.html", description: "All the divisibility rules for 2 through 12 explained with examples and interactive tests." },
+        { title: "Prime Numbers — Khan Academy", url: "https://www.khanacademy.org/math/cc-fifth-grade-math/cc-5th-fact-and-multiples/cc-5th-prime-numbers/v/prime-numbers", description: "Video introduction to prime and composite numbers with a sieve of Eratosthenes activity." },
+        { title: "Factors, Multiples and Primes — NRICH", url: "https://nrich.maths.org/5468", description: "A rich grid-based problem requiring strategic thinking about factors, multiples, and prime numbers." },
+      ],
     },
     activities: [
       // ─── Easy: Patterns in multiplication tables (activities 1–25) ───
@@ -4352,6 +4431,7 @@ export const year5MathsWorksheets: WorksheetItem[] = [
       { type: "open-response", title: "Create Your Own Algorithm (A)", instruction: "Design and describe an algorithm.", prompts: [{ text: "Describe a step-by-step method (algorithm) for deciding whether a number is prime.", type: "box" }, { text: "Test your algorithm on 97. Is it prime? ___", type: "lines", lines: 2 }] },
       { type: "open-response", title: "Create Your Own Algorithm (B)", instruction: "Design a pattern-finding algorithm.", prompts: [{ text: "Write an algorithm to find all common multiples of two numbers up to 100.", type: "box" }, { text: "Apply your algorithm to find common multiples of 7 and 11 up to 100: ___", type: "lines", lines: 1 }] },
     ],
+    nextSteps: ["metric-units-length-mass-capacity"],
   },
 
   // ── WS 11: Metric Units ──────────────────────────────────
@@ -4385,6 +4465,13 @@ export const year5MathsWorksheets: WorksheetItem[] = [
         script: "Quick fire round! 3.5 km equals how many metres? 2500 g equals how many kilograms? 750 mL equals what fraction of a litre? How did you work each one out?",
         action: "Child answers and explains the operation used (multiply or divide). If they hesitate, prompt: 'Are we going to a bigger or smaller unit?' to guide the direction of the conversion.",
       },
+      parentTip: "The most common confusion with unit conversions is knowing whether to multiply or divide — and children often guess. The question that cuts through the confusion is: 'Are you going to a bigger unit or a smaller unit?' Going from metres to centimetres means smaller units, so you need more of them — multiply. Going from millilitres to litres means bigger units, so you need fewer — divide. Post this question somewhere visible during the lesson and keep asking it.",
+      extension: "Set up a measurement scavenger hunt: give your child a list of ten household items and ask them to measure each one, record the measurement in two different units (for example, both centimetres and millimetres, or both grams and kilograms), and write the conversion calculation. Real measurement with real objects fixes unit conversion understanding far better than pure abstract problems.",
+      resources: [
+        { title: "Metric Units — Maths is Fun", url: "https://www.mathsisfun.com/measure/metric-system.html", description: "A clear overview of the metric system with conversion tables for length, mass, and capacity." },
+        { title: "Measurement — Khan Academy", url: "https://www.khanacademy.org/math/cc-fifth-grade-math/cc-5th-measurement-topic/cc-5th-length/v/unit-conversion", description: "Video lessons on converting metric units of length, mass, and volume." },
+        { title: "Measuring — NRICH", url: "https://nrich.maths.org/2630", description: "Practical measurement problems requiring conversion between metric units in real-world contexts." },
+      ],
     },
     activities: [
       // ─── Easy: Choose the right unit (activities 1–25) ───
@@ -4724,6 +4811,7 @@ export const year5MathsWorksheets: WorksheetItem[] = [
       { type: "open-response", title: "Create Measurement Problems (B)", instruction: "Write and solve your own problems.", prompts: [{ text: "Write a problem involving converting between km and m. Solve it.", type: "box" }, { text: "Write a problem involving adding masses in different units. Solve it.", type: "box" }] },
       { type: "circle-correct", title: "Metric Prefix Challenge (A)", instruction: "Circle the correct answer.", questions: [{ prompt: "1 megalitre = ?", options: ["1,000 L", "1,000,000 L", "1,000,000,000 L"] }, { prompt: "1 tonne = ?", options: ["100 kg", "1,000 kg", "10,000 kg"] }, { prompt: "1 microlitre = ?", options: ["0.001 L", "0.000001 L", "0.0001 L"] }, { prompt: "1 milligram = what fraction of a gram?", options: ["1/10", "1/100", "1/1,000"] }] },
     ],
+    nextSteps: ["perimeter-area-problems"],
   },
 
   // ── WS 12: Perimeter and Area ──────────────────────────────────
@@ -4757,6 +4845,13 @@ export const year5MathsWorksheets: WorksheetItem[] = [
         script: "Here is a key question: perimeter is measured in centimetres, but area is measured in square centimetres. Why are the units different? What does that tell you about what each measurement means?",
         action: "Child explains that perimeter is a length (one-dimensional), while area covers a flat surface (two-dimensional). If they are unsure, use the string and grid visual again.",
       },
+      parentTip: "Children who mix up perimeter and area usually need a physical anchor more than a verbal explanation. String for perimeter works beautifully — wrap it around the shape and then straighten it out to measure. For area, grid paper is invaluable; let your child count squares before they use the formula. If they are rushing to apply 'length times width' without understanding why, it is worth going back to the counting-squares approach for one or two problems.",
+      extension: "Ask your child to design a floor plan for their dream bedroom on grid paper (1 square = 1 square metre). They should include the perimeter (how much skirting board is needed) and the area (how much carpet). Then ask: can they change the shape of the room to keep the same area but a smaller perimeter? This open-ended challenge develops real geometric reasoning.",
+      resources: [
+        { title: "Area and Perimeter — Khan Academy", url: "https://www.khanacademy.org/math/cc-fifth-grade-math/cc-5th-measurement-topic/cc-5th-perimeter/v/perimeter-1", description: "Video lessons on calculating perimeter and area of rectangles with interactive exercises." },
+        { title: "Area and Perimeter — Maths is Fun", url: "https://www.mathsisfun.com/area.html", description: "Illustrated explanations of area and perimeter for common shapes with worked examples." },
+        { title: "Perimeter and Area — NRICH", url: "https://nrich.maths.org/6228", description: "NRICH tasks exploring the relationship between area and perimeter using problem-solving contexts." },
+      ],
     },
     activities: [
       // ─── Easy: Understanding perimeter (activities 1–25) ───
@@ -4764,15 +4859,15 @@ export const year5MathsWorksheets: WorksheetItem[] = [
         type: "matching",
         title: "Match Shapes to Perimeters (A)",
         instruction: "Draw a line from each rectangle to its perimeter.",
-        left: ["3 cm × 5 cm", "4 cm × 4 cm", "6 cm × 2 cm", "7 cm × 3 cm"],
-        right: ["16 cm", "16 cm", "20 cm", "16 cm"],
+        left: ["3 cm × 5 cm", "5 cm × 4 cm", "8 cm × 3 cm", "7 cm × 3 cm"],
+        right: ["16 cm", "18 cm", "20 cm", "22 cm"],
       },
       {
         type: "matching",
         title: "Match Shapes to Perimeters (B)",
         instruction: "Draw a line from each rectangle to its perimeter.",
-        left: ["10 cm × 2 cm", "5 cm × 5 cm", "8 cm × 3 cm", "6 cm × 6 cm"],
-        right: ["24 cm", "22 cm", "20 cm", "24 cm"],
+        left: ["10 cm × 2 cm", "5 cm × 5 cm", "8 cm × 3 cm", "6 cm × 7 cm"],
+        right: ["24 cm", "22 cm", "20 cm", "26 cm"],
       },
       {
         type: "open-response",
@@ -4901,8 +4996,8 @@ export const year5MathsWorksheets: WorksheetItem[] = [
         type: "matching",
         title: "Match Rectangles to Areas",
         instruction: "Draw a line from each rectangle to its area.",
-        left: ["5 m × 12 m", "8 m × 8 m", "3 m × 20 m", "10 m × 7 m"],
-        right: ["64 m²", "60 m²", "70 m²", "60 m²"],
+        left: ["5 m × 12 m", "8 m × 8 m", "3 m × 18 m", "10 m × 7 m"],
+        right: ["64 m²", "60 m²", "70 m²", "54 m²"],
       },
       {
         type: "sorting",
@@ -5013,7 +5108,7 @@ export const year5MathsWorksheets: WorksheetItem[] = [
       { type: "open-response", title: "Calculate Area (B)", instruction: "Find the area.", prompts: [{ text: "Rectangle: length 12 cm, width 5 cm. A = ___", type: "lines", lines: 1 }, { text: "Square: side 9 m. A = ___", type: "lines", lines: 1 }, { text: "Rectangle: length 20 m, width 8 m. A = ___", type: "lines", lines: 1 }, { text: "Rectangle: 7 cm × 7 cm. A = ___", type: "lines", lines: 1 }] },
       { type: "number-bonds", title: "Perimeter Bonds", instruction: "A rectangle's perimeter = 2(L + W). If the half-perimeter is the total, find the missing side.", bonds: [{ total: 20, partA: 12, partB: null }, { total: 15, partA: 8, partB: null }, { total: 25, partA: 10, partB: null }, { total: 18, partA: 6, partB: null }, { total: 30, partA: 11, partB: null }, { total: 22, partA: 9, partB: null }] },
       { type: "number-bonds", title: "Area Factor Pairs", instruction: "A rectangle's area = L × W. Find the missing dimension.", bonds: [{ total: 36, partA: 9, partB: null }, { total: 48, partA: 6, partB: null }, { total: 60, partA: 12, partB: null }, { total: 72, partA: 8, partB: null }, { total: 100, partA: 10, partB: null }, { total: 45, partA: 5, partB: null }] },
-      { type: "matching", title: "Match Rectangles to Perimeters (B)", instruction: "Draw a line.", left: ["6 cm × 4 cm", "8 cm × 2 cm", "5 cm × 5 cm", "9 cm × 1 cm"], right: ["20 cm", "20 cm", "20 cm", "20 cm"] },
+      { type: "matching", title: "Match Rectangles to Perimeters (B)", instruction: "Draw a line.", left: ["6 cm × 4 cm", "8 cm × 3 cm", "6 cm × 6 cm", "9 cm × 4 cm"], right: ["20 cm", "22 cm", "24 cm", "26 cm"] },
       // ─── Additional Medium activities ───
       { type: "open-response", title: "Find the Missing Side — Perimeter (A)", instruction: "Find the missing dimension.", prompts: [{ text: "Perimeter = 24 cm. Length = 8 cm. Width = ___", type: "lines", lines: 1 }, { text: "Perimeter = 36 m. Length = 12 m. Width = ___", type: "lines", lines: 1 }, { text: "Perimeter = 50 cm. Width = 10 cm. Length = ___", type: "lines", lines: 1 }] },
       { type: "open-response", title: "Find the Missing Side — Area (A)", instruction: "Find the missing dimension.", prompts: [{ text: "Area = 40 cm². Length = 8 cm. Width = ___", type: "lines", lines: 1 }, { text: "Area = 72 m². Length = 9 m. Width = ___", type: "lines", lines: 1 }, { text: "Area = 100 cm². It's a square. Side = ___", type: "lines", lines: 1 }] },
@@ -5070,8 +5165,8 @@ export const year5MathsWorksheets: WorksheetItem[] = [
         ],
       },
       // ─── Extra activities to reach ~73 total ───
-      { type: "matching", title: "Match Rectangles to Areas", instruction: "Draw a line from each rectangle to its area.", left: ["4 cm × 7 cm", "5 cm × 6 cm", "3 cm × 10 cm", "8 cm × 4 cm"], right: ["28 cm²", "30 cm²", "30 cm²", "32 cm²"] },
-      { type: "matching", title: "Match Rectangles to Perimeters (C)", instruction: "Draw a line from each rectangle to its perimeter.", left: ["3 cm × 8 cm", "5 cm × 6 cm", "4 cm × 7 cm", "10 cm × 1 cm"], right: ["22 cm", "22 cm", "22 cm", "22 cm"] },
+      { type: "matching", title: "Match Rectangles to Areas", instruction: "Draw a line from each rectangle to its area.", left: ["4 cm × 7 cm", "5 cm × 6 cm", "3 cm × 9 cm", "8 cm × 4 cm"], right: ["28 cm²", "30 cm²", "27 cm²", "32 cm²"] },
+      { type: "matching", title: "Match Rectangles to Perimeters (C)", instruction: "Draw a line from each rectangle to its perimeter.", left: ["3 cm × 8 cm", "5 cm × 7 cm", "4 cm × 9 cm", "12 cm × 3 cm"], right: ["22 cm", "24 cm", "26 cm", "30 cm"] },
       { type: "circle-correct", title: "Find the Perimeter (C)", instruction: "Circle the correct perimeter.", questions: [{ prompt: "Rectangle 7 m × 3 m", options: ["20 m", "21 m", "28 m"] }, { prompt: "Square with side 9 cm", options: ["18 cm", "36 cm", "81 cm"] }, { prompt: "Rectangle 12 cm × 5 cm", options: ["34 cm", "36 cm", "60 cm"] }, { prompt: "Square with side 6 m", options: ["12 m", "24 m", "36 m"] }] },
       { type: "circle-correct", title: "Find the Area (C)", instruction: "Circle the correct area.", questions: [{ prompt: "Rectangle 7 m × 4 m", options: ["22 m²", "28 m²", "44 m²"] }, { prompt: "Square with side 8 cm", options: ["32 cm²", "64 cm²", "16 cm²"] }, { prompt: "Rectangle 11 cm × 3 cm", options: ["28 cm²", "33 cm²", "48 cm²"] }, { prompt: "Square with side 10 m", options: ["40 m²", "100 m²", "20 m²"] }] },
       { type: "open-response", title: "Find the Missing Side — Perimeter (B)", instruction: "Find the missing dimension.", prompts: [{ text: "Perimeter = 30 cm. Length = 9 cm. Width = ___", type: "lines", lines: 1 }, { text: "Perimeter = 44 m. Width = 8 m. Length = ___", type: "lines", lines: 1 }, { text: "Square with perimeter = 52 cm. Side = ___", type: "lines", lines: 1 }, { text: "Perimeter = 100 cm. Length = 35 cm. Width = ___", type: "lines", lines: 1 }] },
@@ -5094,6 +5189,7 @@ export const year5MathsWorksheets: WorksheetItem[] = [
       { type: "open-response", title: "Scale Drawing Areas", instruction: "Use scale to find real areas.", prompts: [{ text: "Scale: 1 cm = 5 m. A room measures 4 cm × 3 cm on the drawing. Real dimensions: ___ × ___. Real area: ___", type: "lines", lines: 2 }, { text: "Scale: 1 cm = 10 m. A field is 3 cm × 5 cm on a map. Real area: ___", type: "lines", lines: 2 }] },
       { type: "open-response", title: "Perimeter and Area Investigation", instruction: "Investigate the relationship between perimeter and area.", prompts: [{ text: "If you double both dimensions of a rectangle, what happens to the perimeter? ___", type: "lines", lines: 1 }, { text: "If you double both dimensions, what happens to the area? ___", type: "lines", lines: 1 }, { text: "Which shape — square or rectangle — gives the largest area for a given perimeter? ___", type: "lines", lines: 2 }] },
     ],
+    nextSteps: ["12-24-hour-time"],
   },
 
   // ── WS 13: 12- and 24-Hour Time ──────────────────────────────────
@@ -5124,6 +5220,13 @@ export const year5MathsWorksheets: WorksheetItem[] = [
         script: "I am going to read out a schedule in 12-hour time and you write it in 24-hour time: school starts at 8:50 AM, lunch is at 12:30 PM, after-school club is at 4:15 PM, dinner is at 6:30 PM, bedtime is at 8:00 PM. Ready?",
         action: "Dictate the five times. Child writes each in 24-hour format. Check together and discuss any errors.",
       },
+      parentTip: "The jump from 12-hour to 24-hour time trips children up most at two points: midnight (00:00, not 24:00) and the PM hours (add 12 to any PM hour from 1 PM onwards, but 12 PM noon stays as 12:00). A simple clock face drawn on paper — one side labelled AM, one side PM — helps enormously. If your child is getting confused, stick to AM times first until those feel completely automatic before adding the PM conversions.",
+      extension: "Ask your child to plan a full day of activities as a timetable, writing every entry in 24-hour time. They should calculate how long each activity lasts (in hours and minutes) and check that the activities fit neatly into the 24-hour day. Bonus: find the total time spent on different categories (learning, eating, outdoor time) and compare them as fractions or percentages of the day.",
+      resources: [
+        { title: "Telling Time — Khan Academy", url: "https://www.khanacademy.org/math/cc-fifth-grade-math/cc-5th-measurement-topic/cc-5th-time/v/telling-time-to-the-nearest-minute", description: "Video lessons on reading and converting times, including 24-hour clock formats." },
+        { title: "24-Hour Clock — Maths is Fun", url: "https://www.mathsisfun.com/time.html", description: "Clear explanation of the 24-hour clock with a conversion tool and worked examples." },
+        { title: "Time Problems — NRICH", url: "https://nrich.maths.org/61", description: "Problem-solving activities involving elapsed time and time conversions." },
+      ],
     },
     activities: [
       // ─── Easy (activities 1–25) ───
@@ -5189,7 +5292,7 @@ export const year5MathsWorksheets: WorksheetItem[] = [
       { type: "circle-correct", title: "Time Problem Quiz", instruction: "Circle the correct answer.", questions: [{ prompt: "How many minutes from 09:40 to 10:25?", options: ["35", "45", "55"] }, { prompt: "What time is 2 hours 45 minutes after 11:30?", options: ["13:15", "14:15", "14:45"] }, { prompt: "How many hours from 18:00 to 06:00 next day?", options: ["8", "12", "16"] }, { prompt: "What is 30 minutes before 01:00?", options: ["00:30", "01:30", "12:30"] }] },
       { type: "open-response", title: "School Timetable", instruction: "Create a school timetable using 24-hour time.", prompts: [{ text: "Design a 5-period school day starting at 08:50, with 50-minute periods and a 30-minute lunch after period 3. Write the start and end times for each period in 24-hour time.", type: "box" }] },
       { type: "open-response", title: "World Time Zones", instruction: "Sydney is UTC+10, London is UTC+0.", prompts: [{ text: "When it is 14:00 in Sydney, what time is it in London?", type: "lines", lines: 1 }, { text: "When it is 09:00 in London, what time is it in Sydney?", type: "lines", lines: 1 }, { text: "A video call at 15:00 London time — what time is that in Sydney?", type: "lines", lines: 1 }, { text: "If an event in Sydney is at 20:00 and you are in London, what time would you watch the livestream?", type: "lines", lines: 1 }] },
-      { type: "sequence", title: "Time Sequences", instruction: "A bus departs every 20 minutes. Fill in the missing departure times.", sequences: [{ items: [600, 620, 640, 0, 700], answer: [660] }, { items: [800, 830, 0, 900, 930], answer: [860] }] },
+      { type: "sequence", title: "Time Sequences", instruction: "A bus departs every 30 minutes. Fill in the missing departure times.", sequences: [{ items: [700, 730, 800, 0, 900], answer: [830] }, { items: [1000, 1030, 1100, 0, 1200], answer: [1130] }] },
       { type: "open-response", title: "24-Hour Time Puzzle", instruction: "Solve these puzzles.", prompts: [{ text: "I am a time. In 24-hour format my digits add to 15. My hour is in the afternoon. I am exactly on the half hour. What time am I?", type: "lines", lines: 2 }, { text: "Two events are 3 hours 25 minutes apart. The later event is at 16:40. When is the earlier event?", type: "lines", lines: 1 }] },
       { type: "sorting", title: "Sort: AM Times or PM Times?", instruction: "Sort each 24-hour time as AM (00:00-11:59) or PM (12:00-23:59).", columns: ["AM (00:00–11:59)", "PM (12:00–23:59)"], items: [{ label: "09:45" }, { label: "12:01" }, { label: "00:30" }, { label: "15:00" }, { label: "11:59" }, { label: "12:00" }, { label: "23:59" }, { label: "06:00" }] },
       // ─── Second round of extra activities ───
@@ -5235,6 +5338,7 @@ export const year5MathsWorksheets: WorksheetItem[] = [
       { type: "picture-graph", title: "Daily Screen Time Survey", instruction: "Each icon = 30 minutes. Track average daily screen time per student group.", rows: [{ label: "Under 10 years", icon: "clock", count: 3 }, { label: "10–12 years", icon: "clock", count: 5 }, { label: "13–15 years", icon: "clock", count: 8 }, { label: "Adults", icon: "clock", count: 7 }], questions: ["Average screen time for 10-12 year olds?", "Which group spends most time?", "Total minutes across all groups?", "How much more than under-10s do 13-15 year olds use?"] },
       { type: "home-activity", title: "Home Activity: Time Tracker", instruction: "Practise telling time in both formats!", suggestions: ["Set a digital clock to 24-hour mode. Throughout the day, say each time in both formats.", "Write your daily schedule using 24-hour time.", "Work out how long your favourite TV show lasts using start and finish times.", "If you go to bed at 20:30, how many hours until you wake up at 07:00?"] },
     ],
+    nextSteps: ["estimate-measure-angles"],
   },
 
   // ── WS 14: Estimate, Construct and Measure Angles ──────────────────────────────────
@@ -5266,6 +5370,13 @@ export const year5MathsWorksheets: WorksheetItem[] = [
         script: "If one angle on a straight line is 70 degrees, what is the other? If a right angle is split into two parts and one part is 35 degrees, what is the other? How did you figure those out?",
         action: "Child solves and explains using 'angles on a straight line = 180' or 'angles in a right angle = 90'. Reinforce the idea of subtraction as the method.",
       },
+      parentTip: "Children often try to measure angles by eye and guess the type, rather than reasoning from the known relationship. Reinforce that maths gives us exact rules: a straight line is always 180 degrees, a right angle is always 90 degrees, and angles on a point total 360 degrees. If your child has a protractor, this is a great lesson to practise reading it accurately — and to discover that measuring the angle and then using the rule to find the missing angle gives the same answer.",
+      extension: "Give your child a selection of triangles cut from paper (equilateral, isosceles, scalene, right-angled) and ask them to measure all three angles in each triangle with a protractor. They should discover that the angles always add to 180 degrees. Then challenge them: can they make a triangle where two angles sum to more than 180 degrees? This hands-on discovery is a powerful proof by investigation.",
+      resources: [
+        { title: "Angles — Maths is Fun", url: "https://www.mathsisfun.com/angles.html", description: "Visual guide to acute, right, obtuse, straight, and reflex angles with clear diagrams." },
+        { title: "Measuring Angles — Khan Academy", url: "https://www.khanacademy.org/math/cc-fifth-grade-math/cc-5th-geometry-topic/cc-5th-angles/v/measuring-angles-in-degrees", description: "Video showing how to use a protractor and classify angles, with interactive practice." },
+        { title: "Angles — NRICH", url: "https://nrich.maths.org/2879", description: "Challenging angle problems that require reasoning about angle relationships rather than just measurement." },
+      ],
     },
     activities: [
       // ─── Easy (activities 1–25) ───
@@ -5286,7 +5397,7 @@ export const year5MathsWorksheets: WorksheetItem[] = [
       { type: "matching", title: "Match Angles to Turns", instruction: "Draw a line from each turn to its angle.", left: ["Quarter turn", "Half turn", "Three-quarter turn", "Full turn"], right: ["180°", "360°", "90°", "270°"] },
       { type: "open-response", title: "Angles in Shapes (A)", instruction: "Use angle facts to find missing angles.", prompts: [{ text: "A triangle has angles of 60° and 80°. The third angle is ___° (angles in a triangle = 180°)", type: "lines", lines: 1 }, { text: "A triangle has angles of 45° and 45°. The third angle is ___°", type: "lines", lines: 1 }, { text: "A triangle has a right angle and a 35° angle. The third angle is ___°", type: "lines", lines: 1 }] },
       { type: "open-response", title: "Angles in Shapes (B)", instruction: "Find the missing angles.", prompts: [{ text: "A rectangle has four ___° angles", type: "lines", lines: 1 }, { text: "A square has angles totalling ___°", type: "lines", lines: 1 }, { text: "An equilateral triangle has three angles of ___° each", type: "lines", lines: 1 }, { text: "The angles in any quadrilateral add up to ___°", type: "lines", lines: 1 }] },
-      { type: "circle-correct", title: "Angle Facts True or False", instruction: "Circle TRUE or FALSE.", questions: [{ prompt: "Angles in a triangle always add up to 180°", options: ["TRUE", "FALSE"] }, { prompt: "A right angle is exactly 90°", options: ["TRUE", "FALSE"] }, { prompt: "Angles on a straight line add up to 360°", options: ["TRUE", "FALSE"] }, { prompt: "An equilateral triangle has three equal angles", options: ["TRUE", "FALSE"] }] },
+      { type: "circle-correct", title: "Angle Facts True or False", instruction: "Circle TRUE or FALSE.", questions: [{ prompt: "Angles in a triangle always add up to 180°", options: ["TRUE", "FALSE"] }, { prompt: "A right angle is exactly 90°", options: ["TRUE", "FALSE"] }, { prompt: "Angles on a straight line add up to 180°", options: ["TRUE", "FALSE"] }, { prompt: "An equilateral triangle has three equal angles", options: ["TRUE", "FALSE"] }] },
       // ─── Hard (activities 18–70) ───
       { type: "open-response", title: "Angle Problems (A)", instruction: "Solve each problem. Show your working.", prompts: [{ text: "A triangle has angles of 60° and 80°. What is the third angle? What type of triangle is this?", type: "box" }, { text: "A clock shows 3 o'clock. What angle do the hands make? What about at 6 o'clock?", type: "box" }, { text: "Two angles in a triangle are both 45°. What is the third angle? What type of triangle is this?", type: "box" }] },
       { type: "open-response", title: "Angle Problems (B)", instruction: "Solve these problems.", prompts: [{ text: "Two straight lines cross. One angle is 70°. Find the other three angles.", type: "box" }, { text: "A quadrilateral has angles of 80°, 110° and 95°. What is the fourth angle?", type: "box" }] },
@@ -5339,7 +5450,7 @@ export const year5MathsWorksheets: WorksheetItem[] = [
       { type: "open-response", title: "Angle Investigation", instruction: "Investigate angle sums.", prompts: [{ text: "Draw any quadrilateral. Measure all four angles. Sum = ___°. Is this always 360°?", type: "box" }, { text: "Draw any triangle. Tear off the corners. Arrange them along a straight line. What do you notice?", type: "lines", lines: 2 }] },
       // ─── Third round of extra activities ───
       { type: "matching", title: "Match Angle to Degrees (B)", instruction: "Draw a line.", left: ["One full turn", "Three-quarter turn", "Half turn", "Quarter turn", "One-eighth turn"], right: ["45°", "90°", "180°", "270°", "360°"] },
-      { type: "number-bonds", title: "Supplementary Angle Bonds", instruction: "Two supplementary angles add to 180°. Find the missing angle.", bonds: [{ total: 180, partA: 70, partB: null }, { total: 180, partA: 115, partB: null }, { total: 180, partA: 35, partB: null }, { total: 180, partA: 157, partB: null }, { total: 180, partA: 88, partB: null }, { total: 180, partA: 23, partB: null }] },
+      { type: "number-bonds", title: "Supplementary Angle Bonds", instruction: "Two supplementary angles add to 180°. Find the missing angle.", parentTip: "Extension: Supplementary and complementary angle terminology is extension content beyond the core Year 5 curriculum. Students who grasp basic angle facts are well prepared for this.", bonds: [{ total: 180, partA: 70, partB: null }, { total: 180, partA: 115, partB: null }, { total: 180, partA: 35, partB: null }, { total: 180, partA: 157, partB: null }, { total: 180, partA: 88, partB: null }, { total: 180, partA: 23, partB: null }] },
       { type: "open-response", title: "Angles in Triangles (B)", instruction: "Find the missing angle in each triangle.", prompts: [{ text: "45°, 75°, ___°", type: "lines", lines: 1 }, { text: "90°, 35°, ___°", type: "lines", lines: 1 }, { text: "120°, 30°, ___°", type: "lines", lines: 1 }, { text: "55°, 55°, ___°", type: "lines", lines: 1 }, { text: "72°, 48°, ___°", type: "lines", lines: 1 }] },
       { type: "open-response", title: "Angles in Quadrilaterals (B)", instruction: "Find the missing angle in each quadrilateral (angles sum to 360°).", prompts: [{ text: "90°, 90°, 80°, ___°", type: "lines", lines: 1 }, { text: "100°, 110°, 70°, ___°", type: "lines", lines: 1 }, { text: "120°, 120°, 60°, ___°", type: "lines", lines: 1 }, { text: "95°, 85°, 105°, ___°", type: "lines", lines: 1 }] },
       { type: "sorting", title: "Sort Angles (D)", instruction: "Sort each into the correct range.", columns: ["0°-45°", "45°-90°", "90°-180°", "180°-360°"], items: [{ label: "30°" }, { label: "60°" }, { label: "120°" }, { label: "200°" }, { label: "45°" }, { label: "89°" }, { label: "90°" }, { label: "350°" }] },
@@ -5376,6 +5487,7 @@ export const year5MathsWorksheets: WorksheetItem[] = [
       { type: "tally-chart", title: "Angle Types in a Building", instruction: "Count angle types found in a floor plan.", categories: [{ label: "Right angles (90°)", icon: "square", count: 24 }, { label: "Acute angles (<90°)", icon: "triangle", count: 8 }, { label: "Obtuse angles (>90°)", icon: "diamond", count: 6 }, { label: "Straight lines (180°)", icon: "circle", count: 4 }] },
       { type: "home-activity", title: "Home Activity: Angle Scavenger Hunt", instruction: "Find angles all around you!", suggestions: ["Find 3 right angles in your home (corners of doors, books, tiles).", "Open a door to different angles. Estimate the angle.", "Look at the hands on an analogue clock at different times. Estimate the angle.", "Fold a piece of paper to make angles of 45°, 90° and 180°."] },
     ],
+    nextSteps: ["grid-coordinates"],
   },
 
   // ── WS 15: Grid Coordinates ──────────────────────────────────
@@ -5407,6 +5519,13 @@ export const year5MathsWorksheets: WorksheetItem[] = [
         script: "You are at the point (2, 3) and you need to reach (7, 6). How far right do you move? How far up do you move? And if I asked you to go to (5, 1) from (2, 4), which direction is the vertical movement and how many steps?",
         action: "Child calculates the differences in x and y coordinates. Introduce the language of positive (right/up) and negative (left/down) movement informally if they are ready.",
       },
+      parentTip: "The most common error with coordinates is reversing the order — saying (y, x) instead of (x, y). A memorable prompt is 'along the corridor, then up the stairs' — first move horizontally (x), then vertically (y). If your child keeps mixing them up, draw a simple grid and walk them through it physically with their finger before they try problems independently. Also make sure your child is starting from the origin (0, 0), not from some other corner.",
+      extension: "Create a simple treasure map on a grid and write a set of coordinate directions to lead from the starting point to the hidden treasure. Your child writes the directions as a list of coordinates in order, and then another family member follows the coordinates on a blank copy of the grid to find the treasure. Creating coordinates, not just reading them, deepens understanding considerably.",
+      resources: [
+        { title: "Coordinate Plane — Khan Academy", url: "https://www.khanacademy.org/math/cc-fifth-grade-math/cc-5th-geometry-topic/cc-5th-coordinate-plane/v/the-coordinate-plane", description: "Introduction to the coordinate plane — plotting and reading points in the first quadrant." },
+        { title: "Cartesian Coordinates — Maths is Fun", url: "https://www.mathsisfun.com/data/cartesian-coordinates.html", description: "Step-by-step explanation of how coordinates work with an interactive point-plotting tool." },
+        { title: "Coordinate Challenges — NRICH", url: "https://nrich.maths.org/2667", description: "NRICH coordinate problems that require strategic thinking and precise plotting." },
+      ],
     },
     activities: [
       // ─── Easy (activities 1–25) ───
@@ -5464,7 +5583,7 @@ export const year5MathsWorksheets: WorksheetItem[] = [
       { type: "sorting", title: "Sort: Points Above or Below y = 5", instruction: "Sort each point based on whether its y-coordinate is above, at, or below 5.", columns: ["y < 5", "y = 5", "y > 5"], items: [{ label: "(3, 7)" }, { label: "(8, 5)" }, { label: "(1, 2)" }, { label: "(6, 9)" }, { label: "(4, 5)" }, { label: "(0, 3)" }, { label: "(7, 8)" }, { label: "(2, 1)" }] },
       { type: "open-response", title: "Write the Coordinates (D)", instruction: "Write the coordinates.", prompts: [{ text: "A point that is 0 right and 0 up (origin): (__, __)", type: "lines", lines: 1 }, { text: "A point on the x-axis at position 10: (__, __)", type: "lines", lines: 1 }, { text: "A point on the y-axis at position 6: (__, __)", type: "lines", lines: 1 }, { text: "A point equidistant from both axes at distance 5: (__, __)", type: "lines", lines: 1 }] },
       { type: "open-response", title: "Follow the Directions (E)", instruction: "Start at the given point and follow directions.", prompts: [{ text: "Start at (0, 0). Move right 4, up 3, left 2, up 5. Final position: (__, __)", type: "lines", lines: 1 }, { text: "Start at (5, 5). Move left 3, down 4, right 6, up 1. Final position: (__, __)", type: "lines", lines: 1 }, { text: "Start at (8, 3). Move left 5, up 4, right 3, down 2. Final position: (__, __)", type: "lines", lines: 1 }] },
-      { type: "open-response", title: "Midpoints", instruction: "Find the midpoint (middle point) between each pair of coordinates.", prompts: [{ text: "Midpoint between (0, 0) and (6, 0): (__, __)", type: "lines", lines: 1 }, { text: "Midpoint between (2, 4) and (8, 4): (__, __)", type: "lines", lines: 1 }, { text: "Midpoint between (1, 3) and (5, 7): (__, __)", type: "lines", lines: 1 }, { text: "Midpoint between (0, 0) and (10, 10): (__, __)", type: "lines", lines: 1 }] },
+      { type: "open-response", title: "Midpoints", instruction: "Find the midpoint (middle point) between each pair of coordinates.", parentTip: "Extension: Finding midpoints between coordinates is an enrichment activity beyond the core Year 5 location strand. Introduce when students are confident with coordinate grids.", prompts: [{ text: "Midpoint between (0, 0) and (6, 0): (__, __)", type: "lines", lines: 1 }, { text: "Midpoint between (2, 4) and (8, 4): (__, __)", type: "lines", lines: 1 }, { text: "Midpoint between (1, 3) and (5, 7): (__, __)", type: "lines", lines: 1 }, { text: "Midpoint between (0, 0) and (10, 10): (__, __)", type: "lines", lines: 1 }] },
       { type: "open-response", title: "Coordinate Reflections", instruction: "Find the reflected coordinate.", prompts: [{ text: "Reflect (3, 2) across the y-axis: (__, __)", type: "lines", lines: 1 }, { text: "Reflect (5, 4) across the x-axis: (__, __)", type: "lines", lines: 1 }, { text: "Reflect (2, 3) across the line y = x (swap coordinates): (__, __)", type: "lines", lines: 1 }, { text: "Reflect (6, 1) across the y-axis: (__, __)", type: "lines", lines: 1 }] },
       { type: "picture-graph", title: "Points on a Grid", instruction: "A survey counted points plotted by students in each quadrant area of a 10×10 grid.", rows: [{ label: "x < 5, y < 5", icon: "diamond", count: 6 }, { label: "x ≥ 5, y < 5", icon: "diamond", count: 9 }, { label: "x < 5, y ≥ 5", icon: "diamond", count: 7 }, { label: "x ≥ 5, y ≥ 5", icon: "diamond", count: 8 }], questions: ["Which area had the most points?", "Total points plotted?", "Were points roughly evenly distributed?", "What fraction were in the top-right area?"] },
       { type: "tally-chart", title: "Coordinate Errors", instruction: "Students made coordinate errors. Count the type of error.", categories: [{ label: "Swapped x and y", icon: "circle", count: 8 }, { label: "Read wrong axis", icon: "circle", count: 5 }, { label: "Off by one", icon: "circle", count: 6 }, { label: "No error", icon: "circle", count: 11 }] },
@@ -5481,7 +5600,7 @@ export const year5MathsWorksheets: WorksheetItem[] = [
       { type: "circle-correct", title: "Coordinate Facts Quiz", instruction: "Circle the correct answer.", questions: [{ prompt: "A point on the y-axis has x = ___", options: ["0", "undefined", "same as y"] }, { prompt: "Moving a point 5 units down changes the y-coordinate by ___", options: ["+5", "-5", "0"] }, { prompt: "The midpoint of (2, 4) and (8, 4) is ___", options: ["(4, 4)", "(5, 4)", "(6, 4)"] }, { prompt: "Two points with the same y-coordinate form a ___ line.", options: ["vertical", "horizontal", "diagonal"] }] },
       { type: "sorting", title: "Sort: On Axis or Interior?", instruction: "Sort each point.", columns: ["On the x-axis", "On the y-axis", "At the origin", "Interior (neither axis)"], items: [{ label: "(5, 0)" }, { label: "(0, 3)" }, { label: "(0, 0)" }, { label: "(4, 2)" }, { label: "(7, 0)" }, { label: "(0, 8)" }, { label: "(1, 1)" }, { label: "(0, 0)" }] },
       { type: "open-response", title: "Symmetry on a Grid", instruction: "Use coordinates to describe symmetric shapes.", prompts: [{ text: "A shape has corners (1,2), (3,2), (3,5), (1,5). Draw its reflection across x = 4. New corners: ___, ___, ___, ___", type: "lines", lines: 1 }, { text: "The same shape is reflected across y = 3. New corners: ___, ___, ___, ___", type: "lines", lines: 1 }] },
-      { type: "open-response", title: "Negative Coordinates Introduction", instruction: "Some grids extend to negative numbers.", prompts: [{ text: "If the x-axis goes from -5 to 5, and y from -5 to 5, plot and name the origin: ___", type: "lines", lines: 1 }, { text: "A point at (-3, 2) is ___ units left and ___ units up from the origin.", type: "lines", lines: 1 }, { text: "What coordinate is 4 units left of (1, 3)? ___", type: "lines", lines: 1 }] },
+      { type: "open-response", title: "Negative Coordinates Introduction", instruction: "Some grids extend to negative numbers.", parentTip: "Extension: Negative coordinates (four-quadrant grids) are extension content beyond the core Year 5 curriculum. Introduce once students are fluent with first-quadrant coordinates.", prompts: [{ text: "If the x-axis goes from -5 to 5, and y from -5 to 5, plot and name the origin: ___", type: "lines", lines: 1 }, { text: "A point at (-3, 2) is ___ units left and ___ units up from the origin.", type: "lines", lines: 1 }, { text: "What coordinate is 4 units left of (1, 3)? ___", type: "lines", lines: 1 }] },
       { type: "open-response", title: "Coordinate Geometry Problems (E)", instruction: "Solve.", prompts: [{ text: "A square has two corners at (2,1) and (2,5). The square extends to the right. Write all four corners.", type: "lines", lines: 1 }, { text: "A right-angled triangle has the right angle at (0,0), one side along the x-axis to (6,0), and another along the y-axis to (0,4). What is its perimeter?", type: "lines", lines: 2 }] },
       { type: "open-response", title: "Coordinate Art", instruction: "Create a picture using coordinates.", prompts: [{ text: "Design a simple picture (house, boat, rocket) using only straight lines. List the coordinates for each line segment:", type: "box" }, { text: "Describe what your picture looks like:", type: "lines", lines: 1 }] },
       { type: "sequence", title: "Coordinate Sequences", instruction: "Find the next coordinate in each sequence.", sequences: [{ items: [0, 2, 4, 6, 0], answer: [8] }, { items: [10, 8, 6, 4, 0], answer: [2] }, { items: [0, 3, 6, 9, 0], answer: [12] }] },
@@ -5515,6 +5634,7 @@ export const year5MathsWorksheets: WorksheetItem[] = [
       { type: "open-response", title: "Negative Coordinates in Context", instruction: "Explore negative coordinates.", prompts: [{ text: "A submarine is at coordinates (2, −5) on a sea map where positive y is above sea level. Is the submarine above or below sea level? ___", type: "lines", lines: 1 }, { text: "Plot these points: (3, 2), (−3, 2), (−3, −2), (3, −2). What shape do they make? ___. Area: ___", type: "lines", lines: 1 }, { text: "What does the point (0, 0) represent on a map of a town?", type: "lines", lines: 1 }] },
       { type: "home-activity", title: "Home Activity: Coordinate Treasure Hunt", instruction: "Make a coordinate treasure hunt!", suggestions: ["Draw a grid on paper. Hide a treasure at a secret coordinate. Give clues.", "Use grid paper to draw a picture by connecting coordinates.", "Play Battleships using a coordinate grid.", "Set up a grid in your backyard with string or chalk and use coordinates to navigate."] },
     ],
+    nextSteps: ["2d-nets"],
   },
 
   // ── WS 16: 2D Nets ──────────────────────────────────
@@ -5547,6 +5667,13 @@ export const year5MathsWorksheets: WorksheetItem[] = [
         script: "Tell me: a rectangular prism has how many faces? What shapes are they? A triangular prism has how many faces and what shapes? If I hand you a net made of two triangles and three rectangles, what 3D shape would it make?",
         action: "Child answers from memory. If unsure, allow them to refer to the unfolded shapes. Reinforce that the faces of the net become the faces of the 3D object.",
       },
+      parentTip: "Understanding nets is much easier with physical models than with flat drawings. If you have cardboard, scissors, and tape, spend five minutes before the worksheet letting your child cut out a cross-shaped net and fold it into a cube. Even a quick sketch and fold on paper helps enormously. The key insight — that folding along every edge joins the face to its neighbour — is obvious once experienced and almost impossible to grasp from a diagram alone.",
+      extension: "Challenge your child to draw as many different nets of a cube as they can find — there are exactly 11 distinct ones. After they think they have found them all, check against a reference and discuss which ones they missed. This is a genuine mathematical investigation that connects to systematic thinking and spatial reasoning, both important in the Space strand.",
+      resources: [
+        { title: "3D Shapes — Maths is Fun", url: "https://www.mathsisfun.com/geometry/common-3d-shapes.html", description: "Visual guide to common 3D shapes with their faces, edges, and vertices listed." },
+        { title: "Nets of 3D Shapes — Maths is Fun", url: "https://www.mathsisfun.com/geometry/nets.html", description: "Interactive net diagrams showing how 3D shapes unfold, including multiple nets for the cube." },
+        { title: "Nets — NRICH", url: "https://nrich.maths.org/1", description: "A collection of NRICH tasks involving the construction and analysis of nets of 3D shapes." },
+      ],
     },
     activities: [
       // ─── Easy (activities 1–25) ───
@@ -5596,7 +5723,7 @@ export const year5MathsWorksheets: WorksheetItem[] = [
       { type: "circle-correct", title: "3D Shape Reasoning", instruction: "Circle the correct answer.", questions: [{ prompt: "Which 3D shape has the most faces from these options?", options: ["Cube", "Hexagonal prism", "Triangular pyramid"] }, { prompt: "Which shape has no edges?", options: ["Cylinder", "Cone", "Sphere"] }, { prompt: "All prisms have...", options: ["triangular faces", "two identical end faces", "square faces"] }, { prompt: "Euler's rule V + F - E = ?", options: ["0", "1", "2"] }] },
       { type: "open-response", title: "Design a Package", instruction: "Design packaging using nets.", prompts: [{ text: "Design a gift box shaped like a triangular prism. Give dimensions and describe the net.", type: "box" }, { text: "A chocolate box is shaped like a hexagonal prism. How many faces does the net have? Draw a rough sketch.", type: "box" }] },
       // ─── Extra activities to reach ~71 total ───
-      { type: "matching", title: "Match Faces, Edges and Vertices (A)", instruction: "Draw a line from each 3D shape to its vertex count.", left: ["Cube", "Triangular pyramid", "Rectangular prism", "Square pyramid", "Triangular prism"], right: ["4", "5", "6", "8", "8"] },
+      { type: "matching", title: "Match Faces, Edges and Vertices (A)", instruction: "Draw a line from each 3D shape to its vertex count.", left: ["Cube", "Triangular pyramid", "Pentagonal prism", "Square pyramid", "Triangular prism"], right: ["4", "5", "6", "8", "10"] },
       { type: "circle-correct", title: "Faces, Edges and Vertices (E)", instruction: "Circle the correct answer.", questions: [{ prompt: "How many edges does a triangular pyramid have?", options: ["4", "6", "8"] }, { prompt: "How many faces does a hexagonal prism have?", options: ["6", "8", "10"] }, { prompt: "How many vertices does a pentagonal pyramid have?", options: ["5", "6", "10"] }, { prompt: "A cube and a rectangular prism both have ___ edges.", options: ["8", "10", "12"] }] },
       { type: "number-bonds", title: "Euler's Rule (C): V + F - E = 2", instruction: "Use Euler's Rule (V + F = E + 2). Find the missing value.", bonds: [{ total: 15, partA: 9, partB: null }, { total: 15, partA: 6, partB: null }, { total: 20, partA: 12, partB: null }, { total: 20, partA: 10, partB: null }, { total: 7, partA: 5, partB: null }, { total: 7, partA: 4, partB: null }] },
       { type: "sorting", title: "Sort by Number of Vertices", instruction: "Sort each 3D shape.", columns: ["4 vertices", "5 vertices", "6 vertices", "8 vertices"], items: [{ label: "Triangular pyramid" }, { label: "Square pyramid" }, { label: "Triangular prism" }, { label: "Cube" }, { label: "Rectangular prism" }] },
@@ -5612,7 +5739,7 @@ export const year5MathsWorksheets: WorksheetItem[] = [
       { type: "open-response", title: "3D Shape Investigation", instruction: "Investigate prisms and pyramids.", prompts: [{ text: "How is a prism different from a pyramid? ___", type: "lines", lines: 2 }, { text: "Both a triangular prism and a triangular pyramid start with a triangle. What makes them different?", type: "lines", lines: 2 }, { text: "Can you have a circular prism? What would it be called?", type: "lines", lines: 1 }] },
       { type: "circle-correct", title: "3D Shapes Quiz (B)", instruction: "Circle the correct answer.", questions: [{ prompt: "Prisms have two ___ faces.", options: ["triangular", "identical parallel", "square"] }, { prompt: "Pyramids come to a ___.", options: ["flat top", "point", "curved edge"] }, { prompt: "A cone is like a ___ with a circular base.", options: ["prism", "pyramid", "cylinder"] }, { prompt: "A tetrahedron has ___ faces.", options: ["3", "4", "6"] }] },
       // ─── Third round of extra activities ───
-      { type: "matching", title: "Match 3D Shapes to Number of Edges (B)", instruction: "Draw a line.", left: ["Triangular pyramid", "Cube", "Triangular prism", "Square pyramid", "Octahedron"], right: ["6", "8", "9", "12", "12"] },
+      { type: "matching", title: "Match 3D Shapes to Number of Edges (B)", instruction: "Draw a line.", left: ["Triangular pyramid", "Cube", "Triangular prism", "Square pyramid", "Pentagonal pyramid"], right: ["6", "8", "9", "12", "10"] },
       { type: "number-bonds", title: "Euler's Formula Practise", instruction: "For every 3D shape: Vertices + Faces = Edges + 2.", bonds: [{ total: 14, partA: 6, partB: null }, { total: 14, partA: 8, partB: null }, { total: 12, partA: 5, partB: null }, { total: 12, partA: 8, partB: null }, { total: 18, partA: 8, partB: null }, { total: 18, partA: 12, partB: null }] },
       { type: "open-response", title: "Describe the Cross-Section (B)", instruction: "What 2D shape do you see if you cut each 3D shape?", prompts: [{ text: "Cut a triangular prism across its length: ___", type: "lines", lines: 1 }, { text: "Cut a square pyramid half way up: ___", type: "lines", lines: 1 }, { text: "Cut a cube diagonally corner-to-corner: ___", type: "lines", lines: 1 }, { text: "Cut a cylinder along its length: ___", type: "lines", lines: 1 }] },
       { type: "open-response", title: "Properties Comparison Table", instruction: "Complete the table comparing 3D shapes.", prompts: [{ text: "Shape: Cube. Faces: ___. Edges: ___. Vertices: ___. Face shapes: ___", type: "lines", lines: 1 }, { text: "Shape: Triangular prism. Faces: ___. Edges: ___. Vertices: ___. Face shapes: ___", type: "lines", lines: 1 }, { text: "Shape: Square pyramid. Faces: ___. Edges: ___. Vertices: ___. Face shapes: ___", type: "lines", lines: 1 }] },
@@ -5659,6 +5786,7 @@ export const year5MathsWorksheets: WorksheetItem[] = [
       { type: "open-response", title: "3D Shape Challenge Questions", instruction: "Apply your 3D knowledge.", prompts: [{ text: "A cube has V=8, E=12, F=6. Verify Euler's rule: V + F − E = ___", type: "lines", lines: 1 }, { text: "Add a point on top of a cube to make a square pyramid on top. New V=___ E=___ F=___. Verify Euler's rule: ___", type: "lines", lines: 2 }, { text: "Which 3D shape has the fewest edges and faces? ___", type: "lines", lines: 1 }] },
       { type: "home-activity", title: "Home Activity: Build from Nets", instruction: "Make 3D shapes from nets!", suggestions: ["Draw a cube net on cardboard. Cut it out and fold it into a cube.", "Cut open a cereal box carefully along its edges. Lay it flat — you have found its net!", "Try to draw and cut out a net for a triangular prism.", "Collect different boxes and packaging. Predict what shape their net would be before unfolding them."] },
     ],
+    nextSteps: ["transformations-symmetry"],
   },
 
   // ── WS 17: Transformations and Symmetry ──────────────────────────────────
@@ -5690,6 +5818,13 @@ export const year5MathsWorksheets: WorksheetItem[] = [
         script: "I am going to move this shape, and I want you to describe exactly what I did using the correct word: translation, reflection or rotation. Ready? Watch carefully.",
         action: "Perform three transformations with the cardboard shape one at a time. Child names each and describes it precisely. If they say 'flipped' prompt for 'reflection'. Build the mathematical vocabulary.",
       },
+      parentTip: "The hardest transformation for children to describe precisely is rotation — they tend to say 'turned' and leave it at that. Practise asking three questions: 'Which direction did it turn? How far? Around which point?' If your child is struggling with reflections, try placing a small mirror along the line of symmetry on a drawing and showing how the mirror image appears. Making the abstract visible with a physical tool is always more effective than repeating the verbal explanation.",
+      extension: "Ask your child to design a simple tile pattern that could be used for a floor or wall, using at least one translation and one reflection. They should be able to describe in words exactly how to repeat the pattern to fill a larger area. This connects transformations to real-world design and to the study of tessellation, which is explicitly mentioned in the Australian Curriculum Space strand.",
+      resources: [
+        { title: "Transformations — Maths is Fun", url: "https://www.mathsisfun.com/geometry/transformations.html", description: "Clear visual explanations of translation, reflection, and rotation with interactive examples." },
+        { title: "Symmetry — Khan Academy", url: "https://www.khanacademy.org/math/cc-fifth-grade-math/cc-5th-geometry-topic/cc-5th-line-of-symmetry/v/line-of-symmetry-1", description: "Video lesson on lines of symmetry with examples from letters, shapes, and real objects." },
+        { title: "Symmetry and Transformations — NRICH", url: "https://nrich.maths.org/1384", description: "NRICH problems exploring lines of symmetry and transformations in geometric contexts." },
+      ],
     },
     activities: [
       // ─── Easy (activities 1–25) ───
@@ -5719,7 +5854,7 @@ export const year5MathsWorksheets: WorksheetItem[] = [
       { type: "sorting", title: "Symmetrical or Not? (C)", instruction: "Sort each object: does it have at least one line of symmetry?", columns: ["Symmetrical", "Not symmetrical"], items: [{ label: "Butterfly", icon: "butterfly" }, { label: "Apple", icon: "apple" }, { label: "Moon", icon: "moon" }, { label: "Pencil", icon: "pencil" }, { label: "Flower", icon: "flower" }, { label: "Fish", icon: "fish" }] },
       { type: "circle-correct", title: "Lines of Symmetry (C)", instruction: "Circle the correct number.", questions: [{ prompt: "A regular octagon has ___ lines of symmetry.", options: ["4", "6", "8"] }, { prompt: "An isosceles trapezoid has ___ line(s) of symmetry.", options: ["0", "1", "2"] }, { prompt: "A rhombus has ___ lines of symmetry.", options: ["0", "2", "4"] }, { prompt: "A scalene triangle has ___ lines of symmetry.", options: ["0", "1", "3"] }] },
       { type: "circle-correct", title: "Lines of Symmetry (D)", instruction: "Circle the correct answer.", questions: [{ prompt: "The letter H has ___ line(s) of symmetry.", options: ["0", "1", "2"] }, { prompt: "The letter X has ___ line(s) of symmetry.", options: ["2", "4", "0"] }, { prompt: "The number 8 has ___ line(s) of symmetry.", options: ["0", "1", "2"] }, { prompt: "The letter D has ___ line(s) of symmetry.", options: ["0", "1", "2"] }] },
-      { type: "matching", title: "Match Shapes to Symmetry Lines (B)", instruction: "Draw a line.", left: ["Regular pentagon", "Rectangle", "Rhombus", "Kite", "Scalene triangle"], right: ["0", "1", "2", "2", "5"] },
+      { type: "matching", title: "Match Shapes to Symmetry Lines (B)", instruction: "Draw a line.", left: ["Regular pentagon", "Rectangle", "Regular hexagon", "Kite", "Scalene triangle"], right: ["0", "1", "2", "5", "6"] },
       { type: "open-response", title: "Draw Lines of Symmetry (B)", instruction: "Draw all lines of symmetry.", prompts: [{ text: "Draw the lines of symmetry on an equilateral triangle.", type: "box" }, { text: "Draw the lines of symmetry on a rectangle.", type: "box" }, { text: "Draw the line of symmetry on an isosceles triangle.", type: "box" }] },
       { type: "open-response", title: "Symmetry in Letters and Numbers", instruction: "Identify symmetry.", prompts: [{ text: "List all capital letters with vertical symmetry: ___", type: "lines", lines: 2 }, { text: "List all capital letters with horizontal symmetry: ___", type: "lines", lines: 2 }, { text: "List all single-digit numbers with a line of symmetry: ___", type: "lines", lines: 1 }] },
       // ─── Additional Medium activities ───
@@ -5738,7 +5873,7 @@ export const year5MathsWorksheets: WorksheetItem[] = [
       { type: "open-response", title: "Combined Transformations", instruction: "Perform multiple transformations.", prompts: [{ text: "Start with point (2, 1). Translate right 3, then reflect across x = 7. Final position: ___", type: "lines", lines: 2 }, { text: "Start with point (5, 3). Reflect across y = 4, then translate left 2. Final position: ___", type: "lines", lines: 2 }, { text: "Is the order of transformations important? Explain with an example.", type: "lines", lines: 3 }] },
       { type: "open-response", title: "Tessellations", instruction: "Explore tessellations (repeating patterns with no gaps).", prompts: [{ text: "Name 3 shapes that tessellate (tile a surface with no gaps): ___", type: "lines", lines: 1 }, { text: "Does a regular pentagon tessellate? Why or why not?", type: "lines", lines: 2 }, { text: "Draw a simple tessellation using triangles.", type: "box" }] },
       // ─── Extra activities to reach ~70 total ───
-      { type: "matching", title: "Match Transformations to Real Life (A)", instruction: "Draw a line.", left: ["A windmill turning", "Your image in a mirror", "A carpet tile repeated across a floor", "Picking up a book and putting it down moved"], right: ["Translation", "Rotation", "Reflection", "Translation"] },
+      { type: "matching", title: "Match Transformations to Real Life (A)", instruction: "Draw a line.", left: ["A windmill turning", "Your image in a mirror", "A carpet tile repeated across a floor", "A map where distances are doubled"], right: ["Translation", "Rotation", "Reflection", "Enlargement"] },
       { type: "number-bonds", title: "Rotation Bonds", instruction: "Find the missing angle of rotation.", bonds: [{ total: 360, partA: 90, partB: null }, { total: 360, partA: 180, partB: null }, { total: 360, partA: 270, partB: null }, { total: 180, partA: 90, partB: null }, { total: 360, partA: 45, partB: null }, { total: 360, partA: 135, partB: null }] },
       { type: "circle-correct", title: "Lines of Symmetry (E)", instruction: "Circle the correct number.", questions: [{ prompt: "A regular nonagon (9 sides) has ___ lines of symmetry.", options: ["4", "9", "18"] }, { prompt: "An equilateral triangle and a regular hexagon both have rotational symmetry of order ___", options: ["3 and 6", "3 and 3", "6 and 6"] }, { prompt: "A shape with rotational symmetry of order 1 means it looks the same after a ___ rotation.", options: ["90°", "180°", "360°"] }] },
       { type: "sorting", title: "Sort: Translation, Reflection or Rotation?", instruction: "Sort each movement.", columns: ["Translation", "Reflection", "Rotation"], items: [{ label: "Sliding door opens" }, { label: "Mirror image" }, { label: "Spinning wheel" }, { label: "Moving a chess pawn forward" }, { label: "Butterfly wing (symmetric)" }, { label: "Clock hands" }] },
@@ -5752,7 +5887,7 @@ export const year5MathsWorksheets: WorksheetItem[] = [
       { type: "circle-correct", title: "Transformation Reasoning", instruction: "Circle the correct answer.", questions: [{ prompt: "Which transformation changes a shape's orientation?", options: ["Translation", "Reflection", "Both translation and reflection"] }, { prompt: "After reflecting a shape twice across parallel lines, the result is a...", options: ["rotation", "translation", "reflection"] }, { prompt: "An object with 180° rotational symmetry looks the same when rotated...", options: ["90°", "180°", "360°"] }] },
       { type: "open-response", title: "Transformation Investigation", instruction: "Investigate combining transformations.", prompts: [{ text: "Translate a triangle right 4. Then translate it up 3. What single translation gives the same result?", type: "lines", lines: 2 }, { text: "Rotate a shape 90° clockwise, then 90° clockwise again. What single rotation gives the same result?", type: "lines", lines: 1 }, { text: "Reflect a shape, then reflect it again across the same line. What do you get?", type: "lines", lines: 2 }] },
       // ─── Third round of extra activities ───
-      { type: "matching", title: "Match Symmetry Facts", instruction: "Draw a line.", left: ["Square", "Rectangle (not square)", "Rhombus", "Regular hexagon", "Scalene triangle"], right: ["0 lines", "2 lines", "2 lines", "4 lines", "6 lines"] },
+      { type: "matching", title: "Match Symmetry Facts", instruction: "Draw a line.", left: ["Square", "Rectangle (not square)", "Isosceles triangle", "Regular hexagon", "Scalene triangle"], right: ["0 lines", "1 line", "2 lines", "4 lines", "6 lines"] },
       { type: "number-bonds", title: "Lines of Symmetry Bonds", instruction: "A regular polygon has as many lines of symmetry as it has sides. Find the missing value.", bonds: [{ total: 5, partA: 5, partB: null }, { total: 8, partA: 8, partB: null }, { total: 6, partA: 6, partB: null }, { total: 12, partA: 12, partB: null }, { total: 3, partA: 3, partB: null }, { total: 10, partA: 10, partB: null }] },
       { type: "circle-correct", title: "Identify the Transformation (E)", instruction: "Circle the transformation.", questions: [{ prompt: "Turning a pinwheel is a...", options: ["Translation", "Reflection", "Rotation"] }, { prompt: "Your footprint is a ___ of your foot.", options: ["Translation", "Reflection", "Rotation"] }, { prompt: "Sliding a tray along a bench is a...", options: ["Translation", "Reflection", "Rotation"] }, { prompt: "Flipping a pancake is a...", options: ["Translation", "Reflection", "Rotation"] }] },
       { type: "sorting", title: "Sort: Preserve Orientation?", instruction: "Does this transformation preserve orientation (keep the same handedness)?", columns: ["Preserves orientation", "Reverses orientation"], items: [{ label: "Translation" }, { label: "Reflection" }, { label: "Rotation (any angle)" }, { label: "Enlargement" }, { label: "Glide reflection" }] },
@@ -5799,6 +5934,7 @@ export const year5MathsWorksheets: WorksheetItem[] = [
       { type: "sorting", title: "Sort: Does This Have Line Symmetry?", instruction: "Sort each item.", columns: ["Has line symmetry", "No line symmetry"], items: [{ label: "Letter A" }, { label: "Letter R" }, { label: "Circle" }, { label: "Scalene triangle" }, { label: "Human face" }, { label: "Regular pentagon" }] },
       { type: "home-activity", title: "Home Activity: Symmetry Safari", instruction: "Find symmetry and transformations in the real world!", suggestions: ["Find 5 objects in your home with at least one line of symmetry.", "Fold paper and cut a shape. Unfold it to see the symmetry.", "Use a small mirror to check which capital letters have vertical symmetry.", "Look at tiles, wallpaper or fabric patterns. Can you find translations, reflections or rotations?"] },
     ],
+    nextSteps: ["statistical-investigations-digital"],
   },
 
   // ── WS 18: Statistical Investigations ──────────────────────────────────
@@ -5830,6 +5966,13 @@ export const year5MathsWorksheets: WorksheetItem[] = [
         script: "Looking at our graph, what was the most popular answer? What was the least popular? If you were going to share these results with someone who had not seen the graph, what would you tell them?",
         action: "Child gives a verbal summary of the investigation findings. Prompt with: 'What would you say was the conclusion?' Reinforce that the data should answer the original question.",
       },
+      parentTip: "Children sometimes think a statistical investigation is done once they have drawn the graph — but the interpretation is actually the most important step. Push past 'the most popular answer was...' and ask your child to make a claim from the data and explain why the data supports it. If they are finding it hard to interpret, model it yourself: 'I notice that... and I think this means...' and invite them to do the same.",
+      extension: "Run a real data investigation over a week: choose a question your child genuinely wants to answer (for example, which bird species visits our garden most often, or how long does it take family members to get ready in the morning). Collect real data daily, display it in a table and then a graph at the end of the week, and write a conclusion. This covers the full statistical investigation cycle described in the AC V9 Statistics strand.",
+      resources: [
+        { title: "Statistics — Khan Academy", url: "https://www.khanacademy.org/math/cc-fifth-grade-math/cc-5th-data-topic/cc-5th-line-plots/v/reading-line-plots-with-fractions", description: "Video lessons on collecting, displaying, and interpreting data in various graph formats." },
+        { title: "Data — Maths is Fun", url: "https://www.mathsisfun.com/data/", description: "A collection of explanations and interactive tools for collecting, displaying, and analysing data." },
+        { title: "Statistical Investigations — NRICH", url: "https://nrich.maths.org/4529", description: "NRICH tasks that guide children through a full statistical investigation cycle." },
+      ],
     },
     activities: [
       // ─── Easy (activities 1–25) ───
@@ -5862,7 +6005,7 @@ export const year5MathsWorksheets: WorksheetItem[] = [
       { type: "circle-correct", title: "Data Types (D)", instruction: "Circle the correct answer.", questions: [{ prompt: "A pie chart is best for showing...", options: ["changes over time", "parts of a whole", "individual data points"] }, { prompt: "A bar graph needs...", options: ["connected lines", "labelled bars", "dots only"] }, { prompt: "A tally chart helps you...", options: ["collect data quickly", "show trends", "compare percentages"] }, { prompt: "Numerical data can be displayed on a...", options: ["pie chart only", "number line or line graph", "tally chart only"] }] },
       { type: "tally-chart", title: "Read the Tally Chart (C)", instruction: "Count the tallies for transport to school.", categories: [{ label: "Walk", icon: "house", count: 8 }, { label: "Car", icon: "car", count: 11 }, { label: "Bus", icon: "car", count: 6 }, { label: "Bicycle", icon: "ball", count: 4 }] },
       { type: "picture-graph", title: "Read the Picture Graph (B)", instruction: "Use the picture graph to answer questions.", rows: [{ label: "Dogs", icon: "dog", count: 9 }, { label: "Cats", icon: "cat", count: 7 }, { label: "Fish", icon: "fish", count: 3 }, { label: "Rabbits", icon: "teddy", count: 4 }, { label: "None", icon: "circle", count: 5 }], questions: ["How many students have dogs?", "What is the most popular pet?", "How many students were surveyed?", "How many more have dogs than rabbits?"] },
-      { type: "matching", title: "Match Survey Questions to Data Types", instruction: "Draw a line.", left: ["How many siblings do you have?", "What is your favourite sport?", "How tall are you?", "What month is your birthday?"], right: ["Categorical", "Numerical", "Numerical", "Categorical"] },
+      { type: "sorting", title: "Sort Survey Questions by Data Type", instruction: "Sort each question into the correct column.", columns: ["Categorical", "Numerical"], items: [{ label: "How many siblings do you have?" }, { label: "What is your favourite sport?" }, { label: "How tall are you?" }, { label: "What month is your birthday?" }] },
       { type: "open-response", title: "Read Data from a Table (B)", instruction: "Table shows students' favourite colours: Red 15, Blue 22, Green 10, Purple 8, Other 5.", prompts: [{ text: "Most popular colour: ___", type: "lines", lines: 1 }, { text: "Least popular colour: ___", type: "lines", lines: 1 }, { text: "Total students surveyed: ___", type: "lines", lines: 1 }, { text: "How many more chose blue than green? ___", type: "lines", lines: 1 }, { text: "What fraction chose red? ___", type: "lines", lines: 1 }] },
       // ─── Additional Medium activities ───
       { type: "open-response", title: "Interpret a Bar Graph (B)", instruction: "A bar graph shows goals scored per term: Term 1: 8, Term 2: 12, Term 3: 6, Term 4: 14.", prompts: [{ text: "Best term for goals: ___", type: "lines", lines: 1 }, { text: "Worst term for goals: ___", type: "lines", lines: 1 }, { text: "Total goals for the year: ___", type: "lines", lines: 1 }, { text: "Average goals per term: ___", type: "lines", lines: 1 }] },
@@ -5939,6 +6082,7 @@ export const year5MathsWorksheets: WorksheetItem[] = [
       { type: "open-response", title: "Analysing Population Data", instruction: "Large datasets require careful analysis.", prompts: [{ text: "Australia's population is about 26 million. About 20% are under 15 years old. How many is that? ___", type: "lines", lines: 1 }, { text: "If birth rates increase by 5% next year and the under-15 group grows proportionally, new count: ___", type: "lines", lines: 1 }, { text: "Why is census data (counting everyone) more reliable than sample data?", type: "lines", lines: 2 }] },
       { type: "home-activity", title: "Home Activity: Be a Statistician", instruction: "Conduct your own investigation!", suggestions: ["Survey your family: what is their favourite season? Make a bar graph.", "Measure the temperature outside at the same time each day for a week. Create a line graph.", "Count the colours of cars passing for 15 minutes. Make a tally chart and bar graph.", "Use a spreadsheet to enter your data and create a chart automatically."] },
     ],
+    nextSteps: ["mode-distributions"],
   },
 
   // ── WS 19: Mode and Distributions ──────────────────────────────────
@@ -5969,6 +6113,13 @@ export const year5MathsWorksheets: WorksheetItem[] = [
         script: "Our button data had a mode of red. Does knowing that tell you anything useful about the bag? What if I told you there was one red button and one of every other colour — would there still be a mode? What does the mode NOT tell you?",
         action: "Guide a discussion about the limits of mode. It shows the most common value but not spread or average. This critical thinking builds statistical reasoning beyond just calculation.",
       },
+      parentTip: "Children often believe that the mode is a kind of winner — the best or most important value in a data set. It is worth spending a moment on when the mode is genuinely informative (for example, the most popular shoe size stocked by a shop) and when it tells you very little (for example, if all values occur exactly once, there is no mode at all). This critical view of statistics is part of what Australian Curriculum V9 calls statistical literacy.",
+      extension: "Give your child three small data sets: one where the mode is clearly useful (for example, scores from a test), one where there is no mode (all different values), and one where there are two modes (bimodal data). Ask them to decide for each set whether they would report the mode to a friend and why. Writing a one-sentence justification for each forces deeper thinking about what the mode actually means.",
+      resources: [
+        { title: "Mode — Maths is Fun", url: "https://www.mathsisfun.com/mode.html", description: "Explanation of the mode with examples including data sets with no mode or multiple modes." },
+        { title: "Mean Median Mode — Khan Academy", url: "https://www.khanacademy.org/math/cc-fifth-grade-math/cc-5th-data-topic/cc-5th-data-displays/v/finding-the-mean", description: "Video lessons on mean, median, and mode with comparisons of when each measure is most useful." },
+        { title: "Averages — NRICH", url: "https://nrich.maths.org/1264", description: "Problem-solving tasks that require children to think critically about which average best represents a data set." },
+      ],
     },
     activities: [
       // ─── Easy (activities 1–25) ───
@@ -6078,6 +6229,7 @@ export const year5MathsWorksheets: WorksheetItem[] = [
       { type: "sorting", title: "Sort Data Sets by Their Mean (Low to High)", instruction: "Estimate and sort.", columns: ["Lowest mean", "Highest mean"], items: [{ label: "1,2,3,4,5 (mean=3)" }, { label: "8,8,8,8,8 (mean=8)" }, { label: "2,4,6,8,10 (mean=6)" }, { label: "10,10,10,10,10 (mean=10)" }] },
       { type: "home-activity", title: "Home Activity: Data at Home", instruction: "Collect data and find the mode!", suggestions: ["Roll a dice 30 times. Record each result. What is the mode?", "Ask 10 people their favourite colour. What is the mode?", "Measure the length of 10 leaves from the garden. What is the mode?", "Count the number of letters in each word on a page. What is the most common word length?"] },
     ],
+    nextSteps: ["line-graphs"],
   },
 
   // ── WS 20: Line Graphs ──────────────────────────────────
@@ -6109,6 +6261,13 @@ export const year5MathsWorksheets: WorksheetItem[] = [
         script: "Looking at our graph, tell me the story it shows. Describe what happened to the temperature across the week. Use words like 'increased', 'decreased', 'peaked', 'was steady'. Pretend you are a weather reporter.",
         action: "Child gives a verbal or short written description of the trends. Prompt with: 'What was the overall pattern?' and 'Were there any sudden changes?' to develop analytical language.",
       },
+      parentTip: "Many children can read individual data points from a line graph but struggle to describe the trend — the overall story across time. A useful prompt is: describe the graph the way you would describe a journey — where does it start, where does it go up, where does it level off, where does it drop? If your child tends to list every data point rather than summarising, model a brief trend description yourself and then ask them to try one.",
+      extension: "Ask your child to collect some real time-series data over a few days — for example, the daily high temperature from the Bureau of Meteorology website, or how many steps they walk each day from a phone or watch. Plot the data on a line graph, then write a two-sentence interpretation describing the overall trend. This is authentic statistical work that mirrors what scientists and journalists do every day.",
+      resources: [
+        { title: "Line Graphs — Maths is Fun", url: "https://www.mathsisfun.com/data/line-graphs.html", description: "How to draw and read line graphs with examples showing trends over time." },
+        { title: "Reading Line Plots — Khan Academy", url: "https://www.khanacademy.org/math/cc-fifth-grade-math/cc-5th-data-topic/cc-5th-line-plots/v/reading-line-plots-with-fractions", description: "Video lessons on reading and interpreting line plots and graphs with real data." },
+        { title: "Data and Graphs — NRICH", url: "https://nrich.maths.org/5712", description: "NRICH tasks that develop the skill of interpreting trends and drawing conclusions from graphs." },
+      ],
     },
     activities: [
       // ─── Easy (activities 1–25) ───
@@ -6218,6 +6377,7 @@ export const year5MathsWorksheets: WorksheetItem[] = [
       { type: "open-response", title: "Analysing Real Data (B)", instruction: "Interpret real data shown in a line graph description.", prompts: [{ text: "Mobile phone usage in Australia: 2010=22 million, 2015=25 million, 2020=28 million. Average increase per 5 years: ___", type: "lines", lines: 1 }, { text: "Predict for 2025: ___. Is the trend linear? What does linear mean?", type: "lines", lines: 2 }, { text: "What factors might cause a sudden sharp change in the trend?", type: "lines", lines: 2 }] },
       { type: "home-activity", title: "Home Activity: Make a Line Graph", instruction: "Create your own line graph!", suggestions: ["Record the temperature outside each day for a week. Draw a line graph.", "Track how many pages you read each day. Graph your reading progress.", "Measure a plant's growth each week. Create a line graph.", "Compare two line graphs from the news. What differences do you notice?"] },
     ],
+    nextSteps: ["list-outcomes"],
   },
 
   // ── WS 21: List Outcomes ──────────────────────────────────
@@ -6250,6 +6410,13 @@ export const year5MathsWorksheets: WorksheetItem[] = [
         script: "If a spinner has 4 sections and a bag has 2 coloured balls, how many possible outcomes are there in total if I spin AND pick? How did you work that out? Is there a shortcut?",
         action: "Guide child to see that multiplying the number of outcomes for each event gives the total: 4 times 2 equals 8. This is the multiplication principle for counting outcomes.",
       },
+      parentTip: "Listing outcomes systematically is a skill children often undervalue because it feels slow — they want to leap to an answer. Encourage your child to use an organised list or a two-way table to make sure no outcome is missed or counted twice. The multiplication principle (if event A has m outcomes and event B has n outcomes, the combination has m times n outcomes) is a lovely shortcut to introduce once they have built confidence by listing.",
+      extension: "Have your child design a simple two-stage experiment: for example, roll a die and flip a coin. Draw a complete tree diagram of all possible outcomes (there should be 12) and list them systematically. Then ask: how many outcomes give an even number AND heads? What fraction of all outcomes is that? This introduces the idea of compound events and connects to the AC V9 Probability strand.",
+      resources: [
+        { title: "Probability — Khan Academy", url: "https://www.khanacademy.org/math/cc-fifth-grade-math/cc-5th-probability-topic/cc-5th-basic-probability/v/basic-probability", description: "Introduction to listing outcomes and calculating basic probabilities as fractions." },
+        { title: "Probability — Maths is Fun", url: "https://www.mathsisfun.com/probability.html", description: "Friendly explanation of probability with tree diagrams and sample space examples." },
+        { title: "Listing Outcomes — NRICH", url: "https://nrich.maths.org/6304", description: "NRICH tasks that develop systematic listing of outcomes for combined events." },
+      ],
     },
     activities: [
       // ─── Easy (activities 1–25) ───
@@ -6359,6 +6526,7 @@ export const year5MathsWorksheets: WorksheetItem[] = [
       { type: "open-response", title: "Sample Space: Card Drawing", instruction: "A deck has 4 suits (Hearts, Diamonds, Clubs, Spades) and cards 1–5.", prompts: [{ text: "Total cards: ___. List all Heart cards: ___", type: "lines", lines: 1 }, { text: "P(drawing a red 3) = ___. P(drawing any 4) = ___. P(drawing a Club or Spade 1) = ___", type: "lines", lines: 1 }, { text: "P(drawing a face card) if face cards are J, Q, K = ___. (There are none in this mini-deck)", type: "lines", lines: 1 }] },
       { type: "home-activity", title: "Home Activity: Chance Experiments", instruction: "Try these at home!", suggestions: ["Flip a coin 20 times. Record outcomes. How many heads and tails?", "Put 5 different coloured socks in a bag. List the outcomes before picking one.", "Make a spinner with 4 sections. Predict outcomes, then spin 20 times.", "Choose 3 toppings for a sandwich from 5 options. How many combinations?"] },
     ],
+    nextSteps: ["estimate-likelihoods"],
   },
 
   // ── WS 22: Estimate Likelihoods ──────────────────────────────────
@@ -6390,6 +6558,13 @@ export const year5MathsWorksheets: WorksheetItem[] = [
         script: "Which is more likely: rolling a 3 on a die, or picking a red from the bag? How did you decide? Can you express each as a fraction and compare them?",
         action: "Child writes 1/6 for rolling a 3 and 1/2 for picking red. Compare: 1/2 is bigger than 1/6. Picking red is more likely. Confirm by placing both on the number line.",
       },
+      parentTip: "Children often express likelihood using vague language (probably, maybe, unlikely) without connecting it to the mathematical fraction. Gently push for precision: instead of 'it is quite likely', ask 'can you say that as a fraction?' A probability of 1/2 means equally likely to happen or not happen — this concept of even chance is often quite surprising when first encountered. The number line from 0 (impossible) to 1 (certain) is a powerful visual anchor for the whole lesson.",
+      extension: "Set up a simple spinner using a pencil, paper clip, and a circle divided into sections. Before spinning, your child predicts the probability of landing on each colour as a fraction. After 20 spins, they compare the experimental results (as fractions) with the theoretical predictions. Discuss why the two sets of fractions are close but not identical — this is the essence of the difference between theoretical and experimental probability.",
+      resources: [
+        { title: "Probability — Maths is Fun", url: "https://www.mathsisfun.com/probability.html", description: "Clear explanation of probability as a fraction between 0 and 1, with the probability number line." },
+        { title: "Chance and Probability — Khan Academy", url: "https://www.khanacademy.org/math/cc-fifth-grade-math/cc-5th-probability-topic/cc-5th-basic-probability/v/basic-probability", description: "Video introduction to expressing likelihood as a fraction with simple experiments." },
+        { title: "Probability Problems — NRICH", url: "https://nrich.maths.org/10083", description: "NRICH problems that require comparing probabilities as fractions and placing events on a probability scale." },
+      ],
     },
     activities: [
       // ─── Easy (activities 1–25) ───
@@ -6439,7 +6614,7 @@ export const year5MathsWorksheets: WorksheetItem[] = [
       { type: "circle-correct", title: "Probability True or False", instruction: "Circle TRUE or FALSE.", questions: [{ prompt: "If P(event) = 0, the event is impossible.", options: ["TRUE", "FALSE"] }, { prompt: "P(event) + P(not event) = 1.", options: ["TRUE", "FALSE"] }, { prompt: "If P(rain) = 0.7, rain is more likely than no rain.", options: ["TRUE", "FALSE"] }, { prompt: "A probability can be greater than 1.", options: ["TRUE", "FALSE"] }] },
       { type: "open-response", title: "Complementary Events", instruction: "The probability of an event NOT happening = 1 minus P(event).", prompts: [{ text: "P(rain) = 3/5. P(no rain) = ___", type: "lines", lines: 1 }, { text: "P(rolling a 6) = 1/6. P(not rolling a 6) = ___", type: "lines", lines: 1 }, { text: "P(picking red) = 7/10. P(not picking red) = ___", type: "lines", lines: 1 }, { text: "P(winning) = 0.25. P(losing) = ___", type: "lines", lines: 1 }] },
       // ─── Extra activities to reach ~71 total ───
-      { type: "matching", title: "Match Probability to Events (B)", instruction: "Draw a line.", left: ["Rolling a prime on a die (3 primes)", "Picking a heart from a deck (13/52)", "Picking a red ball from 2 red + 8 blue", "Flipping tails on a fair coin"], right: ["1/5", "1/2", "1/4", "1/2"] },
+      { type: "matching", title: "Match Probability to Events (B)", instruction: "Draw a line.", left: ["Rolling a 3 on a die", "Picking a heart from a deck (13/52)", "Picking a red ball from 2 red + 8 blue", "Flipping tails on a fair coin"], right: ["1/5", "1/2", "1/4", "1/6"] },
       { type: "number-bonds", title: "Probability Bonds to 1", instruction: "P(event) + P(not event) = 1. Find the missing probability.", bonds: [{ total: 1, partA: 1, partB: null }, { total: 1, partA: 1, partB: null }, { total: 1, partA: 1, partB: null }, { total: 1, partA: 1, partB: null }] },
       { type: "circle-correct", title: "Likelihood Language (E)", instruction: "Circle the best description.", questions: [{ prompt: "Rolling an odd number on a die", options: ["unlikely", "even chance", "likely"] }, { prompt: "Drawing from a bag with 1 red and 99 blue — getting red", options: ["impossible", "unlikely", "even chance"] }, { prompt: "Picking any number from 1-10 and getting less than 10", options: ["unlikely", "likely", "certain"] }, { prompt: "A randomly chosen year was a leap year", options: ["unlikely", "even chance", "likely"] }] },
       { type: "sorting", title: "Sort: Probability as Decimal", instruction: "Sort from smallest to largest probability.", columns: ["Less than 0.5", "Equal to 0.5", "Greater than 0.5"], items: [{ label: "0.1" }, { label: "0.75" }, { label: "0.5" }, { label: "0.25" }, { label: "0.9" }, { label: "0.33" }, { label: "0.6" }, { label: "0.5" }] },
@@ -6499,6 +6674,7 @@ export const year5MathsWorksheets: WorksheetItem[] = [
       { type: "open-response", title: "Probability in Sport and Games (B)", instruction: "Calculate probability in these contexts.", prompts: [{ text: "A basketball team wins 7 out of every 10 games. P(winning next game) = ___", type: "lines", lines: 1 }, { text: "A tennis player has a 65% first-serve success rate. P(first serve in) = ___. P(fault) = ___", type: "lines", lines: 1 }, { text: "If a player draws a random card from 10 cards (numbered 1–10) to decide who goes first, is this fair? ___", type: "lines", lines: 1 }] },
       { type: "home-activity", title: "Home Activity: Likelihood in Life", instruction: "Explore likelihood!", suggestions: ["Write 5 events and order them from impossible to certain.", "Make a spinner where one colour takes more space. Predict, then test it.", "Put different coloured objects in a bag. Predict which is most likely, then try 20 times.", "Look at the weather forecast. Estimate the likelihood of rain using probability words."] },
     ],
+    nextSteps: ["repeated-chance-experiments"],
   },
 
   // ── WS 23: Repeated Chance Experiments ──────────────────────────────────
@@ -6530,6 +6706,13 @@ export const year5MathsWorksheets: WorksheetItem[] = [
         script: "If we rolled the die 600 times instead of 30, would the results be closer to or further from 100 for each number? And does getting three 6s in a row mean the next roll is less likely to be a 6? How can you be sure?",
         action: "Child explains that more trials bring results closer to the expected probability, and that each roll is independent — past results do not change future probabilities. These are foundational probability concepts.",
       },
+      parentTip: "One of the most persistent misconceptions in probability is the gambler's fallacy — the belief that if a coin has landed on heads five times in a row, tails is due next. Each toss is completely independent of what came before. This is worth making explicit: the coin has no memory. If your child intuitively feels that tails should come next, it is a sign of normal human reasoning, not a mathematical error — and it is worth discussing gently.",
+      extension: "Extend the experiment by rolling the die 60 times (or 100 times if your child is enthusiastic) and recording results in a tally chart. Calculate the experimental probability of each number as a fraction and compare to the theoretical probability of 1/6. Draw a simple bar graph of results and discuss: does more data make the experimental results closer to the theoretical ones? This connects to the Australian Curriculum's emphasis on the effect of sample size on experimental probability.",
+      resources: [
+        { title: "Experimental Probability — Khan Academy", url: "https://www.khanacademy.org/math/cc-fifth-grade-math/cc-5th-probability-topic/cc-5th-making-predictions/v/simple-probability", description: "Video on experimental versus theoretical probability with coin and die examples." },
+        { title: "Experimental Probability — Maths is Fun", url: "https://www.mathsisfun.com/data/probability.html", description: "Explanation of how experimental probability is calculated and how it relates to theoretical probability." },
+        { title: "Probability Experiments — NRICH", url: "https://nrich.maths.org/1301", description: "NRICH tasks running repeated experiments and comparing results to theoretical predictions." },
+      ],
     },
     activities: [
       // ─── Easy (activities 1–25) ───
@@ -6540,7 +6723,7 @@ export const year5MathsWorksheets: WorksheetItem[] = [
       { type: "circle-correct", title: "Understanding Repeated Experiments (B)", instruction: "Circle the correct answer.", questions: [{ prompt: "If you roll a die 6 times, will you get each number exactly once?", options: ["Definitely", "Probably not", "Impossible"] }, { prompt: "With more trials, results become...", options: ["more random", "more predictable", "exactly predicted"] }, { prompt: "Expected heads in 200 flips is about...", options: ["50", "100", "200"] }, { prompt: "If you roll a 6 five times in a row, the next roll is...", options: ["definitely not 6", "still 1/6 chance of 6", "definitely 6"] }] },
       { type: "open-response", title: "Expected vs Actual (A)", instruction: "A coin was flipped 50 times: 28 heads, 22 tails.", prompts: [{ text: "Expected heads: ___. Actual heads: ___", type: "lines", lines: 1 }, { text: "Difference from expected: ___", type: "lines", lines: 1 }, { text: "Is this result reasonable? Why? ___", type: "lines", lines: 2 }] },
       { type: "open-response", title: "Expected vs Actual (B)", instruction: "A die was rolled 60 times: 1→8, 2→12, 3→11, 4→9, 5→10, 6→10.", prompts: [{ text: "Expected count for each number: ___", type: "lines", lines: 1 }, { text: "Which number appeared most? Is this expected? ___", type: "lines", lines: 1 }, { text: "Which number appeared least? Is this expected? ___", type: "lines", lines: 1 }] },
-      { type: "matching", title: "Match Experiments to Expected Results", instruction: "Draw a line from each experiment to its expected result.", left: ["100 coin flips", "60 die rolls (for any number)", "40 spins on a 4-section spinner (for any colour)", "20 draws from 5 red + 5 blue (for red)"], right: ["10 each", "50 heads", "10", "10"] },
+      { type: "matching", title: "Match Experiments to Expected Results", instruction: "Draw a line from each experiment to its expected result.", left: ["100 coin flips", "60 die rolls (for any number)", "30 spins on a 6-section spinner (for any colour)", "20 draws from 4 red + 16 blue (for red)"], right: ["10 each", "50 heads", "4", "5"] },
       { type: "number-bonds", title: "Expected Outcomes", instruction: "Expected count = total trials ÷ number of outcomes.", bonds: [{ total: 60, partA: 6, partB: null }, { total: 100, partA: 2, partB: null }, { total: 40, partA: 4, partB: null }, { total: 36, partA: 6, partB: null }] },
       // ─── Medium (activities 10–45) ───
       { type: "open-response", title: "Plan a Chance Experiment (A)", instruction: "Plan an experiment.", prompts: [{ text: "What will you test? ___", type: "lines", lines: 1 }, { text: "How many trials? ___", type: "lines", lines: 1 }, { text: "Possible outcomes: ___", type: "lines", lines: 1 }, { text: "Prediction: ___", type: "lines", lines: 2 }] },

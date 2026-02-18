@@ -19,7 +19,7 @@ export const year1MathsWorksheets: WorksheetItem[] = [
       ],
       intro: {
         title: "The Big Count",
-        script: "Let\'s start counting together — ready? One, two, three... keep going with me! Don\'t stop at ten — we\'re going much higher today. See how far we can get! When we reach the twenties, the pattern just keeps repeating. Can you hear it? Twenty-ONE, twenty-TWO... it\'s the same words over and over.",
+        script: "I need your help with something. I am going to put objects in these boxes but I keep losing count around the big numbers. Can you count along with me out loud so I do not lose my place? Here we go...",
         action: "Count together out loud from 1, pointing to fingers or tapping the table for each number. Slow down around tricky spots — the teens (thirteen, fourteen) and the transition into the twenties. Let your child lead once they find the rhythm.",
       },
       mainActivity: {
@@ -30,8 +30,15 @@ export const year1MathsWorksheets: WorksheetItem[] = [
       wrapUp: {
         title: "Tell Me the Number",
         script: "Can you show me what the number 47 looks like? What about 103? And can you tell me which is bigger — 89 or 98? How do you know? Tell me in your own words.",
-        action: "Ask your child to write three numbers you call out, then compare two pairs and explain which is larger. Praise any correct reasoning about tens being worth more than ones.",
+        action: "After the child writes a few numbers, swap roles: child calls out a number and you write it. Then check each other. Ask: which numbers were hardest? Why do you think those ones are tricky?",
       },
+      parentTip: "Numbers beyond 20 can feel overwhelming for children — and parents! Focus on the pattern: after 'twenty' comes twenty-one, twenty-two, just like after 'one' comes two, three. The 'decade words' (thirty, forty, fifty...) are the real hurdles — make a poster of them on the wall for reference.",
+      extension: "Play 'Number Line Leap'. Tape a number line from 0 to 120 along a hallway using paper squares. Call out a number and challenge your child to hop to it. Ask 'What number is one more? Ten more?' as they land on each square.",
+      resources: [
+        { title: "Khan Academy – Counting to 120", url: "https://www.khanacademy.org/math/cc-1st-grade-math/cc-1st-place-value", description: "Year 1 place value and counting activities up to 120." },
+        { title: "Maths is Fun – Counting", url: "https://www.mathsisfun.com/numbers/counting.html", description: "Visual and interactive counting practice up to large numbers." },
+        { title: "NRICH – Number and Place Value", url: "https://nrich.maths.org/early-years", description: "Investigative number activities for early primary learners." },
+      ],
     },
     activities: [
       // ─── Easy: Numbers 10–50 ───
@@ -638,6 +645,7 @@ export const year1MathsWorksheets: WorksheetItem[] = [
         ],
       },
     ],
+    nextSteps: ["tens-and-ones", "skip-counting"],
   },
 
   // ── WS 2: Tens and Ones ─────────────────────────────────────
@@ -670,6 +678,13 @@ export const year1MathsWorksheets: WorksheetItem[] = [
         script: "Now it\'s your turn to quiz me! Make a number with the sticks and I\'ll try to guess what it is. Then swap — you look at my sticks and tell me the number. How many tens? How many ones? What\'s the whole number?",
         action: "Take turns building a number for the other person to read. Encourage your child to say the full sentence: \'Three tens and five ones makes thirty-five.\'",
       },
+      parentTip: "Place value is one of the most important concepts in primary maths — if children truly understand tens and ones, all later arithmetic becomes logical. Use physical objects (bundles of 10 icy-pole sticks, groups of 10 coins) far more than abstract worksheets at this stage.",
+      extension: "Build numbers with bundled straws. Take 10 straws, rubber-band them together as 'one ten'. Make a few bundles and some loose straws. Your child shows numbers by picking the right bundles and singles — for example, 34 = 3 bundles and 4 loose straws.",
+      resources: [
+        { title: "Khan Academy – Tens and Ones", url: "https://www.khanacademy.org/math/cc-1st-grade-math/cc-1st-place-value", description: "Interactive exercises on understanding place value with tens and ones." },
+        { title: "Maths is Fun – Place Value", url: "https://www.mathsisfun.com/place-value.html", description: "Clear visual explanation of ones, tens and hundreds place value." },
+        { title: "NRICH – Place Value Activities", url: "https://nrich.maths.org/early-years", description: "Hands-on place value games and investigations for Year 1." },
+      ],
     },
     activities: [
       // ─── Easy: Tens and Ones to 30 ───
@@ -1095,6 +1110,7 @@ export const year1MathsWorksheets: WorksheetItem[] = [
         ],
       },
     ],
+    nextSteps: ["skip-counting", "addition-subtraction-to-20"],
   },
 
   // ── WS 3: Skip Counting ─────────────────────────────────────
@@ -1121,13 +1137,20 @@ export const year1MathsWorksheets: WorksheetItem[] = [
       mainActivity: {
         title: "Three Counting Challenges",
         script: "Challenge one: count my coins in twos — grab two at a time. Challenge two: count to 50 in fives — use your fingers to feel when you\'ve counted five. Challenge three: let\'s count in tens as fast as we can. Ten, twenty, thirty... go!",
-        action: "For the 2s challenge, put out 20 coins for your child to group into pairs and count. For 5s, clap five times and say the next multiple. For 10s, hold up ten fingers, then fold and hold up again. Write each sequence on paper together.",
+        action: "For the 2s challenge, put out 20 coins for your child to group into pairs and count. For 5s, clap five times slowly — one, two, three, four, five — then on that fifth clap say the number you have reached: five. Clap five more — on the tenth clap say ten. Keep going like that. For 10s, hold up ten fingers, then fold and hold up again. Write each sequence on paper together.",
       },
       wrapUp: {
         title: "Fill the Gap",
         script: "I\'m going to write a counting sequence with a gap, and you fill in the missing number. Ready? 10, 20, ___, 40. What\'s missing? What about 2, 4, ___, 8? Good — now you write one for me with a gap, and I\'ll try to figure it out.",
         action: "Write 3–4 incomplete sequences for your child to complete, one from each skip-count type. Then swap so they write a sequence for you.",
       },
+      parentTip: "Skip counting is best learned through movement and song before written work. Count by 2s while jumping, by 5s while clapping, by 10s while taking big steps. Once the rhythm is in the body, the written pattern makes much more sense.",
+      extension: "Play 'Skip Count Shopping'. Pretend your toy figures each need 2 biscuits. Line up 5 figures and count out the biscuits by 2s: 2, 4, 6, 8, 10. Then try groups of 5 or 10. Keep a running score on paper to see the skip-count sequence build.",
+      resources: [
+        { title: "Khan Academy – Skip Counting", url: "https://www.khanacademy.org/math/cc-1st-grade-math/cc-1st-place-value", description: "Year 1 skip counting exercises by 2s, 5s and 10s." },
+        { title: "Maths is Fun – Skip Counting", url: "https://www.mathsisfun.com/numbers/skip-counting.html", description: "Visual introduction to skip counting with number patterns." },
+        { title: "NRICH – Counting in Steps", url: "https://nrich.maths.org/early-years", description: "Investigative activities exploring counting patterns and skip counting." },
+      ],
     },
     activities: [
       // ─── Easy: Count by 2s (to 20) ───
@@ -1869,6 +1892,7 @@ export const year1MathsWorksheets: WorksheetItem[] = [
         ],
       },
     ],
+    nextSteps: ["addition-subtraction-to-20"],
   },
 
   // ── WS 4: Addition & Subtraction to 20 ─────────────────────
@@ -1901,6 +1925,13 @@ export const year1MathsWorksheets: WorksheetItem[] = [
         script: "Let me tell you a story and you solve it. I had 9 apples. I ate 4. How many are left? Now you make up a story for me using adding or taking away, and I\'ll try to solve it. Use your blocks if it helps!",
         action: "Tell 2 addition and 2 subtraction stories in everyday contexts. Encourage your child to make up one of their own. Ask them to explain how they got the answer.",
       },
+      parentTip: "At Year 1, children are moving from counting-all (counting every object from 1) to counting-on (starting from the larger number). If your child always starts from 1, model counting on: 'I already have 8 — I'll just count on 3 more: 9, 10, 11.' This is a big conceptual step; be patient.",
+      extension: "Make a 'story maths' game. Tell a simple number story: 'There were 7 birds on the fence. 3 flew away. How many are left?' Your child acts it out with toy animals or drawings. Then let them make up their own story for you to solve.",
+      resources: [
+        { title: "Khan Academy – Addition and Subtraction to 20", url: "https://www.khanacademy.org/math/cc-1st-grade-math/cc-1st-add-subtract", description: "Year 1 addition and subtraction strategies and exercises up to 20." },
+        { title: "Maths is Fun – Subtraction", url: "https://www.mathsisfun.com/numbers/subtraction.html", description: "Visual and interactive subtraction explanations for young learners." },
+        { title: "NRICH – Addition and Subtraction", url: "https://nrich.maths.org/early-years", description: "Problem-solving activities building addition and subtraction fluency." },
+      ],
     },
     activities: [
       // ─── Easy: Addition to 10 ───────────────────────────────────
@@ -2876,6 +2907,7 @@ export const year1MathsWorksheets: WorksheetItem[] = [
         ],
       },
     ],
+    nextSteps: ["equal-sharing-grouping"],
   },
 
   // ── WS 5: Equal Sharing & Grouping ──────────────────────────
@@ -2908,6 +2940,13 @@ export const year1MathsWorksheets: WorksheetItem[] = [
         script: "Can you tell me in words what we just did? Use a story — like \'There were 12 biscuits shared between 3 children...\' How many did each child get? Can you think of another fair share story from real life?",
         action: "Ask your child to narrate one sharing and one grouping scenario in words. Prompt with: \'How did you know it was fair?\' and \'What would happen if we added one more item?\'",
       },
+      parentTip: "Children often struggle to distinguish sharing (dealing out one-by-one) from grouping (making equal groups). Act out both separately with real objects: share 12 crackers onto 3 plates (sharing), then put 12 blocks into piles of 4 (grouping). Use the words 'each' and 'groups of' to reinforce the difference.",
+      extension: "'Equal Teams' game: collect 20 small objects (buttons, pasta, blocks). Challenge your child to sort them into equal groups of 2, then 4, then 5. Each time ask: 'How many groups did we get?' Record the results in a simple table.",
+      resources: [
+        { title: "Khan Academy – Division Concepts", url: "https://www.khanacademy.org/math/cc-1st-grade-math/cc-1st-add-subtract", description: "Early division concepts through equal sharing and grouping for Year 1." },
+        { title: "Maths is Fun – Division", url: "https://www.mathsisfun.com/numbers/division.html", description: "Introduction to division as sharing and grouping with clear visuals." },
+        { title: "NRICH – Sharing and Grouping", url: "https://nrich.maths.org/early-years", description: "Investigative sharing and grouping tasks for primary learners." },
+      ],
     },
     activities: [
       // ─── Easy: Share into 2 equal groups ───
@@ -4034,6 +4073,7 @@ export const year1MathsWorksheets: WorksheetItem[] = [
         ],
       },
     ],
+    nextSteps: ["skip-counting-patterns"],
   },
 
   // ── WS 6: Skip Counting & Repeating Patterns (Algebra) ─────
@@ -4058,7 +4098,7 @@ export const year1MathsWorksheets: WorksheetItem[] = [
       },
       mainActivity: {
         title: "Build a Pattern, Find the Unit",
-        script: "Use your two types of objects to build a pattern on this strip. Make it so the same unit repeats at least four times. Now circle the part that repeats — that\'s your unit. Let\'s try making a different pattern where the unit has three parts instead of two.",
+        script: "Use your two types of objects to build a pattern on this strip. The bit that keeps repeating — we call that the unit of the pattern. Make it so the same unit repeats at least four times. Now circle the part that repeats — that\'s your unit. Let\'s try making a different pattern where the unit has three parts instead of two.",
         action: "Let your child build their own AB pattern first, then an ABB or ABC pattern. Help them circle the repeating unit with a pencil. Then introduce a skip-count pattern: lay out 2, 4, 6, 8 in coins and ask what the \'jump\' is. Connect this to the idea of a repeating +2 unit.",
       },
       wrapUp: {
@@ -4066,6 +4106,13 @@ export const year1MathsWorksheets: WorksheetItem[] = [
         script: "I\'m going to start a pattern and you figure out my rule, then keep it going. Ready? Circle, square, circle, square... what\'s my unit? What comes next? Now swap — you make one and I\'ll guess your rule.",
         action: "Alternate being the pattern-maker. Each time the other person guesses the unit, they must continue the pattern for four more steps before you check. Finish with a number pattern to connect back to skip counting.",
       },
+      parentTip: "Year 1 pattern work goes beyond 'what comes next' to understanding WHY — can your child explain the rule? Ask them to teach YOU the pattern. If they can explain it in words ('it goes red, blue, red, blue — the colours keep swapping'), they truly understand it.",
+      extension: "Create a 'Pattern Museum'. Make three different patterns using household objects (coins, pasta shapes, coloured blocks). Label each with the pattern rule written by your child (or dictated to you). Display them and invite other family members to 'visit the museum' and guess each pattern rule.",
+      resources: [
+        { title: "Khan Academy – Patterns and Sequences", url: "https://www.khanacademy.org/math/cc-1st-grade-math/cc-1st-place-value", description: "Year 1 pattern recognition and extension activities." },
+        { title: "NRICH – Pattern Investigations", url: "https://nrich.maths.org/early-years", description: "Open-ended pattern tasks encouraging mathematical thinking." },
+        { title: "Maths is Fun – Patterns", url: "https://www.mathsisfun.com/numberpatterns.html", description: "Interactive number pattern exploration and explanations." },
+      ],
     },
     activities: [
       // ─── Easy: 2-Element Repeating Patterns (AB, AB, AB) ───
@@ -5488,6 +5535,7 @@ export const year1MathsWorksheets: WorksheetItem[] = [
         ],
       },
     ],
+    nextSteps: ["compare-order-measures"],
   },
 
   // ── WS 7: Compare & Order Measures (Measurement) ────────────
@@ -5509,7 +5557,7 @@ export const year1MathsWorksheets: WorksheetItem[] = [
       intro: {
         title: "Which Is Longer?",
         script: "Hold up your pencil and this spoon. Which one do you think is longer? How can we check? We need to line them up at the SAME end — put both ends together here at the edge of the table. Now look at the other end. Which sticks out further? That one is longer!",
-        action: "Place three objects next to each other with a common baseline (one end against a book). Ask your child to order them from shortest to longest. Introduce the words: longer, shorter, longest, shortest.",
+        action: "Hold up two pencils misaligned so the shorter one looks longer. Ask: which is longer? Let your child guess. Then say: let us check properly. Align them at one end. Now what do we see? This is why we always have to line them up at the same end. Then place three objects next to each other with a common baseline. Ask your child to order them from shortest to longest. Introduce the words: longer, shorter, longest, shortest.",
       },
       mainActivity: {
         title: "Heavier and More",
@@ -5521,6 +5569,13 @@ export const year1MathsWorksheets: WorksheetItem[] = [
         script: "Let\'s grab three things from around the house and put them in order. Can you find the heaviest? The lightest? Now do it for length — line them up and order them. How do you know which comes first?",
         action: "Let your child choose 3 objects and order them by length, then by mass. Ask them to use the comparison words: \'This one is the longest, this is shorter, and this is the shortest.\'",
       },
+      parentTip: "Ordering measurements is harder than comparing two objects because children must hold multiple comparisons in mind at once. Start with just 3 objects, then work up to 5. If your child gets confused, physically line them up side-by-side — visual ordering before abstract ordering every time.",
+      extension: "Order the kitchen! Find 5 containers of different heights (jars, bottles, mugs). Ask your child to arrange them from shortest to tallest, then tallest to shortest. Photograph each arrangement. Now guess which holds the most water — test with a measuring jug to check!",
+      resources: [
+        { title: "Khan Academy – Measurement and Data", url: "https://www.khanacademy.org/math/cc-1st-grade-math/cc-1st-measurement", description: "Year 1 measurement concepts including comparing and ordering." },
+        { title: "Maths is Fun – Comparing", url: "https://www.mathsisfun.com/measure/comparing.html", description: "Visual comparison and ordering of measurements for young learners." },
+        { title: "NRICH – Measuring Activities", url: "https://nrich.maths.org/early-years", description: "Hands-on measurement and comparison investigations." },
+      ],
     },
     activities: [
       // ── EASY: Compare Length (longer/shorter) with 2 objects ─────
@@ -6851,6 +6906,7 @@ export const year1MathsWorksheets: WorksheetItem[] = [
         ],
       },
     ],
+    nextSteps: ["informal-units-length"],
   },
 
   // ── WS 8: Informal Units — Length (Measurement) ─────────────
@@ -6884,6 +6940,13 @@ export const year1MathsWorksheets: WorksheetItem[] = [
         script: "What if we used blocks instead of paperclips? Do you think the number will be the same, bigger, or smaller? Let\'s test it! Measure the same book with blocks. The number changed — but the book didn\'t! Why does the number change?",
         action: "Measure one object with two different informal units and compare the results. Guide your child to explain that bigger units give smaller numbers. This is a key insight in measurement.",
       },
+      parentTip: "Informal units are crucial because they show children WHY standard units were invented — if everyone uses different-sized feet, measurements don't agree! Let this frustration arise naturally: measure the table in your child's handspans, then yours. 'Why did we get different numbers?' is the key question.",
+      extension: "Measure the house with footsteps. Choose a start and end point (e.g., front door to kitchen). Measure it in your child's footsteps, then yours. Record both numbers. Discuss why they differ and what would happen if everyone in the world used their own feet as a unit.",
+      resources: [
+        { title: "Khan Academy – Measuring Length", url: "https://www.khanacademy.org/math/cc-1st-grade-math/cc-1st-measurement", description: "Year 1 length measurement with informal and formal units." },
+        { title: "Maths is Fun – Length", url: "https://www.mathsisfun.com/measure/length.html", description: "Introduction to measuring length with informal units and rulers." },
+        { title: "NRICH – Length and Measurement", url: "https://nrich.maths.org/early-years", description: "Investigative tasks exploring informal measurement of length." },
+      ],
     },
     activities: [
       // ── EASY: Count informal units along objects ───────────────
@@ -8320,6 +8383,7 @@ export const year1MathsWorksheets: WorksheetItem[] = [
         ],
       },
     ],
+    nextSteps: ["classify-shapes"],
   },
 
   // ── WS 9: Classify Shapes (Space) ──────────────────────────
@@ -8345,13 +8409,20 @@ export const year1MathsWorksheets: WorksheetItem[] = [
       mainActivity: {
         title: "Faces and Features",
         script: "Let\'s look at this cereal box. It has flat faces — can you trace one on paper? What shape is that face? Now feel the tin can. Are ALL its surfaces flat? No! Some are curved. A shape with all flat faces is different from one with a curved surface. Let\'s sort our objects into two groups.",
-        action: "Trace the faces of 2–3 3D objects onto paper to create 2D shapes. Sort the objects into: \'all flat faces\' and \'has a curved surface\'. Then sort 2D shapes by number of sides (3 sides, 4 sides). Count sides and corners together.",
+        action: "Pick up the cereal box from your materials before you begin this phase. Trace the faces of 2–3 3D objects onto paper to create 2D shapes. Sort the objects into: \'all flat faces\' and \'has a curved surface\'. Then sort 2D shapes by number of sides (3 sides, 4 sides). Count sides and corners together.",
       },
       wrapUp: {
         title: "Describe My Shape",
         script: "I\'m thinking of a shape. It has 4 sides and 4 corners, and all sides are the same length. What am I thinking of? Now you describe a shape for me to guess — no peeking! Give me clues about sides, corners and whether it\'s flat or curved.",
         action: "Play 3–4 rounds of guess-the-shape using descriptions only. Prompt your child to use words: sides, corners, flat, curved, straight, round. Accept all correct shape names and encourage precise language.",
       },
+      parentTip: "Year 1 children often want to name shapes only by memory (a square is always 'a square') rather than by properties. Push gently beyond the label: 'How do you know it's a rectangle? How many sides does it have? Are they straight?' This builds the geometric reasoning that will underpin all future geometry.",
+      extension: "Make a 'Shape Detective' notebook. Fold paper into a small booklet. Each page is one shape. Your child draws the shape, writes its name (or you write it), and then finds and draws a real-world example of it from around the house or garden. Aim for 5 different shapes.",
+      resources: [
+        { title: "Khan Academy – Geometry", url: "https://www.khanacademy.org/math/cc-1st-grade-math/cc-1st-geometry", description: "Year 1 geometry covering 2D and 3D shape properties and classification." },
+        { title: "Maths is Fun – Geometry", url: "https://www.mathsisfun.com/geometry/index.html", description: "Interactive geometry with clear shape definitions and visual examples." },
+        { title: "NRICH – Shape and Space", url: "https://nrich.maths.org/early-years", description: "Creative geometry tasks for early primary learners." },
+      ],
     },
     activities: [
       // ─── Easy: Identify Basic 2D Shapes (Circle, Square, Triangle) ───
@@ -9610,6 +9681,7 @@ export const year1MathsWorksheets: WorksheetItem[] = [
         ],
       },
     ],
+    nextSteps: ["directions-in-space"],
   },
 
   // ── WS 10: Directions in Space ──────────────────────────────
@@ -9640,8 +9712,15 @@ export const year1MathsWorksheets: WorksheetItem[] = [
       wrapUp: {
         title: "Map It",
         script: "Let\'s draw a simple map of our obstacle course from above — like a bird looking down. Here\'s the start, here are the objects. Can you draw arrows to show the path we took? Which direction does this arrow point?",
-        action: "Help your child draw a simple top-down sketch of the room with objects marked. Draw a starting point and ask them to add direction arrows for the route through the course. Label directions together.",
+        action: "Child draws a simple bird's-eye view map. Prompt if needed: start by drawing a rectangle to represent the floor area, then mark where the table (or main piece of furniture) is, then mark where Teddy is. Label the position word beside Teddy.",
       },
+      parentTip: "Giving and following directions is a skill many adults struggle with too — so don't worry if this lesson takes longer than expected! The key is that your child experiences both giving AND following instructions, because each perspective builds different spatial understanding.",
+      extension: "Create a 'Treasure Map' of one room in your house. Draw it from above (a bird's eye view) together. Mark where a hidden toy is. Write 3–5 direction clues using left, right, forward, back. Swap maps and follow each other's directions to find the treasure.",
+      resources: [
+        { title: "Khan Academy – Spatial Reasoning", url: "https://www.khanacademy.org/math/cc-1st-grade-math/cc-1st-geometry", description: "Year 1 geometry and spatial direction activities." },
+        { title: "Maths is Fun – Directions", url: "https://www.mathsisfun.com/geometry/direction.html", description: "Introduction to directions, turns and spatial language." },
+        { title: "NRICH – Position and Direction", url: "https://nrich.maths.org/early-years", description: "Games and tasks building directional language and spatial thinking." },
+      ],
     },
     activities: [
       // ─── Easy: Understand Forward, Backward, Left, Right ───
@@ -11026,6 +11105,7 @@ export const year1MathsWorksheets: WorksheetItem[] = [
         ],
       },
     ],
+    nextSteps: ["categorical-data-displays"],
   },
 
   // ── WS 11: Categorical Data Displays (Statistics) ───────────
@@ -11056,9 +11136,16 @@ export const year1MathsWorksheets: WorksheetItem[] = [
       },
       wrapUp: {
         title: "What Does the Data Tell Us?",
-        script: "Look at our graph. Which group has the most? Which has the least? How many more votes did the winner get than the one with fewest? What if we asked a different group of people — do you think we\'d get the same result?",
+        script: "Now let us write down what we found out. Start your sentence like this: 'We found out that ___ was most popular, with ___ votes.' Can you finish it?",
         action: "Ask your child 3–4 questions about the data: most, least, how many more, total. Encourage them to point to the graph as they answer. Finish by asking them to write one sentence that describes what they found.",
       },
+      parentTip: "The most common mistake with data displays is children drawing pictures instead of making a true graph where each item represents exactly one unit. Check that each item in their graph is the same size and counts for exactly one thing — this discipline sets up correct graph-reading for years to come.",
+      extension: "Run a week-long 'Weather Tally'. Each morning your child looks outside, decides on the weather (sunny, cloudy, rainy, windy), and adds a tally mark to a chart on the fridge. At the end of the week, transfer the tallies to a bar graph and read the results together.",
+      resources: [
+        { title: "Khan Academy – Data and Graphs", url: "https://www.khanacademy.org/math/cc-1st-grade-math/cc-1st-measurement", description: "Year 1 data collection and simple graph display activities." },
+        { title: "Maths is Fun – Data", url: "https://www.mathsisfun.com/data/index.html", description: "Introduction to collecting, tallying and displaying data in graphs." },
+        { title: "NRICH – Data Handling", url: "https://nrich.maths.org/early-years", description: "Investigative data activities for early primary learners." },
+      ],
     },
     activities: [
       // ─── Easy: Count and Tally ───

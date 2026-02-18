@@ -31,6 +31,13 @@ export const year4MathsWorksheets: WorksheetItem[] = [
         script: "Tell me: what is the difference between 0.3 and 0.03? Use the chart to help you explain. And if I write 0.57, what does the 5 mean? What does the 7 mean?",
         action: "Listen for the child to say tenths and hundredths with correct column positions. If they struggle, point to the chart and ask which column each digit is sitting in.",
       },
+      parentTip: "Confusion between 0.3 and 0.03 is extremely common at this stage — children often read 0.3 as 'zero point three' without connecting it to three tenths. A physical place value chart on the table during the lesson makes a huge difference; let your child point to the column as they say the name.",
+      extension: "Ask your child to find three prices in a supermarket catalogue and write each as a fraction. For example, $2.75 = 2 and 75 hundredths. Then challenge them to order five prices from cheapest to most expensive, justifying each step using place value language.",
+      resources: [
+        { title: "Decimals on Khan Academy (Grade 4)", url: "https://www.khanacademy.org/math/cc-fourth-grade-math/imp-decimals", description: "Video lessons and practice exercises on tenths and hundredths, with instant feedback." },
+        { title: "Decimals – Maths is Fun", url: "https://www.mathsisfun.com/decimals.html", description: "Clear visual explanations of decimal place value with interactive examples." },
+        { title: "NRICH: Decimal Time", url: "https://nrich.maths.org/6549", description: "An engaging NRICH activity connecting decimal notation to real contexts." },
+      ],
     },
     activities: [
       // ── EASY (approx 25 activities) ──
@@ -701,6 +708,7 @@ export const year4MathsWorksheets: WorksheetItem[] = [
         ],
       },
     ],
+    nextSteps: ["multiply-by-multiples-of-10", "equivalent-fractions-decimals"],
   },
 
   // ── WS 2: Multiply by Multiples of 10 ──────────────────────────────────
@@ -733,6 +741,13 @@ export const year4MathsWorksheets: WorksheetItem[] = [
         script: "Here is a tricky one: 8 times 50. Walk me through it step by step. Tell me what you do first, then what you do with the zero.",
         action: "Ask the child to talk through the steps out loud, not just give the answer. If they get it right, try 7 x 300 as a bonus. Confirm they understand zeros come from the multiplier, not just being added randomly.",
       },
+      parentTip: "Children sometimes think they are 'just adding zeros', which breaks down with decimals later. Consistently use the language 'multiply the digits, then attach the zeros' and ask your child to say it out loud each time so the reasoning becomes habit rather than a trick.",
+      extension: "Play 'Beat the Clock': write 10 multiplication-by-multiples-of-10 problems (e.g. 6 × 40, 7 × 300, 9 × 2000) and see how many your child can answer correctly in 2 minutes. Increase the difficulty each day by using larger multiples. Record times over a week to show improvement.",
+      resources: [
+        { title: "Multiply by 10, 100 and 1000 – Maths is Fun", url: "https://www.mathsisfun.com/multiplying-by-10-100-1000.html", description: "Step-by-step explanation of the place value shift when multiplying by powers of ten." },
+        { title: "Multiplication by Multiples of 10 – Khan Academy", url: "https://www.khanacademy.org/math/cc-fourth-grade-math/imp-multiplication-and-division-2/imp-multi-digit-multiplication/e/multiply-by-10s", description: "Practice exercises with hints for multiplying by multiples of ten." },
+        { title: "NRICH: Multiplication Squares", url: "https://nrich.maths.org/1027", description: "A puzzle-based activity that reinforces multiplication in engaging ways." },
+      ],
     },
     activities: [
       // ── EASY (approx 25 activities) ──
@@ -1442,6 +1457,7 @@ export const year4MathsWorksheets: WorksheetItem[] = [
         ],
       },
     ],
+    nextSteps: ["efficient-four-operations"],
   },
 
   // ── WS 3: Efficient Four Operations ──────────────────────────────────
@@ -1474,6 +1490,13 @@ export const year4MathsWorksheets: WorksheetItem[] = [
         script: "If 6 times 8 is 48, what else do you know for free? Tell me at least three related facts using those same numbers.",
         action: "Listen for: 8 x 6 = 48, 48 divided by 6 = 8, 48 divided by 8 = 6. Prompt if needed. Reinforce that knowing one fact gives you an entire fact family.",
       },
+      parentTip: "If your child knows their multiplication facts fluently, this lesson flows well. If fact recall is still slow, pause and spend a few minutes on a known fact before each strategy — confidence in the facts is the foundation for all four operations. Don't rush through; depth here saves reteaching later.",
+      extension: "Create a 'Fact Family Pyramid': write a product (e.g. 72) at the top, then find all multiplication and division fact families that use that number. Challenge your child to find a number with the most fact families — this deepens understanding of factors and multiples aligned to AC V9 Year 4 Number strand.",
+      resources: [
+        { title: "Multiplication and Division – Khan Academy Grade 4", url: "https://www.khanacademy.org/math/cc-fourth-grade-math/imp-multiplication-and-division-2", description: "Comprehensive video and exercise coverage of multiplication and division strategies." },
+        { title: "Fact Families – Maths is Fun", url: "https://www.mathsisfun.com/numbers/fact-family.html", description: "Clear explanation of fact families with examples across addition, subtraction, multiplication and division." },
+        { title: "NRICH: Cuisenaire Squares", url: "https://nrich.maths.org/6261", description: "A visual activity for exploring multiplication relationships." },
+      ],
     },
     activities: [
       // ── EASY (approx 25 activities) ──
@@ -2174,6 +2197,7 @@ export const year4MathsWorksheets: WorksheetItem[] = [
         ],
       },
     ],
+    nextSteps: ["rounding-estimation"],
   },
 
   // ── WS 4: Rounding and Estimation ──────────────────────────────────
@@ -2206,6 +2230,13 @@ export const year4MathsWorksheets: WorksheetItem[] = [
         script: "I am going to tell you a calculation and the answer someone got. You use estimation to tell me if it sounds right. 48 plus 53 — someone says the answer is 201. Does that sound right to you? How do you know?",
         action: "Pose 3 or 4 calculations with deliberate wrong answers (ones that are wildly off). Child uses estimation to flag the mistakes. This builds the habit of checking answers.",
       },
+      parentTip: "Many children round mechanically (5 goes up) without understanding why estimation is useful. Make it meaningful by using estimation as a real checking tool — before they grab a calculator or count carefully, ask 'what do you expect the answer to be roughly?' Developing this habit is more valuable than getting the rounded number exactly right.",
+      extension: "Visit a supermarket website together and choose 5 items. Estimate the total bill by rounding each price to the nearest dollar before adding. Then calculate the exact total. Discuss: was the estimate close? Was it an over-estimate or under-estimate? This connects AC V9 Year 4 money and estimation.",
+      resources: [
+        { title: "Rounding Numbers – Maths is Fun", url: "https://www.mathsisfun.com/rounding-numbers.html", description: "Interactive rounding explanations with examples to the nearest 10, 100 and beyond." },
+        { title: "Rounding – Khan Academy Grade 4", url: "https://www.khanacademy.org/math/cc-fourth-grade-math/imp-place-value-and-rounding-2/imp-rounding/e/rounding_numbers", description: "Practice exercises for rounding whole numbers with instant feedback." },
+        { title: "NRICH: Round the Four Dice", url: "https://nrich.maths.org/6849", description: "A game that develops rounding and estimation skills in a playful context." },
+      ],
     },
     activities: [
       // ── EASY (approx 25 activities) ──
@@ -2909,6 +2940,7 @@ export const year4MathsWorksheets: WorksheetItem[] = [
         ],
       },
     ],
+    nextSteps: ["odd-even-properties"],
   },
 
   // ── WS 5: Odd and Even Properties ──────────────────────────────────
@@ -2940,6 +2972,13 @@ export const year4MathsWorksheets: WorksheetItem[] = [
         script: "Tell me in your own words: how do you know if a big number like 374 is odd or even without counting? What is the trick?",
         action: "The child should say to look at the ones digit. If they are unsure, walk through 374 together — the ones digit is 4, which is even, so 374 is even. Then test 561.",
       },
+      parentTip: "The ones-digit rule is simple, but watch for children who try to check whether large numbers are odd or even by counting — that habit needs redirecting. When your child says 'let me count', gently interrupt and ask 'is there a faster way?' Reinforcing the ones-digit shortcut now saves a lot of time in later algebra work.",
+      extension: "Investigate the pattern: even × even = ?, odd × odd = ?, even × odd = ?. Use small numbers to test each combination and write a general rule. Then try: is the sum of the first 10 counting numbers odd or even? Can you predict without adding? This links to AC V9 Year 4 Number — properties of operations.",
+      resources: [
+        { title: "Odd and Even Numbers – Maths is Fun", url: "https://www.mathsisfun.com/numbers/even-odd.html", description: "Clear explanations of odd and even properties with visual examples." },
+        { title: "NRICH: Always, Sometimes or Never?", url: "https://nrich.maths.org/8971", description: "Investigative task where children decide if statements about odd and even numbers are always, sometimes or never true." },
+        { title: "Factors, Multiples and Patterns – Khan Academy Grade 4", url: "https://www.khanacademy.org/math/cc-fourth-grade-math/imp-factors-multiples-and-patterns", description: "Exercises on factors, multiples and number properties for Grade 4." },
+      ],
     },
     activities: [
       // ── EASY (approx 25 activities) ──
@@ -3643,6 +3682,7 @@ export const year4MathsWorksheets: WorksheetItem[] = [
         ],
       },
     ],
+    nextSteps: ["equivalent-fractions-decimals"],
   },
 
   // ── WS 6: Equivalent Fractions & Decimals ──────────────────────────────────
@@ -3675,6 +3715,13 @@ export const year4MathsWorksheets: WorksheetItem[] = [
         script: "Look at this list: 2/4, 1/2, 4/8, 3/6. Tell me — are all of these equivalent? How do you know?",
         action: "Listen for the child to identify that all equal one half. Ask how they checked. Prompt: could you multiply or divide to prove it?",
       },
+      parentTip: "Equivalent fractions are a concept children often confuse with addition — they may think 1/2 + 1/2 = 2/4. Emphasise that we are scaling, not adding. If your child is unsure, use strips of paper folded into halves and quarters side by side so they can see the equal lengths with their own eyes before the abstract notation makes sense.",
+      extension: "Make an 'Equivalence Wall': on grid paper, draw rows of the same total length cut into different fractions — halves, thirds, quarters, sixths, eighths, twelfths. Label each segment. Use the wall to find all fractions equivalent to 1/2, 1/3, and 2/3. This visual model supports AC V9 Year 4 fractions and decimals.",
+      resources: [
+        { title: "Equivalent Fractions – Maths is Fun", url: "https://www.mathsisfun.com/equivalent_fractions.html", description: "Visual pie-chart models and step-by-step rules for finding equivalent fractions." },
+        { title: "Equivalent Fractions – Khan Academy Grade 4", url: "https://www.khanacademy.org/math/cc-fourth-grade-math/imp-fractions-2/imp-equivalent-fractions-and-comparing-fractions/e/equivalent_fractions", description: "Interactive exercises on equivalent fractions with visual fraction models." },
+        { title: "NRICH: Fraction Wall", url: "https://nrich.maths.org/4519", description: "An interactive fraction wall to explore and compare equivalent fractions." },
+      ],
     },
     activities: [
       // ── EASY (approx 25 activities) ──
@@ -4294,6 +4341,7 @@ export const year4MathsWorksheets: WorksheetItem[] = [
         ],
       },
     ],
+    nextSteps: ["fractions-number-line"],
   },
 
   // ── WS 7: Fractions on a Number Line ──────────────────────────────────
@@ -4326,6 +4374,13 @@ export const year4MathsWorksheets: WorksheetItem[] = [
         script: "I am going to say a fraction and you point to where it would go on the number line. Ready? One and a half. Two thirds. Three quarters. Five quarters — careful with that last one!",
         action: "Have the number line from 0 to 2 visible. Child points or marks each fraction. For 5 quarters, watch whether they recognise it is greater than 1. Ask: is it less or more than 1? How do you know?",
       },
+      parentTip: "Children often draw number lines with the fractions squished together near zero. Encourage them to mark 0 and 1 first, measure the space carefully, then place the unit fractions equally. The physical act of measuring with a ruler before drawing the marks makes the spacing accurate and meaningful.",
+      extension: "Print or draw a number line from 0 to 3. Challenge your child to place these on it: 5/4, 7/3, 11/4, 2 and 1/2, 8/3. They will need to convert some to mixed numbers first. Then ask: which fraction is closest to 2? How do you know? This extends AC V9 Year 4 fractions to mixed numbers and comparison.",
+      resources: [
+        { title: "Fractions on a Number Line – Khan Academy", url: "https://www.khanacademy.org/math/cc-fourth-grade-math/imp-fractions-2/imp-fractions-on-the-number-line/e/fractions_on_the_number_line_1", description: "Practice placing unit and non-unit fractions on a number line with visual feedback." },
+        { title: "Number Line – Maths is Fun", url: "https://www.mathsisfun.com/number-line.html", description: "Interactive number line tool for exploring fractions and their positions." },
+        { title: "NRICH: Fraction Lengths", url: "https://nrich.maths.org/6302", description: "An activity connecting fractions on number lines to measurement." },
+      ],
     },
     activities: [
       // ── EASY (approx 25 activities) ──
@@ -4946,6 +5001,7 @@ export const year4MathsWorksheets: WorksheetItem[] = [
         ],
       },
     ],
+    nextSteps: ["financial-problems-number-sentences"],
   },
 
   // ── WS 8: Financial Problems ──────────────────────────────────
@@ -4978,6 +5034,13 @@ export const year4MathsWorksheets: WorksheetItem[] = [
         script: "Four friends buy a pizza that costs $24. They each pay the same amount. Write the number sentence and solve it. Then tell me: which operation did you use and why?",
         action: "Listen for 24 divided by 4 = 6. Ask the child to explain why division is the right operation here, not addition or subtraction.",
       },
+      parentTip: "The biggest challenge here is choosing the right operation. When your child writes a number sentence, ask them to read it back as a story: 'I have $20, I spend $13.75, so I subtract' — verbalising the operation makes errors visible before any calculation begins. Resist correcting silently; ask a question instead.",
+      extension: "Plan a pretend shopping trip with a $50 budget using a real catalogue or website. Your child must write a number sentence for each item added to the cart and track the running total. They should stop before exceeding $50. This is a real-world multi-step problem aligned to AC V9 Year 4 financial maths.",
+      resources: [
+        { title: "Money and Financial Maths – Maths is Fun", url: "https://www.mathsisfun.com/money/index.html", description: "Practical explanations and problems involving counting money, change and budgeting." },
+        { title: "Multi-Step Word Problems – Khan Academy Grade 4", url: "https://www.khanacademy.org/math/cc-fourth-grade-math/imp-multiplication-and-division-2/imp-multi-step-word-problems/e/4-operations-word-problems", description: "Multi-step word problems requiring students to choose the correct operation." },
+        { title: "NRICH: Money Bags", url: "https://nrich.maths.org/753", description: "A classic money problem requiring logical reasoning and number sentences." },
+      ],
     },
     activities: [
       // ── EASY (approx 25 activities) ──
@@ -5549,6 +5612,7 @@ export const year4MathsWorksheets: WorksheetItem[] = [
         ],
       },
     ],
+    nextSteps: ["unknown-values-equations"],
   },
 
   // ── WS 9: Unknown Values in Equations ──────────────────────────────────
@@ -5581,6 +5645,13 @@ export const year4MathsWorksheets: WorksheetItem[] = [
         script: "After you find the unknown, how do you make sure your answer is right? Show me using one of the equations we just did.",
         action: "Child substitutes their answer back into the original equation and confirms both sides are equal. Make sure this checking habit is established before moving to the worksheet.",
       },
+      parentTip: "Some children find it unsettling to see a box or letter in an equation — it can feel like the problem is 'broken'. Frame the unknown as a mystery or puzzle: 'there IS an answer, we just haven't found it yet.' The checking step (substituting back) is powerful — once your child sees it work, their confidence jumps noticeably.",
+      extension: "Create 'Equation Riddle Cards': write 5 real-world riddles where the unknown is hidden (e.g. 'I had some money, spent $17, and have $28 left — how much did I start with?'). Your child writes the equation, solves it, and checks it. Then they write their own riddle for you to solve. This aligns to AC V9 Year 4 Algebra strand.",
+      resources: [
+        { title: "Unknown Values – Khan Academy Grade 4", url: "https://www.khanacademy.org/math/cc-fourth-grade-math/imp-multiplication-and-division-2/imp-unknown-factors/e/unknown-factor-problems", description: "Exercises for finding unknown values in multiplication and division equations." },
+        { title: "Algebra Introduction – Maths is Fun", url: "https://www.mathsisfun.com/algebra/introduction.html", description: "A gentle, visual introduction to the idea of using letters and symbols for unknowns." },
+        { title: "NRICH: Balance Problems", url: "https://nrich.maths.org/4725", description: "Balance scale puzzles that develop algebraic thinking and equation-solving." },
+      ],
     },
     activities: [
       // ── EASY ──
@@ -6142,6 +6213,7 @@ export const year4MathsWorksheets: WorksheetItem[] = [
         ],
       },
     ],
+    nextSteps: ["algorithms-number-patterns"],
   },
 
   // ── WS 10: Algorithms & Number Patterns ──────────────────────────────────
@@ -6174,6 +6246,13 @@ export const year4MathsWorksheets: WorksheetItem[] = [
         script: "Now it is your turn to be the machine. Choose a secret rule, give me three input-output pairs, and I will try to guess the rule. Then we switch.",
         action: "Let the child invent a rule and give you examples. Try to guess their rule, then give them one of yours. This builds their understanding that a rule must be consistent and testable.",
       },
+      parentTip: "Pattern recognition is the gateway to algebraic thinking, so this lesson is more important than it may appear. If your child is guessing the rule rather than testing it methodically, model the process aloud: 'Let me check: does the same rule work for input 3 as for input 5?' Teaching systematic checking is as important as finding the pattern.",
+      extension: "Create an 'Input-Output Machine' using a shoebox. Write input numbers on cards and post them through a slot in the box; your child passes back the output on another card. After 4 exchanges, they guess the rule. Then swap — your child runs the machine. Try multiplicative rules (×3) and two-step rules (×2+1) for extra challenge, aligned to AC V9 Year 4 Algebra.",
+      resources: [
+        { title: "Finding the Pattern Rule – Maths is Fun", url: "https://www.mathsisfun.com/algebra/sequences-finding-rule.html", description: "Explanation of finding rules in sequences with examples and interactive exercises." },
+        { title: "Math Patterns – Khan Academy Grade 4", url: "https://www.khanacademy.org/math/cc-fourth-grade-math/imp-factors-multiples-and-patterns/imp-math-patterns/e/visualizing-and-interpreting-relationships-between-patterns", description: "Exercises on identifying and extending number patterns." },
+        { title: "NRICH: Charlie's Delightful Machine", url: "https://nrich.maths.org/11005", description: "An interactive input-output machine for exploring functions and patterns." },
+      ],
     },
     activities: [
       // ── EASY ──
@@ -6720,6 +6799,7 @@ export const year4MathsWorksheets: WorksheetItem[] = [
         ],
       },
     ],
+    nextSteps: ["scaled-instruments-measure"],
   },
 
   // ── WS 11: Scaled Instruments ──────────────────────────────────
@@ -6754,6 +6834,13 @@ export const year4MathsWorksheets: WorksheetItem[] = [
         script: "If a scale goes from 200 g to 300 g and the pointer is exactly halfway between, what does it read? And if it is one quarter of the way from 300 to 400, what does it read?",
         action: "Ask the child to explain their reasoning. The key idea is that they need to find the value of one division and then count up from the lower mark. Use the real scale to confirm if possible.",
       },
+      parentTip: "Reading the exact value on a scale is surprisingly tricky — children often read the nearest labelled mark without counting divisions. Slow down and count the divisions aloud together: 'This mark says 200, the next says 250, so there are 5 divisions between them — each one is 10.' This metacognitive step is worth repeating on every new instrument.",
+      extension: "Set up a 'measurement station challenge': choose four household objects and four instruments (ruler, kitchen scales, measuring jug, thermometer). Your child measures each object, records the reading including the unit, and then converts between related units where possible (e.g. 1.2 kg = 1200 g). This extends AC V9 Year 4 Measurement — scaled instruments and unit conversion.",
+      resources: [
+        { title: "Measurement – Maths is Fun", url: "https://www.mathsisfun.com/measure/index.html", description: "Overview of measurement units and instruments with practical examples." },
+        { title: "Measurement and Data – Khan Academy Grade 4", url: "https://www.khanacademy.org/math/cc-fourth-grade-math/imp-measurement-and-data-2", description: "Video lessons and exercises on reading and converting measurement units." },
+        { title: "NRICH: Sizing Them Up", url: "https://nrich.maths.org/1152", description: "A measurement estimation and ordering activity using real objects." },
+      ],
     },
     activities: [
       // ── EASY ──
@@ -7339,6 +7426,7 @@ export const year4MathsWorksheets: WorksheetItem[] = [
         ],
       },
     ],
+    nextSteps: ["perimeter-area"],
   },
 
   // ── WS 12: Perimeter and Area ──────────────────────────────────
@@ -7372,6 +7460,13 @@ export const year4MathsWorksheets: WorksheetItem[] = [
         script: "Can you draw two different shapes that both have an area of 12 square centimetres but different perimeters? Try it and see.",
         action: "Give the child grid paper and time to explore. If they are stuck, suggest a 3 by 4 rectangle vs a 2 by 6 rectangle. Calculate the perimeters together to confirm they differ.",
       },
+      parentTip: "Perimeter and area are the two concepts children most often mix up. A reliable mnemonic is: perimeter = 'peRIMeter walks around the RIM', area = 'area is inside'. Whenever your child writes an answer, ask 'is that the inside or the outside?' before accepting it — this one question catches most errors.",
+      extension: "Challenge your child to find the optimal rectangle: using exactly 24 square centimetres of grid paper, how many different rectangles can they make? List all of them, calculate each perimeter, and find which has the smallest and which has the largest perimeter. Discuss: why does a square give the smallest perimeter for a fixed area? This connects to AC V9 Year 4 Measurement.",
+      resources: [
+        { title: "Perimeter – Maths is Fun", url: "https://www.mathsisfun.com/geometry/perimeter.html", description: "Clear explanation of perimeter with formulas and interactive examples." },
+        { title: "Area – Maths is Fun", url: "https://www.mathsisfun.com/area.html", description: "Visual explanations of area for rectangles and irregular shapes." },
+        { title: "Perimeter and Area – Khan Academy Grade 4", url: "https://www.khanacademy.org/math/cc-fourth-grade-math/imp-geometry-2/imp-perimeter/e/perimeter_1", description: "Interactive perimeter practice problems with diagrams and hints." },
+      ],
     },
     activities: [
       // ── EASY ──
@@ -7904,6 +7999,7 @@ export const year4MathsWorksheets: WorksheetItem[] = [
         ],
       },
     ],
+    nextSteps: ["time-units-duration"],
   },
 
   // ── WS 13: Time Units and Duration ──────────────────────────────────
@@ -7936,6 +8032,13 @@ export const year4MathsWorksheets: WorksheetItem[] = [
         script: "If we start school at 9:00 am and do 4 sessions of 45 minutes each with a 15-minute break between each, what time do we finish? Work it out step by step.",
         action: "This is a multi-step duration problem. Guide the child to add each session and break in order rather than trying to jump to the total. Confirm the answer together: 9:00 + 4 x 45 + 3 x 15 minutes.",
       },
+      parentTip: "Elapsed time trips up many children because they try to subtract clock times like ordinary numbers — 4:15 minus 2:45 becomes '2:70' for some children. Teach the count-up method and stick to it: count hours first, then minutes, then adjust. Once they have the count-up method solid, other approaches will make more sense too.",
+      extension: "Create a daily schedule for a dream school day. Your child writes start and finish times for each activity (e.g. Maths: 9:00–9:45, Reading: 9:45–10:15). Then they calculate the duration of each session, total learning time, and total break time. Finally, does the day fit within school hours? This is a rich, real-life AC V9 Year 4 Measurement task.",
+      resources: [
+        { title: "Telling Time – Khan Academy Grade 4", url: "https://www.khanacademy.org/math/cc-fourth-grade-math/imp-measurement-and-data-2/imp-time/e/telling_time", description: "Practice reading analogue and digital clocks and calculating elapsed time." },
+        { title: "Time – Maths is Fun", url: "https://www.mathsisfun.com/time.html", description: "Explanations of time units, reading clocks and calculating durations." },
+        { title: "NRICH: How Long Does It Take?", url: "https://nrich.maths.org/6870", description: "Real-life time duration problems and investigations." },
+      ],
     },
     activities: [
       // ── EASY ──
@@ -8544,6 +8647,7 @@ export const year4MathsWorksheets: WorksheetItem[] = [
         ],
       },
     ],
+    nextSteps: ["angles-right-angle-comparison"],
   },
 
   // ── WS 14: Angles and Right Angle Comparison ──────────────────────────────────
@@ -8576,6 +8680,13 @@ export const year4MathsWorksheets: WorksheetItem[] = [
         script: "Walk around the room and find me one example each of an acute angle, a right angle and an obtuse angle. Tell me where you found each one.",
         action: "Accompany the child on a quick walk of the room. Accept any valid examples. Watch for misconceptions such as calling all corners right angles regardless of their size.",
       },
+      parentTip: "Children sometimes call every corner a right angle regardless of its size. Using a physical tester — the corner of a piece of paper — every single time (even when the answer is obvious) builds the habit of referencing the standard before judging. This is more important than getting the name right; it teaches what the reference point is.",
+      extension: "Go on an 'angle safari' in your home or garden. Your child photographs or sketches 10 different angles they can find: in furniture, architecture, plants or tools. Back at the table, they classify each as acute, right, obtuse or straight, and explain their reasoning. They can draw a simple acute-to-straight scale to show where each angle sits, aligned to AC V9 Year 4 Space.",
+      resources: [
+        { title: "Angles – Maths is Fun", url: "https://www.mathsisfun.com/angles.html", description: "Full explanation of angle types with clear diagrams and interactive measurement." },
+        { title: "Geometry: Angles – Khan Academy Grade 4", url: "https://www.khanacademy.org/math/cc-fourth-grade-math/imp-geometry-2/imp-angles/e/recognizing_angles", description: "Exercises on identifying and classifying acute, right and obtuse angles." },
+        { title: "NRICH: Right Angles", url: "https://nrich.maths.org/8", description: "An engaging NRICH activity for exploring right angles in different orientations." },
+      ],
     },
     activities: [
       // ── EASY ──
@@ -9215,6 +9326,7 @@ export const year4MathsWorksheets: WorksheetItem[] = [
         ],
       },
     ],
+    nextSteps: ["represent-shapes-environment"],
   },
 
   // ── WS 15: Shapes in the Environment ──────────────────────────────────
@@ -9247,6 +9359,13 @@ export const year4MathsWorksheets: WorksheetItem[] = [
         script: "I am going to describe a shape and you tell me what it is. It has 6 faces, all the same size, 12 edges and 8 corners. What is it? Now you describe one and I will guess.",
         action: "Accept any object from the earlier activity. If the child is stuck choosing one to describe, prompt them to count faces and edges slowly. Celebrate when the description is precise enough to identify the shape uniquely.",
       },
+      parentTip: "Counting edges and vertices on 3D objects takes patience — children often miscount because they lose track. Teach them to mark each edge with a fingertip as they count, working systematically around the shape (top face, then sides, then bottom). For vertices, marking with a small sticky dot prevents double-counting.",
+      extension: "Challenge your child to build three different 3D shapes using toothpicks and small balls of playdough as vertices. For each shape they build, they record its name, number of faces, edges and vertices, then check it satisfies Euler's formula: Faces + Vertices − Edges = 2. This is a rich extension aligned to AC V9 Year 4 Space.",
+      resources: [
+        { title: "3D Shapes – Maths is Fun", url: "https://www.mathsisfun.com/geometry/solid-geometry.html", description: "Comprehensive reference for 3D shape properties including faces, edges and vertices." },
+        { title: "Geometry – Khan Academy Grade 4", url: "https://www.khanacademy.org/math/cc-fourth-grade-math/imp-geometry-2", description: "Videos and exercises on classifying and drawing 3D shapes." },
+        { title: "NRICH: Skeleton Shapes", url: "https://nrich.maths.org/4919", description: "An investigation into 3D shapes built from edges, exploring faces, edges and vertices." },
+      ],
     },
     activities: [
       // ── EASY ──
@@ -9838,6 +9957,7 @@ export const year4MathsWorksheets: WorksheetItem[] = [
         ],
       },
     ],
+    nextSteps: ["grid-references"],
   },
 
   // ── WS 16: Grid References ──────────────────────────────────
@@ -9870,6 +9990,13 @@ export const year4MathsWorksheets: WorksheetItem[] = [
         script: "If I am at B2 and I move 2 squares to the right and 1 square up, where do I end up? Try to work that out without looking at the grid first, then check.",
         action: "This tests spatial reasoning as well as grid references. Ask 3 such movement questions. Then ask: what is 3 squares to the left of E4? Confirm by checking the grid together.",
       },
+      parentTip: "The 'across then up' convention (column letter before row number) is easy to mix up, especially when children switch between reading and giving references. A helpful anchor phrase is 'along the corridor, then up the stairs'. Reinforce it every single time in the early lessons — the habit needs many repetitions before it becomes automatic.",
+      extension: "Draw a custom map of your neighbourhood, house floor plan, or an imaginary island with at least a 6x6 grid. Label the columns A–F and rows 1–6. Your child places 8 landmarks on the map, records their grid references in a key, then writes 5 clues for you to solve (e.g. 'The treasure is at D3'). This is a creative, extended AC V9 Year 4 Space activity.",
+      resources: [
+        { title: "Coordinates – Maths is Fun", url: "https://www.mathsisfun.com/data/cartesian-coordinates.html", description: "Introduction to coordinate systems and grid references with interactive examples." },
+        { title: "Maps and Grid References – ABC Education", url: "https://education.abc.net.au/home#!/media/3101988/", description: "Australian curriculum-aligned video on reading maps and grid references." },
+        { title: "NRICH: Eight Hidden Squares", url: "https://nrich.maths.org/2670", description: "A coordinates puzzle game for practising grid references and directions." },
+      ],
     },
     activities: [
       // ── EASY ──
@@ -10396,6 +10523,7 @@ export const year4MathsWorksheets: WorksheetItem[] = [
         ],
       },
     ],
+    nextSteps: ["line-rotational-symmetry"],
   },
 
   // ── WS 17: Line and Rotational Symmetry ──────────────────────────────────
@@ -10429,6 +10557,13 @@ export const year4MathsWorksheets: WorksheetItem[] = [
         script: "Fold a piece of paper in half. Draw half a butterfly wing on the fold line. Cut it out and unfold it. What do you notice? The wings are identical — that is line symmetry. Can you design another symmetrical shape using this fold-and-cut method?",
         action: "Supervise the folding and cutting. The child opens the folded paper to reveal a symmetrical shape. Ask: where is the line of symmetry? How many does this shape have?",
       },
+      parentTip: "Rotational symmetry is the trickier of the two concepts here — children often confuse 'it looks the same' with 'it is the same shape'. When testing rotational symmetry, physically cut out the shape and rotate it over its own outline so your child can feel the match, not just imagine it. The fold-and-cut activity in the wrap-up is especially powerful for this age.",
+      extension: "Investigate the symmetry of capital letters. Write all 26 capital letters and sort them: no symmetry, line symmetry only, rotational symmetry only, or both. For example, H has both. Record findings in a table. Then design a personal logo using at least one line of symmetry. This visual art integration aligns to AC V9 Year 4 Space.",
+      resources: [
+        { title: "Symmetry – Maths is Fun", url: "https://www.mathsisfun.com/geometry/symmetry.html", description: "Explanations and examples of line symmetry and rotational symmetry with interactive images." },
+        { title: "Rotational Symmetry – Maths is Fun", url: "https://www.mathsisfun.com/geometry/symmetry-rotational.html", description: "Clear explanation of order of rotational symmetry with diagrams." },
+        { title: "NRICH: Symmetrical Shapes", url: "https://nrich.maths.org/2148", description: "Activities exploring line symmetry in shapes using a variety of orientations." },
+      ],
     },
     activities: [
       // ── EASY ──
@@ -11007,6 +11142,7 @@ export const year4MathsWorksheets: WorksheetItem[] = [
         ],
       },
     ],
+    nextSteps: ["many-to-one-displays"],
   },
 
   // ── WS 18: Many-to-One Data Displays ──────────────────────────────────
@@ -11039,6 +11175,13 @@ export const year4MathsWorksheets: WorksheetItem[] = [
         script: "If our data went up to 500, should we use a scale of 1, 10, or 50? Explain your thinking. And if our data only went up to 6, would we need a many-to-one scale?",
         action: "Listen for the idea that many-to-one scales are useful when data values are large. A scale of 1 is fine when all values are small. If the child is unsure, try drawing the same data both ways to show how impractical a scale of 1 becomes.",
       },
+      parentTip: "The scale choice is the hardest part of this lesson — children often pick a scale of 1 even when data values are in the hundreds, resulting in a graph that cannot fit on the page. Before your child draws, always ask: 'What is the biggest value in the data? How high would a scale of 1 go?' Making the problem visible prevents the mistake.",
+      extension: "Collect data for a week: each day, record how many minutes of reading, outdoor play and screen time you each had. At the end of the week, create a grouped column graph using a many-to-one scale (each unit = 10 minutes). Compare categories and write 3 statements about what the data shows. This is a full AC V9 Year 4 Statistics investigation.",
+      resources: [
+        { title: "Bar Graphs – Maths is Fun", url: "https://www.mathsisfun.com/data/bar-graphs.html", description: "How to read and create bar graphs including choosing an appropriate scale." },
+        { title: "Data and Statistics – Khan Academy Grade 4", url: "https://www.khanacademy.org/math/cc-fourth-grade-math/imp-measurement-and-data-2/imp-represent-and-interpret-data/e/reading-bar-charts-3", description: "Practice reading bar graphs with scaled axes and interpreting data." },
+        { title: "NRICH: Our Sports", url: "https://nrich.maths.org/5905", description: "A data collection and graphing activity based on students' own sporting preferences." },
+      ],
     },
     activities: [
       // ── EASY ──
@@ -11634,6 +11777,7 @@ export const year4MathsWorksheets: WorksheetItem[] = [
         ],
       },
     ],
+    nextSteps: ["distributions-variation"],
   },
 
   // ── WS 19: Distributions and Variation ──────────────────────────────────
@@ -11666,6 +11810,13 @@ export const year4MathsWorksheets: WorksheetItem[] = [
         script: "Look at our dot plot. Use the words cluster, spread, variation and gap to describe what you see. Then tell me: what would the shape look like if everyone got exactly the same result every time?",
         action: "Listen for accurate use of the vocabulary. If the child is unfamiliar with the words, have them written on paper as a reference. The key idea is that real data always shows some variation.",
       },
+      parentTip: "Children expect experiments to give the same result every time and can feel frustrated when their data 'looks wrong'. Reassure them that variation is real and expected — it is not a mistake. Use the language 'the data is telling us something interesting' rather than 'you got a different answer'. This builds a healthy relationship with uncertainty.",
+      extension: "Conduct a 'Paper plane investigation': make two identical paper planes and throw each one 10 times, measuring the distance each time in centimetres. Create dot plots for both planes. Compare: does one plane fly more consistently (less variation)? Why might that be? Write a conclusion. This is a real AC V9 Year 4 Statistics investigation using primary data.",
+      resources: [
+        { title: "Data – Maths is Fun", url: "https://www.mathsisfun.com/data/index.html", description: "Introductions to collecting, organising and interpreting data including dot plots." },
+        { title: "Line Plots – Khan Academy Grade 4", url: "https://www.khanacademy.org/math/cc-fourth-grade-math/imp-measurement-and-data-2/imp-line-plots/e/creating-line-plots", description: "Creating and reading line (dot) plots with real data." },
+        { title: "NRICH: If the World Were a Village", url: "https://nrich.maths.org/2851", description: "A real-data statistics activity that develops understanding of distribution and variation." },
+      ],
     },
     activities: [
       // ── EASY ──
@@ -12211,6 +12362,7 @@ export const year4MathsWorksheets: WorksheetItem[] = [
         ],
       },
     ],
+    nextSteps: ["surveys-digital-tools"],
   },
 
   // ── WS 20: Surveys and Digital Tools ──────────────────────────────────
@@ -12242,6 +12394,13 @@ export const year4MathsWorksheets: WorksheetItem[] = [
         script: "Now turn your tally chart into a column graph. When you are done, tell me one thing the data shows and one question it makes you want to ask next.",
         action: "Check the graph for correct labelling and appropriate scale. The follow-up question is important — it models the idea that data often raises new questions. Praise curiosity as much as accuracy.",
       },
+      parentTip: "Survey design is a skill, not just data collection. If your child's question is too vague (e.g. 'Do you like sport?'), help them sharpen it by asking 'What exactly do you want to find out?' and 'What answers would you expect?' Practising this before collecting data saves having to redo the survey, which is a great real-life lesson about planning.",
+      extension: "Design a digital survey using Google Forms (free) with at least 3 questions, each offering 4 answer options. Share it with family or friends to collect at least 5 responses. Then create graphs from the results and write a short paragraph summarising the findings. This authentic AC V9 Year 4 Statistics task mirrors real data science workflows.",
+      resources: [
+        { title: "Data Handling – ABC Education", url: "https://education.abc.net.au/home#!/media/1477907/", description: "Australian curriculum-aligned video on collecting data and presenting results." },
+        { title: "Survey Design – Maths is Fun", url: "https://www.mathsisfun.com/data/survey.html", description: "How to design a survey, collect data and avoid bias in questions." },
+        { title: "NRICH: Favourite Sport", url: "https://nrich.maths.org/8258", description: "A complete statistical investigation from question design to data display." },
+      ],
     },
     activities: [
       // ── EASY ──
@@ -12817,6 +12976,7 @@ export const year4MathsWorksheets: WorksheetItem[] = [
         ],
       },
     ],
+    nextSteps: ["order-likelihood"],
   },
 
   // ── WS 21: Order Likelihood ──────────────────────────────────
@@ -12850,6 +13010,13 @@ export const year4MathsWorksheets: WorksheetItem[] = [
         script: "Tell me one thing that is definitely impossible and one thing that is definitely certain. Then come up with something that has an even chance — exactly half and half. How do you know it is even?",
         action: "Accept any reasonable examples. For even chance, listen for the idea that there are equal numbers of favourable and unfavourable outcomes, like a fair coin.",
       },
+      parentTip: "Probability language (impossible, unlikely, even, likely, certain) is formal and new — don't worry if your child initially uses words like 'maybe' or 'probably'. Gently substitute the curriculum vocabulary as you talk: 'Yes, it is probably going to rain — we might say that is likely.' Building vocabulary through real conversation is far more effective than memorising definitions.",
+      extension: "Create a 'Probability Sort' game: write 12 event cards together (from everyday life — 'it will rain somewhere in Australia today', 'you will roll a 7 on a standard die') and physically arrange them on a string from impossible to certain. Debate any cards you disagree on, justifying positions with reasoning. This aligns to AC V9 Year 4 Probability strand.",
+      resources: [
+        { title: "Probability – Maths is Fun", url: "https://www.mathsisfun.com/data/probability.html", description: "Introduction to probability with real examples and a 0-to-1 probability scale." },
+        { title: "Probability – Khan Academy Grade 4", url: "https://www.khanacademy.org/math/cc-fourth-grade-math/imp-measurement-and-data-2", description: "Videos and exercises on basic probability concepts for Grade 4." },
+        { title: "NRICH: Likely or Unlikely?", url: "https://nrich.maths.org/6958", description: "Sorting activities using probability language for events from very unlikely to very likely." },
+      ],
     },
     activities: [
       // ── EASY ──
@@ -13450,6 +13617,7 @@ export const year4MathsWorksheets: WorksheetItem[] = [
         ],
       },
     ],
+    nextSteps: ["independent-dependent-events"],
   },
 
   // ── WS 22: Independent and Dependent Events ──────────────────────────────────
@@ -13483,6 +13651,13 @@ export const year4MathsWorksheets: WorksheetItem[] = [
         script: "If I replace the block after each draw, are the events independent or dependent? If I do not replace it? Tell me why replacing things makes the events independent.",
         action: "This tests the core concept. Child should explain that replacing restores the original situation, so the second draw is unaffected. Not replacing removes a possibility, making the second draw dependent on the first.",
       },
+      parentTip: "Dependent events require children to hold two pieces of information in mind at once (what happened first and how it changed the situation), which is cognitively demanding at Year 4. If your child finds the 'replace or not replace' concept confusing, act it out with physical objects every time — the concrete experience always clarifies what the abstract words cannot.",
+      extension: "Run a 'Bag of Marbles' experiment: put 3 red and 3 blue marbles (or coloured blocks) in a bag. Without looking, draw one marble and record it — then try both ways: put it back (independent) and don't put it back (dependent). After 20 draws each way, compare results. Does the 'without replacement' set show more of one colour over time? Discuss why. This is an AC V9 Year 4 Probability experiment.",
+      resources: [
+        { title: "Independent and Dependent Events – Maths is Fun", url: "https://www.mathsisfun.com/data/probability-events-independent.html", description: "Clear explanation of independent vs dependent events with worked examples." },
+        { title: "Dependent and Independent Events – Khan Academy", url: "https://www.khanacademy.org/math/statistics-probability/probability-library/independent-dependent-probability/a/dependent-and-independent-events-review", description: "Review article with examples distinguishing independent from dependent events." },
+        { title: "NRICH: In a Box", url: "https://nrich.maths.org/47", description: "A marble-drawing probability activity exploring how outcomes change with and without replacement." },
+      ],
     },
     activities: [
       // ── EASY ──
@@ -14117,6 +14292,7 @@ export const year4MathsWorksheets: WorksheetItem[] = [
         ],
       },
     ],
+    nextSteps: ["chance-experiments-variation-y4"],
   },
 
   // ── WS 23: Chance Experiments and Variation ──────────────────────────────────
@@ -14149,6 +14325,13 @@ export const year4MathsWorksheets: WorksheetItem[] = [
         script: "If I flip a coin 100 times, would I get exactly 50 heads? Probably not. But would I be closer to 50 than if I only flipped it 10 times? Tell me why you think more flips gives a more reliable result.",
         action: "Listen for the idea that each flip is random but over many flips, the results balance out more. This is a core statistical concept — do not worry if the child cannot fully articulate it. Affirm partial understanding and reinforce with the data from the activity.",
       },
+      parentTip: "When experimental results don't match expected probability, children can feel they did it 'wrong'. Explain that with a small number of trials, almost any result is possible — 8 heads from 10 flips is not wrong, it is just the natural variation of chance. The key message is: the more trials we do, the closer we get to what we expect. This is a profound idea worth dwelling on.",
+      extension: "Run the 'Law of Large Numbers' investigation: flip a coin in sets of 10 flips, recording results after 10, 20, 50 and 100 total flips. After each set, calculate the percentage of heads. Create a line graph showing how the percentage changes as the number of trials increases. Does it get closer to 50%? Discuss why. This beautifully illustrates AC V9 Year 4 Probability and variation.",
+      resources: [
+        { title: "Probability Experiments – Maths is Fun", url: "https://www.mathsisfun.com/data/probability.html", description: "Explanation of experimental vs theoretical probability with coin flip examples." },
+        { title: "NRICH: Flippin Discs", url: "https://nrich.maths.org/6803", description: "A hands-on coin flipping investigation exploring chance and variation." },
+        { title: "Statistics – Khan Academy Grade 4", url: "https://www.khanacademy.org/math/cc-fourth-grade-math/imp-measurement-and-data-2", description: "Data and probability exercises including interpreting the results of chance experiments." },
+      ],
     },
     activities: [
       // ── EASY ──

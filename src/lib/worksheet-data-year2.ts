@@ -32,6 +32,13 @@ export const year2MathsWorksheets: WorksheetItem[] = [
         script: "Can you tell me — which of these numbers is biggest? How do you know? What does the first digit tell us?",
         action: "Write three numbers on paper (e.g. 204, 420, 240). Child orders them from smallest to largest and explains reasoning.",
       },
+      parentTip: "Don't worry if your child still needs to count individual objects to confirm a three-digit number — that's completely normal at this stage. The key milestone is recognising that the first digit tells us 'how many hundreds', and your physical grouping activity today builds exactly that understanding. If they get confused, just go back to the bowls.",
+      extension: "Challenge your child to find the biggest number they can make using the digits 1 through 9 (using each digit only once in a three-digit number). Then find the smallest. Order three numbers written on cards from smallest to biggest and record them on a number line. This extends ordering and place-value reasoning.",
+      resources: [
+        { title: "Place Value — Hundreds, Tens, Ones", url: "https://www.khanacademy.org/math/cc-2nd-grade-math/cc-2nd-place-value/cc-2nd-hundreds/v/place-value-hundreds-tens-ones", description: "Short video that clearly shows how hundreds, tens and ones work with visual blocks." },
+        { title: "Numbers to 1000", url: "https://www.mathsisfun.com/numbers/counting-table.html", description: "Interactive counting table to explore how numbers build up to 1000." },
+        { title: "Place Value Games", url: "https://nrich.maths.org/5765", description: "NRICH activity exploring three-digit numbers and place value through games." },
+      ],
     },
     activities: [
       // ─── Easy: Numbers 100–300 ───
@@ -1078,6 +1085,7 @@ export const year2MathsWorksheets: WorksheetItem[] = [
         ],
       },
     ],
+    nextSteps: ["place-value-hundreds", "addition-subtraction-facts-20"],
   },
 
   // ── WS 2: Place Value — Hundreds ────────────────────────────
@@ -1111,6 +1119,13 @@ export const year2MathsWorksheets: WorksheetItem[] = [
         script: "Tell me everything you know about the number 470. How many hundreds? How many tens altogether? Can you say it a different way?",
         action: "Child explains 470 in multiple ways (e.g. 4 hundreds 7 tens; 47 tens). Write each version they name. Praise creative thinking.",
       },
+      parentTip: "The idea that 2 hundreds is the same as 20 tens is a genuine conceptual leap — many children need to go back and forth between the physical bundles and the written number several times before it clicks. Resist the urge to explain it for them; instead, keep asking 'how many tens are hiding in that hundred bundle?' and let them puzzle it out.",
+      extension: "Have your child build five different three-digit numbers using straws, then write each number in expanded form (e.g. 346 = 300 + 40 + 6) AND in as many renamed ways as they can (e.g. 34 tens and 6 ones). See who can find the most ways to rename 500.",
+      resources: [
+        { title: "Regrouping Hundreds", url: "https://www.khanacademy.org/math/cc-2nd-grade-math/cc-2nd-place-value/cc-2nd-hundreds/e/hundreds--tens--and-ones", description: "Practice exercises for partitioning three-digit numbers into hundreds, tens and ones." },
+        { title: "Place Value Explainer", url: "https://www.mathsisfun.com/place-value.html", description: "Clear visual explanation of place value up to thousands with interactive examples." },
+        { title: "Dicey Operations", url: "https://nrich.maths.org/6/note", description: "NRICH dice game that deepens understanding of place value through strategic number building." },
+      ],
     },
     activities: [
       // ─── Easy: Two-digit place value review ───
@@ -1863,6 +1878,7 @@ export const year2MathsWorksheets: WorksheetItem[] = [
         ],
       },
     ],
+    nextSteps: ["addition-subtraction-facts-20"],
   },
 
   // ── WS 3: Addition & Subtraction Facts within 20 ───────────
@@ -1896,6 +1912,13 @@ export const year2MathsWorksheets: WorksheetItem[] = [
         script: "I am going to say a number sentence and you tell me the answer as fast as you can. Ready? 7 plus 8... 15 minus 6... 9 plus 9. How did your brain figure it out?",
         action: "Rapid-fire 5-6 facts. Child answers. Afterwards, ask them to explain one strategy they used. Celebrate any thinking they can articulate.",
       },
+      parentTip: "Speed is NOT the goal right now — strategy is. If your child counts on fingers for every fact, that's fine; gently introduce the 'make ten' strategy as an alternative rather than a replacement. Celebrate when they can explain their thinking: 'I know 8 + 6 because I made 10 first' shows far deeper understanding than just saying '14'.",
+      extension: "Write subtraction fact family cards: choose a total (e.g. 15) and two parts (e.g. 7 and 8), then write all four related facts (7+8=15, 8+7=15, 15-7=8, 15-8=7). Make a set of 5 fact families and see if your child can spot the patterns between addition and subtraction.",
+      resources: [
+        { title: "Addition within 20", url: "https://www.khanacademy.org/math/cc-2nd-grade-math/cc-2nd-add-subtract/cc-2nd-add/e/addition_1", description: "Interactive practice building fast recall of addition facts within 20." },
+        { title: "Number Bonds", url: "https://www.mathsisfun.com/numbers/number-bonds-10.html", description: "Visual number bond diagrams to 10 that help children see related addition and subtraction facts." },
+        { title: "Subtraction Facts — Hit the Button", url: "https://nrich.maths.org/problems/hit-button", description: "Fast-paced NRICH activity for practising number facts fluency." },
+      ],
     },
     activities: [
       // ─── Easy: Addition facts to 10 ───
@@ -2684,6 +2707,7 @@ export const year2MathsWorksheets: WorksheetItem[] = [
         ],
       },
     ],
+    nextSteps: ["multiplication-facts-twos"],
   },
 
   // ── WS 4: Multiplication Facts for Twos ────────────────────
@@ -2716,6 +2740,13 @@ export const year2MathsWorksheets: WorksheetItem[] = [
         script: "Let us say the two times table together. One two is two, two twos are four, three twos are six... Now you say it while I clap the beat. See if you can go all the way to ten twos!",
         action: "Recite the 2x table together rhythmically. Child tries solo. Mark off on fingers as they go. Stop at 10 x 2.",
       },
+      parentTip: "Children often confuse 'groups of' with repeated addition at this stage — and that confusion is productive! If your child says '4 twos is 4 plus 4', they're thinking correctly; gently introduce the multiplication symbol as a shorthand for that idea. The skip-counting chant is powerful: repeat it in the car, at the table, anywhere you have 30 seconds.",
+      extension: "Play 'Doubles Snap' with a standard deck of cards (use Ace=1 to 10). Flip a card, double it instantly. For a challenge, mix in 'what is half of this number?' to connect doubling and halving. This builds the two-times table in both directions and links to fractions.",
+      resources: [
+        { title: "Multiply by 2", url: "https://www.khanacademy.org/math/cc-2nd-grade-math/cc-2nd-add-subtract/cc-2nd-skip-counting/e/skip_counting_by_2s", description: "Skip counting by 2s practice that directly builds the two-times table." },
+        { title: "Multiplication as Groups", url: "https://www.mathsisfun.com/numbers/multiplication-introduction.html", description: "Clear introduction to multiplication as equal groups with visual diagrams." },
+        { title: "Two Times Table Activity", url: "https://nrich.maths.org/6960", description: "NRICH visual activity connecting doubling, grouping and the two-times table." },
+      ],
     },
     activities: [
       // ─── Easy: Skip counting by 2 ───
@@ -3462,6 +3493,7 @@ export const year2MathsWorksheets: WorksheetItem[] = [
         ],
       },
     ],
+    nextSteps: ["money-problems"],
   },
 
   // ── WS 5: Money Problems ────────────────────────────────────
@@ -3495,6 +3527,13 @@ export const year2MathsWorksheets: WorksheetItem[] = [
         script: "If you bought the apple AND the pencil, how much did you spend altogether? How much change would you get from $2?",
         action: "Write out the addition sum together. Work through the change problem. Ask child to explain the strategy they used to add the prices.",
       },
+      parentTip: "Real money is a powerful motivator — if you can, use actual coins for this lesson rather than printed copies. Children often mix up the gold $2 coin and the gold $1 coin by size (the $2 is smaller!), so point this out and let them feel both. For change problems, model counting UP from the price to the amount paid, rather than subtracting down.",
+      extension: "Set up a 'home shop' for the week. Label 8-10 household items with prices (keep totals under $5). Give your child a 'budget' of $3 in play money. They choose what to buy, pay, and check their change. Can they buy the most items possible without going over budget?",
+      resources: [
+        { title: "Australian Money", url: "https://education.abc.net.au/home#!/digibook/2921725/money-maths", description: "ABC Education interactive activity specifically covering Australian coins and notes." },
+        { title: "Counting Money", url: "https://www.mathsisfun.com/money/index.html", description: "Maths is Fun guide to counting coins and solving money problems." },
+        { title: "Money Problems", url: "https://www.khanacademy.org/math/cc-2nd-grade-math/cc-2nd-measurement-data/cc-2nd-time-money/e/money", description: "Khan Academy money exercises for Grade 2 level, including adding amounts and making change." },
+      ],
     },
     activities: [
       // ─── Easy: Recognising and counting coins ───
@@ -4122,6 +4161,7 @@ export const year2MathsWorksheets: WorksheetItem[] = [
         ],
       },
     ],
+    nextSteps: ["halves-quarters-eighths"],
   },
 
   // ── WS 6: Halves, Quarters & Eighths ───────────────────────
@@ -4156,6 +4196,13 @@ export const year2MathsWorksheets: WorksheetItem[] = [
         script: "Which is bigger — one half or one quarter? How do you know? What about one quarter compared to one eighth?",
         action: "Child uses their folded paper to compare. Ask them to point to the sections. Guide them to see that more folds makes smaller pieces.",
       },
+      parentTip: "The most common misconception here is that 'half' just means 'two pieces' — not two EQUAL pieces. Emphasise fairness: would you be happy if your sibling got the bigger half? The paper folding is crucial because it makes equal-ness physically obvious. When moving to eighths, many children are surprised the pieces get smaller as the number gets bigger — that reversal takes time to sink in.",
+      extension: "Explore fractions on a number line. Draw a line from 0 to 1. Mark the halfway point (1/2). Then halve each section to mark quarters (1/4, 2/4, 3/4). Then eighths. Can your child see that 2/4 lands in the same spot as 1/2? This visual equivalence is a key Year 2 insight.",
+      resources: [
+        { title: "Fractions Introduction", url: "https://www.khanacademy.org/math/cc-2nd-grade-math/cc-2nd-fractions/cc-2nd-unit-fractions/v/intro-to-fractions", description: "Khan Academy video introducing halves, quarters and equal parts visually." },
+        { title: "Fractions — Equal Parts", url: "https://www.mathsisfun.com/fractions.html", description: "Maths is Fun visual guide to understanding what fractions mean and how equal parts work." },
+        { title: "Fraction Halves and Quarters", url: "https://nrich.maths.org/4519", description: "NRICH activity exploring halves and quarters through fair sharing and folding." },
+      ],
     },
     activities: [
       // ─── Easy: Halves ───
@@ -4853,6 +4900,7 @@ export const year2MathsWorksheets: WorksheetItem[] = [
         ],
       },
     ],
+    nextSteps: ["increasing-decreasing-patterns"],
   },
 
   // ── WS 7: Increasing/Decreasing Patterns ───────────────────
@@ -4885,6 +4933,13 @@ export const year2MathsWorksheets: WorksheetItem[] = [
         script: "I will write a pattern and you tell me the rule. 5, 10, 15, 20 — what is the rule? 30, 27, 24, 21 — what is happening here? Is it going up or down? By how much?",
         action: "Write 3 patterns on paper. Child identifies each as increasing or decreasing and states the constant. Praise them for explaining their reasoning out loud.",
       },
+      parentTip: "The word 'constant' might feel abstract, but 'the rule' is completely natural to children who love games. Frame it that way: 'every pattern has a secret rule — your job is to crack it.' Watch for children who can continue a pattern but can't yet articulate the rule — push gently for them to say it in words, because that verbal articulation is what makes the concept stick.",
+      extension: "Create a 'rule book' of patterns. Your child writes 5 different patterns — mix of increasing and decreasing, with different step sizes (2, 3, 5, 10) — and you have to identify each rule. Then swap. As a challenge, make a two-rule pattern: e.g. +3, +5, +3, +5, ... and see if they can spot the alternating structure.",
+      resources: [
+        { title: "Skip Counting Patterns", url: "https://www.khanacademy.org/math/cc-2nd-grade-math/cc-2nd-add-subtract/cc-2nd-skip-counting/e/skip_counting", description: "Khan Academy exercises for identifying and extending skip-counting number patterns." },
+        { title: "Number Patterns", url: "https://www.mathsisfun.com/numberpatterns.html", description: "Maths is Fun guide to identifying rules in increasing and decreasing number sequences." },
+        { title: "Pattern Sniffing", url: "https://nrich.maths.org/problems/pattern-sniffing", description: "NRICH collection of pattern-spotting activities at various levels of challenge." },
+      ],
     },
     activities: [
       // ─── Easy: Adding a constant ───
@@ -5495,6 +5550,7 @@ export const year2MathsWorksheets: WorksheetItem[] = [
         ],
       },
     ],
+    nextSteps: ["missing-elements-patterns"],
   },
 
   // ── WS 8: Missing Elements in Patterns ─────────────────────
@@ -5528,6 +5584,13 @@ export const year2MathsWorksheets: WorksheetItem[] = [
         script: "Now it is your turn to stump me! Write a pattern and leave out one number. I have to guess what is missing. Make it tricky!",
         action: "Child writes a pattern and covers one number. You think out loud about the rule and find the missing number. Let them correct you if you get it wrong. Swap roles 2-3 times.",
       },
+      parentTip: "Missing-element problems are a form of early algebraic thinking — your child is essentially solving for an unknown. If they struggle, encourage them to check their answer by reading the complete pattern aloud and asking 'does every step follow the same rule?'. A common error is finding the rule between two visible numbers but not noticing the gap spans two steps.",
+      extension: "'Pattern Puzzles': Write a pattern with TWO missing numbers (not next to each other) and see if your child can solve it. Then try patterns that decrease and have a gap near the start. Finally, make a 'mystery pattern' table: input numbers 1-5 in one column, output (e.g. input x 3) in the second, and have your child find the rule.",
+      resources: [
+        { title: "Patterns and Sequences", url: "https://www.mathsisfun.com/algebra/sequences-series.html", description: "Maths is Fun introduction to sequences and finding the rule, with worked examples." },
+        { title: "Missing Number Patterns", url: "https://www.khanacademy.org/math/cc-2nd-grade-math/cc-2nd-add-subtract/cc-2nd-skip-counting/e/skip_counting_by_5s", description: "Khan Academy skip-counting practice that builds the pattern reasoning needed to find missing elements." },
+        { title: "Continuity — NRICH", url: "https://nrich.maths.org/8275", description: "NRICH reasoning activity that challenges children to find and extend patterns with missing terms." },
+      ],
     },
     activities: [
       // ─── Easy: Simple missing numbers ───
@@ -6230,6 +6293,7 @@ export const year2MathsWorksheets: WorksheetItem[] = [
         ],
       },
     ],
+    nextSteps: ["informal-units-measure"],
   },
 
   // ── WS 9: Informal Units — Measure ─────────────────────────
@@ -6265,6 +6329,13 @@ export const year2MathsWorksheets: WorksheetItem[] = [
         script: "Before we measure, let us guess! How many paperclips long do you think my shoe is? Write your estimate. Now measure. How close were you?",
         action: "Child estimates then measures two items. Discuss the gap between estimate and measurement. Ask: what would you do differently next time to estimate better?",
       },
+      parentTip: "The big idea here is that measurement is only meaningful when units are consistent — and children often don't feel the need for this until they experience the unfair ruler problem firsthand. Make the comparison dramatic: measure the same object with your hand, then their hand, and write down both numbers. The mismatch creates the authentic 'need' for standard units.",
+      extension: "Create a 'measurement journal' for the day. Your child measures 10 objects around the house using their chosen informal unit (paperclips, pencils, dried pasta pieces) and records each in a table. Then find the longest, shortest, and calculate the difference between them. Order all 10 objects from shortest to longest.",
+      resources: [
+        { title: "Measuring Length", url: "https://www.khanacademy.org/math/cc-2nd-grade-math/cc-2nd-measurement-data/cc-2nd-measure-lengths/v/measuring-lengths", description: "Khan Academy video on measuring lengths, introducing the concept of uniform units." },
+        { title: "Non-Standard Measurement", url: "https://www.mathsisfun.com/measure/length-measuring.html", description: "Maths is Fun guide to measuring length with both formal and informal units." },
+        { title: "Sizing Up", url: "https://nrich.maths.org/107", description: "NRICH activity estimating and comparing lengths using non-standard units." },
+      ],
     },
     activities: [
       // ─── Easy: Counting units ───
@@ -6850,6 +6921,7 @@ export const year2MathsWorksheets: WorksheetItem[] = [
         ],
       },
     ],
+    nextSteps: ["analog-clock-time"],
   },
 
   // ── WS 10: Analog Clock Time ───────────────────────────────
@@ -6884,6 +6956,13 @@ export const year2MathsWorksheets: WorksheetItem[] = [
         script: "Look at our real clock. What time does it say right now? Is the minute hand pointing to 12, 6, 3 or 9? What does that mean? Tell me the time in words.",
         action: "Child reads the real clock. Ask at different points in the lesson if possible (start, middle, end). Record the time on paper each time. Check child can use the words: o clock, half past, quarter past, quarter to.",
       },
+      parentTip: "Analog clocks are genuinely confusing — two hands that count different things, moving at different speeds, on a circular number line that repeats. If your child gets muddled, focus first on just the hour hand (cover the minute hand with your finger). Once they're confident with o'clock and half past, quarter-to is the trickiest because it uses the language of what's still to come rather than what's already passed.",
+      extension: "Make a 'daily timetable' using analog clock drawings. Your child draws the clock face for breakfast, lunch, dinner, bedtime and one other event — then writes the time in words and in digital format (e.g. 7:30). Stick it on the fridge and use it to practise reading the real clock during the day.",
+      resources: [
+        { title: "Telling Time", url: "https://www.khanacademy.org/math/cc-2nd-grade-math/cc-2nd-measurement-data/cc-2nd-time/v/telling-time-exercise-example-1", description: "Khan Academy video and exercises for reading analog clocks to the hour and half hour." },
+        { title: "Analog Clock Reading", url: "https://www.mathsisfun.com/time.html", description: "Maths is Fun interactive clock where you can practise reading and setting times." },
+        { title: "What Time Is It?", url: "https://nrich.maths.org/6798", description: "NRICH time-reading challenge covering o'clock, half past and quarter times." },
+      ],
     },
     activities: [
       // ─── Easy: O'clock times ───
@@ -7527,6 +7606,7 @@ export const year2MathsWorksheets: WorksheetItem[] = [
         ],
       },
     ],
+    nextSteps: ["calendar-days"],
   },
 
   // ── WS 11: Calendar Days ───────────────────────────────────
@@ -7560,6 +7640,13 @@ export const year2MathsWorksheets: WorksheetItem[] = [
         script: "If today is the 3rd and we want to do something on the 10th, how long do we have to wait? What about from the 15th to the end of the month?",
         action: "Write 2-3 word problems on paper using this month's dates. Child solves by pointing to and counting on the calendar. Ask them to record the answer as a number sentence.",
       },
+      parentTip: "Keep a real calendar in your learning space and make it a daily habit — 'What's today's date? What day of the week? How many days until the weekend?' This incidental daily practice is more powerful than any worksheet. For counting days between two dates, show your child the row-at-a-time strategy: each full row of a calendar is exactly 7 days.",
+      extension: "Plan a real 'event countdown'. Choose an upcoming event (birthday, excursion, school holiday) and have your child calculate exactly how many days away it is. Update the countdown each morning. This keeps the calendar maths alive in a personally meaningful way for weeks.",
+      resources: [
+        { title: "Calendar Maths", url: "https://www.khanacademy.org/math/cc-2nd-grade-math/cc-2nd-measurement-data/cc-2nd-time/e/reading-a-calendar", description: "Khan Academy exercises on reading a calendar and counting days between dates." },
+        { title: "Months and Days", url: "https://www.mathsisfun.com/measure/months-days.html", description: "Maths is Fun reference page on days, months and seasons with interactive calendar features." },
+        { title: "Calendar Maths NRICH", url: "https://nrich.maths.org/1085", description: "NRICH calendar investigation exploring patterns in days and weeks." },
+      ],
     },
     activities: [
       // ─── Easy: Days of the week ───
@@ -8194,6 +8281,7 @@ export const year2MathsWorksheets: WorksheetItem[] = [
         ],
       },
     ],
+    nextSteps: ["classify-shapes-formal"],
   },
 
   // ── WS 12: Classify Shapes — Formal Terms ─────────────────
@@ -8228,6 +8316,13 @@ export const year2MathsWorksheets: WorksheetItem[] = [
         script: "I am going to describe a shape and you tell me what it is. It has 4 sides, all the same length, and 4 right angles. What is it? Now you describe a shape and I will guess.",
         action: "Do 3-4 descriptions for the child to identify. Then child invents one description and you guess. Use formal terms: sides, corners, right angles, equal, parallel (sides that never meet).",
       },
+      parentTip: "Children often learn shape names without understanding the properties that define them — they recognise a 'square' by sight but can't say why it's a square. Use the corner-of-paper trick throughout the lesson: physically testing for right angles is far more memorable than being told a shape 'has four right angles'. Also watch for the common mix-up of 'sides' and 'corners' — point to each distinctly.",
+      extension: "Go on a shape hunt through the house. Your child makes a tally chart with columns for: number of sides (0, 3, 4, 5, 6+). For each 2D face of an object they find, they tally it and note whether it has any right angles. At the end, which shape type is most common in your home?",
+      resources: [
+        { title: "2D Shapes", url: "https://www.khanacademy.org/math/cc-2nd-grade-math/cc-2nd-geometry/cc-2nd-shapes/v/shapes", description: "Khan Academy introduction to 2D shapes, sides and corners for Grade 2." },
+        { title: "Quadrilaterals", url: "https://www.mathsisfun.com/quadrilaterals.html", description: "Maths is Fun visual guide to four-sided shapes, including squares, rectangles and their properties." },
+        { title: "Shapely Maths", url: "https://nrich.maths.org/2778", description: "NRICH shape classification activity using properties like sides, angles and symmetry." },
+      ],
     },
     activities: [
       // ─── Easy: Identifying shapes ───
@@ -8902,6 +8997,7 @@ export const year2MathsWorksheets: WorksheetItem[] = [
         ],
       },
     ],
+    nextSteps: ["positions-2d-maps"],
   },
 
   // ── WS 13: Positions on 2D Maps ───────────────────────────
@@ -8935,6 +9031,13 @@ export const year2MathsWorksheets: WorksheetItem[] = [
         script: "If I am at the house at C3 and I want to get to the shop at B4, describe how to get there using the grid. Do I move left or right? Up or down?",
         action: "Child describes movement between two points using direction and grid language. Extend to asking about features that share a row or column.",
       },
+      parentTip: "Grid references feel abstract until children realise they're already used in everyday life — sports fields, board games like Battleship, and real maps all use the same idea. If your child confuses the letter and number order, use the memory trick: 'go along the corridor, then up the stairs' — horizontal first, then vertical.",
+      extension: "Make a grid map of your home. Draw a top-down floor plan on grid paper (even a rough one works well). Label the columns and rows. Your child places rooms and features at grid references, then writes 5 questions for you to answer using the map — e.g. 'What is at C2? Which room is nearest to A1?'",
+      resources: [
+        { title: "Grid Coordinates", url: "https://www.khanacademy.org/math/cc-2nd-grade-math/cc-2nd-geometry/cc-2nd-shapes/e/recognize-shapes", description: "Khan Academy geometry section covering spatial reasoning and position for Grade 2." },
+        { title: "Maps and Coordinates", url: "https://www.mathsisfun.com/data/cartesian-coordinates.html", description: "Maths is Fun introduction to Cartesian coordinates — a natural extension from grid maps." },
+        { title: "Coordinate Reasoning", url: "https://nrich.maths.org/2462", description: "NRICH grid location activity that develops spatial reasoning and positional language." },
+      ],
     },
     activities: [
       // ─── Easy: Simple grid positions ───
@@ -9520,6 +9623,7 @@ export const year2MathsWorksheets: WorksheetItem[] = [
         ],
       },
     ],
+    nextSteps: ["directions-pathways"],
   },
 
   // ── WS 14: Directions & Pathways ──────────────────────────
@@ -9553,6 +9657,13 @@ export const year2MathsWorksheets: WorksheetItem[] = [
         script: "Let us draw a bird's-eye view map of the path you just made. Where does it start? Which way does it go? Mark the turns with arrows.",
         action: "Child draws a top-down sketch of the pathway with arrows showing direction. Label start and finish. Compare the drawn map to the actual floor path.",
       },
+      parentTip: "Left and right are surprisingly difficult for many children (and some adults!) — if your child struggles, try putting a small sticker on their writing hand as a left/right anchor. The 'robot' framing is wonderful because it makes errors safe and funny: if you walk the wrong way, the 'program' was wrong, not the child. Physical movement is essential here — don't rush to paper-only versions.",
+      extension: "Create a 'treasure map' together. Hide an object somewhere in the house and write step-by-step directional instructions from a starting point. Your child follows the directions to find the treasure, then writes their own set of directions for you to follow. Include turns, forward steps, and at least one landmark reference.",
+      resources: [
+        { title: "Directions and Position", url: "https://www.mathsisfun.com/geometry/direction-distance.html", description: "Maths is Fun guide to direction language and compass points with visual examples." },
+        { title: "Turtle Pathways", url: "https://nrich.maths.org/6288", description: "NRICH pathway activity using directional commands — similar to coding logic for robot navigation." },
+        { title: "ABC Directions Activity", url: "https://education.abc.net.au/home#!/digibook/2777918/mapping-our-world", description: "ABC Education mapping activity that reinforces directional language and spatial reasoning." },
+      ],
     },
     activities: [
       // ─── Easy: Direction words ───
@@ -10176,6 +10287,7 @@ export const year2MathsWorksheets: WorksheetItem[] = [
         ],
       },
     ],
+    nextSteps: ["categorical-data-bar-graphs"],
   },
 
   // ── WS 15: Categorical Data & Bar Graphs ──────────────────
@@ -10209,6 +10321,13 @@ export const year2MathsWorksheets: WorksheetItem[] = [
         script: "Look at our graph. Which fruit got the most votes? Which got fewest? How many more votes did the winner get than the least popular? What would you tell someone about what our survey found?",
         action: "Ask 3-4 interpretation questions pointing to the bar graph. Child answers and explains. Encourage full sentences: apple got 5 votes, which was the most popular.",
       },
+      parentTip: "The most important skill here isn't drawing a perfect bar graph — it's learning to ask 'what does this data tell us?' Encourage your child to make statements about the graph in full sentences before they even pick up a pencil. If tally marks feel tricky, practise making bundles of 5 as a standalone activity: they're used all the way through primary school.",
+      extension: "Run a 'data wall'. Stick a large sheet of paper on the wall ruled into columns (one per category). Each day this week, add one more response to your family's survey (favourite colour, sport, etc.) with a sticky note. By Friday you'll have a live, growing bar graph that your child can interpret and discuss.",
+      resources: [
+        { title: "Bar Graphs", url: "https://www.khanacademy.org/math/cc-2nd-grade-math/cc-2nd-measurement-data/cc-2nd-bar-graphs/v/reading-bar-graphs", description: "Khan Academy video on reading and interpreting bar graphs with practice exercises." },
+        { title: "Tally Charts and Bar Graphs", url: "https://www.mathsisfun.com/data/tally-marks.html", description: "Maths is Fun guide to tally marks, tally charts and how to convert them into bar graphs." },
+        { title: "Data Handling", url: "https://nrich.maths.org/public/search.php?search=data&ks=1", description: "NRICH collection of data handling activities suitable for early primary level." },
+      ],
     },
     activities: [
       // ─── Easy: Tally charts ───
@@ -10932,6 +11051,7 @@ export const year2MathsWorksheets: WorksheetItem[] = [
         ],
       },
     ],
+    nextSteps: ["data-collection-and-interpretation"],
   },
   // ── WS 16: Data Collection & Interpretation ─────────────────────────
   {
@@ -10963,6 +11083,13 @@ export const year2MathsWorksheets: WorksheetItem[] = [
         script: "Look at your data. What was the most common answer? Was anything surprising? If you asked 10 different people, do you think you would get the same results?",
         action: "Child presents their findings in 2-3 spoken sentences. Guide them to say the question, the most common answer, and one interesting observation. Write these sentences down together as a conclusion.",
       },
+      parentTip: "The big shift in this lesson is ownership — your child isn't just filling in a pre-made graph, they're choosing the question, collecting real data, and drawing their own conclusions. It can feel slow and messy, but that's exactly what real mathematical investigation looks like. Resist the urge to tidy up their graph for them; a child-made, slightly crooked bar graph is worth far more than a parent-corrected perfect one.",
+      extension: "Extend the investigation over a week. On Monday your child decides the question. Tuesday-Thursday they collect data (at least 15 responses). Friday they organise, display, and present their findings. You be the 'audience' and ask three questions about the graph. Then they write a two-sentence conclusion: what they found, and what they would investigate next.",
+      resources: [
+        { title: "Picture Graphs and Bar Graphs", url: "https://www.khanacademy.org/math/cc-2nd-grade-math/cc-2nd-measurement-data/cc-2nd-bar-graphs/e/reading-bar-graphs-1", description: "Khan Academy practice for reading and interpreting bar graphs and picture graphs." },
+        { title: "Data and Statistics", url: "https://www.mathsisfun.com/data/index.html", description: "Maths is Fun data section covering surveys, tallies, graphs and basic interpretation." },
+        { title: "Statistics at Primary Level", url: "https://nrich.maths.org/problems/statistics", description: "NRICH statistics problems that develop data collection, display and interpretation skills." },
+      ],
     },
     activities: [
       // ─── Easy: Collecting data ───

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { year8MathsWorksheets, getYear8Worksheet } from "@/lib/worksheet-data-year8";
+import { year2EnglishWorksheets, getYear2EnglishWorksheet } from "@/lib/worksheet-data-english-year2";
 import WorksheetPage from "@/components/worksheets/WorksheetPage";
 import ActivityRenderer from "@/components/worksheets/ActivityRenderer";
 import PrintButton from "@/components/worksheets/PrintButton";
@@ -12,26 +12,26 @@ interface PageProps {
 }
 
 export async function generateStaticParams() {
-  return year8MathsWorksheets.map((ws) => ({ itemSlug: ws.slug }));
+  return year2EnglishWorksheets.map((ws) => ({ itemSlug: ws.slug }));
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { itemSlug } = await params;
-  const worksheet = getYear8Worksheet(itemSlug);
+  const worksheet = getYear2EnglishWorksheet(itemSlug);
   if (!worksheet) return {};
   return {
-    title: `${worksheet.title} — Year 8 Maths Worksheet`,
+    title: `${worksheet.title} — Year 2 English Worksheet`,
     description: worksheet.description,
   };
 }
 
 export default async function WorksheetItemPage({ params }: PageProps) {
   const { itemSlug } = await params;
-  const worksheet = getYear8Worksheet(itemSlug);
+  const worksheet = getYear2EnglishWorksheet(itemSlug);
   if (!worksheet) notFound();
 
   const nextStepWorksheets = (worksheet.nextSteps ?? [])
-    .map((slug) => year8MathsWorksheets.find((w) => w.slug === slug))
+    .map((slug) => year2EnglishWorksheets.find((w) => w.slug === slug))
     .filter((w): w is typeof worksheet => w !== undefined);
 
   return (
@@ -40,7 +40,7 @@ export default async function WorksheetItemPage({ params }: PageProps) {
       <div className="no-print border-b border-charcoal/5 bg-warm-white">
         <div className="mx-auto flex max-w-[210mm] items-center justify-between px-5 py-4 sm:px-6">
           <Link
-            href="/worksheets/mathematics/year-8"
+            href="/worksheets/english/year-2"
             className="inline-flex items-center gap-2 text-sm font-medium text-charcoal-light transition-colors hover:text-charcoal"
           >
             <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
@@ -60,7 +60,7 @@ export default async function WorksheetItemPage({ params }: PageProps) {
               </svg>
               Report a Mistake
             </Link>
-            <PrintButton filename={`year8-maths-${worksheet.slug}`} />
+            <PrintButton filename={`year2-english-${worksheet.slug}`} />
           </div>
         </div>
       </div>
@@ -73,7 +73,7 @@ export default async function WorksheetItemPage({ params }: PageProps) {
           ))}
         </WorksheetPage>
       </div>
-      <NextStepsSection nextSteps={nextStepWorksheets} basePath="/worksheets/mathematics/year-8" />
+      <NextStepsSection nextSteps={nextStepWorksheets} basePath="/worksheets/english/year-2" />
     </>
   );
 }

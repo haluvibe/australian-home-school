@@ -32,6 +32,13 @@ export const year3MathsWorksheets: WorksheetItem[] = [
         script: "Tell me: what does the digit in the thousands place tell us? And how do you know which number is bigger when you compare two big numbers?",
         action: "Write two 4-digit numbers side by side (for example 4,520 and 4,250) and let the child explain which is bigger and why, then hand over the worksheet.",
       },
+      parentTip: "When children start confusing the thousands place with the hundreds place, it helps to always write a place value chart together before comparing numbers. Do not rush past the physical counting step — if your child can see ten groups of ten beans forming a hundred, the concept of 10,000 becomes much more concrete.",
+      extension: "Challenge your child to find five numbers beyond 10,000 in newspapers, catalogues or online articles. Write them all down and then order them from smallest to largest. As an extra challenge, ask them to round each number to the nearest thousand and explain their reasoning aloud.",
+      resources: [
+        { title: "Place Value — Khan Academy Grade 3", url: "https://www.khanacademy.org/math/cc-third-grade-math/imp-place-value", description: "Interactive lessons and exercises on reading and writing large numbers with place value." },
+        { title: "Large Numbers — Maths is Fun", url: "https://www.mathsisfun.com/numbers/counting-large-numbers.html", description: "Clear visual explanation of place value for large numbers up to and beyond 10,000." },
+        { title: "Place Value — ABC Education", url: "https://education.abc.net.au/home#!/topic/1567871/place-value", description: "Australian curriculum-aligned videos and activities on place value." },
+      ],
     },
     activities: [
       // ─── Easy ───
@@ -202,6 +209,7 @@ export const year3MathsWorksheets: WorksheetItem[] = [
       { type: "sorting", title: "Sort Australian Distances: Greater or Less Than 1,000 km?", instruction: "Sort these approximate driving distances from Sydney.", columns: ["Less than 1,000 km", "More than 1,000 km"], items: [{ label: "Canberra (~280 km)" }, { label: "Melbourne (~880 km)" }, { label: "Brisbane (~920 km)" }, { label: "Adelaide (~1,400 km)" }, { label: "Perth (~4,000 km)" }, { label: "Newcastle (~170 km)" }] },
       { type: "home-activity", title: "Home Activity: Australian Number Facts", instruction: "Discover amazing Australian number facts!", suggestions: ["Find out the length of the Great Barrier Reef in km. Round to the nearest thousand.", "Look up the height of Uluru in metres. Write it in words.", "Find Australia's land area in square kilometres. Is it closer to 7 million or 70 million?", "Find the number of species of unique animals in Australia. Round to the nearest hundred."] },
     ],
+    nextSteps: ["partition-for-calculation"],
   },
 
   // ══════════════════════════════════════════════════════════════
@@ -235,6 +243,13 @@ export const year3MathsWorksheets: WorksheetItem[] = [
         script: "Show me how you would partition 563 to make it easy to add 200. Which way works best and why?",
         action: "Listen and prompt if needed. The child should identify that putting 500 and 63 makes adding 200 straightforward. Hand over the worksheet when confident.",
       },
+      parentTip: "Watch out for the common habit of partitioning only in the standard way — hundreds, tens, ones. Gently encourage your child to experiment with flexible splits, for example 347 can become 300 and 47, or 350 minus 3. If they get stuck, try using coins to physically represent the split.",
+      extension: "Play Split It Your Way. Give your child a three-digit number and challenge them to find three completely different ways to partition it — for example, 452 can be 400 and 52, or 450 and 2, or 440 and 12. Which partition makes it easiest to add 30? Discuss and compare strategies.",
+      resources: [
+        { title: "Addition and Subtraction — Khan Academy Grade 3", url: "https://www.khanacademy.org/math/cc-third-grade-math/imp-addition-and-subtraction", description: "Exercises on breaking apart numbers to add and subtract more flexibly." },
+        { title: "Expanded Form — Maths is Fun", url: "https://www.mathsisfun.com/numbers/expanded-form.html", description: "Explains expanded form and how to split numbers in multiple ways for calculation." },
+        { title: "NRICH: Reasoned Rounding", url: "https://nrich.maths.org/problems/reasoned-rounding", description: "A thoughtful problem-solving activity involving number partitioning and estimation strategies." },
+      ],
     },
     activities: [
       // ─── Easy ───
@@ -360,6 +375,7 @@ export const year3MathsWorksheets: WorksheetItem[] = [
       { type: "sorting", title: "Sort 4-Digit Partitions: Standard or Non-Standard?", instruction: "Sort each partition.", columns: ["Standard (Th + H + T + O)", "Non-standard"], items: [{ label: "4000 + 300 + 20 + 5" }, { label: "4325 + 0" }, { label: "7000 + 800 + 0 + 9" }, { label: "7809 − 0" }, { label: "5000 + 600 + 70 + 8" }, { label: "5670 + 8" }] },
       { type: "home-activity", title: "Home Activity: 4-Digit Number Partition Challenge", instruction: "Practise partitioning 4-digit numbers!", suggestions: ["Find 5 four-digit numbers in a newspaper or book. Partition each in standard form.", "Partition the same number 3 different ways (standard and non-standard).", "Use partitioning to add two 4-digit numbers mentally.", "Make a set of partition cards: write a 4-digit number on one card and its partition on another. Play memory."] },
     ],
+    nextSteps: ["apply-addition-subtraction"],
   },
 
   // ══════════════════════════════════════════════════════════════
@@ -392,6 +408,13 @@ export const year3MathsWorksheets: WorksheetItem[] = [
         script: "Tell me: how does knowing 9 minus 4 equals 5 help you work out 490 minus 40? Explain it in your own words.",
         action: "Child explains the connection. Write one more example together and confirm understanding before handing over the worksheet.",
       },
+      parentTip: "A very common habit is for children to treat each problem as brand new rather than looking for the familiar small fact hiding inside it. When they see 60 plus 70, remind them to look for the single-digit fact first. If they cannot see the connection, write the small fact directly above the larger one so the pattern becomes visual.",
+      extension: "Create a fact family ladder together. Write a basic addition fact at the bottom, for example 7 plus 8 equals 15. Write the tens version above it — 70 plus 80 equals 150 — then the hundreds version. Can your child extend it to thousands? Write the subtraction versions beside each rung of the ladder.",
+      resources: [
+        { title: "Addition and Subtraction Strategies — Khan Academy", url: "https://www.khanacademy.org/math/cc-third-grade-math/imp-addition-and-subtraction", description: "Practise applying known addition and subtraction facts to larger numbers." },
+        { title: "Addition — Maths is Fun", url: "https://www.mathsisfun.com/numbers/addition.html", description: "Clear explanations of addition strategies and how to extend small facts to larger numbers." },
+        { title: "NRICH: Strike It Out", url: "https://nrich.maths.org/problems/strike-it-out", description: "A game that builds flexible thinking with addition and subtraction across number ranges." },
+      ],
     },
     activities: [
       // ─── Easy ───
@@ -512,6 +535,7 @@ export const year3MathsWorksheets: WorksheetItem[] = [
       { type: "sorting", title: "Sort: Mental or Written Method?", instruction: "Sort each calculation by the best method.", columns: ["Better for mental calculation", "Better for written method"], items: [{ label: "300 + 200" }, { label: "678 + 349" }, { label: "500 − 200" }, { label: "835 − 469" }, { label: "99 + 45" }, { label: "712 − 385" }] },
       { type: "home-activity", title: "Home Activity: Maths in the News", instruction: "Find addition and subtraction in the news!", suggestions: ["Find a news article with numbers. Write 3 addition or subtraction problems from the data.", "Sports scores: add team scores to find the total points scored.", "Find the difference between two statistics in a news item.", "Write a word problem using data from the news and solve it."] },
     ],
+    nextSteps: ["single-digit-multiplication-division"],
   },
 
   // ══════════════════════════════════════════════════════════════
@@ -545,6 +569,13 @@ export const year3MathsWorksheets: WorksheetItem[] = [
         script: "Here is a problem: there are 5 shelves and 8 books on each shelf. How many books? Without using objects this time — just think about what you know. Now what if I said 40 books on 5 shelves equally — how many on each shelf?",
         action: "Child works both problems mentally or on paper. Confirm both answers. Hand over the worksheet.",
       },
+      parentTip: "Multiplication and division are deeply connected, but many children treat them as completely separate topics. When your child divides, always ask them to say the matching multiplication fact aloud afterwards. Hearing both facts together — three fours are twelve, and twelve divided by four is three — is the fastest path to fluency.",
+      extension: "Play Fact Family Triangles. Draw a triangle and put a number at each corner — two smaller numbers like 4 and 6, and their product 24 at the top. Cover one corner and challenge your child to work it out using the other two. Can they write all four facts? Make ten triangles and race through them.",
+      resources: [
+        { title: "Multiplication — Khan Academy Grade 3", url: "https://www.khanacademy.org/math/cc-third-grade-math/imp-multiplication", description: "Step-by-step exercises on single-digit multiplication and its connection to division." },
+        { title: "Times Tables — Maths is Fun", url: "https://www.mathsisfun.com/times-tables.html", description: "Interactive times table practice and visual arrays to support fact fluency." },
+        { title: "NRICH: Multiplication and Division Problems", url: "https://nrich.maths.org/multiplication-and-division", description: "Rich tasks involving multiplication and division for deeper understanding." },
+      ],
     },
     activities: [
       // ─── Easy ───
@@ -660,6 +691,7 @@ export const year3MathsWorksheets: WorksheetItem[] = [
       { type: "sorting", title: "Sort: Which Times Table?", instruction: "Sort each product into the times table it belongs to.", columns: ["6 times table", "7 times table", "8 times table", "9 times table"], items: [{ label: "42" }, { label: "72" }, { label: "63" }, { label: "48" }, { label: "81" }, { label: "56" }] },
       { type: "home-activity", title: "Home Activity: Times Table Mastery Test", instruction: "Give yourself a times tables mastery test!", suggestions: ["Write out 6×, 7×, 8×, 9× tables from memory. Time yourself.", "Ask a family member to call out random facts from these tables.", "Identify which facts you found hardest. Practise those specifically.", "On Friday, test yourself again. Did you improve?"] },
     ],
+    nextSteps: ["times-tables-2-3-4-5-10"],
   },
 
   // ══════════════════════════════════════════════════════════════
@@ -680,7 +712,7 @@ export const year3MathsWorksheets: WorksheetItem[] = [
       ],
       intro: {
         title: "The Amazing Patterns",
-        script: "The times tables are not just random numbers to memorise — they all have patterns. The 5 times table always ends in 0 or 5. The 10 times table always ends in 0. The 2 times table is always even. Let me show you these patterns and then you try to spot them.",
+        script: "Count to 50 in 5s with me — ready? Five, ten, fifteen, twenty... Stop! What do you notice about all those numbers? They all end in 0 or 5. That is a pattern hiding inside the 5 times table! Every times table has a secret pattern. Today we are going to discover them.",
         action: "Write the 2s, 5s and 10s tables on paper in columns side by side. Ask the child to spot the pattern in the last digit of each table. Point out how 4s are just double the 2s.",
       },
       mainActivity: {
@@ -690,9 +722,16 @@ export const year3MathsWorksheets: WorksheetItem[] = [
       },
       wrapUp: {
         title: "Fact Connection",
-        script: "If you know 3 times 8 equals 24, can you tell me 30 times 8? What about 4 times 8 — can you get there from 3 times 8? If 3 groups is 24, one more group of 8 is 32.",
+        script: "Here is a challenge I want you to think about: if you know 3 times 8, how could that help you work out 4 times 8? Try to explain your thinking in full sentences before you write anything down — what is the connection you can see?",
         action: "Write 3 x 8 = 24 and ask the child to derive 4 x 8 by adding one more group. Do the same for 5 x 8 from 4 x 8. Hand over the worksheet.",
       },
+      parentTip: "Rote memorisation without pattern recognition tends not to stick. Spend time on the patterns first — the 5 times table always ends in 0 or 5, the 2 times table is always even, the 10 times table always ends in 0. Once your child can explain why those patterns exist, the facts are much easier to recall under pressure.",
+      extension: "Create a times table rainbow on grid paper. For each times table — 2, 3, 4, 5, and 10 — colour all the multiples on a 1-to-100 grid in a different colour. Which numbers get coloured twice? Which three times? This shows common multiples visually and leads to great discussion about what your child notices.",
+      resources: [
+        { title: "Multiplication Tables — Khan Academy", url: "https://www.khanacademy.org/math/cc-third-grade-math/imp-multiplication", description: "Practice exercises and videos for the 2, 3, 4, 5 and 10 times tables." },
+        { title: "Times Tables Tips — Maths is Fun", url: "https://www.mathsisfun.com/tables.html", description: "Tricks, patterns and practice tools for all the times tables." },
+        { title: "NRICH: Lots of Lollies", url: "https://nrich.maths.org/problems/lots-of-lollies", description: "An engaging problem that builds understanding of multiples and times table patterns." },
+      ],
     },
     activities: [
       // ─── Easy ───
@@ -812,6 +851,7 @@ export const year3MathsWorksheets: WorksheetItem[] = [
       { type: "sorting", title: "Sort Products: Less Than 30 or More Than 30?", instruction: "Work out each product and sort it.", columns: ["Less than 30", "Equal to 30", "More than 30"], items: [{ label: "3 × 9" }, { label: "5 × 6" }, { label: "4 × 8" }, { label: "2 × 10" }, { label: "3 × 10" }, { label: "4 × 9" }] },
       { type: "home-activity", title: "Home Activity: Times Tables in Music", instruction: "Connect times tables to music and rhythm!", suggestions: ["Clap the 3 times table in a rhythm: 3, 6, 9, 12 ...", "Can you clap the 4 times table while singing the numbers?", "Record yourself reciting a times table. Can you speed it up each time you replay it?", "Make up a times table rap for a table you find hard."] },
     ],
+    nextSteps: ["unit-fractions-multiples"],
   },
 
   // ══════════════════════════════════════════════════════════════
@@ -842,9 +882,16 @@ export const year3MathsWorksheets: WorksheetItem[] = [
       },
       wrapUp: {
         title: "The Comparing Surprise",
-        script: "Which is bigger — one half or one quarter? Think about it first. If I have a pizza cut into 2 pieces and you have one cut into 4 pieces, whose piece is bigger? One half! The bigger the bottom number, the more cuts, so the smaller each piece is.",
+        script: "Here is a puzzle I want you to think through out loud: if we cut the same pizza into 2 pieces or into 4 pieces, which way gives you a bigger piece — and why does that surprise some people? Talk me through your thinking before we settle on an answer.",
         action: "Draw two same-size rectangles. Divide one into halves and one into quarters. Child points to which single piece is bigger. Then hand over the worksheet.",
       },
+      parentTip: "The biggest misconception in early fractions is that a larger denominator means a larger fraction. Your child may confidently say one-eighth is bigger than one-quarter because eight is bigger than four. Use physical examples — fold paper, break food into pieces — to show that more cuts means smaller pieces each time.",
+      extension: "Run a fraction kitchen session. Take a piece of toast or a sheet of paper and fold it into halves, then quarters, then eighths. At each stage ask: how many pieces now? What fraction is each piece? If I eat two of these pieces, what fraction have I eaten? This builds the concept of multiples of unit fractions in a hands-on way.",
+      resources: [
+        { title: "Fractions — Khan Academy Grade 3", url: "https://www.khanacademy.org/math/cc-third-grade-math/imp-fractions", description: "Interactive fraction lessons covering unit fractions and comparing fraction sizes." },
+        { title: "Fractions — Maths is Fun", url: "https://www.mathsisfun.com/fractions.html", description: "Clear visual explanations of fractions, denominators and numerators with interactive tools." },
+        { title: "NRICH: Fraction Match", url: "https://nrich.maths.org/problems/fraction-match", description: "A matching activity that deepens understanding of unit fractions and their relative sizes." },
+      ],
     },
     activities: [
       // ─── Easy ───
@@ -957,6 +1004,7 @@ export const year3MathsWorksheets: WorksheetItem[] = [
       { type: "open-response", title: "Fraction Stories", instruction: "Write fraction stories and solve them.", prompts: [{ text: "Write a story using 1/3: ___\nNumber sentence: ___  Answer: ___", type: "lines", lines: 2 }, { text: "Write a story using 3/4: ___\nNumber sentence: ___  Answer: ___", type: "lines", lines: 2 }] },
       { type: "home-activity", title: "Home Activity: Fraction Wall", instruction: "Make a fraction wall at home!", suggestions: ["Cut strips of paper of equal length. Fold one in half, one in quarters, one in thirds, one in sixths.", "Label each part with its fraction.", "Which is larger: 1/3 or 1/4? Use your fraction wall to check.", "Can you find two fractions on your wall that are equivalent?"] },
     ],
+    nextSteps: ["estimate-financial-calculations"],
   },
 
   // ══════════════════════════════════════════════════════════════
@@ -990,6 +1038,13 @@ export const year3MathsWorksheets: WorksheetItem[] = [
         script: "Tell me: if an item costs $8.95 and another costs $6.10, about how much do I need? How did you work that out?",
         action: "Child explains the rounding strategy. Confirm that $8.95 rounds to $9 and $6.10 rounds to $6, making about $15. Hand over the worksheet.",
       },
+      parentTip: "Let your child be the budget checker on your next real shopping trip or online order. Give them a rough budget and ask them to estimate the running total as items are added. The key skill here is rounding to the nearest dollar and adding mentally — resist the urge to reach for a calculator so they get the authentic practice.",
+      extension: "Set up a home supermarket using items from your pantry with sticky-note prices. Give your child a $20 budget and ask them to choose items, estimate the total before paying, then work out the exact total and any change. Swap roles so your child becomes the shopkeeper and must check whether you have given the right change.",
+      resources: [
+        { title: "Measurement and Data — Khan Academy Grade 3", url: "https://www.khanacademy.org/math/cc-third-grade-math/imp-measurement-and-data", description: "Activities involving money, making change and financial reasoning for Year 3." },
+        { title: "Money — Maths is Fun", url: "https://www.mathsisfun.com/money.html", description: "Explanation of money calculations, rounding prices and making change." },
+        { title: "NRICH: Buying a Balloon", url: "https://nrich.maths.org/problems/buying-a-balloon", description: "A problem-solving activity involving money, estimation and financial decision-making." },
+      ],
     },
     activities: [
       // ─── Easy ───
@@ -1094,6 +1149,7 @@ export const year3MathsWorksheets: WorksheetItem[] = [
       { type: "open-response", title: "Create a Shopping Report", instruction: "Pretend you shopped for 5 items with a $50 budget.", prompts: [{ text: "Item 1: ___ $___  Item 2: ___ $___  Item 3: ___ $___  Item 4: ___ $___  Item 5: ___ $___", type: "lines", lines: 2 }, { text: "Total: $___  Change from $50: $___", type: "lines", lines: 1 }, { text: "Which item gave the best value? Why?", type: "lines", lines: 2 }] },
       { type: "home-activity", title: "Home Activity: Smart Shopper Week", instruction: "Be a smart shopper for a whole week!", suggestions: ["Every time your family shops, look for sale items. Record the saving.", "Compare two brands of the same product. Which is better value per gram/mL?", "Look at the unit price label in the supermarket. What does it tell you?", "Calculate how much your family spends on groceries per week. How many weeks of savings would buy a new game?"] },
     ],
+    nextSteps: ["unknown-values-add-subtract"],
   },
 
   // ══════════════════════════════════════════════════════════════
@@ -1127,6 +1183,13 @@ export const year3MathsWorksheets: WorksheetItem[] = [
         script: "Your turn to be the puzzle master. Write a number sentence with a blank for me to solve. Then tell me which operation I need to use to find the mystery number.",
         action: "Child writes a number sentence. Parent solves it and explains the strategy. Swap one more time, then hand over the worksheet.",
       },
+      parentTip: "Children often try to guess the missing number randomly rather than using inverse operations. If you notice this, pause and ask: what operation is happening in this number sentence? What is the opposite of that? Building the habit of identifying the inverse before calculating is more valuable long-term than getting a quick right answer.",
+      extension: "Play Mystery Number. Write number sentences with a box for the unknown — start simple with something like box plus 9 equals 15, then build to two-step challenges. Then let your child write five of their own mystery number sentences for you to solve. Checking your work is a powerful learning activity for them.",
+      resources: [
+        { title: "Unknown Values and Equations — Khan Academy", url: "https://www.khanacademy.org/math/cc-third-grade-math/imp-addition-and-subtraction", description: "Interactive exercises on finding missing numbers in addition and subtraction equations." },
+        { title: "Algebra Basics — Maths is Fun", url: "https://www.mathsisfun.com/algebra/index.html", description: "Gentle introduction to solving for unknowns using inverse operations and simple equations." },
+        { title: "NRICH: Number Juggler", url: "https://nrich.maths.org/problems/number-juggler", description: "A puzzle-style activity that builds algebraic thinking about missing values in equations." },
+      ],
     },
     activities: [
       // ─── Easy ───
@@ -1225,6 +1288,7 @@ export const year3MathsWorksheets: WorksheetItem[] = [
       { type: "open-response", title: "Puzzle: Find the Three Numbers", instruction: "Three numbers: A, B, C. A + B = 20. B + C = 30. A + C = 22.", prompts: [{ text: "Hint: add all three equations. A + B + C = ___", type: "lines", lines: 1 }, { text: "Use A + B + C to find each value: A = ___ B = ___ C = ___", type: "lines", lines: 1 }, { text: "Check: does A + B = 20? ___  B + C = 30? ___  A + C = 22? ___", type: "lines", lines: 1 }] },
       { type: "home-activity", title: "Home Activity: Unknown Number Newspaper", instruction: "Create a one-page unknown number newspaper!", suggestions: ["Write 5 headlines using unknown numbers: 'Mayor earns ___ dollars if she earns $100 and spends $37.'", "Create 3 puzzles for your family to solve using unknown values.", "Find a pattern in nature and write it as an equation.", "Design a 'Guess the Number' game for younger students using what you know about unknowns."] },
     ],
+    nextSteps: ["algorithms-patterns"],
   },
 
   // ══════════════════════════════════════════════════════════════
@@ -1257,6 +1321,13 @@ export const year3MathsWorksheets: WorksheetItem[] = [
         script: "Now you design a number machine. Choose a starting number and a rule — add or subtract any amount you like. Write the first five numbers in your pattern. Can I guess your rule?",
         action: "Child writes a pattern. Parent tries to name the rule. Discuss and confirm. Hand over the worksheet.",
       },
+      parentTip: "When children first encounter patterns, they sometimes identify the next number correctly but cannot articulate the rule. Push gently: how did you know what came next? Explaining the rule in words — I keep subtracting 4 — builds algebraic thinking, which is the foundation of later formal algebra. The explanation matters as much as the answer.",
+      extension: "Build a two-step rule pattern together. For example: start at 2, add 3, then double, then add 3, then double again. Write the first four terms and see if your child can figure out the rule. Then try a visual pattern using squares drawn on grid paper where each step adds a new row — how many squares will step 10 have?",
+      resources: [
+        { title: "Arithmetic Patterns — Khan Academy Grade 3", url: "https://www.khanacademy.org/math/cc-third-grade-math/imp-arithmetic-patterns-and-problem-solving", description: "Exercises on identifying rules and extending number patterns and sequences." },
+        { title: "Number Patterns — Maths is Fun", url: "https://www.mathsisfun.com/numberpatterns.html", description: "Clear explanation of how number patterns and rules work, with interactive examples." },
+        { title: "NRICH: Number Pyramids", url: "https://nrich.maths.org/problems/number-pyramids", description: "An open-ended pattern challenge that develops algebraic thinking and rule-finding." },
+      ],
     },
     activities: [
       // ─── Easy ───
@@ -1358,6 +1429,7 @@ export const year3MathsWorksheets: WorksheetItem[] = [
       { type: "open-response", title: "Pattern to Prediction", instruction: "Use a pattern to make a prediction.", prompts: [{ text: "Pattern: 5, 10, 15, 20 ... What is the 20th term? ___  How did you work it out?", type: "lines", lines: 2 }, { text: "If the rule is 'add 7', and the 1st term is 3, what is the 10th term? ___", type: "lines", lines: 2 }] },
       { type: "home-activity", title: "Home Activity: Pattern in Numbers", instruction: "Investigate number patterns at home!", suggestions: ["Write the multiplication table for 9. Look at the digits. What pattern do you notice?", "Add consecutive odd numbers: 1, 1+3, 1+3+5 ... What do you get?", "Look at a clock face. What patterns do you see in the numbers?", "Create a new sequence and challenge a family member to find the rule."] },
     ],
+    nextSteps: ["metric-units-estimate-compare"],
   },
 
   // ══════════════════════════════════════════════════════════════
@@ -1389,9 +1461,16 @@ export const year3MathsWorksheets: WorksheetItem[] = [
       },
       wrapUp: {
         title: "Units Summary",
-        script: "Tell me: how many centimetres in a metre? How many metres in a kilometre? How many grams in a kilogram? How many millilitres in a litre? These conversions are really important to remember.",
+        script: "If you had to choose the single most useful measurement conversion to remember for everyday life, which would you pick — and why? Is it kilometres and metres, kilograms and grams, or litres and millilitres? What makes your choice the most practical one?",
         action: "Child recites the four key conversions. Write them down as a reference. Hand over the worksheet.",
       },
+      parentTip: "A child who cannot yet visualise reference points will struggle to estimate meaningfully. Before doing any written work, spend five minutes measuring real things around your home — the height of the door, the weight of an apple, a cup of water in millilitres. These become personal reference points your child can use whenever they estimate.",
+      extension: "Run a measurement marathon around your home. Choose five different types of measurements: length, mass, capacity, temperature if you have a thermometer, and time. For each, make a prediction first, then measure, then calculate the difference between your estimate and the actual result. Who in the family gets the closest estimates overall?",
+      resources: [
+        { title: "Measurement — Khan Academy Grade 3", url: "https://www.khanacademy.org/math/cc-third-grade-math/imp-measurement-and-data", description: "Interactive lessons on measuring length, mass and capacity using metric units." },
+        { title: "Metric System — Maths is Fun", url: "https://www.mathsisfun.com/measure/metric-system.html", description: "Explanation of metric units, conversions and real-world estimation examples." },
+        { title: "NRICH: Sizing Them Up", url: "https://nrich.maths.org/problems/sizing-them-up", description: "An estimation-focused activity that challenges children to compare and order measurements." },
+      ],
     },
     activities: [
       // ─── Easy ───
@@ -1498,6 +1577,7 @@ export const year3MathsWorksheets: WorksheetItem[] = [
       { type: "sorting", title: "Sort: Area or Perimeter?", instruction: "Sort each measurement into the correct category.", columns: ["Perimeter (distance around)", "Area (space inside)"], items: [{ label: "The border of a garden" }, { label: "The carpet inside a room" }, { label: "The fence around a paddock" }, { label: "The tiles covering a floor" }, { label: "The trim around a picture frame" }, { label: "The grass in a park" }] },
       { type: "home-activity", title: "Home Activity: Perimeter Hunt", instruction: "Find and measure perimeters around your home!", suggestions: ["Measure the perimeter of your bedroom in centimetres. Convert to metres.", "Find the perimeter of the kitchen bench.", "Estimate then measure the perimeter of your garden or backyard.", "Draw a room on grid paper and calculate its perimeter using the scale."] },
     ],
+    nextSteps: ["angles-right-angles"],
   },
 
   // ══════════════════════════════════════════════════════════════
@@ -1525,9 +1605,16 @@ export const year3MathsWorksheets: WorksheetItem[] = [
     },
     wrapUp: {
       title: "Right Angle Roll Call",
-      script: "Tell me: how many right angles does a square have? What about a rectangle? How many quarter turns does it take to spin around completely?",
+      script: "Look at the corner of this book and the corner of the room. Are both those corners right angles — and how do you know? If I asked you to find something in this room that does NOT have a right angle corner anywhere, where would you look first?",
       action: "Child answers each question. Confirm: 4 right angles in a square and rectangle, 4 quarter turns in a full turn. Hand over the worksheet.",
     },
+    parentTip: "Many children can identify a right angle when it is shown in the standard upright L-shape but fail to recognise one that is rotated or part of an irregular shape. When practising, deliberately tilt right angles and ask: is it still a right angle? Using the corner of a book or a small square of card as a physical tester helps enormously.",
+    extension: "Go on a right angle hunt around the house with a small square of cardboard as your right angle checker. Photograph or sketch ten things that contain right angles and five things that do not. Then try to find something with an angle greater than a right angle and something with an angle smaller. Record your findings in a simple two-column table.",
+    resources: [
+      { title: "Geometry: Angles — Khan Academy Grade 3", url: "https://www.khanacademy.org/math/cc-third-grade-math/imp-geometry", description: "Introduction to angles, right angles and turns aligned to Year 3 level." },
+      { title: "Angles — Maths is Fun", url: "https://www.mathsisfun.com/angles.html", description: "Clear diagrams and explanations of angle types including right angles and how to measure them." },
+      { title: "NRICH: Right Angles", url: "https://nrich.maths.org/problems/right-angles", description: "A problem-solving activity that challenges children to find and reason about right angles in shapes." },
+    ],
   }, activities: [
     { type: "circle-correct", title: "Find the Right Angle", instruction: "A right angle makes an 'L' shape. Circle the right angle.", questions: [{ prompt: "Which shows a right angle?", options: ["Corner of a book", "A pointy triangle", "A wide opening"] }, { prompt: "A clock at 3 o'clock shows...", options: ["A right angle", "Less than a right angle", "More than a right angle"] }, { prompt: "A door fully open is...", options: ["A right angle", "Less than a right angle", "More than a right angle"] }] },
     { type: "circle-correct", title: "More Right Angles", instruction: "Circle the correct answer.", questions: [{ prompt: "The corner of a page is...", options: ["A right angle", "Less than a right angle", "More than a right angle"] }, { prompt: "The corner of a picture frame is...", options: ["A right angle", "Less than a right angle", "More than a right angle"] }, { prompt: "The hands at 1 o'clock show...", options: ["A right angle", "Less than a right angle", "More than a right angle"] }] },
@@ -1620,7 +1707,9 @@ export const year3MathsWorksheets: WorksheetItem[] = [
     { type: "number-bonds", title: "Angles in a Straight Line", instruction: "Two angles on a straight line add to 180°. Find the missing angle.", bonds: [{ total: 180, partA: 90, partB: null }, { total: 180, partA: null, partB: 60 }, { total: 180, partA: 135, partB: null }, { total: 180, partA: null, partB: 30 }, { total: 180, partA: 150, partB: null }] },
     { type: "ten-frame", title: "Count Angles in Shapes — Ten Frame", instruction: "Count the right angles in each group of shapes.", frames: [{ filled: 4 }, { filled: 4 }, { filled: 0 }, { filled: 3 }, { filled: 4 }] },
     { type: "home-activity", title: "Home Activity: Angle Measurement Practice", instruction: "Practise measuring angles at home!", suggestions: ["Use a protractor to measure 5 angles you find around the house.", "Record whether each is acute, right or obtuse.", "Draw your own angles: one of each type (acute, right, obtuse).", "Challenge a family member to estimate each angle without measuring. Compare with the actual measurement."] },
-  ]},
+  ],
+  nextSteps: ["duration-formal-units"],
+},
 
   // WS 12: Duration — Formal Units of Time
   { slug: "duration-formal-units", title: "Duration: Formal Units of Time", strand: "Measurement", description: "Estimate and compare duration using formal units of time", lesson: {
@@ -1643,9 +1732,16 @@ export const year3MathsWorksheets: WorksheetItem[] = [
     },
     wrapUp: {
       title: "Conversions Check",
-      script: "Quick check: how many seconds in a minute? How many minutes in an hour? How many hours in a day? And how many minutes in half an hour?",
+      script: "Think about this: if you had been working for what felt like a long time, how would you figure out whether it was 15 minutes or closer to an hour? What clues would you look for, and which unit of time makes the most sense to describe how long a lesson usually takes?",
       action: "Child answers each. Write any corrections down. Then hand over the worksheet.",
     },
+    parentTip: "Children often confuse duration — how long something takes — with time of day, which is when something happens. Keep these ideas separate in your language at home: it is 3 o'clock describes the time of day, while it took 20 minutes describes duration. When reading analogue clocks, let your child work out the duration between two times before checking with a digital clock.",
+    extension: "Run a duration detective project for one day. Every time your family does an activity, estimate how long it will take, time it using a clock, then record the actual duration. At the end of the day, add up all the durations. What took the most time? What did you underestimate the most? Represent the results in a simple picture graph.",
+    resources: [
+      { title: "Telling Time — Khan Academy Grade 3", url: "https://www.khanacademy.org/math/cc-third-grade-math/imp-measurement-and-data", description: "Interactive lessons on reading clocks and calculating durations of time." },
+      { title: "Time — Maths is Fun", url: "https://www.mathsisfun.com/time.html", description: "Explanation of time units, reading clocks and working with duration across a day." },
+      { title: "ABC Education: Time", url: "https://education.abc.net.au/home#!/topic/1568101/time", description: "Australian curriculum videos and activities on formal units of time for Year 3." },
+    ],
   }, activities: [
     { type: "matching", title: "Match Time Units", instruction: "Draw a line to match.", left: ["1 minute", "1 hour", "1 day", "1 week"], right: ["7 days", "60 seconds", "24 hours", "60 minutes"] },
     { type: "circle-correct", title: "How Long Does It Take?", instruction: "Circle the best estimate.", questions: [{ prompt: "Brushing your teeth", options: ["2 seconds", "2 minutes", "2 hours"] }, { prompt: "A school day", options: ["6 minutes", "6 hours", "6 days"] }, { prompt: "Eating lunch", options: ["20 seconds", "20 minutes", "20 hours"] }, { prompt: "Watching a movie", options: ["2 minutes", "2 hours", "2 days"] }] },
@@ -1744,7 +1840,9 @@ export const year3MathsWorksheets: WorksheetItem[] = [
     { type: "sorting", title: "Sort: Does Duration Change with More Practice?", instruction: "Sort each activity — does it take less time as you practise more?", columns: ["Gets faster with practice", "Same time regardless"], items: [{ label: "Reading 10 pages" }, { label: "Waiting for a bus" }, { label: "Writing the alphabet" }, { label: "A bus journey of 1 hour" }, { label: "Solving maths facts" }, { label: "Cooking a roast for 2 hours" }] },
     { type: "tally-chart", title: "After-School Activities Duration", instruction: "Record how long students spend on each after-school activity.", categories: [{ label: "Less than 30 min", icon: "star", count: 5 }, { label: "30–60 min", icon: "circle", count: 11 }, { label: "1–2 hours", icon: "heart", count: 8 }, { label: "More than 2 hours", icon: "diamond", count: 4 }] },
     { type: "home-activity", title: "Home Activity: Public Transport Time Table Explorer", instruction: "Explore public transport timetables!", suggestions: ["Find a bus or train timetable for your area online (with a parent).", "Plan a journey from your suburb to the city centre. How long does it take?", "Find the first and last service of the day. How many hours does the service run for?", "If you missed the 9:15 am bus, when is the next one? How long would you wait?"] },
-  ]},
+  ],
+  nextSteps: ["money-representations"],
+},
 
   // WS 13: Money Representations
   { slug: "money-representations", title: "Money Representations", strand: "Measurement", description: "Represent money values in different ways", lesson: {
@@ -1770,6 +1868,13 @@ export const year3MathsWorksheets: WorksheetItem[] = [
       script: "Here is the challenge: what is the fewest number of coins and notes you can use to make $7.50? Think carefully — bigger coins are better!",
       action: "Child works out the minimum coins and notes needed. Confirm: $5 note plus $2 coin plus 50c coin equals three pieces. Hand over the worksheet.",
     },
+    parentTip: "Real coins and notes make this lesson much more powerful than worksheets alone. If you can, get out your actual wallet and let your child make amounts, give change and find the fewest-coin solution for real amounts. The physical act of swapping coins — four 50c coins for a $2 coin — is a learning moment that paper exercises cannot fully replicate.",
+    extension: "Play Exact Change Only. Take turns naming an amount under $10 and the other person must make it using the fewest possible coins and notes. Then challenge: can you make the same amount in a different way? Who can find the most representations for $4.50? Whoever finds the most valid representations wins.",
+    resources: [
+      { title: "Money — Khan Academy Grade 3", url: "https://www.khanacademy.org/math/cc-third-grade-math/imp-measurement-and-data", description: "Practice with making amounts, comparing values and calculating change." },
+      { title: "Money — Maths is Fun", url: "https://www.mathsisfun.com/money.html", description: "Worked examples for counting money, making change and representing amounts in different ways." },
+      { title: "ABC Education: Money and Financial Mathematics", url: "https://education.abc.net.au/home#!/topic/1567881/money-and-financial-mathematics", description: "Australian curriculum-aligned videos and activities on money representations and financial reasoning." },
+    ],
   }, activities: [
     { type: "matching", title: "Match Coins to Values", instruction: "Draw a line to match.", left: ["$1 + $1 + $1", "$2 + $2", "50c + 50c", "$2 + $1 + 50c"], right: ["$3.50", "$4", "$1", "$3"] },
     { type: "matching", title: "Match More Coins", instruction: "Draw a line to match.", left: ["$1 + 50c + 20c", "$2 + $2 + $1", "50c + 20c + 20c + 10c", "$5 + $2"], right: ["$1.00", "$7", "$1.70", "$5"] },
@@ -1865,7 +1970,9 @@ export const year3MathsWorksheets: WorksheetItem[] = [
     { type: "tally-chart", title: "Types of Payment Used", instruction: "Record how students' families pay for groceries.", categories: [{ label: "Cash", icon: "star", count: 8 }, { label: "Card", icon: "circle", count: 15 }, { label: "Phone pay", icon: "moon", count: 6 }, { label: "Vouchers", icon: "heart", count: 2 }] },
     { type: "open-response", title: "Compare Prices Over Time", instruction: "Explore how prices change.", prompts: [{ text: "A movie ticket cost $5 in 1990 and now costs $20. How much more is it? ___", type: "lines", lines: 1 }, { text: "How many times more does it cost now than in 1990? ___", type: "lines", lines: 1 }, { text: "Name something else that has become more expensive. Ask an adult:", type: "lines", lines: 2 }] },
     { type: "home-activity", title: "Home Activity: Australian Money History", instruction: "Learn about Australian money history!", suggestions: ["Find out when Australia switched from pounds to dollars (hint: 1966).", "Ask an adult what things cost when they were young. Compare to today.", "Find out what the coins look like. What animals or people are on them?", "Create a fact sheet about Australian currency for a younger student."] },
-  ]},
+  ],
+  nextSteps: ["classify-3d-objects"],
+},
 
   // WS 14: Classify 3D Objects
   { slug: "classify-3d-objects", title: "Classify 3D Objects", strand: "Space", description: "Make, compare and classify objects using key features", lesson: {
@@ -1891,6 +1998,13 @@ export const year3MathsWorksheets: WorksheetItem[] = [
       script: "I am going to describe a shape and you tell me its name. Ready? It has 6 faces, all squares, and 8 vertices. What is it? Correct, a cube! Now: it has 2 circular faces and one curved surface. That is a cylinder. Last one: it has no flat faces at all. It rolls in every direction. Yes, a sphere! You are a shape detective.",
       action: "Take turns describing objects from the room for each other to name. Finish by having your child draw one 3D shape and label its faces, edges and vertices.",
     },
+    parentTip: "It is very common for children to use 2D shape names when talking about 3D objects — saying circle instead of sphere or square instead of cube. Model the correct vocabulary consistently and gently correct in the moment. Having real objects to handle — a tin can, a ball, a cereal box, a dice — makes the learning stick far better than diagrams alone.",
+    extension: "Set a 3D building challenge. Using blocks, cardboard boxes and cylinders such as toilet rolls, build a structure that contains at least one of each 3D shape: sphere, cube, rectangular prism, cylinder and cone made from card. Photograph the finished structure and label each shape with a sticky note recording the number of faces, edges and vertices.",
+    resources: [
+      { title: "Geometry — Khan Academy Grade 3", url: "https://www.khanacademy.org/math/cc-third-grade-math/imp-geometry", description: "Lessons and exercises on identifying and classifying 3D geometric objects by their features." },
+      { title: "3D Shapes — Maths is Fun", url: "https://www.mathsisfun.com/geometry/solid-geometry.html", description: "Visual guide to 3D shapes including faces, edges, vertices and real-world examples." },
+      { title: "NRICH: Which Solid?", url: "https://nrich.maths.org/problems/which-solid", description: "A classifying activity that challenges children to use key features to identify 3D objects." },
+    ],
   }, activities: [
     { type: "matching", title: "Match 3D Shapes to Names", instruction: "Draw a line to match.", left: ["A ball shape", "A box shape", "An ice-cream cone shape", "A can shape"], right: ["Cylinder", "Sphere", "Cube", "Cone"] },
     { type: "circle-correct", title: "Name That Shape!", instruction: "Circle the correct name.", questions: [{ prompt: "A dice is shaped like a...", options: ["Sphere", "Cube", "Cylinder"] }, { prompt: "A football is shaped like a...", options: ["Cube", "Cone", "Sphere"] }, { prompt: "A tin of beans is shaped like a...", options: ["Cylinder", "Cube", "Cone"] }, { prompt: "A party hat is shaped like a...", options: ["Sphere", "Cylinder", "Cone"] }] },
@@ -1985,7 +2099,9 @@ export const year3MathsWorksheets: WorksheetItem[] = [
     { type: "open-response", title: "Nets and Folding", instruction: "Explore how nets fold into 3D shapes.", prompts: [{ text: "A cross-shaped net with 6 equal squares folds into a: ___", type: "lines", lines: 1 }, { text: "Draw the net of a triangular prism (hint: 2 triangles + 3 rectangles):", type: "box" }] },
     { type: "tally-chart", title: "3D Shapes Spotted in One Day", instruction: "Record how many of each 3D shape you spot in one day.", categories: [{ label: "Cylinders", icon: "cylinder", count: 8 }, { label: "Rectangular prisms", icon: "cube", count: 15 }, { label: "Spheres", icon: "sphere", count: 5 }, { label: "Cones", icon: "cone", count: 3 }] },
     { type: "home-activity", title: "Home Activity: 3D Shape Investigation Report", instruction: "Write a 3D shapes investigation report!", suggestions: ["Choose one 3D shape. Research it: how many faces, vertices and edges?", "Find 5 real-life examples of your chosen shape in your home.", "Draw the net of your shape.", "Present your report to your family. Can they name your shape from your description?"] },
-  ]},
+  ],
+  nextSteps: ["2d-representations"],
+},
 
   // WS 15: 2D Representations
   { slug: "2d-representations", title: "2D Representations of Environments", strand: "Space", description: "Interpret and create two-dimensional representations of familiar environments", lesson: {
@@ -2011,6 +2127,13 @@ export const year3MathsWorksheets: WorksheetItem[] = [
       script: "Swap maps with me. Without looking at the room, can you tell me: where is the door? Where is the window? Which way would you walk to reach the bookshelf? A good map lets someone else navigate even if they have never been in the room. How well does your map do that?",
       action: "Take turns asking questions about each other's map. Finish by writing 2 directions on the back of the map: one from the door to the desk, one from the desk to the window.",
     },
+    parentTip: "Map-reading is a skill that develops gradually, and a child's first maps will look quite rough — that is completely fine. The important things are that the map includes a key and that someone else could use it to navigate. Avoid correcting neatness too strongly; focus on whether the key is clear and whether directions such as left, right and north are accurate.",
+    extension: "Create a treasure map of your home or backyard. Mark a starting point and write four directional clues — for example, take 3 steps north, then turn and walk 2 steps east. Hide a small object at the destination. Swap: your child draws a treasure map for you to follow. Discuss what information had to be included to make the map work.",
+    resources: [
+      { title: "Geometry — Khan Academy Grade 3", url: "https://www.khanacademy.org/math/cc-third-grade-math/imp-geometry", description: "Activities on spatial reasoning, directions and reading simple maps and grids." },
+      { title: "Coordinates — Maths is Fun", url: "https://www.mathsisfun.com/geometry/coordinates.html", description: "Introduction to grid coordinates and reading locations on maps." },
+      { title: "NRICH: Treasure Hunt", url: "https://nrich.maths.org/problems/treasure-hunt", description: "A problem involving following directions and mapping a familiar environment." },
+    ],
   }, activities: [
     { type: "circle-correct", title: "Read the Map", instruction: "Look at the map description and circle the correct answer.", questions: [{ prompt: "On a map, the door is at the bottom. Where are the windows?", options: ["Top", "Bottom", "They are not shown"] }, { prompt: "The teacher's desk is in the front-left. Where is it on the map?", options: ["Top-left", "Bottom-left", "Centre"] }, { prompt: "A bird's-eye view means looking from...", options: ["The side", "Above", "Below"] }, { prompt: "On a classroom map, desks appear as...", options: ["Circles", "Rectangles", "Triangles"] }] },
     { type: "matching", title: "Match Views to Descriptions", instruction: "Draw a line to match.", left: ["Bird's-eye view", "Side view", "Front view", "Map view"], right: ["Looking from the front", "Looking from above", "A flat drawing of a place", "Looking from the side"] },
@@ -2102,7 +2225,9 @@ export const year3MathsWorksheets: WorksheetItem[] = [
     { type: "tally-chart", title: "Popular Map Types", instruction: "Record how many students prefer each type of map.", categories: [{ label: "Street map", icon: "car", count: 8 }, { label: "Topographic", icon: "tree", count: 4 }, { label: "Weather map", icon: "sun", count: 6 }, { label: "Satellite view", icon: "star", count: 9 }] },
     { type: "open-response", title: "Design a Tourist Map", instruction: "Design a tourist map of a place you know or have visited.", prompts: [{ text: "Place name: ___  Draw the map with at least 5 landmarks:", type: "box" }, { text: "Add a key for your symbols:", type: "lines", lines: 1 }, { text: "Add a compass rose and a scale:", type: "lines", lines: 1 }] },
     { type: "home-activity", title: "Home Activity: State and Territory Study", instruction: "Learn about Australian states and territories!", suggestions: ["Find out the capital city of each state and territory. Write them all from memory.", "Using a map of Australia, name the states that share a border with New South Wales.", "Find the population of your state. Is it more or less than 1 million?", "Draw Australia from memory and label all states, territories and capital cities."] },
-  ]},
+  ],
+  nextSteps: ["statistical-investigations-categorical"],
+},
 
   // WS 16: Statistical Investigations — Categorical
   { slug: "statistical-investigations-categorical", title: "Statistical Investigations", strand: "Statistics", description: "Conduct guided statistical investigations with categorical and discrete numerical data", lesson: {
@@ -2129,6 +2254,13 @@ export const year3MathsWorksheets: WorksheetItem[] = [
       script: "Look at your finished tally chart. Which category got the most responses? Which got the fewest? Was the result what you expected? One of the most important things in statistics is being surprised by data. The data tells us the truth even when our guess was wrong. Write one sentence that answers your original question using the data.",
       action: "Your child writes a sentence like: 'The most popular pizza topping in our family is cheese because it got the most tally marks.' Read it back together and confirm it matches the data.",
     },
+    parentTip: "The most common error in student-led statistical investigations is choosing a question that is too vague or cannot be answered with categorical data. Help your child refine the question to something specific and answerable — what is the most popular subject in our family is much better than what do people think about school. Good questions lead to useful data.",
+    extension: "Run a full mini-investigation over two days. Day 1: choose a question, design a tally chart and collect data from at least five people. Day 2: create a picture graph or bar chart from the tally, then write three sentences about what the data shows. Present the report at dinner as if delivering a news broadcast.",
+    resources: [
+      { title: "Data and Statistics — Khan Academy Grade 3", url: "https://www.khanacademy.org/math/cc-third-grade-math/imp-measurement-and-data", description: "Lessons on conducting statistical investigations and organising collected data." },
+      { title: "Data — Maths is Fun", url: "https://www.mathsisfun.com/data/", description: "Clear explanation of data types, tally charts and how to run a simple data investigation." },
+      { title: "NRICH: Our Sports", url: "https://nrich.maths.org/problems/our-sports", description: "A guided statistical investigation activity using real categorical data from a class or family." },
+    ],
   }, activities: [
     { type: "circle-correct", title: "What Is a Survey?", instruction: "Circle the correct answer.", questions: [{ prompt: "A survey is used to...", options: ["Collect information from people", "Draw pictures", "Read a book"] }, { prompt: "Which question is best for a survey?", options: ["What is your name?", "What is your favourite fruit?", "Why is the sky blue?"] }, { prompt: "How do you record survey answers?", options: ["In a tally chart", "On the floor", "In a story"] }] },
     { type: "circle-correct", title: "Good Survey Questions", instruction: "Circle the best survey question.", questions: [{ prompt: "Which is a good survey question?", options: ["What is your favourite colour?", "Do you like things?", "Why?"] }, { prompt: "Which is a good survey question?", options: ["How do you get to school?", "What is 2 + 2?", "Tell me everything."] }] },
@@ -2221,7 +2353,9 @@ export const year3MathsWorksheets: WorksheetItem[] = [
     { type: "tally-chart", title: "Lunch Choices This Week", instruction: "Record these lunch choices from a Year 3 survey.", categories: [{ label: "Sandwiches", icon: "book", count: 12 }, { label: "Hot lunch", icon: "star", count: 8 }, { label: "Leftover dinner", icon: "spoon", count: 5 }, { label: "Sushi", icon: "fish", count: 9 }] },
     { type: "open-response", title: "Evaluate an Investigation", instruction: "Critique this investigation: 'I asked my 3 friends their favourite colour. Blue won with 2 votes.'", prompts: [{ text: "What is wrong with this investigation?", type: "lines", lines: 2 }, { text: "How would you improve it?", type: "lines", lines: 2 }, { text: "Rewrite the conclusion more accurately:", type: "lines", lines: 2 }] },
     { type: "home-activity", title: "Home Activity: Real-World Statistics", instruction: "Find real statistics in your world!", suggestions: ["Find 3 graphs in a newspaper or magazine. Write one conclusion from each.", "Look at a sports ladder. Write 3 statements using data from it.", "Find statistics from the Australian Bureau of Statistics website (with a parent).", "Discuss: how can statistics be used to mislead people?"] },
-  ]},
+  ],
+  nextSteps: ["record-represent-compare-data"],
+},
 
   // WS 17: Record, Represent & Compare Data
   { slug: "record-represent-compare-data", title: "Record, Represent & Compare Data", strand: "Statistics", description: "Record, represent and compare collected data", lesson: {
@@ -2234,7 +2368,7 @@ export const year3MathsWorksheets: WorksheetItem[] = [
     ],
     intro: {
       title: "Two Ways to Show Data",
-      script: "We already know how to use a tally chart to collect data. Today we are going to take that same data and turn it into a picture graph. A picture graph uses a symbol or small drawing to stand for a certain number of things. For example, one star symbol might represent two people. They are very easy to read at a glance because you can see which category has the most just by looking at the height or length of the row. Let us make one together.",
+      script: "If I showed you two lists of numbers, which would you find easier to compare — the numbers in a table, or little drawings in a row? I have two ways to show the same information today, and I want you to tell me at the end which one felt clearer. Let us start by turning a tally chart into a picture graph and see what changes.",
       action: "Draw a quick example on paper: a tally chart showing 4 dogs, 6 cats, 2 fish. Then next to it, draw a simple picture graph using a paw symbol for each animal. Show how the tallies translate directly into the picture graph.",
     },
     mainActivity: {
@@ -2247,6 +2381,13 @@ export const year3MathsWorksheets: WorksheetItem[] = [
       script: "Look at the picture graph and the original tally chart side by side. Which one is easier to compare at a glance? Which gives you more precise numbers? Both have strengths. The tally chart is fast to fill in when collecting data. The picture graph makes comparing categories very visual. Can you think of a situation where a picture graph would be really useful?",
       action: "Your child writes 2 comparison sentences about the car data, such as: 'Blue cars appeared 6 more times than white cars.' Check that the sentences match the numbers in the graph.",
     },
+    parentTip: "Children sometimes make picture graphs that are hard to read because their symbols are different sizes or unevenly spaced. Before starting, model drawing symbols that are the same size in a straight row. Also check that your child understands the scale — if each symbol represents 2 items, they need to draw half a symbol for an odd number, which deserves a discussion.",
+    extension: "Take the same set of data and represent it in two completely different graph types — a tally chart and a picture graph. Then write a paragraph comparing the two. Which was quicker to make? Which is clearer to read at a glance? Which makes comparing categories easier? Finally, create a bar chart on grid paper using the same data for a third representation.",
+    resources: [
+      { title: "Graphs and Data — Khan Academy Grade 3", url: "https://www.khanacademy.org/math/cc-third-grade-math/imp-measurement-and-data", description: "Interactive practice creating and reading picture graphs, tally charts and bar charts." },
+      { title: "Graphs and Charts — Maths is Fun", url: "https://www.mathsisfun.com/data/graphs-charts.html", description: "Visual guide to different types of graphs and when to use each type." },
+      { title: "NRICH: Real Statistics", url: "https://nrich.maths.org/problems/real-statistics", description: "An activity that challenges children to choose the best representation for a given data set." },
+    ],
   }, activities: [
     { type: "tally-chart", title: "Make a Tally Chart", instruction: "Read the data and create tallies.", categories: [{ label: "Red cars", icon: "car", count: 8 }, { label: "Blue cars", icon: "car", count: 12 }, { label: "White cars", icon: "car", count: 6 }, { label: "Black cars", icon: "car", count: 10 }] },
     { type: "circle-correct", title: "Read the Tally Chart", instruction: "Use the tally chart to answer.", questions: [{ prompt: "Which colour car was seen the most?", options: ["Red", "Blue", "White"] }, { prompt: "How many more blue cars than white cars?", options: ["4", "6", "8"] }, { prompt: "How many cars counted altogether?", options: ["32", "34", "36"] }] },
@@ -2348,7 +2489,9 @@ export const year3MathsWorksheets: WorksheetItem[] = [
     { type: "sequence", title: "Data Patterns", instruction: "Complete the missing values in each data sequence.", sequences: [{ items: [2, 4, 6, 0, 10], answer: [8] }, { items: [5, 10, 15, 0, 25], answer: [20] }, { items: [3, 6, 9, 12, 0], answer: [15] }] },
     { type: "open-response", title: "Summarise a Data Set", instruction: "Summarise this data in sentences. Trees: Gum=12, Wattle=8, Banksia=5, Grevillea=3.", prompts: [{ text: "Total trees counted: ___", type: "lines", lines: 1 }, { text: "Most common tree: ___  Least common: ___", type: "lines", lines: 1 }, { text: "Write 2 sentences summarising what the data shows:", type: "lines", lines: 3 }] },
     { type: "home-activity", title: "Home Activity: Graph from Life", instruction: "Create a data display from real life at home!", suggestions: ["Count how many items of each colour are in your wardrobe. Make a tally chart.", "Survey your family about their favourite meals and display in a bar graph.", "Track how many steps you walk each day for 5 days. Make a line graph.", "Find a graph in a book or newspaper. Write 3 questions you could answer from it."] },
-  ]},
+  ],
+  nextSteps: ["likelihood-everyday-events"],
+},
 
   // WS 18: Likelihood of Everyday Events
   { slug: "likelihood-everyday-events", title: "Likelihood of Everyday Events", strand: "Probability", description: "Identify and describe outcomes and the likelihood of everyday events", lesson: {
@@ -2374,6 +2517,13 @@ export const year3MathsWorksheets: WorksheetItem[] = [
       script: "Take the coin. Before I flip it, how likely is it to land on heads? It is equally likely to be heads or tails, so we say it is neither likely nor unlikely. We could say it has an even chance. Now: if I flip the coin 10 times, will exactly 5 be heads? Maybe, but probably not. That is because each flip is independent and random. The result can vary even when the chance is exactly 50/50. We will explore that more next lesson.",
       action: "Flip the coin 10 times. Record each result. Count the heads. Was it exactly 5? Discuss what happened and why the result can vary from what we expect.",
     },
+    parentTip: "Children often confuse likelihood with personal preference — they say something is likely because they want it to happen, not because it genuinely has a good chance. Use objective examples such as weather, dice and spinners rather than wishful scenarios. The language of probability — certain, likely, unlikely, impossible — must be practised in real contexts, not just memorised.",
+    extension: "Make a probability line on a long strip of paper. Mark impossible on the left and certain on the right. Write 20 everyday events on small cards — it will rain today, I will eat breakfast, I will see a unicorn — and place them on the line together. Discuss any events you and your child disagree about, because the reasoning is more valuable than the placement.",
+    resources: [
+      { title: "Math Reasoning — Khan Academy Grade 3", url: "https://www.khanacademy.org/math/cc-third-grade-math/imp-math-reasoning", description: "Introduction to likelihood, chance and probability language for Year 3 level." },
+      { title: "Probability — Maths is Fun", url: "https://www.mathsisfun.com/probability.html", description: "Explanation of probability concepts using everyday examples and accessible language." },
+      { title: "NRICH: Chances Are", url: "https://nrich.maths.org/problems/chances-are", description: "An activity exploring likelihood language and placing everyday events on a probability scale." },
+    ],
   }, activities: [
     { type: "matching", title: "Match Chance Words", instruction: "Draw a line to match.", left: ["The sun will rise tomorrow", "You will fly like a bird", "You will roll a 1 on a dice", "It will rain this week"], right: ["Certain", "Impossible", "Unlikely", "Likely"] },
     { type: "circle-correct", title: "Certain, Likely, Unlikely or Impossible?", instruction: "Circle the correct word.", questions: [{ prompt: "A coin will land on heads or tails", options: ["Certain", "Likely", "Unlikely", "Impossible"] }, { prompt: "It will snow in summer in Australia", options: ["Certain", "Likely", "Unlikely", "Impossible"] }, { prompt: "You will grow taller this year", options: ["Certain", "Likely", "Unlikely", "Impossible"] }, { prompt: "A fish will climb a tree", options: ["Certain", "Likely", "Unlikely", "Impossible"] }] },
@@ -2468,7 +2618,9 @@ export const year3MathsWorksheets: WorksheetItem[] = [
     { type: "tally-chart", title: "Card Draw Experiment", instruction: "Record results from drawing 20 cards from a suit (replaced each time).", categories: [{ label: "Ace", icon: "star", count: 2 }, { label: "Number card (2–10)", icon: "circle", count: 14 }, { label: "Face card (J, Q, K)", icon: "heart", count: 4 }] },
     { type: "open-response", title: "Probability and Fairness", instruction: "A game gives Player A 2 points for rolling 1-3, Player B 2 points for rolling 4-6.", prompts: [{ text: "Is this game fair? ___  Why or why not?", type: "lines", lines: 2 }, { text: "What changes would make the game unfair?", type: "lines", lines: 2 }, { text: "Design your own fair game using a dice:", type: "lines", lines: 2 }] },
     { type: "home-activity", title: "Home Activity: Probability Game Night", instruction: "Play probability-based games with your family!", suggestions: ["Play Snakes and Ladders. Discuss how probability affects each player's progress.", "Shuffle a deck of cards. Try to predict the colour before flipping each card. Track accuracy.", "Design a game where each player has a 1/6 chance of winning each turn. Play 10 rounds.", "Discuss: is skill or luck more important in your favourite game?"] },
-  ]},
+  ],
+  nextSteps: ["chance-experiments-variation"],
+},
 
   // WS 19: Chance Experiments & Variation
   { slug: "chance-experiments-variation", title: "Chance Experiments & Variation", strand: "Probability", description: "Conduct repeated chance experiments and discuss variation in results", lesson: {
@@ -2495,6 +2647,13 @@ export const year3MathsWorksheets: WorksheetItem[] = [
       script: "If we ran the same experiment again, do you think we would get exactly the same results? No, we would get different results even though we are using the same dice. That is variation. The more times we repeat an experiment, the closer the overall results tend to get to the expected outcome. If we rolled 600 times, each number would probably appear close to 100 times. But with only 20 rolls there is a lot of variation. That is why scientists repeat experiments many times.",
       action: "Run a second set of 20 rolls. Compare the two sets of results side by side on paper. Discuss what was the same and what was different. Finish by writing one sentence about what variation means in your own words.",
     },
+    parentTip: "This lesson can be frustrating for children who expect the dice to behave fairly — if they roll the same number six times in a row, they may think the dice is broken or unfair. Reassure them this is completely normal and is exactly what the experiment is exploring. The more rolls they do, the more even the results become — this is a great moment to introduce the idea of a larger sample size.",
+    extension: "Compare two experiments side by side. Roll one dice 20 times and record the tally. Then roll it 60 times on a separate chart. Compare the two: which experiment had results closer to the expected one-sixth for each number? Draw a bar chart for each and compare them visually. Write one sentence explaining what the comparison shows about variation and sample size.",
+    resources: [
+      { title: "Math Reasoning — Khan Academy Grade 3", url: "https://www.khanacademy.org/math/cc-third-grade-math/imp-math-reasoning", description: "Experiments and exercises on chance, variation and recording results from repeated trials." },
+      { title: "Probability — Maths is Fun", url: "https://www.mathsisfun.com/probability.html", description: "Explanation of why repeated experiments vary and how to analyse and discuss results." },
+      { title: "NRICH: Which Spinners?", url: "https://nrich.maths.org/problems/which-spinners", description: "A chance experiment activity that explores variation and connects results to theoretical probability." },
+    ],
   }, activities: [
     { type: "circle-correct", title: "What Could Happen?", instruction: "Circle all the possible outcomes.", questions: [{ prompt: "When you flip a coin, you could get...", options: ["Heads or tails", "Heads, tails or sides", "Only heads"] }, { prompt: "When you roll a dice, you could get...", options: ["1, 2, 3, 4, 5 or 6", "Any number", "Only 6"] }, { prompt: "When you pick from a bag of red and blue marbles, you could get...", options: ["Red or blue", "Only red", "Green"] }] },
     { type: "circle-correct", title: "More Possible Outcomes", instruction: "Circle the correct answer.", questions: [{ prompt: "A spinner with 4 colours could land on...", options: ["Any of the 4 colours", "Only the biggest section", "Always the same colour"] }, { prompt: "Picking a card from a deck, you could get...", options: ["Any card", "Only a king", "Only red cards"] }] },
