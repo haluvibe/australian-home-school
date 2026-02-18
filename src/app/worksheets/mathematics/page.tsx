@@ -18,6 +18,36 @@ const yearLevels = [
     href: "/worksheets/mathematics/year-1",
     description: "Numbers to 120, place value, skip counting, addition and subtraction.",
   },
+  {
+    label: "Year 2",
+    href: "/worksheets/mathematics/year-2",
+    description: "Numbers to 1,000, place value, addition & subtraction facts, times tables for twos, money, fractions and time.",
+  },
+  {
+    label: "Year 3",
+    href: "/worksheets/mathematics/year-3",
+    description: "Numbers beyond 10,000, times tables (2–5, 10), fractions, metric units, angles, 3D objects and probability.",
+  },
+  {
+    label: "Year 4",
+    href: "/worksheets/mathematics/year-4",
+    description: "Decimals, equivalent fractions, perimeter & area, symmetry, data displays and chance experiments.",
+  },
+  {
+    label: "Year 5",
+    href: "/worksheets/mathematics/year-5",
+    description: "Factors & multiples, percentages, fraction operations, angles in degrees, nets, transformations and line graphs.",
+  },
+  {
+    label: "Year 6",
+    href: "/worksheets/mathematics/year-6",
+    description: "Integers, prime numbers, decimal operations, area formulas, Cartesian plane, tessellations and probability.",
+  },
+  {
+    label: "Year 10",
+    href: "/worksheets/mathematics/year-10",
+    description: "Logarithms, trigonometry, simultaneous equations, networks, probability and statistics.",
+  },
 ];
 
 export default function MathematicsWorksheetsPage() {

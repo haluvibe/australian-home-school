@@ -1,16 +1,26 @@
 import Link from "next/link";
 import { foundationMathsWorksheets } from "@/lib/worksheet-data";
 import { year1MathsWorksheets } from "@/lib/worksheet-data-year1";
+import { year2MathsWorksheets } from "@/lib/worksheet-data-year2";
+import { year3MathsWorksheets } from "@/lib/worksheet-data-year3";
+import { year4MathsWorksheets } from "@/lib/worksheet-data-year4";
+import { year5MathsWorksheets } from "@/lib/worksheet-data-year5";
+import { year6MathsWorksheets } from "@/lib/worksheet-data-year6";
+import { year10MathsWorksheets } from "@/lib/worksheet-data-year10";
 import WorksheetObject from "@/components/worksheets/svg/WorksheetObject";
 
-const totalWorksheets =
-  foundationMathsWorksheets.length + year1MathsWorksheets.length;
+const worksheetsByYearLevel = [foundationMathsWorksheets, year1MathsWorksheets, year2MathsWorksheets, year3MathsWorksheets, year4MathsWorksheets, year5MathsWorksheets, year6MathsWorksheets, year10MathsWorksheets];
 
-const allActivities = [
-  ...foundationMathsWorksheets.flatMap((w) => w.activities),
-  ...year1MathsWorksheets.flatMap((w) => w.activities),
-];
+const totalWorksheets = worksheetsByYearLevel.reduce(
+  (sum, ws) => sum + ws.length,
+  0
+);
+
+const allActivities = worksheetsByYearLevel.flatMap((ws) =>
+  ws.flatMap((w) => w.activities)
+);
 const activityTypeCount = new Set(allActivities.map((a) => a.type)).size;
+const yearLevelCount = worksheetsByYearLevel.length;
 
 const featuredSlugs = [
   "number-names-0-20",
@@ -495,7 +505,7 @@ export default function Home() {
             {[
               { value: totalWorksheets, label: "Printable worksheets" },
               { value: activityTypeCount, label: "Activity types" },
-              { value: 2, label: "Year levels live" },
+              { value: yearLevelCount, label: "Year levels live" },
             ].map((stat, i) => (
               <div key={i} className="flex flex-col items-center gap-1 px-4 py-6 text-center sm:py-8">
                 <span className="font-display text-3xl font-semibold text-terracotta sm:text-4xl">

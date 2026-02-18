@@ -219,41 +219,116 @@
       {
         "strand": "Number",
         "items": [
-          "Order and represent numbers to at least 1,000 — e.g. placing 385, 472 and 519 in order from smallest to largest",
-          "Apply place value to partition, rearrange and rename two- and three-digit numbers — e.g. knowing that 253 = 2 hundreds + 5 tens + 3 ones, or 1 hundred + 15 tens + 3 ones",
-          "Recall addition and subtraction facts within 20 — e.g. quickly knowing that 8 + 7 = 15 and 15 − 7 = 8",
-          "Recall multiplication facts for twos — e.g. knowing that 2 × 6 = 12 from memory",
-          "Solve practical additive and multiplicative problems, including money transactions — e.g. working out the total cost of 3 items at $2 each, or how much change from $10",
-          "Identify and represent halves, quarters and eighths in measurement contexts — e.g. cutting a ribbon in half, or dividing a pizza into 4 equal quarters"
+          {
+            "description": "Order and represent numbers to at least 1,000",
+            "example": "placing 385, 472 and 519 in order from smallest to largest",
+            "khanAcademyUrl": "https://www.khanacademy.org/math/cc-2nd-grade-math/cc-2nd-place-value/cc-2nd-numbers-to-1000/e/number-grid-puzzles",
+            "worksheetSlug": "numbers-to-1000"
+          },
+          {
+            "description": "Apply place value to partition, rearrange and rename two- and three-digit numbers",
+            "example": "knowing that 253 = 2 hundreds + 5 tens + 3 ones, or 1 hundred + 15 tens + 3 ones",
+            "khanAcademyUrl": "https://www.khanacademy.org/math/cc-2nd-grade-math/cc-2nd-place-value/cc-2nd-hundreds/e/understanding-place-value-2",
+            "worksheetSlug": "place-value-hundreds"
+          },
+          {
+            "description": "Recall addition and subtraction facts within 20",
+            "example": "quickly knowing that 8 + 7 = 15 and 15 − 7 = 8",
+            "khanAcademyUrl": "https://www.khanacademy.org/math/cc-2nd-grade-math/cc-2nd-add-subtract-100/cc-2nd-adding-1s-and-10s/e/adding-within-20",
+            "worksheetSlug": "addition-subtraction-facts-20"
+          },
+          {
+            "description": "Recall multiplication facts for twos",
+            "example": "knowing that 2 × 6 = 12 from memory",
+            "khanAcademyUrl": "https://www.khanacademy.org/math/cc-3rd-grade-math/imp-multiplication-and-division/imp-multiplying-by-2-and-4/e/multiply-by-2",
+            "worksheetSlug": "multiplication-facts-twos"
+          },
+          {
+            "description": "Solve practical additive and multiplicative problems, including money transactions",
+            "example": "working out the total cost of 3 items at $2 each, or how much change from $10",
+            "khanAcademyUrl": "https://www.khanacademy.org/math/cc-2nd-grade-math/cc-2nd-money/cc-2nd-counting-money/e/counting-money",
+            "worksheetSlug": "money-problems"
+          },
+          {
+            "description": "Identify and represent halves, quarters and eighths in measurement contexts",
+            "example": "cutting a ribbon in half, or dividing a pizza into 4 equal quarters",
+            "khanAcademyUrl": "https://www.khanacademy.org/math/cc-2nd-grade-math/cc-2nd-fractions/cc-2nd-halves-thirds-fourths/e/halves-and-fourths",
+            "worksheetSlug": "halves-quarters-eighths"
+          }
         ]
       },
       {
         "strand": "Algebra",
         "items": [
-          "Describe and continue patterns that increase or decrease by a constant amount — e.g. continuing the pattern 3, 6, 9, 12, ___ (adding 3 each time)",
-          "Identify missing elements in patterns — e.g. finding the missing number in 5, 10, ___, 20, 25"
+          {
+            "description": "Describe and continue patterns that increase or decrease by a constant amount",
+            "example": "continuing the pattern 3, 6, 9, 12, ___ (adding 3 each time)",
+            "khanAcademyUrl": "https://www.khanacademy.org/math/cc-2nd-grade-math/cc-2nd-patterns/cc-2nd-patterns-even-odd/e/number-patterns",
+            "worksheetSlug": "increasing-decreasing-patterns"
+          },
+          {
+            "description": "Identify missing elements in patterns",
+            "example": "finding the missing number in 5, 10, ___, 20, 25",
+            "khanAcademyUrl": "https://www.khanacademy.org/math/cc-2nd-grade-math/cc-2nd-patterns/cc-2nd-patterns-even-odd/e/number-patterns",
+            "worksheetSlug": "missing-elements-patterns"
+          }
         ]
       },
       {
         "strand": "Measurement",
         "items": [
-          "Measure and compare shapes and objects using uniform informal units — e.g. measuring the length of a table using blocks and finding it is '12 blocks long'",
-          "Read time on an analog clock to the hour, half hour and quarter hour — e.g. reading a clock and saying 'it's quarter past 3'",
-          "Determine the number of days between events using a calendar — e.g. counting the days from Monday to the following Thursday"
+          {
+            "description": "Measure and compare shapes and objects using uniform informal units",
+            "example": "measuring the length of a table using blocks and finding it is '12 blocks long'",
+            "khanAcademyUrl": "https://www.khanacademy.org/math/cc-2nd-grade-math/cc-2nd-measurement-data/cc-2nd-measuring-length/e/measuring-lengths-2",
+            "worksheetSlug": "informal-units-measure"
+          },
+          {
+            "description": "Read time on an analog clock to the hour, half hour and quarter hour",
+            "example": "reading a clock and saying 'it's quarter past 3'",
+            "khanAcademyUrl": "https://www.khanacademy.org/math/cc-2nd-grade-math/cc-2nd-measurement-data/cc-2nd-time/e/telling-time",
+            "worksheetSlug": "analog-clock-time"
+          },
+          {
+            "description": "Determine the number of days between events using a calendar",
+            "example": "counting the days from Monday to the following Thursday",
+            "khanAcademyUrl": "https://www.khanacademy.org/math/cc-2nd-grade-math/cc-2nd-measurement-data/cc-2nd-time/e/months-of-the-year",
+            "worksheetSlug": "calendar-days"
+          }
         ]
       },
       {
         "strand": "Space",
         "items": [
-          "Compare and classify shapes, describing features using formal spatial terms — e.g. saying 'a rectangle has 4 sides and 4 right angles'",
-          "Locate and identify positions of features in two-dimensional representations — e.g. finding the library on a simple school map",
-          "Move position by following directions and pathways — e.g. following a path on a treasure map using directions like 'go right 3 squares, then up 2'"
+          {
+            "description": "Compare and classify shapes, describing features using formal spatial terms",
+            "example": "saying 'a rectangle has 4 sides and 4 right angles'",
+            "khanAcademyUrl": "https://www.khanacademy.org/math/cc-2nd-grade-math/cc-2nd-geometry/cc-2nd-recognizing-shapes/e/recognizing-shapes",
+            "worksheetSlug": "classify-shapes-formal"
+          },
+          {
+            "description": "Locate and identify positions of features in two-dimensional representations",
+            "example": "finding the library on a simple school map",
+            "khanAcademyUrl": "https://www.khanacademy.org/math/cc-2nd-grade-math/cc-2nd-geometry/cc-2nd-recognizing-shapes/e/recognizing-shapes",
+            "worksheetSlug": "positions-2d-maps"
+          },
+          {
+            "description": "Move position by following directions and pathways",
+            "example": "following a path on a treasure map using directions like 'go right 3 squares, then up 2'",
+            "khanAcademyUrl": "https://www.khanacademy.org/math/cc-2nd-grade-math/cc-2nd-geometry/cc-2nd-recognizing-shapes/e/recognizing-shapes",
+            "worksheetSlug": "directions-pathways"
+          }
         ]
       },
       {
         "strand": "Statistics",
         "items": [
-          "Collect, record, represent and interpret categorical data in response to questions — e.g. surveying favourite sports, making a bar graph, and saying 'soccer was the most popular'"
+          {
+            "description": "Collect, record, represent and interpret categorical data in response to questions",
+            "example": "surveying favourite sports, making a bar graph, and saying 'soccer was the most popular'",
+            "khanAcademyUrl": "https://www.khanacademy.org/math/cc-2nd-grade-math/cc-2nd-measurement-data/cc-2nd-bar-graphs/e/reading-bar-graphs-1",
+            "worksheetSlug": "categorical-data-bar-graphs"
+          }
         ]
       }
     ],
@@ -272,50 +347,145 @@
       {
         "strand": "Number",
         "items": [
-          "Order and represent natural numbers beyond 10,000 — e.g. placing 8,250 and 9,130 in the correct position on a number line",
-          "Partition two- and three-digit numbers in different ways to assist in calculations — e.g. breaking 347 into 300 + 40 + 7 or 340 + 7 to help with addition",
-          "Apply single-digit addition and related subtraction facts to two- and three-digit problems — e.g. using 6 + 7 = 13 to help solve 260 + 70 = 330",
-          "Solve problems involving single-digit multiplication and division — e.g. working out how many legs on 8 spiders (8 × 8 = 64)",
-          "Recall multiplication facts for 2s, 3s, 4s, 5s and 10s — e.g. quickly answering 4 × 7 = 28 from memory",
-          "Represent unit fractions and their multiples in different ways — e.g. shading 3/4 of a circle or placing 1/3 on a number line",
-          "Make estimates and determine reasonableness of financial calculations — e.g. estimating that 3 items at $4.95 each will cost about $15"
+          {
+            "description": "Order and represent natural numbers beyond 10,000",
+            "example": "placing 8,250 and 9,130 in the correct position on a number line",
+            "khanAcademyUrl": "https://www.khanacademy.org/math/cc-4th-grade-math/imp-place-value-and-rounding/imp-number-forms/e/number-forms",
+            "worksheetSlug": "numbers-beyond-10000"
+          },
+          {
+            "description": "Partition two- and three-digit numbers in different ways to assist in calculations",
+            "example": "breaking 347 into 300 + 40 + 7 or 340 + 7 to help with addition",
+            "khanAcademyUrl": "https://www.khanacademy.org/math/cc-3rd-grade-math/imp-addition-and-subtraction/imp-breaking-apart-3-digit-addition-problems/e/break-apart-3-digit-addition-problems",
+            "worksheetSlug": "partition-for-calculation"
+          },
+          {
+            "description": "Apply single-digit addition and related subtraction facts to two- and three-digit problems",
+            "example": "using 6 + 7 = 13 to help solve 260 + 70 = 330",
+            "khanAcademyUrl": "https://www.khanacademy.org/math/cc-3rd-grade-math/imp-addition-and-subtraction/imp-addition-and-subtraction-within-1000/e/addition-and-subtraction-within-1000",
+            "worksheetSlug": "apply-addition-subtraction"
+          },
+          {
+            "description": "Solve problems involving single-digit multiplication and division",
+            "example": "working out how many legs on 8 spiders (8 x 8 = 64)",
+            "khanAcademyUrl": "https://www.khanacademy.org/math/cc-3rd-grade-math/imp-multiplication-and-division/imp-multiplication-and-division-word-problems/e/multiplication-and-division-word-problems",
+            "worksheetSlug": "single-digit-multiplication-division"
+          },
+          {
+            "description": "Recall multiplication facts for 2s, 3s, 4s, 5s and 10s",
+            "example": "quickly answering 4 x 7 = 28 from memory",
+            "khanAcademyUrl": "https://www.khanacademy.org/math/cc-3rd-grade-math/imp-multiplication-and-division/imp-multiplication-facts-0-to-9/e/multiplication_0.5",
+            "worksheetSlug": "times-tables-2-3-4-5-10"
+          },
+          {
+            "description": "Represent unit fractions and their multiples in different ways",
+            "example": "shading 3/4 of a circle or placing 1/3 on a number line",
+            "khanAcademyUrl": "https://www.khanacademy.org/math/cc-3rd-grade-math/imp-fractions/imp-fractions-on-the-number-line/e/fractions_on_the_number_line_1",
+            "worksheetSlug": "unit-fractions-multiples"
+          },
+          {
+            "description": "Make estimates and determine reasonableness of financial calculations",
+            "example": "estimating that 3 items at $4.95 each will cost about $15",
+            "khanAcademyUrl": "https://www.khanacademy.org/math/cc-3rd-grade-math/imp-addition-and-subtraction/imp-rounding/e/rounding-to-nearest-10-or-100",
+            "worksheetSlug": "estimate-financial-calculations"
+          }
         ]
       },
       {
         "strand": "Algebra",
         "items": [
-          "Find unknown values in number sentences involving addition and subtraction — e.g. solving ___ + 15 = 23 (answer: 8)",
-          "Create algorithms to investigate numbers and explore simple patterns — e.g. writing step-by-step instructions: 'start at 2, add 3 each time' to see the pattern 2, 5, 8, 11..."
+          {
+            "description": "Find unknown values in number sentences involving addition and subtraction",
+            "example": "solving ___ + 15 = 23 (answer: 8)",
+            "khanAcademyUrl": "https://www.khanacademy.org/math/cc-3rd-grade-math/imp-addition-and-subtraction/imp-addition-and-subtraction-missing-value-problems/e/missing-number-addition-and-subtraction",
+            "worksheetSlug": "unknown-values-add-subtract"
+          },
+          {
+            "description": "Create algorithms to investigate numbers and explore simple patterns",
+            "example": "writing step-by-step instructions: 'start at 2, add 3 each time' to see the pattern 2, 5, 8, 11...",
+            "khanAcademyUrl": "https://www.khanacademy.org/math/cc-3rd-grade-math/imp-arithmetic-patterns-and-problem-solving/imp-arithmetic-patterns/e/arithmetic-patterns-2",
+            "worksheetSlug": "algorithms-patterns"
+          }
         ]
       },
       {
         "strand": "Measurement",
         "items": [
-          "Use familiar metric units to estimate, compare and measure attributes of objects — e.g. estimating that a desk is about 1 metre long, then measuring with a ruler to check",
-          "Identify angles as measures of turn and compare them to right angles — e.g. recognising that a door opens at a right angle (90°) and a clock hand at 3 o'clock shows a right angle",
-          "Estimate and compare duration using formal units of time — e.g. saying 'the movie is about 2 hours' or 'recess is 20 minutes'",
-          "Represent money values in different ways — e.g. showing that $1.50 can be made with one $1 coin and a 50c coin, or three 50c coins"
+          {
+            "description": "Use familiar metric units to estimate, compare and measure attributes of objects",
+            "example": "estimating that a desk is about 1 metre long, then measuring with a ruler to check",
+            "khanAcademyUrl": "https://www.khanacademy.org/math/cc-3rd-grade-math/imp-measurement/imp-measuring-length/e/measuring-lengths-2",
+            "worksheetSlug": "metric-units-estimate-compare"
+          },
+          {
+            "description": "Identify angles as measures of turn and compare them to right angles",
+            "example": "recognising that a door opens at a right angle (90 degrees) and a clock hand at 3 o'clock shows a right angle",
+            "khanAcademyUrl": "https://www.khanacademy.org/math/cc-4th-grade-math/imp-geometry-2/imp-angle-introduction/e/recognizing-angles",
+            "worksheetSlug": "angles-right-angles"
+          },
+          {
+            "description": "Estimate and compare duration using formal units of time",
+            "example": "saying 'the movie is about 2 hours' or 'recess is 20 minutes'",
+            "khanAcademyUrl": "https://www.khanacademy.org/math/cc-3rd-grade-math/imp-measurement/imp-telling-time/e/telling-time-on-the-hour-and-half-hour",
+            "worksheetSlug": "duration-formal-units"
+          },
+          {
+            "description": "Represent money values in different ways",
+            "example": "showing that $1.50 can be made with one $1 coin and a 50c coin, or three 50c coins",
+            "khanAcademyUrl": "https://www.khanacademy.org/math/cc-2nd-grade-math/cc-2nd-money/cc-2nd-counting-money/e/counting-money",
+            "worksheetSlug": "money-representations"
+          }
         ]
       },
       {
         "strand": "Space",
         "items": [
-          "Make, compare and classify objects using key features — e.g. sorting 3D objects into prisms and pyramids based on their faces",
-          "Interpret and create two-dimensional representations of familiar environments — e.g. drawing a simple map of the classroom showing the door, windows and desks"
+          {
+            "description": "Make, compare and classify objects using key features",
+            "example": "sorting 3D objects into prisms and pyramids based on their faces",
+            "khanAcademyUrl": "https://www.khanacademy.org/math/cc-2nd-grade-math/cc-2nd-geometry/cc-2nd-recognizing-shapes/e/identifying-3d-shapes",
+            "worksheetSlug": "classify-3d-objects"
+          },
+          {
+            "description": "Interpret and create two-dimensional representations of familiar environments",
+            "example": "drawing a simple map of the classroom showing the door, windows and desks",
+            "khanAcademyUrl": "https://www.khanacademy.org/math/cc-3rd-grade-math/imp-geometry/imp-quadrilaterals/e/identify-quadrilaterals",
+            "worksheetSlug": "2d-representations"
+          }
         ]
       },
       {
         "strand": "Statistics",
         "items": [
-          "Conduct guided statistical investigations with categorical and discrete numerical data — e.g. investigating 'How many siblings do students in our class have?' and collecting the data",
-          "Record, represent and compare collected data — e.g. creating a bar graph of the sibling data and comparing results"
+          {
+            "description": "Conduct guided statistical investigations with categorical and discrete numerical data",
+            "example": "investigating 'How many siblings do students in our class have?' and collecting the data",
+            "khanAcademyUrl": "https://www.khanacademy.org/math/cc-3rd-grade-math/imp-measurement-and-data/imp-represent-and-interpret-data/e/reading-bar-graphs-2",
+            "worksheetSlug": "statistical-investigations-categorical"
+          },
+          {
+            "description": "Record, represent and compare collected data",
+            "example": "creating a bar graph of the sibling data and comparing results",
+            "khanAcademyUrl": "https://www.khanacademy.org/math/cc-3rd-grade-math/imp-measurement-and-data/imp-represent-and-interpret-data/e/creating-bar-graphs",
+            "worksheetSlug": "record-represent-compare-data"
+          }
         ]
       },
       {
         "strand": "Probability",
         "items": [
-          "Identify and describe outcomes and the likelihood of everyday events — e.g. describing the chance of rain today as 'likely' or 'unlikely'",
-          "Conduct repeated chance experiments and discuss variation in results — e.g. rolling a die 30 times and noting that each number doesn't come up exactly 5 times"
+          {
+            "description": "Identify and describe outcomes and the likelihood of everyday events",
+            "example": "describing the chance of rain today as 'likely' or 'unlikely'",
+            "khanAcademyUrl": "https://www.khanacademy.org/math/statistics-probability/probability-library/basic-theoretical-probability/e/probability_1",
+            "worksheetSlug": "likelihood-everyday-events"
+          },
+          {
+            "description": "Conduct repeated chance experiments and discuss variation in results",
+            "example": "rolling a die 30 times and noting that each number doesn't come up exactly 5 times",
+            "khanAcademyUrl": "https://www.khanacademy.org/math/statistics-probability/probability-library/experimental-probability-lib/e/experimental-probability-identify",
+            "worksheetSlug": "chance-experiments-variation"
+          }
         ]
       }
     ],
@@ -335,54 +505,169 @@
       {
         "strand": "Number",
         "items": [
-          "Represent tenths and hundredths in decimal form — e.g. writing three-tenths as 0.3 and twenty-five hundredths as 0.25",
-          "Multiply natural numbers by multiples of 10 — e.g. calculating 6 × 40 = 240 or 15 × 100 = 1,500",
-          "Add, subtract, multiply and divide numbers efficiently using known facts — e.g. using 7 × 8 = 56 to quickly work out 56 ÷ 8 = 7",
-          "Use rounding and estimation to check the reasonableness of calculations — e.g. checking 312 + 489 ≈ 300 + 500 = 800, so an answer of 801 is reasonable",
-          "Use properties of odd and even numbers — e.g. knowing that an even number plus an odd number always gives an odd result",
-          "Recognise equivalent fractions and connect fraction and decimal notations — e.g. knowing that 1/2 = 2/4 = 0.5",
-          "Count and represent fractions on a number line — e.g. marking 1/4, 2/4, 3/4 and 4/4 at equal intervals on a number line",
-          "Solve financial and other practical problems using number sentences — e.g. writing 3 × $4.50 + $2.00 = $15.50 to find the total cost"
+          {
+            "description": "Represent tenths and hundredths in decimal form",
+            "example": "writing three-tenths as 0.3 and twenty-five hundredths as 0.25",
+            "khanAcademyUrl": "https://www.khanacademy.org/math/cc-fourth-grade-math/imp-decimals/imp-decimal-fractions/v/decimal-place-value",
+            "worksheetSlug": "tenths-hundredths-decimals"
+          },
+          {
+            "description": "Multiply natural numbers by multiples of 10",
+            "example": "calculating 6 × 40 = 240 or 15 × 100 = 1,500",
+            "khanAcademyUrl": "https://www.khanacademy.org/math/cc-fourth-grade-math/imp-multiplication-and-division-2/imp-multiplying-by-tens-and-hundreds/v/multiplying-multiples-of-10",
+            "worksheetSlug": "multiply-by-multiples-of-10"
+          },
+          {
+            "description": "Add, subtract, multiply and divide numbers efficiently using known facts",
+            "example": "using 7 × 8 = 56 to quickly work out 56 ÷ 8 = 7",
+            "khanAcademyUrl": "https://www.khanacademy.org/math/cc-fourth-grade-math/imp-multiplication-and-division-2/imp-multi-digit-multiplication/v/multiplication-6-multiple-digit-numbers",
+            "worksheetSlug": "efficient-four-operations"
+          },
+          {
+            "description": "Use rounding and estimation to check the reasonableness of calculations",
+            "example": "checking 312 + 489 ≈ 300 + 500 = 800, so an answer of 801 is reasonable",
+            "khanAcademyUrl": "https://www.khanacademy.org/math/cc-fourth-grade-math/imp-place-value-and-rounding-2/imp-rounding-whole-numbers/v/rounding-whole-numbers",
+            "worksheetSlug": "rounding-estimation"
+          },
+          {
+            "description": "Use properties of odd and even numbers",
+            "example": "knowing that an even number plus an odd number always gives an odd result",
+            "khanAcademyUrl": "https://www.khanacademy.org/math/arithmetic-home/multiply-divide/properties-of-multiplication/v/odd-and-even-numbers",
+            "worksheetSlug": "odd-even-properties"
+          },
+          {
+            "description": "Recognise equivalent fractions and connect fraction and decimal notations",
+            "example": "knowing that 1/2 = 2/4 = 0.5",
+            "khanAcademyUrl": "https://www.khanacademy.org/math/cc-fourth-grade-math/imp-fractions-2/imp-common-denominators/v/equivalent-fractions",
+            "worksheetSlug": "equivalent-fractions-decimals"
+          },
+          {
+            "description": "Count and represent fractions on a number line",
+            "example": "marking 1/4, 2/4, 3/4 and 4/4 at equal intervals on a number line",
+            "khanAcademyUrl": "https://www.khanacademy.org/math/cc-fourth-grade-math/imp-fractions-2/imp-fractions-on-the-number-line/v/fractions-on-a-number-line",
+            "worksheetSlug": "fractions-number-line"
+          },
+          {
+            "description": "Solve financial and other practical problems using number sentences",
+            "example": "writing 3 × $4.50 + $2.00 = $15.50 to find the total cost",
+            "khanAcademyUrl": "https://www.khanacademy.org/math/cc-fourth-grade-math/imp-multiplication-and-division-2/imp-word-problems-with-multiplication-and-division/v/multiplication-and-division-word-problems",
+            "worksheetSlug": "financial-problems-number-sentences"
+          }
         ]
       },
       {
         "strand": "Algebra",
         "items": [
-          "Find unknown values in equations involving addition and subtraction — e.g. solving 45 + ___ = 72 (answer: 27)",
-          "Follow and create algorithms that generate sets of numbers and identify emerging patterns — e.g. following the rule 'multiply by 2 and add 1' starting from 1 to get 1, 3, 7, 15..."
+          {
+            "description": "Find unknown values in equations involving addition and subtraction",
+            "example": "solving 45 + ___ = 72 (answer: 27)",
+            "khanAcademyUrl": "https://www.khanacademy.org/math/cc-fourth-grade-math/imp-factors-multiples-and-patterns/imp-unknown-values/v/missing-number-addition-and-subtraction",
+            "worksheetSlug": "unknown-values-equations"
+          },
+          {
+            "description": "Follow and create algorithms that generate sets of numbers and identify emerging patterns",
+            "example": "following the rule 'multiply by 2 and add 1' starting from 1 to get 1, 3, 7, 15...",
+            "khanAcademyUrl": "https://www.khanacademy.org/math/cc-fourth-grade-math/imp-factors-multiples-and-patterns/imp-math-patterns/v/recognizing-patterns",
+            "worksheetSlug": "algorithms-number-patterns"
+          }
         ]
       },
       {
         "strand": "Measurement",
         "items": [
-          "Use scaled instruments to measure length, mass, capacity and temperature — e.g. reading a thermometer (28°C) or weighing flour on kitchen scales (500 g)",
-          "Measure and approximate perimeters and areas — e.g. finding the perimeter of a garden bed by adding all sides: 3 m + 5 m + 3 m + 5 m = 16 m",
-          "Convert between units of time when solving duration problems — e.g. working out that a 90-minute movie is 1 hour and 30 minutes",
-          "Compare angles relative to a right angle using angle names — e.g. identifying that an open book makes an obtuse angle (greater than 90°)"
+          {
+            "description": "Use scaled instruments to measure length, mass, capacity and temperature",
+            "example": "reading a thermometer (28°C) or weighing flour on kitchen scales (500 g)",
+            "khanAcademyUrl": "https://www.khanacademy.org/math/cc-fourth-grade-math/imp-measurement-and-data-2/imp-converting-units-of-mass/v/metric-system-basics",
+            "worksheetSlug": "scaled-instruments-measure"
+          },
+          {
+            "description": "Measure and approximate perimeters and areas",
+            "example": "finding the perimeter of a garden bed by adding all sides: 3 m + 5 m + 3 m + 5 m = 16 m",
+            "khanAcademyUrl": "https://www.khanacademy.org/math/cc-fourth-grade-math/imp-area-and-perimeter/imp-perimeter/v/introduction-to-perimeter",
+            "worksheetSlug": "perimeter-area"
+          },
+          {
+            "description": "Convert between units of time when solving duration problems",
+            "example": "working out that a 90-minute movie is 1 hour and 30 minutes",
+            "khanAcademyUrl": "https://www.khanacademy.org/math/cc-fourth-grade-math/imp-measurement-and-data-2/imp-time/v/time-word-problems",
+            "worksheetSlug": "time-units-duration"
+          },
+          {
+            "description": "Compare angles relative to a right angle using angle names",
+            "example": "identifying that an open book makes an obtuse angle (greater than 90°)",
+            "khanAcademyUrl": "https://www.khanacademy.org/math/cc-fourth-grade-math/imp-geometry-2/imp-angle-introduction/v/introduction-to-angles",
+            "worksheetSlug": "angles-right-angle-comparison"
+          }
         ]
       },
       {
         "strand": "Space",
         "items": [
-          "Represent and approximate shapes and objects in the environment — e.g. drawing a bird's-eye view of the school playground",
-          "Create and interpret grid references — e.g. finding a location at B3 on a grid map",
-          "Identify line and rotational symmetry in plane shapes; create symmetrical patterns — e.g. showing that a butterfly has one line of symmetry down the middle"
+          {
+            "description": "Represent and approximate shapes and objects in the environment",
+            "example": "drawing a bird's-eye view of the school playground",
+            "khanAcademyUrl": "https://www.khanacademy.org/math/cc-fourth-grade-math/imp-geometry-2/imp-classifying-geometric-shapes/v/recognizing-shapes",
+            "worksheetSlug": "represent-shapes-environment"
+          },
+          {
+            "description": "Create and interpret grid references",
+            "example": "finding a location at B3 on a grid map",
+            "khanAcademyUrl": "https://www.khanacademy.org/math/cc-fourth-grade-math/imp-geometry-2/imp-coordinate-plane/v/graphing-points-and-naming-quadrants",
+            "worksheetSlug": "grid-references"
+          },
+          {
+            "description": "Identify line and rotational symmetry in plane shapes; create symmetrical patterns",
+            "example": "showing that a butterfly has one line of symmetry down the middle",
+            "khanAcademyUrl": "https://www.khanacademy.org/math/cc-fourth-grade-math/imp-geometry-2/imp-line-of-symmetry/v/intro-to-reflective-symmetry",
+            "worksheetSlug": "line-rotational-symmetry"
+          }
         ]
       },
       {
         "strand": "Statistics",
         "items": [
-          "Create many-to-one data displays and assess suitability of displays for representing data — e.g. making a pictograph where each symbol represents 5 students",
-          "Discuss the shape of distributions and variation in data — e.g. noticing most students scored between 70–80% on a test with fewer very high or low scores",
-          "Use surveys and digital tools to generate data in statistical investigations — e.g. using an online survey to collect data about favourite school subjects"
+          {
+            "description": "Create many-to-one data displays and assess suitability of displays for representing data",
+            "example": "making a pictograph where each symbol represents 5 students",
+            "khanAcademyUrl": "https://www.khanacademy.org/math/cc-fourth-grade-math/imp-data-and-graphing/imp-picture-graphs/v/reading-pictographs",
+            "worksheetSlug": "many-to-one-displays"
+          },
+          {
+            "description": "Discuss the shape of distributions and variation in data",
+            "example": "noticing most students scored between 70–80% on a test with fewer very high or low scores",
+            "khanAcademyUrl": "https://www.khanacademy.org/math/cc-fourth-grade-math/imp-data-and-graphing/imp-interpreting-data/v/reading-bar-graphs",
+            "worksheetSlug": "distributions-variation"
+          },
+          {
+            "description": "Use surveys and digital tools to generate data in statistical investigations",
+            "example": "using an online survey to collect data about favourite school subjects",
+            "khanAcademyUrl": "https://www.khanacademy.org/math/statistics-probability/designing-studies/statistics-overview/v/statistical-questions",
+            "worksheetSlug": "surveys-digital-tools"
+          }
         ]
       },
       {
         "strand": "Probability",
         "items": [
-          "Order events or outcomes in terms of likelihood — e.g. ordering 'impossible', 'unlikely', 'even chance', 'likely', 'certain' on a scale",
-          "Identify whether events are independent or dependent — e.g. understanding that drawing 2 cards without replacing the first changes the probabilities",
-          "Conduct repeated chance experiments and describe variation in results — e.g. spinning a spinner 50 times and comparing actual results to what was expected"
+          {
+            "description": "Order events or outcomes in terms of likelihood",
+            "example": "ordering 'impossible', 'unlikely', 'even chance', 'likely', 'certain' on a scale",
+            "khanAcademyUrl": "https://www.khanacademy.org/math/statistics-probability/probability-library/basic-theoretical-probability/v/basic-probability",
+            "worksheetSlug": "order-likelihood"
+          },
+          {
+            "description": "Identify whether events are independent or dependent",
+            "example": "understanding that drawing 2 cards without replacing the first changes the probabilities",
+            "khanAcademyUrl": "https://www.khanacademy.org/math/statistics-probability/probability-library/multiplication-rule-independent/v/compound-probability-of-independent-events",
+            "worksheetSlug": "independent-dependent-events"
+          },
+          {
+            "description": "Conduct repeated chance experiments and describe variation in results",
+            "example": "spinning a spinner 50 times and comparing actual results to what was expected",
+            "khanAcademyUrl": "https://www.khanacademy.org/math/statistics-probability/probability-library/experimental-probability-lib/v/experimental-probability",
+            "worksheetSlug": "chance-experiments-variation-y4"
+          }
         ]
       }
     ],
@@ -402,54 +687,169 @@
       {
         "strand": "Number",
         "items": [
-          "Write and order decimals, including decimals greater than one — e.g. ordering 3.5, 3.05 and 3.55 from smallest to largest",
-          "Express natural numbers as products of factors; identify multiples — e.g. knowing that 36 = 4 × 9 = 6 × 6, and that 12, 24, 36 are multiples of 12",
-          "Add and subtract fractions with same or related denominators — e.g. calculating 3/4 + 1/2 = 3/4 + 2/4 = 5/4 = 1 1/4",
-          "Represent common percentages and connect them to fractions and decimals — e.g. knowing that 25% = 1/4 = 0.25",
-          "Multiply large numbers by one- and two-digit numbers — e.g. calculating 245 × 13 = 3,185",
-          "Divide by single-digit numbers — e.g. working out 756 ÷ 4 = 189",
-          "Check the reasonableness of calculations using estimation — e.g. estimating 398 × 5 ≈ 400 × 5 = 2,000 to check an answer",
-          "Solve financial and other practical problems using mathematical modelling — e.g. calculating how many weeks of $15 pocket money to save $200"
+          {
+            "description": "Write and order decimals, including decimals greater than one",
+            "example": "ordering 3.5, 3.05 and 3.55 from smallest to largest",
+            "khanAcademyUrl": "https://www.khanacademy.org/math/cc-fifth-grade-math/imp-place-value-and-decimals/imp-comparing-decimals/e/comparing_numbers",
+            "worksheetSlug": "order-decimals"
+          },
+          {
+            "description": "Express natural numbers as products of factors; identify multiples",
+            "example": "knowing that 36 = 4 × 9 = 6 × 6, and that 12, 24, 36 are multiples of 12",
+            "khanAcademyUrl": "https://www.khanacademy.org/math/cc-fourth-grade-math/imp-factors-multiples-and-patterns/imp-factors-and-multiples/e/factors_and_multiples",
+            "worksheetSlug": "factors-multiples"
+          },
+          {
+            "description": "Add and subtract fractions with same or related denominators",
+            "example": "calculating 3/4 + 1/2 = 3/4 + 2/4 = 5/4 = 1 1/4",
+            "khanAcademyUrl": "https://www.khanacademy.org/math/cc-fifth-grade-math/imp-fractions-3/imp-adding-and-subtracting-fractions-with-unlike-denominators-intro/e/adding_fractions_with_unlike_denominators",
+            "worksheetSlug": "add-subtract-fractions"
+          },
+          {
+            "description": "Represent common percentages and connect them to fractions and decimals",
+            "example": "knowing that 25% = 1/4 = 0.25",
+            "khanAcademyUrl": "https://www.khanacademy.org/math/cc-sixth-grade-math/cc-6th-ratios-prop-topic/cc-6th-percentages/e/converting-between-percents-fractions-and-decimals",
+            "worksheetSlug": "percentages-fractions-decimals"
+          },
+          {
+            "description": "Multiply large numbers by one- and two-digit numbers",
+            "example": "calculating 245 × 13 = 3,185",
+            "khanAcademyUrl": "https://www.khanacademy.org/math/cc-fifth-grade-math/imp-multi-digit-multiplication-and-division/imp-multi-digit-multiplication/e/multiplication_3",
+            "worksheetSlug": "multiply-large-numbers"
+          },
+          {
+            "description": "Divide by single-digit numbers",
+            "example": "working out 756 ÷ 4 = 189",
+            "khanAcademyUrl": "https://www.khanacademy.org/math/cc-fifth-grade-math/imp-multi-digit-multiplication-and-division/imp-multi-digit-division/e/division_4",
+            "worksheetSlug": "divide-single-digit"
+          },
+          {
+            "description": "Check the reasonableness of calculations using estimation",
+            "example": "estimating 398 × 5 ≈ 400 × 5 = 2,000 to check an answer",
+            "khanAcademyUrl": "https://www.khanacademy.org/math/cc-fourth-grade-math/imp-place-value-and-rounding/imp-rounding-whole-numbers/e/rounding_numbers",
+            "worksheetSlug": "estimation-reasonableness"
+          },
+          {
+            "description": "Solve financial and other practical problems using mathematical modelling",
+            "example": "calculating how many weeks of $15 pocket money to save $200",
+            "khanAcademyUrl": "https://www.khanacademy.org/math/cc-fifth-grade-math/imp-multi-digit-multiplication-and-division/imp-multi-step-word-problems/e/multi-step-word-problems-with-whole-numbers",
+            "worksheetSlug": "financial-modelling"
+          }
         ]
       },
       {
         "strand": "Algebra",
         "items": [
-          "Find unknown values in equations involving multiplication and division — e.g. solving 6 × ___ = 42 (answer: 7)",
-          "Create and use algorithms to identify patterns in factors and multiples — e.g. finding that all multiples of 6 are also multiples of both 2 and 3"
+          {
+            "description": "Find unknown values in equations involving multiplication and division",
+            "example": "solving 6 × ___ = 42 (answer: 7)",
+            "khanAcademyUrl": "https://www.khanacademy.org/math/cc-sixth-grade-math/cc-6th-expressions-and-variables/cc-6th-evaluating-expressions/e/evaluating_expressions_2",
+            "worksheetSlug": "unknown-values-multiply-divide"
+          },
+          {
+            "description": "Create and use algorithms to identify patterns in factors and multiples",
+            "example": "finding that all multiples of 6 are also multiples of both 2 and 3",
+            "khanAcademyUrl": "https://www.khanacademy.org/math/cc-fourth-grade-math/imp-factors-multiples-and-patterns/imp-math-patterns/e/math-patterns",
+            "worksheetSlug": "algorithms-factors-multiples"
+          }
         ]
       },
       {
         "strand": "Measurement",
         "items": [
-          "Choose and use appropriate metric units to measure length, mass and capacity — e.g. choosing kilometres (not metres) to measure the distance to school",
-          "Solve problems involving perimeter and area — e.g. calculating that a 6 m × 4 m room has area 24 m² and perimeter 20 m",
-          "Convert between 12- and 24-hour time — e.g. knowing that 3:30 PM is 15:30 in 24-hour time",
-          "Estimate, construct and measure angles in degrees — e.g. using a protractor to measure an angle as 135°"
+          {
+            "description": "Choose and use appropriate metric units to measure length, mass and capacity",
+            "example": "choosing kilometres (not metres) to measure the distance to school",
+            "khanAcademyUrl": "https://www.khanacademy.org/math/cc-fourth-grade-math/imp-measurement-and-data-2/imp-converting-units-of-mass/e/metric-units-of-mass",
+            "worksheetSlug": "metric-units-length-mass-capacity"
+          },
+          {
+            "description": "Solve problems involving perimeter and area",
+            "example": "calculating that a 6 m × 4 m room has area 24 m² and perimeter 20 m",
+            "khanAcademyUrl": "https://www.khanacademy.org/math/cc-fourth-grade-math/imp-area-and-perimeter/imp-perimeter/e/perimeter-of-rectangles",
+            "worksheetSlug": "perimeter-area-problems"
+          },
+          {
+            "description": "Convert between 12- and 24-hour time",
+            "example": "knowing that 3:30 PM is 15:30 in 24-hour time",
+            "khanAcademyUrl": "https://www.khanacademy.org/math/cc-third-grade-math/imp-measurement-and-data/imp-telling-time/e/telling_time_0.5",
+            "worksheetSlug": "12-24-hour-time"
+          },
+          {
+            "description": "Estimate, construct and measure angles in degrees",
+            "example": "using a protractor to measure an angle as 135°",
+            "khanAcademyUrl": "https://www.khanacademy.org/math/cc-fourth-grade-math/imp-geometry-2/imp-measuring-angles/e/measuring-angles",
+            "worksheetSlug": "estimate-measure-angles"
+          }
         ]
       },
       {
         "strand": "Space",
         "items": [
-          "Use grid coordinates to locate and move positions — e.g. finding a point at coordinates (3, 5) on a grid",
-          "Connect objects to their two-dimensional nets — e.g. matching a cube to its net of 6 connected squares",
-          "Perform and describe transformations; identify symmetries — e.g. reflecting a shape across a line and describing where it ends up"
+          {
+            "description": "Use grid coordinates to locate and move positions",
+            "example": "finding a point at coordinates (3, 5) on a grid",
+            "khanAcademyUrl": "https://www.khanacademy.org/math/cc-fifth-grade-math/imp-geometry-3/imp-coordinate-plane/e/coordinate-plane-quadrant-1",
+            "worksheetSlug": "grid-coordinates"
+          },
+          {
+            "description": "Connect objects to their two-dimensional nets",
+            "example": "matching a cube to its net of 6 connected squares",
+            "khanAcademyUrl": "https://www.khanacademy.org/math/cc-sixth-grade-math/x0267d782:cc-6th-nets-of-3d-figures/cc-6th-nets/e/nets-of-3d-figures",
+            "worksheetSlug": "2d-nets"
+          },
+          {
+            "description": "Perform and describe transformations; identify symmetries",
+            "example": "reflecting a shape across a line and describing where it ends up",
+            "khanAcademyUrl": "https://www.khanacademy.org/math/cc-fourth-grade-math/imp-geometry-2/imp-line-of-symmetry/e/line-of-symmetry",
+            "worksheetSlug": "transformations-symmetry"
+          }
         ]
       },
       {
         "strand": "Statistics",
         "items": [
-          "Plan and conduct statistical investigations with categorical and numerical data using digital tools — e.g. using a spreadsheet to organise and chart data about daily temperatures",
-          "Identify the mode and interpret the shape of distributions — e.g. finding that the most common shoe size (mode) in the class is size 3",
-          "Interpret and compare data represented in line graphs — e.g. reading a line graph of monthly rainfall and identifying which month was wettest"
+          {
+            "description": "Plan and conduct statistical investigations with categorical and numerical data using digital tools",
+            "example": "using a spreadsheet to organise and chart data about daily temperatures",
+            "khanAcademyUrl": "https://www.khanacademy.org/math/cc-sixth-grade-math/cc-6th-data-statistics/cc-6th-statistical-questions/e/statistical-questions",
+            "worksheetSlug": "statistical-investigations-digital"
+          },
+          {
+            "description": "Identify the mode and interpret the shape of distributions",
+            "example": "finding that the most common shoe size (mode) in the class is size 3",
+            "khanAcademyUrl": "https://www.khanacademy.org/math/cc-sixth-grade-math/cc-6th-data-statistics/mean-and-median/e/calculating-the-mean-from-a-data-set",
+            "worksheetSlug": "mode-distributions"
+          },
+          {
+            "description": "Interpret and compare data represented in line graphs",
+            "example": "reading a line graph of monthly rainfall and identifying which month was wettest",
+            "khanAcademyUrl": "https://www.khanacademy.org/math/cc-fifth-grade-math/imp-represent-and-interpret-data/imp-line-plots/e/line-plots-with-fractions",
+            "worksheetSlug": "line-graphs"
+          }
         ]
       },
       {
         "strand": "Probability",
         "items": [
-          "List possible outcomes of chance experiments — e.g. listing all outcomes of rolling a die: {1, 2, 3, 4, 5, 6}",
-          "Estimate likelihoods; compare events with and without equally likely outcomes — e.g. comparing a fair coin (equally likely) to a bag with 3 red and 1 blue marble (not equally likely)",
-          "Conduct repeated chance experiments — e.g. flipping a coin 100 times and tracking how close the results are to 50/50"
+          {
+            "description": "List possible outcomes of chance experiments",
+            "example": "listing all outcomes of rolling a die: {1, 2, 3, 4, 5, 6}",
+            "khanAcademyUrl": "https://www.khanacademy.org/math/cc-seventh-grade-math/cc-7th-probability-statistics/cc-7th-basic-prob/e/identifying-outcomes",
+            "worksheetSlug": "list-outcomes"
+          },
+          {
+            "description": "Estimate likelihoods; compare events with and without equally likely outcomes",
+            "example": "comparing a fair coin (equally likely) to a bag with 3 red and 1 blue marble (not equally likely)",
+            "khanAcademyUrl": "https://www.khanacademy.org/math/cc-seventh-grade-math/cc-7th-probability-statistics/cc-7th-basic-prob/e/probability_1",
+            "worksheetSlug": "estimate-likelihoods"
+          },
+          {
+            "description": "Conduct repeated chance experiments",
+            "example": "flipping a coin 100 times and tracking how close the results are to 50/50",
+            "khanAcademyUrl": "https://www.khanacademy.org/math/cc-seventh-grade-math/cc-7th-probability-statistics/cc-7th-theoretical-and-experimental-prob/e/experimental-probability-identify",
+            "worksheetSlug": "repeated-chance-experiments"
+          }
         ]
       }
     ],
@@ -469,53 +869,163 @@
       {
         "strand": "Number",
         "items": [
-          "Use integers to represent points on a number line and in the Cartesian plane — e.g. plotting −3, 0 and 5 on a number line, or locating (2, −4) on a grid",
-          "Solve problems using properties of prime, composite and square numbers — e.g. finding that 36 is both a composite number and a perfect square (6 × 6)",
-          "Order common fractions; add and subtract fractions with related denominators — e.g. calculating 2/3 − 1/6 = 4/6 − 1/6 = 3/6 = 1/2",
-          "Use all 4 operations with decimals — e.g. calculating 12.5 × 0.4 = 5.0 or 7.2 ÷ 0.8 = 9",
-          "Connect decimal representations of measurements to the metric system — e.g. knowing that 1.5 km = 1,500 m or 0.25 L = 250 mL",
-          "Find a fraction, decimal or percentage of a quantity — e.g. calculating 30% of $80 = $24",
-          "Solve financial and practical problems involving percentages and rational numbers — e.g. working out a 15% discount on a $60 item ($60 − $9 = $51)"
+          {
+            "description": "Use integers to represent points on a number line and in the Cartesian plane",
+            "example": "plotting −3, 0 and 5 on a number line, or locating (2, −4) on a grid",
+            "khanAcademyUrl": "https://www.khanacademy.org/math/cc-sixth-grade-math/cc-6th-negative-numbers-topic/cc-6th-negatives-on-number-line/v/negative-numbers-introduction",
+            "worksheetSlug": "integers-number-line-cartesian"
+          },
+          {
+            "description": "Solve problems using properties of prime, composite and square numbers",
+            "example": "finding that 36 is both a composite number and a perfect square (6 × 6)",
+            "khanAcademyUrl": "https://www.khanacademy.org/math/cc-fourth-grade-math/imp-factors-multiples-and-patterns/imp-prime-and-composite-numbers/v/prime-numbers",
+            "worksheetSlug": "prime-composite-square-numbers"
+          },
+          {
+            "description": "Order common fractions; add and subtract fractions with related denominators",
+            "example": "calculating 2/3 − 1/6 = 4/6 − 1/6 = 3/6 = 1/2",
+            "khanAcademyUrl": "https://www.khanacademy.org/math/cc-fifth-grade-math/ccc-5th-add-subtract-fractions/ccc-5th-add-sub-fracs-with-unlike-denom/v/adding-fractions-with-unlike-denominators",
+            "worksheetSlug": "order-add-subtract-fractions"
+          },
+          {
+            "description": "Use all 4 operations with decimals",
+            "example": "calculating 12.5 × 0.4 = 5.0 or 7.2 ÷ 0.8 = 9",
+            "khanAcademyUrl": "https://www.khanacademy.org/math/cc-sixth-grade-math/cc-6th-arithmetic-operations/cc-6th-dividing-decimals/v/dividing-decimals",
+            "worksheetSlug": "four-operations-decimals"
+          },
+          {
+            "description": "Connect decimal representations of measurements to the metric system",
+            "example": "knowing that 1.5 km = 1,500 m or 0.25 L = 250 mL",
+            "khanAcademyUrl": "https://www.khanacademy.org/math/cc-fifth-grade-math/imp-measurement-and-data-3/imp-unit-conversion/v/converting-within-the-metric-system",
+            "worksheetSlug": "decimal-metric-connections"
+          },
+          {
+            "description": "Find a fraction, decimal or percentage of a quantity",
+            "example": "calculating 30% of $80 = $24",
+            "khanAcademyUrl": "https://www.khanacademy.org/math/cc-sixth-grade-math/cc-6th-ratios-prop-topic/cc-6th-percentages/v/finding-percentages-example",
+            "worksheetSlug": "fraction-decimal-percentage-quantity"
+          },
+          {
+            "description": "Solve financial and practical problems involving percentages and rational numbers",
+            "example": "working out a 15% discount on a $60 item ($60 − $9 = $51)",
+            "khanAcademyUrl": "https://www.khanacademy.org/math/cc-seventh-grade-math/cc-7th-fractions-decimals/cc-7th-percent-word-problems/v/percent-word-problem-example-1",
+            "worksheetSlug": "financial-problems-percentages"
+          }
         ]
       },
       {
         "strand": "Algebra",
         "items": [
-          "Find unknown values in equations involving combinations of arithmetic operations — e.g. solving 4 × ___ + 3 = 19 (answer: 4)",
-          "Identify and explain rules used to create growing patterns — e.g. finding the rule for the sequence 2, 6, 18, 54 is 'multiply by 3'",
-          "Create and use algorithms to generate sets of numbers using a rule — e.g. writing an algorithm: 'start at 1, double and add 1 each time' to get 1, 3, 7, 15, 31"
+          {
+            "description": "Find unknown values in equations involving combinations of arithmetic operations",
+            "example": "solving 4 × ___ + 3 = 19 (answer: 4)",
+            "khanAcademyUrl": "https://www.khanacademy.org/math/cc-sixth-grade-math/cc-6th-equations-and-inequalities/cc-6th-one-step-mult-div-equations/v/one-step-multiplication-equation",
+            "worksheetSlug": "unknown-values-combined-operations"
+          },
+          {
+            "description": "Identify and explain rules used to create growing patterns",
+            "example": "finding the rule for the sequence 2, 6, 18, 54 is 'multiply by 3'",
+            "khanAcademyUrl": "https://www.khanacademy.org/math/cc-fifth-grade-math/imp-algebraic-thinking/imp-number-patterns/v/practice-finding-patterns-in-numbers",
+            "worksheetSlug": "rules-growing-patterns"
+          },
+          {
+            "description": "Create and use algorithms to generate sets of numbers using a rule",
+            "example": "writing an algorithm: 'start at 1, double and add 1 each time' to get 1, 3, 7, 15, 31",
+            "khanAcademyUrl": "https://www.khanacademy.org/math/cc-fifth-grade-math/imp-algebraic-thinking/imp-number-patterns/v/patterns-in-sequences",
+            "worksheetSlug": "algorithms-generate-sets"
+          }
         ]
       },
       {
         "strand": "Measurement",
         "items": [
-          "Interpret and use timetables — e.g. reading a bus timetable to find the next departure and how long the journey takes",
-          "Convert between common units of length, mass and capacity — e.g. converting 3.5 kg to 3,500 g or 2,750 mL to 2.75 L",
-          "Use the formula for the area of a rectangle to solve problems — e.g. calculating the area of an 8 m × 5 m court = 40 m²",
-          "Use angle properties to solve problems — e.g. finding a missing angle in a triangle: 180° − 90° − 35° = 55°"
+          {
+            "description": "Interpret and use timetables",
+            "example": "reading a bus timetable to find the next departure and how long the journey takes",
+            "khanAcademyUrl": "https://www.khanacademy.org/math/cc-third-grade-math/imp-measurement-and-data/imp-time/v/telling-time-exercise-example-1",
+            "worksheetSlug": "timetables-interpret"
+          },
+          {
+            "description": "Convert between common units of length, mass and capacity",
+            "example": "converting 3.5 kg to 3,500 g or 2,750 mL to 2.75 L",
+            "khanAcademyUrl": "https://www.khanacademy.org/math/cc-fifth-grade-math/imp-measurement-and-data-3/imp-unit-conversion/v/converting-within-the-metric-system",
+            "worksheetSlug": "convert-length-mass-capacity"
+          },
+          {
+            "description": "Use the formula for the area of a rectangle to solve problems",
+            "example": "calculating the area of an 8 m × 5 m court = 40 m²",
+            "khanAcademyUrl": "https://www.khanacademy.org/math/cc-fourth-grade-math/imp-area-and-perimeter/imp-area-formula/v/finding-the-area-of-a-rectangle",
+            "worksheetSlug": "area-rectangle-formula"
+          },
+          {
+            "description": "Use angle properties to solve problems",
+            "example": "finding a missing angle in a triangle: 180° − 90° − 35° = 55°",
+            "khanAcademyUrl": "https://www.khanacademy.org/math/cc-eighth-grade-math/cc-8th-geometry/cc-8th-triangle-angles/v/triangle-angle-example-1",
+            "worksheetSlug": "angle-properties"
+          }
         ]
       },
       {
         "strand": "Space",
         "items": [
-          "Identify the parallel cross-section for right prisms — e.g. recognising that slicing a triangular prism parallel to its base always gives a triangle",
-          "Create tessellating patterns using combinations of transformations — e.g. tiling a floor pattern using rotated and translated hexagons with no gaps",
-          "Locate an ordered pair in any one of the 4 quadrants on the Cartesian plane — e.g. plotting the point (−3, 2) in the second quadrant"
+          {
+            "description": "Identify the parallel cross-section for right prisms",
+            "example": "recognising that slicing a triangular prism parallel to its base always gives a triangle",
+            "khanAcademyUrl": "https://www.khanacademy.org/math/geometry/hs-geo-solids/hs-geo-cross-sections/v/cross-sections-of-3d-figures",
+            "worksheetSlug": "parallel-cross-sections"
+          },
+          {
+            "description": "Create tessellating patterns using combinations of transformations",
+            "example": "tiling a floor pattern using rotated and translated hexagons with no gaps",
+            "khanAcademyUrl": "https://www.khanacademy.org/math/geometry/hs-geo-transformations/hs-geo-transformations-intro/v/introduction-to-transformations",
+            "worksheetSlug": "tessellations-transformations"
+          },
+          {
+            "description": "Locate an ordered pair in any one of the 4 quadrants on the Cartesian plane",
+            "example": "plotting the point (−3, 2) in the second quadrant",
+            "khanAcademyUrl": "https://www.khanacademy.org/math/cc-sixth-grade-math/cc-6th-negative-numbers-topic/cc-6th-coordinate-plane/v/the-coordinate-plane",
+            "worksheetSlug": "cartesian-plane-quadrants"
+          }
         ]
       },
       {
         "strand": "Statistics",
         "items": [
-          "Compare distributions of discrete, continuous numerical and ordinal categorical data sets — e.g. comparing the distribution of test scores between two classes using dot plots",
-          "Critique arguments presented in the media based on statistics — e.g. questioning an ad that says '9 out of 10 dentists recommend...' by asking about sample size"
+          {
+            "description": "Compare distributions of discrete, continuous numerical and ordinal categorical data sets",
+            "example": "comparing the distribution of test scores between two classes using dot plots",
+            "khanAcademyUrl": "https://www.khanacademy.org/math/cc-sixth-grade-math/cc-6th-data-statistics/cc-6th-shape-of-data/v/shapes-of-distributions",
+            "worksheetSlug": "compare-distributions"
+          },
+          {
+            "description": "Critique arguments presented in the media based on statistics",
+            "example": "questioning an ad that says '9 out of 10 dentists recommend...' by asking about sample size",
+            "khanAcademyUrl": "https://www.khanacademy.org/math/statistics-probability/designing-studies/statistics-overview/v/statistics-intro-mean-median-and-mode",
+            "worksheetSlug": "critique-media-statistics"
+          }
         ]
       },
       {
         "strand": "Probability",
         "items": [
-          "Assign probabilities using common fractions, decimals and percentages — e.g. a 1 in 4 chance = 1/4 = 0.25 = 25%",
-          "Conduct simulations using digital tools to generate and record outcomes — e.g. using a spreadsheet to simulate rolling 2 dice 1,000 times",
-          "Compare observed frequencies to expected frequencies — e.g. noticing that after 60 coin flips you got 35 heads instead of the expected 30"
+          {
+            "description": "Assign probabilities using common fractions, decimals and percentages",
+            "example": "a 1 in 4 chance = 1/4 = 0.25 = 25%",
+            "khanAcademyUrl": "https://www.khanacademy.org/math/cc-seventh-grade-math/cc-7th-probability-statistics/cc-7th-basic-probability/v/basic-probability",
+            "worksheetSlug": "assign-probabilities"
+          },
+          {
+            "description": "Conduct simulations using digital tools to generate and record outcomes",
+            "example": "using a spreadsheet to simulate rolling 2 dice 1,000 times",
+            "khanAcademyUrl": "https://www.khanacademy.org/math/statistics-probability/random-variables-stats-library/random-variables-discrete/v/random-variables",
+            "worksheetSlug": "simulations-digital-tools"
+          },
+          {
+            "description": "Compare observed frequencies to expected frequencies",
+            "example": "noticing that after 60 coin flips you got 35 heads instead of the expected 30",
+            "khanAcademyUrl": "https://www.khanacademy.org/math/statistics-probability/probability-library/experimental-probability-lib/v/comparing-experimental-and-theoretical-probability",
+            "worksheetSlug": "observed-vs-expected-frequencies"
+          }
         ]
       }
     ],
@@ -738,48 +1248,115 @@
       {
         "strand": "Number",
         "items": [
-          "Recognise the effect of approximations of real numbers in repeated calculations — e.g. showing how rounding π to 3.14 vs 3.14159 leads to different answers over many calculations",
-          "Interpret and use logarithmic scales representing small or large quantities — e.g. understanding the Richter scale where each whole number represents 10× more energy"
+          {
+            "description": "Recognise the effect of approximations of real numbers in repeated calculations",
+            "example": "showing how rounding π to 3.14 vs 3.14159 leads to different answers over many calculations",
+            "worksheetSlug": "approximations-logarithmic-scales"
+          },
+          {
+            "description": "Interpret and use logarithmic scales representing small or large quantities",
+            "example": "understanding the Richter scale where each whole number represents 10× more energy",
+            "worksheetSlug": "approximations-logarithmic-scales"
+          }
         ]
       },
       {
         "strand": "Algebra",
         "items": [
-          "Solve problems involving growth and decay using linear, quadratic and exponential functions — e.g. modelling population growth with P = 1000 × 1.05ⁿ (5% annual growth)",
-          "Solve simultaneous linear equations and linear inequalities in 2 variables graphically — e.g. finding where y = 2x + 1 and y = −x + 7 intersect at (2, 5)",
-          "Make and test conjectures involving functions and relations using digital tools — e.g. using graphing software to explore how changing coefficients affects a parabola"
+          {
+            "description": "Solve problems involving growth and decay using linear, quadratic and exponential functions",
+            "example": "modelling population growth with P = 1000 × 1.05ⁿ (5% annual growth)",
+            "worksheetSlug": "growth-decay-functions"
+          },
+          {
+            "description": "Solve simultaneous linear equations and linear inequalities in 2 variables graphically",
+            "example": "finding where y = 2x + 1 and y = −x + 7 intersect at (2, 5)",
+            "worksheetSlug": "simultaneous-equations-inequalities"
+          },
+          {
+            "description": "Make and test conjectures involving functions and relations using digital tools",
+            "example": "using graphing software to explore how changing coefficients affects a parabola",
+            "worksheetSlug": "conjectures-functions-relations"
+          }
         ]
       },
       {
         "strand": "Measurement",
         "items": [
-          "Solve problems involving surface area and volume of composite objects — e.g. finding the total surface area of a cylindrical tank with hemispherical ends",
-          "Apply Pythagoras' theorem and trigonometry to practical right-angled triangle problems — e.g. calculating the angle of elevation to a building from a point 50 m away",
-          "Identify the impact of measurement errors on accuracy of results — e.g. explaining how a 1 mm error in measuring a cube's side leads to a larger percentage error in volume",
-          "Solve practical problems involving proportion and scaling — e.g. using a map scale of 1:50,000 to calculate real distances between towns"
+          {
+            "description": "Solve problems involving surface area and volume of composite objects",
+            "example": "finding the total surface area of a cylindrical tank with hemispherical ends",
+            "worksheetSlug": "surface-area-volume-composites"
+          },
+          {
+            "description": "Apply Pythagoras' theorem and trigonometry to practical right-angled triangle problems",
+            "example": "calculating the angle of elevation to a building from a point 50 m away",
+            "worksheetSlug": "pythagoras-trigonometry"
+          },
+          {
+            "description": "Identify the impact of measurement errors on accuracy of results",
+            "example": "explaining how a 1 mm error in measuring a cube's side leads to a larger percentage error in volume",
+            "worksheetSlug": "measurement-errors-proportion"
+          },
+          {
+            "description": "Solve practical problems involving proportion and scaling",
+            "example": "using a map scale of 1:50,000 to calculate real distances between towns",
+            "worksheetSlug": "measurement-errors-proportion"
+          }
         ]
       },
       {
         "strand": "Space",
         "items": [
-          "Use deductive reasoning, theorems and algorithms to solve spatial problems — e.g. proving that angles in a quadrilateral sum to 360° using triangle angle sum",
-          "Interpret networks used to represent practical situations and describe connectedness — e.g. analysing a road network to find the shortest route between two towns"
+          {
+            "description": "Use deductive reasoning, theorems and algorithms to solve spatial problems",
+            "example": "proving that angles in a quadrilateral sum to 360° using triangle angle sum",
+            "worksheetSlug": "deductive-reasoning-geometric-theorems"
+          },
+          {
+            "description": "Interpret networks used to represent practical situations and describe connectedness",
+            "example": "analysing a road network to find the shortest route between two towns",
+            "worksheetSlug": "networks-paths-connectedness"
+          }
         ]
       },
       {
         "strand": "Statistics",
         "items": [
-          "Plan and conduct statistical investigations involving bivariate data — e.g. investigating whether there is a relationship between hours of study and exam results",
-          "Represent distributions using tables and scatter plots; comment on possible association — e.g. plotting height vs arm span and noting a positive association",
-          "Analyse inferences and conclusions in the media, noting potential sources of bias — e.g. identifying that a survey about sugar tax funded by a soft drink company may be biased",
-          "Compare distributions of continuous numerical data using various displays — e.g. using box plots to compare marathon times between age groups"
+          {
+            "description": "Plan and conduct statistical investigations involving bivariate data",
+            "example": "investigating whether there is a relationship between hours of study and exam results",
+            "worksheetSlug": "bivariate-data-scatter-plots"
+          },
+          {
+            "description": "Represent distributions using tables and scatter plots; comment on possible association",
+            "example": "plotting height vs arm span and noting a positive association",
+            "worksheetSlug": "bivariate-data-scatter-plots"
+          },
+          {
+            "description": "Analyse inferences and conclusions in the media, noting potential sources of bias",
+            "example": "identifying that a survey about sugar tax funded by a soft drink company may be biased",
+            "worksheetSlug": "media-bias-statistical-analysis"
+          },
+          {
+            "description": "Compare distributions of continuous numerical data using various displays",
+            "example": "using box plots to compare marathon times between age groups"
+          }
         ]
       },
       {
         "strand": "Probability",
         "items": [
-          "Apply conditional probability to solve problems involving compound events — e.g. finding P(pass | studied 3+ hours) using a two-way frequency table",
-          "Design and conduct simulations involving conditional probability using digital tools — e.g. simulating a medical test with 95% accuracy to understand false positive rates"
+          {
+            "description": "Apply conditional probability to solve problems involving compound events",
+            "example": "finding P(pass | studied 3+ hours) using a two-way frequency table",
+            "worksheetSlug": "conditional-probability-compound-events"
+          },
+          {
+            "description": "Design and conduct simulations involving conditional probability using digital tools",
+            "example": "simulating a medical test with 95% accuracy to understand false positive rates",
+            "worksheetSlug": "conditional-probability-compound-events"
+          }
         ]
       }
     ],
