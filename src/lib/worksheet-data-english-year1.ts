@@ -1464,93 +1464,210 @@ export const year1EnglishWorksheets: WorksheetItem[] = [
       ],
     },
     activities: [
-      {
-        type: "open-response" as const,
-        title: "Plan Your Show and Tell",
-        instruction:
-          "Plan what you will say in your Show and Tell. Then present it to your family!",
-        parentTip:
-          "Encourage your child to refer to their notes but speak naturally — not read word for word.",
-        prompts: [
-          { text: "What I am showing or talking about: ___________________________", type: "lines" as const, lines: 1 },
-          { text: "Three things I want to say about it:", type: "lines" as const, lines: 4 },
-          { text: "After my talk, one question I could ask my audience:", type: "lines" as const, lines: 2 },
-        ],
-      },
-      {
-        type: "open-response" as const,
-        title: "Good Listener Checklist",
-        instruction:
-          "After listening to someone speak, fill in this checklist.",
-        parentTip:
-          "Use this after your child listens to YOU do a short talk — this makes the listening skill concrete and measurable.",
-        prompts: [
-          { text: "The speaker was talking about: ___________________________", type: "lines" as const, lines: 2 },
-          { text: "One interesting thing I heard: ___________________________", type: "lines" as const, lines: 2 },
-          { text: "One question I want to ask: ___________________________", type: "lines" as const, lines: 2 },
-        ],
-      },
-      {
-        type: "home-activity" as const,
-        title: "Talk and Listen Every Day",
-        instruction: "Build speaking and listening skills through daily interactions.",
-        parentTip:
-          "Turn off screens during meals and use that time for structured conversation — ask, listen, respond, expand.",
-        suggestions: [
-          "At dinner, everyone shares: one thing that happened today, one feeling they had, one question they want to ask.",
-          "Play 20 Questions — one person thinks of something, others ask yes/no questions to guess.",
-          "Take turns telling a story — one sentence each. See where it goes!",
-          "Listen to an audiobook or podcast episode together, then discuss what you heard.",
-        ],
-      },
-      {
-        type: "sorting" as const,
-        title: "Good Speaker or Needs Improving?",
-        instruction:
-          "Read each behaviour. Sort it into the column that describes a good speaker or a behaviour to improve.",
-        parentTip:
-          "Approach this positively — frame the 'needs improving' column as things we all work on, not things to feel bad about.",
-        columns: ["Good speaker behaviour", "Needs improving"],
-        items: [
-          { label: "Looks at the audience while talking" },
-          { label: "Mumbles and looks at the floor" },
-          { label: "Speaks loudly enough for everyone to hear" },
-          { label: "Talks over other people" },
-          { label: "Waits for their turn to speak" },
-          { label: "Uses complete sentences" },
-          { label: "Talks very fast with no pauses" },
-          { label: "Listens while others are speaking" },
-        ],
-      },
-      {
-        type: "circle-correct" as const,
-        title: "Good Listening or Not?",
-        instruction:
-          "Read each scenario. Circle L if the person is being a good listener, or N if they are not listening well.",
-        parentTip:
-          "Discuss each scenario together after circling. Ask: 'What could that person do differently to be a better listener?'",
-        questions: [
-          { prompt: "Mia looks at her book while her friend is talking.", options: ["L", "N"] },
-          { prompt: "Jack nods and looks at the speaker.", options: ["L", "N"] },
-          { prompt: "Tom keeps interrupting before his friend finishes.", options: ["L", "N"] },
-          { prompt: "Zara asks a question about what was just said.", options: ["L", "N"] },
-          { prompt: "Leo walks away while his parent is giving instructions.", options: ["L", "N"] },
-          { prompt: "Ava waits quietly and then repeats back what she heard.", options: ["L", "N"] },
-        ],
-      },
-      {
-        type: "open-response" as const,
-        title: "Tell Me About Your Day",
-        instruction:
-          "Practise speaking in complete sentences by answering these questions about your day. Say your answer aloud first, then write it.",
-        parentTip:
-          "Model a complete sentence answer yourself before asking your child. This demonstrates the expectation: 'Today I felt excited because we went to the park' rather than just 'excited'.",
-        prompts: [
-          { text: "Something I did today was:", type: "lines" as const, lines: 2 },
-          { text: "I felt _______________ today because:", type: "lines" as const, lines: 2 },
-          { text: "Something I want to tell someone about today:", type: "lines" as const, lines: 2 },
-        ],
-      },
+      // ─── FOUNDATIONAL (1–20): Listening basics, taking turns, speaking in sentences ───
+      // 1
+      { type: "sorting" as const, title: "Good Speaker or Needs Improving?", instruction: "Sort each behaviour: does it describe a good speaker or something that needs improving?", parentTip: "Approach this positively — 'Needs improving' means things we all work on, not things to feel bad about.", columns: ["Good speaker behaviour", "Needs improving"], items: [ { label: "Looks at the audience while talking" }, { label: "Mumbles and looks at the floor" }, { label: "Speaks loudly enough to hear" }, { label: "Talks over other people" }, { label: "Waits for their turn to speak" }, { label: "Uses complete sentences" } ] },
+      // 2
+      { type: "circle-correct" as const, title: "Good Listening or Not? (Set A)", instruction: "Circle L if the person is being a good listener, or N if not.", parentTip: "Discuss each scenario together. Ask: 'What could they do differently?'", questions: [ { prompt: "Mia looks at her book while her friend is talking.", options: ["L", "N"] }, { prompt: "Jack nods and looks at the speaker.", options: ["L", "N"] }, { prompt: "Tom keeps interrupting before his friend finishes.", options: ["L", "N"] } ] },
+      // 3
+      { type: "circle-correct" as const, title: "Good Listening or Not? (Set B)", instruction: "Circle L for good listener or N for not.", questions: [ { prompt: "Zara asks a question about what was just said.", options: ["L", "N"] }, { prompt: "Leo walks away while his parent is giving instructions.", options: ["L", "N"] }, { prompt: "Ava waits quietly and then repeats back what she heard.", options: ["L", "N"] } ] },
+      // 4
+      { type: "open-response" as const, title: "What Makes a Good Listener?", instruction: "Write or draw 4 things a good listener does.", parentTip: "The four key listening behaviours: eyes on the speaker, ears open, brain thinking, body still.", prompts: [ { text: "Good listeners use their eyes to:", type: "lines" as const, lines: 1 }, { text: "Good listeners use their ears to:", type: "lines" as const, lines: 1 }, { text: "Good listeners use their brain to:", type: "lines" as const, lines: 1 }, { text: "Good listeners use their body to:", type: "lines" as const, lines: 1 } ] },
+      // 5
+      { type: "matching" as const, title: "Match the Body Part to the Listening Skill", instruction: "Draw a line from each body part to what it does during good listening.", left: ["Eyes", "Ears", "Brain", "Body", "Mouth"], right: ["Stays still and faces the speaker", "Thinks about what is being said", "Hears the words carefully", "Waits for a turn to speak", "Looks at the speaker"] },
+      // 6
+      { type: "open-response" as const, title: "Tell Me About Your Day (Set A)", instruction: "Practise speaking in complete sentences. Say your answer aloud first, then write it.", parentTip: "Model a complete sentence: 'Today I felt excited because we went to the park' — not just 'excited'.", prompts: [ { text: "Something I did today was:", type: "lines" as const, lines: 2 }, { text: "I felt ___ today because:", type: "lines" as const, lines: 2 } ] },
+      // 7
+      { type: "circle-correct" as const, title: "Complete Sentence or Not?", instruction: "Circle YES if it is a complete sentence or NO if it is not.", parentTip: "When speaking, we should try to use complete sentences, not just single words.", questions: [ { prompt: "'I went to the park today.'", options: ["YES", "NO"] }, { prompt: "'The park.'", options: ["YES", "NO"] }, { prompt: "'My favourite food is pasta.'", options: ["YES", "NO"] }, { prompt: "'Pasta.'", options: ["YES", "NO"] } ] },
+      // 8
+      { type: "open-response" as const, title: "Plan Your Show and Tell (Set A)", instruction: "Plan what you will say in a Show and Tell. Then present it to your family!", parentTip: "Encourage your child to refer to notes but speak naturally — not read word for word.", prompts: [ { text: "What I am showing or talking about:", type: "lines" as const, lines: 1 }, { text: "Three things I want to say about it:", type: "lines" as const, lines: 4 }, { text: "One question I could ask my audience:", type: "lines" as const, lines: 2 } ] },
+      // 9
+      { type: "sorting" as const, title: "Good Listening Behaviours at Home", instruction: "Sort each behaviour: does it show good listening at home or not?", columns: ["Good listening at home", "Not good listening"], items: [ { label: "Looking at Mum when she talks to you" }, { label: "Playing on a tablet while Dad explains something" }, { label: "Saying 'Yes, I understand' after hearing instructions" }, { label: "Walking away before someone finishes talking" }, { label: "Asking 'Can you say that again?' if you missed it" }, { label: "Humming a song while someone is talking to you" } ] },
+      // 10
+      { type: "open-response" as const, title: "Good Listener Checklist (Set A)", instruction: "After listening to someone speak, fill in this checklist.", parentTip: "Use this after your child listens to YOU give a short talk.", prompts: [ { text: "The speaker was talking about:", type: "lines" as const, lines: 2 }, { text: "One interesting thing I heard:", type: "lines" as const, lines: 2 }, { text: "One question I want to ask:", type: "lines" as const, lines: 2 } ] },
+      // 11
+      { type: "circle-correct" as const, title: "What Should You Do? (Set A)", instruction: "Circle the best thing to do in each situation.", questions: [ { prompt: "Your teacher is explaining something and you want to ask a question:", options: ["Shout out your question", "Wait until the teacher finishes, then raise your hand", "Whisper to your friend"] }, { prompt: "You do not understand what someone said:", options: ["Pretend you understood", "Say 'I do not understand, can you explain again?'", "Walk away"] }, { prompt: "Someone is telling you a story and you feel bored:", options: ["Tell them it is boring", "Keep listening politely and ask a question", "Pick up your phone"] } ] },
+      // 12
+      { type: "open-response" as const, title: "Speaking Clearly (Set A)", instruction: "Practise saying these tongue twisters aloud. Then answer the question.", parentTip: "Tongue twisters help with pronunciation and speaking clearly. Say each one slowly first, then speed up.", prompts: [ { text: "Say 3 times: 'She sells sea shells by the sea shore.' How did you go?", type: "lines" as const, lines: 2 }, { text: "Say 3 times: 'Red lorry, yellow lorry.' Was it tricky?", type: "lines" as const, lines: 2 } ] },
+      // 13
+      { type: "matching" as const, title: "Match the Volume to the Situation", instruction: "Draw a line from each situation to the right volume.", left: ["In a library", "On a sports field", "Talking to a friend next to you", "Presenting to the class"], right: ["Quiet / whisper voice", "Loud / outside voice", "Normal talking voice", "Clear, projected voice"] },
+      // 14
+      { type: "open-response" as const, title: "Follow Instructions (Set A)", instruction: "Ask someone to read you 3 instructions. Do each one, then write what you did.", parentTip: "This activity practises listening to and following multi-step instructions — a key school skill.", prompts: [ { text: "Instruction 1 was:", type: "lines" as const, lines: 1 }, { text: "What I did:", type: "lines" as const, lines: 1 }, { text: "Instruction 2 was:", type: "lines" as const, lines: 1 }, { text: "What I did:", type: "lines" as const, lines: 1 }, { text: "Instruction 3 was:", type: "lines" as const, lines: 1 }, { text: "What I did:", type: "lines" as const, lines: 1 } ] },
+      // 15 — TIP
+      { type: "open-response" as const, title: "Turn-Taking Practice (Set A)", instruction: "Have a conversation with someone for 2 minutes. Take turns speaking. Then answer these questions.", parentTip: "Tip: Good conversations are like a tennis game — the ball goes back and forth! One person talks, then the other person responds. The key skills are: wait for your turn, listen carefully, respond to what the other person said (not just what YOU want to say), and ask questions to show you are interested.", prompts: [ { text: "Who did you talk to?", type: "lines" as const, lines: 1 }, { text: "What did you talk about?", type: "lines" as const, lines: 2 }, { text: "Did you wait for your turn? (yes/no)", type: "lines" as const, lines: 1 }, { text: "Did you ask a question? What was it?", type: "lines" as const, lines: 2 } ] },
+      // 16
+      { type: "circle-correct" as const, title: "Taking Turns (Set A)", instruction: "Circle the best response in each conversation.", questions: [ { prompt: "Friend: 'I went to the beach on Saturday.' Best response:", options: ["'That is nice. I went to the shops.'", "'That sounds fun! What did you do at the beach?'", "'I do not like the beach.'"] }, { prompt: "Mum: 'Please put your shoes on.' Best response:", options: ["'OK Mum, I will do it now.'", "'Why?'", "(Ignore and keep playing)"] } ] },
+      // 17
+      { type: "open-response" as const, title: "Describe Without Naming (Set A)", instruction: "Choose an object but do not say its name. Describe it to someone and see if they can guess what it is.", parentTip: "This builds descriptive oral language and vocabulary.", prompts: [ { text: "Object I chose (do not tell anyone!):", type: "lines" as const, lines: 1 }, { text: "My clues (3 describing sentences):", type: "lines" as const, lines: 4 }, { text: "Did the listener guess correctly? (yes/no)", type: "lines" as const, lines: 1 } ] },
+      // 18
+      { type: "sorting" as const, title: "Good Question or Not?", instruction: "Sort each question: is it a good question to ask a speaker or not?", columns: ["Good question to ask", "Not a good question"], items: [ { label: "Can you tell me more about that?" }, { label: "When is lunch?" }, { label: "Why did you choose that topic?" }, { label: "I am bored, can we stop?" }, { label: "What was the most interesting part?" }, { label: "Can I go to the toilet?" } ] },
+      // 19
+      { type: "open-response" as const, title: "Listen and Retell (Set A)", instruction: "Ask someone to tell you a short story or describe an event. Listen carefully. Then retell it in your own words.", prompts: [ { text: "The person told me about:", type: "lines" as const, lines: 1 }, { text: "My retelling (in my own words):", type: "lines" as const, lines: 4 }, { text: "Did I get the main points right? (yes/no)", type: "lines" as const, lines: 1 } ] },
+      // 20 — SPARK
+      { type: "home-activity" as const, title: "Talk and Listen Every Day", instruction: "Build speaking and listening skills through daily interactions.", parentTip: "Spark: Did you know that before writing was invented, ALL stories and knowledge were passed on by speaking and listening? People would memorise entire legends and histories and tell them around campfires! Your voice is one of the most powerful tools you have. What is the most important thing you have ever said to someone? What is the most important thing someone has ever said to you?", suggestions: [ "At dinner, everyone shares: one thing that happened, one feeling, one question.", "Play 20 Questions — one person thinks of something, others ask yes/no questions.", "Take turns telling a story — one sentence each. See where it goes!", "Listen to an audiobook or podcast together, then discuss." ] },
+      // ─── DEVELOPING (21–50): Audience awareness, presenting, asking questions ───
+      // 21
+      { type: "open-response" as const, title: "Plan Your Show and Tell (Set B)", instruction: "Plan a more detailed Show and Tell about something you love.", parentTip: "This time, include why this topic matters to the child — personal connection improves delivery.", prompts: [ { text: "My topic:", type: "lines" as const, lines: 1 }, { text: "Why this is important to me:", type: "lines" as const, lines: 2 }, { text: "Fact 1:", type: "lines" as const, lines: 1 }, { text: "Fact 2:", type: "lines" as const, lines: 1 }, { text: "Fact 3:", type: "lines" as const, lines: 1 }, { text: "A question for my audience:", type: "lines" as const, lines: 1 } ] },
+      // 22
+      { type: "circle-correct" as const, title: "Audience Awareness (Set A)", instruction: "Circle the best way to speak to each audience.", parentTip: "We change how we speak depending on who we are talking to.", questions: [ { prompt: "Talking to a baby:", options: ["Use long, complicated words", "Use simple words and a gentle voice", "Shout loudly"] }, { prompt: "Presenting to your class:", options: ["Whisper so only the front row hears", "Speak clearly and look at everyone", "Talk to one person only"] }, { prompt: "Asking a librarian for help:", options: ["Yell across the library", "Walk up and ask politely in a quiet voice", "Send them a letter"] } ] },
+      // 23
+      { type: "open-response" as const, title: "Give Instructions (Set A)", instruction: "Choose something you know how to do. Give step-by-step instructions to someone. Then write them down.", parentTip: "Speaking instructions clearly is a real-world skill used every day.", prompts: [ { text: "What I am explaining how to do:", type: "lines" as const, lines: 1 }, { text: "Step 1:", type: "lines" as const, lines: 1 }, { text: "Step 2:", type: "lines" as const, lines: 1 }, { text: "Step 3:", type: "lines" as const, lines: 1 }, { text: "Step 4:", type: "lines" as const, lines: 1 }, { text: "Did the listener understand? (yes/no)", type: "lines" as const, lines: 1 } ] },
+      // 24
+      { type: "sorting" as const, title: "Polite or Impolite? (Set A)", instruction: "Sort each phrase: is it a polite way to speak or an impolite way?", columns: ["Polite", "Impolite"], items: [ { label: "Please could you help me?" }, { label: "Give me that!" }, { label: "Thank you for your help." }, { label: "I do not care what you think." }, { label: "Excuse me, may I ask a question?" }, { label: "Whatever." } ] },
+      // 25
+      { type: "open-response" as const, title: "Ask Good Questions (Set A)", instruction: "You are going to interview a family member. Write 5 questions to ask them.", parentTip: "Good interview questions start with: Who, What, Where, When, Why, How.", prompts: [ { text: "Person I will interview:", type: "lines" as const, lines: 1 }, { text: "Question 1:", type: "lines" as const, lines: 1 }, { text: "Question 2:", type: "lines" as const, lines: 1 }, { text: "Question 3:", type: "lines" as const, lines: 1 }, { text: "Question 4:", type: "lines" as const, lines: 1 }, { text: "Question 5:", type: "lines" as const, lines: 1 } ] },
+      // 26
+      { type: "open-response" as const, title: "Interview Report (Set A)", instruction: "After your interview, write down what you learned.", prompts: [ { text: "The most interesting answer was:", type: "lines" as const, lines: 2 }, { text: "Something I did not know before:", type: "lines" as const, lines: 2 }, { text: "A follow-up question I want to ask next time:", type: "lines" as const, lines: 2 } ] },
+      // 27
+      { type: "circle-correct" as const, title: "Good Listening or Not? (Set C)", instruction: "Circle L for good listener or N for not.", questions: [ { prompt: "Emma looks at the speaker and nods when she agrees.", options: ["L", "N"] }, { prompt: "Jack fidgets and looks around the room while someone talks.", options: ["L", "N"] }, { prompt: "Lily waits for the speaker to finish, then asks a thoughtful question.", options: ["L", "N"] }, { prompt: "Ben says 'Uh huh' but is actually thinking about lunch.", options: ["L", "N"] } ] },
+      // 28
+      { type: "open-response" as const, title: "Telephone Game Record", instruction: "Play the telephone game with your family. Write down the results.", parentTip: "Whisper a sentence to someone, they whisper to the next person, and so on. Compare start and end messages.", prompts: [ { text: "The original sentence was:", type: "lines" as const, lines: 2 }, { text: "The final sentence was:", type: "lines" as const, lines: 2 }, { text: "Did the message change? What happened?", type: "lines" as const, lines: 2 } ] },
+      // 29
+      { type: "matching" as const, title: "Match the Feeling to the Tone of Voice", instruction: "Draw a line from each feeling to the tone of voice it usually uses.", left: ["Happy", "Angry", "Scared", "Excited", "Sad"], right: ["Quick, loud and high-pitched", "Bright and cheerful", "Quiet and slow", "Loud and harsh", "Shaky and quiet"] },
+      // 30 — TIP
+      { type: "open-response" as const, title: "Voice Volume Practice", instruction: "Practise using different volumes. Say the same sentence in each volume. Write how it felt.", parentTip: "Tip: Your voice has a volume dial, just like a TV! Sometimes you need to whisper (in a library), sometimes you need a normal voice (talking to a friend), and sometimes you need a BIG voice (presenting to a class or calling for help). Practising different volumes helps you choose the right one for every situation.", prompts: [ { text: "The sentence I practised:", type: "lines" as const, lines: 1 }, { text: "Whisper voice — how did it feel?", type: "lines" as const, lines: 1 }, { text: "Normal voice — how did it feel?", type: "lines" as const, lines: 1 }, { text: "Loud voice — how did it feel?", type: "lines" as const, lines: 1 }, { text: "When would each volume be the right choice?", type: "lines" as const, lines: 3 } ] },
+      // 31
+      { type: "open-response" as const, title: "Describe Without Naming (Set B)", instruction: "Choose an animal. Describe it without saying the name. Get someone to guess.", prompts: [ { text: "Animal I chose:", type: "lines" as const, lines: 1 }, { text: "Clue 1: What it looks like:", type: "lines" as const, lines: 1 }, { text: "Clue 2: Where it lives:", type: "lines" as const, lines: 1 }, { text: "Clue 3: What it eats:", type: "lines" as const, lines: 1 }, { text: "Clue 4: A special thing about it:", type: "lines" as const, lines: 1 }, { text: "Did the listener guess? (yes/no)", type: "lines" as const, lines: 1 } ] },
+      // 32
+      { type: "circle-correct" as const, title: "What Should You Do? (Set B)", instruction: "Circle the best thing to do.", questions: [ { prompt: "You disagree with what your friend said:", options: ["Say 'That is stupid.'", "Say 'I think differently because...'", "Say nothing and walk away."] }, { prompt: "You want to join a conversation:", options: ["Start talking over people.", "Wait for a pause and say 'Can I add something?'", "Stand silently and hope they notice."] }, { prompt: "Someone asks you a question you do not know the answer to:", options: ["Make something up.", "Say 'I am not sure, let me think about it.'", "Ignore the question."] } ] },
+      // 33
+      { type: "open-response" as const, title: "Listen and Draw (Set A)", instruction: "Ask someone to describe a picture without showing it to you. Draw what they describe. Compare.", parentTip: "This activity builds careful listening and following verbal descriptions.", prompts: [ { text: "Draw what you heard described:", type: "box" as const }, { text: "How close was your drawing to the real picture?", type: "lines" as const, lines: 2 }, { text: "What details did you miss?", type: "lines" as const, lines: 2 } ] },
+      // 34
+      { type: "open-response" as const, title: "Giving and Receiving Feedback (Set A)", instruction: "Present something (a story, a drawing, a fact) to a family member. Ask them for feedback. Then you give feedback to them.", parentTip: "Teach the feedback sandwich: one positive, one improvement, one positive.", prompts: [ { text: "What I presented:", type: "lines" as const, lines: 1 }, { text: "Feedback I received (what was good):", type: "lines" as const, lines: 2 }, { text: "Feedback I received (what to improve):", type: "lines" as const, lines: 2 }, { text: "Feedback I gave to someone else:", type: "lines" as const, lines: 2 } ] },
+      // 35
+      { type: "sorting" as const, title: "Good Feedback or Not?", instruction: "Sort each piece of feedback: is it helpful or unhelpful?", columns: ["Helpful feedback", "Unhelpful feedback"], items: [ { label: "I liked how you spoke clearly." }, { label: "That was bad." }, { label: "Maybe try looking at the audience more next time." }, { label: "I could not hear you — try speaking louder." }, { label: "Boring." }, { label: "Great job using interesting words!" } ] },
+      // 36
+      { type: "open-response" as const, title: "Tell Me About Your Day (Set B)", instruction: "Answer these questions in complete sentences. Say aloud first, then write.", prompts: [ { text: "The best part of my day was:", type: "lines" as const, lines: 2 }, { text: "Something I learned today:", type: "lines" as const, lines: 2 }, { text: "Something I want to tell someone about:", type: "lines" as const, lines: 2 } ] },
+      // 37
+      { type: "open-response" as const, title: "Retell a Story (Set A)", instruction: "Listen to someone read a short story. Retell it in your own words.", parentTip: "Include: who, where, what happened (beginning, middle, end).", prompts: [ { text: "Story title:", type: "lines" as const, lines: 1 }, { text: "My retelling:", type: "lines" as const, lines: 6 } ] },
+      // 38
+      { type: "circle-correct" as const, title: "Expression in Speech (Set A)", instruction: "How should you say each sentence? Circle the best expression.", questions: [ { prompt: "'Help! The house is on fire!'", options: ["In a calm, quiet voice", "In a loud, urgent voice", "In a silly, giggly voice"] }, { prompt: "'Once upon a time, in a land far away...'", options: ["In a slow, magical voice", "In a loud, angry voice", "In a fast, rushed voice"] }, { prompt: "'Shhh, the baby is sleeping.'", options: ["In a very loud voice", "In a gentle whisper", "In an excited shout"] } ] },
+      // 39
+      { type: "open-response" as const, title: "Role Play: At the Shop", instruction: "Pretend you are buying something at a shop. Write what you and the shopkeeper would say. Then act it out.", parentTip: "Role play builds confidence and practises real-world speaking situations.", prompts: [ { text: "You say:", type: "lines" as const, lines: 2 }, { text: "Shopkeeper says:", type: "lines" as const, lines: 2 }, { text: "You say:", type: "lines" as const, lines: 2 }, { text: "Shopkeeper says:", type: "lines" as const, lines: 2 } ] },
+      // 40 — SPARK
+      { type: "home-activity" as const, title: "Listening Games", instruction: "Play these listening games with your family!", parentTip: "Spark: Have you ever noticed that some people are really good listeners and some are not? Think about the best listener you know — what do they do that makes them so good? Good listeners make other people feel important and heard. When you listen carefully to someone, you are giving them a gift — the gift of your attention. How does it feel when someone really listens to you?", suggestions: [ "Play Simon Says — you must listen carefully to only follow instructions that start with 'Simon says'.", "Play 'What is the Sound?' — close your eyes and identify 5 sounds around the house.", "Listen to a song together and count how many times a certain word is used.", "Tell a story with mistakes (e.g. 'The cat said moo') — your child catches the errors." ] },
+      // 41
+      { type: "open-response" as const, title: "Plan a Mini Presentation (Set A)", instruction: "Plan a 1-minute presentation about a topic you know well.", parentTip: "One minute is about 100-120 words spoken. Keep it focused.", prompts: [ { text: "My topic:", type: "lines" as const, lines: 1 }, { text: "Opening sentence (grab attention):", type: "lines" as const, lines: 2 }, { text: "3 key points:", type: "lines" as const, lines: 4 }, { text: "Closing sentence:", type: "lines" as const, lines: 2 } ] },
+      // 42
+      { type: "open-response" as const, title: "Self-Assessment: My Presentation", instruction: "After giving your presentation, assess yourself.", prompts: [ { text: "Did I look at my audience? (yes/sometimes/no)", type: "lines" as const, lines: 1 }, { text: "Did I speak loudly enough? (yes/sometimes/no)", type: "lines" as const, lines: 1 }, { text: "Did I use complete sentences? (yes/sometimes/no)", type: "lines" as const, lines: 1 }, { text: "What I did well:", type: "lines" as const, lines: 2 }, { text: "What I want to improve:", type: "lines" as const, lines: 2 } ] },
+      // 43
+      { type: "circle-correct" as const, title: "Body Language (Set A)", instruction: "Circle the body language that matches good speaking or listening.", questions: [ { prompt: "Which shows confident speaking?", options: ["Standing straight, looking at the audience", "Hiding behind a book", "Looking at the ceiling"] }, { prompt: "Which shows active listening?", options: ["Folded arms, looking away", "Nodding, leaning slightly forward", "Tapping fingers on the desk"] }, { prompt: "Which shows respect during a conversation?", options: ["Checking your watch repeatedly", "Making eye contact and waiting your turn", "Yawning loudly"] } ] },
+      // 44
+      { type: "open-response" as const, title: "Interview Report (Set B)", instruction: "Interview a different family member. Write your questions and their answers.", prompts: [ { text: "Person I interviewed:", type: "lines" as const, lines: 1 }, { text: "Question 1 and answer:", type: "lines" as const, lines: 2 }, { text: "Question 2 and answer:", type: "lines" as const, lines: 2 }, { text: "Question 3 and answer:", type: "lines" as const, lines: 2 }, { text: "The most surprising answer:", type: "lines" as const, lines: 2 } ] },
+      // 45 — TIP
+      { type: "open-response" as const, title: "Follow Multi-Step Instructions (Set A)", instruction: "Ask someone to give you 3 instructions in a row (e.g. 'Touch your nose, spin around, then clap twice'). Listen carefully and do all 3 in order.", parentTip: "Tip: Following multi-step instructions is one of the most important listening skills for school. The secret is to repeat the instructions in your head before starting. If someone says 'Put your book away, get your pencil and sit on the mat', say it to yourself: book away, pencil, mat. This mental rehearsal helps you remember all the steps!", prompts: [ { text: "The 3 instructions were:", type: "lines" as const, lines: 3 }, { text: "Did I do them in the right order? (yes/no)", type: "lines" as const, lines: 1 }, { text: "The 3 NEW instructions were:", type: "lines" as const, lines: 3 }, { text: "Did I do them in the right order? (yes/no)", type: "lines" as const, lines: 1 } ] },
+      // 46
+      { type: "open-response" as const, title: "Agree or Disagree (Set A)", instruction: "Read each statement. Say whether you agree or disagree and explain WHY.", parentTip: "Expressing opinions respectfully is a key speaking skill.", prompts: [ { text: "'Dogs are better pets than cats.' I agree/disagree because:", type: "lines" as const, lines: 2 }, { text: "'Reading is more fun than watching TV.' I agree/disagree because:", type: "lines" as const, lines: 2 }, { text: "'Rainy days are boring.' I agree/disagree because:", type: "lines" as const, lines: 2 } ] },
+      // 47
+      { type: "matching" as const, title: "Match the Situation to the Speaking Style", instruction: "Draw a line from each situation to how you should speak.", left: ["Telling a joke to friends", "Asking a teacher for help", "Presenting to the whole class", "Comforting a sad friend", "Calling for help in an emergency"], right: ["Loud and urgent", "Clear and projected", "Gentle and kind", "Fun and animated", "Polite and clear"] },
+      // 48
+      { type: "open-response" as const, title: "Tell a Story to an Audience", instruction: "Tell a short story (real or made up) to a family member. Focus on using expression and different voices for characters.", prompts: [ { text: "Story I told:", type: "lines" as const, lines: 1 }, { text: "Did I use different voices for characters? (yes/no)", type: "lines" as const, lines: 1 }, { text: "Did my audience enjoy it? How do I know?", type: "lines" as const, lines: 2 }, { text: "Feedback from my audience:", type: "lines" as const, lines: 2 } ] },
+      // 49
+      { type: "open-response" as const, title: "Listen and Retell (Set B)", instruction: "Listen to a short podcast or audiobook excerpt. Retell the key points.", prompts: [ { text: "What I listened to:", type: "lines" as const, lines: 1 }, { text: "The main points were:", type: "lines" as const, lines: 4 }, { text: "Something I found interesting:", type: "lines" as const, lines: 2 } ] },
+      // 50
+      { type: "open-response" as const, title: "Role Play: Making a Phone Call", instruction: "Pretend you are calling a friend to invite them to play. Write the conversation.", parentTip: "Phone conversations require extra-clear speaking because you cannot use body language.", prompts: [ { text: "You: (greeting)", type: "lines" as const, lines: 1 }, { text: "Friend:", type: "lines" as const, lines: 1 }, { text: "You: (invitation)", type: "lines" as const, lines: 2 }, { text: "Friend:", type: "lines" as const, lines: 1 }, { text: "You: (details — when, where)", type: "lines" as const, lines: 2 }, { text: "Friend:", type: "lines" as const, lines: 1 } ] },
+      // ─── CONSOLIDATING (51–80): Discussion skills, persuasion, oral presentations ───
+      // 51
+      { type: "open-response" as const, title: "Plan a Mini Presentation (Set B)", instruction: "Plan a presentation about an Australian animal.", prompts: [ { text: "Animal:", type: "lines" as const, lines: 1 }, { text: "What it looks like:", type: "lines" as const, lines: 2 }, { text: "Where it lives:", type: "lines" as const, lines: 1 }, { text: "What it eats:", type: "lines" as const, lines: 1 }, { text: "An interesting fact:", type: "lines" as const, lines: 2 }, { text: "A question for my audience:", type: "lines" as const, lines: 1 } ] },
+      // 52
+      { type: "open-response" as const, title: "Audience Feedback Form", instruction: "After someone gives a presentation, fill in this feedback form.", parentTip: "Learning to give constructive feedback is as important as learning to receive it.", prompts: [ { text: "Presenter's name:", type: "lines" as const, lines: 1 }, { text: "Topic:", type: "lines" as const, lines: 1 }, { text: "Something they did well:", type: "lines" as const, lines: 2 }, { text: "Something they could try next time:", type: "lines" as const, lines: 2 }, { text: "A question I want to ask them:", type: "lines" as const, lines: 2 } ] },
+      // 53
+      { type: "circle-correct" as const, title: "Discussion Dos and Don'ts", instruction: "Circle DO if it is a good discussion behaviour or DON'T if it is not.", questions: [ { prompt: "Wait for someone to finish before you speak.", options: ["DO", "DON'T"] }, { prompt: "Say 'I agree with you because...'", options: ["DO", "DON'T"] }, { prompt: "Say 'You are wrong!' with no explanation.", options: ["DO", "DON'T"] }, { prompt: "Say 'I think differently because...'", options: ["DO", "DON'T"] }, { prompt: "Roll your eyes when someone is talking.", options: ["DO", "DON'T"] } ] },
+      // 54
+      { type: "open-response" as const, title: "Discussion: What Is the Best Pet?", instruction: "Have a discussion with a family member about this question. Write both points of view.", parentTip: "In a discussion, both sides should be heard and respected.", prompts: [ { text: "My opinion:", type: "lines" as const, lines: 2 }, { text: "The other person's opinion:", type: "lines" as const, lines: 2 }, { text: "Did we agree or disagree?", type: "lines" as const, lines: 1 }, { text: "Something interesting the other person said:", type: "lines" as const, lines: 2 } ] },
+      // 55
+      { type: "open-response" as const, title: "Persuade Me! (Set A)", instruction: "Try to persuade a family member to agree with your opinion. Give 3 reasons.", parentTip: "Persuasive speaking means giving reasons to support your opinion.", prompts: [ { text: "My opinion:", type: "lines" as const, lines: 1 }, { text: "Reason 1:", type: "lines" as const, lines: 2 }, { text: "Reason 2:", type: "lines" as const, lines: 2 }, { text: "Reason 3:", type: "lines" as const, lines: 2 }, { text: "Did they agree in the end? (yes/no/partly)", type: "lines" as const, lines: 1 } ] },
+      // 56
+      { type: "sorting" as const, title: "Fact or Opinion? (Spoken Version)", instruction: "Sort each statement: is it a fact (can be proven true) or an opinion (what someone thinks)?", columns: ["Fact", "Opinion"], items: [ { label: "Australia is a country." }, { label: "Dogs are the best animals." }, { label: "The sun rises in the east." }, { label: "Pizza is the tastiest food." }, { label: "There are 7 days in a week." }, { label: "Summer is the best season." } ] },
+      // 57
+      { type: "open-response" as const, title: "Give Instructions (Set B)", instruction: "Explain to someone how to make a sandwich, without showing them. Write down your instructions and whether they understood.", prompts: [ { text: "My instructions (step by step):", type: "lines" as const, lines: 6 }, { text: "Did they understand without help? (yes/no)", type: "lines" as const, lines: 1 }, { text: "What was the hardest part to explain?", type: "lines" as const, lines: 2 } ] },
+      // 58
+      { type: "open-response" as const, title: "Listen and Draw (Set B)", instruction: "Ask someone to describe a simple scene. Draw it based on their words only.", prompts: [ { text: "Draw what you heard:", type: "box" as const }, { text: "How accurate was your drawing? (very/somewhat/not very)", type: "lines" as const, lines: 1 }, { text: "What would have helped you listen better?", type: "lines" as const, lines: 2 } ] },
+      // 59
+      { type: "open-response" as const, title: "News Reporter (Set A)", instruction: "Pretend you are a news reporter. Report on something that happened at your home this week.", parentTip: "News reporters speak clearly, look at the camera (audience) and present facts.", prompts: [ { text: "My news report (write it, then say it aloud):", type: "lines" as const, lines: 6 }, { text: "Did I speak clearly and look at my audience? (yes/no)", type: "lines" as const, lines: 1 } ] },
+      // 60 — SPARK
+      { type: "home-activity" as const, title: "Speaking and Listening in the Real World", instruction: "Notice how speaking and listening works in everyday life.", parentTip: "Spark: Speaking and listening are not just school skills — they are LIFE skills! Think about all the jobs that need great speaking: teachers, doctors, shop assistants, bus drivers, police officers, firefighters. And EVERY job needs good listening! What job would you like to have when you grow up? How would speaking and listening help you in that job?", suggestions: [ "Watch a conversation between two people (on TV or in real life) — notice how they take turns.", "Listen to a weather report and retell the forecast to a family member.", "Practise ordering food at a restaurant or cafe — speak clearly and politely.", "Have a 'no screens' family conversation for 15 minutes — just talk and listen." ] },
+      // 61
+      { type: "open-response" as const, title: "Debate: Should Children Have Homework?", instruction: "Have a friendly debate with a family member. One person argues YES, one argues NO.", prompts: [ { text: "My side of the debate (yes/no):", type: "lines" as const, lines: 1 }, { text: "My 3 reasons:", type: "lines" as const, lines: 4 }, { text: "The other person's best reason:", type: "lines" as const, lines: 2 }, { text: "Who had the most convincing argument?", type: "lines" as const, lines: 1 } ] },
+      // 62
+      { type: "circle-correct" as const, title: "Responding Politely (Set A)", instruction: "Circle the most polite response.", questions: [ { prompt: "Someone gives you a present you do not really like:", options: ["'I do not like this.'", "'Thank you so much for thinking of me!'", "'Can I swap it?'"] }, { prompt: "Your friend makes a mistake in a game:", options: ["'Ha ha, you got it wrong!'", "'That is okay, try again.'", "'You are so bad at this.'"] }, { prompt: "Someone asks you to repeat what you said:", options: ["'I said it already!'", "'Sure, I said...'", "'Were you not listening?'"] } ] },
+      // 63
+      { type: "open-response" as const, title: "Storytelling With Expression", instruction: "Read a short passage aloud using different voices and expressions. Then answer.", parentTip: "Expression means changing volume, speed and tone to match the meaning.", prompts: [ { text: "The passage I read was:", type: "lines" as const, lines: 1 }, { text: "I changed my voice when:", type: "lines" as const, lines: 2 }, { text: "The hardest part to read with expression was:", type: "lines" as const, lines: 2 } ] },
+      // 64
+      { type: "open-response" as const, title: "Group Discussion Record", instruction: "Have a group discussion (3+ people) about a topic. Record the key points.", prompts: [ { text: "Topic:", type: "lines" as const, lines: 1 }, { text: "What Person 1 said:", type: "lines" as const, lines: 2 }, { text: "What Person 2 said:", type: "lines" as const, lines: 2 }, { text: "What I said:", type: "lines" as const, lines: 2 }, { text: "Did everyone get a turn? (yes/no)", type: "lines" as const, lines: 1 } ] },
+      // 65
+      { type: "open-response" as const, title: "Persuade Me! (Set B)", instruction: "Choose something and try to convince a family member it is the best. Use your best persuasive speaking voice.", prompts: [ { text: "I am trying to persuade someone that ___ is the best:", type: "lines" as const, lines: 1 }, { text: "Reason 1:", type: "lines" as const, lines: 2 }, { text: "Reason 2:", type: "lines" as const, lines: 2 }, { text: "Reason 3:", type: "lines" as const, lines: 2 } ] },
+      // 66
+      { type: "matching" as const, title: "Match the Speaker to the Situation", instruction: "Draw a line from each speaker to the best situation for their style.", left: ["A person who speaks very quietly", "A person who uses big hand gestures", "A person who speaks slowly and clearly", "A person who asks lots of questions"], right: ["A teacher explaining a new concept", "Reading a bedtime story to a baby", "An interviewer on a talk show", "A performer on a stage"] },
+      // 67
+      { type: "open-response" as const, title: "Listen and Summarise (Set A)", instruction: "Listen to someone explain something for 2 minutes. Then summarise it in 3 sentences.", prompts: [ { text: "Topic they explained:", type: "lines" as const, lines: 1 }, { text: "My summary in 3 sentences:", type: "lines" as const, lines: 4 }, { text: "Did they agree my summary was accurate? (yes/no)", type: "lines" as const, lines: 1 } ] },
+      // 68
+      { type: "open-response" as const, title: "Role Play: At the Doctor", instruction: "Pretend you are visiting the doctor. Write and act out the conversation.", prompts: [ { text: "Doctor: 'What seems to be the problem?'", type: "lines" as const, lines: 1 }, { text: "You:", type: "lines" as const, lines: 2 }, { text: "Doctor:", type: "lines" as const, lines: 2 }, { text: "You:", type: "lines" as const, lines: 2 } ] },
+      // 69
+      { type: "open-response" as const, title: "News Reporter (Set B)", instruction: "Report on a school event (real or imagined). Use a clear, confident voice.", prompts: [ { text: "My news report:", type: "lines" as const, lines: 6 }, { text: "Self-assessment: Did I sound like a real reporter? (yes/somewhat/no)", type: "lines" as const, lines: 1 } ] },
+      // 70
+      { type: "open-response" as const, title: "Ask Good Questions (Set B)", instruction: "After reading or hearing about a topic, write 5 questions you would like to know the answer to.", parentTip: "Asking good questions shows deep thinking and curiosity.", prompts: [ { text: "Topic:", type: "lines" as const, lines: 1 }, { text: "Question 1:", type: "lines" as const, lines: 1 }, { text: "Question 2:", type: "lines" as const, lines: 1 }, { text: "Question 3:", type: "lines" as const, lines: 1 }, { text: "Question 4:", type: "lines" as const, lines: 1 }, { text: "Question 5:", type: "lines" as const, lines: 1 } ] },
+      // 71
+      { type: "open-response" as const, title: "Retell a Real Event", instruction: "Something happened this week. Retell it in order, with details, to a family member.", prompts: [ { text: "What happened:", type: "lines" as const, lines: 1 }, { text: "My retelling (in order):", type: "lines" as const, lines: 6 }, { text: "Did my listener understand the whole event? (yes/no)", type: "lines" as const, lines: 1 } ] },
+      // 72
+      { type: "sorting" as const, title: "Good Discussion Phrases", instruction: "Sort each phrase: helpful in a discussion or not helpful.", columns: ["Helpful in a discussion", "Not helpful"], items: [ { label: "I agree because..." }, { label: "Shut up!" }, { label: "That is an interesting point, but I think..." }, { label: "Whatever." }, { label: "Can you explain what you mean?" }, { label: "You are wrong and I am right." } ] },
+      // 73
+      { type: "open-response" as const, title: "Explain a Game", instruction: "Choose a game you know well. Explain the rules to someone who has never played it.", prompts: [ { text: "Game:", type: "lines" as const, lines: 1 }, { text: "How to play (step by step):", type: "lines" as const, lines: 6 }, { text: "Did they understand? Could they play? (yes/no)", type: "lines" as const, lines: 1 } ] },
+      // 74
+      { type: "open-response" as const, title: "Peer Teaching (Set A)", instruction: "Teach a family member something you know how to do. Explain step by step.", parentTip: "Teaching something to someone else is the highest form of understanding.", prompts: [ { text: "What I taught:", type: "lines" as const, lines: 1 }, { text: "My steps:", type: "lines" as const, lines: 6 }, { text: "Did they learn it? (yes/no)", type: "lines" as const, lines: 1 } ] },
+      // 75 — TIP
+      { type: "open-response" as const, title: "Listening for Key Information (Set A)", instruction: "Listen to someone read a non-fiction paragraph. Write down the 3 most important facts you heard.", parentTip: "Tip: When listening for key information, imagine you have a 'fact filter' in your brain. Not everything you hear is equally important. Some words are key facts and some are just extra details. Train yourself to listen for the MOST IMPORTANT information. Ask yourself: 'What are the main points?' and 'What do I need to remember?'", prompts: [ { text: "Topic:", type: "lines" as const, lines: 1 }, { text: "Key fact 1:", type: "lines" as const, lines: 1 }, { text: "Key fact 2:", type: "lines" as const, lines: 1 }, { text: "Key fact 3:", type: "lines" as const, lines: 1 }, { text: "Was it hard to pick out the key facts? Why?", type: "lines" as const, lines: 2 } ] },
+      // 76
+      { type: "open-response" as const, title: "Tell a Joke", instruction: "Learn a joke and tell it to 3 different people. Write about how it went.", parentTip: "Joke telling practises timing, expression and audience awareness.", prompts: [ { text: "My joke:", type: "lines" as const, lines: 3 }, { text: "Person 1's reaction:", type: "lines" as const, lines: 1 }, { text: "Person 2's reaction:", type: "lines" as const, lines: 1 }, { text: "Person 3's reaction:", type: "lines" as const, lines: 1 } ] },
+      // 77
+      { type: "open-response" as const, title: "Discussion: What Would You Do?", instruction: "Discuss this scenario with a family member: 'You find money on the ground at school. What should you do?'", prompts: [ { text: "My opinion:", type: "lines" as const, lines: 2 }, { text: "Other person's opinion:", type: "lines" as const, lines: 2 }, { text: "What we agreed on:", type: "lines" as const, lines: 2 } ] },
+      // 78
+      { type: "open-response" as const, title: "Compare Two Speakers", instruction: "Listen to two different people speak (family members, TV presenters, audiobook readers). Compare them.", prompts: [ { text: "Speaker 1: Who and what they spoke about:", type: "lines" as const, lines: 1 }, { text: "Speaker 2: Who and what they spoke about:", type: "lines" as const, lines: 1 }, { text: "Whose voice was easier to listen to? Why?", type: "lines" as const, lines: 2 }, { text: "What made them different?", type: "lines" as const, lines: 2 } ] },
+      // 79
+      { type: "open-response" as const, title: "Plan a Mini Presentation (Set C)", instruction: "Plan a presentation about your favourite book.", prompts: [ { text: "Book title and author:", type: "lines" as const, lines: 1 }, { text: "What the book is about (without giving away the ending):", type: "lines" as const, lines: 3 }, { text: "Why I recommend it:", type: "lines" as const, lines: 2 }, { text: "A question for my audience:", type: "lines" as const, lines: 1 } ] },
+      // 80 — SPARK
+      { type: "home-activity" as const, title: "Communication Challenge", instruction: "Challenge yourself with these communication activities!", parentTip: "Spark: Communication is not just about words! Scientists say that more than half of what we communicate comes from our body language and tone of voice, not the actual words we say. Try saying 'That is great' in a happy voice, then in a sarcastic voice — same words, completely different meaning! How does your body language change when you feel different emotions? Stand in front of a mirror and try showing happiness, sadness, surprise and anger without saying a word. Can someone guess what you are feeling?", suggestions: [ "Have a conversation using ONLY facial expressions and gestures — no words!", "Record yourself giving a presentation and play it back. What do you notice?", "Practise telling the same story to a 5-year-old and then to an adult — notice how you change.", "Try having a conversation where you ask 3 questions before giving your own opinion." ] },
+      // ─── EXTENDING (81–100): Extended speaking, active listening, reflection ───
+      // 81
+      { type: "open-response" as const, title: "Plan a 2-Minute Presentation", instruction: "Plan a longer presentation about a topic you are passionate about.", prompts: [ { text: "Topic:", type: "lines" as const, lines: 1 }, { text: "Why I chose this topic:", type: "lines" as const, lines: 2 }, { text: "Opening (grab attention):", type: "lines" as const, lines: 2 }, { text: "Key point 1:", type: "lines" as const, lines: 2 }, { text: "Key point 2:", type: "lines" as const, lines: 2 }, { text: "Key point 3:", type: "lines" as const, lines: 2 }, { text: "Closing:", type: "lines" as const, lines: 2 } ] },
+      // 82
+      { type: "open-response" as const, title: "Presentation Reflection", instruction: "After giving your 2-minute presentation, reflect on how it went.", prompts: [ { text: "What I am proud of:", type: "lines" as const, lines: 2 }, { text: "What I found challenging:", type: "lines" as const, lines: 2 }, { text: "Feedback from my audience:", type: "lines" as const, lines: 2 }, { text: "One thing I will do differently next time:", type: "lines" as const, lines: 2 } ] },
+      // 83
+      { type: "open-response" as const, title: "Active Listening Challenge", instruction: "Listen to someone speak for 3 minutes without interrupting. Then answer.", parentTip: "Active listening means really engaging with what is being said — not just waiting for your turn.", prompts: [ { text: "Topic they spoke about:", type: "lines" as const, lines: 1 }, { text: "3 key things I heard:", type: "lines" as const, lines: 3 }, { text: "1 opinion they shared:", type: "lines" as const, lines: 2 }, { text: "2 questions I want to ask:", type: "lines" as const, lines: 2 } ] },
+      // 84
+      { type: "open-response" as const, title: "Debate: What Is the Best Season?", instruction: "Have a friendly debate. Each side gets 1 minute to argue their case.", prompts: [ { text: "My favourite season and 3 reasons:", type: "lines" as const, lines: 4 }, { text: "The other person's favourite season and reasons:", type: "lines" as const, lines: 4 }, { text: "Who was more persuasive? Why?", type: "lines" as const, lines: 2 } ] },
+      // 85
+      { type: "open-response" as const, title: "Record and Review", instruction: "Record yourself speaking (reading a passage or giving a talk). Listen back and assess.", prompts: [ { text: "What I recorded:", type: "lines" as const, lines: 1 }, { text: "When I listened back, I noticed:", type: "lines" as const, lines: 3 }, { text: "My voice sounded: (clear/mumbly/too fast/too slow/just right)", type: "lines" as const, lines: 1 }, { text: "One thing I want to improve:", type: "lines" as const, lines: 2 } ] },
+      // 86
+      { type: "open-response" as const, title: "Group Storytelling", instruction: "Tell a story with 2 or 3 other people — each person adds one sentence. Write the story.", parentTip: "This practises listening to what others say AND building on their ideas.", prompts: [ { text: "Our group story:", type: "lines" as const, lines: 8 }, { text: "Was it easy or hard to build on each other's sentences?", type: "lines" as const, lines: 2 } ] },
+      // 87
+      { type: "open-response" as const, title: "Explain Your Thinking", instruction: "Choose a problem or question. Explain your thinking process out loud. Write it down.", parentTip: "Thinking aloud (metacognition) helps develop clear reasoning skills.", prompts: [ { text: "Question or problem:", type: "lines" as const, lines: 1 }, { text: "My thinking process (step by step):", type: "lines" as const, lines: 6 } ] },
+      // 88
+      { type: "circle-correct" as const, title: "Audience Awareness (Set B)", instruction: "Circle the best way to communicate in each situation.", questions: [ { prompt: "Explaining a game to a 3-year-old:", options: ["Use short, simple words and show them", "Use complicated instructions", "Read them a rule book"] }, { prompt: "Asking the school principal for something:", options: ["Shout from across the hall", "Walk up politely and speak clearly", "Send a friend to ask instead"] }, { prompt: "Sharing exciting news with a friend:", options: ["In a flat, boring voice", "With enthusiasm and a big smile", "In writing only"] } ] },
+      // 89
+      { type: "open-response" as const, title: "Interview: Someone I Admire", instruction: "Interview someone you admire (a family member, friend or teacher). Prepare thoughtful questions.", prompts: [ { text: "Person I interviewed:", type: "lines" as const, lines: 1 }, { text: "Why I admire them:", type: "lines" as const, lines: 2 }, { text: "My best question and their answer:", type: "lines" as const, lines: 4 }, { text: "Something I learned about them:", type: "lines" as const, lines: 2 } ] },
+      // 90 — TIP
+      { type: "open-response" as const, title: "Speaking and Listening Self-Assessment", instruction: "Honestly assess your speaking and listening skills.", parentTip: "Tip: Great communicators are always trying to improve. Even the best speakers in the world practise and reflect on their skills. The most important thing is to be AWARE of how you communicate — once you are aware, you can keep getting better. Think about these three things every time you speak: Am I clear? Am I respectful? Am I interesting? And every time you listen: Am I really hearing what is being said? Am I showing the speaker I care?", prompts: [ { text: "My strongest speaking skill:", type: "lines" as const, lines: 2 }, { text: "My strongest listening skill:", type: "lines" as const, lines: 2 }, { text: "Something I still find tricky:", type: "lines" as const, lines: 2 }, { text: "A goal I want to set:", type: "lines" as const, lines: 2 } ] },
+      // 91
+      { type: "open-response" as const, title: "Teach Someone Something New", instruction: "Teach a family member something they do not know. Write your plan and how it went.", prompts: [ { text: "What I taught:", type: "lines" as const, lines: 1 }, { text: "My teaching plan:", type: "lines" as const, lines: 4 }, { text: "Did they learn it? How do I know?", type: "lines" as const, lines: 2 } ] },
+      // 92
+      { type: "open-response" as const, title: "Listen to Different Perspectives", instruction: "Ask 3 different people the same question. Write their different answers.", prompts: [ { text: "Question I asked:", type: "lines" as const, lines: 1 }, { text: "Person 1's answer:", type: "lines" as const, lines: 2 }, { text: "Person 2's answer:", type: "lines" as const, lines: 2 }, { text: "Person 3's answer:", type: "lines" as const, lines: 2 }, { text: "What I learned from hearing different perspectives:", type: "lines" as const, lines: 2 } ] },
+      // 93
+      { type: "open-response" as const, title: "Practise Saying Sorry and Thank You", instruction: "Practise these important social phrases. Role play each scenario.", parentTip: "Knowing how to apologise and express gratitude builds social confidence.", prompts: [ { text: "Scenario 1: You accidentally break a friend's toy. What do you say?", type: "lines" as const, lines: 2 }, { text: "Scenario 2: Someone helps you pick up your books. What do you say?", type: "lines" as const, lines: 2 }, { text: "Scenario 3: You forgot to do something you promised. What do you say?", type: "lines" as const, lines: 2 } ] },
+      // 94
+      { type: "open-response" as const, title: "Create a Radio Advertisement", instruction: "Create a 30-second radio ad for something (a toy, a food, a place). Write and perform it.", prompts: [ { text: "Product or place:", type: "lines" as const, lines: 1 }, { text: "My advertisement script:", type: "lines" as const, lines: 6 }, { text: "Did my audience want to buy/visit it? (yes/no)", type: "lines" as const, lines: 1 } ] },
+      // 95
+      { type: "open-response" as const, title: "Explain Without Words (Charades)", instruction: "Play charades! Act out 5 things without speaking. Write what you acted and whether people guessed correctly.", prompts: [ { text: "Thing 1: ______ — guessed? (yes/no)", type: "lines" as const, lines: 1 }, { text: "Thing 2: ______ — guessed? (yes/no)", type: "lines" as const, lines: 1 }, { text: "Thing 3: ______ — guessed? (yes/no)", type: "lines" as const, lines: 1 }, { text: "Thing 4: ______ — guessed? (yes/no)", type: "lines" as const, lines: 1 }, { text: "Thing 5: ______ — guessed? (yes/no)", type: "lines" as const, lines: 1 }, { text: "What was the hardest to act out? Why?", type: "lines" as const, lines: 2 } ] },
+      // 96
+      { type: "open-response" as const, title: "Plan and Give a Speech", instruction: "Write a short speech (1 minute) about something you care about. Give it to your family.", prompts: [ { text: "Topic I care about:", type: "lines" as const, lines: 1 }, { text: "My speech:", type: "lines" as const, lines: 8 }, { text: "How I felt giving the speech:", type: "lines" as const, lines: 2 } ] },
+      // 97
+      { type: "open-response" as const, title: "Listening Journal Entry", instruction: "Pay special attention to your listening today. At the end of the day, write about it.", prompts: [ { text: "The best thing I listened to today:", type: "lines" as const, lines: 2 }, { text: "A time I listened really well:", type: "lines" as const, lines: 2 }, { text: "A time I could have listened better:", type: "lines" as const, lines: 2 } ] },
+      // 98
+      { type: "open-response" as const, title: "Communication Across Cultures", instruction: "Different cultures communicate in different ways. With a parent's help, learn about one difference.", parentTip: "This builds cultural awareness and respect for diversity.", prompts: [ { text: "Culture I learned about:", type: "lines" as const, lines: 1 }, { text: "A communication difference I discovered:", type: "lines" as const, lines: 3 }, { text: "Why it is important to respect different ways of communicating:", type: "lines" as const, lines: 3 } ] },
+      // 99
+      { type: "open-response" as const, title: "My Communication Goals", instruction: "Set 3 goals for your speaking and listening skills.", prompts: [ { text: "Speaking goal 1:", type: "lines" as const, lines: 2 }, { text: "Speaking goal 2:", type: "lines" as const, lines: 2 }, { text: "Listening goal:", type: "lines" as const, lines: 2 }, { text: "How I will practise these goals:", type: "lines" as const, lines: 3 } ] },
+      // 100 — SPARK
+      { type: "home-activity" as const, title: "Communication Champion", instruction: "You have completed 100 speaking and listening activities! Celebrate and keep communicating!", parentTip: "Spark: You are now a Communication Champion! Think about everything you have learned: listening carefully, speaking clearly, taking turns, asking good questions, presenting to an audience, debating, persuading, giving feedback, using expression, and understanding body language. These skills will help you in EVERY part of your life — at school, with friends, at home, and one day at work. The most important lesson of all is that communication is about CONNECTING with other people. When you truly listen to someone, you show them they matter. When you speak clearly and kindly, you share a part of yourself with the world. Keep talking, keep listening, keep connecting!", suggestions: [ "Start a family book club — read a book together and have a discussion about it each week.", "Interview an older family member about their life when they were your age.", "Organise a family talent show where everyone has to present or perform something.", "Start each day by telling someone one thing you are grateful for." ] },
     ],
   },
 
@@ -1626,94 +1743,210 @@ export const year1EnglishWorksheets: WorksheetItem[] = [
       ],
     },
     activities: [
-      {
-        type: "open-response" as const,
-        title: "Chop and Read",
-        instruction:
-          "Draw a line to split each word into two syllables. Then write each syllable separately and read the whole word.",
-        parentTip:
-          "If your child is unsure where to split, ask them to say the word slowly and listen for the two beats.",
-        prompts: [
-          { text: "rabbit -> rab | bit", type: "lines" as const, lines: 1 },
-          { text: "basket -> ___ | ___", type: "lines" as const, lines: 1 },
-          { text: "pencil -> ___ | ___", type: "lines" as const, lines: 1 },
-          { text: "garden -> ___ | ___", type: "lines" as const, lines: 1 },
-          { text: "finger -> ___ | ___", type: "lines" as const, lines: 1 },
-          { text: "winter -> ___ | ___", type: "lines" as const, lines: 1 },
-        ],
-      },
-      {
-        type: "sorting" as const,
-        title: "One or Two Syllables?",
-        instruction:
-          "Sort each word into the correct column: 1 syllable or 2 syllables.",
-        parentTip:
-          "Clap it out if unsure! One clap = one syllable, two claps = two syllables.",
-        columns: ["1 syllable", "2 syllables"],
-        items: [
-          { label: "cat" },
-          { label: "rabbit" },
-          { label: "jump" },
-          { label: "garden" },
-          { label: "sun" },
-          { label: "pencil" },
-          { label: "dog" },
-          { label: "basket" },
-        ],
-      },
-      {
-        type: "home-activity" as const,
-        title: "Two-Syllable Word Spotting",
-        instruction: "Build the habit of chunking long words in real reading.",
-        parentTip:
-          "Make chunking a habit — every time you encounter a long word in a book or sign, say 'Chop it!' together.",
-        suggestions: [
-          "Find 5 two-syllable words in a picture book. Write them down and draw the split line.",
-          "Look at food labels and find two-syllable ingredient or food names.",
-          "Say a two-syllable word and take turns clapping the syllables before reading it.",
-          "Play Word Builder: give your child a syllable (e.g. 'bas-') and they add a second syllable to make a word.",
-        ],
-      },
-      {
-        type: "matching" as const,
-        title: "Match the Syllable Halves",
-        instruction:
-          "Draw a line to join the two syllables that make a real word.",
-        parentTip:
-          "Say each half aloud before combining. If the blended result sounds like a real word your child knows, it is probably correct.",
-        left: ["rab-", "gar-", "win-", "bas-", "pen-"],
-        right: ["-cil", "-ket", "-bit", "-den", "-ter"],
-      },
-      {
-        type: "circle-correct" as const,
-        title: "How Many Syllables?",
-        instruction:
-          "Clap each word and circle the correct number of syllables.",
-        parentTip:
-          "Place a hand under the chin — each time the jaw drops for a vowel sound, that is one syllable. This physical cue is very reliable for young learners.",
-        questions: [
-          { prompt: "basket", options: ["1", "2", "3"] },
-          { prompt: "dog", options: ["1", "2", "3"] },
-          { prompt: "umbrella", options: ["1", "2", "3"] },
-          { prompt: "garden", options: ["1", "2", "3"] },
-          { prompt: "sun", options: ["1", "2", "3"] },
-          { prompt: "finger", options: ["1", "2", "3"] },
-        ],
-      },
-      {
-        type: "open-response" as const,
-        title: "Write Your Own Two-Syllable Words",
-        instruction:
-          "Think of two-syllable words for each category. Write the word and draw the syllable split line.",
-        parentTip:
-          "If your child is stuck, suggest they think of an animal, a food, or something in the house. Everyday vocabulary is full of two-syllable words.",
-        prompts: [
-          { text: "A two-syllable animal: ________ | ________", type: "lines" as const, lines: 1 },
-          { text: "A two-syllable food: ________ | ________", type: "lines" as const, lines: 1 },
-          { text: "A two-syllable thing in a classroom: ________ | ________", type: "lines" as const, lines: 1 },
-          { text: "Write a sentence using one of your two-syllable words:", type: "lines" as const, lines: 2 },
-        ],
-      },
+      // ─── FOUNDATIONAL (1–20): Syllable counting, clapping, simple two-syllable words ───
+      // 1
+      { type: "circle-correct" as const, title: "How Many Claps? (Set A)", instruction: "Clap each word. Circle the number of syllables you hear.", parentTip: "One clap = one syllable. Demonstrate with 'cat' (1) and 'rab-bit' (2) first.", questions: [ { prompt: "cat", options: ["1", "2"] }, { prompt: "rabbit", options: ["1", "2"] }, { prompt: "dog", options: ["1", "2"] } ] },
+      // 2
+      { type: "circle-correct" as const, title: "How Many Claps? (Set B)", instruction: "Clap each word. Circle the number of syllables.", questions: [ { prompt: "sun", options: ["1", "2"] }, { prompt: "garden", options: ["1", "2"] }, { prompt: "jump", options: ["1", "2"] }, { prompt: "pencil", options: ["1", "2"] } ] },
+      // 3
+      { type: "sorting" as const, title: "One or Two Syllables? (Set A)", instruction: "Sort each word: 1 syllable or 2 syllables.", parentTip: "Clap it out if unsure! One clap = one syllable, two claps = two syllables.", columns: ["1 syllable", "2 syllables"], items: [ { label: "cat" }, { label: "rabbit" }, { label: "jump" }, { label: "garden" }, { label: "sun" }, { label: "pencil" }, { label: "dog" }, { label: "basket" } ] },
+      // 4
+      { type: "open-response" as const, title: "Chop and Read (Set A)", instruction: "Draw a line to split each word into two syllables. The first one is done for you.", parentTip: "Say the word slowly and listen for the two beats.", prompts: [ { text: "rabbit -> rab | bit", type: "lines" as const, lines: 1 }, { text: "basket -> ___ | ___", type: "lines" as const, lines: 1 }, { text: "pencil -> ___ | ___", type: "lines" as const, lines: 1 }, { text: "garden -> ___ | ___", type: "lines" as const, lines: 1 } ] },
+      // 5
+      { type: "matching" as const, title: "Match Syllable Halves (Set A)", instruction: "Draw a line to join the two syllables that make a real word.", parentTip: "Say each half aloud before combining.", left: ["rab-", "gar-", "win-", "bas-", "pen-"], right: ["-cil", "-ket", "-bit", "-den", "-ter"] },
+      // 6
+      { type: "circle-correct" as const, title: "How Many Syllables? (Set A)", instruction: "Clap each word and circle the correct number of syllables.", parentTip: "Place a hand under the chin — each jaw drop = one syllable.", questions: [ { prompt: "basket", options: ["1", "2", "3"] }, { prompt: "dog", options: ["1", "2", "3"] }, { prompt: "umbrella", options: ["1", "2", "3"] }, { prompt: "finger", options: ["1", "2", "3"] } ] },
+      // 7
+      { type: "open-response" as const, title: "Chop and Read (Set B)", instruction: "Split each word into two syllables.", prompts: [ { text: "finger -> ___ | ___", type: "lines" as const, lines: 1 }, { text: "winter -> ___ | ___", type: "lines" as const, lines: 1 }, { text: "kitten -> ___ | ___", type: "lines" as const, lines: 1 }, { text: "puppet -> ___ | ___", type: "lines" as const, lines: 1 } ] },
+      // 8
+      { type: "matching" as const, title: "Match Syllable Halves (Set B)", instruction: "Join two syllables to make a real word.", left: ["kit-", "pup-", "nap-", "but-", "mit-"], right: ["-ten", "-pet", "-ter", "-kin", "-ten"] },
+      // 9
+      { type: "circle-correct" as const, title: "Which Is a Two-Syllable Word? (Set A)", instruction: "Circle the word that has two syllables.", questions: [ { prompt: "Which has 2 syllables?", options: ["hat", "mitten", "sit"] }, { prompt: "Which has 2 syllables?", options: ["rocket", "red", "run"] }, { prompt: "Which has 2 syllables?", options: ["cup", "bat", "sunset"] } ] },
+      // 10
+      { type: "open-response" as const, title: "Write Two-Syllable Words (Set A)", instruction: "Think of two-syllable words for each category. Write and split them.", parentTip: "Everyday vocabulary is full of two-syllable words — animals, foods, household items.", prompts: [ { text: "A two-syllable animal: ___ | ___", type: "lines" as const, lines: 1 }, { text: "A two-syllable food: ___ | ___", type: "lines" as const, lines: 1 }, { text: "A two-syllable thing in a classroom: ___ | ___", type: "lines" as const, lines: 1 } ] },
+      // 11
+      { type: "sorting" as const, title: "One or Two Syllables? (Set B)", instruction: "Sort each word by syllable count.", columns: ["1 syllable", "2 syllables"], items: [ { label: "fish" }, { label: "mitten" }, { label: "hat" }, { label: "rocket" }, { label: "bed" }, { label: "sunset" }, { label: "big" }, { label: "napkin" } ] },
+      // 12
+      { type: "circle-correct" as const, title: "Same First Syllable (Set A)", instruction: "Circle the word that starts with the same syllable as the first word.", questions: [ { prompt: "rab-bit starts like:", options: ["ran", "rabbit", "rag"] }, { prompt: "gar-den starts like:", options: ["game", "garden", "garlic"] }, { prompt: "win-ter starts like:", options: ["window", "wish", "winter"] } ] },
+      // 13
+      { type: "open-response" as const, title: "Chop and Read (Set C)", instruction: "Split each word into syllables. These words have a double letter in the middle.", parentTip: "Many two-syllable words split between double consonants: rab-bit, kit-ten, mit-ten.", prompts: [ { text: "mitten -> ___ | ___", type: "lines" as const, lines: 1 }, { text: "kitten -> ___ | ___", type: "lines" as const, lines: 1 }, { text: "butter -> ___ | ___", type: "lines" as const, lines: 1 }, { text: "dinner -> ___ | ___", type: "lines" as const, lines: 1 }, { text: "summer -> ___ | ___", type: "lines" as const, lines: 1 } ] },
+      // 14
+      { type: "matching" as const, title: "Match the Word to Its Syllable Split", instruction: "Draw a line from each word to its correct split.", left: ["rabbit", "winter", "butter", "dinner", "sunset"], right: ["sun-set", "rab-bit", "din-ner", "win-ter", "but-ter"] },
+      // 15 — TIP
+      { type: "circle-correct" as const, title: "Which Split Is Correct? (Set A)", instruction: "Circle the correct way to split each word into syllables.", parentTip: "Tip: When a word has two consonants in the middle (like 'rab-bit' or 'win-ter'), the split usually goes between the two consonants. This is the most common pattern for splitting two-syllable words! Try it: gar-den (split between r and d), bas-ket (split between s and k), pen-cil (split between n and c).", questions: [ { prompt: "basket", options: ["ba-sket", "bas-ket", "bask-et"] }, { prompt: "garden", options: ["gar-den", "ga-rden", "gard-en"] }, { prompt: "napkin", options: ["na-pkin", "nap-kin", "napk-in"] } ] },
+      // 16
+      { type: "open-response" as const, title: "Chop and Read (Set D)", instruction: "Split these everyday two-syllable words.", prompts: [ { text: "sister -> ___ | ___", type: "lines" as const, lines: 1 }, { text: "number -> ___ | ___", type: "lines" as const, lines: 1 }, { text: "window -> ___ | ___", type: "lines" as const, lines: 1 }, { text: "helmet -> ___ | ___", type: "lines" as const, lines: 1 } ] },
+      // 17
+      { type: "circle-correct" as const, title: "How Many Syllables? (Set B)", instruction: "Clap and circle.", questions: [ { prompt: "helmet", options: ["1", "2", "3"] }, { prompt: "cat", options: ["1", "2", "3"] }, { prompt: "butterfly", options: ["1", "2", "3"] }, { prompt: "sister", options: ["1", "2", "3"] }, { prompt: "bed", options: ["1", "2", "3"] } ] },
+      // 18
+      { type: "sorting" as const, title: "One, Two or Three Syllables?", instruction: "Sort each word by its syllable count.", columns: ["1 syllable", "2 syllables", "3 syllables"], items: [ { label: "dog" }, { label: "rabbit" }, { label: "umbrella" }, { label: "sun" }, { label: "butter" }, { label: "butterfly" }, { label: "hat" }, { label: "garden" }, { label: "elephant" } ] },
+      // 19
+      { type: "open-response" as const, title: "Read and Write Two-Syllable Words", instruction: "Read each word, split it, then write a sentence using it.", prompts: [ { text: "rocket -> ___ | ___ Sentence:", type: "lines" as const, lines: 2 }, { text: "sunset -> ___ | ___ Sentence:", type: "lines" as const, lines: 2 } ] },
+      // 20 — SPARK
+      { type: "home-activity" as const, title: "Two-Syllable Word Spotting", instruction: "Hunt for two-syllable words in the real world!", parentTip: "Spark: Did you know that the word 'syllable' itself has three syllables? Syl-la-ble! Every word in every language is made of syllables. When you learn to hear and count syllables, you unlock the secret to reading longer words. Try this: say your full name and count the syllables. How many syllables does your name have? What about your friends' names? Who has the most syllables in their name?", suggestions: [ "Find 5 two-syllable words in a picture book. Write them and draw the split line.", "Look at food labels and find two-syllable names.", "Clap the syllables of everyone's name at dinner.", "Play Word Builder: give a syllable (e.g. 'bas-') and add a second to make a word." ] },
+      // ─── DEVELOPING (21–50): Compound words, common patterns, reading in context ───
+      // 21
+      { type: "matching" as const, title: "Match to Make Compound Words (Set A)", instruction: "A compound word is made from two smaller words joined together. Draw a line to make compound words.", parentTip: "Compound words are a great entry to two-syllable words because each syllable is a word the child already knows.", left: ["sun-", "rain-", "foot-", "bed-", "cup-"], right: ["-room", "-set", "-board", "-bow", "-ball"] },
+      // 22
+      { type: "open-response" as const, title: "Split the Compound Words (Set A)", instruction: "Split each compound word into its two smaller words.", prompts: [ { text: "sunflower -> ___ + ___", type: "lines" as const, lines: 1 }, { text: "football -> ___ + ___", type: "lines" as const, lines: 1 }, { text: "rainbow -> ___ + ___", type: "lines" as const, lines: 1 }, { text: "bedroom -> ___ + ___", type: "lines" as const, lines: 1 }, { text: "cupboard -> ___ + ___", type: "lines" as const, lines: 1 } ] },
+      // 23
+      { type: "circle-correct" as const, title: "Which Is a Compound Word?", instruction: "Circle the compound word in each set.", questions: [ { prompt: "Which is a compound word?", options: ["butter", "sunflower", "kitten"] }, { prompt: "Which is a compound word?", options: ["garden", "rainbow", "basket"] }, { prompt: "Which is a compound word?", options: ["pancake", "napkin", "winter"] }, { prompt: "Which is a compound word?", options: ["helmet", "puppet", "football"] } ] },
+      // 24
+      { type: "matching" as const, title: "Match to Make Compound Words (Set B)", instruction: "Join two words to make a compound word.", left: ["pan-", "play-", "tooth-", "air-", "star-"], right: ["-fish", "-cake", "-ground", "-brush", "-port"] },
+      // 25
+      { type: "open-response" as const, title: "Write Compound Word Sentences", instruction: "Write a sentence using each compound word.", prompts: [ { text: "sunflower:", type: "lines" as const, lines: 2 }, { text: "football:", type: "lines" as const, lines: 2 }, { text: "rainbow:", type: "lines" as const, lines: 2 } ] },
+      // 26
+      { type: "sorting" as const, title: "Compound Word or Not?", instruction: "Sort each word: is it a compound word (two words joined) or just a two-syllable word?", columns: ["Compound word", "Not a compound word"], items: [ { label: "sunset" }, { label: "kitten" }, { label: "rainbow" }, { label: "garden" }, { label: "football" }, { label: "pencil" }, { label: "bedroom" }, { label: "mitten" } ] },
+      // 27
+      { type: "open-response" as const, title: "Chop and Read (Set E)", instruction: "Split these words. Some are compound, some are not.", prompts: [ { text: "pancake -> ___ | ___", type: "lines" as const, lines: 1 }, { text: "chicken -> ___ | ___", type: "lines" as const, lines: 1 }, { text: "playground -> ___ | ___", type: "lines" as const, lines: 1 }, { text: "monster -> ___ | ___", type: "lines" as const, lines: 1 }, { text: "toothbrush -> ___ | ___", type: "lines" as const, lines: 1 } ] },
+      // 28
+      { type: "circle-correct" as const, title: "Which Split Is Correct? (Set B)", instruction: "Circle the correct syllable split.", parentTip: "Read each option aloud — the correct split will sound natural.", questions: [ { prompt: "chicken", options: ["chi-cken", "chick-en", "ch-icken"] }, { prompt: "monster", options: ["mo-nster", "mon-ster", "mons-ter"] }, { prompt: "carpet", options: ["car-pet", "ca-rpet", "carp-et"] } ] },
+      // 29
+      { type: "matching" as const, title: "Match Syllable Halves (Set C)", instruction: "Join syllables to make real words.", left: ["chick-", "mon-", "car-", "pic-", "doc-"], right: ["-ture", "-en", "-tor", "-pet", "-ster"] },
+      // 30 — TIP
+      { type: "open-response" as const, title: "Chop and Read (Set F)", instruction: "Split these two-syllable words. These have different consonant patterns in the middle.", parentTip: "Tip: Here is a helpful rule for splitting two-syllable words. If there are two consonants in the middle, split between them (VC/CV pattern): win-ter, gar-den, bas-ket. If there is one consonant in the middle, it usually goes with the second syllable (V/CV pattern): ti-ger, spi-der, ro-bot. Try both splits and pick the one that sounds right!", prompts: [ { text: "tiger -> ___ | ___", type: "lines" as const, lines: 1 }, { text: "spider -> ___ | ___", type: "lines" as const, lines: 1 }, { text: "robot -> ___ | ___", type: "lines" as const, lines: 1 }, { text: "paper -> ___ | ___", type: "lines" as const, lines: 1 }, { text: "music -> ___ | ___", type: "lines" as const, lines: 1 } ] },
+      // 31
+      { type: "circle-correct" as const, title: "Which Split Is Correct? (Set C)", instruction: "Circle the correct split for these open-syllable words.", questions: [ { prompt: "tiger", options: ["ti-ger", "tig-er", "t-iger"] }, { prompt: "spider", options: ["spi-der", "spid-er", "sp-ider"] }, { prompt: "robot", options: ["ro-bot", "rob-ot", "r-obot"] }, { prompt: "paper", options: ["pa-per", "pap-er", "p-aper"] } ] },
+      // 32
+      { type: "sorting" as const, title: "Split Between or Before?", instruction: "Sort: does the word split BETWEEN two middle consonants or BEFORE the single middle consonant?", columns: ["Split between (rab-bit)", "Split before (ti-ger)"], items: [ { label: "winter (win-ter)" }, { label: "spider (spi-der)" }, { label: "basket (bas-ket)" }, { label: "robot (ro-bot)" }, { label: "pencil (pen-cil)" }, { label: "paper (pa-per)" } ] },
+      // 33
+      { type: "open-response" as const, title: "Chop and Read (Set G)", instruction: "Split these words. Mix of patterns.", prompts: [ { text: "blanket -> ___ | ___", type: "lines" as const, lines: 1 }, { text: "zebra -> ___ | ___", type: "lines" as const, lines: 1 }, { text: "silver -> ___ | ___", type: "lines" as const, lines: 1 }, { text: "hotel -> ___ | ___", type: "lines" as const, lines: 1 }, { text: "corner -> ___ | ___", type: "lines" as const, lines: 1 } ] },
+      // 34
+      { type: "matching" as const, title: "Match Syllable Halves (Set D)", instruction: "Join syllables to make words.", left: ["blan-", "ze-", "sil-", "cor-", "ho-"], right: ["-ver", "-tel", "-bra", "-ket", "-ner"] },
+      // 35
+      { type: "open-response" as const, title: "Read Two-Syllable Words in Sentences (Set A)", instruction: "Read each sentence. Circle the two-syllable word. Then write it with the syllable split.", prompts: [ { text: "The rabbit hopped across the garden. Two-syllable words:", type: "lines" as const, lines: 1 }, { text: "My sister found a mitten in the basket. Two-syllable words:", type: "lines" as const, lines: 1 }, { text: "The kitten sat on the carpet. Two-syllable words:", type: "lines" as const, lines: 1 } ] },
+      // 36
+      { type: "circle-correct" as const, title: "How Many Syllables? (Set C)", instruction: "Clap and count.", questions: [ { prompt: "blanket", options: ["1", "2", "3"] }, { prompt: "spider", options: ["1", "2", "3"] }, { prompt: "dinosaur", options: ["1", "2", "3"] }, { prompt: "corner", options: ["1", "2", "3"] }, { prompt: "fish", options: ["1", "2", "3"] } ] },
+      // 37
+      { type: "open-response" as const, title: "Write Two-Syllable Words (Set B)", instruction: "Think of two-syllable words for each category.", prompts: [ { text: "A two-syllable body part: ___ | ___", type: "lines" as const, lines: 1 }, { text: "A two-syllable colour: ___ | ___", type: "lines" as const, lines: 1 }, { text: "A two-syllable place: ___ | ___", type: "lines" as const, lines: 1 }, { text: "A two-syllable action (verb): ___ | ___", type: "lines" as const, lines: 1 } ] },
+      // 38
+      { type: "open-response" as const, title: "Chop and Read (Set H)", instruction: "Split these Australian-themed words.", prompts: [ { text: "possum -> ___ | ___", type: "lines" as const, lines: 1 }, { text: "galah -> ___ | ___", type: "lines" as const, lines: 1 }, { text: "wombat -> ___ | ___", type: "lines" as const, lines: 1 }, { text: "magpie -> ___ | ___", type: "lines" as const, lines: 1 }, { text: "bilby -> ___ | ___", type: "lines" as const, lines: 1 } ] },
+      // 39
+      { type: "matching" as const, title: "Match Syllable Halves: Australian Animals", instruction: "Join syllables to make Australian animal names.", left: ["pos-", "wom-", "mag-", "bil-", "ban-"], right: ["-by", "-sum", "-pie", "-bat", "-di-coot"] },
+      // 40 — SPARK
+      { type: "home-activity" as const, title: "Syllable Safari", instruction: "Go on a syllable safari around your house!", parentTip: "Spark: Every word you speak and read is made of syllables. The longest English word has 45 syllables! It is the name of a protein. But you do not need long words to be a great reader — knowing how to break ANY word into syllables means you can read ANYTHING. Try this game: pick up any object in your house and count its syllables. Re-fridge-er-a-tor = 5! Te-le-vi-sion = 4! How many syllables are in the longest word you can find at home?", suggestions: [ "Walk around your house and find 10 two-syllable objects. Write them all down.", "Play Syllable Snap: say a word, clap the syllables, then your partner finds a word with the same number of syllables.", "Read a page of a book and underline all the two-syllable words.", "Look at a food label and count the syllables in each ingredient." ] },
+      // 41
+      { type: "open-response" as const, title: "Chop and Read (Set I)", instruction: "Split these words that end in common patterns.", parentTip: "Words ending in -er, -en, -le, -tion are very common two-syllable endings.", prompts: [ { text: "ladder -> ___ | ___", type: "lines" as const, lines: 1 }, { text: "apple -> ___ | ___", type: "lines" as const, lines: 1 }, { text: "bottle -> ___ | ___", type: "lines" as const, lines: 1 }, { text: "little -> ___ | ___", type: "lines" as const, lines: 1 }, { text: "middle -> ___ | ___", type: "lines" as const, lines: 1 } ] },
+      // 42
+      { type: "sorting" as const, title: "Sort by Ending Pattern (Set A)", instruction: "Sort each word by its ending syllable.", columns: ["-er ending", "-en ending", "-le ending"], items: [ { label: "butter" }, { label: "kitten" }, { label: "apple" }, { label: "winter" }, { label: "mitten" }, { label: "little" }, { label: "sister" }, { label: "chicken" }, { label: "bottle" } ] },
+      // 43
+      { type: "circle-correct" as const, title: "Which Ending? (Set A)", instruction: "Circle the correct ending for each word.", questions: [ { prompt: "butt___", options: ["-er", "-en", "-le"] }, { prompt: "kitt___", options: ["-er", "-en", "-le"] }, { prompt: "litt___", options: ["-er", "-en", "-le"] }, { prompt: "wint___", options: ["-er", "-en", "-le"] }, { prompt: "bott___", options: ["-er", "-en", "-le"] } ] },
+      // 44
+      { type: "open-response" as const, title: "Read Two-Syllable Words in Sentences (Set B)", instruction: "Read each sentence. Find and write down all the two-syllable words.", prompts: [ { text: "The spider made a silver web in the corner of the garden.", type: "lines" as const, lines: 2 }, { text: "My little sister ate a pancake for breakfast.", type: "lines" as const, lines: 2 } ] },
+      // 45 — TIP
+      { type: "open-response" as const, title: "Chop and Read (Set J)", instruction: "Split these longer everyday words. Try the VCCV rule first (split between two middle consonants).", parentTip: "Tip: Here are the two most common syllable patterns. Pattern 1 (VCCV): When two consonants are in the middle, split BETWEEN them. Vowel-Consonant-Consonant-Vowel = split! Examples: win-ter, gar-den, nap-kin, pic-nic. Pattern 2 (VCV): When ONE consonant is in the middle, it usually goes with the SECOND syllable. Vowel-Consonant-Vowel = split before! Examples: ti-ger, ro-bot, pa-per, mu-sic.", prompts: [ { text: "picnic -> ___ | ___", type: "lines" as const, lines: 1 }, { text: "cotton -> ___ | ___", type: "lines" as const, lines: 1 }, { text: "lemon -> ___ | ___", type: "lines" as const, lines: 1 }, { text: "melon -> ___ | ___", type: "lines" as const, lines: 1 }, { text: "tunnel -> ___ | ___", type: "lines" as const, lines: 1 } ] },
+      // 46
+      { type: "matching" as const, title: "Match Syllable Halves (Set E)", instruction: "Join syllables to make food words.", left: ["lem-", "mel-", "bis-", "sand-", "muf-"], right: ["-wich", "-on", "-fin", "-on", "-cuit"] },
+      // 47
+      { type: "open-response" as const, title: "Write Two-Syllable Words (Set C)", instruction: "Write as many two-syllable words as you can think of for each ending.", prompts: [ { text: "Words ending in -er:", type: "lines" as const, lines: 2 }, { text: "Words ending in -le:", type: "lines" as const, lines: 2 }, { text: "Words ending in -et:", type: "lines" as const, lines: 2 } ] },
+      // 48
+      { type: "circle-correct" as const, title: "Read and Choose (Set A)", instruction: "Read the sentence. Circle the correct two-syllable word to complete it.", questions: [ { prompt: "The ___ hopped across the grass.", options: ["rabbit", "rat", "red"] }, { prompt: "Please pass me a ___.", options: ["nap", "napkin", "nap-kin"] }, { prompt: "I wore my warm ___ to school.", options: ["jkt", "jacket", "jacks"] } ] },
+      // 49
+      { type: "open-response" as const, title: "Silly Syllable Mix-Up", instruction: "Mix up the syllables of two words to make a silly new word! Example: rabbit + kitten = rabten or kitbit.", parentTip: "Playing with syllables builds phonological awareness and makes learning fun.", prompts: [ { text: "Mix: butter + mitten = ___", type: "lines" as const, lines: 1 }, { text: "Mix: spider + robot = ___", type: "lines" as const, lines: 1 }, { text: "Mix: garden + basket = ___", type: "lines" as const, lines: 1 }, { text: "Draw your silliest mixed-up word creature:", type: "box" as const } ] },
+      // 50
+      { type: "open-response" as const, title: "Write a Story Using Two-Syllable Words", instruction: "Write a short story (3 to 4 sentences) that uses at least 5 two-syllable words. Underline them.", prompts: [ { text: "My story:", type: "lines" as const, lines: 6 } ] },
+      // ─── CONSOLIDATING (51–80): Multi-syllable words, reading fluency, spelling patterns ───
+      // 51
+      { type: "circle-correct" as const, title: "How Many Syllables? (Set D)", instruction: "These words have 2 or 3 syllables. Clap and count.", questions: [ { prompt: "animal", options: ["2", "3", "4"] }, { prompt: "carpet", options: ["1", "2", "3"] }, { prompt: "banana", options: ["2", "3", "4"] }, { prompt: "hospital", options: ["2", "3", "4"] }, { prompt: "finger", options: ["1", "2", "3"] } ] },
+      // 52
+      { type: "open-response" as const, title: "Chop and Read (Set K)", instruction: "Split these three-syllable words. The first one is done for you.", parentTip: "Three-syllable words use the same rules — just applied twice!", prompts: [ { text: "umbrella -> um | brel | la", type: "lines" as const, lines: 1 }, { text: "animal -> ___ | ___ | ___", type: "lines" as const, lines: 1 }, { text: "banana -> ___ | ___ | ___", type: "lines" as const, lines: 1 }, { text: "hospital -> ___ | ___ | ___", type: "lines" as const, lines: 1 }, { text: "beautiful -> ___ | ___ | ___", type: "lines" as const, lines: 1 } ] },
+      // 53
+      { type: "sorting" as const, title: "Two or Three Syllables? (Set A)", instruction: "Sort each word.", columns: ["2 syllables", "3 syllables"], items: [ { label: "rabbit" }, { label: "umbrella" }, { label: "garden" }, { label: "banana" }, { label: "kitten" }, { label: "animal" }, { label: "sunset" }, { label: "hospital" } ] },
+      // 54
+      { type: "matching" as const, title: "Match Syllable Halves (Set F)", instruction: "Join syllables to make words. Some have 3 syllables.", left: ["um-brel-", "ba-na-", "an-i-", "beau-ti-", "hos-pi-"], right: ["-ful", "-la", "-na", "-mal", "-tal"] },
+      // 55
+      { type: "open-response" as const, title: "Spell Two-Syllable Words (Set A)", instruction: "Listen to someone say each word. Write it, then split it into syllables.", parentTip: "Dictate words clearly, saying them normally (not split). Your child must hear the syllables themselves.", prompts: [ { text: "Word 1: ______ -> ___ | ___", type: "lines" as const, lines: 1 }, { text: "Word 2: ______ -> ___ | ___", type: "lines" as const, lines: 1 }, { text: "Word 3: ______ -> ___ | ___", type: "lines" as const, lines: 1 }, { text: "Word 4: ______ -> ___ | ___", type: "lines" as const, lines: 1 }, { text: "Word 5: ______ -> ___ | ___", type: "lines" as const, lines: 1 } ] },
+      // 56
+      { type: "circle-correct" as const, title: "Which Spelling Is Correct? (Set A)", instruction: "Circle the correct spelling.", questions: [ { prompt: "___", options: ["rabit", "rabbit", "rabitt"] }, { prompt: "___", options: ["kiten", "kitin", "kitten"] }, { prompt: "___", options: ["gardin", "garden", "gardan"] }, { prompt: "___", options: ["bascet", "baskit", "basket"] } ] },
+      // 57
+      { type: "open-response" as const, title: "Chop and Read (Set L)", instruction: "Split these words you find in books.", prompts: [ { text: "kingdom -> ___ | ___", type: "lines" as const, lines: 1 }, { text: "princess -> ___ | ___", type: "lines" as const, lines: 1 }, { text: "dragon -> ___ | ___", type: "lines" as const, lines: 1 }, { text: "castle -> ___ | ___", type: "lines" as const, lines: 1 }, { text: "village -> ___ | ___", type: "lines" as const, lines: 1 } ] },
+      // 58
+      { type: "matching" as const, title: "Match Syllable Halves: Story Words", instruction: "Join syllables to make words you find in stories.", left: ["king-", "prin-", "drag-", "cas-", "vil-"], right: ["-on", "-dom", "-tle", "-cess", "-lage"] },
+      // 59
+      { type: "open-response" as const, title: "Read Two-Syllable Words in Sentences (Set C)", instruction: "Read each sentence. Write all the two-syllable words you find.", prompts: [ { text: "The dragon lived in a castle on top of a mountain.", type: "lines" as const, lines: 2 }, { text: "The princess found a silver basket in the garden.", type: "lines" as const, lines: 2 }, { text: "A little robin sat on the window in the kitchen.", type: "lines" as const, lines: 2 } ] },
+      // 60 — SPARK
+      { type: "home-activity" as const, title: "Syllable Challenge at Home", instruction: "Challenge yourself with syllable activities at home!", parentTip: "Spark: Words are like building blocks — syllables are the blocks! Just like you can build anything with LEGO by connecting blocks, you can read any word by connecting syllables. The longest word in the dictionary has 45 syllables, but even that word can be read one syllable at a time. You now have the strategy to read ANY word, no matter how long. The secret is: stay calm, chop it up, read each piece, blend them together. What is the longest word you can read using this strategy?", suggestions: [ "Challenge a family member: who can find the word with the most syllables in a book?", "Write a sentence using only two-syllable words.", "Make flashcards of syllable halves and mix and match them to make real and silly words.", "Count the syllables in the names of 10 things in your kitchen." ] },
+      // 61
+      { type: "open-response" as const, title: "Chop and Read (Set M)", instruction: "Split these words related to school.", prompts: [ { text: "teacher -> ___ | ___", type: "lines" as const, lines: 1 }, { text: "playground -> ___ | ___", type: "lines" as const, lines: 1 }, { text: "homework -> ___ | ___", type: "lines" as const, lines: 1 }, { text: "crayon -> ___ | ___", type: "lines" as const, lines: 1 }, { text: "ruler -> ___ | ___", type: "lines" as const, lines: 1 } ] },
+      // 62
+      { type: "sorting" as const, title: "Sort by Ending Pattern (Set B)", instruction: "Sort each word by its ending pattern.", columns: ["-er ending", "-ing ending", "-ful ending"], items: [ { label: "teacher" }, { label: "jumping" }, { label: "helpful" }, { label: "ruler" }, { label: "running" }, { label: "thankful" }, { label: "winter" }, { label: "sitting" }, { label: "careful" } ] },
+      // 63
+      { type: "open-response" as const, title: "Add -ing to Make Two-Syllable Words", instruction: "Add -ing to each word to make a two-syllable word. Write the new word and split it.", parentTip: "Adding -ing to a one-syllable word often makes a two-syllable word: jump -> jump-ing.", prompts: [ { text: "jump + -ing = ___ | ___", type: "lines" as const, lines: 1 }, { text: "read + -ing = ___ | ___", type: "lines" as const, lines: 1 }, { text: "play + -ing = ___ | ___", type: "lines" as const, lines: 1 }, { text: "sing + -ing = ___ | ___", type: "lines" as const, lines: 1 }, { text: "help + -ing = ___ | ___", type: "lines" as const, lines: 1 } ] },
+      // 64
+      { type: "circle-correct" as const, title: "Which Spelling Is Correct? (Set B)", instruction: "Circle the correct spelling.", questions: [ { prompt: "___", options: ["windo", "window", "windoe"] }, { prompt: "___", options: ["numbur", "nember", "number"] }, { prompt: "___", options: ["monstr", "monster", "monser"] }, { prompt: "___", options: ["helmat", "helmet", "helment"] } ] },
+      // 65
+      { type: "open-response" as const, title: "Chop and Read (Set N)", instruction: "Split these words related to nature.", prompts: [ { text: "flower -> ___ | ___", type: "lines" as const, lines: 1 }, { text: "river -> ___ | ___", type: "lines" as const, lines: 1 }, { text: "mountain -> ___ | ___", type: "lines" as const, lines: 1 }, { text: "forest -> ___ | ___", type: "lines" as const, lines: 1 }, { text: "ocean -> ___ | ___", type: "lines" as const, lines: 1 } ] },
+      // 66
+      { type: "matching" as const, title: "Match Syllable Halves: Nature Words", instruction: "Join syllables to make nature words.", left: ["flow-", "riv-", "moun-", "for-", "o-"], right: ["-cean", "-er", "-est", "-er", "-tain"] },
+      // 67
+      { type: "open-response" as const, title: "Two-Syllable Word Chains", instruction: "Build a word chain! The last syllable of one word becomes the first syllable of the next. Example: sun-SET -> SET-tle.", prompts: [ { text: "Start: rab-BIT -> BIT-___ -> ___ | ___", type: "lines" as const, lines: 1 }, { text: "Start: win-TER -> TER-___ -> ___ | ___", type: "lines" as const, lines: 1 }, { text: "Make your own chain of 3 words:", type: "lines" as const, lines: 2 } ] },
+      // 68
+      { type: "open-response" as const, title: "Read and Write: Two-Syllable Sentences", instruction: "Read each sentence aloud. Then write your own sentence using at least 3 two-syllable words.", prompts: [ { text: "Read: 'The spider climbed the garden ladder in the summer.'", type: "lines" as const, lines: 1 }, { text: "Your sentence with 3+ two-syllable words:", type: "lines" as const, lines: 2 }, { text: "Read: 'My sister found a mitten and a button under the blanket.'", type: "lines" as const, lines: 1 }, { text: "Your sentence with 3+ two-syllable words:", type: "lines" as const, lines: 2 } ] },
+      // 69
+      { type: "circle-correct" as const, title: "Read and Choose (Set B)", instruction: "Circle the word that completes each sentence.", questions: [ { prompt: "The ___ climbed up the wall.", options: ["spider", "spi", "spidre"] }, { prompt: "We had a ___ at the park.", options: ["picnc", "picnic", "piknik"] }, { prompt: "Please close the ___.", options: ["windoe", "windo", "window"] } ] },
+      // 70
+      { type: "open-response" as const, title: "Two-Syllable Word Race", instruction: "How many two-syllable words can you write in 3 minutes? Time yourself!", parentTip: "Speed writing builds fluency and automatic recall of syllable patterns.", prompts: [ { text: "My words:", type: "lines" as const, lines: 8 }, { text: "Total count:", type: "lines" as const, lines: 1 } ] },
+      // 71
+      { type: "open-response" as const, title: "Chop and Read (Set O)", instruction: "Split these words you see in everyday life.", prompts: [ { text: "morning -> ___ | ___", type: "lines" as const, lines: 1 }, { text: "birthday -> ___ | ___", type: "lines" as const, lines: 1 }, { text: "market -> ___ | ___", type: "lines" as const, lines: 1 }, { text: "trumpet -> ___ | ___", type: "lines" as const, lines: 1 }, { text: "dentist -> ___ | ___", type: "lines" as const, lines: 1 } ] },
+      // 72
+      { type: "sorting" as const, title: "Sort by First Syllable Sound", instruction: "Sort these words by whether the first syllable has a short or long vowel sound.", columns: ["Short vowel (rab-bit)", "Long vowel (ti-ger)"], items: [ { label: "rabbit" }, { label: "tiger" }, { label: "basket" }, { label: "robot" }, { label: "kitten" }, { label: "music" }, { label: "dinner" }, { label: "paper" } ] },
+      // 73
+      { type: "open-response" as const, title: "Spell Two-Syllable Words (Set B)", instruction: "Write each word from dictation, then split it.", parentTip: "Say the word, use it in a sentence, then say it again.", prompts: [ { text: "Word 1: ______ -> ___ | ___", type: "lines" as const, lines: 1 }, { text: "Word 2: ______ -> ___ | ___", type: "lines" as const, lines: 1 }, { text: "Word 3: ______ -> ___ | ___", type: "lines" as const, lines: 1 }, { text: "Word 4: ______ -> ___ | ___", type: "lines" as const, lines: 1 }, { text: "Word 5: ______ -> ___ | ___", type: "lines" as const, lines: 1 }, { text: "Word 6: ______ -> ___ | ___", type: "lines" as const, lines: 1 } ] },
+      // 74
+      { type: "open-response" as const, title: "Write a Paragraph Using Two-Syllable Words", instruction: "Write a paragraph (4 to 5 sentences) about an animal. Use at least 8 two-syllable words. Underline them.", prompts: [ { text: "My paragraph:", type: "lines" as const, lines: 8 } ] },
+      // 75 — TIP
+      { type: "circle-correct" as const, title: "Tricky Two-Syllable Words", instruction: "Some two-syllable words are tricky because they do not follow the usual patterns. Circle the correct spelling.", parentTip: "Tip: Most two-syllable words follow predictable patterns, but some are tricky! Words like 'water', 'sugar', 'mother' and 'colour' need to be learned by sight as well as by syllable chunking. The best strategy is: chunk the word, try to read it, and if it does not sound right, adjust. If 'wa-ter' does not sound right as 'wah-ter', try 'wor-ter' — oh, it is 'water'! Good readers are flexible.", questions: [ { prompt: "___", options: ["warter", "water", "wator"] }, { prompt: "___", options: ["mother", "muther", "mothr"] }, { prompt: "___", options: ["suger", "sugar", "shugar"] }, { prompt: "___", options: ["colur", "colour", "coler"] } ] },
+      // 76
+      { type: "open-response" as const, title: "Chop and Read (Set P)", instruction: "Split these tricky words that do not follow the usual patterns.", prompts: [ { text: "water -> ___ | ___", type: "lines" as const, lines: 1 }, { text: "mother -> ___ | ___", type: "lines" as const, lines: 1 }, { text: "father -> ___ | ___", type: "lines" as const, lines: 1 }, { text: "brother -> ___ | ___", type: "lines" as const, lines: 1 }, { text: "sugar -> ___ | ___", type: "lines" as const, lines: 1 }, { text: "colour -> ___ | ___", type: "lines" as const, lines: 1 } ] },
+      // 77
+      { type: "matching" as const, title: "Match Syllable Halves: Family Words", instruction: "Join syllables to make family-related words.", left: ["moth-", "fa-", "sis-", "broth-", "daugh-"], right: ["-ther", "-er", "-ter", "-er", "-ter"] },
+      // 78
+      { type: "open-response" as const, title: "Read Two-Syllable Words in Context (Set D)", instruction: "Read the passage. Write all the two-syllable words you find.", prompts: [ { text: "On Sunday morning, my mother and father took us to the market. My sister wanted a basket of apples. My brother found a silver robot toy. After lunch, we drove home past the river and the forest. It was a perfect day.", type: "lines" as const, lines: 1 }, { text: "All the two-syllable words:", type: "lines" as const, lines: 4 } ] },
+      // 79
+      { type: "open-response" as const, title: "Make a Two-Syllable Word Book", instruction: "Design a page for a Two-Syllable Word Book. Choose a category and list 10 words.", prompts: [ { text: "My category:", type: "lines" as const, lines: 1 }, { text: "My 10 two-syllable words (with splits):", type: "lines" as const, lines: 10 } ] },
+      // 80 — SPARK
+      { type: "home-activity" as const, title: "Syllable Master Challenge", instruction: "You are becoming a syllable master! Try these challenges.", parentTip: "Spark: Here is something amazing — once you can count and split syllables, you can read words in almost ANY language! Syllables exist in every language in the world. In Japanese, their writing system is based entirely on syllables. In music, each note you sing usually matches one syllable. Try singing your favourite song slowly and counting the syllables in each line. How many syllables are in the first line of 'Happy Birthday'? (Hap-py Birth-day to you = 6!)", suggestions: [ "Read a whole page of a book, chunking every two-syllable word as you go.", "Write a poem where every line has exactly 5 syllables (like a haiku line!).", "Find the word with the most syllables on the back of a cereal box.", "Teach a younger child how to clap syllables — being a teacher is the best way to learn!" ] },
+      // ─── EXTENDING (81–100): Application, fluency, multi-syllable mastery ───
+      // 81
+      { type: "open-response" as const, title: "Chop and Read (Set Q)", instruction: "Split these challenging words. Use everything you have learned.", prompts: [ { text: "yesterday -> ___ | ___ | ___", type: "lines" as const, lines: 1 }, { text: "together -> ___ | ___ | ___", type: "lines" as const, lines: 1 }, { text: "adventure -> ___ | ___ | ___", type: "lines" as const, lines: 1 }, { text: "important -> ___ | ___ | ___", type: "lines" as const, lines: 1 }, { text: "wonderful -> ___ | ___ | ___", type: "lines" as const, lines: 1 } ] },
+      // 82
+      { type: "circle-correct" as const, title: "How Many Syllables? (Set E)", instruction: "Count carefully.", questions: [ { prompt: "yesterday", options: ["2", "3", "4"] }, { prompt: "adventure", options: ["2", "3", "4"] }, { prompt: "caterpillar", options: ["3", "4", "5"] }, { prompt: "wonderful", options: ["2", "3", "4"] }, { prompt: "helicopter", options: ["3", "4", "5"] } ] },
+      // 83
+      { type: "sorting" as const, title: "Sort by Syllable Count (Extended)", instruction: "Sort each word.", columns: ["2 syllables", "3 syllables", "4 syllables"], items: [ { label: "rabbit" }, { label: "umbrella" }, { label: "caterpillar" }, { label: "garden" }, { label: "banana" }, { label: "helicopter" }, { label: "sunset" }, { label: "beautiful" }, { label: "watermelon" } ] },
+      // 84
+      { type: "open-response" as const, title: "Read Multi-Syllable Words in a Story", instruction: "Read this passage and write every word that has 2 or more syllables.", prompts: [ { text: "Yesterday, a beautiful butterfly landed on the garden flower. It was orange and purple with silver spots. My little sister was so excited she jumped up and down. The butterfly flew away over the rainbow-coloured mountain.", type: "lines" as const, lines: 1 }, { text: "Words with 2+ syllables:", type: "lines" as const, lines: 4 } ] },
+      // 85
+      { type: "open-response" as const, title: "Spell Multi-Syllable Words", instruction: "Write these words from dictation. Split each one into syllables.", prompts: [ { text: "Word 1: ______", type: "lines" as const, lines: 1 }, { text: "Word 2: ______", type: "lines" as const, lines: 1 }, { text: "Word 3: ______", type: "lines" as const, lines: 1 }, { text: "Word 4: ______", type: "lines" as const, lines: 1 }, { text: "Word 5: ______", type: "lines" as const, lines: 1 } ] },
+      // 86
+      { type: "matching" as const, title: "Match the Word to Its Syllable Count", instruction: "Draw a line from each word to the correct number of syllables.", left: ["rabbit", "umbrella", "caterpillar", "garden", "helicopter"], right: ["2", "3", "4", "2", "4"] },
+      // 87
+      { type: "open-response" as const, title: "Write a Story With Multi-Syllable Words", instruction: "Write a story (5 to 6 sentences) using at least 3 three-syllable words. Underline them.", prompts: [ { text: "My story:", type: "lines" as const, lines: 10 } ] },
+      // 88
+      { type: "circle-correct" as const, title: "Which Spelling Is Correct? (Set C)", instruction: "Circle the correct spelling of these tricky multi-syllable words.", questions: [ { prompt: "___", options: ["tommorow", "tomorrow", "tomorow"] }, { prompt: "___", options: ["diffrent", "different", "diferent"] }, { prompt: "___", options: ["beautiful", "beautful", "beutiful"] }, { prompt: "___", options: ["importent", "important", "importint"] } ] },
+      // 89
+      { type: "open-response" as const, title: "Chop and Read: Real Book Words", instruction: "Find 5 multi-syllable words in a book you are reading. Write them and split them.", parentTip: "This transfers the skill from worksheets to real reading.", prompts: [ { text: "Book title:", type: "lines" as const, lines: 1 }, { text: "Word 1: ______ -> split:", type: "lines" as const, lines: 1 }, { text: "Word 2: ______ -> split:", type: "lines" as const, lines: 1 }, { text: "Word 3: ______ -> split:", type: "lines" as const, lines: 1 }, { text: "Word 4: ______ -> split:", type: "lines" as const, lines: 1 }, { text: "Word 5: ______ -> split:", type: "lines" as const, lines: 1 } ] },
+      // 90 — TIP
+      { type: "open-response" as const, title: "Syllable Strategy Self-Check", instruction: "Check how well you can use the syllable chunking strategy.", parentTip: "Tip: You now know the most powerful word-reading strategy there is! When you see a long, tricky word, do not panic. Follow these steps: (1) Look at the word. (2) Find where to split it — between double consonants, or before a single consonant. (3) Read each chunk. (4) Blend the chunks together. (5) Does it sound like a word you know? If yes, you got it! If not, try splitting in a different place. This strategy works for words of ANY length!", prompts: [ { text: "Can I split two-syllable words confidently? (yes/mostly/still learning)", type: "lines" as const, lines: 1 }, { text: "Can I split three-syllable words? (yes/mostly/still learning)", type: "lines" as const, lines: 1 }, { text: "Do I use the chunking strategy when reading real books? (yes/sometimes/not yet)", type: "lines" as const, lines: 1 }, { text: "A word I found tricky but eventually decoded:", type: "lines" as const, lines: 2 } ] },
+      // 91
+      { type: "open-response" as const, title: "Create Compound Word Riddles", instruction: "Write riddles where the answer is a compound word.", prompts: [ { text: "Riddle 1 (answer: sunflower):", type: "lines" as const, lines: 2 }, { text: "Riddle 2 (answer: rainbow):", type: "lines" as const, lines: 2 }, { text: "Write your own compound word riddle:", type: "lines" as const, lines: 3 } ] },
+      // 92
+      { type: "open-response" as const, title: "Read a Passage Fluently", instruction: "Read this passage aloud 3 times. Each time, try to read it more smoothly. Time yourself.", prompts: [ { text: "Passage: 'The little kitten in the garden basket watched the spider spinning a silver web between the flowers. A butterfly danced past the window while the robin sang from the chimney.'", type: "lines" as const, lines: 1 }, { text: "Time 1: ___ seconds", type: "lines" as const, lines: 1 }, { text: "Time 2: ___ seconds", type: "lines" as const, lines: 1 }, { text: "Time 3: ___ seconds", type: "lines" as const, lines: 1 }, { text: "Did I get smoother each time? (yes/no)", type: "lines" as const, lines: 1 } ] },
+      // 93
+      { type: "open-response" as const, title: "Chop and Read (Set R)", instruction: "These are the hardest words yet! Use your chunking strategy.", prompts: [ { text: "competition -> ___ | ___ | ___ | ___", type: "lines" as const, lines: 1 }, { text: "refrigerator -> ___ | ___ | ___ | ___ | ___", type: "lines" as const, lines: 1 }, { text: "imagination -> ___ | ___ | ___ | ___ | ___", type: "lines" as const, lines: 1 } ] },
+      // 94
+      { type: "open-response" as const, title: "Teach Someone the Chunking Strategy", instruction: "Explain the syllable chunking strategy to someone who does not know it.", parentTip: "Teaching is the best way to consolidate learning.", prompts: [ { text: "Step 1:", type: "lines" as const, lines: 2 }, { text: "Step 2:", type: "lines" as const, lines: 2 }, { text: "Step 3:", type: "lines" as const, lines: 2 }, { text: "Did they understand? Could they use it? (yes/no)", type: "lines" as const, lines: 1 } ] },
+      // 95
+      { type: "open-response" as const, title: "Two-Syllable Word Categories", instruction: "Write as many two-syllable words as you can for each category. You have 2 minutes per category.", prompts: [ { text: "Animals:", type: "lines" as const, lines: 3 }, { text: "Foods:", type: "lines" as const, lines: 3 }, { text: "Places:", type: "lines" as const, lines: 3 } ] },
+      // 96
+      { type: "open-response" as const, title: "Read and Decode: Unknown Words", instruction: "Here are some words you may not know. Use chunking to decode them. Then guess what they might mean.", prompts: [ { text: "magnet -> ___ | ___ Guess meaning:", type: "lines" as const, lines: 1 }, { text: "insect -> ___ | ___ Guess meaning:", type: "lines" as const, lines: 1 }, { text: "problem -> ___ | ___ Guess meaning:", type: "lines" as const, lines: 1 }, { text: "selfish -> ___ | ___ Guess meaning:", type: "lines" as const, lines: 1 } ] },
+      // 97
+      { type: "open-response" as const, title: "Write a Poem With Multi-Syllable Words", instruction: "Write a short poem (4 to 6 lines) using at least 6 multi-syllable words.", prompts: [ { text: "My poem:", type: "lines" as const, lines: 8 } ] },
+      // 98
+      { type: "open-response" as const, title: "My Syllable Learning Journey", instruction: "Reflect on what you have learned about syllables.", prompts: [ { text: "Before this worksheet, I could/could not split words into syllables:", type: "lines" as const, lines: 2 }, { text: "Now I can:", type: "lines" as const, lines: 2 }, { text: "The easiest type of word to split:", type: "lines" as const, lines: 1 }, { text: "The trickiest type of word to split:", type: "lines" as const, lines: 1 } ] },
+      // 99
+      { type: "open-response" as const, title: "Ultimate Syllable Challenge", instruction: "Find and decode the longest word you can! Use a book, label or sign.", prompts: [ { text: "The longest word I found:", type: "lines" as const, lines: 1 }, { text: "Split into syllables:", type: "lines" as const, lines: 1 }, { text: "Number of syllables:", type: "lines" as const, lines: 1 }, { text: "Where I found it:", type: "lines" as const, lines: 1 } ] },
+      // 100 — SPARK
+      { type: "home-activity" as const, title: "Syllable Champion!", instruction: "You have completed 100 syllable activities! Celebrate your word-reading power!", parentTip: "Spark: You are now a Syllable Champion! You can chunk any word into bite-sized pieces and read it. This is the single most useful reading strategy you will ever learn. It works for words in science (pho-to-syn-the-sis), in maths (mul-ti-pli-ca-tion), in geography (Aus-tra-li-a), and in everyday life (su-per-mar-ket). Every time you read a long word without getting stuck, remember: you are using the chunking strategy! Keep reading, keep chunking, and keep growing as a reader.", suggestions: [ "Challenge yourself to read a page from a chapter book — chunk any tricky words.", "Start a 'Long Words I Can Read' collection — add one word per day.", "Read aloud to a younger child and help THEM learn to chunk words.", "Write the longest sentence you can where EVERY word has at least 2 syllables." ] },
     ],
   },
 
@@ -1788,103 +2021,190 @@ export const year1EnglishWorksheets: WorksheetItem[] = [
       ],
     },
     activities: [
-      {
-        type: "open-response" as const,
-        title: "My Predictions",
-        instruction:
-          "Make a prediction before reading, then check it after reading. Write your thoughts below.",
-        parentTip:
-          "Model making a prediction yourself first: 'I think... because the picture shows...' This gives your child a sentence frame to use.",
-        prompts: [
-          { text: "Book or story title: ___________________________", type: "lines" as const, lines: 1 },
-          { text: "BEFORE reading — I think this story will be about:", type: "lines" as const, lines: 2 },
-          { text: "My clue: (what made me think that?)", type: "lines" as const, lines: 2 },
-          { text: "AFTER reading — Was my prediction right? What actually happened?", type: "lines" as const, lines: 3 },
-        ],
-      },
-      {
-        type: "open-response" as const,
-        title: "Stop and Predict",
-        instruction:
-          "While reading, stop at an exciting moment and write what you think will happen next.",
-        parentTip:
-          "Choose a page where there is a problem, a surprise or a cliff-hanger moment. That is the best place to pause.",
-        prompts: [
-          { text: "I stopped reading on page: ______", type: "lines" as const, lines: 1 },
-          { text: "What has happened so far:", type: "lines" as const, lines: 2 },
-          { text: "My prediction — what will happen next:", type: "lines" as const, lines: 3 },
-          { text: "My clue from the text:", type: "lines" as const, lines: 2 },
-        ],
-      },
-      {
-        type: "home-activity" as const,
-        title: "Predict While You Read",
-        instruction: "Make predicting a habit every time you read together.",
-        parentTip:
-          "The habit of predicting makes every reading session more engaging and builds critical thinking.",
-        suggestions: [
-          "Before opening any new book, look at the cover for 30 seconds and make 2 predictions.",
-          "Pause before turning each page and ask: 'What do you think we will see on the next page?'",
-          "Watch the first 5 minutes of a new show together, then predict what will happen before watching more.",
-          "After a prediction turns out wrong, ask: 'What clue in the text tells us what really happened?'",
-        ],
-      },
-      {
-        type: "sorting" as const,
-        title: "Good Prediction or Wild Guess?",
-        instruction:
-          "Read each prediction about the story of Rex the dog. Sort each one into the correct column — is it a good prediction (based on clues) or a wild guess (no evidence)?",
-        parentTip:
-          "A good prediction does not have to be correct — it just has to be based on something in the text or picture. This is the key concept to reinforce.",
-        columns: ["Good prediction (has a clue)", "Wild guess (no evidence)"],
-        items: [
-          { label: "Rex will run away because the story says he loves to run." },
-          { label: "Rex will turn into a cat." },
-          { label: "Sam will laugh because Sam seems to find Rex funny." },
-          { label: "A rocket ship will land in the park." },
-          { label: "Rex will find another stick because he loves sticks." },
-          { label: "Sam will go to space next." },
-        ],
-      },
-      {
-        type: "circle-correct" as const,
-        title: "Which Prediction Uses a Clue?",
-        instruction:
-          "Read the story opening, then circle the prediction that is best supported by clues in the text.",
-        parentTip:
-          "Read each mini-story snippet aloud together before attempting the questions. Discuss what clues are visible in the text.",
-        questions: [
-          {
-            prompt: "Lily looked at the dark clouds and grabbed her umbrella. She stepped outside. What will happen next?",
-            options: ["It will rain.", "She will fly away.", "A dragon appears."],
-          },
-          {
-            prompt: "Tom opened his lunchbox and frowned. It was empty! What will Tom probably do?",
-            options: ["Tom will go to sleep.", "Tom will look for food.", "Tom will build a rocket."],
-          },
-          {
-            prompt: "The puppy heard a strange noise behind the bush. Its ears pricked up. What will the puppy do?",
-            options: ["The puppy will swim.", "The puppy will investigate the bush.", "The puppy will read a book."],
-          },
-          {
-            prompt: "Mia had been practising her dance for weeks. The big show was tomorrow. How does Mia probably feel?",
-            options: ["Bored", "Nervous and excited", "Sleepy"],
-          },
-        ],
-      },
-      {
-        type: "open-response" as const,
-        title: "Draw and Write Your Prediction",
-        instruction:
-          "Choose a book you are reading. Stop at an exciting moment. Draw what you think will happen next, then write one sentence explaining your prediction.",
-        parentTip:
-          "Ask your child to identify the specific clue that led to their prediction. Naming the clue is the skill — the picture makes the thinking visible.",
-        prompts: [
-          { text: "Draw what you think will happen next:", type: "box" as const },
-          { text: "My prediction in one sentence:", type: "lines" as const, lines: 2 },
-          { text: "The clue I used:", type: "lines" as const, lines: 2 },
-        ],
-      },
+      // ─── FOUNDATIONAL (1–20): What is a prediction? Using pictures and titles ───
+      // 1
+      { type: "circle-correct" as const, title: "What Is a Prediction?", instruction: "Circle the best definition of a prediction.", parentTip: "A prediction is an educated guess about what will happen next, based on clues.", questions: [ { prompt: "A prediction is:", options: ["A wild guess with no reason", "A sensible guess based on clues", "Something that already happened"] }, { prompt: "Good predictions use:", options: ["Clues from the text or pictures", "No clues at all", "Magic powers"] } ] },
+      // 2
+      { type: "circle-correct" as const, title: "Predict From the Title (Set A)", instruction: "Read each book title. Circle what you think the story will be about.", parentTip: "Titles give us our first clue about a story. Discuss each option.", questions: [ { prompt: "Title: 'The Lost Puppy'", options: ["A puppy that gets lost", "A spaceship adventure", "A cooking lesson"] }, { prompt: "Title: 'The Magic Treehouse'", options: ["A story about fishing", "A treehouse with magical powers", "A maths lesson"] }, { prompt: "Title: 'Shark in the Bath!'", options: ["Someone finds a shark in their bath", "A story about brushing teeth", "A trip to the shops"] } ] },
+      // 3
+      { type: "open-response" as const, title: "Predict From the Cover (Set A)", instruction: "Look at a book you have not read yet. Write your prediction based on the cover.", parentTip: "Model: 'I think this book will be about... because I can see...'", prompts: [ { text: "Book title:", type: "lines" as const, lines: 1 }, { text: "What I see on the cover:", type: "lines" as const, lines: 2 }, { text: "My prediction — I think this book will be about:", type: "lines" as const, lines: 2 } ] },
+      // 4
+      { type: "sorting" as const, title: "Good Prediction or Wild Guess? (Set A)", instruction: "Sort each prediction: is it based on clues (good) or random (wild guess)?", parentTip: "A good prediction does not have to be correct — it just needs evidence.", columns: ["Good prediction (has a clue)", "Wild guess (no evidence)"], items: [ { label: "Rex will run away because the story says he loves to run." }, { label: "Rex will turn into a cat." }, { label: "Sam will laugh because Sam finds Rex funny." }, { label: "A rocket ship will land in the park." } ] },
+      // 5
+      { type: "circle-correct" as const, title: "Which Prediction Uses a Clue? (Set A)", instruction: "Read the story opening. Circle the prediction best supported by clues.", parentTip: "Read each snippet aloud before choosing.", questions: [ { prompt: "Lily looked at the dark clouds and grabbed her umbrella. What will happen next?", options: ["It will rain.", "She will fly away.", "A dragon appears."] }, { prompt: "Tom opened his lunchbox and frowned. It was empty! What will Tom do?", options: ["Tom will sleep.", "Tom will look for food.", "Tom will build a rocket."] } ] },
+      // 6
+      { type: "open-response" as const, title: "My First Prediction", instruction: "Make a prediction before reading a book. Then check it after.", parentTip: "Model: 'I think... because the picture shows...'", prompts: [ { text: "Book title:", type: "lines" as const, lines: 1 }, { text: "BEFORE reading — I predict:", type: "lines" as const, lines: 2 }, { text: "My clue:", type: "lines" as const, lines: 1 }, { text: "AFTER reading — Was I right?", type: "lines" as const, lines: 2 } ] },
+      // 7
+      { type: "circle-correct" as const, title: "Predict From the Title (Set B)", instruction: "Circle the best prediction for each title.", questions: [ { prompt: "Title: 'The Grumpy Toad'", options: ["A happy dancing frog", "A toad who is not very cheerful", "A story about the sun"] }, { prompt: "Title: 'Superhero Nana'", options: ["A grandma with special powers", "A story about bananas", "A fish that can fly"] }, { prompt: "Title: 'Race to the Moon'", options: ["A cooking competition", "Someone tries to get to the moon", "A story about rainbows"] } ] },
+      // 8
+      { type: "matching" as const, title: "Match the Title to the Prediction", instruction: "Draw a line from each title to the best prediction.", left: ["The Hungry Caterpillar", "Pirates of the Playground", "Snow Day!"], right: ["Children play in the snow", "A caterpillar eats a lot", "Children pretend to be pirates"] },
+      // 9
+      { type: "open-response" as const, title: "Predict From the First Page", instruction: "Read only the first page of a story. Write your prediction.", prompts: [ { text: "Book title:", type: "lines" as const, lines: 1 }, { text: "What happened on the first page:", type: "lines" as const, lines: 2 }, { text: "My prediction for the rest of the story:", type: "lines" as const, lines: 2 }, { text: "My clue:", type: "lines" as const, lines: 1 } ] },
+      // 10
+      { type: "circle-correct" as const, title: "Which Prediction Uses a Clue? (Set B)", instruction: "Circle the prediction based on clues.", questions: [ { prompt: "The puppy heard a noise behind the bush. Its ears pricked up. What will the puppy do?", options: ["Swim", "Investigate the bush", "Read a book"] }, { prompt: "Mia practised her dance for weeks. The show is tomorrow. How does Mia feel?", options: ["Bored", "Nervous and excited", "Sleepy"] } ] },
+      // 11
+      { type: "sorting" as const, title: "Good Prediction or Wild Guess? (Set B)", instruction: "Sort each prediction.", columns: ["Good prediction (has a clue)", "Wild guess (no evidence)"], items: [ { label: "Rex will find another stick because he loves sticks." }, { label: "Sam will go to space." }, { label: "Sam will laugh because he finds Rex funny." }, { label: "The park will turn into an ocean." } ] },
+      // 12
+      { type: "open-response" as const, title: "Predict What Happens Next (Set A)", instruction: "Read the short story beginning. Write what you think will happen next.", prompts: [ { text: "Story: 'Ella put on her rain boots and opened the front door. Puddles covered the footpath. She looked at her new boots and smiled.'", type: "lines" as const, lines: 1 }, { text: "I predict Ella will:", type: "lines" as const, lines: 2 }, { text: "My clue from the story:", type: "lines" as const, lines: 2 } ] },
+      // 13
+      { type: "circle-correct" as const, title: "Predict the Ending (Set A)", instruction: "Read the story. Circle the most likely ending.", questions: [ { prompt: "Jack tried to climb the big tree. He got halfway up but his foot slipped. He grabbed a branch. What happens next?", options: ["Jack flies into space.", "Jack holds on tight and climbs down carefully.", "The tree turns into a dragon."] }, { prompt: "Mum put a cake in the oven and set the timer. She forgot about it and went outside. After a long time, she smelled something burning. What happens?", options: ["Mum runs inside to check the cake.", "The cake turns into gold.", "Mum goes swimming."] } ] },
+      // 14
+      { type: "open-response" as const, title: "Draw and Write Your Prediction (Set A)", instruction: "Choose a book. Stop at an exciting moment. Draw what you think happens next.", parentTip: "Naming the specific clue is the key skill.", prompts: [ { text: "Draw your prediction:", type: "box" as const }, { text: "My prediction in one sentence:", type: "lines" as const, lines: 2 }, { text: "The clue I used:", type: "lines" as const, lines: 2 } ] },
+      // 15 — TIP
+      { type: "circle-correct" as const, title: "Prediction Vs Fact", instruction: "Circle P if it is a prediction (has not happened yet) or F if it is a fact (already happened).", parentTip: "Tip: A prediction is about the FUTURE — what might happen next. It is not about what already happened. Good predictions are based on clues from the text, pictures, or your own knowledge. When you predict, always ask: 'What clues am I using? Why do I think this will happen?' Even if your prediction turns out wrong, it is still a GOOD prediction if it was based on solid clues!", questions: [ { prompt: "I think the dog will run away.", options: ["P (prediction)", "F (fact)"] }, { prompt: "The boy ate his lunch.", options: ["P (prediction)", "F (fact)"] }, { prompt: "I think it will rain because of the dark clouds.", options: ["P (prediction)", "F (fact)"] }, { prompt: "The cat sat on the mat.", options: ["P (prediction)", "F (fact)"] } ] },
+      // 16
+      { type: "open-response" as const, title: "Predict From the First Sentence", instruction: "Read only the first sentence. Predict what the story will be about.", prompts: [ { text: "Sentence: 'The old woman opened the door and found a baby dragon on her doorstep.' Predict:", type: "lines" as const, lines: 3 }, { text: "Sentence: 'Nobody at school knew that Max had a superpower.' Predict:", type: "lines" as const, lines: 3 } ] },
+      // 17
+      { type: "matching" as const, title: "Match the Clue to the Prediction", instruction: "Draw a line from each clue to the best prediction.", left: ["Dark clouds in the sky", "A character is yawning and rubbing eyes", "A dog is sniffing the ground", "A child has a backpack and lunchbox"], right: ["The child is going to school.", "It is going to rain.", "The dog is looking for something.", "The character is tired and will fall asleep."] },
+      // 18
+      { type: "open-response" as const, title: "Predict What Happens Next (Set B)", instruction: "Read and predict.", prompts: [ { text: "Story: 'The kitten climbed higher and higher up the tree. It looked down and meowed loudly. It would not move.'", type: "lines" as const, lines: 1 }, { text: "I predict:", type: "lines" as const, lines: 2 }, { text: "Clue:", type: "lines" as const, lines: 1 } ] },
+      // 19
+      { type: "open-response" as const, title: "Predict Before a Read-Aloud", instruction: "Before your next read-aloud, make 3 predictions about the book.", prompts: [ { text: "Book title:", type: "lines" as const, lines: 1 }, { text: "Prediction 1:", type: "lines" as const, lines: 1 }, { text: "Prediction 2:", type: "lines" as const, lines: 1 }, { text: "Prediction 3:", type: "lines" as const, lines: 1 }, { text: "After reading — how many were right? ___/3", type: "lines" as const, lines: 1 } ] },
+      // 20 — SPARK
+      { type: "home-activity" as const, title: "Predict While You Read", instruction: "Make predicting a habit every time you read!", parentTip: "Spark: Making predictions while you read is like being a detective who tries to solve the mystery before the detective in the story does! Some of the best readers in the world say that predicting is the skill that keeps them hooked on books. When you guess what might happen next, your brain is working hard — and when you find out whether you were right, it is SO satisfying! Can you think of a time you guessed what would happen in a movie or TV show before it happened? That is predicting!", suggestions: [ "Before opening any new book, look at the cover for 30 seconds and make 2 predictions.", "Pause before turning each page and ask: 'What do you think we will see next?'", "Watch the first 5 minutes of a new show, then predict what will happen.", "After a wrong prediction, ask: 'What clue told us what really happened?'" ] },
+      // ─── DEVELOPING (21–50): Predictions from text clues, checking predictions ───
+      // 21
+      { type: "circle-correct" as const, title: "Which Prediction Uses a Clue? (Set C)", instruction: "Circle the best prediction based on the clues.", questions: [ { prompt: "Ben put on his helmet and knee pads. He picked up his skateboard. What will Ben do?", options: ["Go swimming", "Go skateboarding", "Go to sleep"] }, { prompt: "The teacher handed out paper and crayons. She said 'Draw your favourite animal.' What will the class do?", options: ["Read a book", "Draw animals", "Play outside"] }, { prompt: "Grandma put flour, eggs and sugar on the bench. She opened the recipe book. What will Grandma do?", options: ["Bake something", "Go to the shops", "Plant a garden"] } ] },
+      // 22
+      { type: "open-response" as const, title: "Stop and Predict (Set A)", instruction: "While reading, stop at an exciting moment. Write your prediction.", parentTip: "Choose a page with a problem, surprise or cliff-hanger.", prompts: [ { text: "I stopped on page:", type: "lines" as const, lines: 1 }, { text: "What has happened so far:", type: "lines" as const, lines: 2 }, { text: "My prediction:", type: "lines" as const, lines: 3 }, { text: "My clue:", type: "lines" as const, lines: 2 } ] },
+      // 23
+      { type: "sorting" as const, title: "Clue or Not a Clue? (Set A)", instruction: "When making a prediction about a story about a lost dog, sort which things are helpful clues and which are not.", columns: ["Helpful clue", "Not a clue"], items: [ { label: "The dog's collar has an address on it." }, { label: "The sky is blue." }, { label: "A kind boy sees the dog wandering alone." }, { label: "There is a lamp in the room." }, { label: "The dog keeps sniffing the air (following a scent)." }, { label: "The curtains are green." } ] },
+      // 24
+      { type: "open-response" as const, title: "Predict and Check (Set A)", instruction: "Make a prediction, then read to check it. Record your results.", prompts: [ { text: "My prediction BEFORE reading:", type: "lines" as const, lines: 2 }, { text: "What ACTUALLY happened:", type: "lines" as const, lines: 2 }, { text: "Was I right? (yes/partly/no)", type: "lines" as const, lines: 1 }, { text: "The clue I should have noticed:", type: "lines" as const, lines: 2 } ] },
+      // 25
+      { type: "circle-correct" as const, title: "Predict the Ending (Set B)", instruction: "Circle the most likely ending.", questions: [ { prompt: "Zara studied hard for her spelling test all week. She practised every night. The test day arrived. What will probably happen?", options: ["Zara will do well on the test.", "Zara will forget everything.", "The test will be about dinosaurs."] }, { prompt: "The baby bird tried to fly. It flapped its tiny wings and fell. It tried again. It flapped harder. What will probably happen?", options: ["The bird will eventually fly.", "The bird will turn into a fish.", "A piano will fall from the sky."] } ] },
+      // 26
+      { type: "open-response" as const, title: "Predict What the Character Will Do", instruction: "Based on what you know about the character, predict their actions.", prompts: [ { text: "Character: A very brave knight who always helps people. Problem: A dragon is scaring the village. Predict:", type: "lines" as const, lines: 3 }, { text: "Character: A shy girl who loves animals. Problem: She finds a hurt bird. Predict:", type: "lines" as const, lines: 3 } ] },
+      // 27
+      { type: "matching" as const, title: "Match the Story Problem to the Prediction", instruction: "Draw a line from each problem to the most likely outcome.", left: ["The boat has a hole", "The child is lost in the woods", "The ice cream is melting", "The balloon is floating away"], right: ["Someone will chase or catch it.", "Someone will patch the hole.", "Someone will help them find the way.", "They will eat it quickly."] },
+      // 28
+      { type: "open-response" as const, title: "Predict From a Picture (Set A)", instruction: "Look at a picture in a book (without reading the words). Write what you think is happening.", prompts: [ { text: "What I see in the picture:", type: "lines" as const, lines: 2 }, { text: "What I think is happening:", type: "lines" as const, lines: 2 }, { text: "What I think will happen next:", type: "lines" as const, lines: 2 } ] },
+      // 29
+      { type: "circle-correct" as const, title: "Which Clue Supports the Prediction? (Set A)", instruction: "A prediction has been made. Circle the clue that supports it.", questions: [ { prompt: "Prediction: 'I think the family will go to the beach.' Which clue supports this?", options: ["Mum packed sunscreen and towels.", "Dad read the newspaper.", "The dog was sleeping."] }, { prompt: "Prediction: 'I think it will snow.' Which clue supports this?", options: ["The sun was shining brightly.", "The temperature dropped and dark clouds rolled in.", "The cat was purring."] } ] },
+      // 30 — TIP
+      { type: "open-response" as const, title: "Three Predictions, One Story", instruction: "Make 3 predictions at different points while reading one story.", parentTip: "Tip: The best readers make predictions ALL the time — not just once at the beginning! Try making at least 3 predictions per book: one from the cover, one in the middle, and one near the end. Each time, look for NEW clues. As you get more information from the story, your predictions should get more accurate. It is like a detective who gathers more evidence as the case goes on — each new clue helps you get closer to the truth!", prompts: [ { text: "Book title:", type: "lines" as const, lines: 1 }, { text: "Prediction 1 (from the cover):", type: "lines" as const, lines: 2 }, { text: "Prediction 2 (from the middle):", type: "lines" as const, lines: 2 }, { text: "Prediction 3 (near the end):", type: "lines" as const, lines: 2 }, { text: "Which prediction was most accurate? Why?", type: "lines" as const, lines: 2 } ] },
+      // 31
+      { type: "open-response" as const, title: "Predict and Check (Set B)", instruction: "Make a prediction, read on, and record what actually happened.", prompts: [ { text: "Story:", type: "lines" as const, lines: 1 }, { text: "My prediction:", type: "lines" as const, lines: 2 }, { text: "What actually happened:", type: "lines" as const, lines: 2 }, { text: "Was I close? What clue did I miss?", type: "lines" as const, lines: 2 } ] },
+      // 32
+      { type: "circle-correct" as const, title: "Predict From Character Feelings", instruction: "Use the character's feelings to predict what they will do.", questions: [ { prompt: "Emma is furious because her brother broke her toy. What will Emma probably do?", options: ["Laugh and say 'That is fine'", "Tell her brother she is upset or tell a parent", "Go to sleep happily"] }, { prompt: "Jake is so excited about the party he cannot sit still. What will Jake probably do?", options: ["Sit quietly and read", "Run around and talk about the party", "Cry"] } ] },
+      // 33
+      { type: "open-response" as const, title: "Predict What Happens Next (Set C)", instruction: "Read and predict.", prompts: [ { text: "Story: 'The class was very quiet. Everyone was writing their test. Suddenly, the fire alarm went off! The teacher stood up quickly.'", type: "lines" as const, lines: 1 }, { text: "I predict:", type: "lines" as const, lines: 2 }, { text: "Clue:", type: "lines" as const, lines: 1 } ] },
+      // 34
+      { type: "sorting" as const, title: "Clue or Not a Clue? (Set B)", instruction: "A character is about to get in trouble. Sort which details are clues and which are not.", columns: ["Helpful clue", "Not a clue"], items: [ { label: "The character is sneaking around." }, { label: "The wall is painted blue." }, { label: "The character is whispering and looking over their shoulder." }, { label: "There is a clock on the wall." }, { label: "The character is doing something they were told NOT to do." }, { label: "The carpet is soft." } ] },
+      // 35
+      { type: "open-response" as const, title: "Predict How the Character Feels (Set A)", instruction: "Read the situation. Predict how the character will feel.", prompts: [ { text: "Situation: Lily has been waiting all week for her birthday. Today is the day! Predict how Lily feels:", type: "lines" as const, lines: 2 }, { text: "Situation: Oscar's best friend is moving to a different town. Predict how Oscar feels:", type: "lines" as const, lines: 2 }, { text: "Situation: Zara just won first place in the swimming race. Predict how Zara feels:", type: "lines" as const, lines: 2 } ] },
+      // 36
+      { type: "open-response" as const, title: "Predict and Check (Set C)", instruction: "Record your prediction journey through a story.", prompts: [ { text: "Book:", type: "lines" as const, lines: 1 }, { text: "Prediction at the start:", type: "lines" as const, lines: 2 }, { text: "Was I right? (yes/partly/no)", type: "lines" as const, lines: 1 }, { text: "Prediction in the middle:", type: "lines" as const, lines: 2 }, { text: "Was I right? (yes/partly/no)", type: "lines" as const, lines: 1 } ] },
+      // 37
+      { type: "circle-correct" as const, title: "Which Prediction Uses a Clue? (Set D)", instruction: "Circle the best prediction.", questions: [ { prompt: "Dad looked at the flat tyre and sighed. He opened the boot of the car. What will Dad do?", options: ["Cook dinner", "Change the tyre", "Go to the movies"] }, { prompt: "The baby dropped her biscuit on the floor and started to cry. Mum walked over. What will Mum do?", options: ["Go to work", "Pick up the biscuit or comfort the baby", "Read a newspaper"] }, { prompt: "It was getting dark. The stars began to appear. Mum said, 'Time to go inside.' What will happen?", options: ["They will go inside the house", "They will go swimming", "A unicorn will appear"] } ] },
+      // 38
+      { type: "open-response" as const, title: "Write a Prediction Sentence", instruction: "For each scenario, write a prediction using the sentence frame: 'I predict... because...'", prompts: [ { text: "Scenario: A girl sees a long queue at the ice cream van. I predict... because...", type: "lines" as const, lines: 2 }, { text: "Scenario: A boy is packing his suitcase with warm clothes. I predict... because...", type: "lines" as const, lines: 2 }, { text: "Scenario: The clouds are very dark and the wind is strong. I predict... because...", type: "lines" as const, lines: 2 } ] },
+      // 39
+      { type: "matching" as const, title: "Match the Clue to the Prediction (Set B)", instruction: "Draw a line from each clue to its prediction.", left: ["Character is packing a lunch", "Character is brushing their teeth", "Character is crying", "Character is wearing a costume"], right: ["They are getting ready for bed.", "They are going to a party or play.", "Something sad happened.", "They are going on an outing."] },
+      // 40 — SPARK
+      { type: "home-activity" as const, title: "Prediction Power!", instruction: "Use your prediction skills in everyday life!", parentTip: "Spark: You do not just make predictions when reading books — you make predictions ALL day long without even realising it! When you see rain clouds, you predict rain. When you hear the ice cream van music, you predict it is coming your way. When your parent starts cooking, you predict dinner is coming. Predictions help your brain prepare for what is about to happen. What prediction did you make today that turned out to be right? What prediction was wrong? Being wrong is not a problem — it means you learned something new!", suggestions: [ "Predict what will happen in a TV show before the next scene.", "Before opening a present, predict what is inside based on the size and shape.", "Predict what the weather will be like tomorrow — check the next day.", "While cooking, predict what the food will taste like based on the ingredients." ] },
+      // ─── CONSOLIDATING (51–80): Evidence-based predictions, longer texts, multiple predictions ───
+      // 51
+      { type: "open-response" as const, title: "Predict From a Longer Story (Set A)", instruction: "Read this story beginning. Make 2 predictions.", prompts: [ { text: "Story: 'Maya loved her garden. Every day after school she watered the flowers, pulled out weeds and talked to her plants. One morning she noticed something strange — a flower she had never seen before was growing in the corner. It was bright purple with silver spots. Maya had never planted it.'", type: "lines" as const, lines: 1 }, { text: "Prediction 1 (what is the flower?):", type: "lines" as const, lines: 2 }, { text: "Prediction 2 (what will Maya do?):", type: "lines" as const, lines: 2 }, { text: "My clues:", type: "lines" as const, lines: 2 } ] },
+      // 52
+      { type: "circle-correct" as const, title: "Best Prediction for the Story (Set A)", instruction: "Based on the story about Maya and the strange flower, circle the best prediction.", questions: [ { prompt: "What will Maya do next?", options: ["Ignore the flower", "Investigate the flower or ask someone about it", "Mow over the flower"] }, { prompt: "What might the flower be?", options: ["A magic flower from a seed blown by the wind", "An alien spaceship", "A purple rock"] } ] },
+      // 53
+      { type: "open-response" as const, title: "Predict and Check (Set D)", instruction: "Read half a story. Predict the ending. Then read the rest.", prompts: [ { text: "Story title:", type: "lines" as const, lines: 1 }, { text: "Summary of the first half:", type: "lines" as const, lines: 3 }, { text: "My prediction for the ending:", type: "lines" as const, lines: 3 }, { text: "The actual ending:", type: "lines" as const, lines: 3 }, { text: "Was I right? Why or why not?", type: "lines" as const, lines: 2 } ] },
+      // 54
+      { type: "open-response" as const, title: "Predict From a Longer Story (Set B)", instruction: "Read and predict.", prompts: [ { text: "Story: 'Ollie wanted a pet more than anything. He asked Mum every single day. Mum always said, Not yet. One Saturday morning, Mum said, Get in the car, Ollie. We are going somewhere special. She had a big smile on her face. They drove past the shops, past the park, and turned down a road Ollie had never been on before.'", type: "lines" as const, lines: 1 }, { text: "Where do you think they are going?", type: "lines" as const, lines: 2 }, { text: "What clues tell you?", type: "lines" as const, lines: 2 } ] },
+      // 55
+      { type: "sorting" as const, title: "Strong Clue or Weak Clue?", instruction: "For the Ollie story, sort which clues are strong (really helpful) and which are weak (not very helpful).", columns: ["Strong clue", "Weak clue"], items: [ { label: "Ollie has been asking for a pet every day." }, { label: "They drove past the shops." }, { label: "Mum had a big smile." }, { label: "It was Saturday morning." }, { label: "Mum said 'somewhere special'." }, { label: "They turned down a new road." } ] },
+      // 56
+      { type: "open-response" as const, title: "Two Different Predictions", instruction: "Sometimes there are multiple possible predictions. Write TWO different predictions for the same story.", prompts: [ { text: "Story: 'A letter arrived in the mail for Grandma. She opened it and her eyes went wide. She put her hand over her mouth.' ", type: "lines" as const, lines: 1 }, { text: "Prediction A (good news):", type: "lines" as const, lines: 2 }, { text: "Prediction B (bad news):", type: "lines" as const, lines: 2 }, { text: "Which prediction do you think is more likely? Why?", type: "lines" as const, lines: 2 } ] },
+      // 57
+      { type: "circle-correct" as const, title: "Which Clue Supports the Prediction? (Set B)", instruction: "Circle the clue that best supports each prediction.", questions: [ { prompt: "Prediction: 'The children will go inside.' Best clue:", options: ["It started to rain heavily.", "The cat was sleeping.", "The flowers were blooming."] }, { prompt: "Prediction: 'The character will apologise.' Best clue:", options: ["She looked down and bit her lip, feeling guilty.", "She ate her lunch quickly.", "She wore a red hat."] } ] },
+      // 58
+      { type: "open-response" as const, title: "Predict and Check: Non-fiction", instruction: "Predictions work for non-fiction too! Before reading a non-fiction text, predict what you will learn.", prompts: [ { text: "Topic:", type: "lines" as const, lines: 1 }, { text: "What I already know about this topic:", type: "lines" as const, lines: 2 }, { text: "What I predict I will learn:", type: "lines" as const, lines: 2 }, { text: "After reading — what did I actually learn?", type: "lines" as const, lines: 2 } ] },
+      // 59
+      { type: "open-response" as const, title: "Predict From a Longer Story (Set C)", instruction: "Read and predict.", prompts: [ { text: "Story: 'The old treehouse had been empty for years. Nobody went up there anymore. But one afternoon, Kai noticed a light in the window. He heard soft music playing. Kai stood at the bottom of the ladder and looked up. The wooden rungs looked old and wobbly.'", type: "lines" as const, lines: 1 }, { text: "What do you think Kai will do?", type: "lines" as const, lines: 2 }, { text: "Who or what do you think is in the treehouse?", type: "lines" as const, lines: 2 }, { text: "Your clues:", type: "lines" as const, lines: 2 } ] },
+      // 60 — SPARK
+      { type: "home-activity" as const, title: "Prediction Journal", instruction: "Keep a prediction journal for one week!", parentTip: "Spark: Scientists make predictions too! They call them 'hypotheses'. A scientist says: 'I predict this will happen because of these reasons.' Then they test it. If they are right, great! If they are wrong, they learn something new. Reading predictions work the same way. Every prediction you make — right or wrong — teaches your brain something about how stories work. After reading many, many stories, your predictions will become incredibly accurate because your brain will recognise patterns. What pattern have you noticed in the stories you have read?", suggestions: [ "Keep a prediction journal: for each book, write your prediction before, during and after.", "Watch a nature documentary and predict what the animal will do next.", "Predict the ending of a story before the last page — were you right?", "Discuss predictions with a friend or family member — do you predict the same thing?" ] },
+      // 61
+      { type: "circle-correct" as const, title: "Predict Using Character Knowledge", instruction: "Based on what you know about each character, predict their action.", questions: [ { prompt: "A character who is always very kind sees a lost puppy. They will probably:", options: ["Ignore it", "Help the puppy find its owner", "Be scared of it"] }, { prompt: "A character who is very curious finds a mysterious door. They will probably:", options: ["Walk away", "Open it and look inside", "Tell nobody"] }, { prompt: "A character who is very brave hears a scream for help. They will probably:", options: ["Hide under the bed", "Run towards the sound to help", "Go to sleep"] } ] },
+      // 62
+      { type: "open-response" as const, title: "Predict the Lesson or Message", instruction: "Some stories have a lesson or message. Predict what the lesson will be.", prompts: [ { text: "Story summary: 'A fox keeps trying to steal honey from bees. Every time he gets stung. But he keeps trying new clever plans.' Predicted lesson:", type: "lines" as const, lines: 2 }, { text: "Story summary: 'A girl who always lies finds that nobody believes her when she tells the truth.' Predicted lesson:", type: "lines" as const, lines: 2 } ] },
+      // 63
+      { type: "open-response" as const, title: "Predict From a Longer Story (Set D)", instruction: "Read and predict.", prompts: [ { text: "Story: 'It was the night before the school play. Priya had the main part. She had practised her lines a hundred times. But lying in bed, she could not remember a single word. Her mind was completely blank. She pulled the covers over her head.'", type: "lines" as const, lines: 1 }, { text: "What will happen at the school play?", type: "lines" as const, lines: 3 }, { text: "How do you think the story will end?", type: "lines" as const, lines: 2 }, { text: "Your clues:", type: "lines" as const, lines: 2 } ] },
+      // 64
+      { type: "sorting" as const, title: "Prediction Types", instruction: "Sort each prediction by type.", columns: ["Predicting events", "Predicting feelings", "Predicting what someone will say"], items: [ { label: "I think the boy will cry." }, { label: "I think she will say sorry." }, { label: "I think the bridge will break." }, { label: "I think he will feel proud." }, { label: "I think the dog will run away." }, { label: "I think Mum will say Well done!" } ] },
+      // 65
+      { type: "open-response" as const, title: "Predict and Check (Set E)", instruction: "Multi-point prediction check.", prompts: [ { text: "Book:", type: "lines" as const, lines: 1 }, { text: "Prediction 1:", type: "lines" as const, lines: 1 }, { text: "Right? (yes/no)", type: "lines" as const, lines: 1 }, { text: "Prediction 2:", type: "lines" as const, lines: 1 }, { text: "Right? (yes/no)", type: "lines" as const, lines: 1 }, { text: "Prediction 3:", type: "lines" as const, lines: 1 }, { text: "Right? (yes/no)", type: "lines" as const, lines: 1 }, { text: "Overall accuracy: ___/3", type: "lines" as const, lines: 1 } ] },
+      // 66
+      { type: "circle-correct" as const, title: "Predict the Ending (Set C)", instruction: "Circle the most likely ending.", questions: [ { prompt: "Two friends had a big argument. They did not speak for a whole week. Then one of them left a note saying 'I am sorry.' What will probably happen?", options: ["They will never speak again.", "They will make up and be friends again.", "One of them will move to another planet."] }, { prompt: "A girl trained hard for the race. She felt strong and ready. The starting gun went off. She ran as fast as she could. She was in second place near the end. What will probably happen?", options: ["She will sprint to try to win.", "She will stop and sit down.", "She will start cooking."] } ] },
+      // 67
+      { type: "open-response" as const, title: "Predict the Sequel", instruction: "Think of a story you have read recently. Predict what would happen in a sequel.", prompts: [ { text: "Story:", type: "lines" as const, lines: 1 }, { text: "How did it end?", type: "lines" as const, lines: 2 }, { text: "My prediction for a sequel:", type: "lines" as const, lines: 4 } ] },
+      // 68
+      { type: "open-response" as const, title: "Predict What Someone Will Say (Set A)", instruction: "Based on the situation, predict what each character will say.", prompts: [ { text: "A child brings home a great report card. Mum will say:", type: "lines" as const, lines: 2 }, { text: "A dog knocks over the vase. Dad will say:", type: "lines" as const, lines: 2 }, { text: "A friend shares their lunch with you. You will say:", type: "lines" as const, lines: 2 } ] },
+      // 69
+      { type: "open-response" as const, title: "When My Prediction Was Wrong", instruction: "Write about a time your prediction was wrong. What actually happened? What clue did you miss?", parentTip: "Wrong predictions are VALUABLE — they teach us what clues to look for next time.", prompts: [ { text: "My prediction was:", type: "lines" as const, lines: 2 }, { text: "What actually happened:", type: "lines" as const, lines: 2 }, { text: "The clue I missed:", type: "lines" as const, lines: 2 } ] },
+      // 70
+      { type: "matching" as const, title: "Match the Genre to the Prediction Style", instruction: "Different types of stories lead to different types of predictions. Match each genre to its prediction style.", parentTip: "Understanding genre helps you make better predictions.", left: ["Fairy tale", "Mystery story", "Adventure story", "Funny story", "Sad story"], right: ["The hero will face danger and overcome it.", "Something silly or unexpected will happen.", "The detective will solve the crime.", "A character will learn or grow through sadness.", "Good will win and there will be a happy ending."] },
+      // 71
+      { type: "open-response" as const, title: "Predict From a Longer Story (Set E)", instruction: "Read and predict.", prompts: [ { text: "Story: 'Every afternoon, a mysterious package appeared on Mia's doorstep. Inside was always the same thing — a single red flower. There was never a note. Mia asked her family, her neighbours, even the postman. Nobody knew where the flowers came from. On Friday, Mia decided to set up a camera.'", type: "lines" as const, lines: 1 }, { text: "Who do you think is leaving the flowers?", type: "lines" as const, lines: 2 }, { text: "What will the camera reveal?", type: "lines" as const, lines: 2 }, { text: "Your clues and reasoning:", type: "lines" as const, lines: 2 } ] },
+      // 72
+      { type: "open-response" as const, title: "Predict and Check (Set F)", instruction: "Complete prediction tracking for a full book.", prompts: [ { text: "Book:", type: "lines" as const, lines: 1 }, { text: "Cover prediction:", type: "lines" as const, lines: 1 }, { text: "Quarter-way prediction:", type: "lines" as const, lines: 1 }, { text: "Halfway prediction:", type: "lines" as const, lines: 1 }, { text: "Three-quarter prediction:", type: "lines" as const, lines: 1 }, { text: "Was the ending what you expected? Why or why not?", type: "lines" as const, lines: 3 } ] },
+      // 73
+      { type: "circle-correct" as const, title: "Which Prediction Uses a Clue? (Set E)", instruction: "Circle the best prediction.", questions: [ { prompt: "The dog wagged its tail and ran to the door. It barked excitedly. The key turned in the lock. What is happening?", options: ["The dog is hungry.", "Someone the dog loves is coming home.", "The house is on fire."] }, { prompt: "Mum looked at the thermometer and sighed. She put a cool cloth on the child's forehead. What is happening?", options: ["The child is sick with a fever.", "They are getting ready for a party.", "Mum is cooking dinner."] } ] },
+      // 74
+      { type: "open-response" as const, title: "Predict How a Story Will End (Set A)", instruction: "Read the story so far. Write how you think it will end and why.", prompts: [ { text: "Story so far: 'A rabbit and a tortoise decided to race. The rabbit was much faster and ran far ahead. Feeling confident, the rabbit sat down under a tree for a rest. Meanwhile, the tortoise kept walking slowly but steadily...'", type: "lines" as const, lines: 1 }, { text: "My prediction for the ending:", type: "lines" as const, lines: 3 }, { text: "Why I think this:", type: "lines" as const, lines: 2 } ] },
+      // 75 — TIP
+      { type: "open-response" as const, title: "Predict Using Story Patterns", instruction: "Many stories follow patterns. Use these patterns to help you predict.", parentTip: "Tip: Once you have read lots of stories, you start to notice patterns. In fairy tales, good usually wins. In mystery stories, the detective always solves the case. In adventure stories, the hero faces danger but comes through in the end. Knowing these patterns helps you make better predictions! But the best stories sometimes SURPRISE you by breaking the pattern. That is what makes reading so exciting — you think you know what will happen, and then TWIST!", prompts: [ { text: "A pattern I have noticed in stories:", type: "lines" as const, lines: 2 }, { text: "An example of a story that followed this pattern:", type: "lines" as const, lines: 2 }, { text: "An example of a story that surprised me (broke the pattern):", type: "lines" as const, lines: 2 } ] },
+      // 76
+      { type: "open-response" as const, title: "Predict From a Longer Story (Set F)", instruction: "Read and predict.", prompts: [ { text: "Story: 'The old map was hidden inside the library book. It showed a path through the forest to a cave behind the waterfall. At the bottom, someone had written: Only the brave will find what lies within. Jack looked at his best friend Ali. Without saying a word, they both knew what they were going to do.'", type: "lines" as const, lines: 1 }, { text: "What will Jack and Ali do?", type: "lines" as const, lines: 2 }, { text: "What might they find in the cave?", type: "lines" as const, lines: 2 }, { text: "What challenges might they face?", type: "lines" as const, lines: 2 } ] },
+      // 77
+      { type: "open-response" as const, title: "Predict What Someone Will Say (Set B)", instruction: "Predict the dialogue in each situation.", prompts: [ { text: "A teacher discovers a student cheating on a test. Teacher says:", type: "lines" as const, lines: 2 }, { text: "A child sees a shooting star for the first time. They say:", type: "lines" as const, lines: 2 } ] },
+      // 78
+      { type: "open-response" as const, title: "Compare Your Predictions to a Friend's", instruction: "Read the same story beginning with a family member. BOTH make a prediction (without telling each other). Compare.", prompts: [ { text: "Story:", type: "lines" as const, lines: 1 }, { text: "My prediction:", type: "lines" as const, lines: 2 }, { text: "Their prediction:", type: "lines" as const, lines: 2 }, { text: "Were they the same or different? Why?", type: "lines" as const, lines: 2 } ] },
+      // 79
+      { type: "open-response" as const, title: "Write a Story With a Twist", instruction: "Write a short story where the ending surprises the reader — it is NOT what they would predict!", parentTip: "Understanding twist endings shows deep awareness of prediction patterns.", prompts: [ { text: "My twist story:", type: "lines" as const, lines: 8 }, { text: "What would most readers predict?", type: "lines" as const, lines: 2 }, { text: "What actually happens in my story?", type: "lines" as const, lines: 2 } ] },
+      // 80 — SPARK
+      { type: "home-activity" as const, title: "Prediction Skills Everywhere", instruction: "Use your prediction skills outside of books!", parentTip: "Spark: Prediction is one of the most important thinking skills in the world. Scientists predict what will happen in experiments. Weather forecasters predict the weather. Doctors predict how illnesses will develop. Economists predict what will happen to money. Even your brain is constantly predicting — when you catch a ball, your brain predicts where the ball will be! Every time you make a prediction based on clues, you are training your brain to be a better thinker. What profession would you like to be in where prediction skills are important?", suggestions: [ "Watch a sports game and predict who will score next. What clues are you using?", "Look at the sky each morning and predict the weather for the day.", "Predict what will happen in a video game before you play the next level.", "Start a 'Prediction Score Card': track how many of your reading predictions are correct over a week." ] },
+      // ─── EXTENDING (81–100): Complex predictions, critical thinking, reflection ───
+      // 81
+      { type: "open-response" as const, title: "Predict From a Complex Story", instruction: "Read this story with multiple characters and predict.", prompts: [ { text: "Story: 'Three siblings — Ella, Max and baby Leo — were home alone when the power went out. Ella, the oldest, found a torch. Max started to cry. Baby Leo just laughed and clapped his hands in the dark. Ella heard a strange scratching noise coming from the back door.'", type: "lines" as const, lines: 1 }, { text: "What is making the scratching noise?", type: "lines" as const, lines: 2 }, { text: "What will Ella do?", type: "lines" as const, lines: 2 }, { text: "How will Max react?", type: "lines" as const, lines: 1 }, { text: "Your clues:", type: "lines" as const, lines: 2 } ] },
+      // 82
+      { type: "circle-correct" as const, title: "Predict Based on Character Personality", instruction: "Use what you know about each character type to predict.", questions: [ { prompt: "A character described as 'clever and tricky' faces a locked door. They will probably:", options: ["Sit and wait", "Find a clever way to open it", "Start crying"] }, { prompt: "A character described as 'generous and kind' finds extra food. They will probably:", options: ["Keep it all for themselves", "Share it with others", "Throw it away"] }, { prompt: "A character who 'never gives up' fails on their first try. They will probably:", options: ["Give up immediately", "Try again", "Blame someone else"] } ] },
+      // 83
+      { type: "open-response" as const, title: "Predict the Consequences", instruction: "Every action has consequences. Predict what will happen as a result of each action.", prompts: [ { text: "Action: A boy leaves his bike outside in the rain overnight. Consequence:", type: "lines" as const, lines: 2 }, { text: "Action: A girl practises piano every day for a month. Consequence:", type: "lines" as const, lines: 2 }, { text: "Action: A child eats too much cake at the party. Consequence:", type: "lines" as const, lines: 2 } ] },
+      // 84
+      { type: "open-response" as const, title: "Predict From a Longer Story (Set G)", instruction: "Read and make multiple predictions.", prompts: [ { text: "Story: 'The science fair was tomorrow. Ivy had spent weeks building a volcano model. It was perfect. She carried it carefully to the car. But when Dad opened the car door, the dog jumped out and crashed right into the volcano. Pieces flew everywhere. Ivy stood there, mouth open, holding a pile of crumbs.'", type: "lines" as const, lines: 1 }, { text: "What will Ivy do?", type: "lines" as const, lines: 2 }, { text: "Will she still go to the science fair? How?", type: "lines" as const, lines: 2 }, { text: "What lesson might this story teach?", type: "lines" as const, lines: 2 } ] },
+      // 85
+      { type: "open-response" as const, title: "Predict and Check: Full Book", instruction: "Complete this prediction log for an entire book.", prompts: [ { text: "Book title:", type: "lines" as const, lines: 1 }, { text: "Prediction from cover:", type: "lines" as const, lines: 1 }, { text: "Prediction from chapter 1:", type: "lines" as const, lines: 1 }, { text: "Prediction from the middle:", type: "lines" as const, lines: 1 }, { text: "Prediction near the end:", type: "lines" as const, lines: 1 }, { text: "Accuracy: ___/4 correct", type: "lines" as const, lines: 1 }, { text: "What I learned about predicting:", type: "lines" as const, lines: 2 } ] },
+      // 86
+      { type: "open-response" as const, title: "Write a Cliff-hanger", instruction: "Write a story that stops at the most exciting moment — a cliff-hanger! Ask someone to predict what happens next.", prompts: [ { text: "My cliff-hanger story:", type: "lines" as const, lines: 8 }, { text: "Someone else's prediction:", type: "lines" as const, lines: 2 } ] },
+      // 87
+      { type: "circle-correct" as const, title: "Predict the Genre (Set A)", instruction: "Based on the first sentence, predict what genre (type) of story this is.", questions: [ { prompt: "'Once upon a time, in a kingdom far away...'", options: ["Fairy tale", "Mystery", "Science fiction"] }, { prompt: "'Detective Brown studied the footprints in the mud...'", options: ["Romance", "Mystery", "Comedy"] }, { prompt: "'The spaceship hurtled through the asteroid belt...'", options: ["Fairy tale", "Historical fiction", "Science fiction"] } ] },
+      // 88
+      { type: "open-response" as const, title: "Predict How Problems Will Be Solved", instruction: "For each story problem, predict how it might be solved.", prompts: [ { text: "Problem: The bridge is broken and they need to cross the river. Prediction:", type: "lines" as const, lines: 2 }, { text: "Problem: Two best friends both want the same toy. Prediction:", type: "lines" as const, lines: 2 }, { text: "Problem: The class pet (a hamster) has escaped! Prediction:", type: "lines" as const, lines: 2 } ] },
+      // 89
+      { type: "open-response" as const, title: "Predict From Real Life", instruction: "Make predictions about real-life situations.", prompts: [ { text: "Situation: A new kid is starting at your school tomorrow. Predict:", type: "lines" as const, lines: 2 }, { text: "Situation: You plant a seed and water it every day. Predict:", type: "lines" as const, lines: 2 }, { text: "Situation: You practise reading every night. Predict:", type: "lines" as const, lines: 2 } ] },
+      // 90 — TIP
+      { type: "open-response" as const, title: "My Prediction Skills Assessment", instruction: "Honestly assess your prediction skills.", parentTip: "Tip: By now, you are an expert predictor! Here is what great predictors do: (1) They look for clues EVERYWHERE — in pictures, titles, words and character actions. (2) They use what they already know about the world. (3) They use what they know about how stories work. (4) They are not afraid to be wrong — wrong predictions help you learn! (5) They adjust their predictions as they get new information. Keep practising and your prediction accuracy will keep improving!", prompts: [ { text: "I am good at predicting from: (pictures/titles/words/character actions/all of these)", type: "lines" as const, lines: 1 }, { text: "I find it hardest to predict: (events/feelings/what people will say/endings)", type: "lines" as const, lines: 1 }, { text: "My predictions are usually: (accurate/sometimes right/need improvement)", type: "lines" as const, lines: 1 }, { text: "The best prediction I ever made:", type: "lines" as const, lines: 3 } ] },
+      // 91
+      { type: "open-response" as const, title: "Predict From a Longer Story (Set H)", instruction: "Read and predict.", prompts: [ { text: "Story: 'The annual bake-off competition was fierce this year. Grandma had won for the last three years with her famous chocolate cake. But this year, a new baker called Mrs Tanaka entered with something nobody had ever seen — a cake shaped like a dragon that breathed real steam (from dry ice). The judges looked amazed. Grandma looked at her chocolate cake and then at the dragon cake.'", type: "lines" as const, lines: 1 }, { text: "Who will win the bake-off? Why?", type: "lines" as const, lines: 3 }, { text: "How will Grandma react?", type: "lines" as const, lines: 2 } ] },
+      // 92
+      { type: "open-response" as const, title: "Write a Story Where Predictions Go Wrong", instruction: "Write a story where a character makes a prediction that turns out to be completely wrong. What do they learn?", prompts: [ { text: "My story:", type: "lines" as const, lines: 10 } ] },
+      // 93
+      { type: "open-response" as const, title: "Predict From Two Points of View", instruction: "The same event is happening. Two characters have different predictions.", prompts: [ { text: "Event: A big storm is coming to a small town.", type: "lines" as const, lines: 1 }, { text: "Prediction from a worried parent:", type: "lines" as const, lines: 2 }, { text: "Prediction from an excited child:", type: "lines" as const, lines: 2 }, { text: "Why are their predictions different?", type: "lines" as const, lines: 2 } ] },
+      // 94
+      { type: "open-response" as const, title: "Predict the Next Chapter", instruction: "If you are reading a chapter book, predict what will happen in the next chapter.", prompts: [ { text: "Book:", type: "lines" as const, lines: 1 }, { text: "What happened in this chapter:", type: "lines" as const, lines: 3 }, { text: "My prediction for the next chapter:", type: "lines" as const, lines: 3 }, { text: "Clues I am using:", type: "lines" as const, lines: 2 } ] },
+      // 95
+      { type: "open-response" as const, title: "Teach Someone to Predict", instruction: "Explain the prediction strategy to someone younger or someone who has not learned it yet.", parentTip: "Teaching is the ultimate test of understanding.", prompts: [ { text: "Who I taught:", type: "lines" as const, lines: 1 }, { text: "How I explained what a prediction is:", type: "lines" as const, lines: 3 }, { text: "The example I used:", type: "lines" as const, lines: 3 }, { text: "Did they understand? (yes/no)", type: "lines" as const, lines: 1 } ] },
+      // 96
+      { type: "open-response" as const, title: "Prediction Quiz", instruction: "Write 3 mini story openings. For each, write two possible predictions — one good and one wild guess.", prompts: [ { text: "Mini story 1:", type: "lines" as const, lines: 2 }, { text: "Good prediction:", type: "lines" as const, lines: 1 }, { text: "Wild guess:", type: "lines" as const, lines: 1 }, { text: "Mini story 2:", type: "lines" as const, lines: 2 }, { text: "Good prediction:", type: "lines" as const, lines: 1 }, { text: "Wild guess:", type: "lines" as const, lines: 1 } ] },
+      // 97
+      { type: "open-response" as const, title: "My Prediction Journey", instruction: "Reflect on how your prediction skills have grown.", prompts: [ { text: "At the start of this worksheet, my predictions were:", type: "lines" as const, lines: 2 }, { text: "Now my predictions are:", type: "lines" as const, lines: 2 }, { text: "The most important thing I learned about predicting:", type: "lines" as const, lines: 2 }, { text: "How I will use prediction skills in the future:", type: "lines" as const, lines: 2 } ] },
+      // 98
+      { type: "open-response" as const, title: "Predict the Author's Next Move", instruction: "Think about a favourite author. Based on their other books, predict what their NEXT book might be about.", prompts: [ { text: "Author:", type: "lines" as const, lines: 1 }, { text: "What their books are usually about:", type: "lines" as const, lines: 2 }, { text: "My prediction for their next book:", type: "lines" as const, lines: 3 } ] },
+      // 99
+      { type: "open-response" as const, title: "Ultimate Prediction Challenge", instruction: "Make 5 predictions about what will happen in your life this week. Check them at the end of the week.", prompts: [ { text: "Prediction 1:", type: "lines" as const, lines: 1 }, { text: "Prediction 2:", type: "lines" as const, lines: 1 }, { text: "Prediction 3:", type: "lines" as const, lines: 1 }, { text: "Prediction 4:", type: "lines" as const, lines: 1 }, { text: "Prediction 5:", type: "lines" as const, lines: 1 }, { text: "End of week — how many were right? ___/5", type: "lines" as const, lines: 1 } ] },
+      // 100 — SPARK
+      { type: "home-activity" as const, title: "Prediction Champion!", instruction: "You have completed 100 prediction activities! You are now a Prediction Champion!", parentTip: "Spark: Congratulations — you have trained your brain to be a prediction powerhouse! Every time you read, watch, listen or experience something, your brain is now automatically looking for clues and predicting what will happen next. This skill makes you a better reader, a better thinker, and a better learner in EVERY subject. In science, you will predict the results of experiments. In maths, you will estimate answers before calculating. In social situations, you will anticipate how people feel. Prediction is not just a reading skill — it is a LIFE skill. Keep predicting, keep reading, and keep being curious about what happens next!", suggestions: [ "Continue making predictions every time you read — it will become automatic.", "Try predicting in real life: what will happen at the shops, at school, at the park?", "Read a mystery book and try to solve it before the detective does.", "Discuss predictions with friends — do they predict the same things as you? Why or why not?" ] },
     ],
   },
 ];

@@ -182,6 +182,42 @@ export interface HomeActivityData {
   suggestions: string[];
 }
 
+export interface FillInBlankData {
+  type: "fill-in-blank";
+  title: string;
+  instruction: string;
+  parentTip?: string;
+  sentences: { text: string; blanks: string[] }[];
+}
+
+export interface MultipleChoiceData {
+  type: "multiple-choice";
+  title: string;
+  instruction: string;
+  parentTip?: string;
+  questions: { prompt: string; options: string[]; answer?: string }[];
+}
+
+export interface TrueFalseData {
+  type: "true-false";
+  title: string;
+  instruction: string;
+  parentTip?: string;
+  statements: { text: string; answer?: boolean }[];
+}
+
+export interface TipData {
+  type: "tip";
+  title: string;
+  content: string;
+}
+
+export interface SparkData {
+  type: "spark";
+  title: string;
+  content: string;
+}
+
 export type ActivityData =
   | NumberTraceData
   | CountObjectsData
@@ -197,7 +233,12 @@ export type ActivityData =
   | TenFrameData
   | OpenResponseData
   | HomeActivityData
-  | PictureGraphData;
+  | PictureGraphData
+  | FillInBlankData
+  | MultipleChoiceData
+  | TrueFalseData
+  | TipData
+  | SparkData;
 
 export interface LearningGuide {
   concept: string;
