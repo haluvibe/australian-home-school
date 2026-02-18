@@ -287,6 +287,64 @@ export const year9MathsWorksheets: WorksheetItem[] = [
           { text: "The distance from Earth to the Sun is 1.5 x 10^11 metres. Light travels at 3 x 10^8 m/s. How many seconds does it take for light to travel from the Sun to Earth? Show your working.", type: "lines", lines: 4 },
         ],
       },
+      {
+        type: "open-response",
+        title: "Multiplying Numbers in Scientific Notation",
+        instruction: "Multiply the following numbers. Multiply the front numbers and add the exponents. Write answers in correct scientific notation.",
+        prompts: [
+          { text: "(2 x 10^4) x (3 x 10^5) = ", type: "lines", lines: 3 },
+          { text: "(1.5 x 10^3) x (4 x 10^2) = ", type: "lines", lines: 3 },
+          { text: "(6 x 10^-2) x (5 x 10^-4) = ", type: "lines", lines: 3 },
+          { text: "(2.5 x 10^6) x (4 x 10^3) = ", type: "lines", lines: 3 },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Dividing Numbers in Scientific Notation",
+        instruction: "Divide the following numbers. Divide the front numbers and subtract the exponents. Write answers in correct scientific notation.",
+        prompts: [
+          { text: "(9 x 10^8) / (3 x 10^5) = ", type: "lines", lines: 3 },
+          { text: "(6 x 10^6) / (2 x 10^-2) = ", type: "lines", lines: 3 },
+          { text: "(7.5 x 10^9) / (2.5 x 10^4) = ", type: "lines", lines: 3 },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Adding Numbers in Scientific Notation",
+        instruction: "To add numbers in scientific notation, first convert them to the same power of 10, then add the front numbers. Example: 3 x 10^4 + 2 x 10^3 = 30 x 10^3 + 2 x 10^3 = 32 x 10^3 = 3.2 x 10^4.",
+        prompts: [
+          { text: "5 x 10^5 + 3 x 10^4 = ", type: "lines", lines: 4 },
+          { text: "2.4 x 10^6 + 6 x 10^5 = ", type: "lines", lines: 4 },
+          { text: "8 x 10^-3 + 4 x 10^-4 = ", type: "lines", lines: 4 },
+        ],
+      },
+      {
+        type: "matching",
+        title: "Scientific Notation in Context",
+        instruction: "Draw a line matching each scientific fact to its value in scientific notation.",
+        left: ["Mass of Earth (kg)","Diameter of a red blood cell (m)","Number of seconds in a year (approx)","Charge of an electron (coulombs)"],
+        right: ["6.0 x 10^24","8.0 x 10^-6","3.15 x 10^7","1.6 x 10^-19"],
+      },
+      {
+        type: "circle-correct",
+        title: "Correct Scientific Notation After Calculation",
+        instruction: "A student calculates and gets the answers below. Circle YES if they correctly expressed the answer in scientific notation, NO if they need to adjust.",
+        questions: [
+          { prompt: "Answer: 0.5 x 10^4", options: ["YES -- correct","NO -- should be 5 x 10^3"] },
+          { prompt: "Answer: 12 x 10^5", options: ["YES -- correct","NO -- should be 1.2 x 10^6"] },
+          { prompt: "Answer: 7.8 x 10^-2", options: ["YES -- correct","NO -- should be 78 x 10^-3"] },
+        ],
+      },
+      {
+        type: "home-activity",
+        title: "Scientific Notation in the Real World",
+        instruction: "Explore large and small numbers in everyday science.",
+        suggestions: [
+          "Find three large scientific measurements (e.g. distances in space, national debt) and write them in scientific notation.",
+          "Look up the size of a virus (in nanometres or metres) and write it in scientific notation. How does it compare to the diameter of a human hair?",
+          "Use a calculator to compute (6.022 x 10^23) x (1.6 x 10^-19). Describe what these two numbers represent in science.",
+        ],
+      },
     ],
   },
 
@@ -405,6 +463,60 @@ export const year9MathsWorksheets: WorksheetItem[] = [
           "Write the current year as a product of prime factors using index notation.",
         ],
       },
+      {
+        type: "open-response",
+        title: "Index Laws with Variables -- Product and Quotient",
+        instruction: "Apply the product and quotient laws to these variable expressions. Show the law you use.",
+        prompts: [
+          { text: "x^3 x x^5 = ", type: "lines", lines: 2 },
+          { text: "y^8 / y^3 = ", type: "lines", lines: 2 },
+          { text: "a^4 x a^-2 = ", type: "lines", lines: 2 },
+          { text: "b^5 / b^-1 = ", type: "lines", lines: 2 },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Negative Exponents with Variables",
+        instruction: "Write each expression without negative exponents (as a fraction).",
+        prompts: [
+          { text: "x^-3 = ", type: "lines", lines: 1 },
+          { text: "3y^-2 = ", type: "lines", lines: 2 },
+          { text: "a^-1 b^2 = ", type: "lines", lines: 2 },
+          { text: "(2x)^-2 = ", type: "lines", lines: 3 },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Fractional Bases",
+        instruction: "Evaluate each expression. Write as a fraction or decimal.",
+        prompts: [
+          { text: "(1/2)^3 = ", type: "lines", lines: 2 },
+          { text: "(3/4)^2 = ", type: "lines", lines: 2 },
+          { text: "(2/3)^3 = ", type: "lines", lines: 2 },
+          { text: "(1/5)^2 = ", type: "lines", lines: 2 },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Comparing Exponential Expressions",
+        instruction: "Without a calculator, circle the greater expression in each pair.",
+        questions: [
+          { prompt: "2^10 or 10^2?", options: ["2^10 is greater","10^2 is greater","They are equal"] },
+          { prompt: "3^-1 or 3^0?", options: ["3^-1 is greater","3^0 is greater","They are equal"] },
+          { prompt: "(1/2)^2 or (1/3)^2?", options: ["(1/2)^2 is greater","(1/3)^2 is greater","They are equal"] },
+          { prompt: "5^2 or 2^5?", options: ["5^2 is greater","2^5 is greater","They are equal"] },
+        ],
+      },
+      {
+        type: "sequence",
+        title: "Continuing Exponential Sequences",
+        instruction: "Find the next two terms in each sequence. Use index laws to explain the pattern.",
+        sequences: [
+          { items: [2, 4, 8, 16], answer: [32, 64] },
+          { items: [81, 27, 9, 3], answer: [1, 0.333] },
+          { items: [1, 5, 25, 125], answer: [625, 3125] },
+        ],
+      },
     ],
   },
 
@@ -518,6 +630,55 @@ export const year9MathsWorksheets: WorksheetItem[] = [
           "Ask a family member to choose a two-digit number. Use difference of two squares to mentally calculate: e.g. 19 x 21 = (20-1)(20+1) = 399.",
         ],
       },
+      {
+        type: "open-response",
+        title: "FOIL Method Practice",
+        instruction: "Use FOIL to expand each product. Label each step: F (First), O (Outer), I (Inner), L (Last).",
+        prompts: [
+          { text: "(x + 6)(x + 2): F = ___, O = ___, I = ___, L = ___, Answer = ", type: "lines", lines: 3 },
+          { text: "(x - 3)(x + 7): F = ___, O = ___, I = ___, L = ___, Answer = ", type: "lines", lines: 3 },
+          { text: "(2x + 4)(x - 5): F = ___, O = ___, I = ___, L = ___, Answer = ", type: "lines", lines: 3 },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Expanding (a + b)^2",
+        instruction: "Use the identity (a + b)^2 = a^2 + 2ab + b^2 to expand. State a and b for each.",
+        prompts: [
+          { text: "(x + 7)^2: a = ___, b = ___, expansion = ", type: "lines", lines: 2 },
+          { text: "(x + 12)^2: a = ___, b = ___, expansion = ", type: "lines", lines: 2 },
+          { text: "(3x + 2)^2: a = ___, b = ___, expansion = ", type: "lines", lines: 3 },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Expanding (a - b)^2",
+        instruction: "Use the identity (a - b)^2 = a^2 - 2ab + b^2 to expand.",
+        prompts: [
+          { text: "(x - 7)^2 = ", type: "lines", lines: 2 },
+          { text: "(x - 11)^2 = ", type: "lines", lines: 2 },
+          { text: "(2x - 5)^2 = ", type: "lines", lines: 2 },
+          { text: "(4x - 3)^2 = ", type: "lines", lines: 3 },
+        ],
+      },
+      {
+        type: "matching",
+        title: "Difference of Two Squares Pattern",
+        instruction: "Draw a line matching each product of the form (a + b)(a - b) to its expanded form a^2 - b^2.",
+        left: ["(x + 4)(x - 4)","(x + 11)(x - 11)","(2x + 7)(2x - 7)","(5x + 1)(5x - 1)"],
+        right: ["x^2 - 16","x^2 - 121","4x^2 - 49","25x^2 - 1"],
+      },
+      {
+        type: "open-response",
+        title: "Mixed Binomial Expansion with Negatives",
+        instruction: "Expand and simplify, taking care with negative signs.",
+        prompts: [
+          { text: "(x - 4)(x - 9) = ", type: "lines", lines: 3 },
+          { text: "(-x + 3)(x + 3) = ", type: "lines", lines: 3 },
+          { text: "(x - 8)^2 = ", type: "lines", lines: 3 },
+          { text: "(3 - x)(3 + x) = ", type: "lines", lines: 2 },
+        ],
+      },
     ],
   },
 
@@ -627,6 +788,58 @@ export const year9MathsWorksheets: WorksheetItem[] = [
           { text: "A rectangular garden has area (x^2 + 8x + 15) m^2. If one side is (x + 3) m, what is the length of the other side? Show all working.", type: "lines", lines: 4 },
         ],
       },
+      {
+        type: "open-response",
+        title: "Finding Factor Pairs That Add and Multiply",
+        instruction: "Find two integers p and q such that p x q = c and p + q = b for each quadratic x^2 + bx + c.",
+        prompts: [
+          { text: "x^2 + 9x + 20: Find p and q so that p x q = 20 and p + q = 9. p = ___, q = ___", type: "lines", lines: 2 },
+          { text: "x^2 - 3x - 18: Find p and q so that p x q = -18 and p + q = -3. p = ___, q = ___", type: "lines", lines: 2 },
+          { text: "x^2 - 10x + 24: Find p and q so that p x q = 24 and p + q = -10. p = ___, q = ___", type: "lines", lines: 2 },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Factorising Quadratics with a Negative Constant",
+        instruction: "When c is negative, one factor is positive and one is negative. Factorise each expression.",
+        prompts: [
+          { text: "x^2 + 5x - 6 = ", type: "lines", lines: 3 },
+          { text: "x^2 - 2x - 15 = ", type: "lines", lines: 3 },
+          { text: "x^2 + x - 12 = ", type: "lines", lines: 3 },
+          { text: "x^2 - 3x - 40 = ", type: "lines", lines: 3 },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Difference of Two Squares -- Factorising",
+        instruction: "Recognise and factorise each expression using a^2 - b^2 = (a + b)(a - b).",
+        prompts: [
+          { text: "x^2 - 64 = ", type: "lines", lines: 2 },
+          { text: "x^2 - 81 = ", type: "lines", lines: 2 },
+          { text: "9x^2 - 16 = ", type: "lines", lines: 2 },
+          { text: "25x^2 - 4 = ", type: "lines", lines: 2 },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Check Factorisation by Expanding Back",
+        instruction: "For each factorised form, expand back to verify it matches the original expression.",
+        prompts: [
+          { text: "Claim: x^2 - 7x + 12 = (x - 3)(x - 4). Verify by expanding (x - 3)(x - 4):", type: "lines", lines: 3 },
+          { text: "Claim: x^2 + 2x - 24 = (x + 6)(x - 4). Verify by expanding:", type: "lines", lines: 3 },
+          { text: "Claim: x^2 - 25 = (x + 5)(x - 5). Verify by expanding:", type: "lines", lines: 2 },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Spot the Sign Error",
+        instruction: "Circle the correct factorisation for each quadratic.",
+        questions: [
+          { prompt: "x^2 - 8x + 15", options: ["(x - 3)(x - 5)","(x + 3)(x - 5)","(x - 3)(x + 5)"] },
+          { prompt: "x^2 + 4x - 12", options: ["(x + 6)(x - 2)","(x - 6)(x + 2)","(x + 4)(x - 3)"] },
+          { prompt: "x^2 - 16", options: ["(x + 4)(x - 4)","(x - 4)(x - 4)","(x + 4)(x + 4)"] },
+        ],
+      },
     ],
   },
 
@@ -730,6 +943,57 @@ export const year9MathsWorksheets: WorksheetItem[] = [
         suggestions: [
           "Look up how quadratic equations describe projectile motion (e.g. a ball thrown in the air). Write one example equation and describe what each variable represents.",
           "Create a number puzzle: I am thinking of two numbers. They multiply to 24 and add to 11. Give it to a family member and show how factorising solves it.",
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Null Factor Law Practice",
+        instruction: "Use the null factor law: if A x B = 0, then A = 0 or B = 0. Find all solutions.",
+        prompts: [
+          { text: "(x + 1)(x - 6) = 0 -> x = ___ or x = ___", type: "lines", lines: 2 },
+          { text: "(2x - 4)(x + 3) = 0 -> x = ___ or x = ___", type: "lines", lines: 2 },
+          { text: "x(x - 9) = 0 -> x = ___ or x = ___", type: "lines", lines: 2 },
+          { text: "(x - 5)^2 = 0 -> x = ___ (explain why there is only one solution)", type: "lines", lines: 3 },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Checking Solutions by Substitution",
+        instruction: "Substitute each claimed solution back into the equation to verify it is correct.",
+        prompts: [
+          { text: "Equation: x^2 - 6x + 8 = 0. Check x = 2: LHS = ___. Check x = 4: LHS = ___.", type: "lines", lines: 4 },
+          { text: "Equation: x^2 + x - 12 = 0. Check x = 3: LHS = ___. Check x = -4: LHS = ___.", type: "lines", lines: 4 },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Forming Quadratics from Given Roots",
+        instruction: "If x = p and x = q are the roots of a quadratic, then the equation is (x - p)(x - q) = 0. Write the quadratic equation for each pair of roots.",
+        prompts: [
+          { text: "Roots: x = 3 and x = 5. Equation: ", type: "lines", lines: 3 },
+          { text: "Roots: x = -2 and x = 7. Equation: ", type: "lines", lines: 3 },
+          { text: "Roots: x = -4 and x = -1. Equation: ", type: "lines", lines: 3 },
+          { text: "Root: x = 6 (double root). Equation: ", type: "lines", lines: 3 },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Word Problems Leading to Quadratics",
+        instruction: "Write a quadratic equation for each problem, solve it, and check your answer makes sense.",
+        prompts: [
+          { text: "A rectangle has a length 3 cm greater than its width. Its area is 40 cm^2. Let the width = x. Find the dimensions.", type: "lines", lines: 5 },
+          { text: "The sum of a number and its square is 42. Find the number.", type: "lines", lines: 4 },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "How Many Solutions?",
+        instruction: "Decide how many real solutions each equation has, without solving fully.",
+        questions: [
+          { prompt: "x^2 - 9 = 0", options: ["No solutions","One solution","Two solutions"] },
+          { prompt: "x^2 + 4 = 0", options: ["No real solutions","One solution","Two solutions"] },
+          { prompt: "(x - 3)^2 = 0", options: ["No solutions","One solution (x = 3)","Two solutions"] },
+          { prompt: "x^2 - 5x + 6 = 0", options: ["No solutions","One solution","Two solutions"] },
         ],
       },
     ],
@@ -844,6 +1108,53 @@ export const year9MathsWorksheets: WorksheetItem[] = [
           { text: "Show whether A(1, 2), B(3, 6) and C(5, 10) are collinear by calculating gradients of AB and BC.", type: "lines", lines: 5 },
         ],
       },
+      {
+        type: "open-response",
+        title: "Gradient of Vertical and Horizontal Lines",
+        instruction: "Calculate the gradient of each segment and describe the type of line.",
+        prompts: [
+          { text: "A(2, 5) and B(8, 5): gradient = ___, type of line = ", type: "lines", lines: 3 },
+          { text: "P(3, 1) and Q(3, 9): gradient = ___, type of line = ", type: "lines", lines: 3 },
+          { text: "Explain why the gradient of a vertical line is undefined.", type: "lines", lines: 2 },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Midpoint Formula Application",
+        instruction: "Use the midpoint formula to solve each problem.",
+        prompts: [
+          { text: "The midpoint of AB is M(4, 7). Point A is at (2, 3). Find the coordinates of point B.", type: "lines", lines: 4 },
+          { text: "A bridge is built between two points on opposite banks of a river: (10, 20) and (30, 40). At what coordinates is the midpoint of the bridge?", type: "lines", lines: 3 },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Distance Formula Word Problems",
+        instruction: "Set up coordinates and use the distance formula to solve.",
+        prompts: [
+          { text: "Two friends live at positions A(3, 4) and B(9, 12) on a map grid where 1 unit = 1 km. How far apart do they live?", type: "lines", lines: 4 },
+          { text: "Three cities are at P(0, 0), Q(6, 8) and R(6, 0). Find the perimeter of the triangle PQR.", type: "lines", lines: 5 },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Identifying Gradient Properties",
+        instruction: "Circle the correct statement about each pair of lines.",
+        questions: [
+          { prompt: "Line 1 has gradient 2. Line 2 has gradient 2.", options: ["The lines are parallel","The lines are perpendicular","The lines cross at the origin"] },
+          { prompt: "A horizontal line has gradient:", options: ["0","Undefined","1"] },
+          { prompt: "A vertical line has gradient:", options: ["0","Undefined","Infinity"] },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "All Three Measures -- Mixed Practice",
+        instruction: "For each pair of points, calculate the gradient, midpoint and exact distance.",
+        prompts: [
+          { text: "A(0, 0) and B(5, 12): gradient = ___, midpoint = ___, distance = ___", type: "lines", lines: 4 },
+          { text: "P(-3, 4) and Q(5, -2): gradient = ___, midpoint = ___, distance = ___", type: "lines", lines: 5 },
+        ],
+      },
     ],
   },
 
@@ -941,6 +1252,69 @@ export const year9MathsWorksheets: WorksheetItem[] = [
         instruction: "Use a quadratic function to solve this problem.",
         prompts: [
           { text: "A ball is thrown upward and its height (in metres) after t seconds is h = -5t^2 + 20t. Find the maximum height and the time when the ball hits the ground. Show all working.", type: "lines", lines: 6 },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Identifying Vertex and Axis of Symmetry from a Graph",
+        instruction: "Read the key features from each parabola description and record them.",
+        prompts: [
+          { text: "A parabola passes through (-4, 0) and (2, 0) and has its vertex between them. State the axis of symmetry (x = ___) and find the vertex x-coordinate.", type: "lines", lines: 3 },
+          { text: "A parabola has axis of symmetry x = 3 and passes through (3, -5). State the vertex:", type: "lines", lines: 2 },
+          { text: "For y = x^2 - 8x + 7, find the x-intercepts by factorising, then find the axis of symmetry and vertex.", type: "lines", lines: 5 },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Effect of Changing Coefficient a",
+        instruction: "Circle the correct description for each change to the coefficient a in y = ax^2.",
+        questions: [
+          { prompt: "Compared to y = x^2, the parabola y = 3x^2 is:", options: ["Narrower than y = x^2","Wider than y = x^2","The same width"] },
+          { prompt: "Compared to y = x^2, the parabola y = 0.5x^2 is:", options: ["Narrower than y = x^2","Wider than y = x^2","Reflected"] },
+          { prompt: "Compared to y = x^2, the parabola y = -2x^2:", options: ["Opens upward, narrower","Opens downward, narrower","Opens upward, wider"] },
+          { prompt: "A larger value of a (e.g. a = 5 vs a = 1) makes the parabola:", options: ["Narrower","Wider","Shift up"] },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Effect of Changing c -- Vertical Shift",
+        instruction: "Compare each parabola to y = x^2 and describe the transformation.",
+        prompts: [
+          { text: "y = x^2 + 5 compared to y = x^2: vertex moves from (0, 0) to ___. The parabola shifts ___.", type: "lines", lines: 2 },
+          { text: "y = x^2 - 3 compared to y = x^2: vertex moves to ___. The parabola shifts ___.", type: "lines", lines: 2 },
+          { text: "Write a rule: changing c in y = x^2 + c causes the parabola to:", type: "lines", lines: 2 },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Sketching Parabolas from Tables of Values",
+        instruction: "Complete the table of values and sketch the parabola. Label the vertex and axis of symmetry.",
+        prompts: [
+          { text: "y = x^2 + 2x - 8\nx = -4: y = ___\nx = -3: y = ___\nx = -1: y = ___\nx = 0: y = ___\nx = 1: y = ___\nx = 2: y = ___\nSketch and label vertex:", type: "box" },
+        ],
+      },
+      {
+        type: "sorting",
+        title: "Match Parabola to Its Features",
+        instruction: "Sort each equation into the correct column based on whether its vertex is at the origin, above the x-axis, or below the x-axis.",
+        columns: ["Vertex at origin (0, 0)","Vertex above x-axis","Vertex below x-axis"],
+        items: [
+          {"label":"y = x^2"},
+          {"label":"y = x^2 + 4"},
+          {"label":"y = x^2 - 9"},
+          {"label":"y = -x^2"},
+          {"label":"y = x^2 + 1"},
+          {"label":"y = x^2 - 5"},
+        ],
+      },
+      {
+        type: "home-activity",
+        title: "Parabolas Around the Home",
+        instruction: "Spot and investigate parabolic shapes in everyday life.",
+        suggestions: [
+          "Throw a ball across the room and photograph its path. Sketch the parabola and estimate where the vertex (highest point) is.",
+          "Research how satellite dish shapes use parabolas. Draw a diagram showing how a signal reflects off the dish to a single focal point.",
+          "Using graphing software or a graphics calculator, plot y = x^2, y = 2x^2 and y = 0.5x^2 on the same axes. Write two observations about how a affects the shape.",
         ],
       },
     ],
@@ -1046,6 +1420,52 @@ export const year9MathsWorksheets: WorksheetItem[] = [
           { text: "a = 3, b = 4: c = ", type: "lines", lines: 2 },
           { text: "a = 5, c = 13: b = ", type: "lines", lines: 2 },
           { text: "a = 7, b = 24: c = ", type: "lines", lines: 2 },
+        ],
+      },
+      {
+        type: "matching",
+        title: "Exact Trig Values -- 30, 45 and 60 Degrees",
+        instruction: "Draw a line matching each trigonometric expression to its exact value.",
+        left: ["sin 30 deg","cos 60 deg","tan 45 deg","sin 60 deg","cos 30 deg"],
+        right: ["1/2","1/2","1","sqrt(3)/2","sqrt(3)/2"],
+      },
+      {
+        type: "open-response",
+        title: "Finding Angles Using Inverse Trigonometry",
+        instruction: "Use sin^-1, cos^-1 or tan^-1 on your calculator to find angle theta (to the nearest degree).",
+        prompts: [
+          { text: "sin theta = 0.707. theta = ", type: "lines", lines: 2 },
+          { text: "cos theta = 0.5. theta = ", type: "lines", lines: 2 },
+          { text: "tan theta = 1.732. theta = ", type: "lines", lines: 2 },
+          { text: "In a right triangle, opposite = 8 cm, hypotenuse = 16 cm. Find angle theta.", type: "lines", lines: 3 },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Angle of Elevation and Depression Problems",
+        instruction: "Draw a diagram for each problem, label the angle, then use trigonometry to solve.",
+        prompts: [
+          { text: "From a point 30 m from the base of a building, the angle of elevation to the roof is 50 deg. How tall is the building? (To 2 decimal places.)", type: "lines", lines: 5 },
+          { text: "An aeroplane at 2000 m altitude spots a runway at an angle of depression of 10 deg. How far is the plane horizontally from the runway?", type: "lines", lines: 5 },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Choosing Which Trig Ratio to Use",
+        instruction: "Circle the correct ratio to use in each scenario. Assume angle theta is known.",
+        questions: [
+          { prompt: "Known: hypotenuse and adjacent. Find: theta.", options: ["sin^-1","cos^-1","tan^-1"] },
+          { prompt: "Known: angle theta and adjacent. Find: opposite.", options: ["sin theta","cos theta","tan theta"] },
+          { prompt: "Known: angle theta and hypotenuse. Find: adjacent.", options: ["sin theta","cos theta","tan theta"] },
+          { prompt: "Known: opposite and adjacent. Find: theta.", options: ["sin^-1","cos^-1","tan^-1"] },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Bearings and Trig -- Challenge",
+        instruction: "Solve this navigation problem using trigonometry.",
+        prompts: [
+          { text: "A ship travels 50 km due East, then 30 km due North. Draw a diagram. Calculate the straight-line distance from the starting point to the final position, and the angle from North (bearing) at which the ship finished.", type: "lines", lines: 6 },
         ],
       },
     ],
@@ -1156,6 +1576,53 @@ export const year9MathsWorksheets: WorksheetItem[] = [
           { text: "Container A: cylinder, r = 5 cm, h = 8 cm. Container B: rectangular prism, 8 x 8 x 8 cm. Which holds more? By how much?", type: "lines", lines: 6 },
         ],
       },
+      {
+        type: "open-response",
+        title: "Surface Area of a Cylinder",
+        instruction: "Calculate the total surface area of each cylinder using SA = 2 pi r^2 + 2 pi r h. Use pi approx 3.14.",
+        prompts: [
+          { text: "A tin can: r = 4 cm, h = 12 cm. Curved surface area = ___, Two circular ends = ___, Total SA = ___", type: "lines", lines: 4 },
+          { text: "A storage drum: r = 0.5 m, h = 1.2 m. Total SA = ", type: "lines", lines: 4 },
+          { text: "A pipe (open at both ends, no circular faces): r = 3 cm, h = 50 cm. Curved surface area only = ", type: "lines", lines: 3 },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Volume of a Cone",
+        instruction: "Use V = (1/3) pi r^2 h to find the volume of each cone. Use pi approx 3.14.",
+        prompts: [
+          { text: "r = 3 cm, h = 9 cm: V = ", type: "lines", lines: 3 },
+          { text: "r = 5 m, h = 12 m: V = ", type: "lines", lines: 3 },
+          { text: "An ice-cream cone has r = 2 cm and h = 10 cm. What is its volume? (Round to 1 decimal place.)", type: "lines", lines: 3 },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Comparing Volumes",
+        instruction: "Calculate the volume of each solid and compare them. Show all working.",
+        prompts: [
+          { text: "Cone A: r = 6 cm, h = 10 cm. Cylinder B: r = 6 cm, h = 10 cm. How many times does Cone A fit inside Cylinder B?", type: "lines", lines: 5 },
+          { text: "Which has more volume: a cube with side 6 cm, or a cylinder with r = 3 cm and h = 8 cm? By how much?", type: "lines", lines: 5 },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Unit Conversions: cm^3 to Litres",
+        instruction: "Convert each volume. Remember: 1 L = 1000 cm^3 and 1 mL = 1 cm^3.",
+        prompts: [
+          { text: "5000 cm^3 = ___ litres", type: "lines", lines: 1 },
+          { text: "2.5 litres = ___ cm^3", type: "lines", lines: 1 },
+          { text: "A tank holds 72,000 cm^3 of water. How many litres is this? If water costs $0.002 per litre, what does a full tank cost?", type: "lines", lines: 4 },
+          { text: "A cylinder has r = 10 cm and h = 30 cm. Calculate its volume in cm^3 and then convert to litres.", type: "lines", lines: 4 },
+        ],
+      },
+      {
+        type: "matching",
+        title: "Solid Shapes and Their Formulae",
+        instruction: "Draw a line from each solid to the correct volume formula.",
+        left: ["Cube with side s","Triangular prism","Cylinder","Cone","Rectangular prism"],
+        right: ["s^3","(1/2) b h l","pi r^2 h","(1/3) pi r^2 h","l x w x h"],
+      },
     ],
   },
 
@@ -1260,6 +1727,45 @@ export const year9MathsWorksheets: WorksheetItem[] = [
           "Find an object at home (e.g. a photo). Measure it and draw a scaled-down version on paper using a scale of 1 : 5.",
           "Look at a map of your local area. Use the scale bar to calculate the real distance between two places you know.",
           "Use a measuring tape, a stick and shadow measurements to estimate the height of a tall tree using similar triangles.",
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Scale Factor for Area and Volume",
+        instruction: "When a shape is enlarged by scale factor k, its area is multiplied by k^2 and its volume by k^3. Use this to solve each problem.",
+        prompts: [
+          { text: "A square has side 4 cm and area 16 cm^2. It is enlarged by scale factor 3. New side = ___, New area = ___, Check: 16 x 3^2 = ___", type: "lines", lines: 3 },
+          { text: "A cube has volume 8 cm^3. It is enlarged by scale factor 2. New volume = ___", type: "lines", lines: 3 },
+          { text: "Two similar rectangles have a scale factor of 5 (length to length). If the smaller has area 6 cm^2, what is the area of the larger?", type: "lines", lines: 3 },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Map Reading with Scale",
+        instruction: "Use the given map scale to answer each question.",
+        prompts: [
+          { text: "Scale: 1 : 25,000. Two towns are 8 cm apart on the map. What is the real distance in metres? In kilometres?", type: "lines", lines: 3 },
+          { text: "Scale: 1 : 200 (architect's plan). A room on the plan is 3.5 cm x 2 cm. What are the real dimensions in metres?", type: "lines", lines: 3 },
+          { text: "Two cities are 240 km apart in real life. A map shows them 6 cm apart. Write the map's scale in the form 1 : n.", type: "lines", lines: 3 },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Similar Triangles -- Proof Conditions",
+        instruction: "Two triangles are similar if they satisfy AA (Angle-Angle), SAS (Side-Angle-Side) or SSS (Side-Side-Side) similarity conditions. For each pair, state which condition applies (if any).",
+        prompts: [
+          { text: "Triangle A: angles 40 deg, 70 deg, 70 deg. Triangle B: angles 40 deg, 70 deg, 70 deg. Condition: ", type: "lines", lines: 2 },
+          { text: "Triangle A: sides 4, 6, 8. Triangle B: sides 6, 9, 12. Condition: ", type: "lines", lines: 3 },
+          { text: "Triangle A: sides 3 and 5, included angle 60 deg. Triangle B: sides 6 and 10, included angle 60 deg. Condition: ", type: "lines", lines: 2 },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Enlargement on a Coordinate Grid",
+        instruction: "Enlarge each shape from the given centre of enlargement by the scale factor shown. Write the new coordinates.",
+        prompts: [
+          { text: "Triangle with vertices A(1, 1), B(3, 1), C(2, 3). Scale factor 2, centre at origin. New vertices: A' = ___, B' = ___, C' = ___", type: "lines", lines: 3 },
+          { text: "Rectangle with vertices P(2, 2), Q(4, 2), R(4, 6), S(2, 6). Scale factor 1/2, centre at origin. New vertices: P' = ___, Q' = ___, R' = ___, S' = ___", type: "lines", lines: 3 },
         ],
       },
     ],
@@ -1369,6 +1875,43 @@ export const year9MathsWorksheets: WorksheetItem[] = [
           "Play a board game with a family member and keep track of dice totals. After 20 rolls, compare your experimental frequencies to the theoretical probabilities.",
         ],
       },
+      {
+        type: "open-response",
+        title: "Conditional Probability P(A given B)",
+        instruction: "Conditional probability P(A|B) means the probability of A occurring GIVEN that B has already occurred. P(A|B) = P(A and B) / P(B). Use this to solve each question.",
+        prompts: [
+          { text: "A card is drawn from a standard 52-card deck. Given it is a heart, what is the probability it is also an ace? P(ace | heart) = ", type: "lines", lines: 3 },
+          { text: "In a class of 30 students, 18 play sport and 12 play music. 6 students play both. Given a student plays sport, what is the probability they also play music?", type: "lines", lines: 4 },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Venn Diagrams for Two Overlapping Events",
+        instruction: "Draw a Venn diagram and use it to find probabilities.",
+        prompts: [
+          { text: "In a group of 40 students: 25 like football, 20 like cricket, and 10 like both. Draw a Venn diagram showing the groups. How many like neither sport?", type: "box" },
+          { text: "From the Venn diagram above: P(football only) = ___. P(cricket only) = ___. P(both) = ___.", type: "lines", lines: 3 },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Addition Rule: P(A or B)",
+        instruction: "Use P(A or B) = P(A) + P(B) - P(A and B) to solve each problem.",
+        prompts: [
+          { text: "P(A) = 0.5, P(B) = 0.4, P(A and B) = 0.2. Find P(A or B).", type: "lines", lines: 3 },
+          { text: "In a group of 50 people, 30 drink coffee, 20 drink tea, and 10 drink both. Find P(a randomly chosen person drinks coffee or tea).", type: "lines", lines: 4 },
+          { text: "If P(A) = 3/8, P(B) = 1/4 and the events are mutually exclusive (cannot both occur), find P(A or B).", type: "lines", lines: 3 },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Expected Value Concept",
+        instruction: "The expected value (expected outcome) for a probability experiment is calculated by multiplying each outcome by its probability and adding the results.",
+        prompts: [
+          { text: "A game pays $10 if you roll a 6 on a die, and $0 otherwise. What is the expected payout per roll? (Hint: Expected value = 10 x P(6) + 0 x P(not 6))", type: "lines", lines: 3 },
+          { text: "A spinner has sections: win $5 (P = 0.2), win $2 (P = 0.5), lose $1 (P = 0.3). What is the expected value per spin? Is this game worth playing?", type: "lines", lines: 4 },
+        ],
+      },
     ],
   },
 
@@ -1475,6 +2018,53 @@ export const year9MathsWorksheets: WorksheetItem[] = [
           "Record the daily maximum temperature in your area for 10 days. Calculate the mean, median, mode and range. Does the distribution appear symmetric or skewed?",
           "Compare two types of cereal using nutritional labels (sugar per 100 g). Use statistics to decide which is healthier.",
           "Survey 10 family members or friends: How many hours of screen time did you have yesterday? Compare two groups (e.g. under 18 vs adults) using a back-to-back stem-and-leaf plot.",
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Back-to-Back Stem-and-Leaf Plots -- Building One",
+        instruction: "Create a back-to-back stem-and-leaf plot to display both data sets on the same diagram.",
+        prompts: [
+          { text: "Class A scores: 52, 67, 71, 73, 75, 78, 82, 85, 88, 91\nClass B scores: 44, 58, 63, 67, 70, 72, 79, 83, 86, 90\nDraw the back-to-back stem-and-leaf plot using stems 4, 5, 6, 7, 8, 9:", type: "box" },
+          { text: "Compare the two classes: which has the higher median? Which is more spread out?", type: "lines", lines: 3 },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Five-Number Summary",
+        instruction: "Calculate the five-number summary (minimum, Q1, median, Q3, maximum) for each data set.",
+        prompts: [
+          { text: "Data: 5, 8, 10, 12, 14, 16, 18, 22, 24, 30\nMin = ___  Q1 = ___  Median = ___  Q3 = ___  Max = ___", type: "lines", lines: 4 },
+          { text: "Data: 31, 35, 40, 42, 44, 48, 50, 53, 58, 60\nMin = ___  Q1 = ___  Median = ___  Q3 = ___  Max = ___", type: "lines", lines: 4 },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "IQR and Outlier Detection",
+        instruction: "Use the IQR rule: a value is an outlier if it is below Q1 - 1.5 x IQR or above Q3 + 1.5 x IQR.",
+        prompts: [
+          { text: "Data set: 10, 12, 14, 15, 16, 18, 20, 22, 55\nQ1 = 12.5, Q3 = 21, IQR = 8.5\nLower fence = Q1 - 1.5 x IQR = ___\nUpper fence = Q3 + 1.5 x IQR = ___\nIs 55 an outlier? ___", type: "lines", lines: 5 },
+          { text: "Explain how you would report a data set to someone if there is one outlier: should you include it or remove it? Give a reason for each choice.", type: "lines", lines: 4 },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Comparing Spread Using Standard Deviation Concept",
+        instruction: "Standard deviation measures how spread out values are from the mean. A low standard deviation means values are clustered closely; a high standard deviation means they are spread out.",
+        prompts: [
+          { text: "Data A: 48, 50, 50, 51, 51 (mean = 50). Data B: 30, 40, 50, 60, 70 (mean = 50). Which data set has the higher standard deviation? Explain without calculating.", type: "lines", lines: 3 },
+          { text: "Two athletes run 100 m five times each. Athlete X times (seconds): 12.1, 12.0, 11.9, 12.2, 12.0. Athlete Y times: 11.5, 12.8, 11.9, 13.1, 11.7. Which athlete is more consistent? Justify using spread.", type: "lines", lines: 4 },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Choosing the Best Summary Statistic",
+        instruction: "Circle the most appropriate measure for each situation.",
+        questions: [
+          { prompt: "A data set contains one very large outlier. The best measure of centre is:", options: ["Mean","Median","Mode"] },
+          { prompt: "To measure spread that is not affected by extreme values, use:", options: ["Range","IQR","Standard deviation"] },
+          { prompt: "To find the most common shoe size sold in a store, use:", options: ["Mean","Median","Mode"] },
+          { prompt: "To compare how spread out two data sets are overall, use:", options: ["Range or IQR","Median","Mean"] },
         ],
       },
     ],
