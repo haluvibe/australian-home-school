@@ -2633,7 +2633,1003 @@ export const year4MathsWorksheets: WorksheetItem[] = [
     ],
   },
 
-  // ── PLACEHOLDER for WS 9–23 ──
+  // ── WS 9: Unknown Values in Equations ──────────────────────────────────
+  {
+    slug: "unknown-values-equations",
+    title: "Unknown Values in Equations",
+    strand: "Algebra",
+    description:
+      "Find unknown values in equations involving addition and subtraction",
+    activities: [
+      // ── EASY ──
+      {
+        type: "number-bonds",
+        title: "Find the Missing Part – Addition (Set A)",
+        instruction: "Find the missing number in each equation.",
+        bonds: [
+          { total: 45, partA: 18, partB: null },
+          { total: 72, partA: null, partB: 35 },
+          { total: 100, partA: 53, partB: null },
+          { total: 150, partA: null, partB: 86 },
+          { total: 200, partA: 127, partB: null },
+        ],
+      },
+      {
+        type: "number-bonds",
+        title: "Find the Missing Part – Addition (Set B)",
+        instruction: "Find the missing number.",
+        bonds: [
+          { total: 30, partA: 12, partB: null },
+          { total: 55, partA: null, partB: 28 },
+          { total: 80, partA: 45, partB: null },
+          { total: 125, partA: null, partB: 67 },
+          { total: 250, partA: 143, partB: null },
+        ],
+      },
+      {
+        type: "number-bonds",
+        title: "Find the Missing Part – Addition (Set C)",
+        instruction: "Find the missing number.",
+        bonds: [
+          { total: 60, partA: null, partB: 25 },
+          { total: 90, partA: 37, partB: null },
+          { total: 110, partA: null, partB: 58 },
+          { total: 175, partA: 89, partB: null },
+          { total: 300, partA: null, partB: 162 },
+        ],
+      },
+      {
+        type: "number-bonds",
+        title: "Find the Missing Part – Subtraction (Set A)",
+        instruction: "Find the missing number. Total minus one part gives the other.",
+        bonds: [
+          { total: 90, partA: null, partB: 34 },
+          { total: 125, partA: 67, partB: null },
+          { total: 200, partA: null, partB: 88 },
+          { total: 300, partA: 145, partB: null },
+          { total: 500, partA: null, partB: 276 },
+        ],
+      },
+      {
+        type: "number-bonds",
+        title: "Find the Missing Part – Subtraction (Set B)",
+        instruction: "Find the missing number.",
+        bonds: [
+          { total: 75, partA: 32, partB: null },
+          { total: 100, partA: null, partB: 41 },
+          { total: 160, partA: 78, partB: null },
+          { total: 250, partA: null, partB: 123 },
+          { total: 400, partA: 215, partB: null },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "What Goes in the Box? (Set A)",
+        instruction: "Circle the number that makes each equation true.",
+        questions: [
+          { prompt: "___ + 24 = 61", options: ["33", "37", "41"] },
+          { prompt: "85 − ___ = 39", options: ["44", "46", "48"] },
+          { prompt: "___ + 156 = 200", options: ["34", "44", "54"] },
+          { prompt: "300 − ___ = 178", options: ["112", "122", "132"] },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "What Goes in the Box? (Set B)",
+        instruction: "Circle the number that makes each equation true.",
+        questions: [
+          { prompt: "___ + 35 = 82", options: ["43", "47", "57"] },
+          { prompt: "100 − ___ = 63", options: ["37", "47", "57"] },
+          { prompt: "___ + 250 = 400", options: ["140", "150", "160"] },
+          { prompt: "500 − ___ = 285", options: ["205", "215", "225"] },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "What Goes in the Box? (Set C)",
+        instruction: "Circle the correct number.",
+        questions: [
+          { prompt: "___ + 19 = 50", options: ["29", "31", "39"] },
+          { prompt: "75 − ___ = 48", options: ["23", "27", "33"] },
+          { prompt: "___ + 88 = 200", options: ["102", "112", "122"] },
+          { prompt: "1000 − ___ = 725", options: ["265", "275", "285"] },
+        ],
+      },
+      {
+        type: "matching",
+        title: "Match Equations to Answers (Set A)",
+        instruction: "Draw a line from each equation to the value of the unknown.",
+        left: ["___ + 15 = 42", "63 − ___ = 28", "100 − ___ = 47", "___ + 88 = 150"],
+        right: ["53", "27", "62", "35"],
+      },
+      {
+        type: "matching",
+        title: "Match Equations to Answers (Set B)",
+        instruction: "Draw a line from each equation to the unknown value.",
+        left: ["___ + 34 = 80", "120 − ___ = 55", "200 − ___ = 137", "___ + 75 = 200"],
+        right: ["63", "46", "125", "65"],
+      },
+      {
+        type: "circle-correct",
+        title: "True or False? (Equations)",
+        instruction: "Circle TRUE or FALSE.",
+        questions: [
+          { prompt: "25 + 75 = 100", options: ["TRUE", "FALSE"] },
+          { prompt: "If ___ + 30 = 80, then ___ = 40", options: ["TRUE", "FALSE"] },
+          { prompt: "If 100 − ___ = 35, then ___ = 65", options: ["TRUE", "FALSE"] },
+          { prompt: "If ___ + 48 = 100, then ___ = 62", options: ["TRUE", "FALSE"] },
+        ],
+      },
+      // ── MEDIUM ──
+      {
+        type: "number-bonds",
+        title: "Larger Unknown Values (Set A)",
+        instruction: "Find the missing number.",
+        bonds: [
+          { total: 500, partA: 234, partB: null },
+          { total: 750, partA: null, partB: 418 },
+          { total: 1000, partA: 567, partB: null },
+          { total: 1200, partA: null, partB: 735 },
+        ],
+      },
+      {
+        type: "number-bonds",
+        title: "Larger Unknown Values (Set B)",
+        instruction: "Find the missing number.",
+        bonds: [
+          { total: 600, partA: null, partB: 275 },
+          { total: 850, partA: 493, partB: null },
+          { total: 1000, partA: null, partB: 382 },
+          { total: 1500, partA: 876, partB: null },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Solve the Equations (Set A)",
+        instruction: "Find the unknown value. Show your working.",
+        prompts: [
+          { text: "___ + 234 = 500. The unknown is ___", type: "lines", lines: 2 },
+          { text: "375 − ___ = 198. The unknown is ___", type: "lines", lines: 2 },
+          { text: "___ + 167 = 400. The unknown is ___", type: "lines", lines: 2 },
+          { text: "600 − ___ = 347. The unknown is ___", type: "lines", lines: 2 },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Solve the Equations (Set B)",
+        instruction: "Find the unknown. Show working.",
+        prompts: [
+          { text: "___ + 456 = 900. The unknown is ___", type: "lines", lines: 2 },
+          { text: "800 − ___ = 525. The unknown is ___", type: "lines", lines: 2 },
+          { text: "___ + ___ = 100 (find two different numbers that add to 100)", type: "lines", lines: 2 },
+          { text: "1,000 − ___ = 637. The unknown is ___", type: "lines", lines: 2 },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Word Problems with Unknowns (Set A)",
+        instruction: "Write an equation with an unknown, then solve.",
+        prompts: [
+          { text: "I think of a number. I add 35 and get 82. What was my number?", type: "lines", lines: 2 },
+          { text: "I think of a number. I subtract 47 and get 53. What was my number?", type: "lines", lines: 2 },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Word Problems with Unknowns (Set B)",
+        instruction: "Write an equation and solve.",
+        prompts: [
+          { text: "A bag has some marbles. 25 are added and now there are 68. How many were there at the start?", type: "lines", lines: 2 },
+          { text: "A jar has 150 lollies. Some are eaten and 87 are left. How many were eaten?", type: "lines", lines: 2 },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Which Equation Matches? (Set A)",
+        instruction: "Circle the correct equation for each problem.",
+        questions: [
+          { prompt: "I add 45 to a number and get 100.", options: ["___ + 45 = 100", "___ − 45 = 100", "45 × ___ = 100"] },
+          { prompt: "I subtract a number from 80 and get 35.", options: ["80 + ___ = 35", "80 − ___ = 35", "___ − 80 = 35"] },
+          { prompt: "A number plus 67 equals 200.", options: ["67 − ___ = 200", "200 + ___ = 67", "___ + 67 = 200"] },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Which Equation Matches? (Set B)",
+        instruction: "Circle the correct equation.",
+        questions: [
+          { prompt: "250 minus a number equals 175.", options: ["250 − ___ = 175", "175 − ___ = 250", "___ + 250 = 175"] },
+          { prompt: "A number added to 89 equals 150.", options: ["89 − ___ = 150", "___ + 89 = 150", "150 + ___ = 89"] },
+          { prompt: "500 take away something gives 312.", options: ["500 + ___ = 312", "312 − ___ = 500", "500 − ___ = 312"] },
+        ],
+      },
+      {
+        type: "matching",
+        title: "Match Word Problems to Equations",
+        instruction: "Draw a line from each problem to its equation.",
+        left: ["15 more than a number is 40", "A number less 20 is 55", "Double a number is 48", "Half a number is 12"],
+        right: ["___ − 20 = 55", "___ + 15 = 40", "___ ÷ 2 = 12", "___ × 2 = 48"],
+      },
+      // ── HARD ──
+      {
+        type: "open-response",
+        title: "Two-Step Equations",
+        instruction: "Solve these two-step problems. Show your working.",
+        prompts: [
+          { text: "I think of a number, double it, and add 10. I get 50. What was my number?", type: "lines", lines: 3 },
+          { text: "I think of a number, subtract 15, and then add 8. I get 43. What was my number?", type: "lines", lines: 3 },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Challenge: Balance Puzzles",
+        instruction: "Both sides must be equal. Find the unknown.",
+        prompts: [
+          { text: "___ + 25 = 40 + 10. What is ___?", type: "lines", lines: 2 },
+          { text: "100 − ___ = 35 + 15. What is ___?", type: "lines", lines: 2 },
+          { text: "___ + ___ + ___ = 60 (all three numbers are the same). What is each number?", type: "lines", lines: 2 },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Create Your Own Equations",
+        instruction: "Write your own equations with unknowns. Then give them to someone to solve!",
+        prompts: [
+          { text: "Write an addition equation with an unknown:", type: "lines", lines: 1 },
+          { text: "Write a subtraction equation with an unknown:", type: "lines", lines: 1 },
+          { text: "Write a word problem that uses an unknown:", type: "lines", lines: 3 },
+        ],
+      },
+      // ── HOME ACTIVITY ──
+      {
+        type: "home-activity",
+        title: "Home Activity: Mystery Number Games",
+        instruction: "Practise finding unknowns at home!",
+        suggestions: [
+          "Play 'I'm thinking of a number.' Give clues like 'add 25 and you get 60'. Can your family guess?",
+          "Write equations on cards with one number missing. Race to solve them!",
+          "Think of your age. What do you add to get 100? What do you subtract to get 0?",
+          "Make a set of balance puzzles using household items and a ruler balance.",
+        ],
+      },
+    ],
+  },
+
+  // ── WS 10: Algorithms & Number Patterns ──────────────────────────────────
+  {
+    slug: "algorithms-number-patterns",
+    title: "Algorithms & Number Patterns",
+    strand: "Algebra",
+    description:
+      "Follow and create algorithms that generate sets of numbers and identify emerging patterns",
+    activities: [
+      // ── EASY ──
+      {
+        type: "sequence",
+        title: "Follow the Rule: Add 3",
+        instruction: "The rule is 'add 3'. Fill in the missing numbers.",
+        sequences: [
+          { items: [2, 5, 0, 11, 14], answer: [8] },
+          { items: [10, 13, 16, 0, 22], answer: [19] },
+          { items: [0, 4, 7, 10, 0], answer: [1, 13] },
+        ],
+      },
+      {
+        type: "sequence",
+        title: "Follow the Rule: Add 4",
+        instruction: "The rule is 'add 4'. Fill in the missing numbers.",
+        sequences: [
+          { items: [1, 5, 0, 13, 17], answer: [9] },
+          { items: [3, 7, 11, 0, 19], answer: [15] },
+          { items: [0, 6, 10, 14, 0], answer: [2, 18] },
+        ],
+      },
+      {
+        type: "sequence",
+        title: "Follow the Rule: Add 5",
+        instruction: "The rule is 'add 5'. Fill in the missing numbers.",
+        sequences: [
+          { items: [5, 10, 0, 20, 25], answer: [15] },
+          { items: [0, 8, 13, 18, 0], answer: [3, 23] },
+          { items: [12, 17, 22, 0, 32], answer: [27] },
+        ],
+      },
+      {
+        type: "sequence",
+        title: "Follow the Rule: Subtract 3",
+        instruction: "The rule is 'subtract 3'. Fill in the missing numbers.",
+        sequences: [
+          { items: [30, 27, 0, 21, 18], answer: [24] },
+          { items: [50, 47, 44, 0, 38], answer: [41] },
+          { items: [0, 22, 19, 16, 0], answer: [25, 13] },
+        ],
+      },
+      {
+        type: "sequence",
+        title: "Follow the Rule: Multiply by 2",
+        instruction: "The rule is 'multiply by 2'. Fill in the missing numbers.",
+        sequences: [
+          { items: [3, 6, 0, 24, 48], answer: [12] },
+          { items: [5, 10, 20, 0, 80], answer: [40] },
+          { items: [1, 2, 0, 8, 0], answer: [4, 16] },
+        ],
+      },
+      {
+        type: "sequence",
+        title: "Follow the Rule: Multiply by 3",
+        instruction: "The rule is 'multiply by 3'. Fill in the missing numbers.",
+        sequences: [
+          { items: [2, 6, 0, 54, 162], answer: [18] },
+          { items: [1, 3, 9, 0, 81], answer: [27] },
+          { items: [0, 12, 36, 108, 0], answer: [4, 324] },
+        ],
+      },
+      {
+        type: "matching",
+        title: "Match the Rule to the Pattern (Set A)",
+        instruction: "Draw a line from each rule to the pattern it creates.",
+        left: ["Start at 4, add 5", "Start at 1, multiply by 3", "Start at 100, subtract 12", "Start at 2, add 7"],
+        right: ["1, 3, 9, 27, 81", "4, 9, 14, 19, 24", "2, 9, 16, 23, 30", "100, 88, 76, 64, 52"],
+      },
+      {
+        type: "matching",
+        title: "Match the Rule to the Pattern (Set B)",
+        instruction: "Draw a line from each rule to the number pattern.",
+        left: ["Start at 50, subtract 8", "Start at 3, add 6", "Start at 1, multiply by 2", "Start at 0, add 9"],
+        right: ["1, 2, 4, 8, 16", "3, 9, 15, 21, 27", "50, 42, 34, 26, 18", "0, 9, 18, 27, 36"],
+      },
+      {
+        type: "circle-correct",
+        title: "What Comes Next? (Set A)",
+        instruction: "Look at the pattern and circle what comes next.",
+        questions: [
+          { prompt: "7, 14, 21, 28, ___", options: ["30", "35", "42"] },
+          { prompt: "2, 6, 18, 54, ___", options: ["108", "162", "72"] },
+          { prompt: "100, 90, 81, 73, ___", options: ["66", "64", "63"] },
+          { prompt: "1, 4, 9, 16, ___", options: ["20", "25", "36"] },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "What Comes Next? (Set B)",
+        instruction: "Circle what comes next.",
+        questions: [
+          { prompt: "5, 10, 20, 40, ___", options: ["60", "80", "100"] },
+          { prompt: "3, 7, 11, 15, ___", options: ["17", "19", "21"] },
+          { prompt: "64, 32, 16, 8, ___", options: ["2", "4", "6"] },
+          { prompt: "1, 1, 2, 3, 5, ___", options: ["7", "8", "10"] },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "What Is the Rule? (Set A)",
+        instruction: "Look at the pattern and circle the rule.",
+        questions: [
+          { prompt: "3, 6, 9, 12, 15", options: ["Add 2", "Add 3", "Multiply by 2"] },
+          { prompt: "2, 4, 8, 16, 32", options: ["Add 2", "Add 4", "Multiply by 2"] },
+          { prompt: "50, 45, 40, 35, 30", options: ["Subtract 5", "Subtract 10", "Divide by 2"] },
+          { prompt: "1, 4, 16, 64", options: ["Add 3", "Multiply by 4", "Add 4"] },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "What Is the Rule? (Set B)",
+        instruction: "Circle the rule.",
+        questions: [
+          { prompt: "10, 17, 24, 31, 38", options: ["Add 5", "Add 7", "Add 8"] },
+          { prompt: "100, 91, 82, 73, 64", options: ["Subtract 8", "Subtract 9", "Subtract 10"] },
+          { prompt: "2, 6, 18, 54, 162", options: ["Multiply by 2", "Multiply by 3", "Add 4"] },
+        ],
+      },
+      // ── MEDIUM ──
+      {
+        type: "sorting",
+        title: "Sort: Growing or Shrinking Pattern?",
+        instruction: "Sort each pattern.",
+        columns: ["Growing (increasing)", "Shrinking (decreasing)"],
+        items: [
+          { label: "5, 10, 15, 20" },
+          { label: "100, 90, 80, 70" },
+          { label: "2, 4, 8, 16" },
+          { label: "50, 45, 40, 35" },
+          { label: "1, 3, 9, 27" },
+          { label: "64, 32, 16, 8" },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Create Your Own Pattern (Set A)",
+        instruction: "Create a number pattern using the given rule. Write the first 5 numbers.",
+        prompts: [
+          { text: "Rule: Start at 7, add 6. Pattern: 7, ___, ___, ___, ___", type: "lines", lines: 1 },
+          { text: "Rule: Start at 2, multiply by 2. Pattern: 2, ___, ___, ___, ___", type: "lines", lines: 1 },
+          { text: "Rule: Start at 50, subtract 7. Pattern: 50, ___, ___, ___, ___", type: "lines", lines: 1 },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Create Your Own Pattern (Set B)",
+        instruction: "Create the pattern.",
+        prompts: [
+          { text: "Rule: Start at 100, subtract 11. Pattern: 100, ___, ___, ___, ___", type: "lines", lines: 1 },
+          { text: "Rule: Start at 3, multiply by 3. Pattern: 3, ___, ___, ___, ___", type: "lines", lines: 1 },
+          { text: "Rule: Start at 1, add 8. Pattern: 1, ___, ___, ___, ___", type: "lines", lines: 1 },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Describe the Pattern",
+        instruction: "Look at each pattern and describe the rule in words.",
+        prompts: [
+          { text: "4, 8, 12, 16, 20 — The rule is: ___", type: "lines", lines: 1 },
+          { text: "3, 6, 12, 24, 48 — The rule is: ___", type: "lines", lines: 1 },
+          { text: "80, 72, 64, 56, 48 — The rule is: ___", type: "lines", lines: 1 },
+          { text: "1, 4, 9, 16, 25 — The rule is: ___", type: "lines", lines: 2 },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Continue the Pattern",
+        instruction: "Work out the rule, then write the next 3 numbers.",
+        prompts: [
+          { text: "6, 11, 16, 21, ___, ___, ___", type: "lines", lines: 1 },
+          { text: "2, 6, 18, 54, ___, ___, ___", type: "lines", lines: 1 },
+          { text: "95, 86, 77, 68, ___, ___, ___", type: "lines", lines: 1 },
+          { text: "1, 2, 4, 7, 11, ___, ___, ___", type: "lines", lines: 1 },
+        ],
+      },
+      {
+        type: "pattern",
+        title: "Shape Patterns (Set A)",
+        instruction: "What comes next? Fill in the blank shapes.",
+        rows: [
+          { sequence: ["star", "heart", "star", "heart", "star", null], unitLength: 2 },
+          { sequence: ["circle", "circle", "square", "circle", "circle", null], unitLength: 3 },
+          { sequence: ["triangle", "diamond", "diamond", "triangle", "diamond", null], unitLength: 3 },
+        ],
+      },
+      {
+        type: "pattern",
+        title: "Shape Patterns (Set B)",
+        instruction: "Fill in the missing shapes.",
+        rows: [
+          { sequence: ["apple", "fish", "apple", null, "apple", "fish"], unitLength: 2 },
+          { sequence: ["star", "star", "heart", null, "star", "heart"], unitLength: 3 },
+          { sequence: [null, "circle", "triangle", "square", null, "triangle"], unitLength: 4 },
+        ],
+      },
+      // ── HARD ──
+      {
+        type: "open-response",
+        title: "Two-Step Rules",
+        instruction: "Follow the two-step rule to generate the pattern.",
+        prompts: [
+          { text: "Rule: Multiply by 2, then add 1. Start at 1: ___, ___, ___, ___, ___", type: "lines", lines: 1 },
+          { text: "Rule: Add 3, then multiply by 2. Start at 1: ___, ___, ___, ___", type: "lines", lines: 1 },
+          { text: "Rule: Double, then subtract 1. Start at 2: ___, ___, ___, ___, ___", type: "lines", lines: 1 },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Find the Hidden Rule",
+        instruction: "These patterns have tricky rules. Work them out.",
+        prompts: [
+          { text: "1, 1, 2, 3, 5, 8, 13 — What is the rule? Write the next two numbers.", type: "lines", lines: 2 },
+          { text: "1, 4, 9, 16, 25 — What is the rule? Write the next two numbers.", type: "lines", lines: 2 },
+          { text: "2, 3, 5, 8, 12, 17 — What is the rule? Write the next two numbers.", type: "lines", lines: 2 },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Make Up Your Own Rule and Pattern",
+        instruction: "Be creative!",
+        prompts: [
+          { text: "Write your own rule: ___", type: "lines", lines: 1 },
+          { text: "Write the first 6 numbers of your pattern: ___", type: "lines", lines: 1 },
+          { text: "Challenge: write a two-step rule and its first 5 numbers:", type: "lines", lines: 2 },
+        ],
+      },
+      // ── HOME ACTIVITY ──
+      {
+        type: "home-activity",
+        title: "Home Activity: Pattern Detectives",
+        instruction: "Find and create patterns at home!",
+        suggestions: [
+          "Count tiles in your bathroom. How does the pattern grow row by row?",
+          "Write a 'secret code' using a number pattern rule. Can your family crack it?",
+          "Stack blocks following a rule (e.g. each layer has 2 more). Draw the pattern.",
+          "Find patterns in house numbers on your street. What is the rule?",
+        ],
+      },
+    ],
+  },
+
+  // ── WS 11: Scaled Instruments ──────────────────────────────────
+  {
+    slug: "scaled-instruments-measure",
+    title: "Reading Scaled Instruments",
+    strand: "Measurement",
+    description:
+      "Use scaled instruments to measure length, mass, capacity and temperature",
+    activities: [
+      // ── EASY ──
+      {
+        type: "matching",
+        title: "Match Units to What We Measure",
+        instruction: "Draw a line from each unit to what it measures.",
+        left: ["centimetres (cm)", "grams (g)", "litres (L)", "degrees Celsius (°C)"],
+        right: ["temperature", "length", "capacity", "mass"],
+      },
+      {
+        type: "matching",
+        title: "Match Tools to What They Measure",
+        instruction: "Draw a line from each tool to what it measures.",
+        left: ["Ruler", "Kitchen scales", "Measuring jug", "Thermometer"],
+        right: ["temperature", "mass", "length", "capacity"],
+      },
+      {
+        type: "circle-correct",
+        title: "Choose the Best Unit (Set A)",
+        instruction: "Circle the best unit to measure each item.",
+        questions: [
+          { prompt: "Length of a pencil", options: ["cm", "m", "km"] },
+          { prompt: "Mass of a watermelon", options: ["g", "kg", "t"] },
+          { prompt: "Water in a swimming pool", options: ["mL", "L", "kL"] },
+          { prompt: "Temperature of a hot drink", options: ["°C", "g", "cm"] },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Choose the Best Unit (Set B)",
+        instruction: "Circle the best unit.",
+        questions: [
+          { prompt: "Height of a door", options: ["cm", "m", "km"] },
+          { prompt: "Mass of a feather", options: ["g", "kg", "t"] },
+          { prompt: "Water in a teaspoon", options: ["mL", "L", "kL"] },
+          { prompt: "Distance from Sydney to Melbourne", options: ["cm", "m", "km"] },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Choose the Best Unit (Set C)",
+        instruction: "Circle the best unit.",
+        questions: [
+          { prompt: "Length of an ant", options: ["mm", "cm", "m"] },
+          { prompt: "Mass of a car", options: ["g", "kg", "t"] },
+          { prompt: "Water in a fish tank", options: ["mL", "L", "kL"] },
+          { prompt: "Width of your thumb", options: ["mm", "cm", "m"] },
+        ],
+      },
+      {
+        type: "sorting",
+        title: "Sort: Length Units",
+        instruction: "Sort each item by which unit you would use to measure it.",
+        columns: ["Millimetres (mm)", "Centimetres (cm)", "Metres (m)", "Kilometres (km)"],
+        items: [
+          { label: "Thickness of a coin" },
+          { label: "Length of your foot" },
+          { label: "Height of a building" },
+          { label: "Distance to school" },
+        ],
+      },
+      {
+        type: "sorting",
+        title: "Sort: Mass Units",
+        instruction: "Sort each item by which unit you would use.",
+        columns: ["Grams (g)", "Kilograms (kg)"],
+        items: [
+          { label: "A paperclip" },
+          { label: "A bag of potatoes" },
+          { label: "A pencil" },
+          { label: "A child" },
+          { label: "A slice of bread" },
+          { label: "A suitcase" },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Reading a Ruler (Set A)",
+        instruction: "Circle the correct reading.",
+        questions: [
+          { prompt: "Arrow points to the 5th mark on a cm ruler", options: ["5 mm", "5 cm", "50 cm"] },
+          { prompt: "Arrow points halfway between 7 cm and 8 cm", options: ["7.5 cm", "7 cm", "8 cm"] },
+          { prompt: "Arrow points to the 12th mark on a cm ruler", options: ["12 mm", "12 cm", "120 cm"] },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Reading a Thermometer (Set A)",
+        instruction: "Circle the correct temperature reading.",
+        questions: [
+          { prompt: "Halfway between 20°C and 30°C", options: ["24°C", "25°C", "26°C"] },
+          { prompt: "3 marks past 10°C (each mark = 2°C)", options: ["13°C", "16°C", "15°C"] },
+          { prompt: "2 marks past 30°C (each mark = 5°C)", options: ["32°C", "35°C", "40°C"] },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Reading a Thermometer (Set B)",
+        instruction: "Circle the correct reading.",
+        questions: [
+          { prompt: "1 mark past 0°C (each mark = 1°C)", options: ["1°C", "10°C", "0.1°C"] },
+          { prompt: "Halfway between 30°C and 40°C", options: ["33°C", "35°C", "37°C"] },
+          { prompt: "4 marks past 20°C (each mark = 2°C)", options: ["24°C", "28°C", "30°C"] },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Reading Kitchen Scales (Set A)",
+        instruction: "Circle the correct mass reading.",
+        questions: [
+          { prompt: "Scales show halfway between 200 g and 300 g", options: ["240 g", "250 g", "260 g"] },
+          { prompt: "Scales show 3 marks past 1 kg (each mark = 100 g)", options: ["1.2 kg", "1.3 kg", "1.5 kg"] },
+          { prompt: "Scales show 1 mark past 500 g (each mark = 50 g)", options: ["510 g", "525 g", "550 g"] },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Reading Kitchen Scales (Set B)",
+        instruction: "Circle the correct reading.",
+        questions: [
+          { prompt: "Scales show 2 marks past 0 g (each mark = 100 g)", options: ["2 g", "20 g", "200 g"] },
+          { prompt: "Scales show halfway between 1 kg and 2 kg", options: ["1.5 kg", "1.2 kg", "1.8 kg"] },
+          { prompt: "Scales show 4 marks past 500 g (each mark = 25 g)", options: ["525 g", "600 g", "540 g"] },
+        ],
+      },
+      // ── MEDIUM ──
+      {
+        type: "circle-correct",
+        title: "Reading a Measuring Jug (Set A)",
+        instruction: "Circle the correct capacity.",
+        questions: [
+          { prompt: "Water line at the 3rd mark (each mark = 100 mL)", options: ["30 mL", "300 mL", "3 L"] },
+          { prompt: "Water line halfway between 500 mL and 1 L", options: ["700 mL", "750 mL", "800 mL"] },
+          { prompt: "Water line at 2 marks past 1 L (each mark = 250 mL)", options: ["1.25 L", "1.5 L", "1.75 L"] },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Reading a Measuring Jug (Set B)",
+        instruction: "Circle the correct reading.",
+        questions: [
+          { prompt: "Water line at 4 marks (each mark = 50 mL)", options: ["200 mL", "400 mL", "40 mL"] },
+          { prompt: "Water line halfway between 200 mL and 400 mL", options: ["250 mL", "300 mL", "350 mL"] },
+          { prompt: "Water line 1 mark past 750 mL (each mark = 50 mL)", options: ["760 mL", "800 mL", "850 mL"] },
+        ],
+      },
+      {
+        type: "number-bonds",
+        title: "Unit Conversions (Length)",
+        instruction: "Fill in the missing value.",
+        bonds: [
+          { total: 100, partA: null, partB: 100 },
+          { total: 1000, partA: null, partB: 1000 },
+          { total: 200, partA: 2, partB: null },
+          { total: 500, partA: 5, partB: null },
+        ],
+      },
+      {
+        type: "number-bonds",
+        title: "Unit Conversions (Mass)",
+        instruction: "Fill in the missing value.",
+        bonds: [
+          { total: 1000, partA: null, partB: 1000 },
+          { total: 2000, partA: 2, partB: null },
+          { total: 500, partA: null, partB: 500 },
+          { total: 3000, partA: 3, partB: null },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Estimate and Measure (Set A)",
+        instruction: "Estimate first, then measure if you can.",
+        prompts: [
+          { text: "Length of your desk — Estimate: ___ cm, Measured: ___ cm", type: "lines", lines: 1 },
+          { text: "Mass of your pencil case — Estimate: ___ g, Measured: ___ g", type: "lines", lines: 1 },
+          { text: "Capacity of a cup — Estimate: ___ mL, Measured: ___ mL", type: "lines", lines: 1 },
+          { text: "Temperature outside — Estimate: ___ °C, Actual: ___ °C", type: "lines", lines: 1 },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Estimate and Measure (Set B)",
+        instruction: "Estimate, then measure.",
+        prompts: [
+          { text: "Length of your arm — Estimate: ___ cm, Measured: ___ cm", type: "lines", lines: 1 },
+          { text: "Mass of a book — Estimate: ___ g, Measured: ___ g", type: "lines", lines: 1 },
+          { text: "Width of your hand — Estimate: ___ cm, Measured: ___ cm", type: "lines", lines: 1 },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Convert the Units",
+        instruction: "Convert each measurement.",
+        prompts: [
+          { text: "3 m = ___ cm", type: "lines", lines: 1 },
+          { text: "2 kg = ___ g", type: "lines", lines: 1 },
+          { text: "5 L = ___ mL", type: "lines", lines: 1 },
+          { text: "150 cm = ___ m ___ cm", type: "lines", lines: 1 },
+          { text: "2,500 g = ___ kg ___ g", type: "lines", lines: 1 },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Which Is More?",
+        instruction: "Circle the larger measurement.",
+        questions: [
+          { prompt: "Which is longer?", options: ["150 cm", "1 m"] },
+          { prompt: "Which is heavier?", options: ["2 kg", "1,500 g"] },
+          { prompt: "Which holds more?", options: ["3 L", "2,500 mL"] },
+          { prompt: "Which is hotter?", options: ["35°C", "28°C"] },
+        ],
+      },
+      // ── HARD ──
+      {
+        type: "open-response",
+        title: "Measurement Word Problems (Set A)",
+        instruction: "Solve each problem. Show your working.",
+        prompts: [
+          { text: "A ribbon is 2 m 40 cm long. You cut off 85 cm. How long is the ribbon now?", type: "lines", lines: 2 },
+          { text: "A recipe needs 750 mL of milk. You have 1 L. How much will be left over?", type: "lines", lines: 2 },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Measurement Word Problems (Set B)",
+        instruction: "Solve each problem.",
+        prompts: [
+          { text: "Three packages weigh 450 g, 1.2 kg and 800 g. What is the total mass in kg?", type: "lines", lines: 2 },
+          { text: "The temperature at 7 am was 12°C. By noon it rose 15°C. What was the noon temperature?", type: "lines", lines: 2 },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Challenge: Reading Tricky Scales",
+        instruction: "Answer these questions about reading instruments.",
+        prompts: [
+          { text: "A scale goes from 0 to 500 g with 10 marks. What does each mark represent?", type: "lines", lines: 1 },
+          { text: "A thermometer goes from 0°C to 50°C with 25 marks. What does each mark represent?", type: "lines", lines: 1 },
+          { text: "Why is it important to read a measuring jug at eye level?", type: "lines", lines: 2 },
+        ],
+      },
+      // ── HOME ACTIVITY ──
+      {
+        type: "home-activity",
+        title: "Home Activity: Measurement Scavenger Hunt",
+        instruction: "Use measuring tools around your home!",
+        suggestions: [
+          "Find 3 objects shorter than 15 cm. Measure them with a ruler.",
+          "Weigh 3 fruits or vegetables on kitchen scales. Order them lightest to heaviest.",
+          "Fill different containers with water. Estimate capacity, then measure with a jug.",
+          "Read the thermometer at different times of the day. How does temperature change?",
+        ],
+      },
+    ],
+  },
+
+  // ── WS 12: Perimeter and Area ──────────────────────────────────
+  {
+    slug: "perimeter-area",
+    title: "Perimeter & Area",
+    strand: "Measurement",
+    description:
+      "Measure and approximate perimeters and areas",
+    activities: [
+      // ── EASY ──
+      {
+        type: "matching",
+        title: "Match the Definition",
+        instruction: "Draw a line from each word to its meaning.",
+        left: ["Perimeter", "Area"],
+        right: ["The space inside a shape", "The distance around the outside of a shape"],
+      },
+      {
+        type: "circle-correct",
+        title: "Perimeter or Area? (Set A)",
+        instruction: "Circle whether you would find the PERIMETER or the AREA.",
+        questions: [
+          { prompt: "How much fencing for a garden?", options: ["Perimeter", "Area"] },
+          { prompt: "How much carpet for a room?", options: ["Perimeter", "Area"] },
+          { prompt: "How much ribbon around a present?", options: ["Perimeter", "Area"] },
+          { prompt: "How much paint for a wall?", options: ["Perimeter", "Area"] },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Perimeter or Area? (Set B)",
+        instruction: "Circle the correct answer.",
+        questions: [
+          { prompt: "How much border tape around a poster?", options: ["Perimeter", "Area"] },
+          { prompt: "How many tiles to cover a floor?", options: ["Perimeter", "Area"] },
+          { prompt: "How much edging for a garden bed?", options: ["Perimeter", "Area"] },
+          { prompt: "How much wrapping paper to cover a box top?", options: ["Perimeter", "Area"] },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Find the Perimeter (Set A)",
+        instruction: "Add all the sides to find the perimeter. Circle the correct answer.",
+        questions: [
+          { prompt: "Rectangle: 5 cm, 3 cm, 5 cm, 3 cm", options: ["15 cm", "16 cm", "18 cm"] },
+          { prompt: "Square: 4 sides of 6 cm", options: ["18 cm", "24 cm", "36 cm"] },
+          { prompt: "Triangle: 7 cm, 5 cm, 8 cm", options: ["15 cm", "20 cm", "25 cm"] },
+          { prompt: "Rectangle: 10 m, 4 m, 10 m, 4 m", options: ["24 m", "28 m", "40 m"] },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Find the Perimeter (Set B)",
+        instruction: "Circle the correct perimeter.",
+        questions: [
+          { prompt: "Square: 4 sides of 9 cm", options: ["27 cm", "36 cm", "45 cm"] },
+          { prompt: "Rectangle: 12 cm, 5 cm, 12 cm, 5 cm", options: ["29 cm", "34 cm", "60 cm"] },
+          { prompt: "Triangle: 6 cm, 6 cm, 6 cm", options: ["12 cm", "18 cm", "36 cm"] },
+          { prompt: "Rectangle: 8 m, 3 m, 8 m, 3 m", options: ["22 m", "24 m", "26 m"] },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Count the Square Units – Area (Set A)",
+        instruction: "Each small square = 1 square unit. Circle the area.",
+        questions: [
+          { prompt: "Rectangle: 4 long, 3 wide", options: ["7 sq units", "12 sq units", "14 sq units"] },
+          { prompt: "Rectangle: 5 long, 2 wide", options: ["7 sq units", "10 sq units", "14 sq units"] },
+          { prompt: "Square: 3 on each side", options: ["6 sq units", "9 sq units", "12 sq units"] },
+          { prompt: "Rectangle: 6 long, 4 wide", options: ["20 sq units", "24 sq units", "10 sq units"] },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Count the Square Units – Area (Set B)",
+        instruction: "Circle the area.",
+        questions: [
+          { prompt: "Square: 5 on each side", options: ["20 sq units", "25 sq units", "10 sq units"] },
+          { prompt: "Rectangle: 7 long, 3 wide", options: ["10 sq units", "21 sq units", "24 sq units"] },
+          { prompt: "Rectangle: 8 long, 2 wide", options: ["10 sq units", "16 sq units", "20 sq units"] },
+          { prompt: "Square: 4 on each side", options: ["8 sq units", "12 sq units", "16 sq units"] },
+        ],
+      },
+      {
+        type: "number-bonds",
+        title: "Perimeter Puzzles (Set A)",
+        instruction: "Find the missing side length. Total is the perimeter.",
+        bonds: [
+          { total: 20, partA: 12, partB: null },
+          { total: 24, partA: null, partB: 8 },
+          { total: 30, partA: 18, partB: null },
+          { total: 36, partA: null, partB: 10 },
+        ],
+      },
+      {
+        type: "number-bonds",
+        title: "Perimeter Puzzles (Set B)",
+        instruction: "Find the missing value.",
+        bonds: [
+          { total: 16, partA: 8, partB: null },
+          { total: 28, partA: null, partB: 6 },
+          { total: 40, partA: 22, partB: null },
+          { total: 32, partA: null, partB: 12 },
+        ],
+      },
+      {
+        type: "matching",
+        title: "Match Rectangles to Their Perimeters",
+        instruction: "Draw a line from each rectangle to its perimeter.",
+        left: ["3 cm × 5 cm", "4 cm × 4 cm", "2 cm × 8 cm", "6 cm × 1 cm"],
+        right: ["14 cm", "16 cm", "20 cm", "16 cm"],
+      },
+      {
+        type: "matching",
+        title: "Match Rectangles to Their Areas",
+        instruction: "Draw a line from each rectangle to its area.",
+        left: ["3 cm × 5 cm", "4 cm × 4 cm", "2 cm × 8 cm", "6 cm × 3 cm"],
+        right: ["16 sq cm", "15 sq cm", "18 sq cm", "16 sq cm"],
+      },
+      // ── MEDIUM ──
+      {
+        type: "open-response",
+        title: "Calculate Perimeter and Area (Set A)",
+        instruction: "Work out the perimeter and area for each rectangle.",
+        prompts: [
+          { text: "Length = 8 cm, Width = 3 cm. Perimeter = ___ cm, Area = ___ sq cm", type: "lines", lines: 2 },
+          { text: "Length = 10 m, Width = 5 m. Perimeter = ___ m, Area = ___ sq m", type: "lines", lines: 2 },
+          { text: "Length = 12 cm, Width = 7 cm. Perimeter = ___ cm, Area = ___ sq cm", type: "lines", lines: 2 },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Calculate Perimeter and Area (Set B)",
+        instruction: "Work out the perimeter and area.",
+        prompts: [
+          { text: "Length = 6 m, Width = 6 m. Perimeter = ___ m, Area = ___ sq m", type: "lines", lines: 2 },
+          { text: "Length = 15 cm, Width = 4 cm. Perimeter = ___ cm, Area = ___ sq cm", type: "lines", lines: 2 },
+          { text: "Length = 9 m, Width = 8 m. Perimeter = ___ m, Area = ___ sq m", type: "lines", lines: 2 },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Same Perimeter, Different Area?",
+        instruction: "Both rectangles have the same perimeter. Circle the one with the LARGER area.",
+        questions: [
+          { prompt: "Perimeter = 20 cm: which has more area?", options: ["5 cm × 5 cm (square)", "8 cm × 2 cm"] },
+          { prompt: "Perimeter = 24 cm: which has more area?", options: ["6 cm × 6 cm (square)", "10 cm × 2 cm"] },
+          { prompt: "Perimeter = 16 cm: which has more area?", options: ["4 cm × 4 cm (square)", "6 cm × 2 cm"] },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Perimeter Word Problems",
+        instruction: "Solve each problem. Show your working.",
+        prompts: [
+          { text: "A garden is 12 m long and 8 m wide. How much fencing is needed to go around it?", type: "lines", lines: 2 },
+          { text: "A square painting has a perimeter of 60 cm. How long is each side?", type: "lines", lines: 2 },
+          { text: "A rectangular pool is 25 m long and 10 m wide. What is its perimeter?", type: "lines", lines: 2 },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Area Word Problems",
+        instruction: "Solve each problem.",
+        prompts: [
+          { text: "A rug is 3 m long and 2 m wide. What is its area?", type: "lines", lines: 2 },
+          { text: "A rectangular garden bed has an area of 24 sq m. It is 8 m long. How wide is it?", type: "lines", lines: 2 },
+          { text: "How many 1 m × 1 m tiles do you need to cover a 5 m × 4 m floor?", type: "lines", lines: 2 },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Find the Missing Side",
+        instruction: "Use the perimeter or area to find the missing side.",
+        prompts: [
+          { text: "A rectangle has a perimeter of 26 cm. One side is 8 cm. What is the other side?", type: "lines", lines: 2 },
+          { text: "A rectangle has an area of 36 sq cm. One side is 9 cm. What is the other side?", type: "lines", lines: 2 },
+          { text: "A square has an area of 49 sq cm. What is the length of each side?", type: "lines", lines: 2 },
+        ],
+      },
+      // ── HARD ──
+      {
+        type: "open-response",
+        title: "Draw Shapes with Given Perimeter",
+        instruction: "On grid paper, draw shapes with these perimeters.",
+        prompts: [
+          { text: "Draw two different rectangles that each have a perimeter of 20 cm. Write their areas.", type: "box" },
+          { text: "Draw a rectangle with a perimeter of 24 cm and the largest possible area.", type: "box" },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Challenge: Composite Shapes",
+        instruction: "These shapes are made from rectangles joined together.",
+        prompts: [
+          { text: "An L-shape is made from two rectangles: 4×3 and 2×3. What is the total area?", type: "lines", lines: 2 },
+          { text: "Why is finding the perimeter of an L-shape harder than a rectangle?", type: "lines", lines: 3 },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Challenge: Area and Perimeter Reasoning",
+        instruction: "Answer these thinking questions.",
+        prompts: [
+          { text: "Can two shapes have the same area but different perimeters? Give an example.", type: "lines", lines: 3 },
+          { text: "If you double the sides of a square, does the perimeter double? Does the area double? Explain.", type: "lines", lines: 3 },
+        ],
+      },
+      // ── HOME ACTIVITY ──
+      {
+        type: "home-activity",
+        title: "Home Activity: Perimeter & Area at Home",
+        instruction: "Explore perimeter and area in your home!",
+        suggestions: [
+          "Measure the perimeter of a book, a table and a rug. Which has the largest perimeter?",
+          "Use square sticky notes to cover a small surface. Count them — that is the area!",
+          "Pace around your bedroom. How many steps is the perimeter?",
+          "Draw two different rectangles that both have a perimeter of 20 cm. Are their areas the same?",
+        ],
+      },
+    ],
+  },
+
+  // ── PLACEHOLDER for WS 13–23 ──
 ];
 
 export function getYear4Worksheet(

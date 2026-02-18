@@ -2544,3 +2544,754 @@ export const year6MathsWorksheets: WorksheetItem[] = [
       },
     ],
   },
+
+  // ── WS 12: Convert Length, Mass & Capacity ────────────────
+  {
+    slug: "convert-length-mass-capacity",
+    title: "Convert Length, Mass & Capacity",
+    strand: "Measurement",
+    description:
+      "Convert between common units of length, mass and capacity",
+    activities: [
+      // ─── Easy: Length conversions ───
+      {
+        type: "open-response",
+        title: "Convert Lengths",
+        instruction: "Convert between units. Remember: 1 km = 1,000 m, 1 m = 100 cm, 1 cm = 10 mm.",
+        prompts: [
+          { text: "3 km = ___ m", type: "lines", lines: 1 },
+          { text: "450 cm = ___ m", type: "lines", lines: 1 },
+          { text: "2.5 m = ___ cm", type: "lines", lines: 1 },
+          { text: "85 mm = ___ cm", type: "lines", lines: 1 },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "More Length Conversions",
+        instruction: "Convert each measurement.",
+        prompts: [
+          { text: "7.2 km = ___ m", type: "lines", lines: 1 },
+          { text: "350 cm = ___ m", type: "lines", lines: 1 },
+          { text: "1.8 m = ___ cm", type: "lines", lines: 1 },
+          { text: "42 mm = ___ cm", type: "lines", lines: 1 },
+          { text: "6,500 m = ___ km", type: "lines", lines: 1 },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Which Is Longer?",
+        instruction: "Circle the longer measurement.",
+        questions: [
+          { prompt: "Which is longer?", options: ["350 cm", "3.6 m"] },
+          { prompt: "Which is longer?", options: ["1.2 km", "1,150 m"] },
+          { prompt: "Which is longer?", options: ["45 mm", "4.2 cm"] },
+          { prompt: "Which is longer?", options: ["6,500 m", "6.4 km"] },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "More Length Comparisons",
+        instruction: "Circle the longer measurement.",
+        questions: [
+          { prompt: "Which is longer?", options: ["2.8 m", "275 cm"] },
+          { prompt: "Which is longer?", options: ["0.5 km", "550 m"] },
+          { prompt: "Which is longer?", options: ["90 mm", "8.5 cm"] },
+          { prompt: "Which is longer?", options: ["1,800 m", "1.75 km"] },
+        ],
+      },
+      {
+        type: "matching",
+        title: "Match Length Equivalents",
+        instruction: "Draw a line to match equivalent measurements.",
+        left: ["2 km", "150 cm", "35 mm", "0.75 m"],
+        right: ["75 cm", "3.5 cm", "1.5 m", "2,000 m"],
+      },
+      // ─── Medium: Mass conversions ───
+      {
+        type: "open-response",
+        title: "Convert Mass",
+        instruction: "Convert between units. Remember: 1 kg = 1,000 g, 1 tonne = 1,000 kg.",
+        prompts: [
+          { text: "4.2 kg = ___ g", type: "lines", lines: 1 },
+          { text: "3,750 g = ___ kg", type: "lines", lines: 1 },
+          { text: "0.5 tonne = ___ kg", type: "lines", lines: 1 },
+          { text: "2,500 kg = ___ tonnes", type: "lines", lines: 1 },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "More Mass Conversions",
+        instruction: "Convert each measurement.",
+        prompts: [
+          { text: "6.8 kg = ___ g", type: "lines", lines: 1 },
+          { text: "1,250 g = ___ kg", type: "lines", lines: 1 },
+          { text: "0.25 tonne = ___ kg", type: "lines", lines: 1 },
+          { text: "7,500 kg = ___ tonnes", type: "lines", lines: 1 },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Which Is Heavier?",
+        instruction: "Circle the heavier measurement.",
+        questions: [
+          { prompt: "Which is heavier?", options: ["3.5 kg", "3,400 g"] },
+          { prompt: "Which is heavier?", options: ["0.8 tonne", "850 kg"] },
+          { prompt: "Which is heavier?", options: ["1,200 g", "1.15 kg"] },
+          { prompt: "Which is heavier?", options: ["2.5 tonnes", "2,600 kg"] },
+        ],
+      },
+      {
+        type: "matching",
+        title: "Match Mass Equivalents",
+        instruction: "Draw a line to match equivalent measurements.",
+        left: ["5 kg", "0.5 tonne", "250 g", "3.25 kg"],
+        right: ["3,250 g", "5,000 g", "500 kg", "0.25 kg"],
+      },
+      // ─── Medium: Capacity conversions ───
+      {
+        type: "open-response",
+        title: "Convert Capacity",
+        instruction: "Convert between units. Remember: 1 L = 1,000 mL, 1 kL = 1,000 L.",
+        prompts: [
+          { text: "3.5 L = ___ mL", type: "lines", lines: 1 },
+          { text: "6,250 mL = ___ L", type: "lines", lines: 1 },
+          { text: "0.75 kL = ___ L", type: "lines", lines: 1 },
+          { text: "4,000 L = ___ kL", type: "lines", lines: 1 },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "More Capacity Conversions",
+        instruction: "Convert each measurement.",
+        prompts: [
+          { text: "2.8 L = ___ mL", type: "lines", lines: 1 },
+          { text: "450 mL = ___ L", type: "lines", lines: 1 },
+          { text: "1.5 kL = ___ L", type: "lines", lines: 1 },
+          { text: "8,000 L = ___ kL", type: "lines", lines: 1 },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Which Holds More?",
+        instruction: "Circle the larger capacity.",
+        questions: [
+          { prompt: "Which holds more?", options: ["2.5 L", "2,400 mL"] },
+          { prompt: "Which holds more?", options: ["0.75 kL", "800 L"] },
+          { prompt: "Which holds more?", options: ["1,500 mL", "1.6 L"] },
+          { prompt: "Which holds more?", options: ["3 kL", "2,950 L"] },
+        ],
+      },
+      // ─── Hard: Mixed problems ───
+      {
+        type: "sorting",
+        title: "Sort by Unit Type",
+        instruction: "Sort each unit into the correct measurement type.",
+        columns: ["Length", "Mass", "Capacity"],
+        items: [
+          { label: "kilometres" },
+          { label: "grams" },
+          { label: "litres" },
+          { label: "millimetres" },
+          { label: "tonnes" },
+          { label: "millilitres" },
+        ],
+      },
+      {
+        type: "sorting",
+        title: "Sort: Reasonable Measurements",
+        instruction: "Sort each measurement into whether it is a reasonable estimate or not.",
+        columns: ["Reasonable", "Not Reasonable"],
+        items: [
+          { label: "A car weighs 1.5 tonnes" },
+          { label: "A pencil is 3 m long" },
+          { label: "A bucket holds 10 L" },
+          { label: "An apple weighs 5 kg" },
+          { label: "A door is 2 m tall" },
+          { label: "A glass holds 250 mL" },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Measurement Word Problems",
+        instruction: "Solve each problem. Show your working.",
+        prompts: [
+          { text: "A recipe needs 1.5 kg of flour. You have 800 g. How many more grams do you need?", type: "lines", lines: 2 },
+          { text: "A pool holds 25 kL of water. How many litres is that?", type: "lines", lines: 1 },
+          { text: "A ribbon is 3.2 m long. You cut off 85 cm. How many centimetres are left?", type: "lines", lines: 2 },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "More Word Problems",
+        instruction: "Solve each problem. Show your working.",
+        prompts: [
+          { text: "You mix 750 mL of juice with 1.5 L of water. How many millilitres of liquid do you have?", type: "lines", lines: 2 },
+          { text: "A truck can carry 3 tonnes. It already has 1,800 kg loaded. How many more kilograms can it carry?", type: "lines", lines: 2 },
+          { text: "You need 4 pieces of string, each 65 cm long. How many metres of string do you need in total?", type: "lines", lines: 2 },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Multi-Step Conversions",
+        instruction: "Convert each mixed measurement to a single unit.",
+        prompts: [
+          { text: "2 km 350 m = ___ m", type: "lines", lines: 1 },
+          { text: "4 kg 750 g = ___ g", type: "lines", lines: 1 },
+          { text: "3 L 200 mL = ___ mL", type: "lines", lines: 1 },
+          { text: "1 tonne 500 kg = ___ kg", type: "lines", lines: 1 },
+        ],
+      },
+      {
+        type: "home-activity",
+        title: "Home Activity: Kitchen Conversions",
+        instruction: "Practise converting measurements at home!",
+        suggestions: [
+          "Find 5 food packages. Convert each mass from grams to kilograms (or vice versa).",
+          "Measure the length of 3 rooms in your house in metres, then convert to centimetres.",
+          "Fill a jug with water. How many 250 mL cups does it take to fill a 1 L bottle?",
+          "Estimate the mass of 3 objects in grams, then check with kitchen scales.",
+          "Find the total capacity of all the drink bottles in your house.",
+        ],
+      },
+    ],
+  },
+
+  // ── WS 13: Area of a Rectangle ────────────────────────────
+  {
+    slug: "area-rectangle-formula",
+    title: "Area of a Rectangle",
+    strand: "Measurement",
+    description:
+      "Use the formula for the area of a rectangle to solve problems",
+    activities: [
+      // ─── Easy: Understanding area ───
+      {
+        type: "open-response",
+        title: "Calculate the Area",
+        instruction: "Use the formula: Area = length × width. Include the correct unit (cm² or m²).",
+        prompts: [
+          { text: "Length = 5 cm, Width = 3 cm. Area = ___", type: "lines", lines: 1 },
+          { text: "Length = 8 m, Width = 4 m. Area = ___", type: "lines", lines: 1 },
+          { text: "Length = 10 cm, Width = 6 cm. Area = ___", type: "lines", lines: 1 },
+          { text: "Length = 12 m, Width = 7 m. Area = ___", type: "lines", lines: 1 },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "More Area Calculations",
+        instruction: "Calculate the area of each rectangle.",
+        prompts: [
+          { text: "Length = 9 cm, Width = 5 cm. Area = ___", type: "lines", lines: 1 },
+          { text: "Length = 15 m, Width = 3 m. Area = ___", type: "lines", lines: 1 },
+          { text: "Length = 7 cm, Width = 7 cm. Area = ___", type: "lines", lines: 1 },
+          { text: "Length = 20 m, Width = 8 m. Area = ___", type: "lines", lines: 1 },
+        ],
+      },
+      {
+        type: "matching",
+        title: "Match Dimensions to Areas",
+        instruction: "Draw a line to match each rectangle to its area.",
+        left: ["6 cm × 4 cm", "9 m × 3 m", "5 cm × 5 cm", "8 m × 2 m"],
+        right: ["16 m²", "25 cm²", "24 cm²", "27 m²"],
+      },
+      {
+        type: "circle-correct",
+        title: "Quick Area Check",
+        instruction: "Circle the correct area for each rectangle.",
+        questions: [
+          { prompt: "4 cm × 6 cm = ?", options: ["20 cm²", "24 cm²", "10 cm²"] },
+          { prompt: "11 m × 3 m = ?", options: ["14 m²", "33 m²", "30 m²"] },
+          { prompt: "5 cm × 8 cm = ?", options: ["13 cm²", "35 cm²", "40 cm²"] },
+          { prompt: "10 m × 10 m = ?", options: ["20 m²", "40 m²", "100 m²"] },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Area with Decimal Dimensions",
+        instruction: "Calculate the area. Use decimals.",
+        prompts: [
+          { text: "Length = 3.5 cm, Width = 2 cm. Area = ___", type: "lines", lines: 1 },
+          { text: "Length = 4.5 m, Width = 6 m. Area = ___", type: "lines", lines: 1 },
+          { text: "Length = 2.5 cm, Width = 2.5 cm. Area = ___", type: "lines", lines: 1 },
+          { text: "Length = 10.5 m, Width = 4 m. Area = ___", type: "lines", lines: 1 },
+        ],
+      },
+      {
+        type: "sorting",
+        title: "Sort: Area or Perimeter?",
+        instruction: "Sort each description. Does it describe area or perimeter?",
+        columns: ["Area (space inside)", "Perimeter (distance around)"],
+        items: [
+          { label: "Painting a wall" },
+          { label: "Fencing a garden" },
+          { label: "Laying carpet" },
+          { label: "Putting a border on a photo" },
+          { label: "Tiling a floor" },
+          { label: "Walking around a park" },
+        ],
+      },
+      // ─── Medium: Finding missing dimensions ───
+      {
+        type: "open-response",
+        title: "Find the Missing Dimension",
+        instruction: "Use the area formula to find the missing length or width.",
+        prompts: [
+          { text: "Area = 36 cm², Length = 9 cm. Width = ___", type: "lines", lines: 1 },
+          { text: "Area = 48 m², Width = 6 m. Length = ___", type: "lines", lines: 1 },
+          { text: "Area = 100 cm², Length = 10 cm. Width = ___", type: "lines", lines: 1 },
+          { text: "Area = 72 m², Width = 8 m. Length = ___", type: "lines", lines: 1 },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "More Missing Dimensions",
+        instruction: "Find the missing side length.",
+        prompts: [
+          { text: "Area = 63 cm², Length = 7 cm. Width = ___", type: "lines", lines: 1 },
+          { text: "Area = 120 m², Width = 10 m. Length = ___", type: "lines", lines: 1 },
+          { text: "Area = 56 cm², Length = 14 cm. Width = ___", type: "lines", lines: 1 },
+          { text: "Area = 200 m², Width = 25 m. Length = ___", type: "lines", lines: 1 },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Which Rectangle Has the Largest Area?",
+        instruction: "Calculate the area of each rectangle and circle the largest.",
+        questions: [
+          { prompt: "Largest area?", options: ["7 cm × 5 cm", "6 cm × 6 cm", "8 cm × 4 cm"] },
+          { prompt: "Largest area?", options: ["3 m × 12 m", "5 m × 8 m", "10 m × 4 m"] },
+          { prompt: "Largest area?", options: ["9 cm × 3 cm", "4 cm × 7 cm", "6 cm × 5 cm"] },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Same Area, Different Shapes",
+        instruction: "Which pairs of dimensions give the same area?",
+        questions: [
+          { prompt: "Same area as 4 × 6?", options: ["3 × 8", "2 × 10", "5 × 5"] },
+          { prompt: "Same area as 5 × 12?", options: ["6 × 10", "4 × 15", "Both are correct"] },
+          { prompt: "Same area as 3 × 9?", options: ["6 × 4", "1 × 27", "Both are correct"] },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Draw Rectangles with Given Areas",
+        instruction: "List all possible whole-number dimensions for each area.",
+        prompts: [
+          { text: "Area = 24 cm². Possible dimensions: ___", type: "lines", lines: 2 },
+          { text: "Area = 36 cm². Possible dimensions: ___", type: "lines", lines: 2 },
+          { text: "Area = 18 cm². Possible dimensions: ___", type: "lines", lines: 2 },
+        ],
+      },
+      // ─── Hard: Word problems ───
+      {
+        type: "open-response",
+        title: "Area Word Problems",
+        instruction: "Solve each problem using the area formula. Show your working.",
+        prompts: [
+          { text: "A garden bed is 4.5 m long and 2 m wide. What is its area?", type: "lines", lines: 2 },
+          { text: "A classroom floor is 120 m². If the room is 10 m long, how wide is it?", type: "lines", lines: 2 },
+          { text: "You want to tile a 3 m × 4 m bathroom with tiles that are 0.5 m × 0.5 m. How many tiles do you need?", type: "lines", lines: 2 },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "More Area Word Problems",
+        instruction: "Solve each problem. Show your working.",
+        prompts: [
+          { text: "A rectangular field is 50 m long and 30 m wide. What is its area in square metres?", type: "lines", lines: 2 },
+          { text: "You need to buy turf for a lawn that is 8 m × 6 m. Turf costs $12 per m². What is the total cost?", type: "lines", lines: 2 },
+          { text: "A poster is 60 cm × 40 cm. A frame costs 5 cents per cm². How much does it cost to frame?", type: "lines", lines: 2 },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Composite Shape Areas",
+        instruction: "Break each shape into rectangles and find the total area.",
+        prompts: [
+          { text: "An L-shaped room: one part is 5 m × 3 m, the other is 4 m × 2 m. Total area = ___", type: "lines", lines: 2 },
+          { text: "A T-shaped garden: the top is 6 m × 2 m, the stem is 2 m × 4 m. Total area = ___", type: "lines", lines: 2 },
+        ],
+      },
+      {
+        type: "home-activity",
+        title: "Home Activity: Area Explorer",
+        instruction: "Measure and calculate areas at home!",
+        suggestions: [
+          "Measure the length and width of your bedroom. Calculate its area in square metres.",
+          "Find a rectangular book cover. Measure its dimensions and calculate the area in cm².",
+          "Estimate the area of a table top, then measure to check.",
+          "Draw 3 different rectangles that all have an area of 24 cm².",
+          "Calculate the total floor area of your home by measuring each room.",
+        ],
+      },
+    ],
+  },
+
+  // ── WS 14: Angle Properties ───────────────────────────────
+  {
+    slug: "angle-properties",
+    title: "Angle Properties",
+    strand: "Measurement",
+    description:
+      "Use angle properties to solve problems",
+    activities: [
+      // ─── Easy: Types of angles ───
+      {
+        type: "sorting",
+        title: "Sort the Angles",
+        instruction: "Sort each angle into the correct type.",
+        columns: ["Acute (< 90°)", "Right (= 90°)", "Obtuse (> 90°)"],
+        items: [
+          { label: "45°" },
+          { label: "90°" },
+          { label: "120°" },
+          { label: "30°" },
+          { label: "150°" },
+          { label: "75°" },
+        ],
+      },
+      {
+        type: "sorting",
+        title: "Sort More Angles",
+        instruction: "Sort each angle into the correct type.",
+        columns: ["Acute", "Right", "Obtuse", "Straight"],
+        items: [
+          { label: "15°" },
+          { label: "90°" },
+          { label: "135°" },
+          { label: "180°" },
+          { label: "60°" },
+          { label: "110°" },
+          { label: "89°" },
+          { label: "91°" },
+        ],
+      },
+      {
+        type: "matching",
+        title: "Match Angle Types",
+        instruction: "Draw a line to match each angle to its type.",
+        left: ["35°", "90°", "135°", "180°"],
+        right: ["Straight angle", "Obtuse angle", "Right angle", "Acute angle"],
+      },
+      {
+        type: "circle-correct",
+        title: "Name the Angle Type",
+        instruction: "Circle the type for each angle.",
+        questions: [
+          { prompt: "72° is:", options: ["Acute", "Right", "Obtuse"] },
+          { prompt: "145° is:", options: ["Acute", "Right", "Obtuse"] },
+          { prompt: "90° is:", options: ["Acute", "Right", "Obtuse"] },
+          { prompt: "88° is:", options: ["Acute", "Right", "Obtuse"] },
+          { prompt: "180° is:", options: ["Obtuse", "Straight", "Reflex"] },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Quick Angle Classification",
+        instruction: "Circle the correct classification.",
+        questions: [
+          { prompt: "An angle of 200° is:", options: ["Obtuse", "Straight", "Reflex"] },
+          { prompt: "An angle of 0° is:", options: ["Zero angle", "Acute", "Right"] },
+          { prompt: "An angle of 360° is:", options: ["Full turn", "Straight", "Reflex"] },
+          { prompt: "An angle between 180° and 360° is:", options: ["Obtuse", "Reflex", "Straight"] },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Estimate the Angle",
+        instruction: "Estimate the size of each angle described.",
+        prompts: [
+          { text: "A quarter turn = ___°", type: "lines", lines: 1 },
+          { text: "A half turn = ___°", type: "lines", lines: 1 },
+          { text: "A full turn = ___°", type: "lines", lines: 1 },
+          { text: "A three-quarter turn = ___°", type: "lines", lines: 1 },
+        ],
+      },
+      // ─── Medium: Angles on a line and at a point ───
+      {
+        type: "open-response",
+        title: "Angles on a Straight Line",
+        instruction: "Angles on a straight line add up to 180°. Find the missing angle.",
+        prompts: [
+          { text: "One angle is 110°. The other angle = ___°", type: "lines", lines: 1 },
+          { text: "One angle is 45°. The other angle = ___°", type: "lines", lines: 1 },
+          { text: "One angle is 90°. The other angle = ___°", type: "lines", lines: 1 },
+          { text: "One angle is 63°. The other angle = ___°", type: "lines", lines: 1 },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "More Angles on a Line",
+        instruction: "Find the missing angle on each straight line.",
+        prompts: [
+          { text: "Angles are 35° and 85° and ___°. They add to 180°.", type: "lines", lines: 1 },
+          { text: "Angles are 70° and ___°. They add to 180°.", type: "lines", lines: 1 },
+          { text: "Angles are 42° and 58° and ___°. They add to 180°.", type: "lines", lines: 1 },
+          { text: "Angles are 125° and ___°. They add to 180°.", type: "lines", lines: 1 },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Angles at a Point",
+        instruction: "Angles around a point add up to 360°. Find the missing angle.",
+        prompts: [
+          { text: "Three angles: 90°, 120°, 80°. Missing angle = ___°", type: "lines", lines: 1 },
+          { text: "Two angles: 150° and 150°. Missing angle = ___°", type: "lines", lines: 1 },
+          { text: "Four angles: 90°, 90°, 90° and ___°", type: "lines", lines: 1 },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Find the Missing Angle",
+        instruction: "Circle the correct missing angle.",
+        questions: [
+          { prompt: "Triangle: 60°, 80°, ?° (angles sum to 180°)", options: ["30°", "40°", "50°"] },
+          { prompt: "Triangle: 90°, 35°, ?°", options: ["45°", "55°", "65°"] },
+          { prompt: "Straight line: 125° and ?°", options: ["45°", "55°", "65°"] },
+          { prompt: "Triangle: 70°, 70°, ?°", options: ["30°", "40°", "50°"] },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "More Missing Angles",
+        instruction: "Circle the correct missing angle.",
+        questions: [
+          { prompt: "Triangle: 45°, 45°, ?°", options: ["80°", "90°", "100°"] },
+          { prompt: "Triangle: 30°, 60°, ?°", options: ["80°", "90°", "100°"] },
+          { prompt: "Straight line: 72° and ?°", options: ["98°", "108°", "118°"] },
+          { prompt: "Triangle: 55°, 65°, ?°", options: ["50°", "60°", "70°"] },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Angles in Triangles",
+        instruction: "Find the missing angle in each triangle.",
+        prompts: [
+          { text: "Angles: 50° and 65°. Third angle = ___°", type: "lines", lines: 1 },
+          { text: "Angles: 30° and 120°. Third angle = ___°", type: "lines", lines: 1 },
+          { text: "Angles: 72° and 72°. Third angle = ___°", type: "lines", lines: 1 },
+          { text: "An equilateral triangle has all angles equal. Each angle = ___°", type: "lines", lines: 1 },
+        ],
+      },
+      {
+        type: "matching",
+        title: "Match Triangle Type to Angles",
+        instruction: "Draw a line to match each triangle type to its angle properties.",
+        left: ["Equilateral", "Right-angled", "Isosceles", "Scalene"],
+        right: ["Two equal angles", "All different angles", "All 60°", "One 90° angle"],
+      },
+      // ─── Hard: Multi-step angle problems ───
+      {
+        type: "open-response",
+        title: "Angle Problem Solving",
+        instruction: "Use angle properties to solve these problems. Show your working.",
+        prompts: [
+          { text: "A triangle has angles of 50° and 65°. What is the third angle?", type: "lines", lines: 2 },
+          { text: "Two angles on a straight line are equal. What is each angle?", type: "lines", lines: 1 },
+          { text: "A right angle is split into two angles. One is 38°. What is the other?", type: "lines", lines: 1 },
+          { text: "The angles of a triangle are in the pattern: x, 2x, 3x. Find each angle.", type: "lines", lines: 2 },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "More Angle Problem Solving",
+        instruction: "Solve each angle problem.",
+        prompts: [
+          { text: "Two angles on a straight line are in the ratio 1:3. Find both angles.", type: "lines", lines: 2 },
+          { text: "A quadrilateral has angles of 80°, 100° and 95°. What is the fourth angle? (Angles in a quadrilateral = 360°)", type: "lines", lines: 2 },
+          { text: "An isosceles triangle has a base angle of 55°. What are the other two angles?", type: "lines", lines: 2 },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "True or False: Angle Facts",
+        instruction: "Circle TRUE or FALSE.",
+        questions: [
+          { prompt: "A triangle can have two right angles", options: ["TRUE", "FALSE"] },
+          { prompt: "An obtuse triangle has one angle greater than 90°", options: ["TRUE", "FALSE"] },
+          { prompt: "The sum of angles in a quadrilateral is 360°", options: ["TRUE", "FALSE"] },
+          { prompt: "A right angle is exactly 90°", options: ["TRUE", "FALSE"] },
+        ],
+      },
+      {
+        type: "home-activity",
+        title: "Home Activity: Angle Hunter",
+        instruction: "Find and measure angles at home!",
+        suggestions: [
+          "Find 5 angles around your home. Classify each as acute, right, or obtuse.",
+          "Open a book to different widths. Estimate the angle, then check with a protractor.",
+          "Look at clock hands at different times. What angle do they make at 3:00? At 10:00?",
+          "Draw a triangle, measure all three angles with a protractor, and check they add up to 180°.",
+          "Find all the right angles in your kitchen.",
+        ],
+      },
+    ],
+  },
+
+  // ── WS 15: Parallel Cross-Sections of Right Prisms ───────
+  {
+    slug: "parallel-cross-sections",
+    title: "Parallel Cross-Sections of Right Prisms",
+    strand: "Space",
+    description:
+      "Identify the parallel cross-section for right prisms",
+    activities: [
+      // ─── Easy: Identifying prisms ───
+      {
+        type: "matching",
+        title: "Match Prism to Cross-Section Shape",
+        instruction: "Draw a line to match each prism to the shape of its parallel cross-section.",
+        left: ["Triangular prism", "Rectangular prism", "Pentagonal prism", "Hexagonal prism"],
+        right: ["Hexagon", "Rectangle", "Triangle", "Pentagon"],
+      },
+      {
+        type: "circle-correct",
+        title: "Name the Cross-Section",
+        instruction: "Circle the shape you would see if you sliced each prism parallel to its base.",
+        questions: [
+          { prompt: "Triangular prism", options: ["Triangle", "Rectangle", "Circle"] },
+          { prompt: "Rectangular prism (box)", options: ["Triangle", "Rectangle", "Square"] },
+          { prompt: "Hexagonal prism", options: ["Pentagon", "Hexagon", "Octagon"] },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "More Cross-Sections",
+        instruction: "Circle the correct cross-section shape.",
+        questions: [
+          { prompt: "Cylinder", options: ["Rectangle", "Circle", "Oval"] },
+          { prompt: "Cube", options: ["Triangle", "Circle", "Square"] },
+          { prompt: "Pentagonal prism", options: ["Pentagon", "Hexagon", "Rectangle"] },
+          { prompt: "Octagonal prism", options: ["Hexagon", "Octagon", "Circle"] },
+        ],
+      },
+      {
+        type: "matching",
+        title: "Match Shape to Prism",
+        instruction: "Draw a line to match each cross-section shape to its prism.",
+        left: ["Circle", "Square", "Triangle", "Hexagon"],
+        right: ["Hexagonal prism", "Triangular prism", "Cylinder", "Cube"],
+      },
+      {
+        type: "sorting",
+        title: "Sort: Prisms and Non-Prisms",
+        instruction: "Sort each 3D shape into the correct column.",
+        columns: ["Prism", "Not a Prism"],
+        items: [
+          { label: "Triangular prism" },
+          { label: "Sphere" },
+          { label: "Rectangular prism" },
+          { label: "Cone" },
+          { label: "Hexagonal prism" },
+          { label: "Pyramid" },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Name the Prism",
+        instruction: "If the cross-section is the given shape, name the prism.",
+        prompts: [
+          { text: "Cross-section is a triangle → ___ prism", type: "lines", lines: 1 },
+          { text: "Cross-section is a circle → ___", type: "lines", lines: 1 },
+          { text: "Cross-section is a rectangle → ___ prism", type: "lines", lines: 1 },
+          { text: "Cross-section is a pentagon → ___ prism", type: "lines", lines: 1 },
+        ],
+      },
+      // ─── Medium: Properties of cross-sections ───
+      {
+        type: "circle-correct",
+        title: "True or False? Cross-Sections",
+        instruction: "Circle TRUE or FALSE for each statement.",
+        questions: [
+          { prompt: "Every parallel cross-section of a prism is the same shape", options: ["TRUE", "FALSE"] },
+          { prompt: "A cylinder has a circular cross-section", options: ["TRUE", "FALSE"] },
+          { prompt: "A triangular prism has a rectangular cross-section", options: ["TRUE", "FALSE"] },
+          { prompt: "All cross-sections of a rectangular prism are congruent rectangles", options: ["TRUE", "FALSE"] },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "More True or False",
+        instruction: "Circle TRUE or FALSE.",
+        questions: [
+          { prompt: "A cone has a uniform cross-section", options: ["TRUE", "FALSE"] },
+          { prompt: "All prisms have uniform cross-sections", options: ["TRUE", "FALSE"] },
+          { prompt: "A sphere has a circular cross-section", options: ["TRUE", "FALSE"] },
+          { prompt: "The cross-section of a cube is always a square", options: ["TRUE", "FALSE"] },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Describe the Cross-Section",
+        instruction: "For each shape, describe what you would see if you sliced it parallel to the base.",
+        prompts: [
+          { text: "A cube sliced parallel to its base: ___", type: "lines", lines: 1 },
+          { text: "A triangular prism sliced parallel to its triangular face: ___", type: "lines", lines: 1 },
+          { text: "A cylinder sliced parallel to its circular base: ___", type: "lines", lines: 1 },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Cross-Section Properties",
+        instruction: "Answer each question about cross-sections.",
+        prompts: [
+          { text: "How many faces does a triangular prism have? ___", type: "lines", lines: 1 },
+          { text: "What shape are the two parallel faces of a hexagonal prism? ___", type: "lines", lines: 1 },
+          { text: "If you slice a rectangular prism at any height parallel to the base, what shape do you always get? ___", type: "lines", lines: 1 },
+          { text: "Why does a cone not have a uniform cross-section? ___", type: "lines", lines: 2 },
+        ],
+      },
+      {
+        type: "matching",
+        title: "Match Prism to Number of Faces",
+        instruction: "Draw a line to match each prism to its number of faces.",
+        left: ["Triangular prism", "Rectangular prism", "Pentagonal prism", "Hexagonal prism"],
+        right: ["7", "5", "6", "8"],
+      },
+      // ─── Hard: Drawing and reasoning ───
+      {
+        type: "open-response",
+        title: "Draw the Cross-Section",
+        instruction: "Draw the shape of the parallel cross-section for each prism.",
+        prompts: [
+          { text: "A pentagonal prism (draw the cross-section)", type: "box" },
+          { text: "An octagonal prism (draw the cross-section)", type: "box" },
+          { text: "A right prism with an L-shaped base (draw the cross-section)", type: "box" },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Cross-Section Reasoning",
+        instruction: "Answer each question with a full explanation.",
+        prompts: [
+          { text: "Explain the difference between a cross-section of a prism and a cross-section of a pyramid.", type: "lines", lines: 3 },
+          { text: "A prism has a cross-section with 6 sides. How many faces does the prism have in total?", type: "lines", lines: 2 },
+          { text: "Can a prism have a circular cross-section? Explain.", type: "lines", lines: 2 },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Real-World Cross-Sections",
+        instruction: "Identify the cross-section shape for each real-world object.",
+        prompts: [
+          { text: "A Toblerone box: ___", type: "lines", lines: 1 },
+          { text: "A pencil (hexagonal): ___", type: "lines", lines: 1 },
+          { text: "A log: ___", type: "lines", lines: 1 },
+          { text: "A shipping container: ___", type: "lines", lines: 1 },
+        ],
+      },
+      {
+        type: "home-activity",
+        title: "Home Activity: Slice It!",
+        instruction: "Explore cross-sections with everyday objects!",
+        suggestions: [
+          "Slice a block of cheese parallel to one face. What shape do you see?",
+          "Look at a box (cereal box, tissue box). What shape would each slice be?",
+          "Find objects shaped like prisms around your home. Name the cross-section of each.",
+          "Use playdough to make a triangular prism, then slice it to see the cross-section.",
+          "Look at different shaped pencils. What cross-section does each have?",
+        ],
+      },
+    ],
+  },

@@ -3155,6 +3155,521 @@ export const year2MathsWorksheets: WorksheetItem[] = [
     ],
   },
 
+  // ── WS 10: Analog Clock Time ───────────────────────────────
+  {
+    slug: "analog-clock-time",
+    title: "Reading Analog Clocks",
+    strand: "Measurement",
+    description:
+      "Read time on an analog clock to the hour, half hour and quarter hour",
+    activities: [
+      // ─── Easy: O'clock times ───
+      {
+        type: "matching",
+        title: "Match Clocks to Times (O'clock)",
+        instruction: "Draw a line to match each clock to the correct time.",
+        left: ["Short hand on 3, long hand on 12", "Short hand on 7, long hand on 12", "Short hand on 11, long hand on 12", "Short hand on 1, long hand on 12"],
+        right: ["1 o'clock", "11 o'clock", "3 o'clock", "7 o'clock"],
+      },
+      {
+        type: "matching",
+        title: "More O'clock Matching",
+        instruction: "Match each clock to its time.",
+        left: ["Short hand on 5, long hand on 12", "Short hand on 9, long hand on 12", "Short hand on 12, long hand on 12", "Short hand on 6, long hand on 12"],
+        right: ["12 o'clock", "6 o'clock", "5 o'clock", "9 o'clock"],
+      },
+      {
+        type: "circle-correct",
+        title: "Which Clock Shows the Time?",
+        instruction: "Circle the correct clock.",
+        questions: [
+          { prompt: "Which shows 3 o'clock?", options: ["3:00", "3:30", "9:00"] },
+          { prompt: "Which shows 8 o'clock?", options: ["8:30", "8:00", "12:08"] },
+          { prompt: "Which shows 12 o'clock?", options: ["12:30", "6:00", "12:00"] },
+          { prompt: "Which shows 5 o'clock?", options: ["5:00", "5:15", "5:30"] },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "More O'clock Questions",
+        instruction: "Circle the correct answer.",
+        questions: [
+          { prompt: "Which shows 1 o'clock?", options: ["1:00", "1:30", "11:00"] },
+          { prompt: "Which shows 10 o'clock?", options: ["10:30", "2:00", "10:00"] },
+          { prompt: "Which shows 4 o'clock?", options: ["4:00", "4:15", "8:00"] },
+          { prompt: "Which shows 6 o'clock?", options: ["6:30", "12:30", "6:00"] },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Write the Time (O'clock)",
+        instruction: "Look at each clock description and write the time.",
+        prompts: [
+          { text: "Hour hand on 4, minute hand on 12 → ___", type: "lines", lines: 1 },
+          { text: "Hour hand on 9, minute hand on 12 → ___", type: "lines", lines: 1 },
+          { text: "Hour hand on 6, minute hand on 12 → ___", type: "lines", lines: 1 },
+          { text: "Hour hand on 2, minute hand on 12 → ___", type: "lines", lines: 1 },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "O'clock Facts",
+        instruction: "Circle the correct answer.",
+        questions: [
+          { prompt: "At o'clock times, where does the minute hand point?", options: ["12", "6", "3"] },
+          { prompt: "At 3 o'clock, where does the hour hand point?", options: ["12", "3", "6"] },
+          { prompt: "How many hours are shown on a clock face?", options: ["10", "12", "24"] },
+          { prompt: "The short hand shows the...", options: ["Minutes", "Hours", "Seconds"] },
+        ],
+      },
+      {
+        type: "count-objects",
+        title: "Count the Hours",
+        instruction: "Count the numbers around the clock face.",
+        rows: [
+          { object: "circle", count: 12 },
+        ],
+      },
+      // ─── Medium: Half past ───
+      {
+        type: "matching",
+        title: "Match Clocks to Times (Half Past)",
+        instruction: "Draw a line to match.",
+        left: ["Short hand between 2 and 3, long hand on 6", "Short hand between 7 and 8, long hand on 6", "Short hand between 10 and 11, long hand on 6", "Short hand between 4 and 5, long hand on 6"],
+        right: ["Half past 4", "Half past 10", "Half past 2", "Half past 7"],
+      },
+      {
+        type: "matching",
+        title: "More Half Past Matching",
+        instruction: "Match each clock to its time.",
+        left: ["Short hand between 1 and 2, long hand on 6", "Short hand between 5 and 6, long hand on 6", "Short hand between 8 and 9, long hand on 6", "Short hand between 11 and 12, long hand on 6"],
+        right: ["Half past 11", "Half past 1", "Half past 8", "Half past 5"],
+      },
+      {
+        type: "circle-correct",
+        title: "Which Clock Shows Half Past?",
+        instruction: "Circle the correct time.",
+        questions: [
+          { prompt: "Hour hand between 3 and 4, minute hand on 6", options: ["3 o'clock", "Half past 3", "Half past 6"] },
+          { prompt: "Hour hand between 9 and 10, minute hand on 6", options: ["Half past 9", "9 o'clock", "Half past 10"] },
+          { prompt: "Hour hand between 12 and 1, minute hand on 6", options: ["Half past 12", "12 o'clock", "Half past 6"] },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "More Half Past Questions",
+        instruction: "Circle the correct answer.",
+        questions: [
+          { prompt: "At half past, where does the minute hand point?", options: ["12", "3", "6"] },
+          { prompt: "Half past 7 is the same as...", options: ["7:00", "7:30", "7:15"] },
+          { prompt: "Which is half past 2?", options: ["2:00", "2:15", "2:30"] },
+          { prompt: "Half past 10 is the same as...", options: ["10:15", "10:30", "10:45"] },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Write the Time (Half Past)",
+        instruction: "Write the time for each clock.",
+        prompts: [
+          { text: "Hour hand between 5 and 6, minute hand on 6 → ___", type: "lines", lines: 1 },
+          { text: "Hour hand between 1 and 2, minute hand on 6 → ___", type: "lines", lines: 1 },
+          { text: "Hour hand between 8 and 9, minute hand on 6 → ___", type: "lines", lines: 1 },
+          { text: "Hour hand between 11 and 12, minute hand on 6 → ___", type: "lines", lines: 1 },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "O'clock or Half Past?",
+        instruction: "Circle whether each time is o'clock or half past.",
+        questions: [
+          { prompt: "Minute hand on 12", options: ["O'clock", "Half past"] },
+          { prompt: "Minute hand on 6", options: ["O'clock", "Half past"] },
+          { prompt: "2:30", options: ["O'clock", "Half past"] },
+          { prompt: "7:00", options: ["O'clock", "Half past"] },
+        ],
+      },
+      {
+        type: "sorting",
+        title: "Sort Times: O'clock or Half Past?",
+        instruction: "Sort these times into the correct column.",
+        columns: ["O'clock", "Half past"],
+        items: [
+          { label: "3:00" },
+          { label: "7:30" },
+          { label: "11:00" },
+          { label: "5:30" },
+          { label: "9:00" },
+          { label: "1:30" },
+        ],
+      },
+      // ─── Hard: Quarter past & quarter to ───
+      {
+        type: "matching",
+        title: "Match Clocks to Times (Quarter Hour)",
+        instruction: "Draw a line to match each clock to its time.",
+        left: ["Long hand on 3 (quarter past)", "Long hand on 9 (quarter to)", "Long hand on 6 (half past)", "Long hand on 12 (o'clock)"],
+        right: ["On the hour", "Half past", "Quarter past", "Quarter to"],
+      },
+      {
+        type: "circle-correct",
+        title: "What Time Is It? (Quarter Past)",
+        instruction: "Circle the correct time.",
+        questions: [
+          { prompt: "Hour hand just past 5, minute hand on 3", options: ["Quarter past 5", "5 o'clock", "Quarter to 5"] },
+          { prompt: "Hour hand just past 2, minute hand on 3", options: ["Quarter past 2", "Half past 2", "Quarter to 3"] },
+          { prompt: "Hour hand just past 10, minute hand on 3", options: ["10 o'clock", "Quarter past 10", "Quarter to 10"] },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "More Quarter Past Questions",
+        instruction: "Circle the correct answer.",
+        questions: [
+          { prompt: "Quarter past 3 is the same as...", options: ["3:00", "3:15", "3:30"] },
+          { prompt: "Quarter past 8 is the same as...", options: ["8:15", "8:30", "8:45"] },
+          { prompt: "At quarter past, how many minutes past the hour?", options: ["10", "15", "30"] },
+          { prompt: "Which is quarter past 11?", options: ["11:00", "11:15", "11:30"] },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "What Time Is It? (Quarter To)",
+        instruction: "Circle the correct time.",
+        questions: [
+          { prompt: "Hour hand near 4, minute hand on 9", options: ["Quarter to 4", "Quarter past 3", "9 o'clock"] },
+          { prompt: "Hour hand near 8, minute hand on 9", options: ["8 o'clock", "Quarter to 8", "Quarter past 7"] },
+          { prompt: "Hour hand near 12, minute hand on 9", options: ["Quarter to 12", "12 o'clock", "Quarter past 11"] },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "More Quarter To Questions",
+        instruction: "Circle the correct answer.",
+        questions: [
+          { prompt: "Quarter to 6 is the same as...", options: ["5:30", "5:45", "6:15"] },
+          { prompt: "Quarter to 1 is the same as...", options: ["12:45", "1:15", "1:45"] },
+          { prompt: "At quarter to, how many minutes until the next hour?", options: ["10", "15", "30"] },
+          { prompt: "Which is quarter to 9?", options: ["8:45", "9:15", "9:45"] },
+        ],
+      },
+      {
+        type: "matching",
+        title: "Match Digital to Analog",
+        instruction: "Match each digital time to its spoken time.",
+        left: ["3:15", "7:30", "10:45", "6:00"],
+        right: ["6 o'clock", "Quarter past 3", "Half past 7", "Quarter to 11"],
+      },
+      {
+        type: "sorting",
+        title: "Sort Times Into Categories",
+        instruction: "Sort these times into the correct column.",
+        columns: ["Quarter past", "Half past", "Quarter to"],
+        items: [
+          { label: "2:15" },
+          { label: "4:30" },
+          { label: "8:45" },
+          { label: "11:15" },
+          { label: "6:30" },
+          { label: "3:45" },
+        ],
+      },
+      {
+        type: "sequence",
+        title: "Put Times in Order",
+        instruction: "Number these times from earliest (1) to latest (4).",
+        sequences: [
+          { items: [0, 0, 0, 0], answer: [1, 2, 3, 4] },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Draw the Clock Hands",
+        instruction: "Draw the hour and minute hands on a clock to show each time.",
+        prompts: [
+          { text: "Show 3 o'clock", type: "box" },
+          { text: "Show half past 7", type: "box" },
+          { text: "Show quarter past 11", type: "box" },
+          { text: "Show quarter to 6", type: "box" },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "What Are You Doing at These Times?",
+        instruction: "Write what you might be doing at each time of day.",
+        prompts: [
+          { text: "7 o'clock in the morning: ___", type: "lines", lines: 1 },
+          { text: "12 o'clock midday: ___", type: "lines", lines: 1 },
+          { text: "3 o'clock in the afternoon: ___", type: "lines", lines: 1 },
+          { text: "Half past 7 in the evening: ___", type: "lines", lines: 1 },
+        ],
+      },
+      {
+        type: "home-activity",
+        title: "Home Activity: Clock Reading",
+        instruction: "Practise reading the clock at home!",
+        suggestions: [
+          "Check the clock every hour. Say the time out loud.",
+          "Set an alarm for half past 3. When it rings, check the clock hands.",
+          "Draw a clock face showing your bedtime. What time is it?",
+          "Ask someone to say a time. Can you draw the hands on a clock?",
+        ],
+      },
+    ],
+  },
+
+  // ── WS 11: Calendar Days ───────────────────────────────────
+  {
+    slug: "calendar-days",
+    title: "Calendar Days",
+    strand: "Measurement",
+    description:
+      "Determine the number of days between events using a calendar",
+    activities: [
+      // ─── Easy: Days of the week ───
+      {
+        type: "sequence",
+        title: "Days of the Week",
+        instruction: "Fill in the missing days.",
+        sequences: [
+          { items: [0, 0, 0, 0, 0], answer: [1, 2, 3, 4, 5] },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "What Day Comes Next?",
+        instruction: "Circle the day that comes next.",
+        questions: [
+          { prompt: "Monday, Tuesday, ___", options: ["Thursday", "Wednesday", "Friday"] },
+          { prompt: "Friday, Saturday, ___", options: ["Monday", "Sunday", "Thursday"] },
+          { prompt: "Wednesday, Thursday, ___", options: ["Friday", "Tuesday", "Saturday"] },
+          { prompt: "Saturday, Sunday, ___", options: ["Tuesday", "Monday", "Friday"] },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "What Day Comes Before?",
+        instruction: "Circle the day that comes before.",
+        questions: [
+          { prompt: "___, Tuesday, Wednesday", options: ["Monday", "Sunday", "Thursday"] },
+          { prompt: "___, Friday, Saturday", options: ["Wednesday", "Thursday", "Sunday"] },
+          { prompt: "___, Monday, Tuesday", options: ["Sunday", "Saturday", "Friday"] },
+          { prompt: "___, Thursday, Friday", options: ["Tuesday", "Wednesday", "Monday"] },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "How Many Days?",
+        instruction: "Count the days and circle the answer.",
+        questions: [
+          { prompt: "How many days from Monday to Friday?", options: ["3", "4", "5"] },
+          { prompt: "How many days from Tuesday to Thursday?", options: ["1", "2", "3"] },
+          { prompt: "How many days from Saturday to Monday?", options: ["1", "2", "3"] },
+          { prompt: "How many days in one week?", options: ["5", "6", "7"] },
+        ],
+      },
+      {
+        type: "matching",
+        title: "Match Days to Position",
+        instruction: "Match each day to its position in the week.",
+        left: ["Monday", "Wednesday", "Friday", "Sunday"],
+        right: ["7th day", "1st day", "3rd day", "5th day"],
+      },
+      {
+        type: "sorting",
+        title: "Sort: Weekday or Weekend?",
+        instruction: "Sort each day into the correct column.",
+        columns: ["Weekday", "Weekend"],
+        items: [
+          { label: "Monday" },
+          { label: "Saturday" },
+          { label: "Wednesday" },
+          { label: "Sunday" },
+          { label: "Friday" },
+          { label: "Thursday" },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Days of the Week Facts",
+        instruction: "Circle the correct answer.",
+        questions: [
+          { prompt: "How many weekdays are there?", options: ["5", "6", "7"] },
+          { prompt: "How many weekend days?", options: ["1", "2", "3"] },
+          { prompt: "Which day comes after Sunday?", options: ["Saturday", "Monday", "Tuesday"] },
+          { prompt: "Which day comes before Wednesday?", options: ["Monday", "Tuesday", "Thursday"] },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Write the Days in Order",
+        instruction: "Write all 7 days of the week in order.",
+        prompts: [
+          { text: "1. ___ 2. ___ 3. ___ 4. ___ 5. ___ 6. ___ 7. ___", type: "lines", lines: 2 },
+        ],
+      },
+      // ─── Medium: Months & counting days ───
+      {
+        type: "sequence",
+        title: "Months of the Year",
+        instruction: "Fill in the missing months.",
+        sequences: [
+          { items: [0, 0, 0, 0, 0], answer: [1, 2, 3, 4, 5] },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Which Month Comes Next?",
+        instruction: "Circle the month that comes next.",
+        questions: [
+          { prompt: "January, February, ___", options: ["April", "March", "May"] },
+          { prompt: "June, July, ___", options: ["August", "September", "May"] },
+          { prompt: "October, November, ___", options: ["September", "December", "January"] },
+          { prompt: "March, April, ___", options: ["February", "May", "June"] },
+        ],
+      },
+      {
+        type: "matching",
+        title: "Match Events to Days Away",
+        instruction: "Use a calendar to match how many days until each event.",
+        left: ["Tomorrow", "In 1 week", "In 2 weeks", "In 3 days"],
+        right: ["3 days", "14 days", "1 day", "7 days"],
+      },
+      {
+        type: "matching",
+        title: "Match Time Periods",
+        instruction: "Match each description to its number of days.",
+        left: ["1 week", "2 weeks", "1 day", "Half a week"],
+        right: ["about 3–4 days", "7 days", "14 days", "1 day"],
+      },
+      {
+        type: "circle-correct",
+        title: "What Day Is It? (Counting Forward)",
+        instruction: "Use counting to work out the answer.",
+        questions: [
+          { prompt: "What day is 3 days after Wednesday?", options: ["Friday", "Saturday", "Sunday"] },
+          { prompt: "What day is 5 days after Monday?", options: ["Friday", "Saturday", "Sunday"] },
+          { prompt: "What day is 7 days after Tuesday?", options: ["Monday", "Tuesday", "Wednesday"] },
+          { prompt: "What day is 4 days after Thursday?", options: ["Monday", "Tuesday", "Sunday"] },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "What Day Is It? (Counting Backward)",
+        instruction: "Count backwards to find the answer.",
+        questions: [
+          { prompt: "What day is 2 days before Friday?", options: ["Tuesday", "Wednesday", "Thursday"] },
+          { prompt: "What day is 3 days before Monday?", options: ["Thursday", "Friday", "Saturday"] },
+          { prompt: "What day is 1 day before Sunday?", options: ["Friday", "Saturday", "Monday"] },
+          { prompt: "What day is 4 days before Wednesday?", options: ["Friday", "Saturday", "Sunday"] },
+        ],
+      },
+      {
+        type: "number-bonds",
+        title: "Days Between Events",
+        instruction: "Work out how many days between each pair.",
+        bonds: [
+          { total: 7, partA: 3, partB: null },
+          { total: 14, partA: null, partB: 5 },
+          { total: 10, partA: 4, partB: null },
+          { total: 21, partA: null, partB: 7 },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Write the Months in Order",
+        instruction: "Write all 12 months of the year in order.",
+        prompts: [
+          { text: "1. ___ 2. ___ 3. ___ 4. ___ 5. ___ 6. ___\n7. ___ 8. ___ 9. ___ 10. ___ 11. ___ 12. ___", type: "lines", lines: 3 },
+        ],
+      },
+      // ─── Hard: Calendar reading ───
+      {
+        type: "count-objects",
+        title: "Count Days on a Calendar",
+        instruction: "Count the number of days between each pair of dates.",
+        rows: [
+          { object: "star", count: 5 },
+          { object: "star", count: 10 },
+          { object: "star", count: 14 },
+          { object: "star", count: 21 },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Calendar Questions",
+        instruction: "Use a calendar to answer these questions.",
+        prompts: [
+          { text: "How many days are in this month? ___", type: "lines", lines: 1 },
+          { text: "What day of the week is the 15th? ___", type: "lines", lines: 1 },
+          { text: "How many Saturdays are in this month? ___", type: "lines", lines: 1 },
+          { text: "What is the date of the last day of this month? ___", type: "lines", lines: 1 },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Months and Seasons (Australian)",
+        instruction: "Circle the correct answer.",
+        questions: [
+          { prompt: "How many months in a year?", options: ["10", "11", "12"] },
+          { prompt: "Which month comes after June?", options: ["May", "July", "August"] },
+          { prompt: "Which season is December in Australia?", options: ["Winter", "Spring", "Summer"] },
+          { prompt: "Which month is the first month of the year?", options: ["December", "January", "March"] },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "More Calendar Facts",
+        instruction: "Circle the correct answer.",
+        questions: [
+          { prompt: "How many days in most weeks?", options: ["5", "6", "7"] },
+          { prompt: "How many weeks in a year (about)?", options: ["12", "36", "52"] },
+          { prompt: "Which month comes before October?", options: ["September", "November", "August"] },
+          { prompt: "How many days are in February (most years)?", options: ["28", "30", "31"] },
+        ],
+      },
+      {
+        type: "matching",
+        title: "Match Months to Seasons (Australia)",
+        instruction: "Match each group of months to the correct season.",
+        left: ["December, January, February", "March, April, May", "June, July, August", "September, October, November"],
+        right: ["Spring", "Summer", "Autumn", "Winter"],
+      },
+      {
+        type: "open-response",
+        title: "Days Between Events",
+        instruction: "Work out how many days between these events.",
+        prompts: [
+          { text: "From March 1 to March 10 = ___ days", type: "lines", lines: 1 },
+          { text: "From Monday to the following Monday = ___ days", type: "lines", lines: 1 },
+          { text: "From June 15 to June 30 = ___ days", type: "lines", lines: 1 },
+          { text: "From December 25 to January 1 = ___ days", type: "lines", lines: 1 },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "My Calendar Page",
+        instruction: "Answer these questions about your own life.",
+        prompts: [
+          { text: "My birthday is in the month of ___", type: "lines", lines: 1 },
+          { text: "How many days until your next birthday (approximately)? ___", type: "lines", lines: 1 },
+          { text: "What is today's date? ___", type: "lines", lines: 1 },
+          { text: "What day of the week is it today? ___", type: "lines", lines: 1 },
+        ],
+      },
+      {
+        type: "home-activity",
+        title: "Home Activity: Calendar Explorer",
+        instruction: "Use a calendar at home to practise counting days!",
+        suggestions: [
+          "Mark your birthday on a calendar. How many days until your birthday?",
+          "Mark family events on the calendar. Count the days between them.",
+          "Find how many days until the next school holiday.",
+          "Count backwards from your birthday to today. How many days ago was it?",
+        ],
+      },
+    ],
+  },
+
   // PLACEHOLDER_FOR_REMAINING_WORKSHEETS
 ];
 
