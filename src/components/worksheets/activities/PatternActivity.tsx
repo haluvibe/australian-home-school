@@ -9,7 +9,7 @@ interface Props {
 
 export default function PatternActivity({ data, number }: Props) {
   return (
-    <ActivityBlock number={number} title={data.title} instruction={data.instruction}>
+    <ActivityBlock number={number} title={data.title} instruction={data.instruction} parentTip={data.parentTip}>
       <div className="space-y-4">
         {data.rows.map((row, i) => (
           <div key={i} className="flex items-center gap-2 rounded-lg border border-charcoal/8 p-3">

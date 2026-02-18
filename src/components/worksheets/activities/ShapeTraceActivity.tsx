@@ -122,7 +122,7 @@ function ShapeSVG({ name, sides }: { name: string; sides: number }) {
 
 export default function ShapeTraceActivity({ data, number }: Props) {
   return (
-    <ActivityBlock number={number} title={data.title} instruction={data.instruction}>
+    <ActivityBlock number={number} title={data.title} instruction={data.instruction} parentTip={data.parentTip}>
       <div className="flex flex-wrap gap-6">
         {data.shapes.map((shape, i) => (
           <div key={i} className="flex flex-col items-center gap-2">

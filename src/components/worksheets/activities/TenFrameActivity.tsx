@@ -60,7 +60,7 @@ function TenFrame({ filled, total = 10 }: { filled: number; total?: number }) {
 
 export default function TenFrameActivity({ data, number }: Props) {
   return (
-    <ActivityBlock number={number} title={data.title} instruction={data.instruction}>
+    <ActivityBlock number={number} title={data.title} instruction={data.instruction} parentTip={data.parentTip}>
       <div className="space-y-5">
         {data.frames.map((frame, i) => (
           <TenFrame key={i} filled={frame.filled} total={frame.total} />

@@ -13,7 +13,7 @@ export default function MatchingActivity({ data, number }: Props) {
   const itemCount = Math.max(leftList.length, rightList.length);
 
   return (
-    <ActivityBlock number={number} title={data.title} instruction={data.instruction}>
+    <ActivityBlock number={number} title={data.title} instruction={data.instruction} parentTip={data.parentTip}>
       <div className="flex justify-around gap-8">
         {/* Left column */}
         <div className="space-y-4">

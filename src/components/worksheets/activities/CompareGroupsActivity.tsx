@@ -9,7 +9,7 @@ interface Props {
 
 export default function CompareGroupsActivity({ data, number }: Props) {
   return (
-    <ActivityBlock number={number} title={data.title} instruction={data.instruction}>
+    <ActivityBlock number={number} title={data.title} instruction={data.instruction} parentTip={data.parentTip}>
       <div className="space-y-5">
         {data.pairs.map((pair, i) => (
           <div key={i} className="rounded-lg border border-charcoal/8 p-3">

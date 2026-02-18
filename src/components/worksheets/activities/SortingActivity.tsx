@@ -9,7 +9,7 @@ interface Props {
 
 export default function SortingActivity({ data, number }: Props) {
   return (
-    <ActivityBlock number={number} title={data.title} instruction={data.instruction}>
+    <ActivityBlock number={number} title={data.title} instruction={data.instruction} parentTip={data.parentTip}>
       <div className="space-y-4">
         {/* Items to sort */}
         <div className="flex flex-wrap gap-2 rounded-lg border border-charcoal/8 bg-cream/50 p-3">

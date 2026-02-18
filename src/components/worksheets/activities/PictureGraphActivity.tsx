@@ -11,7 +11,7 @@ export default function PictureGraphActivity({ data, number }: Props) {
   const maxCount = Math.max(...data.rows.map((r) => r.count));
 
   return (
-    <ActivityBlock number={number} title={data.title} instruction={data.instruction}>
+    <ActivityBlock number={number} title={data.title} instruction={data.instruction} parentTip={data.parentTip}>
       <div className="space-y-4">
         {/* Graph */}
         <div className="overflow-x-auto rounded-lg border border-charcoal/10 bg-cream/30 p-3">

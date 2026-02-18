@@ -9,7 +9,7 @@ interface Props {
 
 export default function CountObjectsActivity({ data, number }: Props) {
   return (
-    <ActivityBlock number={number} title={data.title} instruction={data.instruction}>
+    <ActivityBlock number={number} title={data.title} instruction={data.instruction} parentTip={data.parentTip}>
       {data.rows ? (
         <div className="space-y-4">
           {data.rows.map((row, i) => (

@@ -8,7 +8,7 @@ interface Props {
 
 export default function NumberBondsActivity({ data, number }: Props) {
   return (
-    <ActivityBlock number={number} title={data.title} instruction={data.instruction}>
+    <ActivityBlock number={number} title={data.title} instruction={data.instruction} parentTip={data.parentTip}>
       <div className="flex flex-wrap gap-6">
         {data.bonds.map((bond, i) => (
           <div key={i} className="flex flex-col items-center">

@@ -8,13 +8,18 @@ const strandColors: Record<string, string> = {
   Statistics: "bg-terracotta-light/20 text-terracotta-dark",
 };
 
+import type { LearningGuide } from "@/lib/worksheet-types";
+
+// ... existing imports
+
 interface WorksheetPageProps {
   title: string;
   strand: string;
+  learningGuide?: LearningGuide;
   children: ReactNode;
 }
 
-export default function WorksheetPage({ title, strand, children }: WorksheetPageProps) {
+export default function WorksheetPage({ title, strand, learningGuide, children }: WorksheetPageProps) {
   return (
     <div className="worksheet-page mx-auto max-w-[210mm] bg-white p-6 sm:p-10 print:p-0">
       {/* Header */}
@@ -40,6 +45,38 @@ export default function WorksheetPage({ title, strand, children }: WorksheetPage
           </div>
         </div>
       </div>
+
+      {/* The Spark (Learning Guide) */}
+      {learningGuide && (
+        <div className="mb-8 rounded-xl border-2 border-golden/30 bg-golden/10 p-5 print:break-inside-avoid">
+          <div className="mb-3 flex items-center gap-2">
+            <span className="flex h-8 w-8 items-center justify-center rounded-full bg-golden text-lg">
+              ✨
+            </span>
+            <h2 className="font-display text-xl font-bold text-charcoal">The Spark</h2>
+          </div>
+          <div className="grid gap-4 sm:grid-cols-3">
+            <div>
+              <h3 className="text-xs font-bold uppercase tracking-wider text-charcoal/60">Concept</h3>
+              <p className="mt-1 text-sm font-medium leading-relaxed text-charcoal">
+                {learningGuide.concept}
+              </p>
+            </div>
+            <div>
+              <h3 className="text-xs font-bold uppercase tracking-wider text-charcoal/60">Activity</h3>
+              <p className="mt-1 text-sm font-medium leading-relaxed text-charcoal">
+                {learningGuide.activation}
+              </p>
+            </div>
+            <div>
+              <h3 className="text-xs font-bold uppercase tracking-wider text-charcoal/60">Check</h3>
+              <p className="mt-1 text-sm font-medium leading-relaxed text-charcoal">
+                {learningGuide.check}
+              </p>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Activities */}
       <div className="grid grid-cols-2 gap-4">

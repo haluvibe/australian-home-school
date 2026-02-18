@@ -26,7 +26,7 @@ function DrawingBox() {
 
 export default function OpenResponseActivity({ data, number }: Props) {
   return (
-    <ActivityBlock number={number} title={data.title} instruction={data.instruction}>
+    <ActivityBlock number={number} title={data.title} instruction={data.instruction} parentTip={data.parentTip}>
       <div className="space-y-5">
         {data.prompts.map((prompt, i) => (
           <div key={i}>

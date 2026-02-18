@@ -9,7 +9,7 @@ interface Props {
 
 export default function SequenceActivity({ data, number }: Props) {
   return (
-    <ActivityBlock number={number} title={data.title} instruction={data.instruction}>
+    <ActivityBlock number={number} title={data.title} instruction={data.instruction} parentTip={data.parentTip}>
       {data.items ? (
         <div className="space-y-3">
           {data.items.map((item, i) => (

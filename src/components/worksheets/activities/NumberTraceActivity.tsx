@@ -8,7 +8,7 @@ interface Props {
 
 export default function NumberTraceActivity({ data, number }: Props) {
   return (
-    <ActivityBlock number={number} title={data.title} instruction={data.instruction}>
+    <ActivityBlock number={number} title={data.title} instruction={data.instruction} parentTip={data.parentTip}>
       <div className="flex flex-wrap gap-3">
         {data.numbers.map((n, i) => {
           const isDouble = n >= 10;
