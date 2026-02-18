@@ -5,6 +5,11 @@ import Link from "next/link";
 import type { YearLevelData } from "@/lib/curriculum-data";
 import { annotateText } from "@/lib/glossary";
 
+function yearLevelToPath(yearLevel: string): string {
+  if (yearLevel === "Foundation") return "foundation";
+  return yearLevel.toLowerCase().replace(/\s+/g, "-");
+}
+
 interface CurriculumYearCardProps {
   year: YearLevelData;
   subject: string;
@@ -189,7 +194,7 @@ export default function CurriculumYearCard({
                               )}
                               {worksheetSlug && (
                                 <Link
-                                  href={`/worksheets/mathematics/foundation/${worksheetSlug}`}
+                                  href={`/worksheets/mathematics/${yearLevelToPath(year.yearLevel)}/${worksheetSlug}`}
                                   className="mt-1.5 flex items-center gap-2 rounded-lg border border-sage/15 bg-sage/[0.04] px-3 py-1.5 text-sm transition-colors hover:bg-sage/[0.08]"
                                 >
                                   <svg

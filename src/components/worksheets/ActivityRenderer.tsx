@@ -15,44 +15,76 @@ import OpenResponseActivity from "./activities/OpenResponseActivity";
 import HomeActivityActivity from "./activities/HomeActivityActivity";
 import PictureGraphActivity from "./activities/PictureGraphActivity";
 
+const COMPACT_TYPES = new Set([
+  "number-trace",
+  "count-objects",
+  "number-bonds",
+  "circle-correct",
+  "shape-trace",
+]);
+
 interface Props {
   activity: ActivityData;
   number: number;
 }
 
 export default function ActivityRenderer({ activity, number }: Props) {
+  const isCompact = COMPACT_TYPES.has(activity.type);
+
+  let content: React.ReactNode;
   switch (activity.type) {
     case "number-trace":
-      return <NumberTraceActivity data={activity} number={number} />;
+      content = <NumberTraceActivity data={activity} number={number} />;
+      break;
     case "count-objects":
-      return <CountObjectsActivity data={activity} number={number} />;
+      content = <CountObjectsActivity data={activity} number={number} />;
+      break;
     case "matching":
-      return <MatchingActivity data={activity} number={number} />;
+      content = <MatchingActivity data={activity} number={number} />;
+      break;
     case "compare-groups":
-      return <CompareGroupsActivity data={activity} number={number} />;
+      content = <CompareGroupsActivity data={activity} number={number} />;
+      break;
     case "number-bonds":
-      return <NumberBondsActivity data={activity} number={number} />;
+      content = <NumberBondsActivity data={activity} number={number} />;
+      break;
     case "pattern":
-      return <PatternActivity data={activity} number={number} />;
+      content = <PatternActivity data={activity} number={number} />;
+      break;
     case "sorting":
-      return <SortingActivity data={activity} number={number} />;
+      content = <SortingActivity data={activity} number={number} />;
+      break;
     case "circle-correct":
-      return <CircleCorrectActivity data={activity} number={number} />;
+      content = <CircleCorrectActivity data={activity} number={number} />;
+      break;
     case "sequence":
-      return <SequenceActivity data={activity} number={number} />;
+      content = <SequenceActivity data={activity} number={number} />;
+      break;
     case "shape-trace":
-      return <ShapeTraceActivity data={activity} number={number} />;
+      content = <ShapeTraceActivity data={activity} number={number} />;
+      break;
     case "tally-chart":
-      return <TallyChartActivity data={activity} number={number} />;
+      content = <TallyChartActivity data={activity} number={number} />;
+      break;
     case "ten-frame":
-      return <TenFrameActivity data={activity} number={number} />;
+      content = <TenFrameActivity data={activity} number={number} />;
+      break;
     case "open-response":
-      return <OpenResponseActivity data={activity} number={number} />;
+      content = <OpenResponseActivity data={activity} number={number} />;
+      break;
     case "home-activity":
-      return <HomeActivityActivity data={activity} number={number} />;
+      content = <HomeActivityActivity data={activity} number={number} />;
+      break;
     case "picture-graph":
-      return <PictureGraphActivity data={activity} number={number} />;
+      content = <PictureGraphActivity data={activity} number={number} />;
+      break;
     default:
       return null;
   }
+
+  return (
+    <div className={isCompact ? "" : "col-span-2"}>
+      {content}
+    </div>
+  );
 }

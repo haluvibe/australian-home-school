@@ -2,7 +2,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Terms of Service — Australian Home Schooling",
+  title: "Terms of Service",
   description:
     "Terms of service for Australian Home Schooling. Read our terms and conditions for using our website and services.",
 };

@@ -38,6 +38,31 @@ const curriculumSubjects = [
   },
 ];
 
+const worksheetSubjects = [
+  {
+    label: "Mathematics",
+    href: "/worksheets/mathematics",
+    icon: (
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <line x1="12" y1="2" x2="12" y2="22" />
+        <line x1="2" y1="12" x2="22" y2="12" />
+        <path d="M4 4l4 4M16 4l4 4M4 16l4 4M16 16l4 4" />
+      </svg>
+    ),
+  },
+  {
+    label: "English",
+    href: "/worksheets/english",
+    comingSoon: true,
+    icon: (
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+        <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+      </svg>
+    ),
+  },
+];
+
 const dropdowns: Record<string, DropdownConfig> = {
   "External Resources": {
     tagline: "Everything you need\nto teach with confidence",
@@ -86,6 +111,7 @@ const dropdowns: Record<string, DropdownConfig> = {
 const navItems = [
   { label: "Home", href: "/" },
   { label: "Curriculum", href: "#", hasDropdown: true },
+  { label: "Worksheets", href: "#", hasDropdown: true },
   { label: "External Resources", href: "#", hasDropdown: true },
   { label: "FAQ", href: "/faq" },
   { label: "Contact", href: "/contact" },
@@ -224,7 +250,7 @@ export default function Navbar() {
         {/* CTA + Mobile toggle */}
         <div className="flex items-center gap-3">
           <Link
-            href="/get-started"
+            href="/curriculum"
             className="hidden rounded-full bg-charcoal px-5 py-2.5 text-sm font-semibold text-cream transition-all duration-200 hover:bg-terracotta hover:shadow-lg hover:shadow-terracotta/20 lg:block"
           >
             Get Started
@@ -304,6 +330,65 @@ export default function Navbar() {
                     />
                   </svg>
                 </Link>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Desktop Worksheets Dropdown Panel */}
+      <div
+        className="hidden border-t border-charcoal/5 overflow-hidden lg:grid"
+        style={{
+          gridTemplateRows: openDropdown === "Worksheets" ? "1fr" : "0fr",
+          opacity: openDropdown === "Worksheets" ? 1 : 0,
+          transition: "grid-template-rows 0.3s ease, opacity 0.2s ease",
+        }}
+        onMouseEnter={() => handleMouseEnter("Worksheets")}
+        onMouseLeave={handleMouseLeave}
+      >
+        <div className="overflow-hidden">
+          <div className="mx-auto hidden max-w-7xl items-start gap-16 px-6 py-10 lg:flex lg:px-8">
+            <p className="font-display text-2xl leading-tight text-charcoal/40 whitespace-pre-line min-w-[220px]">
+              {"Printable worksheets\nby subject"}
+            </p>
+            <div className="flex flex-1 gap-3">
+              {worksheetSubjects.map((subject) => (
+                "comingSoon" in subject && subject.comingSoon ? (
+                  <div
+                    key={subject.label}
+                    className="flex flex-1 items-center gap-4 rounded-2xl border border-dashed border-charcoal/10 px-5 py-4 opacity-50"
+                  >
+                    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-sand/60 text-charcoal-light">
+                      {subject.icon}
+                    </div>
+                    <div>
+                      <span className="text-[15px] font-medium text-charcoal">{subject.label}</span>
+                      <p className="text-xs italic text-charcoal-light/60">Coming soon</p>
+                    </div>
+                  </div>
+                ) : (
+                  <Link
+                    key={subject.label}
+                    href={subject.href}
+                    className="group flex flex-1 items-center gap-4 rounded-2xl border border-transparent px-5 py-4 transition-all duration-200 hover:border-sand hover:bg-cream"
+                    onClick={() => setOpenDropdown(null)}
+                  >
+                    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-sand/60 text-charcoal-light transition-colors group-hover:bg-terracotta/10 group-hover:text-terracotta">
+                      {subject.icon}
+                    </div>
+                    <span className="text-[15px] font-medium text-charcoal">{subject.label}</span>
+                    <svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      fill="none"
+                      className="ml-auto text-charcoal/20 transition-all duration-200 group-hover:translate-x-0.5 group-hover:text-terracotta"
+                    >
+                      <path d="M6 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                  </Link>
+                )
               ))}
             </div>
           </div>
@@ -407,7 +492,7 @@ export default function Navbar() {
                   <div
                     className="overflow-hidden"
                     style={{
-                      maxHeight: openDropdown === item.label ? "300px" : "0px",
+                      maxHeight: openDropdown === item.label ? "500px" : "0px",
                       transition: "max-height 0.3s ease",
                     }}
                   >
@@ -424,6 +509,30 @@ export default function Navbar() {
                             {subject.label}
                           </Link>
                         ))}
+                      </div>
+                    ) : item.label === "Worksheets" ? (
+                      <div className="space-y-1 pb-2 pl-4">
+                        {worksheetSubjects.map((subject) =>
+                          "comingSoon" in subject && subject.comingSoon ? (
+                            <div
+                              key={subject.label}
+                              className="flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm text-charcoal-light/40 italic"
+                            >
+                              <span className="text-charcoal/20">{subject.icon}</span>
+                              {subject.label} — Coming soon
+                            </div>
+                          ) : (
+                            <Link
+                              key={subject.label}
+                              href={subject.href}
+                              className="flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm text-charcoal-light transition-colors hover:bg-cream hover:text-terracotta"
+                              onClick={() => setMobileOpen(false)}
+                            >
+                              <span className="text-charcoal/30">{subject.icon}</span>
+                              {subject.label}
+                            </Link>
+                          )
+                        )}
                       </div>
                     ) : (
                       <div className="space-y-1 pb-2 pl-4">
@@ -455,7 +564,7 @@ export default function Navbar() {
           ))}
           <div className="pt-3">
             <Link
-              href="/get-started"
+              href="/curriculum"
               className="block rounded-full bg-charcoal px-5 py-3 text-center text-sm font-semibold text-cream transition-colors hover:bg-terracotta"
               onClick={() => setMobileOpen(false)}
             >

@@ -9,7 +9,7 @@ interface ActivityBlockProps {
 
 export default function ActivityBlock({ number, title, instruction, children }: ActivityBlockProps) {
   return (
-    <div className="activity-block rounded-xl border-2 border-charcoal/8 p-4 sm:p-5">
+    <div className="activity-block rounded-xl border-2 border-charcoal/8 p-3 sm:p-4">
       <div className="mb-3 flex items-start gap-3">
         <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-terracotta text-base font-bold text-white">
           {number}

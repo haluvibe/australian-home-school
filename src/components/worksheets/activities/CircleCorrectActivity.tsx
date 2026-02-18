@@ -13,13 +13,17 @@ export default function CircleCorrectActivity({ data, number }: Props) {
       <div className="space-y-4">
         {data.questions.map((q, i) => (
           <div key={i} className="rounded-lg border border-charcoal/8 p-3">
-            <div className="mb-2 flex items-center gap-2">
+            <div className="mb-2 flex flex-col items-center gap-2">
               {q.promptIcon && (
-                <WorksheetObject name={q.promptIcon} size={32} />
+                <div className={`flex min-h-[32px] w-full flex-wrap items-center gap-2 ${q.promptCount && q.promptCount > 5 ? "justify-center" : "justify-center"}`}>
+                  {Array.from({ length: q.promptCount !== undefined ? q.promptCount : 1 }).map((_, iconIndex) => (
+                    <WorksheetObject key={iconIndex} name={q.promptIcon!} size={32} />
+                  ))}
+                </div>
               )}
-              <p className="text-base font-medium text-charcoal">{q.prompt}</p>
+              <p className="text-center text-base font-medium text-charcoal">{q.prompt}</p>
             </div>
-            <div className="flex flex-wrap gap-3">
+            <div className="flex flex-wrap justify-center gap-3">
               {q.options.map((option, j) => (
                 <div
                   key={j}

@@ -4,7 +4,7 @@ import ResourceCard from "@/components/ResourceCard";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Lesson Plans — Australian Home Schooling",
+  title: "Lesson Plans",
   description:
     "Free and premium lesson plan resources for Australian homeschooling families. English, literacy, mathematics, and numeracy resources aligned to the Australian Curriculum.",
 };

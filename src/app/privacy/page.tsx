@@ -2,7 +2,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy — Australian Home Schooling",
+  title: "Privacy Policy",
   description:
     "Privacy policy for Australian Home Schooling. Learn how we collect, use, and protect your personal information.",
 };

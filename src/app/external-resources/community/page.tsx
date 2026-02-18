@@ -4,7 +4,7 @@ import ResourceCard from "@/components/ResourceCard";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Community Resources — Australian Home Schooling",
+  title: "Community Resources",
   description:
     "A curated directory of homeschooling support groups, curriculum providers, and community resources across every Australian state and territory.",
 };

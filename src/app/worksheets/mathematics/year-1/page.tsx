@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { foundationMathsWorksheets } from "@/lib/worksheet-data";
+import { year1MathsWorksheets } from "@/lib/worksheet-data-year1";
 
 export const metadata: Metadata = {
-  title: "Foundation Mathematics Worksheets",
+  title: "Year 1 Mathematics Worksheets — Australian Home Schooling",
   description:
-    "Free printable Foundation Mathematics worksheets aligned to the Australian Curriculum. Covering number, algebra, measurement, space and statistics.",
+    "Free printable Year 1 Mathematics worksheets aligned to the Australian Curriculum. Covering number, algebra, measurement, space and statistics.",
 };
 
 const strandColors: Record<string, string> = {
@@ -17,15 +17,15 @@ const strandColors: Record<string, string> = {
 };
 
 const strandIcons: Record<string, string> = {
-  Number: "🔢",
-  Algebra: "🔁",
-  Measurement: "📏",
-  Space: "📐",
-  Statistics: "📊",
+  Number: "\u{1F522}",
+  Algebra: "\u{1F501}",
+  Measurement: "\u{1F4CF}",
+  Space: "\u{1F4D0}",
+  Statistics: "\u{1F4CA}",
 };
 
-export default function FoundationWorksheetLanding() {
-  const grouped = foundationMathsWorksheets.reduce<Record<string, typeof foundationMathsWorksheets>>(
+export default function Year1WorksheetLanding() {
+  const grouped = year1MathsWorksheets.reduce<Record<string, typeof year1MathsWorksheets>>(
     (acc, ws) => {
       if (!acc[ws.strand]) acc[ws.strand] = [];
       acc[ws.strand].push(ws);
@@ -57,7 +57,7 @@ export default function FoundationWorksheetLanding() {
 
             <span className="mt-4 inline-flex items-center gap-2 rounded-full border border-terracotta/20 bg-terracotta/5 px-4 py-1.5 text-sm font-semibold uppercase tracking-wider text-terracotta-dark">
               <span className="h-1.5 w-1.5 rounded-full bg-terracotta" />
-              Foundation Year
+              Year 1
             </span>
 
             <h1 className="mt-4 font-display text-4xl font-semibold leading-[1.1] tracking-tight text-charcoal sm:text-5xl">
@@ -69,7 +69,7 @@ export default function FoundationWorksheetLanding() {
             </h1>
 
             <p className="mt-4 max-w-xl text-base leading-relaxed text-charcoal-light sm:mt-6 sm:text-lg">
-              Colourful, curriculum-aligned worksheets for Foundation Year
+              Colourful, curriculum-aligned worksheets for Year 1
               mathematics. Just click, print and learn!
             </p>
           </div>
@@ -83,7 +83,7 @@ export default function FoundationWorksheetLanding() {
             {Object.entries(grouped).map(([strand, worksheets]) => (
               <div key={strand}>
                 <div className="mb-4 flex items-center gap-2">
-                  <span className="text-xl">{strandIcons[strand] || "📝"}</span>
+                  <span className="text-xl">{strandIcons[strand] || "\u{1F4DD}"}</span>
                   <h2 className="font-display text-2xl font-semibold text-charcoal">
                     {strand}
                   </h2>
@@ -93,7 +93,7 @@ export default function FoundationWorksheetLanding() {
                   {worksheets.map((ws) => (
                     <Link
                       key={ws.slug}
-                      href={`/worksheets/mathematics/foundation/${ws.slug}`}
+                      href={`/worksheets/mathematics/year-1/${ws.slug}`}
                       className="group rounded-2xl border border-charcoal/[0.06] bg-warm-white p-5 transition-all duration-200 hover:border-charcoal/15 hover:shadow-md"
                     >
                       <span

@@ -42,7 +42,7 @@ export default function WorksheetPage({ title, strand, children }: WorksheetPage
       </div>
 
       {/* Activities */}
-      <div className="space-y-7">
+      <div className="grid grid-cols-2 gap-4">
         {children}
       </div>
     </div>

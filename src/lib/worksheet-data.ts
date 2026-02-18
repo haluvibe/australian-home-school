@@ -26,6 +26,16 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         ],
       },
       {
+        type: "count-objects",
+        title: "Count the Balls",
+        instruction: "Count the balls in each row. Write the number in the box.",
+        rows: [
+          { object: "ball", count: 2 },
+          { object: "ball", count: 4 },
+          { object: "ball", count: 5 },
+        ],
+      },
+      {
         type: "matching",
         title: "Match the Number to the Word",
         instruction: "Draw a line from each number to the matching word.",
@@ -37,9 +47,9 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         title: "Which Number Is This?",
         instruction: "Look at the group of objects. Circle the correct number.",
         questions: [
-          { prompt: "How many stars?", promptIcon: "star", options: ["1", "2", "3"] },
-          { prompt: "How many stars?", promptIcon: "star", options: ["3", "5", "4"] },
-          { prompt: "How many stars?", promptIcon: "star", options: ["0", "1", "2"] },
+          { prompt: "How many stars?", promptIcon: "star", promptCount: 2, options: ["1", "2", "3"] },
+          { prompt: "How many stars?", promptIcon: "star", promptCount: 5, options: ["3", "5", "4"] },
+          { prompt: "How many stars?", promptIcon: "star", promptCount: 0, options: ["0", "1", "2"] },
         ],
       },
       {
@@ -50,6 +60,41 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
           { object: "heart", count: 4 },
           { object: "heart", count: 5 },
           { object: "heart", count: 2 },
+        ],
+      },
+      {
+        type: "matching",
+        title: "Match Numbers 1–5",
+        instruction: "Draw a line to match each number word to its numeral.",
+        left: ["four", "five", "one", "two", "three"],
+        right: ["2", "4", "3", "1", "5"],
+      },
+      {
+        type: "ten-frame",
+        title: "Ten Frames 0–5",
+        instruction: "Look at each ten frame. Count the filled circles and write the number.",
+        frames: [
+          { filled: 1, total: 5 },
+          { filled: 3, total: 5 },
+          { filled: 5, total: 5 },
+          { filled: 0, total: 5 },
+        ],
+      },
+      {
+        type: "matching",
+        title: "Match Words to Numbers (0–5)",
+        instruction: "Draw a line from each word to the correct number.",
+        left: ["zero", "four", "five", "one", "three"],
+        right: ["5", "0", "1", "3", "4"],
+      },
+      {
+        type: "circle-correct",
+        title: "How Many Can You See?",
+        instruction: "Look at each group of objects. Circle the correct number.",
+        questions: [
+          { prompt: "How many cats?", promptIcon: "cat", promptCount: 3, options: ["2", "3", "4"] },
+          { prompt: "How many dogs?", promptIcon: "dog", promptCount: 4, options: ["4", "5", "3"] },
+          { prompt: "How many birds?", promptIcon: "bird", promptCount: 2, options: ["1", "0", "2"] },
         ],
       },
       // --- EASY: Trace & recognise 6-10 ---
@@ -70,12 +115,16 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         ],
       },
       {
-        type: "matching",
-        title: "Match Numbers 1–5",
-        instruction: "Draw a line to match each number word to its numeral.",
-        left: ["four", "five", "one", "two", "three"],
-        right: ["2", "4", "3", "1", "5"],
+        type: "count-objects",
+        title: "Count the Trees",
+        instruction: "Count the trees in each row. Write the total in the box.",
+        rows: [
+          { object: "tree", count: 7 },
+          { object: "tree", count: 9 },
+          { object: "tree", count: 10 },
+        ],
       },
+
       {
         type: "circle-correct",
         title: "Pick the Right Number",
@@ -94,6 +143,27 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
           { object: "fish", count: 9 },
           { object: "fish", count: 10 },
           { object: "fish", count: 6 },
+        ],
+      },
+      {
+        type: "ten-frame",
+        title: "Ten Frames 6–10",
+        instruction: "Look at each ten frame. Count the filled circles and write the number.",
+        frames: [
+          { filled: 6, total: 10 },
+          { filled: 8, total: 10 },
+          { filled: 10, total: 10 },
+          { filled: 7, total: 10 },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Count and Choose (6–10)",
+        instruction: "Count the objects and circle the correct number.",
+        questions: [
+          { prompt: "How many bananas?", promptIcon: "banana", promptCount: 7, options: ["6", "7", "8"] },
+          { prompt: "How many pencils?", promptIcon: "pencil", promptCount: 9, options: ["8", "9", "10"] },
+          { prompt: "How many cups?", promptIcon: "cup", promptCount: 6, options: ["5", "6", "7"] },
         ],
       },
       // --- MEDIUM: Sequences & ordering 0-10 ---
@@ -115,6 +185,16 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
           { prompt: "1, 2, ___, 4, 5", options: ["6", "3", "0"] },
           { prompt: "3, 4, ___, 6, 7", options: ["5", "8", "2"] },
           { prompt: "7, ___, 9, 10", options: ["6", "11", "8"] },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "What Comes Before? (0–10)",
+        instruction: "Circle the number that comes just before.",
+        questions: [
+          { prompt: "___, 3, 4, 5", options: ["1", "2", "6"] },
+          { prompt: "___, 7, 8, 9", options: ["5", "6", "10"] },
+          { prompt: "___, 1, 2, 3", options: ["4", "0", "5"] },
         ],
       },
       {
@@ -146,6 +226,25 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
           { label: "1" },
         ],
       },
+      {
+        type: "sequence",
+        title: "Order From Biggest to Smallest",
+        instruction: "Write 1st, 2nd, 3rd, 4th to put these numbers from biggest to smallest.",
+        items: [
+          { label: "3" },
+          { label: "10" },
+          { label: "7" },
+          { label: "1" },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Fill in the Number Line (0–10)",
+        instruction: "Some numbers are missing from the number line. Write the missing numbers.",
+        prompts: [
+          { text: "0, 1, ___, 3, ___, 5, ___, 7, ___, 9, ___", type: "lines", lines: 1 },
+        ],
+      },
       // --- MEDIUM: Trace & recognise 11-15 ---
       {
         type: "number-trace",
@@ -161,6 +260,16 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
           { object: "flower", count: 11 },
           { object: "flower", count: 13 },
           { object: "flower", count: 12 },
+        ],
+      },
+      {
+        type: "count-objects",
+        title: "Count the Teddies",
+        instruction: "Count the teddies in each row. Write the total.",
+        rows: [
+          { object: "teddy", count: 12 },
+          { object: "teddy", count: 14 },
+          { object: "teddy", count: 15 },
         ],
       },
       {
@@ -181,6 +290,16 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         ],
       },
       {
+        type: "circle-correct",
+        title: "Teen Number or Not?",
+        instruction: "Circle the number that IS a teen number.",
+        questions: [
+          { prompt: "Which is a teen number?", options: ["8", "13", "20"] },
+          { prompt: "Which is a teen number?", options: ["15", "5", "50"] },
+          { prompt: "Which is NOT a teen number?", options: ["11", "7", "14"] },
+        ],
+      },
+      {
         type: "count-objects",
         title: "Count the Diamonds",
         instruction: "Count the diamonds. Write how many there are.",
@@ -188,6 +307,26 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
           { object: "diamond", count: 14 },
           { object: "diamond", count: 11 },
           { object: "diamond", count: 15 },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "What Comes Next? (11–15)",
+        instruction: "Circle the number that comes next in the sequence.",
+        questions: [
+          { prompt: "10, 11, 12, ___", options: ["13", "14", "10"] },
+          { prompt: "12, 13, 14, ___", options: ["16", "15", "11"] },
+          { prompt: "11, 12, ___, 14", options: ["15", "10", "13"] },
+        ],
+      },
+      {
+        type: "ten-frame",
+        title: "Ten Frames — Teen Numbers",
+        instruction: "Each picture shows a full ten frame plus extra dots. Count all the dots and write the number.",
+        frames: [
+          { filled: 11, total: 20 },
+          { filled: 13, total: 20 },
+          { filled: 15, total: 20 },
         ],
       },
       // --- HARDER: Trace & recognise 16-20 ---
@@ -205,6 +344,16 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
           { object: "heart", count: 16 },
           { object: "heart", count: 18 },
           { object: "heart", count: 20 },
+        ],
+      },
+      {
+        type: "count-objects",
+        title: "Count the Grapes",
+        instruction: "Count each group of grapes carefully. Write the total.",
+        rows: [
+          { object: "grape", count: 17 },
+          { object: "grape", count: 19 },
+          { object: "grape", count: 16 },
         ],
       },
       {
@@ -234,6 +383,38 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
           { prompt: "14, 15, ___, 17", options: ["13", "16", "18"] },
         ],
       },
+      {
+        type: "circle-correct",
+        title: "Pick the Right Big Number",
+        instruction: "Circle the number that matches each word.",
+        questions: [
+          { prompt: "sixteen", options: ["6", "16", "60"] },
+          { prompt: "nineteen", options: ["9", "90", "19"] },
+          { prompt: "twenty", options: ["12", "20", "2"] },
+          { prompt: "eighteen", options: ["80", "8", "18"] },
+        ],
+      },
+      {
+        type: "count-objects",
+        title: "Count the Suns",
+        instruction: "Count each group of suns. Write the total.",
+        rows: [
+          { object: "sun", count: 18 },
+          { object: "sun", count: 20 },
+          { object: "sun", count: 16 },
+        ],
+      },
+      {
+        type: "sequence",
+        title: "Order the Big Numbers",
+        instruction: "Write 1st, 2nd, 3rd, 4th to put these numbers from smallest to biggest.",
+        items: [
+          { label: "19" },
+          { label: "16" },
+          { label: "20" },
+          { label: "17" },
+        ],
+      },
       // --- CHALLENGE: Full range 0-20 ---
       {
         type: "count-objects",
@@ -254,6 +435,13 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         right: ["15", "0", "20", "8", "10"],
       },
       {
+        type: "matching",
+        title: "Mixed Number Match",
+        instruction: "Match each number word to the correct numeral.",
+        left: ["three", "thirteen", "seven", "seventeen", "eleven"],
+        right: ["17", "7", "11", "3", "13"],
+      },
+      {
         type: "circle-correct",
         title: "What Comes Before?",
         instruction: "Circle the number that comes BEFORE each number.",
@@ -262,6 +450,17 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
           { prompt: "___ comes before 10", options: ["8", "11", "9"] },
           { prompt: "___ comes before 20", options: ["18", "19", "21"] },
           { prompt: "___ comes before 13", options: ["14", "12", "11"] },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "What Comes After?",
+        instruction: "Circle the number that comes AFTER each number.",
+        questions: [
+          { prompt: "What comes after 7?", options: ["6", "8", "9"] },
+          { prompt: "What comes after 14?", options: ["13", "16", "15"] },
+          { prompt: "What comes after 19?", options: ["20", "18", "21"] },
+          { prompt: "What comes after 0?", options: ["2", "1", "10"] },
         ],
       },
       {
@@ -287,6 +486,31 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
           { prompt: "Which number means 'none'?", options: ["1", "0", "10"] },
         ],
       },
+      {
+        type: "circle-correct",
+        title: "Tricky Number Pairs",
+        instruction: "Some numbers look or sound alike. Circle the correct answer.",
+        questions: [
+          { prompt: "Which is 'thirteen' (not 'thirty')?", options: ["30", "13", "3"] },
+          { prompt: "Which is 'fifteen' (not 'fifty')?", options: ["50", "5", "15"] },
+          { prompt: "Which is 'twelve' (not 'twenty')?", options: ["20", "12", "2"] },
+          { prompt: "Which is 'fourteen' (not 'forty')?", options: ["14", "40", "4"] },
+        ],
+      },
+      {
+        type: "sorting",
+        title: "Sort: Less Than 10 or More Than 10?",
+        instruction: "Sort each number into the correct column.",
+        columns: ["Less than 10", "More than 10"],
+        items: [
+          { label: "3" },
+          { label: "15" },
+          { label: "8" },
+          { label: "18" },
+          { label: "6" },
+          { label: "12" },
+        ],
+      },
       // --- Improvement: Zero focus ---
       {
         type: "circle-correct",
@@ -295,7 +519,7 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         questions: [
           { prompt: "How many elephants are in your lunchbox right now?", options: ["0", "1", "2"] },
           { prompt: "You have 3 lollies and eat them all. How many are left?", options: ["0", "1", "3"] },
-          { prompt: "Which picture shows zero stars? (A) ⭐⭐ (B) nothing (C) ⭐", options: ["A", "B", "C"] },
+          { prompt: "Which picture shows zero stars? (A) two stars (B) nothing (C) one star", options: ["A", "B", "C"] },
           { prompt: "What number comes just before 1?", options: ["2", "0", "10"] },
         ],
       },
@@ -322,6 +546,28 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
           { text: "15 = _______________", type: "lines", lines: 1 },
         ],
       },
+      {
+        type: "open-response",
+        title: "Write the Numeral",
+        instruction: "Read each word and write the matching number.",
+        prompts: [
+          { text: "five = ___", type: "lines", lines: 1 },
+          { text: "twelve = ___", type: "lines", lines: 1 },
+          { text: "nineteen = ___", type: "lines", lines: 1 },
+          { text: "twenty = ___", type: "lines", lines: 1 },
+          { text: "zero = ___", type: "lines", lines: 1 },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Count Backwards!",
+        instruction: "Can you write the numbers counting backwards? Give it a try!",
+        prompts: [
+          { text: "Write the numbers from 5 down to 0:", type: "lines", lines: 1 },
+          { text: "Write the numbers from 10 down to 5:", type: "lines", lines: 1 },
+          { text: "Write the numbers from 20 down to 15:", type: "lines", lines: 1 },
+        ],
+      },
       // --- Try This at Home ---
       {
         type: "home-activity",
@@ -332,6 +578,8 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
           "Play 'What comes next?' — a parent says a number and the child says the next one in the sequence.",
           "Write numbers 0–20 on cards and play snap, matching the numeral to the number word.",
           "Count objects around the house (shoes by the door, spoons in the drawer) and write the numeral on a whiteboard.",
+          "Play 'Count backwards' — start from 20 and count down to 0 together. Try it while going down the stairs!",
+          "Write the numbers 0–20 in chalk on the driveway and hop along them while saying each number.",
         ],
       },
     ],
@@ -344,7 +592,7 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
     strand: "Number",
     description: "Use subitising and counting strategies to quantify collections",
     activities: [
-      // --- EASY: Subitise tiny groups 1-3 ---
+      // --- EASY: Subitise tiny groups 1-3 (10 activities) ---
       {
         type: "count-objects",
         title: "How Many Stars?",
@@ -356,13 +604,23 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         ],
       },
       {
+        type: "count-objects",
+        title: "How Many Apples?",
+        instruction: "Look at the apples. Write how many in the box.",
+        rows: [
+          { object: "apple", count: 2 },
+          { object: "apple", count: 1 },
+          { object: "apple", count: 3 },
+        ],
+      },
+      {
         type: "circle-correct",
         title: "Quick! How Many?",
         instruction: "Look at the picture quickly. Circle the right number.",
         questions: [
-          { prompt: "🍎", options: ["1", "2", "3"] },
-          { prompt: "🍎🍎🍎", options: ["2", "3", "4"] },
-          { prompt: "🍎🍎", options: ["1", "2", "3"] },
+          { prompt: "A group of 1 apple", options: ["1", "2", "3"] },
+          { prompt: "A group of 3 apples", options: ["2", "3", "4"] },
+          { prompt: "A group of 2 apples", options: ["1", "2", "3"] },
         ],
       },
       {
@@ -373,6 +631,26 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
           { object: "heart", count: 2 },
           { object: "heart", count: 3 },
           { object: "heart", count: 1 },
+        ],
+      },
+      {
+        type: "count-objects",
+        title: "How Many Circles?",
+        instruction: "Look at the circles. Write how many you see.",
+        rows: [
+          { object: "circle", count: 3 },
+          { object: "circle", count: 1 },
+          { object: "circle", count: 2 },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Subitise! Quick Eyes!",
+        instruction: "Try to see the number right away without counting one by one. Circle the right number.",
+        questions: [
+          { prompt: "A group of 2 fish", options: ["1", "2", "3"] },
+          { prompt: "A group of 1 fish", options: ["1", "2", "3"] },
+          { prompt: "A group of 3 fish", options: ["2", "3", "4"] },
         ],
       },
       {
@@ -392,7 +670,27 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
           { object: "fish", count: 2 },
         ],
       },
-      // --- EASY: Subitise groups of 4-5 ---
+      {
+        type: "count-objects",
+        title: "Count the Triangles",
+        instruction: "How many triangles do you see? Write the number.",
+        rows: [
+          { object: "triangle", count: 1 },
+          { object: "triangle", count: 3 },
+          { object: "triangle", count: 2 },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "How Many Do You See?",
+        instruction: "Look at the group and circle the correct number.",
+        questions: [
+          { prompt: "A group of 3 stars", options: ["2", "3", "4"] },
+          { prompt: "A group of 2 hearts", options: ["1", "2", "3"] },
+          { prompt: "A group of 1 flower", options: ["1", "2", "3"] },
+        ],
+      },
+      // --- EASY: Subitise groups of 4-5 (10 activities) ---
       {
         type: "count-objects",
         title: "Count the Apples",
@@ -404,13 +702,23 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         ],
       },
       {
+        type: "count-objects",
+        title: "Count the Squares",
+        instruction: "Count the squares in each row. Write the total.",
+        rows: [
+          { object: "square", count: 5 },
+          { object: "square", count: 3 },
+          { object: "square", count: 4 },
+        ],
+      },
+      {
         type: "circle-correct",
         title: "Subitise! How Many Do You See?",
         instruction: "Try to see the number WITHOUT counting one by one. Circle your answer.",
         questions: [
-          { prompt: "⭐⭐⭐⭐", options: ["3", "4", "5"] },
-          { prompt: "⭐⭐⭐⭐⭐", options: ["4", "5", "6"] },
-          { prompt: "⭐⭐⭐", options: ["2", "4", "3"] },
+          { prompt: "A group of 4 stars", options: ["3", "4", "5"] },
+          { prompt: "A group of 5 stars", options: ["4", "5", "6"] },
+          { prompt: "A group of 3 stars", options: ["2", "4", "3"] },
         ],
       },
       {
@@ -424,11 +732,41 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         ],
       },
       {
+        type: "count-objects",
+        title: "Count the Butterflies",
+        instruction: "Count each group of butterflies. Write the number.",
+        rows: [
+          { object: "butterfly", count: 4 },
+          { object: "butterfly", count: 5 },
+          { object: "butterfly", count: 3 },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Quick Look — How Many?",
+        instruction: "Try to see the total without counting one by one. Circle your answer.",
+        questions: [
+          { prompt: "A group of 5 hearts", options: ["4", "5", "6"] },
+          { prompt: "A group of 4 diamonds", options: ["3", "4", "5"] },
+          { prompt: "A group of 3 flowers", options: ["2", "3", "4"] },
+        ],
+      },
+      {
         type: "matching",
-        title: "Match Groups 1–5",
+        title: "Match Groups 1-5",
         instruction: "Draw a line from each group to the matching number.",
         left: ["● ●", "● ● ● ●", "● ● ● ● ●", "●", "● ● ●"],
         right: ["5", "1", "2", "3", "4"],
+      },
+      {
+        type: "count-objects",
+        title: "Count the Dogs",
+        instruction: "How many dogs do you see? Write the number.",
+        rows: [
+          { object: "dog", count: 5 },
+          { object: "dog", count: 4 },
+          { object: "dog", count: 3 },
+        ],
       },
       {
         type: "circle-correct",
@@ -440,19 +778,49 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
           { prompt: "One finger", options: ["0", "1", "2"] },
         ],
       },
-      // --- BRIDGE: Ten-frame introduction ---
+      {
+        type: "count-objects",
+        title: "Count the Balls",
+        instruction: "Count the balls. Write the number in the box.",
+        rows: [
+          { object: "ball", count: 4 },
+          { object: "ball", count: 2 },
+          { object: "ball", count: 5 },
+        ],
+      },
+      // --- BRIDGE: Ten-frame introduction (3 activities) ---
+      {
+        type: "ten-frame",
+        title: "Meet the Ten Frame!",
+        instruction: "A ten frame is a box with 10 spaces (2 rows of 5). Count the filled circles and write the number.",
+        frames: [
+          { filled: 2 },
+          { filled: 3 },
+          { filled: 1 },
+        ],
+      },
       {
         type: "ten-frame",
         title: "Using a Ten Frame",
-        instruction: "A ten frame helps us count. Count the filled circles and write the number.",
+        instruction: "Count the filled circles in each ten frame. Write the number.",
         frames: [
           { filled: 5 },
           { filled: 4 },
           { filled: 6 },
         ],
       },
+      {
+        type: "circle-correct",
+        title: "Ten Frame Quick Check",
+        instruction: "A ten frame has 10 spaces. Look at how many are filled and circle the correct number.",
+        questions: [
+          { prompt: "A ten frame with 3 dots filled", options: ["2", "3", "4"] },
+          { prompt: "A ten frame with 5 dots filled (one full row)", options: ["4", "5", "6"] },
+          { prompt: "A ten frame with 4 dots filled", options: ["3", "4", "5"] },
+        ],
+      },
 
-      // --- MEDIUM: Count groups of 6-8 ---
+      // --- MEDIUM: Count groups of 6-8 (10 activities) ---
       {
         type: "count-objects",
         title: "Count the Butterflies",
@@ -461,6 +829,16 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
           { object: "butterfly", count: 6 },
           { object: "butterfly", count: 7 },
           { object: "butterfly", count: 5 },
+        ],
+      },
+      {
+        type: "count-objects",
+        title: "Count the Cats",
+        instruction: "Count each group of cats. Write the total.",
+        rows: [
+          { object: "cat", count: 7 },
+          { object: "cat", count: 6 },
+          { object: "cat", count: 8 },
         ],
       },
       {
@@ -478,9 +856,9 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         title: "Pick the Right Number",
         instruction: "Count the objects. Circle the correct total.",
         questions: [
-          { prompt: "🐟🐟🐟🐟🐟🐟", options: ["5", "6", "7"] },
-          { prompt: "🐟🐟🐟🐟🐟🐟🐟🐟", options: ["7", "8", "9"] },
-          { prompt: "🐟🐟🐟🐟🐟🐟🐟", options: ["6", "7", "8"] },
+          { prompt: "A group of 6 fish", options: ["5", "6", "7"] },
+          { prompt: "A group of 8 fish", options: ["7", "8", "9"] },
+          { prompt: "A group of 7 fish", options: ["6", "7", "8"] },
         ],
       },
       {
@@ -494,13 +872,53 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         ],
       },
       {
+        type: "count-objects",
+        title: "Count the Birds",
+        instruction: "Count each group of birds carefully. Write the total.",
+        rows: [
+          { object: "bird", count: 6 },
+          { object: "bird", count: 8 },
+          { object: "bird", count: 7 },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "How Many Objects?",
+        instruction: "Count carefully and circle the correct number.",
+        questions: [
+          { prompt: "A group of 7 stars", options: ["6", "7", "8"] },
+          { prompt: "A group of 6 hearts", options: ["5", "6", "7"] },
+          { prompt: "A group of 8 apples", options: ["7", "8", "9"] },
+        ],
+      },
+      {
+        type: "count-objects",
+        title: "Count the Trees",
+        instruction: "Count the trees in each row. Write the number.",
+        rows: [
+          { object: "tree", count: 8 },
+          { object: "tree", count: 7 },
+          { object: "tree", count: 6 },
+        ],
+      },
+      {
         type: "matching",
         title: "Match Groups to Numbers (Big!)",
         instruction: "Draw a line to match each dot group to its number.",
         left: ["● ● ● ● ●", "● ● ● ● ● ● ●", "● ● ● ● ● ●", "● ● ● ● ● ● ● ●"],
         right: ["8", "5", "7", "6"],
       },
-      // --- MEDIUM: Count groups of 9-12 ---
+      {
+        type: "ten-frame",
+        title: "Ten Frame: 6, 7, and 8",
+        instruction: "Count the filled circles in each ten frame. Write the number.",
+        frames: [
+          { filled: 6 },
+          { filled: 7 },
+          { filled: 8 },
+        ],
+      },
+      // --- MEDIUM: Count groups of 9-12 (10 activities) ---
       {
         type: "count-objects",
         title: "Count the Stars",
@@ -512,13 +930,23 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         ],
       },
       {
+        type: "count-objects",
+        title: "Count the Elephants",
+        instruction: "Count the elephants in each row. Write the total.",
+        rows: [
+          { object: "elephant", count: 10 },
+          { object: "elephant", count: 9 },
+          { object: "elephant", count: 11 },
+        ],
+      },
+      {
         type: "circle-correct",
         title: "How Many? (Getting Bigger!)",
         instruction: "Count carefully and circle the right number.",
         questions: [
-          { prompt: "🌸🌸🌸🌸🌸🌸🌸🌸🌸", options: ["8", "9", "10"] },
-          { prompt: "🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸", options: ["9", "10", "11"] },
-          { prompt: "🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸", options: ["10", "11", "12"] },
+          { prompt: "A group of 9 flowers", options: ["8", "9", "10"] },
+          { prompt: "A group of 10 flowers", options: ["9", "10", "11"] },
+          { prompt: "A group of 11 flowers", options: ["10", "11", "12"] },
         ],
       },
       {
@@ -529,6 +957,16 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
           { object: "apple", count: 11 },
           { object: "apple", count: 9 },
           { object: "apple", count: 12 },
+        ],
+      },
+      {
+        type: "count-objects",
+        title: "Count the Pencils",
+        instruction: "Count each group of pencils. Write the total.",
+        rows: [
+          { object: "pencil", count: 9 },
+          { object: "pencil", count: 12 },
+          { object: "pencil", count: 10 },
         ],
       },
       {
@@ -546,12 +984,39 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         title: "Which Number Matches?",
         instruction: "Count the group. Circle the matching number.",
         questions: [
-          { prompt: "⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐", options: ["9", "10", "11"] },
-          { prompt: "⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐", options: ["11", "12", "13"] },
-          { prompt: "⭐⭐⭐⭐⭐⭐⭐⭐⭐", options: ["8", "9", "10"] },
+          { prompt: "A group of 10 stars", options: ["9", "10", "11"] },
+          { prompt: "A group of 12 stars", options: ["11", "12", "13"] },
+          { prompt: "A group of 9 stars", options: ["8", "9", "10"] },
         ],
       },
-      // --- HARDER: Count groups of 13-16 ---
+      {
+        type: "count-objects",
+        title: "Count the Cups",
+        instruction: "Count each group of cups carefully. Write the number.",
+        rows: [
+          { object: "cup", count: 11 },
+          { object: "cup", count: 10 },
+          { object: "cup", count: 12 },
+        ],
+      },
+      {
+        type: "ten-frame",
+        title: "Ten Frame: 9, 10, 11, 12",
+        instruction: "Count the filled circles in each ten frame. Write the number.",
+        frames: [
+          { filled: 9 },
+          { filled: 10 },
+          { filled: 8 },
+        ],
+      },
+      {
+        type: "matching",
+        title: "Match Groups 9-12",
+        instruction: "Draw a line from each group description to the correct number.",
+        left: ["A group of 9 dots", "A group of 11 dots", "A group of 10 dots", "A group of 12 dots"],
+        right: ["11", "9", "12", "10"],
+      },
+      // --- HARDER: Count groups of 13-16 (10 activities) ---
       {
         type: "count-objects",
         title: "Count the Flowers — Teen Numbers!",
@@ -560,6 +1025,16 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
           { object: "flower", count: 13 },
           { object: "flower", count: 15 },
           { object: "flower", count: 14 },
+        ],
+      },
+      {
+        type: "count-objects",
+        title: "Count the Bananas",
+        instruction: "Count each group of bananas. These are teen numbers!",
+        rows: [
+          { object: "banana", count: 14 },
+          { object: "banana", count: 13 },
+          { object: "banana", count: 15 },
         ],
       },
       {
@@ -577,9 +1052,19 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         title: "Big Group Challenge",
         instruction: "Count the objects. Circle the correct total.",
         questions: [
-          { prompt: "🦋🦋🦋🦋🦋🦋🦋🦋🦋🦋🦋🦋🦋", options: ["12", "13", "14"] },
-          { prompt: "🦋🦋🦋🦋🦋🦋🦋🦋🦋🦋🦋🦋🦋🦋🦋", options: ["14", "15", "16"] },
-          { prompt: "🦋🦋🦋🦋🦋🦋🦋🦋🦋🦋🦋🦋🦋🦋", options: ["13", "14", "15"] },
+          { prompt: "A group of 13 butterflies", options: ["12", "13", "14"] },
+          { prompt: "A group of 15 butterflies", options: ["14", "15", "16"] },
+          { prompt: "A group of 14 butterflies", options: ["13", "14", "15"] },
+        ],
+      },
+      {
+        type: "count-objects",
+        title: "Count the Books",
+        instruction: "Count the books carefully. Write the total.",
+        rows: [
+          { object: "book", count: 15 },
+          { object: "book", count: 13 },
+          { object: "book", count: 16 },
         ],
       },
       {
@@ -593,13 +1078,43 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         ],
       },
       {
+        type: "circle-correct",
+        title: "Teen Number Check",
+        instruction: "Count carefully and circle the right answer.",
+        questions: [
+          { prompt: "A group of 16 stars", options: ["15", "16", "17"] },
+          { prompt: "A group of 14 apples", options: ["13", "14", "15"] },
+          { prompt: "A group of 13 hearts", options: ["12", "13", "14"] },
+        ],
+      },
+      {
+        type: "count-objects",
+        title: "Count the Suns",
+        instruction: "Count each group of suns. Write the total.",
+        rows: [
+          { object: "sun", count: 16 },
+          { object: "sun", count: 14 },
+          { object: "sun", count: 15 },
+        ],
+      },
+      {
         type: "matching",
         title: "Match Big Groups",
         instruction: "Count each group and match it to the correct number.",
         left: ["13 stars", "15 stars", "10 stars", "16 stars"],
         right: ["15", "10", "16", "13"],
       },
-      // --- CHALLENGE: Count groups of 17-20 ---
+      {
+        type: "count-objects",
+        title: "Count the Cars",
+        instruction: "Point to each car as you count. Write the total.",
+        rows: [
+          { object: "car", count: 13 },
+          { object: "car", count: 16 },
+          { object: "car", count: 14 },
+        ],
+      },
+      // --- CHALLENGE: Count groups of 17-20 (10 activities) ---
       {
         type: "count-objects",
         title: "Count the Stars — Nearly 20!",
@@ -621,6 +1136,16 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         ],
       },
       {
+        type: "count-objects",
+        title: "Count the Flowers — Big Numbers!",
+        instruction: "Count slowly and carefully. Write the total.",
+        rows: [
+          { object: "flower", count: 18 },
+          { object: "flower", count: 20 },
+          { object: "flower", count: 17 },
+        ],
+      },
+      {
         type: "circle-correct",
         title: "Counting Super Quiz",
         instruction: "Answer each question by circling the right number.",
@@ -628,6 +1153,46 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
           { prompt: "What number comes after 17?", options: ["16", "18", "19"] },
           { prompt: "If you have 15 apples and get 2 more, how many?", options: ["16", "17", "18"] },
           { prompt: "How many fingers on 4 hands?", options: ["15", "20", "10"] },
+        ],
+      },
+      {
+        type: "count-objects",
+        title: "Count the Hearts — The Big Challenge!",
+        instruction: "Count each group. Try counting in groups of 5!",
+        rows: [
+          { object: "heart", count: 20 },
+          { object: "heart", count: 18 },
+          { object: "heart", count: 19 },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "How Many Big Groups?",
+        instruction: "Count the objects. Circle the correct total.",
+        questions: [
+          { prompt: "A group of 17 diamonds", options: ["16", "17", "18"] },
+          { prompt: "A group of 19 fish", options: ["18", "19", "20"] },
+          { prompt: "A group of 18 apples", options: ["17", "18", "19"] },
+        ],
+      },
+      {
+        type: "count-objects",
+        title: "Count the Teddies",
+        instruction: "Count each group of teddies. Write the total.",
+        rows: [
+          { object: "teddy", count: 17 },
+          { object: "teddy", count: 19 },
+          { object: "teddy", count: 18 },
+        ],
+      },
+      {
+        type: "count-objects",
+        title: "Count the Spoons — Last Stretch!",
+        instruction: "Almost at 20! Count carefully and write the total.",
+        rows: [
+          { object: "spoon", count: 20 },
+          { object: "spoon", count: 17 },
+          { object: "spoon", count: 19 },
         ],
       },
       {
@@ -660,6 +1225,16 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
           { filled: 3 },
           { filled: 5 },
           { filled: 2 },
+        ],
+      },
+      {
+        type: "ten-frame",
+        title: "Ten-Frame: A Little More",
+        instruction: "Count the filled circles. Write the number you see.",
+        frames: [
+          { filled: 4 },
+          { filled: 1 },
+          { filled: 5 },
         ],
       },
       {
@@ -700,30 +1275,40 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         title: "Dice Dot Patterns",
         instruction: "A dice has dot patterns. Can you recognise them WITHOUT counting? Circle the number.",
         questions: [
-          { prompt: "⚀ (one dot in the middle)", options: ["1", "2", "3"] },
-          { prompt: "⚁ (two dots, one top-right, one bottom-left)", options: ["1", "2", "3"] },
-          { prompt: "⚂ (three dots in a diagonal line)", options: ["2", "3", "4"] },
-          { prompt: "⚃ (four dots, one in each corner)", options: ["3", "4", "5"] },
-          { prompt: "⚄ (five dots, four corners and one middle)", options: ["4", "5", "6"] },
-          { prompt: "⚅ (six dots, three on each side)", options: ["5", "6", "7"] },
+          { prompt: "How many dots?", promptIcon: "dice-1", options: ["1", "2", "3"] },
+          { prompt: "How many dots?", promptIcon: "dice-2", options: ["1", "2", "3"] },
+          { prompt: "How many dots?", promptIcon: "dice-3", options: ["2", "3", "4"] },
+          { prompt: "How many dots?", promptIcon: "dice-4", options: ["3", "4", "5"] },
+          { prompt: "How many dots?", promptIcon: "dice-5", options: ["4", "5", "6"] },
+          { prompt: "How many dots?", promptIcon: "dice-6", options: ["5", "6", "7"] },
         ],
       },
       {
         type: "matching",
         title: "Match Dice to Numbers",
         instruction: "Draw a line to match each dice face to the correct number.",
-        left: ["⚀", "⚂", "⚄", "⚅"],
-        right: ["5", "3", "1", "6"],
+        leftItems: [
+          { label: "Dice", objects: ["dice-1"] },
+          { label: "Dice", objects: ["dice-3"] },
+          { label: "Dice", objects: ["dice-5"] },
+          { label: "Dice", objects: ["dice-6"] },
+        ],
+        rightItems: [
+          { label: "5", objects: [] },
+          { label: "3", objects: [] },
+          { label: "1", objects: [] },
+          { label: "6", objects: [] },
+        ],
       },
       {
         type: "circle-correct",
         title: "Two Dice — How Many Altogether?",
-        instruction: "Imagine rolling two dice. Can you add the dot patterns together? Circle the total.",
+        instruction: "Imagine rolling two dice. Add the dots together. Circle the total.",
         questions: [
-          { prompt: "⚀ and ⚁ (1 and 2)", options: ["2", "3", "4"] },
-          { prompt: "⚂ and ⚂ (3 and 3)", options: ["5", "6", "7"] },
-          { prompt: "⚃ and ⚁ (4 and 2)", options: ["5", "6", "7"] },
-          { prompt: "⚄ and ⚀ (5 and 1)", options: ["5", "6", "7"] },
+          { prompt: "You roll a 1 and a 2. How many altogether?", options: ["2", "3", "4"] },
+          { prompt: "You roll a 3 and a 3. How many altogether?", options: ["5", "6", "7"] },
+          { prompt: "You roll a 4 and a 2. How many altogether?", options: ["5", "6", "7"] },
+          { prompt: "You roll a 5 and a 1. How many altogether?", options: ["5", "6", "7"] },
         ],
       },
       // --- Improvement: Conceptual subitising (see groups within groups) ---
@@ -736,6 +1321,17 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
           { prompt: "You see a full ten-frame (10) and 3 more. How many altogether?", options: ["12", "13", "14"] },
           { prompt: "You see two groups of 5 dots. How many altogether?", options: ["8", "10", "12"] },
           { prompt: "You see a group of 4 and a group of 4. How many altogether?", options: ["6", "8", "10"] },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "More Groups Within Groups",
+        instruction: "Can you see the small groups inside the big group? Add them together!",
+        questions: [
+          { prompt: "You see a group of 2 fish and a group of 3 fish. How many altogether?", options: ["4", "5", "6"] },
+          { prompt: "You see a group of 5 and a group of 5. How many altogether?", options: ["8", "10", "12"] },
+          { prompt: "You see a group of 4 hearts and a group of 3 hearts. How many altogether?", options: ["6", "7", "8"] },
+          { prompt: "You see a full ten-frame (10) and 5 more. How many altogether?", options: ["14", "15", "16"] },
         ],
       },
       // --- Improvement: Open-ended drawing ---
@@ -757,8 +1353,9 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         suggestions: [
           "Make a ten-frame from an egg carton (cut to 10 holes) and use pom poms or buttons as counters. Flash different amounts and ask 'how many?'",
           "Play dice games! Roll a dice and say the number as fast as you can without counting the dots.",
-          "Put small groups of objects (1–5) on a plate. Cover them, flash for 2 seconds, then cover again. How many did you see?",
+          "Put small groups of objects (1-5) on a plate. Cover them, flash for 2 seconds, then cover again. How many did you see?",
           "Play 'Fingers Flash' — hold up some fingers quickly, then hide. Your child says how many they saw.",
+          "Collect groups of small toys (e.g. 7 cars, 12 blocks) and practise counting them together every day. Repetition builds confidence!",
         ],
       },
     ],
@@ -784,12 +1381,32 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
       },
       {
         type: "compare-groups",
+        title: "Which Group Has More? (Tiny Groups 2)",
+        instruction: "Look at each pair. Circle the group that has MORE.",
+        pairs: [
+          { leftCount: 4, rightCount: 2, object: "fish", question: "Which group has more fish?" },
+          { leftCount: 1, rightCount: 5, object: "butterfly", question: "Which group has more butterflies?" },
+          { leftCount: 3, rightCount: 4, object: "flower", question: "Which group has more flowers?" },
+        ],
+      },
+      {
+        type: "compare-groups",
         title: "Which Group Has Fewer? (Tiny Groups)",
         instruction: "Look at each pair. Circle the group that has FEWER.",
         pairs: [
           { leftCount: 3, rightCount: 1, object: "fish", question: "Which group has fewer fish?" },
           { leftCount: 2, rightCount: 4, object: "flower", question: "Which group has fewer flowers?" },
           { leftCount: 5, rightCount: 3, object: "butterfly", question: "Which group has fewer butterflies?" },
+        ],
+      },
+      {
+        type: "compare-groups",
+        title: "Which Group Has Fewer? (Tiny Groups 2)",
+        instruction: "Look at each pair. Circle the group that has FEWER.",
+        pairs: [
+          { leftCount: 4, rightCount: 1, object: "diamond", question: "Which group has fewer diamonds?" },
+          { leftCount: 5, rightCount: 2, object: "star", question: "Which group has fewer stars?" },
+          { leftCount: 3, rightCount: 5, object: "apple", question: "Which group has fewer apples?" },
         ],
       },
       {
@@ -803,11 +1420,29 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
       },
       {
         type: "count-objects",
+        title: "Count and Compare Flowers",
+        instruction: "Count each group of flowers. Write the number. Then circle the group with MORE.",
+        groups: [
+          { objects: Array(1).fill("flower"), label: "Group A" },
+          { objects: Array(3).fill("flower"), label: "Group B" },
+        ],
+      },
+      {
+        type: "count-objects",
         title: "Count and Compare Hearts",
         instruction: "Count each group of hearts. Write the number. Then circle the group with FEWER.",
         groups: [
           { objects: Array(5).fill("heart"), label: "Group A" },
           { objects: Array(3).fill("heart"), label: "Group B" },
+        ],
+      },
+      {
+        type: "count-objects",
+        title: "Count and Compare Fish",
+        instruction: "Count each group of fish. Write the number. Then circle the group with FEWER.",
+        groups: [
+          { objects: Array(4).fill("fish"), label: "Group A" },
+          { objects: Array(2).fill("fish"), label: "Group B" },
         ],
       },
       {
@@ -821,6 +1456,16 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         ],
       },
       {
+        type: "circle-correct",
+        title: "More or Fewer? (Practice 2)",
+        instruction: "Circle the correct answer.",
+        questions: [
+          { prompt: "3 hearts and 5 hearts — which is more?", options: ["3", "5"] },
+          { prompt: "4 flowers and 2 flowers — which is fewer?", options: ["4", "2"] },
+          { prompt: "3 diamonds and 3 diamonds — the groups are...", options: ["more", "fewer", "equal"] },
+        ],
+      },
+      {
         type: "compare-groups",
         title: "Same or Different?",
         instruction: "Look at each pair. Are they the SAME number or DIFFERENT? Circle 'same' or 'different'.",
@@ -828,6 +1473,16 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
           { leftCount: 3, rightCount: 3, object: "diamond", question: "Same or different?" },
           { leftCount: 2, rightCount: 5, object: "star", question: "Same or different?" },
           { leftCount: 4, rightCount: 4, object: "flower", question: "Same or different?" },
+        ],
+      },
+      {
+        type: "compare-groups",
+        title: "Same or Different? (Practice 2)",
+        instruction: "Look at each pair. Are they the SAME number or DIFFERENT? Circle 'same' or 'different'.",
+        pairs: [
+          { leftCount: 1, rightCount: 1, object: "apple", question: "Same or different?" },
+          { leftCount: 5, rightCount: 3, object: "heart", question: "Same or different?" },
+          { leftCount: 2, rightCount: 2, object: "fish", question: "Same or different?" },
         ],
       },
       {
@@ -846,12 +1501,36 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         ],
       },
       {
+        type: "matching",
+        title: "Match Groups That Are Equal (Practice 2)",
+        instruction: "Draw a line to match the groups that have the SAME number.",
+        leftItems: [
+          { label: "5 butterflies", objects: Array(5).fill("butterfly") },
+          { label: "1 diamond", objects: Array(1).fill("diamond") },
+          { label: "3 flowers", objects: Array(3).fill("flower") },
+        ],
+        rightItems: [
+          { label: "3 hearts", objects: Array(3).fill("heart") },
+          { label: "5 fish", objects: Array(5).fill("fish") },
+          { label: "1 star", objects: Array(1).fill("star") },
+        ],
+      },
+      {
         type: "count-objects",
         title: "Which Basket Has More Apples?",
         instruction: "Count the apples in each basket. Write the number. Circle the basket with MORE apples.",
         groups: [
           { objects: Array(3).fill("apple"), label: "Basket A" },
           { objects: Array(5).fill("apple"), label: "Basket B" },
+        ],
+      },
+      {
+        type: "count-objects",
+        title: "Which Box Has Fewer Diamonds?",
+        instruction: "Count the diamonds in each box. Write the number. Circle the box with FEWER diamonds.",
+        groups: [
+          { objects: Array(4).fill("diamond"), label: "Box A" },
+          { objects: Array(1).fill("diamond"), label: "Box B" },
         ],
       },
 
@@ -868,12 +1547,32 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
       },
       {
         type: "compare-groups",
+        title: "Which Group Has More? (Up to 10, Practice 2)",
+        instruction: "Look at each pair. Circle the group that has MORE.",
+        pairs: [
+          { leftCount: 3, rightCount: 7, object: "diamond", question: "Which group has more diamonds?" },
+          { leftCount: 9, rightCount: 6, object: "butterfly", question: "Which group has more butterflies?" },
+          { leftCount: 4, rightCount: 10, object: "heart", question: "Which group has more hearts?" },
+        ],
+      },
+      {
+        type: "compare-groups",
         title: "Which Group Has Fewer? (Up to 10)",
         instruction: "Look at each pair. Circle the group that has FEWER.",
         pairs: [
           { leftCount: 8, rightCount: 6, object: "heart", question: "Which group has fewer hearts?" },
           { leftCount: 3, rightCount: 7, object: "butterfly", question: "Which group has fewer butterflies?" },
           { leftCount: 10, rightCount: 5, object: "flower", question: "Which group has fewer flowers?" },
+        ],
+      },
+      {
+        type: "compare-groups",
+        title: "Which Group Has Fewer? (Up to 10, Practice 2)",
+        instruction: "Look at each pair. Circle the group that has FEWER.",
+        pairs: [
+          { leftCount: 9, rightCount: 4, object: "star", question: "Which group has fewer stars?" },
+          { leftCount: 2, rightCount: 6, object: "apple", question: "Which group has fewer apples?" },
+          { leftCount: 7, rightCount: 10, object: "diamond", question: "Which group has fewer diamonds?" },
         ],
       },
       {
@@ -888,6 +1587,17 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         ],
       },
       {
+        type: "circle-correct",
+        title: "More, Fewer, or Equal? (Practice 2)",
+        instruction: "Read each sentence. Circle the correct answer.",
+        questions: [
+          { prompt: "5 diamonds and 5 diamonds — the groups are...", options: ["more", "fewer", "equal"] },
+          { prompt: "3 butterflies and 8 butterflies — 3 is...", options: ["more", "fewer", "equal"] },
+          { prompt: "9 stars and 6 stars — 9 is...", options: ["more", "fewer", "equal"] },
+          { prompt: "7 hearts and 7 hearts — the groups are...", options: ["more", "fewer", "equal"] },
+        ],
+      },
+      {
         type: "count-objects",
         title: "Count and Compare Flowers",
         instruction: "Count the flowers in each garden. Write the number. Circle the garden with MORE flowers.",
@@ -898,11 +1608,29 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
       },
       {
         type: "count-objects",
+        title: "Count and Compare Diamonds",
+        instruction: "Count the diamonds in each box. Write the number. Circle the box with MORE diamonds.",
+        groups: [
+          { objects: Array(3).fill("diamond"), label: "Box A" },
+          { objects: Array(8).fill("diamond"), label: "Box B" },
+        ],
+      },
+      {
+        type: "count-objects",
         title: "Count and Compare Fish",
         instruction: "Count the fish in each pond. Write the number. Circle the pond with FEWER fish.",
         groups: [
           { objects: Array(6).fill("fish"), label: "Pond A" },
           { objects: Array(9).fill("fish"), label: "Pond B" },
+        ],
+      },
+      {
+        type: "count-objects",
+        title: "Count and Compare Butterflies",
+        instruction: "Count the butterflies in each garden. Write the number. Circle the garden with FEWER butterflies.",
+        groups: [
+          { objects: Array(10).fill("butterfly"), label: "Garden A" },
+          { objects: Array(5).fill("butterfly"), label: "Garden B" },
         ],
       },
       {
@@ -921,12 +1649,36 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         ],
       },
       {
+        type: "matching",
+        title: "Match Equal Groups (Up to 10)",
+        instruction: "Draw a line to match the groups that have the SAME number.",
+        leftItems: [
+          { label: "6 fish", objects: Array(6).fill("fish") },
+          { label: "9 diamonds", objects: Array(9).fill("diamond") },
+          { label: "7 flowers", objects: Array(7).fill("flower") },
+        ],
+        rightItems: [
+          { label: "7 butterflies", objects: Array(7).fill("butterfly") },
+          { label: "6 apples", objects: Array(6).fill("apple") },
+          { label: "9 stars", objects: Array(9).fill("star") },
+        ],
+      },
+      {
         type: "compare-groups",
         title: "Biggest Group",
         instruction: "Look at all three groups. Circle the group that has the MOST.",
         pairs: [
           { leftCount: 4, rightCount: 9, object: "star", question: "Which has the most?" },
           { leftCount: 7, rightCount: 3, object: "diamond", question: "Which has the most?" },
+        ],
+      },
+      {
+        type: "compare-groups",
+        title: "Smallest Group",
+        instruction: "Look at each pair. Circle the group that has the LEAST.",
+        pairs: [
+          { leftCount: 8, rightCount: 2, object: "flower", question: "Which has the least?" },
+          { leftCount: 5, rightCount: 10, object: "fish", question: "Which has the least?" },
         ],
       },
       {
@@ -942,6 +1694,17 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
       },
       {
         type: "circle-correct",
+        title: "Which Number Is Bigger? (Practice 2)",
+        instruction: "Circle the bigger number.",
+        questions: [
+          { prompt: "Which is bigger?", options: ["4", "6"] },
+          { prompt: "Which is bigger?", options: ["1", "9"] },
+          { prompt: "Which is bigger?", options: ["8", "3"] },
+          { prompt: "Which is bigger?", options: ["2", "10"] },
+        ],
+      },
+      {
+        type: "circle-correct",
         title: "Which Number Is Smaller?",
         instruction: "Circle the smaller number.",
         questions: [
@@ -952,6 +1715,17 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         ],
       },
       {
+        type: "circle-correct",
+        title: "Which Number Is Smaller? (Practice 2)",
+        instruction: "Circle the smaller number.",
+        questions: [
+          { prompt: "Which is smaller?", options: ["9", "2"] },
+          { prompt: "Which is smaller?", options: ["5", "7"] },
+          { prompt: "Which is smaller?", options: ["1", "4"] },
+          { prompt: "Which is smaller?", options: ["10", "3"] },
+        ],
+      },
+      {
         type: "count-objects",
         title: "Three Groups of Butterflies",
         instruction: "Count the butterflies in each group. Write the numbers. Circle the group with the MOST.",
@@ -959,6 +1733,16 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
           { objects: Array(5).fill("butterfly"), label: "Group A" },
           { objects: Array(8).fill("butterfly"), label: "Group B" },
           { objects: Array(3).fill("butterfly"), label: "Group C" },
+        ],
+      },
+      {
+        type: "count-objects",
+        title: "Three Groups of Hearts",
+        instruction: "Count the hearts in each group. Write the numbers. Circle the group with the FEWEST.",
+        groups: [
+          { objects: Array(9).fill("heart"), label: "Group A" },
+          { objects: Array(4).fill("heart"), label: "Group B" },
+          { objects: Array(7).fill("heart"), label: "Group C" },
         ],
       },
 
@@ -975,12 +1759,32 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
       },
       {
         type: "compare-groups",
+        title: "Which Group Has More? (Bigger Numbers 2)",
+        instruction: "Look at each pair. Circle the group that has MORE.",
+        pairs: [
+          { leftCount: 8, rightCount: 13, object: "flower", question: "Which group has more flowers?" },
+          { leftCount: 15, rightCount: 10, object: "butterfly", question: "Which group has more butterflies?" },
+          { leftCount: 11, rightCount: 16, object: "diamond", question: "Which group has more diamonds?" },
+        ],
+      },
+      {
+        type: "compare-groups",
         title: "Which Group Has Fewer? (Bigger Numbers)",
         instruction: "Look at each pair. Circle the group that has FEWER.",
         pairs: [
           { leftCount: 13, rightCount: 10, object: "fish", question: "Which group has fewer fish?" },
           { leftCount: 7, rightCount: 12, object: "flower", question: "Which group has fewer flowers?" },
           { leftCount: 16, rightCount: 11, object: "diamond", question: "Which group has fewer diamonds?" },
+        ],
+      },
+      {
+        type: "compare-groups",
+        title: "Which Group Has Fewer? (Bigger Numbers 2)",
+        instruction: "Look at each pair. Circle the group that has FEWER.",
+        pairs: [
+          { leftCount: 14, rightCount: 9, object: "star", question: "Which group has fewer stars?" },
+          { leftCount: 10, rightCount: 15, object: "apple", question: "Which group has fewer apples?" },
+          { leftCount: 12, rightCount: 8, object: "heart", question: "Which group has fewer hearts?" },
         ],
       },
       {
@@ -995,6 +1799,39 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         ],
       },
       {
+        type: "circle-correct",
+        title: "Compare Big Numbers (Practice 2)",
+        instruction: "Circle the correct answer.",
+        questions: [
+          { prompt: "10 or 14 — which is more?", options: ["10", "14"] },
+          { prompt: "15 or 8 — which is fewer?", options: ["15", "8"] },
+          { prompt: "13 and 13 — they are...", options: ["more", "fewer", "equal"] },
+          { prompt: "9 or 16 — which is more?", options: ["9", "16"] },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Which Big Number Is Bigger?",
+        instruction: "Circle the bigger number.",
+        questions: [
+          { prompt: "Which is bigger?", options: ["11", "14"] },
+          { prompt: "Which is bigger?", options: ["16", "9"] },
+          { prompt: "Which is bigger?", options: ["8", "13"] },
+          { prompt: "Which is bigger?", options: ["15", "12"] },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Which Big Number Is Smaller?",
+        instruction: "Circle the smaller number.",
+        questions: [
+          { prompt: "Which is smaller?", options: ["13", "10"] },
+          { prompt: "Which is smaller?", options: ["8", "16"] },
+          { prompt: "Which is smaller?", options: ["14", "11"] },
+          { prompt: "Which is smaller?", options: ["9", "15"] },
+        ],
+      },
+      {
         type: "count-objects",
         title: "Count and Compare Stars (Bigger Groups)",
         instruction: "Count the stars in each group. Write the number. Circle the group with MORE.",
@@ -1005,12 +1842,31 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
       },
       {
         type: "count-objects",
+        title: "Count and Compare Flowers (Bigger Groups)",
+        instruction: "Count the flowers in each group. Write the number. Circle the group with MORE.",
+        groups: [
+          { objects: Array(9).fill("flower"), label: "Group A" },
+          { objects: Array(13).fill("flower"), label: "Group B" },
+        ],
+      },
+      {
+        type: "count-objects",
         title: "Three Big Groups",
         instruction: "Count each group. Write the numbers. Circle the group with the FEWEST.",
         groups: [
           { objects: Array(10).fill("heart"), label: "Group A" },
           { objects: Array(6).fill("heart"), label: "Group B" },
           { objects: Array(13).fill("heart"), label: "Group C" },
+        ],
+      },
+      {
+        type: "count-objects",
+        title: "Three Big Groups of Fish",
+        instruction: "Count each group. Write the numbers. Circle the group with the MOST.",
+        groups: [
+          { objects: Array(8).fill("fish"), label: "Group A" },
+          { objects: Array(15).fill("fish"), label: "Group B" },
+          { objects: Array(11).fill("fish"), label: "Group C" },
         ],
       },
       {
@@ -1028,6 +1884,21 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
           { label: "8 stars", objects: Array(8).fill("star") },
         ],
       },
+      {
+        type: "matching",
+        title: "Match Equal Big Groups",
+        instruction: "Draw a line to match the groups that have the SAME number.",
+        leftItems: [
+          { label: "12 hearts", objects: Array(12).fill("heart") },
+          { label: "15 diamonds", objects: Array(15).fill("diamond") },
+          { label: "10 apples", objects: Array(10).fill("apple") },
+        ],
+        rightItems: [
+          { label: "10 butterflies", objects: Array(10).fill("butterfly") },
+          { label: "12 stars", objects: Array(12).fill("star") },
+          { label: "15 fish", objects: Array(15).fill("fish") },
+        ],
+      },
 
       // --- CHALLENGE: Comparing up to 20, ordering, reasoning ---
       {
@@ -1042,12 +1913,32 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
       },
       {
         type: "compare-groups",
+        title: "Which Group Has More? (Up to 20, Practice 2)",
+        instruction: "Look at each pair. Circle the group that has MORE.",
+        pairs: [
+          { leftCount: 12, rightCount: 18, object: "heart", question: "Which group has more hearts?" },
+          { leftCount: 19, rightCount: 15, object: "fish", question: "Which group has more fish?" },
+          { leftCount: 16, rightCount: 20, object: "flower", question: "Which group has more flowers?" },
+        ],
+      },
+      {
+        type: "compare-groups",
         title: "Which Group Has Fewer? (Up to 20)",
         instruction: "Look at each pair. Circle the group that has FEWER.",
         pairs: [
           { leftCount: 18, rightCount: 12, object: "heart", question: "Which group has fewer hearts?" },
           { leftCount: 15, rightCount: 20, object: "diamond", question: "Which group has fewer diamonds?" },
           { leftCount: 11, rightCount: 17, object: "fish", question: "Which group has fewer fish?" },
+        ],
+      },
+      {
+        type: "compare-groups",
+        title: "Which Group Has Fewer? (Up to 20, Practice 2)",
+        instruction: "Look at each pair. Circle the group that has FEWER.",
+        pairs: [
+          { leftCount: 20, rightCount: 14, object: "star", question: "Which group has fewer stars?" },
+          { leftCount: 13, rightCount: 19, object: "butterfly", question: "Which group has fewer butterflies?" },
+          { leftCount: 16, rightCount: 11, object: "apple", question: "Which group has fewer apples?" },
         ],
       },
       {
@@ -1062,6 +1953,39 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         ],
       },
       {
+        type: "circle-correct",
+        title: "Compare Numbers to 20 (Practice 2)",
+        instruction: "Circle the correct answer.",
+        questions: [
+          { prompt: "14 or 20 — which is more?", options: ["14", "20"] },
+          { prompt: "19 or 12 — which is fewer?", options: ["19", "12"] },
+          { prompt: "16 or 16 — they are...", options: ["more", "fewer", "equal"] },
+          { prompt: "13 or 18 — which is more?", options: ["13", "18"] },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Which Big Number Is Bigger? (Up to 20)",
+        instruction: "Circle the bigger number.",
+        questions: [
+          { prompt: "Which is bigger?", options: ["14", "19"] },
+          { prompt: "Which is bigger?", options: ["20", "11"] },
+          { prompt: "Which is bigger?", options: ["13", "17"] },
+          { prompt: "Which is bigger?", options: ["18", "15"] },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Which Big Number Is Smaller? (Up to 20)",
+        instruction: "Circle the smaller number.",
+        questions: [
+          { prompt: "Which is smaller?", options: ["16", "12"] },
+          { prompt: "Which is smaller?", options: ["11", "20"] },
+          { prompt: "Which is smaller?", options: ["19", "14"] },
+          { prompt: "Which is smaller?", options: ["13", "17"] },
+        ],
+      },
+      {
         type: "sequence",
         title: "Order from Smallest to Biggest",
         instruction: "Write these numbers in order from smallest to biggest.",
@@ -1073,12 +1997,32 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
       },
       {
         type: "sequence",
+        title: "Order from Smallest to Biggest (Practice 2)",
+        instruction: "Write these numbers in order from smallest to biggest.",
+        sequences: [
+          { items: [9, 1, 6], answer: [1, 6, 9] },
+          { items: [14, 10, 18], answer: [10, 14, 18] },
+          { items: [17, 5, 13], answer: [5, 13, 17] },
+        ],
+      },
+      {
+        type: "sequence",
         title: "Order from Biggest to Smallest",
         instruction: "Write these numbers in order from biggest to smallest.",
         sequences: [
           { items: [4, 9, 1], answer: [9, 4, 1] },
           { items: [16, 8, 19], answer: [19, 16, 8] },
           { items: [13, 20, 6], answer: [20, 13, 6] },
+        ],
+      },
+      {
+        type: "sequence",
+        title: "Order from Biggest to Smallest (Practice 2)",
+        instruction: "Write these numbers in order from biggest to smallest.",
+        sequences: [
+          { items: [7, 3, 10], answer: [10, 7, 3] },
+          { items: [18, 11, 15], answer: [18, 15, 11] },
+          { items: [20, 9, 14], answer: [20, 14, 9] },
         ],
       },
       // --- Improvement: "As many as" language ---
@@ -1093,15 +2037,46 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
           { prompt: "12 flowers and 9 flowers — the first group has ___ the second.", options: ["More than", "Fewer than", "As many as"] },
         ],
       },
+      {
+        type: "circle-correct",
+        title: "As Many As (Practice 2)",
+        instruction: "'As many as' means the same number. Circle the correct answer.",
+        questions: [
+          { prompt: "6 diamonds and 6 stars — does the diamond group have as many as the star group?", options: ["Yes", "No"] },
+          { prompt: "10 butterflies and 4 butterflies — does the first group have as many as the second?", options: ["Yes", "No"] },
+          { prompt: "7 hearts and 7 hearts — the groups have ___ each other.", options: ["More than", "Fewer than", "As many as"] },
+          { prompt: "9 fish and 14 fish — the first group has ___ the second.", options: ["More than", "Fewer than", "As many as"] },
+        ],
+      },
+      {
+        type: "compare-groups",
+        title: "As Many As — Visual",
+        instruction: "Look at each pair. Do they have AS MANY AS each other? Circle 'yes' or 'no'.",
+        pairs: [
+          { leftCount: 4, rightCount: 4, object: "apple", question: "As many as each other?" },
+          { leftCount: 6, rightCount: 3, object: "star", question: "As many as each other?" },
+          { leftCount: 5, rightCount: 5, object: "heart", question: "As many as each other?" },
+        ],
+      },
       // --- Improvement: Draw to create equal groups ---
       {
         type: "open-response",
         title: "Draw to Make Equal",
         instruction: "Draw more objects so that both groups have the same number (as many as each other).",
         prompts: [
-          { text: "Group A has 5 stars ⭐⭐⭐⭐⭐. Group B has 3 stars ⭐⭐⭐. Draw more stars in Group B:", type: "box" },
-          { text: "Group A has 4 hearts ❤️❤️❤️❤️. Group B has 7 hearts. Draw more hearts in Group A:", type: "box" },
+          { text: "Group A has 5 stars. Group B has 3 stars. Draw more stars in Group B so both groups are equal:", type: "box" },
+          { text: "Group A has 4 hearts. Group B has 7 hearts. Draw more hearts in Group A so both groups are equal:", type: "box" },
           { text: "Make both groups have 6. Group A has 6 fish. Draw 6 fish for Group B:", type: "box" },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Draw to Make Equal (Practice 2)",
+        instruction: "Draw more objects so that both groups have the same number (as many as each other).",
+        prompts: [
+          { text: "Group A has 3 apples. Group B has 6 apples. Draw more apples in Group A so both groups are equal:", type: "box" },
+          { text: "Group A has 8 diamonds. Group B has 5 diamonds. Draw more diamonds in Group B so both groups are equal:", type: "box" },
+          { text: "Make both groups have 4. Group A has 4 flowers. Draw 4 flowers for Group B:", type: "box" },
         ],
       },
       {
@@ -1114,6 +2089,16 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
           { text: "Draw two groups that have AS MANY AS each other:", type: "box" },
         ],
       },
+      {
+        type: "open-response",
+        title: "Draw More or Fewer (Practice 2)",
+        instruction: "Follow the instructions to draw the right number of objects.",
+        prompts: [
+          { text: "Draw a group that has MORE than 3 fish:", type: "box" },
+          { text: "Draw a group that has FEWER than 7 apples:", type: "box" },
+          { text: "Draw a group of 6 butterflies, then draw another group with FEWER butterflies:", type: "box" },
+        ],
+      },
       // --- Try This at Home ---
       {
         type: "home-activity",
@@ -1124,6 +2109,8 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
           "Give your child two handfuls of pasta. Ask them to count each and tell you which has more, fewer, or if they are equal.",
           "Play 'Make it equal' — put 7 blocks in a row, then ask your child to make another row with as many as the first.",
           "At the supermarket, compare items: 'There are 6 bananas and 4 apples. Which do we have more of?'",
+          "Use pairs of socks to practise comparing. Put different numbers in two piles and ask which pile has more or fewer.",
+          "At dinner time, compare plates: 'You have 5 peas and I have 8. Who has more? Who has fewer?'",
         ],
       },
     ],
@@ -1136,7 +2123,9 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
     strand: "Number",
     description: "Partition and combine collections up to 10 in different ways",
     activities: [
+      // =============================================
       // --- EASY: Number bonds to 5 ---
+      // =============================================
       {
         type: "number-bonds",
         title: "Number Bonds to 3",
@@ -1146,6 +2135,17 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
           { total: 3, partA: null, partB: 1 },
           { total: 3, partA: 2, partB: null },
           { total: 3, partA: 0, partB: null },
+        ],
+      },
+      {
+        type: "number-bonds",
+        title: "More Number Bonds to 3",
+        instruction: "Fill in the missing number to complete each bond.",
+        bonds: [
+          { total: 3, partA: null, partB: 2 },
+          { total: 3, partA: 3, partB: null },
+          { total: 3, partA: null, partB: 0 },
+          { total: 3, partA: null, partB: 3 },
         ],
       },
       {
@@ -1161,6 +2161,17 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
       },
       {
         type: "number-bonds",
+        title: "More Number Bonds to 4",
+        instruction: "Fill in the missing number to complete each bond.",
+        bonds: [
+          { total: 4, partA: null, partB: 3 },
+          { total: 4, partA: 2, partB: null },
+          { total: 4, partA: null, partB: 0 },
+          { total: 4, partA: 4, partB: null },
+        ],
+      },
+      {
+        type: "number-bonds",
         title: "Number Bonds to 5",
         instruction: "Fill in the missing number to complete each bond.",
         bonds: [
@@ -1169,6 +2180,18 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
           { total: 5, partA: 4, partB: null },
           { total: 5, partA: 2, partB: null },
           { total: 5, partA: null, partB: 0 },
+        ],
+      },
+      {
+        type: "number-bonds",
+        title: "More Number Bonds to 5",
+        instruction: "Fill in the missing number to complete each bond.",
+        bonds: [
+          { total: 5, partA: null, partB: 4 },
+          { total: 5, partA: 3, partB: null },
+          { total: 5, partA: null, partB: 2 },
+          { total: 5, partA: 0, partB: null },
+          { total: 5, partA: 5, partB: null },
         ],
       },
       {
@@ -1190,6 +2213,35 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         ],
       },
       {
+        type: "count-objects",
+        title: "Split the Apples",
+        instruction: "Count the apples in each part. Write how many in each part and the total.",
+        groups: [
+          { objects: Array(1).fill("apple"), label: "Part A" },
+          { objects: Array(2).fill("apple"), label: "Part B" },
+        ],
+      },
+      {
+        type: "count-objects",
+        title: "Split the Fish",
+        instruction: "Count the fish in each part. Write how many in each part and the total.",
+        groups: [
+          { objects: Array(4).fill("fish"), label: "Part A" },
+          { objects: Array(1).fill("fish"), label: "Part B" },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "How Many More to Make 4?",
+        instruction: "Circle the number that completes each sentence.",
+        questions: [
+          { prompt: "I have 1 ball. I need ___ more to make 4.", options: ["2", "3", "4"] },
+          { prompt: "I have 2 cups. I need ___ more to make 4.", options: ["1", "2", "3"] },
+          { prompt: "I have 3 books. I need ___ more to make 4.", options: ["0", "1", "2"] },
+          { prompt: "I have 0 pencils. I need ___ more to make 4.", options: ["3", "4", "5"] },
+        ],
+      },
+      {
         type: "circle-correct",
         title: "How Many More to Make 5?",
         instruction: "Circle the number that completes each sentence.",
@@ -1198,6 +2250,34 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
           { prompt: "I have 3 apples. I need ___ more to make 5.", options: ["1", "2", "3"] },
           { prompt: "I have 4 fish. I need ___ more to make 5.", options: ["0", "1", "2"] },
           { prompt: "I have 0 flowers. I need ___ more to make 5.", options: ["4", "5", "3"] },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "How Many More to Make 5? (Again)",
+        instruction: "Circle the number that completes each sentence.",
+        questions: [
+          { prompt: "I have 2 butterflies. I need ___ more to make 5.", options: ["2", "3", "4"] },
+          { prompt: "I have 5 diamonds. I need ___ more to make 5.", options: ["0", "1", "2"] },
+          { prompt: "I have 1 flower. I need ___ more to make 5.", options: ["3", "4", "5"] },
+          { prompt: "I have 4 hearts. I need ___ more to make 5.", options: ["0", "1", "2"] },
+        ],
+      },
+      {
+        type: "matching",
+        title: "Match Parts That Make 4",
+        instruction: "Draw a line to match the numbers that add up to 4.",
+        leftItems: [
+          { label: "1", objects: Array(1).fill("apple") },
+          { label: "2", objects: Array(2).fill("apple") },
+          { label: "0", objects: [] },
+          { label: "4", objects: Array(4).fill("apple") },
+        ],
+        rightItems: [
+          { label: "2", objects: Array(2).fill("fish") },
+          { label: "4", objects: Array(4).fill("fish") },
+          { label: "3", objects: Array(3).fill("fish") },
+          { label: "0", objects: [] },
         ],
       },
       {
@@ -1226,8 +2306,50 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
           { objects: Array(3).fill("apple"), label: "Group B" },
         ],
       },
+      {
+        type: "count-objects",
+        title: "Two Groups Make 5",
+        instruction: "Count the objects in each group. Together they make 5!",
+        groups: [
+          { objects: Array(2).fill("flower"), label: "Group A" },
+          { objects: Array(3).fill("flower"), label: "Group B" },
+        ],
+      },
+      {
+        type: "count-objects",
+        title: "Two Groups Make 3",
+        instruction: "Count the objects in each group. Together they make 3!",
+        groups: [
+          { objects: Array(1).fill("banana"), label: "Group A" },
+          { objects: Array(2).fill("banana"), label: "Group B" },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Which Pair Makes 4?",
+        instruction: "Circle the pair of numbers that add up to 4.",
+        questions: [
+          { prompt: "Which pair makes 4?", options: ["1 and 3", "1 and 2", "1 and 4"] },
+          { prompt: "Which pair makes 4?", options: ["2 and 3", "2 and 2", "2 and 1"] },
+          { prompt: "Which pair makes 4?", options: ["0 and 3", "0 and 4", "0 and 5"] },
+          { prompt: "Which pair makes 4?", options: ["3 and 2", "3 and 1", "3 and 0"] },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Which Pair Makes 5?",
+        instruction: "Circle the pair of numbers that add up to 5.",
+        questions: [
+          { prompt: "Which pair makes 5?", options: ["2 and 3", "2 and 2", "2 and 4"] },
+          { prompt: "Which pair makes 5?", options: ["4 and 2", "4 and 1", "4 and 0"] },
+          { prompt: "Which pair makes 5?", options: ["1 and 4", "1 and 3", "1 and 5"] },
+          { prompt: "Which pair makes 5?", options: ["0 and 5", "0 and 4", "0 and 3"] },
+        ],
+      },
 
+      // =============================================
       // --- MEDIUM: Number bonds to 7 ---
+      // =============================================
       {
         type: "number-bonds",
         title: "Number Bonds to 6",
@@ -1238,6 +2360,18 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
           { total: 6, partA: 4, partB: null },
           { total: 6, partA: null, partB: 3 },
           { total: 6, partA: 0, partB: null },
+        ],
+      },
+      {
+        type: "number-bonds",
+        title: "More Number Bonds to 6",
+        instruction: "Fill in the missing number to complete each bond.",
+        bonds: [
+          { total: 6, partA: null, partB: 4 },
+          { total: 6, partA: 5, partB: null },
+          { total: 6, partA: null, partB: 0 },
+          { total: 6, partA: 1, partB: null },
+          { total: 6, partA: 6, partB: null },
         ],
       },
       {
@@ -1253,6 +2387,18 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         ],
       },
       {
+        type: "number-bonds",
+        title: "More Number Bonds to 7",
+        instruction: "Fill in the missing number to complete each bond.",
+        bonds: [
+          { total: 7, partA: null, partB: 4 },
+          { total: 7, partA: 1, partB: null },
+          { total: 7, partA: null, partB: 0 },
+          { total: 7, partA: 7, partB: null },
+          { total: 7, partA: null, partB: 5 },
+        ],
+      },
+      {
         type: "circle-correct",
         title: "Part-Part-Whole to 6",
         instruction: "Circle the number that completes each equation.",
@@ -1265,6 +2411,17 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
       },
       {
         type: "circle-correct",
+        title: "More Part-Part-Whole to 6",
+        instruction: "Circle the number that completes each equation.",
+        questions: [
+          { prompt: "1 + ___ = 6", options: ["4", "5", "6"] },
+          { prompt: "___ + 0 = 6", options: ["5", "6", "7"] },
+          { prompt: "6 + ___ = 6", options: ["0", "1", "2"] },
+          { prompt: "___ + 3 = 6", options: ["2", "3", "4"] },
+        ],
+      },
+      {
+        type: "circle-correct",
         title: "Part-Part-Whole to 7",
         instruction: "Circle the number that completes each equation.",
         questions: [
@@ -1272,6 +2429,34 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
           { prompt: "___ + 6 = 7", options: ["0", "1", "2"] },
           { prompt: "5 + ___ = 7", options: ["1", "2", "3"] },
           { prompt: "___ + 2 = 7", options: ["4", "5", "6"] },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "More Part-Part-Whole to 7",
+        instruction: "Circle the number that completes each equation.",
+        questions: [
+          { prompt: "1 + ___ = 7", options: ["5", "6", "7"] },
+          { prompt: "___ + 4 = 7", options: ["2", "3", "4"] },
+          { prompt: "7 + ___ = 7", options: ["0", "1", "2"] },
+          { prompt: "___ + 3 = 7", options: ["3", "4", "5"] },
+        ],
+      },
+      {
+        type: "matching",
+        title: "Match Parts That Make 6",
+        instruction: "Draw a line to match the numbers that add up to 6.",
+        leftItems: [
+          { label: "1", objects: Array(1).fill("circle") },
+          { label: "3", objects: Array(3).fill("circle") },
+          { label: "5", objects: Array(5).fill("circle") },
+          { label: "0", objects: [] },
+        ],
+        rightItems: [
+          { label: "3", objects: Array(3).fill("square") },
+          { label: "6", objects: Array(6).fill("square") },
+          { label: "5", objects: Array(5).fill("square") },
+          { label: "1", objects: Array(1).fill("square") },
         ],
       },
       {
@@ -1300,11 +2485,29 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
       },
       {
         type: "count-objects",
+        title: "Split the Circles into Two Groups",
+        instruction: "Here are 6 circles split into two groups. Count each group.",
+        groups: [
+          { objects: Array(3).fill("circle"), label: "Part A" },
+          { objects: Array(3).fill("circle"), label: "Part B" },
+        ],
+      },
+      {
+        type: "count-objects",
         title: "Split the Diamonds into Two Groups",
         instruction: "Here are 7 diamonds. They are split into two groups. Count each group.",
         groups: [
           { objects: Array(5).fill("diamond"), label: "Part A" },
           { objects: Array(2).fill("diamond"), label: "Part B" },
+        ],
+      },
+      {
+        type: "count-objects",
+        title: "Split the Triangles into Two Groups",
+        instruction: "Here are 7 triangles split into two groups. Count each group.",
+        groups: [
+          { objects: Array(3).fill("triangle"), label: "Part A" },
+          { objects: Array(4).fill("triangle"), label: "Part B" },
         ],
       },
       {
@@ -1317,8 +2520,20 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
           { prompt: "Which pair makes 6?", options: ["3 and 3", "4 and 1", "2 and 2"] },
         ],
       },
+      {
+        type: "circle-correct",
+        title: "Ways to Make 7",
+        instruction: "Which of these makes 7? Circle the correct pair.",
+        questions: [
+          { prompt: "Which pair makes 7?", options: ["3 and 4", "3 and 3", "2 and 4"] },
+          { prompt: "Which pair makes 7?", options: ["6 and 2", "6 and 1", "5 and 3"] },
+          { prompt: "Which pair makes 7?", options: ["5 and 2", "4 and 2", "1 and 5"] },
+        ],
+      },
 
+      // =============================================
       // --- HARDER: Number bonds to 9 ---
+      // =============================================
       {
         type: "number-bonds",
         title: "Number Bonds to 8",
@@ -1329,6 +2544,18 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
           { total: 8, partA: 5, partB: null },
           { total: 8, partA: null, partB: 7 },
           { total: 8, partA: 4, partB: null },
+        ],
+      },
+      {
+        type: "number-bonds",
+        title: "More Number Bonds to 8",
+        instruction: "Fill in the missing number to complete each bond.",
+        bonds: [
+          { total: 8, partA: null, partB: 4 },
+          { total: 8, partA: 1, partB: null },
+          { total: 8, partA: null, partB: 0 },
+          { total: 8, partA: 6, partB: null },
+          { total: 8, partA: null, partB: 5 },
         ],
       },
       {
@@ -1344,6 +2571,18 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         ],
       },
       {
+        type: "number-bonds",
+        title: "More Number Bonds to 9",
+        instruction: "Fill in the missing number to complete each bond.",
+        bonds: [
+          { total: 9, partA: null, partB: 5 },
+          { total: 9, partA: 2, partB: null },
+          { total: 9, partA: null, partB: 9 },
+          { total: 9, partA: 0, partB: null },
+          { total: 9, partA: null, partB: 1 },
+        ],
+      },
+      {
         type: "circle-correct",
         title: "Part-Part-Whole to 8",
         instruction: "Circle the number that completes each equation.",
@@ -1356,6 +2595,17 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
       },
       {
         type: "circle-correct",
+        title: "More Part-Part-Whole to 8",
+        instruction: "Circle the number that completes each equation.",
+        questions: [
+          { prompt: "1 + ___ = 8", options: ["6", "7", "8"] },
+          { prompt: "___ + 5 = 8", options: ["2", "3", "4"] },
+          { prompt: "8 + ___ = 8", options: ["0", "1", "2"] },
+          { prompt: "___ + 2 = 8", options: ["5", "6", "7"] },
+        ],
+      },
+      {
+        type: "circle-correct",
         title: "Part-Part-Whole to 9",
         instruction: "Circle the number that completes each equation.",
         questions: [
@@ -1363,6 +2613,34 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
           { prompt: "___ + 7 = 9", options: ["1", "2", "3"] },
           { prompt: "6 + ___ = 9", options: ["2", "3", "4"] },
           { prompt: "___ + 1 = 9", options: ["7", "8", "9"] },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "More Part-Part-Whole to 9",
+        instruction: "Circle the number that completes each equation.",
+        questions: [
+          { prompt: "3 + ___ = 9", options: ["5", "6", "7"] },
+          { prompt: "___ + 8 = 9", options: ["0", "1", "2"] },
+          { prompt: "4 + ___ = 9", options: ["4", "5", "6"] },
+          { prompt: "___ + 0 = 9", options: ["8", "9", "10"] },
+        ],
+      },
+      {
+        type: "matching",
+        title: "Match Parts That Make 8",
+        instruction: "Draw a line to match the numbers that add up to 8.",
+        leftItems: [
+          { label: "2", objects: Array(2).fill("sun") },
+          { label: "5", objects: Array(5).fill("sun") },
+          { label: "6", objects: Array(6).fill("sun") },
+          { label: "0", objects: [] },
+        ],
+        rightItems: [
+          { label: "3", objects: Array(3).fill("moon") },
+          { label: "2", objects: Array(2).fill("moon") },
+          { label: "8", objects: Array(8).fill("moon") },
+          { label: "6", objects: Array(6).fill("moon") },
         ],
       },
       {
@@ -1391,6 +2669,15 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
       },
       {
         type: "count-objects",
+        title: "Two Groups Make 8 (Different Way)",
+        instruction: "Count the objects in each group. Together they make 8!",
+        groups: [
+          { objects: Array(6).fill("ball"), label: "Group A" },
+          { objects: Array(2).fill("ball"), label: "Group B" },
+        ],
+      },
+      {
+        type: "count-objects",
         title: "Two Groups Make 9",
         instruction: "Count the objects in each group. Together they make 9!",
         groups: [
@@ -1398,8 +2685,73 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
           { objects: Array(3).fill("butterfly"), label: "Group B" },
         ],
       },
+      {
+        type: "count-objects",
+        title: "Two Groups Make 9 (Different Way)",
+        instruction: "Count the objects in each group. Together they make 9!",
+        groups: [
+          { objects: Array(5).fill("tree"), label: "Group A" },
+          { objects: Array(4).fill("tree"), label: "Group B" },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Ways to Make 8",
+        instruction: "Which of these makes 8? Circle the correct pair.",
+        questions: [
+          { prompt: "Which pair makes 8?", options: ["3 and 5", "3 and 4", "3 and 6"] },
+          { prompt: "Which pair makes 8?", options: ["6 and 3", "6 and 2", "6 and 1"] },
+          { prompt: "Which pair makes 8?", options: ["4 and 4", "4 and 3", "4 and 5"] },
+          { prompt: "Which pair makes 8?", options: ["7 and 2", "7 and 1", "7 and 0"] },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Ways to Make 9",
+        instruction: "Which of these makes 9? Circle the correct pair.",
+        questions: [
+          { prompt: "Which pair makes 9?", options: ["4 and 5", "4 and 4", "4 and 6"] },
+          { prompt: "Which pair makes 9?", options: ["7 and 3", "7 and 2", "7 and 1"] },
+          { prompt: "Which pair makes 9?", options: ["8 and 1", "8 and 2", "8 and 0"] },
+          { prompt: "Which pair makes 9?", options: ["6 and 3", "6 and 2", "6 and 4"] },
+        ],
+      },
+      {
+        type: "matching",
+        title: "More Pairs That Make 8",
+        instruction: "Draw a line to match the numbers that add up to 8.",
+        leftItems: [
+          { label: "1", objects: Array(1).fill("heart") },
+          { label: "4", objects: Array(4).fill("heart") },
+          { label: "3", objects: Array(3).fill("heart") },
+        ],
+        rightItems: [
+          { label: "4", objects: Array(4).fill("flower") },
+          { label: "5", objects: Array(5).fill("flower") },
+          { label: "7", objects: Array(7).fill("flower") },
+        ],
+      },
+      {
+        type: "matching",
+        title: "More Pairs That Make 9",
+        instruction: "Draw a line to match the numbers that add up to 9.",
+        leftItems: [
+          { label: "1", objects: Array(1).fill("star") },
+          { label: "4", objects: Array(4).fill("star") },
+          { label: "8", objects: Array(8).fill("star") },
+          { label: "6", objects: Array(6).fill("star") },
+        ],
+        rightItems: [
+          { label: "5", objects: Array(5).fill("circle") },
+          { label: "1", objects: Array(1).fill("circle") },
+          { label: "8", objects: Array(8).fill("circle") },
+          { label: "3", objects: Array(3).fill("circle") },
+        ],
+      },
 
+      // =============================================
       // --- CHALLENGE: Number bonds to 10, multiple ways ---
+      // =============================================
       {
         type: "number-bonds",
         title: "Number Bonds to 10",
@@ -1411,6 +2763,19 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
           { total: 10, partA: null, partB: 9 },
           { total: 10, partA: 6, partB: null },
           { total: 10, partA: null, partB: 4 },
+        ],
+      },
+      {
+        type: "number-bonds",
+        title: "More Number Bonds to 10",
+        instruction: "Fill in the missing number to complete each bond.",
+        bonds: [
+          { total: 10, partA: 1, partB: null },
+          { total: 10, partA: null, partB: 7 },
+          { total: 10, partA: 0, partB: null },
+          { total: 10, partA: null, partB: 2 },
+          { total: 10, partA: 5, partB: null },
+          { total: 10, partA: null, partB: 10 },
         ],
       },
       {
@@ -1431,6 +2796,23 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         ],
       },
       {
+        type: "matching",
+        title: "More Ways to Make 10",
+        instruction: "Draw a line to match pairs that make 10 together.",
+        leftItems: [
+          { label: "4", objects: Array(4).fill("star") },
+          { label: "0", objects: [] },
+          { label: "6", objects: Array(6).fill("star") },
+          { label: "7", objects: Array(7).fill("star") },
+        ],
+        rightItems: [
+          { label: "4", objects: Array(4).fill("diamond") },
+          { label: "10", objects: Array(10).fill("diamond") },
+          { label: "6", objects: Array(6).fill("diamond") },
+          { label: "3", objects: Array(3).fill("diamond") },
+        ],
+      },
+      {
         type: "circle-correct",
         title: "Part-Part-Whole to 10",
         instruction: "Circle the number that completes each equation.",
@@ -1439,6 +2821,17 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
           { prompt: "___ + 3 = 10", options: ["6", "7", "8"] },
           { prompt: "9 + ___ = 10", options: ["0", "1", "2"] },
           { prompt: "___ + 5 = 10", options: ["4", "5", "6"] },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "More Part-Part-Whole to 10",
+        instruction: "Circle the number that completes each equation.",
+        questions: [
+          { prompt: "2 + ___ = 10", options: ["7", "8", "9"] },
+          { prompt: "___ + 1 = 10", options: ["8", "9", "10"] },
+          { prompt: "6 + ___ = 10", options: ["3", "4", "5"] },
+          { prompt: "___ + 8 = 10", options: ["1", "2", "3"] },
         ],
       },
       {
@@ -1453,12 +2846,41 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         ],
       },
       {
+        type: "circle-correct",
+        title: "More Pairs That Make 10",
+        instruction: "Circle the pair of numbers that add up to 10.",
+        questions: [
+          { prompt: "Which pair makes 10?", options: ["9 and 1", "9 and 2", "9 and 0"] },
+          { prompt: "Which pair makes 10?", options: ["3 and 8", "3 and 7", "3 and 6"] },
+          { prompt: "Which pair makes 10?", options: ["2 and 8", "2 and 7", "2 and 9"] },
+          { prompt: "Which pair makes 10?", options: ["4 and 6", "4 and 5", "4 and 7"] },
+        ],
+      },
+      {
         type: "count-objects",
         title: "Split 10 Stars Two Ways",
         instruction: "Here are 10 stars split into two groups. Count each group and write the numbers.",
         groups: [
           { objects: Array(7).fill("star"), label: "Group A" },
           { objects: Array(3).fill("star"), label: "Group B" },
+        ],
+      },
+      {
+        type: "count-objects",
+        title: "Split 10 Hearts Two Ways",
+        instruction: "Here are 10 hearts split into two groups. Count each group and write the numbers.",
+        groups: [
+          { objects: Array(4).fill("heart"), label: "Group A" },
+          { objects: Array(6).fill("heart"), label: "Group B" },
+        ],
+      },
+      {
+        type: "count-objects",
+        title: "Split 10 Fish Two Ways",
+        instruction: "Here are 10 fish split into two groups. Count each group and write the numbers.",
+        groups: [
+          { objects: Array(8).fill("fish"), label: "Group A" },
+          { objects: Array(2).fill("fish"), label: "Group B" },
         ],
       },
       {
@@ -1474,7 +2896,89 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
           { total: 10, partA: 0, partB: null },
         ],
       },
+      {
+        type: "number-bonds",
+        title: "More Mixed Number Bonds",
+        instruction: "Fill in the missing number to complete each bond.",
+        bonds: [
+          { total: 7, partA: 5, partB: null },
+          { total: 9, partA: null, partB: 6 },
+          { total: 10, partA: 4, partB: null },
+          { total: 8, partA: null, partB: 3 },
+          { total: 6, partA: 1, partB: null },
+          { total: 10, partA: null, partB: 10 },
+        ],
+      },
+      {
+        type: "count-objects",
+        title: "Split 10 Apples Two Ways",
+        instruction: "Here are 10 apples split into two groups. Count each group and write the numbers.",
+        groups: [
+          { objects: Array(5).fill("apple"), label: "Group A" },
+          { objects: Array(5).fill("apple"), label: "Group B" },
+        ],
+      },
+      {
+        type: "count-objects",
+        title: "Split 10 Butterflies Two Ways",
+        instruction: "Here are 10 butterflies split into two groups. Count each group and write the numbers.",
+        groups: [
+          { objects: Array(9).fill("butterfly"), label: "Group A" },
+          { objects: Array(1).fill("butterfly"), label: "Group B" },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Tricky Part-Part-Whole to 10",
+        instruction: "Circle the number that completes each equation.",
+        questions: [
+          { prompt: "10 + ___ = 10", options: ["0", "1", "10"] },
+          { prompt: "___ + 6 = 10", options: ["3", "4", "5"] },
+          { prompt: "7 + ___ = 10", options: ["2", "3", "4"] },
+          { prompt: "___ + 0 = 10", options: ["9", "10", "0"] },
+        ],
+      },
+      {
+        type: "number-bonds",
+        title: "All Number Bonds to 10 Challenge",
+        instruction: "Fill in the missing number to complete each bond. Can you get them all right?",
+        bonds: [
+          { total: 10, partA: 2, partB: null },
+          { total: 10, partA: null, partB: 3 },
+          { total: 10, partA: 7, partB: null },
+          { total: 10, partA: null, partB: 6 },
+          { total: 10, partA: 9, partB: null },
+          { total: 10, partA: null, partB: 1 },
+        ],
+      },
+
+      // =============================================
       // --- Improvement: Open-ended "show all ways" ---
+      // =============================================
+      {
+        type: "open-response",
+        title: "All the Ways to Make 5",
+        instruction: "How many different ways can you split 5 into two parts? Write as many as you can find!",
+        prompts: [
+          { text: "5 = ___ and ___", type: "lines", lines: 1 },
+          { text: "5 = ___ and ___", type: "lines", lines: 1 },
+          { text: "5 = ___ and ___", type: "lines", lines: 1 },
+          { text: "5 = ___ and ___", type: "lines", lines: 1 },
+          { text: "How many ways did you find? ___", type: "lines", lines: 1 },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "All the Ways to Make 6",
+        instruction: "How many different ways can you split 6 into two parts? Write as many as you can find!",
+        prompts: [
+          { text: "6 = ___ and ___", type: "lines", lines: 1 },
+          { text: "6 = ___ and ___", type: "lines", lines: 1 },
+          { text: "6 = ___ and ___", type: "lines", lines: 1 },
+          { text: "6 = ___ and ___", type: "lines", lines: 1 },
+          { text: "How many ways did you find? ___", type: "lines", lines: 1 },
+        ],
+      },
       {
         type: "open-response",
         title: "All the Ways to Make 8",
@@ -1502,11 +3006,29 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
       // --- Improvement: Draw to show partitioning ---
       {
         type: "open-response",
-        title: "Draw to Split",
-        instruction: "Draw circles to show each number split into two parts. There is no wrong answer!",
+        title: "Draw to Split 5",
+        instruction: "Draw circles to show the number 5 split into two parts. There is no wrong answer!",
+        prompts: [
+          { text: "Split 5 into two groups (draw circles in two groups):", type: "box" },
+          { text: "Now split 5 a DIFFERENT way:", type: "box" },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Draw to Split 6",
+        instruction: "Draw circles to show the number 6 split into two parts. There is no wrong answer!",
         prompts: [
           { text: "Split 6 into two groups (draw circles in two groups):", type: "box" },
           { text: "Now split 6 a DIFFERENT way:", type: "box" },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Draw to Split 8",
+        instruction: "Draw circles to show the number 8 split into two parts. Can you find more than one way?",
+        prompts: [
+          { text: "Split 8 into two groups (draw circles in two groups):", type: "box" },
+          { text: "Now split 8 a DIFFERENT way:", type: "box" },
         ],
       },
       // --- Try This at Home ---
@@ -1516,9 +3038,10 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         instruction: "Use real objects to explore how numbers can be split apart and put back together.",
         suggestions: [
           "Get 10 buttons, blocks, or snacks. Ask your child to split them into two groups as many different ways as they can.",
-          "Play 'Shake and Spill' — put 7 two-colour counters (or coins) in a cup, shake and tip out. How many heads? How many tails? That's a number bond!",
+          "Play 'Shake and Spill' -- put 7 two-colour counters (or coins) in a cup, shake and tip out. How many heads? How many tails? That is a number bond!",
           "Use a muffin tin with 10 holes. Put small objects in some holes. 'How many are filled? How many are empty? Together that makes 10!'",
-          "At dinner, share out items: '10 peas — 6 for you, how many for me?'",
+          "At dinner, share out items: '10 peas -- 6 for you, how many for me?'",
+          "Hide some toys under a cloth: 'There are 8 altogether, but you can only see 3. How many are hiding?'",
         ],
       },
     ],
@@ -1543,11 +3066,29 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
       },
       {
         type: "count-objects",
+        title: "Add the Circles Together",
+        instruction: "Count the circles in each group. How many altogether?",
+        groups: [
+          { objects: Array(1).fill("circle"), label: "Group A" },
+          { objects: Array(1).fill("circle"), label: "Group B" },
+        ],
+      },
+      {
+        type: "count-objects",
         title: "Add the Hearts Together",
         instruction: "Count the hearts in each group. How many altogether?",
         groups: [
           { objects: Array(2).fill("heart"), label: "Group A" },
           { objects: Array(2).fill("heart"), label: "Group B" },
+        ],
+      },
+      {
+        type: "count-objects",
+        title: "Add the Balls Together",
+        instruction: "Count the balls in each group. Write the total.",
+        groups: [
+          { objects: Array(2).fill("ball"), label: "Group A" },
+          { objects: Array(1).fill("ball"), label: "Group B" },
         ],
       },
       {
@@ -1562,12 +3103,32 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         ],
       },
       {
+        type: "circle-correct",
+        title: "More Simple Adding",
+        instruction: "Circle the correct answer.",
+        questions: [
+          { prompt: "1 banana and 1 more banana = ___", options: ["1", "2", "3"] },
+          { prompt: "1 teddy and 3 more teddies = ___", options: ["3", "4", "5"] },
+          { prompt: "2 birds and 2 more birds = ___", options: ["3", "4", "5"] },
+          { prompt: "3 balls and 1 more ball = ___", options: ["3", "4", "5"] },
+        ],
+      },
+      {
         type: "count-objects",
         title: "Add the Apples Together",
         instruction: "Put both groups together. How many apples altogether?",
         groups: [
           { objects: Array(3).fill("apple"), label: "Group A" },
           { objects: Array(2).fill("apple"), label: "Group B" },
+        ],
+      },
+      {
+        type: "count-objects",
+        title: "Add the Butterflies Together",
+        instruction: "Put both groups together. How many butterflies altogether?",
+        groups: [
+          { objects: Array(1).fill("butterfly"), label: "Group A" },
+          { objects: Array(4).fill("butterfly"), label: "Group B" },
         ],
       },
       {
@@ -1582,11 +3143,30 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         ],
       },
       {
+        type: "circle-correct",
+        title: "More Easy Take Away",
+        instruction: "Circle the correct answer.",
+        questions: [
+          { prompt: "2 cats, take away 1 = ___", options: ["0", "1", "2"] },
+          { prompt: "4 birds, take away 1 = ___", options: ["2", "3", "4"] },
+          { prompt: "5 bananas, take away 2 = ___", options: ["2", "3", "4"] },
+          { prompt: "3 balls, take away 3 = ___", options: ["0", "1", "2"] },
+        ],
+      },
+      {
         type: "count-objects",
         title: "Cross Out and Count",
         instruction: "There are 4 flowers. Cross out 1. How many are left?",
         rows: [
           { object: "flower", count: 4 },
+        ],
+      },
+      {
+        type: "count-objects",
+        title: "Cross Out and Count — Triangles",
+        instruction: "There are 5 triangles. Cross out 2. How many are left?",
+        rows: [
+          { object: "triangle", count: 5 },
         ],
       },
       {
@@ -1598,6 +3178,17 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
           { total: 4, partA: 2, partB: null },
           { total: 5, partA: 3, partB: null },
           { total: 5, partA: 1, partB: null },
+        ],
+      },
+      {
+        type: "number-bonds",
+        title: "More Bonds to 5",
+        instruction: "Fill in the missing number. The two parts add up to the total.",
+        bonds: [
+          { total: 4, partA: 1, partB: null },
+          { total: 5, partA: 2, partB: null },
+          { total: 3, partA: null, partB: 2 },
+          { total: 4, partA: null, partB: 3 },
         ],
       },
       {
@@ -1617,6 +3208,23 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
           { label: "2", objects: Array(2).fill("diamond") },
         ],
       },
+      {
+        type: "matching",
+        title: "Match the Take Away",
+        instruction: "Draw a line to match each take away to its answer.",
+        leftItems: [
+          { label: "3 − 1", objects: [] },
+          { label: "4 − 2", objects: [] },
+          { label: "5 − 1", objects: [] },
+          { label: "5 − 3", objects: [] },
+        ],
+        rightItems: [
+          { label: "4", objects: Array(4).fill("circle") },
+          { label: "2", objects: Array(2).fill("circle") },
+          { label: "2", objects: Array(2).fill("circle") },
+          { label: "2", objects: Array(2).fill("circle") },
+        ],
+      },
 
       // --- BRIDGE: Adding to 6 ---
       {
@@ -1629,6 +3237,24 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         ],
       },
       {
+        type: "count-objects",
+        title: "Picture Addition — Diamonds",
+        instruction: "Count both groups. How many diamonds altogether?",
+        groups: [
+          { objects: Array(4).fill("diamond"), label: "Group A" },
+          { objects: Array(2).fill("diamond"), label: "Group B" },
+        ],
+      },
+      {
+        type: "count-objects",
+        title: "Picture Addition — Teddies",
+        instruction: "Count both groups of teddies. Write the total.",
+        groups: [
+          { objects: Array(5).fill("teddy"), label: "Group A" },
+          { objects: Array(1).fill("teddy"), label: "Group B" },
+        ],
+      },
+      {
         type: "circle-correct",
         title: "Add Up to 6",
         instruction: "Circle the correct answer.",
@@ -1637,6 +3263,25 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
           { prompt: "3 + 3 = ___", options: ["5", "6", "7"] },
           { prompt: "5 + 1 = ___", options: ["5", "6", "7"] },
           { prompt: "4 + 2 = ___", options: ["5", "6", "7"] },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Take Away from 6",
+        instruction: "Circle the correct answer.",
+        questions: [
+          { prompt: "6 trees, take away 1 = ___", options: ["4", "5", "6"] },
+          { prompt: "6 suns, take away 3 = ___", options: ["2", "3", "4"] },
+          { prompt: "6 cups, take away 4 = ___", options: ["1", "2", "3"] },
+          { prompt: "5 books, take away 2 = ___", options: ["2", "3", "4"] },
+        ],
+      },
+      {
+        type: "count-objects",
+        title: "Cross Out and Count — Grapes",
+        instruction: "There are 6 grapes. Cross out 2. How many are left?",
+        rows: [
+          { object: "grape", count: 6 },
         ],
       },
       {
@@ -1671,6 +3316,15 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         ],
       },
       {
+        type: "count-objects",
+        title: "Picture Addition — Cats",
+        instruction: "How many cats altogether?",
+        groups: [
+          { objects: Array(3).fill("cat"), label: "Group A" },
+          { objects: Array(4).fill("cat"), label: "Group B" },
+        ],
+      },
+      {
         type: "circle-correct",
         title: "Add Up to 7",
         instruction: "Circle the correct answer.",
@@ -1679,6 +3333,17 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
           { prompt: "5 + 2 = ___", options: ["6", "7", "8"] },
           { prompt: "6 + 1 = ___", options: ["6", "7", "8"] },
           { prompt: "4 + 2 = ___", options: ["5", "6", "7"] },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "More Adding to 7",
+        instruction: "Circle the correct answer.",
+        questions: [
+          { prompt: "1 + 6 = ___", options: ["5", "6", "7"] },
+          { prompt: "2 + 5 = ___", options: ["6", "7", "8"] },
+          { prompt: "4 + 3 = ___", options: ["6", "7", "8"] },
+          { prompt: "3 + 3 = ___", options: ["5", "6", "7"] },
         ],
       },
       {
@@ -1693,11 +3358,30 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         ],
       },
       {
+        type: "circle-correct",
+        title: "More Take Away (Up to 7)",
+        instruction: "Circle the correct answer.",
+        questions: [
+          { prompt: "7 bananas, take away 4 = ___", options: ["2", "3", "4"] },
+          { prompt: "6 pencils, take away 3 = ___", options: ["2", "3", "4"] },
+          { prompt: "7 grapes, take away 5 = ___", options: ["1", "2", "3"] },
+          { prompt: "5 teddies, take away 3 = ___", options: ["1", "2", "3"] },
+        ],
+      },
+      {
         type: "count-objects",
         title: "Cross Out and Count — Hearts",
         instruction: "There are 7 hearts. Cross out 3. How many are left?",
         rows: [
           { object: "heart", count: 7 },
+        ],
+      },
+      {
+        type: "count-objects",
+        title: "Cross Out and Count — Dogs",
+        instruction: "There are 6 dogs. Cross out 4. How many are left?",
+        rows: [
+          { object: "dog", count: 6 },
         ],
       },
       {
@@ -1709,6 +3393,17 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
           { total: 7, partA: 4, partB: null },
           { total: 6, partA: null, partB: 5 },
           { total: 7, partA: null, partB: 2 },
+        ],
+      },
+      {
+        type: "number-bonds",
+        title: "More Bonds to 7",
+        instruction: "Fill in the missing number.",
+        bonds: [
+          { total: 7, partA: 3, partB: null },
+          { total: 7, partA: 6, partB: null },
+          { total: 7, partA: null, partB: 1 },
+          { total: 6, partA: null, partB: 2 },
         ],
       },
       {
@@ -1738,6 +3433,16 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
           { prompt: "2 fish shared between 2 = ___", options: ["1", "2", "3"] },
         ],
       },
+      {
+        type: "circle-correct",
+        title: "More Sharing Between 2",
+        instruction: "Share these equally between 2 friends. How many does each friend get?",
+        questions: [
+          { prompt: "2 bananas shared between 2 = ___", options: ["1", "2", "3"] },
+          { prompt: "4 teddies shared between 2 = ___", options: ["1", "2", "3"] },
+          { prompt: "6 grapes shared between 2 = ___", options: ["2", "3", "4"] },
+        ],
+      },
 
       // --- HARDER: Adding and subtracting to 10 ---
       {
@@ -1751,11 +3456,29 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
       },
       {
         type: "count-objects",
+        title: "Picture Addition — Birds",
+        instruction: "Count both groups. How many birds altogether?",
+        groups: [
+          { objects: Array(5).fill("bird"), label: "Group A" },
+          { objects: Array(3).fill("bird"), label: "Group B" },
+        ],
+      },
+      {
+        type: "count-objects",
         title: "Picture Addition — Flowers",
         instruction: "Put both groups of flowers together. Write the total.",
         groups: [
           { objects: Array(5).fill("flower"), label: "Group A" },
           { objects: Array(5).fill("flower"), label: "Group B" },
+        ],
+      },
+      {
+        type: "count-objects",
+        title: "Picture Addition — Squares",
+        instruction: "Count both groups of squares. How many altogether?",
+        groups: [
+          { objects: Array(7).fill("square"), label: "Group A" },
+          { objects: Array(3).fill("square"), label: "Group B" },
         ],
       },
       {
@@ -1771,6 +3494,17 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
       },
       {
         type: "circle-correct",
+        title: "More Adding to 10",
+        instruction: "Circle the correct answer.",
+        questions: [
+          { prompt: "4 + 4 = ___", options: ["7", "8", "9"] },
+          { prompt: "6 + 3 = ___", options: ["8", "9", "10"] },
+          { prompt: "3 + 5 = ___", options: ["7", "8", "9"] },
+          { prompt: "9 + 1 = ___", options: ["9", "10", "11"] },
+        ],
+      },
+      {
+        type: "circle-correct",
         title: "Take Away (Up to 10)",
         instruction: "Circle the correct answer.",
         questions: [
@@ -1781,11 +3515,38 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         ],
       },
       {
+        type: "circle-correct",
+        title: "More Take Away (Up to 10)",
+        instruction: "Circle the correct answer.",
+        questions: [
+          { prompt: "9 butterflies, take away 3 = ___", options: ["5", "6", "7"] },
+          { prompt: "8 flowers, take away 5 = ___", options: ["2", "3", "4"] },
+          { prompt: "10 triangles, take away 2 = ___", options: ["7", "8", "9"] },
+          { prompt: "7 cats, take away 4 = ___", options: ["2", "3", "4"] },
+        ],
+      },
+      {
         type: "count-objects",
         title: "Cross Out and Count — Stars",
         instruction: "There are 9 stars. Cross out 4. How many are left?",
         rows: [
           { object: "star", count: 9 },
+        ],
+      },
+      {
+        type: "count-objects",
+        title: "Cross Out and Count — Bananas",
+        instruction: "There are 8 bananas. Cross out 5. How many are left?",
+        rows: [
+          { object: "banana", count: 8 },
+        ],
+      },
+      {
+        type: "count-objects",
+        title: "Cross Out and Count — Pencils",
+        instruction: "There are 10 pencils. Cross out 6. How many are left?",
+        rows: [
+          { object: "pencil", count: 10 },
         ],
       },
       {
@@ -1801,6 +3562,18 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         ],
       },
       {
+        type: "number-bonds",
+        title: "More Bonds to 10",
+        instruction: "Fill in the missing number.",
+        bonds: [
+          { total: 10, partA: 5, partB: null },
+          { total: 8, partA: null, partB: 3 },
+          { total: 9, partA: 7, partB: null },
+          { total: 10, partA: null, partB: 6 },
+          { total: 8, partA: null, partB: 4 },
+        ],
+      },
+      {
         type: "matching",
         title: "Match Additions to 10",
         instruction: "Draw a line to match each addition to its answer.",
@@ -1813,6 +3586,23 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
           { label: "10", objects: Array(10).fill("star") },
           { label: "8", objects: Array(8).fill("star") },
           { label: "9", objects: Array(9).fill("star") },
+        ],
+      },
+      {
+        type: "matching",
+        title: "Match Subtractions from 10",
+        instruction: "Draw a line to match each subtraction to its answer.",
+        leftItems: [
+          { label: "10 − 3", objects: [] },
+          { label: "9 − 5", objects: [] },
+          { label: "8 − 2", objects: [] },
+          { label: "10 − 7", objects: [] },
+        ],
+        rightItems: [
+          { label: "6", objects: Array(6).fill("butterfly") },
+          { label: "3", objects: Array(3).fill("butterfly") },
+          { label: "4", objects: Array(4).fill("butterfly") },
+          { label: "7", objects: Array(7).fill("butterfly") },
         ],
       },
 
@@ -1852,6 +3642,17 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
       },
       {
         type: "circle-correct",
+        title: "More Story Problems",
+        instruction: "Read each story. Circle the correct answer.",
+        questions: [
+          { prompt: "Ben has 4 balls. Dad gives him 3 more. How many now?", options: ["6", "7", "8"] },
+          { prompt: "There are 10 birds on a tree. 4 fly away. How many left?", options: ["5", "6", "7"] },
+          { prompt: "Mia has 2 cats. She gets 6 more. How many now?", options: ["7", "8", "9"] },
+          { prompt: "There are 7 grapes. You eat 5. How many left?", options: ["1", "2", "3"] },
+        ],
+      },
+      {
+        type: "circle-correct",
         title: "Mixed Challenge",
         instruction: "Circle the correct answer for each problem.",
         questions: [
@@ -1862,12 +3663,32 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         ],
       },
       {
+        type: "circle-correct",
+        title: "More Mixed Challenge",
+        instruction: "Circle the correct answer for each problem.",
+        questions: [
+          { prompt: "3 + 6 = ___", options: ["8", "9", "10"] },
+          { prompt: "8 − 5 = ___", options: ["2", "3", "4"] },
+          { prompt: "2 + 8 = ___", options: ["9", "10", "11"] },
+          { prompt: "10 − 3 = ___", options: ["6", "7", "8"] },
+        ],
+      },
+      {
         type: "count-objects",
         title: "Share 10 Apples Equally",
         instruction: "Share 10 apples equally into 2 baskets. Draw them and write how many in each.",
         groups: [
           { objects: Array(5).fill("apple"), label: "Basket A" },
           { objects: Array(5).fill("apple"), label: "Basket B" },
+        ],
+      },
+      {
+        type: "count-objects",
+        title: "Share 8 Stars Equally",
+        instruction: "Share 8 stars equally into 2 groups. Write how many in each.",
+        groups: [
+          { objects: Array(4).fill("star"), label: "Group A" },
+          { objects: Array(4).fill("star"), label: "Group B" },
         ],
       },
       {
@@ -1908,6 +3729,16 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         ],
       },
       {
+        type: "number-bonds",
+        title: "Sharing Bonds — 3 Groups",
+        instruction: "If you share the total equally into 3 groups, fill in how many in each group.",
+        bonds: [
+          { total: 3, partA: 1, partB: null },
+          { total: 6, partA: 2, partB: null },
+          { total: 9, partA: 3, partB: null },
+        ],
+      },
+      {
         type: "open-response",
         title: "Draw to Share Equally",
         instruction: "Draw circles to show how you would share the objects equally.",
@@ -1928,6 +3759,16 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
           { text: "9 lollies shared equally between 3 friends. Draw it. Each friend gets: ___", type: "box" },
         ],
       },
+      {
+        type: "open-response",
+        title: "More Draw and Write",
+        instruction: "Read each story. Draw a picture to show what happens. Then write the number sentence.",
+        prompts: [
+          { text: "There are 4 cats. 5 more cats come. Draw it. Number sentence: ___ + ___ = ___", type: "box" },
+          { text: "Ben has 10 grapes. He eats 4. Draw it. Number sentence: ___ − ___ = ___", type: "box" },
+          { text: "6 balls shared equally between 2 children. Draw it. Each child gets: ___", type: "box" },
+        ],
+      },
       // --- Improvement: More cross-out (take away from) activities ---
       {
         type: "count-objects",
@@ -1937,6 +3778,16 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
           { object: "star", count: 8 },
           { object: "apple", count: 10 },
           { object: "heart", count: 6 },
+        ],
+      },
+      {
+        type: "count-objects",
+        title: "More Cross Out to Take Away",
+        instruction: "Cross out the number shown, then count how many are left.",
+        rows: [
+          { object: "fish", count: 7 },
+          { object: "flower", count: 9 },
+          { object: "butterfly", count: 5 },
         ],
       },
       // --- Try This at Home ---
@@ -1987,6 +3838,30 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         ],
       },
       {
+        type: "pattern",
+        title: "Continue the Circle-Square Pattern",
+        instruction: "Look at the shapes. Draw what comes next.",
+        rows: [
+          { sequence: ["circle", "square", "circle", "square", null, null], unitLength: 2 },
+        ],
+      },
+      {
+        type: "pattern",
+        title: "Continue the Sun-Moon Pattern",
+        instruction: "Day and night! What comes next in the pattern?",
+        rows: [
+          { sequence: ["sun", "moon", "sun", "moon", null, null], unitLength: 2 },
+        ],
+      },
+      {
+        type: "pattern",
+        title: "Continue the Cat-Dog Pattern",
+        instruction: "Fill in the empty boxes to keep the pattern going.",
+        rows: [
+          { sequence: ["cat", "dog", "cat", "dog", null, null], unitLength: 2 },
+        ],
+      },
+      {
         type: "circle-correct",
         title: "What Comes Next? (AB Patterns)",
         instruction: "Circle what comes next in each pattern.",
@@ -1997,11 +3872,29 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         ],
       },
       {
+        type: "circle-correct",
+        title: "What Comes Next? (More AB Patterns)",
+        instruction: "Circle the object that comes next.",
+        questions: [
+          { prompt: "Sun, Moon, Sun, Moon, Sun, ___", options: ["Sun", "Moon"] },
+          { prompt: "Cat, Dog, Cat, Dog, ___", options: ["Cat", "Dog"] },
+          { prompt: "Ball, Teddy, Ball, Teddy, Ball, ___", options: ["Ball", "Teddy"] },
+        ],
+      },
+      {
         type: "pattern",
         title: "Copy the Pattern",
         instruction: "Look at the pattern on top. Copy it exactly in the empty boxes below.",
         rows: [
           { sequence: ["star", "diamond", "star", "diamond", null, null, null, null], unitLength: 2 },
+        ],
+      },
+      {
+        type: "pattern",
+        title: "Copy the Tree-Flower Pattern",
+        instruction: "Look carefully and copy the pattern in the empty boxes.",
+        rows: [
+          { sequence: ["tree", "flower", "tree", "flower", null, null, null, null], unitLength: 2 },
         ],
       },
       {
@@ -2020,6 +3913,21 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         ],
       },
       {
+        type: "matching",
+        title: "Match These Patterns Too",
+        instruction: "Draw a line from each pattern to the object that comes next.",
+        leftItems: [
+          { label: "Cat, Dog, Cat, Dog, ___", objects: ["cat", "dog", "cat", "dog"] },
+          { label: "Sun, Moon, Sun, Moon, ___", objects: ["sun", "moon", "sun", "moon"] },
+          { label: "Ball, Cup, Ball, Cup, ___", objects: ["ball", "cup", "ball", "cup"] },
+        ],
+        rightItems: [
+          { label: "Sun", objects: ["sun"] },
+          { label: "Ball", objects: ["ball"] },
+          { label: "Cat", objects: ["cat"] },
+        ],
+      },
+      {
         type: "circle-correct",
         title: "Which Is the Repeating Part?",
         instruction: "Circle the part that repeats over and over.",
@@ -2029,12 +3937,30 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         ],
       },
       {
+        type: "circle-correct",
+        title: "Find the Repeating Part (More Practice)",
+        instruction: "Circle the group of objects that repeats.",
+        questions: [
+          { prompt: "Sun, Moon, Sun, Moon — what repeats?", options: ["Sun, Moon", "Sun, Sun", "Moon"] },
+          { prompt: "Tree, Flower, Tree, Flower — what repeats?", options: ["Tree", "Tree, Flower", "Flower, Tree, Flower"] },
+        ],
+      },
+      {
         type: "pattern",
         title: "Two AB Patterns",
         instruction: "Continue both patterns. Fill in the empty boxes.",
         rows: [
           { sequence: ["heart", "star", "heart", "star", null, null], unitLength: 2 },
           { sequence: ["circle", "triangle", "circle", "triangle", null, null], unitLength: 2 },
+        ],
+      },
+      {
+        type: "pattern",
+        title: "Two More AB Patterns",
+        instruction: "Keep both patterns going. Fill in the empty boxes.",
+        rows: [
+          { sequence: ["banana", "apple", "banana", "apple", null, null], unitLength: 2 },
+          { sequence: ["bird", "fish", "bird", "fish", null, null], unitLength: 2 },
         ],
       },
 
@@ -2057,10 +3983,42 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
       },
       {
         type: "pattern",
+        title: "Sun-Sun-Moon Pattern",
+        instruction: "Two suns and then a moon. Continue the pattern.",
+        rows: [
+          { sequence: ["sun", "sun", "moon", "sun", "sun", null, null, null], unitLength: 3 },
+        ],
+      },
+      {
+        type: "pattern",
+        title: "Cat-Cat-Bird Pattern",
+        instruction: "Look carefully — two cats then one bird. Fill in the empty boxes.",
+        rows: [
+          { sequence: ["cat", "cat", "bird", "cat", "cat", null, null, null], unitLength: 3 },
+        ],
+      },
+      {
+        type: "pattern",
         title: "Flower-Butterfly-Butterfly Pattern",
         instruction: "What comes next? Fill in the empty boxes.",
         rows: [
           { sequence: ["flower", "butterfly", "butterfly", "flower", "butterfly", null, null, null], unitLength: 3 },
+        ],
+      },
+      {
+        type: "pattern",
+        title: "Ball-Cup-Cup Pattern",
+        instruction: "One ball then two cups. Continue this pattern.",
+        rows: [
+          { sequence: ["ball", "cup", "cup", "ball", "cup", null, null, null], unitLength: 3 },
+        ],
+      },
+      {
+        type: "pattern",
+        title: "Tree-Flower-Flower Pattern",
+        instruction: "One tree and then two flowers. Keep the pattern going!",
+        rows: [
+          { sequence: ["tree", "flower", "flower", "tree", "flower", null, null, null], unitLength: 3 },
         ],
       },
       {
@@ -2074,12 +4032,31 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         ],
       },
       {
+        type: "circle-correct",
+        title: "What Comes Next? (Even More Practice)",
+        instruction: "Circle the object that should come next.",
+        questions: [
+          { prompt: "Sun, Sun, Moon, Sun, Sun, ___", options: ["Sun", "Moon"] },
+          { prompt: "Cat, Cat, Bird, Cat, Cat, ___", options: ["Cat", "Bird"] },
+          { prompt: "Ball, Cup, Cup, Ball, Cup, ___", options: ["Ball", "Cup"] },
+        ],
+      },
+      {
         type: "pattern",
         title: "Two Longer Patterns",
         instruction: "Continue both patterns.",
         rows: [
           { sequence: ["heart", "heart", "diamond", "heart", "heart", null, null, null], unitLength: 3 },
           { sequence: ["fish", "star", "star", "fish", "star", null, null, null], unitLength: 3 },
+        ],
+      },
+      {
+        type: "pattern",
+        title: "Two More Longer Patterns",
+        instruction: "Fill in the empty boxes to continue both patterns.",
+        rows: [
+          { sequence: ["banana", "banana", "grape", "banana", "banana", null, null, null], unitLength: 3 },
+          { sequence: ["dog", "cat", "cat", "dog", "cat", null, null, null], unitLength: 3 },
         ],
       },
       {
@@ -2090,6 +4067,16 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
           { prompt: "Star, Star, Heart, Star, Star, Heart — what repeats?", options: ["Star, Heart", "Star, Star, Heart", "Star, Star"] },
           { prompt: "Apple, Fish, Fish, Apple, Fish, Fish — what repeats?", options: ["Apple, Fish, Fish", "Apple, Fish", "Fish, Fish"] },
           { prompt: "Heart, Heart, Star, Heart, Heart, Star — what repeats?", options: ["Heart, Star", "Heart, Heart, Star", "Heart, Heart"] },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Find the Repeating Unit (Extra Practice)",
+        instruction: "Which part of the pattern keeps repeating?",
+        questions: [
+          { prompt: "Sun, Sun, Moon, Sun, Sun, Moon — what repeats?", options: ["Sun, Moon", "Sun, Sun, Moon", "Sun, Sun"] },
+          { prompt: "Tree, Flower, Flower, Tree, Flower, Flower — what repeats?", options: ["Tree, Flower, Flower", "Tree, Flower", "Flower, Flower"] },
+          { prompt: "Ball, Ball, Cup, Ball, Ball, Cup — what repeats?", options: ["Ball, Cup", "Ball, Ball, Cup", "Ball, Ball"] },
         ],
       },
       {
@@ -2105,6 +4092,21 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
           { label: "Fish, Apple", objects: ["fish", "apple"] },
           { label: "Star, Star, Heart", objects: ["star", "star", "heart"] },
           { label: "Diamond, Flower, Flower", objects: ["diamond", "flower", "flower"] },
+        ],
+      },
+      {
+        type: "matching",
+        title: "Match More Patterns to Their Repeating Unit",
+        instruction: "Draw a line from each pattern to the group that repeats.",
+        leftItems: [
+          { label: "Sun, Sun, Moon, Sun, Sun, Moon", objects: ["sun", "sun", "moon"] },
+          { label: "Cat, Dog, Cat, Dog", objects: ["cat", "dog"] },
+          { label: "Ball, Cup, Cup, Ball, Cup, Cup", objects: ["ball", "cup", "cup"] },
+        ],
+        rightItems: [
+          { label: "Cat, Dog", objects: ["cat", "dog"] },
+          { label: "Sun, Sun, Moon", objects: ["sun", "sun", "moon"] },
+          { label: "Ball, Cup, Cup", objects: ["ball", "cup", "cup"] },
         ],
       },
 
@@ -2134,6 +4136,30 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         ],
       },
       {
+        type: "pattern",
+        title: "Sun-Tree-Bird Pattern",
+        instruction: "Three different objects in a row. Continue the pattern.",
+        rows: [
+          { sequence: ["sun", "tree", "bird", "sun", "tree", null, null, null], unitLength: 3 },
+        ],
+      },
+      {
+        type: "pattern",
+        title: "Cat-Ball-Cup Pattern",
+        instruction: "What comes next? Fill in the empty boxes.",
+        rows: [
+          { sequence: ["cat", "ball", "cup", "cat", "ball", null, null, null], unitLength: 3 },
+        ],
+      },
+      {
+        type: "pattern",
+        title: "Banana-Apple-Grape Pattern",
+        instruction: "Three fruits in a pattern! Fill in the empty boxes.",
+        rows: [
+          { sequence: ["banana", "apple", "grape", "banana", "apple", null, null, null], unitLength: 3 },
+        ],
+      },
+      {
         type: "circle-correct",
         title: "What Comes Next? (ABC Patterns)",
         instruction: "Circle what comes next.",
@@ -2141,6 +4167,16 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
           { prompt: "Star, Heart, Apple, Star, Heart, ___", options: ["Star", "Heart", "Apple"] },
           { prompt: "Circle, Square, Triangle, Circle, ___", options: ["Circle", "Square", "Triangle"] },
           { prompt: "Fish, Flower, Diamond, Fish, Flower, Diamond, Fish, ___", options: ["Fish", "Flower", "Diamond"] },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "What Comes Next? (More ABC Patterns)",
+        instruction: "Circle the correct answer.",
+        questions: [
+          { prompt: "Sun, Tree, Bird, Sun, Tree, ___", options: ["Sun", "Tree", "Bird"] },
+          { prompt: "Cat, Ball, Cup, Cat, ___", options: ["Cat", "Ball", "Cup"] },
+          { prompt: "Banana, Apple, Grape, Banana, Apple, Grape, Banana, ___", options: ["Banana", "Apple", "Grape"] },
         ],
       },
       {
@@ -2154,12 +4190,46 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         ],
       },
       {
+        type: "circle-correct",
+        title: "Spot More Mistakes!",
+        instruction: "Look carefully. Is each pattern correct or does it have a mistake?",
+        questions: [
+          { prompt: "Sun, Moon, Sun, Moon, Sun, Sun — is this correct?", options: ["Yes", "No — the last one should be Moon"] },
+          { prompt: "Cat, Dog, Cat, Dog, Cat, Dog — is this correct?", options: ["Yes, it is correct", "No, it has a mistake"] },
+          { prompt: "Ball, Ball, Cup, Ball, Cup, Cup — is this correct?", options: ["Yes", "No — it should be Ball, Ball, Cup"] },
+        ],
+      },
+      {
         type: "pattern",
         title: "Two ABC Patterns",
         instruction: "Continue both patterns.",
         rows: [
           { sequence: ["butterfly", "star", "heart", "butterfly", "star", null, null, null], unitLength: 3 },
           { sequence: ["apple", "diamond", "flower", "apple", "diamond", null, null, null], unitLength: 3 },
+        ],
+      },
+      {
+        type: "pattern",
+        title: "Two More ABC Patterns",
+        instruction: "Fill in the empty boxes to continue both patterns.",
+        rows: [
+          { sequence: ["sun", "moon", "star", "sun", "moon", null, null, null], unitLength: 3 },
+          { sequence: ["cat", "bird", "fish", "cat", "bird", null, null, null], unitLength: 3 },
+        ],
+      },
+      {
+        type: "matching",
+        title: "Match ABC Patterns to What Comes Next",
+        instruction: "Draw a line from each pattern to the object that comes next.",
+        leftItems: [
+          { label: "Star, Heart, Apple, Star, Heart, ___", objects: ["star", "heart", "apple", "star", "heart"] },
+          { label: "Sun, Tree, Bird, Sun, ___", objects: ["sun", "tree", "bird", "sun"] },
+          { label: "Cat, Ball, Cup, Cat, Ball, ___", objects: ["cat", "ball", "cup", "cat", "ball"] },
+        ],
+        rightItems: [
+          { label: "Tree", objects: ["tree"] },
+          { label: "Cup", objects: ["cup"] },
+          { label: "Apple", objects: ["apple"] },
         ],
       },
 
@@ -2174,6 +4244,14 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
       },
       {
         type: "pattern",
+        title: "Create Another AB Pattern",
+        instruction: "Pick two different objects this time and make a new AB pattern.",
+        rows: [
+          { sequence: [null, null, null, null, null, null], unitLength: 2 },
+        ],
+      },
+      {
+        type: "pattern",
         title: "Create an AAB Pattern",
         instruction: "Choose objects and create an AAB pattern (two same, one different). Draw it.",
         rows: [
@@ -2182,8 +4260,24 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
       },
       {
         type: "pattern",
+        title: "Create an ABB Pattern",
+        instruction: "Make an ABB pattern (one object, then two of another). Draw it in the boxes.",
+        rows: [
+          { sequence: [null, null, null, null, null, null], unitLength: 3 },
+        ],
+      },
+      {
+        type: "pattern",
         title: "Create an ABC Pattern",
         instruction: "Use three different objects to create an ABC pattern.",
+        rows: [
+          { sequence: [null, null, null, null, null, null], unitLength: 3 },
+        ],
+      },
+      {
+        type: "pattern",
+        title: "Create Another ABC Pattern",
+        instruction: "Pick three new objects and make a different ABC pattern.",
         rows: [
           { sequence: [null, null, null, null, null, null], unitLength: 3 },
         ],
@@ -2199,6 +4293,16 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         ],
       },
       {
+        type: "circle-correct",
+        title: "Pattern Detective (Round 2)",
+        instruction: "Look carefully at each pattern. Circle what the repeating unit is.",
+        questions: [
+          { prompt: "Dog, Cat, Cat, Dog, Cat, Cat — the unit is:", options: ["Dog, Cat", "Dog, Cat, Cat", "Cat, Cat"] },
+          { prompt: "Sun, Moon, Star, Sun, Moon, Star — the unit is:", options: ["Sun, Moon", "Sun, Moon, Star", "Moon, Star"] },
+          { prompt: "Ball, Ball, Teddy, Ball, Ball, Teddy — the unit is:", options: ["Ball, Teddy", "Ball, Ball, Teddy", "Ball, Ball"] },
+        ],
+      },
+      {
         type: "pattern",
         title: "Long Pattern Challenge",
         instruction: "Continue each pattern to fill all the boxes.",
@@ -2206,6 +4310,16 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
           { sequence: ["star", "heart", "star", "heart", null, null, null, null], unitLength: 2 },
           { sequence: ["apple", "apple", "fish", "apple", "apple", null, null, null, null], unitLength: 3 },
           { sequence: ["circle", "square", "triangle", "circle", null, null, null, null, null], unitLength: 3 },
+        ],
+      },
+      {
+        type: "pattern",
+        title: "Long Pattern Challenge (Part 2)",
+        instruction: "Continue each pattern to fill all the boxes.",
+        rows: [
+          { sequence: ["sun", "moon", "sun", "moon", null, null, null, null], unitLength: 2 },
+          { sequence: ["cat", "cat", "bird", "cat", "cat", null, null, null, null], unitLength: 3 },
+          { sequence: ["banana", "apple", "grape", "banana", null, null, null, null, null], unitLength: 3 },
         ],
       },
       {
@@ -2218,16 +4332,37 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
           { prompt: "If the pattern is Star, Heart, Apple and it repeats 4 times, how many objects total?", options: ["9", "12", "15"] },
         ],
       },
+      {
+        type: "circle-correct",
+        title: "Mixed Pattern Quiz (Part 2)",
+        instruction: "Answer each question about patterns.",
+        questions: [
+          { prompt: "How many objects are in the repeating unit of: Cat, Dog, Cat, Dog?", options: ["1", "2", "3"] },
+          { prompt: "How many objects are in the repeating unit of: Sun, Moon, Star, Sun, Moon, Star?", options: ["2", "3", "4"] },
+          { prompt: "If the pattern is Fish, Ball and it repeats 5 times, how many objects total?", options: ["8", "10", "12"] },
+        ],
+      },
       // --- Improvement: Non-visual pattern awareness ---
       {
         type: "circle-correct",
         title: "Patterns Are Everywhere!",
-        instruction: "Patterns aren't just pictures — they can be sounds, actions, or colours too! Circle the correct answer.",
+        instruction: "Patterns are not just pictures — they can be sounds, actions, or colours too! Circle the correct answer.",
         questions: [
           { prompt: "Clap, stomp, clap, stomp, clap, ___ — what comes next?", options: ["Clap", "Stomp"] },
           { prompt: "Red, blue, red, blue, red, ___ — what colour comes next?", options: ["Red", "Blue", "Green"] },
           { prompt: "Loud, quiet, loud, quiet — what type of pattern is this?", options: ["AB pattern", "ABC pattern", "AAB pattern"] },
           { prompt: "Big, big, small, big, big, small — what type of pattern is this?", options: ["AB pattern", "AAB pattern", "ABC pattern"] },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "More Patterns All Around Us",
+        instruction: "Think about patterns you can hear, feel, or see. Circle the correct answer.",
+        questions: [
+          { prompt: "Hop, skip, hop, skip, hop, ___ — what comes next?", options: ["Hop", "Skip"] },
+          { prompt: "Green, yellow, green, yellow, ___ — what colour comes next?", options: ["Green", "Yellow", "Blue"] },
+          { prompt: "Fast, fast, slow, fast, fast, slow — what type of pattern is this?", options: ["AB pattern", "AAB pattern", "ABC pattern"] },
+          { prompt: "Tap, clap, snap, tap, clap, snap — what type of pattern is this?", options: ["AB pattern", "AAB pattern", "ABC pattern"] },
         ],
       },
       {
@@ -2241,6 +4376,16 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
           { text: "Create your OWN pattern — any type you like!:", type: "lines", lines: 1 },
         ],
       },
+      {
+        type: "open-response",
+        title: "Describe These Patterns",
+        instruction: "Write about what you see in these patterns.",
+        prompts: [
+          { text: "Describe a pattern you see on your clothes today:", type: "lines", lines: 1 },
+          { text: "Describe a pattern you could make with sounds:", type: "lines", lines: 1 },
+          { text: "Describe a pattern you could make with body movements:", type: "lines", lines: 1 },
+        ],
+      },
       // --- Try This at Home ---
       {
         type: "home-activity",
@@ -2251,6 +4396,8 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
           "Use coloured pegs, beads, or LEGO bricks to make visual patterns on a string or in a line.",
           "Go on a pattern hunt — look at floor tiles, fences, fabric, and wrapping paper. What repeating patterns can you spot?",
           "Make a body movement pattern: jump-spin-jump-spin. Take turns creating patterns for each other to copy.",
+          "At dinner time, arrange food in patterns on the plate — carrot, pea, carrot, pea. Let your child continue the pattern.",
+          "Use stickers or stamps to create patterns on paper. Start a pattern and ask your child to keep it going.",
         ],
       },
     ],
@@ -2279,6 +4426,20 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         ],
       },
       {
+        type: "sorting",
+        title: "Heavy or Light? (Set 2)",
+        instruction: "Sort each item into the correct column. Is it heavy or light?",
+        columns: ["Heavy", "Light"],
+        items: [
+          { label: "Horse", icon: "horse" },
+          { label: "Pencil", icon: "pencil" },
+          { label: "Ball", icon: "ball" },
+          { label: "House", icon: "house" },
+          { label: "Ant", icon: "ant" },
+          { label: "Book", icon: "book" },
+        ],
+      },
+      {
         type: "circle-correct",
         title: "Which Is Heavier?",
         instruction: "Circle the heavier item.",
@@ -2290,12 +4451,32 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
       },
       {
         type: "circle-correct",
+        title: "Which Is Heavier? (Set 2)",
+        instruction: "Circle the heavier item.",
+        questions: [
+          { prompt: "A horse or a dog?", optionIcons: ["horse", "dog"], options: ["Horse", "Dog"] },
+          { prompt: "A rock or a butterfly?", optionIcons: ["rock", "butterfly"], options: ["Rock", "Butterfly"] },
+          { prompt: "A banana or a watermelon?", optionIcons: ["banana", "watermelon"], options: ["Banana", "Watermelon"] },
+        ],
+      },
+      {
+        type: "circle-correct",
         title: "Which Is Lighter?",
         instruction: "Circle the lighter item.",
         questions: [
           { prompt: "A brick or a balloon?", options: ["Brick", "Balloon"] },
           { prompt: "A dog or an ant?", optionIcons: ["dog", "ant"], options: ["Dog", "Ant"] },
           { prompt: "A pillow or a table?", options: ["Pillow", "Table"] },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Which Is Lighter? (Set 2)",
+        instruction: "Circle the lighter item.",
+        questions: [
+          { prompt: "A grape or a watermelon?", optionIcons: ["grape", "watermelon"], options: ["Grape", "Watermelon"] },
+          { prompt: "A feather or a rock?", optionIcons: ["feather", "rock"], options: ["Feather", "Rock"] },
+          { prompt: "A spoon or a car?", optionIcons: ["spoon", "car"], options: ["Spoon", "Car"] },
         ],
       },
 
@@ -2315,6 +4496,20 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         ],
       },
       {
+        type: "sorting",
+        title: "Full or Empty? (Set 2)",
+        instruction: "Sort each item into the correct column.",
+        columns: ["Full", "Empty"],
+        items: [
+          { label: "Bottle of juice", icon: "bottle" },
+          { label: "Empty bucket", icon: "bucket" },
+          { label: "Cup of tea", icon: "cup" },
+          { label: "Empty fish tank" },
+          { label: "Full water bottle", icon: "bottle" },
+          { label: "Empty glass", icon: "cup" },
+        ],
+      },
+      {
         type: "circle-correct",
         title: "Which Holds More?",
         instruction: "Circle the container that holds MORE.",
@@ -2326,12 +4521,32 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
       },
       {
         type: "circle-correct",
+        title: "Which Holds More? (Set 2)",
+        instruction: "Circle the container that holds MORE.",
+        questions: [
+          { prompt: "A bottle or a fish tank?", optionIcons: ["bottle"], options: ["Bottle", "Fish tank"] },
+          { prompt: "A cup or a bucket?", optionIcons: ["cup", "bucket"], options: ["Cup", "Bucket"] },
+          { prompt: "A sink or a puddle?", options: ["Sink", "Puddle"] },
+        ],
+      },
+      {
+        type: "circle-correct",
         title: "Which Holds Less?",
         instruction: "Circle the container that holds LESS.",
         questions: [
           { prompt: "A teacup or a jug?", options: ["Teacup", "Jug"] },
           { prompt: "An egg cup or a mug?", options: ["Egg cup", "Mug"] },
           { prompt: "A thimble or a glass?", options: ["Thimble", "Glass"] },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Which Holds Less? (Set 2)",
+        instruction: "Circle the container that holds LESS.",
+        questions: [
+          { prompt: "A spoon or a bucket?", optionIcons: ["spoon", "bucket"], options: ["Spoon", "Bucket"] },
+          { prompt: "A cup or a swimming pool?", optionIcons: ["cup"], options: ["Cup", "Swimming pool"] },
+          { prompt: "A bottle or a bath?", optionIcons: ["bottle"], options: ["Bottle", "Bath"] },
         ],
       },
 
@@ -2349,12 +4564,43 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
       },
       {
         type: "circle-correct",
+        title: "Long or Short? (Set 2)",
+        instruction: "Circle the correct answer.",
+        questions: [
+          { prompt: "A snake is ___", promptIcon: "snake", options: ["Long", "Short"] },
+          { prompt: "A worm is ___", options: ["Long", "Short"] },
+          { prompt: "A giraffe's neck is ___", options: ["Long", "Short"] },
+          { prompt: "A mouse's tail is ___", promptIcon: "mouse", options: ["Long", "Short"] },
+        ],
+      },
+      {
+        type: "circle-correct",
         title: "Which Is Longer?",
         instruction: "Circle the longer item.",
         questions: [
           { prompt: "A snake or a worm?", optionIcons: ["snake"], options: ["Snake", "Worm"] },
           { prompt: "A ruler or a rubber?", options: ["Ruler", "Rubber"] },
           { prompt: "A scarf or a sock?", options: ["Scarf", "Sock"] },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Which Is Longer? (Set 2)",
+        instruction: "Circle the longer item.",
+        questions: [
+          { prompt: "A pencil or a crayon?", optionIcons: ["pencil"], options: ["Pencil", "Crayon"] },
+          { prompt: "A river or a puddle?", options: ["River", "Puddle"] },
+          { prompt: "A rope or a ribbon?", options: ["Rope", "Ribbon"] },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Which Is Shorter?",
+        instruction: "Circle the shorter item.",
+        questions: [
+          { prompt: "A tree or a flower?", optionIcons: ["tree", "flower"], options: ["Tree", "Flower"] },
+          { prompt: "A pencil or a stick?", optionIcons: ["pencil"], options: ["Pencil", "Stick"] },
+          { prompt: "A car or a bus?", optionIcons: ["car"], options: ["Car", "Bus"] },
         ],
       },
 
@@ -2368,6 +4614,17 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
           { prompt: "Growing a tree takes a ___", options: ["Long time", "Short time"] },
           { prompt: "Blinking your eyes takes a ___", options: ["Long time", "Short time"] },
           { prompt: "Baking a cake takes a ___", options: ["Long time", "Short time"] },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Quick or Slow? (Set 2)",
+        instruction: "Circle whether each thing takes a long time or a short time.",
+        questions: [
+          { prompt: "Counting to ten takes a ___", options: ["Long time", "Short time"] },
+          { prompt: "Going on a holiday takes a ___", options: ["Long time", "Short time"] },
+          { prompt: "Snapping your fingers takes a ___", options: ["Long time", "Short time"] },
+          { prompt: "Painting a house takes a ___", options: ["Long time", "Short time"] },
         ],
       },
       {
@@ -2385,6 +4642,20 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         ],
       },
       {
+        type: "sorting",
+        title: "Quick or Takes a Long Time? (Set 2)",
+        instruction: "Sort each activity into the correct column.",
+        columns: ["Quick", "Takes a Long Time"],
+        items: [
+          { label: "Clicking your fingers" },
+          { label: "Growing a plant" },
+          { label: "Catching a ball", icon: "ball" },
+          { label: "Watching a movie" },
+          { label: "Opening a door" },
+          { label: "Driving to the beach" },
+        ],
+      },
+      {
         type: "circle-correct",
         title: "Which Takes Longer?",
         instruction: "Circle the activity that takes LONGER.",
@@ -2394,17 +4665,38 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
           { prompt: "Brushing your teeth or having a bath?", options: ["Brushing teeth", "Having a bath"] },
         ],
       },
+      {
+        type: "circle-correct",
+        title: "Which Takes Longer? (Set 2)",
+        instruction: "Circle the activity that takes LONGER.",
+        questions: [
+          { prompt: "Reading a page or reading a whole book?", options: ["Reading a page", "Reading a whole book"] },
+          { prompt: "Hopping once or running a race?", options: ["Hopping once", "Running a race"] },
+          { prompt: "Saying your name or singing a song?", options: ["Saying your name", "Singing a song"] },
+        ],
+      },
 
       // --- BRIDGE: Introducing "in between" before 3-category sorting ---
       {
         type: "circle-correct",
         title: "Heavy, Light, or In Between?",
-        instruction: "Some things are not heavy and not light — they are in between! Circle the best answer.",
+        instruction: "Some things are not heavy and not light -- they are in between! Circle the best answer.",
         questions: [
           { prompt: "A watermelon is ___", promptIcon: "watermelon", options: ["Heavy", "In between", "Light"] },
           { prompt: "A feather is ___", promptIcon: "feather", options: ["Heavy", "In between", "Light"] },
           { prompt: "A book is ___", promptIcon: "book", options: ["Heavy", "In between", "Light"] },
           { prompt: "A car is ___", promptIcon: "car", options: ["Heavy", "In between", "Light"] },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Heavy, Light, or In Between? (Set 2)",
+        instruction: "Some things are not heavy and not light -- they are in between! Circle the best answer.",
+        questions: [
+          { prompt: "A banana is ___", promptIcon: "banana", options: ["Heavy", "In between", "Light"] },
+          { prompt: "An elephant is ___", promptIcon: "elephant", options: ["Heavy", "In between", "Light"] },
+          { prompt: "A ball is ___", promptIcon: "ball", options: ["Heavy", "In between", "Light"] },
+          { prompt: "A butterfly is ___", promptIcon: "butterfly", options: ["Heavy", "In between", "Light"] },
         ],
       },
 
@@ -2424,6 +4716,20 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         ],
       },
       {
+        type: "sorting",
+        title: "Sort by Mass: Heavy, Medium, Light (Set 2)",
+        instruction: "Sort each item into the correct column.",
+        columns: ["Heavy", "Medium", "Light"],
+        items: [
+          { label: "Elephant", icon: "elephant" },
+          { label: "Book", icon: "book" },
+          { label: "Feather", icon: "feather" },
+          { label: "Dog", icon: "dog" },
+          { label: "Grape", icon: "grape" },
+          { label: "Car", icon: "car" },
+        ],
+      },
+      {
         type: "sequence",
         title: "Order by Mass",
         instruction: "Put these in order from lightest to heaviest. Write 1, 2, 3.",
@@ -2431,6 +4737,16 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
           { label: "Elephant", icon: "elephant" },
           { label: "Cat", icon: "cat" },
           { label: "Mouse", icon: "mouse" },
+        ],
+      },
+      {
+        type: "sequence",
+        title: "Order by Mass (Set 2)",
+        instruction: "Put these in order from lightest to heaviest. Write 1, 2, 3.",
+        items: [
+          { label: "Horse", icon: "horse" },
+          { label: "Dog", icon: "dog" },
+          { label: "Ant", icon: "ant" },
         ],
       },
 
@@ -2450,6 +4766,20 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         ],
       },
       {
+        type: "sorting",
+        title: "Holds a Lot or Holds a Little? (Set 2)",
+        instruction: "Sort each container.",
+        columns: ["Holds a Lot", "Holds a Little"],
+        items: [
+          { label: "Bathtub" },
+          { label: "Bottle cap" },
+          { label: "Water tank" },
+          { label: "Spoon", icon: "spoon" },
+          { label: "Bucket", icon: "bucket" },
+          { label: "Egg cup" },
+        ],
+      },
+      {
         type: "sequence",
         title: "Order by How Much They Hold",
         instruction: "Put these in order from holds the least to holds the most. Write 1, 2, 3.",
@@ -2457,6 +4787,16 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
           { label: "Bucket", icon: "bucket" },
           { label: "Cup", icon: "cup" },
           { label: "Spoon", icon: "spoon" },
+        ],
+      },
+      {
+        type: "sequence",
+        title: "Order by How Much They Hold (Set 2)",
+        instruction: "Put these in order from holds the least to holds the most. Write 1, 2, 3.",
+        items: [
+          { label: "Swimming pool" },
+          { label: "Bathtub" },
+          { label: "Bottle", icon: "bottle" },
         ],
       },
 
@@ -2476,6 +4816,20 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         ],
       },
       {
+        type: "sorting",
+        title: "Tall or Short? (Set 2)",
+        instruction: "Sort each thing into the correct column.",
+        columns: ["Tall", "Short"],
+        items: [
+          { label: "Elephant", icon: "elephant" },
+          { label: "Ant", icon: "ant" },
+          { label: "Horse", icon: "horse" },
+          { label: "Cat", icon: "cat" },
+          { label: "Sun", icon: "sun" },
+          { label: "Pencil", icon: "pencil" },
+        ],
+      },
+      {
         type: "sequence",
         title: "Order by Height",
         instruction: "Put these in order from shortest to tallest. Write 1, 2, 3.",
@@ -2483,6 +4837,16 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
           { label: "Ant", icon: "ant" },
           { label: "Child" },
           { label: "House", icon: "house" },
+        ],
+      },
+      {
+        type: "sequence",
+        title: "Order by Height (Set 2)",
+        instruction: "Put these in order from shortest to tallest. Write 1, 2, 3.",
+        items: [
+          { label: "Flower", icon: "flower" },
+          { label: "Tree", icon: "tree" },
+          { label: "Mouse", icon: "mouse" },
         ],
       },
 
@@ -2496,6 +4860,17 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
           { prompt: "How tall is the tree?", options: ["Mass", "Length", "Capacity"] },
           { prompt: "How much water fits in the jug?", options: ["Mass", "Length", "Capacity"] },
           { prompt: "How long does it take to walk to school?", options: ["Mass", "Duration", "Length"] },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "What Are We Measuring? (Set 2)",
+        instruction: "Circle what kind of measurement each question is about.",
+        questions: [
+          { prompt: "How much does the cat weigh?", options: ["Mass", "Length", "Duration"] },
+          { prompt: "How long is the snake?", options: ["Mass", "Length", "Capacity"] },
+          { prompt: "How much milk fits in the bottle?", options: ["Mass", "Length", "Capacity"] },
+          { prompt: "How long does it take to eat dinner?", options: ["Mass", "Duration", "Capacity"] },
         ],
       },
       {
@@ -2516,6 +4891,23 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         ],
       },
       {
+        type: "matching",
+        title: "Match the Example to the Measurement",
+        instruction: "Draw a line to match each example to the type of measurement.",
+        leftItems: [
+          { label: "Weighing a bag of apples", objects: [] },
+          { label: "Measuring how far you can jump", objects: [] },
+          { label: "Filling a bucket with water", objects: [] },
+          { label: "Timing a race", objects: [] },
+        ],
+        rightItems: [
+          { label: "Duration", objects: [] },
+          { label: "Mass", objects: [] },
+          { label: "Length", objects: [] },
+          { label: "Capacity", objects: [] },
+        ],
+      },
+      {
         type: "sorting",
         title: "Sort the Words",
         instruction: "Sort each word into the measurement type it describes.",
@@ -2527,6 +4919,20 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
           { label: "Light" },
           { label: "Short" },
           { label: "Empty" },
+        ],
+      },
+      {
+        type: "sorting",
+        title: "Sort the Words (Set 2)",
+        instruction: "Sort each word into the measurement type it describes.",
+        columns: ["Mass", "Capacity", "Duration"],
+        items: [
+          { label: "Weigh" },
+          { label: "Pour" },
+          { label: "Quick" },
+          { label: "Hefty" },
+          { label: "Fill" },
+          { label: "Slow" },
         ],
       },
 
@@ -2543,6 +4949,16 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
       },
       {
         type: "sequence",
+        title: "Heaviest to Lightest (Set 2)",
+        instruction: "Put these in order from heaviest to lightest. Write 1, 2, 3.",
+        items: [
+          { label: "Car", icon: "car" },
+          { label: "Book", icon: "book" },
+          { label: "Grape", icon: "grape" },
+        ],
+      },
+      {
+        type: "sequence",
         title: "Longest to Shortest",
         instruction: "Put these in order from longest to shortest. Write 1, 2, 3.",
         items: [
@@ -2553,12 +4969,32 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
       },
       {
         type: "sequence",
+        title: "Longest to Shortest (Set 2)",
+        instruction: "Put these in order from longest to shortest. Write 1, 2, 3.",
+        items: [
+          { label: "Snake", icon: "snake" },
+          { label: "Worm" },
+          { label: "Train" },
+        ],
+      },
+      {
+        type: "sequence",
         title: "Takes the Longest to the Quickest",
         instruction: "Put these in order from takes the longest to the quickest. Write 1, 2, 3.",
         items: [
           { label: "Clapping once" },
           { label: "Eating dinner" },
           { label: "Sleeping all night" },
+        ],
+      },
+      {
+        type: "sequence",
+        title: "Takes the Longest to the Quickest (Set 2)",
+        instruction: "Put these in order from takes the longest to the quickest. Write 1, 2, 3.",
+        items: [
+          { label: "Blinking your eyes" },
+          { label: "Reading a book" },
+          { label: "Going on a holiday" },
         ],
       },
 
@@ -2576,6 +5012,17 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
       },
       {
         type: "circle-correct",
+        title: "Measurement Thinking (Set 2)",
+        instruction: "Circle the best answer.",
+        questions: [
+          { prompt: "To find out how heavy a bag of apples is, I would use ___", promptIcon: "apple", options: ["A ruler", "Scales", "A jug"] },
+          { prompt: "To find out how tall my friend is, I would use a ___", options: ["Clock", "Scales", "Measuring tape"] },
+          { prompt: "To find out how much a bucket holds, I would ___", promptIcon: "bucket", options: ["Put it on scales", "Fill it with water", "Use a ruler"] },
+          { prompt: "To find out how long a song lasts, I would use a ___", options: ["Ruler", "Measuring tape", "Clock"] },
+        ],
+      },
+      {
+        type: "circle-correct",
         title: "True or False?",
         instruction: "Circle True or False for each statement.",
         questions: [
@@ -2583,6 +5030,17 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
           { prompt: "A bucket holds more water than a cup.", promptIcon: "bucket", options: ["True", "False"] },
           { prompt: "A pencil is longer than a train.", promptIcon: "pencil", options: ["True", "False"] },
           { prompt: "Brushing your teeth takes longer than sleeping all night.", options: ["True", "False"] },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "True or False? (Set 2)",
+        instruction: "Circle True or False for each statement.",
+        questions: [
+          { prompt: "An elephant is lighter than a mouse.", promptIcon: "elephant", options: ["True", "False"] },
+          { prompt: "A spoon holds more water than a swimming pool.", promptIcon: "spoon", options: ["True", "False"] },
+          { prompt: "A snake is longer than a worm.", promptIcon: "snake", options: ["True", "False"] },
+          { prompt: "Clapping once takes longer than cooking dinner.", options: ["True", "False"] },
         ],
       },
       {
@@ -2602,6 +5060,22 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         ],
       },
       {
+        type: "sorting",
+        title: "Big Measurement Sort (Set 2)",
+        instruction: "Sort each item into the correct column.",
+        columns: ["Heavy", "Light", "Holds a Lot", "Holds a Little"],
+        items: [
+          { label: "Car", icon: "car" },
+          { label: "Butterfly", icon: "butterfly" },
+          { label: "Swimming pool" },
+          { label: "Thimble" },
+          { label: "Horse", icon: "horse" },
+          { label: "Grape", icon: "grape" },
+          { label: "Bathtub" },
+          { label: "Egg cup" },
+        ],
+      },
+      {
         type: "circle-correct",
         title: "Mixed Measurement Challenge",
         instruction: "Circle the correct answer.",
@@ -2612,6 +5086,18 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
           { prompt: "Which is taller: a door or a window?", options: ["Door", "Window"] },
         ],
       },
+      {
+        type: "circle-correct",
+        title: "Mixed Measurement Challenge (Set 2)",
+        instruction: "Circle the correct answer.",
+        questions: [
+          { prompt: "Which is heavier: a rock or a leaf?", optionIcons: ["rock"], options: ["Rock", "Leaf"] },
+          { prompt: "Which holds more: a glass or a fish tank?", options: ["Glass", "Fish tank"] },
+          { prompt: "Which takes longer: sneezing or sleeping?", options: ["Sneezing", "Sleeping"] },
+          { prompt: "Which is longer: a pencil or a broomstick?", promptIcon: "pencil", options: ["Pencil", "Broomstick"] },
+        ],
+      },
+
       // --- Improvement: Define the attributes ---
       {
         type: "matching",
@@ -2631,6 +5117,23 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         ],
       },
       {
+        type: "matching",
+        title: "Match the Tool to the Measurement",
+        instruction: "Draw a line to match each tool to what it measures.",
+        leftItems: [
+          { label: "Scales", objects: [] },
+          { label: "Ruler", objects: [] },
+          { label: "Measuring jug", objects: [] },
+          { label: "Clock", objects: [] },
+        ],
+        rightItems: [
+          { label: "Duration", objects: [] },
+          { label: "Mass", objects: [] },
+          { label: "Capacity", objects: [] },
+          { label: "Length", objects: [] },
+        ],
+      },
+      {
         type: "open-response",
         title: "Explain in Your Own Words",
         instruction: "Try to explain what each measurement word means. There is no wrong answer!",
@@ -2641,15 +5144,27 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
           { text: "Duration means:", type: "lines", lines: 1 },
         ],
       },
+      {
+        type: "open-response",
+        title: "Give an Example",
+        instruction: "Write one example for each type of measurement. There is no wrong answer!",
+        prompts: [
+          { text: "Something heavy:", type: "lines", lines: 1 },
+          { text: "Something that holds a lot:", type: "lines", lines: 1 },
+          { text: "Something very long:", type: "lines", lines: 1 },
+          { text: "Something that takes a long time:", type: "lines", lines: 1 },
+        ],
+      },
+
       // --- Try This at Home ---
       {
         type: "home-activity",
         title: "Try This at Home!",
         instruction: "Measurement comes alive with hands-on exploring!",
         suggestions: [
-          "Hold two different objects — one in each hand. Which feels heavier? That's comparing mass!",
+          "Hold two different objects -- one in each hand. Which feels heavier? That's comparing mass!",
           "Fill a cup with water. Pour it into a bowl. Which container holds more? That's exploring capacity!",
-          "Lie string along different objects (your arm, a book, the table). Cut the string to match. Compare the strings — that's measuring length!",
+          "Lie string along different objects (your arm, a book, the table). Cut the string to match. Compare the strings -- that's measuring length!",
           "Time how long it takes to brush your teeth versus tying your shoes. Which takes longer? That's duration!",
         ],
       },
@@ -2663,10 +5178,12 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
     strand: "Measurement",
     description: "Use direct comparison to compare objects and events",
     activities: [
+      // =============================================
       // --- EASY: Comparing length (longer/shorter) ---
+      // =============================================
       {
         type: "circle-correct",
-        title: "Which Is Longer?",
+        title: "Which Is Longer? (1)",
         instruction: "Circle the LONGER item in each pair.",
         questions: [
           { prompt: "A pencil or a crayon?", optionIcons: ["pencil"], options: ["Pencil", "Crayon"] },
@@ -2676,7 +5193,17 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
       },
       {
         type: "circle-correct",
-        title: "Which Is Shorter?",
+        title: "Which Is Longer? (2)",
+        instruction: "Circle the LONGER item in each pair.",
+        questions: [
+          { prompt: "A train or a car?", optionIcons: ["car"], options: ["Train", "Car"] },
+          { prompt: "A skipping rope or a belt?", options: ["Skipping rope", "Belt"] },
+          { prompt: "A garden hose or a straw?", options: ["Garden hose", "Straw"] },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Which Is Shorter? (1)",
         instruction: "Circle the SHORTER item in each pair.",
         questions: [
           { prompt: "A bus or a car?", optionIcons: ["car"], options: ["Bus", "Car"] },
@@ -2685,8 +5212,18 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         ],
       },
       {
+        type: "circle-correct",
+        title: "Which Is Shorter? (2)",
+        instruction: "Circle the SHORTER item in each pair.",
+        questions: [
+          { prompt: "A pencil or a ruler?", optionIcons: ["pencil"], options: ["Pencil", "Ruler"] },
+          { prompt: "A finger or a leg?", options: ["Finger", "Leg"] },
+          { prompt: "A paper clip or a baseball bat?", options: ["Paper clip", "Baseball bat"] },
+        ],
+      },
+      {
         type: "sorting",
-        title: "Long or Short?",
+        title: "Long or Short? (1)",
         instruction: "Sort each item into the correct column.",
         columns: ["Long", "Short"],
         items: [
@@ -2698,11 +5235,27 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
           { label: "Paper clip" },
         ],
       },
+      {
+        type: "sorting",
+        title: "Long or Short? (2)",
+        instruction: "Sort each item into the correct column.",
+        columns: ["Long", "Short"],
+        items: [
+          { label: "Snake", icon: "snake" },
+          { label: "Ant", icon: "ant" },
+          { label: "Garden hose" },
+          { label: "Coin" },
+          { label: "Scarf" },
+          { label: "Rubber band" },
+        ],
+      },
 
+      // =============================================
       // --- EASY: Comparing height (taller/shorter) ---
+      // =============================================
       {
         type: "circle-correct",
-        title: "Which Is Taller?",
+        title: "Which Is Taller? (1)",
         instruction: "Circle the TALLER one.",
         questions: [
           { prompt: "A tree or a flower?", optionIcons: ["tree", "flower"], options: ["Tree", "Flower"] },
@@ -2712,7 +5265,17 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
       },
       {
         type: "circle-correct",
-        title: "Which Is Shorter (Height)?",
+        title: "Which Is Taller? (2)",
+        instruction: "Circle the TALLER one.",
+        questions: [
+          { prompt: "A lamp post or a fire hydrant?", options: ["Lamp post", "Fire hydrant"] },
+          { prompt: "An elephant or a mouse?", optionIcons: ["elephant", "mouse"], options: ["Elephant", "Mouse"] },
+          { prompt: "A basketball hoop or a table?", options: ["Basketball hoop", "Table"] },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Which Is Shorter (Height)? (1)",
         instruction: "Circle the one that is NOT as tall.",
         questions: [
           { prompt: "A cat or a horse?", optionIcons: ["cat", "horse"], options: ["Cat", "Horse"] },
@@ -2720,11 +5283,37 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
           { prompt: "A child or a dad?", options: ["Child", "Dad"] },
         ],
       },
-
-      // --- EASY: Comparing mass (heavier/lighter) ---
       {
         type: "circle-correct",
-        title: "Which Is Heavier?",
+        title: "Which Is Shorter (Height)? (2)",
+        instruction: "Circle the one that is NOT as tall.",
+        questions: [
+          { prompt: "A mushroom or a sunflower?", options: ["Mushroom", "Sunflower"] },
+          { prompt: "A bird or a giraffe?", optionIcons: ["bird", "giraffe"], options: ["Bird", "Giraffe"] },
+          { prompt: "A teddy bear or a wardrobe?", optionIcons: ["teddy"], options: ["Teddy bear", "Wardrobe"] },
+        ],
+      },
+      {
+        type: "sorting",
+        title: "Tall or Short?",
+        instruction: "Sort each thing into the correct column.",
+        columns: ["Tall", "Short"],
+        items: [
+          { label: "Giraffe", icon: "giraffe" },
+          { label: "Ant", icon: "ant" },
+          { label: "Tree", icon: "tree" },
+          { label: "Flower", icon: "flower" },
+          { label: "House", icon: "house" },
+          { label: "Mouse", icon: "mouse" },
+        ],
+      },
+
+      // =============================================
+      // --- EASY: Comparing mass (heavier/lighter) ---
+      // =============================================
+      {
+        type: "circle-correct",
+        title: "Which Is Heavier? (1)",
         instruction: "Circle the HEAVIER item in each pair.",
         questions: [
           { prompt: "A watermelon or a grape?", optionIcons: ["watermelon", "grape"], options: ["Watermelon", "Grape"] },
@@ -2734,7 +5323,17 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
       },
       {
         type: "circle-correct",
-        title: "Which Is Lighter?",
+        title: "Which Is Heavier? (2)",
+        instruction: "Circle the HEAVIER item in each pair.",
+        questions: [
+          { prompt: "A horse or a cat?", optionIcons: ["horse", "cat"], options: ["Horse", "Cat"] },
+          { prompt: "A bag of sand or a tissue?", options: ["Bag of sand", "Tissue"] },
+          { prompt: "A rock or a leaf?", optionIcons: ["rock"], options: ["Rock", "Leaf"] },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Which Is Lighter? (1)",
         instruction: "Circle the LIGHTER item in each pair.",
         questions: [
           { prompt: "A balloon or a bowling ball?", options: ["Balloon", "Bowling ball"] },
@@ -2743,8 +5342,18 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         ],
       },
       {
+        type: "circle-correct",
+        title: "Which Is Lighter? (2)",
+        instruction: "Circle the LIGHTER item in each pair.",
+        questions: [
+          { prompt: "A butterfly or a rock?", optionIcons: ["butterfly", "rock"], options: ["Butterfly", "Rock"] },
+          { prompt: "A cotton ball or a banana?", optionIcons: ["banana"], options: ["Cotton ball", "Banana"] },
+          { prompt: "A piece of paper or a cup of water?", optionIcons: ["cup"], options: ["Piece of paper", "Cup of water"] },
+        ],
+      },
+      {
         type: "sorting",
-        title: "Heavy or Light?",
+        title: "Heavy or Light? (1)",
         instruction: "Sort each item into the correct column.",
         columns: ["Heavy", "Light"],
         items: [
@@ -2756,11 +5365,27 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
           { label: "Petal", icon: "flower" },
         ],
       },
+      {
+        type: "sorting",
+        title: "Heavy or Light? (2)",
+        instruction: "Sort each item into the correct column.",
+        columns: ["Heavy", "Light"],
+        items: [
+          { label: "Elephant", icon: "elephant" },
+          { label: "Feather", icon: "feather" },
+          { label: "Watermelon", icon: "watermelon" },
+          { label: "Butterfly", icon: "butterfly" },
+          { label: "Horse", icon: "horse" },
+          { label: "Grape", icon: "grape" },
+        ],
+      },
 
+      // =============================================
       // --- MEDIUM: Comparing capacity (holds more/less) ---
+      // =============================================
       {
         type: "circle-correct",
-        title: "Which Holds More?",
+        title: "Which Holds More? (1)",
         instruction: "Circle the container that HOLDS MORE.",
         questions: [
           { prompt: "A bucket or a cup?", optionIcons: ["bucket", "cup"], options: ["Bucket", "Cup"] },
@@ -2770,7 +5395,17 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
       },
       {
         type: "circle-correct",
-        title: "Which Holds Less?",
+        title: "Which Holds More? (2)",
+        instruction: "Circle the container that HOLDS MORE.",
+        questions: [
+          { prompt: "A fish tank or a glass?", options: ["Fish tank", "Glass"] },
+          { prompt: "A wheelbarrow or a spoon?", optionIcons: ["spoon"], options: ["Wheelbarrow", "Spoon"] },
+          { prompt: "A water bottle or a thimble?", optionIcons: ["bottle"], options: ["Water bottle", "Thimble"] },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Which Holds Less? (1)",
         instruction: "Circle the container that HOLDS LESS.",
         questions: [
           { prompt: "A mug or a jug?", options: ["Mug", "Jug"] },
@@ -2778,11 +5413,37 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
           { prompt: "A thimble or a glass?", options: ["Thimble", "Glass"] },
         ],
       },
-
-      // --- MEDIUM: Comparing duration ---
       {
         type: "circle-correct",
-        title: "Which Takes Longer?",
+        title: "Which Holds Less? (2)",
+        instruction: "Circle the container that HOLDS LESS.",
+        questions: [
+          { prompt: "An egg cup or a bucket?", optionIcons: ["bucket"], options: ["Egg cup", "Bucket"] },
+          { prompt: "A cup or a bathtub?", optionIcons: ["cup"], options: ["Cup", "Bathtub"] },
+          { prompt: "A bottle cap or a pot?", options: ["Bottle cap", "Pot"] },
+        ],
+      },
+      {
+        type: "sorting",
+        title: "Holds More or Holds Less?",
+        instruction: "Sort each container into the correct column.",
+        columns: ["Holds More", "Holds Less"],
+        items: [
+          { label: "Swimming pool" },
+          { label: "Teaspoon", icon: "spoon" },
+          { label: "Bucket", icon: "bucket" },
+          { label: "Egg cup" },
+          { label: "Bathtub" },
+          { label: "Thimble" },
+        ],
+      },
+
+      // =============================================
+      // --- MEDIUM: Comparing duration ---
+      // =============================================
+      {
+        type: "circle-correct",
+        title: "Which Takes Longer? (1)",
         instruction: "Circle the activity that takes LONGER.",
         questions: [
           { prompt: "Brushing your teeth or having a shower?", options: ["Brushing teeth", "Having a shower"] },
@@ -2792,7 +5453,17 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
       },
       {
         type: "circle-correct",
-        title: "Which Is Quicker?",
+        title: "Which Takes Longer? (2)",
+        instruction: "Circle the activity that takes LONGER.",
+        questions: [
+          { prompt: "Writing your name or writing a story?", options: ["Writing your name", "Writing a story"] },
+          { prompt: "Counting to 5 or counting to 100?", options: ["Counting to 5", "Counting to 100"] },
+          { prompt: "Tying your shoes or building a sandcastle?", options: ["Tying your shoes", "Building a sandcastle"] },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Which Is Quicker? (1)",
         instruction: "Circle the activity that is QUICKER.",
         questions: [
           { prompt: "Clapping once or singing a song?", options: ["Clapping once", "Singing a song"] },
@@ -2800,11 +5471,37 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
           { prompt: "Sneezing or watching a movie?", options: ["Sneezing", "Watching a movie"] },
         ],
       },
+      {
+        type: "circle-correct",
+        title: "Which Is Quicker? (2)",
+        instruction: "Circle the activity that is QUICKER.",
+        questions: [
+          { prompt: "Waving hello or painting a picture?", options: ["Waving hello", "Painting a picture"] },
+          { prompt: "Taking one step or walking to school?", options: ["Taking one step", "Walking to school"] },
+          { prompt: "Drinking a sip of water or eating a whole meal?", options: ["Drinking a sip", "Eating a whole meal"] },
+        ],
+      },
+      {
+        type: "sorting",
+        title: "Quick or Slow?",
+        instruction: "Sort each activity into the correct column.",
+        columns: ["Quick", "Takes a Long Time"],
+        items: [
+          { label: "Clapping once" },
+          { label: "Baking a cake" },
+          { label: "Sneezing" },
+          { label: "Reading a whole book" },
+          { label: "Blinking" },
+          { label: "Growing a plant" },
+        ],
+      },
 
+      // =============================================
       // --- MEDIUM: Ordering by direct comparison ---
+      // =============================================
       {
         type: "sequence",
-        title: "Order by Length: Shortest to Longest",
+        title: "Order by Length: Shortest to Longest (1)",
         instruction: "Put these in order from shortest to longest. Write 1, 2, 3.",
         items: [
           { label: "Caterpillar" },
@@ -2814,7 +5511,17 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
       },
       {
         type: "sequence",
-        title: "Order by Height: Shortest to Tallest",
+        title: "Order by Length: Shortest to Longest (2)",
+        instruction: "Put these in order from shortest to longest. Write 1, 2, 3.",
+        items: [
+          { label: "Paper clip" },
+          { label: "Pencil", icon: "pencil" },
+          { label: "Cricket bat" },
+        ],
+      },
+      {
+        type: "sequence",
+        title: "Order by Height: Shortest to Tallest (1)",
         instruction: "Put these in order from shortest to tallest. Write 1, 2, 3.",
         items: [
           { label: "Sunflower", icon: "flower" },
@@ -2824,7 +5531,17 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
       },
       {
         type: "sequence",
-        title: "Order by Mass: Lightest to Heaviest",
+        title: "Order by Height: Shortest to Tallest (2)",
+        instruction: "Put these in order from shortest to tallest. Write 1, 2, 3.",
+        items: [
+          { label: "Ant", icon: "ant" },
+          { label: "Dog", icon: "dog" },
+          { label: "Elephant", icon: "elephant" },
+        ],
+      },
+      {
+        type: "sequence",
+        title: "Order by Mass: Lightest to Heaviest (1)",
         instruction: "Put these in order from lightest to heaviest. Write 1, 2, 3.",
         items: [
           { label: "Coin" },
@@ -2832,11 +5549,33 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
           { label: "Apple", icon: "apple" },
         ],
       },
+      {
+        type: "sequence",
+        title: "Order by Mass: Lightest to Heaviest (2)",
+        instruction: "Put these in order from lightest to heaviest. Write 1, 2, 3.",
+        items: [
+          { label: "Feather", icon: "feather" },
+          { label: "Book", icon: "book" },
+          { label: "Watermelon", icon: "watermelon" },
+        ],
+      },
+      {
+        type: "sequence",
+        title: "Order by Capacity: Least to Most",
+        instruction: "Put these in order from holds the least to holds the most. Write 1, 2, 3.",
+        items: [
+          { label: "Spoon", icon: "spoon" },
+          { label: "Cup", icon: "cup" },
+          { label: "Bucket", icon: "bucket" },
+        ],
+      },
 
+      // =============================================
       // --- HARDER: Mixed comparisons ---
+      // =============================================
       {
         type: "matching",
-        title: "Match the Comparison",
+        title: "Match the Comparison (1)",
         instruction: "Draw a line to match each pair to the correct comparison word.",
         leftItems: [
           { label: "Bus and bicycle", objects: [] },
@@ -2850,19 +5589,45 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         ],
       },
       {
+        type: "matching",
+        title: "Match the Comparison (2)",
+        instruction: "Draw a line to match each pair to the correct comparison word.",
+        leftItems: [
+          { label: "Giraffe and dog", objects: [] },
+          { label: "Watermelon and grape", objects: [] },
+          { label: "Bath and cup", objects: [] },
+        ],
+        rightItems: [
+          { label: "Giraffe is taller", objects: [] },
+          { label: "Bath holds more", objects: [] },
+          { label: "Watermelon is heavier", objects: [] },
+        ],
+      },
+      {
         type: "circle-correct",
-        title: "Compare Two Things",
+        title: "Compare Two Things (1)",
         instruction: "Circle the correct comparison.",
         questions: [
-          { prompt: "A giraffe and a cat — the giraffe is ___", options: ["Taller", "Shorter", "Lighter"] },
-          { prompt: "A marble and a basketball — the marble is ___", options: ["Bigger", "Smaller", "Heavier"] },
-          { prompt: "A truck and a scooter — the truck is ___", options: ["Lighter", "Shorter", "Heavier"] },
-          { prompt: "A lake and a puddle — the lake holds ___", options: ["Less", "More", "The same"] },
+          { prompt: "A giraffe and a cat -- the giraffe is ___", options: ["Taller", "Shorter", "Lighter"] },
+          { prompt: "A marble and a basketball -- the marble is ___", options: ["Bigger", "Smaller", "Heavier"] },
+          { prompt: "A truck and a scooter -- the truck is ___", options: ["Lighter", "Shorter", "Heavier"] },
+          { prompt: "A lake and a puddle -- the lake holds ___", options: ["Less", "More", "The same"] },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Compare Two Things (2)",
+        instruction: "Circle the correct comparison.",
+        questions: [
+          { prompt: "A horse and a bird -- the horse is ___", options: ["Lighter", "Heavier", "Shorter"] },
+          { prompt: "A snake and a caterpillar -- the snake is ___", options: ["Shorter", "Longer", "Lighter"] },
+          { prompt: "A swimming pool and a bucket -- the pool holds ___", options: ["Less", "The same", "More"] },
+          { prompt: "A tree and a bush -- the tree is ___", options: ["Shorter", "Taller", "Lighter"] },
         ],
       },
       {
         type: "sorting",
-        title: "Sort by Size: Smallest to Biggest",
+        title: "Sort by Size: Smallest to Biggest (1)",
         instruction: "Write 1 for smallest, 2 for middle, 3 for biggest.",
         columns: ["Smallest (1)", "Middle (2)", "Biggest (3)"],
         items: [
@@ -2871,22 +5636,46 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
           { label: "Elephant", icon: "elephant" },
         ],
       },
+      {
+        type: "sorting",
+        title: "Sort by Size: Smallest to Biggest (2)",
+        instruction: "Write 1 for smallest, 2 for middle, 3 for biggest.",
+        columns: ["Smallest (1)", "Middle (2)", "Biggest (3)"],
+        items: [
+          { label: "Ant", icon: "ant" },
+          { label: "Bird", icon: "bird" },
+          { label: "Horse", icon: "horse" },
+        ],
+      },
 
+      // =============================================
       // --- HARDER: Comparing with reasoning ---
+      // =============================================
       {
         type: "circle-correct",
-        title: "How Would You Compare?",
+        title: "How Would You Compare? (1)",
         instruction: "Circle the BEST way to compare each pair.",
         questions: [
-          { prompt: "Two pieces of string — I would compare their ___", options: ["Length", "Mass", "Capacity"] },
-          { prompt: "Two rocks — I would compare their ___", options: ["Length", "Mass", "Capacity"] },
-          { prompt: "Two bottles — I would compare their ___", options: ["Length", "Mass", "Capacity"] },
-          { prompt: "Two sticks — I would compare their ___", options: ["Length", "Mass", "Capacity"] },
+          { prompt: "Two pieces of string -- I would compare their ___", options: ["Length", "Mass", "Capacity"] },
+          { prompt: "Two rocks -- I would compare their ___", options: ["Length", "Mass", "Capacity"] },
+          { prompt: "Two bottles -- I would compare their ___", options: ["Length", "Mass", "Capacity"] },
+          { prompt: "Two sticks -- I would compare their ___", options: ["Length", "Mass", "Capacity"] },
         ],
       },
       {
         type: "circle-correct",
-        title: "Same or Different?",
+        title: "How Would You Compare? (2)",
+        instruction: "Circle the BEST way to compare each pair.",
+        questions: [
+          { prompt: "Two ribbons -- I would compare their ___", options: ["Length", "Mass", "Capacity"] },
+          { prompt: "Two bags of fruit -- I would compare their ___", options: ["Length", "Mass", "Capacity"] },
+          { prompt: "Two buckets -- I would compare their ___", options: ["Length", "Mass", "Capacity"] },
+          { prompt: "Two buildings -- I would compare their ___", options: ["Height", "Mass", "Capacity"] },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Same or Different? (1)",
         instruction: "Could these two things be the same? Circle the best answer.",
         questions: [
           { prompt: "Can two pencils be the same length?", options: ["Yes", "No"] },
@@ -2895,8 +5684,21 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
           { prompt: "Can a short bottle hold more than a tall bottle?", options: ["Yes", "No"] },
         ],
       },
+      {
+        type: "circle-correct",
+        title: "Same or Different? (2)",
+        instruction: "Could these two things be the same? Circle the best answer.",
+        questions: [
+          { prompt: "Can two cups hold the same amount of water?", options: ["Yes", "No"] },
+          { prompt: "Can a small rock be heavier than a big pillow?", options: ["Yes", "No"] },
+          { prompt: "Can two children be the same height?", options: ["Yes", "No"] },
+          { prompt: "Can a thin book be longer than a thick book?", options: ["Yes", "No"] },
+        ],
+      },
 
+      // =============================================
       // --- CHALLENGE: Ordering 4 items, tricky comparisons ---
+      // =============================================
       {
         type: "sequence",
         title: "Order 4 Animals by Size",
@@ -2906,6 +5708,17 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
           { label: "Cat", icon: "cat" },
           { label: "Horse", icon: "horse" },
           { label: "Mouse", icon: "mouse" },
+        ],
+      },
+      {
+        type: "sequence",
+        title: "Order 4 Animals by Height",
+        instruction: "Put these in order from shortest to tallest. Write 1, 2, 3, 4.",
+        items: [
+          { label: "Mouse", icon: "mouse" },
+          { label: "Dog", icon: "dog" },
+          { label: "Horse", icon: "horse" },
+          { label: "Giraffe", icon: "giraffe" },
         ],
       },
       {
@@ -2921,6 +5734,17 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
       },
       {
         type: "sequence",
+        title: "Order 4 Things by Mass",
+        instruction: "Put these in order from lightest to heaviest. Write 1, 2, 3, 4.",
+        items: [
+          { label: "Feather", icon: "feather" },
+          { label: "Apple", icon: "apple" },
+          { label: "Dog", icon: "dog" },
+          { label: "Elephant", icon: "elephant" },
+        ],
+      },
+      {
+        type: "sequence",
         title: "Order 4 Containers by Capacity",
         instruction: "Put these in order from holds the least to holds the most. Write 1, 2, 3, 4.",
         items: [
@@ -2931,18 +5755,39 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         ],
       },
       {
+        type: "sequence",
+        title: "Order 4 Activities by Duration",
+        instruction: "Put these in order from quickest to longest. Write 1, 2, 3, 4.",
+        items: [
+          { label: "Clapping once" },
+          { label: "Brushing your teeth" },
+          { label: "Watching a movie" },
+          { label: "Sleeping all night" },
+        ],
+      },
+      {
         type: "circle-correct",
-        title: "Tricky Comparisons",
+        title: "Tricky Comparisons (1)",
         instruction: "Think carefully! Circle the best answer.",
         questions: [
-          { prompt: "A big balloon or a small rock — which is heavier?", options: ["Big balloon", "Small rock"] },
-          { prompt: "A tall thin glass or a short wide bowl — which might hold more?", options: ["The glass", "The bowl", "Hard to tell without checking"] },
-          { prompt: "A long piece of string or a short stick — which is heavier?", options: ["The string", "The stick", "You need to compare them to know"] },
+          { prompt: "A big balloon or a small rock -- which is heavier?", options: ["Big balloon", "Small rock"] },
+          { prompt: "A tall thin glass or a short wide bowl -- which might hold more?", options: ["The glass", "The bowl", "Hard to tell without checking"] },
+          { prompt: "A long piece of string or a short stick -- which is heavier?", options: ["The string", "The stick", "You need to compare them to know"] },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Tricky Comparisons (2)",
+        instruction: "Think carefully! Circle the best answer.",
+        questions: [
+          { prompt: "A big fluffy pillow or a small stone -- which is heavier?", options: ["Big pillow", "Small stone", "You need to compare them to know"] },
+          { prompt: "A tall narrow bottle or a short wide bucket -- which holds more?", options: ["The bottle", "The bucket", "Hard to tell without checking"] },
+          { prompt: "A long thin leaf or a short thick book -- which is heavier?", options: ["The leaf", "The book"] },
         ],
       },
       {
         type: "matching",
-        title: "Match Objects to Comparisons",
+        title: "Match Objects to Comparisons (1)",
         instruction: "Draw a line to match each statement to the correct pair.",
         leftItems: [
           { label: "The ___ is taller", objects: [] },
@@ -2958,8 +5803,25 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         ],
       },
       {
+        type: "matching",
+        title: "Match Objects to Comparisons (2)",
+        instruction: "Draw a line to match each statement to the correct pair.",
+        leftItems: [
+          { label: "The ___ is shorter", objects: [] },
+          { label: "The ___ is lighter", objects: [] },
+          { label: "The ___ holds less", objects: [] },
+          { label: "The ___ is quicker", objects: [] },
+        ],
+        rightItems: [
+          { label: "Clapping vs cooking dinner", objects: [] },
+          { label: "Ant vs dog", objects: [] },
+          { label: "Feather vs rock", objects: [] },
+          { label: "Teaspoon vs bucket", objects: [] },
+        ],
+      },
+      {
         type: "circle-correct",
-        title: "Direct Comparison Challenge",
+        title: "Direct Comparison Challenge (1)",
         instruction: "Circle the correct answer.",
         questions: [
           { prompt: "To compare which ribbon is longer, you should ___", options: ["Hold them next to each other", "Weigh them", "Put water in them"] },
@@ -2968,10 +5830,24 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
           { prompt: "To compare which is taller, two friends should ___", options: ["Stand back to back", "Sit down", "Hold hands"] },
         ],
       },
-      // --- Improvement: Comparing events explicitly ---
       {
         type: "circle-correct",
-        title: "Comparing Events",
+        title: "Direct Comparison Challenge (2)",
+        instruction: "Circle the correct answer.",
+        questions: [
+          { prompt: "To compare which stick is longer, you should ___", options: ["Line them up end to end", "Put them in water", "Weigh them"] },
+          { prompt: "To compare which bag is heavier, you should ___", options: ["Put them side by side", "Hold one in each hand", "Measure them"] },
+          { prompt: "To compare which jug holds more, you should ___", options: ["Stand them next to each other", "Weigh them", "Fill one and pour into the other"] },
+          { prompt: "To compare which pencil is shorter, you should ___", options: ["Weigh them", "Line them up side by side", "Fill them with water"] },
+        ],
+      },
+
+      // =============================================
+      // --- Improvement: Comparing events explicitly ---
+      // =============================================
+      {
+        type: "circle-correct",
+        title: "Comparing Events (1)",
         instruction: "Events are things that happen. We can compare how long events take!",
         questions: [
           { prompt: "Which EVENT takes longer: brushing your teeth or sleeping all night?", options: ["Brushing teeth", "Sleeping all night"] },
@@ -2980,18 +5856,54 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
           { prompt: "Put these EVENTS in order from quickest to longest: clapping once, reading a book, cooking dinner.", options: ["Clap, book, cooking", "Cooking, book, clap", "Book, clap, cooking"] },
         ],
       },
-      // --- Improvement: Open-ended comparison reasoning ---
       {
-        type: "open-response",
-        title: "How Would You Compare?",
-        instruction: "For each pair, write HOW you would compare them. What would you do?",
-        prompts: [
-          { text: "Two sticks — how would you find which is longer?", type: "lines", lines: 2 },
-          { text: "Two bags — how would you find which is heavier?", type: "lines", lines: 2 },
-          { text: "Two jugs — how would you find which holds more water?", type: "lines", lines: 2 },
+        type: "circle-correct",
+        title: "Comparing Events (2)",
+        instruction: "Think about how long each event takes. Circle the right answer.",
+        questions: [
+          { prompt: "Which EVENT takes longer: washing your hands or having a bath?", options: ["Washing hands", "Having a bath"] },
+          { prompt: "Which EVENT is quicker: opening a door or painting a fence?", options: ["Opening a door", "Painting a fence"] },
+          { prompt: "Which EVENT takes longer: eating one apple or growing an apple tree?", options: ["Eating one apple", "Growing an apple tree"] },
+          { prompt: "Put these EVENTS in order from quickest to longest: yawning, eating lunch, going on a holiday.", options: ["Yawn, lunch, holiday", "Holiday, yawn, lunch", "Lunch, holiday, yawn"] },
         ],
       },
+
+      // =============================================
+      // --- Improvement: Open-ended comparison reasoning ---
+      // =============================================
+      {
+        type: "open-response",
+        title: "How Would You Compare? (1)",
+        instruction: "For each pair, write HOW you would compare them. What would you do?",
+        prompts: [
+          { text: "Two sticks -- how would you find which is longer?", type: "lines", lines: 2 },
+          { text: "Two bags -- how would you find which is heavier?", type: "lines", lines: 2 },
+          { text: "Two jugs -- how would you find which holds more water?", type: "lines", lines: 2 },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "How Would You Compare? (2)",
+        instruction: "For each pair, write HOW you would compare them. What would you do?",
+        prompts: [
+          { text: "Two ribbons -- how would you find which is longer?", type: "lines", lines: 2 },
+          { text: "Two rocks -- how would you find which is heavier?", type: "lines", lines: 2 },
+          { text: "Two cups -- how would you find which holds more?", type: "lines", lines: 2 },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Draw and Compare",
+        instruction: "Draw two things and write which one is bigger, longer, or heavier.",
+        prompts: [
+          { text: "Draw a tall thing and a short thing. Write which is taller.", type: "lines", lines: 3 },
+          { text: "Draw a heavy thing and a light thing. Write which is heavier.", type: "lines", lines: 3 },
+        ],
+      },
+
+      // =============================================
       // --- Try This at Home ---
+      // =============================================
       {
         type: "home-activity",
         title: "Try This at Home!",
@@ -3001,6 +5913,8 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
           "Hold an apple in one hand and a banana in the other. Which feels heavier? That's direct comparison of mass!",
           "Get two different cups. Fill one with water and pour it into the other. Does it overflow or not fill up? That's comparing capacity!",
           "Time yourself doing two activities (star jumps vs hopping). Which took longer? That's comparing duration!",
+          "Line up three toys from shortest to tallest. You just ordered by height!",
+          "Find the heaviest and lightest thing in your pencil case. How did you decide?",
         ],
       },
     ],
@@ -3027,6 +5941,17 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
       },
       {
         type: "circle-correct",
+        title: "More Morning Activities",
+        instruction: "Circle the things you do in the MORNING.",
+        questions: [
+          { prompt: "Brush your teeth after waking up", options: ["Morning", "Night"] },
+          { prompt: "Pack your school bag", options: ["Morning", "Night"] },
+          { prompt: "See the sun come up", options: ["Morning", "Night"] },
+          { prompt: "Read a bedtime story", options: ["Morning", "Night"] },
+        ],
+      },
+      {
+        type: "circle-correct",
         title: "What Do We Do at Night?",
         instruction: "Circle the things you do at NIGHT.",
         questions: [
@@ -3034,6 +5959,17 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
           { prompt: "Eat breakfast", options: ["Morning", "Night"] },
           { prompt: "Brush teeth before bed", options: ["Morning", "Night"] },
           { prompt: "Read a bedtime story", options: ["Morning", "Night"] },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "More Night Activities",
+        instruction: "Circle the things you do at NIGHT.",
+        questions: [
+          { prompt: "Look at the stars", options: ["Morning", "Night"] },
+          { prompt: "Get dressed for school", options: ["Morning", "Night"] },
+          { prompt: "Turn off the light", options: ["Morning", "Night"] },
+          { prompt: "Cuddle your teddy in bed", options: ["Morning", "Night"] },
         ],
       },
       {
@@ -3051,6 +5987,20 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         ],
       },
       {
+        type: "sorting",
+        title: "Morning or Night? (Part 2)",
+        instruction: "Sort each activity. Does it happen in the morning or at night?",
+        columns: ["Morning", "Night"],
+        items: [
+          { label: "See the sunrise", icon: "sun" },
+          { label: "Turn off the light", icon: "moon" },
+          { label: "Pack school bag", icon: "sun" },
+          { label: "Dream while sleeping", icon: "moon" },
+          { label: "Open the curtains", icon: "sun" },
+          { label: "Close the curtains", icon: "moon" },
+        ],
+      },
+      {
         type: "sequence",
         title: "Morning Routine",
         instruction: "Put these morning activities in order. Write 1, 2, 3.",
@@ -3058,6 +6008,33 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
           { label: "Eat breakfast" },
           { label: "Wake up" },
           { label: "Get dressed" },
+        ],
+      },
+      {
+        type: "sequence",
+        title: "Getting Ready for School",
+        instruction: "Put these morning activities in order. Write 1, 2, 3.",
+        items: [
+          { label: "Walk to school" },
+          { label: "Brush your teeth" },
+          { label: "Pack your bag" },
+        ],
+      },
+      {
+        type: "matching",
+        title: "Match Morning and Night",
+        instruction: "Draw a line to match each activity to when it happens.",
+        leftItems: [
+          { label: "See the sunrise", objects: [] },
+          { label: "Put on pyjamas", objects: [] },
+          { label: "Eat cereal", objects: [] },
+          { label: "Close the curtains", objects: [] },
+        ],
+        rightItems: [
+          { label: "Night", objects: [] },
+          { label: "Morning", objects: [] },
+          { label: "Night", objects: [] },
+          { label: "Morning", objects: [] },
         ],
       },
 
@@ -3074,6 +6051,28 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         ],
       },
       {
+        type: "circle-correct",
+        title: "When Does This Happen?",
+        instruction: "Circle when each activity usually happens.",
+        questions: [
+          { prompt: "Play at the park after school", options: ["Morning", "Afternoon", "Night"] },
+          { prompt: "Eat toast and eggs", options: ["Morning", "Afternoon", "Night"] },
+          { prompt: "Have an afternoon nap", options: ["Morning", "Afternoon", "Night"] },
+          { prompt: "Put on pyjamas", options: ["Morning", "Afternoon", "Night"] },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Time of Day Quiz",
+        instruction: "Circle when each activity usually happens.",
+        questions: [
+          { prompt: "Have afternoon tea", options: ["Morning", "Afternoon", "Night"] },
+          { prompt: "Brush teeth before bed", options: ["Morning", "Afternoon", "Night"] },
+          { prompt: "Eat breakfast", options: ["Morning", "Afternoon", "Night"] },
+          { prompt: "Do homework after school", options: ["Morning", "Afternoon", "Night"] },
+        ],
+      },
+      {
         type: "sorting",
         title: "Sort: Morning, Afternoon, or Night?",
         instruction: "Sort each activity into the correct time of day.",
@@ -3085,6 +6084,20 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
           { label: "Afternoon snack" },
           { label: "Wake up" },
           { label: "Brush teeth (bedtime)" },
+        ],
+      },
+      {
+        type: "sorting",
+        title: "Sort: When Does It Happen?",
+        instruction: "Sort each activity into the correct time of day.",
+        columns: ["Morning", "Afternoon", "Night"],
+        items: [
+          { label: "Play after school" },
+          { label: "See the sunrise" },
+          { label: "Read a bedtime story" },
+          { label: "Have afternoon tea" },
+          { label: "Get dressed for school" },
+          { label: "Look at the stars" },
         ],
       },
       {
@@ -3105,12 +6118,40 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         ],
       },
       {
+        type: "matching",
+        title: "Match What You See to the Time",
+        instruction: "Draw a line to match what you see outside to the time of day.",
+        leftItems: [
+          { label: "Bright sunshine", objects: [] },
+          { label: "Stars in the sky", objects: [] },
+          { label: "Sun going down", objects: [] },
+          { label: "Dew on the grass", objects: [] },
+        ],
+        rightItems: [
+          { label: "Evening", objects: [] },
+          { label: "Night", objects: [] },
+          { label: "Middle of the day", objects: [] },
+          { label: "Early morning", objects: [] },
+        ],
+      },
+      {
         type: "sequence",
         title: "Meals in Order",
         instruction: "Put these meals in the order they happen. Write 1, 2, 3.",
         items: [
           { label: "Dinner" },
           { label: "Breakfast" },
+          { label: "Lunch" },
+        ],
+      },
+      {
+        type: "sequence",
+        title: "Snacks and Meals in Order",
+        instruction: "Put these in the order they happen during the day. Write 1, 2, 3, 4.",
+        items: [
+          { label: "Afternoon tea" },
+          { label: "Breakfast" },
+          { label: "Dinner" },
           { label: "Lunch" },
         ],
       },
@@ -3129,12 +6170,33 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
       },
       {
         type: "sequence",
+        title: "A School Day in Order",
+        instruction: "Number these events 1 to 4 in the order they happen.",
+        items: [
+          { label: "Eat lunch at school" },
+          { label: "Walk to school" },
+          { label: "Come home" },
+          { label: "Eat breakfast" },
+        ],
+      },
+      {
+        type: "sequence",
         title: "After School Routine",
         instruction: "Put these after-school activities in order. Write 1, 2, 3.",
         items: [
           { label: "Have a snack" },
           { label: "Walk home from school" },
           { label: "Play outside" },
+        ],
+      },
+      {
+        type: "sequence",
+        title: "Getting Home from School",
+        instruction: "Put these activities in order. Write 1, 2, 3.",
+        items: [
+          { label: "Take off your shoes" },
+          { label: "Walk in the front door" },
+          { label: "Put your bag away" },
         ],
       },
       {
@@ -3146,6 +6208,17 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
           { label: "Put on pyjamas" },
           { label: "Brush teeth" },
           { label: "Read a story" },
+        ],
+      },
+      {
+        type: "sequence",
+        title: "Getting Ready for Bed",
+        instruction: "Put these bedtime activities in order. Write 1, 2, 3, 4.",
+        items: [
+          { label: "Close your eyes" },
+          { label: "Have a bath" },
+          { label: "Say goodnight" },
+          { label: "Get into bed" },
         ],
       },
       {
@@ -3161,12 +6234,48 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
       },
       {
         type: "circle-correct",
+        title: "Which Comes First?",
+        instruction: "Circle the activity that happens FIRST.",
+        questions: [
+          { prompt: "Have a bath or eat breakfast?", options: ["Have a bath", "Eat breakfast"] },
+          { prompt: "Afternoon tea or lunch?", options: ["Afternoon tea", "Lunch"] },
+          { prompt: "Wake up or brush your teeth?", options: ["Wake up", "Brush your teeth"] },
+          { prompt: "Go to sleep or put on pyjamas?", options: ["Go to sleep", "Put on pyjamas"] },
+        ],
+      },
+      {
+        type: "circle-correct",
         title: "What Happens Next?",
         instruction: "Circle what usually happens NEXT.",
         questions: [
           { prompt: "After you wake up, you ___", options: ["Go to sleep", "Get dressed", "Eat dinner"] },
           { prompt: "After school, you ___", options: ["Wake up", "Go home", "Eat breakfast"] },
           { prompt: "After dinner, you ___", options: ["Eat lunch", "Have a bath", "Go to school"] },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "What Comes After?",
+        instruction: "Circle what usually happens NEXT.",
+        questions: [
+          { prompt: "After you eat lunch, you ___", options: ["Go to sleep", "Play or rest", "Eat breakfast"] },
+          { prompt: "After you brush your teeth at night, you ___", options: ["Go to school", "Go to bed", "Eat lunch"] },
+          { prompt: "After you put on your shoes, you ___", options: ["Go to bed", "Have a bath", "Go outside"] },
+          { prompt: "After you have a bath, you ___", options: ["Eat breakfast", "Wake up", "Put on pyjamas"] },
+        ],
+      },
+      {
+        type: "sorting",
+        title: "Sort: Before School or After School?",
+        instruction: "Sort each activity. Does it happen before school or after school?",
+        columns: ["Before School", "After School"],
+        items: [
+          { label: "Eat breakfast", icon: "sun" },
+          { label: "Do homework", icon: "book" },
+          { label: "Pack your bag", icon: "sun" },
+          { label: "Play outside", icon: "ball" },
+          { label: "Get dressed", icon: "sun" },
+          { label: "Have afternoon tea", icon: "cup" },
         ],
       },
 
@@ -3183,6 +6292,31 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         ],
       },
       {
+        type: "sequence",
+        title: "More Days of the Week",
+        instruction: "Put these days in the correct order. Write 1, 2, 3, 4.",
+        items: [
+          { label: "Saturday" },
+          { label: "Thursday" },
+          { label: "Friday" },
+          { label: "Sunday" },
+        ],
+      },
+      {
+        type: "sequence",
+        title: "All Seven Days",
+        instruction: "Put all seven days of the week in order. Write 1 to 7.",
+        items: [
+          { label: "Friday" },
+          { label: "Tuesday" },
+          { label: "Sunday" },
+          { label: "Wednesday" },
+          { label: "Monday" },
+          { label: "Saturday" },
+          { label: "Thursday" },
+        ],
+      },
+      {
         type: "circle-correct",
         title: "What Day Comes Next?",
         instruction: "Circle the day that comes NEXT.",
@@ -3190,6 +6324,17 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
           { prompt: "After Monday comes ___", options: ["Sunday", "Tuesday", "Wednesday"] },
           { prompt: "After Friday comes ___", options: ["Thursday", "Saturday", "Sunday"] },
           { prompt: "After Wednesday comes ___", options: ["Tuesday", "Thursday", "Friday"] },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "What Day Comes Next? (Part 2)",
+        instruction: "Circle the day that comes NEXT.",
+        questions: [
+          { prompt: "After Sunday comes ___", options: ["Saturday", "Monday", "Tuesday"] },
+          { prompt: "After Tuesday comes ___", options: ["Monday", "Wednesday", "Thursday"] },
+          { prompt: "After Thursday comes ___", options: ["Wednesday", "Friday", "Saturday"] },
+          { prompt: "After Saturday comes ___", options: ["Friday", "Sunday", "Monday"] },
         ],
       },
       {
@@ -3203,6 +6348,31 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
           { prompt: "Friday", options: ["Weekday", "Weekend"] },
         ],
       },
+      {
+        type: "circle-correct",
+        title: "Weekday or Weekend? (Part 2)",
+        instruction: "Circle whether each day is a weekday or a weekend day.",
+        questions: [
+          { prompt: "Monday", options: ["Weekday", "Weekend"] },
+          { prompt: "Wednesday", options: ["Weekday", "Weekend"] },
+          { prompt: "Thursday", options: ["Weekday", "Weekend"] },
+          { prompt: "Sunday", options: ["Weekday", "Weekend"] },
+        ],
+      },
+      {
+        type: "sorting",
+        title: "Sort: Weekday or Weekend?",
+        instruction: "Sort each day. Is it a weekday or a weekend day?",
+        columns: ["Weekday", "Weekend"],
+        items: [
+          { label: "Monday" },
+          { label: "Saturday" },
+          { label: "Wednesday" },
+          { label: "Sunday" },
+          { label: "Friday" },
+          { label: "Tuesday" },
+        ],
+      },
 
       // --- HARDER: Before and after, time language ---
       {
@@ -3214,6 +6384,17 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
           { prompt: "Dinner happens ___ lunch.", options: ["Before", "After"] },
           { prompt: "Bedtime happens ___ dinner.", options: ["Before", "After"] },
           { prompt: "Waking up happens ___ going to school.", options: ["Before", "After"] },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Before or After? (Part 2)",
+        instruction: "Circle the correct answer.",
+        questions: [
+          { prompt: "Lunch happens ___ breakfast.", options: ["Before", "After"] },
+          { prompt: "Morning tea happens ___ lunch.", options: ["Before", "After"] },
+          { prompt: "Getting dressed happens ___ having a bath at night.", options: ["Before", "After"] },
+          { prompt: "Afternoon play happens ___ school lessons.", options: ["Before", "After"] },
         ],
       },
       {
@@ -3232,6 +6413,23 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         ],
       },
       {
+        type: "matching",
+        title: "What Happens Before?",
+        instruction: "Draw a line to match each event to what happens right BEFORE it.",
+        leftItems: [
+          { label: "Eat breakfast", objects: [] },
+          { label: "Go to bed", objects: [] },
+          { label: "Go to school", objects: [] },
+          { label: "Eat lunch", objects: [] },
+        ],
+        rightItems: [
+          { label: "Morning lessons", objects: [] },
+          { label: "Wake up", objects: [] },
+          { label: "Brush teeth and pyjamas", objects: [] },
+          { label: "Get dressed and pack bag", objects: [] },
+        ],
+      },
+      {
         type: "circle-correct",
         title: "Time Words",
         instruction: "Circle the best time word for each sentence.",
@@ -3240,6 +6438,31 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
           { prompt: "The sun goes down in the ___", options: ["Morning", "Evening", "Midnight"] },
           { prompt: "We see stars at ___", options: ["Lunchtime", "Morning", "Night"] },
           { prompt: "School starts in the ___", options: ["Morning", "Night", "Evening"] },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "More Time Words",
+        instruction: "Circle the best time word for each sentence.",
+        questions: [
+          { prompt: "We eat dinner in the ___", options: ["Morning", "Afternoon", "Evening"] },
+          { prompt: "The birds start singing in the ___", options: ["Morning", "Night", "Midnight"] },
+          { prompt: "We play sport in the ___", options: ["Night", "Afternoon", "Midnight"] },
+          { prompt: "It gets dark in the ___", options: ["Morning", "Afternoon", "Evening"] },
+        ],
+      },
+      {
+        type: "sorting",
+        title: "Sort the Time Words",
+        instruction: "Sort each word or phrase into when it describes.",
+        columns: ["Earlier in the Day", "Later in the Day"],
+        items: [
+          { label: "Morning", icon: "sun" },
+          { label: "Evening", icon: "moon" },
+          { label: "Sunrise", icon: "sun" },
+          { label: "Sunset", icon: "moon" },
+          { label: "Midday", icon: "sun" },
+          { label: "Midnight", icon: "moon" },
         ],
       },
 
@@ -3264,11 +6487,47 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
           { prompt: "I went swimming the day before today.", options: ["Yesterday", "Today", "Tomorrow"] },
         ],
       },
+      {
+        type: "circle-correct",
+        title: "When Will It Happen?",
+        instruction: "Circle whether each thing happened yesterday, is happening today, or will happen tomorrow.",
+        questions: [
+          { prompt: "I played at the park the day before today.", options: ["Yesterday", "Today", "Tomorrow"] },
+          { prompt: "I am eating lunch right now.", options: ["Yesterday", "Today", "Tomorrow"] },
+          { prompt: "I will visit Grandma after I sleep tonight.", options: ["Yesterday", "Today", "Tomorrow"] },
+          { prompt: "I read a book the day before today.", options: ["Yesterday", "Today", "Tomorrow"] },
+        ],
+      },
+      {
+        type: "sequence",
+        title: "Yesterday, Today, Tomorrow",
+        instruction: "Put these time words in order from the past to the future. Write 1, 2, 3.",
+        items: [
+          { label: "Tomorrow" },
+          { label: "Yesterday" },
+          { label: "Today" },
+        ],
+      },
+      {
+        type: "matching",
+        title: "Match the Time Words",
+        instruction: "Draw a line to match each description to the correct time word.",
+        leftItems: [
+          { label: "The day before today", objects: [] },
+          { label: "Right now", objects: [] },
+          { label: "The day after today", objects: [] },
+        ],
+        rightItems: [
+          { label: "Tomorrow", objects: [] },
+          { label: "Yesterday", objects: [] },
+          { label: "Today", objects: [] },
+        ],
+      },
 
       // --- CHALLENGE: Full day sequencing, seasons ---
       {
         type: "sequence",
-        title: "A Full Day — Start to Finish",
+        title: "A Full Day -- Start to Finish",
         instruction: "Put these in order from the start of the day to the end. Write 1 to 6.",
         items: [
           { label: "Eat dinner" },
@@ -3277,6 +6536,18 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
           { label: "Go to bed" },
           { label: "Go to school" },
           { label: "Eat breakfast" },
+        ],
+      },
+      {
+        type: "sequence",
+        title: "A Weekend Day -- Start to Finish",
+        instruction: "Put these in order from the start of the day to the end. Write 1 to 5.",
+        items: [
+          { label: "Have lunch" },
+          { label: "Play in the morning" },
+          { label: "Go to bed" },
+          { label: "Wake up" },
+          { label: "Eat dinner" },
         ],
       },
       {
@@ -3294,6 +6565,20 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         ],
       },
       {
+        type: "sorting",
+        title: "Light or Dark? (Part 2)",
+        instruction: "Sort each time. Is it usually light or dark outside?",
+        columns: ["Light Outside", "Dark Outside"],
+        items: [
+          { label: "Breakfast time", icon: "sun" },
+          { label: "When you dream", icon: "moon" },
+          { label: "Afternoon play", icon: "sun" },
+          { label: "Dinner time (winter)", icon: "moon" },
+          { label: "Walking to school", icon: "sun" },
+          { label: "Looking at the stars", icon: "moon" },
+        ],
+      },
+      {
         type: "circle-correct",
         title: "Seasons of the Year",
         instruction: "Circle the correct answer about seasons.",
@@ -3302,6 +6587,17 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
           { prompt: "Which season is the hottest in Australia?", options: ["Winter", "Summer", "Autumn"] },
           { prompt: "Which season is the coldest in Australia?", options: ["Summer", "Spring", "Winter"] },
           { prompt: "After autumn comes ___", options: ["Summer", "Winter", "Spring"] },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "More About Seasons",
+        instruction: "Circle the correct answer about seasons.",
+        questions: [
+          { prompt: "After winter comes ___", options: ["Autumn", "Spring", "Summer"] },
+          { prompt: "After summer comes ___", options: ["Autumn", "Winter", "Spring"] },
+          { prompt: "After spring comes ___", options: ["Winter", "Autumn", "Summer"] },
+          { prompt: "Leaves fall off trees in ___", options: ["Spring", "Autumn", "Summer"] },
         ],
       },
       {
@@ -3316,6 +6612,20 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         ],
       },
       {
+        type: "sorting",
+        title: "Sort: Hot Season or Cold Season?",
+        instruction: "Sort each thing into the season it goes with.",
+        columns: ["Summer (Hot)", "Winter (Cold)"],
+        items: [
+          { label: "Swimming at the beach", icon: "sun" },
+          { label: "Wearing a warm jacket", icon: "moon" },
+          { label: "Eating ice cream outside", icon: "sun" },
+          { label: "Sitting by the heater", icon: "moon" },
+          { label: "Long sunny days", icon: "sun" },
+          { label: "Short cold days", icon: "moon" },
+        ],
+      },
+      {
         type: "circle-correct",
         title: "Time Challenge",
         instruction: "Think carefully! Circle the best answer.",
@@ -3324,6 +6634,17 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
           { prompt: "What meal do we eat in the evening?", options: ["Breakfast", "Lunch", "Dinner"] },
           { prompt: "If today is Tuesday, what day was yesterday?", options: ["Monday", "Wednesday", "Sunday"] },
           { prompt: "If today is Friday, what day is tomorrow?", options: ["Thursday", "Saturday", "Sunday"] },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Time Challenge (Part 2)",
+        instruction: "Think carefully! Circle the best answer.",
+        questions: [
+          { prompt: "How many months are in a year?", options: ["7", "10", "12"] },
+          { prompt: "If today is Sunday, what day is tomorrow?", options: ["Saturday", "Monday", "Tuesday"] },
+          { prompt: "If today is Wednesday, what day was yesterday?", options: ["Thursday", "Tuesday", "Monday"] },
+          { prompt: "Which comes first: afternoon or morning?", options: ["Afternoon", "Morning", "Evening"] },
         ],
       },
       {
@@ -3341,6 +6662,23 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
           { label: "4", objects: [] },
           { label: "3", objects: [] },
           { label: "7", objects: [] },
+        ],
+      },
+      {
+        type: "matching",
+        title: "Match More Time Facts",
+        instruction: "Draw a line to match each question to its answer.",
+        leftItems: [
+          { label: "Months in a year?", objects: [] },
+          { label: "Days on the weekend?", objects: [] },
+          { label: "The sun sets in the ___?", objects: [] },
+          { label: "Weekdays in a week?", objects: [] },
+        ],
+        rightItems: [
+          { label: "5", objects: [] },
+          { label: "Evening", objects: [] },
+          { label: "2", objects: [] },
+          { label: "12", objects: [] },
         ],
       },
       // --- Improvement: Connect events TO times of day ---
@@ -3364,16 +6702,38 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
           { text: "At night, I:", type: "lines", lines: 2 },
         ],
       },
+      {
+        type: "open-response",
+        title: "My Favourite Time of Day",
+        instruction: "Think about your favourite time of day and write about it.",
+        prompts: [
+          { text: "My favourite time of day is:", type: "lines", lines: 1 },
+          { text: "I like this time because:", type: "lines", lines: 2 },
+          { text: "Something I do at this time is:", type: "lines", lines: 2 },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "What Comes Next?",
+        instruction: "Write what you think happens NEXT after each activity.",
+        prompts: [
+          { text: "After I wake up, the next thing I do is:", type: "lines", lines: 2 },
+          { text: "After I eat dinner, the next thing I do is:", type: "lines", lines: 2 },
+          { text: "After school finishes, the next thing I do is:", type: "lines", lines: 2 },
+        ],
+      },
       // --- Try This at Home ---
       {
         type: "home-activity",
         title: "Try This at Home!",
         instruction: "Help your child understand how daily events connect to times of day.",
         suggestions: [
-          "Make a visual daily timetable together — draw or stick pictures of activities in morning, afternoon, and night columns.",
-          "Throughout the day, narrate the time: 'It's morning, so we eat breakfast. It's the afternoon, so we have a rest.'",
+          "Make a visual daily timetable together -- draw or stick pictures of activities in morning, afternoon, and night columns.",
+          "Throughout the day, narrate the time: 'It is morning, so we eat breakfast. It is the afternoon, so we have a rest.'",
           "Before bed, ask your child to retell their day in order: 'First I woke up, then I had breakfast, then...'",
-          "Play 'When do we...?' — name an activity and your child says the time of day it happens.",
+          "Play 'When do we...?' -- name an activity and your child says the time of day it happens.",
+          "Use a calendar to practise days of the week. Ask 'What day is it today? What day was yesterday? What day is tomorrow?'",
+          "Talk about seasons when the weather changes. Ask 'What season are we in? What do we wear in this season?'",
         ],
       },
     ],
@@ -3399,8 +6759,28 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
       },
       {
         type: "shape-trace",
+        title: "Trace More Circles",
+        instruction: "Keep practising! Trace these circles carefully.",
+        shapes: [
+          { name: "Circle", sides: 0 },
+          { name: "Circle", sides: 0 },
+          { name: "Circle", sides: 0 },
+        ],
+      },
+      {
+        type: "shape-trace",
         title: "Trace a Square",
         instruction: "Trace over the dotted square. A square has 4 equal sides!",
+        shapes: [
+          { name: "Square", sides: 4 },
+          { name: "Square", sides: 4 },
+          { name: "Square", sides: 4 },
+        ],
+      },
+      {
+        type: "shape-trace",
+        title: "Trace More Squares",
+        instruction: "Keep practising! Trace these squares carefully. Try to make each side straight.",
         shapes: [
           { name: "Square", sides: 4 },
           { name: "Square", sides: 4 },
@@ -3419,8 +6799,28 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
       },
       {
         type: "shape-trace",
+        title: "Trace More Triangles",
+        instruction: "Keep practising! Trace these triangles carefully. Count the 3 sides as you go.",
+        shapes: [
+          { name: "Triangle", sides: 3 },
+          { name: "Triangle", sides: 3 },
+          { name: "Triangle", sides: 3 },
+        ],
+      },
+      {
+        type: "shape-trace",
         title: "Trace a Rectangle",
         instruction: "Trace over the dotted rectangle. A rectangle has 4 sides — 2 long and 2 short!",
+        shapes: [
+          { name: "Rectangle", sides: 4 },
+          { name: "Rectangle", sides: 4 },
+          { name: "Rectangle", sides: 4 },
+        ],
+      },
+      {
+        type: "shape-trace",
+        title: "Trace More Rectangles",
+        instruction: "Keep practising! Trace these rectangles carefully. Notice the 2 long sides and 2 short sides.",
         shapes: [
           { name: "Rectangle", sides: 4 },
           { name: "Rectangle", sides: 4 },
@@ -3439,6 +6839,16 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
       },
       {
         type: "shape-trace",
+        title: "Trace More Diamonds",
+        instruction: "Keep practising! Trace these diamonds carefully. A diamond is like a square standing on one corner.",
+        shapes: [
+          { name: "Diamond", sides: 4 },
+          { name: "Diamond", sides: 4 },
+          { name: "Diamond", sides: 4 },
+        ],
+      },
+      {
+        type: "shape-trace",
         title: "Trace All Five Shapes",
         instruction: "Trace over each dotted shape. Write its name below.",
         shapes: [
@@ -3447,6 +6857,18 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
           { name: "Triangle", sides: 3 },
           { name: "Rectangle", sides: 4 },
           { name: "Diamond", sides: 4 },
+        ],
+      },
+      {
+        type: "shape-trace",
+        title: "Trace Each Shape Again",
+        instruction: "Practise makes perfect! Trace each shape one more time.",
+        shapes: [
+          { name: "Triangle", sides: 3 },
+          { name: "Diamond", sides: 4 },
+          { name: "Circle", sides: 0 },
+          { name: "Rectangle", sides: 4 },
+          { name: "Square", sides: 4 },
         ],
       },
       {
@@ -3467,6 +6889,23 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         ],
       },
       {
+        type: "matching",
+        title: "Match More Shapes to Names",
+        instruction: "Draw a line to match each shape to its correct name.",
+        leftItems: [
+          { label: "Circle", objects: ["circle"] },
+          { label: "Rectangle", objects: [] },
+          { label: "Diamond", objects: ["diamond"] },
+          { label: "Triangle", objects: ["triangle"] },
+        ],
+        rightItems: [
+          { label: "▲ Triangle", objects: [] },
+          { label: "● Circle", objects: [] },
+          { label: "▬ Rectangle", objects: [] },
+          { label: "◆ Diamond", objects: [] },
+        ],
+      },
+      {
         type: "circle-correct",
         title: "Name That Shape!",
         instruction: "Circle the correct name for each shape.",
@@ -3475,6 +6914,17 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
           { prompt: "This shape is a ___", promptIcon: "square", options: ["Rectangle", "Circle", "Square"] },
           { prompt: "This shape is a ___", promptIcon: "triangle", options: ["Triangle", "Diamond", "Square"] },
           { prompt: "This shape is a ___", promptIcon: "diamond", options: ["Circle", "Triangle", "Diamond"] },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Name That Shape Again!",
+        instruction: "Keep practising! Circle the correct name for each shape.",
+        questions: [
+          { prompt: "What is the name of this shape?", promptIcon: "triangle", options: ["Circle", "Triangle", "Rectangle"] },
+          { prompt: "What is the name of this shape?", promptIcon: "circle", options: ["Diamond", "Square", "Circle"] },
+          { prompt: "What is the name of this shape?", promptIcon: "diamond", options: ["Diamond", "Triangle", "Circle"] },
+          { prompt: "What is the name of this shape?", promptIcon: "square", options: ["Square", "Triangle", "Diamond"] },
         ],
       },
 
@@ -3486,6 +6936,17 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         questions: [
           { prompt: "Circle", promptIcon: "circle", options: ["Yes, it has sides", "No sides (it is round)"] },
           { prompt: "Square", promptIcon: "square", options: ["Yes, it has sides", "No sides (it is round)"] },
+          { prompt: "Triangle", promptIcon: "triangle", options: ["Yes, it has sides", "No sides (it is round)"] },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Sides or No Sides?",
+        instruction: "Remember, sides are the straight lines of a shape. Does this shape have straight sides?",
+        questions: [
+          { prompt: "Diamond", promptIcon: "diamond", options: ["Yes, it has sides", "No sides (it is round)"] },
+          { prompt: "Rectangle", options: ["Yes, it has sides", "No sides (it is round)"] },
+          { prompt: "Circle", promptIcon: "circle", options: ["Yes, it has sides", "No sides (it is round)"] },
           { prompt: "Triangle", promptIcon: "triangle", options: ["Yes, it has sides", "No sides (it is round)"] },
         ],
       },
@@ -3504,6 +6965,17 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
       },
       {
         type: "circle-correct",
+        title: "Count the Sides Again",
+        instruction: "How many sides does each shape have? Count carefully!",
+        questions: [
+          { prompt: "Diamond", promptIcon: "diamond", options: ["3", "4", "5"] },
+          { prompt: "Circle", promptIcon: "circle", options: ["0", "2", "4"] },
+          { prompt: "Triangle", promptIcon: "triangle", options: ["2", "3", "4"] },
+          { prompt: "Square", promptIcon: "square", options: ["2", "3", "4"] },
+        ],
+      },
+      {
+        type: "circle-correct",
         title: "Count the Corners",
         instruction: "How many corners (points) does each shape have?",
         questions: [
@@ -3511,6 +6983,17 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
           { prompt: "Square", promptIcon: "square", options: ["3", "4", "5"] },
           { prompt: "Circle", promptIcon: "circle", options: ["0", "1", "2"] },
           { prompt: "Diamond", promptIcon: "diamond", options: ["3", "4", "5"] },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Count the Corners Again",
+        instruction: "Corners are the pointy parts where two sides meet. How many corners?",
+        questions: [
+          { prompt: "Rectangle", options: ["3", "4", "5"] },
+          { prompt: "Circle", promptIcon: "circle", options: ["0", "1", "3"] },
+          { prompt: "Diamond", promptIcon: "diamond", options: ["2", "3", "4"] },
+          { prompt: "Triangle", promptIcon: "triangle", options: ["2", "3", "4"] },
         ],
       },
       {
@@ -3529,6 +7012,23 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         ],
       },
       {
+        type: "matching",
+        title: "Match Shape to Number of Corners",
+        instruction: "Draw a line to match each shape to how many corners it has.",
+        leftItems: [
+          { label: "Diamond", objects: ["diamond"] },
+          { label: "Circle", objects: ["circle"] },
+          { label: "Triangle", objects: ["triangle"] },
+          { label: "Rectangle", objects: [] },
+        ],
+        rightItems: [
+          { label: "0 corners", objects: [] },
+          { label: "3 corners", objects: [] },
+          { label: "4 corners", objects: [] },
+          { label: "4 corners", objects: [] },
+        ],
+      },
+      {
         type: "circle-correct",
         title: "True or False: Shape Facts",
         instruction: "Circle True or False.",
@@ -3537,6 +7037,18 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
           { prompt: "A circle has 4 corners.", options: ["True", "False"] },
           { prompt: "A square has 4 equal sides.", options: ["True", "False"] },
           { prompt: "A rectangle has 3 sides.", options: ["True", "False"] },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "More True or False: Shape Facts",
+        instruction: "Circle True or False.",
+        questions: [
+          { prompt: "A diamond has 4 sides.", options: ["True", "False"] },
+          { prompt: "A circle has 0 corners.", options: ["True", "False"] },
+          { prompt: "A triangle has 4 corners.", options: ["True", "False"] },
+          { prompt: "A rectangle has 4 sides.", options: ["True", "False"] },
+          { prompt: "A square is round.", options: ["True", "False"] },
         ],
       },
 
@@ -3568,6 +7080,19 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         ],
       },
       {
+        type: "sorting",
+        title: "Sort: 3 Corners or 4 Corners?",
+        instruction: "Sort each shape by how many corners it has.",
+        columns: ["0 Corners", "3 Corners", "4 Corners"],
+        items: [
+          { label: "Triangle", icon: "triangle" },
+          { label: "Square", icon: "square" },
+          { label: "Circle", icon: "circle" },
+          { label: "Diamond", icon: "diamond" },
+          { label: "Rectangle" },
+        ],
+      },
+      {
         type: "circle-correct",
         title: "Which Shape Am I?",
         instruction: "Read the clues. Circle the correct shape.",
@@ -3576,6 +7101,17 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
           { prompt: "I am round with no sides. I am a ___", options: ["Diamond", "Circle", "Rectangle"] },
           { prompt: "I have 4 equal sides and 4 corners. I am a ___", options: ["Triangle", "Rectangle", "Square"] },
           { prompt: "I have 4 sides — 2 long and 2 short. I am a ___", options: ["Square", "Rectangle", "Diamond"] },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "More Shape Clues",
+        instruction: "Read the clues. Circle the correct shape.",
+        questions: [
+          { prompt: "I have 4 sides and look like a tilted square. I am a ___", options: ["Circle", "Diamond", "Triangle"] },
+          { prompt: "I have no corners and no sides. I am a ___", options: ["Square", "Triangle", "Circle"] },
+          { prompt: "I have 4 corners and all my sides are the same length. I am a ___", options: ["Rectangle", "Square", "Triangle"] },
+          { prompt: "I have 3 corners. I am a ___", options: ["Diamond", "Circle", "Triangle"] },
         ],
       },
 
@@ -3598,6 +7134,23 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         ],
       },
       {
+        type: "matching",
+        title: "More Real-Life Shapes",
+        instruction: "Draw a line to match each real-life thing to its shape.",
+        leftItems: [
+          { label: "Plate", objects: [] },
+          { label: "Envelope", objects: [] },
+          { label: "Road sign (Give Way)", objects: [] },
+          { label: "Tile on the floor", objects: [] },
+        ],
+        rightItems: [
+          { label: "Square", objects: ["square"] },
+          { label: "Circle", objects: ["circle"] },
+          { label: "Rectangle", objects: [] },
+          { label: "Triangle", objects: ["triangle"] },
+        ],
+      },
+      {
         type: "circle-correct",
         title: "What Shape Is It?",
         instruction: "Circle the shape that matches each thing in real life.",
@@ -3606,6 +7159,17 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
           { prompt: "A door is shaped like a ___", options: ["Triangle", "Circle", "Rectangle"] },
           { prompt: "A sandwich cut in half diagonally is a ___", options: ["Circle", "Triangle", "Square"] },
           { prompt: "A dice face is shaped like a ___", options: ["Square", "Circle", "Triangle"] },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "More Real-Life Shape Questions",
+        instruction: "Circle the shape that matches each thing in real life.",
+        questions: [
+          { prompt: "A coin is shaped like a ___", options: ["Triangle", "Circle", "Square"] },
+          { prompt: "A picture frame is shaped like a ___", options: ["Circle", "Triangle", "Rectangle"] },
+          { prompt: "A slice of watermelon is shaped like a ___", options: ["Triangle", "Square", "Circle"] },
+          { prompt: "A window pane is shaped like a ___", options: ["Circle", "Square", "Triangle"] },
         ],
       },
       {
@@ -3622,6 +7186,20 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
           { label: "Yield sign" },
         ],
       },
+      {
+        type: "sorting",
+        title: "Sort More Real Things by Shape",
+        instruction: "Sort each real-life thing into the correct shape column.",
+        columns: ["Circle", "Square/Rectangle", "Triangle"],
+        items: [
+          { label: "Clock face" },
+          { label: "Napkin" },
+          { label: "Sandwich cut diagonally" },
+          { label: "Frisbee" },
+          { label: "Tablet screen" },
+          { label: "Coat hanger" },
+        ],
+      },
 
       // --- HARDER: Comparing shapes ---
       {
@@ -3636,12 +7214,33 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
       },
       {
         type: "circle-correct",
+        title: "Same Shape or Different Shape?",
+        instruction: "Think about the shape, not the size or colour. Are they the same or different?",
+        questions: [
+          { prompt: "A big square and a small square — same shape?", options: ["Yes, the same shape", "No, different shapes"] },
+          { prompt: "A tall triangle and a short triangle — same shape?", options: ["Yes, the same shape", "No, different shapes"] },
+          { prompt: "A circle and a diamond — same shape?", options: ["Yes, the same", "No, different"] },
+          { prompt: "A diamond and a square — same shape?", options: ["Yes, the same", "No, different"] },
+        ],
+      },
+      {
+        type: "circle-correct",
         title: "What Is Different?",
         instruction: "Circle what is DIFFERENT about these shapes.",
         questions: [
           { prompt: "A square and a rectangle both have 4 sides. What is different?", options: ["Number of corners", "The side lengths", "They are the same"] },
           { prompt: "A big triangle and a small triangle. What is different?", options: ["Number of sides", "The size", "The shape name"] },
           { prompt: "A circle and a square. What is different?", options: ["One has sides, one doesn't", "They are the same", "Both have 4 sides"] },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "How Are They Different?",
+        instruction: "Circle what is DIFFERENT about these shapes.",
+        questions: [
+          { prompt: "A triangle has 3 sides. A square has 4 sides. What is different?", options: ["The number of sides", "The colour", "Nothing"] },
+          { prompt: "A circle and a triangle. What is different?", options: ["Both are round", "One is round, one has sides", "They are the same"] },
+          { prompt: "A rectangle and a diamond both have 4 sides. What is different?", options: ["Number of sides", "The shape of the sides and corners", "Nothing is different"] },
         ],
       },
 
@@ -3659,6 +7258,18 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         ],
       },
       {
+        type: "shape-trace",
+        title: "Draw These Shapes from Memory",
+        instruction: "Without looking at examples, draw each shape from memory. Think about the sides and corners!",
+        shapes: [
+          { name: "Square", sides: 4 },
+          { name: "Circle", sides: 0 },
+          { name: "Diamond", sides: 4 },
+          { name: "Triangle", sides: 3 },
+          { name: "Rectangle", sides: 4 },
+        ],
+      },
+      {
         type: "circle-correct",
         title: "Shape Riddles",
         instruction: "Solve each shape riddle. Circle the answer.",
@@ -3670,6 +7281,17 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
       },
       {
         type: "circle-correct",
+        title: "More Shape Riddles",
+        instruction: "Solve each shape riddle. Circle the answer.",
+        questions: [
+          { prompt: "I have no corners and I can roll. What am I?", options: ["Square", "Triangle", "Circle"] },
+          { prompt: "I have 4 equal sides but I am not tilted. What am I?", options: ["Diamond", "Square", "Triangle"] },
+          { prompt: "I have the fewest sides of any shape with straight edges. What am I?", options: ["Triangle", "Square", "Rectangle"] },
+          { prompt: "I have 4 corners and 2 of my sides are longer than the other 2. What am I?", options: ["Square", "Circle", "Rectangle"] },
+        ],
+      },
+      {
+        type: "circle-correct",
         title: "Shape Challenge",
         instruction: "Think carefully! Circle the best answer.",
         questions: [
@@ -3677,6 +7299,17 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
           { prompt: "If you cut a rectangle in half, what shapes could you get?", options: ["Two squares", "Two rectangles", "Both are possible"] },
           { prompt: "Which shape can roll?", options: ["Square", "Triangle", "Circle"] },
           { prompt: "Which shape is the strongest for building?", options: ["Circle", "Triangle", "Diamond"] },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "More Shape Challenges",
+        instruction: "Think carefully! Circle the best answer.",
+        questions: [
+          { prompt: "Which shape has the most corners: triangle, square, or circle?", options: ["Triangle", "Square", "Circle"] },
+          { prompt: "If you fold a square in half, what shape do you get?", options: ["Triangle", "Rectangle", "Circle"] },
+          { prompt: "Which shape has NO straight lines?", options: ["Square", "Diamond", "Circle"] },
+          { prompt: "A rectangle and a square both have 4 sides. What makes a square special?", options: ["All sides equal", "It is bigger", "It has more corners"] },
         ],
       },
       {
@@ -3697,6 +7330,23 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         ],
       },
       {
+        type: "matching",
+        title: "More Shape Properties Match",
+        instruction: "Draw a line to match each description to the correct shape.",
+        leftItems: [
+          { label: "4 sides, looks like a tilted square", objects: [] },
+          { label: "Round, can roll", objects: [] },
+          { label: "3 straight sides", objects: [] },
+          { label: "4 sides, all the same length, sits flat", objects: [] },
+        ],
+        rightItems: [
+          { label: "Square", objects: ["square"] },
+          { label: "Diamond", objects: ["diamond"] },
+          { label: "Circle", objects: ["circle"] },
+          { label: "Triangle", objects: ["triangle"] },
+        ],
+      },
+      {
         type: "circle-correct",
         title: "How Many Shapes Can You See?",
         instruction: "A house drawing has a square body, a triangle roof, a rectangle door, and 2 circle windows. How many of each?",
@@ -3707,6 +7357,18 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
           { prompt: "How many circles?", options: ["1", "2", "3"] },
         ],
       },
+      {
+        type: "circle-correct",
+        title: "Count the Shapes in the Picture",
+        instruction: "A robot is made from: a square head, a rectangle body, 2 rectangle arms, 2 rectangle legs, and 2 circle eyes. How many of each?",
+        questions: [
+          { prompt: "How many squares?", options: ["1", "2", "3"] },
+          { prompt: "How many rectangles?", options: ["3", "5", "6"] },
+          { prompt: "How many circles?", options: ["1", "2", "4"] },
+          { prompt: "How many shapes in total?", options: ["6", "8", "10"] },
+        ],
+      },
+
       // --- BRIDGE: Flat vs solid shapes ---
       {
         type: "circle-correct",
@@ -3717,6 +7379,17 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
           { prompt: "A ball you can hold is ___", options: ["Flat", "Solid"] },
           { prompt: "A square on paper is ___", options: ["Flat", "Solid"] },
           { prompt: "A box you can pick up is ___", options: ["Flat", "Solid"] },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "More Flat or Solid?",
+        instruction: "Is it flat (like a drawing) or solid (like something you can pick up and hold)?",
+        questions: [
+          { prompt: "A triangle drawn on paper is ___", options: ["Flat", "Solid"] },
+          { prompt: "A tin can from the cupboard is ___", options: ["Flat", "Solid"] },
+          { prompt: "A rectangle on a poster is ___", options: ["Flat", "Solid"] },
+          { prompt: "A party hat you can wear is ___", options: ["Flat", "Solid"] },
         ],
       },
 
@@ -3730,6 +7403,17 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
           { prompt: "A dice/box is shaped like a ___", promptIcon: "cube", options: ["Sphere", "Cube", "Cone"] },
           { prompt: "An ice cream cone is shaped like a ___", promptIcon: "cone", options: ["Cylinder", "Sphere", "Cone"] },
           { prompt: "A tin of beans is shaped like a ___", promptIcon: "cylinder", options: ["Cube", "Cylinder", "Cone"] },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Name That 3D Shape!",
+        instruction: "Circle the correct name for each 3D shape.",
+        questions: [
+          { prompt: "This shape is round like a ball.", promptIcon: "sphere", options: ["Cone", "Sphere", "Cylinder"] },
+          { prompt: "This shape has flat square faces.", promptIcon: "cube", options: ["Cube", "Sphere", "Cone"] },
+          { prompt: "This shape has a point at the top.", promptIcon: "cone", options: ["Cube", "Cylinder", "Cone"] },
+          { prompt: "This shape is like a can.", promptIcon: "cylinder", options: ["Sphere", "Cylinder", "Cube"] },
         ],
       },
       {
@@ -3750,6 +7434,23 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         ],
       },
       {
+        type: "matching",
+        title: "Match More 3D Shapes to Real Things",
+        instruction: "Draw a line to match each 3D shape to something in real life.",
+        leftItems: [
+          { label: "Sphere", objects: ["sphere"] },
+          { label: "Cube", objects: ["cube"] },
+          { label: "Cylinder", objects: ["cylinder"] },
+          { label: "Cone", objects: ["cone"] },
+        ],
+        rightItems: [
+          { label: "Orange (fruit)", objects: [] },
+          { label: "Ice cream cone", objects: [] },
+          { label: "Building block", objects: [] },
+          { label: "Toilet paper roll", objects: [] },
+        ],
+      },
+      {
         type: "sorting",
         title: "Sort: Flat (2D) or Solid (3D)?",
         instruction: "Sort each shape. Is it flat (you can draw it) or solid (you can hold it)?",
@@ -3766,6 +7467,20 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         ],
       },
       {
+        type: "sorting",
+        title: "Sort More Shapes: Flat or Solid?",
+        instruction: "Sort each shape. Is it flat (2D) or solid (3D)?",
+        columns: ["Flat (2D)", "Solid (3D)"],
+        items: [
+          { label: "Diamond", icon: "diamond" },
+          { label: "Cone", icon: "cone" },
+          { label: "Triangle", icon: "triangle" },
+          { label: "Sphere", icon: "sphere" },
+          { label: "Rectangle" },
+          { label: "Cube", icon: "cube" },
+        ],
+      },
+      {
         type: "circle-correct",
         title: "3D Shape Properties",
         instruction: "Circle the correct answer about 3D shapes.",
@@ -3776,6 +7491,29 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
           { prompt: "Which 3D shape has two flat circle faces?", optionIcons: ["cylinder", "cube", "cone"], options: ["Cylinder", "Cube", "Cone"] },
         ],
       },
+      {
+        type: "circle-correct",
+        title: "More 3D Shape Properties",
+        instruction: "Circle the correct answer about 3D shapes.",
+        questions: [
+          { prompt: "Which 3D shape cannot roll at all?", optionIcons: ["cube", "sphere", "cylinder"], options: ["Cube", "Sphere", "Cylinder"] },
+          { prompt: "Which 3D shape looks the same from every direction?", optionIcons: ["cube", "cone", "sphere"], options: ["Cube", "Cone", "Sphere"] },
+          { prompt: "Which 3D shape has both a flat face and a point?", optionIcons: ["sphere", "cone", "cube"], options: ["Sphere", "Cone", "Cube"] },
+          { prompt: "Which 3D shape can slide but not roll?", optionIcons: ["sphere", "cube", "cylinder"], options: ["Sphere", "Cube", "Cylinder"] },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "True or False: 3D Shape Facts",
+        instruction: "Circle True or False.",
+        questions: [
+          { prompt: "A sphere has no flat faces.", options: ["True", "False"] },
+          { prompt: "A cube has 6 flat faces.", options: ["True", "False"] },
+          { prompt: "A cone can roll.", options: ["True", "False"] },
+          { prompt: "A cylinder has 2 flat circle faces.", options: ["True", "False"] },
+        ],
+      },
+
       // --- Improvement: Give reasoning ---
       {
         type: "open-response",
@@ -3798,6 +7536,27 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
           { text: "Draw a shape with NO sides and NO corners. It is called a ___.", type: "box" },
         ],
       },
+      {
+        type: "open-response",
+        title: "Describe the Shape",
+        instruction: "Write about each shape. How many sides and corners does it have? What does it look like?",
+        prompts: [
+          { text: "A square has ___ sides and ___ corners. It looks like:", type: "lines", lines: 2 },
+          { text: "A diamond has ___ sides and ___ corners. It looks like:", type: "lines", lines: 2 },
+          { text: "What is the difference between a square and a rectangle?", type: "lines", lines: 2 },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Shape Hunt Journal",
+        instruction: "Think about shapes you see every day. Write or draw your answers.",
+        prompts: [
+          { text: "Name 3 things at home that are shaped like a circle:", type: "lines", lines: 2 },
+          { text: "Name 3 things at home that are shaped like a rectangle:", type: "lines", lines: 2 },
+          { text: "Name something you have seen that is shaped like a sphere (3D ball shape):", type: "lines", lines: 2 },
+        ],
+      },
+
       // --- Try This at Home ---
       {
         type: "home-activity",
@@ -3820,7 +7579,7 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
     strand: "Space",
     description: "Describe the position and location of objects in relation to other objects and people",
     activities: [
-      // --- EASY: On, under, in ---
+      // --- EASY: On, under, in (1 of 2) ---
       {
         type: "circle-correct",
         title: "On, Under, or In?",
@@ -3833,6 +7592,17 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         ],
       },
       {
+        type: "circle-correct",
+        title: "On, Under, or In? (2)",
+        instruction: "Circle the correct position word.",
+        questions: [
+          { prompt: "The bird is sitting ___ the branch.", promptIcon: "bird", options: ["On", "Under", "In"] },
+          { prompt: "The ball is ___ the couch.", promptIcon: "ball", options: ["On", "Under", "In"] },
+          { prompt: "The fish is swimming ___ the water.", promptIcon: "fish", options: ["On", "Under", "In"] },
+          { prompt: "The cup is ___ the shelf.", promptIcon: "cup", options: ["On", "Under", "In"] },
+        ],
+      },
+      {
         type: "matching",
         title: "Match the Position",
         instruction: "Draw a line to match each picture to the correct position word.",
@@ -3840,6 +7610,21 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
           { label: "Bird on a branch", objects: [] },
           { label: "Cat under a bed", objects: [] },
           { label: "Ball in a box", objects: [] },
+        ],
+        rightItems: [
+          { label: "In", objects: [] },
+          { label: "On", objects: [] },
+          { label: "Under", objects: [] },
+        ],
+      },
+      {
+        type: "matching",
+        title: "Match the Position (2)",
+        instruction: "Draw a line to match each picture to the correct position word.",
+        leftItems: [
+          { label: "Apple on the plate", objects: [] },
+          { label: "Dog under the table", objects: [] },
+          { label: "Pencil in the cup", objects: [] },
         ],
         rightItems: [
           { label: "In", objects: [] },
@@ -3859,6 +7644,16 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
       },
       {
         type: "circle-correct",
+        title: "Where Is the Heart?",
+        instruction: "Circle where the heart is.",
+        questions: [
+          { prompt: "The heart is ___ the pillow.", promptIcon: "heart", options: ["On top of", "Under", "Inside"] },
+          { prompt: "The heart is ___ the chair.", promptIcon: "heart", options: ["On top of", "Under", "Beside"] },
+          { prompt: "The heart is ___ the bag.", promptIcon: "heart", options: ["On top of", "Inside", "Behind"] },
+        ],
+      },
+      {
+        type: "circle-correct",
         title: "True or False: Position",
         instruction: "If the cat is ON the chair, circle True or False.",
         questions: [
@@ -3867,8 +7662,32 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
           { prompt: "The cat is inside the chair.", options: ["True", "False"] },
         ],
       },
+      {
+        type: "circle-correct",
+        title: "True or False: Position (2)",
+        instruction: "If the dog is UNDER the table, circle True or False.",
+        questions: [
+          { prompt: "The dog is on top of the table.", promptIcon: "dog", options: ["True", "False"] },
+          { prompt: "The dog is under the table.", promptIcon: "dog", options: ["True", "False"] },
+          { prompt: "The dog is beside the table.", promptIcon: "dog", options: ["True", "False"] },
+        ],
+      },
+      {
+        type: "sorting",
+        title: "Sort: On or In?",
+        instruction: "Sort each thing. Is it usually ON something or IN something?",
+        columns: ["On", "In"],
+        items: [
+          { label: "A hat ___ your head" },
+          { label: "Juice ___ a cup", icon: "cup" },
+          { label: "A bird ___ a branch", icon: "bird" },
+          { label: "Fish ___ a pond", icon: "fish" },
+          { label: "A book ___ a table", icon: "book" },
+          { label: "Toys ___ a box", icon: "teddy" },
+        ],
+      },
 
-      // --- EASY: Next to, beside, between ---
+      // --- EASY: Next to, beside, between (1 of 2) ---
       {
         type: "circle-correct",
         title: "Next To and Beside",
@@ -3881,12 +7700,32 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
       },
       {
         type: "circle-correct",
+        title: "Next To and Beside (2)",
+        instruction: "Circle the correct word.",
+        questions: [
+          { prompt: "The tree is ___ the house.", promptIcon: "tree", options: ["Next to", "Under", "Inside"] },
+          { prompt: "The pencil is ___ the book.", promptIcon: "pencil", options: ["On top of", "Beside", "Under"] },
+          { prompt: "The cat is sitting ___ the dog.", promptIcon: "cat", options: ["Inside", "Under", "Next to"] },
+        ],
+      },
+      {
+        type: "circle-correct",
         title: "Between",
         instruction: "Circle what is BETWEEN the other two things.",
         questions: [
-          { prompt: "Star, Heart, Apple — what is between the star and the apple?", options: ["Star", "Heart", "Apple"] },
-          { prompt: "Cat, Dog, Bird — what is between the cat and the bird?", options: ["Cat", "Dog", "Bird"] },
-          { prompt: "Red, Blue, Green — what is between red and green?", options: ["Red", "Blue", "Green"] },
+          { prompt: "Star, Heart, Apple -- what is between the star and the apple?", options: ["Star", "Heart", "Apple"] },
+          { prompt: "Cat, Dog, Bird -- what is between the cat and the bird?", options: ["Cat", "Dog", "Bird"] },
+          { prompt: "Red, Blue, Green -- what is between red and green?", options: ["Red", "Blue", "Green"] },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Between (2)",
+        instruction: "Circle what is BETWEEN the other two things.",
+        questions: [
+          { prompt: "Sun, Moon, Star -- what is between the sun and the star?", options: ["Sun", "Moon", "Star"] },
+          { prompt: "Fish, Flower, Butterfly -- what is between the fish and the butterfly?", options: ["Fish", "Flower", "Butterfly"] },
+          { prompt: "Apple, Banana, Grape -- what is between the apple and the grape?", options: ["Apple", "Banana", "Grape"] },
         ],
       },
       {
@@ -3906,8 +7745,36 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
           { label: "Beside", objects: [] },
         ],
       },
+      {
+        type: "matching",
+        title: "Match Position Words (2)",
+        instruction: "Draw a line to match each sentence to the correct position word.",
+        leftItems: [
+          { label: "The bird sits ___ the tree and the fence", objects: [] },
+          { label: "The flower is ___ the pot", objects: [] },
+          { label: "The ball is ___ the bed", objects: [] },
+          { label: "The star is ___ the book", objects: [] },
+        ],
+        rightItems: [
+          { label: "In", objects: [] },
+          { label: "On top of", objects: [] },
+          { label: "Under", objects: [] },
+          { label: "Between", objects: [] },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "On, In, Under, or Beside?",
+        instruction: "Circle the correct position word for each sentence.",
+        questions: [
+          { prompt: "The spoon is ___ the drawer.", promptIcon: "spoon", options: ["On", "In", "Under", "Beside"] },
+          { prompt: "The clock is ___ the wall.", promptIcon: "clock", options: ["On", "In", "Under", "Beside"] },
+          { prompt: "The elephant stands ___ the tree.", promptIcon: "elephant", options: ["On", "In", "Under", "Beside"] },
+          { prompt: "The mouse hides ___ the cup.", promptIcon: "mouse", options: ["On", "In", "Under", "Beside"] },
+        ],
+      },
 
-      // --- MEDIUM: In front of, behind, above, below ---
+      // --- MEDIUM: In front of, behind, above, below (1 of 2) ---
       {
         type: "circle-correct",
         title: "In Front or Behind?",
@@ -3920,6 +7787,17 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
       },
       {
         type: "circle-correct",
+        title: "In Front or Behind? (2)",
+        instruction: "Circle the correct word.",
+        questions: [
+          { prompt: "The dog is walking ___ its owner.", promptIcon: "dog", options: ["In front of", "Behind", "Under"] },
+          { prompt: "The sun is ___ the clouds.", promptIcon: "sun", options: ["In front of", "Behind", "Under"] },
+          { prompt: "Dad is standing ___ the door.", options: ["In front of", "Behind", "On top of"] },
+          { prompt: "The cat is hiding ___ the curtain.", promptIcon: "cat", options: ["In front of", "Behind", "Above"] },
+        ],
+      },
+      {
+        type: "circle-correct",
         title: "Above or Below?",
         instruction: "Circle the correct word.",
         questions: [
@@ -3927,6 +7805,17 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
           { prompt: "The ground is ___ our feet.", options: ["Above", "Below", "Behind"] },
           { prompt: "The bird is flying ___ the tree.", promptIcon: "bird", options: ["Above", "Below", "Inside"] },
           { prompt: "The fish swims ___ the water.", promptIcon: "fish", options: ["Above", "Below", "In front of"] },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Above or Below? (2)",
+        instruction: "Circle the correct word.",
+        questions: [
+          { prompt: "The moon is ___ the rooftop.", promptIcon: "moon", options: ["Above", "Below", "Beside"] },
+          { prompt: "The roots of a tree are ___ the ground.", promptIcon: "tree", options: ["Above", "Below", "In front of"] },
+          { prompt: "The stars shine ___ us at night.", promptIcon: "star", options: ["Above", "Below", "Behind"] },
+          { prompt: "The ant walks ___ the leaf.", promptIcon: "ant", options: ["Above", "Below", "Inside"] },
         ],
       },
       {
@@ -3944,6 +7833,20 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         ],
       },
       {
+        type: "sorting",
+        title: "Sort: In Front or Behind?",
+        instruction: "You are facing the TV. Sort each thing. Is it IN FRONT of you or BEHIND you?",
+        columns: ["In Front of Me", "Behind Me"],
+        items: [
+          { label: "The TV" },
+          { label: "The wall behind you" },
+          { label: "Your toes" },
+          { label: "Your back" },
+          { label: "The screen" },
+          { label: "The couch you sit on" },
+        ],
+      },
+      {
         type: "circle-correct",
         title: "All the Position Words",
         instruction: "Circle the best position word for each sentence.",
@@ -3954,8 +7857,36 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
           { prompt: "The dog sleeps ___ the door.", options: ["Above", "In front of", "On top of"] },
         ],
       },
+      {
+        type: "circle-correct",
+        title: "All the Position Words (2)",
+        instruction: "Circle the best position word for each sentence.",
+        questions: [
+          { prompt: "The cat hides ___ the bookshelf.", promptIcon: "cat", options: ["Behind", "Above", "On top of"] },
+          { prompt: "The flower grows ___ the fence.", promptIcon: "flower", options: ["Next to", "Under", "On top of"] },
+          { prompt: "The moon shines ___ the house.", promptIcon: "moon", options: ["Above", "Under", "Beside"] },
+          { prompt: "The shoes are ___ the bed.", options: ["Above", "In front of", "Under"] },
+        ],
+      },
+      {
+        type: "matching",
+        title: "Match: In Front, Behind, Above, Below",
+        instruction: "Draw a line to match each sentence to the correct position word.",
+        leftItems: [
+          { label: "The bird flies high up", objects: [] },
+          { label: "The worm is in the dirt", objects: [] },
+          { label: "You can see the teacher at the board", objects: [] },
+          { label: "Something is hiding at the back", objects: [] },
+        ],
+        rightItems: [
+          { label: "Above", objects: [] },
+          { label: "Below", objects: [] },
+          { label: "In front of", objects: [] },
+          { label: "Behind", objects: [] },
+        ],
+      },
 
-      // --- MEDIUM: Left and right ---
+      // --- MEDIUM: Left and right (1 of 2) ---
       {
         type: "circle-correct",
         title: "Left or Right?",
@@ -3964,6 +7895,16 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
           { prompt: "You write with your ___ hand (if right-handed).", options: ["Left", "Right"] },
           { prompt: "Your heart is on your ___ side.", options: ["Left", "Right"] },
           { prompt: "Hold up both hands. Your thumb points out on your ___ hand to make an L.", options: ["Left", "Right"] },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Left or Right? (2)",
+        instruction: "Circle the correct answer.",
+        questions: [
+          { prompt: "When you read a book, you start on the ___ side of the page.", options: ["Left", "Right"] },
+          { prompt: "On a clock, the number 9 is on the ___ side.", options: ["Left", "Right"] },
+          { prompt: "On a clock, the number 3 is on the ___ side.", options: ["Left", "Right"] },
         ],
       },
       {
@@ -3978,12 +7919,45 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
       },
       {
         type: "circle-correct",
+        title: "What Is on the Left? What Is on the Right? (2)",
+        instruction: "Dog is on the LEFT. Cat is in the MIDDLE. Bird is on the RIGHT. Answer the questions.",
+        questions: [
+          { prompt: "What is on the left?", options: ["Dog", "Cat", "Bird"] },
+          { prompt: "What is on the right?", options: ["Dog", "Cat", "Bird"] },
+          { prompt: "What is in the middle?", options: ["Dog", "Cat", "Bird"] },
+        ],
+      },
+      {
+        type: "circle-correct",
         title: "Left, Right, or Middle?",
-        instruction: "Fish, Flower, Diamond, Butterfly, Star — they are in a line. Answer the questions.",
+        instruction: "Fish, Flower, Diamond, Butterfly, Star -- they are in a line. Answer the questions.",
         questions: [
           { prompt: "What is on the far left?", options: ["Fish", "Diamond", "Star"] },
           { prompt: "What is on the far right?", options: ["Fish", "Diamond", "Star"] },
           { prompt: "What is in the middle?", options: ["Flower", "Diamond", "Butterfly"] },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Left, Right, or Middle? (2)",
+        instruction: "Apple, Sun, Heart, Moon, Tree -- they are in a line. Answer the questions.",
+        questions: [
+          { prompt: "What is on the far left?", options: ["Apple", "Heart", "Tree"] },
+          { prompt: "What is on the far right?", options: ["Apple", "Heart", "Tree"] },
+          { prompt: "What is in the middle?", options: ["Sun", "Heart", "Moon"] },
+          { prompt: "What is to the right of the heart?", options: ["Sun", "Moon", "Apple"] },
+        ],
+      },
+      {
+        type: "sorting",
+        title: "Sort: Left Side or Right Side?",
+        instruction: "You are facing a shelf. A teddy is in the middle. Sort the items by which side they are on.",
+        columns: ["Left of the Teddy", "Right of the Teddy"],
+        items: [
+          { label: "Book (far left)", icon: "book" },
+          { label: "Cup (near left)", icon: "cup" },
+          { label: "Ball (near right)", icon: "ball" },
+          { label: "Star (far right)", icon: "star" },
         ],
       },
 
@@ -3998,8 +7972,35 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
           { prompt: "Reach DOWN. What can you touch?", options: ["The ceiling", "The floor", "The clouds"] },
         ],
       },
+      {
+        type: "circle-correct",
+        title: "One-Step Directions (2)",
+        instruction: "Follow the simple direction. Circle the answer.",
+        questions: [
+          { prompt: "Look BEHIND you. What do you see?", options: ["What is in front of you", "What is above you", "What is at your back"] },
+          { prompt: "Point to your LEFT. What side is that?", options: ["The same side as your right hand", "The side that makes an L shape", "The side with your tummy"] },
+          { prompt: "Put your hand UNDER the table. Where is your hand now?", options: ["On the table", "Below the table", "Above the table"] },
+        ],
+      },
+      {
+        type: "matching",
+        title: "Match the Direction to What You Do",
+        instruction: "Draw a line to match each direction to what you would do.",
+        leftItems: [
+          { label: "Look up", objects: [] },
+          { label: "Look down", objects: [] },
+          { label: "Look behind you", objects: [] },
+          { label: "Look to your left", objects: [] },
+        ],
+        rightItems: [
+          { label: "Turn your head to one side", objects: [] },
+          { label: "Tilt your head to the ceiling", objects: [] },
+          { label: "Turn your whole body around", objects: [] },
+          { label: "Tilt your head to the floor", objects: [] },
+        ],
+      },
 
-      // --- HARDER: Giving directions ---
+      // --- HARDER: Giving directions (1 of 2) ---
       {
         type: "circle-correct",
         title: "Follow the Directions",
@@ -4012,12 +8013,33 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
       },
       {
         type: "circle-correct",
+        title: "Follow the Directions (2)",
+        instruction: "Circle what you would find if you follow the direction.",
+        questions: [
+          { prompt: "Cat, Dog, Bird are in a line. Start at the Bird. Move left. What do you find?", options: ["Cat", "Dog", "Bird"] },
+          { prompt: "You are at the front of the class. Walk to the back. You are now ___ the class.", options: ["In front of", "Behind", "Above"] },
+          { prompt: "Face the door. Turn to your left. You are now facing the ___.", options: ["Door", "Wall to the left", "Floor"] },
+        ],
+      },
+      {
+        type: "circle-correct",
         title: "Where Would You Go?",
         instruction: "Circle the best direction.",
         questions: [
           { prompt: "To get something from a high shelf, you reach ___.", options: ["Up", "Down", "Left"] },
           { prompt: "To pick up something on the floor, you reach ___.", options: ["Up", "Down", "Behind"] },
           { prompt: "To open a door on your right, you reach to the ___.", options: ["Left", "Right", "Up"] },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Where Would You Go? (2)",
+        instruction: "Circle the best direction.",
+        questions: [
+          { prompt: "To see a plane in the sky, you look ___.", options: ["Up", "Down", "Left"] },
+          { prompt: "To find your shoes on the floor, you look ___.", options: ["Up", "Down", "Behind"] },
+          { prompt: "To wave to a friend across the room, you look to the ___.", options: ["Up", "Down", "Side"] },
+          { prompt: "To find something you dropped behind you, you turn ___.", options: ["Up", "Down", "Around"] },
         ],
       },
       {
@@ -4038,6 +8060,23 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         ],
       },
       {
+        type: "matching",
+        title: "Match Direction to Action (2)",
+        instruction: "Draw a line to match each direction to what happens.",
+        leftItems: [
+          { label: "Move left", objects: [] },
+          { label: "Move right", objects: [] },
+          { label: "Step backward", objects: [] },
+          { label: "Step forward", objects: [] },
+        ],
+        rightItems: [
+          { label: "Go to the side of your right hand", objects: [] },
+          { label: "Go to the side of your left hand", objects: [] },
+          { label: "Walk straight ahead", objects: [] },
+          { label: "Walk away from where you face", objects: [] },
+        ],
+      },
+      {
         type: "sequence",
         title: "Follow the Path",
         instruction: "Put these directions in order to get from the door to the desk. Write 1, 2, 3.",
@@ -4047,8 +8086,19 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
           { label: "Walk forward 2 steps to the desk" },
         ],
       },
+      {
+        type: "sequence",
+        title: "Follow the Path (2)",
+        instruction: "Put these directions in order to get from the gate to the sandpit. Write 1, 2, 3, 4.",
+        items: [
+          { label: "Walk forward through the gate" },
+          { label: "Turn right" },
+          { label: "Walk past the slide" },
+          { label: "Stop at the sandpit" },
+        ],
+      },
 
-      // --- HARDER: Describing positions ---
+      // --- HARDER: Describing positions (1 of 2) ---
       {
         type: "circle-correct",
         title: "Describe the Position",
@@ -4057,6 +8107,17 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
           { prompt: "Where is the teddy?", promptIcon: "teddy", options: ["On the shelf", "Under the shelf", "Next to the ball"] },
           { prompt: "Where is the ball?", promptIcon: "ball", options: ["On the shelf", "Under the shelf", "Next to the teddy"] },
           { prompt: "What is next to the teddy?", promptIcon: "book", options: ["The ball", "The shelf", "The book"] },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Describe the Position (2)",
+        instruction: "A clock is ON the wall. A cup is BELOW the clock on the table. A cat is UNDER the table. Circle the correct answer.",
+        questions: [
+          { prompt: "Where is the clock?", promptIcon: "clock", options: ["On the wall", "Under the table", "Next to the cup"] },
+          { prompt: "Where is the cup?", promptIcon: "cup", options: ["On the wall", "Below the clock on the table", "Under the table"] },
+          { prompt: "Where is the cat?", promptIcon: "cat", options: ["On the wall", "On the table", "Under the table"] },
+          { prompt: "What is above the cup?", options: ["The cat", "The clock", "The table"] },
         ],
       },
       {
@@ -4070,6 +8131,34 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
           { prompt: "The opposite of ABOVE is ___.", options: ["Below", "Beside", "Behind"] },
         ],
       },
+      {
+        type: "circle-correct",
+        title: "Opposite Positions (2)",
+        instruction: "Circle the OPPOSITE position word.",
+        questions: [
+          { prompt: "The opposite of INSIDE is ___.", options: ["Outside", "Above", "Beside"] },
+          { prompt: "The opposite of ON TOP OF is ___.", options: ["Below", "Beside", "In front of"] },
+          { prompt: "The opposite of NEAR is ___.", options: ["Close", "Far", "Above"] },
+          { prompt: "The opposite of BEHIND is ___.", options: ["Under", "Above", "In front of"] },
+        ],
+      },
+      {
+        type: "matching",
+        title: "Match the Opposites",
+        instruction: "Draw a line to match each position word to its opposite.",
+        leftItems: [
+          { label: "Up", objects: [] },
+          { label: "Left", objects: [] },
+          { label: "In front of", objects: [] },
+          { label: "Inside", objects: [] },
+        ],
+        rightItems: [
+          { label: "Outside", objects: [] },
+          { label: "Down", objects: [] },
+          { label: "Behind", objects: [] },
+          { label: "Right", objects: [] },
+        ],
+      },
 
       // --- CHALLENGE: Complex positions, maps ---
       {
@@ -4080,6 +8169,16 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
           { prompt: "It is ABOVE the table AND to the LEFT. Where is it?", options: ["On the top left", "Under the table", "To the right"] },
           { prompt: "It is BEHIND the chair AND on the floor. Where is it?", options: ["On top of the chair", "On the floor behind the chair", "Inside the chair"] },
           { prompt: "It is BETWEEN the cup and the plate AND on the table. Where is it?", options: ["Under the table", "On the table, in the middle", "Behind the plate"] },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Two Clues (2)",
+        instruction: "Use both clues to work out where the object is.",
+        questions: [
+          { prompt: "It is BELOW the shelf AND to the RIGHT. Where is it?", options: ["On the bottom right", "On top of the shelf", "To the left"] },
+          { prompt: "It is IN FRONT OF the couch AND on the floor. Where is it?", options: ["On the floor in front of the couch", "Behind the couch", "On the couch"] },
+          { prompt: "It is BESIDE the door AND above the floor. Where is it?", options: ["Under the floor", "On the wall next to the door", "Behind the door on the floor"] },
         ],
       },
       {
@@ -4097,6 +8196,22 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         ],
       },
       {
+        type: "sorting",
+        title: "Sort Position Words (2)",
+        instruction: "Sort these words into the correct group.",
+        columns: ["On/In Words", "Direction Words"],
+        items: [
+          { label: "On top of" },
+          { label: "Forward" },
+          { label: "Inside" },
+          { label: "Backward" },
+          { label: "Under" },
+          { label: "Left" },
+          { label: "In" },
+          { label: "Right" },
+        ],
+      },
+      {
         type: "circle-correct",
         title: "Position Challenge",
         instruction: "Think carefully! Circle the best answer.",
@@ -4105,6 +8220,17 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
           { prompt: "If you walk forward then turn around and walk forward, you end up ___.", options: ["Where you started", "Far away", "Turned around"] },
           { prompt: "The opposite of 'inside' is ___.", options: ["Outside", "Under", "Above"] },
           { prompt: "If the ball is behind you, you need to ___ to see it.", options: ["Look up", "Turn around", "Look down"] },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Position Challenge (2)",
+        instruction: "Think carefully! Circle the best answer.",
+        questions: [
+          { prompt: "If you face north and turn to your right, you face ___.", options: ["East", "West", "South"] },
+          { prompt: "If a tree is to your left and a fence is to your right, you are ___ the tree and fence.", options: ["On top of", "Between", "Under"] },
+          { prompt: "If you put a ball behind a box and then walk behind the box, the ball is now ___ you.", options: ["Behind", "In front of", "Above"] },
+          { prompt: "If something is below you and to your right, it is on the ___ .", options: ["Bottom right", "Top left", "Top right"] },
         ],
       },
       {
@@ -4124,6 +8250,34 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
           { label: "Under", objects: [] },
         ],
       },
+      {
+        type: "matching",
+        title: "Position Words Review (2)",
+        instruction: "Draw a line to match each position word to its meaning.",
+        leftItems: [
+          { label: "In front of", objects: [] },
+          { label: "Behind", objects: [] },
+          { label: "On top of", objects: [] },
+          { label: "Inside", objects: [] },
+        ],
+        rightItems: [
+          { label: "Sitting on something", objects: [] },
+          { label: "At the back of something", objects: [] },
+          { label: "Facing something", objects: [] },
+          { label: "Within something", objects: [] },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Tricky Positions",
+        instruction: "Read carefully and circle the best answer.",
+        questions: [
+          { prompt: "The book is on the table. The pencil is on the book. The pencil is also ___ the table.", options: ["Under", "Above", "Behind"] },
+          { prompt: "The cat is under the bed. The rug is under the bed too. The cat is ___ the rug.", options: ["On", "Under", "Beside"] },
+          { prompt: "You are between two trees. Both trees are ___ you.", options: ["Behind", "In front of", "Beside"] },
+        ],
+      },
+
       // --- Improvement: First-person spatial language ("in relation to people") ---
       {
         type: "circle-correct",
@@ -4134,6 +8288,28 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
           { prompt: "You are sitting under a tree. The tree is ___ you.", options: ["Under", "Above", "Behind"] },
           { prompt: "You are standing between two friends. You are in the ___.", options: ["Front", "Middle", "Back"] },
           { prompt: "You are lying on your bed. The bed is ___ you.", options: ["Above", "Below", "Beside"] },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Where Am I? (2)",
+        instruction: "Imagine YOU are in these places. Circle the correct answer about YOUR position.",
+        questions: [
+          { prompt: "You are sitting on the floor. The table is ___ you.", options: ["Below", "Above", "Under"] },
+          { prompt: "You are hiding behind the door. The door is ___ you.", options: ["Behind", "In front of", "Under"] },
+          { prompt: "You are standing next to a tree. The tree is ___ you.", options: ["On top of", "Beside", "Under"] },
+          { prompt: "You are inside a tent. The tent is ___ you.", options: ["Under", "Behind", "Around"] },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Your Body Position Words",
+        instruction: "Use position words to describe parts of your body.",
+        questions: [
+          { prompt: "Your head is ___ your shoulders.", options: ["Above", "Below", "Behind"] },
+          { prompt: "Your feet are ___ your legs.", options: ["Above", "Below", "In front of"] },
+          { prompt: "Your ears are ___ your head.", options: ["On the sides of", "Under", "In front of"] },
+          { prompt: "Your nose is ___ your eyes and your mouth.", options: ["Behind", "Between", "Under"] },
         ],
       },
       {
@@ -4157,6 +8333,16 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
           { text: "The window is:", type: "lines", lines: 2 },
         ],
       },
+      {
+        type: "open-response",
+        title: "Describe the Kitchen",
+        instruction: "Think about your kitchen. Use position words to describe where things are.",
+        prompts: [
+          { text: "The fridge is:", type: "lines", lines: 2 },
+          { text: "The cups are:", type: "lines", lines: 2 },
+          { text: "The table is:", type: "lines", lines: 2 },
+        ],
+      },
       // --- Try This at Home ---
       {
         type: "home-activity",
@@ -4164,7 +8350,7 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         instruction: "Position and location are best learnt by moving your body!",
         suggestions: [
           "Play Simon Says with position words: 'Simon says stand BEHIND the chair', 'Simon says put your hands ABOVE your head', 'Simon says sit UNDER the table.'",
-          "Hide a toy and give position clues: 'It's ON something, NEXT TO a book, ABOVE the floor.' Can your child find it?",
+          "Hide a toy and give position clues: 'It is ON something, NEXT TO a book, ABOVE the floor.' Can your child find it?",
           "Set up an obstacle course: 'Go OVER the cushion, UNDER the table, AROUND the chair, and BETWEEN the two boxes.'",
           "Describe where things are in photos or picture books together, using as many position words as you can.",
         ],
@@ -4196,6 +8382,20 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
       },
       {
         type: "sorting",
+        title: "Sort: Living or Not Living?",
+        instruction: "Sort each thing into the correct column.",
+        columns: ["Living Things", "Not Living Things"],
+        items: [
+          { label: "Cat", icon: "cat" },
+          { label: "Rock", icon: "rock" },
+          { label: "Bird", icon: "bird" },
+          { label: "Cup", icon: "cup" },
+          { label: "Tree", icon: "tree" },
+          { label: "Ball", icon: "ball" },
+        ],
+      },
+      {
+        type: "sorting",
         title: "Sort by Colour",
         instruction: "Sort each thing into the correct colour group.",
         columns: ["Red Things", "Yellow Things", "Blue Things"],
@@ -4206,6 +8406,20 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
           { label: "Strawberry" },
           { label: "Banana", icon: "banana" },
           { label: "Ocean" },
+        ],
+      },
+      {
+        type: "sorting",
+        title: "Sort by Where You Find It",
+        instruction: "Sort each thing into the correct column.",
+        columns: ["Inside the House", "Outside the House"],
+        items: [
+          { label: "Bed", icon: "bed" },
+          { label: "Tree", icon: "tree" },
+          { label: "Cup", icon: "cup" },
+          { label: "Sun", icon: "sun" },
+          { label: "Spoon", icon: "spoon" },
+          { label: "Bird", icon: "bird" },
         ],
       },
       {
@@ -4223,6 +8437,20 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         ],
       },
       {
+        type: "sorting",
+        title: "Sort: Flies or Does Not Fly?",
+        instruction: "Sort each animal into the correct column.",
+        columns: ["Can Fly", "Cannot Fly"],
+        items: [
+          { label: "Bird", icon: "bird" },
+          { label: "Dog", icon: "dog" },
+          { label: "Butterfly", icon: "butterfly" },
+          { label: "Fish", icon: "fish" },
+          { label: "Elephant", icon: "elephant" },
+          { label: "Ant", icon: "ant" },
+        ],
+      },
+      {
         type: "circle-correct",
         title: "How Many in Each Group?",
         instruction: "Look at: Star, Heart, Star, Apple, Star, Heart. Count each type.",
@@ -4232,11 +8460,21 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
           { prompt: "How many apples?", options: ["0", "1", "2"] },
         ],
       },
+      {
+        type: "circle-correct",
+        title: "Count the Objects",
+        instruction: "Look at: Fish, Fish, Flower, Fish, Flower, Star. Count each type.",
+        questions: [
+          { prompt: "How many fish?", options: ["2", "3", "4"] },
+          { prompt: "How many flowers?", options: ["1", "2", "3"] },
+          { prompt: "How many stars?", options: ["0", "1", "2"] },
+        ],
+      },
 
       // --- EASY: Tally charts ---
       {
         type: "tally-chart",
-        title: "Count and Tally — Stars and Hearts",
+        title: "Count and Tally -- Stars and Hearts",
         instruction: "Count each type. Make a tally mark for each one. Write the total.",
         categories: [
           { label: "Stars", icon: "star", count: 3 },
@@ -4245,13 +8483,33 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
       },
       {
         type: "tally-chart",
-        title: "Count and Tally — Four Objects",
+        title: "Count and Tally -- Fish and Flowers",
+        instruction: "Count each type. Make a tally mark for each one. Write the total.",
+        categories: [
+          { label: "Fish", icon: "fish", count: 4 },
+          { label: "Flowers", icon: "flower", count: 2 },
+        ],
+      },
+      {
+        type: "tally-chart",
+        title: "Count and Tally -- Four Objects",
         instruction: "Count each type of object. Make tally marks and write the total.",
         categories: [
           { label: "Stars", icon: "star", count: 4 },
           { label: "Hearts", icon: "heart", count: 3 },
           { label: "Fish", icon: "fish", count: 5 },
           { label: "Flowers", icon: "flower", count: 2 },
+        ],
+      },
+      {
+        type: "tally-chart",
+        title: "Count and Tally -- Animals",
+        instruction: "Count each type of animal. Make tally marks and write the total.",
+        categories: [
+          { label: "Dogs", icon: "dog", count: 3 },
+          { label: "Cats", icon: "cat", count: 5 },
+          { label: "Birds", icon: "bird", count: 2 },
+          { label: "Fish", icon: "fish", count: 4 },
         ],
       },
       {
@@ -4274,6 +8532,36 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
           { prompt: "Are there more stars or hearts?", options: ["Stars", "Hearts", "Same"] },
         ],
       },
+      {
+        type: "circle-correct",
+        title: "More Animal Tally Questions",
+        instruction: "Dogs: 3, Cats: 5, Birds: 2, Fish: 4. Answer the questions.",
+        questions: [
+          { prompt: "How many animals altogether?", options: ["12", "14", "16"] },
+          { prompt: "How many more cats than birds?", options: ["2", "3", "4"] },
+          { prompt: "Are there more dogs or fish?", options: ["Dogs", "Fish", "Same"] },
+        ],
+      },
+      {
+        type: "tally-chart",
+        title: "Count and Tally -- Shapes",
+        instruction: "Count each shape. Make a tally mark for each one. Write the total.",
+        categories: [
+          { label: "Circles", icon: "circle", count: 4 },
+          { label: "Squares", icon: "square", count: 6 },
+          { label: "Triangles", icon: "triangle", count: 3 },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Shape Tally Questions",
+        instruction: "Circles: 4, Squares: 6, Triangles: 3. Answer the questions.",
+        questions: [
+          { prompt: "Which shape has the MOST?", options: ["Circles", "Squares", "Triangles"] },
+          { prompt: "Which shape has the FEWEST?", options: ["Circles", "Squares", "Triangles"] },
+          { prompt: "How many shapes altogether?", options: ["11", "13", "15"] },
+        ],
+      },
 
       // --- MEDIUM: Collecting data ---
       {
@@ -4288,6 +8576,17 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
       },
       {
         type: "tally-chart",
+        title: "Favourite Animals",
+        instruction: "Ask 4 friends their favourite animal. Make a tally mark for each answer.",
+        categories: [
+          { label: "Dog", icon: "dog", count: 0 },
+          { label: "Cat", icon: "cat", count: 0 },
+          { label: "Fish", icon: "fish", count: 0 },
+          { label: "Bird", icon: "bird", count: 0 },
+        ],
+      },
+      {
+        type: "tally-chart",
         title: "Count the Shapes",
         instruction: "Count each shape. Make tally marks and write the total.",
         categories: [
@@ -4295,6 +8594,17 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
           { label: "Squares", icon: "square", count: 4 },
           { label: "Triangles", icon: "triangle", count: 3 },
           { label: "Diamonds", icon: "diamond", count: 5 },
+        ],
+      },
+      {
+        type: "tally-chart",
+        title: "Count the Toys",
+        instruction: "Count each toy. Make tally marks and write the total.",
+        categories: [
+          { label: "Balls", icon: "ball", count: 5 },
+          { label: "Teddies", icon: "teddy", count: 3 },
+          { label: "Cars", icon: "car", count: 7 },
+          { label: "Books", icon: "book", count: 4 },
         ],
       },
       {
@@ -4306,6 +8616,17 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
           { prompt: "Which shape is there the fewest of?", options: ["Circles", "Squares", "Triangles", "Diamonds"] },
           { prompt: "How many shapes altogether?", options: ["16", "18", "20"] },
           { prompt: "How many more circles than triangles?", options: ["2", "3", "4"] },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Read the Toy Tally",
+        instruction: "Balls: 5, Teddies: 3, Cars: 7, Books: 4. Answer the questions.",
+        questions: [
+          { prompt: "Which toy is there the most of?", options: ["Balls", "Teddies", "Cars", "Books"] },
+          { prompt: "Which toy is there the fewest of?", options: ["Balls", "Teddies", "Cars", "Books"] },
+          { prompt: "How many toys altogether?", options: ["17", "19", "21"] },
+          { prompt: "How many more cars than teddies?", options: ["3", "4", "5"] },
         ],
       },
       {
@@ -4335,6 +8656,16 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         ],
       },
       {
+        type: "circle-correct",
+        title: "Compare Two More Groups",
+        instruction: "Group A has 5 hearts. Group B has 9 hearts. Answer the questions.",
+        questions: [
+          { prompt: "Which group has more?", options: ["Group A", "Group B", "Same"] },
+          { prompt: "How many more does Group B have?", options: ["3", "4", "5"] },
+          { prompt: "How many altogether?", options: ["12", "14", "16"] },
+        ],
+      },
+      {
         type: "tally-chart",
         title: "Pets in Our Class",
         instruction: "Here are the pets children in the class have. Make tally marks and write the total.",
@@ -4356,6 +8687,27 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
           { prompt: "How many more dogs than birds?", options: ["4", "6", "8"] },
         ],
       },
+      {
+        type: "tally-chart",
+        title: "Favourite Drinks",
+        instruction: "Here are the favourite drinks chosen by children. Make tally marks and write the total.",
+        categories: [
+          { label: "Water", icon: "bottle", count: 7 },
+          { label: "Juice", icon: "cup", count: 5 },
+          { label: "Milk", icon: "bottle", count: 3 },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Favourite Drinks Questions",
+        instruction: "Water: 7, Juice: 5, Milk: 3. Answer the questions.",
+        questions: [
+          { prompt: "What is the most popular drink?", options: ["Water", "Juice", "Milk"] },
+          { prompt: "What is the least popular drink?", options: ["Water", "Juice", "Milk"] },
+          { prompt: "How many children were asked?", options: ["13", "15", "17"] },
+          { prompt: "How many more chose water than milk?", options: ["3", "4", "5"] },
+        ],
+      },
 
       // --- HARDER: Yes/No surveys ---
       {
@@ -4368,13 +8720,42 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         ],
       },
       {
+        type: "tally-chart",
+        title: "Yes or No Survey: Do You Like Swimming?",
+        instruction: "Ask 6 friends: Do you like swimming? Tally the Yes and No answers.",
+        categories: [
+          { label: "Yes", icon: "star", count: 0 },
+          { label: "No", icon: "heart", count: 0 },
+        ],
+      },
+      {
         type: "circle-correct",
-        title: "Survey Results",
+        title: "Survey Results: Ice Cream",
         instruction: "5 children said Yes, 3 children said No. Answer the questions.",
         questions: [
           { prompt: "How many children were asked?", options: ["5", "8", "10"] },
           { prompt: "Did more children say Yes or No?", options: ["Yes", "No", "Same"] },
           { prompt: "How many more said Yes than No?", options: ["1", "2", "3"] },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Survey Results: Swimming",
+        instruction: "7 children said Yes, 3 children said No. Answer the questions.",
+        questions: [
+          { prompt: "How many children were asked?", options: ["7", "10", "12"] },
+          { prompt: "Did more children say Yes or No?", options: ["Yes", "No", "Same"] },
+          { prompt: "How many more said Yes than No?", options: ["3", "4", "5"] },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Survey Results: Favourite Season",
+        instruction: "6 children said Summer, 2 said Winter, 4 said Autumn. Answer the questions.",
+        questions: [
+          { prompt: "How many children were asked?", options: ["10", "12", "14"] },
+          { prompt: "Which season was the most popular?", options: ["Summer", "Winter", "Autumn"] },
+          { prompt: "How many more chose summer than winter?", options: ["2", "4", "6"] },
         ],
       },
       {
@@ -4391,8 +8772,38 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
           { label: "Chips" },
         ],
       },
+      {
+        type: "sorting",
+        title: "Sort Animals: Legs or No Legs?",
+        instruction: "Sort each animal into the correct column.",
+        columns: ["Has Legs", "No Legs"],
+        items: [
+          { label: "Dog", icon: "dog" },
+          { label: "Snake", icon: "snake" },
+          { label: "Cat", icon: "cat" },
+          { label: "Fish", icon: "fish" },
+          { label: "Horse", icon: "horse" },
+          { label: "Bird", icon: "bird" },
+        ],
+      },
 
       // --- HARDER: Reading data displays ---
+      {
+        type: "picture-graph",
+        title: "How We Get to School -- Picture Graph",
+        instruction: "Each picture means 1 child. Count the pictures and answer the questions.",
+        rows: [
+          { label: "Walked", icon: "star", count: 5 },
+          { label: "Drove", icon: "car", count: 3 },
+          { label: "Bus", icon: "car", count: 2 },
+        ],
+        questions: [
+          "How many children walked? ___",
+          "How many children took the bus? ___",
+          "How many children altogether? ___",
+          "What was the most common way to get to school? ___",
+        ],
+      },
       {
         type: "circle-correct",
         title: "Reading a Picture Graph",
@@ -4402,6 +8813,36 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
           { prompt: "How many children took the bus?", options: ["2", "3", "5"] },
           { prompt: "How many children altogether?", options: ["8", "10", "12"] },
           { prompt: "What was the most common way to get to school?", options: ["Walked", "Drove", "Bus"] },
+        ],
+      },
+      {
+        type: "picture-graph",
+        title: "Playground Games -- Picture Graph",
+        instruction: "Each picture means 1 child chose that game. Count the pictures and answer the questions.",
+        rows: [
+          { label: "Tag", icon: "star", count: 6 },
+          { label: "Hide and Seek", icon: "heart", count: 4 },
+          { label: "Ball Games", icon: "ball", count: 7 },
+          { label: "Climbing", icon: "tree", count: 3 },
+        ],
+        questions: [
+          "How many children chose tag? ___",
+          "How many children chose ball games? ___",
+          "Which game is the most popular? ___",
+          "Which game is the least popular? ___",
+          "How many more chose ball games than climbing? ___",
+          "How many children were asked altogether? ___",
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Playground Games Questions",
+        instruction: "Tag: 6, Hide and Seek: 4, Ball Games: 7, Climbing: 3. Answer the questions.",
+        questions: [
+          { prompt: "Which game is the most popular?", options: ["Tag", "Hide and Seek", "Ball Games", "Climbing"] },
+          { prompt: "Which game is the least popular?", options: ["Tag", "Hide and Seek", "Ball Games", "Climbing"] },
+          { prompt: "How many children chose tag or hide and seek?", options: ["8", "10", "12"] },
+          { prompt: "How many more chose ball games than climbing?", options: ["3", "4", "5"] },
         ],
       },
       {
@@ -4415,13 +8856,63 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         ],
       },
       {
+        type: "tally-chart",
+        title: "Weather Last Week",
+        instruction: "Last week the weather was: Rainy, Sunny, Rainy, Rainy, Cloudy, Sunny, Rainy. Tally each type.",
+        categories: [
+          { label: "Sunny", icon: "sun", count: 2 },
+          { label: "Rainy", icon: "diamond", count: 4 },
+          { label: "Cloudy", icon: "circle", count: 1 },
+        ],
+      },
+      {
         type: "circle-correct",
-        title: "Weather Questions",
+        title: "Weather Questions -- This Week",
         instruction: "Sunny: 3 days, Rainy: 1 day, Cloudy: 1 day. Answer the questions.",
         questions: [
           { prompt: "What was the most common weather?", options: ["Sunny", "Rainy", "Cloudy"] },
           { prompt: "How many days of data?", options: ["3", "5", "7"] },
           { prompt: "Were there more sunny days or rainy days?", options: ["Sunny", "Rainy", "Same"] },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Weather Questions -- Last Week",
+        instruction: "Sunny: 2 days, Rainy: 4 days, Cloudy: 1 day. Answer the questions.",
+        questions: [
+          { prompt: "What was the most common weather?", options: ["Sunny", "Rainy", "Cloudy"] },
+          { prompt: "How many days of data?", options: ["5", "7", "9"] },
+          { prompt: "How many more rainy days than sunny days?", options: ["1", "2", "3"] },
+        ],
+      },
+      {
+        type: "picture-graph",
+        title: "Lunchbox Items -- Picture Graph",
+        instruction: "Each picture means 1 child brought that item. Count the pictures and answer the questions.",
+        rows: [
+          { label: "Sandwich", icon: "square", count: 8 },
+          { label: "Fruit", icon: "apple", count: 6 },
+          { label: "Biscuit", icon: "circle", count: 3 },
+          { label: "Yoghurt", icon: "cup", count: 5 },
+        ],
+        questions: [
+          "How many children brought a sandwich? ___",
+          "How many children brought fruit? ___",
+          "Which item was brought the most? ___",
+          "Which item was brought the least? ___",
+          "How many more brought sandwiches than biscuits? ___",
+          "How many children were counted altogether? ___",
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Lunchbox Items Questions",
+        instruction: "Sandwich: 8, Fruit: 6, Biscuit: 3, Yoghurt: 5. Answer the questions.",
+        questions: [
+          { prompt: "Which item did the most children bring?", options: ["Sandwich", "Fruit", "Biscuit", "Yoghurt"] },
+          { prompt: "Which item did the fewest children bring?", options: ["Sandwich", "Fruit", "Biscuit", "Yoghurt"] },
+          { prompt: "How many children brought fruit or yoghurt?", options: ["9", "11", "13"] },
+          { prompt: "How many more brought sandwiches than yoghurt?", options: ["2", "3", "4"] },
         ],
       },
 
@@ -4434,6 +8925,16 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
           { prompt: "To find out favourite colours, we should ask:", options: ["What is your favourite colour?", "Do you like red?", "How old are you?"] },
           { prompt: "To find out how children get to school, we should ask:", options: ["Do you like school?", "How do you get to school?", "What is your name?"] },
           { prompt: "To find out favourite animals, we should ask:", options: ["Do you have a pet?", "What is your favourite animal?", "How many legs do cats have?"] },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "More Questions About Data",
+        instruction: "Circle the BEST question to ask to collect useful data.",
+        questions: [
+          { prompt: "To find out favourite sports, we should ask:", options: ["What is your favourite sport?", "Do you like running?", "How tall are you?"] },
+          { prompt: "To find out what people eat for breakfast, we should ask:", options: ["Do you like cereal?", "What did you eat for breakfast today?", "What time do you wake up?"] },
+          { prompt: "To find out favourite seasons, we should ask:", options: ["What is your favourite season?", "Is it cold today?", "Do you like rain?"] },
         ],
       },
       {
@@ -4459,6 +8960,28 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         ],
       },
       {
+        type: "tally-chart",
+        title: "Favourite Seasons",
+        instruction: "Summer: 9, Winter: 3, Autumn: 4, Spring: 6. Make tally marks and write totals.",
+        categories: [
+          { label: "Summer", icon: "sun", count: 9 },
+          { label: "Winter", icon: "diamond", count: 3 },
+          { label: "Autumn", icon: "flower", count: 4 },
+          { label: "Spring", icon: "butterfly", count: 6 },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Favourite Seasons Questions",
+        instruction: "Summer: 9, Winter: 3, Autumn: 4, Spring: 6. Answer the questions.",
+        questions: [
+          { prompt: "What is the most popular season?", options: ["Summer", "Winter", "Autumn", "Spring"] },
+          { prompt: "What is the least popular season?", options: ["Summer", "Winter", "Autumn", "Spring"] },
+          { prompt: "How many children chose summer or spring?", options: ["13", "15", "17"] },
+          { prompt: "How many more chose summer than winter?", options: ["4", "6", "8"] },
+        ],
+      },
+      {
         type: "circle-correct",
         title: "Data Challenge",
         instruction: "Think carefully about data! Circle the best answer.",
@@ -4467,6 +8990,17 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
           { prompt: "What is a tally mark?", options: ["A type of counting mark", "A type of shape", "A colour"] },
           { prompt: "If 10 children were asked and 6 said Yes, how many said No?", options: ["3", "4", "6"] },
           { prompt: "Which is the best way to show how many of each fruit people like?", options: ["A tally chart", "A story", "A song"] },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "More Data Challenges",
+        instruction: "Think carefully about data! Circle the best answer.",
+        questions: [
+          { prompt: "What is a picture graph?", options: ["A chart that uses pictures to show data", "A drawing of your pet", "A type of story"] },
+          { prompt: "If 12 children were asked and 5 said Yes, how many said No?", options: ["5", "7", "12"] },
+          { prompt: "Which is the best way to compare two groups?", options: ["Count each group and compare the numbers", "Just guess which is bigger", "Pick your favourite"] },
+          { prompt: "What should you do before collecting data?", options: ["Think of a good question to ask", "Draw a picture", "Count to 20"] },
         ],
       },
       // --- Improvement: More data collection (hands-on) ---
@@ -4503,6 +9037,17 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
           { label: "Bike", icon: "flower", count: 0 },
         ],
       },
+      {
+        type: "tally-chart",
+        title: "Survey: What Is Your Favourite Toy?",
+        instruction: "Ask friends or family: What is your favourite toy? Make a tally for each answer.",
+        categories: [
+          { label: "Ball", icon: "ball", count: 0 },
+          { label: "Teddy", icon: "teddy", count: 0 },
+          { label: "Car", icon: "car", count: 0 },
+          { label: "Book", icon: "book", count: 0 },
+        ],
+      },
       // --- Improvement: Picture graph ---
       {
         type: "picture-graph",
@@ -4520,6 +9065,25 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
           "Which fruit is the most popular? ___",
           "Which fruit is the least popular? ___",
           "How many more chose strawberries than bananas? ___",
+          "How many children were asked altogether? ___",
+        ],
+      },
+      {
+        type: "picture-graph",
+        title: "Favourite Animals Picture Graph",
+        instruction: "Each picture means 1 child chose that animal. Count the pictures and answer the questions.",
+        rows: [
+          { label: "Dogs", icon: "dog", count: 7 },
+          { label: "Cats", icon: "cat", count: 5 },
+          { label: "Birds", icon: "bird", count: 3 },
+          { label: "Fish", icon: "fish", count: 4 },
+        ],
+        questions: [
+          "How many children chose dogs? ___",
+          "How many children chose cats? ___",
+          "Which animal is the most popular? ___",
+          "Which animal is the least popular? ___",
+          "How many more chose dogs than birds? ___",
           "How many children were asked altogether? ___",
         ],
       },
@@ -4544,6 +9108,17 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
           { text: "How would you show the answers? (e.g., tally chart, picture graph)", type: "lines", lines: 2 },
         ],
       },
+      {
+        type: "open-response",
+        title: "Plan Your Own Survey",
+        instruction: "Think of a survey you could do. Plan it out below.",
+        prompts: [
+          { text: "What question would you ask? ___", type: "lines", lines: 2 },
+          { text: "Who would you ask? (e.g., family, friends, classmates) ___", type: "lines", lines: 1 },
+          { text: "How many people would you ask? ___", type: "lines", lines: 1 },
+          { text: "What answers do you think you might get? ___", type: "lines", lines: 2 },
+        ],
+      },
       // --- Try This at Home ---
       {
         type: "home-activity",
@@ -4552,8 +9127,10 @@ export const foundationMathsWorksheets: WorksheetItem[] = [
         suggestions: [
           "Run a family survey: 'What is everyone's favourite dinner?' Make a tally chart together and discuss the results.",
           "Count the colours of cars that pass your house in 10 minutes. Sort them and find which colour is most common.",
-          "Make a picture graph using stickers or stamps — each sticker represents one person's answer to your question.",
+          "Make a picture graph using stickers or stamps -- each sticker represents one person's answer to your question.",
           "Look at the weather each day for a week. Record sunny/rainy/cloudy on a chart. At the end, discuss: 'What was the most common weather this week?'",
+          "Sort your toys into groups (soft toys, cars, building blocks, etc.) and count how many are in each group. Which group has the most?",
+          "Ask family members their favourite animal and make a tally chart. Draw a picture graph to show the results.",
         ],
       },
     ],

@@ -496,6 +496,64 @@ export default function WorksheetObject({ name, size = 48, className = "" }: Wor
         </svg>
       );
 
+    case "dice-1":
+      return (
+        <svg {...props}>
+          <rect x="4" y="4" width="40" height="40" rx="6" fill="white" stroke="#235F8B" strokeWidth="2" />
+          <circle cx="24" cy="24" r="4" fill="#235F8B" />
+        </svg>
+      );
+    case "dice-2":
+      return (
+        <svg {...props}>
+          <rect x="4" y="4" width="40" height="40" rx="6" fill="white" stroke="#235F8B" strokeWidth="2" />
+          <circle cx="33" cy="15" r="4" fill="#235F8B" />
+          <circle cx="15" cy="33" r="4" fill="#235F8B" />
+        </svg>
+      );
+    case "dice-3":
+      return (
+        <svg {...props}>
+          <rect x="4" y="4" width="40" height="40" rx="6" fill="white" stroke="#235F8B" strokeWidth="2" />
+          <circle cx="33" cy="15" r="4" fill="#235F8B" />
+          <circle cx="24" cy="24" r="4" fill="#235F8B" />
+          <circle cx="15" cy="33" r="4" fill="#235F8B" />
+        </svg>
+      );
+    case "dice-4":
+      return (
+        <svg {...props}>
+          <rect x="4" y="4" width="40" height="40" rx="6" fill="white" stroke="#235F8B" strokeWidth="2" />
+          <circle cx="15" cy="15" r="4" fill="#235F8B" />
+          <circle cx="33" cy="15" r="4" fill="#235F8B" />
+          <circle cx="15" cy="33" r="4" fill="#235F8B" />
+          <circle cx="33" cy="33" r="4" fill="#235F8B" />
+        </svg>
+      );
+    case "dice-5":
+      return (
+        <svg {...props}>
+          <rect x="4" y="4" width="40" height="40" rx="6" fill="white" stroke="#235F8B" strokeWidth="2" />
+          <circle cx="15" cy="15" r="4" fill="#235F8B" />
+          <circle cx="33" cy="15" r="4" fill="#235F8B" />
+          <circle cx="24" cy="24" r="4" fill="#235F8B" />
+          <circle cx="15" cy="33" r="4" fill="#235F8B" />
+          <circle cx="33" cy="33" r="4" fill="#235F8B" />
+        </svg>
+      );
+    case "dice-6":
+      return (
+        <svg {...props}>
+          <rect x="4" y="4" width="40" height="40" rx="6" fill="white" stroke="#235F8B" strokeWidth="2" />
+          <circle cx="15" cy="13" r="4" fill="#235F8B" />
+          <circle cx="15" cy="24" r="4" fill="#235F8B" />
+          <circle cx="15" cy="35" r="4" fill="#235F8B" />
+          <circle cx="33" cy="13" r="4" fill="#235F8B" />
+          <circle cx="33" cy="24" r="4" fill="#235F8B" />
+          <circle cx="33" cy="35" r="4" fill="#235F8B" />
+        </svg>
+      );
+
     default:
       return (
         <svg {...props}>

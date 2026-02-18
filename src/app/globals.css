@@ -24,6 +24,10 @@
   --animate-scale-in: scale-in 0.5s ease-out both;
   --animate-float: float 6s ease-in-out infinite;
   --animate-float-reverse: float-reverse 7s ease-in-out infinite;
+  --animate-drift: drift 20s ease-in-out infinite;
+  --animate-drift-slow: drift-slow 30s ease-in-out infinite;
+  --animate-spin-slow: spin-slow 40s linear infinite;
+  --animate-pulse-soft: pulse-soft 4s ease-in-out infinite;
 }
 
 @layer base {
@@ -86,6 +90,29 @@
   50% { transform: translateY(12px) rotate(-2deg); }
 }
 
+@keyframes drift {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  25% { transform: translate(20px, -15px) rotate(3deg); }
+  50% { transform: translate(-10px, -25px) rotate(-2deg); }
+  75% { transform: translate(-20px, -8px) rotate(4deg); }
+}
+
+@keyframes drift-slow {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(30px, -20px) scale(1.05); }
+  66% { transform: translate(-25px, 15px) scale(0.95); }
+}
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes pulse-soft {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
 /* ---- Print styles ---- */
 
 @media print {
@@ -95,12 +122,25 @@
   @page { size: A4; margin: 12mm 15mm; }
   .worksheet-page { page-break-after: always; max-width: none !important; padding: 0 !important; }
   .activity-block { break-inside: avoid; }
+  .grid { display: grid !important; }
   * { print-color-adjust: exact !important; -webkit-print-color-adjust: exact !important; }
 }
 
 /* ---- Grain texture overlay ---- */
 
 @layer utilities {
+  .section-diagonal-top::before {
+    content: "";
+    position: absolute;
+    top: -1px;
+    left: 0;
+    right: 0;
+    height: 80px;
+    background: inherit;
+    clip-path: polygon(0 0, 100% 0, 100% 0%, 0 100%);
+    z-index: 2;
+  }
+
   .grain-overlay::before {
     content: "";
     position: absolute;

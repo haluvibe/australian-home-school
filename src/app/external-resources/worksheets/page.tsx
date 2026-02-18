@@ -4,7 +4,7 @@ import ResourceCard from "@/components/ResourceCard";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Worksheets — Australian Home Schooling",
+  title: "Worksheets",
   description:
     "Free and premium printable worksheets for Australian homeschooling families. English, literacy, mathematics, and numeracy worksheets suitable for Foundation to Year 10.",
 };

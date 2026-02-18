@@ -34,9 +34,13 @@ export default function SequenceActivity({ data, number }: Props) {
                 {seq.items.map((n, j) => (
                   <div
                     key={j}
-                    className="flex h-10 w-10 items-center justify-center rounded-lg bg-sage/10 text-lg font-bold text-charcoal"
+                    className={`flex h-10 w-10 items-center justify-center rounded-lg text-lg font-bold ${
+                      n === 0
+                        ? "border-2 border-dashed border-charcoal/25 bg-cream/50"
+                        : "bg-sage/10 text-charcoal"
+                    }`}
                   >
-                    {n}
+                    {n !== 0 ? n : null}
                   </div>
                 ))}
               </div>

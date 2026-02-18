@@ -41,7 +41,13 @@ export type ObjectName =
   | "sphere"
   | "cube"
   | "cone"
-  | "cylinder";
+  | "cylinder"
+  | "dice-1"
+  | "dice-2"
+  | "dice-3"
+  | "dice-4"
+  | "dice-5"
+  | "dice-6";
 
 export interface NumberTraceData {
   type: "number-trace";
@@ -104,6 +110,7 @@ export interface CircleCorrectData {
   questions: {
     prompt: string;
     promptIcon?: ObjectName;
+    promptCount?: number;
     options: string[];
     optionIcons?: ObjectName[];
   }[];

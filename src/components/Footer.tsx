@@ -18,8 +18,29 @@ const footerLinks = {
 
 export default function Footer() {
   return (
-    <footer className="border-t border-charcoal/5 bg-charcoal">
-      <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
+    <footer className="border-t border-charcoal/5">
+      <div className="bg-golden/10 px-6 py-3 text-center text-sm leading-relaxed text-charcoal-light">
+        <span className="font-semibold text-charcoal">AI-Generated Content:</span>{" "}
+        All materials on this website — including worksheets, lesson plans, curriculum summaries, FAQs, games, and
+        every other resource — are entirely AI-generated and may contain errors or inaccuracies.
+        <br />
+        Always verify against the{" "}
+        <a
+          href="https://www.australiancurriculum.edu.au"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="font-medium text-charcoal underline decoration-charcoal/30 underline-offset-2 hover:decoration-charcoal/60"
+        >
+          official Australian Curriculum
+        </a>{" "}
+        before making educational decisions.
+        <br />
+        If you have any concerns about the accuracy of
+        information or resources provided here, please consult a qualified educator or
+        your local state or territory education department.
+      </div>
+      <div className="bg-charcoal px-6 py-16 lg:px-8">
+      <div className="mx-auto max-w-7xl">
         <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
           {/* Brand */}
           <div className="col-span-2 md:col-span-1">
@@ -95,6 +116,7 @@ export default function Footer() {
             </Link>
           </div>
         </div>
+      </div>
       </div>
     </footer>
   );

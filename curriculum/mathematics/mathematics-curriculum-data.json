@@ -115,37 +115,92 @@
       {
         "strand": "Number",
         "items": [
-          "Connect number names, numerals and quantities; order numbers to at least 120 — e.g. knowing that 47 comes before 48 and represents forty-seven objects",
-          "Partition two-digit numbers into tens and ones — e.g. breaking 36 into 3 tens and 6 ones",
-          "Skip count in twos, fives or tens to at least 120 — e.g. counting 5, 10, 15, 20, 25... to find the total of a group of 5-cent coins",
-          "Solve addition and subtraction problems with numbers to 20 — e.g. working out 13 + 5 = 18 or 17 − 9 = 8",
-          "Solve practical problems involving equal sharing and grouping — e.g. sharing 12 counters equally among 3 children (4 each)"
+          {
+            "description": "Connect number names, numerals and quantities; order numbers to at least 120",
+            "example": "knowing that 47 comes before 48 and represents forty-seven objects",
+            "khanAcademyUrl": "https://www.khanacademy.org/math/cc-1st-grade-math/cc-1st-place-value",
+            "worksheetSlug": "number-names-to-120"
+          },
+          {
+            "description": "Partition two-digit numbers into tens and ones",
+            "example": "breaking 36 into 3 tens and 6 ones",
+            "khanAcademyUrl": "https://www.khanacademy.org/math/cc-1st-grade-math/cc-1st-place-value/cc-1st-tens/e/understanding-place-value-as-tens-and-ones",
+            "worksheetSlug": "tens-and-ones"
+          },
+          {
+            "description": "Skip count in twos, fives or tens to at least 120",
+            "example": "counting 5, 10, 15, 20, 25... to find the total of a group of 5-cent coins",
+            "khanAcademyUrl": "https://www.khanacademy.org/math/cc-1st-grade-math/cc-1st-place-value/cc-1st-skip-counting/e/skip-counting-by-5s-and-10s",
+            "worksheetSlug": "skip-counting"
+          },
+          {
+            "description": "Solve addition and subtraction problems with numbers to 20",
+            "example": "working out 13 + 5 = 18 or 17 − 9 = 8",
+            "khanAcademyUrl": "https://www.khanacademy.org/math/cc-1st-grade-math/cc-1st-addition-subtraction",
+            "worksheetSlug": "addition-subtraction-to-20"
+          },
+          {
+            "description": "Solve practical problems involving equal sharing and grouping",
+            "example": "sharing 12 counters equally among 3 children (4 each)",
+            "khanAcademyUrl": "https://www.khanacademy.org/math/cc-1st-grade-math/cc-1st-addition-subtraction/cc-1st-word-problems-types/e/addition-and-subtraction-word-problems--within-20--level-3",
+            "worksheetSlug": "equal-sharing-grouping"
+          }
         ]
       },
       {
         "strand": "Algebra",
         "items": [
-          "Create skip counting and repeating patterns, identifying the repeating unit — e.g. making a pattern of circle-square-circle-square and identifying that 'circle-square' is the unit that repeats"
+          {
+            "description": "Create skip counting and repeating patterns, identifying the repeating unit",
+            "example": "making a pattern of circle-square-circle-square and identifying that 'circle-square' is the unit that repeats",
+            "khanAcademyUrl": "https://www.khanacademy.org/math/early-math/cc-early-math-counting-topic/cc-early-math-patterns/e/find-the-pattern",
+            "worksheetSlug": "skip-counting-patterns"
+          }
         ]
       },
       {
         "strand": "Measurement",
         "items": [
-          "Compare and order objects and events by length, mass, capacity and duration — e.g. ordering 3 ribbons from shortest to longest",
-          "Measure length of shapes and objects using uniform informal units — e.g. measuring a desk using hand spans and recording it as '8 hand spans long'"
+          {
+            "description": "Compare and order objects and events by length, mass, capacity and duration",
+            "example": "ordering 3 ribbons from shortest to longest",
+            "khanAcademyUrl": "https://www.khanacademy.org/math/cc-1st-grade-math/cc-1st-measurement-data/cc-1st-measurement/e/comparing-lengths",
+            "worksheetSlug": "compare-order-measures"
+          },
+          {
+            "description": "Measure length of shapes and objects using uniform informal units",
+            "example": "measuring a desk using hand spans and recording it as '8 hand spans long'",
+            "khanAcademyUrl": "https://www.khanacademy.org/math/cc-1st-grade-math/cc-1st-measurement-data/cc-1st-measurement/e/measuring-lengths-2",
+            "worksheetSlug": "informal-units-length"
+          }
         ]
       },
       {
         "strand": "Space",
         "items": [
-          "Make, compare and classify shapes and objects using obvious features — e.g. sorting objects by how many sides or corners they have",
-          "Give and follow directions to move people and objects within a space — e.g. following instructions like 'take 3 steps forward, then turn left'"
+          {
+            "description": "Make, compare and classify shapes and objects using obvious features",
+            "example": "sorting objects by how many sides or corners they have",
+            "khanAcademyUrl": "https://www.khanacademy.org/math/cc-1st-grade-math/cc-1st-geometry/cc-1st-shapes/e/identify-shapes",
+            "worksheetSlug": "classify-shapes"
+          },
+          {
+            "description": "Give and follow directions to move people and objects within a space",
+            "example": "following instructions like 'take 3 steps forward, then turn left'",
+            "khanAcademyUrl": "https://www.khanacademy.org/math/cc-1st-grade-math/cc-1st-geometry",
+            "worksheetSlug": "directions-in-space"
+          }
         ]
       },
       {
         "strand": "Statistics",
         "items": [
-          "Collect and record categorical data, create one-to-one displays, and compare data using frequencies — e.g. recording each child's eye colour and making a picture graph with one square per child"
+          {
+            "description": "Collect and record categorical data, create one-to-one displays, and compare data using frequencies",
+            "example": "recording each child's eye colour and making a picture graph with one square per child",
+            "khanAcademyUrl": "https://www.khanacademy.org/math/cc-1st-grade-math/cc-1st-measurement-data/cc-1st-data/e/reading-picture-graphs-1",
+            "worksheetSlug": "categorical-data-displays"
+          }
         ]
       }
     ],
