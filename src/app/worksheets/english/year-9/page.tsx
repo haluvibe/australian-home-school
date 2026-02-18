@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { year10EnglishWorksheets } from "@/lib/worksheet-data-english-year10";
+import { year9EnglishWorksheets } from "@/lib/worksheet-data-english-year9";
 
 export const metadata: Metadata = {
-  title: "Year 10 English Worksheets — Australian Home Schooling",
+  title: "Year 9 English Worksheets — Australian Home Schooling",
   description:
-    "Free printable Year 10 English worksheets aligned to the Australian Curriculum. Covering Language, Literature and Literacy strands.",
+    "Free printable Year 9 English worksheets aligned to the Australian Curriculum. Covering critical literacy, rhetoric, multimodal analysis, Australian literature, and extended writing",
 };
 
 const strandColors: Record<string, string> = {
@@ -15,13 +15,13 @@ const strandColors: Record<string, string> = {
 };
 
 const strandIcons: Record<string, string> = {
-  Language: "\u{1F4AC}",
-  Literature: "\u{1F4DA}",
-  Literacy: "\u270F\uFE0F",
+  Language: "💬",
+  Literature: "📖",
+  Literacy: "✏️",
 };
 
-export default function Year10EnglishLanding() {
-  const grouped = year10EnglishWorksheets.reduce<Record<string, typeof year10EnglishWorksheets>>(
+export default function Year9EnglishWorksheetLanding() {
+  const grouped = year9EnglishWorksheets.reduce<Record<string, typeof year9EnglishWorksheets>>(
     (acc, ws) => {
       if (!acc[ws.strand]) acc[ws.strand] = [];
       acc[ws.strand].push(ws);
@@ -53,7 +53,7 @@ export default function Year10EnglishLanding() {
 
             <span className="mt-4 inline-flex items-center gap-2 rounded-full border border-terracotta/20 bg-terracotta/5 px-4 py-1.5 text-sm font-semibold uppercase tracking-wider text-terracotta-dark">
               <span className="h-1.5 w-1.5 rounded-full bg-terracotta" />
-              Year 10 English
+              Year 9
             </span>
 
             <h1 className="mt-4 font-display text-4xl font-semibold leading-[1.1] tracking-tight text-charcoal sm:text-5xl">
@@ -65,7 +65,7 @@ export default function Year10EnglishLanding() {
             </h1>
 
             <p className="mt-4 max-w-xl text-base leading-relaxed text-charcoal-light sm:mt-6 sm:text-lg">
-              Curriculum-aligned worksheets for Year 10 English — covering ideology and representation, rhetoric, close reading, comparative analysis, essay writing, research and oral language.
+              Curriculum-aligned Year 9 English worksheets covering critical literacy, rhetoric, multimodal texts, Australian literature, and extended analytical writing.
             </p>
           </div>
         </div>
@@ -88,7 +88,7 @@ export default function Year10EnglishLanding() {
                   {worksheets.map((ws) => (
                     <Link
                       key={ws.slug}
-                      href={`/worksheets/english/year-10/${ws.slug}`}
+                      href={`/worksheets/mathematics/year-9/${ws.slug}`}
                       className="group rounded-2xl border border-charcoal/[0.06] bg-warm-white p-5 transition-all duration-200 hover:border-charcoal/15 hover:shadow-md"
                     >
                       <span

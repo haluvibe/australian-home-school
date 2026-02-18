@@ -18,6 +18,51 @@ const yearLevels = [
     href: "/worksheets/english/year-1",
     description: "Blends and digraphs, sight words, sentence punctuation, reading comprehension, creative writing, speaking and listening.",
   },
+  {
+    label: "Year 2",
+    href: "/worksheets/english/year-2",
+    description: "Long vowel patterns, word endings, nouns/verbs/adjectives, joining words, main idea, and short story writing.",
+  },
+  {
+    label: "Year 3",
+    href: "/worksheets/english/year-3",
+    description: "Prefixes and suffixes, expanded noun groups, apostrophes, making inferences, recounts, and commas in lists.",
+  },
+  {
+    label: "Year 4",
+    href: "/worksheets/english/year-4",
+    description: "Synonyms and antonyms, complex sentences, speech marks, pronoun agreement, fact vs opinion, and persuasive writing.",
+  },
+  {
+    label: "Year 5",
+    href: "/worksheets/english/year-5",
+    description: "Figurative language, verb tenses, relative clauses, inferencing, media literacy, expository writing, and persuasive arguments.",
+  },
+  {
+    label: "Year 6",
+    href: "/worksheets/english/year-6",
+    description: "Connotation, modal verbs, passive voice, persuasive essays, author's craft, theme analysis, and research reports.",
+  },
+  {
+    label: "Year 7",
+    href: "/worksheets/english/year-7",
+    description: "Register, complex sentences, analytical paragraphs (TEEL/PEEL), poetry analysis, visual literacy, and cohesive devices.",
+  },
+  {
+    label: "Year 8",
+    href: "/worksheets/english/year-8",
+    description: "How texts position readers, symbolism, intertextuality, syntax for effect, analytical essays, and comparative analysis.",
+  },
+  {
+    label: "Year 9",
+    href: "/worksheets/english/year-9",
+    description: "Critical literacy, rhetorical devices, multimodal analysis, Australian literature, reflective writing, and formal presentations.",
+  },
+  {
+    label: "Year 10",
+    href: "/worksheets/english/year-10",
+    description: "Ideology and representation, close reading, comparative text analysis, extended essay writing, research synthesis, and grammar for effect.",
+  },
 ];
 
 export default function EnglishWorksheetsPage() {

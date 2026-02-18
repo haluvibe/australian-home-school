@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { year10EnglishWorksheets } from "@/lib/worksheet-data-english-year10";
+import { year1EnglishWorksheets } from "@/lib/worksheet-data-english-year1";
 
 export const metadata: Metadata = {
-  title: "Year 10 English Worksheets — Australian Home Schooling",
+  title: "Year 1 English Worksheets — Australian Home Schooling",
   description:
-    "Free printable Year 10 English worksheets aligned to the Australian Curriculum. Covering Language, Literature and Literacy strands.",
+    "Free printable Year 1 English worksheets aligned to the Australian Curriculum. Covering phonics, sight words, reading comprehension, creative writing and oral language.",
 };
 
 const strandColors: Record<string, string> = {
@@ -15,13 +15,15 @@ const strandColors: Record<string, string> = {
 };
 
 const strandIcons: Record<string, string> = {
-  Language: "\u{1F4AC}",
-  Literature: "\u{1F4DA}",
-  Literacy: "\u270F\uFE0F",
+  Number: "\u{1F522}",
+  Algebra: "\u{1F501}",
+  Measurement: "\u{1F4CF}",
+  Space: "\u{1F4D0}",
+  Statistics: "\u{1F4CA}",
 };
 
-export default function Year10EnglishLanding() {
-  const grouped = year10EnglishWorksheets.reduce<Record<string, typeof year10EnglishWorksheets>>(
+export default function Year1EnglishWorksheetLanding() {
+  const grouped = year1EnglishWorksheets.reduce<Record<string, typeof year1EnglishWorksheets>>(
     (acc, ws) => {
       if (!acc[ws.strand]) acc[ws.strand] = [];
       acc[ws.strand].push(ws);
@@ -42,18 +44,18 @@ export default function Year10EnglishLanding() {
         <div className="relative mx-auto max-w-7xl px-5 pb-10 pt-14 sm:px-6 sm:pb-14 sm:pt-28 lg:px-8 lg:pb-16 lg:pt-32">
           <div className="max-w-3xl">
             <Link
-              href="/curriculum?subject=english"
+              href="/worksheets/english"
               className="inline-flex items-center gap-2 text-sm font-medium text-charcoal-light transition-colors hover:text-charcoal"
             >
               <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
                 <path d="M9 3L5 7l4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
-              Back to Curriculum
+              Back to English
             </Link>
 
-            <span className="mt-4 inline-flex items-center gap-2 rounded-full border border-terracotta/20 bg-terracotta/5 px-4 py-1.5 text-sm font-semibold uppercase tracking-wider text-terracotta-dark">
-              <span className="h-1.5 w-1.5 rounded-full bg-terracotta" />
-              Year 10 English
+            <span className="mt-4 inline-flex items-center gap-2 rounded-full border border-sage/20 bg-sage/5 px-4 py-1.5 text-sm font-semibold uppercase tracking-wider text-charcoal">
+              <span className="h-1.5 w-1.5 rounded-full bg-sage" />
+              Year 1
             </span>
 
             <h1 className="mt-4 font-display text-4xl font-semibold leading-[1.1] tracking-tight text-charcoal sm:text-5xl">
@@ -65,7 +67,8 @@ export default function Year10EnglishLanding() {
             </h1>
 
             <p className="mt-4 max-w-xl text-base leading-relaxed text-charcoal-light sm:mt-6 sm:text-lg">
-              Curriculum-aligned worksheets for Year 10 English — covering ideology and representation, rhetoric, close reading, comparative analysis, essay writing, research and oral language.
+              Colourful, curriculum-aligned worksheets for Year 1
+              mathematics. Just click, print and learn!
             </p>
           </div>
         </div>
@@ -88,7 +91,7 @@ export default function Year10EnglishLanding() {
                   {worksheets.map((ws) => (
                     <Link
                       key={ws.slug}
-                      href={`/worksheets/english/year-10/${ws.slug}`}
+                      href={`/worksheets/english/year-1/${ws.slug}`}
                       className="group rounded-2xl border border-charcoal/[0.06] bg-warm-white p-5 transition-all duration-200 hover:border-charcoal/15 hover:shadow-md"
                     >
                       <span
