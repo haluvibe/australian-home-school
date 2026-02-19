@@ -161,7 +161,7 @@ const navItems = [
   { label: "Guides & Tools", href: "#", hasDropdown: true },
   { label: "External Resources", href: "#", hasDropdown: true },
   { label: "FAQ", href: "/faq" },
-  { label: "Contact", href: "/contact" },
+  { label: "Contact", href: "https://ainativeschool.featurebase.app/" },
 ];
 
 export default function Navbar() {

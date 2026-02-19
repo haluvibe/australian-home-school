@@ -228,7 +228,9 @@ export default function PrivacyPage() {
                 If you have questions or concerns about this Privacy Policy,
                 please{" "}
                 <Link
-                  href="/contact"
+                  href="https://ainativeschool.featurebase.app/"
+              target="_blank"
+              rel="noopener noreferrer"
                   className="font-medium text-terracotta underline decoration-terracotta/30 transition-colors hover:text-terracotta-dark hover:decoration-terracotta"
                 >
                   contact us

@@ -120,7 +120,9 @@ export default function FAQPage() {
           <p className="mx-auto mt-4 max-w-lg text-lg text-charcoal-light/85">
             Everything you need to know about homeschooling in Australia.
             Can&apos;t find what you&apos;re looking for?{" "}
-            <Link href="/contact" className="font-medium text-terracotta underline decoration-terracotta/30 transition-colors hover:text-terracotta-dark hover:decoration-terracotta">
+            <Link href="https://ainativeschool.featurebase.app/"
+              target="_blank"
+              rel="noopener noreferrer" className="font-medium text-terracotta underline decoration-terracotta/30 transition-colors hover:text-terracotta-dark hover:decoration-terracotta">
               Get in touch
             </Link>
             .
@@ -146,7 +148,9 @@ export default function FAQPage() {
           </p>
           <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <Link
-              href="/contact"
+              href="https://ainativeschool.featurebase.app/"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 rounded-full bg-charcoal px-7 py-3.5 text-sm font-semibold text-cream transition-all duration-200 hover:bg-terracotta"
             >
               Contact Us

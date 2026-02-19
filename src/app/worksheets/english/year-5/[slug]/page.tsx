@@ -57,7 +57,9 @@ export default async function WorksheetItemPage({ params }: PageProps) {
           </Link>
           <div className="flex items-center gap-3">
             <Link
-              href="/contact"
+              href="https://ainativeschool.featurebase.app/"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-full border border-charcoal/10 bg-white px-4 py-3 text-sm font-medium text-charcoal-light transition-all duration-200 hover:border-terracotta/30 hover:text-terracotta"
             >
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">

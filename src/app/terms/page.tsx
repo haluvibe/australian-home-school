@@ -114,7 +114,9 @@ export default function TermsPage() {
                   Assessment and Reporting Authority (ACARA). If you spot an
                   error, please{" "}
                   <Link
-                    href="/contact"
+                    href="https://ainativeschool.featurebase.app/"
+              target="_blank"
+              rel="noopener noreferrer"
                     className="font-medium text-terracotta underline decoration-terracotta/30 transition-colors hover:text-terracotta-dark hover:decoration-terracotta"
                   >
                     report it to us
@@ -233,7 +235,9 @@ export default function TermsPage() {
               <p className="mt-3 text-base leading-relaxed text-charcoal-light/85">
                 If you have questions about these Terms of Service, please{" "}
                 <Link
-                  href="/contact"
+                  href="https://ainativeschool.featurebase.app/"
+              target="_blank"
+              rel="noopener noreferrer"
                   className="font-medium text-terracotta underline decoration-terracotta/30 transition-colors hover:text-terracotta-dark hover:decoration-terracotta"
                 >
                   contact us

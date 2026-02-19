@@ -12,7 +12,7 @@ const footerLinks = {
   ],
   Company: [
     { label: "FAQ", href: "/faq" },
-    { label: "Contact", href: "/contact" },
+    { label: "Contact", href: "https://ainativeschool.featurebase.app/" },
   ],
 };
 
