@@ -20,8 +20,15 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const worksheet = getYear4Worksheet(itemSlug);
   if (!worksheet) return {};
   return {
-    title: `${worksheet.title} — Year 4 Maths Worksheet`,
+    title: `${worksheet.title} — Year 4 Mathematics Worksheet`,
     description: worksheet.description,
+    keywords: [`${worksheet.title}`, "free printable worksheet", "Australian Curriculum", "homeschool worksheet"],
+    alternates: { canonical: `/worksheets/mathematics/year-4/${itemSlug}` },
+    openGraph: {
+      title: `${worksheet.title} — Year 4 Mathematics Worksheet | Australian Home Schooling`,
+      description: worksheet.description,
+      url: `/worksheets/mathematics/year-4/${itemSlug}`,
+    },
   };
 }
 

@@ -6397,94 +6397,1112 @@ export const year5EnglishWorksheets: WorksheetItem[] = [
       ],
     },
     activities: [
+      // 1
+      {
+        type: "multiple-choice" as const,
+        title: "What Is Persuasive Writing?",
+        instruction: "Choose the best answer for each question about persuasive writing.",
+        parentTip: "Persuasive writing is one of the most important real-world writing skills. Being able to argue a position clearly and fairly is central to participation in democracy, the workplace and academic life.",
+        questions: [
+          { prompt: "What is the main purpose of persuasive writing?", options: ["To entertain the reader with an exciting story", "To convince the reader to agree with a particular viewpoint", "To explain how something works step by step", "To record events in the order they happened"], answer: "To convince the reader to agree with a particular viewpoint" },
+          { prompt: "What is a counterargument in a persuasive text?", options: ["A second argument that agrees with the main argument", "A sentence that introduces the topic", "The opposing viewpoint that the writer acknowledges", "The concluding statement at the end of the text"], answer: "The opposing viewpoint that the writer acknowledges" },
+          { prompt: "What is a rebuttal?", options: ["A sentence that introduces a new argument", "A response that explains why the counterargument is less convincing than the main argument", "A list of all the evidence used in the text", "A question that asks the reader to agree"], answer: "A response that explains why the counterargument is less convincing than the main argument" },
+        ],
+      },
+      // 2
+      {
+        type: "matching" as const,
+        title: "Match the Persuasive Text Part to Its Purpose",
+        instruction: "Draw a line to match each part of a persuasive text to its purpose.",
+        left: ["Position statement", "Argument", "Evidence", "Counterargument", "Rebuttal", "Conclusion"],
+        right: ["Shows the writer has considered the other side fairly", "Wraps up the argument and restates the position", "A reason that supports the writer's position", "Explains why the counterargument is less convincing", "The writer's main viewpoint on the issue", "A fact, statistic or example that supports the argument"],
+      },
+      // 3
+      {
+        type: "true-false" as const,
+        title: "True or False: Persuasive Writing Basics",
+        instruction: "Mark each statement True or False.",
+        parentTip: "Ask your child to explain their reasoning for each answer. Understanding why a statement is false is more valuable than simply knowing the answer.",
+        statements: [
+          { text: "A persuasive text always presents only one side of an argument.", answer: false },
+          { text: "A rebuttal acknowledges the counterargument and explains why the main argument is stronger.", answer: true },
+          { text: "Personal feelings are always the strongest form of evidence in persuasive writing.", answer: false },
+          { text: "Including a counterargument can make a persuasive argument MORE convincing.", answer: true },
+          { text: "A persuasive text should use a formal, confident tone.", answer: true },
+        ],
+      },
+      // 4
       {
         type: "open-response" as const,
         title: "Identify the Argument Structure",
-        instruction:
-          "Read the paragraph below. Label each part — A for argument, CA for counterargument and R for rebuttal.",
+        instruction: "Read the paragraph below. Label each part — A (argument), CA (counterargument) and R (rebuttal).",
         prompts: [
-          {
-            text: "PARAGRAPH:\n\nAustralia should introduce mandatory recycling education in all primary schools. Studies show that children who learn recycling habits early are significantly more likely to maintain them into adulthood, helping to reduce landfill and plastic pollution. Some may argue that this would take up valuable classroom time better spent on core subjects. However, environmental education is itself a core life skill, and brief weekly lessons — as short as fifteen minutes — have been shown to make a lasting difference in student attitudes and behaviour.\n\nLabel each part of the paragraph (A, CA, R):",
-            type: "lines",
-            lines: 4,
-          },
+          { text: "PARAGRAPH:\nAustralia should introduce mandatory recycling education in all primary schools. Studies show that children who learn recycling habits early are significantly more likely to maintain them into adulthood, helping to reduce landfill and plastic pollution. Some may argue that this would take up valuable classroom time better spent on core subjects. However, environmental education is itself a core life skill, and brief weekly lessons — as short as fifteen minutes — have been shown to make a lasting difference in student attitudes and behaviour.\n\nLabel each part (A, CA or R):", type: "lines", lines: 4 },
         ],
       },
+      // 5
       {
-        type: "open-response" as const,
-        title: "Plan Your Argument",
-        instruction:
-          "Choose a topic and plan your persuasive paragraph using the argument structure below.",
-        prompts: [
-          {
-            text: "Topic:\n  [ ] Screen time for children should be limited.\n  [ ] All students should learn a second language.\n  [ ] My own topic:",
-            type: "lines",
-            lines: 1,
-          },
-          { text: "My main argument:", type: "lines", lines: 2 },
-          { text: "Evidence or example:", type: "lines", lines: 2 },
-          { text: "Counterargument (the other side):", type: "lines", lines: 2 },
-          { text: "My rebuttal (why my argument is stronger):", type: "lines", lines: 2 },
+        type: "fill-in-blank" as const,
+        title: "Complete the Persuasive Vocabulary",
+        instruction: "Fill in each blank with the correct term: argue, evidence, rebuttal, counterargument, position.",
+        parentTip: "Knowing the correct vocabulary for persuasive writing helps students analyse texts they read and structure their own writing with greater precision.",
+        sentences: [
+          { text: "The writer's _____ is their main viewpoint on the topic.", blanks: ["position"] },
+          { text: "A _____ is the opposing view that the writer acknowledges.", blanks: ["counterargument"] },
+          { text: "A _____ is the writer's response to the opposing view.", blanks: ["rebuttal"] },
+          { text: "Writers use _____ such as facts and statistics to support their argument.", blanks: ["evidence"] },
+          { text: "To _____ effectively, a writer must support every claim with reasoning or evidence.", blanks: ["argue"] },
         ],
       },
+      // 6
       {
-        type: "open-response" as const,
-        title: "Write Your Persuasive Paragraph",
-        instruction:
-          "Use your plan to write a persuasive paragraph that includes your argument, a counterargument and a strong rebuttal.",
-        prompts: [{ text: "My persuasive paragraph:", type: "box", lines: 14 }],
-      },
-      {
-        type: "matching" as const,
-        title: "Match the Persuasive Language Technique",
-        instruction:
-          "Draw a line to match each sentence with the persuasive language technique it uses.",
-        parentTip:
-          "Recognising these techniques in texts they read will help your child use them deliberately in their own persuasive writing — and spot when others are using them on them.",
-        left: [
-          "Nine out of ten experts agree that sleep is critical for learning.",
-          "Surely no reasonable person would want children to suffer.",
-          "We all want our children to have the best possible future, don't we?",
-          "The evidence is clear, the science is settled, and the time to act is now.",
-          "If we do nothing, the consequences will be catastrophic.",
-        ],
-        right: [
-          "Rhetorical question",
-          "Appeal to authority / statistics",
-          "Emotive language",
-          "Rule of three",
-          "Appeal to shared values",
+        type: "sorting" as const,
+        title: "Sort the Persuasive Sentences",
+        instruction: "Sort each sentence into the correct category: Argument, Counterargument or Rebuttal.",
+        parentTip: "Being able to categorise sentences by their argumentative function is a critical reading skill. It helps students understand how persuasive texts are structured.",
+        columns: ["Argument", "Counterargument", "Rebuttal"],
+        items: [
+          { label: "All students should have access to a school lunch programme." },
+          { label: "Some may argue that a lunch programme would be too expensive to run." },
+          { label: "However, research from the UK shows that investment in school meals saves governments money by improving attendance and reducing healthcare costs." },
+          { label: "Zoos play a vital role in the conservation of endangered species." },
+          { label: "Critics claim that zoos restrict animals and reduce their quality of life." },
+          { label: "While this concern is valid, modern zoos with enrichment programmes and large habitats provide conditions far superior to an unprotected wild environment." },
         ],
       },
+      // 7
       {
         type: "circle-correct" as const,
         title: "Strong Argument or Weak Argument?",
-        instruction:
-          "Read each argument. Circle whether it is strong (well supported with evidence or reasoning) or weak (unsupported opinion or logical flaw).",
-        parentTip:
-          "Discuss with your child why an argument without evidence is easy to dismiss. This develops the habit of always asking: What is the evidence for this claim?",
+        instruction: "Circle whether each argument is strong (well supported) or weak (unsupported or flawed).",
+        parentTip: "Discuss with your child why an argument without evidence is easy to dismiss. This builds the habit of asking: What is the evidence for this claim?",
         questions: [
-          {
-            prompt: "Everyone knows that homework is useless. It should be abolished immediately.",
-            options: ["Strong — well supported", "Weak — unsupported opinion"],
-          },
-          {
-            prompt: "A 2023 study by researchers at the University of Melbourne found that students who completed 30 minutes of homework per night performed 15% better on standardised tests.",
-            options: ["Strong — well supported", "Weak — unsupported opinion"],
-          },
-          {
-            prompt: "We should protect the environment because nature is nice and it would be sad if animals died.",
-            options: ["Strong — well supported", "Weak — vague and unsupported"],
-          },
-          {
-            prompt: "Reducing single-use plastics is essential because they take up to 500 years to break down and currently make up over 80% of marine debris, threatening thousands of ocean species.",
-            options: ["Strong — well supported", "Weak — unsupported opinion"],
-          },
-          {
-            prompt: "My friend agrees with me, so my argument must be right.",
-            options: ["Strong — uses evidence", "Weak — logical flaw (appeal to one opinion)"],
-          },
+          { prompt: "Everyone knows that homework is useless. It should be abolished immediately.", options: ["Strong — well supported", "Weak — unsupported opinion"] },
+          { prompt: "Reducing single-use plastics is essential: they take up to 500 years to break down and make up over 80% of marine debris, threatening thousands of ocean species.", options: ["Strong — well supported", "Weak — unsupported opinion"] },
+          { prompt: "We should protect the environment because nature is nice and it would be sad if animals died.", options: ["Strong — well supported", "Weak — vague and unsupported"] },
+          { prompt: "My friend agrees with me, so my argument must be right.", options: ["Strong — uses evidence", "Weak — logical flaw (appeal to one opinion)"] },
         ],
+      },
+      // 8
+      {
+        type: "open-response" as const,
+        title: "Write a Rebuttal",
+        instruction: "Read each counterargument. Write a rebuttal that acknowledges the concern but explains why the main argument is still stronger.",
+        parentTip: "A good rebuttal begins by acknowledging the counterargument ('While it is true that…' or 'Although some argue…') before explaining why the main position is stronger. This structure signals fair-mindedness.",
+        prompts: [
+          { text: "ARGUMENT: Students should have more physical education time.\nCOUNTERARGUMENT: More PE time would reduce time available for core academic subjects.\nMY REBUTTAL:", type: "lines", lines: 4 },
+          { text: "ARGUMENT: Schools should ban smartphones during school hours.\nCOUNTERARGUMENT: Smartphones are useful educational tools that can support learning.\nMY REBUTTAL:", type: "lines", lines: 4 },
+        ],
+      },
+      // 9
+      {
+        type: "matching" as const,
+        title: "Match the Persuasive Language Technique",
+        instruction: "Draw a line to match each sentence to the persuasive language technique it uses.",
+        parentTip: "Recognising these techniques in texts helps your child use them deliberately in their own writing — and spot when writers are using them to influence readers.",
+        left: ["Nine out of ten experts agree that sleep is critical for learning.", "Surely no reasonable person would want children to suffer.", "We all want our children to have the best possible future, don't we?", "The evidence is clear, the science is settled, and the time to act is now.", "If we do nothing, the consequences will be catastrophic."],
+        right: ["Rhetorical question", "Appeal to authority / statistics", "Emotive language", "Rule of three", "Appeal to shared values"],
+      },
+      // 10
+      {
+        type: "true-false" as const,
+        title: "True or False: Persuasive Techniques",
+        instruction: "Mark each statement about persuasive techniques True or False.",
+        parentTip: "Media literacy and persuasive literacy go hand in hand. The ability to recognise these techniques in advertising, politics and media is one of the most important critical thinking skills a young person can develop.",
+        statements: [
+          { text: "A rhetorical question expects the reader to answer out loud.", answer: false },
+          { text: "Emotive language is designed to trigger a strong emotional response in the reader.", answer: true },
+          { text: "The 'rule of three' means using three arguments in a row for extra impact.", answer: true },
+          { text: "Appealing to authority means making up a famous person's name to support your argument.", answer: false },
+          { text: "Repetition can be used to emphasise a key message in persuasive writing.", answer: true },
+        ],
+      },
+      // 11
+      {
+        type: "circle-correct" as const,
+        title: "Identify the Technique",
+        instruction: "Read each sentence. Circle the persuasive technique being used.",
+        questions: [
+          { prompt: "'Every parent wants their child to be safe, healthy and happy.' What technique is this?", options: ["Rule of three", "Appeal to shared values", "Rhetorical question", "Emotive language"] },
+          { prompt: "'How can we stand by and do nothing while our oceans fill with plastic?' What technique is this?", options: ["Appeal to authority", "Emotive language", "Rhetorical question", "Rule of three"] },
+          { prompt: "'Research from the World Health Organisation shows that…' What technique is this?", options: ["Appeal to authority", "Rhetorical question", "Rule of three", "Repetition"] },
+          { prompt: "'Our children deserve better. Our planet deserves better. Our future deserves better.' What technique is this?", options: ["Emotive language", "Rule of three and repetition", "Appeal to shared values", "Appeal to authority"] },
+        ],
+      },
+      // 12
+      {
+        type: "fill-in-blank" as const,
+        title: "Add a Persuasive Technique",
+        instruction: "Rewrite each plain statement using the persuasive technique in brackets.",
+        parentTip: "Consciously applying a technique before writing naturally helps students internalise these tools. With practice, they begin to use them automatically.",
+        sentences: [
+          { text: "[Rhetorical question]: Exercise is important for children. REWRITE: _____?", blanks: [""] },
+          { text: "[Rule of three]: Reading improves your vocabulary. REWRITE: Reading improves your _____, your _____ and your _____.", blanks: [""] },
+          { text: "[Emotive language]: Many animals are losing their homes due to deforestation. REWRITE: Thousands of _____ animals are _____ their homes each year as forests are _____.", blanks: [""] },
+        ],
+      },
+      // 13
+      {
+        type: "open-response" as const,
+        title: "Analyse a Persuasive Text",
+        instruction: "Read this short persuasive paragraph and answer the analysis questions below.",
+        prompts: [
+          { text: "PARAGRAPH:\n'School uniforms should be compulsory in all Australian primary schools. Uniforms reduce the visible differences between students from different economic backgrounds, which research shows decreases bullying related to clothing. Some argue that uniforms limit students' self-expression. However, identity can be expressed through personality, talent and behaviour — not just clothing — and the benefits of social equality and reduced distraction far outweigh this concern.'\n\nQ1: What is the main argument?", type: "lines", lines: 2 },
+          { text: "Q2: What is the counterargument?", type: "lines", lines: 2 },
+          { text: "Q3: What is the rebuttal?", type: "lines", lines: 2 },
+          { text: "Q4: What evidence is used? Is it strong? Why or why not?", type: "lines", lines: 3 },
+        ],
+      },
+      // 14
+      {
+        type: "sorting" as const,
+        title: "Sort by Persuasive Strength",
+        instruction: "Sort each piece of evidence from WEAK (1) to STRONG (3).",
+        parentTip: "Students often struggle to distinguish between strong and weak evidence. This sorting activity makes the difference concrete and memorable.",
+        columns: ["Weak", "Moderate", "Strong"],
+        items: [
+          { label: "I think exercise is good." },
+          { label: "Many people say exercise is beneficial." },
+          { label: "The Australian Department of Health recommends 60 minutes of moderate exercise per day for children aged 5–12 to support physical and mental health." },
+          { label: "Rainforests are important." },
+          { label: "Rainforests provide habitat for many animals." },
+          { label: "The Amazon rainforest produces 20% of the world's oxygen and is home to approximately 10% of all known species on Earth." },
+        ],
+      },
+      // 15 — TIP
+      {
+        type: "tip" as const,
+        title: "Parent Tip: The Fairness Test",
+        content: "Help your child apply the 'Fairness Test' to any counterargument they write: 'If someone who disagrees with me read this counterargument, would they say I have represented their view fairly?' A counterargument that is too weak or easy to dismiss actually weakens a persuasive text, because it signals to the reader that the writer has not engaged seriously with the opposing view. Fairness builds credibility.",
+      },
+      // 16
+      {
+        type: "open-response" as const,
+        title: "Write a Fair Counterargument",
+        instruction: "A fair counterargument genuinely represents the opposing view — it does not distort or weaken it. Write a fair counterargument for each argument below.",
+        parentTip: "Writing a fair counterargument requires empathy and critical thinking — the ability to truly understand a view you disagree with. This is a higher-order skill well worth practising.",
+        prompts: [
+          { text: "ARGUMENT: Children should be allowed to choose their own subjects at school.\nFAIR COUNTERARGUMENT:", type: "lines", lines: 3 },
+          { text: "ARGUMENT: Fast food companies should not be allowed to advertise to children.\nFAIR COUNTERARGUMENT:", type: "lines", lines: 3 },
+        ],
+      },
+      // 17
+      {
+        type: "multiple-choice" as const,
+        title: "Which Rebuttal Is Stronger?",
+        instruction: "Read each pair of rebuttals. Choose the stronger one.",
+        parentTip: "A strong rebuttal doesn't just say the counterargument is wrong — it explains specifically why, using evidence or logic.",
+        questions: [
+          { prompt: "COUNTERARGUMENT: School uniforms limit students' self-expression.\nRebuttal A: That is not true, uniforms are fine.\nRebuttal B: While uniforms limit clothing choices, self-expression is better achieved through art, writing, sport and social interaction — areas where schools actively encourage individuality.", options: ["Rebuttal A", "Rebuttal B"], answer: "Rebuttal B" },
+          { prompt: "COUNTERARGUMENT: Banning phones at school would make it harder for students to contact parents in an emergency.\nRebuttal A: That is wrong and the counterargument does not make sense.\nRebuttal B: While safety is a genuine concern, schools can provide alternative means of communication — such as the front office — which ensures student safety without the distraction of unrestricted phone access.", options: ["Rebuttal A", "Rebuttal B"], answer: "Rebuttal B" },
+        ],
+      },
+      // 18
+      {
+        type: "fill-in-blank" as const,
+        title: "Rebuttal Sentence Starters",
+        instruction: "Complete each rebuttal using one of these sentence starters: While it is true that, Although some argue, This concern, while understandable, While this view has merit.",
+        sentences: [
+          { text: "COUNTERARGUMENT: More physical education would take time away from maths and literacy.\n_____, the evidence suggests that physically active students achieve higher academic results overall.", blanks: ["While it is true that"] },
+          { text: "COUNTERARGUMENT: Technology in classrooms can distract students.\n_____ that technology presents risks, the solution is guided use and clear boundaries — not prohibition.", blanks: ["Although some argue"] },
+          { text: "COUNTERARGUMENT: Banning disposable plastics could harm businesses.\n_____, overlooks the far greater economic cost of plastic pollution to fishing industries, tourism and coastal communities.", blanks: ["This concern, while understandable,"] },
+          { text: "COUNTERARGUMENT: Compulsory sport at school is unfair to students who are not athletic.\n_____, the goal of school sport is participation, fitness and teamwork — not elite competition — and all students can benefit from it.", blanks: ["While this view has merit,"] },
+        ],
+      },
+      // 19
+      {
+        type: "open-response" as const,
+        title: "Plan Your Argument",
+        instruction: "Choose a topic and plan your persuasive paragraph using the argument structure below.",
+        parentTip: "Planning before writing is especially important for persuasive texts, which require careful sequencing. A well-planned paragraph is much easier to write and almost always better quality.",
+        prompts: [
+          { text: "Topic (circle one or write your own): Screen time for children should be limited. / All students should learn a second language. / My own topic:", type: "lines", lines: 1 },
+          { text: "My main argument:", type: "lines", lines: 2 },
+          { text: "Evidence or example:", type: "lines", lines: 2 },
+          { text: "Counterargument (the other side — fairly represented):", type: "lines", lines: 2 },
+          { text: "My rebuttal (why my argument is stronger):", type: "lines", lines: 2 },
+        ],
+      },
+      // 20 — SPARK
+      {
+        type: "spark" as const,
+        title: "Spark: The Art of Changing Minds",
+        content: "The ability to change someone's mind with words — without force, without manipulation, just through clear reasoning and fair acknowledgement of the other side — is one of the most important skills a human can possess. Abraham Lincoln, Malala Yousafzai, David Attenborough and Greta Thunberg all changed the world primarily through persuasive language. Their secret was not just passion — it was structure. They knew their position, they supported it with evidence, they acknowledged opposition, and they rebutted it clearly. Persuasion is not about winning an argument. It is about inviting someone to see the world from a different angle. What do you believe in strongly enough to argue for?",
+      },
+      // 21
+      {
+        type: "open-response" as const,
+        title: "Write Your Persuasive Paragraph",
+        instruction: "Use your plan to write a persuasive paragraph that includes your argument, a counterargument and a strong rebuttal.",
+        parentTip: "Encourage your child to read their paragraph aloud when finished. The ear catches awkward phrasing that the eye misses, especially in persuasive writing where rhythm and flow matter.",
+        prompts: [{ text: "My persuasive paragraph:", type: "box", lines: 14 }],
+      },
+      // 22
+      {
+        type: "true-false" as const,
+        title: "True or False: Types of Evidence",
+        instruction: "Mark each statement True or False.",
+        statements: [
+          { text: "A statistic from a government health department is a reliable form of evidence.", answer: true },
+          { text: "An anonymous blog post is always a reliable source of evidence.", answer: false },
+          { text: "An anecdote (personal story) can be a powerful but limited form of evidence.", answer: true },
+          { text: "An expert opinion carries more weight if it comes from a specialist in the relevant field.", answer: true },
+          { text: "A quote from a celebrity is always strong evidence for a scientific claim.", answer: false },
+        ],
+      },
+      // 23
+      {
+        type: "sorting" as const,
+        title: "Sort the Evidence Types",
+        instruction: "Sort each piece of evidence by type: Statistic, Expert opinion, Anecdote or Example.",
+        parentTip: "Strong persuasive writing uses a variety of evidence types. Knowing each type's strengths and limitations helps writers choose and evaluate evidence more carefully.",
+        columns: ["Statistic", "Expert opinion", "Anecdote", "Example"],
+        items: [
+          { label: "According to the CSIRO, 1.9 billion people worldwide lack access to clean drinking water." },
+          { label: "Dr Emma Johnston, a leading marine scientist, argues that ocean pollution is the defining environmental challenge of our century." },
+          { label: "My grandmother lived through the Snowy Mountains Scheme and says it changed the entire region." },
+          { label: "Finland, which ranks among the world's top education systems, allows children to start formal schooling at age seven." },
+          { label: "A 2024 report found that 67% of Australian primary students do not meet the recommended daily exercise guidelines." },
+          { label: "The teacher who changed my father's life was the one who told him he was good at maths when nobody else did." },
+        ],
+      },
+      // 24
+      {
+        type: "multiple-choice" as const,
+        title: "Which Evidence Is Best?",
+        instruction: "Choose the most credible and relevant piece of evidence for each argument.",
+        questions: [
+          { prompt: "ARGUMENT: Australian students need more time outdoors during the school day.", options: ["My cousin loves playing outside.", "A 2023 study published in the Australian Journal of Education found that outdoor breaks of 20 minutes improved student focus and reduced anxiety.", "Nature is very calming according to most people."], answer: "A 2023 study published in the Australian Journal of Education found that outdoor breaks of 20 minutes improved student focus and reduced anxiety." },
+          { prompt: "ARGUMENT: The Great Barrier Reef requires urgent government protection.", options: ["The reef is really beautiful and lots of people love it.", "The Australian Institute of Marine Science reports that over 50% of the reef's coral has been lost since 1995 due to warming ocean temperatures.", "I went snorkelling once and thought it was amazing."], answer: "The Australian Institute of Marine Science reports that over 50% of the reef's coral has been lost since 1995 due to warming ocean temperatures." },
+        ],
+      },
+      // 25
+      {
+        type: "fill-in-blank" as const,
+        title: "Integrate Evidence into a Sentence",
+        instruction: "Rewrite each piece of evidence as a sentence that integrates it naturally into a persuasive argument.",
+        parentTip: "Integrating evidence smoothly — rather than just dropping in a fact — is a mark of sophisticated writing. The phrase 'According to [source]' or 'Research by [organisation] shows that' is the standard academic way to introduce evidence.",
+        sentences: [
+          { text: "EVIDENCE: 78% of children who learn to cook at home make healthier food choices as adults. INTEGRATED: According to _____, _____.", blanks: [""] },
+          { text: "EVIDENCE: The ACT government introduced a 30-minute reading programme and literacy rates rose by 22%. INTEGRATED: As demonstrated by _____, _____.", blanks: [""] },
+        ],
+      },
+      // 26
+      {
+        type: "open-response" as const,
+        title: "Evaluate Your Evidence",
+        instruction: "Look at the evidence you used in your persuasive paragraph. Answer the questions to evaluate it.",
+        prompts: [
+          { text: "My evidence (copy it here):", type: "lines", lines: 3 },
+          { text: "Q1: What type of evidence is it (statistic, example, expert opinion, anecdote)?", type: "lines", lines: 1 },
+          { text: "Q2: Is it specific and verifiable? How do you know?", type: "lines", lines: 2 },
+          { text: "Q3: Is there any stronger evidence you could use instead? What would that look like?", type: "lines", lines: 3 },
+        ],
+      },
+      // 27
+      {
+        type: "circle-correct" as const,
+        title: "Identify the Logical Flaw",
+        instruction: "Each argument contains a logical flaw. Circle the name of the flaw.",
+        parentTip: "Learning to recognise logical fallacies — common errors in reasoning — is an advanced critical thinking skill that protects against manipulation and strengthens students' own arguments.",
+        questions: [
+          { prompt: "Argument: 'A famous footballer eats this cereal, therefore it must be the most nutritious breakfast available.' What is the flaw?", options: ["Appeal to false authority — a footballer is not a nutritionist", "The argument is actually correct", "This is an example of the rule of three"] },
+          { prompt: "Argument: 'We have always had homework, so we should always have homework.' What is the flaw?", options: ["Appeal to tradition — 'it has always been done this way' is not a reason to continue", "The argument is actually correct", "This is an example of emotive language"] },
+          { prompt: "Argument: 'If schools allow students to use phones, next they will allow students to do whatever they want.' What is the flaw?", options: ["Slippery slope — assumes one change leads to extreme outcomes", "The argument is actually correct", "This is an appeal to authority"] },
+        ],
+      },
+      // 28
+      {
+        type: "matching" as const,
+        title: "Match the Logical Fallacy to Its Description",
+        instruction: "Match each logical fallacy to its definition.",
+        parentTip: "Logical fallacies are everywhere — in advertising, politics and everyday conversation. Students who can name them have a powerful analytical tool for the rest of their lives.",
+        left: ["Straw man", "Ad hominem", "False dichotomy", "Bandwagon fallacy", "Appeal to fear"],
+        right: ["Arguing that the other side is wrong by attacking the person rather than their argument", "Suggesting that there are only two possible options when more exist", "Misrepresenting the opposing argument to make it easier to defeat", "Claiming something is true because many people believe it", "Using fear of consequences to persuade rather than evidence"],
+      },
+      // 29
+      {
+        type: "true-false" as const,
+        title: "True or False: Logical Fallacies",
+        instruction: "Mark each statement True or False.",
+        statements: [
+          { text: "A logical fallacy is an error in reasoning that makes an argument less valid.", answer: true },
+          { text: "The straw man fallacy involves fairly representing the opposing argument before refuting it.", answer: false },
+          { text: "Using fear to persuade an audience is always considered a logical fallacy.", answer: false },
+          { text: "An ad hominem attack targets the person making the argument rather than the argument itself.", answer: true },
+          { text: "A false dichotomy presents two extreme options as if they are the only choices available.", answer: true },
+        ],
+      },
+      // 30 — TIP
+      {
+        type: "tip" as const,
+        title: "Parent Tip: Real-World Persuasion",
+        content: "Persuasive arguments are everywhere — in television advertising, political speeches, news editorials and even school fundraiser letters. Make it a habit to watch a short news segment or read an editorial with your child and ask: What is the argument? What evidence is used? Is there a counterargument? What logical fallacies can you spot? This real-world practice develops critical literacy skills far more effectively than worksheets alone.",
+      },
+      // 31
+      {
+        type: "open-response" as const,
+        title: "Spot the Fallacy",
+        instruction: "Read each argument. Identify the logical fallacy and explain why it makes the argument weaker.",
+        prompts: [
+          { text: "ARGUMENT: 'Everyone in my class thinks we should have shorter school days, so shorter days must be better for learning.'\nFALLACY NAME:", type: "lines", lines: 1 },
+          { text: "Why this weakens the argument:", type: "lines", lines: 2 },
+          { text: "ARGUMENT: 'You cannot trust her opinion on homework — she always arrives late to school.'\nFALLACY NAME:", type: "lines", lines: 1 },
+          { text: "Why this weakens the argument:", type: "lines", lines: 2 },
+        ],
+      },
+      // 32
+      {
+        type: "fill-in-blank" as const,
+        title: "Persuasive Sentence Starters",
+        instruction: "Complete each sentence using your own words. Each sentence starts with a persuasive technique.",
+        sentences: [
+          { text: "Evidence clearly shows that _____.", blanks: [""] },
+          { text: "Surely no reasonable person would argue that _____.", blanks: [""] },
+          { text: "Studies by [organisation] demonstrate that _____.", blanks: [""] },
+          { text: "While some may argue that _____, the evidence suggests that _____.", blanks: [""] },
+          { text: "The time to act is now — _____.", blanks: [""] },
+        ],
+      },
+      // 33
+      {
+        type: "sorting" as const,
+        title: "Sort the Techniques: Logos, Ethos or Pathos?",
+        instruction: "Sort each persuasive technique into the correct classical appeal category.",
+        parentTip: "The Greek philosopher Aristotle identified three forms of appeal in persuasion: logos (logic/evidence), ethos (credibility/character) and pathos (emotion). Even at Year 5, these concepts are accessible and powerful.",
+        columns: ["Logos (logic and evidence)", "Ethos (credibility and authority)", "Pathos (emotion and values)"],
+        items: [
+          { label: "A statistic from a government health report" },
+          { label: "A quote from a renowned scientist" },
+          { label: "A story about a child affected by poverty" },
+          { label: "A logical argument showing cause and effect" },
+          { label: "An appeal to the reader's love for their family" },
+          { label: "The writer's personal experience as a nurse" },
+          { label: "A comparison of costs and benefits" },
+          { label: "A vivid description of suffering animals" },
+          { label: "The writer citing their ten years of research" },
+        ],
+      },
+      // 34
+      {
+        type: "multiple-choice" as const,
+        title: "Logos, Ethos or Pathos?",
+        instruction: "Choose whether each sentence uses logos, ethos or pathos.",
+        questions: [
+          { prompt: "'As a doctor with twenty years of experience, I can tell you that sleep deprivation has serious consequences for children's development.'", options: ["Logos", "Ethos", "Pathos"], answer: "Ethos" },
+          { prompt: "'Imagine your child going to school hungry, unable to concentrate, falling further and further behind.'", options: ["Logos", "Ethos", "Pathos"], answer: "Pathos" },
+          { prompt: "'Data from the Australian Bureau of Statistics shows that 18% of children live in households experiencing food insecurity.'", options: ["Logos", "Ethos", "Pathos"], answer: "Logos" },
+          { prompt: "'We all share the responsibility to create a fair society for every Australian child.'", options: ["Logos", "Ethos", "Pathos"], answer: "Pathos" },
+        ],
+      },
+      // 35
+      {
+        type: "open-response" as const,
+        title: "Write a Paragraph Using All Three Appeals",
+        instruction: "Write a persuasive paragraph that uses logos, ethos AND pathos. Label where you have used each one in the margin.",
+        parentTip: "Using all three classical appeals creates a persuasive argument that engages multiple dimensions of the reader's mind — their reason, their trust and their emotions. This is what master persuaders do.",
+        prompts: [{ text: "Topic: Access to nature and outdoor play is essential for children's development.\nMy paragraph (label each appeal — Logos, Ethos, Pathos — in the margin):", type: "box", lines: 12 }],
+      },
+      // 36
+      {
+        type: "fill-in-blank" as const,
+        title: "Formal Language for Persuasive Writing",
+        instruction: "Rewrite each informal statement using formal language appropriate for a persuasive essay.",
+        parentTip: "Formal language in persuasive writing signals that the writer is serious, credible and has considered the topic carefully. Informal language undermines the authority of the argument.",
+        sentences: [
+          { text: "INFORMAL: 'I reckon we should totally ban junk food ads.' FORMAL: '_____ should be _____ in order to _____.'", blanks: [""] },
+          { text: "INFORMAL: 'Heaps of kids don't get enough sleep and it makes them tired.' FORMAL: 'A significant number of _____, resulting in _____.'", blanks: [""] },
+          { text: "INFORMAL: 'It's kind of obvious that schools need better funding.' FORMAL: 'It is evident that _____ in order to _____.'", blanks: [""] },
+        ],
+      },
+      // 37
+      {
+        type: "true-false" as const,
+        title: "True or False: Formal Persuasive Writing",
+        instruction: "Mark each statement True or False.",
+        statements: [
+          { text: "Contractions such as 'don't' and 'it's' are appropriate in formal persuasive writing.", answer: false },
+          { text: "Using the passive voice (e.g. 'it has been demonstrated') can make persuasive writing sound more authoritative.", answer: true },
+          { text: "A formal persuasive essay should begin with 'I think' or 'In my opinion'.", answer: false },
+          { text: "The words 'moreover' and 'furthermore' are appropriate for formal persuasive writing.", answer: true },
+          { text: "A persuasive text can use emotive language in a formal register.", answer: true },
+        ],
+      },
+      // 38
+      {
+        type: "open-response" as const,
+        title: "Convert to Formal Persuasion",
+        instruction: "Rewrite this informal persuasive paragraph in formal, confident language. Remove contractions, slang and personal opinion phrases.",
+        prompts: [
+          { text: "ORIGINAL: 'I think it's totally wrong that kids don't get to choose what subjects they study. Heaps of students are really good at art but they have to waste time on stuff they don't care about. It's kind of obvious that this makes school less fun and less effective.'\n\nMY FORMAL REWRITE:", type: "box", lines: 8 },
+        ],
+      },
+      // 39
+      {
+        type: "multiple-choice" as const,
+        title: "The Right Tone for Persuasion",
+        instruction: "Choose the sentence that uses the most appropriate tone for a formal persuasive essay.",
+        questions: [
+          { prompt: "Which version is most appropriate in a formal persuasive essay?", options: ["Everyone knows that homework is pointless and totally unfair.", "The evidence suggests that excessive homework loads may be counterproductive to student wellbeing and academic performance."], answer: "The evidence suggests that excessive homework loads may be counterproductive to student wellbeing and academic performance." },
+          { prompt: "Which rebuttal sentence is most appropriate in a formal persuasive essay?", options: ["That argument is totally wrong and doesn't make any sense.", "While this perspective raises valid concerns, the evidence does not support the claim that…"], answer: "While this perspective raises valid concerns, the evidence does not support the claim that…" },
+        ],
+      },
+      // 40 — SPARK
+      {
+        type: "spark" as const,
+        title: "Spark: Debate Is Democracy",
+        content: "The word 'democracy' comes from the Greek words for 'people' (demos) and 'rule' (kratos). In ancient Athens — where democracy was invented — citizens were expected to be able to argue their case in public. The ability to form an argument, present evidence and respond fairly to opposing views was considered a civic duty. Today, the same skills lie at the heart of a functioning democracy. When you learn to write persuasively — with evidence, fairness and clear reasoning — you are not just learning to write. You are learning to participate in one of humanity's greatest inventions. What argument would you most like to make to the world?",
+      },
+      // 41
+      {
+        type: "open-response" as const,
+        title: "Write Two Body Paragraphs",
+        instruction: "Write two persuasive body paragraphs on the same topic. Each paragraph should have a different main argument, include evidence and end with a linking sentence to the next paragraph.",
+        parentTip: "Writing two body paragraphs on the same topic is a significant step — it requires planning to make sure the two arguments are distinct and not repetitive. If your child struggles, help them brainstorm three possible arguments before choosing the two strongest.",
+        prompts: [
+          { text: "Topic: ___\nBody Paragraph 1 (argument 1):", type: "box", lines: 10 },
+          { text: "Body Paragraph 2 (argument 2, with counterargument and rebuttal):", type: "box", lines: 10 },
+        ],
+      },
+      // 42
+      {
+        type: "sequence" as const,
+        title: "Order the Persuasive Essay",
+        instruction: "Number these parts of a persuasive essay from 1 (first) to 6 (last).",
+        items: [
+          { label: "Body paragraph 2 — second argument with evidence and rebuttal" },
+          { label: "Introduction — hook, background and position statement" },
+          { label: "Conclusion — restate position, summary, call to action" },
+          { label: "Body paragraph 1 — first argument with evidence" },
+          { label: "Body paragraph 3 — third argument with counterargument and rebuttal" },
+          { label: "Transition sentence linking introduction to body paragraphs" },
+        ],
+      },
+      // 43
+      {
+        type: "fill-in-blank" as const,
+        title: "Write a Position Statement",
+        instruction: "A position statement clearly states the writer's view. Complete each position statement using your own words.",
+        parentTip: "The position statement is the backbone of the persuasive essay — everything else supports it. A clearly worded position statement makes the entire text easier to write and more effective to read.",
+        sentences: [
+          { text: "This essay will argue that _____ because _____.", blanks: [""] },
+          { text: "It is my position that _____, given that _____.", blanks: [""] },
+          { text: "The evidence strongly suggests that _____ and therefore _____.", blanks: [""] },
+        ],
+      },
+      // 44
+      {
+        type: "open-response" as const,
+        title: "Write a Persuasive Introduction",
+        instruction: "Write an introduction paragraph for a persuasive essay on one of these topics: Zoos should be closed / Schools should grow their own food / Australia should reduce single-use plastics. Include: a hook, background information and a position statement.",
+        prompts: [{ text: "My introduction paragraph:", type: "box", lines: 10 }],
+      },
+      // 45 — TIP
+      {
+        type: "tip" as const,
+        title: "Parent Tip: The Hook",
+        content: "The opening sentence of a persuasive essay — the hook — is one of the most important sentences a student will learn to write. Powerful hooks include a surprising statistic ('Every year, over 8 million tonnes of plastic enter the world's oceans'), a rhetorical question ('What would happen if every bee on Earth disappeared tomorrow?'), or a bold statement ('The most dangerous threat to Australian children's health is not a disease — it is a sedentary lifestyle'). Help your child draft two or three different hooks for their essay and choose the strongest together.",
+      },
+      // 46
+      {
+        type: "matching" as const,
+        title: "Match the Hook Type to the Example",
+        instruction: "Match each hook type to its example.",
+        left: ["Surprising statistic", "Rhetorical question", "Bold statement", "Vivid description", "Brief anecdote"],
+        right: ["Every morning, thousands of Australian children walk through school gates too tired to learn.", "The single most effective change a school can make to improve student wellbeing costs nothing — it is 60 minutes of outdoor play.", "What would you do if your favourite animal became extinct in your lifetime?", "Imagine waking up to find that every bee species on Earth had vanished overnight.", "Over 130,000 tonnes of plastic waste enter Australian waterways every single year."],
+      },
+      // 47
+      {
+        type: "open-response" as const,
+        title: "Write Three Different Hooks",
+        instruction: "Write three different hooks for the same persuasive essay. Use a different hook type for each one.",
+        parentTip: "Writing multiple drafts of an opening line is something professional writers do routinely. Encourage your child to read all three hooks aloud and decide which one best draws the reader in.",
+        prompts: [
+          { text: "ESSAY TOPIC: Children should spend less time on screens and more time outdoors.\nHOOK 1 (Statistic):", type: "lines", lines: 2 },
+          { text: "HOOK 2 (Rhetorical question):", type: "lines", lines: 2 },
+          { text: "HOOK 3 (Bold statement):", type: "lines", lines: 2 },
+        ],
+      },
+      // 48
+      {
+        type: "multiple-choice" as const,
+        title: "Persuasive Essay: Conclusion Skills",
+        instruction: "Choose the best answer for each question about persuasive conclusions.",
+        questions: [
+          { prompt: "What should a conclusion paragraph in a persuasive essay include?", options: ["A brand new argument not mentioned earlier in the text", "A restatement of the position, a brief summary of key arguments and a call to action or final thought", "Only the strongest piece of evidence from the body paragraphs", "A list of all the counterarguments raised in the essay"], answer: "A restatement of the position, a brief summary of key arguments and a call to action or final thought" },
+          { prompt: "What is a 'call to action' in a persuasive conclusion?", options: ["A sentence that tells the reader exactly what to do or how they should respond to the argument", "A sentence that lists all the evidence used in the essay", "A question that asks the reader if they enjoyed the essay", "A sentence that introduces the main argument for the first time"], answer: "A sentence that tells the reader exactly what to do or how they should respond to the argument" },
+        ],
+      },
+      // 49
+      {
+        type: "open-response" as const,
+        title: "Write a Persuasive Conclusion",
+        instruction: "Write a conclusion paragraph for your essay. Restate your position, briefly summarise your key arguments and end with a call to action or a memorable final statement.",
+        prompts: [{ text: "My conclusion paragraph:", type: "box", lines: 10 }],
+      },
+      // 50
+      {
+        type: "sorting" as const,
+        title: "Organise the Full Essay",
+        instruction: "Sort these sentences from a persuasive essay about school lunch programmes into the correct paragraph.",
+        parentTip: "Being able to sort sentences by paragraph is a strong indicator that a student understands how persuasive essays are structured — a skill that transfers directly to writing quality.",
+        columns: ["Introduction", "Body paragraph", "Conclusion"],
+        items: [
+          { label: "This essay will argue that all Australian schools should provide a free, healthy school lunch programme." },
+          { label: "Research from the UK shows that school lunch programmes improve concentration, attendance and academic results." },
+          { label: "In conclusion, the evidence clearly demonstrates that investing in school lunch programmes is one of the most cost-effective ways to improve educational outcomes." },
+          { label: "Every day, thousands of Australian children arrive at school without having eaten breakfast." },
+          { label: "While some argue that lunch provision is the responsibility of parents, a national programme would ensure equity regardless of family circumstances." },
+          { label: "The time to act is now — every child deserves to learn on a full stomach." },
+        ],
+      },
+      // 51
+      {
+        type: "open-response" as const,
+        title: "Full Persuasive Essay Plan",
+        instruction: "Plan a full four-paragraph persuasive essay (introduction, two body paragraphs, conclusion) on a topic you care about.",
+        parentTip: "A topic the student cares about produces significantly better persuasive writing. If possible, connect this essay to something happening in your community, a social issue they have discussed or a decision that affects them.",
+        prompts: [
+          { text: "Essay topic:", type: "lines", lines: 1 },
+          { text: "Position statement:", type: "lines", lines: 2 },
+          { text: "Body Paragraph 1 main argument:", type: "lines", lines: 2 },
+          { text: "Body Paragraph 1 evidence:", type: "lines", lines: 2 },
+          { text: "Body Paragraph 2 main argument + counterargument + rebuttal:", type: "lines", lines: 3 },
+          { text: "Conclusion — call to action:", type: "lines", lines: 2 },
+        ],
+      },
+      // 52
+      {
+        type: "fill-in-blank" as const,
+        title: "Call to Action Sentences",
+        instruction: "Complete each call to action sentence for the given topic.",
+        sentences: [
+          { text: "TOPIC: Protecting the Great Barrier Reef. It is time for the Australian government to _____.", blanks: [""] },
+          { text: "TOPIC: Reducing food waste. Every household can make a difference by _____.", blanks: [""] },
+          { text: "TOPIC: Children's screen time. Parents and educators must work together to _____.", blanks: [""] },
+          { text: "TOPIC: Renewable energy. The transition to clean energy must begin _____ and requires _____.", blanks: [""] },
+        ],
+      },
+      // 53
+      {
+        type: "multiple-choice" as const,
+        title: "Evaluating Persuasive Techniques",
+        instruction: "Read each description of a persuasive technique. Choose whether it is used ethically (fairly, with honesty) or unethically (manipulatively).",
+        parentTip: "The difference between persuasion and manipulation is one of the most important ethical distinctions in communication. Persuasion uses fair evidence and reasoning; manipulation uses distortion, fear and deception.",
+        questions: [
+          { prompt: "A writer uses a verified statistic from a government health agency to support their argument.", options: ["Ethical — fair use of evidence", "Unethical — manipulation"], answer: "Ethical — fair use of evidence" },
+          { prompt: "A writer invents a false statistic to make their argument sound stronger.", options: ["Ethical — fair use of evidence", "Unethical — manipulation"], answer: "Unethical — manipulation" },
+          { prompt: "A writer uses emotive language to help readers understand the human cost of a policy.", options: ["Ethical — if the emotional appeal is accurate and relevant", "Always unethical — emotion has no place in argument"], answer: "Ethical — if the emotional appeal is accurate and relevant" },
+          { prompt: "A writer deliberately misrepresents the opposing view to make it easy to defeat (straw man).", options: ["Ethical — fair use of counterargument", "Unethical — this distorts the opposing view"], answer: "Unethical — this distorts the opposing view" },
+        ],
+      },
+      // 54
+      {
+        type: "open-response" as const,
+        title: "Ethics in Persuasion",
+        instruction: "Answer the reflection questions about ethical persuasion.",
+        prompts: [
+          { text: "Q1: What is the difference between persuasion and manipulation? Use an example.", type: "lines", lines: 4 },
+          { text: "Q2: Why is it important to represent the counterargument fairly?", type: "lines", lines: 3 },
+          { text: "Q3: If a persuasive writer uses a logical fallacy, what does that tell you about the strength of their argument?", type: "lines", lines: 3 },
+        ],
+      },
+      // 55
+      {
+        type: "open-response" as const,
+        title: "Write Your Full Persuasive Essay",
+        instruction: "Write your full four-paragraph persuasive essay using your plan. Take your time and aim for clear, formal, evidence-based writing throughout.",
+        parentTip: "This is a major writing task — allow 30–45 minutes. Encourage your child to plan first, write a full draft, then read it aloud and edit before writing the final version.",
+        prompts: [{ text: "My persuasive essay:", type: "box", lines: 28 }],
+      },
+      // 56
+      {
+        type: "circle-correct" as const,
+        title: "Oral Debate Practice",
+        instruction: "Choose a topic and circle whether you will argue FOR or AGAINST. Write three argument points to use in an oral debate.",
+        questions: [
+          { prompt: "Should all schools have a student council that can vote on school rules?", options: ["I will argue FOR", "I will argue AGAINST"] },
+          { prompt: "Should mobile phones be banned in all public spaces for children under 12?", options: ["I will argue FOR", "I will argue AGAINST"] },
+        ],
+      },
+      // 57
+      {
+        type: "open-response" as const,
+        title: "Prepare for Oral Debate",
+        instruction: "Choose your debate topic and position. Write three arguments, each with supporting evidence, and one rebuttal for the opposing side's likely strongest argument.",
+        parentTip: "Oral debate develops confidence, fluency and critical thinking simultaneously. Even five minutes of structured debate at home — where you argue the opposite side — is one of the most effective literacy activities possible.",
+        prompts: [
+          { text: "Debate topic and my position:", type: "lines", lines: 1 },
+          { text: "Argument 1 + evidence:", type: "lines", lines: 3 },
+          { text: "Argument 2 + evidence:", type: "lines", lines: 3 },
+          { text: "Argument 3 + evidence:", type: "lines", lines: 3 },
+          { text: "My rebuttal for their likely strongest counterargument:", type: "lines", lines: 3 },
+        ],
+      },
+      // 58
+      {
+        type: "true-false" as const,
+        title: "True or False: Oral vs Written Persuasion",
+        instruction: "Mark each statement True or False.",
+        statements: [
+          { text: "Oral persuasion can use tone of voice and pausing for effect, which written persuasion cannot.", answer: true },
+          { text: "Written persuasion relies on structure and word choice rather than vocal delivery.", answer: true },
+          { text: "A rebuttal is only used in written persuasive texts — not in spoken debate.", answer: false },
+          { text: "Both oral and written persuasion benefit from clear, logical reasoning.", answer: true },
+          { text: "In oral debate, it does not matter how you respond to the other side's argument.", answer: false },
+        ],
+      },
+      // 59
+      {
+        type: "multiple-choice" as const,
+        title: "Comparing Persuasive Text Types",
+        instruction: "Choose the best answer for each question about different forms of persuasive text.",
+        parentTip: "Persuasion takes many forms — speeches, editorials, letters, advertising, social media posts. Understanding how each form works helps students both read and create persuasive texts more effectively.",
+        questions: [
+          { prompt: "Which persuasive text type typically appears in a newspaper and presents the publication's or writer's opinion on a current issue?", options: ["A letter of complaint", "An editorial / opinion piece", "An advertisement", "A scientific report"], answer: "An editorial / opinion piece" },
+          { prompt: "Which form of persuasion is specifically designed to change a decision-maker's mind — such as a letter to a councillor about a local issue?", options: ["An advertisement", "A narrative", "A formal letter of argument", "A scientific explanation"], answer: "A formal letter of argument" },
+          { prompt: "What makes a political speech different from a written persuasive essay?", options: ["A speech never uses evidence or logic", "A speech does not need a conclusion", "A speech uses vocal delivery, pausing, audience engagement and repetition for effect", "A speech is always shorter than an essay"], answer: "A speech uses vocal delivery, pausing, audience engagement and repetition for effect" },
+        ],
+      },
+      // 60 — TIP
+      {
+        type: "tip" as const,
+        title: "Parent Tip: Watch Speeches Together",
+        content: "Watching great speeches together is one of the richest ways to develop your child's persuasive skills. Try Martin Luther King Jr's 'I Have a Dream' speech, Malala Yousafzai's UN speech, or Greta Thunberg's climate speech. After watching, discuss: What was the main argument? What evidence was used? What emotional appeals did you notice? What made it memorable? Connecting writing skills to powerful real-world examples shows students why these skills matter.",
+      },
+      // 61
+      {
+        type: "open-response" as const,
+        title: "Write a Letter of Argument",
+        instruction: "Write a formal letter to a decision-maker (e.g. your school principal, local council or the Minister for Education) arguing for a change you believe in. Include: a formal greeting, position statement, two arguments with evidence, one counterargument and rebuttal, and a call to action.",
+        parentTip: "A formal letter is one of the most practical persuasive forms your child will use throughout life. The conventions — formal greeting, structured paragraphs, respectful sign-off — are simple and worth learning correctly.",
+        prompts: [{ text: "My formal letter of argument:", type: "box", lines: 20 }],
+      },
+      // 62
+      {
+        type: "fill-in-blank" as const,
+        title: "Formal Letter Conventions",
+        instruction: "Fill in the blanks to complete the formal letter conventions.",
+        sentences: [
+          { text: "A formal letter begins with the writer's _____ and _____ at the top right.", blanks: ["name", "address"] },
+          { text: "The greeting in a formal letter to someone you know is: 'Dear _____ [title] _____.'", blanks: [""] },
+          { text: "If you do not know the person's name, you write: 'Dear _____ or _____.'", blanks: ["Sir", "Madam"] },
+          { text: "A formal letter ends with '_____ sincerely' if you know the name, or '_____ faithfully' if you don't.", blanks: ["Yours", "Yours"] },
+          { text: "The purpose of the letter is stated clearly in the _____ paragraph.", blanks: ["first"] },
+        ],
+      },
+      // 63
+      {
+        type: "sorting" as const,
+        title: "Sort the Techniques: Effective or Ineffective?",
+        instruction: "Sort each persuasive technique into Effective or Ineffective based on whether it strengthens or weakens a formal argument.",
+        parentTip: "This sorting activity helps students distinguish between techniques that build credibility (evidence, clear reasoning, fair counterargument) and those that undermine it (exaggeration, personal attacks, emotional manipulation).",
+        columns: ["Effective", "Ineffective"],
+        items: [
+          { label: "A verified statistic from a peer-reviewed study" },
+          { label: "Threatening the reader if they don't agree" },
+          { label: "A fair and accurately represented counterargument" },
+          { label: "Appealing to fear without providing evidence" },
+          { label: "A quote from a recognised expert in the field" },
+          { label: "Insulting people who hold the opposing view" },
+          { label: "A logical cause-and-effect argument" },
+          { label: "Repeating the same unsupported claim multiple times" },
+        ],
+      },
+      // 64
+      {
+        type: "open-response" as const,
+        title: "Evaluate a Real Persuasive Text",
+        instruction: "Find a persuasive text — an editorial, letter to the editor, or opinion piece — with your parent's help. Evaluate it using the questions below.",
+        parentTip: "Applying critical thinking skills to real-world texts consolidates learning in a way that worksheets alone cannot. Look for opinion pieces in local newspapers, ABC News online or news magazines for young people.",
+        prompts: [
+          { text: "Source (title and where you found it):", type: "lines", lines: 1 },
+          { text: "Q1: What is the main argument? Is the position statement clear?", type: "lines", lines: 3 },
+          { text: "Q2: What evidence is used? How strong is it?", type: "lines", lines: 3 },
+          { text: "Q3: Is there a counterargument and rebuttal? Is the counterargument fair?", type: "lines", lines: 3 },
+          { text: "Q4: What persuasive techniques are used? Are any of them logical fallacies?", type: "lines", lines: 3 },
+        ],
+      },
+      // 65
+      {
+        type: "multiple-choice" as const,
+        title: "Self-Editing a Persuasive Text",
+        instruction: "Choose the best self-editing question for each stage of the editing process.",
+        questions: [
+          { prompt: "When checking your STRUCTURE, the most useful question is:", options: ["Is my handwriting neat?", "Does each paragraph focus on one main argument, with evidence and a concluding sentence?", "Did I use exactly five persuasive techniques?", "Is my introduction the shortest paragraph?"], answer: "Does each paragraph focus on one main argument, with evidence and a concluding sentence?" },
+          { prompt: "When checking your LANGUAGE, the most useful question is:", options: ["Did I use formal language throughout, avoiding contractions and slang?", "Did I use the same transition word in every paragraph?", "Is the essay the exact same length as the model paragraph?", "Did I write three counterarguments?"], answer: "Did I use formal language throughout, avoiding contractions and slang?" },
+          { prompt: "When checking your ARGUMENT, the most useful question is:", options: ["Have I fairly acknowledged the opposing view and provided a convincing rebuttal?", "Did I write exactly two body paragraphs?", "Did I end with a question mark?", "Is my call to action in the introduction?"], answer: "Have I fairly acknowledged the opposing view and provided a convincing rebuttal?" },
+        ],
+      },
+      // 66
+      {
+        type: "open-response" as const,
+        title: "Self-Edit Your Essay",
+        instruction: "Use this comprehensive checklist to evaluate and improve your persuasive essay.",
+        prompts: [
+          { text: "STRUCTURE CHECKLIST (tick each one):\n☐ Clear position statement in the introduction\n☐ Each body paragraph has one main argument\n☐ Each argument is supported by specific evidence\n☐ At least one paragraph includes a counterargument and rebuttal\n☐ The conclusion restates the position and includes a call to action\n\nFORMAT/LANGUAGE CHECKLIST:\n☐ Formal language throughout (no contractions or slang)\n☐ Transition words used accurately\n☐ No logical fallacies\n☐ Consistent, confident persuasive tone\n\nImprovements I will make:", type: "box", lines: 8 },
+        ],
+      },
+      // 67
+      {
+        type: "true-false" as const,
+        title: "True or False: Advanced Persuasion",
+        instruction: "Mark each statement True or False.",
+        statements: [
+          { text: "A persuasive essay that acknowledges and rebuts a counterargument is generally more convincing than one that ignores it.", answer: true },
+          { text: "Using logos, ethos and pathos together creates a well-rounded persuasive argument.", answer: true },
+          { text: "If your argument is very passionate, you do not need to provide evidence.", answer: false },
+          { text: "A call to action tells the reader what they should do or think as a result of the argument.", answer: true },
+          { text: "It is acceptable to use a straw man argument as long as your rebuttal is strong.", answer: false },
+        ],
+      },
+      // 68
+      {
+        type: "matching" as const,
+        title: "Match the Persuasive Essay Feature to Its Location",
+        instruction: "Match each persuasive essay feature to the part of the essay where it typically appears.",
+        parentTip: "Understanding the architecture of an essay helps students plan more confidently and write more efficiently.",
+        left: ["Hook and background information", "Position statement", "Main argument with evidence", "Counterargument and rebuttal", "Call to action", "Summary of key arguments"],
+        right: ["Typically in a body paragraph, often the final body paragraph", "Introduction — first paragraph", "Introduction — often the final sentence of the introduction", "Conclusion — near the end", "Body paragraph — one per paragraph", "Conclusion — before the call to action"],
+      },
+      // 69
+      {
+        type: "open-response" as const,
+        title: "Rewrite a Weak Argument",
+        instruction: "This argument is weak because it uses an unsupported opinion and a logical fallacy. Rewrite it as a strong, evidence-based argument.",
+        prompts: [
+          { text: "ORIGINAL: 'Everyone knows that school should start later because all my friends are tired in the morning and it's really unfair. My friend said research says kids need sleep and since she told me that, I believe it completely.'\n\nMY IMPROVED ARGUMENT (add specific evidence, remove the fallacy, use formal language):", type: "box", lines: 8 },
+        ],
+      },
+      // 70
+      {
+        type: "home-activity" as const,
+        title: "Home Activity: Family Debate Night",
+        instruction: "Choose a topic that affects your family or community. Have a structured family debate using the skills from this worksheet.",
+        parentTip: "Family debates are one of the most enjoyable and effective ways to develop persuasive speaking and listening skills. The goal is not to 'win' but to practise forming and expressing arguments with evidence and fairness.",
+        suggestions: [
+          "Choose a topic everyone has an opinion on — screen time, pets, family rules, local issues or a current news story.",
+          "Each person takes one minute to state their position and one piece of evidence.",
+          "Each person then acknowledges the strongest point made against them and explains their rebuttal.",
+          "After the debate, discuss together: Which argument was the most convincing? Why?",
+          "Write a one-paragraph reflection on the debate — what was the strongest argument you heard, and why?",
+        ],
+      },
+      // 71
+      {
+        type: "open-response" as const,
+        title: "Extension: Compare Two Arguments on the Same Topic",
+        instruction: "Find two different editorials or opinion pieces on the same topic. Compare their arguments, evidence and use of persuasive techniques.",
+        parentTip: "Comparing two perspectives on the same issue is an excellent critical thinking exercise. It shows students that reasonable, intelligent people can hold different views — and that what distinguishes them is usually the quality and fairness of their evidence and reasoning.",
+        prompts: [
+          { text: "Topic:", type: "lines", lines: 1 },
+          { text: "Text 1 title and position:", type: "lines", lines: 2 },
+          { text: "Text 2 title and position:", type: "lines", lines: 2 },
+          { text: "Which text provides stronger evidence? Why?", type: "lines", lines: 3 },
+          { text: "Which text acknowledges the other side more fairly? How?", type: "lines", lines: 3 },
+        ],
+      },
+      // 72
+      {
+        type: "fill-in-blank" as const,
+        title: "Advanced Persuasive Vocabulary",
+        instruction: "Fill in each blank with the correct advanced term: antithesis, concession, refutation, ethos, polemic.",
+        sentences: [
+          { text: "When a writer establishes their _____, they build credibility by showing expertise or character.", blanks: ["ethos"] },
+          { text: "A _____ is a strongly worded, one-sided piece of writing that argues passionately for a single position.", blanks: ["polemic"] },
+          { text: "A _____ occurs when a writer acknowledges that part of the opposing view has merit before explaining why their own position is still stronger.", blanks: ["concession"] },
+          { text: "A _____ is a direct response that disproves or counters the opposing argument with evidence or logic.", blanks: ["refutation"] },
+          { text: "The rhetorical device of _____ places contrasting ideas side by side for effect — for example, 'Ask not what your country can do for you, ask what you can do for your country.'", blanks: ["antithesis"] },
+        ],
+      },
+      // 73
+      {
+        type: "multiple-choice" as const,
+        title: "Mastery Check: Persuasive Essay Concepts",
+        instruction: "Demonstrate your mastery of persuasive writing by choosing the best answer for each question.",
+        questions: [
+          { prompt: "What distinguishes a concession from a counterargument?", options: ["A concession introduces a new argument; a counterargument summarises the essay", "A concession acknowledges a partial truth in the opposing view before reinforcing the main argument; a counterargument states the opposing view", "They mean exactly the same thing", "A concession is always the last sentence in the essay"], answer: "A concession acknowledges a partial truth in the opposing view before reinforcing the main argument; a counterargument states the opposing view" },
+          { prompt: "Why does including a well-reasoned rebuttal make a persuasive text more credible?", options: ["It shows the reader that the writer has researched the opposing view and can respond to it thoughtfully", "It means the writer does not need any other evidence", "It replaces the need for a position statement", "It always makes the essay longer"], answer: "It shows the reader that the writer has researched the opposing view and can respond to it thoughtfully" },
+          { prompt: "Which of these is the best definition of a 'call to action'?", options: ["A sentence that introduces the essay topic for the first time", "A final sentence that urges the reader to take a specific action or adopt a new perspective", "A sentence that lists all the arguments made in the essay", "A question that asks the reader whether they enjoyed the essay"], answer: "A final sentence that urges the reader to take a specific action or adopt a new perspective" },
+        ],
+      },
+      // 74
+      {
+        type: "open-response" as const,
+        title: "Persuasive Writing About a Cause You Care About",
+        instruction: "Write a persuasive paragraph about a cause, issue or change that genuinely matters to you. Use everything you have learned: position statement, evidence, counterargument, rebuttal and call to action.",
+        parentTip: "Authentic writing — writing about something the student genuinely cares about — is always better quality than writing about assigned topics. Help your child identify a cause they feel strongly about, whether local, national or global.",
+        prompts: [{ text: "My cause:", type: "lines", lines: 1 }, { text: "My persuasive paragraph:", type: "box", lines: 12 }],
+      },
+      // 75 — TIP
+      {
+        type: "tip" as const,
+        title: "Parent Tip: Argument Is a Life Skill",
+        content: "The ability to form a well-reasoned, evidence-based argument is not just a school skill. It is used in job interviews, community meetings, business presentations, legal disputes and political engagement throughout life. Every time your child practises forming a clear position, finding evidence and responding fairly to opposition, they are building a cognitive skill that compounds over years. The most important thing you can do is model good argument yourself — acknowledge good points made against your view, and ask for evidence when someone makes a claim.",
+      },
+      // 76
+      {
+        type: "open-response" as const,
+        title: "Argument Analysis: Spot Three Techniques",
+        instruction: "Find a persuasive text — editorial, advertisement or speech transcript — and identify at least three persuasive techniques used by the writer.",
+        prompts: [
+          { text: "Text title and source:", type: "lines", lines: 1 },
+          { text: "Technique 1: ___. Quote or example from the text:", type: "lines", lines: 3 },
+          { text: "Technique 2: ___. Quote or example from the text:", type: "lines", lines: 3 },
+          { text: "Technique 3: ___. Quote or example from the text:", type: "lines", lines: 3 },
+        ],
+      },
+      // 77
+      {
+        type: "sorting" as const,
+        title: "Sort the Evidence: Strong or Weak?",
+        instruction: "Sort each piece of evidence into Strong (verifiable, specific, from reliable source) or Weak (vague, opinion, unreliable source).",
+        parentTip: "Evaluating evidence quality is one of the most transferable skills in the curriculum. It underpins scientific literacy, media literacy and all forms of academic writing.",
+        columns: ["Strong", "Weak"],
+        items: [
+          { label: "The CSIRO found that 2.5 million Australian households experienced food insecurity in 2023." },
+          { label: "I heard on the internet that most people think the government is doing a bad job." },
+          { label: "According to the World Health Organisation, physical inactivity is the fourth leading risk factor for global mortality." },
+          { label: "My neighbour says that solar panels are too expensive and don't really work." },
+          { label: "The Australian Bureau of Statistics recorded that 97% of households had internet access in 2023." },
+          { label: "Everyone knows that children are spending too much time on screens." },
+        ],
+      },
+      // 78
+      {
+        type: "fill-in-blank" as const,
+        title: "Write the Missing Part",
+        instruction: "Each persuasive paragraph is missing one key part. Write it in.",
+        sentences: [
+          { text: "MISSING PART: Position statement. 'Every year, millions of tonnes of electronic waste are dumped in landfill. This waste contains toxic materials that leach into soil and water. Australia must introduce a national e-waste recycling scheme.' ADD THE POSITION STATEMENT: _____.", blanks: [""] },
+          { text: "MISSING PART: Rebuttal. 'Schools should ban competitive sport. Some argue that sport builds character and teamwork. _____.' ADD THE REBUTTAL:", blanks: [""] },
+          { text: "MISSING PART: Call to action. 'The evidence clearly shows that reducing food waste has significant environmental and economic benefits. Australia already has the tools and the will to lead the way. _____.' ADD THE CALL TO ACTION:", blanks: [""] },
+        ],
+      },
+      // 79
+      {
+        type: "open-response" as const,
+        title: "Persuasion in Advertising",
+        instruction: "Analyse an advertisement (TV, online or print) that is trying to persuade you to buy something or adopt an attitude. Answer the questions below.",
+        parentTip: "Children are exposed to thousands of advertisements every year, many of which use sophisticated persuasive techniques. Developing the habit of analysing these critically is one of the best media literacy skills you can teach.",
+        prompts: [
+          { text: "Describe the advertisement (product or cause, where you saw it):", type: "lines", lines: 2 },
+          { text: "What persuasive techniques does it use?", type: "lines", lines: 3 },
+          { text: "What emotions does it try to make you feel?", type: "lines", lines: 2 },
+          { text: "Do you find it convincing? Why or why not?", type: "lines", lines: 3 },
+        ],
+      },
+      // 80 — SPARK
+      {
+        type: "spark" as const,
+        title: "Spark: Words That Changed the World",
+        content: "Throughout history, persuasive writing and speaking have changed laws, shifted societies and ended injustices. Harriet Beecher Stowe's novel about slavery moved Abraham Lincoln to say she had started the Civil War. Rachel Carson's book about pesticides led to the banning of DDT. Malala Yousafzai's speech to the United Nations changed how many countries approach girls' education. None of these people had armies or governments behind them when they first started writing. They had arguments, evidence and the courage to express a position clearly and publicly. Every time you practise forming a careful, evidence-based argument, you are learning one of the most genuinely powerful skills in human history. Use it wisely. Use it fairly. Use it to make things better.",
+      },
+      // 81
+      {
+        type: "open-response" as const,
+        title: "Extension: Argue the Opposite Side",
+        instruction: "Take a topic you feel strongly about. Write a persuasive paragraph arguing the OPPOSITE of your real view — as fairly and convincingly as possible.",
+        parentTip: "Arguing the other side requires genuine intellectual flexibility and deep understanding of the issue. Students who can write a convincing argument for a view they disagree with have reached a very high level of critical thinking.",
+        prompts: [
+          { text: "My topic and my REAL view:", type: "lines", lines: 1 },
+          { text: "Paragraph arguing the OPPOSITE view (try to be as convincing as possible):", type: "box", lines: 10 },
+        ],
+      },
+      // 82
+      {
+        type: "multiple-choice" as const,
+        title: "Advanced Concept Check: Concession and Refutation",
+        instruction: "Choose the best answer for each question about concession and refutation.",
+        questions: [
+          { prompt: "When a writer makes a concession, they:", options: ["Abandon their main argument", "Acknowledge that a point made by the opposing side has partial merit", "Introduce a brand new argument", "Repeat the counterargument without responding to it"], answer: "Acknowledge that a point made by the opposing side has partial merit" },
+          { prompt: "A refutation is most effective when it:", options: ["Simply states 'This argument is wrong'", "Dismisses the counterargument without evidence", "Provides specific evidence or logic that directly undermines the counterargument", "Ignores the strongest points of the opposing view"], answer: "Provides specific evidence or logic that directly undermines the counterargument" },
+          { prompt: "Which sentence best demonstrates a concession-and-refutation structure?", options: ["The counterargument is not valid.", "While it is true that renewable energy requires significant upfront investment, the long-term savings and environmental benefits far outweigh the initial costs.", "Renewable energy is obviously better than fossil fuels.", "Some people disagree, but they are probably wrong."], answer: "While it is true that renewable energy requires significant upfront investment, the long-term savings and environmental benefits far outweigh the initial costs." },
+        ],
+      },
+      // 83
+      {
+        type: "open-response" as const,
+        title: "Write a Concession-and-Refutation Paragraph",
+        instruction: "Write a full paragraph that begins with a concession ('While it is true that… / Although some argue…') and then provides a well-reasoned refutation with evidence.",
+        parentTip: "The concession-and-refutation structure is used in legal briefs, academic essays, editorial journalism and policy documents. Mastering it at Year 5 gives your child a significant head start in secondary school writing.",
+        prompts: [{ text: "My concession-and-refutation paragraph:", type: "box", lines: 10 }],
+      },
+      // 84
+      {
+        type: "fill-in-blank" as const,
+        title: "Rebuttal Sentence Patterns",
+        instruction: "Complete each rebuttal using the pattern provided.",
+        sentences: [
+          { text: "CONCESSION: While it is true that reducing single-use plastics will affect some businesses, _____.", blanks: [""] },
+          { text: "REFUTATION: Although critics argue that school uniforms limit self-expression, research from the University of Sydney demonstrates that _____.", blanks: [""] },
+          { text: "ACKNOWLEDGEMENT: This concern is understandable; however, _____.", blanks: [""] },
+          { text: "PARTIAL CONCESSION: Admittedly, _____, yet _____.", blanks: [""] },
+        ],
+      },
+      // 85
+      {
+        type: "open-response" as const,
+        title: "Your Strongest Persuasive Paragraph",
+        instruction: "Write the strongest persuasive paragraph you can. Choose a topic you know well and care about. Use a concession-and-refutation structure, integrate specific evidence and end with a compelling final sentence.",
+        parentTip: "This is a showcase activity — your child's best work. Consider saving it as part of a writing portfolio. Read it together and celebrate what they have achieved.",
+        prompts: [{ text: "My strongest persuasive paragraph:", type: "box", lines: 14 }],
+      },
+      // 86
+      {
+        type: "true-false" as const,
+        title: "True or False: Advanced Persuasive Skills",
+        instruction: "Mark each statement True or False.",
+        statements: [
+          { text: "A writer who uses a concession demonstrates intellectual honesty and builds reader trust.", answer: true },
+          { text: "A refutation is most effective when it dismisses the counterargument without providing evidence.", answer: false },
+          { text: "Logos, ethos and pathos can all appear in the same persuasive paragraph.", answer: true },
+          { text: "An appeal to fear is always an unethical persuasive technique.", answer: false },
+          { text: "The best persuasive writers combine emotional appeals with logical evidence and credible sources.", answer: true },
+        ],
+      },
+      // 87
+      {
+        type: "multiple-choice" as const,
+        title: "Mastery Challenge: Identify the Technique",
+        instruction: "Choose the most precise description of the persuasive technique used in each example.",
+        questions: [
+          { prompt: "'The science is unambiguous. The evidence is overwhelming. The time is now.' What technique is this?", options: ["Straw man", "Rule of three with anaphora (repetition for emphasis)", "Bandwagon fallacy", "Appeal to authority"], answer: "Rule of three with anaphora (repetition for emphasis)" },
+          { prompt: "'To be for this policy is to be for children. To be against it is to be against their future.' What technique is this?", options: ["False dichotomy using antithesis", "Rhetorical question", "Appeal to shared values", "Emotive language"], answer: "False dichotomy using antithesis" },
+          { prompt: "'As a marine biologist who has spent 30 years studying the reef, I can tell you that the damage is irreversible without immediate action.' What technique is this?", options: ["Emotive language", "Appeal to ethos (credibility through expertise)", "Rule of three", "Bandwagon fallacy"], answer: "Appeal to ethos (credibility through expertise)" },
+        ],
+      },
+      // 88
+      {
+        type: "open-response" as const,
+        title: "Teach the Skill",
+        instruction: "Explain to a younger student (or a parent) what the difference between a counterargument and a rebuttal is. Use a simple example and draw a diagram if it helps.",
+        parentTip: "Teaching a concept demonstrates deeper understanding than any test. If your child can explain the difference clearly and create an original example, they have genuinely mastered this skill.",
+        prompts: [{ text: "My explanation (as if teaching someone younger):", type: "box", lines: 10 }],
+      },
+      // 89
+      {
+        type: "sorting" as const,
+        title: "Sort the Essay Features by Importance",
+        instruction: "Sort these persuasive essay features by how important you think they are to a convincing argument. Then justify your top choice in writing.",
+        columns: ["Essential", "Important", "Helpful but optional"],
+        items: [
+          { label: "A clear position statement" },
+          { label: "At least two pieces of specific evidence" },
+          { label: "A counterargument and rebuttal" },
+          { label: "A hook in the introduction" },
+          { label: "Varied persuasive techniques (logos, ethos, pathos)" },
+          { label: "Formal language throughout" },
+          { label: "A call to action in the conclusion" },
+          { label: "Perfect spelling throughout" },
+          { label: "At least three body paragraphs" },
+        ],
+      },
+      // 90 — TIP
+      {
+        type: "tip" as const,
+        title: "Parent Tip: Connecting to the World",
+        content: "One of the most powerful motivators for developing persuasive writing is connecting it to real issues in your child's world. Consider writing a real letter together — to your local council about a park, to the school about an issue that matters, or to a newspaper about something in your community. Even if it is never sent, the act of writing for a real purpose with a real audience transforms the skill from a school exercise into a meaningful act of participation.",
+      },
+      // 91
+      {
+        type: "open-response" as const,
+        title: "Write a Persuasive Editorial",
+        instruction: "Write a short editorial (opinion piece) for a school or community newspaper on an issue that matters to you. Use all the skills from this worksheet: hook, position statement, evidence, counterargument, rebuttal and call to action.",
+        prompts: [{ text: "My editorial:", type: "box", lines: 20 }],
+      },
+      // 92
+      {
+        type: "multiple-choice" as const,
+        title: "Final Mastery Check",
+        instruction: "Demonstrate your mastery of persuasive writing by choosing the best answer for each question.",
+        questions: [
+          { prompt: "Which of these is the most complete definition of a persuasive essay?", options: ["A story that convinces the reader by showing what happens to characters", "A structured text that presents a position, supports it with evidence, acknowledges opposing views and rebuts them, ending with a call to action", "A text that explains how something works, using facts and diagrams", "A diary entry that expresses the writer's personal feelings about a topic"], answer: "A structured text that presents a position, supports it with evidence, acknowledges opposing views and rebuts them, ending with a call to action" },
+          { prompt: "Why is a logical fallacy a problem in a persuasive argument?", options: ["Because it uses too many words", "Because it replaces sound reasoning with flawed thinking, which undermines the argument's credibility", "Because it is always dishonest", "Because it uses no evidence at all"], answer: "Because it replaces sound reasoning with flawed thinking, which undermines the argument's credibility" },
+          { prompt: "Which combination of techniques creates the strongest persuasive argument?", options: ["Emotional appeals alone", "Statistics alone", "Logos (evidence), ethos (credibility) and pathos (emotion) used together with a fair counterargument and rebuttal", "Repeated assertions with no evidence"], answer: "Logos (evidence), ethos (credibility) and pathos (emotion) used together with a fair counterargument and rebuttal" },
+        ],
+      },
+      // 93
+      {
+        type: "open-response" as const,
+        title: "Reflection: What Have You Learned?",
+        instruction: "Look back over your work in this worksheet and answer the reflection questions.",
+        prompts: [
+          { text: "Q1: What is the most important thing you have learned about persuasive writing?", type: "lines", lines: 3 },
+          { text: "Q2: What technique do you find most effective and why?", type: "lines", lines: 3 },
+          { text: "Q3: How has your persuasive writing improved since the beginning of this worksheet?", type: "lines", lines: 3 },
+        ],
+      },
+      // 94
+      {
+        type: "fill-in-blank" as const,
+        title: "Complete the Advanced Argument",
+        instruction: "Fill in the blanks to complete this formal persuasive paragraph. Use the most precise language for each gap.",
+        sentences: [
+          { text: "It is _____ [clear / kind of obvious] that Australia needs a stronger national approach to food waste.", blanks: ["clear"] },
+          { text: "According to the National Food Waste Strategy, Australians _____ [waste / chuck out] approximately 7.6 million tonnes of food each year.", blanks: ["waste"] },
+          { text: "This is _____ [significant / a big deal] because food waste accounts for nearly one-third of landfill and generates significant greenhouse gas emissions.", blanks: ["significant"] },
+          { text: "While some _____ [argue / reckon] that individual change is sufficient, systemic policy reform is _____ [essential / necessary] to achieve meaningful reduction at scale.", blanks: ["argue", "essential"] },
+        ],
+      },
+      // 95
+      {
+        type: "home-activity" as const,
+        title: "Home Activity: Write to Your Local Representative",
+        instruction: "Choose an issue in your local community or school that you think should change. Write a formal letter to your local council, school principal or state government representative.",
+        parentTip: "This is one of the most powerful learning experiences possible — using real persuasive writing skills to engage with real civic institutions. Help your child find the correct name and address for their intended recipient. Whether the letter is sent or not, the experience of writing for a real audience and real purpose is transformative.",
+        suggestions: [
+          "Identify one issue that genuinely matters to you in your school, community or the wider world.",
+          "Research the issue — find two or three specific facts or statistics.",
+          "Draft a formal letter with: a formal greeting, one paragraph of background, two paragraphs of argument with evidence, one paragraph with counterargument and rebuttal, and a call to action.",
+          "Read your letter aloud to check the tone is formal, confident and respectful throughout.",
+          "If you are brave enough, send it — or keep it in your writing portfolio as evidence of your skills.",
+        ],
+      },
+      // 96
+      {
+        type: "open-response" as const,
+        title: "Respond to a Counterargument in Conversation",
+        instruction: "Your parent will read one of these counterarguments aloud. You must respond with a well-reasoned rebuttal — speaking, not writing. Then write a one-paragraph rebuttal for the one that challenged you the most.",
+        parentTip: "Responding to counterarguments in real time — without the safety net of planning — is the highest level of persuasive skill. This oral practice directly develops the academic debate skills used in secondary school and beyond.",
+        prompts: [
+          { text: "OPTIONS FOR PARENT TO READ ALOUD:\n• 'Children should not have any homework at all.'\n• 'Social media should be banned for anyone under 16.'\n• 'It is more important to be kind than to be clever.'\n\nThe counterargument I found most challenging:", type: "lines", lines: 1 },
+          { text: "My written rebuttal for that counterargument:", type: "box", lines: 8 },
+        ],
+      },
+      // 97
+      {
+        type: "multiple-choice" as const,
+        title: "Mastery Challenge: The Complete Persuasive Writer",
+        instruction: "These questions test your mastery of all aspects of persuasive writing from this worksheet.",
+        questions: [
+          { prompt: "A student writes: 'Everyone should agree with me about this.' What is wrong with this sentence in a formal persuasive essay?", options: ["It is too short", "It makes a claim without evidence and uses informal, absolute language", "It has no transition word", "It is in the wrong paragraph"], answer: "It makes a claim without evidence and uses informal, absolute language" },
+          { prompt: "A student writes: 'While critics argue that community gardens take up space that could be used for other purposes, extensive research from urban planning studies shows that community gardens increase property values, reduce crime and improve community wellbeing.' What persuasive structure does this sentence demonstrate?", options: ["Position statement followed by a call to action", "Evidence followed by explanation", "Counterargument (concession) followed by a refutation with evidence", "Rule of three followed by emotive language"], answer: "Counterargument (concession) followed by a refutation with evidence" },
+        ],
+      },
+      // 98
+      {
+        type: "open-response" as const,
+        title: "Your Best Persuasive Writing Piece",
+        instruction: "Write the most polished, convincing persuasive text you can. This is your showcase piece. Take 30 minutes, use everything you have learned, and produce something you are genuinely proud of.",
+        prompts: [{ text: "My best persuasive writing piece:", type: "box", lines: 22 }],
+      },
+      // 99
+      {
+        type: "open-response" as const,
+        title: "Final Reflection: The Power of Argument",
+        instruction: "Write a final reflection on what you have learned throughout this worksheet.",
+        prompts: [
+          { text: "Q1: Before this worksheet, how did you think about persuasion? Has your view changed? How?", type: "lines", lines: 4 },
+          { text: "Q2: What is the difference between persuasion and manipulation? Why does that difference matter?", type: "lines", lines: 4 },
+          { text: "Q3: What is the most important skill you have developed in this worksheet?", type: "lines", lines: 3 },
+        ],
+      },
+      // 100 — SPARK
+      {
+        type: "spark" as const,
+        title: "Spark: Argument Is a Gift",
+        content: "Some people think argument means fighting. It does not. Argument — real, careful, evidence-based argument — is one of the great gifts of human intelligence. It is how science advances, how laws improve and how societies become fairer. When two people can hold different views, present their evidence respectfully and genuinely listen to the other side, something remarkable can happen: one of them might change their mind. Or both might. Or they might discover that the truth is more complex than either of them first thought. You have now practised all the tools of a skilled persuasive writer: position statements, evidence, counterarguments, rebuttals, logical reasoning and the ethical principles that make argument trustworthy. Use those tools carefully, honestly and bravely. The world needs clear thinkers who can argue well.",
       },
     ],
   },
@@ -6558,67 +7576,57 @@ export const year5EnglishWorksheets: WorksheetItem[] = [
       ],
     },
     activities: [
+      // 1
+      {
+        type: "multiple-choice" as const,
+        title: "What Is Media Literacy?",
+        instruction: "Choose the best answer for each question about media literacy.",
+        parentTip: "Media literacy is one of the most important skills of the 21st century. Young people who can critically read images, layouts and design choices are far less vulnerable to manipulation and misinformation.",
+        questions: [
+          { prompt: "What does 'media literacy' mean?", options: ["The ability to read a newspaper quickly", "The ability to read and critically evaluate texts that combine words with visual elements", "The ability to write for digital media platforms", "The ability to identify famous artworks"], answer: "The ability to read and critically evaluate texts that combine words with visual elements" },
+          { prompt: "Which of these is an example of a media text?", options: ["A chapter from a novel with no illustrations", "A newspaper front page with photographs and headlines", "A handwritten diary entry", "A maths worksheet"], answer: "A newspaper front page with photographs and headlines" },
+          { prompt: "Why do designers make deliberate choices about layout, colour and images?", options: ["Because they have no other options", "To fill empty space on the page", "To communicate meaning, guide the reader's attention and influence how the audience feels", "Because computers automatically decide layout for them"], answer: "To communicate meaning, guide the reader's attention and influence how the audience feels" },
+        ],
+      },
+      // 2
+      {
+        type: "matching" as const,
+        title: "Match the Design Element to Its Definition",
+        instruction: "Draw a line to match each design element to its correct definition.",
+        left: ["Layout", "Typography", "Colour scheme", "White space", "Hierarchy"],
+        right: ["The empty areas on a page that help the eye focus on key content", "The way design elements are arranged and sized to show their order of importance", "The arrangement of text, images and other elements on a page", "The set of colours chosen for a design and the mood they create", "The style, size and arrangement of text in a design"],
+      },
+      // 3
+      {
+        type: "true-false" as const,
+        title: "True or False: Design Basics",
+        instruction: "Mark each statement True or False.",
+        parentTip: "Before checking answers, ask your child to look at a nearby book cover, poster or package and identify one true statement from this activity that they can see in that design.",
+        statements: [
+          { text: "The largest element in a design is usually the most important one.", answer: true },
+          { text: "White space in a design is always a mistake — the designer ran out of ideas.", answer: false },
+          { text: "Typography choices — such as font size and style — communicate meaning beyond the words themselves.", answer: true },
+          { text: "Colour choices in a design are purely decorative and have no effect on how the audience feels.", answer: false },
+          { text: "The placement of an image can influence where the reader looks first.", answer: true },
+        ],
+      },
+      // 4
       {
         type: "open-response" as const,
-        title: "Analyse a Media Text",
-        instruction:
-          "Look at the description of an advertisement below. Answer each question about the design choices the creator made.",
+        title: "First Impressions",
+        instruction: "Before you read a word, a design is already communicating. Look at the description below and answer the questions.",
         prompts: [
-          {
-            text: "ADVERTISEMENT DESCRIPTION:\nA full-page advertisement for a children's charity shows a large photograph of a child smiling and holding a book. Above the image is a small headline in white text: Giving one book changes everything. Below the image is a large button in bright orange reading: Donate today. The background is white with a small logo in the top corner. The photograph takes up 80% of the page.\n\n1. Why do you think the photograph takes up most of the page?",
-            type: "lines",
-            lines: 3,
-          },
-          {
-            text: "2. Why might the creator have chosen bright orange for the button?",
-            type: "lines",
-            lines: 3,
-          },
-          {
-            text: "3. What emotion is the creator trying to make the audience feel? How do you know?",
-            type: "lines",
-            lines: 3,
-          },
-          {
-            text: "4. Who is the intended audience for this advertisement? What design choices tell you this?",
-            type: "lines",
-            lines: 3,
-          },
+          { text: "DESCRIPTION: A newspaper front page. The top half of the page is a full-width photograph of a flooded street with a small house barely visible above the water. The headline below reads 'DISASTER STRIKES' in large bold letters. There is a small story in the bottom right corner with a tiny photograph of a smiling sports player.\n\nQ1: What does your eye go to first? Why?", type: "lines", lines: 3 },
+          { text: "Q2: What does the size difference between the two stories tell you about what the editor thinks is most important?", type: "lines", lines: 3 },
+          { text: "Q3: How does the photograph shape how you feel before you read the headline?", type: "lines", lines: 3 },
         ],
       },
-      {
-        type: "open-response" as const,
-        title: "Design Your Own Poster",
-        instruction:
-          "Plan and sketch a simple poster or advertisement on a topic of your choice. Then write an explanation of three design choices you made.",
-        prompts: [
-          { text: "My topic or message:", type: "lines", lines: 1 },
-          { text: "Sketch your poster here (use the box as your design space):", type: "box", lines: 12 },
-          { text: "Design choice 1 and why I made it:", type: "lines", lines: 3 },
-          { text: "Design choice 2 and why I made it:", type: "lines", lines: 3 },
-          { text: "Design choice 3 and why I made it:", type: "lines", lines: 3 },
-        ],
-      },
-      {
-        type: "home-activity" as const,
-        title: "Media Critic for a Week",
-        instruction:
-          "Try these activities during the week to keep developing your media literacy.",
-        parentTip:
-          "Doing this alongside your child — sharing your own observations — models the habit of thinking critically about media without making it feel like a test.",
-        suggestions: [
-          "Find a magazine or newspaper advertisement and write down three design choices the creator made. For each one, explain what effect it has on the audience.",
-          "Compare the front page of two different newspapers on the same day. What is the main story on each? What images did they choose? What does the difference tell you about each newspaper's audience or point of view?",
-          "Notice five logos this week — on food packaging, vehicles or signs. For each one, consider: what does the colour choice communicate? What mood does the shape or font create?",
-        ],
-      },
+      // 5
       {
         type: "sorting" as const,
         title: "Sort the Design Techniques",
-        instruction:
-          "Sort each design feature into the correct column based on its primary purpose in a media text.",
-        parentTip:
-          "Remind your child that one design feature can serve multiple purposes — a large image might both attract attention and evoke emotion. Encourage them to think about the dominant purpose.",
+        instruction: "Sort each design feature into the correct column based on its primary purpose.",
+        parentTip: "Design features often serve multiple purposes — a large image might both attract attention and evoke emotion. Encourage your child to think about the dominant purpose.",
         columns: ["Attract attention", "Evoke emotion", "Build credibility", "Guide the reader's eye"],
         items: [
           { label: "Bold, oversized headline" },
@@ -6635,47 +7643,1083 @@ export const year5EnglishWorksheets: WorksheetItem[] = [
           { label: "A countdown timer or deadline" },
         ],
       },
+      // 6
+      {
+        type: "fill-in-blank" as const,
+        title: "Design Vocabulary",
+        instruction: "Fill in each blank using a word from the box: contrast, focal point, hierarchy, caption, masthead.",
+        parentTip: "Building a vocabulary for talking about design helps students move from 'I like/dislike this' to 'I can explain what this design is doing and why'.",
+        sentences: [
+          { text: "The _____ of a newspaper is the publication's name printed at the top of the front page.", blanks: ["masthead"] },
+          { text: "The _____ is the element in a design that the viewer's eye is naturally drawn to first.", blanks: ["focal point"] },
+          { text: "When light and dark colours are placed next to each other, this is called _____.", blanks: ["contrast"] },
+          { text: "A _____ is a short text placed beneath a photograph to explain what it shows.", blanks: ["caption"] },
+          { text: "Visual _____ is when design elements are sized and positioned to show their order of importance.", blanks: ["hierarchy"] },
+        ],
+      },
+      // 7
       {
         type: "circle-correct" as const,
         title: "Reading Design Choices",
-        instruction:
-          "Read each description of a design choice. Circle the most likely reason the creator made that choice.",
-        parentTip:
-          "There is rarely a single correct answer in media analysis — what matters is whether your child can justify their response with reasoning. Accept well-reasoned alternatives.",
+        instruction: "Read each design description. Circle the most likely reason the creator made that choice.",
         questions: [
-          {
-            prompt: "A charity poster uses a dark, desaturated colour scheme with a single beam of light in the centre.",
-            options: [
-              "To make the poster easy to print cheaply",
-              "To create a sense of hope emerging from hardship",
-              "Because those were the only colours available",
-            ],
-          },
-          {
-            prompt: "A news website places its most important story in the top-left corner of the page.",
-            options: [
-              "Because most readers scan pages from top-left to bottom-right",
-              "Because the story was too short to go anywhere else",
-              "To hide it from casual readers",
-            ],
-          },
-          {
-            prompt: "An advertisement for a children's breakfast cereal uses a large cartoon character and bold primary colours.",
-            options: [
-              "To appeal to adult shoppers who find cartoons nostalgic",
-              "To target children by using visuals that are familiar and exciting to them",
-              "Because the designer preferred cartoon art",
-            ],
-          },
-          {
-            prompt: "A documentary about climate change opens with sweeping aerial footage of a dying coral reef, with no words for the first 30 seconds.",
-            options: [
-              "To save time on writing a script",
-              "To create an emotional impact before presenting any facts",
-              "Because footage of coral reefs is free to use",
-            ],
-          },
+          { prompt: "A charity poster uses a dark, desaturated colour scheme with a single beam of light in the centre.", options: ["To make the poster easy to print cheaply", "To create a sense of hope emerging from hardship", "Because those were the only colours available"] },
+          { prompt: "A news website places its most important story in the top-left corner of the page.", options: ["Because most readers scan pages from top-left to bottom-right", "Because the story was too short to go anywhere else", "To hide it from casual readers"] },
+          { prompt: "An advertisement for a children's breakfast cereal uses a large cartoon character and bold primary colours.", options: ["To appeal to adult shoppers who find cartoons nostalgic", "To target children by using visuals that are familiar and exciting to them", "Because the designer preferred cartoon art"] },
+          { prompt: "A documentary about climate change opens with sweeping aerial footage of a dying coral reef, with no words for the first 30 seconds.", options: ["To save time on writing a script", "To create an emotional impact before presenting any facts", "Because footage of coral reefs is free to use"] },
         ],
+      },
+      // 8
+      {
+        type: "open-response" as const,
+        title: "Analyse a Media Text",
+        instruction: "Read the description of an advertisement. Answer each analysis question.",
+        prompts: [
+          { text: "ADVERTISEMENT:\nA full-page advertisement for a children's charity shows a large photograph of a child smiling and holding a book. Above the image is a small headline in white text: Giving one book changes everything. Below the image is a large button in bright orange reading: Donate today. The background is white with a small logo in the top corner.\n\nQ1: Why do you think the photograph takes up most of the page?", type: "lines", lines: 3 },
+          { text: "Q2: Why might the creator have chosen bright orange for the donate button?", type: "lines", lines: 3 },
+          { text: "Q3: What emotion is the creator trying to create? How do you know?", type: "lines", lines: 3 },
+          { text: "Q4: Who is the intended audience? What design choices tell you this?", type: "lines", lines: 3 },
+        ],
+      },
+      // 9
+      {
+        type: "matching" as const,
+        title: "Match the Colour to Its Common Association",
+        instruction: "Match each colour to its most common emotional association in Western media design.",
+        parentTip: "Colour associations are culturally learned and not universal — red means danger in some contexts and celebration in others. However, these associations are very commonly used in Australian and Western media, making them important to recognise.",
+        left: ["Red", "Blue", "Green", "Yellow/Gold", "Black", "White"],
+        right: ["Mourning, formality, authority or elegance", "Nature, growth, environmental themes or health", "Danger, urgency, passion or importance", "Purity, cleanliness, simplicity or neutrality", "Trust, calm, technology or reliability", "Energy, optimism, warning or sunshine"],
+      },
+      // 10
+      {
+        type: "true-false" as const,
+        title: "True or False: Colour in Design",
+        instruction: "Mark each statement True or False.",
+        statements: [
+          { text: "Colour associations are always the same in every culture around the world.", answer: false },
+          { text: "Emergency services vehicles are often red or orange because these colours attract attention quickly.", answer: true },
+          { text: "A design that uses only black and white cannot communicate emotion.", answer: false },
+          { text: "In advertising, the colour of a product's packaging is deliberately chosen to appeal to the target audience.", answer: true },
+          { text: "A large block of red on a poster always means danger.", answer: false },
+        ],
+      },
+      // 11
+      {
+        type: "open-response" as const,
+        title: "Analyse Colour Choices",
+        instruction: "Describe what you would expect to feel when looking at a design that uses each colour scheme. Explain why.",
+        parentTip: "This activity develops colour literacy — the ability to read and use colour as a communicative tool. Encourage your child to connect their answers to real examples they have seen.",
+        prompts: [
+          { text: "Colour scheme: Deep blue and silver with white text.", type: "lines", lines: 3 },
+          { text: "Colour scheme: Bright orange, red and yellow with black outlines.", type: "lines", lines: 3 },
+          { text: "Colour scheme: Pale green, cream and soft brown with natural textures.", type: "lines", lines: 3 },
+        ],
+      },
+      // 12
+      {
+        type: "multiple-choice" as const,
+        title: "Typography: Reading Fonts",
+        instruction: "Choose the best answer for each question about typography in media.",
+        parentTip: "Typography — the design of text — is one of the most powerful and underappreciated communication tools in media. Serif vs sans-serif, bold vs light, large vs small all communicate messages before the reader processes the words.",
+        questions: [
+          { prompt: "A newspaper uses a large, bold font for headlines and a smaller, lighter font for body text. Why?", options: ["To make the design more colourful", "To show hierarchy — headlines are more important and should attract attention first", "Because large fonts are always easier to read", "Because the designer preferred bold fonts"], answer: "To show hierarchy — headlines are more important and should attract attention first" },
+          { prompt: "A luxury brand uses a thin, elegant serif font. What does this communicate?", options: ["The brand is aimed at children", "The brand is sporty and active", "The brand values elegance, tradition and refinement", "The brand is a technology company"], answer: "The brand values elegance, tradition and refinement" },
+          { prompt: "A warning label uses capital letters, bold text and an exclamation mark. Why?", options: ["To make the label look professional", "To urgently attract attention and signal danger or importance", "Because the designer made a mistake", "To make the label harder to read"], answer: "To urgently attract attention and signal danger or importance" },
+        ],
+      },
+      // 13
+      {
+        type: "matching" as const,
+        title: "Match the Font Style to Its Communication",
+        instruction: "Match each font description to the message or mood it typically communicates.",
+        left: ["Large, bold, sans-serif font", "Flowing, handwritten-style font", "Small, light, elegant serif font", "All capital letters in a clean font", "Distressed, worn, rough-edged font"],
+        right: ["A sense of age, vintage character or authenticity", "Quiet elegance, luxury or sophistication", "Urgency, importance or a shout", "Strength, modernity and directness", "Warmth, personality or a handmade quality"],
+      },
+      // 14
+      {
+        type: "open-response" as const,
+        title: "Font Choice Matters",
+        instruction: "Read these two versions of the same message. Explain how the font description changes your feeling about the message.",
+        prompts: [
+          { text: "MESSAGE: 'Fresh milk — delivered daily.'\nVERSION A: Written in a flowing, handwritten-style script in green on a cream background with a small farm illustration.\nVERSION B: Written in bold industrial block letters in white on a bright red background.\n\nQ1: What does Version A communicate about the brand?", type: "lines", lines: 3 },
+          { text: "Q2: What does Version B communicate about the brand?", type: "lines", lines: 3 },
+          { text: "Q3: Which version would be more effective for a small artisan farm? Explain why.", type: "lines", lines: 3 },
+        ],
+      },
+      // 15 — TIP
+      {
+        type: "tip" as const,
+        title: "Parent Tip: The Design Conversation",
+        content: "The best media literacy learning happens in everyday conversation, not just worksheets. When you see a poster, advertisement or website together, try asking: What did your eye go to first? Why? What colours are used and what feeling do they give you? Who do you think made this and who is it for? These questions, asked regularly and naturally, develop a critical eye that becomes automatic over time. You do not need to be a designer yourself — you just need to be curious.",
+      },
+      // 16
+      {
+        type: "true-false" as const,
+        title: "True or False: Images in Media",
+        instruction: "Mark each statement True or False.",
+        statements: [
+          { text: "Photographs in news media always show events exactly as they happened, with no editorial choice involved.", answer: false },
+          { text: "The angle of a photograph can change how the subject is perceived by the audience.", answer: true },
+          { text: "A close-up image of a person's face creates a more intimate or emotional connection than a distant shot.", answer: true },
+          { text: "Selecting which photograph to publish in a news story is always a neutral, factual decision.", answer: false },
+          { text: "Airbrushing and editing photographs in advertising is always disclosed to the audience.", answer: false },
+        ],
+      },
+      // 17
+      {
+        type: "matching" as const,
+        title: "Match the Camera Shot to Its Effect",
+        instruction: "Match each description of a photograph or camera shot to the effect it creates on the viewer.",
+        parentTip: "Understanding shot types and their effects is essential for analysing film, news photography, advertising and social media images. These terms are used in media, English and Film Studies.",
+        left: ["Close-up of a person's eyes", "Wide shot of a vast empty landscape", "Low-angle shot looking up at a person", "High-angle shot looking down at a person", "Side profile shot of someone looking off-camera"],
+        right: ["Makes the subject seem small, vulnerable or insignificant", "Creates a sense of loneliness, scale or freedom", "Creates a sense of depth, mystery or contemplation", "Creates intense intimacy, emotion or connection", "Makes the subject seem powerful, heroic or imposing"],
+      },
+      // 18
+      {
+        type: "open-response" as const,
+        title: "Analyse Photograph Choices",
+        instruction: "For each scenario, explain what photograph choice was made and what effect it was designed to have.",
+        prompts: [
+          { text: "SCENARIO 1: A newspaper story about rising cost of living shows a photograph of a single empty shelf in a supermarket.\nWhat effect is this image designed to create?", type: "lines", lines: 3 },
+          { text: "SCENARIO 2: An election campaign poster shows a politician photographed from a low angle, standing in bright sunlight with their chin slightly raised.\nWhat does this photograph communicate?", type: "lines", lines: 3 },
+          { text: "SCENARIO 3: An environmental advertisement shows a bird covered in oil against a dark background.\nWhat emotion is this image designed to trigger?", type: "lines", lines: 3 },
+        ],
+      },
+      // 19
+      {
+        type: "circle-correct" as const,
+        title: "Image and Text: What Is the Relationship?",
+        instruction: "For each example, circle whether the image and text are working together in the same direction, or whether the image adds something extra/unexpected.",
+        questions: [
+          { prompt: "A news article about a school awards night uses a photograph of a student receiving a trophy while their parent looks on proudly. The caption reads: 'Year 5 student wins regional science award.'", options: ["Image supports and reinforces the text", "Image adds an unexpected or contrasting layer of meaning"] },
+          { prompt: "An article about the pressures of social media uses a photograph of a teenager smiling at their phone. The headline reads: 'Young people's mental health in crisis.'", options: ["Image supports and reinforces the text", "Image creates tension or irony — the happy image contradicts the serious headline"] },
+          { prompt: "A conservation advertisement shows a single plastic bag floating in the ocean next to the words: 'This stays in the ocean for 500 years.'", options: ["Image supports and reinforces the text", "Image adds an unexpected or contrasting layer of meaning"] },
+        ],
+      },
+      // 20 — SPARK
+      {
+        type: "spark" as const,
+        title: "Spark: A Picture Is Worth a Thousand Choices",
+        content: "The phrase 'a picture is worth a thousand words' is true — but it misses something important. A picture is also worth a thousand choices. Someone decided what angle to photograph from, what to include in the frame and what to cut out, how bright or dark to make the image, what colour filter to apply, what caption to write, and where to place it on the page. Every one of those choices shaped what you see — and what you feel. Media literacy is not about being suspicious of every image. It is about knowing that images are made by people with purposes. When you understand that, you can read images as carefully as you read words.",
+      },
+      // 21
+      {
+        type: "open-response" as const,
+        title: "The Cropping Experiment",
+        instruction: "Imagine a photograph that shows a large crowd of protestors in a city street. Answer the questions below about how different cropping choices change the meaning.",
+        parentTip: "The concept that cropping — what you include and exclude in a frame — changes meaning is one of the most important media literacy insights a student can develop. It directly applies to social media, news photography and advertising.",
+        prompts: [
+          { text: "CROP A: The photograph is cropped tightly to show 20 very angry-looking people at the front of the crowd.\nWhat impression does this crop give the viewer?", type: "lines", lines: 3 },
+          { text: "CROP B: The photograph is a wide shot showing the full crowd of 10,000 peaceful marchers stretching for several blocks.\nWhat impression does this crop give the viewer?", type: "lines", lines: 3 },
+          { text: "Q: Same event, two very different impressions. What does this tell you about how photographs can shape a story?", type: "lines", lines: 3 },
+        ],
+      },
+      // 22
+      {
+        type: "multiple-choice" as const,
+        title: "Audience and Purpose",
+        instruction: "For each media text description, identify the most likely audience.",
+        parentTip: "Every media text is created with a specific audience in mind. All the design choices — colour, image, typography, language level — are calibrated for that audience. Understanding this is the foundation of media literacy.",
+        questions: [
+          { prompt: "A magazine with a hot pink cover, large bubbly fonts, celebrity photographs and headlines like 'Your Summer Look' and '50 Style Tips'.", options: ["Engineers aged 40–60", "Young adult women or teenage girls interested in fashion and celebrity", "Primary school boys", "Retired farmers"], answer: "Young adult women or teenage girls interested in fashion and celebrity" },
+          { prompt: "A website with a dark background, small technical fonts, product specifications and comparison tables for electronic components.", options: ["Young children learning to read", "Parents looking for school resources", "Technology enthusiasts or professionals buying electronics", "Elderly readers looking for general news"], answer: "Technology enthusiasts or professionals buying electronics" },
+          { prompt: "A colourful leaflet about a local council event with large text, photographs of families and children playing, and the headline 'Bring the whole family!'", options: ["Single professionals aged 20–30", "Families with young children in the local area", "International business travellers", "University students"], answer: "Families with young children in the local area" },
+        ],
+      },
+      // 23
+      {
+        type: "fill-in-blank" as const,
+        title: "Identify the Target Audience",
+        instruction: "Fill in the target audience for each media text description.",
+        sentences: [
+          { text: "A sports shoe advertisement featuring a famous basketball player, with action photography and the tagline 'Play like you mean it', targets _____.", blanks: ["young sports enthusiasts, particularly those interested in basketball"] },
+          { text: "A brochure for a retirement village using calming blue-green colours, large text, photographs of older adults enjoying activities and the headline 'Your best years, your way', targets _____.", blanks: ["older Australians or their families considering retirement living"] },
+          { text: "A website with animated characters, bright primary colours, simple vocabulary and interactive games targets _____.", blanks: ["young children, typically aged 4–8"] },
+        ],
+      },
+      // 24
+      {
+        type: "open-response" as const,
+        title: "Decode the Advertisement",
+        instruction: "Answer the four key media analysis questions for this advertisement description.",
+        prompts: [
+          { text: "ADVERTISEMENT:\nA full-page glossy magazine advertisement for bottled water. The background is a photograph of a crystal-clear mountain stream in a lush green forest at sunrise. The water bottle is shown in the foreground, small compared to the landscape. The text reads in small, clean white font: 'Pure. Natural. Untouched.' At the bottom: 'Aqualux — premium spring water — $12 per bottle.'\n\nQ1 — What do you see first and why?", type: "lines", lines: 3 },
+          { text: "Q2 — What colours are used and what mood do they create?", type: "lines", lines: 3 },
+          { text: "Q3 — How does the image work with the text?", type: "lines", lines: 3 },
+          { text: "Q4 — Who is the intended audience and how do the design choices target them?", type: "lines", lines: 3 },
+        ],
+      },
+      // 25
+      {
+        type: "sorting" as const,
+        title: "Sort the Media Text Features by Purpose",
+        instruction: "Sort each media text feature into its primary purpose category.",
+        parentTip: "Many media text features serve more than one purpose simultaneously. Encourage your child to identify the most prominent purpose rather than searching for the single 'correct' answer.",
+        columns: ["Establish credibility", "Create emotion", "Inform the audience", "Persuade or motivate action"],
+        items: [
+          { label: "A 'trusted by millions' badge on a product" },
+          { label: "A dramatic photograph of a natural disaster" },
+          { label: "A fact box with key statistics" },
+          { label: "A call-to-action button: 'Donate now'" },
+          { label: "A testimonial from a customer with their name and photograph" },
+          { label: "Before-and-after photographs" },
+          { label: "A timeline of events" },
+          { label: "The headline 'Your child could be next'" },
+        ],
+      },
+      // 26
+      {
+        type: "true-false" as const,
+        title: "True or False: Advertising Techniques",
+        instruction: "Mark each statement True or False.",
+        parentTip: "Advertising literacy is one of the most practical forms of media literacy. Understanding how advertisements work helps consumers make more conscious choices.",
+        statements: [
+          { text: "Advertisers use research about human psychology to design more effective advertisements.", answer: true },
+          { text: "All claims made in advertisements in Australia must be truthful and not misleading.", answer: true },
+          { text: "Celebrity endorsements always mean that the celebrity genuinely uses and believes in the product.", answer: false },
+          { text: "The placement of a product in a film or television show (product placement) is a form of advertising.", answer: true },
+          { text: "Children are considered a special audience that requires additional advertising protections under Australian law.", answer: true },
+        ],
+      },
+      // 27
+      {
+        type: "multiple-choice" as const,
+        title: "Advertising Techniques",
+        instruction: "Choose the advertising technique used in each example.",
+        questions: [
+          { prompt: "An advertisement says: '9 out of 10 dentists recommend this toothpaste.' What technique is this?", options: ["Celebrity endorsement", "Appeal to authority and statistics", "Fear appeal", "Bandwagon effect"], answer: "Appeal to authority and statistics" },
+          { prompt: "An advertisement shows everyone at a party using a brand of phone and looking happy and popular. What technique is this?", options: ["Appeal to authority", "Fear appeal", "Bandwagon effect — join in or be left out", "Rule of three"], answer: "Bandwagon effect — join in or be left out" },
+          { prompt: "An advertisement for an insurance company shows a family caught in a storm, looking worried. Then it cuts to the same family, safe and smiling after a claim was paid. What technique is this?", options: ["Humour", "Fear appeal followed by resolution and relief", "Celebrity endorsement", "Colour symbolism"], answer: "Fear appeal followed by resolution and relief" },
+          { prompt: "A famous actor appears in a perfume advertisement, walking through Paris in elegant clothing. What technique is this?", options: ["Fear appeal", "Bandwagon effect", "Celebrity endorsement — associating the product with glamour and aspiration", "Rule of three"], answer: "Celebrity endorsement — associating the product with glamour and aspiration" },
+        ],
+      },
+      // 28
+      {
+        type: "open-response" as const,
+        title: "Identify the Advertising Technique",
+        instruction: "Describe an advertisement you have seen recently. Identify at least two techniques it uses and explain how they are designed to influence the audience.",
+        parentTip: "This open-ended analysis connects worksheet learning to real-world experience. There are no right or wrong answers — what matters is the quality of the reasoning your child provides.",
+        prompts: [
+          { text: "Product or service being advertised:", type: "lines", lines: 1 },
+          { text: "Describe the advertisement (what you see, hear and read):", type: "lines", lines: 3 },
+          { text: "Technique 1 and how it works on the audience:", type: "lines", lines: 3 },
+          { text: "Technique 2 and how it works on the audience:", type: "lines", lines: 3 },
+        ],
+      },
+      // 29
+      {
+        type: "circle-correct" as const,
+        title: "Responsible Advertising?",
+        instruction: "For each advertising practice, circle whether it is responsible or potentially problematic.",
+        questions: [
+          { prompt: "An advertisement for a sugary cereal is placed between children's cartoon episodes on a children's TV channel and uses cartoon characters to appeal to young viewers.", options: ["Responsible — companies have a right to advertise", "Potentially problematic — targets children who lack the critical skills to evaluate advertising claims"] },
+          { prompt: "A sports supplement advertisement clearly states that the product 'supports performance — results may vary' and shows athletes training hard.", options: ["Responsible — includes a disclaimer and realistic context", "Potentially problematic — misleads consumers about guaranteed outcomes"] },
+          { prompt: "A fast food chain edits its photographs to make the food look larger, fresher and more appealing than the actual product customers receive.", options: ["Responsible — all advertising uses some enhancement", "Potentially problematic — this misrepresents the product in a misleading way"] },
+        ],
+      },
+      // 30 — TIP
+      {
+        type: "tip" as const,
+        title: "Parent Tip: The Ad Break Activity",
+        content: "During a commercial break on television or before a YouTube video, try this: each person picks one advertisement and has 30 seconds to identify the target audience, one technique used and what emotion it is designed to create. Make it fast and fun — no need for full sentences. This builds critical media viewing habits without adding academic pressure. Over time, your child will start doing this automatically every time they encounter an advertisement.",
+      },
+      // 31
+      {
+        type: "open-response" as const,
+        title: "Compare Two Advertisements",
+        instruction: "Find two advertisements for similar products (e.g. two different brands of breakfast cereal, two different cars, or two different phone models). Compare their design choices.",
+        parentTip: "Comparing two advertisements on the same product category is one of the richest media literacy activities. Differences in colour, image choice, language and layout reveal different brand values, different target audiences and different assumptions about what motivates consumers.",
+        prompts: [
+          { text: "Product category:", type: "lines", lines: 1 },
+          { text: "Advertisement 1 — brand and design choices (colour, image, font, message):", type: "lines", lines: 4 },
+          { text: "Advertisement 2 — brand and design choices:", type: "lines", lines: 4 },
+          { text: "Key differences and what they tell you about each brand's audience or values:", type: "lines", lines: 4 },
+        ],
+      },
+      // 32
+      {
+        type: "multiple-choice" as const,
+        title: "News Media Design Choices",
+        instruction: "Choose the best answer for each question about how design choices in news media shape meaning.",
+        questions: [
+          { prompt: "Two newspapers cover the same story. One uses a photograph of the politician looking composed and professional; the other uses a photograph of the same politician mid-sentence, looking frustrated. What does this difference tell us?", options: ["Photographs in news are always chosen randomly", "Both photographs are equally objective because they are real photographs", "The choice of photograph reflects the publication's editorial stance or intention to influence how the audience views the subject", "Photographs are chosen by the subjects themselves"], answer: "The choice of photograph reflects the publication's editorial stance or intention to influence how the audience views the subject" },
+          { prompt: "A newspaper places a story about climate change on page 18 with a small headline and no photograph. What does this placement communicate?", options: ["The newspaper considers climate change less significant than stories placed on earlier pages", "The story was too short to be placed on the front page", "Climate change is not a real concern for the newspaper's audience", "All stories on page 18 are about the environment"], answer: "The newspaper considers climate change less significant than stories placed on earlier pages" },
+        ],
+      },
+      // 33
+      {
+        type: "open-response" as const,
+        title: "Front Page Analysis",
+        instruction: "Examine the front page of a newspaper or news website with your parent. Answer the analysis questions below.",
+        parentTip: "Analysing a real newspaper front page is one of the most valuable media literacy activities possible. Focus on how the editor has made decisions about what is important, how stories are represented and what audiences are assumed.",
+        prompts: [
+          { text: "Source (newspaper name and date):", type: "lines", lines: 1 },
+          { text: "Q1: What is the lead story? How do you know it is the most important story? (Consider size, position, image).", type: "lines", lines: 3 },
+          { text: "Q2: What photographs are used? What mood or emotion do they create?", type: "lines", lines: 3 },
+          { text: "Q3: Are any groups of people or topics underrepresented on this front page?", type: "lines", lines: 3 },
+          { text: "Q4: What does this front page tell you about what the editor thinks the audience cares about?", type: "lines", lines: 3 },
+        ],
+      },
+      // 34
+      {
+        type: "true-false" as const,
+        title: "True or False: News Media and Objectivity",
+        instruction: "Mark each statement True or False.",
+        parentTip: "The concept of media objectivity is complex and important. Helping your child understand that all media involves choices — without becoming cynical about all media — is the goal of this section.",
+        statements: [
+          { text: "News media makes dozens of editorial choices every day — what to cover, what photographs to use, how to word headlines — and these choices shape how audiences understand the world.", answer: true },
+          { text: "Headlines in news media are always completely neutral and never use emotive or persuasive language.", answer: false },
+          { text: "Different news organisations can cover the same event and present it in different ways to different audiences.", answer: true },
+          { text: "Consuming news from a variety of sources helps readers develop a more complete picture of events.", answer: true },
+          { text: "All news websites in Australia are required by law to be completely politically neutral.", answer: false },
+        ],
+      },
+      // 35
+      {
+        type: "fill-in-blank" as const,
+        title: "Media Literacy Vocabulary: Headlines",
+        instruction: "Fill in the blanks to describe how these headline techniques work.",
+        sentences: [
+          { text: "'Experts warn of devastating consequences' — The word 'devastating' is _____ language designed to create a strong _____ response in the reader.", blanks: ["emotive", "emotional"] },
+          { text: "'COULD YOUR CHILD BE AT RISK?' — This headline uses a _____ question to create a sense of _____ in the reader.", blanks: ["rhetorical", "concern or fear"] },
+          { text: "'School reforms: the good, the bad and the ugly' — This headline uses a _____ to make it catchy and memorable.", blanks: ["rule of three"] },
+          { text: "'Government slammed over policy failure' — The word 'slammed' is a _____ word choice that reveals the writer's _____ tone.", blanks: ["strong emotive", "negative or critical"] },
+        ],
+      },
+      // 36
+      {
+        type: "open-response" as const,
+        title: "Rewrite the Headline",
+        instruction: "Each headline below uses emotive language that reveals a bias. Rewrite it in neutral, objective language.",
+        parentTip: "Rewriting biased headlines in neutral language is an excellent critical thinking exercise. It shows students that word choice is never accidental — every word carries weight.",
+        prompts: [
+          { text: "ORIGINAL: 'Government's disastrous bungling leaves thousands without support'\nNEUTRAL REWRITE:", type: "lines", lines: 2 },
+          { text: "ORIGINAL: 'Heroic protesters stand firm against greedy developers'\nNEUTRAL REWRITE:", type: "lines", lines: 2 },
+          { text: "ORIGINAL: 'Clueless council ignores community pleas'\nNEUTRAL REWRITE:", type: "lines", lines: 2 },
+        ],
+      },
+      // 37
+      {
+        type: "multiple-choice" as const,
+        title: "Digital Media Literacy",
+        instruction: "Choose the best answer for each question about reading media online.",
+        parentTip: "Digital media literacy is arguably more urgent than traditional media literacy, given that children encounter hundreds of online media texts every day through social media, YouTube, gaming platforms and news apps.",
+        questions: [
+          { prompt: "What is clickbait?", options: ["A type of fishing technique", "Content designed with sensational or misleading headlines to attract clicks, often leading to disappointing or misleading content", "A way to test if a website is reliable", "A type of digital advertisement that appears between website pages"], answer: "Content designed with sensational or misleading headlines to attract clicks, often leading to disappointing or misleading content" },
+          { prompt: "Which of these is the best way to check if an online news story is credible?", options: ["Check if the website looks professional", "See how many people have shared it on social media", "Check if multiple reliable news sources are reporting the same story", "See if the headline uses capital letters"], answer: "Check if multiple reliable news sources are reporting the same story" },
+          { prompt: "What is a 'filter bubble' in digital media?", options: ["A tool for removing inappropriate content from websites", "A system that automatically corrects spelling in online articles", "The way algorithms show users content similar to what they have already viewed, creating a limited view of the world", "A type of social media privacy setting"], answer: "The way algorithms show users content similar to what they have already viewed, creating a limited view of the world" },
+        ],
+      },
+      // 38
+      {
+        type: "sorting" as const,
+        title: "Sort the Online Sources: Reliable or Unreliable?",
+        instruction: "Sort each online source into Reliable (credible, evidence-based) or Unreliable (unverified, biased or misleading).",
+        parentTip: "Source evaluation is a critical digital literacy skill. Help your child understand that a professional-looking website does not guarantee reliability, and that checking who wrote something and why is always worth the effort.",
+        columns: ["Reliable", "Unreliable"],
+        items: [
+          { label: "A report published on the Australian Bureau of Statistics website" },
+          { label: "An anonymous social media post claiming 'scientists have discovered that…'" },
+          { label: "An article from the ABC News website with a named journalist and cited sources" },
+          { label: "A YouTube video claiming a common medicine is dangerous, with no scientific sources cited" },
+          { label: "A peer-reviewed study published in the Medical Journal of Australia" },
+          { label: "A website selling natural health supplements that also publishes articles about health" },
+        ],
+      },
+      // 39
+      {
+        type: "open-response" as const,
+        title: "Evaluate a Digital Source",
+        instruction: "Find an article or post online with your parent's guidance. Evaluate its reliability using the SIFT method (Stop, Investigate the source, Find better coverage, Trace claims).",
+        parentTip: "The SIFT method (developed by Mike Caulfield) is one of the most practical digital media literacy frameworks available. Even stopping to investigate who wrote something before sharing it would significantly reduce misinformation spread.",
+        prompts: [
+          { text: "Article title and URL (write it down):", type: "lines", lines: 2 },
+          { text: "STOP: What is my first reaction? Am I about to share without reading carefully?", type: "lines", lines: 2 },
+          { text: "INVESTIGATE: Who wrote this? What organisation published it? Do they have expertise?", type: "lines", lines: 3 },
+          { text: "FIND BETTER COVERAGE: Do other reliable sources report the same information?", type: "lines", lines: 2 },
+          { text: "My overall reliability rating (1–5) and reason:", type: "lines", lines: 2 },
+        ],
+      },
+      // 40 — SPARK
+      {
+        type: "spark" as const,
+        title: "Spark: You Are the Audience — and You Choose",
+        content: "Every media text was made by someone, for a purpose, to be consumed by an audience. That audience is you. The most powerful thing media literacy gives you is the ability to be a conscious audience member rather than a passive one. When you look at an advertisement and recognise the techniques it is using, you are not falling for them — you are reading them. When you look at a news photograph and ask who chose it and why, you are reading it. When you notice that a website makes you feel afraid or angry and you stop to ask why, you are reading it. This kind of reading takes practice. But every image, headline and design you analyse makes you a stronger, more aware reader of the world you live in.",
+      },
+      // 41
+      {
+        type: "open-response" as const,
+        title: "Design Your Own Poster",
+        instruction: "Plan and sketch a simple poster or advertisement on a topic of your choice. Then write an explanation of three deliberate design choices you made.",
+        parentTip: "Creating media is one of the most effective ways to understand how media works. When students make their own design choices, they develop a deeper appreciation for why professional designers make the choices they do.",
+        prompts: [
+          { text: "My topic or message:", type: "lines", lines: 1 },
+          { text: "Sketch your poster here:", type: "box", lines: 12 },
+          { text: "Design choice 1 (colour/image/font/layout) and why I made it:", type: "lines", lines: 3 },
+          { text: "Design choice 2 and why I made it:", type: "lines", lines: 3 },
+          { text: "Design choice 3 and why I made it:", type: "lines", lines: 3 },
+        ],
+      },
+      // 42
+      {
+        type: "multiple-choice" as const,
+        title: "Layout Principles",
+        instruction: "Choose the best answer for each question about layout design.",
+        questions: [
+          { prompt: "What does 'visual hierarchy' mean in design?", options: ["The process of ordering information alphabetically", "The way elements are arranged and sized so that the most important information is seen first", "The use of multiple columns on a page", "The number of images in a design"], answer: "The way elements are arranged and sized so that the most important information is seen first" },
+          { prompt: "Why do designers use white space (blank areas) in a layout?", options: ["Because they ran out of content to fill the space", "To help the eye focus on key elements and reduce visual clutter", "White space is considered a design error", "To make the design cheaper to print"], answer: "To help the eye focus on key elements and reduce visual clutter" },
+          { prompt: "Most English-language readers scan a page in a Z-pattern — starting top-left, moving right, then diagonally down to the bottom-left, ending bottom-right. How might a designer use this knowledge?", options: ["By placing the most important information in the middle of the page", "By placing the logo bottom-right and the headline top-left, following the natural reading path", "By ignoring this pattern and placing information randomly to surprise the reader", "By placing all the text on one side of the page"], answer: "By placing the logo bottom-right and the headline top-left, following the natural reading path" },
+        ],
+      },
+      // 43
+      {
+        type: "open-response" as const,
+        title: "Design for an Audience",
+        instruction: "You have been asked to design a poster for each of these events. For each one, describe the design choices you would make (colour, image type, font style, layout) and explain why they suit the audience.",
+        prompts: [
+          { text: "EVENT 1: An open day for a primary school, targeting families with young children.", type: "lines", lines: 4 },
+          { text: "EVENT 2: A careers fair for Year 10–12 students, targeting teenagers thinking about their future.", type: "lines", lines: 4 },
+          { text: "EVENT 3: A gala dinner for a conservation charity, targeting wealthy adult donors.", type: "lines", lines: 4 },
+        ],
+      },
+      // 44
+      {
+        type: "matching" as const,
+        title: "Match the Design Choice to the Audience",
+        instruction: "Match each design choice to the audience it is most likely targeting.",
+        parentTip: "The connection between design choice and audience is the central insight of media literacy. Understanding that all design choices are audience-directed builds the habit of asking 'who is this for?' every time students encounter a media text.",
+        left: ["Bright colours, simple large fonts, animated characters and interactive games", "Neutral greys, clean sans-serif fonts, technical specifications and data tables", "Warm earth tones, handwritten-style fonts, photographs of vegetables and nature", "Bold black and white photography, minimal text and a single luxury product image"],
+        right: ["Adults who value premium quality and minimalism", "Young children learning through play", "Technology professionals comparing products", "Health-conscious adults interested in organic food"],
+      },
+      // 45 — TIP
+      {
+        type: "tip" as const,
+        title: "Parent Tip: Creating Media Together",
+        content: "One of the richest media literacy activities is creating media together — not just analysing it. Try designing a simple poster, newsletter front page or advertisement together on any topic. As you make choices about colour, font, image placement and message, discuss why you are making each choice. The process of creation reveals the complexity of design in a way that analysis alone cannot. Free tools like Canva (canva.com) make professional-looking design accessible to primary school students.",
+      },
+      // 46
+      {
+        type: "true-false" as const,
+        title: "True or False: Social Media and Media Literacy",
+        instruction: "Mark each statement True or False.",
+        statements: [
+          { text: "Social media posts and images are a form of media text that can be analysed using media literacy tools.", answer: true },
+          { text: "A photograph with many 'likes' on social media is always accurate and reliable.", answer: false },
+          { text: "Social media algorithms are designed to show users content that will keep them engaged for as long as possible.", answer: true },
+          { text: "Filters and editing tools on social media mean that photographs often do not accurately represent reality.", answer: true },
+          { text: "Social media influencers are always required to disclose when they have been paid to promote a product.", answer: false },
+        ],
+      },
+      // 47
+      {
+        type: "multiple-choice" as const,
+        title: "Media Literacy: Misinformation and Disinformation",
+        instruction: "Choose the best answer for each question.",
+        parentTip: "The difference between misinformation (incorrect information spread without intent to deceive) and disinformation (incorrect information spread deliberately) is an important distinction for young media consumers.",
+        questions: [
+          { prompt: "What is the difference between misinformation and disinformation?", options: ["They mean exactly the same thing — both refer to false information", "Misinformation is false information spread without deliberate intent to deceive; disinformation is false information spread deliberately to mislead", "Misinformation is only found in newspapers; disinformation is only online", "Misinformation is always about politics; disinformation is about health"], answer: "Misinformation is false information spread without deliberate intent to deceive; disinformation is false information spread deliberately to mislead" },
+          { prompt: "What is 'deepfake' technology?", options: ["A type of social media filter", "Artificial intelligence technology that can create convincing fake photographs and videos of real people", "A method of detecting fake news", "A type of digital advertisement"], answer: "Artificial intelligence technology that can create convincing fake photographs and videos of real people" },
+          { prompt: "What is the best first step when you see a surprising claim on social media?", options: ["Share it immediately because your friends should know", "Believe it — it would not be on social media if it were not true", "Stop and check whether reliable news sources are reporting the same claim before sharing it", "Ignore all social media posts because they are all false"], answer: "Stop and check whether reliable news sources are reporting the same claim before sharing it" },
+        ],
+      },
+      // 48
+      {
+        type: "open-response" as const,
+        title: "Spot the Fake",
+        instruction: "Here are four 'social media post' descriptions. Which ones show warning signs of misinformation? Explain your thinking.",
+        prompts: [
+          { text: "POST A: 'SHARE THIS NOW!!! Scientists have SECRETLY DISCOVERED that drinking coffee every day cures ALL cancer. Big Pharma doesn't want you to know!! [No source, no date, posted by anonymous account]'\nWarning signs:", type: "lines", lines: 3 },
+          { text: "POST B: 'According to a new study published in The Lancet, moderate coffee consumption is associated with a lower risk of certain cancers — though researchers stress this is not conclusive. [Link to The Lancet website included]'\nWarning signs:", type: "lines", lines: 3 },
+        ],
+      },
+      // 49
+      {
+        type: "sorting" as const,
+        title: "Sort the Media Literacy Practices",
+        instruction: "Sort each practice into Good digital media habit or Poor digital media habit.",
+        columns: ["Good digital media habit", "Poor digital media habit"],
+        items: [
+          { label: "Checking who published an article before trusting it" },
+          { label: "Sharing a shocking headline without reading the full article" },
+          { label: "Consuming news from a variety of different sources" },
+          { label: "Assuming something is true because it has many likes or shares" },
+          { label: "Noticing if a source has a potential bias or conflict of interest" },
+          { label: "Only reading news from one source that agrees with your existing views" },
+          { label: "Asking 'who made this and why?' before accepting a claim as fact" },
+          { label: "Trusting a website because it looks professional" },
+        ],
+      },
+      // 50
+      {
+        type: "open-response" as const,
+        title: "Write a Media Literacy Guide for a Younger Student",
+        instruction: "Write a short guide (5–8 sentences) for a younger student explaining how to read media texts critically. Include at least three practical questions they should ask about any media text.",
+        parentTip: "Teaching the concept to someone else is the highest form of understanding. If your child can write this guide clearly and practically, they have genuinely internalised the key principles of media literacy.",
+        prompts: [{ text: "My media literacy guide:", type: "box", lines: 10 }],
+      },
+      // 51
+      {
+        type: "multiple-choice" as const,
+        title: "Documentary Films as Media Texts",
+        instruction: "Choose the best answer for each question about documentary films as media texts.",
+        parentTip: "Documentary films are often treated as objective truth, but they involve the same editorial choices as any other media text — what to include, what to leave out, whose perspective to show, what music to use and how to sequence information.",
+        questions: [
+          { prompt: "A documentary filmmaker decides to include only interviews with people who agree with their argument. What is the problem with this approach?", options: ["Interviewing fewer people saves time", "Presenting only one perspective creates a biased picture that may mislead the audience", "Documentaries never include opposing viewpoints", "The filmmaker is not allowed to choose their interviewees"], answer: "Presenting only one perspective creates a biased picture that may mislead the audience" },
+          { prompt: "A documentary about environmental destruction uses slow, sad music throughout all its footage of nature. What effect is this designed to create?", options: ["It slows down the pacing of the film", "It emotionally primes the viewer to feel sadness and concern for the environment", "It has no effect — music is only used for entertainment", "It makes the documentary more credible"], answer: "It emotionally primes the viewer to feel sadness and concern for the environment" },
+          { prompt: "How is a documentary film similar to a persuasive essay?", options: ["Both always present both sides of an argument equally", "Both are required by law to be completely factual", "Both make deliberate choices about what evidence to present and how to sequence it to support a position", "Both are written rather than visual"], answer: "Both make deliberate choices about what evidence to present and how to sequence it to support a position" },
+        ],
+      },
+      // 52
+      {
+        type: "fill-in-blank" as const,
+        title: "Documentary Film Techniques",
+        instruction: "Fill in the blanks using these terms: voice-over narration, archival footage, talking head, reconstructed scene, montage.",
+        sentences: [
+          { text: "When a documentary shows an interviewee speaking directly to camera, this is called a _____ interview.", blanks: ["talking head"] },
+          { text: "When old photographs or film footage from the past is used in a documentary, this is called _____ footage.", blanks: ["archival"] },
+          { text: "When a series of images is edited together quickly to create a powerful impression or summarise events, this is called a _____.", blanks: ["montage"] },
+          { text: "When an off-screen commentator speaks over footage to guide the viewer's interpretation, this is called _____ narration.", blanks: ["voice-over"] },
+          { text: "When events that were not filmed at the time are acted out for the documentary, this is called a _____ scene.", blanks: ["reconstructed"] },
+        ],
+      },
+      // 53
+      {
+        type: "open-response" as const,
+        title: "Analyse a Documentary Sequence",
+        instruction: "You have just watched the opening of a documentary about ocean pollution. Describe how each element contributes to the overall effect.",
+        prompts: [
+          { text: "OPENING SEQUENCE DESCRIPTION:\nThe film opens with two minutes of beautiful aerial footage of a pristine blue ocean at sunrise, with no music — only the sound of waves. Slowly, a piece of plastic drifts into frame. The music begins — a single, sad piano note. Then: cut to a seabird, tangled in fishing line. The camera holds on its face. Then: a slow zoom out to reveal an ocean covered in floating plastic. The narrator says quietly: 'This is the ocean we inherited. This is the ocean we are leaving behind.'\n\nQ1: What effect do the first two minutes of beautiful ocean footage create?", type: "lines", lines: 3 },
+          { text: "Q2: Why does the music begin with the appearance of plastic?", type: "lines", lines: 3 },
+          { text: "Q3: What is the effect of showing the seabird's face in close-up?", type: "lines", lines: 3 },
+          { text: "Q4: How does the narrator's final line use contrast to create impact?", type: "lines", lines: 3 },
+        ],
+      },
+      // 54
+      {
+        type: "true-false" as const,
+        title: "True or False: Screen Media",
+        instruction: "Mark each statement True or False.",
+        statements: [
+          { text: "The choice of music in a film or documentary can significantly influence how the audience feels about what they are seeing.", answer: true },
+          { text: "Slow, careful editing creates a sense of urgency and action.", answer: false },
+          { text: "A close-up shot of a person's face in a film creates emotional intimacy between the audience and the subject.", answer: true },
+          { text: "Documentary films can never include actors or dramatic reconstructions of events.", answer: false },
+          { text: "The title sequence of a film is a deliberate communication that sets mood, tone and expectation before the story begins.", answer: true },
+        ],
+      },
+      // 55
+      {
+        type: "open-response" as const,
+        title: "Design an Opening Scene",
+        instruction: "You are the director of a documentary about the importance of protecting Australian wildlife. Design your opening two-minute scene. Describe your image choices, music, camera angles and narration.",
+        parentTip: "This creative activity is highly motivating for visual learners and can be done collaboratively. Encourage your child to think cinematically — to 'see' the scene as they describe it.",
+        prompts: [{ text: "My opening two-minute documentary scene:", type: "box", lines: 14 }],
+      },
+      // 56
+      {
+        type: "multiple-choice" as const,
+        title: "Multimodal Texts",
+        instruction: "Choose the best answer for each question about multimodal texts.",
+        parentTip: "A multimodal text is any text that uses more than one mode of communication — for example, a website that combines text, image, audio and video. All modern media texts are multimodal.",
+        questions: [
+          { prompt: "What is a multimodal text?", options: ["A text that uses only written words", "A text that uses more than one mode of communication — e.g. words, images, sound, layout", "A text that is very long and complex", "A text that is published in multiple languages"], answer: "A text that uses more than one mode of communication — e.g. words, images, sound, layout" },
+          { prompt: "In a multimodal news article, which element typically appears first when the page loads?", options: ["The full article text", "The author's biography", "The headline and lead photograph, which together create the first impression", "The comments section"], answer: "The headline and lead photograph, which together create the first impression" },
+          { prompt: "What term describes the way different modes in a multimodal text work together to create meaning?", options: ["Synchronisation", "Coherence", "Multimodal cohesion — the way all the modes reinforce or complement each other", "Typography"], answer: "Multimodal cohesion — the way all the modes reinforce or complement each other" },
+        ],
+      },
+      // 57
+      {
+        type: "open-response" as const,
+        title: "Analyse a Website Homepage",
+        instruction: "Look at the homepage of a website with your parent and answer these analysis questions.",
+        parentTip: "Website homepage analysis is one of the richest multimodal literacy activities available. Commercial websites are designed by professional teams using extensive audience research — everything visible is intentional.",
+        prompts: [
+          { text: "Website name and purpose:", type: "lines", lines: 1 },
+          { text: "Q1: What is the first element your eye goes to? Why?", type: "lines", lines: 3 },
+          { text: "Q2: What colour palette is used? What mood does it create?", type: "lines", lines: 3 },
+          { text: "Q3: Who is the intended audience? What design choices target them?", type: "lines", lines: 3 },
+          { text: "Q4: Is there a clear call to action? Where is it placed and how is it designed?", type: "lines", lines: 3 },
+        ],
+      },
+      // 58
+      {
+        type: "sorting" as const,
+        title: "Sort by Multimodal Mode",
+        instruction: "Sort each element into the correct communication mode category.",
+        parentTip: "Understanding the different modes in a multimodal text — and how they work together — is a key media literacy concept that applies to websites, films, games, advertisements and all modern media.",
+        columns: ["Visual (images/layout)", "Linguistic (written/spoken language)", "Audio (sound/music)", "Spatial (arrangement/proximity)"],
+        items: [
+          { label: "A news headline in bold letters" },
+          { label: "A lead photograph of a flood" },
+          { label: "Background music in a film trailer" },
+          { label: "Two related images placed side by side for comparison" },
+          { label: "A caption explaining a chart" },
+          { label: "A sound effect of a clock ticking" },
+          { label: "The brand logo positioned in the top-left corner" },
+          { label: "A voice-over narration" },
+        ],
+      },
+      // 59
+      {
+        type: "open-response" as const,
+        title: "Create a Multimodal Text",
+        instruction: "Plan a two-page spread for a school magazine about an issue you care about. Describe all the multimodal elements you would include and explain the purpose of each.",
+        prompts: [
+          { text: "Topic:", type: "lines", lines: 1 },
+          { text: "Headline and font choice:", type: "lines", lines: 2 },
+          { text: "Lead image description and purpose:", type: "lines", lines: 3 },
+          { text: "Layout description (where things are placed and why):", type: "lines", lines: 3 },
+          { text: "Colour scheme and mood it creates:", type: "lines", lines: 2 },
+          { text: "Key text (main article):", type: "lines", lines: 2 },
+        ],
+      },
+      // 60 — TIP
+      {
+        type: "tip" as const,
+        title: "Parent Tip: Real Media Projects",
+        content: "Consider creating a real multimodal text with your child — a newsletter about your homeschooling journey, a poster for a community event, or a digital presentation about a topic they are passionate about. Free tools like Canva, Google Slides or Microsoft Publisher make this accessible and enjoyable. The experience of making design decisions for a real purpose — and seeing the final result — is one of the most powerful learning experiences possible for developing media literacy.",
+      },
+      // 61
+      {
+        type: "fill-in-blank" as const,
+        title: "Media Concepts: Review",
+        instruction: "Fill in each blank using the correct media literacy term.",
+        sentences: [
+          { text: "A text that combines images, words, sound and layout to create meaning is called a _____ text.", blanks: ["multimodal"] },
+          { text: "The intended _____ is the group of people a media text is designed for.", blanks: ["audience"] },
+          { text: "The arrangement of elements on a page to show order of importance is called visual _____.", blanks: ["hierarchy"] },
+          { text: "False information spread deliberately to mislead is called _____.", blanks: ["disinformation"] },
+          { text: "The deliberate choice of which part of a scene to include in a photograph or film frame is called _____.", blanks: ["framing"] },
+        ],
+      },
+      // 62
+      {
+        type: "multiple-choice" as const,
+        title: "Reading Graphic Novels and Picture Books",
+        instruction: "Choose the best answer for each question about visual narrative in graphic novels and picture books.",
+        questions: [
+          { prompt: "In a graphic novel, what is a panel?", options: ["A chapter heading", "A single framed image that shows one moment in the story", "A page of text without images", "The title page of the book"], answer: "A single framed image that shows one moment in the story" },
+          { prompt: "In a picture book, what is the relationship between the words and illustrations usually called?", options: ["A picture book only uses words", "Counterpoint — where words and illustrations tell different aspects of the story, creating richer meaning together", "Illustrations are only decorations and do not add meaning", "All picture books use photographs rather than illustrations"], answer: "Counterpoint — where words and illustrations tell different aspects of the story, creating richer meaning together" },
+          { prompt: "In a graphic novel, the space between panels is called 'the gutter'. What happens in the gutter?", options: ["Nothing — the story is paused", "The reader's imagination fills in the action or time that has passed between the two panels", "The author's notes appear", "Sound effects are placed"], answer: "The reader's imagination fills in the action or time that has passed between the two panels" },
+        ],
+      },
+      // 63
+      {
+        type: "open-response" as const,
+        title: "Analyse a Picture Book Page",
+        instruction: "Choose a picture book you have at home (or one from memory). Analyse a page or double-spread where the illustration adds meaning that the text alone does not.",
+        parentTip: "Picture books are some of the richest multimodal texts available. Books like 'The Arrival' by Shaun Tan, 'Where the Wild Things Are' by Maurice Sendak or 'The Rabbits' by John Marsden and Shaun Tan offer extraordinary material for media literacy analysis.",
+        prompts: [
+          { text: "Book title and illustrator:", type: "lines", lines: 1 },
+          { text: "Describe the page and its illustration:", type: "lines", lines: 3 },
+          { text: "Q1: What information does the illustration add that the text does not say?", type: "lines", lines: 3 },
+          { text: "Q2: How do the colour, composition and mood of the illustration shape how you feel about the story?", type: "lines", lines: 3 },
+        ],
+      },
+      // 64
+      {
+        type: "true-false" as const,
+        title: "True or False: Graphic Novels and Visual Storytelling",
+        instruction: "Mark each statement True or False.",
+        statements: [
+          { text: "In a graphic novel, the size of a panel can indicate the importance or duration of a moment in the story.", answer: true },
+          { text: "A full-page image (splash page) in a graphic novel is typically used for a dramatic, important moment.", answer: true },
+          { text: "Colour is never used symbolically in graphic novels — it is only for aesthetic decoration.", answer: false },
+          { text: "The reading path through a page of a graphic novel always goes left to right, top to bottom.", answer: false },
+          { text: "Perspective and camera angle in a graphic novel's illustrations can show power relationships between characters.", answer: true },
+        ],
+      },
+      // 65
+      {
+        type: "open-response" as const,
+        title: "Design a Three-Panel Graphic Novel Page",
+        instruction: "Plan a three-panel graphic novel page for a story of your choice. Describe what each panel shows, the colour mood, the camera angle and what happens in the 'gutters' between panels.",
+        parentTip: "Creating a graphic novel page plan develops visual storytelling skills alongside media literacy. If your child enjoys drawing, they could sketch the actual panels. The planning process itself is the key learning.",
+        prompts: [
+          { text: "My story and characters:", type: "lines", lines: 2 },
+          { text: "PANEL 1 — what I see, camera angle, colour mood:", type: "lines", lines: 3 },
+          { text: "GUTTER 1 — what happens in the gap (what the reader must imagine):", type: "lines", lines: 2 },
+          { text: "PANEL 2 — what I see, camera angle, colour mood:", type: "lines", lines: 3 },
+          { text: "GUTTER 2 — what happens in the gap:", type: "lines", lines: 2 },
+          { text: "PANEL 3 — what I see, camera angle, colour mood:", type: "lines", lines: 3 },
+        ],
+      },
+      // 66
+      {
+        type: "multiple-choice" as const,
+        title: "Logo Analysis",
+        instruction: "Choose the best answer for each question about logos as media texts.",
+        questions: [
+          { prompt: "What is the purpose of a logo?", options: ["To list all the products a company sells", "To instantly communicate a brand's identity, values and personality through visual elements", "To provide legal information about the company", "To show the company's address"], answer: "To instantly communicate a brand's identity, values and personality through visual elements" },
+          { prompt: "A tech company uses a simple, circular logo in flat blue with a clean white icon in the centre. What does this design typically communicate?", options: ["The company is old-fashioned and traditional", "The company values complexity and detail", "The company is modern, trustworthy and user-friendly", "The company only makes blue products"], answer: "The company is modern, trustworthy and user-friendly" },
+          { prompt: "Why do many environmental organisations use green in their logos?", options: ["Because green is the cheapest colour to print", "Because green is associated with nature, growth and environmental values", "Because all charity logos must be green by law", "Because green is the most visible colour"], answer: "Because green is associated with nature, growth and environmental values" },
+        ],
+      },
+      // 67
+      {
+        type: "open-response" as const,
+        title: "Logo Analysis Activity",
+        instruction: "Choose three logos you see regularly — on packaging, clothing, vehicles or signs. Analyse each one.",
+        parentTip: "Logo analysis can be done anywhere — the supermarket, the school bag, the television. Logos are everywhere, making them an endlessly available resource for media literacy practice.",
+        prompts: [
+          { text: "Logo 1 — brand name, description, colours and shapes used, what it communicates:", type: "lines", lines: 4 },
+          { text: "Logo 2 — brand name, description, colours and shapes used, what it communicates:", type: "lines", lines: 4 },
+          { text: "Logo 3 — brand name, description, colours and shapes used, what it communicates:", type: "lines", lines: 4 },
+        ],
+      },
+      // 68
+      {
+        type: "sorting" as const,
+        title: "Sort the Shape Associations",
+        instruction: "Sort each shape description into what it most commonly communicates in design.",
+        parentTip: "Shape psychology in design — the study of how shapes affect emotion and perception — is a real field that informs branding, architecture, product design and media. Even Year 5 students can apply these concepts with practice.",
+        columns: ["Stability / Trust", "Energy / Movement", "Creativity / Playfulness", "Luxury / Elegance"],
+        items: [
+          { label: "A solid horizontal rectangle or square" },
+          { label: "A flowing, organic curved shape" },
+          { label: "Sharp diagonal lines and angles" },
+          { label: "A thin, elongated vertical shape" },
+          { label: "A burst or starburst pattern" },
+          { label: "Irregular, hand-drawn shapes" },
+          { label: "A simple, balanced circle" },
+          { label: "Symmetrical, fine geometric lines" },
+        ],
+      },
+      // 69
+      {
+        type: "open-response" as const,
+        title: "Design Your Own Logo",
+        instruction: "Design a logo for a made-up organisation of your choice. Sketch it and write a brief explanation of every design choice you made.",
+        prompts: [
+          { text: "Organisation name and purpose:", type: "lines", lines: 2 },
+          { text: "Sketch your logo here:", type: "box", lines: 10 },
+          { text: "Colour choices and why:", type: "lines", lines: 2 },
+          { text: "Shape choices and why:", type: "lines", lines: 2 },
+          { text: "Font choice (if any) and why:", type: "lines", lines: 2 },
+        ],
+      },
+      // 70
+      {
+        type: "home-activity" as const,
+        title: "Home Activity: Media Critic for a Week",
+        instruction: "Try these activities during the week to keep developing your media literacy skills.",
+        parentTip: "Doing this alongside your child — sharing your own observations — models the habit of thinking critically about media without making it feel like a test.",
+        suggestions: [
+          "Find a magazine or newspaper advertisement and write down three design choices the creator made. For each one, explain what effect it has on the audience.",
+          "Compare the front pages of two different newspapers on the same day. What is the main story on each? What images did they choose? What does the difference tell you about each publication's audience or perspective?",
+          "Notice five logos this week. For each one, consider: what does the colour choice communicate? What mood does the shape or font create?",
+          "Watch a two-minute segment of a documentary or news story. Pause and discuss: what music is playing and how does it affect the mood? What camera shots are used? What do you think is left out of the story?",
+          "Find an advertisement online that targets a different audience to you. Describe who the audience is and explain three design choices that target that audience specifically.",
+        ],
+      },
+      // 71
+      {
+        type: "open-response" as const,
+        title: "Critically Evaluate an Infographic",
+        instruction: "Find an infographic online or in a magazine (an infographic presents data visually using charts, icons and short text). Analyse it using the questions below.",
+        parentTip: "Infographics are among the most shared media texts online — and also among the most misleading when poorly made. Learning to evaluate them critically is an essential digital literacy skill.",
+        prompts: [
+          { text: "Infographic topic and source:", type: "lines", lines: 1 },
+          { text: "Q1: What data or information does the infographic present?", type: "lines", lines: 3 },
+          { text: "Q2: Is the data clearly sourced? Where does it come from?", type: "lines", lines: 2 },
+          { text: "Q3: Are the visual representations accurate? (E.g. do the sizes of bars or circles accurately reflect the numbers?)", type: "lines", lines: 3 },
+          { text: "Q4: Does the infographic tell a simple story, or does it oversimplify a complex issue?", type: "lines", lines: 3 },
+        ],
+      },
+      // 72
+      {
+        type: "multiple-choice" as const,
+        title: "How Graphs Can Mislead",
+        instruction: "Choose the best answer for each question about misleading graphs in media.",
+        parentTip: "Misleading graphs are common in media and political communication. Developing the habit of reading graphs critically — checking the axes, looking for missing context — is a powerful analytical skill.",
+        questions: [
+          { prompt: "A bar graph shows that company profits rose from $100 million to $101 million. The y-axis is scaled to start at $99 million, making the rise look enormous. What is the problem?", options: ["The company made too much money", "The graph is technically accurate but the scale is designed to exaggerate the change", "The graph is clearly labelled and therefore cannot be misleading", "The graph should show negative numbers"], answer: "The graph is technically accurate but the scale is designed to exaggerate the change" },
+          { prompt: "A pie chart shows that 'most Australians support this policy' but does not state how many people were surveyed or how the question was worded. What is the problem?", options: ["Pie charts are never reliable", "The graphic is missing critical context — sample size and question wording both affect the result", "The pie chart is clearly misleading if it uses more than three sections", "The colour choices are inappropriate"], answer: "The graphic is missing critical context — sample size and question wording both affect the result" },
+        ],
+      },
+      // 73
+      {
+        type: "open-response" as const,
+        title: "Extension: Write a Media Critique",
+        instruction: "Choose one media text — an advertisement, editorial, infographic, news article or documentary segment — and write a full media critique of two or three paragraphs. Analyse the purpose, audience, design choices, techniques and any potential bias.",
+        parentTip: "A media critique is a formal analysis that shows a student can identify design choices, name the techniques being used and evaluate how effectively they serve the purpose and audience. This is an extension task appropriate for students who are ready for secondary school level media study.",
+        prompts: [{ text: "My media critique:", type: "box", lines: 16 }],
+      },
+      // 74
+      {
+        type: "true-false" as const,
+        title: "True or False: Media Literacy Summary",
+        instruction: "Mark each statement True or False.",
+        statements: [
+          { text: "Every design choice in a media text — colour, font, image, layout — communicates meaning.", answer: true },
+          { text: "Media texts are always created with a specific audience and purpose in mind.", answer: true },
+          { text: "Photographs in news media and advertising are always neutral and objective.", answer: false },
+          { text: "Understanding how media texts work makes you a more aware and critical consumer of media.", answer: true },
+          { text: "The ability to create your own media texts is separate from the ability to analyse others' texts.", answer: false },
+        ],
+      },
+      // 75 — TIP
+      {
+        type: "tip" as const,
+        title: "Parent Tip: Protecting Young Media Consumers",
+        content: "Children who understand how media works are significantly better protected from the negative effects of advertising, misinformation and social media manipulation. The most important thing you can do is model critical media consumption yourself — by pausing to ask questions out loud, by checking sources before sharing, and by talking openly about why some media makes you feel uncomfortable or suspicious. You do not need to be a media expert to raise a media-literate child. You just need to stay curious and keep asking questions.",
+      },
+      // 76
+      {
+        type: "multiple-choice" as const,
+        title: "Mastery Check: Design Principles",
+        instruction: "Demonstrate your mastery of design principles by choosing the best answer for each question.",
+        questions: [
+          { prompt: "A designer places the most important information in the largest font at the top of the page. What design principle are they applying?", options: ["Colour psychology", "Visual hierarchy", "Typography alignment", "White space management"], answer: "Visual hierarchy" },
+          { prompt: "A designer leaves a large area of blank space around a single product image. What effect is this trying to create?", options: ["It shows the product has no context", "It focuses the viewer's attention on the product and creates a sense of elegance or exclusivity", "It indicates the design is unfinished", "It makes the product appear smaller"], answer: "It focuses the viewer's attention on the product and creates a sense of elegance or exclusivity" },
+          { prompt: "A designer uses the same font, colour palette and layout style across all of a brand's materials. What design principle is this?", options: ["Contrast", "Visual hierarchy", "Consistency — creating a recognisable brand identity", "Framing"], answer: "Consistency — creating a recognisable brand identity" },
+        ],
+      },
+      // 77
+      {
+        type: "open-response" as const,
+        title: "Spot Five Design Choices",
+        instruction: "Look at any printed media text — a magazine cover, a product package, a poster or a book cover. Identify and analyse five deliberate design choices.",
+        prompts: [
+          { text: "Media text I am analysing:", type: "lines", lines: 1 },
+          { text: "Design Choice 1 (what it is and what it communicates):", type: "lines", lines: 2 },
+          { text: "Design Choice 2:", type: "lines", lines: 2 },
+          { text: "Design Choice 3:", type: "lines", lines: 2 },
+          { text: "Design Choice 4:", type: "lines", lines: 2 },
+          { text: "Design Choice 5:", type: "lines", lines: 2 },
+        ],
+      },
+      // 78
+      {
+        type: "sorting" as const,
+        title: "Media Text Analysis Toolkit",
+        instruction: "Sort each question into the correct analysis category: Purpose, Audience, Design, or Credibility.",
+        parentTip: "This sorting activity consolidates the key questions of media analysis into a reusable toolkit. If your child can apply these four categories to any media text independently, they are media literate at a secondary school level.",
+        columns: ["Purpose", "Audience", "Design", "Credibility"],
+        items: [
+          { label: "Who made this and why?" },
+          { label: "Who is this designed to reach?" },
+          { label: "What colours and fonts are used and why?" },
+          { label: "Is the information verified and sourced?" },
+          { label: "What action is the text designed to produce?" },
+          { label: "What values or assumptions does the audience need to share?" },
+          { label: "What is the focal point and how does the layout guide the eye?" },
+          { label: "Is the perspective presented balanced or one-sided?" },
+        ],
+      },
+      // 79
+      {
+        type: "open-response" as const,
+        title: "Final Project: Design and Analyse",
+        instruction: "Create a final media project. Design a one-page advertisement or information poster on a topic of your choice. Then write a 200-word analysis explaining every design choice you made and why.",
+        parentTip: "This combined creation-and-analysis task is the highest level of media literacy — students demonstrate both their ability to make deliberate design choices and to articulate the thinking behind them. Display the finished work.",
+        prompts: [
+          { text: "PART 1 — My design (sketch or describe the poster fully):", type: "box", lines: 14 },
+          { text: "PART 2 — My design analysis (explain every choice you made):", type: "box", lines: 12 },
+        ],
+      },
+      // 80 — SPARK
+      {
+        type: "spark" as const,
+        title: "Spark: The World Is a Text",
+        content: "Everything designed by a human to be seen, heard or read is a text. The font on your cereal box, the angle of the photo on a campaign poster, the colour of an emergency sign, the music in a shopping centre, the layout of a supermarket — all of these are designed. All of them communicate. All of them make you feel something. The world is not simply a neutral backdrop — it is a richly designed communicative environment created by people with purposes, audiences and intentions. Media literacy is the ability to read that environment as actively and critically as you read a book. You have now developed some of the most important tools for doing exactly that. Use them. The world is full of texts waiting to be read.",
+      },
+      // 81
+      {
+        type: "open-response" as const,
+        title: "Extension: The Ethics of Image Manipulation",
+        instruction: "Consider the question: Is it ethical to manipulate photographs used in news media? Write a persuasive paragraph arguing either FOR (some manipulation is acceptable) or AGAINST (no manipulation should occur).",
+        parentTip: "This extension activity connects media literacy to ethics — a rich philosophical territory. There are genuine disagreements among media professionals about when, if ever, image manipulation in news is acceptable. Encourage your child to research the issue before forming a view.",
+        prompts: [{ text: "My position:", type: "lines", lines: 1 }, { text: "My persuasive paragraph:", type: "box", lines: 10 }],
+      },
+      // 82
+      {
+        type: "multiple-choice" as const,
+        title: "Advanced Concept Check",
+        instruction: "Choose the best answer for each advanced media literacy question.",
+        questions: [
+          { prompt: "What is 'agenda-setting' in media theory?", options: ["The order in which stories are written in a newsroom", "The idea that media organisations tell audiences not what to think, but what to think about — by choosing which issues to cover prominently", "A list of topics a journalist must cover in a day", "The editorial planning calendar of a news organisation"], answer: "The idea that media organisations tell audiences not what to think, but what to think about — by choosing which issues to cover prominently" },
+          { prompt: "What is 'representation' in media?", options: ["A legal document about copyright", "How media texts portray different groups — such as women, cultural groups or young people — and whether those portrayals are accurate and fair", "The number of copies sold of a publication", "How many languages a media text is translated into"], answer: "How media texts portray different groups — such as women, cultural groups or young people — and whether those portrayals are accurate and fair" },
+        ],
+      },
+      // 83
+      {
+        type: "open-response" as const,
+        title: "Who Is Missing? Representation in Media",
+        instruction: "Think about a type of media you consume regularly (news, books, films, advertisements). Answer the reflection questions about representation.",
+        parentTip: "Questions about representation — who is shown, how they are shown, who is absent — are some of the richest media literacy discussions possible. These questions develop both critical thinking and empathy.",
+        prompts: [
+          { text: "Type of media:", type: "lines", lines: 1 },
+          { text: "Q1: What types of people appear most frequently in this media? Describe them.", type: "lines", lines: 3 },
+          { text: "Q2: What groups of people are rarely seen or absent? Why might this be?", type: "lines", lines: 3 },
+          { text: "Q3: How might different audiences feel when they see themselves represented — or not represented — in this media?", type: "lines", lines: 3 },
+        ],
+      },
+      // 84
+      {
+        type: "fill-in-blank" as const,
+        title: "Advanced Media Concepts",
+        instruction: "Fill in each blank with the correct advanced media term.",
+        sentences: [
+          { text: "The theory that news organisations influence public priorities by deciding which stories to cover prominently is called _____ theory.", blanks: ["agenda-setting"] },
+          { text: "When only a narrow range of groups, viewpoints or experiences are shown in media, this is called limited _____.", blanks: ["representation"] },
+          { text: "A 'filter bubble' is created when _____ show users only content similar to what they have already engaged with.", blanks: ["algorithms"] },
+          { text: "The deliberate placement of a brand's product in a film or TV show without it being presented as an advertisement is called _____ placement.", blanks: ["product"] },
+          { text: "AI-generated fake video or audio designed to look like real footage of a real person is called a _____.", blanks: ["deepfake"] },
+        ],
+      },
+      // 85
+      {
+        type: "open-response" as const,
+        title: "Media Literacy Self-Assessment",
+        instruction: "Look back over all your work in this worksheet. Complete the self-assessment questions.",
+        prompts: [
+          { text: "Q1: Name three specific skills you have developed in this worksheet.", type: "lines", lines: 4 },
+          { text: "Q2: What is the most interesting or surprising thing you learned about how media works?", type: "lines", lines: 3 },
+          { text: "Q3: Which activities challenged you the most and why?", type: "lines", lines: 3 },
+        ],
+      },
+      // 86
+      {
+        type: "true-false" as const,
+        title: "True or False: Advanced Media Literacy",
+        instruction: "Mark each statement True or False.",
+        statements: [
+          { text: "Agenda-setting theory suggests that media tells us what to think about by deciding which stories receive prominence.", answer: true },
+          { text: "Representation in media is only important for groups who are shown negatively.", answer: false },
+          { text: "Social media algorithms create filter bubbles by showing users increasingly similar content.", answer: true },
+          { text: "Product placement is a form of advertising that is always clearly disclosed to audiences.", answer: false },
+          { text: "A media-literate person is better equipped to evaluate both what is shown in media texts and what is left out.", answer: true },
+        ],
+      },
+      // 87
+      {
+        type: "open-response" as const,
+        title: "Write a Brief Media Analysis",
+        instruction: "Choose any one media text — advertisement, news article, poster, book cover or film trailer — and write a brief (150–200 word) formal media analysis. Include: purpose, audience, key design choices and your evaluation of how effectively the text achieves its purpose.",
+        prompts: [{ text: "My media analysis:", type: "box", lines: 14 }],
+      },
+      // 88
+      {
+        type: "matching" as const,
+        title: "Media Literacy: Complete the Pairs",
+        instruction: "Match each media literacy concept to its key question.",
+        left: ["Purpose", "Audience", "Codes and conventions", "Representation", "Values and ideology"],
+        right: ["Whose view of the world does this text reflect?", "Who made this and what are they trying to achieve?", "Who is this designed to reach and how does it appeal to them?", "What are the shared rules and expectations of this text type?", "Who is shown and whose stories are told?"],
+      },
+      // 89
+      {
+        type: "open-response" as const,
+        title: "Teach It Back: Media Literacy",
+        instruction: "Explain to a parent or younger sibling what the four key questions of media analysis are, and give an example of how you would apply them to a real text.",
+        parentTip: "Teaching back is the deepest form of learning. If your child can explain these concepts in their own words and apply them to a real example spontaneously, they have genuinely internalised them.",
+        prompts: [{ text: "My explanation of the four key questions and how to use them:", type: "box", lines: 10 }],
+      },
+      // 90 — TIP
+      {
+        type: "tip" as const,
+        title: "Parent Tip: A Lifetime of Critical Viewing",
+        content: "The world your child is growing up in is saturated with media — news, advertising, social media, streaming video, games, podcasts, apps and more. The young person who can read all of these critically — asking who made it, for whom, with what purpose and with what effect — will navigate this world with far greater agency than one who consumes passively. Media literacy is not about being suspicious of all media. It is about being curious, aware and empowered. You have now given your child a substantial toolkit for exactly that. Keep the conversations going.",
+      },
+      // 91
+      {
+        type: "open-response" as const,
+        title: "Extension: Design a Media Literacy Poster",
+        instruction: "Design a poster that teaches younger students the four key questions of media literacy. Your poster should be visually engaging and easy to understand. Plan it here and sketch the design.",
+        prompts: [
+          { text: "My four key questions (write them clearly):", type: "lines", lines: 4 },
+          { text: "Sketch of my poster:", type: "box", lines: 12 },
+          { text: "Explain three deliberate design choices you made:", type: "lines", lines: 3 },
+        ],
+      },
+      // 92
+      {
+        type: "multiple-choice" as const,
+        title: "Final Mastery Check: Media Literacy",
+        instruction: "Demonstrate your mastery by choosing the best answer for each question.",
+        questions: [
+          { prompt: "What is the most important question a media-literate person asks about any media text?", options: ["Is it entertaining?", "Who made this, for what purpose, for what audience — and what is left out?", "Is it new?", "Is it free to access?"], answer: "Who made this, for what purpose, for what audience — and what is left out?" },
+          { prompt: "Why is it important to be a critical consumer of media rather than a passive one?", options: ["Critical consumers use less data on their devices", "Passive viewers are always happier", "Critical consumers are better able to evaluate what is true, fair and in their interests — and resist manipulation", "Critical consumers always disagree with everything they read"], answer: "Critical consumers are better able to evaluate what is true, fair and in their interests — and resist manipulation" },
+          { prompt: "What does it mean to say that a media text is 'constructed'?", options: ["It was built using physical materials", "It was made by someone who made choices about what to include, exclude and how to present it", "It was published before the internet existed", "It was designed by an algorithm"], answer: "It was made by someone who made choices about what to include, exclude and how to present it" },
+        ],
+      },
+      // 93
+      {
+        type: "open-response" as const,
+        title: "Your Best Media Analysis",
+        instruction: "Write the most thorough and detailed media analysis you can produce. Choose a media text that genuinely interests you. Address all four key questions and write approximately 200 words.",
+        prompts: [{ text: "Media text I am analysing:", type: "lines", lines: 1 }, { text: "My analysis:", type: "box", lines: 16 }],
+      },
+      // 94
+      {
+        type: "fill-in-blank" as const,
+        title: "Final Vocabulary Review",
+        instruction: "Fill in each blank using the most precise media literacy term you know.",
+        sentences: [
+          { text: "The way a designer arranges and sizes elements to show order of importance is called visual _____.", blanks: ["hierarchy"] },
+          { text: "A text that uses words, images, sound and layout together is called a _____ text.", blanks: ["multimodal"] },
+          { text: "Selecting which part of a scene to show in a photograph or film is called _____.", blanks: ["framing"] },
+          { text: "The group of people a media text is designed to reach is called the target _____.", blanks: ["audience"] },
+          { text: "AI-generated fake video footage that appears to show a real person is called a _____.", blanks: ["deepfake"] },
+        ],
+      },
+      // 95
+      {
+        type: "home-activity" as const,
+        title: "Home Activity: The Month of Conscious Media",
+        instruction: "For one month, practise applying media literacy every day. Use these daily challenges to build the habit.",
+        parentTip: "The goal is not to make media scary or exhausting — it is to build a quiet, habitual awareness. Over time, this awareness becomes effortless. A child who asks 'who made this and why?' before accepting a media claim is developing one of the most important thinking habits of the 21st century.",
+        suggestions: [
+          "WEEK 1: Every time you see an advertisement, name one technique it uses and who the intended audience is.",
+          "WEEK 2: When reading or watching news, ask: What is the main story? Who is shown in the photographs? What is not being covered?",
+          "WEEK 3: Choose one social media platform and observe: What content is the algorithm showing you? Is it balanced or one-sided? How does it make you feel?",
+          "WEEK 4: Find one example of excellent media design and one example of misleading media design. Write a one-paragraph analysis of each.",
+          "FINAL CHALLENGE: Share one media literacy observation with a family member each day. Turn it into a conversation.",
+        ],
+      },
+      // 96
+      {
+        type: "open-response" as const,
+        title: "Reflection: How Has Your Media Viewing Changed?",
+        instruction: "Look back at where you started this worksheet and where you are now. Write a reflection on how your thinking about media has changed.",
+        prompts: [
+          { text: "Q1: Before this worksheet, how did you 'read' media texts?", type: "lines", lines: 3 },
+          { text: "Q2: What new questions do you now automatically ask when you encounter a media text?", type: "lines", lines: 3 },
+          { text: "Q3: Has studying media literacy made you enjoy media more, less, or differently? Explain.", type: "lines", lines: 3 },
+        ],
+      },
+      // 97
+      {
+        type: "multiple-choice" as const,
+        title: "Mastery Challenge: The Complete Media Literacy Toolkit",
+        instruction: "These questions test your overall mastery of media literacy.",
+        questions: [
+          { prompt: "A student sees a photograph in a newspaper that shows a politician standing in front of a large cheering crowd. They think: 'This photograph shows that the politician is very popular.' What media literacy question would a critical reader also ask?", options: ["How do I subscribe to the newspaper?", "Was this the only photograph available, or was it chosen to create a particular impression?", "What is the politician's favourite colour?", "How many people are in the crowd exactly?"], answer: "Was this the only photograph available, or was it chosen to create a particular impression?" },
+          { prompt: "Which of these statements best describes what it means to be 'media literate'?", options: ["Able to read and write media text very quickly", "Able to recognise, question and critically evaluate how media texts construct meaning, for whom and with what effect", "Interested in journalism and television production", "Sceptical of all media texts and unwilling to trust any of them"], answer: "Able to recognise, question and critically evaluate how media texts construct meaning, for whom and with what effect" },
+        ],
+      },
+      // 98
+      {
+        type: "open-response" as const,
+        title: "Your Most Interesting Media Discovery",
+        instruction: "Describe the most interesting or surprising thing you discovered about how media works during this worksheet. Explain what it was, why it surprised you and how it has changed the way you think.",
+        prompts: [{ text: "My most interesting media discovery:", type: "box", lines: 12 }],
+      },
+      // 99
+      {
+        type: "open-response" as const,
+        title: "Create a Final Media Text",
+        instruction: "Create your best media text — a poster, digital design description, book cover plan or advertisement — applying everything you have learned. Then write a full analytical explanation of every design choice.",
+        prompts: [
+          { text: "My media text (sketch or full description):", type: "box", lines: 14 },
+          { text: "My analytical explanation of every design choice:", type: "box", lines: 12 },
+        ],
+      },
+      // 100 — SPARK
+      {
+        type: "spark" as const,
+        title: "Spark: Now You Are the Designer",
+        content: "You have spent 100 activities learning to read the world as a designed communication space. You can identify visual hierarchy, decode colour choices, recognise advertising techniques, evaluate source credibility, analyse camera angles and understand how algorithms shape what we see. But the most powerful next step is to become not just a reader of media but a maker of it. Every poster, video, article, presentation, social media post and speech you create will be shaped by the choices you make — about what to include, who to speak to, what emotion to create and what truth to tell. Those choices are your responsibility. Use them to make things that are honest, clear and worthy of the attention your audience gives them. The world needs people who create media thoughtfully. Now you are one of them.",
       },
     ],
   },
@@ -6749,92 +8793,1120 @@ export const year5EnglishWorksheets: WorksheetItem[] = [
       ],
     },
     activities: [
+      // 1
       {
-        type: "open-response" as const,
-        title: "Skim and Summarise",
-        instruction:
-          "Read the passage below. First skim it quickly (30 seconds). Then read it carefully. Write a three-sentence summary in your own words.",
-        prompts: [
-          {
-            text: "PASSAGE:\nThe Great Barrier Reef stretches over 2,300 kilometres along the Queensland coast, making it the world's largest coral reef system. It is home to more than 1,500 species of fish, 4,000 types of mollusc and over 30 species of whale and dolphin. Despite its scale, the reef is under serious threat. Rising sea temperatures caused by climate change have led to mass coral bleaching events — most recently in 2016, 2017 and 2020. When corals bleach, they expel the algae that give them colour and nutrients. Without intervention, large sections of the reef could be permanently damaged within decades.\n\nThree-sentence summary in your own words:",
-            type: "lines",
-            lines: 6,
-          },
+        type: "multiple-choice" as const,
+        title: "What Are Reading Comprehension Strategies?",
+        instruction: "Choose the best answer for each question about reading strategies.",
+        parentTip: "Strategic readers choose the right tool for the right job. Building a toolkit of comprehension strategies — and knowing when to use each one — is one of the most powerful reading habits a student can develop.",
+        questions: [
+          { prompt: "What is 'skimming' as a reading strategy?", options: ["Reading every word very slowly and carefully", "Moving your eyes quickly over a text to get the general topic or gist", "Looking for a specific word or number in the text", "Writing a summary of the text after reading"], answer: "Moving your eyes quickly over a text to get the general topic or gist" },
+          { prompt: "What is 'scanning' as a reading strategy?", options: ["Reading aloud to check pronunciation", "Moving your eyes quickly over a text searching for specific information", "Reading every sentence twice to improve memory", "Drawing a diagram of the text's structure"], answer: "Moving your eyes quickly over a text searching for specific information" },
+          { prompt: "What is 'summarising' as a reading strategy?", options: ["Copying the text word for word", "Underlining every important word in the text", "Capturing the main idea of a text in your own words, leaving out unnecessary detail", "Reading the first and last sentence only"], answer: "Capturing the main idea of a text in your own words, leaving out unnecessary detail" },
         ],
       },
+      // 2
+      {
+        type: "matching" as const,
+        title: "Match the Reading Strategy to Its Purpose",
+        instruction: "Draw a line to match each reading strategy with the situation where a reader would use it.",
+        parentTip: "Metacognition — knowing which strategy to use and when — is a hallmark of skilled readers. Practise asking: What strategy would you use if you needed to find a specific date in a long article?",
+        left: ["Skimming", "Scanning", "Summarising", "Evaluating", "Close reading", "Inferencing"],
+        right: ["You want to find a specific name or statistic quickly", "You need to check whether a source is reliable and why it was written", "You want to understand every detail of a complex section of text", "You want to capture the main idea of a passage in your own words", "You read quickly to get the general topic before deciding whether to read further", "You use clues in the text to work out what the author implies but does not state"],
+      },
+      // 3
+      {
+        type: "true-false" as const,
+        title: "True or False: Reading Strategies",
+        instruction: "Mark each statement True or False.",
+        parentTip: "Discuss each answer with your child. Understanding why a strategy is or is not useful in a given situation is more valuable than memorising definitions.",
+        statements: [
+          { text: "Skimming and scanning are the same reading strategy.", answer: false },
+          { text: "A good reader uses different strategies depending on their purpose.", answer: true },
+          { text: "Summarising a text always means copying its first paragraph.", answer: false },
+          { text: "Evaluating a text includes asking who wrote it and why.", answer: true },
+          { text: "Close reading is used when you need to understand a complex section of text in detail.", answer: true },
+        ],
+      },
+      // 4
+      {
+        type: "open-response" as const,
+        title: "Skim and Summarise: The Great Barrier Reef",
+        instruction: "Skim the passage quickly (30 seconds). Then read it carefully. Write a three-sentence summary in your own words.",
+        prompts: [
+          { text: "PASSAGE:\nThe Great Barrier Reef stretches over 2,300 kilometres along the Queensland coast, making it the world's largest coral reef system. It is home to more than 1,500 species of fish, 4,000 types of mollusc and over 30 species of whale and dolphin. Despite its scale, the reef is under serious threat. Rising sea temperatures caused by climate change have led to mass coral bleaching events — most recently in 2016, 2017 and 2020. When corals bleach, they expel the algae that give them colour and nutrients. Without intervention, large sections of the reef could be permanently damaged within decades.\n\nMy three-sentence summary:", type: "lines", lines: 6 },
+        ],
+      },
+      // 5
       {
         type: "open-response" as const,
         title: "Scan for Specific Information",
-        instruction:
-          "Scan the passage above to find the answers as quickly as you can. Do not re-read the whole text — move your eyes to find the specific information.",
+        instruction: "Scan the passage above to find the answers as quickly as possible. Move your eyes to find the specific information — do not re-read the whole text.",
+        parentTip: "Time your child's scanning — see how quickly they can find each fact. Speed with accuracy is the goal. This skill is invaluable for tests and research tasks.",
         prompts: [
           { text: "How many species of fish live in the Great Barrier Reef?", type: "lines", lines: 1 },
           { text: "In which years did mass coral bleaching events occur?", type: "lines", lines: 1 },
           { text: "How long is the Great Barrier Reef?", type: "lines", lines: 1 },
+          { text: "What do corals expel during bleaching?", type: "lines", lines: 1 },
         ],
       },
+      // 6
       {
         type: "open-response" as const,
         title: "Evaluate the Author's Purpose",
-        instruction:
-          "Answer these questions about the author's purpose and point of view in the passage above.",
+        instruction: "Answer these questions about the author's purpose and point of view in the Great Barrier Reef passage.",
         prompts: [
-          {
-            text: "What is the author's main purpose: to inform, to persuade, or to entertain? Explain your answer.",
-            type: "lines",
-            lines: 3,
-          },
-          {
-            text: "Does the author seem to have a point of view on the issue? What language choices tell you this?",
-            type: "lines",
-            lines: 3,
-          },
-          {
-            text: "Is this text reliable? What would you check to verify the facts?",
-            type: "lines",
-            lines: 3,
-          },
+          { text: "What is the author's main purpose: to inform, to persuade, or to entertain? Explain.", type: "lines", lines: 3 },
+          { text: "Does the author have a point of view on the issue? What language choices reveal this?", type: "lines", lines: 3 },
+          { text: "Is this text reliable? What would you check to verify the facts?", type: "lines", lines: 3 },
         ],
       },
-      {
-        type: "matching" as const,
-        title: "Match the Reading Strategy to Its Purpose",
-        instruction:
-          "Draw a line to match each reading strategy with the situation where a reader would use it.",
-        parentTip:
-          "Metacognition — knowing which strategy to use and when — is a hallmark of skilled readers. Practise asking your child: What strategy would you use if you needed to find a specific date in a long article?",
-        left: [
-          "Skimming",
-          "Scanning",
-          "Summarising",
-          "Evaluating",
-          "Close reading",
-          "Inferencing",
-        ],
-        right: [
-          "You want to find a specific name or statistic quickly",
-          "You need to check whether a source is reliable and why it was written",
-          "You want to understand every detail of a complex section of text",
-          "You want to capture the main idea of a passage in your own words",
-          "You read quickly to get the general topic before deciding whether to read further",
-          "You use clues in the text to work out what the author implies but does not state",
-        ],
-      },
+      // 7
       {
         type: "sequence" as const,
         title: "Order the Research Process",
-        instruction:
-          "A student is researching a topic for an informational report. Number these steps 1 to 6 to show the most logical order for using reading strategies effectively.",
-        parentTip:
-          "Discuss with your child that real research rarely follows a perfectly linear path — readers often loop back to earlier steps. This activity teaches the ideal process as a starting point.",
+        instruction: "Number these research steps 1 to 6 in the most logical order.",
+        parentTip: "Real research rarely follows a perfectly linear path — readers often loop back to earlier steps. This activity teaches the ideal process as a starting point.",
         items: [
-          { label: "Skim several sources quickly to decide which ones are most relevant." },
+          { label: "Skim several sources quickly to decide which are most relevant." },
           { label: "Evaluate each source for reliability, author purpose and potential bias." },
           { label: "Choose a research question or topic to investigate." },
           { label: "Scan chosen sources for specific facts and evidence to support your points." },
           { label: "Summarise key information from each source in your own words." },
-          { label: "Close-read the most important sections to fully understand the detail." },
+          { label: "Close-read the most important sections to understand the detail." },
         ],
+      },
+      // 8
+      {
+        type: "multiple-choice" as const,
+        title: "Skimming vs Scanning",
+        instruction: "Choose whether each task requires skimming or scanning.",
+        questions: [
+          { prompt: "You need to find out whether an article discusses renewable energy before deciding whether to read it.", options: ["Skimming — quickly reading to get the general topic", "Scanning — searching for specific information"], answer: "Skimming — quickly reading to get the general topic" },
+          { prompt: "You need to find the exact year that a law was passed in a long history text.", options: ["Skimming — quickly reading to get the general topic", "Scanning — searching for specific information"], answer: "Scanning — searching for specific information" },
+          { prompt: "You are choosing between five library books on the same topic and need to identify which ones are most useful.", options: ["Skimming — quickly reading to get the general topic", "Scanning — searching for specific information"], answer: "Skimming — quickly reading to get the general topic" },
+          { prompt: "You need to find the name of a specific scientist mentioned in a science report.", options: ["Skimming — quickly reading to get the general topic", "Scanning — searching for specific information"], answer: "Scanning — searching for specific information" },
+        ],
+      },
+      // 9
+      {
+        type: "open-response" as const,
+        title: "Practise Skimming",
+        instruction: "Skim the passage below for 45 seconds. Then cover it and answer the questions from memory.",
+        prompts: [
+          { text: "PASSAGE:\nAustralia's Indigenous people have the oldest continuous culture in the world, dating back more than 60,000 years. Across this vast continent, over 500 distinct language groups exist, each with unique stories, traditions and knowledge systems. Indigenous Australians developed sophisticated methods for land management, including cultural burning — a practice of controlled burning that reduces the risk of catastrophic bushfires and promotes the growth of certain native plants. These practices are increasingly recognised by land managers and scientists as having modern environmental applications.\n\nQ1: What is the main topic of this passage?", type: "lines", lines: 2 },
+          { text: "Q2: What is one specific fact you remember from your skim?", type: "lines", lines: 2 },
+          { text: "Q3: What do you think the author's purpose is?", type: "lines", lines: 2 },
+        ],
+      },
+      // 10
+      {
+        type: "open-response" as const,
+        title: "Practise Scanning",
+        instruction: "Scan the passage above to find specific information as quickly as possible.",
+        parentTip: "Scanning is a targetted eye movement — looking for a specific shape of information (a date, a name, a number) rather than reading for meaning. With practice, it becomes very fast.",
+        prompts: [
+          { text: "How many distinct language groups exist across Australia?", type: "lines", lines: 1 },
+          { text: "How many years does Indigenous Australian culture date back?", type: "lines", lines: 1 },
+          { text: "What is cultural burning?", type: "lines", lines: 2 },
+          { text: "What benefit does cultural burning provide?", type: "lines", lines: 2 },
+        ],
+      },
+      // 11
+      {
+        type: "fill-in-blank" as const,
+        title: "Reading Strategy Vocabulary",
+        instruction: "Fill in each blank with the correct reading strategy term: close reading, evaluating, skimming, summarising, scanning, inferencing.",
+        sentences: [
+          { text: "Reading quickly to get the general topic of a text is called _____.", blanks: ["skimming"] },
+          { text: "Searching for specific information in a text without reading every word is called _____.", blanks: ["scanning"] },
+          { text: "Capturing the main idea of a text in your own words is called _____.", blanks: ["summarising"] },
+          { text: "Judging the reliability, purpose and bias of a text is called _____.", blanks: ["evaluating"] },
+          { text: "Carefully analysing every word and sentence in a complex section is called _____.", blanks: ["close reading"] },
+          { text: "Using clues in the text to work out what the author implies but does not state is called _____.", blanks: ["inferencing"] },
+        ],
+      },
+      // 12
+      {
+        type: "true-false" as const,
+        title: "True or False: Informational Text Features",
+        instruction: "Mark each statement True or False.",
+        parentTip: "Informational text features are designed to make complex information accessible. Recognising and using them makes both reading and research much more efficient.",
+        statements: [
+          { text: "Subheadings in an informational text help the reader navigate to the section they need.", answer: true },
+          { text: "A table of contents always appears at the end of a non-fiction book.", answer: false },
+          { text: "A glossary in an informational text provides definitions for technical vocabulary.", answer: true },
+          { text: "Photographs and diagrams in informational texts are always purely decorative.", answer: false },
+          { text: "An index at the back of a book helps readers find specific topics quickly without reading the whole book.", answer: true },
+        ],
+      },
+      // 13
+      {
+        type: "matching" as const,
+        title: "Match the Text Feature to Its Purpose",
+        instruction: "Match each informational text feature to its purpose for the reader.",
+        left: ["Table of contents", "Subheading", "Glossary", "Caption", "Index", "Diagram with labels"],
+        right: ["Shows how something works or is structured visually", "Lists chapter titles and page numbers so readers can navigate to specific sections", "Introduces a new section and signals what it will cover", "Provides an alphabetical list of topics and their page numbers for quick reference", "Explains the meaning of technical vocabulary used in the text", "Provides a brief explanation of what a photograph or image shows"],
+      },
+      // 14
+      {
+        type: "open-response" as const,
+        title: "Using Text Features",
+        instruction: "Imagine you are reading a non-fiction book about climate change. Explain which text feature you would use to find each piece of information, and why.",
+        parentTip: "Efficient research depends on knowing which feature to use for each purpose. Students who can navigate non-fiction texts confidently are far more effective researchers across all subjects.",
+        prompts: [
+          { text: "You want to know whether the book covers carbon emissions. Text feature you would use and why:", type: "lines", lines: 3 },
+          { text: "You want to find the definition of 'greenhouse gas'. Text feature you would use and why:", type: "lines", lines: 3 },
+          { text: "You want to quickly find every page that mentions the Great Barrier Reef. Text feature you would use and why:", type: "lines", lines: 3 },
+        ],
+      },
+      // 15 — TIP
+      {
+        type: "tip" as const,
+        title: "Parent Tip: The Non-Fiction Reading Habit",
+        content: "Research consistently shows that children who read non-fiction regularly develop significantly stronger vocabulary, general knowledge and comprehension skills than those who read only fiction. This does not mean abandoning fiction — it means adding non-fiction. A good starting point is 10–15 minutes of non-fiction reading three times per week. Encyclopaedia entries, science articles, news stories written for children and quality information websites are all excellent sources. The ABC Education website (abc.net.au/education) offers free, Australian-relevant informational texts at upper primary level.",
+      },
+      // 16
+      {
+        type: "open-response" as const,
+        title: "Author Purpose: Identify and Justify",
+        instruction: "Read each description of a text and identify the author's most likely purpose. Justify your answer with evidence from the description.",
+        prompts: [
+          { text: "TEXT A: 'How to care for a native garden: a step-by-step guide from the Australian Native Plants Society.'\nAuthor's purpose and justification:", type: "lines", lines: 3 },
+          { text: "TEXT B: 'Why the government must act now to save the Murray-Darling River system' — an opinion piece by an environmental scientist.\nAuthor's purpose and justification:", type: "lines", lines: 3 },
+          { text: "TEXT C: 'A history of Australian explorers: the journeys, discoveries and hardships of those who mapped a continent' — a history reference book.\nAuthor's purpose and justification:", type: "lines", lines: 3 },
+        ],
+      },
+      // 17
+      {
+        type: "sorting" as const,
+        title: "Sort by Author Purpose",
+        instruction: "Sort each text description by the author's primary purpose.",
+        parentTip: "Many texts serve more than one purpose — a nature documentary both informs and entertains; a health brochure informs and persuades. Encourage your child to identify the dominant purpose.",
+        columns: ["Primarily to inform", "Primarily to persuade", "Primarily to entertain", "Primarily to instruct"],
+        items: [
+          { label: "An encyclopaedia entry about the platypus" },
+          { label: "A letter to the editor arguing for more funding for public libraries" },
+          { label: "A recipe with step-by-step cooking instructions" },
+          { label: "A science fiction novel set on a spaceship" },
+          { label: "A government health brochure about healthy eating" },
+          { label: "A school magazine article about a student's trip overseas" },
+          { label: "A safety manual for operating laboratory equipment" },
+          { label: "A persuasive speech arguing for school uniform reform" },
+        ],
+      },
+      // 18
+      {
+        type: "multiple-choice" as const,
+        title: "Evaluating Author Purpose",
+        instruction: "Choose the best answer for each question about evaluating author purpose.",
+        questions: [
+          { prompt: "A website about the health benefits of a vitamin supplement is published by the company that manufactures the supplement. Why is this a concern?", options: ["The website is probably designed well", "The author has a financial interest in presenting the supplement positively, which may create bias", "Company websites are always the most reliable source", "The supplement must be effective if the company is talking about it"], answer: "The author has a financial interest in presenting the supplement positively, which may create bias" },
+          { prompt: "A newspaper article includes interviews with three scientists who disagree about a new environmental policy. What does this tell you about the article's approach?", options: ["The article has no clear purpose", "The journalist is trying to present multiple perspectives on a complex issue", "The scientists must all be wrong", "The article is unreliable because scientists disagree"], answer: "The journalist is trying to present multiple perspectives on a complex issue" },
+        ],
+      },
+      // 19
+      {
+        type: "open-response" as const,
+        title: "Close Reading: Word Choice",
+        instruction: "Read the sentence below. Identify two or three key word choices and explain what each one communicates about the author's perspective.",
+        parentTip: "Close reading at the word level is one of the most powerful comprehension and analysis skills. A student who can explain why an author chose one word over another is reading at a genuinely advanced level.",
+        prompts: [
+          { text: "SENTENCE: 'Despite decades of urgent warnings from scientists, governments around the world have failed to take meaningful action to halt the catastrophic destruction of the world's remaining rainforests.'\n\nKey word 1 and what it communicates about the author's perspective:", type: "lines", lines: 3 },
+          { text: "Key word 2 and what it communicates:", type: "lines", lines: 3 },
+          { text: "Key word 3 and what it communicates:", type: "lines", lines: 3 },
+        ],
+      },
+      // 20 — SPARK
+      {
+        type: "spark" as const,
+        title: "Spark: The Reader Is Not Passive",
+        content: "When you open a non-fiction text, you are not an empty vessel waiting to be filled. You are an active participant — bringing your own knowledge, experience and questions to the text. Strategic readers do not just absorb information. They question it, test it, connect it to what they already know and evaluate whether they trust it. The word 'comprehension' comes from the Latin for 'to grasp firmly'. True comprehension means not just understanding the words on the page, but grasping the ideas behind them — and knowing when to hold on and when to let go. Every informational text you read is a conversation. The author is making claims. Your job is to listen carefully and decide what to believe.",
+      },
+      // 21
+      {
+        type: "open-response" as const,
+        title: "Write a Three-Sentence Summary",
+        instruction: "Read this short passage about bees. Write a three-sentence summary in your own words. Focus on the most important ideas.",
+        parentTip: "A three-sentence summary forces prioritisation — the student must decide what the most important ideas are. This is harder than it sounds and is one of the best comprehension exercises available.",
+        prompts: [
+          { text: "PASSAGE:\nBees are among the most important animals on Earth. As they fly from flower to flower collecting nectar and pollen, they transfer pollen between plants — a process called pollination. Without pollination, many of the foods we eat could not be produced. Approximately one third of all food consumed globally depends on bee pollination. Alarmingly, global bee populations have declined by between 10% and 40% in some species over the past decade. Threats include habitat loss, pesticide use, disease and climate change. Scientists and farmers are increasingly working together to protect bee populations through wildflower planting, reducing pesticide use and creating protected habitats.\n\nMy three-sentence summary:", type: "lines", lines: 6 },
+        ],
+      },
+      // 22
+      {
+        type: "open-response" as const,
+        title: "Scan for Specific Information: Bees",
+        instruction: "Scan the bee passage above to answer these questions as quickly as possible.",
+        prompts: [
+          { text: "What fraction of global food depends on bee pollination?", type: "lines", lines: 1 },
+          { text: "By how much have some bee populations declined?", type: "lines", lines: 1 },
+          { text: "Name three threats to bee populations.", type: "lines", lines: 2 },
+          { text: "What is one action scientists and farmers are taking to help bees?", type: "lines", lines: 1 },
+        ],
+      },
+      // 23
+      {
+        type: "multiple-choice" as const,
+        title: "Comprehension: The Bee Passage",
+        instruction: "Answer these comprehension questions about the bee passage.",
+        questions: [
+          { prompt: "What is the main purpose of the bee passage?", options: ["To persuade readers to become beekeepers", "To inform readers about why bees are important and the threats they face", "To entertain readers with a story about bees", "To provide instructions for planting wildflowers"], answer: "To inform readers about why bees are important and the threats they face" },
+          { prompt: "The word 'alarmingly' in the passage is an example of:", options: ["A technical scientific term", "A word that signals the author is describing something with concern or urgency", "A neutral, objective word choice", "A word that means 'not surprisingly'"], answer: "A word that signals the author is describing something with concern or urgency" },
+          { prompt: "Based on the passage, which statement can be inferred about the future of global food supply?", options: ["Food production is not affected by bee populations", "If bee populations continue to decline, food security could be seriously threatened", "Bee pollination is only important for honey production", "Scientists believe bee populations will recover without any human intervention"], answer: "If bee populations continue to decline, food security could be seriously threatened" },
+        ],
+      },
+      // 24
+      {
+        type: "true-false" as const,
+        title: "True or False: About the Bee Passage",
+        instruction: "Mark each statement True, False or Cannot Tell from the passage.",
+        parentTip: "The 'Cannot Tell' option is important — it teaches students to distinguish between what a text says, what can be inferred, and what is not addressed at all.",
+        statements: [
+          { text: "Approximately one third of all food consumed globally depends on bee pollination.", answer: true },
+          { text: "All bee species have declined by exactly 40% in the past decade.", answer: false },
+          { text: "Honey bees are the only species that pollinate food crops.", answer: false },
+          { text: "Wildflower planting is one strategy being used to support bee populations.", answer: true },
+          { text: "Bees are currently threatened with total extinction within ten years.", answer: false },
+        ],
+      },
+      // 25
+      {
+        type: "fill-in-blank" as const,
+        title: "Summarising in Your Own Words",
+        instruction: "Read each sentence from the bee passage. Rewrite it in your own words, keeping the same meaning but using different vocabulary.",
+        parentTip: "Paraphrasing — restating information in one's own words — is an essential research skill that prevents plagiarism and demonstrates genuine understanding. It is also significantly harder than it appears.",
+        sentences: [
+          { text: "ORIGINAL: 'Without pollination, many of the foods we eat could not be produced.' IN MY OWN WORDS: _____.", blanks: [""] },
+          { text: "ORIGINAL: 'Threats include habitat loss, pesticide use, disease and climate change.' IN MY OWN WORDS: _____.", blanks: [""] },
+          { text: "ORIGINAL: 'Scientists and farmers are increasingly working together to protect bee populations.' IN MY OWN WORDS: _____.", blanks: [""] },
+        ],
+      },
+      // 26
+      {
+        type: "open-response" as const,
+        title: "Evaluate the Bee Passage",
+        instruction: "Evaluate the bee passage using the four key questions.",
+        prompts: [
+          { text: "Q1: Who likely wrote this type of text and for what purpose?", type: "lines", lines: 3 },
+          { text: "Q2: Is the information presented as fact, opinion or a mix? Give an example.", type: "lines", lines: 3 },
+          { text: "Q3: What additional information would you want to know to fully understand this topic?", type: "lines", lines: 3 },
+          { text: "Q4: What sources would you consult to check the accuracy of the facts presented?", type: "lines", lines: 2 },
+        ],
+      },
+      // 27
+      {
+        type: "open-response" as const,
+        title: "Make an Inference",
+        instruction: "An inference is a conclusion you reach based on evidence in the text and your own reasoning — not something stated directly.",
+        prompts: [
+          { text: "FROM THE BEE PASSAGE: 'Approximately one third of all food consumed globally depends on bee pollination.'\nINFERENCE: What does this suggest could happen to the global food supply if bee populations collapse?", type: "lines", lines: 3 },
+          { text: "FROM THE REEF PASSAGE (Activity 4): 'Without intervention, large sections of the reef could be permanently damaged within decades.'\nINFERENCE: What does the word 'permanently' suggest about the urgency of the problem?", type: "lines", lines: 3 },
+        ],
+      },
+      // 28
+      {
+        type: "sorting" as const,
+        title: "Fact, Inference or Opinion?",
+        instruction: "Sort each statement into the correct category.",
+        parentTip: "The ability to distinguish between fact (verifiable), inference (reasoned conclusion from evidence) and opinion (personal view) is one of the most important critical thinking skills in reading and writing.",
+        columns: ["Fact (stated directly in a text or verifiable)", "Inference (reasoned from evidence)", "Opinion (personal view)"],
+        items: [
+          { label: "The Great Barrier Reef is over 2,300 kilometres long." },
+          { label: "If coral bleaching continues, tourism in Queensland will suffer." },
+          { label: "The Great Barrier Reef is the most beautiful natural wonder in the world." },
+          { label: "One third of global food production depends on bee pollination." },
+          { label: "If bee populations decline further, certain food crops may become scarce." },
+          { label: "People should stop using pesticides because they are bad for bees." },
+        ],
+      },
+      // 29
+      {
+        type: "multiple-choice" as const,
+        title: "Inference Questions",
+        instruction: "Read each passage extract and choose the strongest inference.",
+        questions: [
+          { prompt: "EXTRACT: 'Australia has the world's highest rate of mammal extinction.' What can be most reasonably inferred?", options: ["Australia does not care about animals", "Australia's environmental management policies have significant room for improvement", "All Australian mammals will be extinct within ten years", "Australian scientists are the best in the world at conservation"], answer: "Australia's environmental management policies have significant room for improvement" },
+          { prompt: "EXTRACT: 'The number of Australian students who cannot read at the expected level by Year 3 has remained steady despite multiple government intervention programmes.' What can be most reasonably inferred?", options: ["Reading is not important for Year 3 students", "The current intervention programmes may not be sufficiently effective", "All Year 3 students can read well", "The government should stop all reading programmes"], answer: "The current intervention programmes may not be sufficiently effective" },
+        ],
+      },
+      // 30 — TIP
+      {
+        type: "tip" as const,
+        title: "Parent Tip: Reading Together",
+        content: "One of the most effective ways to develop reading comprehension is to read informational texts together and discuss them using the four key questions: What is this mainly about? What is the author's purpose? What can we infer? Is this reliable? This can be done in five minutes with any article, encyclopaedia entry or news story. The conversation matters more than any written activity. Ask open-ended questions and be genuinely curious about your child's thinking — there are often no single right answers, and the quality of the reasoning is what counts.",
+      },
+      // 31
+      {
+        type: "open-response" as const,
+        title: "Read an Informational Text: Water Scarcity",
+        instruction: "Read the passage carefully, then answer the comprehension questions.",
+        prompts: [
+          { text: "PASSAGE:\nWater covers approximately 71% of the Earth's surface, yet less than 3% of it is fresh water, and most of that is locked in ice caps and glaciers. Only about 0.3% of all water on Earth is accessible for human use — in lakes, rivers and underground aquifers. As the global population grows and climate change alters rainfall patterns, the demand for clean water is increasing while supply in many regions is declining. The United Nations predicts that by 2025, two-thirds of the world's population could be living under conditions of water stress. In Australia, many rural and remote communities already struggle with water security, particularly during drought years.\n\nQ1: What is the main topic of this passage?", type: "lines", lines: 2 },
+          { text: "Q2: What is one statistic that surprised you? Why?", type: "lines", lines: 3 },
+          { text: "Q3: What is the author's purpose?", type: "lines", lines: 2 },
+          { text: "Q4: Write a two-sentence summary of the passage in your own words.", type: "lines", lines: 4 },
+        ],
+      },
+      // 32
+      {
+        type: "open-response" as const,
+        title: "Scan for Specific Information: Water Scarcity",
+        instruction: "Scan the water scarcity passage to find the answers quickly.",
+        prompts: [
+          { text: "What percentage of Earth's surface is covered by water?", type: "lines", lines: 1 },
+          { text: "What percentage of all water on Earth is accessible for human use?", type: "lines", lines: 1 },
+          { text: "By what year does the UN predict water stress will affect two-thirds of the world's population?", type: "lines", lines: 1 },
+          { text: "Which group in Australia is specifically mentioned as struggling with water security?", type: "lines", lines: 1 },
+        ],
+      },
+      // 33
+      {
+        type: "multiple-choice" as const,
+        title: "Comprehension: Water Scarcity",
+        instruction: "Choose the best answer for each comprehension question about the water scarcity passage.",
+        questions: [
+          { prompt: "According to the passage, why is the supply of accessible fresh water declining in many regions?", options: ["People are drinking more water than ever before", "Most water is in the ocean", "Climate change is altering rainfall patterns", "Underground aquifers are being filled with salt water"], answer: "Climate change is altering rainfall patterns" },
+          { prompt: "What does the phrase 'water stress' most likely mean in this context?", options: ["A feeling of anxiety caused by thinking about water", "A situation where water demand equals or exceeds available supply", "A scientific term for drought", "The physical pressure of water in a pipe"], answer: "A situation where water demand equals or exceeds available supply" },
+          { prompt: "What is the most reasonable inference from the statistic that only 0.3% of Earth's water is accessible?", options: ["Water is easy to find anywhere on Earth", "Fresh water is a far more precious and limited resource than it appears", "Most water is too cold to drink", "Water scarcity is not a real problem"], answer: "Fresh water is a far more precious and limited resource than it appears" },
+        ],
+      },
+      // 34
+      {
+        type: "open-response" as const,
+        title: "Close Reading: Key Vocabulary",
+        instruction: "The water scarcity passage uses several important technical and academic terms. For each word below, use context clues from the passage to work out its meaning.",
+        parentTip: "Using context clues to determine the meaning of unknown words is one of the most important reading strategies. Students who can do this fluently build their vocabulary more quickly and read more independently.",
+        prompts: [
+          { text: "The word 'aquifers' — from the sentence 'in lakes, rivers and underground aquifers'. What do aquifers most likely mean?", type: "lines", lines: 2 },
+          { text: "The phrase 'water stress' — from the sentence 'two-thirds of the world's population could be living under conditions of water stress'. What does this phrase most likely mean?", type: "lines", lines: 2 },
+          { text: "The word 'accessible' — from the sentence 'only about 0.3% of all water on Earth is accessible for human use'. What does accessible mean here?", type: "lines", lines: 2 },
+        ],
+      },
+      // 35
+      {
+        type: "fill-in-blank" as const,
+        title: "Using Context Clues",
+        instruction: "Fill in each blank using the correct strategy for working out word meaning from context.",
+        sentences: [
+          { text: "If a word is followed by a dash (—) and an explanation, this is a _____ clue.", blanks: ["definition"] },
+          { text: "If you can understand a word's meaning from the surrounding sentences and the overall topic, this is a _____ clue.", blanks: ["context"] },
+          { text: "If a word contains a prefix or suffix you recognise — for example, 'un-', 'dis-', '-tion', '-less' — this is a _____ clue.", blanks: ["structural"] },
+          { text: "If the text provides an example of a word, this is an _____ clue.", blanks: ["example"] },
+        ],
+      },
+      // 36
+      {
+        type: "open-response" as const,
+        title: "Summarising in Your Own Words: Water Scarcity",
+        instruction: "Write a one-paragraph summary of the water scarcity passage using only your own words. Do not look at the passage — work from memory.",
+        parentTip: "Summarising from memory — rather than with the text in front of you — tests genuine comprehension rather than copying ability. If your child needs to look back at the passage, that is fine the first time, but encourage them to try without it.",
+        prompts: [{ text: "My summary (from memory):", type: "box", lines: 8 }],
+      },
+      // 37
+      {
+        type: "matching" as const,
+        title: "Match the Comprehension Skill to Its Example",
+        instruction: "Match each comprehension skill to the activity that demonstrates it.",
+        parentTip: "Naming specific comprehension skills — inferencing, summarising, evaluating — helps students become more deliberate about what they are doing when they read. This metacognitive awareness is a hallmark of advanced readers.",
+        left: ["Literal comprehension", "Inferencing", "Evaluating", "Summarising", "Vocabulary in context", "Critical questioning"],
+      right: ["Working out that 'water stress' means insufficient water supply from the surrounding sentences", "Asking: 'Does the author have a financial or ideological reason to present the facts this way?'", "Stating the main idea of the passage in two sentences using your own words", "Understanding that only 0.3% of all water is accessible from a direct reading of the text", "Concluding that if only 0.3% of water is accessible, fresh water is a very limited resource", "Asking: 'What information is missing from this text that might change my understanding?'"],
+      },
+      // 38
+      {
+        type: "circle-correct" as const,
+        title: "Literal or Inferred?",
+        instruction: "Decide whether each answer comes directly from the text (literal) or requires reasoning beyond the text (inferred).",
+        questions: [
+          { prompt: "Q: What percentage of Earth's surface is covered by water? A: 71%.", options: ["Literal — stated directly in the text", "Inferred — requires reasoning beyond the text"] },
+          { prompt: "Q: If water scarcity continues to worsen, which Australian industries will be most affected? (This question is NOT answered in the text.)", options: ["Literal — stated directly in the text", "Inferred — requires reasoning beyond the text"] },
+          { prompt: "Q: How do altering rainfall patterns caused by climate change affect water availability? A: They cause water supply to decline in many regions.", options: ["Literal — stated directly in the text", "Inferred — requires reasoning beyond the text"] },
+          { prompt: "Q: If Australia already faces water security issues, what might this mean for future food production in rural areas?", options: ["Literal — stated directly in the text", "Inferred — requires reasoning beyond the text"] },
+        ],
+      },
+      // 39
+      {
+        type: "open-response" as const,
+        title: "Generate Questions About a Text",
+        instruction: "Good readers generate their own questions before, during and after reading. Read the passage title and first sentence below, then write five questions you would like answered by the full text.",
+        parentTip: "Generating questions before reading is one of the most effective comprehension strategies available. It activates prior knowledge and gives the reader a purpose for reading. Encourage your child to ask questions at all levels — literal, inferential and evaluative.",
+        prompts: [
+          { text: "TEXT TITLE AND OPENING: 'The Plastics Problem: Why Our Oceans Are in Crisis. Every year, more than 8 million tonnes of plastic enter the world's oceans. Unlike most materials, plastics do not biodegrade — they simply break down into smaller and smaller pieces called microplastics…'\n\nMy five questions:", type: "box", lines: 10 },
+        ],
+      },
+      // 40 — SPARK
+      {
+        type: "spark" as const,
+        title: "Spark: Questions Are More Powerful Than Answers",
+        content: "In education, we often think of the goal as finding the right answer. But the most important thing a reader can do — and the thing that distinguishes experts from novices — is asking the right questions. Scientists advance their fields by asking questions nobody has asked before. Historians interpret the past by questioning the sources they read. Journalists uncover truth by questioning official accounts. When you read an informational text and you ask 'Why? Who benefits from this? What is missing? What does this imply?' — you are doing exactly what the world's best thinkers do. The answer matters. But the question that led you there matters more.",
+      },
+      // 41
+      {
+        type: "open-response" as const,
+        title: "Read and Apply All Four Strategies",
+        instruction: "Read this passage about Indigenous Australian cultural burning practices. Apply all four reading strategies: skim, scan, summarise and evaluate.",
+        prompts: [
+          { text: "PASSAGE:\nFor tens of thousands of years, Aboriginal Australians have used controlled, low-intensity fire to manage Country. This practice, known as cultural burning, is fundamentally different from the high-intensity bushfires that devastate large areas of land. Cultural burning promotes the growth of native plants, creates habitat for animals, clears dry undergrowth that could fuel larger fires, and maintains the health of the landscape. In recent decades, land managers and governments have begun working with Indigenous communities to incorporate cultural burning into modern fire management strategies. The 2019–2020 Black Summer bushfires renewed urgent interest in these practices, as many areas that had been subject to cultural burning experienced less severe fire impacts than those that had not.\n\nSKIM RESULT — main topic (write in one sentence):", type: "lines", lines: 2 },
+          { text: "SCAN — find and write: In which years did the Black Summer bushfires occur?", type: "lines", lines: 1 },
+          { text: "SUMMARY — three sentences in your own words:", type: "lines", lines: 6 },
+          { text: "EVALUATE — Who likely wrote this text? What is their purpose? Is it reliable? What would you check?", type: "lines", lines: 4 },
+        ],
+      },
+      // 42
+      {
+        type: "true-false" as const,
+        title: "True or False: Cultural Burning Passage",
+        instruction: "Mark each statement True, False or Cannot Tell from the passage.",
+        statements: [
+          { text: "Cultural burning is a practice used by Aboriginal Australians for tens of thousands of years.", answer: true },
+          { text: "Cultural burning involves high-intensity fires that clear large areas of vegetation.", answer: false },
+          { text: "All areas subject to cultural burning were completely unaffected by the 2019–2020 bushfires.", answer: false },
+          { text: "Cultural burning can promote the growth of native plants and create animal habitat.", answer: true },
+          { text: "The 2019–2020 Black Summer bushfires led to increased interest in cultural burning strategies.", answer: true },
+        ],
+      },
+      // 43
+      {
+        type: "open-response" as const,
+        title: "Connect the Text to Your Knowledge",
+        instruction: "Good readers connect new information to what they already know. Answer these connection questions about the cultural burning passage.",
+        parentTip: "Making connections — text-to-self, text-to-world and text-to-text — is one of the seven fundamental comprehension strategies identified by reading researchers. Encouraging your child to make these connections regularly deepens comprehension significantly.",
+        prompts: [
+          { text: "TEXT-TO-SELF: What do you already know about bushfires or land management that connects to this passage?", type: "lines", lines: 3 },
+          { text: "TEXT-TO-WORLD: How does this passage connect to anything you know about Indigenous Australian culture or environmental issues?", type: "lines", lines: 3 },
+          { text: "TEXT-TO-TEXT: How does this passage connect to anything else you have read or learned recently?", type: "lines", lines: 3 },
+        ],
+      },
+      // 44
+      {
+        type: "multiple-choice" as const,
+        title: "Evaluating Source Reliability",
+        instruction: "For each informational source, choose the best evaluation.",
+        parentTip: "Evaluating sources is a critical skill that underpins all academic work and media literacy. The key questions are: Who wrote it? When? For what purpose? What evidence do they use?",
+        questions: [
+          { prompt: "A guide to nutrition written by a registered dietitian and published on a government health website.", options: ["Highly reliable — written by a qualified expert for a public information purpose", "Unreliable — government websites are always biased", "Unreliable — nutrition science changes too fast to trust any source", "Moderately reliable — but only if it mentions celebrities"], answer: "Highly reliable — written by a qualified expert for a public information purpose" },
+          { prompt: "An article about the dangers of a food additive, published on the website of a company selling an 'all-natural' alternative product.", options: ["Highly reliable — companies always provide accurate health information", "Potentially biased — the source has a financial interest in making the alternative product attractive", "Unreliable — company websites can never be trusted for any information", "Highly reliable — the article must be true or they could be sued"], answer: "Potentially biased — the source has a financial interest in making the alternative product attractive" },
+          { prompt: "A peer-reviewed study about climate change published in a scientific journal, with named researchers from a university.", options: ["Unreliable — scientists can be wrong", "Highly reliable — peer-reviewed research is scrutinised by other experts before publication", "Moderately reliable — only if the journal is from Australia", "Unreliable — universities always have a bias"], answer: "Highly reliable — peer-reviewed research is scrutinised by other experts before publication" },
+        ],
+      },
+      // 45 — TIP
+      {
+        type: "tip" as const,
+        title: "Parent Tip: Building the Research Habit",
+        content: "Every time your child asks a question about the world — 'Why do whales beach themselves?', 'How do vaccines work?', 'What caused the First World War?' — it is an opportunity to practise research. Help them find one reliable source, skim it for relevance, scan for the specific answer, summarise it and evaluate the source together. This five-minute process, done regularly, builds genuine research skills far more effectively than prescribed research projects. Curiosity plus method is the formula for a lifelong researcher.",
+      },
+      // 46
+      {
+        type: "open-response" as const,
+        title: "Read and Annotate",
+        instruction: "Read the passage below and annotate it as you read. Use these symbols: * for important information, ? for something you do not understand, ! for something that surprises you, + for information you could connect to something you already know.",
+        parentTip: "Annotation — marking a text as you read — is one of the most effective active reading strategies used by university students and researchers. Teaching it at Year 5 establishes a powerful habit early.",
+        prompts: [
+          { text: "PASSAGE:\nThe platypus is one of only five surviving species of monotreme — mammals that lay eggs rather than giving birth to live young. Found only in eastern Australia, the platypus leads a semi-aquatic life in freshwater rivers and streams. It uses electroreception — the ability to detect the electric fields generated by the muscle contractions of its prey — to hunt underwater, making it one of very few mammals to use this sense. The male platypus also has venomous spurs on its hind legs. Until European scientists first encountered the platypus in 1799, they initially believed it was a hoax — a duck's bill and feet sewn onto a beaver-like body.\n\nDescribe your three most interesting annotations and what they tell you about your reading:", type: "box", lines: 10 },
+        ],
+      },
+      // 47
+      {
+        type: "multiple-choice" as const,
+        title: "Comprehension: The Platypus Passage",
+        instruction: "Choose the best answer for each comprehension question.",
+        questions: [
+          { prompt: "What is a monotreme?", options: ["A type of aquatic mammal that lives in rivers", "A mammal that lays eggs rather than giving birth to live young", "Any mammal found only in Australia", "A mammal with venomous spurs"], answer: "A mammal that lays eggs rather than giving birth to live young" },
+          { prompt: "What does 'electroreception' mean based on the context of the passage?", options: ["Receiving electricity from a power source", "Using electricity as a weapon against prey", "The ability to detect the electric fields generated by the muscle contractions of prey", "A type of underwater sonar used by dolphins"], answer: "The ability to detect the electric fields generated by the muscle contractions of prey" },
+          { prompt: "Why did European scientists initially think the platypus was a hoax?", options: ["Because it was described by Australian Aboriginal peoples", "Because it was only found in very remote areas", "Because its combination of features — duck bill, beaver body, egg-laying — seemed impossible in one animal", "Because it was discovered on April Fool's Day"], answer: "Because its combination of features — duck bill, beaver body, egg-laying — seemed impossible in one animal" },
+        ],
+      },
+      // 48
+      {
+        type: "open-response" as const,
+        title: "Inferences: The Platypus Passage",
+        instruction: "Answer these inference questions about the platypus passage.",
+        prompts: [
+          { text: "INFERENCE Q1: The passage says European scientists believed the platypus was 'a hoax — a duck's bill and feet sewn onto a beaver-like body.' What does this tell you about what scientists expected animals to look like?", type: "lines", lines: 3 },
+          { text: "INFERENCE Q2: The male platypus has venomous spurs. What might this tell you about how the platypus survived evolution?", type: "lines", lines: 3 },
+        ],
+      },
+      // 49
+      {
+        type: "open-response" as const,
+        title: "Vocabulary in Context: The Platypus Passage",
+        instruction: "Use the context of the platypus passage to work out the meaning of each term.",
+        prompts: [
+          { text: "The word 'monotreme' — what does it most likely describe?", type: "lines", lines: 2 },
+          { text: "The phrase 'semi-aquatic' — what do you think this means?", type: "lines", lines: 2 },
+          { text: "The word 'electroreception' — what does it describe and how did you work this out?", type: "lines", lines: 2 },
+        ],
+      },
+      // 50
+      {
+        type: "open-response" as const,
+        title: "Write Your Own Comprehension Questions",
+        instruction: "Write three comprehension questions about the platypus passage — one literal, one inference and one evaluation question.",
+        parentTip: "Writing comprehension questions is a more advanced skill than answering them — it requires understanding what makes a question meaningful. Challenge your child to write questions that could not be answered with a single word.",
+        prompts: [
+          { text: "LITERAL question (answer is directly in the text):", type: "lines", lines: 2 },
+          { text: "INFERENCE question (answer requires reasoning from the text):", type: "lines", lines: 2 },
+          { text: "EVALUATION question (answer requires judging the text's content, purpose or reliability):", type: "lines", lines: 2 },
+        ],
+      },
+      // 51
+      {
+        type: "multiple-choice" as const,
+        title: "Types of Comprehension Questions",
+        instruction: "Identify whether each question is literal, inferential or evaluative.",
+        questions: [
+          { prompt: "Q: How long is the Great Barrier Reef? (Answer: 2,300 kilometres)", options: ["Literal — stated directly in the text", "Inferential — requires reasoning", "Evaluative — requires judging the text"], answer: "Literal — stated directly in the text" },
+          { prompt: "Q: If bee populations decline, what might happen to the price of fruit and vegetables? (Not stated in the text)", options: ["Literal — stated directly in the text", "Inferential — requires reasoning from the text", "Evaluative — requires judging the text"], answer: "Inferential — requires reasoning from the text" },
+          { prompt: "Q: Is the source of the water scarcity passage reliable and why?", options: ["Literal — stated directly in the text", "Inferential — requires reasoning from the text", "Evaluative — requires judging the text's credibility"], answer: "Evaluative — requires judging the text's credibility" },
+        ],
+      },
+      // 52
+      {
+        type: "open-response" as const,
+        title: "Read for Bias",
+        instruction: "Read this passage extract and identify any signs of bias — language choices, omissions or framing that suggest the author has a particular viewpoint.",
+        prompts: [
+          { text: "EXTRACT:\n'Proposed changes to Australia's forestry laws would devastate regional communities that depend on logging for their livelihoods. Thousands of hardworking families would lose their jobs, all for the sake of a handful of city-based environmental activists who have never set foot in a forest. The logging industry has operated sustainably in Australian forests for over a century.'\n\nQ1: What is the author's viewpoint on the proposed changes?", type: "lines", lines: 2 },
+          { text: "Q2: Identify two specific words or phrases that reveal bias. Explain what each one communicates.", type: "lines", lines: 4 },
+          { text: "Q3: What important perspective is not represented in this extract?", type: "lines", lines: 3 },
+        ],
+      },
+      // 53
+      {
+        type: "true-false" as const,
+        title: "True or False: Bias in Informational Texts",
+        instruction: "Mark each statement True or False.",
+        parentTip: "Understanding that all texts — even 'objective' informational texts — involve choices about what to include, emphasise or omit is one of the most important insights in critical literacy.",
+        statements: [
+          { text: "Bias in a text always means the author is deliberately lying.", answer: false },
+          { text: "Emotive language in a text can be a sign of authorial bias.", answer: true },
+          { text: "Even apparently factual texts can reflect a particular viewpoint through word choice and what they choose to omit.", answer: true },
+          { text: "A text that cites statistics cannot be biased.", answer: false },
+          { text: "Reading multiple texts from different perspectives on the same topic helps readers identify bias and build a more balanced understanding.", answer: true },
+        ],
+      },
+      // 54
+      {
+        type: "fill-in-blank" as const,
+        title: "Bias Vocabulary",
+        instruction: "Fill in each blank with the correct critical literacy term.",
+        sentences: [
+          { text: "When an author emphasises some facts while leaving out others to support their viewpoint, this is called _____.", blanks: ["selective presentation"] },
+          { text: "Language designed to trigger an emotional response in the reader is called _____ language.", blanks: ["emotive"] },
+          { text: "When an author presents only one side of an issue as if no other viewpoints exist, this is called presenting a _____ perspective.", blanks: ["one-sided"] },
+          { text: "The process of questioning a text's claims, purpose and perspective rather than accepting it passively is called _____ reading.", blanks: ["critical"] },
+        ],
+      },
+      // 55
+      {
+        type: "open-response" as const,
+        title: "Identify and Challenge Assumptions",
+        instruction: "Every informational text makes assumptions about what the reader already knows or believes. Read this extract and identify two assumptions the author is making.",
+        parentTip: "Challenging assumptions is a high-level critical thinking skill. Students who can identify hidden assumptions in texts are developing the analytical skills required for secondary school and beyond.",
+        prompts: [
+          { text: "EXTRACT:\n'As every educated Australian knows, reducing our carbon emissions is the most important environmental priority of the next decade. The science is settled — economic growth and environmental responsibility are not in conflict, and businesses that fail to adapt to this reality will be left behind.'\n\nASSUMPTION 1 the author makes:", type: "lines", lines: 3 },
+          { text: "ASSUMPTION 2 the author makes:", type: "lines", lines: 3 },
+          { text: "Why is it important to identify these assumptions rather than accepting them?", type: "lines", lines: 3 },
+        ],
+      },
+      // 56
+      {
+        type: "open-response" as const,
+        title: "Compare Two Perspectives on the Same Topic",
+        instruction: "Read these two extracts about the same topic. Identify how they differ and what perspective each author holds.",
+        prompts: [
+          { text: "EXTRACT A:\n'The decision to expand the Adani coal mine in Queensland is a positive development for regional employment and energy security. Thousands of local jobs will be created, providing economic opportunity for communities that have struggled with high unemployment for decades.'\n\nEXTRACT B:\n'The expansion of the Adani coal mine represents a catastrophic environmental decision. At a time when the world must rapidly decarbonise to limit catastrophic climate change, investing in new coal infrastructure is economically irrational and morally indefensible.'\n\nQ1: What viewpoint does Extract A represent?", type: "lines", lines: 2 },
+          { text: "Q2: What viewpoint does Extract B represent?", type: "lines", lines: 2 },
+          { text: "Q3: What evidence would you need to make a truly informed view on this issue?", type: "lines", lines: 3 },
+        ],
+      },
+      // 57
+      {
+        type: "multiple-choice" as const,
+        title: "Reading Non-Fiction: Comprehension at Depth",
+        instruction: "Choose the best answer for each question about reading informational texts at a deeper level.",
+        questions: [
+          { prompt: "What does it mean to 'read between the lines' of a text?", options: ["To read only alternate lines of a passage", "To identify what the author implies but does not state directly", "To skip paragraphs that seem unimportant", "To look for typing errors in the text"], answer: "To identify what the author implies but does not state directly" },
+          { prompt: "Which skill would you use to work out the meaning of an unfamiliar word from the sentences around it?", options: ["Scanning", "Using context clues", "Skimming", "Evaluating"], answer: "Using context clues" },
+          { prompt: "Why is it important to read texts about the same topic from multiple different sources?", options: ["To read more total words for literacy practice", "To identify agreements and disagreements between sources and build a more complete understanding", "Because one source always has wrong information", "To practise skimming different text layouts"], answer: "To identify agreements and disagreements between sources and build a more complete understanding" },
+        ],
+      },
+      // 58
+      {
+        type: "open-response" as const,
+        title: "Research a Topic: Three Sources",
+        instruction: "Choose a topic from your curriculum. Find information from three different sources. Complete the comparison table below.",
+        parentTip: "Consulting multiple sources before forming a view is one of the most important academic habits. At Year 5, this can mean a book, an encyclopaedia website and a news article — it does not need to be complex.",
+        prompts: [
+          { text: "My topic:", type: "lines", lines: 1 },
+          { text: "SOURCE 1 — title, type and author/publisher:", type: "lines", lines: 2 },
+          { text: "Source 1 — key information:", type: "lines", lines: 2 },
+          { text: "SOURCE 2 — title, type and author/publisher:", type: "lines", lines: 2 },
+          { text: "Source 2 — key information:", type: "lines", lines: 2 },
+          { text: "SOURCE 3 — title, type and author/publisher:", type: "lines", lines: 2 },
+          { text: "Source 3 — key information:", type: "lines", lines: 2 },
+          { text: "Key agreements and disagreements between the sources:", type: "lines", lines: 3 },
+        ],
+      },
+      // 59
+      {
+        type: "sequence" as const,
+        title: "Order the Research Process",
+        instruction: "Number these steps from 1 (first) to 6 (last) to show the most logical order for researching a topic.",
+        items: [
+          { label: "Skim several sources quickly to decide which are most relevant." },
+          { label: "Evaluate each source for reliability, author purpose and potential bias." },
+          { label: "Choose a research question or topic to investigate." },
+          { label: "Scan chosen sources for specific facts and evidence." },
+          { label: "Summarise key information from each source in your own words." },
+          { label: "Close-read the most important sections to understand the detail." },
+        ],
+      },
+      // 60 — TIP
+      {
+        type: "tip" as const,
+        title: "Parent Tip: Model Your Own Reading",
+        content: "Children learn reading habits by watching skilled adult readers. When you read a news article, an instruction manual or an information website — think aloud. Say: 'I am going to skim this first to see if it is relevant.' Or: 'I notice the author uses very emotive language — I wonder if they are trying to persuade as well as inform.' Or: 'That statistic is surprising — I would want to check the source before believing it.' These running commentaries on your own reading process teach your child more about strategic reading than almost anything else.",
+      },
+      // 61
+      {
+        type: "open-response" as const,
+        title: "Take Notes Using a T-Chart",
+        instruction: "A T-chart helps organise information into two categories. Use the T-chart below to note information from any informational text you read this week — sorting information into FACTS (verifiable) and QUESTIONS (things you want to know more about).",
+        prompts: [
+          { text: "Text I am reading:", type: "lines", lines: 1 },
+          { text: "FACTS (things I have learned):", type: "box", lines: 8 },
+          { text: "QUESTIONS (things I want to know more about):", type: "box", lines: 8 },
+        ],
+      },
+      // 62
+      {
+        type: "open-response" as const,
+        title: "Write a Summary: In Three Different Lengths",
+        instruction: "Read the cultural burning passage from Activity 41 again. Write three summaries of different lengths: a 10-word summary, a 30-word summary and a 60-word summary.",
+        parentTip: "Writing summaries of different lengths develops the skill of prioritisation — deciding what is most essential. The 10-word summary is the hardest and the most valuable. It forces students to identify the single most important idea.",
+        prompts: [
+          { text: "10-WORD SUMMARY (the single most important idea):", type: "lines", lines: 2 },
+          { text: "30-WORD SUMMARY (the main idea + one key supporting point):", type: "lines", lines: 3 },
+          { text: "60-WORD SUMMARY (main idea + key supporting points + one specific detail):", type: "lines", lines: 6 },
+        ],
+      },
+      // 63
+      {
+        type: "multiple-choice" as const,
+        title: "Which Summary Is Best?",
+        instruction: "Read each pair of summaries and choose the better one. Then explain your choice.",
+        questions: [
+          { prompt: "ORIGINAL TEXT TOPIC: The decline of bee populations globally.\nSUMMARY A: 'Bee populations are declining globally due to habitat loss, pesticides, disease and climate change. This threatens food security because bees pollinate approximately one third of all food crops.'\nSUMMARY B: 'Bees are very important insects. There are many types of bees and they live in hives. Bees make honey and they also pollinate things. Some bees sting you if you come too close.'\nWhich summary is better?", options: ["Summary A — it captures the main idea and key causes accurately and specifically", "Summary B — it includes more general information about bees"], answer: "Summary A — it captures the main idea and key causes accurately and specifically" },
+        ],
+      },
+      // 64
+      {
+        type: "fill-in-blank" as const,
+        title: "Summarising: Key Language",
+        instruction: "Fill in each blank with the correct summarising phrase.",
+        sentences: [
+          { text: "This passage is mainly about _____.", blanks: [""] },
+          { text: "The author's key point is that _____.", blanks: [""] },
+          { text: "In summary, _____ because _____.", blanks: [""] },
+          { text: "The most important information in this text is _____, which suggests _____.", blanks: [""] },
+        ],
+      },
+      // 65
+      {
+        type: "open-response" as const,
+        title: "Comprehension Deep Dive: Australia's Biodiversity",
+        instruction: "Read the passage and apply all comprehension strategies: literal comprehension, inference, vocabulary in context, evaluation and summarising.",
+        prompts: [
+          { text: "PASSAGE:\nAustralia is one of the world's 17 megadiverse countries — nations that contain extraordinarily high levels of biodiversity. The continent has been isolated from other landmasses for approximately 45 million years, allowing unique species to evolve in isolation. As a result, around 84% of Australia's mammals, 93% of reptiles and 45% of birds are found nowhere else on Earth. This phenomenon — species found only in one place — is called endemism. However, Australia also has one of the highest rates of animal and plant extinction in the developed world, driven by habitat destruction, invasive species and climate change. Since European settlement, over 100 species of Australian plants and animals have become extinct.\n\nLITERAL: What percentage of Australian mammals are found nowhere else on Earth?", type: "lines", lines: 1 },
+          { text: "VOCABULARY: What does 'endemism' mean based on the passage?", type: "lines", lines: 2 },
+          { text: "INFERENCE: Why might isolation from other landmasses for millions of years lead to unique species developing?", type: "lines", lines: 3 },
+          { text: "EVALUATE: What is the author's purpose? Is there evidence of a viewpoint?", type: "lines", lines: 3 },
+          { text: "SUMMARISE: Write a two-sentence summary in your own words:", type: "lines", lines: 4 },
+        ],
+      },
+      // 66
+      {
+        type: "true-false" as const,
+        title: "True or False: Australia's Biodiversity",
+        instruction: "Mark each statement True, False or Cannot Tell from the biodiversity passage.",
+        statements: [
+          { text: "Australia is one of 17 megadiverse countries in the world.", answer: true },
+          { text: "Australia has been isolated from other landmasses for approximately 45 million years.", answer: true },
+          { text: "100% of Australian mammals are found nowhere else on Earth.", answer: false },
+          { text: "Australia has the highest rate of species extinction in the world.", answer: false },
+          { text: "European settlement contributed to species extinction in Australia.", answer: true },
+        ],
+      },
+      // 67
+      {
+        type: "open-response" as const,
+        title: "Generate Research Questions",
+        instruction: "Based on what you read about Australia's biodiversity, write five research questions you would like to investigate further.",
+        parentTip: "A student who generates their own research questions after reading is demonstrating genuine intellectual engagement with the text — a far richer response than simply answering provided questions.",
+        prompts: [{ text: "My five research questions:", type: "box", lines: 10 }],
+      },
+      // 68
+      {
+        type: "sorting" as const,
+        title: "Sort the Comprehension Activities by Depth",
+        instruction: "Sort these comprehension activities from Surface (basic recall) to Deep (complex analysis).",
+        parentTip: "Bloom's Taxonomy — a framework for educational thinking levels — runs from remembering and understanding at the surface through applying, analysing, evaluating and creating at the deep end. Helping your child aim for the deeper levels significantly improves comprehension.",
+        columns: ["Surface", "Mid-level", "Deep"],
+        items: [
+          { label: "Scan the passage to find a specific date" },
+          { label: "Write a three-sentence summary of the main idea" },
+          { label: "Evaluate the author's bias and viewpoint with specific evidence" },
+          { label: "Identify whether the text is mainly fact or opinion" },
+          { label: "Find one statistic in the text" },
+          { label: "Make an inference about what might happen next based on the evidence in the text" },
+          { label: "Use context clues to work out the meaning of a technical word" },
+          { label: "Write your own research questions inspired by the text" },
+        ],
+      },
+      // 69
+      {
+        type: "open-response" as const,
+        title: "Read and Evaluate a News Article",
+        instruction: "Read a news article from ABC News, the Guardian or any quality news source with your parent's help. Evaluate it using the critical reading questions below.",
+        parentTip: "Reading real news articles with your child is one of the most valuable academic activities you can do together. Even 10 minutes once a week builds vocabulary, general knowledge, comprehension and critical thinking simultaneously.",
+        prompts: [
+          { text: "Article title and source:", type: "lines", lines: 1 },
+          { text: "Q1: What is the main news story in three sentences?", type: "lines", lines: 3 },
+          { text: "Q2: What evidence or sources are cited in the article?", type: "lines", lines: 3 },
+          { text: "Q3: Is the article balanced (presenting multiple perspectives) or one-sided?", type: "lines", lines: 3 },
+          { text: "Q4: What questions do you have after reading that the article did not answer?", type: "lines", lines: 3 },
+        ],
+      },
+      // 70
+      {
+        type: "home-activity" as const,
+        title: "Home Activity: The Smart Reader's Weekly Practice",
+        instruction: "Apply these activities across one week of regular reading to build your comprehension strategy toolkit.",
+        parentTip: "Comprehension strategies develop through consistent, regular practice with real texts — not just worksheet activities. The most important thing is to read informational texts regularly and apply at least one strategy deliberately each time.",
+        suggestions: [
+          "MONDAY — SKIM: Pick up any non-fiction book or magazine. Skim two pages in 60 seconds. Then tell someone what the passage is mainly about without looking back.",
+          "TUESDAY — SCAN: Find a news article online. Set a timer for 30 seconds. Scan for three specific facts: a name, a date and a number.",
+          "WEDNESDAY — SUMMARISE: Read any article or encyclopedia entry. Close the book or screen. Write a summary in exactly three sentences from memory.",
+          "THURSDAY — EVALUATE: Read any informational text. Ask: Who wrote this? When? Why? Is it reliable? How do I know?",
+          "FRIDAY — INFER: Find a headline from a news article without reading the full story. Write three things you can infer might be in the full article, based on the headline alone. Then read the article and check.",
+        ],
+      },
+      // 71
+      {
+        type: "open-response" as const,
+        title: "Extension: Critical Reading of a Long Text",
+        instruction: "Choose a chapter from a non-fiction library book on any topic. Read it carefully, then write a critical analysis including: main idea, key evidence, author purpose, at least one inference and one evaluation of the text's reliability.",
+        parentTip: "This extension activity asks your child to apply all five comprehension strategies to a longer, more complex text. Allow 30–45 minutes and encourage them to annotate as they read.",
+        prompts: [{ text: "Book title, chapter and author:", type: "lines", lines: 2 }, { text: "My critical analysis:", type: "box", lines: 16 }],
+      },
+      // 72
+      {
+        type: "multiple-choice" as const,
+        title: "Comprehension Mastery Check",
+        instruction: "Demonstrate your mastery by choosing the best answer for each question.",
+        questions: [
+          { prompt: "What is the difference between a literal comprehension question and an inferential question?", options: ["Literal questions are longer; inferential questions are shorter", "Literal questions can be answered from information stated directly in the text; inferential questions require reasoning beyond the text", "They are the same thing", "Literal questions are about maths; inferential questions are about English"], answer: "Literal questions can be answered from information stated directly in the text; inferential questions require reasoning beyond the text" },
+          { prompt: "What should you do when you encounter an unfamiliar word in an informational text?", options: ["Stop reading and look up every unfamiliar word in a dictionary immediately", "Skip the word and ignore it", "Use context clues from surrounding sentences to work out its meaning, or look it up if still unclear", "Assume the word is unimportant and continue reading"], answer: "Use context clues from surrounding sentences to work out its meaning, or look it up if still unclear" },
+          { prompt: "What is the most important question to ask when evaluating an informational source?", options: ["Is the article long enough?", "Does the article include photographs?", "Who wrote this, for what purpose, and what evidence do they provide?", "Is the article interesting to read?"], answer: "Who wrote this, for what purpose, and what evidence do they provide?" },
+        ],
+      },
+      // 73
+      {
+        type: "open-response" as const,
+        title: "Comprehension Self-Assessment",
+        instruction: "Look back over your work in this worksheet and assess your own progress as a reader.",
+        prompts: [
+          { text: "Q1: Which comprehension strategy do you find most natural and easy? Why?", type: "lines", lines: 3 },
+          { text: "Q2: Which strategy is most challenging for you? What makes it difficult?", type: "lines", lines: 3 },
+          { text: "Q3: Which activity in this worksheet challenged you the most and why?", type: "lines", lines: 3 },
+        ],
+      },
+      // 74
+      {
+        type: "fill-in-blank" as const,
+        title: "Comprehension Vocabulary: Final Review",
+        instruction: "Fill in each blank with the correct comprehension term.",
+        sentences: [
+          { text: "Reading quickly to get the general topic of a text is called _____.", blanks: ["skimming"] },
+          { text: "A conclusion reasoned from evidence in the text that is not stated directly is an _____.", blanks: ["inference"] },
+          { text: "Capturing the main idea of a text in your own words is called _____.", blanks: ["summarising"] },
+          { text: "Using surrounding words and sentences to work out the meaning of an unknown word is called using _____ clues.", blanks: ["context"] },
+          { text: "Assessing the reliability, bias and purpose of a source is called _____ reading.", blanks: ["critical"] },
+        ],
+      },
+      // 75 — TIP
+      {
+        type: "tip" as const,
+        title: "Parent Tip: The Value of Wide Reading",
+        content: "The single most reliable predictor of reading comprehension skill is the amount and variety of reading a child does outside school. Research by literacy scholars such as E.D. Hirsch has shown that background knowledge — the accumulated information a reader brings to a new text — is a stronger predictor of comprehension than vocabulary or reading instruction alone. Every informational text your child reads deposits knowledge that makes the next text easier to understand. Wide, varied reading in science, history, geography, nature and current events builds the background knowledge that makes reading comprehension automatic rather than effortful.",
+      },
+      // 76
+      {
+        type: "open-response" as const,
+        title: "Read for a Purpose",
+        instruction: "Choose an informational text on a topic you are currently studying. Read it for a specific purpose — choose one: to find evidence for an argument, to answer a specific question, or to compare with another source.",
+        prompts: [
+          { text: "Text I am reading and my purpose:", type: "lines", lines: 2 },
+          { text: "What I found that serves my purpose:", type: "box", lines: 8 },
+          { text: "How this information connects to what I am studying:", type: "lines", lines: 3 },
+        ],
+      },
+      // 77
+      {
+        type: "multiple-choice" as const,
+        title: "Advanced Comprehension: Structure in Informational Texts",
+        instruction: "Choose the best answer for each question about how informational texts are structured.",
+        questions: [
+          { prompt: "What is a 'claim' in an informational or argumentative text?", options: ["A legal document", "A statement that the author asserts is true, which may or may not be supported by evidence", "The main photograph of the text", "The title of the text"], answer: "A statement that the author asserts is true, which may or may not be supported by evidence" },
+          { prompt: "What is the difference between the 'main idea' and 'supporting details' in an informational text?", options: ["They mean the same thing", "The main idea is the central point the text makes; supporting details are evidence and examples that develop and illustrate the main idea", "Supporting details are more important than the main idea", "The main idea only appears in the last paragraph"], answer: "The main idea is the central point the text makes; supporting details are evidence and examples that develop and illustrate the main idea" },
+        ],
+      },
+      // 78
+      {
+        type: "open-response" as const,
+        title: "Identify Claim, Evidence and Explanation",
+        instruction: "Read this extract. Identify the claim, the evidence and the explanation.",
+        prompts: [
+          { text: "EXTRACT:\n'Regular physical activity is essential for children's mental health. Research from the University of Melbourne found that students who engaged in 60 minutes of moderate exercise five times per week reported significantly lower levels of anxiety and depression. This is because exercise releases endorphins — natural mood-elevating chemicals — and reduces the stress hormone cortisol.'\n\nCLAIM (the main assertion):", type: "lines", lines: 2 },
+          { text: "EVIDENCE (the specific research or data):", type: "lines", lines: 2 },
+          { text: "EXPLANATION (why the evidence supports the claim):", type: "lines", lines: 2 },
+        ],
+      },
+      // 79
+      {
+        type: "sorting" as const,
+        title: "Sort: Main Idea or Supporting Detail?",
+        instruction: "Sort each sentence into Main idea (the central point of the whole text) or Supporting detail (evidence or example that supports the main idea) for a text about climate change.",
+        columns: ["Main idea", "Supporting detail"],
+        items: [
+          { label: "Climate change poses one of the most significant threats to human civilisation in recorded history." },
+          { label: "Global temperatures have risen by approximately 1.1°C since pre-industrial times." },
+          { label: "The 2019–2020 Australian bushfire season was the worst on record, burning over 18 million hectares." },
+          { label: "More frequent and intense extreme weather events are one of the predicted consequences of continued warming." },
+          { label: "Addressing climate change requires urgent, coordinated international action across all sectors of the economy." },
+          { label: "Ocean levels are rising at an average rate of 3.6 mm per year as ice sheets melt." },
+        ],
+      },
+      // 80 — SPARK
+      {
+        type: "spark" as const,
+        title: "Spark: You Are Already a Researcher",
+        content: "Every time you have ever been curious about something — a fact that surprised you, a question you could not stop thinking about, a problem you wanted to understand — and you looked it up or asked someone about it, you were doing research. Research is not a formal academic process that only adults in laboratories do. It is the natural extension of curiosity. The skills you have practised in this worksheet — skimming, scanning, summarising, evaluating, inferencing, questioning — are the formal names for things strategic readers do naturally. You now have the language to be deliberate about it. Every book, article, documentary and website you encounter for the rest of your life is a source. You are the researcher. Start reading the world with that confidence.",
+      },
+      // 81
+      {
+        type: "open-response" as const,
+        title: "Extension: Comprehension of a Complex Text",
+        instruction: "Find and read a longer informational article — at least 500 words — on any topic from science, history or current events. Apply all the comprehension strategies and write a full critical reading response.",
+        parentTip: "This is the capstone activity of the worksheet. Encourage your child to choose a text that genuinely interests them and to take their time. The goal is to demonstrate all five comprehension strategies in action — not to rush to completion.",
+        prompts: [
+          { text: "Article title, source and date:", type: "lines", lines: 2 },
+          { text: "SKIM RESULT — main topic in one sentence:", type: "lines", lines: 2 },
+          { text: "SCAN — three specific facts found:", type: "lines", lines: 3 },
+          { text: "SUMMARY — three sentences in my own words:", type: "lines", lines: 6 },
+          { text: "INFERENCE — something implied but not stated:", type: "lines", lines: 3 },
+          { text: "EVALUATE — purpose, reliability, bias:", type: "lines", lines: 4 },
+        ],
+      },
+      // 82
+      {
+        type: "multiple-choice" as const,
+        title: "Mastery Challenge: All Five Strategies",
+        instruction: "Choose the best comprehension strategy for each reading purpose.",
+        questions: [
+          { prompt: "You are choosing between ten articles for a research project. Which strategy do you use first?", options: ["Close reading every article from start to finish", "Skimming each article to see whether it covers your topic", "Scanning for your topic's keyword", "Evaluating each article for bias before reading it"], answer: "Skimming each article to see whether it covers your topic" },
+          { prompt: "You have found a reliable article. You need to find one specific statistic quickly.", options: ["Close reading the whole article", "Summarising the article first", "Scanning for numbers or the relevant section", "Skimming the article again"], answer: "Scanning for numbers or the relevant section" },
+          { prompt: "You need to write a paragraph that captures the key ideas of an article in your own words.", options: ["Scanning for keywords", "Skimming for the general topic", "Summarising the main idea and key supporting points", "Evaluating the source's reliability"], answer: "Summarising the main idea and key supporting points" },
+          { prompt: "Before using the article as a source in your report, you need to check whether it is credible.", options: ["Scanning for the author's name", "Evaluating the source — author, publisher, date, evidence", "Summarising the article", "Close reading every paragraph"], answer: "Evaluating the source — author, publisher, date, evidence" },
+        ],
+      },
+      // 83
+      {
+        type: "open-response" as const,
+        title: "Teach Back: Comprehension Strategies",
+        instruction: "Explain the five comprehension strategies (skimming, scanning, summarising, evaluating and inferencing) to a parent or younger sibling. Give one example of each and describe when you would use it.",
+        parentTip: "Teaching comprehension strategies to someone else is the highest form of understanding. If your child can explain each strategy in their own words and give an authentic example, they have genuinely mastered the content of this worksheet.",
+        prompts: [{ text: "My explanation of the five strategies:", type: "box", lines: 16 }],
+      },
+      // 84
+      {
+        type: "fill-in-blank" as const,
+        title: "Reading for Research: Complete the Process",
+        instruction: "Fill in each blank to complete the research reading process.",
+        sentences: [
+          { text: "First, I _____ several sources to quickly identify which ones cover my topic.", blanks: ["skim"] },
+          { text: "Next, I _____ each source to check who wrote it, when and why, and whether it is reliable.", blanks: ["evaluate"] },
+          { text: "Then, I _____ the most relevant sources to find specific facts and data quickly.", blanks: ["scan"] },
+          { text: "For the most important sections, I use _____ reading to understand every detail.", blanks: ["close"] },
+          { text: "Finally, I _____ the key information from each source in my own words for my notes.", blanks: ["summarise"] },
+        ],
+      },
+      // 85
+      {
+        type: "open-response" as const,
+        title: "Your Best Comprehension Response",
+        instruction: "Read a passage of your choice — from a library book, encyclopaedia or quality news website — and write your best, most complete comprehension response. Apply all five strategies and demonstrate everything you have learned in this worksheet.",
+        parentTip: "This is your child's showcase activity. Allow 30–40 minutes. Encourage slow, careful reading followed by a thoughtful response. The goal is quality, not speed.",
+        prompts: [{ text: "Text I chose and why:", type: "lines", lines: 2 }, { text: "My complete comprehension response:", type: "box", lines: 18 }],
+      },
+      // 86
+      {
+        type: "true-false" as const,
+        title: "True or False: Advanced Reading Skills",
+        instruction: "Mark each statement True or False.",
+        statements: [
+          { text: "Strategic readers choose their reading strategy based on their purpose and the type of text they are reading.", answer: true },
+          { text: "A skilled reader reads every word of every text at the same speed, regardless of purpose.", answer: false },
+          { text: "Making inferences requires both information from the text and prior knowledge from the reader.", answer: true },
+          { text: "A summary that uses the same sentences as the original text demonstrates strong comprehension.", answer: false },
+          { text: "Critical reading includes asking who benefits from the way information is presented in a text.", answer: true },
+        ],
+      },
+      // 87
+      {
+        type: "open-response" as const,
+        title: "Design a Comprehension Toolkit Card",
+        instruction: "Design a 'Comprehension Toolkit Card' — a small reference card that lists the five reading strategies, when to use each one and one practical tip for applying each. Keep it as a reference for future reading.",
+        parentTip: "A self-made reference card is used and remembered far more than a worksheet summary. Encourage your child to keep this card in their reading area and refer to it when reading informational texts across all subjects.",
+        prompts: [{ text: "My Comprehension Toolkit Card (design it clearly and neatly here):", type: "box", lines: 14 }],
+      },
+      // 88
+      {
+        type: "sorting" as const,
+        title: "Sort the Reading Activities by Strategy Used",
+        instruction: "Sort each reading activity by the primary strategy it requires.",
+        parentTip: "This consolidation activity checks whether your child can identify which strategy is appropriate for each purpose — a key metacognitive skill for independent readers.",
+        columns: ["Skimming", "Scanning", "Summarising", "Evaluating", "Inferencing"],
+        items: [
+          { label: "Reading only headings and opening sentences to decide if an article is relevant" },
+          { label: "Looking for a specific date mentioned in a long article" },
+          { label: "Writing the main idea and two key points from a chapter in your own words" },
+          { label: "Asking 'Does this author have a financial reason to present the information this way?'" },
+          { label: "Concluding that a character in a story must be poor based on descriptions of their home" },
+          { label: "Quickly reading the blurb and contents page of a book before deciding to read it" },
+          { label: "Checking when an article was written and whether the author is an expert" },
+          { label: "Drawing a conclusion about what might happen to bee populations if pesticide use is not reduced" },
+        ],
+      },
+      // 89
+      {
+        type: "open-response" as const,
+        title: "Reflection: How Has Your Reading Changed?",
+        instruction: "Look back at where you started this worksheet and where you are now as a reader.",
+        prompts: [
+          { text: "Q1: Before this worksheet, how did you read an informational text?", type: "lines", lines: 3 },
+          { text: "Q2: What do you do differently now when you read non-fiction?", type: "lines", lines: 3 },
+          { text: "Q3: Which strategy will be most useful to you this year and beyond? Why?", type: "lines", lines: 3 },
+        ],
+      },
+      // 90 — TIP
+      {
+        type: "tip" as const,
+        title: "Parent Tip: The Long View on Literacy",
+        content: "Reading comprehension is not a single skill — it is a constellation of habits, strategies and knowledge that develops over years. The activities in this worksheet are not destinations — they are starting points. The most powerful thing you can do for your child's reading development is to ensure that reading informational texts is a regular, enjoyable part of their life: through library visits, magazine subscriptions, quality news apps designed for young readers, science and history books, and conversations about what they are reading and thinking. The child who reads widely and thinks critically about what they read will thrive across every subject and throughout life.",
+      },
+      // 91
+      {
+        type: "open-response" as const,
+        title: "Create a Reading Journal Entry",
+        instruction: "Write a reading journal entry about any informational text you have read recently. Include your reactions, what you learned, any inferences you made and one question you would like to research further.",
+        parentTip: "A reading journal is one of the most valuable literacy tools available. Even brief, informal entries — written a few times a week — develop metacognitive awareness of reading, build vocabulary and consolidate comprehension.",
+        prompts: [{ text: "My reading journal entry:", type: "box", lines: 14 }],
+      },
+      // 92
+      {
+        type: "multiple-choice" as const,
+        title: "Final Mastery Check: Reading Comprehension",
+        instruction: "Demonstrate your full mastery by choosing the best answer for each question.",
+        questions: [
+          { prompt: "Which of these is the most complete description of reading comprehension?", options: ["The ability to read words accurately and quickly", "The ability to decode letters and form words", "The ability to understand, evaluate, and think critically about what has been read", "The ability to read without making any errors"], answer: "The ability to understand, evaluate, and think critically about what has been read" },
+          { prompt: "What does it mean to evaluate a source?", options: ["To find every statistic in the source", "To assess the source's reliability, author, purpose, potential bias and the quality of its evidence", "To read every sentence of the source twice", "To summarise the source in three sentences"], answer: "To assess the source's reliability, author, purpose, potential bias and the quality of its evidence" },
+          { prompt: "Why is summarising important as a reading strategy?", options: ["It makes the text shorter", "It forces the reader to identify what is most important and to process and restate the information in their own words — proving genuine understanding", "It is the fastest way to read a text", "It allows the reader to avoid reading the full text"], answer: "It forces the reader to identify what is most important and to process and restate the information in their own words — proving genuine understanding" },
+        ],
+      },
+      // 93
+      {
+        type: "open-response" as const,
+        title: "Apply Comprehension Strategies Independently",
+        instruction: "Choose an informational text on any topic from your curriculum. Without any guidance, apply all five comprehension strategies independently and record your results.",
+        prompts: [
+          { text: "Text I chose:", type: "lines", lines: 1 },
+          { text: "SKIM — main topic:", type: "lines", lines: 2 },
+          { text: "SCAN — three specific facts:", type: "lines", lines: 3 },
+          { text: "SUMMARISE — two sentences in my own words:", type: "lines", lines: 4 },
+          { text: "INFER — one conclusion reasoned from the text:", type: "lines", lines: 3 },
+          { text: "EVALUATE — purpose and reliability:", type: "lines", lines: 3 },
+        ],
+      },
+      // 94
+      {
+        type: "fill-in-blank" as const,
+        title: "Complete the Comprehension Checklist",
+        instruction: "Fill in each blank to complete the reading comprehension self-check. Use these terms: evaluate, summarise, infer, scan, skim.",
+        sentences: [
+          { text: "Before reading a new text, I _____ it quickly to decide whether it is relevant to my purpose.", blanks: ["skim"] },
+          { text: "When I need a specific fact fast, I _____ for keywords, numbers or names.", blanks: ["scan"] },
+          { text: "After reading carefully, I _____ the main idea in my own words to check I have understood it.", blanks: ["summarise"] },
+          { text: "I _____ the source before trusting the information — checking who wrote it and why.", blanks: ["evaluate"] },
+          { text: "I _____ what the author implies by using evidence in the text and my prior knowledge.", blanks: ["infer"] },
+        ],
+      },
+      // 95
+      {
+        type: "home-activity" as const,
+        title: "Home Activity: Build a Reading Life",
+        instruction: "Reading comprehension grows through regular, wide, varied reading. Use these suggestions to build a rich reading life beyond the worksheet.",
+        parentTip: "The research is unambiguous: children who read for pleasure regularly develop stronger vocabulary, comprehension, empathy and academic performance across all subjects. The goal is not to turn reading into a chore — it is to make it a pleasure. Follow your child's interests wherever they lead.",
+        suggestions: [
+          "Visit your local library and borrow one non-fiction book in a subject area you are curious about. Read at least one chapter this week.",
+          "Subscribe to a free children's news service such as ABC's Behind the News or First News (UK). Read one article per week and apply one comprehension strategy to it.",
+          "Start a reading journal. After reading any informational text, write three sentences: what I learned, one question I now have, and one connection to something I already knew.",
+          "Choose a topic you are passionate about and spend 20 minutes researching it from at least two different sources. Compare what each source says.",
+          "Share one interesting fact you have read this week at the dinner table. Explain where you read it and why you found it interesting.",
+        ],
+      },
+      // 96
+      {
+        type: "open-response" as const,
+        title: "What Kind of Reader Do You Want to Be?",
+        instruction: "Write a personal reading goal for the rest of this year. What do you want to read more of? What comprehension skills do you want to develop? How will you challenge yourself as a reader?",
+        parentTip: "Goal-setting for reading gives students ownership of their literacy development. A concrete, specific goal — 'I will read one non-fiction article every Tuesday and write three sentences in my reading journal' — is far more effective than a vague aspiration to 'read more'.",
+        prompts: [{ text: "My personal reading goal for this year:", type: "box", lines: 10 }],
+      },
+      // 97
+      {
+        type: "multiple-choice" as const,
+        title: "Mastery Challenge: All Strategies Together",
+        instruction: "Choose the best strategy for each complex reading scenario.",
+        questions: [
+          { prompt: "You are writing a report on water scarcity. You have found five sources. What is the most efficient reading process?", options: ["Close-read all five sources from start to finish before taking any notes", "Skim all five sources, evaluate each for reliability, scan for relevant data, close-read the best sections, then summarise", "Summarise all five sources before reading them", "Scan all five sources for the word 'water' and record every sentence that contains it"], answer: "Skim all five sources, evaluate each for reliability, scan for relevant data, close-read the best sections, then summarise" },
+          { prompt: "You have read a persuasive article about renewable energy and notice the author works for a solar power company. What should you do?", options: ["Trust the article completely because the author is an expert", "Discard the article — all company-authored articles are wrong", "Note the potential bias, look for which claims are well-evidenced, and seek additional independent sources to verify key facts", "Only use the statistics and ignore the opinions"], answer: "Note the potential bias, look for which claims are well-evidenced, and seek additional independent sources to verify key facts" },
+        ],
+      },
+      // 98
+      {
+        type: "open-response" as const,
+        title: "Your Strongest Comprehension Demonstration",
+        instruction: "Write your best, most complete response to a passage of your choice. Demonstrate everything you have learned in this worksheet — all five strategies, critical thinking and sophisticated vocabulary.",
+        prompts: [{ text: "Text I chose:", type: "lines", lines: 1 }, { text: "My comprehensive response:", type: "box", lines: 18 }],
+      },
+      // 99
+      {
+        type: "open-response" as const,
+        title: "Final Reflection: The Reader You Have Become",
+        instruction: "Write a final reflection on your journey through this worksheet.",
+        prompts: [
+          { text: "Q1: What is the most valuable comprehension skill you have developed and why?", type: "lines", lines: 4 },
+          { text: "Q2: How has your approach to reading informational texts changed?", type: "lines", lines: 4 },
+          { text: "Q3: Where will you use these skills outside of English lessons?", type: "lines", lines: 3 },
+        ],
+      },
+      // 100 — SPARK
+      {
+        type: "spark" as const,
+        title: "Spark: You Are Now a Strategic Reader",
+        content: "One hundred activities ago, you began this worksheet with some understanding of how to read informational texts. Now you have a full toolkit: you can skim for relevance, scan for specific information, summarise the key ideas, infer what the author implies, evaluate sources for reliability and bias, and generate your own research questions. These are the same strategies used by journalists, scientists, historians, lawyers and scholars every day of their working lives. Reading is not a passive activity — it is one of the most intellectually demanding and rewarding things a human brain can do. Every text you read adds to your knowledge, sharpens your thinking and connects you to the full breadth of human understanding. You are a strategic reader now. Read widely, read critically and read with curiosity — the world is full of extraordinary things waiting to be understood.",
       },
     ],
   },

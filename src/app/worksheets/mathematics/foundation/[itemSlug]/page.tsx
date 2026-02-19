@@ -20,8 +20,15 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const worksheet = getFoundationWorksheet(itemSlug);
   if (!worksheet) return {};
   return {
-    title: `${worksheet.title} — Foundation Maths Worksheet`,
+    title: `${worksheet.title} — Foundation Mathematics Worksheet`,
     description: worksheet.description,
+    keywords: [`${worksheet.title}`, "free printable worksheet", "Australian Curriculum", "homeschool worksheet"],
+    alternates: { canonical: `/worksheets/mathematics/foundation/${itemSlug}` },
+    openGraph: {
+      title: `${worksheet.title} — Foundation Mathematics Worksheet | Australian Home Schooling`,
+      description: worksheet.description,
+      url: `/worksheets/mathematics/foundation/${itemSlug}`,
+    },
   };
 }
 

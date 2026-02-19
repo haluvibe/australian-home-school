@@ -3,9 +3,16 @@ import Link from "next/link";
 import { foundationEnglishWorksheets } from "@/lib/worksheet-data-english-foundation";
 
 export const metadata: Metadata = {
-  title: "Foundation English Worksheets — Australian Home Schooling",
+  title: "Foundation English Worksheets",
   description:
-    "Free printable Foundation English worksheets aligned to the Australian Curriculum. Covering phonological awareness, phonics, vocabulary, literature and literacy.",
+    "Free printable Foundation English worksheets aligned to the Australian Curriculum V9. Covering phonological awareness, phonics, vocabulary, literature and literacy.",
+  keywords: ["Foundation English worksheets", "Foundation phonics worksheets", "kindergarten English Australia", "Foundation literacy", "Australian Curriculum Foundation English"],
+  alternates: { canonical: "/worksheets/english/foundation" },
+  openGraph: {
+    title: "Foundation English Worksheets | Australian Home Schooling",
+    description: "Free printable Foundation English worksheets covering phonological awareness, phonics, vocabulary, literature and literacy.",
+    url: "/worksheets/english/foundation",
+  },
 };
 
 const strandColors: Record<string, string> = {

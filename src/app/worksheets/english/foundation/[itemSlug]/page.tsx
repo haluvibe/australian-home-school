@@ -22,6 +22,13 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return {
     title: `${worksheet.title} — Foundation English Worksheet`,
     description: worksheet.description,
+    keywords: [`${worksheet.title}`, "free printable worksheet", "Australian Curriculum", "homeschool worksheet"],
+    alternates: { canonical: `/worksheets/english/foundation/${itemSlug}` },
+    openGraph: {
+      title: `${worksheet.title} — Foundation English Worksheet | Australian Home Schooling`,
+      description: worksheet.description,
+      url: `/worksheets/english/foundation/${itemSlug}`,
+    },
   };
 }
 
