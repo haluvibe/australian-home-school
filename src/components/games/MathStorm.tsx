@@ -35,7 +35,7 @@ const WEAPONS = [
 ];
 
 // Generate random boss targets based on world index
-function generateBossTargets(worldIdx) {
+function generateBossTargets(worldIdx: number) {
   const hp = 2 + Math.floor(worldIdx / 2);
   const minTarget = worldIdx <= 2 ? 2 + worldIdx : Math.floor(3 + worldIdx * 3);
   const maxTarget = worldIdx <= 2 ? 5 + worldIdx * 3 : Math.floor(10 + worldIdx * worldIdx * 1.5);
@@ -54,13 +54,13 @@ const ENEMIES_PER_BOSS = 3;
 // =============== UTILITIES ===============
 let _idCounter = 0;
 const nextId = () => ++_idCounter;
-const clamp = (v, lo, hi) => Math.max(lo, Math.min(hi, v));
-const lerp = (a, b, t) => a + (b - a) * t;
-const dist = (a, b) => Math.hypot(a.x - b.x, a.y - b.y);
-const rand = (lo, hi) => lo + Math.random() * (hi - lo);
-const randInt = (lo, hi) => Math.floor(rand(lo, hi + 1));
+const clamp = (v: number, lo: number, hi: number): number => Math.max(lo, Math.min(hi, v));
+const lerp = (a: number, b: number, t: number): number => a + (b - a) * t;
+const dist = (a: {x:number;y:number}, b: {x:number;y:number}): number => Math.hypot(a.x - b.x, a.y - b.y);
+const rand = (lo: number, hi: number): number => lo + Math.random() * (hi - lo);
+const randInt = (lo: number, hi: number): number => Math.floor(rand(lo, hi + 1));
 
-function applyOp(power, opIndex, value) {
+function applyOp(power: number, opIndex: number, value: number): number {
   if (opIndex === 0) return clamp(power + value, MIN_POWER, MAX_POWER);
   if (opIndex === 1) return clamp(power - value, MIN_POWER, MAX_POWER);
   if (opIndex === 2) return clamp(power * value, MIN_POWER, MAX_POWER);
@@ -68,9 +68,9 @@ function applyOp(power, opIndex, value) {
   return power;
 }
 
-function opSymbol(i) { return ['+', '\u2212', '\u00d7', '\u00f7'][i] || '?'; }
+function opSymbol(i: number) { return ['+', '\u2212', '\u00d7', '\u00f7'][i] || '?'; }
 
-function isPrime(n) {
+function isPrime(n: number): boolean {
   if (n < 2) return false;
   if (n < 4) return true;
   if (n % 2 === 0 || n % 3 === 0) return false;
@@ -117,6 +117,7 @@ export default function MathStorm({ onExit }: MathStormProps = {}) {
     const W = wrap.clientWidth;
     const H = wrap.clientHeight;
     const cvs = canvasRef.current;
+    if (!cvs) return;
     cvs.width = W;
     cvs.height = H;
 
@@ -174,6 +175,7 @@ export default function MathStorm({ onExit }: MathStormProps = {}) {
       score: 0, lives: 3, power: 0, weapon: 0,
       world: 1, combo: 0, bossHP: 0, bossMaxHP: 0,
       bossTarget: 0, bossActive: false, powerMatch: false,
+      shieldActive: false, primeActive: false, isPrime: false,
       msg: 'GET READY!', msgTimer: 80,
     });
   }, []);
@@ -275,7 +277,7 @@ export default function MathStorm({ onExit }: MathStormProps = {}) {
         s.x += (g.W / 2 - s.x) * 0.05 * dt;
         s.y -= 7 * dt;
         // Clear remaining enemies and bullets off screen
-        g.enemies = g.enemies.filter(e => { e.y += 8 * dt; return e.y < g.H + 60; });
+        g.enemies = g.enemies.filter((e: any) => { e.y += 8 * dt; return e.y < g.H + 60; });
         g.eBullets = [];
         g.bullets = [];
         if (s.y < -60) {
@@ -360,7 +362,7 @@ export default function MathStorm({ onExit }: MathStormProps = {}) {
     }
 
     // ---- bullets ----
-    g.bullets = g.bullets.filter(b => {
+    g.bullets = g.bullets.filter((b: any) => {
       if (!b.alive) return false;
       if (b.homing && g.enemies.length > 0) {
         let best = null, bestD = 280;
@@ -443,7 +445,7 @@ export default function MathStorm({ onExit }: MathStormProps = {}) {
 
     if (!g.transition) {
     // ---- enemies ----
-    g.enemies = g.enemies.filter(e => {
+    g.enemies = g.enemies.filter((e: any) => {
       // Smooth waypoint steering (like 1942/Raptor)
       if (e.waypoints && e.wpIdx < e.waypoints.length) {
         const wp = e.waypoints[e.wpIdx];
@@ -557,7 +559,7 @@ export default function MathStorm({ onExit }: MathStormProps = {}) {
     }
 
     // ---- enemy bullets ----
-    g.eBullets = g.eBullets.filter(b => {
+    g.eBullets = g.eBullets.filter((b: any) => {
       b.x += b.vx * dt; b.y += b.vy * dt;
       return b.x > -20 && b.x < g.W + 20 && b.y > -20 && b.y < g.H + 20;
     });
@@ -648,7 +650,7 @@ export default function MathStorm({ onExit }: MathStormProps = {}) {
         }
       }
     }
-    g.bullets = g.bullets.filter(b => b.alive);
+    g.bullets = g.bullets.filter((b: any) => b.alive);
 
     // ---- collisions: player bullets vs enemy bullets ----
     for (let bi = g.bullets.length - 1; bi >= 0; bi--) {
@@ -667,7 +669,7 @@ export default function MathStorm({ onExit }: MathStormProps = {}) {
         }
       }
     }
-    g.bullets = g.bullets.filter(b => b.alive);
+    g.bullets = g.bullets.filter((b: any) => b.alive);
 
     // ---- collisions: enemy bullets / enemies vs player ----
     if (s.invTimer <= 0 && g.shieldTimer <= 0) {
@@ -689,7 +691,7 @@ export default function MathStorm({ onExit }: MathStormProps = {}) {
     // ---- pickups ----
     if (g.shieldTimer > 0) g.shieldTimer -= dt;
     if (g.primeTimer > 0) g.primeTimer -= dt;
-    g.pickups = g.pickups.filter(pk => {
+    g.pickups = g.pickups.filter((pk: any) => {
       pk.bobT += dt * 0.1;
       pk.y += pk.vy * dt;
       pk.x += Math.sin(pk.bobT * 3) * 0.5 * dt;
@@ -713,10 +715,10 @@ export default function MathStorm({ onExit }: MathStormProps = {}) {
     });
 
     // ---- particles ----
-    g.particles = g.particles.filter(p => { p.x += p.vx * dt; p.y += p.vy * dt; p.vx *= 0.97; p.vy *= 0.97; p.life -= dt; return p.life > 0; });
+    g.particles = g.particles.filter((p: any) => { p.x += p.vx * dt; p.y += p.vy * dt; p.vx *= 0.97; p.vy *= 0.97; p.life -= dt; return p.life > 0; });
 
     // ---- text effects ----
-    g.texts = g.texts.filter(t => { t.y += (t.vy || 0) * dt; t.life -= dt; return t.life > 0; });
+    g.texts = g.texts.filter((t: any) => { t.y += (t.vy || 0) * dt; t.life -= dt; return t.life > 0; });
 
     // ---- stars & nebulae ----
     for (const st of g.stars) { st.y += st.speed * dt; if (st.y > g.H) { st.y = -2; st.x = Math.random() * g.W; } }
@@ -1020,7 +1022,7 @@ export default function MathStorm({ onExit }: MathStormProps = {}) {
       ctx.shadowBlur = 0;
       ctx.fillStyle = powerMatch ? '#ffd700' : '#7a8ba8';
       ctx.font = `600 9px 'Rajdhani', sans-serif`;
-      ctx.letterSpacing = '2px';
+      (ctx as any).letterSpacing = '2px';
       ctx.fillText(powerMatch ? 'HIT ME!' : 'SHIELD', 0, 17);
 
       // HP bar with gradient
@@ -1488,7 +1490,7 @@ export default function MathStorm({ onExit }: MathStormProps = {}) {
       keysRef.current[e.key] = true;
       if (['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight', ' '].includes(e.key)) e.preventDefault();
     };
-    const ku = (e) => { keysRef.current[e.key] = false; };
+    const ku = (e: KeyboardEvent) => { keysRef.current[e.key] = false; };
     window.addEventListener('keydown', kd);
     window.addEventListener('keyup', ku);
     return () => { window.removeEventListener('keydown', kd); window.removeEventListener('keyup', ku); };
@@ -1497,8 +1499,8 @@ export default function MathStorm({ onExit }: MathStormProps = {}) {
   useEffect(() => {
     const el = wrapRef.current;
     if (!el) return;
-    const mm = (e) => { const r = el.getBoundingClientRect(); mouseRef.current.x = e.clientX - r.left; mouseRef.current.y = e.clientY - r.top; mouseRef.current.active = true; };
-    const md = (e) => { e.preventDefault(); mouseRef.current.down = true; };
+    const mm = (e: MouseEvent) => { const r = el.getBoundingClientRect(); mouseRef.current.x = e.clientX - r.left; mouseRef.current.y = e.clientY - r.top; mouseRef.current.active = true; };
+    const md = (e: MouseEvent) => { e.preventDefault(); mouseRef.current.down = true; };
     const mu = () => { mouseRef.current.down = false; };
     const ml = () => { mouseRef.current.active = false; mouseRef.current.down = false; };
     el.addEventListener('mousemove', mm);
@@ -1541,19 +1543,19 @@ export default function MathStorm({ onExit }: MathStormProps = {}) {
                 <div className="ms-card-line" />
               </div>
               <div className="ms-weapons-grid">
-                <div className="ms-rule" style={{ '--rc': '#4ade80' }}>
+                <div className="ms-rule" style={{ '--rc': '#4ade80' } as React.CSSProperties}>
                   <span className="ms-rule-icon">+</span>
                   <div className="ms-rule-body"><strong>ADD</strong><span>Rapid fire. Adds to your Power.</span></div>
                 </div>
-                <div className="ms-rule" style={{ '--rc': '#fb923c' }}>
+                <div className="ms-rule" style={{ '--rc': '#fb923c' } as React.CSSProperties}>
                   <span className="ms-rule-icon">{'\u2212'}</span>
                   <div className="ms-rule-body"><strong>SUB</strong><span>Homing shots. Subtracts from Power.</span></div>
                 </div>
-                <div className="ms-rule" style={{ '--rc': '#a78bfa' }}>
+                <div className="ms-rule" style={{ '--rc': '#a78bfa' } as React.CSSProperties}>
                   <span className="ms-rule-icon">{'\u00d7'}</span>
                   <div className="ms-rule-body"><strong>MUL</strong><span>Heavy burst. Multiplies your Power.</span></div>
                 </div>
-                <div className="ms-rule" style={{ '--rc': '#38bdf8' }}>
+                <div className="ms-rule" style={{ '--rc': '#38bdf8' } as React.CSSProperties}>
                   <span className="ms-rule-icon">{'\u00f7'}</span>
                   <div className="ms-rule-body"><strong>DIV</strong><span>Pierce shot. Divides your Power.</span></div>
                 </div>
@@ -1672,7 +1674,7 @@ export default function MathStorm({ onExit }: MathStormProps = {}) {
             <button
               key={w.id}
               className={`ms-wep-btn ${hud.weapon === i ? 'active' : ''}`}
-              style={{ '--wc': w.color, '--wg': w.glow }}
+              style={{ '--wc': w.color, '--wg': w.glow } as React.CSSProperties}
               onClick={() => { if (gRef.current) gRef.current.weapon = i; }}
             >
               <span className="ms-wep-sym">{w.symbol}</span>
@@ -1726,7 +1728,7 @@ const styles = `
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
 .ms-root {
-  width: 100%; height: 100vh;
+  width: 100%; height: 100%;
   font-family: 'Exo 2', sans-serif;
   overflow: hidden;
   background: var(--ms-bg);
@@ -1735,7 +1737,7 @@ const styles = `
 
 /* ===== SHARED ===== */
 .ms-intro, .ms-gameover {
-  height: 100vh; display: flex; align-items: center; justify-content: center;
+  height: 100%; display: flex; align-items: center; justify-content: center;
   position: relative; overflow: hidden;
   background:
     radial-gradient(ellipse 80% 50% at 50% 0%, rgba(60,80,180,0.12) 0%, transparent 60%),
@@ -1992,7 +1994,7 @@ const styles = `
 
 /* ===== GAME ===== */
 .ms-game {
-  width: 100%; height: 100vh; position: relative; overflow: hidden;
+  width: 100%; height: 100%; position: relative; overflow: hidden;
   cursor: crosshair;
 }
 .ms-canvas { display: block; width: 100%; height: 100%; }
