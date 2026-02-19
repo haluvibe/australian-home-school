@@ -4018,71 +4018,1187 @@ export const year9EnglishWorksheets: WorksheetItem[] = [
       ],
     },
     activities: [
+      // ── FOUNDATIONAL 1–20 ──────────────────────────────────────────────────
+      // 1
+      {
+        type: "matching",
+        title: "Australian Literature: Key Themes",
+        instruction: "Match each key theme of Australian literature with its most common textual expression.",
+        parentTip: "These themes recur across Australian literature from the nineteenth century to the present — recognising them in new texts is a fundamental reading skill.",
+        left: ["The land", "Belonging and outsider-ness", "Colonial history", "Multicultural identity", "Survival and resilience"],
+        right: [
+          "Characters negotiating competing cultural inheritances in contemporary Australia",
+          "The physical environment as a presence that shapes character and meaning",
+          "The experience of never fully fitting in — to a place, a family, a nation",
+          "Enduring extreme conditions — physical, emotional, or social",
+          "The legacies of dispossession, settlement, and the relationship between First Nations and settler Australians",
+        ],
+      },
+      // 2
+      {
+        type: "true-false",
+        title: "Australian Literature: True or False?",
+        instruction: "Decide whether each statement about Australian literature is true or false.",
+        statements: [
+          { text: "Australian literature is a single unified tradition with one dominant style.", answer: false },
+          { text: "Aboriginal and Torres Strait Islander people have been telling stories on this continent for tens of thousands of years.", answer: true },
+          { text: "The Australian landscape in early settler writing is almost always represented as familiar and welcoming.", answer: false },
+          { text: "Questions of belonging and identity are central to a wide range of Australian literary texts.", answer: true },
+          { text: "The Reading Australia Project curates significant Australian texts with teaching notes.", answer: true },
+          { text: "Australian literature only includes texts written by people born in Australia.", answer: false },
+        ],
+      },
+      // 3
+      {
+        type: "sorting",
+        title: "Australian Literary Voices",
+        instruction: "Sort these authors and text types into the correct column based on the cultural tradition they represent.",
+        columns: ["First Nations literary tradition", "Settler/Colonial literary tradition", "Migrant/Multicultural literary tradition"],
+        items: [
+          { label: "Alexis Wright — Carpentaria" },
+          { label: "Henry Lawson — bush ballads and stories" },
+          { label: "Nam Le — The Boat" },
+          { label: "Bruce Pascoe — Dark Emu" },
+          { label: "Patrick White — Voss" },
+          { label: "Christos Tsiolkas — The Slap" },
+          { label: "Sally Morgan — My Place" },
+          { label: "Tim Winton — Cloudstreet" },
+        ],
+      },
+      // 4
+      {
+        type: "fill-in-blank",
+        title: "Australian Literature Vocabulary",
+        instruction: "Complete each sentence using the correct term: [terra nullius, dispossession, multicultural, colonial, reconciliation, sovereignty].",
+        sentences: [
+          { text: "The legal fiction that Australia was uninhabited before British settlement is called ___.", blanks: ["terra nullius"] },
+          { text: "The forced removal of First Nations people from their traditional lands is called ___.", blanks: ["dispossession"] },
+          { text: "The ongoing process of acknowledging historical wrongs and building respectful relationships between First Nations and non-Indigenous Australians is called ___.", blanks: ["reconciliation"] },
+          { text: "Australia's ___ history shapes much of its literature — the experience of settlement and its consequences is a persistent theme.", blanks: ["colonial"] },
+          { text: "The claim to political and cultural self-governance over land and peoples is called ___.", blanks: ["sovereignty"] },
+          { text: "Contemporary Australia is celebrated as a ___ nation — home to people from many cultural backgrounds.", blanks: ["multicultural"] },
+        ],
+      },
+      // 5
+      {
+        type: "multiple-choice",
+        title: "Reading Australian Texts",
+        instruction: "Choose the best answer for each question about reading Australian literature.",
+        parentTip: "For any question where your student is unsure, ask them to consider what they already know about Australian history and culture before answering.",
+        questions: [
+          {
+            prompt: "Why is contextual knowledge important when reading Australian literature?",
+            options: [
+              "It is not important — texts can be read without any background knowledge",
+              "Australian literature references events, places, and debates that can only be fully understood with knowledge of Australian history and culture",
+              "It tells the reader whether a text is good or bad",
+              "It replaces the need to read the text closely",
+            ],
+            answer: "Australian literature references events, places, and debates that can only be fully understood with knowledge of Australian history and culture",
+          },
+          {
+            prompt: "When reading a text by an Aboriginal or Torres Strait Islander author, why is it particularly important to seek out the author's own contextual notes?",
+            options: [
+              "To check whether the text is factually accurate",
+              "Because the cultural knowledge embedded in such texts may not be accessible without the author's guidance, and seeking it shows respect for the work",
+              "Because such texts are always autobiographical",
+              "To find out which parts of the text were censored",
+            ],
+            answer: "Because the cultural knowledge embedded in such texts may not be accessible without the author's guidance, and seeking it shows respect for the work",
+          },
+        ],
+      },
+      // 6
       {
         type: "open-response",
         title: "Reading the Landscape",
-        instruction:
-          "Choose a passage from your Australian text in which the natural environment is described. Analyse how the writer represents the landscape.",
-        parentTip:
-          "The way landscape is written about in Australian literature is rarely neutral — it almost always carries cultural, historical, or emotional freight. Encourage your student to look beyond the descriptive surface.",
+        instruction: "Choose a passage from your Australian text in which the natural environment is described. Analyse how the writer represents the landscape.",
+        parentTip: "The way landscape is written about in Australian literature is rarely neutral — it almost always carries cultural, historical, or emotional freight. Encourage your student to look beyond the descriptive surface.",
         prompts: [
-          {
-            text: "Quote or describe the passage you have chosen and identify the key descriptive language.",
-            type: "lines",
-            lines: 4,
-          },
-          {
-            text: "How is the landscape represented — as beautiful, threatening, indifferent, alive, or something else? What language creates this impression?",
-            type: "lines",
-            lines: 4,
-          },
-          {
-            text: "What does this representation of landscape reveal about the character's (or narrator's) relationship to the land and their cultural context?",
-            type: "lines",
-            lines: 4,
-          },
+          { text: "Quote or describe the passage you have chosen and identify the key descriptive language.", type: "lines", lines: 4 },
+          { text: "How is the landscape represented — as beautiful, threatening, indifferent, alive, or something else? What language creates this impression?", type: "lines", lines: 4 },
+          { text: "What does this representation of landscape reveal about the character's (or narrator's) relationship to the land and their cultural context?", type: "lines", lines: 4 },
         ],
       },
+      // 7
+      {
+        type: "circle-correct",
+        title: "How Is the Land Represented?",
+        instruction: "For each description of landscape, circle the type of representation it illustrates.",
+        questions: [
+          { prompt: "The outback described as hostile, alien, and punishing — draining characters of identity and hope.", options: ["Settler alienation", "Indigenous connection", "Multicultural"] },
+          { prompt: "Country described as alive with story, ancestor presence, and obligation.", options: ["Settler alienation", "Indigenous country", "Urban"] },
+          { prompt: "Suburban backyard described with domestic warmth and childhood memory.", options: ["Settler alienation", "Indigenous country", "Suburban/domestic"] },
+          { prompt: "Landscape described through a migrant's eyes — strange, beautiful, and unlike anything back home.", options: ["Settler alienation", "Migrant perspective", "Indigenous country"] },
+        ],
+      },
+      // 8
       {
         type: "open-response",
         title: "Identity and Belonging in Australian Texts",
-        instruction:
-          "Australian literature often explores questions of identity, belonging, and home. Reflect on these questions in relation to the text you are reading.",
-        parentTip:
-          "If your family has its own experience of migration, belonging, or cultural identity, this is a natural conversation to open up — personal connection to texts deepens analysis, not weakens it.",
+        instruction: "Australian literature often explores questions of identity, belonging, and home. Reflect on these questions in relation to the text you are reading.",
+        parentTip: "If your family has its own experience of migration, belonging, or cultural identity, this is a natural conversation to open up — personal connection to texts deepens analysis, not weakens it.",
         prompts: [
-          {
-            text: "How does the text explore the idea of belonging? Does the main character feel they belong, and to what or whom?",
-            type: "lines",
-            lines: 4,
-          },
-          {
-            text: "Is there a tension in the text between different kinds of identity (cultural, national, familial, personal)? Describe it using evidence from the text.",
-            type: "lines",
-            lines: 4,
-          },
-          {
-            text: "How does the historical or cultural context of Australia shape the characters' sense of identity? Connect the text to a specific aspect of Australian history or culture.",
-            type: "lines",
-            lines: 4,
-          },
+          { text: "How does the text explore the idea of belonging? Does the main character feel they belong, and to what or whom?", type: "lines", lines: 4 },
+          { text: "Is there a tension in the text between different kinds of identity (cultural, national, familial, personal)? Describe it using evidence from the text.", type: "lines", lines: 4 },
+          { text: "How does the historical or cultural context of Australia shape the characters' sense of identity? Connect the text to a specific aspect of Australian history or culture.", type: "lines", lines: 4 },
         ],
       },
+      // 9
+      {
+        type: "true-false",
+        title: "First Nations Literature",
+        instruction: "Decide whether each statement about First Nations Australian literature is true or false.",
+        parentTip: "These statements address common misconceptions and important truths about First Nations literary traditions — they are worth discussing rather than just marking.",
+        statements: [
+          { text: "Aboriginal and Torres Strait Islander literary traditions are entirely oral and have no written tradition.", answer: false },
+          { text: "Reading First Nations literature with respect means seeking out the cultural context provided by the authors themselves.", answer: true },
+          { text: "All First Nations Australian texts are autobiographical.", answer: false },
+          { text: "First Nations authors write from within rich, complex cultural traditions that predate European settlement.", answer: true },
+          { text: "Country in First Nations literature is purely a physical setting, like a backdrop.", answer: false },
+          { text: "Non-Indigenous Australians can learn from First Nations literature perspectives on land, history, and sovereignty.", answer: true },
+        ],
+      },
+      // 10
+      {
+        type: "open-response",
+        title: "Australian History and Literature",
+        instruction: "Australian literature is shaped by specific historical events and debates. For the text you are studying, identify the historical contexts that most shape its representations.",
+        parentTip: "If your student is unfamiliar with the historical context, spend 10–15 minutes researching together before completing this activity — the investment pays dividends in analytical depth.",
+        prompts: [
+          { text: "What historical events or debates are most relevant to the text you are studying? (e.g. colonisation, the Stolen Generations, immigration waves, the republican debate, reconciliation)", type: "lines", lines: 4 },
+          { text: "How does this history manifest in the text — directly (as explicit subject matter) or indirectly (as background assumptions, silences, or tensions)?", type: "lines", lines: 4 },
+          { text: "Does the text take a position on this historical matter? What language choices reveal this position?", type: "lines", lines: 4 },
+        ],
+      },
+      // 11
+      {
+        type: "fill-in-blank",
+        title: "Analytical Vocabulary: Australian Literature",
+        instruction: "Complete each analytical sentence using the correct term.",
+        sentences: [
+          { text: "The author represents the landscape as ___, which reflects the ___ of the colonial tradition that saw the Australian environment as foreign and ___.", blanks: ["...", "...", "..."] },
+          { text: "By narrating from a First Nations perspective, the text ___ the dominant settler narrative by showing the land as ___ rather than ___.", blanks: ["subverts", "...", "..."] },
+          { text: "The tension between the character's ___ identity and their ___ identity reflects the experience of many Australians navigating competing cultural inheritances.", blanks: ["...", "..."] },
+          { text: "The historical context of ___ is central to understanding why this text represents [group] in this way.", blanks: ["..."] },
+        ],
+      },
+      // 12
+      {
+        type: "open-response",
+        title: "The Stolen Generations in Literature",
+        instruction: "The Stolen Generations — the policy of forcibly removing Aboriginal and Torres Strait Islander children from their families — is one of the most significant historical traumas of twentieth-century Australia. It appears directly or indirectly in many First Nations literary texts.",
+        parentTip: "This topic may require careful and sensitive discussion. If it connects to your family's history or identity, that personal connection is valuable and worth following. If it is entirely new territory, approaching it with genuine curiosity and humility is the right disposition.",
+        prompts: [
+          { text: "Is the experience of the Stolen Generations present in the text you are studying, either directly or indirectly? Describe how it appears.", type: "lines", lines: 4 },
+          { text: "If it is not present in your current text, find a short extract from a text (poem, memoir, or fiction) that addresses this experience and analyse how the author represents it.", type: "lines", lines: 5 },
+        ],
+      },
+      // 13
+      {
+        type: "matching",
+        title: "Australian Literary Periods",
+        instruction: "Match each period of Australian literary history with its characteristic concerns.",
+        left: ["Colonial period (1788–1900)", "Early modern period (1900–1960)", "Post-1960s", "Contemporary (post-1980s)"],
+        right: [
+          "Increasing diversity of voices, multicultural and First Nations perspectives, global engagement",
+          "European settlers writing about an unfamiliar and often frightening landscape; defining 'Australian' identity",
+          "Nationalist literature; the bush legend; mateship; the Anzac tradition",
+          "Challenges to white masculine nationalism; feminist, Indigenous, and migrant voices emerge",
+        ],
+      },
+      // 14
       {
         type: "open-response",
         title: "Contextual Analysis Paragraph",
-        instruction:
-          "Write one analytical paragraph that connects a specific aspect of your Australian text to its broader cultural or historical context. Use the structure: name a textual choice the author makes, explain its effect, and then explicitly connect it to the Australian context in which the text was produced.",
-        parentTip:
-          "The contextual connection is often the part students skip. Prompt your student: 'Why might an Australian author in [time period] write about [topic] in this way? What was happening in Australia at that time?'",
+        instruction: "Write one analytical paragraph that connects a specific aspect of your Australian text to its broader cultural or historical context. Use the structure: name a textual choice the author makes, explain its effect, and then explicitly connect it to the Australian context in which the text was produced.",
+        parentTip: "The contextual connection is often the part students skip. Prompt your student: 'Why might an Australian author in [time period] write about [topic] in this way? What was happening in Australia at that time?'",
         prompts: [
           { text: "Your contextual analysis paragraph:", type: "box" },
+          { text: "Does your paragraph explicitly name the cultural or historical context? If not, add that connection here:", type: "lines", lines: 4 },
+        ],
+      },
+      // 15
+      {
+        type: "tip",
+        title: "Tip: The Three Layers of Australian Literary Analysis",
+        content: "When analysing Australian literature, attend to three layers simultaneously: (1) Place — how is the landscape or environment described, and what cultural meanings does it carry? (2) Community — whose relationships, values, and ways of living are centred, and whose are marginalised? (3) History — what historical events or legacies are present in this text, even if not explicitly stated? These three layers often illuminate each other and lead to the most sophisticated analysis.",
+      },
+      // 16
+      {
+        type: "open-response",
+        title: "Voice and Perspective in Australian Texts",
+        instruction: "The narrative perspective of an Australian text — who narrates, from where, with what knowledge — is as important as its content. Analyse the narrative perspective of the text you are studying.",
+        parentTip: "Narrative perspective is particularly significant in Australian texts, where whose voice tells the story is often itself a political act.",
+        prompts: [
+          { text: "Who narrates your text? What is their cultural background and relationship to the events they describe?", type: "lines", lines: 3 },
+          { text: "Does the narrative perspective give the reader full access to all characters' inner lives, or are some characters seen only from the outside?", type: "lines", lines: 4 },
+          { text: "What is the effect of this narrative perspective on the text's representation of Australia?", type: "lines", lines: 4 },
+        ],
+      },
+      // 17
+      {
+        type: "multiple-choice",
+        title: "The Bush in Australian Literature",
+        instruction: "Choose the best answer for each question about the representation of the bush in Australian literature.",
+        questions: [
           {
-            text: "Does your paragraph explicitly name the cultural or historical context? If not, add that connection here:",
-            type: "lines",
-            lines: 4,
+            prompt: "In early settler writing, the Australian bush is most commonly represented as:",
+            options: [
+              "A welcoming and familiar environment",
+              "A strange, threatening, and potentially fatal environment",
+              "A place of spiritual significance and deep belonging",
+              "Essentially identical to the English countryside",
+            ],
+            answer: "A strange, threatening, and potentially fatal environment",
+          },
+          {
+            prompt: "In much First Nations writing, Country (the land) is represented as:",
+            options: [
+              "A dangerous wilderness to be conquered",
+              "A neutral backdrop for human drama",
+              "A living relationship — alive with story, obligation, and ancestor presence",
+              "A resource to be used and managed",
+            ],
+            answer: "A living relationship — alive with story, obligation, and ancestor presence",
           },
         ],
+      },
+      // 18
+      {
+        type: "open-response",
+        title: "Comparing Two Representations of the Australian Landscape",
+        instruction: "Find two short passages from different Australian texts (or different authors) that describe the Australian landscape. Compare how they represent the land.",
+        parentTip: "If your student only has one text, find a short excerpt from a different tradition online — the comparison will be most revealing if the two texts come from different cultural backgrounds.",
+        prompts: [
+          { text: "Passage A: quote or describe, and note the key language choices.", type: "lines", lines: 4 },
+          { text: "Passage B: quote or describe, and note the key language choices.", type: "lines", lines: 4 },
+          { text: "What does the difference in representation reveal about the different cultural contexts of these two authors?", type: "lines", lines: 4 },
+        ],
+      },
+      // 19
+      {
+        type: "home-activity",
+        title: "Australian Literature in Context",
+        instruction: "This week, extend your engagement with Australian literature beyond the text you are currently studying.",
+        suggestions: [
+          "Read a poem by an Australian poet — Oodgeroo Noonuccal (Kath Walker), Judith Wright, or Les Murray — and identify how the landscape or identity is represented.",
+          "Look up the Reading Australia Project website and explore a text or author that interests you. Read the contextual notes provided.",
+          "Watch or listen to a short interview with an Australian author about their work. What do they say about their relationship to place, history, or identity?",
+          "Find a current news story about an issue related to themes in your text (reconciliation, First Nations rights, migration, identity). Write a short reflection on how the text speaks to this issue.",
+        ],
+      },
+      // 20
+      {
+        type: "spark",
+        title: "Spark: Writing From Here",
+        content: "The poet Judith Wright wrote: 'I am born of the conquerors, you of the persecuted.' She was addressing the deep divisions of Australian history — between those who came as settlers and those who were already here. Every Australian author writes from somewhere in this history, whether they know it or not. The best Australian literature is honest about this position — it does not pretend to write from nowhere. When you read Australian texts, asking 'where is this author writing from?' is always the right first question.",
+      },
+
+      // ── DEVELOPING 21–50 ──────────────────────────────────────────────────
+      // 21
+      {
+        type: "open-response",
+        title: "TEEL Paragraph: Australian Literature and Context",
+        instruction: "Write one TEEL paragraph analysing how a specific aspect of Australian identity, history, or landscape is represented in the text you are studying. Name a textual technique, provide evidence, explain its effect, and connect explicitly to Australian cultural or historical context.",
+        parentTip: "The contextual connection — linking the textual choice to the specific Australian moment in which it was made — is what transforms a good analytical paragraph into an excellent one.",
+        prompts: [
+          { text: "Your TEEL paragraph:", type: "box" },
+          { text: "Does your Explanation explicitly name the Australian cultural or historical context? If not, add that connection.", type: "lines", lines: 3 },
+        ],
+      },
+      // 22
+      {
+        type: "open-response",
+        title: "Analysing an Australian Poem",
+        instruction: "Choose a poem by an Australian author and conduct a close reading, with particular attention to how it represents place, identity, and cultural belonging.",
+        parentTip: "Australian poetry is among the most accessible form for close reading — its compression makes textual detail especially visible. Poems by Oodgeroo Noonuccal, Judith Wright, or contemporary poets like Ali Cobby Eckermann work well.",
+        prompts: [
+          { text: "Poem title and author:", type: "lines", lines: 1 },
+          { text: "Read the poem twice, then identify: what is it about? What is its emotional register?", type: "lines", lines: 3 },
+          { text: "How does the poem represent place? Quote specific language and explain its effect.", type: "lines", lines: 4 },
+          { text: "What Australian cultural or historical context is embedded in the poem? Connect the text to its context.", type: "lines", lines: 4 },
+        ],
+      },
+      // 23
+      {
+        type: "matching",
+        title: "Australian Authors and Their Concerns",
+        instruction: "Match each Australian author with the theme or community most associated with their work.",
+        parentTip: "These are all significant Australian authors — if your student has not encountered them, this matching activity can serve as an introduction to figures worth reading.",
+        left: ["Tim Winton", "Alexis Wright", "Christos Tsiolkas", "Sally Morgan", "Tara June Winch"],
+        right: [
+          "Indigenous identity and the search for family history across generations",
+          "Working-class Western Australian communities and the coast",
+          "The complexity and conflicts of Australian multicultural urban life",
+          "Wiradjuri country, belonging, and language",
+          "Deeply imagined Aboriginal spiritual and political worlds in the Gulf Country",
+        ],
+      },
+      // 24
+      {
+        type: "open-response",
+        title: "Migration and Identity in Australian Literature",
+        instruction: "Australia has one of the most significant migration histories in the world. Many important Australian texts explore the experience of arriving in Australia, navigating between cultures, and building a new identity.",
+        parentTip: "If your family has a migration history, this is a powerful point of personal connection to the literature. Personal experience of navigating cultural identity deepens literary analysis.",
+        prompts: [
+          { text: "Is the experience of migration or cultural negotiation present in the text you are studying? If so, how is it represented?", type: "lines", lines: 4 },
+          { text: "If not, find a short extract from an Australian text that addresses migration or multicultural experience. What specific aspects of this experience does the author highlight?", type: "lines", lines: 4 },
+          { text: "What does the text suggest about the complexity of Australian identity — the tension between different cultural inheritances?", type: "lines", lines: 4 },
+        ],
+      },
+      // 25
+      {
+        type: "true-false",
+        title: "Australian Identity in Literature",
+        instruction: "Decide whether each statement about Australian identity in literature is true or false.",
+        statements: [
+          { text: "The 'bush legend' in Australian culture valorises mateship, resourcefulness, and independence.", answer: true },
+          { text: "The bush legend has always been inclusive of women, migrants, and Indigenous Australians.", answer: false },
+          { text: "Contemporary Australian literature increasingly challenges narrow definitions of 'Australian identity'.", answer: true },
+          { text: "Australian identity is fixed and has not changed since the early colonial period.", answer: false },
+          { text: "The tension between different versions of Australian identity is itself a productive theme in Australian literature.", answer: true },
+        ],
+      },
+      // 26
+      {
+        type: "open-response",
+        title: "The Bush Legend and Its Critique",
+        instruction: "The 'bush legend' — the idea of the rugged, independent, egalitarian Australian bushman — has been central to Australian national identity since the late nineteenth century. But it has also been critiqued for whom it excludes.",
+        parentTip: "The bush legend is an ideology as much as a literary tradition — approaching it critically is exactly the kind of work this worksheet is building toward.",
+        prompts: [
+          { text: "What values and character types does the bush legend celebrate?", type: "lines", lines: 3 },
+          { text: "Who is excluded from the bush legend's vision of Australian identity? (Consider: gender, race, class, location)", type: "lines", lines: 4 },
+          { text: "Does the text you are studying engage with or critique the bush legend? How?", type: "lines", lines: 4 },
+        ],
+      },
+      // 27
+      {
+        type: "open-response",
+        title: "Reading a First Nations Text",
+        instruction: "Find a short extract from a text by an Aboriginal or Torres Strait Islander author — a poem, memoir extract, or short story. Read it carefully, seeking out any available contextual notes or author statements.",
+        parentTip: "Many First Nations authors explicitly discuss the cultural context of their work in author notes, interviews, and public statements — seeking these out is part of reading respectfully and reading well.",
+        prompts: [
+          { text: "Text details (title, author, genre):", type: "lines", lines: 2 },
+          { text: "What cultural context did you find through the author's notes or interviews? How does it shape your reading of the extract?", type: "lines", lines: 4 },
+          { text: "Analyse one aspect of the extract: how does it represent Country, identity, or history?", type: "lines", lines: 4 },
+        ],
+      },
+      // 28
+      {
+        type: "open-response",
+        title: "Tim Winton and Western Australian Landscape",
+        instruction: "Tim Winton is one of Australia's most celebrated authors. His fiction is deeply embedded in the Western Australian coast and is known for its representation of class, landscape, and working-class identity.",
+        parentTip: "If your student has not read Winton, a short extract from Cloudstreet, The Riders, or his essay collection Island Home would be excellent preparation for this activity.",
+        prompts: [
+          { text: "Read a short Winton extract or consider a Winton text you have encountered. How does he represent the Western Australian landscape?", type: "lines", lines: 4 },
+          { text: "What relationship to the land do Winton's characters typically have? How is this different from earlier settler representations?", type: "lines", lines: 4 },
+          { text: "What does Winton's work suggest about class, work, and belonging in Australian life?", type: "lines", lines: 4 },
+        ],
+      },
+      // 29
+      {
+        type: "open-response",
+        title: "Comparative Analysis: Two Australian Texts",
+        instruction: "Compare how two Australian texts represent the same theme (e.g. belonging, the land, family, or history) differently. Explain what the difference reveals about the texts' different cultural contexts.",
+        parentTip: "Comparative analysis is a sophisticated Year 9 skill. The most revealing comparisons are between texts from different cultural traditions within Australia — settler and First Nations, or first-generation migrant and third-generation Australian.",
+        prompts: [
+          { text: "Text A — theme and how it is represented:", type: "lines", lines: 4 },
+          { text: "Text B — theme and how it is represented:", type: "lines", lines: 4 },
+          { text: "What does the difference reveal about the texts' different cultural contexts?", type: "lines", lines: 4 },
+        ],
+      },
+      // 30
+      {
+        type: "tip",
+        title: "Tip: Context Is Not Background — It Is the Analysis",
+        content: "In analytical writing about Australian literature, context is often treated as optional background information to be added at the start of an essay and then ignored. This is a missed opportunity. The most sophisticated analysis weaves context into every paragraph: 'The author's choice to do X reflects the historical moment of Y, in which Z was occurring.' Context is not decoration — it is the explanation of why a text represents the world the way it does.",
+      },
+      // 31
+      {
+        type: "open-response",
+        title: "Reconciliation and Australian Literature",
+        instruction: "Reconciliation — the ongoing process of acknowledging historical wrongs and building respectful relationships between First Nations and non-Indigenous Australians — is a central concern of much contemporary Australian literature.",
+        parentTip: "Reconciliation is not a completed historical event but an ongoing process. Literature that engages with reconciliation is participating in that process. Discussing what reconciliation means in your own community's context enriches this activity.",
+        prompts: [
+          { text: "Does the text you are studying engage with reconciliation — explicitly or implicitly? Describe how.", type: "lines", lines: 4 },
+          { text: "What position does the text seem to take on the possibility of reconciliation? Is it hopeful, ambivalent, or despairing?", type: "lines", lines: 4 },
+          { text: "What role can literature play in the process of reconciliation?", type: "lines", lines: 4 },
+        ],
+      },
+      // 32
+      {
+        type: "fill-in-blank",
+        title: "Contextual Analytical Sentences",
+        instruction: "Complete these contextual analytical sentences, connecting textual choices to Australian historical or cultural contexts.",
+        sentences: [
+          { text: "The author's representation of ___ as threatening and unknowable reflects the ___ of early settler culture, in which the Australian environment was experienced as ___.", blanks: ["...", "...", "..."] },
+          { text: "By narrating from a First Nations perspective, the text challenges the dominant ___ narrative and positions the reader to understand ___ from within.", blanks: ["...", "..."] },
+          { text: "The tension between the character's ___ and ___ identity reflects the experience of many Australians of ___ heritage navigating a society that does not always recognise ___.", blanks: ["...", "...", "...", "..."] },
+          { text: "This text, written in ___, engages with the specific debates of that period: particularly ___.", blanks: ["...", "..."] },
+        ],
+      },
+      // 33
+      {
+        type: "open-response",
+        title: "Language and Country",
+        instruction: "In First Nations traditions, language and land are deeply connected — the loss of language through colonial policies is also the loss of a relationship with Country. This connection appears in many First Nations literary texts.",
+        parentTip: "The connection between language and country is one of the most profound concepts in Australian intellectual life — it is worth exploring together through reading or listening to First Nations authors discuss it.",
+        prompts: [
+          { text: "Does the text you are studying make any connection between language (or its loss) and the relationship to land or identity?", type: "lines", lines: 4 },
+          { text: "If not, find a short passage from a First Nations author (Bruce Pascoe, Ali Cobby Eckermann, or Tara June Winch) that addresses this connection. What does the author say?", type: "lines", lines: 4 },
+          { text: "What does this connection between language and land suggest about the consequences of colonisation for First Nations Australians?", type: "lines", lines: 4 },
+        ],
+      },
+      // 34
+      {
+        type: "multiple-choice",
+        title: "Australian Literary Analysis: Assessment Preparation",
+        instruction: "Choose the most analytically sophisticated response to each question.",
+        questions: [
+          {
+            prompt: "A student writes: 'The author describes the bush as scary.' This analysis needs improvement because:",
+            options: [
+              "The bush is not a common theme in Australian literature",
+              "It is descriptive rather than analytical — it does not name a specific technique, quote evidence, or connect to cultural context",
+              "The word 'scary' is not accurate enough",
+              "It is too long for a good analytical statement",
+            ],
+            answer: "It is descriptive rather than analytical — it does not name a specific technique, quote evidence, or connect to cultural context",
+          },
+          {
+            prompt: "The most sophisticated analyses of Australian literature will:",
+            options: [
+              "Focus only on the literary techniques and avoid discussing history",
+              "Treat the text as reflecting Australian history and culture in a simple, direct way",
+              "Connect specific textual choices to the specific cultural and historical moment of the text's production",
+              "Summarise the text's plot before beginning the analysis",
+            ],
+            answer: "Connect specific textual choices to the specific cultural and historical moment of the text's production",
+          },
+        ],
+      },
+      // 35
+      {
+        type: "open-response",
+        title: "Personal Response: What Does Australian Literature Mean to You?",
+        instruction: "Reflect on your personal relationship to Australian literature — the texts, authors, and stories that have shaped your understanding of Australia.",
+        parentTip: "Personal response is a legitimate and valuable dimension of literary analysis — students who can connect their personal experience to their analytical thinking produce more engaged and authentic writing.",
+        prompts: [
+          { text: "Which Australian text or author has meant most to you, and why?", type: "lines", lines: 4 },
+          { text: "Does Australian literature connect to your own sense of identity, belonging, or place? How?", type: "lines", lines: 4 },
+          { text: "Is there an aspect of Australian life or history that you wish was more represented in the literature you have encountered?", type: "lines", lines: 4 },
+        ],
+      },
+      // 36
+      {
+        type: "open-response",
+        title: "Planning an Essay on Australian Literature",
+        instruction: "Plan an essay (600–800 words) on a text you have studied. Your essay should connect a specific aspect of the text's representation to Australian cultural or historical context.",
+        parentTip: "The plan is where the essay is won or lost. A detailed plan that includes specific contextual connections at the paragraph level produces much stronger essays than a vague one.",
+        prompts: [
+          { text: "Essay question:", type: "lines", lines: 2 },
+          { text: "Thesis statement (specific, arguable, connecting textual choice to Australian context):", type: "lines", lines: 3 },
+          { text: "Paragraph topics in order (4–5, each with evidence and contextual connection):", type: "lines", lines: 8 },
+          { text: "What insight will your conclusion arrive at?", type: "lines", lines: 3 },
+        ],
+      },
+      // 37
+      {
+        type: "open-response",
+        title: "Drafting the Australian Literature Essay",
+        instruction: "Draft your essay (600–800 words) using your plan. In each body paragraph, ensure the contextual connection is explicitly made — do not assume the reader knows the context.",
+        parentTip: "The most common weakness in Australian literature essays is treating context as assumed knowledge rather than as an explicit part of the analysis. Every contextual connection must be stated clearly.",
+        prompts: [
+          { text: "Essay draft:", type: "box" },
+        ],
+      },
+      // 38
+      {
+        type: "true-false",
+        title: "Contemporary Australian Literature",
+        instruction: "Decide whether each statement about contemporary Australian literature is true or false.",
+        statements: [
+          { text: "Contemporary Australian literature increasingly includes voices from multicultural backgrounds.", answer: true },
+          { text: "First Nations literature has become more prominent in Australian publishing since the 1980s.", answer: true },
+          { text: "The dominant narrative of Australian national identity in contemporary literature is unchanged since the colonial era.", answer: false },
+          { text: "Questions of environmental crisis and climate change are beginning to appear in Australian literary texts.", answer: true },
+          { text: "Urban Australian life is as significant a subject for contemporary literature as the bush.", answer: true },
+        ],
+      },
+      // 39
+      {
+        type: "home-activity",
+        title: "Reading Australia Project Exploration",
+        instruction: "Explore the Reading Australia Project (readingaustralia.com.au) this week.",
+        suggestions: [
+          "Browse the catalogue and find a text from a cultural tradition different from the one you are currently studying.",
+          "Read the teaching notes for one text and identify: what contextual information is considered essential for understanding this text?",
+          "Find an author interview or author note on the site and summarise what the author says about their relationship to place and identity.",
+          "Write a short paragraph connecting the new text you found to the theme of identity in your current text.",
+        ],
+      },
+      // 40
+      {
+        type: "spark",
+        title: "Spark: The Literature of a Place",
+        content: "Every great literary tradition is rooted in a specific place and its particular history. Russian literature is shaped by the Russian winter, the vast steppe, and the history of serfdom. American literature is shaped by slavery, immigration, and the frontier myth. Australian literature is shaped by the oldest continuous cultures on Earth, by colonisation and its ongoing legacies, by an extraordinary landscape, and by the experience of belonging to a continent that is also an island — vast, ancient, and unlike anywhere else. Learning to read this literature in its full context is learning to understand a place deeply.",
+      },
+
+      // ── CONSOLIDATING 41–80 ──────────────────────────────────────────────────
+      // 41
+      {
+        type: "open-response",
+        title: "Revising for Contextual Depth",
+        instruction: "Review your essay draft (Activity 37). Identify two places where the contextual connection could be more explicit or more detailed. Revise those sections.",
+        parentTip: "Revision for contextual depth is one of the most important revision moves in Australian literature essays — it turns adequate analysis into sophisticated contextual argument.",
+        prompts: [
+          { text: "Two sections revised for contextual depth:", type: "box" },
+          { text: "What specific contextual information did you add or make more explicit? Why does each addition strengthen the analysis?", type: "lines", lines: 4 },
+        ],
+      },
+      // 42
+      {
+        type: "open-response",
+        title: "Australian Literature and Environment",
+        instruction: "The relationship between Australians and their environment is a persistent literary theme — from settler attempts to domesticate an alien landscape to First Nations understandings of Country, to contemporary anxieties about climate change and environmental destruction.",
+        parentTip: "Ecocriticism — applying environmental thinking to literary analysis — is a growing field particularly relevant to Australian literature, given Australia's extreme environmental challenges and the richness of First Nations ecological knowledge.",
+        prompts: [
+          { text: "How does the text you are studying represent the natural environment, and what is the character's or narrator's relationship to it?", type: "lines", lines: 5 },
+          { text: "Does the text suggest any environmental crisis, threat, or loss? How does this connect to contemporary Australian concerns?", type: "lines", lines: 4 },
+          { text: "What does the text's representation of the environment reveal about the ideology of its cultural context?", type: "lines", lines: 4 },
+        ],
+      },
+      // 43
+      {
+        type: "open-response",
+        title: "Applying Critical Literacy to Australian Literature",
+        instruction: "Apply the critical literacy skills from Worksheet 1 to your Australian text. Whose perspective is centred? Whose is marginalised? What is treated as 'normal', and what as 'other'?",
+        parentTip: "Cross-worksheet integration — applying critical literacy to Australian literary analysis — is the most sophisticated analytical move at Year 9.",
+        prompts: [
+          { text: "Whose perspective is centred in your text? Who is the implied reader?", type: "lines", lines: 3 },
+          { text: "Whose perspective is marginalised? Who is seen from the outside rather than the inside?", type: "lines", lines: 4 },
+          { text: "What does this pattern of centring and marginalisation reveal about the text's ideology and its cultural moment?", type: "lines", lines: 4 },
+        ],
+      },
+      // 44
+      {
+        type: "open-response",
+        title: "Analysing a Short Story: Close Reading",
+        instruction: "Choose a short story by an Australian author. Read it carefully and conduct a close textual analysis with particular attention to how it represents Australian experience.",
+        parentTip: "Short stories are ideal for close reading at Year 9 — their length allows for the kind of sustained attention to detail that produces the most impressive analytical writing.",
+        prompts: [
+          { text: "Short story title and author:", type: "lines", lines: 1 },
+          { text: "Close reading: identify three specific language choices (words, phrases, or sentences) that carry significant meaning about Australian identity, landscape, or history.", type: "lines", lines: 6 },
+          { text: "Write one analytical paragraph connecting your most significant observation to Australian cultural or historical context.", type: "box" },
+        ],
+      },
+      // 45
+      {
+        type: "tip",
+        title: "Tip: Quoting Australian Texts",
+        content: "When quoting from Australian texts in your essays, choose quotations that do genuine analytical work — that demonstrate a specific technique or reveal something about the author's cultural position. Avoid choosing quotations just because they sound impressive or because they summarise the plot. Ask yourself: does this quotation provide evidence for my analytical claim? If so, use it. If not, find one that does.",
+      },
+      // 46
+      {
+        type: "open-response",
+        title: "Extended Analysis: Landscape and Culture",
+        instruction: "Write a two-paragraph extended analysis of how your Australian text represents the relationship between landscape and cultural identity. Each paragraph should make a distinct analytical point with specific textual evidence and contextual connection.",
+        parentTip: "Two-paragraph responses develop the skill of sustaining analytical argument beyond a single paragraph — an important step toward the extended essays assessed at Year 9.",
+        prompts: [
+          { text: "Paragraph 1 (first analytical point about landscape and culture):", type: "box" },
+          { text: "Paragraph 2 (second, distinct analytical point):", type: "box" },
+        ],
+      },
+      // 47
+      {
+        type: "open-response",
+        title: "Peer Review: Australian Literature Essay",
+        instruction: "Exchange your essay with another reader (parent or peer) and complete the peer review below.",
+        parentTip: "Parents can conduct this review thoughtfully — the questions are a framework for any critical reader to engage with the essay's analytical quality.",
+        prompts: [
+          { text: "What is the writer's central argument about the text and its Australian context?", type: "lines", lines: 2 },
+          { text: "Which contextual connection is most convincing?", type: "lines", lines: 3 },
+          { text: "Where does the analysis feel thin or disconnected from the Australian context?", type: "lines", lines: 4 },
+          { text: "Is the thesis specific and arguable, or too general?", type: "lines", lines: 3 },
+        ],
+      },
+      // 48
+      {
+        type: "open-response",
+        title: "Responding to Feedback",
+        instruction: "Read the peer review feedback. Which feedback do you agree with? Revise one paragraph in response to the most significant piece of feedback.",
+        parentTip: "Students who genuinely act on feedback improve their writing faster than those who acknowledge feedback without acting on it.",
+        prompts: [
+          { text: "Your response to the feedback:", type: "lines", lines: 3 },
+          { text: "Revised paragraph:", type: "box" },
+        ],
+      },
+      // 49
+      {
+        type: "open-response",
+        title: "Australian Literature and National Identity",
+        instruction: "Australian literature has been central to defining and contesting the idea of 'Australian national identity'. Explore this idea in relation to texts you have studied.",
+        parentTip: "The question of what it means to be Australian — who belongs, who is excluded, whose values are central — is one of the most generative and contested questions in Australian literary culture.",
+        prompts: [
+          { text: "What version of Australian national identity does the text you are studying project or contest?", type: "lines", lines: 4 },
+          { text: "Who is included in this vision of Australian identity, and who is excluded?", type: "lines", lines: 4 },
+          { text: "Does the text challenge or reinforce the dominant narrative of Australian national identity? What textual evidence supports your answer?", type: "lines", lines: 4 },
+        ],
+      },
+      // 50
+      {
+        type: "open-response",
+        title: "Synthesis: What Australian Literature Does",
+        instruction: "Write a short synthesis response (200–300 words) on what you believe Australian literature does at its best — what work it performs culturally, historically, and personally for its readers.",
+        parentTip: "This synthesis question invites genuine personal response alongside critical thinking — encourage your student to write in their own voice, not in formal essay register.",
+        prompts: [
+          { text: "Your synthesis response:", type: "box" },
+        ],
+      },
+      // 51
+      {
+        type: "true-false",
+        title: "Australian Literature: Consolidation Check",
+        instruction: "A consolidation check on key concepts in Australian literature study.",
+        statements: [
+          { text: "The Reading Australia Project provides curated texts with teaching notes and author context.", answer: true },
+          { text: "In Australian literature, the bush is always represented in the same way regardless of the author's cultural background.", answer: false },
+          { text: "The experience of the Stolen Generations appears in many First Nations Australian literary texts.", answer: true },
+          { text: "Contextual analysis means connecting textual choices to the cultural and historical moment of a text's production.", answer: true },
+          { text: "Tim Winton is primarily associated with Queensland literature.", answer: false },
+          { text: "Contemporary Australian literature is more culturally diverse than the literature of the colonial period.", answer: true },
+        ],
+      },
+      // 52
+      {
+        type: "open-response",
+        title: "Completing the Essay: Full Draft",
+        instruction: "Complete the full draft of your Australian literature essay (600–800 words) if not already done. If complete, use this activity for a sustained revision session focusing on contextual depth and analytical precision.",
+        parentTip: "For revision: read the draft aloud together. Mark every place where context is mentioned — is it genuinely woven into the analysis, or just gestured at?",
+        prompts: [
+          { text: "Full essay draft or revision record:", type: "box" },
+        ],
+      },
+      // 53
+      {
+        type: "open-response",
+        title: "Examination Practice: Australian Literature",
+        instruction: "Respond to the following examination-style prompt in 40 minutes: 'How does the Australian text you have studied use specific literary techniques to represent an aspect of Australian identity, landscape, or history? Your response should connect your analysis to the cultural or historical context of the text.'",
+        parentTip: "Timed practice simulates the conditions of formal assessment. Debrief afterwards: what did you plan quickly? What took time? What would you do differently?",
+        prompts: [
+          { text: "Planning notes:", type: "lines", lines: 4 },
+          { text: "Full response:", type: "box" },
+          { text: "Self-evaluation: What went well? What would you improve?", type: "lines", lines: 4 },
+        ],
+      },
+      // 54
+      {
+        type: "open-response",
+        title: "Australian Literature and Climate",
+        instruction: "Climate and weather have always been central to Australian literary experience — the extreme heat, the drought, the fire, the flood. In recent decades, climate change has begun to appear in Australian literature as a specific contemporary anxiety.",
+        parentTip: "The literary representation of climate and environmental crisis is a genuinely contemporary and important area of Australian literature — connecting it to current events makes the study feel urgent and relevant.",
+        prompts: [
+          { text: "Does the text you are studying engage with climate, weather, or environmental conditions in significant ways? How?", type: "lines", lines: 4 },
+          { text: "What does the text's treatment of the natural world suggest about the relationship between Australians and their environment?", type: "lines", lines: 4 },
+          { text: "How might contemporary anxieties about climate change affect future Australian literary representations of the land?", type: "lines", lines: 3 },
+        ],
+      },
+      // 55
+      {
+        type: "home-activity",
+        title: "Australian Literature Portfolio",
+        instruction: "This week, build a short portfolio of Australian literary engagement.",
+        suggestions: [
+          "Read one Australian poem and write a short close reading paragraph connecting it to Australian cultural context.",
+          "Watch a short Australian film (or a clip) and apply multimodal analysis and Australian context analysis together.",
+          "Find an interview with an Australian author discussing their relationship to place and identity. Write a brief summary of what they say.",
+          "Write a short creative piece (150–200 words) inspired by the Australian landscape or history, in the style of an author you have studied.",
+        ],
+      },
+      // 56
+      {
+        type: "open-response",
+        title: "Australian Literature and Diaspora",
+        instruction: "Many significant Australian literary texts are written by Australians living abroad, or by migrants writing from Australia about their country of origin. This diasporic perspective creates unique literary voices.",
+        parentTip: "Diaspora literature — writing from the experience of living between two cultures — is among the richest and most complex in Australian literature.",
+        prompts: [
+          { text: "Have you encountered any Australian literary texts that engage with diaspora or the experience of living between cultures? Describe them briefly.", type: "lines", lines: 4 },
+          { text: "What does a diasporic perspective bring to Australian literature that a settled perspective does not?", type: "lines", lines: 4 },
+        ],
+      },
+      // 57
+      {
+        type: "open-response",
+        title: "Australian Literature and Gender",
+        instruction: "Apply feminist critical thinking to an Australian text you have studied. How are gender roles and relationships represented? Whose experience is centred?",
+        parentTip: "Feminist analysis of Australian literature reveals how gender has shaped what has been considered 'truly Australian' — the bush legend's exclusion of women is the clearest example.",
+        prompts: [
+          { text: "How are gender roles represented in your Australian text? Are they conventional or subversive?", type: "lines", lines: 4 },
+          { text: "Whose experience — male or female — is centred in the narrative? What effect does this have?", type: "lines", lines: 4 },
+          { text: "What does this gender representation reveal about the cultural context in which the text was produced?", type: "lines", lines: 4 },
+        ],
+      },
+      // 58
+      {
+        type: "open-response",
+        title: "Comparative Essay: Two Australian Texts",
+        instruction: "Write a comparative essay (600–800 words) on two Australian texts from different cultural traditions (e.g. settler and First Nations; first-generation migrant and third-generation Australian). Focus on how the different cultural contexts shape their representations.",
+        parentTip: "Comparative essays require a structure that genuinely integrates the comparison — moving between the texts — rather than treating them sequentially.",
+        prompts: [
+          { text: "Your comparative essay:", type: "box" },
+          { text: "Does your essay integrate the comparison or treat each text separately? What revisions would improve the integration?", type: "lines", lines: 4 },
+        ],
+      },
+      // 59
+      {
+        type: "open-response",
+        title: "Self-Assessment: Australian Literature",
+        instruction: "Reflect honestly on your development as a reader and analyst of Australian literature throughout this worksheet.",
+        prompts: [
+          { text: "Which concept or author introduced in this worksheet was most new or challenging?", type: "lines", lines: 3 },
+          { text: "How has this worksheet changed or deepened how you think about Australian identity and culture?", type: "lines", lines: 4 },
+          { text: "What aspect of Australian literary study will you focus on developing further?", type: "lines", lines: 3 },
+        ],
+      },
+      // 60
+      {
+        type: "tip",
+        title: "Tip: Writing About First Nations Texts With Respect",
+        content: "When writing analytical essays about First Nations Australian texts, handle the material with both intellectual rigour and cultural respect. This means: seeking out the author's own contextual notes rather than interpreting from outside; avoiding the imposition of non-Indigenous critical frameworks without acknowledgement; recognising the cultural knowledge embedded in the text as belonging to the community it comes from; and being explicit about the limits of your own perspective as an outside reader. Rigorous and respectful analysis are not in opposition — they reinforce each other.",
+      },
+
+      // ── EXTENDING 61–100 ──────────────────────────────────────────────────
+      // 61
+      {
+        type: "open-response",
+        title: "Independent Research: Australian Literary Context",
+        instruction: "Choose an event or period from Australian history and research how it has been represented in Australian literature. Find at least two literary texts (or extracts) that engage with this event or period.",
+        parentTip: "Independent research connecting history to literature is one of the most rewarding forms of extended learning at Year 9 — encourage your student to follow genuine curiosity.",
+        prompts: [
+          { text: "Historical event or period chosen:", type: "lines", lines: 2 },
+          { text: "Text A and how it represents this history:", type: "lines", lines: 4 },
+          { text: "Text B and how it represents this history:", type: "lines", lines: 4 },
+          { text: "What does the comparison reveal about different literary responses to the same historical moment?", type: "lines", lines: 4 },
+        ],
+      },
+      // 62
+      {
+        type: "open-response",
+        title: "Australian Literature and the World",
+        instruction: "Australian literature exists within a global literary context. Some Australian authors are read internationally and have influenced world literature; others engage directly with global issues from an Australian perspective.",
+        prompts: [
+          { text: "How does the Australian text you are studying engage with global issues or connect to world literature?", type: "lines", lines: 4 },
+          { text: "What is distinctively Australian about this text — what could not have been written from any other place?", type: "lines", lines: 4 },
+        ],
+      },
+      // 63
+      {
+        type: "open-response",
+        title: "Extended Essay: Australian Literature",
+        instruction: "Complete the most polished version of your Australian literature essay. This should be 700–900 words and demonstrate: specific textual analysis, explicit contextual connections, and a sustained argument developed across all body paragraphs.",
+        parentTip: "This final essay is a culminating task — encourage your student to treat it as a performance of everything they have learned in this worksheet.",
+        prompts: [
+          { text: "Final essay:", type: "box" },
+        ],
+      },
+      // 64
+      {
+        type: "open-response",
+        title: "Creating an Australian Literature Resource",
+        instruction: "Create a guide to Australian literature for a student beginning Year 9. Include: key themes, important authors (at least one from each of the three traditions: settler, First Nations, multicultural), and three study tips for approaching Australian texts.",
+        parentTip: "Creating a resource for others consolidates understanding and demonstrates the capacity to communicate complex ideas accessibly — a valuable skill at this level.",
+        prompts: [
+          { text: "Your Australian literature guide:", type: "box" },
+          { text: "What was hardest to explain simply?", type: "lines", lines: 3 },
+        ],
+      },
+      // 65
+      {
+        type: "open-response",
+        title: "Australian Literature and Creative Response",
+        instruction: "Write a short creative response (150–250 words) to the text you have been studying — a poem, a scene from another character's perspective, a continuation, or a response from a character's future self.",
+        parentTip: "Creative response to a text is a legitimate and valuable form of literary engagement — it requires genuine understanding of the text's voice, world, and concerns.",
+        prompts: [
+          { text: "Your creative response:", type: "box" },
+          { text: "What choices did you make to reflect the text's themes, voice, and cultural context?", type: "lines", lines: 4 },
+        ],
+      },
+      // 66
+      {
+        type: "open-response",
+        title: "Connecting Australian Literature to Current Events",
+        instruction: "Find a current Australian news story that connects to a theme in the text you have been studying (e.g. a story about reconciliation, land rights, migration, identity, or environmental change).",
+        parentTip: "Connecting literature to current events demonstrates that the text is not a historical artefact but a living engagement with ongoing issues — this connection is both analytically valuable and motivating.",
+        prompts: [
+          { text: "The news story and how it connects to your text:", type: "lines", lines: 4 },
+          { text: "What does the text say about this issue that the news story does not?", type: "lines", lines: 4 },
+          { text: "What does the news story reveal about why the text still matters?", type: "lines", lines: 3 },
+        ],
+      },
+      // 67
+      {
+        type: "open-response",
+        title: "Australian Memoir and Personal Essay",
+        instruction: "Memoir and personal essay are important genres in Australian literature — authors such as Sally Morgan, Tim Winton, and Bruce Pascoe have written powerfully about their own lives and cultural experiences.",
+        parentTip: "Memoir is particularly rich territory for Australian literary analysis because it blurs the boundary between personal experience and cultural history — a useful discussion point.",
+        prompts: [
+          { text: "Have you read any Australian memoir or personal essay? Describe it briefly.", type: "lines", lines: 3 },
+          { text: "How does the personal voice of memoir allow an Australian author to explore cultural and historical themes in a unique way?", type: "lines", lines: 4 },
+          { text: "How does this differ from the way fiction or poetry explores the same themes?", type: "lines", lines: 4 },
+        ],
+      },
+      // 68
+      {
+        type: "home-activity",
+        title: "Australian Literature: Reading Challenge",
+        instruction: "This month, set yourself a reading challenge within Australian literature.",
+        suggestions: [
+          "Read a full short story collection by an Australian author from a cultural tradition different from your own.",
+          "Read or listen to a collection of Aboriginal stories or oral narratives.",
+          "Read a chapter from a significant Australian novel outside your current study text.",
+          "Keep a reading journal: write a short response to each text you read, applying one concept from this worksheet.",
+        ],
+      },
+      // 69
+      {
+        type: "open-response",
+        title: "Australian Literature: Future Voices",
+        instruction: "Australian literature continues to evolve. New voices are emerging — from communities previously excluded from mainstream publishing, and engaging with contemporary issues like digital identity, climate change, and global connection.",
+        prompts: [
+          { text: "What communities or experiences do you think are currently underrepresented in Australian literature?", type: "lines", lines: 4 },
+          { text: "What new forms or genres might future Australian literature adopt in response to contemporary life?", type: "lines", lines: 4 },
+          { text: "Is there a story about Australian life that you feel needs to be told and has not been written yet?", type: "lines", lines: 4 },
+        ],
+      },
+      // 70
+      {
+        type: "open-response",
+        title: "Extended Research Project: Australian Author Study",
+        instruction: "Choose one Australian author and conduct a sustained author study (800–1000 words). Research their life, cultural context, major works, and critical reception. Apply what you learn to a close reading of one text.",
+        parentTip: "An author study at this depth is one of the most rewarding extended research activities — encourage your student to follow genuine interest in their chosen author.",
+        prompts: [
+          { text: "Author chosen and reason:", type: "lines", lines: 2 },
+          { text: "Your author study:", type: "box" },
+        ],
+      },
+      // 71
+      {
+        type: "true-false",
+        title: "Final Mastery Check: Australian Literature",
+        instruction: "A final mastery check across all the Australian literature concepts in this worksheet.",
+        statements: [
+          { text: "Australian literature encompasses settler, First Nations, and multicultural traditions.", answer: true },
+          { text: "The bush legend has been critiqued for its exclusion of women, Indigenous Australians, and migrants.", answer: true },
+          { text: "Contextual analysis in Australian literature means adding a paragraph about Australian history to the end of an essay.", answer: false },
+          { text: "First Nations literature in Australia includes oral traditions as well as written texts.", answer: true },
+          { text: "The Reading Australia Project is a curated resource for teachers and students of Australian literature.", answer: true },
+          { text: "Australian literature has been closed to new voices since the colonial era.", answer: false },
+        ],
+      },
+      // 72
+      {
+        type: "open-response",
+        title: "Australian Literature Portfolio",
+        instruction: "Select the three best pieces of writing from this worksheet. Write a brief framing statement for each explaining what it demonstrates about your skills as a reader and analyst of Australian literature.",
+        prompts: [
+          { text: "Piece 1 selected and why:", type: "lines", lines: 3 },
+          { text: "Piece 2 selected and why:", type: "lines", lines: 3 },
+          { text: "Piece 3 selected and why:", type: "lines", lines: 3 },
+          { text: "What does your portfolio demonstrate about your development as a reader of Australian literature?", type: "lines", lines: 4 },
+        ],
+      },
+      // 73
+      {
+        type: "open-response",
+        title: "Sustained Analysis: Three Frameworks",
+        instruction: "Write an extended analysis (600–800 words) of your Australian text using THREE critical frameworks simultaneously: literary analysis (techniques and effects), contextual analysis (cultural and historical context), and critical literacy (whose perspective is centred and whose is marginalised).",
+        parentTip: "Applying three frameworks simultaneously in a sustained piece of writing is the highest analytical demand in this worksheet — it is also the most likely to produce writing that feels genuinely sophisticated.",
+        prompts: [
+          { text: "Your three-framework analysis:", type: "box" },
+          { text: "Which framework added the most to your understanding? Which was hardest to integrate?", type: "lines", lines: 4 },
+        ],
+      },
+      // 74
+      {
+        type: "open-response",
+        title: "Final Reflection: Australian Literature",
+        instruction: "Reflect on what you have learned about Australian literature, culture, and history through this worksheet.",
+        prompts: [
+          { text: "What is the most significant thing you have learned about Australian literary culture through this worksheet?", type: "lines", lines: 4 },
+          { text: "Has studying Australian literature changed how you think about Australian identity or history? How?", type: "lines", lines: 4 },
+          { text: "What Australian author or text will you seek out next, and why?", type: "lines", lines: 3 },
+        ],
+      },
+      // 75
+      {
+        type: "tip",
+        title: "Tip: Excellence in Australian Literature Essays",
+        content: "At the highest level, essays about Australian literature demonstrate: (1) specific, well-chosen quotations that serve the analytical argument; (2) contextual connections that are woven into every paragraph rather than confined to an introduction; (3) awareness of the cultural tradition the author belongs to and how it shapes their representation; (4) acknowledgement of the complexity of Australian identity — not a single, fixed narrative; (5) a conclusion that arrives at a broader insight about Australian culture, history, or identity. Review your essays against these criteria.",
+      },
+      // 76
+      {
+        type: "open-response",
+        title: "Teaching Australian Literature to Someone Else",
+        instruction: "Explain to a parent, sibling, or friend what Australian literature is, why it matters, and what you find most interesting or significant about it.",
+        parentTip: "Teaching is the most rigorous form of learning — how well your student can explain Australian literature to someone unfamiliar with it reveals what they truly understand.",
+        prompts: [
+          { text: "Which text did you use as an example? Who did you explain to?", type: "lines", lines: 2 },
+          { text: "How did the conversation go? What questions did they ask?", type: "lines", lines: 4 },
+          { text: "What did explaining it teach you about your own understanding?", type: "lines", lines: 3 },
+        ],
+      },
+      // 77
+      {
+        type: "open-response",
+        title: "Australian Literature and Your Own Writing",
+        instruction: "Apply what you have learned about Australian literary techniques and themes to your own creative or analytical writing. Is there an aspect of Australian experience — landscape, history, identity — that you want to explore in your own writing?",
+        prompts: [
+          { text: "What aspect of Australian experience do you want to explore in your own writing?", type: "lines", lines: 3 },
+          { text: "Which Australian author's style or approach do you find most inspiring? What specific elements might you draw on?", type: "lines", lines: 4 },
+          { text: "Write a short creative piece (100–200 words) that explores an aspect of Australian experience in your own voice:", type: "box" },
+        ],
+      },
+      // 78
+      {
+        type: "open-response",
+        title: "Australian Literature: A Broader Significance",
+        instruction: "Reflect on why reading and studying Australian literature matters — not just for English class, but for understanding Australia and your place in it.",
+        parentTip: "This reflective discussion is an opportunity to discuss together what it means to be Australian — a conversation that has no single answer but is worth having.",
+        prompts: [
+          { text: "Why does it matter that Australians read Australian literature?", type: "lines", lines: 4 },
+          { text: "What can Australian literature teach non-Australians about this country?", type: "lines", lines: 3 },
+          { text: "What does Australian literature most need more of right now?", type: "lines", lines: 3 },
+        ],
+      },
+      // 79
+      {
+        type: "open-response",
+        title: "Final Examination Practice: Australian Literature",
+        instruction: "Respond to the following examination-style prompt in 45 minutes: 'Analyse how a specific Australian text uses literary techniques to represent an aspect of Australian cultural identity. Connect your analysis to the cultural or historical context of the text.'",
+        parentTip: "Treat this as genuine examination practice — set a timer and plan before writing. The debriefing afterwards is as valuable as the response itself.",
+        prompts: [
+          { text: "Planning notes:", type: "lines", lines: 5 },
+          { text: "Full response:", type: "box" },
+          { text: "Self-evaluation: What mark would you give yourself and why?", type: "lines", lines: 4 },
+        ],
+      },
+      // 80
+      {
+        type: "spark",
+        title: "Spark: Reading This Country",
+        content: "The writer David Malouf has said that Australian literature is still, in some ways, trying to come to terms with the country — trying to find a language adequate to the landscape, the history, and the full range of human experience that has occurred here. That work is still happening. Every Australian author who writes honestly about this place is contributing to that project. And every reader who engages seriously with their work is participating in it too. Reading Australian literature is a form of belonging to and thinking about this remarkable, complicated place.",
+      },
+      // 81
+      {
+        type: "open-response",
+        title: "Extending: Australian Literature in Translation",
+        instruction: "Several significant Aboriginal literary works have been translated from Indigenous languages or draw explicitly on oral traditions. Research one such text and reflect on what translation adds or removes from the literary experience.",
+        prompts: [
+          { text: "Text researched:", type: "lines", lines: 2 },
+          { text: "What does the process of translation (or transcription from oral tradition) add to or complicate in this text?", type: "lines", lines: 5 },
+          { text: "What does this reveal about the relationship between language, culture, and literary meaning?", type: "lines", lines: 4 },
+        ],
+      },
+      // 82
+      {
+        type: "open-response",
+        title: "Advanced: Applying Postcolonial Theory",
+        instruction: "Apply postcolonial critical theory explicitly to an Australian text. Identify: how does the text reflect the legacies of colonialism? Whose knowledge is treated as authoritative? How does the text position itself in relation to colonial discourse?",
+        parentTip: "Postcolonial theory is the most directly relevant critical framework for much Australian literature — applying it explicitly demonstrates the highest level of critical literacy and literary sophistication.",
+        prompts: [
+          { text: "Your postcolonial analysis:", type: "box" },
+          { text: "What specific aspects of the text are most illuminated by postcolonial theory?", type: "lines", lines: 4 },
+        ],
+      },
+      // 83
+      {
+        type: "open-response",
+        title: "Australian Literature: Oral Traditions",
+        instruction: "Aboriginal and Torres Strait Islander oral traditions are among the oldest literary traditions on Earth. Research one oral tradition (Dreamtime stories, songlines, or specific cultural narrative traditions) and reflect on what makes it a literary form.",
+        parentTip: "Approaching oral traditions as literature — not as anthropological curiosities but as sophisticated narrative forms with their own conventions and aesthetic qualities — is an important move.",
+        prompts: [
+          { text: "Oral tradition researched:", type: "lines", lines: 2 },
+          { text: "What makes this oral tradition a literary form? What aesthetic, narrative, and cultural qualities does it demonstrate?", type: "lines", lines: 5 },
+          { text: "How does engaging with this tradition change your understanding of 'literature'?", type: "lines", lines: 4 },
+        ],
+      },
+      // 84
+      {
+        type: "home-activity",
+        title: "Australian Literature: Community Engagement",
+        instruction: "Bring Australian literature into your broader life and community this week.",
+        suggestions: [
+          "Visit a public library and ask a librarian to recommend an Australian author you have not encountered. Read the first chapter.",
+          "Attend or watch a recording of a literary festival event featuring an Australian author.",
+          "Share a poem by an Australian author with a family member and discuss it together.",
+          "Find out whether your local area has any connection to Australian literary culture (e.g. a famous author who lived nearby, a significant historical event that has been written about).",
+        ],
+      },
+      // 85
+      {
+        type: "open-response",
+        title: "Australian Literature and Digital Culture",
+        instruction: "Australian literary culture is changing with digital technology — e-books, podcasts, social media, and online publishing are creating new forms and new audiences. Reflect on how digital culture is shaping Australian literature.",
+        prompts: [
+          { text: "Have you encountered any Australian literature or literary culture through digital platforms? Describe it.", type: "lines", lines: 3 },
+          { text: "What opportunities does digital culture create for Australian literary voices that might have been excluded from traditional publishing?", type: "lines", lines: 4 },
+          { text: "What might be lost if Australian literary culture moves entirely to digital formats?", type: "lines", lines: 3 },
+        ],
+      },
+      // 86
+      {
+        type: "open-response",
+        title: "Advanced Essay: Three Critical Frameworks",
+        instruction: "Write an essay (700–900 words) applying three critical frameworks to a single Australian text: literary analysis, contextual/postcolonial analysis, and critical literacy. Your essay should demonstrate how the three frameworks complement each other.",
+        parentTip: "There is no single correct way to structure an essay using multiple frameworks — some students alternate frameworks by paragraph, others apply them all to each paragraph. Experiment to find what works best.",
+        prompts: [
+          { text: "Your three-framework essay:", type: "box" },
+        ],
+      },
+      // 87
+      {
+        type: "open-response",
+        title: "Reflecting on Australian Identity",
+        instruction: "Having studied Australian literature in depth, write a personal reflection on your own sense of Australian identity — how you relate to the stories, landscapes, and histories you have encountered.",
+        parentTip: "This is perhaps the most personal activity in the worksheet — encourage genuine honesty and openness rather than performative responses.",
+        prompts: [
+          { text: "What aspects of Australian identity resonate most strongly with you personally?", type: "lines", lines: 4 },
+          { text: "What aspects of Australian identity or history do you find most challenging, troubling, or in need of change?", type: "lines", lines: 4 },
+          { text: "How has studying Australian literature shaped or deepened your sense of what it means to live here?", type: "lines", lines: 4 },
+        ],
+      },
+      // 88
+      {
+        type: "open-response",
+        title: "Australian Literature: Independent Study Plan",
+        instruction: "Design a personal reading plan for the next six months in Australian literature. Choose texts that will extend your understanding beyond your current study.",
+        parentTip: "Self-directed reading planning is a metacognitive skill that develops genuine independence as a reader. Supporting your student in following through with their reading plan is one of the most valuable things you can do.",
+        prompts: [
+          { text: "Your six-month Australian literature reading plan (at least four texts):", type: "lines", lines: 6 },
+          { text: "What do you most want to understand about Australian literature that you do not yet understand?", type: "lines", lines: 3 },
+        ],
+      },
+      // 89
+      {
+        type: "open-response",
+        title: "Final Synthesis: Australian Literature",
+        instruction: "Write a 300-word personal statement on what Australian literature means to you — as a student, a reader, and an inhabitant of Australia. Draw on specific texts and authors from this worksheet.",
+        prompts: [
+          { text: "Your personal statement on Australian literature:", type: "box" },
+        ],
+      },
+      // 90
+      {
+        type: "tip",
+        title: "Tip: Reading Australian Literature Throughout Your Life",
+        content: "Australian literature is not a subject to be studied and then put down. The best Australian writing — by Tim Winton, Alexis Wright, Sally Morgan, Bruce Pascoe, Kim Scott, and many others — rewards rereading at different points in your life. A text you read at fifteen will mean something different at thirty, because you have changed and because you see the Australian context differently. The investment you make in understanding this literature now will pay dividends across a lifetime of reading.",
+      },
+      // 91
+      {
+        type: "open-response",
+        title: "Independent Research: Significant Australian Text",
+        instruction: "Choose a significant Australian text you have not yet studied — one frequently cited as important in Australian literary culture — and conduct an independent research-based analysis (600–800 words).",
+        parentTip: "Significant Australian texts include: Dark Emu (Pascoe), Carpentaria (Wright), Cloudstreet (Winton), The Boat (Nam Le), The Swan Book (Wright), Grog War (Tara June Winch). Any of these are excellent choices.",
+        prompts: [
+          { text: "Text chosen and why:", type: "lines", lines: 2 },
+          { text: "Your research-based analysis:", type: "box" },
+        ],
+      },
+      // 92
+      {
+        type: "open-response",
+        title: "Comparative Critical Analysis: Final",
+        instruction: "Write a final comparative critical analysis (600–800 words) of two Australian texts from different cultural traditions. Apply literary analysis, contextual analysis, and critical literacy simultaneously.",
+        prompts: [
+          { text: "Your final comparative critical analysis:", type: "box" },
+          { text: "What new insight about Australian literary culture did this comparison produce?", type: "lines", lines: 4 },
+        ],
+      },
+      // 93
+      {
+        type: "open-response",
+        title: "Australian Literature: Your Own Contribution",
+        instruction: "If you were to write a piece of Australian literature, what story would you tell? Plan a short creative work (poem, story opening, or essay) that contributes to Australian literary culture.",
+        parentTip: "This invitation to contribute to Australian literature — rather than simply to consume and analyse it — is the highest expression of literary education.",
+        prompts: [
+          { text: "Your creative plan or opening:", type: "box" },
+          { text: "What aspects of Australian experience do you most want to put into words? Why?", type: "lines", lines: 4 },
+        ],
+      },
+      // 94
+      {
+        type: "open-response",
+        title: "Growth Reflection: Australian Literature",
+        instruction: "Look back at your earliest activities in this worksheet (Activities 1–10). How has your understanding of Australian literature grown? What can you do now that you could not do at the start?",
+        prompts: [
+          { text: "Your reflection on growth:", type: "lines", lines: 6 },
+          { text: "What is the single most important thing you have learned about Australian literature?", type: "lines", lines: 3 },
+        ],
+      },
+      // 95
+      {
+        type: "true-false",
+        title: "Final Review: All Australian Literature Concepts",
+        instruction: "A comprehensive final review of all the Australian literature concepts from this worksheet.",
+        statements: [
+          { text: "Country in First Nations literature is typically represented as a passive, neutral backdrop.", answer: false },
+          { text: "Postcolonial theory is relevant to the analysis of Australian literature.", answer: true },
+          { text: "The bush legend has been challenged by feminist, Indigenous, and multicultural Australian writers.", answer: true },
+          { text: "Australian literary analysis does not require knowledge of Australian history.", answer: false },
+          { text: "Memoir is an important genre in First Nations Australian literature.", answer: true },
+          { text: "Australian literature is a completed, fixed tradition with no new significant voices emerging.", answer: false },
+        ],
+      },
+      // 96
+      {
+        type: "home-activity",
+        title: "Lifelong Habits: Australian Literature",
+        instruction: "Here are habits for engaging with Australian literature beyond this worksheet.",
+        suggestions: [
+          "Maintain an ongoing reading list of Australian texts you want to read — add to it whenever you hear about a significant text.",
+          "Follow Australian literary news: the Miles Franklin Award, the Queensland Premier's Literary Awards, and AIATSIS prizes all highlight significant new Australian writing.",
+          "Visit a local bookshop's Australian literature section annually and choose one new text that interests you.",
+          "When you travel in Australia, seek out texts connected to the specific place you are visiting.",
+        ],
+      },
+      // 97
+      {
+        type: "open-response",
+        title: "Final Extended Essay: Australian Literature",
+        instruction: "Complete your best, most polished extended essay on Australian literature (750–950 words). Apply the full range of skills developed in this worksheet: literary analysis, contextual analysis, and critical literacy.",
+        parentTip: "This final essay represents the culmination of all the work in this worksheet. Encourage your student to treat it with the care and attention it deserves — it should be their best analytical writing.",
+        prompts: [
+          { text: "Final essay:", type: "box" },
+        ],
+      },
+      // 98
+      {
+        type: "open-response",
+        title: "Australian Literature and Other Art Forms",
+        instruction: "Australian literature has inspired and been inspired by other Australian art forms — music, visual art, film, dance. Reflect on these connections.",
+        prompts: [
+          { text: "Can you think of an Australian song, painting, or film that explores similar themes to the text you have been studying?", type: "lines", lines: 3 },
+          { text: "How do these different art forms approach the same Australian themes differently?", type: "lines", lines: 4 },
+          { text: "What can Australian literature do that other art forms cannot?", type: "lines", lines: 3 },
+        ],
+      },
+      // 99
+      {
+        type: "open-response",
+        title: "Examination Mastery: Australian Literature",
+        instruction: "Respond to a self-chosen examination-style prompt (write your own question) about the Australian text you have studied in depth. Respond in 45 minutes. Then evaluate your response against Year 9 criteria.",
+        prompts: [
+          { text: "Your examination question:", type: "lines", lines: 2 },
+          { text: "Your examination response:", type: "box" },
+          { text: "Self-evaluation: How well did you apply contextual analysis, literary technique, and critical literacy? What would improve the response?", type: "lines", lines: 5 },
+        ],
+      },
+      // 100
+      {
+        type: "spark",
+        title: "Spark: This Country Is a Story",
+        content: "Australia is a place with tens of thousands of years of story embedded in its rocks, rivers, and skies. It is also a place where some stories have been suppressed, distorted, or ignored. Australian literature — at its best — is the act of telling these stories honestly: the painful ones and the beautiful ones, the stories of loss and the stories of connection. Every reader who engages seriously with Australian literature becomes part of that ongoing story. You are part of it now.",
       },
     ],
     nextSteps: [
@@ -4150,6 +5266,97 @@ export const year9EnglishWorksheets: WorksheetItem[] = [
       ],
     },
     activities: [
+      // ── FOUNDATIONAL 1–20 ──────────────────────────────────────────────────
+      // 1
+      {
+        type: "true-false",
+        title: "Personal Writing: True or False?",
+        instruction: "Mark each statement about personal and reflective writing as true or false.",
+        statements: [
+          { text: "Personal writing must be written in the first person (using 'I').", answer: true },
+          { text: "A personal essay is always entirely factual, with no interpretation.", answer: false },
+          { text: "Reflective writing involves thinking about the meaning of an experience.", answer: true },
+          { text: "In a memoir, the writer can never speculate about what they were feeling.", answer: false },
+          { text: "Scene writing recreates a moment with sensory detail in real time.", answer: true },
+          { text: "The 'experiencing self' and the 'reflecting self' are the same voice in personal writing.", answer: false },
+        ],
+      },
+      // 2
+      {
+        type: "matching",
+        title: "Personal Writing Vocabulary",
+        instruction: "Match each personal writing term to its correct definition.",
+        left: [
+          "Memoir",
+          "Vignette",
+          "Anecdote",
+          "Tone",
+          "Voice",
+          "Reflection",
+        ],
+        right: [
+          "The writer's thinking about the meaning or significance of an experience",
+          "A short, vivid piece of writing capturing one scene or moment",
+          "A brief story told to illustrate a point",
+          "A book-length account of part of a person's life and experiences",
+          "The emotional quality of a piece of writing",
+          "The distinctive personality and style of a writer",
+        ],
+      },
+      // 3
+      {
+        type: "multiple-choice",
+        title: "Scene vs. Summary",
+        instruction: "Choose the best answer for each question about the difference between scene and summary.",
+        parentTip: "The scene vs. summary distinction is central to narrative craft. Scene puts readers inside the moment; summary tells them what happened from a distance.",
+        questions: [
+          {
+            prompt: "Which sentence is an example of scene?",
+            options: [
+              "We had a difficult conversation that afternoon.",
+              "She sat across from me at the kitchen table, her hands wrapped around a mug that had long gone cold.",
+              "That summer was a hard one for our family.",
+              "He eventually decided to leave.",
+            ],
+            answer: "She sat across from me at the kitchen table, her hands wrapped around a mug that had long gone cold.",
+          },
+          {
+            prompt: "Which sentence is an example of summary?",
+            options: [
+              "The screen door banged shut behind her.",
+              "I watched the second hand tick around the clock face three times before anyone spoke.",
+              "Over the next few weeks, things gradually improved.",
+              "My hands were shaking as I opened the envelope.",
+            ],
+            answer: "Over the next few weeks, things gradually improved.",
+          },
+          {
+            prompt: "Why do writing teachers advise 'show, don't tell'?",
+            options: [
+              "Because writers should never use adjectives",
+              "Because scene writing creates vivid, immediate experience for the reader rather than reporting from a distance",
+              "Because first person narration is more reliable",
+              "Because readers prefer shorter sentences",
+            ],
+            answer: "Because scene writing creates vivid, immediate experience for the reader rather than reporting from a distance",
+          },
+        ],
+      },
+      // 4
+      {
+        type: "fill-in-blank",
+        title: "Sensory Detail in Personal Writing",
+        instruction: "Complete each sentence with an appropriate sensory detail word or phrase from the box below.",
+        parentTip: "Sensory details ground personal writing in the physical world. Encourage your student to notice which senses they tend to neglect.",
+        sentences: [
+          { text: "The _______ of fresh bread drifted through the house.", blanks: ["smell / scent / aroma"] },
+          { text: "She could hear the _______ of rain on the tin roof.", blanks: ["drumming / pattering / hammering"] },
+          { text: "The wooden floorboards were _______ under his bare feet.", blanks: ["cool / cold / rough / smooth"] },
+          { text: "The light through the curtains was _______ and gold.", blanks: ["soft / warm / pale / thin"] },
+          { text: "The taste of salt hit the back of her _______ before she reached the water.", blanks: ["throat / mouth / tongue"] },
+        ],
+      },
+      // 5
       {
         type: "open-response",
         title: "Scene Writing: A Specific Moment",
@@ -4166,11 +5373,92 @@ export const year9EnglishWorksheets: WorksheetItem[] = [
           },
         ],
       },
+      // 6
+      {
+        type: "sorting",
+        title: "Narrative Techniques: Personal vs. Analytical",
+        instruction: "Sort each technique into the correct column — is it more characteristic of personal/reflective writing or analytical essay writing?",
+        columns: ["Personal / Reflective Writing", "Analytical Essay Writing"],
+        items: [
+          { label: "Writing in the first person ('I')" },
+          { label: "Using topic sentences that connect to a thesis" },
+          { label: "Scene writing with sensory detail" },
+          { label: "Formal, impersonal tone" },
+          { label: "Reflection on the meaning of personal experience" },
+          { label: "Evidence from secondary sources" },
+          { label: "Anecdotes and vignettes" },
+          { label: "Citation of critics and scholars" },
+          { label: "Associative structure (following memory)" },
+          { label: "Logical, sequential paragraph structure" },
+        ],
+      },
+      // 7
+      {
+        type: "circle-correct",
+        title: "Identifying the Experiencing vs. Reflecting Self",
+        instruction: "For each excerpt, circle whether the voice belongs to the 'experiencing self' (inside the moment) or the 'reflecting self' (looking back with understanding).",
+        questions: [
+          {
+            prompt: "'I had no idea, standing there in that car park, that this was the last time I would see her.'",
+            options: ["Experiencing self", "Reflecting self"],
+          },
+          {
+            prompt: "'I was so angry I could barely speak.'",
+            options: ["Experiencing self", "Reflecting self"],
+          },
+          {
+            prompt: "'What I understand now, years later, is that she was trying to protect me.'",
+            options: ["Experiencing self", "Reflecting self"],
+          },
+          {
+            prompt: "'My hands wouldn\u2019t stop shaking as I dialled.'",
+            options: ["Experiencing self", "Reflecting self"],
+          },
+          {
+            prompt: "'Looking back, I can see how much I was avoiding the question.'",
+            options: ["Experiencing self", "Reflecting self"],
+          },
+        ],
+      },
+      // 8
+      {
+        type: "multiple-choice",
+        title: "Forms of Personal Writing",
+        instruction: "Choose the best answer for each question about the different forms personal writing can take.",
+        questions: [
+          {
+            prompt: "Which form typically focuses on the author's ideas and essayistic reflection rather than narrative events?",
+            options: ["Memoir", "Personal essay", "Autobiography", "Anecdote"],
+            answer: "Personal essay",
+          },
+          {
+            prompt: "An autobiography typically covers:",
+            options: [
+              "One specific period or aspect of a life",
+              "A whole life from beginning to end",
+              "Someone else's life from the outside",
+              "A fictional life based on real events",
+            ],
+            answer: "A whole life from beginning to end",
+          },
+          {
+            prompt: "A memoir differs from autobiography in that it:",
+            options: [
+              "Is always written in third person",
+              "Must be about a famous person",
+              "Focuses on a specific period, theme, or set of experiences rather than a whole life",
+              "Cannot include dialogue",
+            ],
+            answer: "Focuses on a specific period, theme, or set of experiences rather than a whole life",
+          },
+        ],
+      },
+      // 9
       {
         type: "open-response",
         title: "Adding the Reflective Layer",
         instruction:
-          "Take the scene you wrote in Activity 1 and add a reflective layer. This is where you move from 'what happened' to 'what it meant.'",
+          "Take the scene you wrote in Activity 5 and add a reflective layer. This is where you move from 'what happened' to 'what it meant.'",
         parentTip:
           "Reflection in personal writing is not the same as a moral or lesson. It is more like thinking aloud — noticing what is complicated, what you still do not understand, what surprised you about yourself.",
         prompts: [
@@ -4186,6 +5474,54 @@ export const year9EnglishWorksheets: WorksheetItem[] = [
           },
         ],
       },
+      // 10
+      {
+        type: "fill-in-blank",
+        title: "Transitional Phrases in Reflective Writing",
+        instruction: "Fill in the blank with an appropriate phrase that shifts from scene to reflection.",
+        sentences: [
+          { text: "I did not know it then, but _______.", blanks: ["that moment would change everything / this was the beginning of something larger"] },
+          { text: "Looking back now, _______.", blanks: ["I can see what I was missing / I understand why she said that"] },
+          { text: "What I couldn't see at the time was _______.", blanks: ["how much I needed to hear it / that I was already changing"] },
+          { text: "It took years before I _______ what that silence meant.", blanks: ["understood / recognised / realised"] },
+          { text: "At the time, I felt _______. Now I feel something closer to _______.", blanks: ["angry / sadness and understanding"] },
+        ],
+      },
+      // 11
+      {
+        type: "true-false",
+        title: "Voice in Personal Writing",
+        instruction: "Mark each statement about voice in personal writing as true or false.",
+        statements: [
+          { text: "Voice in writing refers to the distinctive personality and style of a writer.", answer: true },
+          { text: "All personal writing must sound serious and formal.", answer: false },
+          { text: "A writer's voice can include humour, irony, and self-deprecation.", answer: true },
+          { text: "The best way to develop voice is to imitate your favourite writers exactly.", answer: false },
+          { text: "Voice emerges through word choice, sentence length, tone, and perspective.", answer: true },
+          { text: "Two writers describing the same event would write with identical voices.", answer: false },
+        ],
+      },
+      // 12
+      {
+        type: "matching",
+        title: "Types of Voice: Matching Examples",
+        instruction: "Match each voice description to the example sentence that best illustrates it.",
+        left: [
+          "Dry and ironic",
+          "Warm and confessional",
+          "Cool and observational",
+          "Urgent and passionate",
+          "Self-deprecating",
+        ],
+        right: [
+          "I watched from the window as the rest of the world went about its business, entirely unaware of the catastrophe unfolding in my kitchen.",
+          "I have never been a person who handles bad news well. I am, by most reasonable measures, a disaster.",
+          "She arrived late. She always arrived late. The table was still set for four.",
+          "We cannot wait any longer to have this conversation. The moment is now.",
+          "I want to tell you everything — the embarrassing parts especially, the parts I got wrong.",
+        ],
+      },
+      // 13
       {
         type: "open-response",
         title: "Voice and Style",
@@ -4211,10 +5547,1394 @@ export const year9EnglishWorksheets: WorksheetItem[] = [
           },
         ],
       },
+      // 14
+      {
+        type: "circle-correct",
+        title: "Purpose in Personal Writing",
+        instruction: "For each piece of personal writing, circle the most likely primary purpose.",
+        questions: [
+          {
+            prompt: "A memoir about growing up during the Vietnam War era",
+            options: ["To entertain with adventure", "To preserve memory and bear witness to history", "To argue a political position"],
+          },
+          {
+            prompt: "A personal essay on why the writer finds city life alienating",
+            options: ["To explore and articulate an idea through personal experience", "To provide factual information about cities", "To persuade readers to move to the country"],
+          },
+          {
+            prompt: "A vignette about a grandmother's kitchen",
+            options: ["To sell a cookbook", "To analyse cooking techniques", "To evoke memory and honour a relationship"],
+          },
+          {
+            prompt: "A reflective piece written after a failure or mistake",
+            options: ["To make excuses", "To process experience and understand oneself better", "To warn others about the same mistake"],
+          },
+        ],
+      },
+      // 15
+      {
+        type: "tip",
+        title: "Tip: The Particular Is the Universal",
+        content: "Personal writing works when it is deeply specific. Counter-intuitively, the more specific and personal a piece of writing is, the more universally relatable it tends to be. A vague, general account of 'a difficult time' connects with nobody. A precise description of the specific details of one difficult afternoon connects with everyone who has ever had a difficult afternoon. When writing personally, resist the urge to generalise — stay in the particular.",
+      },
+      // 16
+      {
+        type: "multiple-choice",
+        title: "Structure in Personal Writing",
+        instruction: "Choose the best answer for each question about how personal writing is structured.",
+        parentTip: "Unlike analytical essays, personal writing can follow memory and association rather than strict logic. This is a strength, not a weakness — but it requires skill to make associative structure feel purposeful rather than random.",
+        questions: [
+          {
+            prompt: "What is associative structure in personal writing?",
+            options: [
+              "A structure that follows a strict chronological timeline",
+              "A structure that moves between moments by following the logic of memory and idea rather than time",
+              "A structure with an introduction, body, and conclusion",
+              "A structure that uses numbered sections",
+            ],
+            answer: "A structure that moves between moments by following the logic of memory and idea rather than time",
+          },
+          {
+            prompt: "Which of the following is NOT a common structural technique in memoir and personal essay?",
+            options: [
+              "Circular structure (returning to the opening image at the end)",
+              "Moving between past and present",
+              "The five-paragraph essay format",
+              "Beginning in the middle of the action",
+            ],
+            answer: "The five-paragraph essay format",
+          },
+        ],
+      },
+      // 17
+      {
+        type: "sorting",
+        title: "Personal Writing: Sorting by Form",
+        instruction: "Sort each description into the correct form of personal writing.",
+        columns: ["Memoir", "Personal Essay", "Vignette"],
+        items: [
+          { label: "A 200-word piece capturing one image or moment" },
+          { label: "A book-length account of a specific period of a life" },
+          { label: "A shorter piece that uses personal experience to explore an idea" },
+          { label: "Often has a looser, more lyrical structure than analytical writing" },
+          { label: "May blend narrative and argument" },
+          { label: "Like a very short short story, but non-fiction" },
+          { label: "Examples include 'When Breath Becomes Air' by Paul Kalanithi" },
+          { label: "Examples include essays by George Orwell and James Baldwin" },
+          { label: "Named from the French word for 'sketch' or 'small view'" },
+        ],
+      },
+      // 18
+      {
+        type: "open-response",
+        title: "Writing from an Object",
+        instruction: "Choose an object that has significance in your life — it could be anything: a piece of clothing, a book, a kitchen utensil, a toy. Write a vignette (8–12 sentences) about this object that reveals something true about your life or relationships.",
+        parentTip: "Objects are a classic entry point into personal writing because they are concrete and specific — they anchor abstract emotions in the physical world. The essay 'My Mother's Coat' or 'The Kitchen Table' works because the object becomes a vessel for meaning.",
+        prompts: [
+          { text: "Your object and why you chose it:", type: "lines", lines: 2 },
+          { text: "Your vignette:", type: "box" },
+        ],
+      },
+      // 19
+      {
+        type: "fill-in-blank",
+        title: "Personal Writing: Key Terms",
+        instruction: "Fill in the blank with the correct personal writing term.",
+        sentences: [
+          { text: "A _______ is a brief piece of writing that captures one vivid scene or moment.", blanks: ["vignette"] },
+          { text: "The _______ voice belongs to the writer in the moment of experience, while the _______ voice belongs to the writer looking back.", blanks: ["experiencing", "reflecting"] },
+          { text: "Writing that recreates a moment using sensory detail in real time is called _______ writing.", blanks: ["scene"] },
+          { text: "The distinctive personality and style of a writer is called their _______.", blanks: ["voice"] },
+          { text: "A structural device where the essay returns to its opening image or idea at the end is called a _______ structure.", blanks: ["circular"] },
+        ],
+      },
+      // 20
+      {
+        type: "spark",
+        title: "Spark: What Memory Are You Avoiding?",
+        content: "The American writer Annie Dillard said: 'The very writing that you don't want to do is probably your best writing.' This is a provocation worth sitting with. What memory or experience in your own life have you always thought would make a powerful piece of writing, but that you have avoided? What makes you avoid it? What would you need in order to write it — distance, time, a particular structure? You don't have to write it now. But think about it.",
+      },
+      // ── DEVELOPING 21–50 ──────────────────────────────────────────────────
+      // 21
+      {
+        type: "multiple-choice",
+        title: "Dialogue in Personal Writing",
+        instruction: "Choose the best answer for each question about using dialogue in personal and memoir writing.",
+        parentTip: "Dialogue in memoir is reconstructed from memory, not transcribed — it should capture the essence and meaning of what was said, even if the exact words have faded.",
+        questions: [
+          {
+            prompt: "Why do memoirists and personal essayists use dialogue?",
+            options: [
+              "To meet a word count requirement",
+              "To bring scenes to life and reveal character through speech",
+              "Because all non-fiction must include direct quotes",
+              "To make the writing sound more academic",
+            ],
+            answer: "To bring scenes to life and reveal character through speech",
+          },
+          {
+            prompt: "How should a memoirist handle dialogue they cannot remember word for word?",
+            options: [
+              "Invent entirely fictional dialogue",
+              "Include no dialogue at all",
+              "Reconstruct the essence of what was said in a way that is true to the meaning and character of the person",
+              "Only use dialogue if they have recordings or transcripts",
+            ],
+            answer: "Reconstruct the essence of what was said in a way that is true to the meaning and character of the person",
+          },
+        ],
+      },
+      // 22
+      {
+        type: "open-response",
+        title: "A Conversation Worth Remembering",
+        instruction: "Write a scene (8–12 sentences) built around a real conversation you have had that stayed with you. Include dialogue. Try to capture how each person sounded — their vocabulary, their pace, what they left unsaid.",
+        parentTip: "After your student writes, discuss: does the dialogue sound like the person? Does it advance the scene or just fill space? Dialogue should do at least one of: reveal character, create tension, or advance the scene.",
+        prompts: [
+          { text: "Your scene with dialogue:", type: "box" },
+          {
+            text: "What does this conversation reveal about the relationship between the speakers?",
+            type: "lines",
+            lines: 3,
+          },
+        ],
+      },
+      // 23
+      {
+        type: "true-false",
+        title: "Australian Personal Writing: True or False?",
+        instruction: "Mark each statement as true or false.",
+        statements: [
+          { text: "Tim Winton is an Australian author known for personal and memoir writing.", answer: true },
+          { text: "Australian personal writing never engages with Indigenous history or Country.", answer: false },
+          { text: "The Australian landscape often features as a character in Australian memoir.", answer: true },
+          { text: "Personal writing in Australia is always set in urban environments.", answer: false },
+          { text: "Memoir writing can serve as a form of historical testimony.", answer: true },
+        ],
+      },
+      // 24
+      {
+        type: "matching",
+        title: "Personal Writing: Australian Authors",
+        instruction: "Match each Australian author to the description of their personal writing.",
+        left: [
+          "Tim Winton",
+          "Alexis Wright",
+          "Sally Morgan",
+          "Bruce Pascoe",
+        ],
+        right: [
+          "Author of 'My Place', a memoir reclaiming Aboriginal heritage and identity",
+          "Essayist and novelist who writes about landscape, place, and what it means to be Australian",
+          "Author whose work including 'Praiseworthy' explores Indigenous experience and sovereignty",
+          "Author of 'Dark Emu', which reclaims Aboriginal history and land management",
+        ],
+      },
+      // 25
+      {
+        type: "open-response",
+        title: "Writing About Place",
+        instruction: "Personal writing is often deeply tied to place. Write a vignette (10–15 sentences) about a place that matters to you — somewhere that has shaped who you are, even in a small way. Do not describe the place objectively; write it through the lens of your relationship with it.",
+        parentTip: "The key instruction is 'through the lens of your relationship with it' — this transforms description into memoir. A beach described objectively is journalism; a beach described through memory and feeling is personal writing.",
+        prompts: [
+          { text: "Your place vignette:", type: "box" },
+          {
+            text: "What does this place represent in your inner life? What would you lose if it were gone?",
+            type: "lines",
+            lines: 4,
+          },
+        ],
+      },
+      // 26
+      {
+        type: "fill-in-blank",
+        title: "Sentence-Level Craft: Rhythm and Variation",
+        instruction: "Fill in the blanks to describe techniques for creating rhythm and variation in personal writing.",
+        sentences: [
+          { text: "A series of very short sentences in a row creates a sense of _______ and urgency.", blanks: ["pace / speed / tension"] },
+          { text: "A very long sentence with multiple clauses and pauses can create a sense of _______ or accumulation.", blanks: ["complexity / sprawl / richness"] },
+          { text: "Repeating a word or phrase at the start of successive sentences is a technique called _______.", blanks: ["anaphora"] },
+          { text: "Placing the most important word at the end of a sentence is called _______ position.", blanks: ["end / final / terminal"] },
+          { text: "Varying sentence length throughout a paragraph prevents the writing from becoming _______.", blanks: ["monotonous / flat / predictable"] },
+        ],
+      },
+      // 27
+      {
+        type: "circle-correct",
+        title: "Tone in Personal Writing",
+        instruction: "Read each excerpt and circle the tone that best describes it.",
+        questions: [
+          {
+            prompt: "'I have made every possible mistake a person could make in this regard. I am, as I have said, an expert in failure.'",
+            options: ["Self-pitying", "Dry and self-deprecating", "Angry and accusatory"],
+          },
+          {
+            prompt: "'She was dying, and still she wanted to know what I had eaten for dinner. That was the thing about her: she was always more interested in you than in herself.'",
+            options: ["Bitter", "Tender and elegiac", "Analytical"],
+          },
+          {
+            prompt: "'This country does something to you. I couldn\u2019t explain it to anyone who hasn\u2019t stood in that red light, felt that heat, understood without understanding.'",
+            options: ["Nostalgic", "Lyrical and searching", "Journalistic"],
+          },
+        ],
+      },
+      // 28
+      {
+        type: "open-response",
+        title: "The Unsaid: Writing Silence and Absence",
+        instruction: "In personal writing, what is NOT said can be as powerful as what is said. Write a short scene (6–10 sentences) where the most important thing is something that is avoided, withheld, or left unsaid.",
+        parentTip: "This is an advanced technique. Discuss with your student: in real conversations, how often do people say the most important thing directly? Literature can capture the way human beings actually communicate — obliquely, indirectly, around the edges of what matters.",
+        prompts: [
+          { text: "Your scene:", type: "box" },
+          {
+            text: "What is the unsaid thing at the centre of your scene? What effect does leaving it unsaid have on the reader?",
+            type: "lines",
+            lines: 3,
+          },
+        ],
+      },
+      // 29
+      {
+        type: "multiple-choice",
+        title: "Audience and Addressee in Personal Writing",
+        instruction: "Choose the best answer for each question about audience in personal and reflective writing.",
+        questions: [
+          {
+            prompt: "What is an 'implied reader' in personal writing?",
+            options: [
+              "A specific named person the writer is writing to",
+              "The imagined audience the writer has in mind as they write",
+              "A reader who has not yet read the text",
+              "A critic who analyses the writing after publication",
+            ],
+            answer: "The imagined audience the writer has in mind as they write",
+          },
+          {
+            prompt: "When a personal essayist writes 'you' — e.g. 'You know that feeling when...' — what effect does this create?",
+            options: [
+              "It confuses the reader about who is speaking",
+              "It creates distance between writer and reader",
+              "It draws the reader in, creating intimacy and a sense of shared experience",
+              "It sounds informal and should be avoided",
+            ],
+            answer: "It draws the reader in, creating intimacy and a sense of shared experience",
+          },
+        ],
+      },
+      // 30
+      {
+        type: "tip",
+        title: "Tip: Resist the Tidy Resolution",
+        content: "Beginning writers often feel that personal writing must end with a lesson learned, a problem resolved, or a clear moral. But the best personal writing resists this tidiness. Life is complicated; the best memoir and personal essays honour that complication. It is often more honest — and more powerful — to end with a question, a continuing uncertainty, or an image that carries meaning without explaining it. Ask yourself: am I rounding this off too neatly? What am I leaving out in order to make it feel resolved?",
+      },
+      // 31
+      {
+        type: "sorting",
+        title: "Effective vs. Ineffective Personal Writing Choices",
+        instruction: "Sort each choice into 'Effective' (tends to strengthen personal writing) or 'Ineffective' (tends to weaken it).",
+        columns: ["Effective", "Ineffective"],
+        items: [
+          { label: "Using specific, concrete sensory details" },
+          { label: "Summarising what happened without scene writing" },
+          { label: "Allowing the reflecting self to notice complexity and uncertainty" },
+          { label: "Forcing a tidy moral lesson at the end" },
+          { label: "Writing dialogue that sounds like the real person" },
+          { label: "Using vague, general language ('it was a really hard time')" },
+          { label: "Allowing silence and what is unsaid to carry meaning" },
+          { label: "Explaining every emotion in abstract terms" },
+          { label: "Varying sentence length to control pace and rhythm" },
+          { label: "Beginning every sentence with 'I felt...'" },
+        ],
+      },
+      // 32
+      {
+        type: "open-response",
+        title: "Revision: Rewriting a Scene",
+        instruction: "Return to the scene you wrote in Activity 5 and revise it using at least three of the following techniques: (a) add or intensify sensory detail, (b) vary your sentence lengths, (c) cut any place where you shift from scene to summary, (d) add a line of dialogue, (e) adjust your word choices to better reflect your intended voice.",
+        parentTip: "Revision is where writing actually happens — drafting is just making clay. Helping your student understand that rewriting is not 'fixing mistakes' but 'discovering what the writing can be' is one of the most important things you can do for their development as a writer.",
+        prompts: [
+          { text: "Your revised scene:", type: "box" },
+          {
+            text: "List the three or more techniques you applied, and explain the effect of each change:",
+            type: "lines",
+            lines: 5,
+          },
+        ],
+      },
+      // 33
+      {
+        type: "fill-in-blank",
+        title: "The Essay Tradition: Key Figures",
+        instruction: "Fill in the blank with the correct name or term.",
+        sentences: [
+          { text: "The essay as a literary form was invented by the French writer _______ in the 16th century.", blanks: ["Montaigne / Michel de Montaigne"] },
+          { text: "George Orwell's personal essays, including 'Why I Write' and 'Shooting an _______', are models of the personal essay form.", blanks: ["Elephant"] },
+          { text: "James Baldwin's personal essays explore race and identity in America; his collection 'Notes of a _______' is particularly celebrated.", blanks: ["Native Son"] },
+          { text: "The term 'essay' comes from the French 'essai', meaning an _______ or attempt.", blanks: ["attempt / trial / test"] },
+          { text: "Joan Didion's essay collection 'Slouching Towards _______' combines personal experience with cultural criticism.", blanks: ["Bethlehem"] },
+        ],
+      },
+      // 34
+      {
+        type: "matching",
+        title: "Personal Writing Techniques and Definitions",
+        instruction: "Match each technique to its definition.",
+        left: [
+          "In medias res",
+          "Circular structure",
+          "Fragmented structure",
+          "Braided narrative",
+          "Lyric essay",
+        ],
+        right: [
+          "An essay that weaves two or three separate narrative threads together throughout the piece",
+          "Beginning the piece in the middle of the action rather than at the beginning",
+          "An essay that blends poetic compression, associative logic, and fragmented form",
+          "A structure that uses short, disconnected sections to create meaning through juxtaposition",
+          "A structure that returns to the opening image or idea at the end",
+        ],
+      },
+      // 35
+      {
+        type: "open-response",
+        title: "Writing About a Relationship",
+        instruction: "Write a scene (10–15 sentences) that reveals something important about a relationship in your life — with a family member, friend, or even a pet. Do not name the relationship explicitly. Show it through behaviour, dialogue, and detail.",
+        parentTip: "The instruction not to name the relationship is a useful constraint: instead of writing 'My mother was always critical', the student must find the scene that shows that. This is the difference between assertion and demonstration.",
+        prompts: [
+          { text: "Your scene:", type: "box" },
+          {
+            text: "What does your scene reveal about this relationship that a direct statement would not?",
+            type: "lines",
+            lines: 3,
+          },
+        ],
+      },
+      // 36
+      {
+        type: "true-false",
+        title: "Ethics of Personal Writing",
+        instruction: "Mark each statement about the ethics of writing about real people and events as true or false.",
+        statements: [
+          { text: "Memoirists have an ethical responsibility to consider how their writing may affect real people who appear in it.", answer: true },
+          { text: "If something happened, a writer can write about it in any way they choose with no ethical considerations.", answer: false },
+          { text: "Changing identifying details to protect someone's privacy is an accepted practice in memoir.", answer: true },
+          { text: "The memoirist's memory is always perfectly accurate and should be presented as objective fact.", answer: false },
+          { text: "Some memoirists include an author's note acknowledging the limitations of memory.", answer: true },
+        ],
+      },
+      // 37
+      {
+        type: "circle-correct",
+        title: "Strong Opening Lines",
+        instruction: "For each pair, circle the opening line that is more effective for a personal essay or memoir.",
+        questions: [
+          {
+            prompt: "Option A: 'In this essay, I will discuss a time in my life when things were difficult.' Option B: 'The summer I turned fourteen, I stopped being able to sleep.'",
+            options: ["Option A", "Option B"],
+          },
+          {
+            prompt: "Option A: 'The thing about grief is that it arrives without warning, in the cereal aisle, at 9 a.m. on a Tuesday.' Option B: 'I am going to write about grief in this personal essay.'",
+            options: ["Option A", "Option B"],
+          },
+          {
+            prompt: "Option A: 'I have a complicated relationship with the place where I grew up.' Option B: 'There is a creek at the bottom of the street I grew up on. My mother told us never to go there. We went every day.'",
+            options: ["Option A", "Option B"],
+          },
+        ],
+      },
+      // 38
+      {
+        type: "open-response",
+        title: "Writing a Strong Opening",
+        instruction: "Write three different possible opening sentences or short paragraphs for a personal essay about something in your own life. Experiment with different techniques: in medias res (beginning in the middle), a strong image, a striking statement, or a question.",
+        parentTip: "The opening of a personal essay does three jobs: it earns the reader's attention, establishes the writer's voice, and signals what kind of essay this will be. Having your student write multiple options and choose the strongest is excellent practice.",
+        prompts: [
+          { text: "Opening 1:", type: "lines", lines: 3 },
+          { text: "Opening 2:", type: "lines", lines: 3 },
+          { text: "Opening 3:", type: "lines", lines: 3 },
+          { text: "Which is strongest and why?", type: "lines", lines: 3 },
+        ],
+      },
+      // 39
+      {
+        type: "multiple-choice",
+        title: "Memoir and Truth",
+        instruction: "Choose the best answer for each question about truth and memory in memoir.",
+        parentTip: "The question of truth in memoir is a genuinely interesting ethical and philosophical question worth discussing. Memory is constructive, not reproductive — it rebuilds rather than plays back. How should writers handle this?",
+        questions: [
+          {
+            prompt: "Mary Karr, author of 'The Liar's Club', says that memoir requires 'an honest investigation of the past'. This means:",
+            options: [
+              "The writer must have video evidence of all events described",
+              "The writer approaches memory with rigour, acknowledging uncertainty rather than inventing false certainty",
+              "The writer must only include events other people can corroborate",
+              "The writer must present all characters fairly and positively",
+            ],
+            answer: "The writer approaches memory with rigour, acknowledging uncertainty rather than inventing false certainty",
+          },
+          {
+            prompt: "What is the difference between 'emotional truth' and 'factual accuracy' in memoir?",
+            options: [
+              "They are exactly the same thing",
+              "Emotional truth refers to capturing the felt experience faithfully; factual accuracy refers to precise historical record",
+              "Emotional truth is more important because it allows writers to invent events",
+              "Factual accuracy is irrelevant to memoir writing",
+            ],
+            answer: "Emotional truth refers to capturing the felt experience faithfully; factual accuracy refers to precise historical record",
+          },
+        ],
+      },
+      // 40
+      {
+        type: "spark",
+        title: "Spark: The Essay as Thinking",
+        content: "The essayist and critic Edward Said described the essay as 'thinking in public'. Unlike an argument that begins with a conclusion and marshals evidence to support it, the personal essay often begins with a question and thinks its way toward — but not necessarily to — an answer. The best personal essays give readers the sensation of watching a mind at work, in real time. What question are you currently turning over in your own mind — about yourself, your place in the world, something you don't yet understand? That question might be the seed of your best essay.",
+      },
+      // ── CONSOLIDATING 51–80 ──────────────────────────────────────────────────
+      // 41
+      {
+        type: "open-response",
+        title: "Sustained Scene Writing",
+        instruction: "Write an extended scene (15–20 sentences) about a moment of change in your life — a moment when something shifted, even subtly. Use all the techniques practised so far: sensory detail, dialogue, varied sentence length, both experiencing and reflecting voices.",
+        parentTip: "Moments of change are the engine of memoir. They do not have to be dramatic — the most interesting changes are often small, quiet realisations. A moment of change can be as simple as looking at someone differently, or noticing something for the first time.",
+        prompts: [
+          { text: "Your extended scene:", type: "box" },
+        ],
+      },
+      // 42
+      {
+        type: "matching",
+        title: "Paragraph Functions in Personal Writing",
+        instruction: "Match each paragraph type to its function in a personal essay.",
+        left: [
+          "Hook paragraph",
+          "Scene paragraph",
+          "Reflection paragraph",
+          "Transition paragraph",
+          "Closing paragraph",
+        ],
+        right: [
+          "Moves the essay from one section or time to another",
+          "Recreates a moment with sensory detail in real time",
+          "Opens the essay with something that earns the reader's attention",
+          "Arrives at an insight or image that gives the essay its final resonance",
+          "Steps back from scene to consider meaning and significance",
+        ],
+      },
+      // 43
+      {
+        type: "fill-in-blank",
+        title: "Personal Writing: Advanced Vocabulary",
+        instruction: "Fill in the blank with the correct literary or craft term.",
+        sentences: [
+          { text: "When a writer steps outside the narrative to address the reader directly, this is called _______ address.", blanks: ["direct"] },
+          { text: "Writing that moves between different time periods is said to use a _______ structure.", blanks: ["non-linear / fragmented / temporal"] },
+          { text: "The _______ narrator is one who writes about events long after they occurred and has the benefit of hindsight.", blanks: ["retrospective"] },
+          { text: "A piece of writing that blurs the line between poetry and prose is called a _______ essay.", blanks: ["lyric"] },
+          { text: "The use of a specific object, image, or phrase that recurs throughout a piece of writing to carry meaning is called a _______.", blanks: ["motif / leitmotif"] },
+        ],
+      },
+      // 44
+      {
+        type: "open-response",
+        title: "The Motif: A Recurring Image",
+        instruction: "Choose an image, object, or phrase to use as a motif throughout a personal essay you plan or draft. Write three short paragraphs (3–5 sentences each) where this motif appears, each time with a different meaning or in a different context.",
+        parentTip: "A motif gives a personal essay structural coherence and emotional depth. The same image appearing at the beginning, middle, and end — with shifting meaning — is a classic and powerful technique. Water, light, a particular piece of music, or a recurring gesture all work well.",
+        prompts: [
+          { text: "Your chosen motif:", type: "lines", lines: 1 },
+          { text: "Paragraph 1 (introduce the motif):", type: "box" },
+          { text: "Paragraph 2 (motif reappears with shifted meaning):", type: "box" },
+          { text: "Paragraph 3 (motif appears again — what has it accumulated?):", type: "box" },
+        ],
+      },
+      // 45
+      {
+        type: "tip",
+        title: "Tip: Write From Uncertainty",
+        content: "Personal writing is strongest when the writer does not already know what they think. If you begin with a clear conclusion and write toward it, the essay will feel closed and didactic. If you begin with a genuine question — something you are still working out — the writing will have the quality of live thought, and the reader will think alongside you. Ask: what is something I genuinely do not understand about my own life? That gap between experience and understanding is the essay's territory.",
+      },
+      // 46
+      {
+        type: "multiple-choice",
+        title: "Structure: Beginning, Middle, End in Personal Writing",
+        instruction: "Choose the best answer for each question.",
+        questions: [
+          {
+            prompt: "What makes a personal essay's conclusion more powerful than a simple summary?",
+            options: [
+              "It repeats the thesis three times",
+              "It is longer than the introduction",
+              "It arrives at an insight that was not fully available at the beginning — a sense of arrival rather than return",
+              "It introduces new evidence the body did not cover",
+            ],
+            answer: "It arrives at an insight that was not fully available at the beginning — a sense of arrival rather than return",
+          },
+          {
+            prompt: "In personal writing, what is the purpose of beginning in medias res (in the middle)?",
+            options: [
+              "To confuse the reader",
+              "To begin with action or immediacy, drawing the reader in before providing context",
+              "To hide the essay's thesis",
+              "To avoid having to write an introduction",
+            ],
+            answer: "To begin with action or immediacy, drawing the reader in before providing context",
+          },
+        ],
+      },
+      // 47
+      {
+        type: "sorting",
+        title: "What Makes a Closing Powerful?",
+        instruction: "Sort each closing strategy into 'Strong Ending' or 'Weak Ending'.",
+        columns: ["Strong Ending", "Weak Ending"],
+        items: [
+          { label: "Ending with an image that contains unspoken meaning" },
+          { label: "Summarising every point the essay has made" },
+          { label: "Returning to the opening image with new understanding" },
+          { label: "Beginning the conclusion with 'In conclusion, I have shown that...'" },
+          { label: "Ending with an open question that leaves the reader thinking" },
+          { label: "Explaining the essay's meaning in a final paragraph" },
+          { label: "A short, resonant final line that lands with weight" },
+          { label: "Ending abruptly mid-thought" },
+        ],
+      },
+      // 48
+      {
+        type: "open-response",
+        title: "Drafting an Introduction and Conclusion",
+        instruction: "Write an introduction (4–6 sentences) and conclusion (4–6 sentences) for a personal essay about an experience that changed you. The introduction should begin with something that earns the reader's attention. The conclusion should arrive somewhere — not just summarise.",
+        parentTip: "Ask your student to read only the introduction and conclusion together, as if the body did not exist. Does the conclusion feel like an arrival? If they are essentially saying the same thing, the conclusion needs rethinking.",
+        prompts: [
+          { text: "Introduction:", type: "box" },
+          { text: "Conclusion:", type: "box" },
+          {
+            text: "Where does your essay arrive at the end that it could not have arrived at the beginning?",
+            type: "lines",
+            lines: 3,
+          },
+        ],
+      },
+      // 49
+      {
+        type: "true-false",
+        title: "Advanced Personal Writing: True or False?",
+        instruction: "Mark each statement as true or false.",
+        statements: [
+          { text: "A lyric essay can include blank space, fragments, and non-linear sections.", answer: true },
+          { text: "In a braided narrative, all threads must relate to the same central theme or question.", answer: true },
+          { text: "Personal writing should always avoid metaphor and figurative language.", answer: false },
+          { text: "The most powerful personal writing often ends with a clear, stated moral.", answer: false },
+          { text: "Compression — saying more with fewer words — is a key virtue in personal writing.", answer: true },
+        ],
+      },
+      // 50
+      {
+        type: "open-response",
+        title: "Reading Like a Writer",
+        instruction: "Find a personal essay or memoir passage by an Australian writer (suggestions: Tim Winton's Island Home, Sally Morgan's My Place, or any essay from Meanjin or Overland magazine). Read it carefully, then answer the questions below.",
+        parentTip: "Reading like a writer means asking: how did they make this? What choices did they make about structure, voice, detail, and form? This is different from reading for meaning — it is reading as a craft apprentice.",
+        prompts: [
+          { text: "What is the essay/passage about? (2–3 sentences):", type: "lines", lines: 3 },
+          { text: "What is one thing this writer does that you would like to try in your own writing?", type: "lines", lines: 3 },
+          { text: "Copy one sentence you find particularly strong and explain why it works:", type: "lines", lines: 4 },
+        ],
+      },
+      // 51
+      {
+        type: "open-response",
+        title: "Voice Experiment: Three Versions",
+        instruction: "Take one short scene from your life (3–4 sentences) and write it three times in three different voices: (a) formal and detached, (b) warm and conversational, (c) dry and ironic. Notice how voice changes the effect of the same content.",
+        parentTip: "This is a powerful exercise in understanding that voice is a choice — writers select the register that serves their purpose. Understanding this helps students stop thinking of voice as something fixed and start thinking of it as a craft tool.",
+        prompts: [
+          { text: "The scene:", type: "lines", lines: 3 },
+          { text: "Version A — formal and detached:", type: "lines", lines: 4 },
+          { text: "Version B — warm and conversational:", type: "lines", lines: 4 },
+          { text: "Version C — dry and ironic:", type: "lines", lines: 4 },
+          { text: "Which version do you prefer and why?", type: "lines", lines: 3 },
+        ],
+      },
+      // 52
+      {
+        type: "fill-in-blank",
+        title: "Figurative Language in Personal Writing",
+        instruction: "Fill in the blank with an appropriate figure of speech to complete each sentence in a way that feels true and specific.",
+        sentences: [
+          { text: "Her voice on the phone was _______ — a sound I had not heard in years.", blanks: ["like coming up for air / like a door opening / thin as paper"] },
+          { text: "The silence in the room was _______ after he left.", blanks: ["enormous / physical / a third presence"] },
+          { text: "That afternoon felt _______, stretched out beyond its edges.", blanks: ["elastic / too long / suspended"] },
+          { text: "I carried the news around all day like _______.", blanks: ["a stone in my pocket / something heavy / a question I couldn't ask"] },
+        ],
+      },
+      // 53
+      {
+        type: "open-response",
+        title: "The Braided Essay: Planning",
+        instruction: "A braided essay weaves two or three separate narrative threads together, with each thread shedding light on the others. Plan a braided personal essay by identifying two threads that connect to a common theme or question.",
+        parentTip: "Classic braided essay combinations: a personal memory and a research thread; a current moment and a historical event; a relationship and an object. The threads should illuminate each other without the connection being stated too explicitly.",
+        prompts: [
+          { text: "Your central theme or question:", type: "lines", lines: 2 },
+          { text: "Thread 1 (describe what this thread covers):", type: "lines", lines: 3 },
+          { text: "Thread 2 (describe what this thread covers):", type: "lines", lines: 3 },
+          { text: "How do these threads connect? What does weaving them together reveal that neither thread could reveal alone?", type: "lines", lines: 4 },
+        ],
+      },
+      // 54
+      {
+        type: "matching",
+        title: "Literary Influences on Australian Personal Writing",
+        instruction: "Match each description to the Australian literary tradition or context it describes.",
+        left: [
+          "Country as inner landscape",
+          "The settler experience",
+          "First Nations storytelling",
+          "The bush tradition",
+          "Migrant memoir",
+        ],
+        right: [
+          "A tradition that writes land and self as inseparable — knowing Country is knowing self",
+          "Narratives of displacement, cultural adaptation, and the formation of new identity",
+          "Early Australian writing that celebrated rural life, hardship, and mateship",
+          "Writing that explores the experience of European settlement and its ambivalences",
+          "Oral and written traditions that predate European contact and carry ancestral knowledge",
+        ],
+      },
+      // 55
+      {
+        type: "open-response",
+        title: "Writing About Identity",
+        instruction: "Personal writing often engages with questions of identity — who we are, how we have been shaped, what we belong to. Write a personal essay passage (10–15 sentences) that explores one aspect of your own identity. You might explore cultural background, where you grew up, your family's values, or any experience that shaped how you understand yourself.",
+        parentTip: "Identity writing can feel exposing for teenagers. Assure your student that they can choose any aspect of identity they are comfortable exploring — they do not have to write about anything painful or private. The key is that it should feel true.",
+        prompts: [
+          { text: "Your passage:", type: "box" },
+          {
+            text: "What aspect of your identity did you write about, and why did you choose it?",
+            type: "lines",
+            lines: 3,
+          },
+        ],
+      },
+      // 56
+      {
+        type: "multiple-choice",
+        title: "Compression and Cutting",
+        instruction: "Choose the best answer for each question about editing and compression in personal writing.",
+        questions: [
+          {
+            prompt: "What does it mean to 'cut to the bone' in personal writing?",
+            options: [
+              "To write about painful memories",
+              "To remove everything that is not essential to the essay's purpose — to leave only what does necessary work",
+              "To write very short sentences only",
+              "To eliminate all figurative language",
+            ],
+            answer: "To remove everything that is not essential to the essay's purpose — to leave only what does necessary work",
+          },
+          {
+            prompt: "Which of the following is usually a sign that a sentence should be cut?",
+            options: [
+              "It contains a specific sensory detail",
+              "It advances the narrative or deepens the reflection",
+              "It repeats something the reader already knows, or explains what the writing already shows",
+              "It is shorter than the sentence before it",
+            ],
+            answer: "It repeats something the reader already knows, or explains what the writing already shows",
+          },
+        ],
+      },
+      // 57
+      {
+        type: "open-response",
+        title: "The Art of Cutting",
+        instruction: "Find a paragraph in your earlier writing from this worksheet (or from another piece of your personal writing) and cut it by at least a third — removing anything that repeats, over-explains, or does not do necessary work. Then write the revised version.",
+        parentTip: "Cutting is one of the hardest things to teach young writers, because it requires them to value what is lost as well as what is gained. William Faulkner's advice — 'kill your darlings' — means removing the sentences you love most if they are not serving the whole.",
+        prompts: [
+          { text: "Original paragraph:", type: "box" },
+          { text: "Revised paragraph (at least one-third shorter):", type: "box" },
+          {
+            text: "What did cutting change? Did anything important get lost, or did cutting actually strengthen the writing?",
+            type: "lines",
+            lines: 4,
+          },
+        ],
+      },
+      // 58
+      {
+        type: "true-false",
+        title: "The Craft of Personal Writing: True or False?",
+        instruction: "Mark each statement as true or false.",
+        statements: [
+          { text: "A vignette is a form of personal writing that typically runs 150–400 words.", answer: true },
+          { text: "Personal writing never requires revision — it should come out right the first time.", answer: false },
+          { text: "Fragmented structure — short sections separated by white space — can be used deliberately to create meaning.", answer: true },
+          { text: "The most important quality in a personal essay is that it is grammatically perfect.", answer: false },
+          { text: "Reading widely in personal writing (memoir, essay) is one of the best ways to develop as a personal writer.", answer: true },
+          { text: "The 'kernel' of a personal essay is the specific experience or question at its centre.", answer: true },
+        ],
+      },
+      // 59
+      {
+        type: "open-response",
+        title: "Drafting a Short Personal Essay",
+        instruction: "Write a short personal essay (250–350 words) on a topic of your choice. Use everything you have learned: a strong opening, scene writing, reflection, a distinctive voice, and an ending that arrives somewhere. This does not need to be perfect — it is a draft.",
+        parentTip: "A first draft is not a finished product; it is discovery. Encourage your student to write without stopping to edit — get the thinking on the page. Editing comes after. If they are stuck, suggest: begin with the scene you know best and see where it leads.",
+        prompts: [
+          { text: "Your short personal essay:", type: "box" },
+        ],
+      },
+      // 60
+      {
+        type: "spark",
+        title: "Spark: The Ordinary Is Extraordinary",
+        content: "Personal writing does not require a dramatic or unusual life. The Australian writer Helen Garner has written entire essays about a kitchen, a suburb, a morning walk. The subject matters less than the quality of attention brought to it. What would it mean to pay the kind of attention to one ordinary day of your life that a novelist would pay to the most important day of their character's life? Write one sentence — right now, without stopping to plan — about something ordinary that happened today. That sentence might be the beginning of something.",
+      },
+      // ── EXTENDING 81–100 ──────────────────────────────────────────────────
+      // 61
+      {
+        type: "multiple-choice",
+        title: "The Personal and the Political",
+        instruction: "Choose the best answer for each question about how personal writing engages with public issues.",
+        parentTip: "Some of the most powerful personal writing — by James Baldwin, Roxane Gay, Tim Winton — moves between private experience and public significance. Personal is political: individual stories reveal structural truths.",
+        questions: [
+          {
+            prompt: "What does the phrase 'the personal is political' mean in the context of personal writing?",
+            options: [
+              "Personal writing should include political arguments",
+              "Private experiences often reveal and reflect larger social structures and power relations",
+              "Writers should only write about political events",
+              "Personal writing is always more important than political commentary",
+            ],
+            answer: "Private experiences often reveal and reflect larger social structures and power relations",
+          },
+          {
+            prompt: "How does a personal essay that begins with one person's experience connect with readers beyond that person?",
+            options: [
+              "Because the writer is famous",
+              "Because personal specificity creates universal resonance — a particular truth opens into a general truth",
+              "Because all human experiences are identical",
+              "Because readers prefer to read about other people's lives",
+            ],
+            answer: "Because personal specificity creates universal resonance — a particular truth opens into a general truth",
+          },
+        ],
+      },
+      // 62
+      {
+        type: "open-response",
+        title: "Personal and Political: Connecting Experience to Context",
+        instruction: "Write a passage (10–15 sentences) that begins with a personal experience and opens out to a broader social or political significance. Do not preach or lecture — let the connection emerge through the writing.",
+        parentTip: "This is advanced work. The skill is in the light touch — allowing the broader significance to emerge without the writer stepping back from the personal to explain it. The best essays of this kind trust the reader to make the connection.",
+        prompts: [
+          { text: "Your passage:", type: "box" },
+          {
+            text: "What broader context or social reality does your personal experience connect to?",
+            type: "lines",
+            lines: 3,
+          },
+        ],
+      },
+      // 63
+      {
+        type: "matching",
+        title: "Craft Terminology: Advanced",
+        instruction: "Match each advanced craft term to its definition.",
+        left: [
+          "Negative capability",
+          "Defamiliarisation",
+          "Free indirect style",
+          "Ekphrasis",
+          "Parataxis",
+        ],
+        right: [
+          "A grammatical style placing short, simple clauses side by side with minimal connectives",
+          "Keats's term for the capacity to live with uncertainty and doubt without irritably reaching for resolution",
+          "Making the familiar strange so it can be seen freshly",
+          "A narrative technique that blends narrator and character consciousness without signalling the shift",
+          "Writing that describes or responds to a visual artwork",
+        ],
+      },
+      // 64
+      {
+        type: "open-response",
+        title: "Defamiliarisation: Making the Ordinary Strange",
+        instruction: "Choose something completely ordinary — a daily routine, a common object, a familiar place — and write about it as if you are seeing it for the first time. Make the familiar strange. Aim for 8–12 sentences.",
+        parentTip: "Defamiliarisation (the Russian Formalists called it 'ostranenie') is one of literature's core functions — helping us see what habit has made invisible. The Russian writer Tolstoy was a master of this; Orwell did it in essays about ordinary life. It requires stepping outside the comfortable and looking with genuine curiosity.",
+        prompts: [
+          { text: "Your subject:", type: "lines", lines: 1 },
+          { text: "Your defamiliarised passage:", type: "box" },
+        ],
+      },
+      // 65
+      {
+        type: "fill-in-blank",
+        title: "Personal Writing in the Australian Literary Tradition",
+        instruction: "Fill in the blank with the correct word or phrase.",
+        sentences: [
+          { text: "Tim Winton's book 'Island Home' is subtitled 'A _______ Memoir', reflecting his engagement with the Australian landscape.", blanks: ["Landscape / Country"] },
+          { text: "The genre of writing that bears witness to historical trauma and injustice, including through personal narrative, is called _______ literature.", blanks: ["testimony / witness / testimonial"] },
+          { text: "Australian magazine _______ has published personal essays and memoir by major Australian writers since 1940.", blanks: ["Meanjin"] },
+          { text: "First Nations writers who have used memoir to reclaim identity and history include Sally Morgan, whose memoir is called 'My _______'.", blanks: ["Place"] },
+          { text: "Helen Garner is an Australian writer celebrated for personal writing that blurs the line between journalism, essay, and _______.", blanks: ["memoir / fiction"] },
+        ],
+      },
+      // 66
+      {
+        type: "open-response",
+        title: "The Lyric Essay: Fragmented Form",
+        instruction: "Write a short lyric essay (150–200 words) in three or four numbered or separated sections. Each section should be short (2–5 sentences). They should not connect chronologically or logically — but they should connect thematically. The white space between sections should carry meaning.",
+        parentTip: "The lyric essay is a hybrid form that allows for compression, juxtaposition, and poetic thinking. It is ideal for subjects that resist straightforward narrative. Encourage your student to think of each section as a facet of the same gem — each shows a different angle.",
+        prompts: [
+          { text: "Your lyric essay:", type: "box" },
+          {
+            text: "What holds your sections together? What is the implied connection between them?",
+            type: "lines",
+            lines: 3,
+          },
+        ],
+      },
+      // 67
+      {
+        type: "circle-correct",
+        title: "Evaluating Personal Writing",
+        instruction: "For each description, circle whether it describes strong or weak personal writing.",
+        questions: [
+          {
+            prompt: "A passage that uses five different sensory details in eight sentences and recreates a moment in vivid, immediate real-time.",
+            options: ["Strong", "Weak"],
+          },
+          {
+            prompt: "An essay that ends with 'And that is why I learned that hard work always pays off.'",
+            options: ["Strong", "Weak"],
+          },
+          {
+            prompt: "A passage where the reflecting self acknowledges: 'I'm still not sure what I think about this, and that uncertainty is part of what I am trying to work out here.'",
+            options: ["Strong", "Weak"],
+          },
+          {
+            prompt: "A memoir passage that tells the reader how to feel ('This was the saddest moment of my life and you should feel sad reading it.').",
+            options: ["Strong", "Weak"],
+          },
+          {
+            prompt: "A vignette that ends on an image — a door closing, a bird lifting from a fence — without explaining its meaning.",
+            options: ["Strong", "Weak"],
+          },
+        ],
+      },
+      // 68
+      {
+        type: "open-response",
+        title: "Extended Reflective Piece",
+        instruction: "Write an extended piece of personal and reflective writing (350–500 words) on a topic that genuinely matters to you. Bring together everything you have practised: scene writing, reflection, distinctive voice, motif, strong opening and closing, and the movement between experiencing self and reflecting self.",
+        parentTip: "This is the major piece for this worksheet. Give your student time and space. Suggest they plan briefly — identify the scene, the reflective question, and the ending — before drafting. Then let them write without interruption. Feedback after, not during.",
+        prompts: [
+          { text: "Brief plan (optional):", type: "lines", lines: 4 },
+          { text: "Your extended reflective piece:", type: "box" },
+        ],
+      },
+      // 69
+      {
+        type: "multiple-choice",
+        title: "Self-Evaluation in Personal Writing",
+        instruction: "Choose the best approach for each scenario.",
+        questions: [
+          {
+            prompt: "After writing a personal essay, your student says 'I think it\u2019s good.' What would be the most useful next step?",
+            options: [
+              "Congratulate them and move on",
+              "Ask them to identify the three strongest sentences and the three they are least sure about, and explain why",
+              "Point out every grammatical error",
+              "Ask them to rewrite it immediately",
+            ],
+            answer: "Ask them to identify the three strongest sentences and the three they are least sure about, and explain why",
+          },
+          {
+            prompt: "Which of the following is the most useful self-evaluation question after drafting?",
+            options: [
+              "Is this long enough?",
+              "Did I use enough vocabulary words?",
+              "What is the essay doing — and does every part of it serve that purpose?",
+              "How many paragraphs did I write?",
+            ],
+            answer: "What is the essay doing — and does every part of it serve that purpose?",
+          },
+        ],
+      },
+      // 70
+      {
+        type: "open-response",
+        title: "Self-Evaluation of Your Extended Piece",
+        instruction: "After writing your extended reflective piece in Activity 68, evaluate it using the questions below.",
+        parentTip: "Self-evaluation should be honest and specific. 'I think it\u2019s okay' is not useful; 'the opening is strong but the middle loses focus and the ending is too obvious' is useful. Help your student develop the habit of honest self-assessment.",
+        prompts: [
+          {
+            text: "What is the strongest moment in your piece? Copy it here and explain why it works.",
+            type: "lines",
+            lines: 4,
+          },
+          {
+            text: "What is the weakest moment? What would you do differently if you revised?",
+            type: "lines",
+            lines: 4,
+          },
+          {
+            text: "Does your piece arrive somewhere — is the ending different from the beginning in some meaningful way? Explain.",
+            type: "lines",
+            lines: 3,
+          },
+        ],
+      },
+      // 71
+      {
+        type: "true-false",
+        title: "Advanced Memoir and Essay Craft: True or False?",
+        instruction: "Mark each statement as true or false.",
+        statements: [
+          { text: "The lyric essay is a recognised literary form that often blends poetry and prose.", answer: true },
+          { text: "Personal writing cannot be submitted to literary magazines or competitions.", answer: false },
+          { text: "A strong personal essay can function as both intimate autobiography and cultural criticism.", answer: true },
+          { text: "Every personal essay must begin with the writer's childhood.", answer: false },
+          { text: "White space and fragmentation can be intentional formal choices that carry meaning.", answer: true },
+          { text: "The goal of personal writing is always to make the reader like the writer.", answer: false },
+        ],
+      },
+      // 72
+      {
+        type: "sorting",
+        title: "Forms and Their Key Features",
+        instruction: "Sort each feature into the correct form of personal writing.",
+        columns: ["Memoir (book length)", "Personal Essay (short form)", "Vignette (micro)"],
+        items: [
+          { label: "Typically 150–500 words" },
+          { label: "Usually 60,000–100,000+ words" },
+          { label: "Usually 800–5,000 words" },
+          { label: "Focuses on one image or moment" },
+          { label: "Covers a significant period or theme of a life" },
+          { label: "Can explore an idea through personal experience" },
+          { label: "Published in literary journals and magazines" },
+          { label: "Published as a standalone book" },
+          { label: "Often used as a standalone piece or as part of a collection" },
+        ],
+      },
+      // 73
+      {
+        type: "open-response",
+        title: "Writing About Loss",
+        instruction: "Loss is one of the great subjects of personal writing. Write a passage (10–15 sentences) about something lost — an object, a place, a person, a version of yourself. Do not explain the loss — show it through what is absent.",
+        parentTip: "Writing about loss requires care. Ensure your student is writing about something they feel safe exploring. Loss of an object or a place can be as rich as loss of a person, and may feel less exposing. The key instruction — 'show it through what is absent' — is the craft challenge: how do you render what is not there?",
+        prompts: [
+          { text: "Your passage about loss:", type: "box" },
+          {
+            text: "What technique did you use to show the loss without stating it directly?",
+            type: "lines",
+            lines: 3,
+          },
+        ],
+      },
+      // 74
+      {
+        type: "fill-in-blank",
+        title: "Key Critics and Essayists on Personal Writing",
+        instruction: "Fill in the blank with the correct name or phrase.",
+        sentences: [
+          { text: "The American essayist Annie Dillard wrote 'Pilgrim at _______ Creek', a book-length personal essay about the natural world.", blanks: ["Tinker"] },
+          { text: "Virginia Woolf's essay '_______ of One's Own' argues for the conditions — material and creative — that a woman writer needs.", blanks: ["A Room"] },
+          { text: "The New Journalism movement of the 1960s and 1970s brought personal, subjective voice to _______ writing.", blanks: ["journalism / non-fiction"] },
+          { text: "Australian literary journal _______ and _______ have been key platforms for personal essays and memoir in Australia.", blanks: ["Meanjin", "Overland"] },
+          { text: "George Orwell's six rules for good writing, from 'Politics and the English Language', include: 'Never use a long word where a _______ one will do.'", blanks: ["short"] },
+        ],
+      },
+      // 75
+      {
+        type: "tip",
+        title: "Tip: Use the Body",
+        content: "The body is one of the most underused resources in personal writing. Emotion is not just felt in the mind — it is felt physically: the throat tightens, the stomach drops, the hands shake, the chest goes hollow. When writing about an emotional experience, ask: where did I feel this in my body? Writing from physical sensation grounds abstract emotion in the concrete and real, making it legible to the reader in a way that abstract emotional vocabulary ('I was devastated') rarely does. Try replacing one abstract emotional statement in your writing with a physical sensation.",
+      },
+      // 76
+      {
+        type: "open-response",
+        title: "Writing Through the Body",
+        instruction: "Revise a passage from earlier in this worksheet (or from another piece of personal writing) to add at least three moments where abstract emotion is replaced or accompanied by physical sensation. Write the revised version.",
+        parentTip: "This revision technique is immediately useful: most student writing relies on emotional abstraction ('I was scared', 'I felt happy') rather than physical embodiment. Even one or two physical details per emotional moment transforms the reader's experience.",
+        prompts: [
+          { text: "Original passage:", type: "box" },
+          { text: "Revised passage (with physical sensation):", type: "box" },
+          {
+            text: "List the three physical sensations you added and explain the effect each has:",
+            type: "lines",
+            lines: 5,
+          },
+        ],
+      },
+      // 77
+      {
+        type: "multiple-choice",
+        title: "Publishing and Audience for Personal Writing",
+        instruction: "Choose the best answer for each question.",
+        questions: [
+          {
+            prompt: "Where can Australian student writers submit personal essays and memoir for publication?",
+            options: [
+              "Only to major publishing houses",
+              "Student literary journals, school magazines, youth writing competitions, and some online literary platforms",
+              "Nowhere — student writing cannot be published",
+              "Only to academic journals",
+            ],
+            answer: "Student literary journals, school magazines, youth writing competitions, and some online literary platforms",
+          },
+          {
+            prompt: "Why does considering an audience matter in personal writing?",
+            options: [
+              "Because you should only write what your audience wants to hear",
+              "Because thinking about who will read the work influences choices about what to include, what to explain, what to leave unsaid",
+              "Because personal writing has no audience — it is only for the writer",
+              "Because audience determines the length of the essay",
+            ],
+            answer: "Because thinking about who will read the work influences choices about what to include, what to explain, what to leave unsaid",
+          },
+        ],
+      },
+      // 78
+      {
+        type: "open-response",
+        title: "Peer Feedback Practice",
+        instruction: "Exchange one of your personal writing pieces with another writer (a sibling, parent, friend, or online writing partner). Give and receive feedback using the three questions below.",
+        parentTip: "Giving feedback is as important as receiving it — it develops critical reading skills that transfer directly to self-editing. Useful feedback is specific and focused on effect: 'In the third paragraph, I couldn\u2019t picture the scene because there were no sensory details' is more helpful than 'it\u2019s good but could be better.'",
+        prompts: [
+          {
+            text: "What is the strongest moment in their piece, and why does it work?",
+            type: "lines",
+            lines: 3,
+          },
+          {
+            text: "Where did your engagement as a reader drop, and why?",
+            type: "lines",
+            lines: 3,
+          },
+          {
+            text: "What is one specific change they could make to strengthen the piece?",
+            type: "lines",
+            lines: 3,
+          },
+        ],
+      },
+      // 79
+      {
+        type: "sorting",
+        title: "Personal Writing: Year 9 Australian Curriculum Outcomes",
+        instruction: "Sort each outcome into the correct strand it primarily addresses.",
+        columns: ["Language", "Literature", "Literacy"],
+        items: [
+          { label: "Understanding how voice and tone are constructed through word choice and syntax" },
+          { label: "Engaging with personal writing as a literary form with its own conventions" },
+          { label: "Drafting, revising, and editing personal writing for an audience" },
+          { label: "Understanding the difference between experiencing and reflecting self" },
+          { label: "Recognising how personal writing engages with Australian literary traditions" },
+          { label: "Using figurative language, sensory detail, and dialogue effectively" },
+          { label: "Reading widely in memoir, personal essay, and vignette" },
+          { label: "Evaluating and improving own writing through self-assessment and feedback" },
+          { label: "Understanding how structure (circular, braided, fragmented) creates meaning" },
+        ],
+      },
+      // 80
+      {
+        type: "spark",
+        title: "Spark: Your Writing Practice",
+        content: "Professional writers — including the greatest memoir writers — write regularly, often daily. They write in journals, on scraps of paper, in notes apps. They write things they will never share. The purpose is not productivity; it is maintenance — keeping the channel open between experience and language. What would your own writing practice look like? Not as a school task but as a habit. What would you write about if no one were reading? Start there.",
+      },
+      // 81
+      {
+        type: "open-response",
+        title: "Extended Personal Essay: Planning",
+        instruction: "Plan a full personal essay (500–700 words) on a topic of genuine significance to you. Your plan should include: your central question or idea, your opening strategy, the scene or scenes you will use, the reflective movements, and your intended ending.",
+        parentTip: "A good plan for personal writing is less prescriptive than an essay plan — it identifies the key scenes and the reflective question, but allows for discovery in the drafting. Too rigid a plan can kill the essay's life; too loose a plan can lead to drift.",
+        prompts: [
+          { text: "Central question or idea:", type: "lines", lines: 2 },
+          { text: "Opening strategy:", type: "lines", lines: 2 },
+          { text: "Key scene(s):", type: "lines", lines: 3 },
+          { text: "Reflective movements (what thinking will happen between/after scenes):", type: "lines", lines: 3 },
+          { text: "Intended ending (where will the essay arrive?):", type: "lines", lines: 2 },
+        ],
+      },
+      // 82
+      {
+        type: "open-response",
+        title: "Extended Personal Essay: Draft",
+        instruction: "Using your plan, write the full draft of your personal essay (500–700 words). Do not stop to perfect — write through to the end. You will revise in the next activity.",
+        parentTip: "Give your student extended, uninterrupted time for this draft. Suggest they put their plan to one side and write from memory and feeling — the plan has done its job. If they get stuck, tell them to write the next true thing they know about their subject.",
+        prompts: [
+          { text: "Your full draft:", type: "box" },
+        ],
+      },
+      // 83
+      {
+        type: "open-response",
+        title: "Extended Personal Essay: Revision",
+        instruction: "Revise your draft from Activity 82 using the following checklist: (1) Does the opening earn the reader's attention? (2) Is there at least one fully developed scene? (3) Does the reflection go beyond summary to genuine thinking? (4) Is the voice consistent and distinctive? (5) Does the ending arrive somewhere? (6) Can you cut at least 50 words without losing anything essential?",
+        parentTip: "Revision is not proofreading — it is reconsidering. A revision might mean reordering, cutting a whole section, adding a scene, or rethinking the ending. Encourage your student to be bold rather than conservative in revision.",
+        prompts: [
+          { text: "Your revised draft:", type: "box" },
+          {
+            text: "What did you change in revision, and why?",
+            type: "lines",
+            lines: 5,
+          },
+        ],
+      },
+      // 84
+      {
+        type: "true-false",
+        title: "The Extended Essay: True or False?",
+        instruction: "Mark each statement as true or false.",
+        statements: [
+          { text: "A 700-word personal essay can sustain more than one scene.", answer: true },
+          { text: "Revision always means making the writing longer.", answer: false },
+          { text: "The most important part of a personal essay is the conclusion.", answer: false },
+          { text: "A distinctive voice is built partly through sentence variety and word choice.", answer: true },
+          { text: "An essay that makes a reader think long after they have finished it has achieved something.", answer: true },
+          { text: "Personal essays must be submitted in strict five-paragraph format.", answer: false },
+        ],
+      },
+      // 85
+      {
+        type: "multiple-choice",
+        title: "Genre Hybridity in Personal Writing",
+        instruction: "Choose the best answer for each question about hybrid and experimental personal writing.",
+        questions: [
+          {
+            prompt: "What is a 'hybrid text' in the context of personal writing?",
+            options: [
+              "A text that contains both fiction and non-fiction elements",
+              "A text written by two authors",
+              "A text printed in two languages",
+              "A text that combines essay, poetry, research, or other modes in unexpected ways",
+            ],
+            answer: "A text that combines essay, poetry, research, or other modes in unexpected ways",
+          },
+          {
+            prompt: "Why might an author choose a fragmented structure for a personal essay?",
+            options: [
+              "Because they ran out of time to finish it",
+              "To reflect the fragmented nature of memory, or to create meaning through juxtaposition rather than argument",
+              "Because editors prefer shorter sections",
+              "To make the essay appear longer than it is",
+            ],
+            answer: "To reflect the fragmented nature of memory, or to create meaning through juxtaposition rather than argument",
+          },
+        ],
+      },
+      // 86
+      {
+        type: "open-response",
+        title: "Writing an Author's Note",
+        instruction: "Some memoirists and personal essayists include a short author's note (100–150 words) at the beginning of their work, addressing the reader directly about their approach to memory, truth, and ethics. Write one for a piece of personal writing you have completed.",
+        parentTip: "An author's note is an interesting genre in itself — it is the writer stepping outside the text to address the conditions of its creation. It demonstrates self-awareness about the limitations of memory and the ethical responsibilities of writing about real people and events.",
+        prompts: [
+          { text: "Your author's note:", type: "box" },
+        ],
+      },
+      // 87
+      {
+        type: "open-response",
+        title: "Portfolio Reflection: Your Development as a Personal Writer",
+        instruction: "Look back over all the writing you have done in this worksheet. Write a personal reflection (150–200 words) on your development as a personal writer. What have you learned? What surprised you? What do you most want to improve?",
+        parentTip: "Metacognitive reflection — thinking about your own thinking and development — is a powerful learning tool. It is also good practice for personal writing: the student is writing personally about their experience of writing personally.",
+        prompts: [
+          { text: "Your reflection:", type: "box" },
+        ],
+      },
+      // 88
+      {
+        type: "circle-correct",
+        title: "What Should Stay? Editorial Decisions",
+        instruction: "For each sentence, circle whether it should STAY or GO in a tight, well-revised personal essay.",
+        questions: [
+          {
+            prompt: "'She put the cup down on the table.' (The cup has no significance in the essay.)",
+            options: ["Stay", "Go"],
+          },
+          {
+            prompt: "'It was a cold morning. Not cold enough to snow — the wrong kind of cold, the kind that makes your face feel like paper.'",
+            options: ["Stay", "Go"],
+          },
+          {
+            prompt: "'In this essay, I will be exploring the theme of belonging and how it relates to my personal experience.'",
+            options: ["Stay", "Go"],
+          },
+          {
+            prompt: "'She laughed, but it was the laugh she used when she wanted to end a conversation.'",
+            options: ["Stay", "Go"],
+          },
+          {
+            prompt: "'As I have stated above, the experience was significant to me in a number of ways.'",
+            options: ["Stay", "Go"],
+          },
+        ],
+      },
+      // 89
+      {
+        type: "open-response",
+        title: "The Final Piece: Personal Essay for an Audience",
+        instruction: "Write a final, polished personal essay (400–600 words) that you would be willing to share with a real reader — a family member, a writing group, or submitted to a youth writing competition. Apply everything you have learned in this worksheet.",
+        parentTip: "Writing for a genuine audience raises the stakes in a productive way. If there is a youth literary magazine, school writing competition, or local publication that accepts personal essays, consider encouraging your student to submit this piece. Real audiences produce real writers.",
+        prompts: [
+          { text: "Your final personal essay:", type: "box" },
+        ],
+      },
+      // 90
+      {
+        type: "tip",
+        title: "Tip: Keep a Writing Journal",
+        content: "The single best thing any aspiring writer can do is keep a regular writing journal — not a diary, but a notebook for observations, questions, images, fragments, and beginnings. Not everything in the journal becomes an essay; most of it doesn't. But the journal is where you notice things, catch the language before it evaporates, and keep the writing muscle active. Some of the most celebrated personal writing in history began in notebooks. Start one, or continue one, and make it yours.",
+      },
+      // 91
+      {
+        type: "open-response",
+        title: "Comparison: Two Personal Writers",
+        instruction: "Compare two personal writers you have read or studied — one Australian, one from elsewhere. Write a paragraph (8–12 sentences) on each, discussing their voice, their subject matter, and one technique you could borrow from each.",
+        parentTip: "Comparative reading is one of the best ways to understand how craft works. By placing two writers side by side, differences in voice, structure, and technique become visible that would be invisible if reading each in isolation.",
+        prompts: [
+          { text: "Writer 1 (Australian):", type: "box" },
+          { text: "Writer 2 (International):", type: "box" },
+          {
+            text: "What could these two writers learn from each other?",
+            type: "lines",
+            lines: 3,
+          },
+        ],
+      },
+      // 92
+      {
+        type: "matching",
+        title: "Personal Writing Awards and Platforms in Australia",
+        instruction: "Match each Australian literary award or platform to its description.",
+        left: [
+          "Miles Franklin Literary Award",
+          "Meanjin",
+          "Vogel Award",
+          "Overland",
+          "Kill Your Darlings",
+        ],
+        right: [
+          "Online magazine with a strong tradition of publishing personal essays and memoir",
+          "Annual prize for unpublished manuscripts by writers under 35",
+          "Australia's most prestigious literary award for published fiction and memoir",
+          "One of Australia's oldest literary journals, publishing essays, criticism, and memoir since 1940",
+          "Progressive literary journal that has published personal writing on politics, culture, and identity since 1954",
+        ],
+      },
+      // 93
+      {
+        type: "open-response",
+        title: "A Letter You Will Not Send",
+        instruction: "Write a personal essay in the form of a letter to someone — a person from your past, a future version of yourself, or someone you have never met. The letter form gives personal writing a built-in addressee and intimacy. Aim for 200–300 words.",
+        parentTip: "The epistolary essay (essay in letter form) is a time-honoured form. It creates intimacy and directness. Mary Karr, James Baldwin, and many others have used it. The fact that the letter will not be sent frees the student to be more honest than they might otherwise be.",
+        prompts: [
+          { text: "Your letter essay:", type: "box" },
+          {
+            text: "What does the letter form allow you to do that straight personal essay would not?",
+            type: "lines",
+            lines: 3,
+          },
+        ],
+      },
+      // 94
+      {
+        type: "multiple-choice",
+        title: "The Purpose of Personal Writing",
+        instruction: "Choose the best answer for each question.",
+        questions: [
+          {
+            prompt: "Which of the following best describes the purpose of personal writing at its highest level?",
+            options: [
+              "To entertain readers with funny stories",
+              "To create a permanent record of events",
+              "To think in public — to use personal experience as a lens through which to understand something larger about human experience",
+              "To express negative emotions safely",
+            ],
+            answer: "To think in public — to use personal experience as a lens through which to understand something larger about human experience",
+          },
+          {
+            prompt: "Why do universities and employers value the ability to write well personally and reflectively?",
+            options: [
+              "Because it demonstrates intelligence",
+              "Because it requires and develops self-knowledge, critical thinking, and the capacity to communicate complex experience clearly",
+              "Because it is required for all professional jobs",
+              "Because it shows creativity",
+            ],
+            answer: "Because it requires and develops self-knowledge, critical thinking, and the capacity to communicate complex experience clearly",
+          },
+        ],
+      },
+      // 95
+      {
+        type: "open-response",
+        title: "Your Writing Practice: A Manifesto",
+        instruction: "Write a short personal manifesto (150–200 words) about your writing practice and values. What do you want to write about? What kind of writer do you want to be? What do you believe good writing should do? This does not need to be polished — it needs to be true.",
+        parentTip: "A writing manifesto is a declaration of intent and values. It helps a young writer understand what they care about and what they are reaching for. It can also be a document they return to and revise as they develop. Encourage honesty over polish.",
+        prompts: [
+          { text: "Your writing manifesto:", type: "box" },
+        ],
+      },
+      // 96
+      {
+        type: "home-activity",
+        title: "Beyond the Worksheet: Personal Writing in the World",
+        instruction: "Choose one or more of the following activities to extend your personal writing practice beyond this worksheet.",
+        parentTip: "Personal writing develops best when practised regularly and when connected to real reading. These activities connect the worksheet work to ongoing practice and the wider world of Australian and international personal writing.",
+        suggestions: [
+          "Read a memoir or personal essay collection by an Australian writer. Suggestions: Tim Winton's Island Home, Sally Morgan's My Place, Helen Garner's This House of Grief, or essays from Meanjin magazine (meanjin.com.au).",
+          "Start a writing journal. Commit to writing at least 10 minutes a day for one week — observations, questions, beginnings. Not for anyone else to read.",
+          "Submit a personal essay to a youth writing competition. Australian options include the Writing Australia Unpublished Manuscript Award and various state-based competitions.",
+          "Read one personal essay aloud to a family member or friend. Notice what sounds different when heard rather than read. Revise at least one sentence based on hearing it.",
+          "Interview a family member about a period of their life you know little about. Take notes. Then write a scene or vignette based on what they told you — this is the beginning of oral history memoir.",
+        ],
+      },
+      // 97
+      {
+        type: "open-response",
+        title: "Final Reflection: What Have You Learned?",
+        instruction: "Write a reflective response (150–200 words) to the following question: What is the most important thing you have learned about personal writing from this worksheet — not about techniques or forms, but about the act of writing personally?",
+        parentTip: "This final reflection asks your student to move beyond craft knowledge to something more personal and philosophical. The best answers will be specific — they will name one thing, one realisation, rather than listing everything covered.",
+        prompts: [
+          { text: "Your reflection:", type: "box" },
+        ],
+      },
+      // 98
+      {
+        type: "true-false",
+        title: "Final Review: Personal Writing Essentials",
+        instruction: "Mark each statement as true or false.",
+        statements: [
+          { text: "Personal writing at its best does more than document experience — it illuminates something true about human experience.", answer: true },
+          { text: "The only purpose of reflection in personal writing is to tell the reader what lesson was learned.", answer: false },
+          { text: "A personal essay can have a political or cultural dimension without losing its personal quality.", answer: true },
+          { text: "Revision is optional in personal writing because the first draft should always be authentic.", answer: false },
+          { text: "The 'white space' between sections in a fragmented essay is dead space that adds nothing.", answer: false },
+          { text: "A personal essay about a very specific, local experience can have universal resonance.", answer: true },
+        ],
+      },
+      // 99
+      {
+        type: "open-response",
+        title: "Next Steps: Your Personal Writing Project",
+        instruction: "Identify your next personal writing project. It might be a complete personal essay, a chapter of a memoir, a series of vignettes, or a lyric essay. Describe it briefly and write the first sentence — right now, without editing.",
+        parentTip: "Beginning is the hardest part. By having your student write the first sentence of their next project at the end of this worksheet, you create continuity — the next project has already started. This reduces the 'blank page' problem considerably.",
+        prompts: [
+          { text: "Describe your next project:", type: "lines", lines: 4 },
+          { text: "The first sentence (write it now, without editing):", type: "lines", lines: 2 },
+        ],
+      },
+      // 100
+      {
+        type: "spark",
+        title: "Spark: Write Your Life",
+        content: "Every life contains enough material for a thousand essays. Your ordinary days, your specific loves and losses, your observations at bus stops and kitchen tables, your half-understood memories, your unanswered questions — all of this is material. The poet Muriel Rukeyser wrote: 'The universe is made of stories, not atoms.' You are a universe. Write your life.",
+      },
     ],
     nextSteps: [
       "Complete a full personal essay using the scene and reflection you developed in this worksheet.",
       "Read a personal essay by an Australian author — Tim Winton's essays in Island Home are a strong choice.",
+      "Start a writing journal and commit to regular short entries for one month.",
+      "Submit your best personal essay to a youth writing competition.",
     ],
   },
 
