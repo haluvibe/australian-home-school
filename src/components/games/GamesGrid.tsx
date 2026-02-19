@@ -368,6 +368,17 @@ const games: GameEntry[] = [
     emoji: "📬",
     bgGradient: "from-sky-700 to-blue-900",
   },
+  {
+    slug: "phonics-blaster",
+    title: "Phonics Blaster",
+    description: "Pilot a spaceship and switch between blend/digraph weapons — SH, CH, TH, BL — to complete word fragments drifting through space. Battle bosses across 6 worlds from single blends to chaos mode!",
+    subject: "English",
+    subjectColour: "text-sage-dark",
+    yearLevels: ["Year 1", "Year 2"],
+    skills: ["Blends", "Digraphs", "Phonics", "Word building"],
+    emoji: "🚀",
+    bgGradient: "from-violet-950 to-indigo-950",
+  },
 ];
 
 export default function GamesGrid() {
