@@ -58,7 +58,7 @@ export default function GameShell({ gameName, children }: GameShellProps) {
   return (
     <div
       ref={containerRef}
-      style={{ height: isFullscreen ? "100vh" : "calc(100vh - 72px)" }}
+      style={{ height: "100vh" }}
       className="w-full bg-slate-900"
     >
       {!launched ? (
