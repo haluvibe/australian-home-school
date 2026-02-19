@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import GamePageClient from "@/components/games/GamePageClient";
+import BubbleMathLabGame from "@/components/games/BubbleMathLabGame";
 
 export const metadata: Metadata = {
   title: "Bubble Math Lab",
@@ -14,5 +14,5 @@ export const metadata: Metadata = {
 };
 
 export default function BubbleMathLabPage() {
-  return <GamePageClient gameId="bubble-math-lab" />;
+  return <BubbleMathLabGame />;
 }

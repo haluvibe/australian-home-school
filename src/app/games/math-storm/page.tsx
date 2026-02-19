@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
-import GameShell from "@/components/games/GameShell";
-import MathStorm from "@/components/games/MathStorm";
+import MathStormGame from "@/components/games/MathStormGame";
 
 export const metadata: Metadata = {
   title: "MathStorm: Number Squadron",
@@ -15,9 +14,5 @@ export const metadata: Metadata = {
 };
 
 export default function MathStormPage() {
-  return (
-    <GameShell gameName="MathStorm: Number Squadron">
-      {(onExit) => <MathStorm onExit={onExit} />}
-    </GameShell>
-  );
+  return <MathStormGame />;
 }
