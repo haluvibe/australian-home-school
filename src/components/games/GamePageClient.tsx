@@ -7,6 +7,13 @@ import ShapeShadows from "@/components/games/ShapeShadows";
 import SkipCountSurf from "@/components/games/SkipCountSurf";
 import PatternPirates from "@/components/games/PatternPirates";
 import CritterCompare from "@/components/games/CritterCompare";
+import NumberBalloons from "@/components/games/NumberBalloons";
+import DotDash from "@/components/games/DotDash";
+import MeasurementKitchen from "@/components/games/MeasurementKitchen";
+import SizeSafari from "@/components/games/SizeSafari";
+import ClockworkCastle from "@/components/games/ClockworkCastle";
+import PositionPlayground from "@/components/games/PositionPlayground";
+import DataDetective from "@/components/games/DataDetective";
 
 type GameId =
   | "bubble-math-lab"
@@ -14,7 +21,14 @@ type GameId =
   | "shape-shadows"
   | "skip-count-surf"
   | "pattern-pirates"
-  | "critter-compare";
+  | "critter-compare"
+  | "number-balloons"
+  | "dot-dash"
+  | "measurement-kitchen"
+  | "size-safari"
+  | "clockwork-castle"
+  | "position-playground"
+  | "data-detective";
 
 const GAME_NAMES: Record<GameId, string> = {
   "bubble-math-lab": "Bubble Math Lab",
@@ -23,6 +37,13 @@ const GAME_NAMES: Record<GameId, string> = {
   "skip-count-surf": "Skip Count Surf",
   "pattern-pirates": "Pattern Pirates",
   "critter-compare": "Critter Compare",
+  "number-balloons": "Number Balloons",
+  "dot-dash": "Dot Dash",
+  "measurement-kitchen": "Measurement Kitchen",
+  "size-safari": "Size Safari",
+  "clockwork-castle": "Clockwork Castle",
+  "position-playground": "Position Playground",
+  "data-detective": "Data Detective",
 };
 
 function GameComponent({ gameId, onExit }: { gameId: GameId; onExit: () => void }) {
@@ -39,6 +60,20 @@ function GameComponent({ gameId, onExit }: { gameId: GameId; onExit: () => void 
       return <PatternPirates onExit={onExit} />;
     case "critter-compare":
       return <CritterCompare onExit={onExit} />;
+    case "number-balloons":
+      return <NumberBalloons onExit={onExit} />;
+    case "dot-dash":
+      return <DotDash onExit={onExit} />;
+    case "measurement-kitchen":
+      return <MeasurementKitchen onExit={onExit} />;
+    case "size-safari":
+      return <SizeSafari onExit={onExit} />;
+    case "clockwork-castle":
+      return <ClockworkCastle onExit={onExit} />;
+    case "position-playground":
+      return <PositionPlayground onExit={onExit} />;
+    case "data-detective":
+      return <DataDetective onExit={onExit} />;
   }
 }
 

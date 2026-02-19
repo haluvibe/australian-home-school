@@ -38,6 +38,47 @@ export default function GamesPage() {
           <GamesGrid />
         </div>
       </section>
+
+      {/* Feedback actions */}
+      <section className="border-t border-charcoal/5 bg-warm-white px-4 py-12 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-3xl text-center">
+          <h2 className="font-display mb-2 text-2xl font-bold tracking-tight text-charcoal">
+            Help us make games better
+          </h2>
+          <p className="mb-8 text-charcoal-light">
+            Got an idea? Found a bug? We&apos;d love to hear from you.
+          </p>
+          <div className="flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
+            <a
+              href="https://ainativeschool.featurebase.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-full bg-terracotta px-6 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-terracotta-dark"
+            >
+              <span>💡</span>
+              Request a Game
+            </a>
+            <a
+              href="https://ainativeschool.featurebase.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-full border border-charcoal/15 bg-white px-6 py-2.5 text-sm font-semibold text-charcoal transition-colors hover:bg-sand/30"
+            >
+              <span>🐛</span>
+              Report an Issue
+            </a>
+            <a
+              href="https://ainativeschool.featurebase.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-full border border-charcoal/15 bg-white px-6 py-2.5 text-sm font-semibold text-charcoal transition-colors hover:bg-sand/30"
+            >
+              <span>✨</span>
+              Suggest an Improvement
+            </a>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
