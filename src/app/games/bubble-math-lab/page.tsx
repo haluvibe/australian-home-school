@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import GameShell from "@/components/games/GameShell";
 import BubbleMathLab from "@/components/games/BubbleMathLab";
 
 export const metadata: Metadata = {
@@ -14,5 +15,9 @@ export const metadata: Metadata = {
 };
 
 export default function BubbleMathLabPage() {
-  return <BubbleMathLab />;
+  return (
+    <GameShell gameName="Bubble Math Lab">
+      {(onExit) => <BubbleMathLab onExit={onExit} />}
+    </GameShell>
+  );
 }

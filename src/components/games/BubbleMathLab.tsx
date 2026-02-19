@@ -94,7 +94,11 @@ type GameScreen = 'intro' | 'playing' | 'complete';
 let bubbleIdCounter = 0;
 const getNewId = (): number => ++bubbleIdCounter;
 
-export default function BubbleMathLab() {
+interface BubbleMathLabProps {
+  onExit?: () => void;
+}
+
+export default function BubbleMathLab({ onExit }: BubbleMathLabProps = {}) {
   const [gameState, setGameState] = useState<GameScreen>('intro');
   const [bubbles, setBubbles] = useState<Bubble[]>([]);
   const [targets, setTargets] = useState<Target[]>([]);
@@ -609,7 +613,7 @@ export default function BubbleMathLab() {
             </div>
             <div className="complete-buttons">
               <button className="next-btn" onClick={nextLevel}>Level {level + 1} →</button>
-              <button className="menu-btn" onClick={() => setGameState('intro')}>Main Menu</button>
+              <button className="menu-btn" onClick={() => onExit ? onExit() : setGameState('intro')}>Main Menu</button>
             </div>
           </div>
         </div>
@@ -623,7 +627,7 @@ export default function BubbleMathLab() {
       <div className="game-screen">
         <div className="game-header">
           <div className="header-left">
-            <button className="back-btn" onClick={() => setGameState('intro')}>←</button>
+            <button className="back-btn" onClick={() => onExit ? onExit() : setGameState('intro')}>←</button>
             <div className="level-badge">Level {level}</div>
           </div>
           <div className="header-center">
@@ -765,7 +769,7 @@ const styles = `
 
   .bubble-lab {
     width: 100%;
-    height: calc(100vh - 72px);
+    height: 100%;
     font-family: 'Nunito', sans-serif;
     overflow: hidden;
     background: linear-gradient(180deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
