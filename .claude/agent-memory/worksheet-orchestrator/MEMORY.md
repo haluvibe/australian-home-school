@@ -1,7 +1,8 @@
 # Worksheet Orchestrator Memory
 
 ## Last Session: 2026-02-19
-All 8 Foundation English worksheets now at 100 activities each. File compiles clean (4966 lines).
+All 8 Foundation English worksheets at 100 activities each. File compiles clean (4966 lines).
+All 8 Year 1 English worksheets at 100 activities each. File compiles clean (2236 lines).
 
 ## Activity Count Audit (2026-02-19)
 
@@ -24,7 +25,7 @@ All 8 Foundation English worksheets now at 100 activities each. File compiles cl
 | Year Level | Worksheets | Completed | Remaining | Status |
 |---|---|---|---|---|
 | Foundation | 8 | 8 (ALL COMPLETE) | 0 | DONE |
-| Year 1 | 8 | 1 (blends-and-digraphs) | 7 | In progress |
+| Year 1 | 8 | 8 (ALL COMPLETE) | 0 | DONE |
 | Year 2 | 7 | 0 | 7 | Not started |
 | Year 3 | 7 | 0 | 7 | Not started |
 | Year 4 | 8 | 0 | 8 | Not started |

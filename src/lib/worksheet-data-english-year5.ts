@@ -71,11 +71,12 @@ export const year5EnglishWorksheets: WorksheetItem[] = [
       ],
     },
     activities: [
+      // ── FOUNDATIONAL 1–20 ──────────────────────────────────────────────────
+      // 1
       {
         type: "matching" as const,
         title: "Match the Figurative Language Type",
-        instruction:
-          "Draw a line to match each example with the correct type of figurative language.",
+        instruction: "Draw a line to match each example with the correct type of figurative language.",
         left: [
           "I have told you a million times.",
           "The trees danced in the breeze.",
@@ -84,109 +85,1217 @@ export const year5EnglishWorksheets: WorksheetItem[] = [
           "Break a leg!",
           "The ocean roared its fury.",
         ],
-        right: [
-          "Simile",
-          "Idiom",
-          "Hyperbole",
-          "Personification",
-          "Idiom",
-          "Personification",
+        right: ["Hyperbole", "Personification", "Idiom", "Simile", "Idiom", "Personification"],
+      },
+      // 2
+      {
+        type: "circle-correct" as const,
+        title: "Name That Figurative Language (Set A)",
+        instruction: "Read each sentence. Circle the correct type of figurative language.",
+        parentTip: "Ask your child to explain the literal meaning and the intended meaning for each example before circling.",
+        questions: [
+          { prompt: "The thunder clapped its hands with delight.", options: ["Simile", "Personification", "Hyperbole", "Idiom"] },
+          { prompt: "I am so tired I could sleep for a thousand years.", options: ["Metaphor", "Idiom", "Hyperbole", "Simile"] },
+          { prompt: "Her laughter was music to his ears.", options: ["Personification", "Idiom", "Simile", "Hyperbole"] },
+          { prompt: "The new student was a fish out of water.", options: ["Hyperbole", "Personification", "Idiom", "Simile"] },
+          { prompt: "His voice was as rough as gravel.", options: ["Metaphor", "Simile", "Idiom", "Personification"] },
+          { prompt: "The stars winked at us through the clouds.", options: ["Simile", "Hyperbole", "Personification", "Idiom"] },
         ],
       },
+      // 3
+      {
+        type: "true-false" as const,
+        title: "True or False: Figurative Language Basics",
+        instruction: "Circle True or False for each statement.",
+        statements: [
+          { text: "An idiom means exactly what the words say.", answer: false },
+          { text: "Personification gives human qualities to non-human things.", answer: true },
+          { text: "Hyperbole is a deliberate exaggeration for effect.", answer: true },
+          { text: "A simile compares two things using the word 'is' directly.", answer: false },
+          { text: "The phrase 'bite the bullet' is an example of an idiom.", answer: true },
+          { text: "Metaphor and simile both compare things, but simile uses 'like' or 'as'.", answer: true },
+        ],
+      },
+      // 4
+      {
+        type: "sorting" as const,
+        title: "Sort by Figurative Language Type (Set A)",
+        instruction: "Sort each phrase into the correct column.",
+        columns: ["Idiom", "Hyperbole", "Personification", "Simile"],
+        items: [
+          { label: "The wind whispered secrets." },
+          { label: "I have a mountain of homework." },
+          { label: "She is as brave as a lion." },
+          { label: "It cost me an arm and a leg." },
+          { label: "The sun smiled down on us." },
+          { label: "I am so hungry I could eat a horse." },
+          { label: "His smile was like sunshine." },
+          { label: "Hit the nail on the head." },
+        ],
+      },
+      // 5
+      {
+        type: "fill-in-blank" as const,
+        title: "Complete the Figurative Language",
+        instruction: "Fill in the blank to complete each example of figurative language. Use the word bank: danced / mouse / million / walk / spluttered.",
+        parentTip: "Encourage your child to read the whole sentence aloud before choosing the word, and think about what image or effect the author is creating.",
+        sentences: [
+          { text: "The rain _______ on the rooftop all night long. (personification)", blanks: ["danced"] },
+          { text: "She was as quiet as a _______. (simile)", blanks: ["mouse"] },
+          { text: "I have told you a _______ times! (hyperbole)", blanks: ["million"] },
+          { text: "Learning a new skill takes time — you can't run before you _______. (idiom)", blanks: ["walk"] },
+          { text: "The old car _______ to life with a loud cough. (personification)", blanks: ["spluttered"] },
+        ],
+      },
+      // 6
+      {
+        type: "multiple-choice" as const,
+        title: "What Does This Idiom Mean?",
+        instruction: "Choose the correct meaning of each idiom.",
+        questions: [
+          { prompt: "She decided to bite the bullet and get the injection.", options: ["To chew something hard", "To endure something painful bravely", "To be very hungry", "To run away quickly"], answer: "To endure something painful bravely" },
+          { prompt: "The project is back to square one.", options: ["Starting over from the beginning", "Moving to a new location", "Finishing on time", "Working in a square room"], answer: "Starting over from the beginning" },
+          { prompt: "He let the cat out of the bag.", options: ["He found a lost cat", "He revealed a secret", "He opened a bag of food", "He was very untidy"], answer: "He revealed a secret" },
+          { prompt: "Don't judge a book by its cover.", options: ["Libraries are important", "Do not read books", "Do not judge things by their appearance", "Books have attractive covers"], answer: "Do not judge things by their appearance" },
+        ],
+      },
+      // 7
       {
         type: "open-response" as const,
-        title: "Crack the Root Word Code",
-        instruction:
-          "Use the meaning of the root word to work out the meaning of each English word. Then write one more word that uses the same root.",
+        title: "Crack the Root Word Code (Set A)",
+        instruction: "Use the root word meaning to work out the meaning of each English word. Write one more word that uses the same root.",
         prompts: [
-          {
-            text: "Root: PORT (to carry)\nWord: transport\nMeaning:                          Another port word:",
-            type: "lines",
-            lines: 2,
-          },
-          {
-            text: "Root: AUD (to hear)\nWord: auditorium\nMeaning:                          Another aud word:",
-            type: "lines",
-            lines: 2,
-          },
-          {
-            text: "Root: GRAPH (to write)\nWord: biography\nMeaning:                          Another graph word:",
-            type: "lines",
-            lines: 2,
-          },
-          {
-            text: "Root: DICT (to say or tell)\nWord: predict\nMeaning:                          Another dict word:",
-            type: "lines",
-            lines: 2,
-          },
+          { text: "Root: PORT (to carry)\nWord: transport\nMeaning: _______________  Another port word: _______________", type: "lines", lines: 2 },
+          { text: "Root: AUD (to hear)\nWord: auditorium\nMeaning: _______________  Another aud word: _______________", type: "lines", lines: 2 },
+          { text: "Root: GRAPH (to write)\nWord: biography\nMeaning: _______________  Another graph word: _______________", type: "lines", lines: 2 },
+          { text: "Root: DICT (to say or tell)\nWord: predict\nMeaning: _______________  Another dict word: _______________", type: "lines", lines: 2 },
         ],
       },
+      // 8
+      {
+        type: "matching" as const,
+        title: "Match the Root to Its Meaning",
+        instruction: "Draw a line from each Latin or Greek root to its meaning.",
+        parentTip: "Knowing just 20 common roots unlocks the meaning of hundreds of English words. Keep a root word notebook as an ongoing vocabulary tool.",
+        left: ["port", "aud", "graph", "dict", "vis", "scrib / script"],
+        right: ["to write", "to carry", "to see", "to hear", "to write / written", "to say or tell"],
+      },
+      // 9
+      {
+        type: "sorting" as const,
+        title: "Sort the Root Word Families",
+        instruction: "Sort each word into the column that matches its Latin or Greek root.",
+        parentTip: "If your child is unsure, encourage them to say the word aloud and identify the part that sounds like the root. Connecting the sound of a root to its meaning is a powerful independent vocabulary strategy.",
+        columns: ["PORT (carry)", "AUD (hear)", "GRAPH (write)", "DICT (say or tell)"],
+        items: [
+          { label: "export" }, { label: "audience" }, { label: "autograph" }, { label: "dictate" },
+          { label: "portable" }, { label: "audible" }, { label: "paragraph" }, { label: "contradict" },
+          { label: "import" }, { label: "inaudible" }, { label: "photograph" }, { label: "predict" },
+        ],
+      },
+      // 10
+      {
+        type: "fill-in-blank" as const,
+        title: "Root Word Fill-In (Set A)",
+        instruction: "Use your knowledge of roots to fill in the missing word.",
+        sentences: [
+          { text: "A device that makes sound louder (aud + related parts) is called an _______.", blanks: ["amplifier"] },
+          { text: "To _______ a word means to carry it across languages (trans + port).", blanks: ["transport"] },
+          { text: "A _______ is a written description of someone's life (bio + graph + y).", blanks: ["biography"] },
+          { text: "A _______ is a device for seeing far away (tele + scope).", blanks: ["telescope"] },
+        ],
+      },
+      // 11
+      {
+        type: "circle-correct" as const,
+        title: "Simile or Metaphor?",
+        instruction: "Circle whether each sentence is a simile or a metaphor.",
+        questions: [
+          { prompt: "Life is a rollercoaster.", options: ["Simile", "Metaphor"] },
+          { prompt: "She ran like the wind.", options: ["Simile", "Metaphor"] },
+          { prompt: "The classroom was a zoo.", options: ["Simile", "Metaphor"] },
+          { prompt: "His eyes were as blue as the ocean.", options: ["Simile", "Metaphor"] },
+          { prompt: "Time is a thief.", options: ["Simile", "Metaphor"] },
+          { prompt: "The baby's skin was like velvet.", options: ["Simile", "Metaphor"] },
+        ],
+      },
+      // 12
+      {
+        type: "multiple-choice" as const,
+        title: "Word Origins: Which Language?",
+        instruction: "Each word came into English from another language. Choose the correct origin.",
+        parentTip: "Exploring word origins across languages helps children understand that English is a rich mix of many cultures and histories.",
+        questions: [
+          { prompt: "The word 'disaster' (meaning terrible event) comes from:", options: ["Latin — bad star", "French — bad weather", "Greek — falling rock", "Italian — dark day"], answer: "Latin — bad star" },
+          { prompt: "The word 'kindergarten' (a class for young children) comes from:", options: ["French", "Spanish", "German", "Japanese"], answer: "German" },
+          { prompt: "The word 'ballet' (a type of dance) comes from:", options: ["Italian", "French", "Latin", "Greek"], answer: "French" },
+          { prompt: "The word 'typhoon' (a tropical storm) comes from:", options: ["Arabic", "Chinese / Greek", "French", "Spanish"], answer: "Chinese / Greek" },
+        ],
+      },
+      // 13
       {
         type: "open-response" as const,
-        title: "Write with Figurative Language",
-        instruction:
-          "Write a short paragraph (4 to 5 sentences) about a storm, a sporting event or a busy day. Include at least one idiom, one example of hyperbole and one example of personification. Label each in the margin.",
+        title: "Write Your Own Figurative Language",
+        instruction: "Write one original example of each type of figurative language. Make each one vivid and interesting.",
+        prompts: [
+          { text: "Simile (comparing using 'like' or 'as'):", type: "lines", lines: 2 },
+          { text: "Metaphor (direct comparison):", type: "lines", lines: 2 },
+          { text: "Personification (giving human qualities to a non-human thing):", type: "lines", lines: 2 },
+          { text: "Hyperbole (deliberate exaggeration):", type: "lines", lines: 2 },
+          { text: "Idiom (a phrase with a non-literal meaning):", type: "lines", lines: 2 },
+        ],
+      },
+      // 14
+      {
+        type: "sequence" as const,
+        title: "Build a Word Family from a Root",
+        instruction: "Each row shows a root growing into a word family. Read the sequence from simplest to most complex.",
+        items: [
+          { label: "vis → visible → visibility → visually → visualise" },
+          { label: "port → portable → transport → transportation → deportation" },
+          { label: "graph → graphic → photograph → photography → photographer" },
+        ],
+      },
+      // 15 — TIP
+      {
+        type: "tip" as const,
+        title: "Tip: How to Spot Figurative Language",
+        content: "Ask yourself: Could this sentence be literally true? If the answer is no, it is probably figurative. 'The wind whispered' — can wind literally whisper? No — so it is personification. 'She ran like the wind' — is she actually wind? No — so it is a simile. Always ask: What image does this create, and why did the author choose to say it this way?",
+      },
+      // 16
+      {
+        type: "true-false" as const,
+        title: "True or False: Root Words",
+        instruction: "Circle True or False for each statement about root words.",
+        statements: [
+          { text: "The root 'port' means to hear.", answer: false },
+          { text: "Knowing a root word can help you work out the meaning of unfamiliar words.", answer: true },
+          { text: "The word 'export' contains the root 'port'.", answer: true },
+          { text: "Latin and Greek roots only appear in science words.", answer: false },
+          { text: "The root 'aud' appears in the word 'audible'.", answer: true },
+          { text: "Etymology is the study of the history of words.", answer: true },
+        ],
+      },
+      // 17
+      {
+        type: "fill-in-blank" as const,
+        title: "Figurative Language in Context",
+        instruction: "Fill in the blank with the correct figurative language technique from the word bank: idiom / simile / metaphor / personification / hyperbole.",
+        parentTip: "Encourage your child to identify the figurative language first, then check by asking what literal and intended meanings are.",
+        sentences: [
+          { text: "The phrase 'over the moon' is an _______.", blanks: ["idiom"] },
+          { text: "'She sings like an angel' is a _______.", blanks: ["simile"] },
+          { text: "'The classroom was a jungle' is a _______.", blanks: ["metaphor"] },
+          { text: "'The fire devoured the building' is _______.", blanks: ["personification"] },
+          { text: "'I have a billion things to do today' is _______.", blanks: ["hyperbole"] },
+        ],
+      },
+      // 18
+      {
+        type: "sorting" as const,
+        title: "Sort: Literal or Figurative?",
+        instruction: "Sort each phrase into the correct column.",
+        columns: ["Literal meaning", "Figurative meaning"],
+        items: [
+          { label: "The dog barked loudly." },
+          { label: "She has a heart of gold." },
+          { label: "It is raining heavily." },
+          { label: "It is raining cats and dogs." },
+          { label: "The sun set behind the hills." },
+          { label: "The sun kissed the horizon." },
+          { label: "He ate three sandwiches." },
+          { label: "He ate a mountain of food." },
+        ],
+      },
+      // 19
+      {
+        type: "home-activity" as const,
+        title: "Figurative Language Spotter",
+        instruction: "Try these activities over the next few days to practise finding figurative language in the real world.",
+        parentTip: "Point out figurative language in books, songs and conversations as you come across them — normalising the observation makes it a habit rather than a task.",
+        suggestions: [
+          "Read a chapter of any novel and use sticky notes to mark every example of figurative language you find. Count how many of each type the author uses.",
+          "Listen to a song and write down all the figurative language in the lyrics. Identify the technique used for each one.",
+          "Look at three advertisements — on TV, in a magazine or online. Write down any figurative language used and explain the effect it has on the audience.",
+        ],
+      },
+      // 20 — SPARK
+      {
+        type: "spark" as const,
+        title: "Spark: The Word Detective Challenge",
+        content: "Choose five words from your current reading book that you have never seen before. Use an etymology dictionary (etymonline.com is free) to find where each word came from. Can you find a root that links any of them to other words you know? Create a word detective card for each: word, origin, root meaning, and two related words. Display them somewhere you will see them every day this week.",
+      },
+      // ── DEVELOPING 21–50 ──────────────────────────────────────────────────
+      // 21
+      {
+        type: "multiple-choice" as const,
+        title: "Greek and Latin Roots (Set A)",
+        instruction: "Choose the correct meaning for each root.",
+        parentTip: "These roots appear in science, history and maths vocabulary too — connecting them across subjects reinforces learning.",
+        questions: [
+          { prompt: "What does the Greek root 'tele' mean?", options: ["Small", "Far", "Fast", "Under"], answer: "Far" },
+          { prompt: "What does the Latin root 'terr' mean?", options: ["Water", "Sky", "Earth", "Fire"], answer: "Earth" },
+          { prompt: "What does the Greek root 'bio' mean?", options: ["Book", "Life", "Light", "Stone"], answer: "Life" },
+          { prompt: "What does the Latin root 'aqua' mean?", options: ["Earth", "Fire", "Air", "Water"], answer: "Water" },
+        ],
+      },
+      // 22
+      {
+        type: "sorting" as const,
+        title: "Sort Words by Root: TERR, BIO, AQUA, TELE",
+        instruction: "Sort each word into the column that matches its root.",
+        columns: ["TERR (earth)", "BIO (life)", "AQUA (water)", "TELE (far)"],
+        items: [
+          { label: "territory" }, { label: "biology" }, { label: "aquarium" }, { label: "telescope" },
+          { label: "terrain" }, { label: "biome" }, { label: "aquatic" }, { label: "television" },
+          { label: "terrarium" }, { label: "biography" }, { label: "aqueduct" }, { label: "telephone" },
+        ],
+      },
+      // 23
+      {
+        type: "fill-in-blank" as const,
+        title: "Complete the Sentence with the Right Root Word",
+        instruction: "Use the root clues to fill in the correct word.",
+        sentences: [
+          { text: "A _______ (terra + rium) is a glass container for growing plants or keeping small animals.", blanks: ["terrarium"] },
+          { text: "An _______ (aqua + tic) animal lives in water.", blanks: ["aquatic"] },
+          { text: "A _______ (tele + phone) lets you communicate over long distances.", blanks: ["telephone"] },
+          { text: "_______ (bio + logy) is the study of living things.", blanks: ["Biology"] },
+        ],
+      },
+      // 24
+      {
+        type: "circle-correct" as const,
+        title: "Choose the More Effective Figurative Language",
+        instruction: "Read each pair of sentences. Circle the one that uses figurative language more effectively.",
+        questions: [
+          { prompt: "Which is more vivid?", options: ["The wind was strong.", "The wind howled like a wolf at midnight."] },
+          { prompt: "Which is more effective?", options: ["She was very happy.", "She was over the moon."] },
+          { prompt: "Which is more powerful?", options: ["The crowd was noisy.", "The crowd roared like thunder, shaking the very ground."] },
+          { prompt: "Which is stronger?", options: ["He was very tired.", "He was so tired he could have slept for a century."] },
+        ],
+      },
+      // 25
+      {
+        type: "open-response" as const,
+        title: "Explain the Figurative Language",
+        instruction: "For each sentence, explain what the figurative language means and what effect it creates for the reader.",
+        parentTip: "Explaining the effect — not just the label — shows deeper understanding. Ask: Does it create a feeling? A picture? A sense of urgency?",
+        prompts: [
+          { text: "Sentence: 'The deadline was a ticking time bomb.'\nType: _______________\nMeaning and effect:", type: "lines", lines: 3 },
+          { text: "Sentence: 'She had butterflies in her stomach.'\nType: _______________\nMeaning and effect:", type: "lines", lines: 3 },
+          { text: "Sentence: 'The ancient oak stood like a silent guardian.'\nType: _______________\nMeaning and effect:", type: "lines", lines: 3 },
+        ],
+      },
+      // 26
+      {
+        type: "true-false" as const,
+        title: "True or False: Advanced Figurative Language",
+        instruction: "Circle True or False.",
+        statements: [
+          { text: "A metaphor always uses the word 'like' or 'as'.", answer: false },
+          { text: "Onomatopoeia is when a word sounds like what it describes.", answer: true },
+          { text: "Alliteration is when words in a phrase begin with the same consonant sound.", answer: true },
+          { text: "An extended metaphor is used across only one sentence.", answer: false },
+          { text: "Pathetic fallacy is when weather or nature reflects the mood of a character.", answer: true },
+          { text: "A euphemism is a harsh or offensive way of saying something.", answer: false },
+        ],
+      },
+      // 27
+      {
+        type: "matching" as const,
+        title: "Match the Advanced Figurative Technique",
+        instruction: "Draw a line to match each technique with its correct definition.",
+        parentTip: "These more advanced techniques will appear in literary texts your child reads. Learning the terms helps them discuss and analyse texts with confidence.",
+        left: ["Onomatopoeia", "Alliteration", "Pathetic fallacy", "Euphemism", "Extended metaphor", "Oxymoron"],
+        right: [
+          "A polite or indirect way of saying something unpleasant",
+          "A word that sounds like the thing it describes (buzz, crash)",
+          "Two contradictory words used together (deafening silence)",
+          "When the weather or nature reflects a character's emotions",
+          "Words in a group that start with the same sound",
+          "A metaphor developed over several lines or a whole text",
+        ],
+      },
+      // 28
+      {
+        type: "fill-in-blank" as const,
+        title: "Advanced Techniques in Context",
+        instruction: "Identify the figurative technique used in each example.",
+        sentences: [
+          { text: "The bees _______ around the flowers. (Write the onomatopoeia sound word)", blanks: ["buzzed"] },
+          { text: "Peter Piper plucked a peck of peppers. (This is an example of _______)", blanks: ["alliteration"] },
+          { text: "'He passed away peacefully' is a _______ for the word died.", blanks: ["euphemism"] },
+          { text: "The stormy weather matched the character's stormy mood. This is called _______ _______.", blanks: ["pathetic fallacy"] },
+        ],
+      },
+      // 29
+      {
+        type: "open-response" as const,
+        title: "Root Word Spidergram",
+        instruction: "Choose one root from the box: VIS, SCRIB, TERR, BIO. Write the root in the centre, then add six words that contain that root around it. Write a brief meaning for each word.",
+        prompts: [
+          { text: "My chosen root: _______________", type: "lines", lines: 1 },
+          { text: "My spidergram (draw it in the box and label each word with its meaning):", type: "box", lines: 14 },
+        ],
+      },
+      // 30 — TIP
+      {
+        type: "tip" as const,
+        title: "Tip: Using Figurative Language in Your Own Writing",
+        content: "When you write a figurative language technique, always ask: Does this create a clear image? Does it sound natural? Does it fit the mood? A forced or clichéd comparison (as old as the hills) is weaker than a fresh, original one. Challenge yourself to create comparisons that no one has used before — that is what makes writing memorable.",
+      },
+      // 31
+      {
+        type: "circle-correct" as const,
+        title: "Name That Technique (Set B — Advanced)",
+        instruction: "Circle the correct literary technique used in each example.",
+        questions: [
+          { prompt: "The silver snake of the river wound through the valley.", options: ["Simile", "Metaphor", "Onomatopoeia", "Hyperbole"] },
+          { prompt: "Sizzling sausages filled the still summer air.", options: ["Alliteration", "Personification", "Idiom", "Simile"] },
+          { prompt: "The dark clouds gathered as she opened the letter.", options: ["Hyperbole", "Metaphor", "Pathetic fallacy", "Alliteration"] },
+          { prompt: "He was a living legend.", options: ["Idiom", "Oxymoron", "Simile", "Metaphor"] },
+          { prompt: "The thunder crashed and the rain hissed on the roof.", options: ["Alliteration", "Onomatopoeia", "Personification", "Euphemism"] },
+        ],
+      },
+      // 32
+      {
+        type: "sorting" as const,
+        title: "Sort by Language Technique (Set B)",
+        instruction: "Sort each example into the correct column.",
+        columns: ["Alliteration", "Onomatopoeia", "Pathetic fallacy", "Oxymoron"],
+        items: [
+          { label: "The bees buzzed busily." },
+          { label: "The crack of thunder split the air." },
+          { label: "Rain fell as she walked into the empty house." },
+          { label: "A deafening silence filled the room." },
+          { label: "Fierce flames flickered and fell." },
+          { label: "The door creaked open." },
+          { label: "Bright sunshine greeted her happy news." },
+          { label: "The icy warmth of his smile confused her." },
+        ],
+      },
+      // 33
+      {
+        type: "multiple-choice" as const,
+        title: "Prefix and Root Combinations",
+        instruction: "Use your knowledge of prefixes and roots to work out the meaning of each word.",
+        parentTip: "Common prefixes: un- (not), re- (again), pre- (before), sub- (under), inter- (between).",
+        questions: [
+          { prompt: "What does 'submarine' most likely mean? (sub = under, mare = sea)", options: ["An underwater vessel", "A type of sandwich", "A surface ship", "A sea creature"], answer: "An underwater vessel" },
+          { prompt: "What does 'preview' most likely mean? (pre = before, view = see)", options: ["Seeing something after it happens", "Seeing something before it is released", "A very short film", "A type of review"], answer: "Seeing something before it is released" },
+          { prompt: "What does 'interact' mean? (inter = between, act = do)", options: ["To act alone", "To act before others", "To act together or with each other", "To refuse to act"], answer: "To act together or with each other" },
+          { prompt: "What does 'rehydrate' mean? (re = again, hydra = water)", options: ["To dry something out", "To restore water to something", "To study water", "To move across water"], answer: "To restore water to something" },
+        ],
+      },
+      // 34
+      {
+        type: "fill-in-blank" as const,
+        title: "Figurative Language Cloze Passage",
+        instruction: "Fill in the blanks using the word bank to complete this figurative language-rich paragraph. Word bank: treasure chest / danced / fog / escape.",
+        parentTip: "Read the whole passage first before filling in any blanks — the context of surrounding sentences is the best clue.",
+        sentences: [
+          { text: "The old library was a _______ of stories waiting to be discovered.", blanks: ["treasure chest"] },
+          { text: "Dust _______ in the pale light that filtered through the tall windows.", blanks: ["danced"] },
+          { text: "The silence was as thick as _______, wrapping around every shelf.", blanks: ["fog"] },
+          { text: "Every book was a doorway — open one and you could _______ to another world.", blanks: ["escape"] },
+        ],
+      },
+      // 35
+      {
+        type: "open-response" as const,
+        title: "Write with Figurative Language (Set A)",
+        instruction: "Write a short paragraph (4 to 5 sentences) about a storm, a sporting event or a busy day. Include at least one idiom, one example of hyperbole and one example of personification. Label each in the margin.",
         prompts: [
           { text: "My topic:", type: "lines", lines: 1 },
           { text: "My paragraph:", type: "box", lines: 12 },
         ],
       },
+      // 36
       {
-        type: "sorting" as const,
-        title: "Sort the Root Word Families",
-        instruction:
-          "Sort each word into the column that matches its Latin or Greek root. Use the root meanings to help you: PORT (carry), AUD (hear), GRAPH (write), DICT (say or tell).",
-        parentTip:
-          "If your child is unsure, encourage them to say the word aloud and identify the part that sounds like the root. Connecting the sound of a root to its meaning is a powerful independent vocabulary strategy.",
-        columns: ["PORT (carry)", "AUD (hear)", "GRAPH (write)", "DICT (say or tell)"],
-        items: [
-          { label: "export" },
-          { label: "audience" },
-          { label: "autograph" },
-          { label: "dictate" },
-          { label: "portable" },
-          { label: "audible" },
-          { label: "paragraph" },
-          { label: "contradict" },
-          { label: "import" },
-          { label: "inaudible" },
-          { label: "photograph" },
-          { label: "predict" },
+        type: "multiple-choice" as const,
+        title: "Etymology in Action",
+        instruction: "Use your knowledge of roots to choose the most likely meaning of each word.",
+        questions: [
+          { prompt: "What does 'audiology' mean? (aud = hear, -ology = study of)", options: ["Study of music", "Study of hearing", "Study of the ear's structure only", "Study of speech"], answer: "Study of hearing" },
+          { prompt: "What does 'scriptorium' mean? (script = written, -orium = a place for)", options: ["A type of letter", "A room for reading aloud", "A room where writing was done", "A publishing company"], answer: "A room where writing was done" },
+          { prompt: "What does 'geothermal' mean? (geo = earth, therm = heat)", options: ["Heat from the earth", "Cold underground", "The study of rocks", "Movement of tectonic plates"], answer: "Heat from the earth" },
+          { prompt: "What does 'chronology' mean? (chrono = time, -ology = study of)", options: ["Study of colour", "Study of time and the order of events", "Study of ancient clocks", "Study of the future"], answer: "Study of time and the order of events" },
         ],
       },
+      // 37
       {
-        type: "circle-correct" as const,
-        title: "Name That Figurative Language",
-        instruction:
-          "Read each sentence. Circle the type of figurative language it contains.",
-        parentTip:
-          "Ask your child to explain the literal meaning and the intended meaning for each example — this distinction shows whether they have truly grasped the technique rather than just memorised a label.",
+        type: "sorting" as const,
+        title: "Sort: Prefix, Root or Suffix?",
+        instruction: "Sort each word part into the correct column.",
+        columns: ["Prefix (beginning)", "Root (core meaning)", "Suffix (ending)"],
+        items: [
+          { label: "un-" }, { label: "port" }, { label: "-tion" },
+          { label: "pre-" }, { label: "aud" }, { label: "-ment" },
+          { label: "re-" }, { label: "vis" }, { label: "-ful" },
+          { label: "sub-" }, { label: "graph" }, { label: "-ness" },
+        ],
+      },
+      // 38
+      {
+        type: "true-false" as const,
+        title: "True or False: Etymology and Figurative Language",
+        instruction: "Circle True or False.",
+        statements: [
+          { text: "The root 'chron' relates to time.", answer: true },
+          { text: "A suffix comes at the beginning of a word.", answer: false },
+          { text: "The word 'astronomy' contains the root 'astro' meaning star.", answer: true },
+          { text: "Figurative language always makes writing harder to understand.", answer: false },
+          { text: "Alliteration uses repeated vowel sounds at the start of words.", answer: false },
+          { text: "An oxymoron places two contradictory words together.", answer: true },
+        ],
+      },
+      // 39
+      {
+        type: "open-response" as const,
+        title: "Analyse Figurative Language in a Text",
+        instruction: "Find a paragraph in your current reading book that contains at least two examples of figurative language. Copy the paragraph, underline the figurative language, and explain the effect of each example.",
+        parentTip: "If your child struggles to find examples, newspapers, picture books and song lyrics are rich sources of figurative language. Any text will do.",
+        prompts: [
+          { text: "Source (book title and page number):", type: "lines", lines: 1 },
+          { text: "Paragraph (copy here):", type: "box", lines: 6 },
+          { text: "Example 1 — technique and effect:", type: "lines", lines: 3 },
+          { text: "Example 2 — technique and effect:", type: "lines", lines: 3 },
+        ],
+      },
+      // 40 — SPARK
+      {
+        type: "spark" as const,
+        title: "Spark: Etymology Across Languages",
+        content: "English has borrowed words from more than 350 languages. Choose five words that you suspect came from another language — perhaps words related to food, sport, music or science. Research each one using etymonline.com. Create a mini-poster: write each word, its origin language, its original meaning and how that meaning changed in English. What surprised you most?",
+      },
+      // ── DEVELOPING → CONSOLIDATING bridge (41–50) ────────────────────────
+      // 41
+      {
+        type: "fill-in-blank" as const,
+        title: "Greek Roots in Science Vocabulary",
+        instruction: "Use the Greek roots to complete each science term.",
+        parentTip: "Science vocabulary is heavily rooted in Greek and Latin. Learning the roots makes new science words far easier to decode.",
+        sentences: [
+          { text: "The _______ (micro + scope) is used to see very small things.", blanks: ["microscope"] },
+          { text: "_______ (photo + synthesis) is the process by which plants make food from light.", blanks: ["Photosynthesis"] },
+          { text: "The study of living things is called _______ (bio + logy).", blanks: ["biology"] },
+          { text: "A _______ (thermo + meter) measures temperature.", blanks: ["thermometer"] },
+        ],
+      },
+      // 42
+      {
+        type: "multiple-choice" as const,
+        title: "Extended Metaphor: What Is It?",
+        instruction: "Read each passage and answer the question.",
         questions: [
           {
-            prompt: "The thunder clapped its hands with delight.",
-            options: ["Simile", "Personification", "Hyperbole", "Idiom"],
+            prompt: "Life is a journey. We face mountains and valleys, crossroads and dead ends. Sometimes we travel with companions; at other times we must walk alone. What we carry on the journey matters as much as the destination. Which technique is used throughout this passage?",
+            options: ["Alliteration", "Extended metaphor", "Hyperbole", "Personification"],
+            answer: "Extended metaphor",
           },
           {
-            prompt: "I am so tired I could sleep for a thousand years.",
-            options: ["Metaphor", "Idiom", "Hyperbole", "Simile"],
+            prompt: "In an extended metaphor, the comparison is developed across:",
+            options: ["A single word", "One sentence only", "Multiple sentences or a whole text", "A list of similes"],
+            answer: "Multiple sentences or a whole text",
           },
           {
-            prompt: "Her laughter was music to his ears.",
-            options: ["Personification", "Idiom", "Simile", "Hyperbole"],
-          },
-          {
-            prompt: "The new student was a fish out of water.",
-            options: ["Hyperbole", "Personification", "Idiom", "Simile"],
-          },
-          {
-            prompt: "His voice was as rough as gravel.",
-            options: ["Metaphor", "Simile", "Idiom", "Personification"],
-          },
-          {
-            prompt: "The stars winked at us through the clouds.",
-            options: ["Simile", "Hyperbole", "Personification", "Idiom"],
+            prompt: "Which of the following is an example of an extended metaphor?",
+            options: [
+              "She was as fast as a cheetah.",
+              "The school was a jungle — teachers were hunters, tests were traps, and every corridor was a dangerous trail.",
+              "The wind howled.",
+              "He bit the bullet.",
+            ],
+            answer: "The school was a jungle — teachers were hunters, tests were traps, and every corridor was a dangerous trail.",
           },
         ],
+      },
+      // 43
+      {
+        type: "open-response" as const,
+        title: "Write an Extended Metaphor",
+        instruction: "Choose one of the metaphors below and extend it across a full paragraph (5 to 7 sentences). Every sentence should develop the comparison in a new way.",
+        parentTip: "Model an extended metaphor aloud first — for example, 'The classroom is a beehive' — and brainstorm together what else in the classroom could link to the beehive metaphor before your child writes.",
+        prompts: [
+          { text: "Choose a starting metaphor:\n  A) Reading is a journey.\n  B) The mind is a garden.\n  C) Learning is climbing a mountain.\n  D) My own idea: _______________", type: "lines", lines: 1 },
+          { text: "My extended metaphor paragraph:", type: "box", lines: 14 },
+        ],
+      },
+      // 44
+      {
+        type: "sorting" as const,
+        title: "Sort by Level of Formality",
+        instruction: "Idioms and figurative language vary in formality. Sort these expressions from most informal to most formal.",
+        columns: ["Very informal / colloquial", "Neutral / everyday", "Formal / literary"],
+        items: [
+          { label: "It cost a bomb." },
+          { label: "It was expensive." },
+          { label: "The expense was considerable." },
+          { label: "She gave him a piece of her mind." },
+          { label: "She expressed her frustration." },
+          { label: "She articulated her dissatisfaction with measured precision." },
+        ],
+      },
+      // 45 — TIP
+      {
+        type: "tip" as const,
+        title: "Tip: Choosing the Right Figurative Language for Your Audience",
+        content: "Figurative language affects your writing differently depending on your audience. Idioms and informal comparisons suit conversational writing; extended metaphors and literary techniques suit formal essays and creative writing. Always ask: Who am I writing for, and what effect do I want to create? Matching the technique to the context is the mark of a skilled writer.",
+      },
+      // 46
+      {
+        type: "circle-correct" as const,
+        title: "Identify the Effect",
+        instruction: "Read each sentence. Circle the most accurate description of the effect created by the figurative language.",
+        questions: [
+          { prompt: "The abandoned house crouched at the end of the street, watching.", options: ["Creates a sense of warmth and safety", "Creates a sense of menace and unease", "Creates a sense of excitement", "Creates a comical effect"] },
+          { prompt: "She was a ray of sunshine in the darkest room.", options: ["Suggests she was literally glowing", "Suggests she brought happiness and warmth to others", "Suggests she was standing near a window", "Suggests she was very hot"] },
+          { prompt: "His words were daggers, each one perfectly aimed.", options: ["Suggests he was a skilled surgeon", "Suggests his words were literally sharp objects", "Suggests his words were extremely hurtful", "Suggests he was speaking quickly"] },
+          { prompt: "I have told you a million times not to do that.", options: ["Literally means one million repetitions", "Emphasises the speaker's frustration through exaggeration", "Suggests a very long time period", "Is a factual statement about how many times it was said"] },
+        ],
+      },
+      // 47
+      {
+        type: "fill-in-blank" as const,
+        title: "Figurative Language in Advertising",
+        instruction: "Advertisers use figurative language to make slogans memorable. Fill in the technique name for each example.",
+        sentences: [
+          { text: "A slogan that uses repeated beginning sounds like 'Snap, Crackle, Pop' uses _______.", blanks: ["onomatopoeia"] },
+          { text: "'The best a man can get' uses a _______ (type of comparison without 'like' or 'as').", blanks: ["metaphor"] },
+          { text: "'Finger lickin' good' is an example of _______ and informal language.", blanks: ["hyperbole"] },
+          { text: "A slogan that makes you picture a feeling — 'Reach for the stars' — uses a _______.", blanks: ["metaphor"] },
+        ],
+      },
+      // 48
+      {
+        type: "open-response" as const,
+        title: "Analyse an Idiom's History",
+        instruction: "Choose one idiom from the box and research its origin. Explain where it came from and how its meaning has changed over time.",
+        parentTip: "Use phrases.org.uk or etymonline.com to research idiom origins. This is a great opportunity to model using reliable online sources for research.",
+        prompts: [
+          { text: "Idiom choices: 'Bite the bullet' / 'Under the weather' / 'Kick the bucket' / 'Spill the beans'\nMy chosen idiom:", type: "lines", lines: 1 },
+          { text: "Its origin story (where and when did it come from?):", type: "lines", lines: 4 },
+          { text: "How is it used today?", type: "lines", lines: 3 },
+        ],
+      },
+      // 49
+      {
+        type: "multiple-choice" as const,
+        title: "Root Words in Context (Set B)",
+        instruction: "Use the root meaning to identify the most likely meaning of each word.",
+        questions: [
+          { prompt: "What does 'benevolent' mean? (bene = well/good, vol = wish)", options: ["Wishing others well; kind and generous", "Wishing others harm", "Wishing for money", "Wishing for power"], answer: "Wishing others well; kind and generous" },
+          { prompt: "What does 'malfunction' mean? (mal = bad, function = work)", options: ["A bad smell", "To work extremely well", "To work badly or fail", "A special function"], answer: "To work badly or fail" },
+          { prompt: "What does 'omnivore' mean? (omni = all, vor = eat)", options: ["An animal that eats only plants", "An animal that eats only meat", "An animal that eats all types of food", "A very large animal"], answer: "An animal that eats all types of food" },
+          { prompt: "What does 'circumnavigate' mean? (circum = around, navigate = sail/travel)", options: ["To travel very quickly", "To travel all the way around something", "To travel underground", "To navigate using a compass"], answer: "To travel all the way around something" },
+        ],
+      },
+      // 50
+      {
+        type: "open-response" as const,
+        title: "Write a Figurative Language Poem",
+        instruction: "Write a short poem (8 to 10 lines) on any topic you choose. You must include at least four different figurative language techniques. Label each technique in the margin using abbreviations: S (simile), M (metaphor), P (personification), H (hyperbole), A (alliteration), O (onomatopoeia).",
+        parentTip: "Free verse (no rhyme required) removes the pressure of rhyming and allows your child to focus on the figurative language. Encourage risk-taking with language.",
+        prompts: [
+          { text: "My topic:", type: "lines", lines: 1 },
+          { text: "My poem:", type: "box", lines: 16 },
+          { text: "Techniques I used (list each one):", type: "lines", lines: 3 },
+        ],
+      },
+      // ── CONSOLIDATING 51–80 ──────────────────────────────────────────────
+      // 51
+      {
+        type: "sorting" as const,
+        title: "Sort: Figurative Technique by Purpose",
+        instruction: "Sort each technique into the column that best describes its primary purpose in writing.",
+        columns: ["Create vivid imagery", "Show emotion or mood", "Add rhythm or sound", "Make comparison"],
+        items: [
+          { label: "Alliteration" }, { label: "Pathetic fallacy" }, { label: "Simile" }, { label: "Onomatopoeia" },
+          { label: "Metaphor" }, { label: "Hyperbole" }, { label: "Extended metaphor" }, { label: "Personification" },
+        ],
+      },
+      // 52
+      {
+        type: "true-false" as const,
+        title: "True or False: Word Origins",
+        instruction: "Circle True or False.",
+        statements: [
+          { text: "The word 'salary' comes from the Latin word for salt, because Roman soldiers were sometimes paid in salt.", answer: true },
+          { text: "The word 'window' comes from Old Norse meaning 'wind eye'.", answer: true },
+          { text: "The word 'robot' was invented in the 18th century.", answer: false },
+          { text: "Many English words for government and law come from French.", answer: true },
+          { text: "The word 'pyjamas' comes from a Persian word.", answer: true },
+          { text: "Greek roots are only found in medical and scientific vocabulary.", answer: false },
+        ],
+      },
+      // 53
+      {
+        type: "multiple-choice" as const,
+        title: "Figurative Language in Poetry",
+        instruction: "Read each extract and answer the question.",
+        parentTip: "Poetry is the richest source of figurative language. Reading poetry aloud together helps children hear the techniques as well as see them.",
+        questions: [
+          { prompt: "The fog comes on little cat feet. (Carl Sandburg)\nWhat technique is used?", options: ["Hyperbole", "Extended metaphor / personification", "Idiom", "Alliteration"], answer: "Extended metaphor / personification" },
+          { prompt: "'I wandered lonely as a cloud' (Wordsworth)\nWhat technique is used?", options: ["Metaphor", "Simile", "Idiom", "Hyperbole"], answer: "Simile" },
+          { prompt: "'Season of mists and mellow fruitfulness' (Keats)\nWhat technique is highlighted?", options: ["Onomatopoeia", "Metaphor", "Alliteration", "Idiom"], answer: "Alliteration" },
+        ],
+      },
+      // 54
+      {
+        type: "fill-in-blank" as const,
+        title: "Prefixes That Change Meaning",
+        instruction: "Add the correct prefix to change the meaning of each base word.",
+        sentences: [
+          { text: "If something is not visible, it is _______visible.", blanks: ["in"] },
+          { text: "If you write something again, you _______write it.", blanks: ["re"] },
+          { text: "Something that happens before the war is _______war.", blanks: ["pre"] },
+          { text: "A manager who is below a senior manager is a _______manager.", blanks: ["sub"] },
+          { text: "If two countries cooperate between themselves, they _______act.", blanks: ["inter"] },
+        ],
+      },
+      // 55
+      {
+        type: "open-response" as const,
+        title: "Rewrite Using Better Figurative Language",
+        instruction: "Each sentence below is flat and literal. Rewrite it using vivid figurative language to make it more engaging. Try to use a different technique for each.",
+        parentTip: "Share your own rewrites with your child and compare — whose version creates a stronger image? This models the craft of revision.",
+        prompts: [
+          { text: "Original: The forest was dark and quiet.\nRewrite:", type: "lines", lines: 2 },
+          { text: "Original: She was very nervous before the performance.\nRewrite:", type: "lines", lines: 2 },
+          { text: "Original: The market was very busy.\nRewrite:", type: "lines", lines: 2 },
+          { text: "Original: He was very happy when he won.\nRewrite:", type: "lines", lines: 2 },
+        ],
+      },
+      // 56
+      {
+        type: "circle-correct" as const,
+        title: "Which Root Is in This Word?",
+        instruction: "Circle the root that each word contains.",
+        questions: [
+          { prompt: "chronological", options: ["chron (time)", "log (word)", "ical (relating to)", "chrono (colour)"] },
+          { prompt: "thermometer", options: ["thermo (heat)", "meter (water)", "therm (measure)", "metro (city)"] },
+          { prompt: "circumference", options: ["circum (around)", "ference (carry around)", "circum (circle)", "circum (measure)"] },
+          { prompt: "psychology", options: ["psych (mind)", "ology (body)", "psych (speak)", "logo (study)"] },
+          { prompt: "hydrophobic", options: ["hydro (water)", "phobic (loving)", "hydro (fire)", "phobic (fear of)"] },
+        ],
+      },
+      // 57
+      {
+        type: "sorting" as const,
+        title: "Sort: Cliche or Fresh Figurative Language?",
+        instruction: "Some figurative language has been used so often it has become a cliche. Sort each example.",
+        columns: ["Cliche (overused)", "Fresh and original"],
+        items: [
+          { label: "As old as the hills." },
+          { label: "The library swallowed her whole, digesting her page by page." },
+          { label: "It was raining cats and dogs." },
+          { label: "The city exhaled its tired commuters into the evening air." },
+          { label: "Every cloud has a silver lining." },
+          { label: "The clock ate the hours one minute at a time." },
+        ],
+      },
+      // 58
+      {
+        type: "multiple-choice" as const,
+        title: "Suffixes and Their Meanings",
+        instruction: "Choose the correct meaning for each suffix.",
+        questions: [
+          { prompt: "What does the suffix '-ology' mean?", options: ["Study of", "Fear of", "Full of", "Without"], answer: "Study of" },
+          { prompt: "What does the suffix '-phobia' mean?", options: ["Love of", "Study of", "Fear of", "Full of"], answer: "Fear of" },
+          { prompt: "What does the suffix '-ment' mean?", options: ["Relating to", "The state or result of", "Without", "One who"], answer: "The state or result of" },
+          { prompt: "What does the suffix '-ist' mean?", options: ["A place where", "Without", "A person who", "Relating to"], answer: "A person who" },
+        ],
+      },
+      // 59
+      {
+        type: "open-response" as const,
+        title: "Figurative Language Revision: Label and Explain",
+        instruction: "Read the passage below. Find and label five examples of figurative language. Explain the technique and its effect for each one.",
+        parentTip: "This type of analytical work is excellent preparation for secondary school English. Praise the quality of reasoning, not just the identification of the technique.",
+        prompts: [
+          {
+            text: "PASSAGE:\nThe river was an old man, slow and deliberate, winding through the valley as if it had all the time in the world. On its banks, willow trees wept silently into the water. The summer heat was a heavy blanket draped over everything, stifling and still. Even the birds had given up their singing — the sky was as empty as a forgotten promise.\n\nExample 1 — quote, technique, effect:",
+            type: "lines", lines: 3,
+          },
+          { text: "Example 2 — quote, technique, effect:", type: "lines", lines: 3 },
+          { text: "Example 3 — quote, technique, effect:", type: "lines", lines: 3 },
+          { text: "Example 4 — quote, technique, effect:", type: "lines", lines: 3 },
+          { text: "Example 5 — quote, technique, effect:", type: "lines", lines: 3 },
+        ],
+      },
+      // 60 — TIP
+      {
+        type: "tip" as const,
+        title: "Tip: Analysing Figurative Language in Four Steps",
+        content: "When analysing figurative language in any text, use these four steps: 1. Identify — name the technique. 2. Quote — write the exact words. 3. Explain — describe what the words mean literally and what they suggest figuratively. 4. Effect — explain what this creates for the reader (an image, an emotion, a sense of pace). This structure works for any literary analysis task you will ever face.",
+      },
+      // 61 — SPARK
+      {
+        type: "spark" as const,
+        title: "Spark: Write Your Own Cliche Buster",
+        content: "Take five of the most overused expressions in English — as cold as ice, time flies, better late than never, the tip of the iceberg, every cloud has a silver lining — and rewrite each one as a brand new, original figurative expression that means the same thing. Challenge: can you make your versions so vivid that a reader could picture them immediately? Share your favourite with someone.",
+      },
+      // 62
+      {
+        type: "fill-in-blank" as const,
+        title: "Roots from the Natural World",
+        instruction: "Many English words about nature come from Latin and Greek. Fill in the correct word using the root clues.",
+        sentences: [
+          { text: "_______ (luna + r) means relating to the moon.", blanks: ["Lunar"] },
+          { text: "_______ (sol + ar) means relating to the sun.", blanks: ["Solar"] },
+          { text: "An _______ (aqua + naut) is an underwater explorer.", blanks: ["aquanaut"] },
+          { text: "_______ (flor + al) means relating to flowers.", blanks: ["Floral"] },
+          { text: "A _______ (terr + ace) is a raised flat platform of earth.", blanks: ["terrace"] },
+        ],
+      },
+      // 63
+      {
+        type: "circle-correct" as const,
+        title: "Tone and Figurative Language",
+        instruction: "Figurative language shapes the tone of a text. Circle the tone each example creates.",
+        parentTip: "Tone is the author's attitude expressed through word choices. Helping your child connect figurative language to tone is a key step in literary analysis.",
+        questions: [
+          { prompt: "The sun beamed down on the laughing children, and the world was golden.", options: ["Dark and menacing", "Warm and joyful", "Tense and anxious", "Sad and reflective"] },
+          { prompt: "The house stood like a broken tooth against the grey sky, hollow and rotting.", options: ["Playful and fun", "Warm and welcoming", "Gloomy and unsettling", "Peaceful and calm"] },
+          { prompt: "She bounced into the room, her laughter fizzing like a shaken bottle of lemonade.", options: ["Sad and melancholy", "Calm and reflective", "Energetic and cheerful", "Angry and frustrated"] },
+          { prompt: "Time crawled. Every second stretched into a minute; every minute into an hour.", options: ["Exciting and fast-paced", "Tense and slow-moving", "Happy and light", "Confused and disoriented"] },
+        ],
+      },
+      // 64
+      {
+        type: "open-response" as const,
+        title: "Design a Root Word Reference Card",
+        instruction: "Create a reference card for five roots of your choice. For each root write: the root, its language of origin, its meaning, three English words that contain it, and a memory trick to help you remember it.",
+        prompts: [
+          { text: "Root 1:", type: "lines", lines: 4 },
+          { text: "Root 2:", type: "lines", lines: 4 },
+          { text: "Root 3:", type: "lines", lines: 4 },
+        ],
+      },
+      // 65
+      {
+        type: "multiple-choice" as const,
+        title: "Figurative Language in Non-Fiction",
+        instruction: "Non-fiction texts also use figurative language. Identify the technique in each example.",
+        questions: [
+          { prompt: "From a science article: 'The immune system is the body's army, defending against invasion.' What technique is used?", options: ["Idiom", "Extended metaphor", "Alliteration", "Hyperbole"], answer: "Extended metaphor" },
+          { prompt: "From a geography textbook: 'Rivers carry their load like labourers, depositing sediment when their energy runs out.' What technique?", options: ["Simile", "Personification", "Oxymoron", "Onomatopoeia"], answer: "Simile" },
+          { prompt: "From a history text: 'The war consumed an entire generation.' What technique?", options: ["Alliteration", "Simile", "Metaphor / personification", "Hyperbole"], answer: "Metaphor / personification" },
+        ],
+      },
+      // 66
+      {
+        type: "sorting" as const,
+        title: "Sort: Which Subject Uses This Root Most?",
+        instruction: "Sort each root word into the subject area where it appears most often. Some may fit more than one — choose the most common.",
+        columns: ["Science / Biology", "History / Humanities", "Maths / Measurement", "Literature / Language"],
+        items: [
+          { label: "bio (life)" }, { label: "chron (time)" }, { label: "geo (earth)" }, { label: "meter (measure)" },
+          { label: "graph (write)" }, { label: "aqua (water)" }, { label: "terr (land)" }, { label: "dict (say)" },
+        ],
+      },
+      // 67
+      {
+        type: "true-false" as const,
+        title: "True or False: Figurative Language in Different Texts",
+        instruction: "Circle True or False.",
+        statements: [
+          { text: "Figurative language only appears in poetry and fiction.", answer: false },
+          { text: "Advertising texts often use idioms to sound friendly and relatable.", answer: true },
+          { text: "Personification can be used in persuasive writing to make an argument more emotional.", answer: true },
+          { text: "Scientific writing should always avoid figurative language entirely.", answer: false },
+          { text: "Metaphors can help explain complex scientific concepts to general audiences.", answer: true },
+          { text: "Extended metaphors are only suitable for very long texts.", answer: false },
+        ],
+      },
+      // 68
+      {
+        type: "fill-in-blank" as const,
+        title: "Alliteration and Onomatopoeia in Action",
+        instruction: "Complete each sentence to create alliteration or onomatopoeia as instructed.",
+        sentences: [
+          { text: "Alliteration: 'The silver snake slithered silently through the _______.' (Fill in a word that starts with s)", blanks: ["shadows"] },
+          { text: "Onomatopoeia: 'The angry bees _______ around the hive.' (Choose a sound word)", blanks: ["buzzed"] },
+          { text: "Alliteration: 'Five fierce foxes _______ through the forest.' (fill in an alliterative verb)", blanks: ["fled"] },
+          { text: "Onomatopoeia: 'Rain _______ against the window pane all night.' (sound word)", blanks: ["drummed"] },
+        ],
+      },
+      // 69
+      {
+        type: "open-response" as const,
+        title: "Word Origins: English from Around the World",
+        instruction: "Research five words that came into English from other languages. For each, record the word, its origin language and original meaning, and how we use it today.",
+        parentTip: "This task can be a wonderful conversation about your family's own language heritage. If your family speaks another language, explore words that have crossed between that language and English.",
+        prompts: [
+          { text: "Word 1 (word, origin language, original meaning, current use):", type: "lines", lines: 3 },
+          { text: "Word 2:", type: "lines", lines: 3 },
+          { text: "Word 3:", type: "lines", lines: 3 },
+          { text: "Word 4:", type: "lines", lines: 3 },
+          { text: "Word 5:", type: "lines", lines: 3 },
+        ],
+      },
+      // 70
+      {
+        type: "home-activity" as const,
+        title: "Figurative Language in the World Around You",
+        instruction: "Try these activities this week to practise figurative language beyond the worksheet.",
+        parentTip: "Keep a shared family notebook where you collect interesting figurative language from books, conversations, films and news. Review it weekly.",
+        suggestions: [
+          "Watch the news or a documentary and write down three examples of figurative language used by journalists or commentators. Explain the technique and effect of each.",
+          "Read the headlines of a newspaper or news website. Identify any idioms, metaphors or hyperbole. Rewrite three headlines using literal language and compare the effect.",
+          "Play 'Figurative Language Swap': take turns choosing a sentence and challenging each other to replace any literal language with a figurative version using a different technique each time.",
+        ],
+      },
+      // ── EXTENDING 71–100 ─────────────────────────────────────────────────
+      // 71
+      {
+        type: "multiple-choice" as const,
+        title: "Advanced Etymology: Word Families",
+        instruction: "Use your knowledge of roots, prefixes and suffixes to answer each question.",
+        questions: [
+          { prompt: "Which word does NOT belong in the same word family as 'graphic, photograph, biography'?", options: ["autograph", "paragraph", "geography", "automobile"], answer: "automobile" },
+          { prompt: "Which pair of words shares the same root?", options: ["dictionary / dedication", "auditorium / audible", "transport / transfer", "Both B and C"], answer: "Both B and C" },
+          { prompt: "The word 'benediction' contains which two roots?", options: ["bene (good) + dict (say)", "ben (book) + diction (speak)", "bene (life) + dict (write)", "beni (good) + diction (read)"], answer: "bene (good) + dict (say)" },
+        ],
+      },
+      // 72
+      {
+        type: "open-response" as const,
+        title: "Literary Analysis: Figurative Language Essay Paragraph",
+        instruction: "Write a formal analytical paragraph about how an author uses figurative language in a text of your choice. Use this structure: Point (make a claim) → Evidence (quote from the text) → Explanation (explain the technique) → Effect (describe the impact on the reader).",
+        parentTip: "The Point-Evidence-Explanation-Effect structure is the foundation of literary essay writing at secondary school. Practising it now gives your child a significant advantage.",
+        prompts: [
+          { text: "Text title and author:", type: "lines", lines: 1 },
+          { text: "My analytical paragraph (use Point → Evidence → Explanation → Effect):", type: "box", lines: 16 },
+        ],
+      },
+      // 73
+      {
+        type: "sorting" as const,
+        title: "Sort: Etymology Across Disciplines",
+        instruction: "Sort each word into the academic discipline where its root appears most prominently.",
+        columns: ["Medicine", "Law / Government", "Mathematics", "Environmental Science"],
+        items: [
+          { label: "cardiology (cardio = heart)" }, { label: "legislation (legis = law)" },
+          { label: "circumference (circum = around)" }, { label: "ecology (eco = house/environment)" },
+          { label: "neurology (neuro = nerve)" }, { label: "democracy (demos = people)" },
+          { label: "polygon (poly = many)" }, { label: "biodiversity (bio = life)" },
+        ],
+      },
+      // 74
+      {
+        type: "true-false" as const,
+        title: "True or False: Advanced Language Analysis",
+        instruction: "Circle True or False.",
+        statements: [
+          { text: "The purpose of figurative language is always to make text more complex and difficult.", answer: false },
+          { text: "A writer can use multiple figurative techniques in a single sentence.", answer: true },
+          { text: "The effect of figurative language depends partly on the reader's own experiences and knowledge.", answer: true },
+          { text: "Avoiding all cliches is always the right choice in creative writing.", answer: false },
+          { text: "Etymology can help a reader decode unfamiliar words in any subject area.", answer: true },
+          { text: "A skilled writer chooses figurative language deliberately to create a specific effect.", answer: true },
+        ],
+      },
+      // 75 — TIP
+      {
+        type: "tip" as const,
+        title: "Tip: Building a Vocabulary Toolkit for Secondary School",
+        content: "The best vocabulary strategy is building word families. When you learn a new word, find its root, then look for five other words that share that root. For example, learning 'psychology' introduces you to: psychological, psychologist, psyche, psychiatry, psychosis. One root unlocks five words. Over a year, this compounds into hundreds of words — an enormous advantage in every subject.",
+      },
+      // 76
+      {
+        type: "fill-in-blank" as const,
+        title: "Greek Roots in Technology and Modern Life",
+        instruction: "Use the root clues to complete each modern technology word.",
+        sentences: [
+          { text: "A _______ (cyber + space) is the virtual environment of the internet.", blanks: ["cyberspace"] },
+          { text: "A _______ (micro + chip) is a tiny electronic component.", blanks: ["microchip"] },
+          { text: "_______ (digit + al) technology converts information into numbers.", blanks: ["Digital"] },
+          { text: "A _______ (tele + vision) transmits images over distance.", blanks: ["television"] },
+        ],
+      },
+      // 77
+      {
+        type: "multiple-choice" as const,
+        title: "Figurative Language and Author Intent",
+        instruction: "Read each question about author choices and select the best answer.",
+        parentTip: "Understanding why an author chooses a particular technique — not just what it is — is the highest level of literary thinking. This is the distinction between identifying and analysing.",
+        questions: [
+          { prompt: "An author describes a politician as 'a wolf in sheep's clothing'. Why might the author have chosen this metaphor rather than saying the politician was dishonest?", options: ["To make the text shorter", "To avoid using the word dishonest", "To create a vivid and memorable image that implies the politician pretends to be harmless while being dangerous", "To make the text more informal"], answer: "To create a vivid and memorable image that implies the politician pretends to be harmless while being dangerous" },
+          { prompt: "A poet uses pathetic fallacy — rain and storms — when a character receives bad news. What is the most likely reason?", options: ["The poet lived in a rainy climate", "To help the reader feel the character's emotional state through the environment", "To show that the weather was actually bad that day", "To make the poem longer"], answer: "To help the reader feel the character's emotional state through the environment" },
+          { prompt: "An author uses alliteration in a villain's name: 'Silas Slade'. What effect does this create?", options: ["It makes the name easier to spell", "It makes the villain seem friendly", "It creates a sinister, hissing sound that reinforces the character's threatening nature", "It is just a coincidence"], answer: "It creates a sinister, hissing sound that reinforces the character's threatening nature" },
+        ],
+      },
+      // 78
+      {
+        type: "open-response" as const,
+        title: "Create a Figurative Language Mentor Text",
+        instruction: "Write a descriptive passage of 8 to 12 sentences on any topic. Deliberately include at least six different figurative language techniques. Then create an answer key listing every technique you used, where it appears, and the effect you intended.",
+        parentTip: "Writing a mentor text with an answer key shows the highest level of understanding — your child must consciously choose and deploy techniques, then reflect on their own choices. This is a genuine creative and analytical challenge.",
+        prompts: [
+          { text: "My descriptive passage:", type: "box", lines: 16 },
+          { text: "Answer key (technique, quote, intended effect):", type: "box", lines: 12 },
+        ],
+      },
+      // 79
+      {
+        type: "circle-correct" as const,
+        title: "Strong Analysis or Weak Analysis?",
+        instruction: "Read each analytical statement. Circle whether it is a strong analysis (clear point + evidence + effect) or a weak analysis (just identification with no explanation).",
+        questions: [
+          { prompt: "The author uses personification.", options: ["Strong analysis", "Weak — no explanation of effect"] },
+          { prompt: "The metaphor 'the city was a beast' creates a sense of overwhelming, inhuman power, suggesting the character feels consumed by urban life.", options: ["Strong analysis", "Weak — no explanation of effect"] },
+          { prompt: "There is alliteration in 'silent, silver stars'.", options: ["Strong analysis", "Weak — no explanation of effect"] },
+          { prompt: "The alliteration 'silent, silver stars' creates a soft, hushed sound effect that mirrors the peaceful, still atmosphere of the scene.", options: ["Strong analysis", "Weak — no explanation of effect"] },
+        ],
+      },
+      // 80 — SPARK
+      {
+        type: "spark" as const,
+        title: "Spark: Etymology Family Tree",
+        content: "Choose one Latin or Greek root — for example SCRIB/SCRIPT (to write), SPEC (to see), or VOCA (voice/call). Create a visual family tree showing: the root at the top, prefixes that combine with it, and at least 12 real English words in the branches. For each word, write a brief definition and use it in a sentence. Display your tree and see if family members can suggest more words to add.",
+      },
+      // 81
+      {
+        type: "open-response" as const,
+        title: "Figurative Language Critique: Compare Two Texts",
+        instruction: "Find two short passages on the same topic — one from a novel or poem and one from a newspaper or non-fiction article. Analyse how each text uses figurative language differently and explain why the differences suit each text's purpose.",
+        parentTip: "Comparing texts is a high-order analytical skill. Encourage your child to consider audience, purpose and context when explaining why different texts use figurative language differently.",
+        prompts: [
+          { text: "Text 1 title, type and source:", type: "lines", lines: 1 },
+          { text: "Figurative language techniques found in Text 1 (quote + technique + effect):", type: "box", lines: 8 },
+          { text: "Text 2 title, type and source:", type: "lines", lines: 1 },
+          { text: "Figurative language techniques found in Text 2 (quote + technique + effect):", type: "box", lines: 8 },
+          { text: "How and why does the use of figurative language differ between the two texts?", type: "box", lines: 6 },
+        ],
+      },
+      // 82
+      {
+        type: "fill-in-blank" as const,
+        title: "Advanced Suffixes and Word Formation",
+        instruction: "Add the correct suffix to form the requested word type.",
+        sentences: [
+          { text: "The noun form of 'predict' (predict + ion) is _______.", blanks: ["prediction"] },
+          { text: "The adjective form of 'biology' is _______ (bio + logic + al).", blanks: ["biological"] },
+          { text: "The adverb form of 'audible' is _______ (audible + y).", blanks: ["audibly"] },
+          { text: "The noun meaning 'the act of transporting' is _______ (transport + ation).", blanks: ["transportation"] },
+          { text: "The adjective meaning 'relating to vision' is _______ (vis + ual).", blanks: ["visual"] },
+        ],
+      },
+      // 83
+      {
+        type: "multiple-choice" as const,
+        title: "Figurative Language and Persuasion",
+        instruction: "Analyse how figurative language is used persuasively in each example.",
+        questions: [
+          { prompt: "A charity campaign uses the slogan: 'Every child deserves to be a star.' What does this metaphor achieve?", options: ["It makes children want to be in films", "It suggests every child has equal worth and deserves to shine — creating an emotional appeal", "It literally means children should study astronomy", "It is a weak slogan with no clear meaning"], answer: "It suggests every child has equal worth and deserves to shine — creating an emotional appeal" },
+          { prompt: "An environmental campaign says: 'The Earth is choking.' What effect does the personification create?", options: ["It is factually accurate about the atmosphere", "It creates a sense of urgency and suffering, making the environmental crisis feel immediate and personal", "It suggests the Earth is a person who can complain", "It is an example of hyperbole with no emotional impact"], answer: "It creates a sense of urgency and suffering, making the environmental crisis feel immediate and personal" },
+        ],
+      },
+      // 84
+      {
+        type: "sorting" as const,
+        title: "Sort: Register and Figurative Language",
+        instruction: "Match each piece of writing to the type of figurative language most suited to it.",
+        columns: ["Formal / academic writing", "Creative / literary writing", "Persuasive writing", "Everyday conversation"],
+        items: [
+          { label: "Extended metaphor across a whole essay" },
+          { label: "A well-worn idiom: 'at the end of the day'" },
+          { label: "Emotive personification: 'the planet is crying out'" },
+          { label: "Precise simile in a report: 'a sharp rise in the data'" },
+          { label: "Vivid pathetic fallacy in a short story" },
+          { label: "Hyperbole for humour: 'I have told you a thousand times'" },
+          { label: "Alliteration in a campaign slogan" },
+          { label: "Technical root-word vocabulary: 'the aqueduct transported water'" },
+        ],
+      },
+      // 85
+      {
+        type: "open-response" as const,
+        title: "Write a Persuasive Text Using Figurative Language",
+        instruction: "Write a persuasive letter (3 paragraphs) to your school council arguing for a change you believe in. Deliberately use at least five figurative language techniques to strengthen your arguments. Label each technique in the margin.",
+        parentTip: "Remind your child that in persuasive writing, figurative language must serve the argument — it should illuminate and strengthen, not distract. Review the draft together and ask: Does each technique make the argument stronger?",
+        prompts: [
+          { text: "My argument (what change am I arguing for?):", type: "lines", lines: 2 },
+          { text: "My persuasive letter:", type: "box", lines: 20 },
+          { text: "Figurative language techniques I used (label and quote each):", type: "lines", lines: 5 },
+        ],
+      },
+      // 86
+      {
+        type: "true-false" as const,
+        title: "True or False: Language, Power and Figurative Expression",
+        instruction: "Circle True or False.",
+        statements: [
+          { text: "Political speeches often use figurative language to create emotional impact.", answer: true },
+          { text: "Figurative language is more powerful in spoken language than written language.", answer: false },
+          { text: "The same figurative expression can be interpreted differently by different readers.", answer: true },
+          { text: "Cultural background never affects how a reader interprets figurative language.", answer: false },
+          { text: "Some idioms are unique to Australian English.", answer: true },
+          { text: "Understanding figurative language is only useful for English classes.", answer: false },
+        ],
+      },
+      // 87
+      {
+        type: "circle-correct" as const,
+        title: "Which Technique Serves This Purpose Best?",
+        instruction: "A writer wants to achieve a specific effect. Circle the technique that would work best.",
+        questions: [
+          { prompt: "The writer wants the reader to feel the beauty and loneliness of an empty landscape.", options: ["Hyperbole", "Pathetic fallacy and extended metaphor", "Idiom", "Alliteration only"] },
+          { prompt: "The writer wants to create a sense of danger and speed in an action scene.", options: ["Long, complex metaphors", "Short alliterative phrases and onomatopoeia", "A list of idioms", "Euphemism"] },
+          { prompt: "The writer wants to make a scientific concept accessible to a general audience.", options: ["Technical jargon with no figurative language", "A simple, clear metaphor or analogy", "Oxymoron", "Multiple mixed metaphors"] },
+          { prompt: "The writer wants to show a character is pretending to be calm but is deeply afraid.", options: ["Direct statement: 'She was afraid'", "Contrast: calm exterior actions described alongside trembling details", "Hyperbole about her courage", "An extended simile about calmness"] },
+        ],
+      },
+      // 88
+      {
+        type: "fill-in-blank" as const,
+        title: "Complex Root Word Combinations",
+        instruction: "Combine the roots and affixes to form a real English word, then write its meaning.",
+        sentences: [
+          { text: "omni + vor + ous = _______ (meaning: eating all types of food)", blanks: ["omnivorous"] },
+          { text: "circum + nav + ig + ate = _______ (meaning: to travel all the way around)", blanks: ["circumnavigate"] },
+          { text: "bene + vol + ent = _______ (meaning: wishing good to others; kind)", blanks: ["benevolent"] },
+          { text: "mal + ad + just + ment = _______ (meaning: a poor adjustment to circumstances)", blanks: ["maladjustment"] },
+        ],
+      },
+      // 89
+      {
+        type: "open-response" as const,
+        title: "Glossary of Figurative Language Techniques",
+        instruction: "Create a personal glossary of figurative language techniques. For each term, write: the definition, an example from a text you have read, and your own original example.",
+        parentTip: "A personal glossary is one of the most useful study tools your child can create. Encourage them to add to it throughout the year as they encounter new techniques.",
+        prompts: [
+          { text: "Simile — definition, text example, my own example:", type: "lines", lines: 4 },
+          { text: "Metaphor — definition, text example, my own example:", type: "lines", lines: 4 },
+          { text: "Extended metaphor — definition, text example, my own example:", type: "lines", lines: 4 },
+          { text: "Pathetic fallacy — definition, text example, my own example:", type: "lines", lines: 4 },
+          { text: "Oxymoron — definition, text example, my own example:", type: "lines", lines: 4 },
+        ],
+      },
+      // 90 — TIP
+      {
+        type: "tip" as const,
+        title: "Tip: Preparing for Secondary School English",
+        content: "At secondary school, English assessments frequently ask you to: identify figurative language techniques, quote from the text, explain the technique, and analyse its effect on the reader. The key word is 'analyse' — not 'describe'. Practise writing full analytical sentences now: 'The metaphor X suggests Y, creating the effect of Z for the reader.' This structure will serve you in every English essay you write.",
+      },
+      // 91
+      {
+        type: "multiple-choice" as const,
+        title: "Figurative Language in Historical Texts",
+        instruction: "Read each historical quotation and identify the technique used.",
+        questions: [
+          { prompt: "'I have a dream that my four little children will one day live in a nation where they will not be judged by the colour of their skin but by the content of their character.' (Martin Luther King Jr) — What technique structures this speech?", options: ["Alliteration", "Extended metaphor", "Anaphora (repetition of a phrase at the beginning of sentences)", "Hyperbole"], answer: "Anaphora (repetition of a phrase at the beginning of sentences)" },
+          { prompt: "'All the world's a stage, and all the men and women merely players.' (Shakespeare) — What technique is used?", options: ["Simile", "Extended metaphor", "Hyperbole", "Idiom"], answer: "Extended metaphor" },
+          { prompt: "'We shall fight on the beaches, we shall fight on the landing grounds, we shall fight in the fields...' (Churchill) — What technique?", options: ["Pathetic fallacy", "Alliteration", "Anaphora", "Onomatopoeia"], answer: "Anaphora" },
+        ],
+      },
+      // 92
+      {
+        type: "sorting" as const,
+        title: "Sort: Etymology Strategy — Which Clue Helps Most?",
+        instruction: "When encountering an unknown word, different strategies help in different ways. Sort each strategy into the column that best describes when to use it.",
+        columns: ["Best for finding core meaning", "Best for understanding nuance", "Best for confirming usage"],
+        items: [
+          { label: "Identify the Latin or Greek root" },
+          { label: "Look at the context of the surrounding sentences" },
+          { label: "Check the word in a dictionary" },
+          { label: "Identify the prefix and suffix" },
+          { label: "Find the word's etymology using etymonline.com" },
+          { label: "Find three example sentences in different texts" },
+        ],
+      },
+      // 93
+      {
+        type: "open-response" as const,
+        title: "Independent Research: Australian English Idioms",
+        instruction: "Australian English has many unique idioms and expressions. Research five Australian English idioms that are not common in British or American English. For each one: write the idiom, explain its meaning, and explain its likely origin.",
+        parentTip: "This task is a wonderful opportunity to explore Australian identity through language. Discuss expressions your own family uses — regional or cultural idioms are part of living language.",
+        prompts: [
+          { text: "Idiom 1 (expression, meaning, origin):", type: "lines", lines: 4 },
+          { text: "Idiom 2:", type: "lines", lines: 4 },
+          { text: "Idiom 3:", type: "lines", lines: 4 },
+          { text: "Idiom 4:", type: "lines", lines: 3 },
+          { text: "Idiom 5:", type: "lines", lines: 3 },
+        ],
+      },
+      // 94
+      {
+        type: "circle-correct" as const,
+        title: "Evaluate the Quality of the Writing",
+        instruction: "Read each pair of sentences. Circle the one that uses figurative language more skilfully — with a specific, fresh image and clear effect.",
+        questions: [
+          { prompt: "Which is more skilfully written?", options: ["The old man was as slow as a snail.", "The old man moved like a tide going out — unhurried, inevitable, carrying the weight of decades."] },
+          { prompt: "Which is more effective?", options: ["Fear gripped her heart like a vice, cold and unrelenting.", "She was really, really scared."] },
+          { prompt: "Which shows better control of figurative language?", options: ["The city was a jungle, but also a machine, and also a beast — he hated it.", "The city was a machine that never slept, grinding its gears through the night, indifferent to those caught between its teeth."] },
+          { prompt: "Which is the stronger descriptive sentence?", options: ["The sunset was beautiful.", "The horizon bled crimson and gold, the sun drowning slowly in the sea."] },
+        ],
+      },
+      // 95
+      {
+        type: "fill-in-blank" as const,
+        title: "Latin Phrases Used in English",
+        instruction: "Many Latin phrases are used directly in English, especially in academic and legal writing. Fill in the correct Latin phrase from the word bank.",
+        sentences: [
+          { text: "_______ means 'and other things' and is used when listing items (abbreviated etc.).", blanks: ["Et cetera"] },
+          { text: "_______ means 'note well' and is used to draw attention to something important (abbreviated NB).", blanks: ["Nota bene"] },
+          { text: "_______ means 'by the fact itself' — something that is automatically true.", blanks: ["Ipso facto"] },
+          { text: "_______ means 'in good faith' — acting honestly and sincerely.", blanks: ["Bona fide"] },
+        ],
+      },
+      // 96
+      {
+        type: "open-response" as const,
+        title: "Figurative Language in a Science Context",
+        instruction: "Figurative language is used in science to explain complex concepts. Read each scientific explanation and then write your own figurative explanation of the same concept using a different technique.",
+        parentTip: "Using metaphors and analogies to explain science is a mark of deep understanding. Scientists and science communicators use this skill constantly.",
+        prompts: [
+          { text: "Scientific explanation: The nucleus of an atom is at the centre, surrounded by electrons at great distances, like a tiny solar system.\nYour own figurative explanation using a different image:", type: "lines", lines: 3 },
+          { text: "Scientific explanation: DNA is a set of instructions coded in chemical letters that tells cells how to function.\nYour own figurative explanation:", type: "lines", lines: 3 },
+          { text: "Scientific explanation: The immune system detects and destroys foreign invaders in the body.\nYour own figurative explanation:", type: "lines", lines: 3 },
+        ],
+      },
+      // 97
+      {
+        type: "multiple-choice" as const,
+        title: "Mastery Check: Figurative Language and Etymology",
+        instruction: "Demonstrate your mastery by answering these challenge questions.",
+        questions: [
+          { prompt: "Which statement best describes what makes figurative language effective in writing?", options: ["Using as many techniques as possible in every sentence", "Choosing the technique that best serves the purpose and audience, and deploying it precisely", "Always using similes because they are the easiest to understand", "Avoiding figurative language in non-fiction writing"], answer: "Choosing the technique that best serves the purpose and audience, and deploying it precisely" },
+          { prompt: "How does etymology help readers with comprehension?", options: ["It tells you the exact current definition of a word", "It helps you recognise shared roots between words, allowing you to make educated guesses about unfamiliar words", "It replaces the need for a dictionary", "It only helps with words from Latin languages"], answer: "It helps you recognise shared roots between words, allowing you to make educated guesses about unfamiliar words" },
+          { prompt: "What is the difference between identifying figurative language and analysing it?", options: ["There is no difference", "Identifying names the technique; analysing explains how and why it creates a specific effect for the reader", "Analysing means finding more examples", "Identifying is harder than analysing"], answer: "Identifying names the technique; analysing explains how and why it creates a specific effect for the reader" },
+        ],
+      },
+      // 98
+      {
+        type: "home-activity" as const,
+        title: "Extended Project: Language Detectives",
+        instruction: "Over the next two weeks, complete this extended language detective project.",
+        parentTip: "This extended project develops sustained research and writing skills. Support the process by discussing findings at each stage rather than waiting until the final product.",
+        suggestions: [
+          "Week 1 — Etymology: Choose a theme (sport, food, technology, or your favourite subject area). Find 10 words on that theme and research the etymology of each. Create a visual display showing each word's journey into English.",
+          "Week 2 — Figurative Language Anthology: Collect 10 examples of figurative language from different text types (novel, poem, newspaper, advertisement, speech, non-fiction book). Annotate each one with the technique and its effect. Write a one-page reflection on what you noticed about how different text types use figurative language.",
+          "Final step: Choose your three favourite figurative language examples from your anthology and use them as inspiration to write an original descriptive paragraph. Share it with a family member and discuss the choices you made.",
+        ],
+      },
+      // 99
+      {
+        type: "open-response" as const,
+        title: "Reflection: My Growth as a Word Learner",
+        instruction: "Reflect on what you have learned about figurative language and etymology throughout this worksheet. Answer each question thoughtfully.",
+        prompts: [
+          { text: "Which figurative language technique do you find most powerful in writing, and why?", type: "lines", lines: 4 },
+          { text: "Which root word has been most useful for understanding unfamiliar words? Give three examples of words it helped you with.", type: "lines", lines: 4 },
+          { text: "How has learning about word origins changed the way you read or write?", type: "lines", lines: 4 },
+          { text: "Set yourself a vocabulary goal for next month. What will you do to reach it?", type: "lines", lines: 3 },
+        ],
+      },
+      // 100 — SPARK
+      {
+        type: "spark" as const,
+        title: "Spark: Write a Language Manifesto",
+        content: "A manifesto is a public declaration of beliefs and intentions. Write a one-page Language Manifesto — a passionate, figurative-language-rich declaration about why words matter. Include your beliefs about reading, writing, word origins and the power of language. Use at least eight figurative language techniques deliberately. This is your chance to write something that truly reflects how you think and feel about language. Keep it — it is the beginning of your voice as a writer.",
       },
     ],
   },
@@ -255,61 +1364,13 @@ export const year5EnglishWorksheets: WorksheetItem[] = [
       ],
     },
     activities: [
-      {
-        type: "open-response" as const,
-        title: "Spot the Tense Shift",
-        instruction:
-          "Read the paragraph below. Find and underline every verb. Then circle the verbs that are the wrong tense. Rewrite the paragraph with consistent past tense.",
-        prompts: [
-          {
-            text: "PARAGRAPH:\nYesterday, Maya woke up early and runs downstairs. She ate breakfast quickly because the bus is coming at eight. She packed her bag and rushes out the door. The cold air hits her face as she jogged to the bus stop.\n\nRewrite with consistent past tense:",
-            type: "box",
-            lines: 8,
-          },
-        ],
-      },
-      {
-        type: "circle-correct" as const,
-        title: "Choose the Correct Tense Form",
-        instruction:
-          "Circle the verb form that keeps the tense consistent with the rest of the sentence.",
-        questions: [
-          {
-            prompt: "Yesterday, the team played well but they ___ the final point.",
-            options: ["miss", "missed", "will miss"],
-          },
-          {
-            prompt: "Every morning she ___ her teeth before breakfast.",
-            options: ["brushed", "brushes", "will brush"],
-          },
-          {
-            prompt: "By the time we arrived, the show ___ already started.",
-            options: ["has", "had", "have"],
-          },
-          {
-            prompt: "Right now, the children ___ in the garden.",
-            options: ["played", "are playing", "will play"],
-          },
-          {
-            prompt: "Since last year, he ___ three books.",
-            options: ["read", "has read", "reads"],
-          },
-        ],
-      },
-      {
-        type: "open-response" as const,
-        title: "Write a Consistent Paragraph",
-        instruction:
-          "Write a paragraph of 6 to 8 sentences about an adventure — real or imagined. Choose past tense and stick with it throughout. Underline every verb when you have finished.",
-        prompts: [{ text: "My adventure paragraph:", type: "box", lines: 14 }],
-      },
+      // ── FOUNDATIONAL 1–20 ──────────────────────────────────────────────────
+      // 1
       {
         type: "matching" as const,
         title: "Match the Tense to Its Name",
-        instruction:
-          "Draw a line to match each example sentence with the correct verb tense name.",
-        parentTip:
-          "Read each sentence aloud with your child before matching — hearing the tense often makes it easier to identify than reading silently.",
+        instruction: "Draw a line to match each example sentence with the correct verb tense name.",
+        parentTip: "Read each sentence aloud with your child before matching — hearing the tense often makes it easier to identify than reading silently.",
         left: [
           "She runs to school every day.",
           "He was reading when the phone rang.",
@@ -318,22 +1379,100 @@ export const year5EnglishWorksheets: WorksheetItem[] = [
           "The dog barked all night.",
           "I am writing a story right now.",
         ],
-        right: [
-          "Simple present",
-          "Past continuous",
-          "Simple future",
-          "Present perfect",
-          "Simple past",
-          "Present continuous",
+        right: ["Simple present", "Past continuous", "Simple future", "Present perfect", "Simple past", "Present continuous"],
+      },
+      // 2
+      {
+        type: "circle-correct" as const,
+        title: "Choose the Correct Tense Form (Set A)",
+        instruction: "Circle the verb form that keeps the tense consistent with the rest of the sentence.",
+        questions: [
+          { prompt: "Yesterday, the team played well but they ___ the final point.", options: ["miss", "missed", "will miss"] },
+          { prompt: "Every morning she ___ her teeth before breakfast.", options: ["brushed", "brushes", "will brush"] },
+          { prompt: "By the time we arrived, the show ___ already started.", options: ["has", "had", "have"] },
+          { prompt: "Right now, the children ___ in the garden.", options: ["played", "are playing", "will play"] },
+          { prompt: "Since last year, he ___ three books.", options: ["read", "has read", "reads"] },
         ],
       },
+      // 3
+      {
+        type: "true-false" as const,
+        title: "True or False: Tense Basics",
+        instruction: "Circle True or False for each statement.",
+        statements: [
+          { text: "Simple past tense is used to describe actions that happened and finished in the past.", answer: true },
+          { text: "Simple present tense can describe habitual actions.", answer: true },
+          { text: "Switching from past to present tense mid-paragraph is always correct.", answer: false },
+          { text: "The verb 'is' is present tense.", answer: true },
+          { text: "Past continuous tense uses 'was/were + -ing'.", answer: true },
+          { text: "Present perfect tense uses 'had + past participle'.", answer: false },
+        ],
+      },
+      // 4
+      {
+        type: "sorting" as const,
+        title: "Sort Sentences by Tense (Set A)",
+        instruction: "Sort each sentence into the correct tense column.",
+        columns: ["Simple past", "Simple present", "Simple future"],
+        items: [
+          { label: "She walked to the park." },
+          { label: "He reads every night." },
+          { label: "They will travel next week." },
+          { label: "The cat sat on the mat." },
+          { label: "I write in my journal daily." },
+          { label: "We will finish the project soon." },
+          { label: "He cooked dinner last night." },
+          { label: "She sings beautifully." },
+          { label: "The bus will arrive at noon." },
+        ],
+      },
+      // 5
+      {
+        type: "open-response" as const,
+        title: "Spot the Tense Shift (Set A)",
+        instruction: "Read the paragraph below. Find and underline every verb. Then circle the verbs that are the wrong tense. Rewrite the paragraph with consistent past tense.",
+        prompts: [
+          {
+            text: "PARAGRAPH:\nYesterday, Maya woke up early and runs downstairs. She ate breakfast quickly because the bus is coming at eight. She packed her bag and rushes out the door. The cold air hits her face as she jogged to the bus stop.\n\nRewrite with consistent past tense:",
+            type: "box",
+            lines: 8,
+          },
+        ],
+      },
+      // 6
+      {
+        type: "fill-in-blank" as const,
+        title: "Complete the Sentence in Past Tense",
+        instruction: "Fill in the blank with the correct simple past tense form of the verb in brackets.",
+        parentTip: "If your child is unsure of irregular past tense forms, help them notice: go → went, see → saw, buy → bought. Irregular verbs must be memorised.",
+        sentences: [
+          { text: "She _______ (walk) to school every day last term.", blanks: ["walked"] },
+          { text: "He _______ (eat) all of his lunch.", blanks: ["ate"] },
+          { text: "They _______ (run) across the oval.", blanks: ["ran"] },
+          { text: "I _______ (write) three pages in my journal.", blanks: ["wrote"] },
+          { text: "The dog _______ (bark) at the postman.", blanks: ["barked"] },
+        ],
+      },
+      // 7
+      {
+        type: "circle-correct" as const,
+        title: "Simple Present or Simple Past?",
+        instruction: "Circle whether each sentence is in simple present or simple past tense.",
+        questions: [
+          { prompt: "She plays tennis every Saturday.", options: ["Simple present", "Simple past"] },
+          { prompt: "He finished his homework before dinner.", options: ["Simple present", "Simple past"] },
+          { prompt: "They travel to Canberra twice a year.", options: ["Simple present", "Simple past"] },
+          { prompt: "The team won the championship.", options: ["Simple present", "Simple past"] },
+          { prompt: "I read for thirty minutes every night.", options: ["Simple present", "Simple past"] },
+          { prompt: "She baked a cake for the party.", options: ["Simple present", "Simple past"] },
+        ],
+      },
+      // 8
       {
         type: "sequence" as const,
         title: "Order the Tense Timeline",
-        instruction:
-          "Number these sentences 1 to 5 to put them in the correct order from earliest to latest in time, based on the tense and time clues in each sentence.",
-        parentTip:
-          "Encourage your child to underline the time clue words first — such as ago, last weekend, already, right now, next Friday — before deciding on the order.",
+        instruction: "Number these sentences 1 to 5 to put them in the correct order from earliest to latest in time, based on the tense and time clues in each sentence.",
+        parentTip: "Encourage your child to underline the time clue words first — such as ago, last weekend, already, right now, next Friday — before deciding on the order.",
         items: [
           { label: "She will present her project to the class next Friday." },
           { label: "She has already written the introduction." },
@@ -341,6 +1480,1137 @@ export const year5EnglishWorksheets: WorksheetItem[] = [
           { label: "She chose her topic two weeks ago." },
           { label: "She is editing the final draft right now." },
         ],
+      },
+      // 9
+      {
+        type: "fill-in-blank" as const,
+        title: "Convert to Present Tense",
+        instruction: "Rewrite each past tense sentence in simple present tense.",
+        sentences: [
+          { text: "She walked to the library every afternoon.\nPresent: She _______ to the library every afternoon.", blanks: ["walks"] },
+          { text: "He ate breakfast at seven o'clock.\nPresent: He _______ breakfast at seven o'clock.", blanks: ["eats"] },
+          { text: "The children played outside after school.\nPresent: The children _______ outside after school.", blanks: ["play"] },
+          { text: "The bus arrived at eight sharp.\nPresent: The bus _______ at eight sharp.", blanks: ["arrives"] },
+        ],
+      },
+      // 10
+      {
+        type: "multiple-choice" as const,
+        title: "Identify the Tense Shift Error",
+        instruction: "Read each sentence. Choose the version that corrects the tense shift.",
+        parentTip: "A tense shift error feels jarring when read aloud. Encourage your child to read each option aloud before choosing.",
+        questions: [
+          {
+            prompt: "The cat climbed the tree and then jumps down. (error: tense shift)",
+            options: ["The cat climbed the tree and then jumped down.", "The cat climbs the tree and then jumped down.", "The cat will climb the tree and then jumped down."],
+            answer: "The cat climbed the tree and then jumped down.",
+          },
+          {
+            prompt: "He opens the door and walked inside. (error: tense shift)",
+            options: ["He opened the door and walked inside.", "He opens the door and walks inside.", "Both A and B are correct in different contexts"],
+            answer: "Both A and B are correct in different contexts",
+          },
+          {
+            prompt: "She studies hard all year and then passed the exam. (error: tense shift)",
+            options: ["She studied hard all year and then passed the exam.", "She studies hard all year and then passes the exam.", "Both A and B are correct in different contexts"],
+            answer: "Both A and B are correct in different contexts",
+          },
+        ],
+      },
+      // 11
+      {
+        type: "sorting" as const,
+        title: "Sort by Tense: Past, Present and Future",
+        instruction: "Sort each verb phrase into the correct tense column.",
+        columns: ["Past tense", "Present tense", "Future tense"],
+        items: [
+          { label: "will travel" }, { label: "has eaten" }, { label: "is running" },
+          { label: "ran quickly" }, { label: "will finish" }, { label: "reads every day" },
+          { label: "wrote a letter" }, { label: "are studying" }, { label: "will have finished" },
+        ],
+      },
+      // 12
+      {
+        type: "open-response" as const,
+        title: "Rewrite in Past Tense",
+        instruction: "This passage is written in present tense. Rewrite it entirely in simple past tense. Change every verb.",
+        prompts: [
+          {
+            text: "PASSAGE (present tense):\nEvery morning, Sam wakes up at six and eats a bowl of cereal. He brushes his teeth, picks up his bag and walks to the corner. His friend Priya meets him there and together they race to the bus stop.\n\nRewrite in past tense:",
+            type: "box",
+            lines: 10,
+          },
+        ],
+      },
+      // 13
+      {
+        type: "matching" as const,
+        title: "Match Tense Forms: Regular Verbs",
+        instruction: "Draw a line to match each base verb with its correct simple past form.",
+        left: ["walk", "jump", "carry", "stop", "try", "plan"],
+        right: ["stopped", "jumped", "tried", "carried", "planned", "walked"],
+      },
+      // 14
+      {
+        type: "circle-correct" as const,
+        title: "Irregular Past Tense (Set A)",
+        instruction: "Circle the correct simple past tense form of each irregular verb.",
+        parentTip: "Irregular verbs do not follow the standard -ed rule. Keep a list of common irregular past tenses on display in your learning space.",
+        questions: [
+          { prompt: "go (simple past)", options: ["goed", "went", "gone"] },
+          { prompt: "see (simple past)", options: ["sawed", "seed", "saw"] },
+          { prompt: "take (simple past)", options: ["taked", "took", "taken"] },
+          { prompt: "write (simple past)", options: ["writed", "wrote", "written"] },
+          { prompt: "run (simple past)", options: ["runned", "ran", "run"] },
+        ],
+      },
+      // 15 — TIP
+      {
+        type: "tip" as const,
+        title: "Tip: How to Check Tense Consistency",
+        content: "When you finish a piece of writing, read it through specifically looking at verbs. Use a highlighter to mark every verb. Are they all in the same tense? If you find a shift, ask: Did I change tense deliberately to show a different time, or was it an accident? If it was an accident, correct it. If it was deliberate (such as a flashback), make sure a time clue makes the change clear for the reader.",
+      },
+      // 16
+      {
+        type: "fill-in-blank" as const,
+        title: "Continuous Tenses",
+        instruction: "Fill in the blank with the correct continuous tense form.",
+        sentences: [
+          { text: "Right now, she _______ (read) a book. (present continuous)", blanks: ["is reading"] },
+          { text: "When the phone rang, he _______ (cook) dinner. (past continuous)", blanks: ["was cooking"] },
+          { text: "They _______ (play) outside when it started raining. (past continuous)", blanks: ["were playing"] },
+          { text: "At this time tomorrow, I _______ (fly) to Brisbane. (future continuous)", blanks: ["will be flying"] },
+        ],
+      },
+      // 17
+      {
+        type: "true-false" as const,
+        title: "True or False: Continuous and Perfect Tenses",
+        instruction: "Circle True or False.",
+        statements: [
+          { text: "Present continuous uses 'am/is/are + verb-ing'.", answer: true },
+          { text: "Past perfect tense uses 'had + past participle'.", answer: true },
+          { text: "Present perfect tense always refers to the distant past.", answer: false },
+          { text: "'She has been running' is an example of present perfect continuous.", answer: true },
+          { text: "Past continuous can only be used to describe a single completed action.", answer: false },
+          { text: "Future simple tense uses 'will + base verb'.", answer: true },
+        ],
+      },
+      // 18
+      {
+        type: "sorting" as const,
+        title: "Sort by Tense Form: Simple, Continuous, Perfect",
+        instruction: "Sort each verb phrase into the correct category.",
+        columns: ["Simple (one word)", "Continuous (-ing form)", "Perfect (has/have/had)"],
+        items: [
+          { label: "walked" }, { label: "is walking" }, { label: "has walked" },
+          { label: "ran" }, { label: "was running" }, { label: "had run" },
+          { label: "writes" }, { label: "will be writing" }, { label: "have written" },
+        ],
+      },
+      // 19
+      {
+        type: "open-response" as const,
+        title: "Write a Consistent Past Tense Paragraph",
+        instruction: "Write a paragraph of 6 to 8 sentences about an adventure — real or imagined. Choose simple past tense and use it consistently throughout. Underline every verb when you have finished.",
+        prompts: [{ text: "My adventure paragraph:", type: "box", lines: 14 }],
+      },
+      // 20 — SPARK
+      {
+        type: "spark" as const,
+        title: "Spark: Tense as a Storytelling Tool",
+        content: "Some of the most powerful novels are written in present tense — as if the action is happening right now. Find a novel written in present tense (many popular teen and young adult novels use it). Read two or three pages and then rewrite a paragraph in past tense. Which version feels more immediate? Which creates more distance? Write a short paragraph explaining which tense you prefer to write in and why.",
+      },
+      // ── DEVELOPING 21–50 ──────────────────────────────────────────────────
+      // 21
+      {
+        type: "fill-in-blank" as const,
+        title: "Perfect Tenses: Present and Past",
+        instruction: "Fill in the blank with the correct perfect tense form.",
+        parentTip: "Present perfect (has/have + past participle) connects past to present. Past perfect (had + past participle) shows one past action happened before another.",
+        sentences: [
+          { text: "She _______ (finish) her homework, so she can go out now. (present perfect)", blanks: ["has finished"] },
+          { text: "By the time he arrived, the concert _______ (start). (past perfect)", blanks: ["had started"] },
+          { text: "They _______ (visit) Paris three times. (present perfect)", blanks: ["have visited"] },
+          { text: "I _______ (never, see) such a beautiful sunset before. (past perfect)", blanks: ["had never seen"] },
+          { text: "She _______ (already, eat) when we arrived. (past perfect)", blanks: ["had already eaten"] },
+        ],
+      },
+      // 22
+      {
+        type: "circle-correct" as const,
+        title: "Present Perfect or Simple Past?",
+        instruction: "Circle the correct tense for each sentence.",
+        questions: [
+          { prompt: "She ___ to Paris last summer.", options: ["went (simple past)", "has gone (present perfect)"] },
+          { prompt: "___ you ever tried sushi?", options: ["Did (simple past)", "Have (present perfect)"] },
+          { prompt: "He ___ the book yesterday.", options: ["finished (simple past)", "has finished (present perfect)"] },
+          { prompt: "I ___ in this house for ten years and I love it.", options: ["lived (simple past)", "have lived (present perfect)"] },
+          { prompt: "She ___ ill since Monday.", options: ["was (simple past)", "has been (present perfect)"] },
+        ],
+      },
+      // 23
+      {
+        type: "open-response" as const,
+        title: "Spot and Fix the Tense Shifts (Set B)",
+        instruction: "Read each paragraph. Identify ALL the tense shifts and rewrite the paragraph with consistent tense.",
+        prompts: [
+          {
+            text: "PARAGRAPH 1 (should be past tense):\nThe explorer set out at dawn. He walks for hours through dense jungle. Suddenly, he stops and listens. A strange sound comes from the trees above him. He reached for his torch.\n\nRewrite:",
+            type: "box",
+            lines: 8,
+          },
+          {
+            text: "PARAGRAPH 2 (should be present tense):\nEvery Sunday, the family drove to the beach. Mum packs the bags while Dad loads the car. The children fought over who gets the front seat. When they arrived, everyone ran straight to the water.\n\nRewrite:",
+            type: "box",
+            lines: 8,
+          },
+        ],
+      },
+      // 24
+      {
+        type: "multiple-choice" as const,
+        title: "Which Tense Is Most Appropriate Here?",
+        instruction: "Read each writing context. Choose the most appropriate tense to use.",
+        questions: [
+          { prompt: "You are writing a recount of a school excursion that happened last week.", options: ["Simple present", "Simple past", "Future tense"], answer: "Simple past" },
+          { prompt: "You are writing a set of instructions for how to make a sandwich.", options: ["Simple present (imperative)", "Simple past", "Past perfect"], answer: "Simple present (imperative)" },
+          { prompt: "You are writing a review of a film you saw recently.", options: ["Future tense only", "Simple present for plot, past for your experience", "Past perfect only"], answer: "Simple present for plot, past for your experience" },
+          { prompt: "You are writing a persuasive essay about what schools should do next year.", options: ["Simple past", "Future and conditional tense", "Past continuous"], answer: "Future and conditional tense" },
+        ],
+      },
+      // 25
+      {
+        type: "open-response" as const,
+        title: "Convert the Tense Throughout",
+        instruction: "Rewrite this present tense passage in present perfect tense. Think carefully about how each verb changes.",
+        parentTip: "This exercise highlights how tense choice changes the relationship between actions and their timing. Present perfect says 'this relates to now'; simple past says 'this is finished'.",
+        prompts: [
+          {
+            text: "ORIGINAL (simple present):\nShe trains for the marathon every day. She runs twenty kilometres before breakfast and lifts weights in the evening. Her dedication impresses her coaches.\n\nRewrite in present perfect:",
+            type: "box",
+            lines: 8,
+          },
+        ],
+      },
+      // 26
+      {
+        type: "sorting" as const,
+        title: "Sort: Which Time Clue Goes with Which Tense?",
+        instruction: "Sort each time clue word or phrase into the tense it most commonly signals.",
+        parentTip: "Time clue words (sometimes called time markers or temporal adverbs) are a key reading strategy for identifying tense and sequencing events.",
+        columns: ["Past tense signals", "Present tense signals", "Future tense signals", "Perfect tense signals"],
+        items: [
+          { label: "yesterday" }, { label: "every day" }, { label: "tomorrow" }, { label: "already" },
+          { label: "last year" }, { label: "right now" }, { label: "next week" }, { label: "since last month" },
+          { label: "in 1999" }, { label: "currently" }, { label: "soon" }, { label: "just" },
+        ],
+      },
+      // 27
+      {
+        type: "fill-in-blank" as const,
+        title: "Irregular Past Tense (Set B)",
+        instruction: "Write the simple past tense form of each irregular verb.",
+        sentences: [
+          { text: "bring → _______", blanks: ["brought"] },
+          { text: "think → _______", blanks: ["thought"] },
+          { text: "catch → _______", blanks: ["caught"] },
+          { text: "teach → _______", blanks: ["taught"] },
+          { text: "buy → _______", blanks: ["bought"] },
+          { text: "fight → _______", blanks: ["fought"] },
+        ],
+      },
+      // 28
+      {
+        type: "true-false" as const,
+        title: "True or False: Tense in Different Text Types",
+        instruction: "Circle True or False.",
+        statements: [
+          { text: "Narrative texts are usually written in past tense.", answer: true },
+          { text: "Procedural texts (instructions) are usually written in future tense.", answer: false },
+          { text: "News articles often use past tense to describe events.", answer: true },
+          { text: "A persuasive essay should switch tenses frequently to create variety.", answer: false },
+          { text: "Present tense can create a sense of immediacy in storytelling.", answer: true },
+          { text: "Film scripts are usually written in past tense.", answer: false },
+        ],
+      },
+      // 29
+      {
+        type: "open-response" as const,
+        title: "Write in Three Tenses",
+        instruction: "Write the same event (something ordinary, like making breakfast) three times — once in simple past, once in simple present and once in present perfect. Compare how each version reads.",
+        parentTip: "This exercise reveals how tense changes the feel of the same content. Discuss with your child: Which version feels most immediate? Which feels most like a story? Which would suit a report?",
+        prompts: [
+          { text: "Simple past version:", type: "box", lines: 6 },
+          { text: "Simple present version:", type: "box", lines: 6 },
+          { text: "Present perfect version:", type: "box", lines: 6 },
+          { text: "Which version do you prefer and why?", type: "lines", lines: 3 },
+        ],
+      },
+      // 30 — TIP
+      {
+        type: "tip" as const,
+        title: "Tip: When Is a Tense Shift Deliberate?",
+        content: "Not all tense shifts are errors. In narrative writing, you may use a flashback (shift to an earlier time) or a flash-forward (shift to a later time). When you do this deliberately, help your reader by using a clear time signal: 'Three years earlier...' or 'Later, when she was grown...' Without a signal, the tense shift will simply look like a mistake. The key question is always: Will my reader know why I changed tense?",
+      },
+      // 31
+      {
+        type: "circle-correct" as const,
+        title: "Tense Shift: Error or Deliberate?",
+        instruction: "Read each passage. Circle whether the tense shift is an error or a deliberate, well-signalled technique.",
+        questions: [
+          {
+            prompt: "She walked into the room and smiles at everyone. Her confidence amazed them.",
+            options: ["Error — accidental tense shift", "Deliberate — well signalled"],
+          },
+          {
+            prompt: "He sat down heavily. Twenty years earlier, he had stood in this same spot as a young man, full of hope.",
+            options: ["Error — accidental tense shift", "Deliberate — well signalled flashback"],
+          },
+          {
+            prompt: "They played in the park all afternoon and then runs home for dinner.",
+            options: ["Error — accidental tense shift", "Deliberate — well signalled"],
+          },
+          {
+            prompt: "She opened the letter slowly. She already knew what it would say — she had received the same letter every year for the past decade.",
+            options: ["Error — accidental tense shift", "Deliberate — well signalled"],
+          },
+        ],
+      },
+      // 32
+      {
+        type: "matching" as const,
+        title: "Match the Tense to the Text Type",
+        instruction: "Draw a line to match each text type with the tense most commonly used to write it.",
+        parentTip: "Understanding which tense suits which text type helps children make intentional choices rather than guessing.",
+        left: ["Personal narrative / recount", "Set of instructions", "Present-tense novel", "Science experiment write-up", "Persuasive essay about future action", "Book review"],
+        right: [
+          "Simple present (imperative for commands)",
+          "Simple past",
+          "Simple present",
+          "Past tense (for method); present (for conclusions)",
+          "Future and conditional",
+          "Mixed: present for plot summary, past for personal response",
+        ],
+      },
+      // 33
+      {
+        type: "fill-in-blank" as const,
+        title: "Past Perfect: Before and After",
+        instruction: "Use past perfect (had + past participle) to show which action happened first.",
+        sentences: [
+          { text: "By the time I arrived, they _______ (leave) already.", blanks: ["had left"] },
+          { text: "She _______ (never, see) the ocean before her first trip to the coast.", blanks: ["had never seen"] },
+          { text: "He remembered that he _______ (forget) his keys.", blanks: ["had forgotten"] },
+          { text: "When the teacher entered, the students _______ (finish) the test.", blanks: ["had finished"] },
+        ],
+      },
+      // 34
+      {
+        type: "open-response" as const,
+        title: "Edit for Tense Consistency",
+        instruction: "Read the paragraph below. Every sentence has at least one tense error. Underline each error and then rewrite the whole paragraph with consistent past tense.",
+        prompts: [
+          {
+            text: "PARAGRAPH:\nLast Saturday, our family decided to go camping. We pack the car the night before and everyone is excited. Dad drives for three hours while Mum reads the map. When we arrive at the campsite, the sun already sets. We set up the tent in the dark and then eat cold sandwiches for dinner. Despite everything, it will be a wonderful night.\n\nCorrected version:",
+            type: "box",
+            lines: 12,
+          },
+        ],
+      },
+      // 35
+      {
+        type: "multiple-choice" as const,
+        title: "The Conditional Tense",
+        instruction: "The conditional tense describes what would happen if something else were true. Choose the correct verb form for each conditional sentence.",
+        parentTip: "Conditional sentences often use 'if'. First conditional (real possibility): if + present, will + base. Second conditional (imagined): if + past, would + base.",
+        questions: [
+          { prompt: "If she studies hard, she ___ pass the test. (first conditional — real possibility)", options: ["will", "would", "had"], answer: "will" },
+          { prompt: "If I had more time, I ___ read more books. (second conditional — imagined)", options: ["will", "would", "had"], answer: "would" },
+          { prompt: "If it rains tomorrow, we ___ stay inside. (first conditional)", options: ["would", "will", "had"], answer: "will" },
+          { prompt: "If I ___ a dog, I would walk it every day. (second conditional)", options: ["have", "had", "has"], answer: "had" },
+        ],
+      },
+      // 36
+      {
+        type: "sorting" as const,
+        title: "Sort: First or Second Conditional?",
+        instruction: "Sort each conditional sentence into the correct column.",
+        columns: ["First conditional (real / likely)", "Second conditional (imagined / unlikely)"],
+        items: [
+          { label: "If it is sunny, we will go to the beach." },
+          { label: "If I were a bird, I would fly to Antarctica." },
+          { label: "If she practises, she will improve." },
+          { label: "If I had a million dollars, I would buy a boat." },
+          { label: "If you eat well, you will feel better." },
+          { label: "If cats could talk, they would complain constantly." },
+        ],
+      },
+      // 37
+      {
+        type: "open-response" as const,
+        title: "Tense in Informational Writing",
+        instruction: "Write a short informational paragraph (5 to 7 sentences) about an animal, a place or a historical event. Choose the most appropriate tense and use it consistently. Explain why you chose that tense.",
+        parentTip: "Facts about animals typically use present tense (they live in, they eat). Historical events use past tense. Discussing your topic with your child before they write improves the quality of the tense decision.",
+        prompts: [
+          { text: "My topic:", type: "lines", lines: 1 },
+          { text: "The tense I will use and why:", type: "lines", lines: 2 },
+          { text: "My informational paragraph:", type: "box", lines: 10 },
+        ],
+      },
+      // 38
+      {
+        type: "circle-correct" as const,
+        title: "Irregular Past Tense (Set B)",
+        instruction: "Circle the correct past tense form of each irregular verb.",
+        questions: [
+          { prompt: "bite (simple past)", options: ["bited", "bit", "bitten"] },
+          { prompt: "draw (simple past)", options: ["drawed", "drew", "drawn"] },
+          { prompt: "fly (simple past)", options: ["flied", "flew", "flown"] },
+          { prompt: "grow (simple past)", options: ["growed", "grew", "grown"] },
+          { prompt: "shake (simple past)", options: ["shaked", "shook", "shaken"] },
+          { prompt: "steal (simple past)", options: ["stealed", "stole", "stolen"] },
+        ],
+      },
+      // 39
+      {
+        type: "true-false" as const,
+        title: "True or False: Tense in Writing",
+        instruction: "Circle True or False.",
+        statements: [
+          { text: "Every verb in a paragraph must be in exactly the same tense with no exceptions.", answer: false },
+          { text: "A speech tag like 'she said' is usually in past tense even in a present-tense story.", answer: true },
+          { text: "Direct speech does not need to follow the tense of the surrounding narrative.", answer: true },
+          { text: "The past perfect tense can be used to show a backstory or earlier event.", answer: true },
+          { text: "Habitual actions in the past can be shown using 'used to' + base verb.", answer: true },
+          { text: "Tense errors are the most common grammatical mistake in student writing.", answer: true },
+        ],
+      },
+      // 40 — SPARK
+      {
+        type: "spark" as const,
+        title: "Spark: The Same Story, Three Times",
+        content: "Choose a simple event — buying something at a market, finding something lost, meeting someone new. Write it three times: first as a past tense recount (it happened), then as a present tense news report (it is happening now), then as a future tense prediction (it will happen). Compare the three versions. Which creates the most tension? Which feels most personal? Which sounds most formal? Write a paragraph reflecting on what tense does to a story.",
+      },
+      // ── CONSOLIDATING 51–80 ──────────────────────────────────────────────
+      // 41
+      {
+        type: "fill-in-blank" as const,
+        title: "Passive Voice and Tense",
+        instruction: "The passive voice changes who or what is the focus of the sentence. Fill in the correct passive form.",
+        parentTip: "Passive voice is formed with 'to be' + past participle. It is commonly used in scientific and formal writing.",
+        sentences: [
+          { text: "The cake _______ (eat) by the children. (past passive)", blanks: ["was eaten"] },
+          { text: "The results _______ (record) in the notebook. (past passive)", blanks: ["were recorded"] },
+          { text: "The letter _______ (write) yesterday. (past passive)", blanks: ["was written"] },
+          { text: "The experiment _______ (conduct) carefully. (past passive)", blanks: ["was conducted"] },
+        ],
+      },
+      // 42
+      {
+        type: "open-response" as const,
+        title: "Analyse Tense in a Published Text",
+        instruction: "Choose a page from a novel, newspaper or non-fiction book. Copy two paragraphs. Highlight every verb. Write a short analysis of the tense choices: which tenses are used, are they consistent, and is there any deliberate tense shift?",
+        prompts: [
+          { text: "Source (title, author, page):", type: "lines", lines: 1 },
+          { text: "Copied paragraphs:", type: "box", lines: 8 },
+          { text: "My tense analysis (which tenses, consistency, any deliberate shifts):", type: "box", lines: 8 },
+        ],
+      },
+      // 43
+      {
+        type: "multiple-choice" as const,
+        title: "Active and Passive Voice",
+        instruction: "Identify whether each sentence is active or passive voice.",
+        parentTip: "Active voice: the subject does the action. Passive voice: the subject receives the action.",
+        questions: [
+          { prompt: "The dog chased the cat.", options: ["Active voice", "Passive voice"], answer: "Active voice" },
+          { prompt: "The cat was chased by the dog.", options: ["Active voice", "Passive voice"], answer: "Passive voice" },
+          { prompt: "Scientists discovered a new planet.", options: ["Active voice", "Passive voice"], answer: "Active voice" },
+          { prompt: "A new planet was discovered by scientists.", options: ["Active voice", "Passive voice"], answer: "Passive voice" },
+          { prompt: "The trophy was presented to the winning team.", options: ["Active voice", "Passive voice"], answer: "Passive voice" },
+        ],
+      },
+      // 44
+      {
+        type: "sorting" as const,
+        title: "Sort: Active or Passive Voice?",
+        instruction: "Sort each sentence into the correct column.",
+        columns: ["Active voice (subject does the action)", "Passive voice (subject receives the action)"],
+        items: [
+          { label: "The chef cooked the meal." },
+          { label: "The meal was cooked by the chef." },
+          { label: "She wrote the report." },
+          { label: "The report was written overnight." },
+          { label: "The students completed the experiment." },
+          { label: "The experiment was completed in one hour." },
+        ],
+      },
+      // 45 — TIP
+      {
+        type: "tip" as const,
+        title: "Tip: Active vs Passive Voice — When to Use Each",
+        content: "Active voice is usually clearer and more direct: 'The council approved the plan.' Passive voice is useful when the doer of the action is unknown or unimportant: 'The window was broken' (we do not know by whom). In formal or scientific writing, passive voice is common: 'The samples were tested.' In creative writing, active voice is usually stronger. The key is choosing deliberately, not by accident.",
+      },
+      // 46
+      {
+        type: "circle-correct" as const,
+        title: "Choose the More Effective Verb Form",
+        instruction: "Read each pair. Circle the version that uses tense and voice more effectively for the context given.",
+        questions: [
+          { prompt: "For a formal science report about results:", options: ["We tested the samples.", "The samples were tested."] },
+          { prompt: "For an exciting action story:", options: ["The lion leapt towards her.", "She was leapt at by the lion."] },
+          { prompt: "For a formal letter of complaint:", options: ["Someone broke the window.", "The window was broken on the evening of Friday the 12th."] },
+          { prompt: "For a personal recount:", options: ["I swam across the lake in twenty minutes.", "The lake was swum across by me in twenty minutes."] },
+        ],
+      },
+      // 47
+      {
+        type: "open-response" as const,
+        title: "Write in Two Voices",
+        instruction: "Write the same event (a science experiment, a game or a race) twice — once in active voice and once in passive voice. Then explain which version is more appropriate and for what kind of text.",
+        prompts: [
+          { text: "My event:", type: "lines", lines: 1 },
+          { text: "Active voice version:", type: "box", lines: 6 },
+          { text: "Passive voice version:", type: "box", lines: 6 },
+          { text: "Which is better and for what purpose?", type: "lines", lines: 3 },
+        ],
+      },
+      // 48
+      {
+        type: "fill-in-blank" as const,
+        title: "Modal Verbs and Tense",
+        instruction: "Modal verbs (can, could, will, would, may, might, must, should) work with other verbs to indicate possibility, necessity or permission. Fill in the correct modal verb.",
+        sentences: [
+          { text: "You _______ finish this by Friday if you work hard. (possibility in future)", blanks: ["could"] },
+          { text: "Students _______ wear their uniform every day. (necessity — rule)", blanks: ["must"] },
+          { text: "It _______ rain tomorrow — the sky looks dark. (strong probability)", blanks: ["might"] },
+          { text: "She _______ speak three languages when she was ten. (past ability)", blanks: ["could"] },
+        ],
+      },
+      // 49
+      {
+        type: "multiple-choice" as const,
+        title: "Reported Speech and Tense Backshift",
+        instruction: "When reporting what someone said, verbs usually shift back in tense. Choose the correct reported speech version.",
+        parentTip: "This is called 'tense backshift' in reported speech: present → past, past → past perfect, will → would.",
+        questions: [
+          { prompt: "Direct speech: 'I am tired,' she said.\nWhich is the correct reported speech?", options: ["She said she is tired.", "She said she was tired.", "She said she were tired."], answer: "She said she was tired." },
+          { prompt: "Direct speech: 'I will come tomorrow,' he said.\nWhich is correct reported speech?", options: ["He said he will come the next day.", "He said he would come the next day.", "He said he comes the next day."], answer: "He said he would come the next day." },
+          { prompt: "Direct speech: 'We have finished,' they said.\nWhich is correct reported speech?", options: ["They said they finished.", "They said they have finished.", "They said they had finished."], answer: "They said they had finished." },
+        ],
+      },
+      // 50
+      {
+        type: "open-response" as const,
+        title: "Convert Direct to Reported Speech",
+        instruction: "Rewrite each piece of direct speech as reported speech. Remember to backshift the tense and change pronouns as needed.",
+        parentTip: "Model the first one together before your child attempts the rest independently. Say the sentence aloud in direct speech, then report it as if you are telling someone else later.",
+        prompts: [
+          { text: "1. 'I am going to the market,' said Mum.\nReported speech:", type: "lines", lines: 2 },
+          { text: "2. 'We have already eaten,' said the children.\nReported speech:", type: "lines", lines: 2 },
+          { text: "3. 'I will finish the project by Friday,' said the student.\nReported speech:", type: "lines", lines: 2 },
+          { text: "4. 'The storm is getting worse,' the captain warned.\nReported speech:", type: "lines", lines: 2 },
+        ],
+      },
+      // ── CONSOLIDATING continued 51–80 ─────────────────────────────────────
+      // 51
+      {
+        type: "sorting" as const,
+        title: "Sort: Direct or Reported Speech?",
+        instruction: "Sort each sentence into the correct column.",
+        columns: ["Direct speech (exact words in quotes)", "Reported speech (no quote marks)"],
+        items: [
+          { label: "'I love reading,' said Maya." },
+          { label: "Maya said that she loved reading." },
+          { label: "'We are winning!' the crowd shouted." },
+          { label: "The crowd shouted that they were winning." },
+          { label: "He told me he had seen the film twice." },
+          { label: "'I have seen that film twice,' he said." },
+        ],
+      },
+      // 52
+      {
+        type: "true-false" as const,
+        title: "True or False: Reported Speech",
+        instruction: "Circle True or False.",
+        statements: [
+          { text: "In reported speech, present tense usually shifts to past tense.", answer: true },
+          { text: "Direct speech always uses quotation marks.", answer: true },
+          { text: "In reported speech, pronouns often change (I → he/she).", answer: true },
+          { text: "Time expressions may change in reported speech (now → then).", answer: true },
+          { text: "Reported speech always requires a tense backshift.", answer: false },
+          { text: "Reporting verbs include: said, told, explained, warned, admitted.", answer: true },
+        ],
+      },
+      // 53
+      {
+        type: "open-response" as const,
+        title: "Tense and Mood: The Subjunctive",
+        instruction: "The subjunctive mood expresses wishes, hypotheticals and formal suggestions. It often uses 'were' instead of 'was'. Read the examples then answer the questions.",
+        parentTip: "The subjunctive is rarely taught at primary school but appears in formal English. Even introducing the concept gives your child an advantage when they encounter it in secondary school texts.",
+        prompts: [
+          { text: "Examples of the subjunctive:\n'If I were you, I would study more.' (hypothetical)\n'She wishes she were taller.' (wish)\n'It is important that he be present.' (formal suggestion)\n\nIn your own words, explain what is unusual about the verb form in these sentences:", type: "lines", lines: 3 },
+          { text: "Write two sentences of your own using the subjunctive mood:", type: "lines", lines: 4 },
+        ],
+      },
+      // 54
+      {
+        type: "multiple-choice" as const,
+        title: "Tense in Formal Writing",
+        instruction: "Formal writing often uses specific tense conventions. Choose the most appropriate option for each formal writing context.",
+        questions: [
+          { prompt: "In an academic essay analysing a novel, you usually refer to the plot in:", options: ["Past tense", "Present tense (literary present)", "Future tense"], answer: "Present tense (literary present)" },
+          { prompt: "A historical essay about events in World War Two uses:", options: ["Present tense", "Past tense", "Future tense"], answer: "Past tense" },
+          { prompt: "A formal recommendation for future policy uses:", options: ["Past tense", "Present and future tense", "Past perfect only"], answer: "Present and future tense" },
+          { prompt: "A scientific report about a completed experiment uses:", options: ["Present tense for all sections", "Past tense for method; present for results and conclusions", "Future tense for all sections"], answer: "Past tense for method; present for results and conclusions" },
+        ],
+      },
+      // 55
+      {
+        type: "fill-in-blank" as const,
+        title: "Tense Consistency in Complex Sentences",
+        instruction: "Fill in the blank with the correct verb form to maintain tense consistency within each complex sentence.",
+        sentences: [
+          { text: "Although she _______ (feel) nervous, she walked onto the stage and smiled.", blanks: ["felt"] },
+          { text: "Before they _______ (leave) the house, they checked that all the windows were closed.", blanks: ["left"] },
+          { text: "The results surprised everyone because no one _______ (expect) such a dramatic change.", blanks: ["had expected"] },
+          { text: "She runs every morning because she _______ (find) it clears her mind for the day.", blanks: ["finds"] },
+        ],
+      },
+      // 56
+      {
+        type: "open-response" as const,
+        title: "Proofread for Tense",
+        instruction: "A student wrote this paragraph but made eight tense errors. Find every error, underline it, and write the correction above it. Then rewrite the full corrected paragraph below.",
+        prompts: [
+          {
+            text: "STUDENT PARAGRAPH:\nLast Tuesday, our class visited the science museum. We arrive at nine o'clock and immediately went to the space exhibit. Our teacher explain all about the solar system while we look at the models. I especially like the model of the International Space Station — it will have been huge! Afterwards, we eat lunch in the courtyard before we will leave at two o'clock.\n\nCorrected paragraph:",
+            type: "box",
+            lines: 12,
+          },
+        ],
+      },
+      // 57
+      {
+        type: "circle-correct" as const,
+        title: "Choose the Correct Reporting Verb Tense",
+        instruction: "Circle the correct verb form in each reported speech sentence.",
+        questions: [
+          { prompt: "She said she ___ happy.", options: ["is", "was", "will be"] },
+          { prompt: "He told us he ___ the book the previous night.", options: ["reads", "had read", "has read"] },
+          { prompt: "They explained that the experiment ___ several hours to complete.", options: ["takes", "will take", "had taken"] },
+          { prompt: "The teacher announced that the test ___ on Friday.", options: ["is", "was", "would be"] },
+          { prompt: "She admitted that she ___ to finish on time.", options: ["is struggling", "had been struggling", "will struggle"] },
+        ],
+      },
+      // 58
+      {
+        type: "matching" as const,
+        title: "Match the Verb Form to the Tense Name",
+        instruction: "Draw a line to match each verb form to the correct tense name.",
+        parentTip: "Knowing the formal names for tense forms helps your child communicate about grammar clearly, which is essential for editing conferences and secondary school English.",
+        left: [
+          "She had eaten.",
+          "She will have eaten.",
+          "She was eating.",
+          "She has been eating.",
+          "She would eat.",
+          "She eats.",
+        ],
+        right: [
+          "Present perfect continuous",
+          "Past perfect",
+          "Future perfect",
+          "Simple present",
+          "Past continuous",
+          "Conditional",
+        ],
+      },
+      // 59
+      {
+        type: "open-response" as const,
+        title: "Tense in Narrative: Write a Flashback",
+        instruction: "Write a short narrative passage (8 to 10 sentences) set in the present. At a key moment, include a clearly signalled flashback to the past using past perfect tense. Then return to present tense. Label where each tense shift occurs.",
+        parentTip: "Reading published examples of flashbacks helps — many novels use this technique. The key is the signal phrase: 'She remembered the day when...' or 'Three years earlier...'.",
+        prompts: [
+          { text: "My narrative with flashback:", type: "box", lines: 16 },
+          { text: "Where did I signal the tense shifts?", type: "lines", lines: 3 },
+        ],
+      },
+      // 60 — TIP
+      {
+        type: "tip" as const,
+        title: "Tip: The Literary Present Tense",
+        content: "When analysing literature, English teachers expect you to write in the literary present tense — as if the events of the story are happening now, even if the novel was written hundreds of years ago. For example: 'In Charlotte's Web, Charlotte sacrifices herself for Wilbur.' Not 'Charlotte sacrificed herself.' This convention applies to all literary analysis essays. Practise it now so it becomes a habit before secondary school.",
+      },
+      // 61
+      {
+        type: "true-false" as const,
+        title: "True or False: Advanced Tense Concepts",
+        instruction: "Circle True or False.",
+        statements: [
+          { text: "The literary present tense is used when analysing fiction.", answer: true },
+          { text: "Passive voice is always grammatically incorrect.", answer: false },
+          { text: "Modal verbs change meaning depending on tense and context.", answer: true },
+          { text: "Backshift in reported speech is optional in informal conversation.", answer: true },
+          { text: "The subjunctive mood is identical to the indicative mood in modern English.", answer: false },
+          { text: "Tense errors in formal writing can undermine the writer's credibility.", answer: true },
+        ],
+      },
+      // 62 — SPARK
+      {
+        type: "spark" as const,
+        title: "Spark: Tense Across Cultures",
+        content: "Not all languages express time through verb tenses the way English does. In Mandarin Chinese, for example, time is indicated by context words rather than changing the verb itself. In French, there are more than ten distinct tenses. Research one other language and find out how it expresses past, present and future time. Write a one-page comparison of how that language handles tense versus how English does it. What does this tell you about the relationship between language and time?",
+      },
+      // 63
+      {
+        type: "fill-in-blank" as const,
+        title: "Complex Tense Sequences",
+        instruction: "In complex narratives, different tenses must work together logically. Fill in each blank with the most logical tense form.",
+        sentences: [
+          { text: "She _______ (read) the letter twice before she finally _______ (understand) what it meant.", blanks: ["had read", "understood"] },
+          { text: "By the time we _______ (reach) the top, the sun _______ (already, set).", blanks: ["reached", "had already set"] },
+          { text: "He _______ (live) in three different countries and _______ (speak) four languages by the time he was twelve.", blanks: ["had lived", "spoke"] },
+        ],
+      },
+      // 64
+      {
+        type: "open-response" as const,
+        title: "Literary Analysis: Tense in a Passage",
+        instruction: "Find a passage in your current reading book of at least three paragraphs. Analyse the tense use: identify every tense used, discuss any tense shifts and explain what they signal, and evaluate whether the author handles tense consistently and effectively.",
+        parentTip: "Literary analysis requires students to discuss author choices. Ask: Did the author use tense deliberately? What effect does it create? Encouraging this kind of questioning builds higher-order thinking.",
+        prompts: [
+          { text: "Source (title, author, page numbers):", type: "lines", lines: 1 },
+          { text: "Tenses used in the passage:", type: "lines", lines: 2 },
+          { text: "Any tense shifts — where, and what do they signal?", type: "lines", lines: 3 },
+          { text: "Is the tense use consistent and effective? Explain:", type: "lines", lines: 4 },
+        ],
+      },
+      // 65
+      {
+        type: "multiple-choice" as const,
+        title: "Tense, Aspect and Meaning",
+        instruction: "Tense and aspect combine to create precise meanings. Choose the most accurate description of each verb form.",
+        questions: [
+          { prompt: "What does 'has been running' (present perfect continuous) communicate?", options: ["A single completed action in the past", "An ongoing action that started in the past and continues to the present", "A future intention", "A habitual past action"], answer: "An ongoing action that started in the past and continues to the present" },
+          { prompt: "What does 'had been waiting' (past perfect continuous) communicate?", options: ["A future plan", "An action that was ongoing before another past action", "A completed past action", "A present habit"], answer: "An action that was ongoing before another past action" },
+          { prompt: "What is the key difference between 'she studied' and 'she was studying'?", options: ["No difference — they are interchangeable", "'She studied' suggests a completed action; 'she was studying' suggests it was in progress when something else happened", "'She was studying' is past perfect", "'She studied' is present tense"], answer: "'She studied' suggests a completed action; 'she was studying' suggests it was in progress when something else happened" },
+        ],
+      },
+      // 66
+      {
+        type: "sorting" as const,
+        title: "Sort by Aspect: Completed or Ongoing?",
+        instruction: "Sort each verb phrase based on whether it describes a completed or ongoing action.",
+        columns: ["Completed action", "Ongoing or continuing action"],
+        items: [
+          { label: "She finished the book." },
+          { label: "She was reading the book." },
+          { label: "He has been working all day." },
+          { label: "He completed the task." },
+          { label: "They had been waiting for an hour." },
+          { label: "They arrived at noon." },
+          { label: "I have been learning guitar for two years." },
+          { label: "I learnt a new chord yesterday." },
+        ],
+      },
+      // 67
+      {
+        type: "open-response" as const,
+        title: "Peer Edit for Tense",
+        instruction: "Below is a paragraph written by a student. Act as a peer editor: identify every tense issue, explain what is wrong and rewrite the corrected version.",
+        prompts: [
+          {
+            text: "STUDENT PARAGRAPH:\nThe drought in Australia in 2019 was severe. Farmers will struggle to keep their animals alive. Rivers had dried up and crops fail. Government will introduce emergency water measures, but many farmers said it comes too late. Despite the hardship, communities come together and support each other through the crisis.\n\nYour peer edit (list each issue and your suggested fix):",
+            type: "box",
+            lines: 10,
+          },
+          { text: "Corrected paragraph:", type: "box", lines: 10 },
+        ],
+      },
+      // 68
+      {
+        type: "circle-correct" as const,
+        title: "Tense in Different Sentence Types",
+        instruction: "Circle the correct tense for each context.",
+        questions: [
+          { prompt: "Stating a scientific fact: 'Water ___ at 100 degrees Celsius.'", options: ["boiled", "boils", "will boil"] },
+          { prompt: "Writing about a historical event: 'The First Fleet ___ in 1788.'", options: ["arrives", "arrived", "will arrive"] },
+          { prompt: "Giving instructions in a recipe: '___ the butter until it melts.'", options: ["Melted", "Melt", "Will melt"] },
+          { prompt: "Discussing a novel: 'In this chapter, the character ___ a difficult choice.'", options: ["faced", "faces", "will face"] },
+        ],
+      },
+      // 69
+      {
+        type: "open-response" as const,
+        title: "Write a Multi-Tense Narrative",
+        instruction: "Write a narrative of 12 to 15 sentences that deliberately uses at least four different tenses correctly. Label each tense in the margin. Your narrative must use: simple past, past continuous, past perfect and present perfect.",
+        parentTip: "This task requires sustained control of multiple tense forms. Read the draft aloud together to check that tense shifts feel logical and are well-signalled.",
+        prompts: [
+          { text: "My multi-tense narrative:", type: "box", lines: 20 },
+          { text: "Tenses I used and where:", type: "lines", lines: 4 },
+        ],
+      },
+      // 70
+      {
+        type: "home-activity" as const,
+        title: "Tense Detectives: Finding Tenses in the Wild",
+        instruction: "Practise recognising tenses in real-world texts this week.",
+        parentTip: "When your child has completed each task, discuss the findings together. Real-world examples are far more memorable than invented ones.",
+        suggestions: [
+          "Read a page from a novel and list every verb you find. Identify the tense of each one. Are they consistent? Note any deliberate tense shifts.",
+          "Watch a news report and notice what tenses the journalists use. Do they shift between present and past? When and why?",
+          "Read a recipe and a recount of a sporting event. Compare the tenses used. Write a short paragraph explaining how the purpose of each text shapes its tense choices.",
+        ],
+      },
+      // ── EXTENDING 71–100 ─────────────────────────────────────────────────
+      // 71
+      {
+        type: "multiple-choice" as const,
+        title: "Tense and Meaning: Advanced Distinctions",
+        instruction: "Choose the answer that best explains the subtle difference in meaning.",
+        questions: [
+          { prompt: "What is the subtle difference between 'I lived in Sydney' and 'I have lived in Sydney'?", options: ["No difference", "'I lived in Sydney' implies I no longer live there; 'I have lived' implies a connection to the present", "'I have lived' is past perfect", "'I lived' is more formal"], answer: "'I lived in Sydney' implies I no longer live there; 'I have lived' implies a connection to the present" },
+          { prompt: "What is the difference between 'she was walking' and 'she walked'?", options: ["'Was walking' suggests the action was in progress; 'walked' suggests a completed action", "No meaningful difference", "'Walked' is more formal", "'Was walking' implies she stopped"], answer: "'Was walking' suggests the action was in progress; 'walked' suggests a completed action" },
+        ],
+      },
+      // 72
+      {
+        type: "open-response" as const,
+        title: "Tense and Narrative Voice",
+        instruction: "The same story can feel very different depending on the narrative tense and person. Write the opening paragraph of a story twice: first in third-person past tense (He walked...) and then in first-person present tense (I walk...). Analyse the difference in feeling and effect.",
+        parentTip: "This is a sophisticated craft exercise. Discuss: which feels more immediate? More distant? More literary? There is no right answer — the goal is awareness of craft.",
+        prompts: [
+          { text: "Third-person past tense version:", type: "box", lines: 8 },
+          { text: "First-person present tense version:", type: "box", lines: 8 },
+          { text: "Analysis — how does the tense and person change the effect?", type: "box", lines: 6 },
+        ],
+      },
+      // 73
+      {
+        type: "sorting" as const,
+        title: "Sort: When Is Each Tense Most Useful?",
+        instruction: "Match each tense to its most common and effective use case.",
+        columns: ["Simple past", "Present perfect", "Past perfect", "Present continuous"],
+        items: [
+          { label: "Describing a completed event at a specific time in the past" },
+          { label: "Describing an experience without specifying when" },
+          { label: "Showing which of two past events happened first" },
+          { label: "Describing something happening right now" },
+          { label: "Recounting a historical event in chronological order" },
+          { label: "Describing an action that began in the past and continues" },
+          { label: "Setting the scene when something else happened" },
+          { label: "Describing a background action interrupted by another" },
+        ],
+      },
+      // 74
+      {
+        type: "true-false" as const,
+        title: "True or False: Mastery Level Tense Concepts",
+        instruction: "Circle True or False.",
+        statements: [
+          { text: "The future perfect tense describes an action that will be completed before a specific future time.", answer: true },
+          { text: "In English, there is a grammatically distinct future tense verb form.", answer: false },
+          { text: "Modal verbs like 'might', 'could' and 'should' can express future possibility.", answer: true },
+          { text: "The continuous aspect always implies the action is still happening now.", answer: false },
+          { text: "Choosing the wrong tense in a job application or formal essay can make the writer appear less credible.", answer: true },
+          { text: "Tense and aspect are the same grammatical concept.", answer: false },
+        ],
+      },
+      // 75 — TIP
+      {
+        type: "tip" as const,
+        title: "Tip: Editing for Tense — A Professional Approach",
+        content: "Professional editors always read a manuscript at least once specifically for tense. Here is their process: 1. Read through and highlight every verb. 2. Check that all verbs in a single section share a consistent tense unless a shift is clearly signalled. 3. Check that tense shifts in complex sentences are logical and intentional. 4. Read the highlighted verbs alone, skipping all other words — do they tell a coherent time story? Adopt this professional approach for your own writing.",
+      },
+      // 76
+      {
+        type: "open-response" as const,
+        title: "Tense in Academic Writing",
+        instruction: "Academic writing uses tense conventions carefully. Write a short academic-style paragraph (5 to 8 sentences) about a topic you have studied this year. Use the correct academic tense conventions: present tense for facts, past tense for completed research, and present perfect for research that has ongoing relevance.",
+        prompts: [
+          { text: "My topic:", type: "lines", lines: 1 },
+          { text: "My academic paragraph:", type: "box", lines: 12 },
+          { text: "Which tenses did I use and why?", type: "lines", lines: 3 },
+        ],
+      },
+      // 77
+      {
+        type: "multiple-choice" as const,
+        title: "Tense in Journalism",
+        instruction: "Journalists use tense in specific and intentional ways. Answer each question about tense in news writing.",
+        parentTip: "Reading newspaper articles with your child and discussing the tense choices is an excellent critical literacy activity that also builds general knowledge.",
+        questions: [
+          { prompt: "Why do newspaper headlines often use present tense even for past events?", options: ["Because journalists do not know past tense", "Because present tense creates immediacy and makes the story feel relevant now", "Because present tense is faster to type", "Because all newspaper articles are about current events"], answer: "Because present tense creates immediacy and makes the story feel relevant now" },
+          { prompt: "In the body of a news article, the main event is usually described in:", options: ["Future tense", "Present tense", "Past tense", "Present perfect"], answer: "Past tense" },
+          { prompt: "Why might a journalist use present perfect ('has decided', 'have announced') rather than simple past?", options: ["It is always more formal", "It connects the past event to the present and suggests ongoing relevance", "It is easier to write", "It is required by style guides"], answer: "It connects the past event to the present and suggests ongoing relevance" },
+        ],
+      },
+      // 78
+      {
+        type: "fill-in-blank" as const,
+        title: "Tense in Complex Argument Writing",
+        instruction: "Fill in each blank with the correct tense to maintain consistency in this formal argument passage.",
+        sentences: [
+          { text: "Research consistently _______ (show) that children who read daily develop stronger vocabulary.", blanks: ["shows"] },
+          { text: "A 2022 study _______ (find) that students who read for 30 minutes a night _______ (score) 20% higher on comprehension tests.", blanks: ["found", "scored"] },
+          { text: "Educators who _______ (implement) daily reading programmes _______ (report) improvements in student engagement.", blanks: ["have implemented", "report"] },
+          { text: "If schools _______ (prioritise) reading time, student outcomes _______ (improve) significantly.", blanks: ["prioritised", "would improve"] },
+        ],
+      },
+      // 79
+      {
+        type: "circle-correct" as const,
+        title: "Mastery Check: Tense Identification",
+        instruction: "Identify the tense and aspect of each underlined verb phrase.",
+        questions: [
+          { prompt: "She has been studying for three hours.", options: ["Present perfect continuous", "Past perfect continuous", "Present continuous", "Past continuous"] },
+          { prompt: "By next year, they will have completed the project.", options: ["Future simple", "Future perfect", "Future continuous", "Present perfect"] },
+          { prompt: "He had been waiting for an hour when she finally arrived.", options: ["Past perfect continuous", "Past perfect simple", "Past continuous", "Present perfect continuous"] },
+          { prompt: "The committee would consider all applications fairly.", options: ["Past simple", "Present conditional", "Conditional (would)", "Future simple"] },
+        ],
+      },
+      // 80 — SPARK
+      {
+        type: "spark" as const,
+        title: "Spark: Write a Time-Travelling Paragraph",
+        content: "Write a paragraph that deliberately uses every major English tense — at least six — in a way that makes chronological sense. You might write about a character who travels through time, or a narrator reflecting on past, present and future. Every tense shift must be signalled clearly. Label each tense in the margin. This is one of the hardest tense challenges in English — mastering it shows genuine grammatical sophistication.",
+      },
+      // 81
+      {
+        type: "open-response" as const,
+        title: "Comparative Tense Analysis",
+        instruction: "Find two published texts that cover the same subject (for example, two news articles about the same event, or an encyclopaedia entry and a novel excerpt on the same topic). Compare how each text uses tense: which tenses are used, are they consistent, and what does the tense choice reveal about each text's purpose and audience?",
+        parentTip: "Comparative analysis is a sophisticated skill that requires holding two texts in mind simultaneously. Support your child by discussing each text separately before attempting the comparison.",
+        prompts: [
+          { text: "Text 1 (title, type, source):", type: "lines", lines: 1 },
+          { text: "Tense analysis for Text 1:", type: "box", lines: 6 },
+          { text: "Text 2 (title, type, source):", type: "lines", lines: 1 },
+          { text: "Tense analysis for Text 2:", type: "box", lines: 6 },
+          { text: "Comparison — how do the tense choices differ and why?", type: "box", lines: 6 },
+        ],
+      },
+      // 82
+      {
+        type: "multiple-choice" as const,
+        title: "Tense and Reliability in Argument",
+        instruction: "Tense can affect how convincing an argument sounds. Choose the most persuasive option for each context.",
+        questions: [
+          { prompt: "Which version of this claim is most credible and precise?", options: ["Studies will show that exercise is good.", "Studies showed exercise was good once.", "Studies consistently show that regular exercise improves both physical and mental health.", "Exercise is probably good."], answer: "Studies consistently show that regular exercise improves both physical and mental health." },
+          { prompt: "Which tense is most appropriate for a recommendation?", options: ["Schools will implement reading programmes.", "Schools should implement reading programmes.", "Schools implemented reading programmes.", "Schools have implemented reading programmes."], answer: "Schools should implement reading programmes." },
+        ],
+      },
+      // 83
+      {
+        type: "sorting" as const,
+        title: "Sort: Tense Errors and Their Fixes",
+        instruction: "Sort each incorrect sentence into the column that describes the type of tense error it contains.",
+        columns: ["Accidental tense shift", "Wrong tense for context", "Unnecessary passive"],
+        items: [
+          { label: "She ran across the field and then waves at us." },
+          { label: "In his novel, Dickens described Oliver Twist as a hungry child. (literary present should be used)" },
+          { label: "The ball was kicked by him across the room. (active would be clearer)" },
+          { label: "They played all afternoon and then it gets dark." },
+          { label: "The experiment was performed by the students yesterday. (active would be clearer)" },
+          { label: "Scientists discovered in 1928 that penicillin kills bacteria. (should be present for current fact)" },
+        ],
+      },
+      // 84
+      {
+        type: "open-response" as const,
+        title: "Write a Formal Report with Correct Tense",
+        instruction: "Write a short formal report (3 short paragraphs) about any topic you have studied this year. Use correct tense conventions: past tense for completed events, present tense for current facts and findings, and future or conditional for recommendations.",
+        parentTip: "Report writing is an essential skill for secondary school and university. Discuss the tense conventions before your child begins, and review the draft together section by section.",
+        prompts: [
+          { text: "Report topic:", type: "lines", lines: 1 },
+          { text: "Paragraph 1 — Background (past tense):", type: "box", lines: 6 },
+          { text: "Paragraph 2 — Findings (present tense for facts):", type: "box", lines: 6 },
+          { text: "Paragraph 3 — Recommendations (future or conditional):", type: "box", lines: 6 },
+        ],
+      },
+      // 85
+      {
+        type: "fill-in-blank" as const,
+        title: "Future Perfect and Future Continuous",
+        instruction: "Fill in the blank with the correct future tense form.",
+        sentences: [
+          { text: "By Friday, she _______ (finish) the entire project. (future perfect)", blanks: ["will have finished"] },
+          { text: "At this time tomorrow, they _______ (fly) over the Pacific. (future continuous)", blanks: ["will be flying"] },
+          { text: "By the time you read this, I _______ (leave) for Brisbane. (future perfect)", blanks: ["will have left"] },
+          { text: "This time next year, he _______ (study) at university. (future continuous)", blanks: ["will be studying"] },
+        ],
+      },
+      // 86
+      {
+        type: "true-false" as const,
+        title: "True or False: Mastery Challenge",
+        instruction: "Circle True or False.",
+        statements: [
+          { text: "Future perfect continuous describes an action that will still be in progress at a point in the future.", answer: true },
+          { text: "Tense choice is a grammatical rule with no creative dimension.", answer: false },
+          { text: "Spoken English often uses fewer tense distinctions than written formal English.", answer: true },
+          { text: "In Australian English, 'used to' indicates a habitual past action that no longer occurs.", answer: true },
+          { text: "Overusing passive voice in creative writing is generally considered a stylistic weakness.", answer: true },
+          { text: "A narrative can never switch tenses without becoming confusing.", answer: false },
+        ],
+      },
+      // 87
+      {
+        type: "circle-correct" as const,
+        title: "Subtle Tense Distinctions",
+        instruction: "Circle the sentence in each pair that uses tense more precisely for the given context.",
+        questions: [
+          { prompt: "Expressing a past habit that no longer occurs:", options: ["She walked to school.", "She used to walk to school."] },
+          { prompt: "Expressing an action completed just before another past action:", options: ["She studied hard and passed the exam.", "She had studied for weeks before she sat the exam."] },
+          { prompt: "Expressing an ongoing state that started in the past and continues:", options: ["She lives in Melbourne.", "She has lived in Melbourne since 2015."] },
+          { prompt: "Expressing an action still in progress at a past moment:", options: ["He read when I called.", "He was reading when I called."] },
+        ],
+      },
+      // 88
+      {
+        type: "open-response" as const,
+        title: "Verb Tense Glossary",
+        instruction: "Create a personal reference glossary for the eight most important English tenses. For each one, write: the tense name, how it is formed, when to use it, and one clear example sentence.",
+        parentTip: "A personal grammar glossary is a powerful revision and reference tool. Encourage your child to revisit and add to it throughout the year.",
+        prompts: [
+          { text: "Simple past — form, use, example:", type: "lines", lines: 3 },
+          { text: "Simple present — form, use, example:", type: "lines", lines: 3 },
+          { text: "Simple future — form, use, example:", type: "lines", lines: 3 },
+          { text: "Past continuous — form, use, example:", type: "lines", lines: 3 },
+          { text: "Present perfect — form, use, example:", type: "lines", lines: 3 },
+          { text: "Past perfect — form, use, example:", type: "lines", lines: 3 },
+          { text: "Future perfect — form, use, example:", type: "lines", lines: 3 },
+          { text: "Conditional (would) — form, use, example:", type: "lines", lines: 3 },
+        ],
+      },
+      // 89
+      {
+        type: "home-activity" as const,
+        title: "Extended Project: Tense Through the Ages",
+        instruction: "Over the next two weeks, investigate how tense is used across different historical periods and text types.",
+        parentTip: "This project builds both grammatical knowledge and historical literacy. Working through it together over two weeks — rather than all at once — allows your child to reflect between stages.",
+        suggestions: [
+          "Find three short texts from very different eras: an ancient or classical text, a Victorian-era text and a modern text. Analyse the tense use in each and discuss: has the way English uses tense changed over time? How?",
+          "Choose a historical event. Write about it three ways: as a past tense narrative, as a present tense dramatic monologue from the perspective of someone living it, and as a future tense prediction written by someone before the event. Share all three versions with a family member.",
+          "Reflection: Write a one-page essay answering the question: 'Why does tense matter?' Use everything you have learned about tense in this worksheet to construct a clear, well-evidenced argument.",
+        ],
+      },
+      // 90 — TIP
+      {
+        type: "tip" as const,
+        title: "Tip: Five Tense Rules Every Writer Must Know",
+        content: "1. Choose a base tense for each piece and stick to it unless you have a deliberate reason to shift. 2. Signal every deliberate tense shift with a clear time clue. 3. In literary analysis, always use the literary present tense. 4. In science and formal reports, use past for completed method, present for current findings. 5. In reported speech, backshift one tense: present becomes past, past becomes past perfect. These five rules will serve you through secondary school and beyond.",
+      },
+      // 91
+      {
+        type: "open-response" as const,
+        title: "Reflection: My Tense Learning Journey",
+        instruction: "Reflect on what you have learned about verb tenses throughout this worksheet. Answer each question thoughtfully.",
+        prompts: [
+          { text: "Which tense concept did you find most difficult? How did you work through it?", type: "lines", lines: 4 },
+          { text: "Which tense concept was most new or surprising to you?", type: "lines", lines: 3 },
+          { text: "How will you check for tense consistency in your own writing from now on?", type: "lines", lines: 3 },
+          { text: "Name a text type you write regularly. What is the correct tense for that text type and why?", type: "lines", lines: 3 },
+        ],
+      },
+      // 92
+      {
+        type: "multiple-choice" as const,
+        title: "Mastery Check: Tense Application",
+        instruction: "Apply your knowledge to each real-world writing scenario.",
+        questions: [
+          { prompt: "You are writing a recount of a bushwalk you did last weekend. Which tense family should you use?", options: ["Future tenses", "Past tenses (simple, continuous, perfect as needed)", "Present tenses only", "A mix of all tenses equally"], answer: "Past tenses (simple, continuous, perfect as needed)" },
+          { prompt: "You are writing an information report about the water cycle for a science assignment. Which tense is most appropriate for describing how the water cycle works?", options: ["Future tense", "Simple past", "Simple present", "Past perfect"], answer: "Simple present" },
+          { prompt: "You are discussing a theme in a novel you have been studying. What tense should you use to discuss the plot?", options: ["Simple past", "Literary present tense", "Future tense", "Past perfect"], answer: "Literary present tense" },
+        ],
+      },
+      // 93
+      {
+        type: "sorting" as const,
+        title: "Sort: Tense Errors in Student Writing",
+        instruction: "A student made tense errors throughout their essay. Sort each sentence into the column that identifies the type of tense problem.",
+        columns: ["Accidental tense shift", "Wrong tense for text type", "Inconsistent reported speech"],
+        items: [
+          { label: "In the novel, Pip wanted to become a gentleman, so he leaves his home. (literary present violated)" },
+          { label: "The teacher said that the test is on Friday. (should be 'was')" },
+          { label: "She ran towards the door and then looks back." },
+          { label: "Scientists discovered that the Earth orbits the sun. (fact should be present)" },
+          { label: "He told us he will be late. (should be 'would be')" },
+          { label: "The children played happily until it suddenly starts raining." },
+        ],
+      },
+      // 94
+      {
+        type: "circle-correct" as const,
+        title: "Final Tense Challenge: Choose the Best Version",
+        instruction: "Read each context and circle the sentence that uses tense most accurately and effectively.",
+        questions: [
+          { prompt: "For a science report conclusion:", options: ["The experiment showed that plants grow faster with more light.", "The experiment shows that plants grew faster with more light.", "The experiment shows that plants grow faster with more light."] },
+          { prompt: "For a literary essay about a novel:", options: ["Atticus Finch defended Tom Robinson in court.", "Atticus Finch defends Tom Robinson in court and his courage inspires his children.", "Atticus Finch will defend Tom Robinson."] },
+          { prompt: "For a historical recount:", options: ["In 1788, the First Fleet arrives in Sydney Cove.", "In 1788, the First Fleet arrived in Sydney Cove.", "In 1788, the First Fleet has arrived in Sydney Cove."] },
+          { prompt: "For a persuasive essay about a current issue:", options: ["Climate change is threatening biodiversity worldwide.", "Climate change threatened biodiversity worldwide.", "Climate change will have threatened biodiversity."] },
+        ],
+      },
+      // 95
+      {
+        type: "fill-in-blank" as const,
+        title: "Mastery Fill-In: Mixed Tenses",
+        instruction: "Fill in each blank with the most appropriate tense form based on the context clues.",
+        sentences: [
+          { text: "She _______ (study) for three years by the time she _______ (sit) the final exam.", blanks: ["had been studying", "sat"] },
+          { text: "The report _______ (conclude) that schools _______ (benefit) from greater investment in libraries.", blanks: ["concludes", "benefit"] },
+          { text: "When the storm _______ (hit), the team _______ (already, pack) their equipment.", blanks: ["hit", "had already packed"] },
+        ],
+      },
+      // 96
+      {
+        type: "open-response" as const,
+        title: "Argument: Why Tense Matters in Communication",
+        instruction: "Write a persuasive paragraph arguing why verb tense is one of the most important grammatical tools a writer has. Use specific examples to support your argument.",
+        parentTip: "This task requires your child to synthesise everything they have learned. Encourage them to plan their argument before writing: what is their main claim? What three examples will they use as evidence?",
+        prompts: [
+          { text: "My persuasive paragraph:", type: "box", lines: 14 },
+        ],
+      },
+      // 97
+      {
+        type: "multiple-choice" as const,
+        title: "Tense in Spoken vs Written English",
+        instruction: "Spoken and written English handle tense differently. Choose the best answer.",
+        questions: [
+          { prompt: "Which of the following is more typical of spoken English than written English?", options: ["Strict use of the literary present for discussing books", "Using simple past when present perfect would be more technically correct ('I already told you' instead of 'I have already told you')", "Careful use of passive voice", "Precise use of past perfect"], answer: "Using simple past when present perfect would be more technically correct ('I already told you' instead of 'I have already told you')" },
+          { prompt: "Why might a skilled writer occasionally bend tense rules deliberately?", options: ["Because they do not know the rules", "To create a specific stylistic effect, such as immediacy or intimacy", "Because tense rules do not apply to creative writing", "To confuse the reader"], answer: "To create a specific stylistic effect, such as immediacy or intimacy" },
+        ],
+      },
+      // 98
+      {
+        type: "home-activity" as const,
+        title: "Tense Audit of Your Own Writing",
+        instruction: "Apply everything you have learned to your own recent writing.",
+        parentTip: "Reviewing their own past work with new eyes is one of the most powerful learning activities a student can do. Sit alongside your child for this one.",
+        suggestions: [
+          "Find three pieces of your own writing from the past month. Highlight every verb in each piece. Are the tenses consistent? Are there any accidental tense shifts? Make a list of every error you find.",
+          "Choose the piece of writing with the most tense errors. Rewrite it in full, correcting all tense issues and improving the tense variety where appropriate.",
+          "Write a one-page reflection on what you notice about your own tense habits. What are your most common errors? What will you do differently in your next piece of writing?",
+        ],
+      },
+      // 99
+      {
+        type: "open-response" as const,
+        title: "Create a Tense Teaching Resource",
+        instruction: "Create a one-page tense guide that could help a younger student understand the most important tense concepts. Include: a clear explanation of at least five tenses with examples, a common error to watch out for, and a simple checklist for editing tense in their own writing.",
+        parentTip: "Teaching something to someone else is the deepest form of learning. If possible, have your child present this guide to a younger sibling or family member.",
+        prompts: [
+          { text: "My tense guide (write it below as if you are writing for a Year 3 student):", type: "box", lines: 20 },
+        ],
+      },
+      // 100 — SPARK
+      {
+        type: "spark" as const,
+        title: "Spark: The Tense Manifesto",
+        content: "Write a one-page creative piece in which EVERY sentence begins with a different verb tense. You have approximately 12 common English tense forms to work with: simple present, present continuous, present perfect, present perfect continuous, simple past, past continuous, past perfect, past perfect continuous, simple future, future continuous, future perfect, and conditional. Label each tense at the beginning of its sentence. Can you make it read as a coherent piece of writing despite the tense changes? This is the ultimate tense mastery challenge.",
       },
     ],
   },
