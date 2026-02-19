@@ -4709,24 +4709,24 @@ export const foundationEnglishWorksheets: WorksheetItem[] = [
         script:
           "Your ideas are wonderful and we want to write them down so everyone can read them! Today you are going to draw and write about something YOU love — something that makes you happy. Before we start, tell me about it: what do you love? Where does it happen? How does it make you feel? Good — now we have lots of ideas ready to write!",
         action:
-          "Have a 3 to 4 minute conversation about the chosen topic before any writing. The richer the discussion, the better the writing.",
+          "Have a 3 to 4 minute conversation about the chosen topic before any writing. Ask open questions: 'What does it look like? Who is there? What happens? How does it make you feel?' The richer the discussion, the better the writing. Jot down key words your child says on a scrap of paper — they can refer to these when writing.",
       },
       mainActivity: {
         title: "Draw, Label and Write",
         script:
-          "Step 1: draw your idea. Step 2: label the most important things in your picture — write the word or even just the first letter. Step 3: write a sentence about your picture. It might start with I love... or My favourite... Ready? Off you go — you are a writer!",
+          "Step 1: draw your idea — take your time and add lots of details. Step 2: label the most important things in your picture — write the word or even just the first letter. So if you drew a dog, write 'dog' or just 'd'. Step 3: write a sentence about your picture. It might start with 'I love...' or 'My favourite...' or 'This is...' Here is my example: I drew a cat. I wrote: 'My cat is fluffy.' Now you try! Ready? Off you go — you are a writer!",
         action:
-          "Prompt: What is happening here in your picture? Can you write that? Celebrate every attempt. Accept invented spelling as valid.",
+          "While your child draws, do not rush them. When they move to labelling, prompt: 'What is the most important thing in your picture? Let us write that word.' Help them sound out the first letter: 'Dog — what sound does it start with? /d/. What letter makes that sound? d. Write it!' For the sentence, if your child dictates rather than writes, write their words in light pencil and let them trace over. Celebrate every mark on the paper: 'You wrote the d for dog — that is real writing!'",
       },
       wrapUp: {
         title: "Author's Chair",
         script:
-          "Now it is sharing time! Sit in the special Author's Chair (any chair will do!) and share your writing with me. Read your words or tell me about your picture. You are a real author now!",
+          "Now it is sharing time! Sit in the special Author's Chair (any chair will do!) and share your writing with me. Read your words or tell me about your picture. You are a real author now! I want to hear all about what you wrote.",
         action:
-          "Let your child read their writing to you. Ask one question about their work to show genuine interest.",
+          "Let your child read their writing to you — or describe their picture if they cannot yet read their own writing. Ask two genuine questions about their work: 'Why did you choose that?' and 'What happens next in your story?' This makes them feel their ideas matter.",
       },
       parentTip:
-        "Never correct invented spelling in a negative way — it can shut down the writing process entirely. Instead, celebrate the attempt and model the correct spelling naturally in your response.",
+        "Never correct invented spelling in a negative way — it can shut down the writing process entirely. Instead, celebrate the attempt and model the correct spelling naturally in your response. For example, if your child writes 'I luv my dg', you might respond: 'You love your dog! What a great sentence.' Common misconception: parents sometimes worry that accepting invented spelling will teach bad habits — it will not. Research consistently shows that children who are encouraged to write freely at this stage develop stronger spelling later because they practise more. Another common issue: children may draw extensively but resist writing any words. This is normal. The progression is: drawing, then labelling with initial sounds, then full words, then sentences. Meet your child where they are. Your child is ready for the worksheet when they can: (1) write their own first name from memory, (2) label at least one item in a drawing with the correct beginning sound, and (3) communicate an idea through drawing and explain it orally.",
       extension:
         "Create a simple book about your child's favourite thing: fold 4 to 5 pieces of paper in half and staple. One idea per page. Add a title page with your child's name as the author. This covers AC V9 Foundation Literacy — creating short written texts using words and images.",
       resources: [
