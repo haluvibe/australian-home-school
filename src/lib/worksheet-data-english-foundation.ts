@@ -47,7 +47,7 @@ export const foundationEnglishWorksheets: WorksheetItem[] = [
           "Point to objects in the room and say rhyming words aloud. Let your child run to touch the rhyming object if they find it.",
       },
       parentTip:
-        "Rhyming games are perfect in the car or at bath time — no materials needed. Simply take turns adding rhyming words. Do not worry about nonsense words; made-up rhymes show strong phonological thinking.",
+        "Rhyming games are perfect in the car or at bath time — no materials needed. Simply take turns adding rhyming words. Do not worry about nonsense words; made-up rhymes show strong phonological thinking. Common misconception: some children match words by meaning rather than sound — they might say 'cat' and 'dog' rhyme because both are animals. Gently redirect: 'Those are both pets, but do they sound the same at the end? Listen: cat... hat. Those rhyme because they both end in -at.' Your child is ready for the worksheet when they can: (1) correctly identify whether two spoken words rhyme at least 4 out of 5 times, (2) produce at least one rhyming word when you give them a starting word, and (3) explain in their own words that rhyming means the ends of words sound the same.",
       extension:
         "Read a rhyming picture book (e.g. Hairy Maclary by Lynley Dodd) together and pause before each rhyming word, letting your child predict what comes next. This aligns with AC V9 Foundation English — Language: listening for rhymes and sound patterns.",
       resources: [
@@ -1207,24 +1207,24 @@ export const foundationEnglishWorksheets: WorksheetItem[] = [
         script:
           "We are going to be sound detectives today! A detective listens very, very carefully. I am going to say a word and I want you to tell me the VERY FIRST sound you hear — just the first little sound. Listen: mmmoon. What is the first sound? Yes, /m/! Now try this one: sssun. What is the first sound? Great, /s/!",
         action:
-          "Hold up objects or point to pictures and stretch the first sound out slightly to help your child isolate it. Do 4 to 5 examples together before the written activity.",
+          "Hold up each object one at a time. Say the word slowly, stretching the first sound: 'sssock — what sound do you hear first?' If your child says the letter name instead of the sound, model the correction: 'That is the letter S, and the sound it makes is /s/. Let us say it together: /s/.' Work through all 5 objects: sock (/s/), book (/b/), cup (/k/), pen (/p/), apple (/a/). Keep it playful — hide objects behind your back and reveal them one at a time.",
       },
       mainActivity: {
         title: "Sort by Beginning Sound",
         script:
-          "I am going to say some words, and you are going to sort them into groups based on their beginning sound. I will say the word, you say the beginning sound, and then put it in the right group. Let us try: sun starts with /s/. Mum starts with /m/. Banana — what does banana start with?",
+          "I am going to say some words, and you are going to sort them into groups based on their beginning sound. I will say the word, you say the beginning sound, and then put it in the right group. Let us try: sun starts with /s/. Mum starts with /m/. Banana — what does banana start with? That is right, /b/! Here is a tricky one: chair. It does not start with /c/ — it starts with /ch/. Two letters can make one sound together.",
         action:
-          "Use the sorting activity on the worksheet. Say each word aloud before your child writes or draws in the correct column.",
+          "Draw two or three columns on paper, each headed by a large letter (e.g. S, M, B). Gather 6 to 8 small objects or picture cards. Say each word clearly, stretching the first sound. Your child places or draws each item in the correct column. If they are unsure, say the word again and emphasise the first sound: 'Listen one more time — mmmmilk. Which column?' After sorting, point to each column and read all the words together: 'S column: sun, sock, spoon — they all start with /s/!'",
       },
       wrapUp: {
         title: "Beginning Sound I-Spy",
         script:
-          "Let us finish with a round of Sound I-Spy. I will pick a beginning sound and you find as many things in the room as you can that start with that sound. I spy with my little eye... everything starting with /b/!",
+          "Let us finish with a round of Sound I-Spy. I will pick a beginning sound and you find as many things in the room as you can that start with that sound. I spy with my little eye... everything starting with /b/! Book, ball, bed — brilliant! Now you pick a sound for me.",
         action:
-          "Take turns choosing a beginning sound. The child who finds the most objects wins a high-five.",
+          "Take turns choosing a beginning sound. Set a 30-second timer for each round. Count how many objects you each find. The child who finds the most wins a high-five. If your child picks a difficult sound like /th/, celebrate the challenge rather than correcting.",
       },
       parentTip:
-        "The key is to say the SOUND, not the letter name — say /s/ not 'ess'. Stretch the first sound slightly: sssun, mmmoon. This makes it much easier for young children to hear and identify.",
+        "The key is to say the SOUND, not the letter name — say /s/ not 'ess'. Stretch the first sound slightly: sssun, mmmoon. This makes it much easier for young children to hear and identify. Common misconception: children often confuse the letter name with the letter sound — they might say the first sound in 'cat' is 'see' instead of /k/. If this happens, gently say: 'That is the letter name — the sound it makes is /k/. Listen: /k/ /k/ cat.' Another common confusion is with blends like 'sp' in 'spoon' — children may say the first sound is /s/ or /p/ rather than hearing both. At this stage, accept /s/ as correct for 'spoon' and save blends for Year 1. Your child is ready for the worksheet when they can: (1) correctly identify the beginning sound of at least 4 out of 5 spoken words, (2) distinguish between the letter name and the letter sound when prompted, and (3) sort objects by beginning sound with minimal help.",
       extension:
         "Help your child make an alphabet sound book: fold 3 pieces of paper in half to make a booklet. Assign one letter per page and draw or paste pictures of things beginning with that sound. This covers AC V9 Foundation — naming letters and knowing the sounds they represent.",
       resources: [
@@ -2418,24 +2418,24 @@ export const foundationEnglishWorksheets: WorksheetItem[] = [
         script:
           "Did you know every letter in the alphabet has a twin? One twin is BIG (uppercase) and one is small (lowercase). They are the same letter, just dressed differently! Look at this: A and a. Same letter — different outfit! Can you find any uppercase or lowercase letters around the room right now?",
         action:
-          "Look at books, cereal boxes, or other printed materials. Point out uppercase and lowercase letter pairs together.",
+          "Walk around the room together pointing at letters on book covers, cereal boxes, signs, or toys. For each one you find, say: 'Look — that is a big B! And here is its twin, the little b. Same letter, different size.' Aim for 4 to 5 pairs. Write each pair on paper as you find them so your child sees them side by side.",
       },
       mainActivity: {
         title: "Letter Pair Snap",
         script:
-          "I have written some letters on these cards. We are going to make pairs — matching the big letter to its small twin. When you find a match, say the letter name AND its sound. Ready? Let us go!",
+          "I have written some letters on these cards. We are going to make pairs — matching the big letter to its small twin. When you find a match, say the letter name AND its sound. So if you match B and b, you say: 'B — /b/!' Ready? Let us go!",
         action:
-          "Write 8 to 10 uppercase and matching lowercase letters on small cards. Shuffle them and play a matching game — or lay them out and draw lines between pairs.",
+          "Write 8 to 10 uppercase and matching lowercase letters on small cards (start with letters your child knows best — often those in their name). Lay all cards face up in a grid. Your child picks up a card, says the letter name, then searches for its twin. When they find a pair, they say the letter name and make its sound. If they hesitate on the sound, model it: 'This is M — it says /m/, like mmmmum.' Keep matched pairs in a pile. After all pairs are found, shuffle and play Snap: flip cards one at a time, and slap the pile when consecutive cards are a matching pair.",
       },
       wrapUp: {
         title: "Write Your Letters",
         script:
-          "You have been amazing at matching today! Now let us practise forming some of these letters ourselves. I will say a letter name and you write it — both the big and small version. We will take it slow and make each letter as neat as we can.",
+          "You have been amazing at matching today! Now let us practise forming some of these letters ourselves. I will say a letter name and you write it — both the big and small version. We will take it slow and make each letter as neat as we can. Start at the top of each letter and work down.",
         action:
-          "Dictate 5 letters for your child to write in both forms. Praise effort and correct letter formation gently.",
+          "Dictate 5 letters for your child to write in both forms. Start with letters they matched confidently, then include one or two they found harder. For each letter, show the formation first: 'Watch me — I start at the top and come down, then add the bump.' Then let your child try. Praise the attempt even if the letter is wobbly: 'I can see that is a B — well done!'",
       },
       parentTip:
-        "When your child forms letters, watch the starting point and direction — most letters start at the top. Correct habits early as they are harder to undo later, but always keep the tone encouraging.",
+        "When your child forms letters, watch the starting point and direction — most letters start at the top. Correct habits early as they are harder to undo later, but always keep the tone encouraging. Common misconception: children frequently confuse b/d and p/q because these letters are mirror images of each other. A helpful trick: make two fists with thumbs up — the left hand makes a 'b' shape, the right hand makes a 'd' shape. Say: 'b comes first in the alphabet, and it is on the left — like the left hand.' Another common issue is confusing uppercase and lowercase for letters that look different in each form, such as A/a, G/g, and Q/q. Extra practice with these specific pairs helps. Your child is ready for the worksheet when they can: (1) correctly match at least 8 out of 10 uppercase-lowercase pairs, (2) name the sound for at least 5 letters without help, and (3) write both forms of at least 3 letters from memory.",
       extension:
         "Go on a letter hunt in a newspaper or magazine. Circle every uppercase A in red and every lowercase a in blue. Count how many you find. This covers AC V9 Foundation — naming letters of the English alphabet.",
       resources: [
@@ -3599,24 +3599,24 @@ export const foundationEnglishWorksheets: WorksheetItem[] = [
         script:
           "Reading is like driving a train! The train starts slowly and then gets faster as the carriages join up. Let us try it: I will say the sounds slowly — /h/ ... /a/ ... /t/ — and then we will speed the train up to make the word. Ready? /h/ /a/ /t/ ... hat! Let us try another: /c/ /u/ /p/. Can you speed the train up? Cup! Excellent!",
         action:
-          "Use your fingers or small objects as carriages — one for each sound. Push them together as you blend.",
+          "Use your fingers or small objects as carriages — one for each sound. Line up three blocks on the table. Touch each block as you say each sound: /h/ (touch block 1), /a/ (touch block 2), /t/ (touch block 3). Then slide all three blocks together and say 'hat!' Do this with 4 to 5 words: hat, cup, dog, pen, sun. Let your child take over the block-sliding after the first two examples.",
       },
       mainActivity: {
         title: "Sound Boxes",
         script:
-          "Now we are going to use sound boxes. Each box holds one sound. I will say a word and you write one letter in each box — one letter per sound. Let us try sun. What is the first sound? /s/ — write it in the first box. Middle sound? /u/ — second box. Last sound? /n/ — third box. Now say it all together: sun!",
+          "Now we are going to use sound boxes. Each box holds one sound. I will say a word and you write one letter in each box — one letter per sound. Let us try sun. What is the first sound? /s/ — write it in the first box. Middle sound? /u/ — second box. Last sound? /n/ — third box. Now say it all together: sun! Let us do another: mop. First sound? /m/. Middle? /o/. Last? /p/. Mop!",
         action:
-          "Draw three connected boxes on paper for each word: sun, hat, cat, pen, big, dog, mop, run. Say the word and have your child write one phoneme per box.",
+          "Draw three connected boxes on paper for each word. Work through these words in order: sun, hat, cat, pen, big, dog, mop, run. For each word: (1) say it aloud normally, (2) say it stretched out with gaps between sounds, (3) your child writes one letter per box, (4) child reads the whole word back by blending. If your child writes the wrong letter, say: 'Listen again — /d/ /o/ /g/. What sound do you hear in the middle? /o/. What letter makes that sound?' Guide them to self-correct rather than simply telling them the answer.",
       },
       wrapUp: {
         title: "Read and Match",
         script:
-          "You have done so well blending and segmenting today! Now let us see if you can read some of these words on your own and match them to the right picture. Take your time — remember the blending train!",
+          "You have done so well blending and segmenting today! Now let us see if you can read some of these words on your own and match them to the right picture. Take your time — remember the blending train! Touch each letter, say its sound, then slide them together.",
         action:
-          "Point to the written words in the matching activity and let your child blend each one independently.",
+          "Point to the written words in the matching activity and let your child blend each one independently. If they freeze on a word, prompt: 'What is the first sound? Good. Now the middle. Now the last. Now put them together — fast!' Celebrate every successful blend.",
       },
       parentTip:
-        "Keep blending sessions short — 10 minutes is plenty for Foundation children. Always start with words using known sounds and build up. Never skip the blending step by showing pictures before the child has a chance to decode the word.",
+        "Keep blending sessions short — 10 minutes is plenty for Foundation children. Always start with words using known sounds and build up. Never skip the blending step by showing pictures before the child has a chance to decode the word. Common misconception: children often say letter names instead of sounds — they might say 'see-ay-tee' instead of /k/ /a/ /t/. Always model the sounds, not the names. Another common issue is that children blend the first two sounds but forget the last — they say /ka/ and stop. Prompt them: 'Nearly there! What is the last sound?' Children also sometimes confuse short vowel sounds, especially /e/ and /i/ (saying 'pin' for 'pen'). This is normal at this stage — just model the correct vowel sound clearly. Your child is ready for the worksheet when they can: (1) blend three separate sounds into a word when you say them aloud, (2) segment a spoken CVC word into its three sounds with the sound box method, and (3) read at least 3 written CVC words by sounding them out independently.",
       extension:
         "Write 5 CVC words on cards and hide them around the house. When your child finds a card, they must blend the word and run to find an object that matches. This aligns with AC V9 Foundation — reading consonant-vowel-consonant words.",
       resources: [
@@ -3876,23 +3876,23 @@ export const foundationEnglishWorksheets: WorksheetItem[] = [
         script:
           "Did you know that words are a bit like music? They have beats, just like a song! We call those beats syllables. Put your hand under your chin and say apple — feel how your chin drops twice? App-le. Two beats! Try cat — just one drop. One beat! Now try butterfly — but-ter-fly. Three drops! Can you feel it?",
         action:
-          "Practise with your child's hand under their chin for several words. The chin-drop trick is more reliable than clapping for some children.",
+          "Have your child place their hand flat under their chin. Say 'apple' slowly and feel the chin drop twice. Then try 'cat' — one drop. Then 'butterfly' — three drops. Do 6 to 8 words together: dog (1), happy (2), banana (3), cup (1), pencil (2), elephant (3). For each word, have your child hold up fingers to show the count. If the chin-drop method is difficult, try placing one block on the table per syllable as you say the word.",
       },
       mainActivity: {
         title: "Clap and Count",
         script:
-          "Now let us clap the beats! I will say a word, you clap and count the syllables, then write the number. Ready? Crocodile — clap it with me: croc-o-dile. How many? Three! Great. Now fish... just one clap. Write the number!",
+          "Now let us clap the beats! I will say a word, you clap and count the syllables, then write the number. Ready? Crocodile — clap it with me: croc-o-dile. How many? Three! Great. Now fish... just one clap. Write the number! Let us try a tricky one: chocolate. Choc-o-late. Some people say it as two beats, some say three — both are fine!",
         action:
-          "Work through the sorting and counting activities together. Use small objects (blocks) to represent each syllable.",
+          "Work through the sorting and counting activities together. For each word, follow this sequence: (1) say the word normally, (2) clap and say it in syllable chunks, (3) your child places one block per syllable on the table, (4) count the blocks, (5) write the number. Use these words in order: cat, rabbit, butterfly, dog, happy, dinosaur, sun, penguin. After counting, sort the blocks into groups: 1-syllable pile, 2-syllable pile, 3-syllable pile.",
       },
       wrapUp: {
         title: "Syllable Sort",
         script:
-          "Let us sort these animal names by how many syllables they have. One-syllable animals go here, two-syllable animals there, and three-syllable animals over here. Say each one slowly — ant, penguin, elephant...",
-        action: "Sort animal name cards or spoken words into groups by syllable count.",
+          "Let us sort these animal names by how many syllables they have. One-syllable animals go here, two-syllable animals there, and three-syllable animals over here. Say each one slowly — ant, penguin, elephant. Where does kangaroo go? Kan-ga-roo — three! What about cat? Just one.",
+        action: "Sort animal name cards or spoken words into groups by syllable count. Make three piles or columns labelled 1, 2, 3. Let your child physically move cards or blocks into the right group. After sorting, read each group aloud together: 'All the one-syllable animals: cat, fish, ant.'",
       },
       parentTip:
-        "The chin-drop trick is the most reliable method for young children because it is physical and they can feel it clearly. If clapping is confusing, always go back to placing a hand under the chin.",
+        "The chin-drop trick is the most reliable method for young children because it is physical and they can feel it clearly. If clapping is confusing, always go back to placing a hand under the chin. Common misconception: children often count sounds instead of syllables — they might say 'cat' has three syllables because it has three sounds (/k/, /a/, /t/). Clarify the difference: 'Syllables are the BIG beats. Cat has three sounds but only one big beat — cat. Hear how it is just one clap?' Another common issue is with words where syllable boundaries are ambiguous, like 'chocolate' (2 or 3 syllables depending on accent). Accept your child's natural pronunciation. Your child is ready for the worksheet when they can: (1) correctly clap the syllables in 1- and 2-syllable words without help, (2) sort at least 5 spoken words into 1-, 2-, or 3-syllable groups, and (3) explain in their own words that syllables are the 'beats' or 'claps' in a word.",
       extension:
         "Use your child's favourite toys or stuffed animals. How many syllables in each name? Sort them into 1, 2 or 3-syllable groups. This aligns with AC V9 Foundation — orally blending and segmenting phonemes in single-syllable words.",
       resources: [
@@ -4153,24 +4153,24 @@ export const foundationEnglishWorksheets: WorksheetItem[] = [
         script:
           "I am thinking of something in this room. I am going to describe it and you have to guess what it is. Ready? It is big, flat, and brown. You read it. What is it? Yes — a book! Now it is your turn. Think of something in the room and describe it using colours, sizes and shapes. Do not say what it is — just describe it!",
         action:
-          "Take turns describing and guessing objects. Encourage your child to use as many describing words as possible: colour, size, texture, shape.",
+          "Take turns describing and guessing objects. For your turn, model rich descriptions: 'I am thinking of something small, round, red, and smooth. You can eat it. What is it?' (an apple). Encourage your child to use as many describing words as possible: colour, size, texture, shape, purpose. If they only give one word, prompt: 'What colour is it? Is it big or small? What does it feel like?' Aim for 4 to 5 rounds of guessing.",
       },
       mainActivity: {
         title: "Draw and Label",
         script:
-          "Now let us be writers! You are going to draw one of these objects and then write labels — the word AND a describing word. So if you draw the cup, you might write blue cup or small cup. Let us see how many describing words you can use!",
+          "Now let us be writers! You are going to draw one of these objects and then write labels — the word AND a describing word. So if you draw the cup, you might write blue cup or small cup. Here is my example: I will draw this pencil. It is long, yellow, and thin. I will write: long yellow pencil. Now your turn — let us see how many describing words you can use!",
         action:
-          "Your child draws 3 objects from the selection and labels them with at least one noun and one adjective. Encourage invented spelling.",
+          "Your child draws 3 objects from the selection and labels them with at least one noun and one adjective. For each drawing, ask three questions before they write: 'What colour is it? Is it big or small? What shape is it?' Then help them write labels. Accept invented spelling — if they write 'yelo' for yellow, say: 'I can read that — yelo, yellow! Great writing.' Only model the correct spelling if they ask for it.",
       },
       wrapUp: {
         title: "Describing Word Collection",
         script:
-          "What a wonderful word collection we have built today! Let us write all our favourite describing words in a list — we could call it our word wall. Which was your favourite describing word today?",
+          "What a wonderful word collection we have built today! Let us write all our favourite describing words in a list — we could call it our word wall. I will write the words you say: big, small, red, round, soft... Which was your favourite describing word today?",
         action:
-          "Write a family word wall together on a large piece of paper. Stick it on the fridge as a reference.",
+          "Write a family word wall together on a large piece of paper. Organise words into groups: colour words, size words, shape words, feeling words. Stick it on the fridge as a reference. Add to it each day.",
       },
       parentTip:
-        "Encourage your child to use describing words in everyday speech. When they use a vague word like thing, gently ask: Can you describe it more so I know exactly which one? This builds precision in language.",
+        "Encourage your child to use describing words in everyday speech. When they use a vague word like 'thing', gently ask: 'Can you describe it more so I know exactly which one?' This builds precision in language. Common misconception: children at this age often confuse describing words (adjectives) with action words (verbs) — they might say 'running' is a describing word because it tells you about a person. Gently clarify: 'Running is what they DO. Fast is what they ARE LIKE. Fast is the describing word.' Also, children sometimes think colours are the only describing words. Expand their thinking: 'What about soft? Bumpy? Tiny? Loud? Those are all describing words too!' Your child is ready for the worksheet when they can: (1) describe a familiar object using at least two different adjectives without prompting, (2) understand that describing words tell us what something looks like, feels like, or sounds like, and (3) label a drawing with at least one adjective and one noun.",
       extension:
         "Make a describing book: fold 5 pages together, draw one object per page, and write a full describing sentence underneath. Read it together as a finished book. This aligns with AC V9 Foundation — using words and phrases in spoken and written communication.",
       resources: [
@@ -4431,24 +4431,24 @@ export const foundationEnglishWorksheets: WorksheetItem[] = [
         script:
           "Every story has three parts — like a sandwich! The beginning is the top piece of bread. Something important happens in the middle — that is the filling. And then the end wraps it all up — the bottom piece of bread. Today we are going to read a story together and then YOU are going to be the storyteller. Are you ready to tell the story back to me?",
         action:
-          "Read the chosen picture book together. As you read, pause and ask: Is this the beginning, middle or end? Let your child identify each part.",
+          "Read the chosen picture book together. Before you begin, say: 'Let us watch for the three parts of the story — the beginning, the middle, and the end.' At the first page, say: 'This is the beginning — we are meeting the characters and finding out where the story happens.' Partway through, pause: 'We are in the middle now — the exciting part! What is happening?' At the end: 'Here is the ending — how did everything get sorted out?' After reading, hold up the book and ask your child to point to roughly where each part was.",
       },
       mainActivity: {
         title: "My Story Booklet",
         script:
-          "Now it is your turn to retell the story. You are going to draw and write what happened in the beginning, middle and end. For each part, draw a picture and write or tell me a sentence about what happened. Take your time — storytellers always think before they speak!",
+          "Now it is your turn to retell the story. You are going to draw and write what happened in the beginning, middle and end. For each part, draw a picture and write or tell me a sentence about what happened. Take your time — storytellers always think before they speak! For the beginning, think: who was in the story and where were they? For the middle: what was the problem or the exciting part? For the end: how did it all work out?",
         action:
-          "Fold 3 pieces of paper to make a booklet. Label three pages: Beginning, Middle, End. Your child draws and writes one event per page.",
+          "Fold 3 pieces of paper to make a booklet. Label three pages: Beginning, Middle, End. For each page, ask your child to tell you what happened before they draw. Write down their words if they are not yet able to write sentences independently — you can write in pencil below their drawing and they can trace over it. Aim for one drawing and one sentence per page. If your child wants to add more detail, encourage it.",
       },
       wrapUp: {
         title: "Be the Storyteller",
         script:
-          "Now put away the book — we are going to close our eyes and retell the story from memory. Ready? Once upon a time... You start! I will help if you get stuck, but I bet you remember more than you think.",
+          "Now put away the book — we are going to close our eyes and retell the story from memory. Ready? Once upon a time... You start! I will help if you get stuck, but I bet you remember more than you think. Remember to tell me who was in the story, what happened, and how it ended.",
         action:
-          "Your child retells the story orally from their booklet or from memory. Praise any attempt at sequencing.",
+          "Your child retells the story orally from their booklet or from memory. Use prompting questions if they stall: 'And then what happened?' or 'How did the character feel?' Praise any attempt at sequencing. If they jump to the end, gently say: 'Wait — what happened before that? Let us go back to the middle.'",
       },
       parentTip:
-        "The goal is oral storytelling — confident speech. If your child's written response is brief, that is fine. What matters is whether they can tell you the story orally. Writing develops later; comprehension and oral fluency come first.",
+        "The goal is oral storytelling — confident speech. If your child's written response is brief, that is fine. What matters is whether they can tell you the story orally. Writing develops later; comprehension and oral fluency come first. Common misconception: children often retell only their favourite scene rather than the whole story — they skip the beginning and jump straight to the exciting bit. This is developmentally normal but worth gently correcting: 'That is the best part! But what happened before that? Who was in the story and where were they?' Another common issue is confusing character feelings with story events — a child might say 'he was sad' without explaining what made the character sad. Prompt: 'Why was he sad? What happened?' Your child is ready for the worksheet when they can: (1) retell a familiar story with at least one event for each of the beginning, middle, and end, (2) name at least one character and the setting, and (3) use sequence words like 'first', 'then', 'at the end' even occasionally.",
       extension:
         "Act out the story with soft toys or paper puppets. Perform the story for another family member. This covers AC V9 Foundation Literature — listening to texts and retelling stories.",
       resources: [
