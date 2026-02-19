@@ -2762,6 +2762,59 @@ export const year8MathsWorksheets: WorksheetItem[] = [
       },
       {
         type: "open-response",
+        title: "Commission and Wages",
+        instruction: "Calculate take-home pay in each commission scenario.",
+        parentTip: "Commission is a common real-world use of percentages. These problems develop practical financial literacy.",
+        prompts: [
+          { text: "A sales agent earns $400 base salary per week plus 5% commission on all sales. This week sales totalled $3200. Calculate total weekly income.", type: "lines", lines: 3 },
+          { text: "A real estate agent earns 2.5% commission on property sales. How much do they earn from selling a $680 000 house?", type: "lines", lines: 3 },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Budgeting with Percentages",
+        instruction: "Use percentage guidelines to plan a budget. Show working.",
+        parentTip: "The 50/30/20 rule is a popular budgeting guideline: 50% needs, 30% wants, 20% savings.",
+        prompts: [
+          { text: "Weekly take-home pay: $620. Apply the 50/30/20 rule. How much goes to needs, wants, and savings?", type: "lines", lines: 4 },
+          { text: "After 6 months, how much would be saved?", type: "lines", lines: 2 },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Percentage of a Quantity — Calculator Skills",
+        instruction: "Use π ≈ 3.14 or a calculator. Choose the correct result.",
+        questions: [
+          { prompt: "8.5% of $1240:", options: ["$105.40", "$126.50", "$10.54"] },
+          { prompt: "3.75% of $8000:", options: ["$300", "$30", "$3000"] },
+          { prompt: "112% of $450:", options: ["$504", "$450", "$396"] },
+          { prompt: "0.5% of $9600:", options: ["$48", "$480", "$4.80"] },
+        ],
+      },
+      {
+        type: "fill-in-blank",
+        title: "Percentage — Key Formulas",
+        instruction: "Fill in the blank.",
+        sentences: [
+          { text: "% of a quantity: answer = percentage ÷ 100 × ___", blanks: ["quantity"] },
+          { text: "% change = change ÷ ___ × 100", blanks: ["original"] },
+          { text: "Reverse: original = result ÷ (1 + r/100) for a ___", blanks: ["percentage increase"] },
+          { text: "Simple interest: I = P × R × T ÷ ___", blanks: ["100"] },
+          { text: "GST: total price = pre-GST price × ___", blanks: ["1.1"] },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Error Analysis — Percentage Mistakes",
+        instruction: "Find and correct the errors.",
+        parentTip: "Percentage errors are among the most common and costly mathematical mistakes in everyday life.",
+        prompts: [
+          { text: "Student: 'After 20% off, $60 becomes $50 because 20% of 60 is $12, not $10.' What is wrong? Correct the answer.", type: "lines", lines: 3 },
+          { text: "Student: 'To find the original price when the sale price is $80 after 20% off, I subtract 20% from $80 to get $64.' What is wrong? Find the correct original price.", type: "lines", lines: 4 },
+        ],
+      },
+      {
+        type: "open-response",
         title: "Reflection",
         instruction: "Write a brief reflection on what you have learned.",
         parentTip: "Reflection consolidates learning and helps identify gaps for revision.",
