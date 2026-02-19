@@ -313,6 +313,28 @@ const games: GameEntry[] = [
     emoji: "🌿",
     bgGradient: "from-green-800 to-emerald-950",
   },
+  {
+    slug: "sound-blaster",
+    title: "Sound Blaster",
+    description: "Load beginning letter sounds into your blaster and fire at matching objects! A platformer across 4 worlds — Forest, Ocean, Sky, and Cave — with boss fights and combo scoring.",
+    subject: "English",
+    subjectColour: "text-sage-dark",
+    yearLevels: ["Foundation", "Year 1"],
+    skills: ["Beginning sounds", "Letter-sound matching", "Phonics", "Alphabet"],
+    emoji: "🔫",
+    bgGradient: "from-indigo-900 to-slate-950",
+  },
+  {
+    slug: "sight-word-sprint",
+    title: "Sight Word Sprint",
+    description: "An endless runner platformer! Your character auto-runs through Forest, City, and Space zones. Jump to collect matching sight words, duck under obstacles, grab power-ups, and survive boss zones.",
+    subject: "English",
+    subjectColour: "text-sage-dark",
+    yearLevels: ["Foundation", "Year 1"],
+    skills: ["Sight words", "High-frequency words", "Word recognition", "Reading fluency"],
+    emoji: "\u{1F3C3}",
+    bgGradient: "from-green-800 to-emerald-950",
+  },
 ];
 
 export default function GamesGrid() {
