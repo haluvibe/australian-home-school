@@ -3944,97 +3944,14 @@ export const year5EnglishWorksheets: WorksheetItem[] = [
       ],
     },
     activities: [
-      {
-        type: "open-response" as const,
-        title: "Making Inferences",
-        instruction:
-          "Read the extract below. Answer each question using evidence from the text and your own knowledge. Write your reasoning.",
-        prompts: [
-          {
-            text: "EXTRACT:\nLukas stared at the envelope for a long time before he picked it up. His name was written in his mother's handwriting — the looping letters he had not seen for three years. His hands were steady but his heart was not.\n\nWhat can you infer about Lukas's relationship with his mother? Cite the evidence that leads you to this inference.",
-            type: "lines",
-            lines: 4,
-          },
-          {
-            text: "What emotions do you think Lukas is feeling? How do you know?",
-            type: "lines",
-            lines: 4,
-          },
-          {
-            text: "From whose point of view is this passage told? How does this affect what information we receive?",
-            type: "lines",
-            lines: 3,
-          },
-        ],
-      },
-      {
-        type: "sorting" as const,
-        title: "Sort: Topic or Theme?",
-        instruction:
-          "A topic is what a story is about. A theme is the message or big idea. Sort each statement into the correct column.",
-        columns: ["Topic (what it is about)", "Theme (the message)"],
-        items: [
-          { label: "A young girl lost in the woods." },
-          { label: "Courage means acting even when you are afraid." },
-          { label: "A sports team that keeps losing." },
-          { label: "Perseverance leads to success even after failure." },
-          { label: "Two children from rival families." },
-          { label: "Kindness can break down the barriers that divide people." },
-        ],
-      },
-      {
-        type: "open-response" as const,
-        title: "Theme Statement for Your Reading Book",
-        instruction:
-          "Write a theme statement for your current or most recently finished reading book. Support it with two pieces of evidence from the text.",
-        prompts: [
-          { text: "Book title and author:", type: "lines", lines: 1 },
-          { text: "Theme statement (a full sentence that expresses the big idea):", type: "lines", lines: 3 },
-          { text: "Evidence 1 from the text:", type: "lines", lines: 3 },
-          { text: "Evidence 2 from the text:", type: "lines", lines: 3 },
-        ],
-      },
-      {
-        type: "circle-correct" as const,
-        title: "Identify the Point of View",
-        instruction:
-          "Read each short extract. Circle the point of view from which it is narrated.",
-        parentTip:
-          "Point of view affects what a reader is allowed to know. Ask your child: What would change if this passage was told from a different character's perspective? This deepens understanding of authorial choice.",
-        questions: [
-          {
-            prompt: "I crept along the hallway, my heart hammering. I did not know what I would find behind the door.",
-            options: ["First person", "Third person limited", "Third person omniscient"],
-          },
-          {
-            prompt: "Sara felt nervous as she stepped onto the stage, though the audience had no idea she was trembling inside.",
-            options: ["First person", "Third person limited", "Third person omniscient"],
-          },
-          {
-            prompt: "In the kitchen, Mum worried about the bills. Meanwhile, upstairs, Dad was pretending everything was fine. Neither of them knew the other was afraid.",
-            options: ["First person", "Third person limited", "Third person omniscient"],
-          },
-          {
-            prompt: "Marcus grabbed his bag and ran. He had no way of knowing that the parcel he carried would change everything.",
-            options: ["First person", "Third person limited", "Third person omniscient"],
-          },
-        ],
-      },
+      // ── FOUNDATIONAL 1–20 ──────────────────────────────────────────────────
+      // 1
       {
         type: "matching" as const,
         title: "Match the Literary Term",
-        instruction:
-          "Draw a line to match each literary term with its correct definition.",
-        parentTip:
-          "Encourage your child to cover the right column, read each term aloud, and try to recall the definition before looking — this active retrieval strategy strengthens memory.",
-        left: [
-          "Inference",
-          "Theme",
-          "First person point of view",
-          "Third person omniscient",
-          "Topic",
-          "Third person limited",
-        ],
+        instruction: "Draw a line to match each literary term with its correct definition.",
+        parentTip: "Encourage your child to cover the right column, read each term aloud, and try to recall the definition before looking — this active retrieval strategy strengthens memory.",
+        left: ["Inference", "Theme", "First person point of view", "Third person omniscient", "Topic", "Third person limited"],
         right: [
           "The central message or big idea of a text",
           "A conclusion drawn from clues in the text and background knowledge",
@@ -4043,6 +3960,1201 @@ export const year5EnglishWorksheets: WorksheetItem[] = [
           "Narrated using 'he/she'; the narrator knows all characters' thoughts",
           "Narrated using 'he/she'; only one character's thoughts are known",
         ],
+      },
+      // 2
+      {
+        type: "circle-correct" as const,
+        title: "Identify the Point of View (Set A)",
+        instruction: "Read each short extract. Circle the point of view from which it is narrated.",
+        parentTip: "Point of view affects what a reader is allowed to know. Ask your child: What would change if this passage was told from a different character's perspective?",
+        questions: [
+          { prompt: "I crept along the hallway, my heart hammering. I did not know what I would find behind the door.", options: ["First person", "Third person limited", "Third person omniscient"] },
+          { prompt: "Sara felt nervous as she stepped onto the stage, though the audience had no idea she was trembling inside.", options: ["First person", "Third person limited", "Third person omniscient"] },
+          { prompt: "In the kitchen, Mum worried about the bills. Meanwhile, upstairs, Dad was pretending everything was fine. Neither of them knew the other was afraid.", options: ["First person", "Third person limited", "Third person omniscient"] },
+          { prompt: "Marcus grabbed his bag and ran. He had no way of knowing that the parcel he carried would change everything.", options: ["First person", "Third person limited", "Third person omniscient"] },
+        ],
+      },
+      // 3
+      {
+        type: "true-false" as const,
+        title: "True or False: Inferencing, Theme and Point of View Basics",
+        instruction: "Circle True or False for each statement.",
+        statements: [
+          { text: "An inference is a conclusion you reach using clues in the text and your background knowledge.", answer: true },
+          { text: "Theme is the same as the topic of a text.", answer: false },
+          { text: "First person narration uses 'I' and 'we'.", answer: true },
+          { text: "Third person omniscient narrators know the thoughts of all characters.", answer: true },
+          { text: "A theme can usually be expressed in a single word like 'friendship'.", answer: false },
+          { text: "An author can choose point of view deliberately to control what information the reader receives.", answer: true },
+        ],
+      },
+      // 4
+      {
+        type: "sorting" as const,
+        title: "Sort: Topic or Theme?",
+        instruction: "A topic is what a story is about. A theme is the message or big idea. Sort each statement into the correct column.",
+        columns: ["Topic (what it is about)", "Theme (the message)"],
+        items: [
+          { label: "A young girl lost in the woods." },
+          { label: "Courage means acting even when you are afraid." },
+          { label: "A sports team that keeps losing." },
+          { label: "Perseverance leads to success even after failure." },
+          { label: "Two children from rival families." },
+          { label: "Kindness can break down the barriers that divide people." },
+          { label: "A boy who discovers he has magical powers." },
+          { label: "Growing up means accepting that the world is more complex than you believed." },
+        ],
+      },
+      // 5
+      {
+        type: "open-response" as const,
+        title: "Making Inferences (Set A)",
+        instruction: "Read the extract below. Answer each question using evidence from the text and your own knowledge.",
+        prompts: [
+          {
+            text: "EXTRACT:\nLukas stared at the envelope for a long time before he picked it up. His name was written in his mother's handwriting — the looping letters he had not seen for three years. His hands were steady but his heart was not.\n\nWhat can you infer about Lukas's relationship with his mother? Cite the evidence.",
+            type: "lines", lines: 4,
+          },
+          { text: "What emotions do you think Lukas is feeling? How do you know?", type: "lines", lines: 4 },
+          { text: "From whose point of view is this passage told? How does this affect what information we receive?", type: "lines", lines: 3 },
+        ],
+      },
+      // 6
+      {
+        type: "fill-in-blank" as const,
+        title: "Complete the Inference Statement",
+        instruction: "Fill in the blank to complete each inference statement. Use the text clue to guide you.",
+        parentTip: "Model the inference process aloud: 'The text says X. I already know Y. So I can infer Z.' This three-step process helps children make their reasoning visible.",
+        sentences: [
+          { text: "Text clue: She kept glancing at the clock. Inference: She was probably feeling _______ about something.", blanks: ["anxious / impatient"] },
+          { text: "Text clue: He walked in without knocking. Inference: He probably _______ about waiting to be invited.", blanks: ["did not care"] },
+          { text: "Text clue: The house was dark and the curtains were drawn at noon. Inference: The family was probably _______.", blanks: ["away / sleeping / in mourning"] },
+          { text: "Text clue: She put the letter back in the envelope without reading it. Inference: She probably _______ what it said.", blanks: ["already knew / was afraid of"] },
+        ],
+      },
+      // 7
+      {
+        type: "multiple-choice" as const,
+        title: "Which Is the Best Inference?",
+        instruction: "Read each text clue. Choose the inference best supported by the evidence.",
+        questions: [
+          { prompt: "Text clue: He had not eaten since yesterday and his hands were shaking. What can you infer?", options: ["He was cold", "He was hungry and possibly unwell from lack of food", "He was nervous about a speech", "He was very old"], answer: "He was hungry and possibly unwell from lack of food" },
+          { prompt: "Text clue: She smiled but her eyes were wet. What can you infer?", options: ["She was happy", "She was sad", "She was experiencing complex or mixed emotions", "She had something in her eye"], answer: "She was experiencing complex or mixed emotions" },
+          { prompt: "Text clue: All the photos had been turned face down. What can you infer?", options: ["The room needed cleaning", "Someone wanted to avoid seeing or thinking about the people in the photos", "The frames were broken", "The photos were new"], answer: "Someone wanted to avoid seeing or thinking about the people in the photos" },
+        ],
+      },
+      // 8
+      {
+        type: "open-response" as const,
+        title: "Theme Statement for Your Reading Book",
+        instruction: "Write a theme statement for your current or most recently finished reading book. Support it with two pieces of evidence from the text.",
+        prompts: [
+          { text: "Book title and author:", type: "lines", lines: 1 },
+          { text: "Theme statement (a full sentence that expresses the big idea — not just a single word):", type: "lines", lines: 3 },
+          { text: "Evidence 1 from the text:", type: "lines", lines: 3 },
+          { text: "Evidence 2 from the text:", type: "lines", lines: 3 },
+        ],
+      },
+      // 9
+      {
+        type: "sorting" as const,
+        title: "Sort: First Person, Third Limited, Third Omniscient",
+        instruction: "Sort each extract into the correct point of view column.",
+        columns: ["First person", "Third person limited", "Third person omniscient"],
+        items: [
+          { label: "I had always feared the dark, but this night was different." },
+          { label: "She knew something was wrong, though she could not say exactly what." },
+          { label: "James was nervous. What he did not know was that across town, Emma was planning a surprise." },
+          { label: "We ran as fast as our legs would carry us down the slope." },
+          { label: "The general scanned the battlefield. He felt calm; his troops, however, were terrified." },
+          { label: "My palms were sweating as I reached for the door handle." },
+        ],
+      },
+      // 10
+      {
+        type: "fill-in-blank" as const,
+        title: "Identify the Literary Term",
+        instruction: "Fill in the correct literary term for each definition.",
+        sentences: [
+          { text: "Using clues from the text and your own knowledge to reach a conclusion = _______", blanks: ["inference"] },
+          { text: "The central message or big idea expressed by a text = _______", blanks: ["theme"] },
+          { text: "What a story is about, described without evaluating its meaning = _______", blanks: ["topic"] },
+          { text: "The perspective from which a story is told = _______ _______", blanks: ["point of view"] },
+          { text: "A narrator who knows the thoughts of only one character = _______ person _______", blanks: ["third", "limited"] },
+        ],
+      },
+      // 11
+      {
+        type: "multiple-choice" as const,
+        title: "Theme: Single Word or Full Statement?",
+        instruction: "A theme is always expressed as a full statement about human experience, not a single word. Choose the best theme statement for each story.",
+        parentTip: "The difference between 'friendship' (topic element) and 'true friendship requires sacrifice' (theme statement) is a critical distinction. Practise this until it is instinctive.",
+        questions: [
+          { prompt: "Story: A girl gives up her dream to care for her sick brother. Best theme statement:", options: ["Sacrifice", "Love and sacrifice sometimes require us to give up what we want most.", "Family is important.", "The girl was sad."], answer: "Love and sacrifice sometimes require us to give up what we want most." },
+          { prompt: "Story: Two strangers help each other survive a natural disaster. Best theme statement:", options: ["Survival", "Natural disasters are dangerous.", "In times of crisis, strangers can become allies — and even friends.", "Bushfires are common in Australia."], answer: "In times of crisis, strangers can become allies — and even friends." },
+          { prompt: "Story: A boy lies to protect someone he loves but the lie grows and causes more harm. Best theme statement:", options: ["Lying", "Even well-intentioned lies can cause more damage than the truth.", "The boy was dishonest.", "Truth"], answer: "Even well-intentioned lies can cause more damage than the truth." },
+        ],
+      },
+      // 12
+      {
+        type: "open-response" as const,
+        title: "Inference Using Visual Clues",
+        instruction: "Read this description of a scene and answer the inferencing questions.",
+        prompts: [
+          {
+            text: "SCENE DESCRIPTION:\nThe kitchen table was set for three — three glasses of juice, three plates of half-eaten toast. A child's coat hung by the door but no other coats. School bags sat in the hallway. On the bench, a phone was lit up with seventeen missed calls, all from the same number.\n\n1. What can you infer about who lives in this house?",
+            type: "lines", lines: 3,
+          },
+          { text: "2. What can you infer has happened recently? What clues support this?", type: "lines", lines: 3 },
+          { text: "3. What mood or atmosphere does the description create? How does the author create it without stating it directly?", type: "lines", lines: 3 },
+        ],
+      },
+      // 13
+      {
+        type: "circle-correct" as const,
+        title: "Point of View: What Can the Narrator Know?",
+        instruction: "Based on the point of view, circle what the narrator is allowed to tell the reader.",
+        questions: [
+          { prompt: "First person narrator:", options: ["The thoughts and feelings of all characters", "Only their own thoughts, feelings and what they observe", "Future events", "Events happening in other locations they cannot see"] },
+          { prompt: "Third person limited narrator:", options: ["The inner thoughts of one character only", "The inner thoughts of all characters", "Only external events and dialogue", "Events happening simultaneously in different places"] },
+          { prompt: "Third person omniscient narrator:", options: ["Only what one character observes", "Only dialogue", "The thoughts, feelings and actions of all characters", "Only past events"] },
+        ],
+      },
+      // 14
+      {
+        type: "open-response" as const,
+        title: "Point of View: How Does It Change the Story?",
+        instruction: "Read this brief scene. Rewrite it from a different point of view and explain what changes.",
+        prompts: [
+          {
+            text: "ORIGINAL (third person limited — from Mia's point of view):\nMia watched her brother eat the last slice of cake. He did not even look up. She felt her jaw tighten, though she said nothing. Nobody ever noticed when she was angry — that was the problem.\n\nRewrite from the brother's first person point of view:",
+            type: "box", lines: 8,
+          },
+          { text: "What information does the original version give that your rewrite cannot? What new information does your rewrite give?", type: "lines", lines: 4 },
+        ],
+      },
+      // 15 — TIP
+      {
+        type: "tip" as const,
+        title: "Tip: The Three-Step Inference Process",
+        content: "When making an inference, use these three steps: 1. Text evidence — what does the text actually say? Quote or paraphrase it. 2. Background knowledge — what do you already know that helps you interpret this? 3. Inference — combining these two, what can you conclude that the author has not stated directly? Writing out all three steps makes your inference visible and testable. If you cannot find text evidence, it is not a valid inference — it is a guess.",
+      },
+      // 16
+      {
+        type: "true-false" as const,
+        title: "True or False: Making Inferences",
+        instruction: "Circle True or False.",
+        statements: [
+          { text: "An inference must always be supported by evidence from the text.", answer: true },
+          { text: "You can infer whatever you like as long as it seems possible.", answer: false },
+          { text: "Background knowledge can help you interpret text clues to make an inference.", answer: true },
+          { text: "An inference is the same as a prediction.", answer: false },
+          { text: "Strong readers make inferences automatically as they read.", answer: true },
+          { text: "An inference is something the author states directly.", answer: false },
+        ],
+      },
+      // 17
+      {
+        type: "sorting" as const,
+        title: "Sort: Valid Inference or Unsupported Guess?",
+        instruction: "Read each inference about the extract below. Sort each into the correct column.\n\nEXTRACT: The boy had not eaten. He sat outside the locked door for a long time, then slowly walked away.",
+        columns: ["Valid inference (supported by text clues)", "Unsupported guess (no text evidence)"],
+        items: [
+          { label: "The boy was hungry." },
+          { label: "The boy had been hoping someone would open the door." },
+          { label: "The boy was eight years old." },
+          { label: "Someone inside was aware the boy was there." },
+          { label: "The boy felt disappointed or resigned." },
+          { label: "The boy had red hair." },
+        ],
+      },
+      // 18
+      {
+        type: "open-response" as const,
+        title: "Identify Theme in a Short Text",
+        instruction: "Read the text below. Identify the theme and support it with evidence.",
+        prompts: [
+          {
+            text: "SHORT TEXT:\nFor twenty years, she had kept the letter in the bottom of her jewellery box, sealed. She had told herself she would open it when she was ready — but ready never came. On the morning of her fortieth birthday, she sat alone at the kitchen table, poured herself a cup of tea, and finally broke the seal. Whatever it said, she decided, she could face it now.\n\nWhat is the theme of this text? Write a theme statement (a full sentence, not a single word):",
+            type: "lines", lines: 3,
+          },
+          { text: "What evidence from the text supports your theme statement?", type: "lines", lines: 3 },
+          { text: "From what point of view is this text told? What do we know and not know because of this?", type: "lines", lines: 3 },
+        ],
+      },
+      // 19
+      {
+        type: "home-activity" as const,
+        title: "Inference Spotter",
+        instruction: "Try these activities this week to practise inferencing beyond the worksheet.",
+        parentTip: "Inferencing conversations are best had in the moment — pausing during a read-aloud or film is far more effective than discussing it afterwards from memory.",
+        suggestions: [
+          "As you read with your child this week, pause at a tense or important moment and ask: What do you think is happening? What evidence in the text made you think that? What do you know from your own experience that helps you interpret it?",
+          "Watch a film or TV show together. Pause at a moment of tension or mystery and ask: What can we infer about this character's motivation? Can we prove it from what we have seen?",
+          "Find a newspaper photograph (no caption) and make three inferences about what is happening. Then check the caption — were your inferences supported?",
+        ],
+      },
+      // 20 — SPARK
+      {
+        type: "spark" as const,
+        title: "Spark: The Unreliable Narrator",
+        content: "Some stories are told by narrators who lie to us, or who do not understand what is really happening — these are called unreliable narrators. Famous examples include the narrator of 'The Tell-Tale Heart' by Edgar Allan Poe and Holden Caulfield in 'The Catcher in the Rye'. Read the opening of a story by a first-person narrator. Ask: Can I trust this narrator? What clues suggest they might not be telling the whole truth? Then write a short passage of your own with a narrator who is hiding something.",
+      },
+      // ── DEVELOPING 21–50 ──────────────────────────────────────────────────
+      // 21
+      {
+        type: "multiple-choice" as const,
+        title: "Inference vs Interpretation vs Summary",
+        instruction: "Choose the best description for each reading response.",
+        parentTip: "Distinguishing between summary (what happened), inference (what it implies) and interpretation (what it means overall) is a key higher-order reading skill.",
+        questions: [
+          { prompt: "Response: 'In this extract, a boy receives a letter from his absent mother and feels conflicted.' What type of response is this?", options: ["Inference", "Summary", "Theme statement"], answer: "Summary" },
+          { prompt: "Response: 'Lukas's steady hands but unsteady heart suggest he is trying to appear calm while feeling deeply emotional.' What type of response is this?", options: ["Summary", "Inference", "Topic identification"], answer: "Inference" },
+          { prompt: "Response: 'This extract explores the theme that unresolved family relationships continue to affect us long after the physical separation.' What type of response is this?", options: ["Summary", "Inference", "Theme interpretation"], answer: "Theme interpretation" },
+        ],
+      },
+      // 22
+      {
+        type: "open-response" as const,
+        title: "Three Levels of Response",
+        instruction: "Read the passage and then write all three types of response: a summary, an inference and a theme statement.",
+        prompts: [
+          {
+            text: "PASSAGE:\nElla had won every race that season — and hated it. Winning was easy; it was the silence afterwards that killed her. Her coach celebrated, her parents beamed, her teammates clapped. Nobody asked her how she felt. She stood on the podium and smiled and smiled and smiled, until her face ached with the effort.\n\nSummary (what happens):",
+            type: "lines", lines: 3,
+          },
+          { text: "Inference (what the text implies but does not state):", type: "lines", lines: 3 },
+          { text: "Theme statement (the big idea this text explores):", type: "lines", lines: 3 },
+        ],
+      },
+      // 23
+      {
+        type: "sorting" as const,
+        title: "Sort: Clue or Not a Clue?",
+        instruction: "A reader is trying to infer whether a character is anxious before a performance. Sort each detail from the text as a useful clue or not a useful clue for this inference.",
+        columns: ["Useful clue (supports the inference)", "Not a useful clue (irrelevant or contradicts it)"],
+        items: [
+          { label: "She kept tapping her foot." },
+          { label: "The auditorium had blue curtains." },
+          { label: "She rehearsed her opening line over and over in her head." },
+          { label: "Her sandwich was uneaten on the table." },
+          { label: "She had been to this auditorium before." },
+          { label: "Her hands were cold despite the warm room." },
+          { label: "She took three deep breaths." },
+          { label: "The seats were made of red velvet." },
+        ],
+      },
+      // 24
+      {
+        type: "circle-correct" as const,
+        title: "Identify the Point of View (Set B)",
+        instruction: "Circle the correct point of view.",
+        questions: [
+          { prompt: "The explorer had no idea that the villagers watching him were afraid — not of the jungle, but of him.", options: ["First person", "Third person limited", "Third person omniscient"] },
+          { prompt: "I pressed myself against the wall and waited. My heart was so loud I was sure they could hear it.", options: ["First person", "Third person limited", "Third person omniscient"] },
+          { prompt: "She walked through the door, not knowing what she would find. She told herself it would be fine.", options: ["First person", "Third person limited", "Third person omniscient"] },
+          { prompt: "From above, the valley looked peaceful. But below, three different families were each making a decision that would change all their lives forever.", options: ["First person", "Third person limited", "Third person omniscient"] },
+        ],
+      },
+      // 25
+      {
+        type: "open-response" as const,
+        title: "Retell from a Different Point of View",
+        instruction: "Choose a scene from your current reading book. Briefly summarise it in 2 to 3 sentences. Then retell it from the perspective of a different character in the scene. Discuss how the retelling changes what we know and feel.",
+        parentTip: "Perspective-taking activities build both empathy and literary thinking. There is no wrong answer — the quality of the child's reasoning matters more than which perspective they choose.",
+        prompts: [
+          { text: "Original scene (2-3 sentence summary):", type: "lines", lines: 3 },
+          { text: "Original point of view:", type: "lines", lines: 1 },
+          { text: "Retelling from a different perspective:", type: "box", lines: 10 },
+          { text: "How does the new perspective change what the reader knows or feels?", type: "lines", lines: 3 },
+        ],
+      },
+      // 26
+      {
+        type: "true-false" as const,
+        title: "True or False: Theme and Point of View",
+        instruction: "Circle True or False.",
+        statements: [
+          { text: "A text can have more than one theme.", answer: true },
+          { text: "Point of view and perspective are exactly the same concept.", answer: false },
+          { text: "Third person limited point of view can create dramatic irony when the reader knows more than the narrator.", answer: false },
+          { text: "Third person omniscient can create dramatic irony because the narrator knows more than individual characters.", answer: true },
+          { text: "First person narration always makes a story more trustworthy.", answer: false },
+          { text: "The author's choice of point of view shapes what the reader can and cannot know.", answer: true },
+        ],
+      },
+      // 27
+      {
+        type: "multiple-choice" as const,
+        title: "Dramatic Irony and Point of View",
+        instruction: "Dramatic irony occurs when the reader knows something a character does not. Identify which point of view most easily creates dramatic irony.",
+        questions: [
+          { prompt: "Which point of view most easily creates dramatic irony?", options: ["First person — because the narrator tells us everything", "Third person omniscient — because the narrator knows all characters' thoughts and can reveal information one character does not know", "Third person limited — because the narrator only knows one character's thoughts", "All point of view types create dramatic irony equally"], answer: "Third person omniscient — because the narrator knows all characters' thoughts and can reveal information one character does not know" },
+          { prompt: "Example: 'Emma smiled as she walked towards the surprise party. What she didn't know was that everyone was already hiding.' What effect does this create for the reader?", options: ["Suspense", "Dramatic irony — the reader knows more than Emma does", "A theme statement", "An inference"], answer: "Dramatic irony — the reader knows more than Emma does" },
+        ],
+      },
+      // 28
+      {
+        type: "fill-in-blank" as const,
+        title: "Complete the Analysis Sentence",
+        instruction: "Complete each analysis sentence using the correct literary term.",
+        sentences: [
+          { text: "The author uses _______ person point of view, which means the reader has access to the thoughts of all characters.", blanks: ["third omniscient"] },
+          { text: "By writing from _______ person perspective, the author creates immediacy and makes the reader feel as if they are the character.", blanks: ["first"] },
+          { text: "The author chooses a _______ person limited narrator, which means we can only know what the main character thinks and observes.", blanks: ["third"] },
+          { text: "The _______ of this novel explores the idea that true courage requires acknowledging your fear.", blanks: ["theme"] },
+        ],
+      },
+      // 29
+      {
+        type: "open-response" as const,
+        title: "Inference Chain",
+        instruction: "An inference chain shows how one inference can lead to another. Read the passage and build an inference chain: start with a text clue, make an inference, then use that inference to make a further inference.",
+        parentTip: "Building inference chains mirrors the way skilled readers naturally think. Praise the process of reasoning, even when conclusions are uncertain.",
+        prompts: [
+          {
+            text: "PASSAGE:\nThe lights in the old man's house had been off for a week. His newspaper was still on the step. The neighbour had knocked twice — no answer. She stood at the gate, unsure whether to call someone.\n\nText clue 1:",
+            type: "lines", lines: 1,
+          },
+          { text: "Inference 1 (based on clue 1):", type: "lines", lines: 2 },
+          { text: "Further inference (based on inference 1 and additional clues):", type: "lines", lines: 2 },
+          { text: "What emotion does the author create and how?", type: "lines", lines: 3 },
+        ],
+      },
+      // 30 — TIP
+      {
+        type: "tip" as const,
+        title: "Tip: Themes Are Universal Human Experiences",
+        content: "A strong theme statement captures a universal human experience — something true not just for the characters in the story but for all of us. Weak: 'Charlotte's Web is about friendship.' Strong: 'True friendship means being willing to make great sacrifices for those you love, even when they cannot repay you.' The second version could apply to many texts, many lives. When writing a theme statement, ask: Is this true only for these characters, or does it say something about what it means to be human?",
+      },
+      // 31
+      {
+        type: "sorting" as const,
+        title: "Sort: Weak or Strong Theme Statement?",
+        instruction: "Sort each theme statement based on its quality.",
+        columns: ["Weak (too vague, topic-based, or not universal)", "Strong (specific, universal, full sentence)"],
+        items: [
+          { label: "The story is about courage." },
+          { label: "Courage is not the absence of fear, but acting despite it." },
+          { label: "Friendship is good." },
+          { label: "True friendship survives distance, change and misunderstanding." },
+          { label: "The book is about a dog." },
+          { label: "Loyalty to those we love can drive us to extraordinary acts of bravery." },
+          { label: "Growing up is hard." },
+          { label: "Adolescence forces us to choose between who we are told to be and who we truly are." },
+        ],
+      },
+      // 32
+      {
+        type: "multiple-choice" as const,
+        title: "Point of View and the Reliability of Information",
+        instruction: "Different points of view give readers different kinds of information. Answer each question.",
+        questions: [
+          { prompt: "A first person narrator describes someone they dislike. Should the reader take this description as completely reliable?", options: ["Yes — first person narrators always tell the truth", "No — first person narrators may be biased or limited in what they observe", "Yes — first person is the most reliable point of view", "It depends on whether the author is reliable"], answer: "No — first person narrators may be biased or limited in what they observe" },
+          { prompt: "Which point of view allows an author to provide the most balanced perspective on a conflict between two characters?", options: ["First person from one character's view", "Third person limited", "Third person omniscient", "Second person"], answer: "Third person omniscient" },
+          { prompt: "In a story told from a child's first person perspective, what kind of information might the narrator miss or misinterpret?", options: ["Basic events and dialogue", "Complex adult motivations and context they do not fully understand", "What they eat and wear", "The names of other characters"], answer: "Complex adult motivations and context they do not fully understand" },
+        ],
+      },
+      // 33
+      {
+        type: "open-response" as const,
+        title: "Analyse Theme Across Two Texts",
+        instruction: "Think of two stories you have read that share a similar theme. Compare how each story explores the theme differently.",
+        parentTip: "Comparing texts on a thematic level is an advanced literary thinking skill. Start with stories your child knows well — comparing known texts is easier than comparing unfamiliar ones.",
+        prompts: [
+          { text: "Text 1 (title and author):", type: "lines", lines: 1 },
+          { text: "Text 2 (title and author):", type: "lines", lines: 1 },
+          { text: "Shared theme (expressed as a full sentence):", type: "lines", lines: 2 },
+          { text: "How does Text 1 explore this theme?", type: "lines", lines: 3 },
+          { text: "How does Text 2 explore this theme?", type: "lines", lines: 3 },
+          { text: "How are the two explorations of the theme different?", type: "lines", lines: 3 },
+        ],
+      },
+      // 34
+      {
+        type: "fill-in-blank" as const,
+        title: "Inference Language: Hedging Your Certainty",
+        instruction: "When making inferences, skilled readers use language that shows they are drawing a conclusion, not stating a fact. Fill in the blank with an appropriate inference phrase.",
+        sentences: [
+          { text: "The text suggests that the character is _______.", blanks: ["lonely / afraid / hiding something"] },
+          { text: "Based on the evidence that _______, we can infer that...", blanks: ["[a detail from the text]"] },
+          { text: "This _______ that the relationship between the two characters has broken down.", blanks: ["implies / suggests"] },
+          { text: "Although not stated directly, the reader can deduce that _______.", blanks: ["[an implied meaning]"] },
+        ],
+      },
+      // 35
+      {
+        type: "open-response" as const,
+        title: "Write an Inference-Based Response",
+        instruction: "Read the passage. Write a full paragraph that makes at least two inferences and supports each with evidence from the text.",
+        parentTip: "A well-structured inference response uses: quote or paraphrase → inference → explanation. Guide your child to connect each piece of evidence explicitly to their conclusion.",
+        prompts: [
+          {
+            text: "PASSAGE:\nShe had been careful. She had memorised every exit. She had planned it for months — the day she would finally leave. But now, standing at the door with her bag in her hand, she found her feet would not move.\n\nWrite your inference paragraph:",
+            type: "box", lines: 12,
+          },
+        ],
+      },
+      // 36
+      {
+        type: "circle-correct" as const,
+        title: "Identify the Theme",
+        instruction: "Read each brief story description. Circle the theme statement that best fits.",
+        questions: [
+          { prompt: "Story: A child helps a stray animal despite being told not to. In the end, both are better for it.", options: ["Animals should not be strays.", "Acts of compassion, however small, can change lives.", "Children should follow rules."] },
+          { prompt: "Story: Two rivals compete fiercely for years. When one falls ill, the other visits and they become friends.", options: ["Competition is dangerous.", "Sport is important.", "Our greatest rivals can sometimes become our most important friends."] },
+          { prompt: "Story: A girl raised in poverty works hard, earns a scholarship, and leaves for university.", options: ["Universities are good.", "Hard work and determination can overcome even the most difficult circumstances.", "Money does not buy happiness."] },
+        ],
+      },
+      // 37
+      {
+        type: "true-false" as const,
+        title: "True or False: Literary Thinking",
+        instruction: "Circle True or False.",
+        statements: [
+          { text: "Dramatic irony requires the reader to know something a character does not.", answer: true },
+          { text: "A theme statement should be specific enough to apply to other texts and life experiences.", answer: true },
+          { text: "The most important information in a text is always stated explicitly.", answer: false },
+          { text: "Good readers read between the lines to find implied meaning.", answer: true },
+          { text: "The author's choice of point of view affects what the reader can infer.", answer: true },
+          { text: "All valid inferences are equally well-supported by evidence.", answer: false },
+        ],
+      },
+      // 38
+      {
+        type: "open-response" as const,
+        title: "Create an Inference-Rich Passage",
+        instruction: "Write a short passage (6 to 8 sentences) in which you show rather than tell the reader three things about a character: their emotional state, their relationship with someone else, and something about their past. Do NOT state any of these things directly — let the reader infer them.",
+        parentTip: "Show-don't-tell is one of the most important creative writing skills. After your child has written their passage, swap roles: you try to identify the three things they were showing, and they check if you got them right.",
+        prompts: [
+          { text: "Three things I am showing (but NOT telling) — for your reference only:", type: "lines", lines: 3 },
+          { text: "My passage:", type: "box", lines: 14 },
+        ],
+      },
+      // 39
+      {
+        type: "matching" as const,
+        title: "Match the Point of View Effect",
+        instruction: "Draw a line to match each point of view with the effect it creates for the reader.",
+        parentTip: "This kind of analytical thinking about author craft is exactly what English teachers at secondary school expect. Building this habit now is enormously valuable.",
+        left: ["First person narration", "Third person limited", "Third person omniscient", "Unreliable first person narrator", "Close third person (intimate)"],
+        right: [
+          "Creates suspense because readers know more than some characters",
+          "Creates intimacy; reader feels they ARE the character",
+          "Creates a puzzle; reader must decide what is true",
+          "Creates intimacy; reader feels close to one character's perspective",
+          "Provides breadth; allows multiple characters' perspectives",
+        ],
+      },
+      // 40 — SPARK
+      {
+        type: "spark" as const,
+        title: "Spark: Theme Hunting",
+        content: "Choose three completely different texts you have read this year — a novel, a non-fiction book and a film or TV episode. Can you find a single theme that all three explore, even if in very different ways? Write a one-page reflection: state the theme, explain how each text explores it, and discuss what is different about each exploration. What does comparing these three texts tell you about why that theme keeps appearing in the things humans create?",
+      },
+      // ── CONSOLIDATING 51–80 ──────────────────────────────────────────────
+      // 41
+      {
+        type: "fill-in-blank" as const,
+        title: "Inferencing in Non-Fiction",
+        instruction: "Inferencing applies to non-fiction too. Read each non-fiction text clue and complete the inference.",
+        sentences: [
+          { text: "Non-fiction clue: In 2019, Australia recorded its hottest ever average temperature. Inference: This suggests that _______.", blanks: ["climate change is having measurable effects in Australia"] },
+          { text: "Non-fiction clue: The rainforest has been cleared, but the creek still flows. Inference: The creek may be _______.", blanks: ["at risk / affected / changed by the loss of vegetation"] },
+          { text: "Non-fiction clue: The survey showed 78% of children prefer watching videos to reading books. Inference: This could suggest that _______.", blanks: ["traditional reading habits are declining / screen-based media is more engaging for many children"] },
+        ],
+      },
+      // 42
+      {
+        type: "multiple-choice" as const,
+        title: "Point of View in Non-Fiction",
+        instruction: "Non-fiction texts also have a point of view. Answer each question about perspective in non-fiction.",
+        questions: [
+          { prompt: "A newspaper article about a protest written by a journalist who supports the cause will likely:", options: ["Be completely neutral and factual", "Reflect the author's sympathies in language choice and what is emphasised", "Avoid any point of view", "Only report the police's perspective"], answer: "Reflect the author's sympathies in language choice and what is emphasised" },
+          { prompt: "What does it mean to evaluate an author's perspective in a non-fiction text?", options: ["To check whether the facts are correct", "To identify who the author is and what they believe, and how this shapes the text", "To summarise the main points", "To identify the genre"], answer: "To identify who the author is and what they believe, and how this shapes the text" },
+          { prompt: "An account of an historical event written by a soldier who fought in it differs from one written by a historian because:", options: ["Soldiers cannot write well", "The soldier's account is a primary source with personal perspective; the historian's is secondary with analytical distance", "Historians are always more accurate", "The soldier's account is always more reliable"], answer: "The soldier's account is a primary source with personal perspective; the historian's is secondary with analytical distance" },
+        ],
+      },
+      // 43
+      {
+        type: "open-response" as const,
+        title: "Evaluating Author Perspective in Non-Fiction",
+        instruction: "Find a short non-fiction article or extract on any topic. Evaluate the author's perspective: Who are they? What is their position? What language choices reveal their point of view?",
+        parentTip: "Evaluating perspective in non-fiction is a critical media literacy skill. Help your child see that every text — even a 'factual' one — reflects a perspective.",
+        prompts: [
+          { text: "Title and source of the article:", type: "lines", lines: 1 },
+          { text: "Who is the author and what is their position or background?", type: "lines", lines: 2 },
+          { text: "What point of view does the author express?", type: "lines", lines: 2 },
+          { text: "What language choices reveal their perspective? (Quote at least two examples)", type: "box", lines: 6 },
+          { text: "How does the author's perspective affect the information they include or exclude?", type: "lines", lines: 3 },
+        ],
+      },
+      // 44
+      {
+        type: "sorting" as const,
+        title: "Sort: Explicit, Implicit or Inferred?",
+        instruction: "Sort each statement about a text into the correct column.",
+        columns: ["Explicitly stated (directly in the text)", "Implicitly suggested (hinted at)", "Reader inference (using clues + background knowledge)"],
+        items: [
+          { label: "The text states: 'She was twelve years old.'" },
+          { label: "The text describes a character repeatedly checking their watch — suggesting impatience." },
+          { label: "Because the character is impatient AND the deadline is tomorrow, we can infer she will not finish on time." },
+          { label: "The text states: 'It was raining heavily.'" },
+          { label: "The character takes an umbrella when leaving — suggesting she checked the weather." },
+          { label: "Because the character takes an umbrella, she is likely organised and plan-oriented." },
+        ],
+      },
+      // 45 — TIP
+      {
+        type: "tip" as const,
+        title: "Tip: Theme Is Not Moral",
+        content: "Students sometimes confuse theme with moral. A moral is a simple lesson or rule: 'Be kind' or 'Honesty is the best policy.' A theme is a more complex, nuanced statement about human experience that does not tell the reader what to do. 'Growing up requires accepting loss' is a theme. 'Be brave' is a moral. Themes acknowledge complexity and ambiguity. They do not provide easy answers — they invite reflection. When you write a theme statement, ask: Does this tell the reader what to do, or does it make them think about something true and complex about life?",
+      },
+      // 46
+      {
+        type: "open-response" as const,
+        title: "Moral or Theme?",
+        instruction: "For each example, identify whether it is a moral (a simple lesson) or a theme (a complex statement about human experience) and explain the difference.",
+        prompts: [
+          { text: "'Always tell the truth.' — Moral or theme? Explain:", type: "lines", lines: 3 },
+          { text: "'Silence can be a form of complicity.' — Moral or theme? Explain:", type: "lines", lines: 3 },
+          { text: "'Never judge a book by its cover.' — Moral or theme? Explain:", type: "lines", lines: 3 },
+          { text: "'Identity is shaped by the communities we belong to and the ones we are excluded from.' — Moral or theme? Explain:", type: "lines", lines: 3 },
+        ],
+      },
+      // 47
+      {
+        type: "circle-correct" as const,
+        title: "Point of View and Its Effect on Theme",
+        instruction: "Read each question and circle the best answer.",
+        questions: [
+          { prompt: "How does first person narration affect the reader's access to theme?", options: ["It makes theme explicit and clear", "It gives theme through one character's subjective experience, which may be limited or biased", "It prevents the reader from identifying any theme", "It always produces a clear moral lesson"] },
+          { prompt: "Why might an author choose third person omniscient for a story about a community divided by conflict?", options: ["To show only one side of the conflict", "To give the reader access to all perspectives and make the complexity of the situation clear", "To hide the resolution from the reader", "Because it is the easiest point of view to write in"] },
+          { prompt: "If an author wants the reader to realise something a character does not, which point of view is most effective?", options: ["First person from that character's perspective", "Third person omniscient or close third person with narrative distance", "Second person", "First person from a different character"] },
+        ],
+      },
+      // 48
+      {
+        type: "open-response" as const,
+        title: "Write a Literary Analysis Paragraph",
+        instruction: "Write a formal literary analysis paragraph about a text you have recently read. Focus on how the author uses point of view to convey theme. Use this structure: Point → Evidence → Explanation → Effect.",
+        parentTip: "The Point-Evidence-Explanation-Effect (PEEL) paragraph structure is the standard for secondary school literary analysis. If your child can write it confidently now, they are already ahead.",
+        prompts: [
+          { text: "Text title and author:", type: "lines", lines: 1 },
+          { text: "My literary analysis paragraph (use PEEL structure):", type: "box", lines: 16 },
+        ],
+      },
+      // 49
+      {
+        type: "true-false" as const,
+        title: "True or False: Literary Analysis",
+        instruction: "Circle True or False.",
+        statements: [
+          { text: "A valid inference requires text evidence plus background knowledge.", answer: true },
+          { text: "All texts have exactly one theme.", answer: false },
+          { text: "Theme can be expressed differently in different parts of the same text.", answer: true },
+          { text: "Point of view is a neutral technical choice with no effect on meaning.", answer: false },
+          { text: "Reading between the lines is a metaphor for inferencing — finding implied meaning.", answer: true },
+          { text: "An author can use an unreliable narrator to create irony and distance between what is said and what is true.", answer: true },
+        ],
+      },
+      // 50
+      {
+        type: "open-response" as const,
+        title: "Design an Inferencing Task",
+        instruction: "Write a short passage (6 to 8 sentences) and then create three inferencing questions based on it. Write a model answer for each question that demonstrates the three-step process: text evidence → background knowledge → inference.",
+        parentTip: "Creating questions about a text requires the deepest understanding of it. This task asks your child to think like a teacher — an extremely effective learning strategy.",
+        prompts: [
+          { text: "My passage:", type: "box", lines: 10 },
+          { text: "Inferencing question 1 + model answer:", type: "box", lines: 6 },
+          { text: "Inferencing question 2 + model answer:", type: "box", lines: 6 },
+          { text: "Inferencing question 3 + model answer:", type: "box", lines: 6 },
+        ],
+      },
+      // ── CONSOLIDATING continued 51–80 ─────────────────────────────────────
+      // 51
+      {
+        type: "sorting" as const,
+        title: "Sort: What Can Each Narrator Tell Us?",
+        instruction: "Sort each type of information by whether a first person narrator, third person limited narrator, or third person omniscient narrator can provide it.",
+        columns: ["First person only", "Third person limited only", "Third person omniscient only", "Any narrator (if relevant)"],
+        items: [
+          { label: "The narrator's own internal thoughts." },
+          { label: "What another character is secretly planning without the main character knowing." },
+          { label: "Direct observations of events the narrator witnesses." },
+          { label: "The main character's emotions and motivations." },
+          { label: "The simultaneous thoughts of two characters in different locations." },
+          { label: "What happened in the past, before the story began." },
+        ],
+      },
+      // 52
+      {
+        type: "open-response" as const,
+        title: "Explore an Unreliable Narrator",
+        instruction: "Read the passage below. Identify evidence that the narrator may be unreliable. Discuss what the reader might actually be able to infer despite the narrator's claims.",
+        prompts: [
+          {
+            text: "PASSAGE (first person narrator):\nI never did anything wrong. Not once. I was always polite, always fair, always the first to offer help. If people did not like me, that was their problem. It had nothing to do with anything I did or said. The way I see it, if others had simply been more reasonable, none of it would have happened. I have no regrets.\n\nEvidence that this narrator may be unreliable:",
+            type: "lines", lines: 4,
+          },
+          { text: "What might the reader be able to infer despite what the narrator claims?", type: "lines", lines: 4 },
+          { text: "What technique is the author using and what effect does it create?", type: "lines", lines: 3 },
+        ],
+      },
+      // 53
+      {
+        type: "multiple-choice" as const,
+        title: "Theme in Different Genres",
+        instruction: "Answer these questions about how theme appears across different genres.",
+        questions: [
+          { prompt: "A thriller novel and a nature documentary both explore the same theme: 'Survival requires adaptation.' What does this tell us about theme?", options: ["Themes are unique to fiction", "Themes can cross genres and text types — they are universal human ideas", "Thrillers and documentaries are the same genre", "All texts share the same themes"], answer: "Themes can cross genres and text types — they are universal human ideas" },
+          { prompt: "Why might a dystopian novel like George Orwell's 1984 have multiple themes?", options: ["Because it is very long", "Because complex texts explore multiple dimensions of human experience simultaneously", "Because dystopian fiction always has exactly four themes", "Because the author was confused about the story's meaning"], answer: "Because complex texts explore multiple dimensions of human experience simultaneously" },
+        ],
+      },
+      // 54
+      {
+        type: "open-response" as const,
+        title: "Track Theme Development",
+        instruction: "Choose a novel you have read recently. Track how the theme develops from beginning to middle to end. How does the author develop and complicate the theme across the whole text?",
+        parentTip: "Tracking how a theme develops across a text is a sophisticated analytical skill. For this task, your child should think about key scenes or turning points that change the reader's understanding of the theme.",
+        prompts: [
+          { text: "Novel title and author:", type: "lines", lines: 1 },
+          { text: "Theme (expressed as a full sentence):", type: "lines", lines: 2 },
+          { text: "How is the theme introduced at the beginning?", type: "lines", lines: 3 },
+          { text: "How does the theme develop or become complicated in the middle?", type: "lines", lines: 3 },
+          { text: "How is the theme resolved or left open-ended at the end?", type: "lines", lines: 3 },
+        ],
+      },
+      // 55
+      {
+        type: "circle-correct" as const,
+        title: "Inference from Dialogue",
+        instruction: "Read each piece of dialogue and circle the best inference.",
+        questions: [
+          { prompt: "'I am fine,' she said, not looking up from her book.\nBest inference:", options: ["She is genuinely fine.", "She does not want to discuss how she is really feeling.", "She loves reading more than talking.", "She is lying about being sick."] },
+          { prompt: "'Oh, you are still here?' said Mrs Hawkes.\nBest inference:", options: ["Mrs Hawkes is pleased to see the character.", "Mrs Hawkes expected or hoped the character would have left.", "Mrs Hawkes is confused about the time.", "Mrs Hawkes is asking a simple factual question."] },
+          { prompt: "'It does not matter,' he said, carefully folding the letter and placing it in his pocket.\nBest inference:", options: ["The letter truly does not matter to him.", "The letter matters very much — he is trying to hide this.", "He plans to throw the letter away.", "The letter is from a stranger."] },
+        ],
+      },
+      // 56
+      {
+        type: "fill-in-blank" as const,
+        title: "Inference Language Toolkit",
+        instruction: "Strong analytical writing uses precise language to express inferences. Complete each sentence with the most appropriate inference phrase.",
+        sentences: [
+          { text: "The author _______ that the character is concealing a secret through the repeated use of evasive language.", blanks: ["implies / suggests"] },
+          { text: "The repeated motif of water in this text _______ the theme of cleansing and renewal.", blanks: ["reinforces / symbolises"] },
+          { text: "The reader can _______ from the character's behaviour that she has experienced this situation before.", blanks: ["infer / deduce"] },
+          { text: "The _______ narrative voice creates a sense of intimacy, making the reader feel complicit in the character's choices.", blanks: ["first person / close third person"] },
+        ],
+      },
+      // 57
+      {
+        type: "open-response" as const,
+        title: "Write a Theme-Based Book Review",
+        instruction: "Write a book review (4 to 5 paragraphs) of a novel you have recently read. Focus your review on the theme — how does the author develop it? Is it explored effectively? Does the text change how you think about this theme in your own life?",
+        parentTip: "A theme-based review develops both critical thinking and writing skills simultaneously. If your child struggles with the format, suggest: Paragraph 1 — overview, Paragraph 2 — theme, Paragraph 3 — how the theme is developed, Paragraph 4 — your evaluation, Paragraph 5 — recommendation.",
+        prompts: [
+          { text: "My theme-based book review:", type: "box", lines: 24 },
+        ],
+      },
+      // 58
+      {
+        type: "sorting" as const,
+        title: "Sort: Inference Quality",
+        instruction: "Sort each inference based on its quality — how well it is supported by evidence and how precisely it is expressed.",
+        columns: ["High quality — specific, evidence-based, precise language", "Moderate — correct but vague", "Low quality — guessing or unsupported"],
+        items: [
+          { label: "The character is sad." },
+          { label: "The character's refusal to eat and her repeated glances at the empty chair imply she is grieving someone she expected to be present." },
+          { label: "I think she is upset because of something bad." },
+          { label: "She might be angry." },
+          { label: "The detail that she has worn the same coat for three days suggests she is not paying attention to her appearance, which may indicate she is in distress." },
+          { label: "The character seems to feel some kind of negative emotion." },
+        ],
+      },
+      // 59
+      {
+        type: "multiple-choice" as const,
+        title: "Perspective and Empathy",
+        instruction: "Answer these questions about the connection between point of view and empathy.",
+        parentTip: "One of the profound purposes of literature is to build empathy by allowing readers to inhabit other perspectives. This conversation is worth having explicitly with your child.",
+        questions: [
+          { prompt: "Why might a novelist choose to tell a story from the perspective of a marginalised or overlooked character?", options: ["To make the story easier to write", "To force readers to inhabit a perspective they might otherwise ignore, building empathy and understanding", "Because that character is always the most interesting", "To avoid having to describe other characters"], answer: "To force readers to inhabit a perspective they might otherwise ignore, building empathy and understanding" },
+          { prompt: "What does it mean to say that reading fiction builds empathy?", options: ["Fiction always has kind characters", "Reading fiction allows you to experience life through others' eyes, deepening your understanding of experiences different from your own", "Fiction makes you feel sad", "Fiction is always morally instructive"], answer: "Reading fiction allows you to experience life through others' eyes, deepening your understanding of experiences different from your own" },
+        ],
+      },
+      // 60 — TIP
+      {
+        type: "tip" as const,
+        title: "Tip: The PEEL Paragraph for Literary Analysis",
+        content: "Every literary analysis paragraph should follow this structure: Point — make a specific claim about the text (theme, technique, effect). Evidence — quote or closely paraphrase the text. Explanation — unpack the evidence (what technique is used, what it means). Effect — explain the impact on the reader. For example: 'The author develops the theme of isolation through the recurring image of the empty house (Point). When the narrator describes coming home to find every room exactly as she left it (Evidence), the precision of 'exactly' implies no one has been there — the house is a monument to absence (Explanation). This creates a profound sense of loneliness that mirrors the narrator's emotional state (Effect).'",
+      },
+      // 61 — SPARK
+      {
+        type: "spark" as const,
+        title: "Spark: Write a Story to Demonstrate a Theme",
+        content: "Choose a theme you feel strongly about — something you believe to be true about human experience. Write a short story (one to two pages) that explores this theme WITHOUT stating it explicitly anywhere in the text. Every scene, image and character choice should work towards expressing the theme, but the word 'theme' and the theme itself should never appear in the words. Share it with a family member and ask them to identify the theme. If they get it, your storytelling is working.",
+      },
+      // 62
+      {
+        type: "open-response" as const,
+        title: "Inference from Setting",
+        instruction: "Read the description and answer the inferencing questions about what the setting implies.",
+        prompts: [
+          {
+            text: "SETTING DESCRIPTION:\nThe waiting room had plastic chairs bolted to the floor. A television in the corner played the same loop of cheerful morning news. The coffee machine had an 'Out of Order' sign that looked permanent. A child drew pictures on a notepad while her mother stared at nothing in particular.\n\nWhat type of place might this be? What clues support your inference?",
+            type: "lines", lines: 4,
+          },
+          { text: "What can you infer about the emotional experience of the people in this room? What details support this?", type: "lines", lines: 4 },
+          { text: "How does the author create a mood without explicitly describing feelings?", type: "lines", lines: 3 },
+        ],
+      },
+      // 63
+      {
+        type: "true-false" as const,
+        title: "True or False: Advanced Literary Thinking",
+        instruction: "Circle True or False.",
+        statements: [
+          { text: "A reliable narrator always tells the literal truth.", answer: false },
+          { text: "Subtext is the meaning beneath the surface of what characters say and do.", answer: true },
+          { text: "The reader's personal background can affect how they interpret a theme.", answer: true },
+          { text: "An author must state the theme explicitly for readers to identify it.", answer: false },
+          { text: "Recurring symbols or motifs in a text can reinforce the theme.", answer: true },
+          { text: "Point of view is a purely technical choice with no effect on theme or meaning.", answer: false },
+        ],
+      },
+      // 64
+      {
+        type: "open-response" as const,
+        title: "Symbol and Theme",
+        instruction: "In many literary texts, symbols (recurring objects or images) reinforce the theme. Choose a symbol from a text you have read and analyse how it connects to the theme.",
+        parentTip: "Symbols in literature range from obvious (a wilting flower = death) to subtle (a recurring colour, a type of weather). Help your child look for patterns and repetition in the texts they read.",
+        prompts: [
+          { text: "Text title:", type: "lines", lines: 1 },
+          { text: "The symbol I identified:", type: "lines", lines: 1 },
+          { text: "How does the symbol appear and develop in the text?", type: "lines", lines: 3 },
+          { text: "How does the symbol connect to the theme?", type: "lines", lines: 3 },
+          { text: "Why might the author have chosen this symbol rather than stating the theme directly?", type: "lines", lines: 3 },
+        ],
+      },
+      // 65
+      {
+        type: "multiple-choice" as const,
+        title: "Inference from Silence and Omission",
+        instruction: "What an author chooses NOT to say can be as meaningful as what they do say. Answer these questions.",
+        questions: [
+          { prompt: "A character is asked a direct question and changes the subject. What can the reader infer?", options: ["The character did not hear the question", "The character is deliberately avoiding the topic — likely because the answer is uncomfortable or revealing", "The character does not understand the question", "The character is hard of hearing"], answer: "The character is deliberately avoiding the topic — likely because the answer is uncomfortable or revealing" },
+          { prompt: "An author describes a family dinner with great detail but never mentions the absent father. What can the reader infer?", options: ["The father is at work", "The absence is significant and the author wants the reader to notice it without stating it directly", "The author forgot to include the father", "The father is not important to the story"], answer: "The absence is significant and the author wants the reader to notice it without stating it directly" },
+          { prompt: "What literary device involves meaning created through what is left unsaid or implied?", options: ["Hyperbole", "Subtext", "Alliteration", "Simile"], answer: "Subtext" },
+        ],
+      },
+      // 66
+      {
+        type: "open-response" as const,
+        title: "Write About Subtext",
+        instruction: "Write a short scene (6 to 8 sentences) between two characters who are arguing about something trivial (like who forgot to buy milk) but the real issue they are avoiding is something deeper (like a broken promise or a long-held resentment). The surface argument should be present; the deeper conflict should be visible only through implication and inference.",
+        parentTip: "This is a sophisticated creative task that requires understanding subtext. Discuss a real-life parallel first — times when an argument about something small is really about something much bigger.",
+        prompts: [
+          { text: "The surface argument (what they are saying):", type: "lines", lines: 1 },
+          { text: "The real underlying issue (what it is really about):", type: "lines", lines: 1 },
+          { text: "My scene:", type: "box", lines: 14 },
+        ],
+      },
+      // 67
+      {
+        type: "circle-correct" as const,
+        title: "Theme and the Author's Perspective",
+        instruction: "An author's perspective, values and lived experience can shape the themes they explore. Circle the best answer.",
+        questions: [
+          { prompt: "Why might the life experiences of an author affect the themes in their writing?", options: ["Authors always write about themselves", "Authors draw on what they know and care about; their perspective shapes which ideas feel urgent and true", "Life experience makes authors less creative", "Only autobiography reflects an author's perspective"] },
+          { prompt: "If two readers from very different cultural backgrounds read the same novel, might they identify different themes?", options: ["No — themes are objective facts", "Yes — different life experiences can lead to different but equally valid interpretations of a theme", "Yes — but only one of them can be correct", "No — the author's intended theme is the only valid one"] },
+          { prompt: "What should you do if your interpretation of a theme differs from your teacher's or another reader's?", options: ["Assume you are wrong", "Accept the teacher's interpretation without question", "Defend your interpretation with evidence from the text and remain open to other perspectives", "Ignore other interpretations entirely"] },
+        ],
+      },
+      // 68
+      {
+        type: "fill-in-blank" as const,
+        title: "Analytical Vocabulary for Inferencing and Theme",
+        instruction: "Fill in the blank with the most appropriate analytical term from the word bank.",
+        sentences: [
+          { text: "The author _______ a mood of unease through the description of the empty house. (evokes / eliminates)", blanks: ["evokes"] },
+          { text: "The repeated symbol of the locked door _______ the theme of suppressed emotion. (reinforces / contradicts)", blanks: ["reinforces"] },
+          { text: "The reader can _______ that the character is hiding something based on her evasive responses. (infer / summarise)", blanks: ["infer"] },
+          { text: "The _______ of the first person narrator limits what the reader can know about other characters' motivations. (perspective / grammar)", blanks: ["perspective"] },
+        ],
+      },
+      // 69
+      {
+        type: "open-response" as const,
+        title: "Reflection on a Text's Point of View Choice",
+        instruction: "Choose a novel or short story. Write a reflective paragraph explaining why you think the author chose the specific point of view they used, and how the story would change if told from a different point of view.",
+        parentTip: "This is a classic secondary school English question. Practising it now builds the analytical habit of connecting authorial choices to their effects.",
+        prompts: [
+          { text: "Text title and author:", type: "lines", lines: 1 },
+          { text: "Point of view used:", type: "lines", lines: 1 },
+          { text: "Why I think the author made this choice:", type: "lines", lines: 4 },
+          { text: "How the story would change if told from a different point of view:", type: "lines", lines: 4 },
+        ],
+      },
+      // 70
+      {
+        type: "home-activity" as const,
+        title: "Literary Thinking Beyond the Worksheet",
+        instruction: "Try these activities this week to develop your skills in inferencing, theme and point of view.",
+        parentTip: "These activities are most effective when done alongside your child — sharing your own thinking models the process and creates a genuine conversation about literature.",
+        suggestions: [
+          "After finishing a chapter or episode of a TV show, discuss: What did we infer that was not stated directly? What clues led us to that inference? Was our inference correct by the end?",
+          "Choose a news story. Identify: What facts are stated? What is implied but not stated? What point of view does the reporter seem to hold? How might the story look from the perspective of someone on the opposite side?",
+          "Look at a famous painting or photograph. Write three inferences about what is happening, what happened before and what might happen next. Support each with visual clues.",
+        ],
+      },
+      // ── EXTENDING 71–100 ─────────────────────────────────────────────────
+      // 71
+      {
+        type: "multiple-choice" as const,
+        title: "Advanced Literary Analysis Concepts",
+        instruction: "Choose the best answer for each higher-order question.",
+        questions: [
+          { prompt: "What is the difference between a text's stated meaning and its subtext?", options: ["There is no difference", "Stated meaning is what the text explicitly says; subtext is the implied meaning beneath the surface", "Stated meaning is false; subtext is always true", "Subtext only appears in poetry"], answer: "Stated meaning is what the text explicitly says; subtext is the implied meaning beneath the surface" },
+          { prompt: "Why might an author deliberately choose an unreliable narrator?", options: ["To make the story easier to write", "To create irony, ambiguity and make the reader an active participant in interpreting what really happened", "Because reliable narrators are boring", "To avoid having to develop other characters"], answer: "To create irony, ambiguity and make the reader an active participant in interpreting what really happened" },
+          { prompt: "When we say a text is 'polyphonic', we mean:", options: ["It has a musical element", "Multiple voices or perspectives are present, creating a complex and layered meaning", "It is told entirely in dialogue", "It has no clear narrator"], answer: "Multiple voices or perspectives are present, creating a complex and layered meaning" },
+        ],
+      },
+      // 72
+      {
+        type: "open-response" as const,
+        title: "Extended Literary Analysis Essay",
+        instruction: "Write a 4 to 5 paragraph literary analysis essay about a text you have read. Focus your essay on how the author uses point of view to develop a specific theme. Your essay should include: an introduction with a thesis statement, two to three body paragraphs using PEEL structure, and a conclusion.",
+        parentTip: "This is a full essay task — the most demanding on this worksheet. If needed, support your child through the planning stage: thesis statement first, then the evidence for each body paragraph, then write.",
+        prompts: [
+          { text: "Text title and author:", type: "lines", lines: 1 },
+          { text: "My thesis statement (how does the author use point of view to develop a theme?):", type: "lines", lines: 3 },
+          { text: "My essay:", type: "box", lines: 28 },
+        ],
+      },
+      // 73
+      {
+        type: "sorting" as const,
+        title: "Sort: Techniques for Conveying Theme",
+        instruction: "Sort each technique by how directly it conveys theme.",
+        columns: ["Direct statement of theme", "Symbol or motif", "Character arc", "Implied through subtext / reader inference"],
+        items: [
+          { label: "A character explicitly says: 'I have learned that love requires sacrifice.'" },
+          { label: "A recurring image of birds in cages throughout the novel." },
+          { label: "A character begins selfish and ends generous through their experiences." },
+          { label: "A character's reluctance to open letters — never explained — that the reader must interpret." },
+          { label: "A story title: 'The Weight We Carry'" },
+          { label: "A character's changing relationship with a broken mirror over the course of the story." },
+          { label: "A journey narrative in which each stage of the physical journey mirrors an internal change." },
+          { label: "The ending is ambiguous — the reader must decide what it means." },
+        ],
+      },
+      // 74
+      {
+        type: "true-false" as const,
+        title: "True or False: Mastery Level",
+        instruction: "Circle True or False.",
+        statements: [
+          { text: "Literary analysis always requires only one correct interpretation.", answer: false },
+          { text: "A strong literary argument is always supported by evidence from the text.", answer: true },
+          { text: "The author's intended meaning is always the most valid interpretation of a text.", answer: false },
+          { text: "Readers bring their own experiences and values to a text, which affects how they interpret it.", answer: true },
+          { text: "Themes in literature always resolve clearly by the end of a text.", answer: false },
+          { text: "A skilled reader can identify theme even when it is not stated explicitly.", answer: true },
+        ],
+      },
+      // 75 — TIP
+      {
+        type: "tip" as const,
+        title: "Tip: Reading Literature Actively",
+        content: "Active reading is what distinguishes a skilled literary thinker from a passive consumer of story. Active readers ask questions constantly: Why did the author choose this word? Why this point of view? What is not being said? What does this image suggest? They write in the margins, use sticky notes, mark patterns and revisit earlier passages when a later development changes the meaning. If you read a book once and never return to it, you have only experienced the story. Active rereading reveals the craft.",
+      },
+      // 76
+      {
+        type: "fill-in-blank" as const,
+        title: "Write About Theme Using Precise Analytical Language",
+        instruction: "Fill in each blank with a precise analytical term or phrase.",
+        sentences: [
+          { text: "The author _______ the theme of isolation through the repeated image of locked doors.", blanks: ["develops / reinforces"] },
+          { text: "The first person narrator's _______ account of events creates dramatic irony when the reader understands more than the narrator does.", blanks: ["limited / unreliable"] },
+          { text: "The _______ of the novel — its central message about the cost of silence — is conveyed through the protagonist's inability to speak the truth.", blanks: ["theme"] },
+          { text: "By choosing a _______ narrator, the author is able to reveal the private thoughts of all characters, creating a sense of _______ irony.", blanks: ["third person omniscient", "dramatic"] },
+        ],
+      },
+      // 77
+      {
+        type: "open-response" as const,
+        title: "Analyse Theme in a Non-Fiction Text",
+        instruction: "Choose a non-fiction text — a biography, a documentary, an essay or a speech. Identify at least two themes and analyse how they are developed. Use evidence from the text to support your analysis.",
+        parentTip: "Applying literary thinking skills to non-fiction is an important extension. It shows that these are not just 'English class' skills — they apply to all reading and communication.",
+        prompts: [
+          { text: "Non-fiction text (title, type, source):", type: "lines", lines: 1 },
+          { text: "Theme 1 (full sentence):", type: "lines", lines: 2 },
+          { text: "Evidence and analysis for Theme 1:", type: "box", lines: 6 },
+          { text: "Theme 2 (full sentence):", type: "lines", lines: 2 },
+          { text: "Evidence and analysis for Theme 2:", type: "box", lines: 6 },
+        ],
+      },
+      // 78
+      {
+        type: "multiple-choice" as const,
+        title: "The Reader's Role in Constructing Meaning",
+        instruction: "Modern literary theory emphasises that meaning is created in the interaction between text and reader. Answer these questions.",
+        questions: [
+          { prompt: "What is meant by the idea that 'the reader completes the text'?", options: ["The reader writes the ending", "The text only achieves full meaning when a reader actively engages with and interprets it", "Readers are more important than authors", "The reader corrects the author's errors"], answer: "The text only achieves full meaning when a reader actively engages with and interprets it" },
+          { prompt: "Why might two equally skilled readers produce different valid interpretations of the same theme?", options: ["One of them must be wrong", "Different life experiences, cultural contexts and knowledge produce different but equally valid readings", "Themes are always ambiguous and unresolvable", "Only one interpretation can be correct"], answer: "Different life experiences, cultural contexts and knowledge produce different but equally valid readings" },
+        ],
+      },
+      // 79
+      {
+        type: "open-response" as const,
+        title: "Close Reading: Full Analysis of a Short Passage",
+        instruction: "Read the passage carefully multiple times. Write a detailed analysis that discusses: the point of view, at least two inferences with evidence, the theme, and the techniques the author uses to convey meaning. Aim for at least 200 words.",
+        parentTip: "Close reading is a core secondary and university English skill. Praise the depth and specificity of evidence use, not just the identification of techniques.",
+        prompts: [
+          {
+            text: "PASSAGE:\nHe had kept the key for thirty years in a drawer he rarely opened. He was not sure, on most days, what it unlocked — perhaps a door that no longer existed, perhaps a box long since lost. But throwing it away had never seemed possible. Some things, he had decided, are not for throwing away. You carry them instead, and you learn to call the weight something other than grief.\n\nMy close reading analysis:",
+            type: "box", lines: 20,
+          },
+        ],
+      },
+      // 80 — SPARK
+      {
+        type: "spark" as const,
+        title: "Spark: Reading as Empathy",
+        content: "The novelist Chimamanda Ngozi Adichie says: 'Stories matter. Many stories matter. Stories have been used to dispossess and to malign, but stories can also be used to empower and to humanise.' Choose one text you have read this year that genuinely changed how you think or feel about something. Write a one-page reflection: What did you believe before you read it? What do you believe now? What inference, theme or perspective shift caused the change? This reflection is evidence that literature is not just entertainment — it is how we grow.",
+      },
+      // 81
+      {
+        type: "open-response" as const,
+        title: "Comparative Essay: Theme Across Two Texts",
+        instruction: "Write a comparative literary essay (4 to 5 paragraphs) exploring how a common theme is developed in two different texts. Your essay should argue a specific thesis about how the two texts approach the theme similarly or differently.",
+        parentTip: "Comparative essays are a staple of secondary English assessments. The key skill is keeping both texts present throughout — not writing about one and then the other, but comparing them paragraph by paragraph.",
+        prompts: [
+          { text: "Text 1 title and author:", type: "lines", lines: 1 },
+          { text: "Text 2 title and author:", type: "lines", lines: 1 },
+          { text: "Common theme (full sentence):", type: "lines", lines: 2 },
+          { text: "Thesis statement (how do the texts approach this theme similarly or differently?):", type: "lines", lines: 3 },
+          { text: "My comparative essay:", type: "box", lines: 28 },
+        ],
+      },
+      // 82
+      {
+        type: "fill-in-blank" as const,
+        title: "Advanced Inference Vocabulary",
+        instruction: "Fill in the blank with the most precise term.",
+        sentences: [
+          { text: "The term for meaning implied beneath the surface of dialogue and action is _______.", blanks: ["subtext"] },
+          { text: "When the reader knows more than a character, creating tension, this is called _______ _______.", blanks: ["dramatic irony"] },
+          { text: "A narrator whose account of events cannot be fully trusted is called an _______ narrator.", blanks: ["unreliable"] },
+          { text: "The technique of showing something without stating it directly is known as '_______  _______  tell'.", blanks: ["show don't"] },
+          { text: "A symbol that recurs throughout a text and reinforces the theme is called a _______.", blanks: ["motif"] },
+        ],
+      },
+      // 83
+      {
+        type: "multiple-choice" as const,
+        title: "Mastery Check: Literary Analysis",
+        instruction: "Demonstrate your mastery by answering these challenge questions.",
+        questions: [
+          { prompt: "What distinguishes a strong literary analysis from a weak one?", options: ["A strong analysis is longer", "A strong analysis makes a specific argument supported by precise textual evidence and explains the effect", "A strong analysis identifies more techniques", "A strong analysis uses difficult vocabulary"], answer: "A strong analysis makes a specific argument supported by precise textual evidence and explains the effect" },
+          { prompt: "If you are asked to analyse how point of view shapes meaning in a text, what should your response include?", options: ["Only the identification of the point of view type", "A description of what happens in the text", "The type of point of view, how it limits or expands the reader's access to information, and how this creates specific effects related to theme and character", "A list of every character's name"], answer: "The type of point of view, how it limits or expands the reader's access to information, and how this creates specific effects related to theme and character" },
+        ],
+      },
+      // 84
+      {
+        type: "sorting" as const,
+        title: "Sort: Inference, Summary or Analysis?",
+        instruction: "Sort each response to a text into the correct column.",
+        columns: ["Summary (what happens)", "Inference (what is implied)", "Analysis (how and why — technique and effect)"],
+        items: [
+          { label: "The character leaves the party early." },
+          { label: "Her early departure suggests she is uncomfortable in social situations, perhaps due to anxiety or a previous negative experience." },
+          { label: "The author uses the detail of the early departure to develop the theme of isolation, showing how the character's internal world prevents her from connecting with others." },
+          { label: "The boy does not speak for three chapters." },
+          { label: "The boy's silence implies something traumatic has happened that he is unable or unwilling to process verbally." },
+          { label: "The sustained silence is a formal technique — the author withholds the character's voice to mirror his emotional shutdown, creating dramatic tension for the reader." },
+        ],
+      },
+      // 85
+      {
+        type: "open-response" as const,
+        title: "Independent Reading Response: Apply All Three Skills",
+        instruction: "Choose a chapter or section from your current reading book. Write a response that demonstrates all three skills: (1) an inference with evidence, (2) a theme statement with evidence, and (3) an analysis of how the point of view shapes what the reader can know.",
+        parentTip: "This task integrates all three strands of this worksheet. It mirrors the type of extended response expected in secondary school English assessments.",
+        prompts: [
+          { text: "Text title, author and chapter/section:", type: "lines", lines: 1 },
+          { text: "1. My inference (with evidence):", type: "box", lines: 6 },
+          { text: "2. My theme statement (with evidence):", type: "box", lines: 6 },
+          { text: "3. My analysis of point of view and its effect:", type: "box", lines: 6 },
+        ],
+      },
+      // 86
+      {
+        type: "true-false" as const,
+        title: "True or False: Reading and Thinking at Secondary School Level",
+        instruction: "Circle True or False.",
+        statements: [
+          { text: "At secondary school, teachers expect students to both identify and analyse literary techniques.", answer: true },
+          { text: "A one-word theme like 'hope' is sufficient for a secondary school essay.", answer: false },
+          { text: "Point of view analysis should include the effect the point of view creates, not just its identification.", answer: true },
+          { text: "Making an inference means stating what you think without providing evidence.", answer: false },
+          { text: "The ability to discuss subtext and implied meaning is a marker of advanced literary thinking.", answer: true },
+          { text: "All texts have a definitive, correct interpretation that every reader should agree on.", answer: false },
+        ],
+      },
+      // 87
+      {
+        type: "open-response" as const,
+        title: "Write a Character Study Using Inference",
+        instruction: "Write a detailed character study (8 to 10 sentences) of a character from your current reading book. Focus entirely on what you can INFER about them from their actions, speech and relationships — do not simply describe events. Every inference must be linked to specific text evidence.",
+        parentTip: "A character study based on inference requires careful selection of significant details. Help your child distinguish between details that reveal character (inferential) and events that simply happen (plot summary).",
+        prompts: [
+          { text: "Character name and text:", type: "lines", lines: 1 },
+          { text: "My inference-based character study:", type: "box", lines: 18 },
+        ],
+      },
+      // 88
+      {
+        type: "multiple-choice" as const,
+        title: "Tying It All Together: Theme, Inference, Point of View",
+        instruction: "Answer these integrative questions that bring together all three concepts.",
+        questions: [
+          { prompt: "How do inference, theme and point of view work together in a literary text?", options: ["They are three separate unrelated skills", "Point of view shapes what information is available; inference allows readers to find hidden meaning; theme is the big idea that emerges from both — the three skills are deeply interconnected", "Inference is about plot; theme is about character; point of view is about setting", "Only theme matters for literary analysis"], answer: "Point of view shapes what information is available; inference allows readers to find hidden meaning; theme is the big idea that emerges from both — the three skills are deeply interconnected" },
+          { prompt: "A first person narrator states that they are perfectly happy. But they spend every chapter returning to memories of a particular summer. What is the most insightful literary response?", options: ["The narrator is happy as they say.", "The reader can infer from the repeated return to that summer that the narrator has unresolved feelings; this unreliable narration develops the theme that we cannot always face or name our deepest losses.", "The narrator is lying.", "The summer was probably just a nice memory."], answer: "The reader can infer from the repeated return to that summer that the narrator has unresolved feelings; this unreliable narration develops the theme that we cannot always face or name our deepest losses." },
+        ],
+      },
+      // 89
+      {
+        type: "home-activity" as const,
+        title: "Extended Literary Project: Read, Analyse, Create",
+        instruction: "Over the next three weeks, complete this extended literary project.",
+        parentTip: "This project integrates reading, analysis and creative writing. The three-week timeline allows for deep engagement rather than rushed completion. Check in at each stage.",
+        suggestions: [
+          "Week 1 — Close Reading: Choose a short story or chapter you have not read before. Read it twice: once for enjoyment, once for analysis. Annotate it: underline inferences you made, circle techniques that develop theme, note the point of view and any shifts.",
+          "Week 2 — Analysis: Write a detailed analytical essay (3 to 4 paragraphs) on the short story or chapter. Focus on how the author uses point of view to develop theme. Use at least five pieces of textual evidence.",
+          "Week 3 — Creative Response: Write a creative response to the text: either a retelling from a different point of view, or an alternative ending that changes the theme. Write a brief reflection explaining the choices you made and how they changed the meaning.",
+        ],
+      },
+      // 90 — TIP
+      {
+        type: "tip" as const,
+        title: "Tip: Five Habits of a Literary Thinker",
+        content: "1. Always ask 'Why?' — Why did the author make this choice? 2. Look for what is NOT there — absence and silence are as meaningful as presence. 3. Connect the local to the universal — how does this scene connect to the whole text's theme? 4. Trust your responses — a strong emotional or intellectual reaction often points to something worth analysing. 5. Return to the text — every time you re-read, you will notice something new. These five habits will serve you through secondary school, university and a lifetime of reading.",
+      },
+      // 91
+      {
+        type: "open-response" as const,
+        title: "Write About a Text That Changed How You Think",
+        instruction: "Write a personal literary essay (3 to 4 paragraphs) about a text that genuinely affected how you think about something. What did the text make you infer, what theme did it explore, and how did it change your perspective?",
+        parentTip: "This is the most personal and authentic form of literary response — connecting the text to the reader's own life and thinking. There are no wrong answers, only more or less developed ones.",
+        prompts: [
+          { text: "My personal literary essay:", type: "box", lines: 24 },
+        ],
+      },
+      // 92
+      {
+        type: "circle-correct" as const,
+        title: "Advanced Point of View Analysis",
+        instruction: "Circle the best analytical statement for each example.",
+        questions: [
+          { prompt: "In a story about war, the author chooses a child narrator. What is the most insightful analysis of this choice?", options: ["Children are simpler to write", "The child's point of view limits the reader's access to political context, forcing them to experience the war's emotional reality without adult justification — this serves the theme that war's true cost is felt most by the innocent", "Child narrators are always unreliable", "It makes the story easier for young readers"] },
+          { prompt: "A novel switches between two first person narrators who have conflicting perspectives on the same events. What effect does this create?", options: ["Confusion", "The structural device of dual narration develops the theme that truth is subjective and perspective-dependent — readers must actively decide what to believe", "It doubles the length of the novel", "It makes both characters equally unreliable"] },
+        ],
+      },
+      // 93
+      {
+        type: "sorting" as const,
+        title: "Sort: Evidence Strength for Inferences",
+        instruction: "Sort each piece of evidence by how strongly it supports the inference that a character is afraid.",
+        columns: ["Strong evidence", "Moderate evidence", "Weak or irrelevant evidence"],
+        items: [
+          { label: "The character's hands were trembling." },
+          { label: "The character was wearing a grey coat." },
+          { label: "She took three steadying breaths before opening the door." },
+          { label: "The weather was cold." },
+          { label: "She walked slower than usual, pausing at each corner." },
+          { label: "She had eaten breakfast that morning." },
+          { label: "Her voice, when she finally spoke, was barely above a whisper." },
+          { label: "She glanced behind her three times before entering the building." },
+        ],
+      },
+      // 94
+      {
+        type: "multiple-choice" as const,
+        title: "Narrative Distance and Its Effect",
+        instruction: "Narrative distance refers to how 'close' the narrator feels to the characters. Choose the best answer.",
+        questions: [
+          { prompt: "Which point of view creates the most narrative distance (the narrator feels furthest from the characters)?", options: ["First person", "Close third person", "Omniscient third person with reflective, analytical commentary", "Second person"], answer: "Omniscient third person with reflective, analytical commentary" },
+          { prompt: "What effect does close narrative distance (intimate, immediate) create for the reader?", options: ["The reader feels like an observer watching from outside", "The reader feels as if they are inside the character's experience — creating empathy and immediacy", "The reader has access to all characters' thoughts simultaneously", "The reader can trust the narrator completely"], answer: "The reader feels as if they are inside the character's experience — creating empathy and immediacy" },
+        ],
+      },
+      // 95
+      {
+        type: "open-response" as const,
+        title: "Design Your Own Analytical Question",
+        instruction: "Design three analytical questions about a text you have read. Each question should require a response that uses inference, theme analysis or point of view analysis. Write a model answer for one of your questions.",
+        parentTip: "Designing questions is one of the highest-order learning tasks. Your child must have deep understanding to construct questions that require analytical thinking rather than simple recall.",
+        prompts: [
+          { text: "Text title and author:", type: "lines", lines: 1 },
+          { text: "Question 1 (inference-based):", type: "lines", lines: 2 },
+          { text: "Question 2 (theme-based):", type: "lines", lines: 2 },
+          { text: "Question 3 (point of view-based):", type: "lines", lines: 2 },
+          { text: "Model answer for Question ___ (choose one):", type: "box", lines: 12 },
+        ],
+      },
+      // 96
+      {
+        type: "fill-in-blank" as const,
+        title: "Mastery Vocabulary Check",
+        instruction: "Fill in the blank with the correct literary term.",
+        sentences: [
+          { text: "A _______ is a central image, symbol or idea that recurs throughout a text and reinforces the theme.", blanks: ["motif"] },
+          { text: "A narrator who seems to tell the truth but whose account is questionable or limited is called an _______ narrator.", blanks: ["unreliable"] },
+          { text: "The technique where readers know more than a character, creating tension, is called _______ _______.", blanks: ["dramatic irony"] },
+          { text: "The meaning beneath the surface of what characters say and do is called _______.", blanks: ["subtext"] },
+          { text: "The overall message or central idea of a text, expressed as a full sentence about human experience, is called the _______.", blanks: ["theme"] },
+        ],
+      },
+      // 97
+      {
+        type: "open-response" as const,
+        title: "Reflection: My Development as a Literary Thinker",
+        instruction: "Reflect on what you have learned throughout this worksheet and how your thinking about texts has developed.",
+        prompts: [
+          { text: "Which of the three skills — inferencing, theme, or point of view — do you find most challenging? How have you improved?", type: "lines", lines: 4 },
+          { text: "What has changed about the way you read since starting this worksheet?", type: "lines", lines: 4 },
+          { text: "Name a text you want to re-read with your new analytical skills. What do you expect to notice that you missed the first time?", type: "lines", lines: 3 },
+        ],
+      },
+      // 98
+      {
+        type: "home-activity" as const,
+        title: "Reading Journal",
+        instruction: "Start a reading journal to capture your literary thinking as you read.",
+        parentTip: "A reading journal becomes an invaluable resource for secondary school English. Help your child start it now and make it a genuine habit rather than a chore.",
+        suggestions: [
+          "After each reading session, write at least two inferences you made with the text evidence that supported them. Over time, this builds the habit of reading actively rather than passively.",
+          "At the end of each book, write a one-paragraph theme statement and a one-paragraph point of view analysis. Keep these in your journal — they are the beginning of a personal library of literary thinking.",
+          "Once a month, look back through your journal. What patterns do you notice? Are there themes that keep appearing across different texts you read? What does this tell you about your own reading interests and values?",
+        ],
+      },
+      // 99
+      {
+        type: "open-response" as const,
+        title: "Create a Literary Thinking Guide",
+        instruction: "Create a one-page guide titled 'How to Think Like a Literary Scholar'. Include: definitions and examples for inference, theme, point of view and subtext; the PEEL paragraph structure; and your top five tips for reading analytically.",
+        parentTip: "Creating a summary guide is a powerful consolidation task. Display it prominently — it will be used as a reference for secondary school English for years.",
+        prompts: [
+          { text: "My Literary Thinking Guide:", type: "box", lines: 24 },
+        ],
+      },
+      // 100 — SPARK
+      {
+        type: "spark" as const,
+        title: "Spark: Write a Story That Explores a Theme You Believe In",
+        content: "You have now spent significant time analysing how other authors use inferencing, theme and point of view. It is time to turn these skills on yourself as a writer. Think of a theme you genuinely believe in — something true about human experience that you want to share. Write a short story of two to three pages that explores this theme entirely through character, action and imagery — never stating the theme directly. Choose your point of view deliberately: which narrator gives the reader the best access to the theme? Create at least three moments that invite the reader to make an inference. This is the most important writing challenge on this worksheet — the one that asks you to be an author, not just a student.",
       },
     ],
   },
@@ -4116,47 +5228,70 @@ export const year5EnglishWorksheets: WorksheetItem[] = [
       ],
     },
     activities: [
+      // 1
       {
-        type: "open-response" as const,
-        title: "Label the Paragraph Structure",
-        instruction:
-          "Read the model paragraph below. Label each part of the information sandwich structure — TS for topic sentence, E for evidence, EX for explanation, CS for concluding statement.",
-        prompts: [
-          {
-            text: "MODEL PARAGRAPH:\n\nRegular physical activity is essential for the health of primary school students. Research by the Australian Institute of Health and Welfare shows that children who exercise at least 60 minutes daily have better concentration and lower rates of anxiety. This matters because learning is harder when students are stressed or unable to focus. Furthermore, active children tend to sleep better, which improves their mood and memory. Overall, building physical activity into the school day benefits both the body and the mind.\n\nLabel each sentence with TS, E, EX or CS:",
-            type: "lines",
-            lines: 6,
-          },
+        type: "multiple-choice" as const,
+        title: "What Is Expository Writing?",
+        instruction: "Choose the best answer for each question about expository writing.",
+        parentTip: "Expository writing is the backbone of academic success. At Year 5, students write reports, explanations and essays — all expository forms. Building this skill now pays dividends across every subject.",
+        questions: [
+          { prompt: "What is the main purpose of expository writing?", options: ["To entertain readers with an imaginative story", "To persuade readers to change their opinion", "To inform or explain a topic clearly and accurately", "To express personal feelings about an experience"], answer: "To inform or explain a topic clearly and accurately" },
+          { prompt: "Which of these is an example of an expository text?", options: ["A fairy tale about a dragon", "A science report about the water cycle", "A poem about autumn leaves", "A diary entry about a camping trip"], answer: "A science report about the water cycle" },
+          { prompt: "An expository paragraph is built around:", options: ["A hook that grabs the reader's attention", "A main idea stated in a topic sentence", "A sequence of events in time order", "A comparison between two characters"], answer: "A main idea stated in a topic sentence" },
         ],
       },
+      // 2
       {
-        type: "open-response" as const,
-        title: "Plan Your Paragraph",
-        instruction:
-          "Use the information sandwich planner to organise your ideas before writing.",
-        prompts: [
-          { text: "Topic sentence (main idea):", type: "lines", lines: 2 },
-          { text: "Evidence 1 (fact, statistic or example):", type: "lines", lines: 2 },
-          { text: "Explanation 1 (why does this matter?):", type: "lines", lines: 2 },
-          { text: "Evidence 2:", type: "lines", lines: 2 },
-          { text: "Explanation 2:", type: "lines", lines: 2 },
-          { text: "Concluding statement:", type: "lines", lines: 2 },
+        type: "true-false" as const,
+        title: "True or False: Expository Writing Basics",
+        instruction: "Mark each statement True or False.",
+        parentTip: "Before checking answers together, ask your child to explain their reasoning for each statement. Justifying thinking is as important as the answer.",
+        statements: [
+          { text: "A topic sentence states the main idea of the paragraph.", answer: true },
+          { text: "Expository writing always tells a story with characters.", answer: false },
+          { text: "Evidence in an expository paragraph can be facts, statistics or examples.", answer: true },
+          { text: "Every sentence in an expository paragraph should introduce a new topic.", answer: false },
+          { text: "A concluding statement wraps up the main idea of the paragraph.", answer: true },
         ],
       },
+      // 3
       {
-        type: "open-response" as const,
-        title: "Write Your Expository Paragraph",
-        instruction:
-          "Use your planner to write your full expository paragraph. Include at least two transition words. Underline each transition word when you have finished.",
-        prompts: [{ text: "My paragraph:", type: "box", lines: 14 }],
+        type: "matching" as const,
+        title: "Match the Paragraph Parts",
+        instruction: "Draw a line to match each paragraph part to its description.",
+        left: ["Topic sentence", "Evidence", "Explanation", "Transition word", "Concluding statement"],
+        right: ["A fact, statistic or example that supports the main idea", "Tells the reader what the paragraph is about", "Shows how ideas connect — e.g. furthermore, therefore", "Explains why the evidence matters", "Wraps up the idea and links to what comes next"],
       },
+      // 4
+      {
+        type: "circle-correct" as const,
+        title: "Identify the Topic Sentence",
+        instruction: "Read each paragraph. Circle the letter of the sentence that is the topic sentence.",
+        parentTip: "A topic sentence is usually — but not always — the first sentence of the paragraph. Good readers can spot it even when it appears in the middle or at the end.",
+        questions: [
+          { prompt: "A) Koalas sleep up to 22 hours per day. B) The koala's diet of eucalyptus leaves provides very little energy, which explains many of its unusual behaviours. C) They move slowly and stay still for long periods. D) They have a specialised digestive system to process the toxins in the leaves.", options: ["A", "B", "C", "D"] },
+          { prompt: "A) Every morning, students line up outside. B) Many children arrive early before school begins. C) School routines help students feel safe and ready to learn. D) Teachers greet students at the door.", options: ["A", "B", "C", "D"] },
+        ],
+      },
+      // 5
+      {
+        type: "fill-in-blank" as const,
+        title: "Complete the Expository Paragraph",
+        instruction: "Fill in each blank with the correct word from the box: therefore, furthermore, evidence, topic sentence, concluding statement.",
+        sentences: [
+          { text: "The first sentence of an expository paragraph is called the _____.", blanks: ["topic sentence"] },
+          { text: "A writer uses _____ such as facts and statistics to support the main idea.", blanks: ["evidence"] },
+          { text: "The word _____ signals that a cause-and-effect relationship is being shown.", blanks: ["therefore"] },
+          { text: "_____ is used to add another piece of supporting information.", blanks: ["furthermore"] },
+          { text: "The final sentence is the _____, which wraps up the paragraph's main idea.", blanks: ["concluding statement"] },
+        ],
+      },
+      // 6
       {
         type: "sorting" as const,
         title: "Sort the Transition Words",
-        instruction:
-          "Sort each transition word or phrase into the correct column based on its purpose in expository writing.",
-        parentTip:
-          "Transition words are the glue of expository writing. After sorting, challenge your child to use one from each column in a sentence about any topic they are currently studying.",
+        instruction: "Sort each transition word or phrase into the correct category based on its purpose.",
+        parentTip: "Transition words are the glue of expository writing. After sorting, challenge your child to use one from each column in a sentence about any topic they are studying.",
         columns: ["Adding information", "Cause and effect", "Contrasting", "Concluding"],
         items: [
           { label: "furthermore" },
@@ -4173,47 +5308,1026 @@ export const year5EnglishWorksheets: WorksheetItem[] = [
           { label: "to summarise" },
         ],
       },
+      // 7
+      {
+        type: "open-response" as const,
+        title: "Label the Paragraph Structure",
+        instruction: "Read the model paragraph. Label each sentence with TS (topic sentence), E (evidence), EX (explanation) or CS (concluding statement).",
+        prompts: [
+          { text: "PARAGRAPH:\nRegular physical activity is essential for the health of primary school students. Research by the Australian Institute of Health and Welfare shows that children who exercise at least 60 minutes daily have better concentration and lower rates of anxiety. This matters because learning is harder when students are stressed or unable to focus. Furthermore, active children tend to sleep better, which improves their mood and memory. Overall, building physical activity into the school day benefits both the body and the mind.\n\nWrite the label (TS, E, EX or CS) for each sentence:", type: "lines", lines: 5 },
+        ],
+      },
+      // 8
+      {
+        type: "multiple-choice" as const,
+        title: "Strong vs Weak Topic Sentences",
+        instruction: "Choose the stronger topic sentence in each pair.",
+        parentTip: "A strong topic sentence is specific enough to guide the whole paragraph but broad enough to need more than one sentence of support.",
+        questions: [
+          { prompt: "Which is the stronger topic sentence for a paragraph about exercise?", options: ["Exercise is good for you.", "Regular physical activity strengthens the heart, improves mood and sharpens concentration."], answer: "Regular physical activity strengthens the heart, improves mood and sharpens concentration." },
+          { prompt: "Which is the stronger topic sentence for a paragraph about the Great Barrier Reef?", options: ["The Great Barrier Reef is one of Australia's most significant natural wonders, supporting thousands of marine species.", "The Great Barrier Reef is in Queensland."], answer: "The Great Barrier Reef is one of Australia's most significant natural wonders, supporting thousands of marine species." },
+          { prompt: "Which is the stronger topic sentence for a paragraph about screen time?", options: ["Excessive screen time before bed disrupts sleep patterns and reduces the quality of rest for young people.", "Screens are everywhere today."], answer: "Excessive screen time before bed disrupts sleep patterns and reduces the quality of rest for young people." },
+        ],
+      },
+      // 9
+      {
+        type: "open-response" as const,
+        title: "Write Three Topic Sentences",
+        instruction: "Write a strong topic sentence for each of the following expository paragraph topics. Make each one specific and interesting.",
+        parentTip: "If your child struggles, suggest they think about: What is the most important thing I could say about this topic? That thought often becomes the topic sentence.",
+        prompts: [
+          { text: "Topic: The importance of water for the human body", type: "lines", lines: 2 },
+          { text: "Topic: Why rainforests are important to the planet", type: "lines", lines: 2 },
+          { text: "Topic: How libraries benefit a community", type: "lines", lines: 2 },
+        ],
+      },
+      // 10
       {
         type: "circle-correct" as const,
         title: "Choose the Best Topic Sentence",
-        instruction:
-          "Read each set of sentences. Circle the one that would make the best topic sentence for an expository paragraph.",
-        parentTip:
-          "A strong topic sentence states the main idea clearly without giving away all the details. It should make the reader want to read on to find out more.",
+        instruction: "Circle the sentence that would make the best topic sentence for an expository paragraph on each topic.",
         questions: [
-          {
-            prompt: "Choose the best topic sentence for a paragraph about coral reefs:",
-            options: [
-              "Coral reefs are found in warm, shallow water.",
-              "Coral reefs are among the most biodiverse ecosystems on Earth, yet they face serious threats from climate change.",
-              "Some coral has bleached due to warm water.",
-            ],
-          },
-          {
-            prompt: "Choose the best topic sentence for a paragraph about reading:",
-            options: [
-              "Reading is good.",
-              "Many students read books at school.",
-              "Reading regularly builds vocabulary, improves concentration and develops empathy.",
-            ],
-          },
-          {
-            prompt: "Choose the best topic sentence for a paragraph about sleep:",
-            options: [
-              "Getting enough sleep each night is essential for a child's physical and mental health.",
-              "Children should go to bed at a reasonable time.",
-              "Sleep is when the body rests.",
-            ],
-          },
-          {
-            prompt: "Choose the best topic sentence for a paragraph about renewable energy:",
-            options: [
-              "Solar panels use the sun.",
-              "Wind turbines are tall.",
-              "Renewable energy sources such as solar and wind power offer a cleaner alternative to fossil fuels.",
-            ],
-          },
+          { prompt: "Topic: Coral reefs", options: ["Coral reefs are found in warm, shallow water.", "Coral reefs are among the most biodiverse ecosystems on Earth, yet they face serious threats from climate change.", "Some coral has bleached due to warm water."] },
+          { prompt: "Topic: Reading", options: ["Reading is good.", "Many students read books at school.", "Reading regularly builds vocabulary, improves concentration and develops empathy."] },
+          { prompt: "Topic: Renewable energy", options: ["Solar panels use the sun.", "Wind turbines are tall.", "Renewable energy sources such as solar and wind power offer a cleaner alternative to fossil fuels."] },
         ],
+      },
+      // 11
+      {
+        type: "fill-in-blank" as const,
+        title: "Transition Word Gap Fill",
+        instruction: "Choose the best transition word from the box to complete each sentence: however, therefore, in addition, as a result, to summarise.",
+        parentTip: "Reading the sentence with each option aloud helps children choose the right transition word — the one that makes the sentence sound natural and logical.",
+        sentences: [
+          { text: "The town has a new library. _____, residents now have easy access to thousands of books.", blanks: ["Therefore"] },
+          { text: "Exercise improves physical health. _____, it also benefits mental wellbeing.", blanks: ["In addition"] },
+          { text: "The rainforest provides habitat for millions of species. _____, it also regulates the Earth's climate.", blanks: ["In addition"] },
+          { text: "The students studied hard all term. _____, their test results improved significantly.", blanks: ["As a result"] },
+          { text: "Solar energy is clean and renewable. _____, it can be expensive to install.", blanks: ["However"] },
+        ],
+      },
+      // 12
+      {
+        type: "true-false" as const,
+        title: "True or False: Using Evidence",
+        instruction: "Mark each statement True or False.",
+        statements: [
+          { text: "A statistic is a type of evidence that uses numbers to support a point.", answer: true },
+          { text: "A personal feeling counts as strong evidence in an expository paragraph.", answer: false },
+          { text: "An example is a specific instance that illustrates the main idea.", answer: true },
+          { text: "A quote from an expert can be used as evidence in expository writing.", answer: true },
+          { text: "Expository writing does not need evidence — the topic sentence is enough.", answer: false },
+        ],
+      },
+      // 13
+      {
+        type: "sorting" as const,
+        title: "Evidence or Opinion?",
+        instruction: "Sort each statement into the correct column — Evidence (can be verified) or Opinion (personal view).",
+        columns: ["Evidence", "Opinion"],
+        items: [
+          { label: "Australia has over 500 species of eucalyptus trees." },
+          { label: "Eucalyptus trees are the most beautiful plants in the world." },
+          { label: "The Great Barrier Reef stretches over 2,300 kilometres." },
+          { label: "Snorkelling in the reef is the best experience imaginable." },
+          { label: "On average, Australians eat 1.9 kg of red meat per week." },
+          { label: "Vegetarian food is more delicious than meat." },
+        ],
+      },
+      // 14
+      {
+        type: "open-response" as const,
+        title: "Improve the Evidence",
+        instruction: "Read each weak evidence statement. Rewrite it as a stronger piece of evidence by adding a specific fact, statistic or expert example.",
+        prompts: [
+          { text: "WEAK: 'Many people exercise regularly.' STRONGER:", type: "lines", lines: 2 },
+          { text: "WEAK: 'Reading is popular among students.' STRONGER:", type: "lines", lines: 2 },
+          { text: "WEAK: 'The environment is being damaged.' STRONGER:", type: "lines", lines: 2 },
+        ],
+      },
+      // 15 — TIP
+      {
+        type: "tip" as const,
+        title: "Parent Tip: The Evidence Ladder",
+        content: "Strong expository writing uses a variety of evidence types — statistics, examples, expert quotes and anecdotes. Encourage your child to notice what kinds of evidence are used in the non-fiction books and articles they read. Ask: 'Is that a fact, a statistic, an example or an expert's opinion?' Developing this critical eye makes both reading and writing stronger.",
+      },
+      // 16
+      {
+        type: "matching" as const,
+        title: "Match Evidence to Explanation",
+        instruction: "Draw a line to match each piece of evidence to the explanation that tells the reader why it matters.",
+        parentTip: "The explanation (the 'so what' sentence) is what turns raw evidence into an argument. Without it, readers are left to draw their own conclusions — which may not be what the writer intended.",
+        left: ["Studies show children who read 20 minutes per day score significantly higher in literacy tests.", "The Great Barrier Reef is home to more than 1,500 species of fish.", "Australia generates less than 25% of its electricity from renewable sources.", "Over 90% of plastics are not recycled globally."],
+        right: ["This means Australia still relies heavily on fossil fuels for its energy needs.", "This explains why reading daily is one of the most powerful habits a student can develop.", "This highlights the urgent need for better waste management systems worldwide.", "This demonstrates the extraordinary biodiversity of this unique ecosystem."],
+      },
+      // 17
+      {
+        type: "fill-in-blank" as const,
+        title: "Complete the Explanation Sentence",
+        instruction: "Complete each explanation sentence using your own words. The explanation must say why the evidence matters.",
+        sentences: [
+          { text: "Research shows that students who sleep fewer than nine hours perform worse on memory tasks. This matters because _____.", blanks: [""] },
+          { text: "Australia is the world's driest inhabited continent. This means that _____.", blanks: [""] },
+          { text: "Screen time among children aged 5–12 has doubled since 2015. As a result, _____.", blanks: [""] },
+        ],
+      },
+      // 18
+      {
+        type: "open-response" as const,
+        title: "Write a Topic Sentence + Evidence + Explanation",
+        instruction: "Choose one of these topics and write a three-sentence mini-paragraph: Topic sentence → Evidence → Explanation. Topics: Homework, School gardens, Recycling.",
+        parentTip: "Three-sentence paragraphs are a great scaffold — they force the writer to focus on one idea only. Once the structure is automatic, expanding to five or six sentences feels natural.",
+        prompts: [{ text: "My topic: ___\nMy three-sentence paragraph:", type: "box", lines: 8 }],
+      },
+      // 19
+      {
+        type: "multiple-choice" as const,
+        title: "Identifying Weak Paragraphs",
+        instruction: "Read each paragraph description and choose the problem it has.",
+        questions: [
+          { prompt: "A paragraph starts with a topic sentence about the benefits of exercise, then discusses the history of the Olympic Games.", options: ["It lacks a concluding statement", "The evidence does not support the topic sentence", "It has too many transition words", "The topic sentence is too specific"], answer: "The evidence does not support the topic sentence" },
+          { prompt: "A paragraph includes three pieces of evidence about coral reef bleaching but never explains why any of it matters.", options: ["It lacks a topic sentence", "It has too many transition words", "It lacks explanations for the evidence", "The concluding statement is too long"], answer: "It lacks explanations for the evidence" },
+          { prompt: "A paragraph has a strong topic sentence and good evidence but ends abruptly without wrapping up the idea.", options: ["It lacks a concluding statement", "It has too many opinions", "The topic sentence is too broad", "It uses no transition words"], answer: "It lacks a concluding statement" },
+        ],
+      },
+      // 20 — SPARK
+      {
+        type: "spark" as const,
+        title: "Spark: The Power of Explanation",
+        content: "A piece of evidence without an explanation is like a compass without a map — you have the tool, but you do not know where it is pointing. The explanation is the most important sentence in any expository paragraph because it tells the reader: 'Here is what this fact means for my argument.' The world's best non-fiction writers are masters of the short, punchy explanation. This week, when you read a non-fiction article, find one piece of evidence and highlight the explanation that follows it. See how the author has connected the two.",
+      },
+      // 21
+      {
+        type: "open-response" as const,
+        title: "Plan Your Paragraph",
+        instruction: "Use the information sandwich planner to organise your ideas before writing a full expository paragraph.",
+        parentTip: "Planning before writing reduces the number of drafts needed. Five minutes of planning saves twenty minutes of rewriting.",
+        prompts: [
+          { text: "Topic sentence (main idea):", type: "lines", lines: 2 },
+          { text: "Evidence 1 (fact, statistic or example):", type: "lines", lines: 2 },
+          { text: "Explanation 1 (why does this matter?):", type: "lines", lines: 2 },
+          { text: "Evidence 2:", type: "lines", lines: 2 },
+          { text: "Explanation 2:", type: "lines", lines: 2 },
+          { text: "Concluding statement:", type: "lines", lines: 2 },
+        ],
+      },
+      // 22
+      {
+        type: "open-response" as const,
+        title: "Write Your Expository Paragraph",
+        instruction: "Use your planner to write a full expository paragraph. Include at least two transition words. Underline each transition word.",
+        prompts: [{ text: "My paragraph:", type: "box", lines: 14 }],
+      },
+      // 23
+      {
+        type: "true-false" as const,
+        title: "True or False: Transition Words",
+        instruction: "Mark each statement about transition words True or False.",
+        parentTip: "A useful follow-up activity: ask your child to find five transition words in a newspaper article or encyclopedia entry and tell you what each one is doing.",
+        statements: [
+          { text: "Transition words help the reader follow the flow of ideas.", answer: true },
+          { text: "'However' signals that the writer is about to add more information.", answer: false },
+          { text: "'Therefore' is used to show a result or conclusion.", answer: true },
+          { text: "Using too many transition words can make writing sound unnatural.", answer: true },
+          { text: "'In addition' means the same thing as 'on the other hand'.", answer: false },
+        ],
+      },
+      // 24
+      {
+        type: "fill-in-blank" as const,
+        title: "Expository Writing Vocabulary",
+        instruction: "Fill in each blank using a word from the box: expository, informs, paragraph, evidence, relevant.",
+        sentences: [
+          { text: "_____ writing explains or _____ the reader about a topic.", blanks: ["Expository", "informs"] },
+          { text: "Each _____ of an expository text focuses on one main idea.", blanks: ["paragraph"] },
+          { text: "Good _____ is accurate, specific and _____ to the topic sentence.", blanks: ["evidence", "relevant"] },
+        ],
+      },
+      // 25
+      {
+        type: "circle-correct" as const,
+        title: "Circle the Better Evidence",
+        instruction: "In each pair, circle the piece of evidence that is stronger and more specific.",
+        parentTip: "Strong evidence is specific, verifiable and directly connected to the topic. Vague statements like 'many people think' are not strong evidence.",
+        questions: [
+          { prompt: "Topic: The health benefits of sleep", options: ["Sleep is important for your health.", "Research from the Sleep Foundation shows that children aged 8–12 need 9–11 hours of sleep per night for optimal brain development."] },
+          { prompt: "Topic: The decline of bee populations", options: ["A 2023 report found that global bee populations have declined by over 30% in the past decade, threatening food security.", "Bees are dying and that is a big problem for everyone."] },
+          { prompt: "Topic: The benefits of public libraries", options: ["Libraries are good places to visit.", "A 2022 Australian survey found that 78% of library users reported improved reading skills and increased access to learning resources."] },
+        ],
+      },
+      // 26
+      {
+        type: "open-response" as const,
+        title: "Write a Concluding Statement",
+        instruction: "Read each topic sentence and the evidence provided. Write a strong concluding statement that wraps up the paragraph.",
+        prompts: [
+          { text: "TOPIC SENTENCE: Daily reading has a profound impact on children's academic performance.\nEVIDENCE: Studies show students who read 20 minutes daily score 50% higher on comprehension tests.\nEXPLANATION: This shows how small daily habits compound over time.\nYOUR CONCLUDING STATEMENT:", type: "lines", lines: 3 },
+          { text: "TOPIC SENTENCE: Reducing single-use plastics is one of the most important steps we can take to protect our oceans.\nEVIDENCE: Over 8 million tonnes of plastic enter the ocean every year.\nEXPLANATION: This plastic harms marine animals and enters the food chain.\nYOUR CONCLUDING STATEMENT:", type: "lines", lines: 3 },
+        ],
+      },
+      // 27
+      {
+        type: "matching" as const,
+        title: "Match the Transition Word to Its Purpose",
+        instruction: "Match each transition word or phrase to the job it does in a sentence.",
+        parentTip: "If your child is unsure, suggest they try putting the transition word in a sentence and see what relationship it creates between two ideas.",
+        left: ["In conclusion", "Furthermore", "However", "As a result", "For example"],
+        right: ["Introduces a specific illustration of the main idea", "Signals a contrasting or opposing idea", "Wraps up the whole argument", "Shows a consequence or outcome", "Adds another supporting point"],
+      },
+      // 28
+      {
+        type: "multiple-choice" as const,
+        title: "Choose the Right Transition Word",
+        instruction: "Choose the transition word that best fits each sentence.",
+        parentTip: "The right transition word makes a sentence sound logical and natural. If the choice sounds wrong when read aloud, it probably is wrong.",
+        questions: [
+          { prompt: "The desert receives very little rainfall. _____, most plants that grow there have adapted to store water.", options: ["However", "For example", "As a result", "In conclusion"], answer: "As a result" },
+          { prompt: "Reading builds vocabulary and improves writing skills. _____, it has been shown to reduce stress.", options: ["However", "Furthermore", "As a result", "For instance"], answer: "Furthermore" },
+          { prompt: "Many students enjoy digital learning. _____, some research suggests that handwriting notes improves memory more than typing.", options: ["As a result", "Furthermore", "However", "In addition"], answer: "However" },
+          { prompt: "The Amazon rainforest covers approximately 5.5 million square kilometres. _____, it is often called 'the lungs of the Earth'.", options: ["However", "As a result", "Although", "For this reason"], answer: "For this reason" },
+        ],
+      },
+      // 29
+      {
+        type: "open-response" as const,
+        title: "Self-Edit Your Paragraph",
+        instruction: "Re-read the paragraph you wrote earlier. Use this checklist to improve it. Then rewrite the improved version below.",
+        prompts: [
+          { text: "CHECKLIST (tick each one):\n☐ Topic sentence clearly states the main idea\n☐ Each piece of evidence is specific and accurate\n☐ Each piece of evidence is followed by an explanation\n☐ At least two transition words are used correctly\n☐ Concluding statement wraps up the main idea\n\nRewritten paragraph:", type: "box", lines: 14 },
+        ],
+      },
+      // 30 — TIP
+      {
+        type: "tip" as const,
+        title: "Parent Tip: The Read-Aloud Revision Strategy",
+        content: "One of the best revision tools for expository writing is reading the paragraph aloud. The ear catches what the eye misses — awkward sentences, missing transitions, ideas that jump around. Before your child rewrites any paragraph, ask them to read it aloud slowly. If they stumble or pause on a sentence, that is usually the one that needs rewriting. This strategy is used by professional writers at all levels.",
+      },
+      // 31
+      {
+        type: "sorting" as const,
+        title: "Organise the Paragraph",
+        instruction: "These sentences are from an expository paragraph but they are in the wrong order. Number them 1–5 to show the correct order.",
+        parentTip: "Paragraph ordering is a key comprehension and writing skill. It reveals whether students understand how ideas build on each other in expository text.",
+        columns: ["Correct order (1–5)"],
+        items: [
+          { label: "This demonstrates why regular sleep is one of the most important factors in a child's academic success." },
+          { label: "Furthermore, poor sleep has been linked to lower emotional regulation and increased anxiety." },
+          { label: "Sleep is essential for learning and memory consolidation in primary school students." },
+          { label: "As a result, students who sleep well are better prepared to focus and retain new information at school." },
+          { label: "Research shows that children aged 8–12 who sleep fewer than nine hours per night score significantly lower on memory and attention tasks." },
+        ],
+      },
+      // 32
+      {
+        type: "fill-in-blank" as const,
+        title: "Connect the Ideas",
+        instruction: "Choose the best transition word to complete each pair of sentences so they flow logically.",
+        sentences: [
+          { text: "Forests absorb carbon dioxide from the atmosphere. _____, deforestation contributes significantly to climate change.", blanks: ["Therefore"] },
+          { text: "The school introduced a reading programme. _____, students can now borrow books to take home each weekend.", blanks: ["Furthermore"] },
+          { text: "Some students prefer visual learning. _____, others learn best through listening or doing.", blanks: ["However"] },
+          { text: "The river flooded after heavy rain. _____, three roads were closed and residents were evacuated.", blanks: ["As a result"] },
+        ],
+      },
+      // 33
+      {
+        type: "true-false" as const,
+        title: "True or False: Expository Structure",
+        instruction: "Mark each statement True or False.",
+        statements: [
+          { text: "An expository paragraph can have more than one piece of evidence.", answer: true },
+          { text: "The concluding statement must begin with the words 'In conclusion'.", answer: false },
+          { text: "Evidence must always be followed by an explanation of why it matters.", answer: true },
+          { text: "You can write a strong expository paragraph without a topic sentence.", answer: false },
+          { text: "Using a variety of transition words makes expository writing flow better.", answer: true },
+        ],
+      },
+      // 34
+      {
+        type: "open-response" as const,
+        title: "Compare Two Topic Sentences",
+        instruction: "Read these two topic sentences about the same topic. Answer the questions below.",
+        parentTip: "Comparing strong and weak examples is one of the most effective ways to develop writing quality. The gap between the two reveals what a good writer adds.",
+        prompts: [
+          { text: "TOPIC SENTENCE A: Dogs are popular pets.\nTOPIC SENTENCE B: Dogs provide companionship, improve mental health and give their owners a reason to exercise daily, making them one of the most beneficial pets a family can own.\n\nQ1: What specific details does Sentence B include that Sentence A does not?", type: "lines", lines: 3 },
+          { text: "Q2: Which sentence better prepares the reader for the evidence that will follow? Why?", type: "lines", lines: 3 },
+          { text: "Q3: Write your own strong topic sentence about a pet, sport or hobby:", type: "lines", lines: 2 },
+        ],
+      },
+      // 35
+      {
+        type: "circle-correct" as const,
+        title: "Which Sentence Is the Concluding Statement?",
+        instruction: "Read each paragraph excerpt. Circle the sentence that is the concluding statement.",
+        questions: [
+          { prompt: "A) The Southern Ocean is home to 80% of the world's krill. B) Krill support the entire Antarctic food web. C) Without krill, the marine ecosystems of the Southern Ocean would collapse. D) Whales, penguins and seals all depend on krill for survival.", options: ["A", "B", "C", "D"] },
+          { prompt: "A) Books develop imagination and empathy. B) Research shows avid readers score higher on emotional intelligence tests. C) When we read stories from perspectives different to our own, we practise understanding other people. D) Overall, reading fiction is one of the best tools we have for building a more empathetic society.", options: ["A", "B", "C", "D"] },
+        ],
+      },
+      // 36
+      {
+        type: "multiple-choice" as const,
+        title: "Expository vs Other Text Types",
+        instruction: "Choose whether each text type is expository or not.",
+        parentTip: "Understanding text types helps students know what techniques to use when reading and writing. Expository texts prioritise accuracy and logic over creativity.",
+        questions: [
+          { prompt: "A report about how volcanoes form", options: ["Expository", "Not expository"], answer: "Expository" },
+          { prompt: "A short story about a child lost in the bush", options: ["Expository", "Not expository"], answer: "Not expository" },
+          { prompt: "An explanation of the water cycle", options: ["Expository", "Not expository"], answer: "Expository" },
+          { prompt: "A persuasive letter to the local council", options: ["Expository", "Not expository"], answer: "Not expository" },
+          { prompt: "An encyclopaedia entry about platypuses", options: ["Expository", "Not expository"], answer: "Expository" },
+        ],
+      },
+      // 37
+      {
+        type: "open-response" as const,
+        title: "Topic Sentence Expansion",
+        instruction: "Expand each simple sentence into a strong topic sentence by adding specific details.",
+        prompts: [
+          { text: "SIMPLE: Water is important.\nSTRONG TOPIC SENTENCE:", type: "lines", lines: 2 },
+          { text: "SIMPLE: Bees are useful insects.\nSTRONG TOPIC SENTENCE:", type: "lines", lines: 2 },
+          { text: "SIMPLE: Libraries are good for communities.\nSTRONG TOPIC SENTENCE:", type: "lines", lines: 2 },
+        ],
+      },
+      // 38
+      {
+        type: "matching" as const,
+        title: "Match the Text Feature to Its Purpose",
+        instruction: "Match each expository text feature to its purpose.",
+        parentTip: "Expository texts use visual and structural features to help readers navigate and understand the content. Recognising these features improves both reading and writing.",
+        left: ["Subheading", "Diagram with labels", "Table", "Glossary", "Bold text"],
+        right: ["Presents information in rows and columns for easy comparison", "Highlights key vocabulary or important terms", "Explains the meaning of technical words used in the text", "Introduces a new section or idea within the text", "Shows how something works or is structured visually"],
+      },
+      // 39
+      {
+        type: "fill-in-blank" as const,
+        title: "Build the Paragraph — Fill the Framework",
+        instruction: "Fill in the blanks to complete this expository paragraph framework on a topic of your choice.",
+        parentTip: "This scaffold removes the pressure of starting from scratch. Once your child can complete the framework fluently, they are ready to write without it.",
+        sentences: [
+          { text: "_____ [topic] is important/significant because _____.", blanks: [""] },
+          { text: "Research/Studies show that _____. This means _____.", blanks: [""] },
+          { text: "Furthermore/In addition, _____. As a result, _____.", blanks: [""] },
+          { text: "Overall/In conclusion, _____.", blanks: [""] },
+        ],
+      },
+      // 40 — SPARK
+      {
+        type: "spark" as const,
+        title: "Spark: Expository Writers Change the World",
+        content: "Some of the most powerful writing ever produced has been expository writing — scientific papers, investigative reports, health guides and environmental analyses. Rachel Carson's Silent Spring used expository writing to expose the dangers of pesticides and launched the modern environmental movement. David Attenborough's documentary scripts are masterclasses in expository explanation. When you learn to write clearly and accurately about the world, you are learning a skill that can genuinely make a difference. What topic do you know well enough to explain to someone else? That knowledge, shaped into clear writing, could inform or inspire anyone who reads it.",
+      },
+      // 41
+      {
+        type: "open-response" as const,
+        title: "Research and Note-Taking",
+        instruction: "Choose a topic from your current school curriculum. Find two facts or statistics from a reliable source. Write them in the note-taking frame below.",
+        parentTip: "Note-taking is a pre-writing skill students often skip. Encourage your child to write facts in their own words rather than copying directly. This is called 'paraphrasing' and is an essential academic skill.",
+        prompts: [
+          { text: "My topic:", type: "lines", lines: 1 },
+          { text: "Source (book title, website or encyclopaedia):", type: "lines", lines: 1 },
+          { text: "Fact 1 (in my own words):", type: "lines", lines: 2 },
+          { text: "Fact 2 (in my own words):", type: "lines", lines: 2 },
+        ],
+      },
+      // 42
+      {
+        type: "multiple-choice" as const,
+        title: "Expository Writing: Formal Language",
+        instruction: "Choose the option that uses more formal, precise language appropriate for expository writing.",
+        parentTip: "Expository writing uses formal language — no contractions, no slang and no first-person opinions. Academic writing begins at primary school level.",
+        questions: [
+          { prompt: "Which version is more appropriate for expository writing?", options: ["I think it's really important to exercise a lot.", "Regular physical activity is essential for maintaining physical and mental health."], answer: "Regular physical activity is essential for maintaining physical and mental health." },
+          { prompt: "Which version is more appropriate for expository writing?", options: ["Scientists have found that coral bleaching has increased by over 40% in the past decade.", "Scientists have found that coral bleaching has gotten way worse lately."], answer: "Scientists have found that coral bleaching has increased by over 40% in the past decade." },
+          { prompt: "Which version is more appropriate for expository writing?", options: ["In conclusion, I reckon everyone should read more books.", "In conclusion, the evidence strongly suggests that regular reading has measurable benefits for literacy and wellbeing."], answer: "In conclusion, the evidence strongly suggests that regular reading has measurable benefits for literacy and wellbeing." },
+        ],
+      },
+      // 43
+      {
+        type: "sorting" as const,
+        title: "Formal or Informal?",
+        instruction: "Sort each phrase into the correct column — Formal (suitable for expository writing) or Informal (not suitable).",
+        parentTip: "Switching between registers (formal and informal language) is a skill. Understanding why one is right for expository writing helps students develop audience awareness.",
+        columns: ["Formal", "Informal"],
+        items: [
+          { label: "Research suggests that..." },
+          { label: "I reckon..." },
+          { label: "Evidence indicates..." },
+          { label: "Heaps of people think..." },
+          { label: "Furthermore, studies show..." },
+          { label: "It's kind of a big deal." },
+          { label: "This demonstrates that..." },
+          { label: "Loads of scientists agree." },
+        ],
+      },
+      // 44
+      {
+        type: "fill-in-blank" as const,
+        title: "Formal Rewrites",
+        instruction: "Rewrite each informal phrase as a formal expression suitable for expository writing.",
+        sentences: [
+          { text: "INFORMAL: 'I think exercise is really good for you.' FORMAL: 'Evidence suggests that regular physical activity _____.'", blanks: [""] },
+          { text: "INFORMAL: 'Heaps of animals are going extinct.' FORMAL: 'A growing number of species are _____ due to _____.'", blanks: [""] },
+          { text: "INFORMAL: 'It's kind of obvious that reading is helpful.' FORMAL: 'Research demonstrates that _____ is highly beneficial for _____.'", blanks: [""] },
+        ],
+      },
+      // 45 — TIP
+      {
+        type: "tip" as const,
+        title: "Parent Tip: No Opinions, Just Evidence",
+        content: "One of the most common Year 5 writing errors is mixing personal opinion with expository writing. Phrases like 'I think', 'I believe' or 'I reckon' do not belong in expository text. If your child uses them, ask: 'Is there evidence that shows this? How could you rewrite this as a fact rather than an opinion?' Over time, this builds the habit of evidence-based thinking that underpins all academic disciplines.",
+      },
+      // 46
+      {
+        type: "open-response" as const,
+        title: "Write a Full Expository Paragraph From a Note",
+        instruction: "Use these notes to write a full, well-structured expository paragraph. Add transition words and a concluding statement.",
+        prompts: [
+          { text: "NOTES:\n• Topic: The importance of bees to agriculture\n• Fact 1: Bees pollinate approximately one third of all food crops grown globally\n• Explanation: Without pollination, fruit, vegetables and nuts would not grow\n• Fact 2: The value of bee pollination to Australian agriculture is estimated at $14.2 billion per year\n• Explanation: Losing bees would cause food prices to rise dramatically\n\nMy paragraph:", type: "box", lines: 12 },
+        ],
+      },
+      // 47
+      {
+        type: "circle-correct" as const,
+        title: "Identify the Explanation",
+        instruction: "Read each evidence statement. Circle the sentence that provides the best explanation of why the evidence matters.",
+        questions: [
+          { prompt: "EVIDENCE: Studies show children who eat breakfast achieve higher concentration levels throughout the morning.\nWhich sentence best explains why this matters?", options: ["This is interesting research.", "This means that providing breakfast programmes in schools could directly improve learning outcomes for disadvantaged students.", "Breakfast is good."] },
+          { prompt: "EVIDENCE: Australia loses approximately 1.5 million tonnes of food to waste each year.\nWhich sentence best explains why this matters?", options: ["This highlights the significant environmental and economic cost of not using food efficiently.", "People should not waste food.", "That is a lot of food."] },
+        ],
+      },
+      // 48
+      {
+        type: "matching" as const,
+        title: "Match the Paragraph Weakness to the Fix",
+        instruction: "Match each paragraph weakness to the revision strategy that would fix it.",
+        parentTip: "Learning to diagnose weakness in writing is an advanced skill. A student who can identify 'the explanation is missing' in their own writing is on track for strong secondary school results.",
+        left: ["The topic sentence is too vague — 'Sport is good for children.'", "The evidence is a personal opinion — 'I think reading is important.'", "There is no explanation after the evidence.", "The paragraph has three different topic ideas.", "There are no transition words between sentences."],
+        right: ["Add 'This means...' or 'This shows...' after the fact to connect the evidence to the argument.", "Replace with a specific fact or statistic from a reliable source.", "Rewrite as a specific claim — 'Regular sport builds teamwork skills and reduces childhood obesity.'", "Add words like 'furthermore', 'however' or 'as a result' to link the sentences.", "Choose one main idea and remove the sentences that do not relate to it."],
+      },
+      // 49
+      {
+        type: "true-false" as const,
+        title: "True or False: Multi-Paragraph Expository Writing",
+        instruction: "Mark each statement True or False.",
+        statements: [
+          { text: "Each paragraph in a multi-paragraph expository text should have its own topic sentence.", answer: true },
+          { text: "The introduction paragraph does not need to mention what the text will cover.", answer: false },
+          { text: "A linking sentence at the end of one paragraph can signal the topic of the next paragraph.", answer: true },
+          { text: "The concluding paragraph can introduce a brand new idea that was not discussed earlier.", answer: false },
+          { text: "Headings and subheadings can be used to organise a long expository text.", answer: true },
+        ],
+      },
+      // 50
+      {
+        type: "open-response" as const,
+        title: "Plan a Three-Paragraph Expository Text",
+        instruction: "Plan a three-paragraph expository text on a topic you are currently studying. Complete the planner below.",
+        parentTip: "Planning a three-paragraph text is a significant milestone. If your child can do this independently, they are operating well above the Year 5 average for structured writing.",
+        prompts: [
+          { text: "My topic:", type: "lines", lines: 1 },
+          { text: "Paragraph 1 topic sentence:", type: "lines", lines: 2 },
+          { text: "Paragraph 2 topic sentence:", type: "lines", lines: 2 },
+          { text: "Paragraph 3 topic sentence (could be a conclusion):", type: "lines", lines: 2 },
+          { text: "One piece of evidence for each paragraph (list three):", type: "lines", lines: 3 },
+        ],
+      },
+      // 51
+      {
+        type: "multiple-choice" as const,
+        title: "Multi-Paragraph Structure",
+        instruction: "Choose the best answer about how multi-paragraph expository texts are organised.",
+        questions: [
+          { prompt: "What is the main purpose of an introduction paragraph in an expository text?", options: ["To provide all the evidence the text will cover", "To introduce the topic and give the reader an overview of what will be discussed", "To persuade the reader to agree with the writer", "To list all the transition words that will be used"], answer: "To introduce the topic and give the reader an overview of what will be discussed" },
+          { prompt: "What is a linking sentence at the end of a body paragraph?", options: ["A sentence that repeats the topic sentence word for word", "A sentence that introduces a brand new unrelated topic", "A sentence that signals what the next paragraph will discuss", "A sentence that provides more evidence"], answer: "A sentence that signals what the next paragraph will discuss" },
+          { prompt: "In a three-paragraph expository text, the body paragraphs should:", options: ["Each discuss a different aspect of the main topic", "Repeat the introduction in different words", "Each end with the same concluding statement", "Only use one type of transition word"], answer: "Each discuss a different aspect of the main topic" },
+        ],
+      },
+      // 52
+      {
+        type: "fill-in-blank" as const,
+        title: "Introduction Sentences",
+        instruction: "Complete each introduction sentence for an expository text. Use formal language.",
+        parentTip: "A strong introduction creates a 'map' of the text so the reader knows what is coming. Teaching students to write a clear overview sentence is excellent preparation for essay writing.",
+        sentences: [
+          { text: "This report will examine _____.", blanks: [""] },
+          { text: "Rainforests are among the most _____ ecosystems on Earth because _____.", blanks: [""] },
+          { text: "There are three main reasons why _____ is important: _____, _____ and _____.", blanks: [""] },
+        ],
+      },
+      // 53
+      {
+        type: "open-response" as const,
+        title: "Write a Linking Sentence",
+        instruction: "Read each paragraph topic and write a linking sentence at the end that signals the topic of the next paragraph.",
+        prompts: [
+          { text: "PARAGRAPH 1 TOPIC: The physical health benefits of regular exercise.\nLINKING SENTENCE (signals next topic: mental health benefits):", type: "lines", lines: 2 },
+          { text: "PARAGRAPH 2 TOPIC: How rainforests produce oxygen.\nLINKING SENTENCE (signals next topic: biodiversity of rainforests):", type: "lines", lines: 2 },
+        ],
+      },
+      // 54
+      {
+        type: "sorting" as const,
+        title: "Organise a Three-Paragraph Text",
+        instruction: "Sort each sentence into the correct paragraph of a three-paragraph text about why reading is important.",
+        parentTip: "Sorting activities train students to recognise which ideas belong together. This builds the skill of paragraph unity — keeping each paragraph focused on one idea.",
+        columns: ["Introduction", "Body paragraph", "Conclusion"],
+        items: [
+          { label: "Reading regularly builds vocabulary, comprehension and empathy." },
+          { label: "This report will explain why reading is one of the most valuable habits a student can develop." },
+          { label: "In conclusion, the evidence clearly shows that daily reading improves academic performance and social development." },
+          { label: "Studies show students who read 20 minutes per day score 50% higher on literacy assessments." },
+          { label: "Furthermore, reading fiction has been shown to increase empathy by exposing readers to diverse perspectives." },
+          { label: "Reading is not just a school skill — it is a life skill with lasting benefits." },
+        ],
+      },
+      // 55
+      {
+        type: "open-response" as const,
+        title: "Write Your Three-Paragraph Expository Text",
+        instruction: "Use your plan from Activity 50 to write a full three-paragraph expository text. Use your transition words, evidence and linking sentences.",
+        parentTip: "This is the biggest writing challenge on this worksheet. Allow 20–30 minutes. Encourage your child to write a first draft, then use the self-edit checklist before writing the final version.",
+        prompts: [{ text: "My three-paragraph expository text:", type: "box", lines: 22 }],
+      },
+      // 56
+      {
+        type: "circle-correct" as const,
+        title: "Identify the Best Conclusion",
+        instruction: "Read each pair of conclusion sentences. Circle the one that is more effective for ending an expository paragraph.",
+        questions: [
+          { prompt: "Topic: The importance of physical activity for children", options: ["So kids should exercise.", "In conclusion, the evidence clearly demonstrates that regular physical activity is essential for children's physical health, mental wellbeing and academic performance."] },
+          { prompt: "Topic: The impact of plastic pollution on marine life", options: ["Overall, reducing plastic pollution is one of the most urgent environmental challenges of our time, requiring action from individuals, industries and governments alike.", "So we need to stop using plastic because it hurts fish and stuff."] },
+          { prompt: "Topic: How animals adapt to their environments", options: ["Animals are really adaptable.", "To summarise, animals have evolved a remarkable range of physical and behavioural adaptations that allow them to thrive in even the most extreme environments on Earth."] },
+        ],
+      },
+      // 57
+      {
+        type: "true-false" as const,
+        title: "True or False: Expository Writing Features",
+        instruction: "Mark each statement True or False.",
+        parentTip: "Use these statements as a quick oral quiz before the activity. Ask your child to explain their reasoning — this deepens understanding more than simply marking answers.",
+        statements: [
+          { text: "Headings in an expository text help the reader navigate to the information they need.", answer: true },
+          { text: "An expository text can include diagrams and tables to present information visually.", answer: true },
+          { text: "The passive voice is never used in expository writing.", answer: false },
+          { text: "Expository writing requires the writer to express a personal opinion in every paragraph.", answer: false },
+          { text: "Technical vocabulary is appropriate in expository writing when it is explained clearly.", answer: true },
+        ],
+      },
+      // 58
+      {
+        type: "matching" as const,
+        title: "Match the Sentence to the Paragraph Part",
+        instruction: "Read each sentence. Match it to the paragraph part it represents in an expository paragraph about the water cycle.",
+        left: ["The water cycle is the continuous movement of water through the Earth's atmosphere and surface.", "Evaporation occurs when the sun heats surface water, turning it into vapour that rises into the atmosphere.", "This process is driven by solar energy and gravity, which together power the cycle endlessly.", "In conclusion, the water cycle is a fundamental natural process that distributes fresh water across the planet."],
+        right: ["Explanation — tells us why the evidence matters", "Topic sentence — states the main idea", "Concluding statement — wraps up the paragraph", "Evidence — gives specific factual detail"],
+      },
+      // 59
+      {
+        type: "open-response" as const,
+        title: "Write a Short Expository Text About Science",
+        instruction: "Write a short expository paragraph (5–7 sentences) explaining a science concept you are currently studying. Use the information sandwich structure.",
+        parentTip: "Cross-curriculum writing reinforces learning in both subjects. Writing about science consolidates scientific understanding while practising expository structure simultaneously.",
+        prompts: [
+          { text: "My science concept:", type: "lines", lines: 1 },
+          { text: "My paragraph:", type: "box", lines: 10 },
+        ],
+      },
+      // 60 — TIP
+      {
+        type: "tip" as const,
+        title: "Parent Tip: Writing in Every Subject",
+        content: "Expository writing is not just an English skill — it is the primary mode of communication in science, geography, history and health. The more your child writes across different subjects, the more fluent and confident their expository writing will become. Encourage your child to write a short paragraph about something they learned in any subject today, using the topic sentence → evidence → explanation → concluding statement structure.",
+      },
+      // 61
+      {
+        type: "fill-in-blank" as const,
+        title: "Technical Vocabulary in Expository Writing",
+        instruction: "Fill in each blank with the correct technical term: evaporation, condensation, precipitation, runoff, aquifer.",
+        sentences: [
+          { text: "_____ occurs when liquid water is heated and becomes water vapour.", blanks: ["Evaporation"] },
+          { text: "When water vapour cools and forms clouds, the process is called _____.", blanks: ["condensation"] },
+          { text: "Rain, snow and hail are all forms of _____, through which water returns to the Earth's surface.", blanks: ["precipitation"] },
+          { text: "Water that flows over the land into streams and rivers is called _____.", blanks: ["runoff"] },
+          { text: "An underground layer of rock that stores water is called an _____.", blanks: ["aquifer"] },
+        ],
+      },
+      // 62
+      {
+        type: "multiple-choice" as const,
+        title: "Using Technical Vocabulary",
+        instruction: "Choose the sentence that uses technical vocabulary more effectively.",
+        questions: [
+          { prompt: "Which sentence uses technical vocabulary more effectively in an expository text about ecosystems?", options: ["Lots of animals and plants live together in a place.", "An ecosystem is a complex network of interdependent organisms — both living and non-living — that interact within a shared environment."], answer: "An ecosystem is a complex network of interdependent organisms — both living and non-living — that interact within a shared environment." },
+          { prompt: "Which sentence uses technical vocabulary more effectively in an expository text about weather?", options: ["A cold front is a mass of cold air that moves into a region of warmer air, often causing rapid weather changes.", "Cold air comes and pushes the warm air and things change."], answer: "A cold front is a mass of cold air that moves into a region of warmer air, often causing rapid weather changes." },
+        ],
+      },
+      // 63
+      {
+        type: "open-response" as const,
+        title: "Add Technical Vocabulary to a Paragraph",
+        instruction: "Rewrite this paragraph using more precise, technical vocabulary. Replace the underlined words with more accurate scientific terms.",
+        parentTip: "Using precise vocabulary demonstrates deep understanding. It also makes writing clearer and more credible. Encourage your child to use a dictionary or glossary when editing.",
+        prompts: [
+          { text: "ORIGINAL: 'The sun heats the water and turns it into air stuff. The air stuff goes up and makes fluffy things in the sky. Then the water falls back down as rain.'\n\nMY REWRITE (use: evaporation, water vapour, condensation, precipitation):", type: "box", lines: 6 },
+        ],
+      },
+      // 64
+      {
+        type: "sorting" as const,
+        title: "Sort by Text Structure",
+        instruction: "Sort each feature into the correct category based on what it helps the reader do in an expository text.",
+        parentTip: "Expository texts use a variety of features to make complex information accessible. Identifying these features helps students both read and write more effectively.",
+        columns: ["Navigating the text", "Understanding vocabulary", "Comparing information"],
+        items: [
+          { label: "Subheadings" },
+          { label: "Table of contents" },
+          { label: "Glossary" },
+          { label: "Bold key terms" },
+          { label: "Comparison table" },
+          { label: "Diagrams with labels" },
+          { label: "Index" },
+          { label: "Side-by-side examples" },
+        ],
+      },
+      // 65
+      {
+        type: "open-response" as const,
+        title: "Design an Expository Subheading System",
+        instruction: "You are writing a three-section expository text about climate change. Write three subheadings and a one-sentence description of what each section will cover.",
+        prompts: [
+          { text: "Subheading 1:", type: "lines", lines: 1 },
+          { text: "This section will cover:", type: "lines", lines: 2 },
+          { text: "Subheading 2:", type: "lines", lines: 1 },
+          { text: "This section will cover:", type: "lines", lines: 2 },
+          { text: "Subheading 3:", type: "lines", lines: 1 },
+          { text: "This section will cover:", type: "lines", lines: 2 },
+        ],
+      },
+      // 66
+      {
+        type: "true-false" as const,
+        title: "True or False: Expository Research",
+        instruction: "Mark each statement True or False.",
+        statements: [
+          { text: "A reliable source for expository writing could be a university research paper or government website.", answer: true },
+          { text: "A personal blog post written by an anonymous author is always a reliable source.", answer: false },
+          { text: "When using information from a source, it is important to check the date to ensure the information is current.", answer: true },
+          { text: "Copying sentences directly from a source without quotation marks or acknowledgement is called plagiarism.", answer: true },
+          { text: "All websites ending in .com are reliable sources of factual information.", answer: false },
+        ],
+      },
+      // 67
+      {
+        type: "multiple-choice" as const,
+        title: "Evaluating Sources",
+        instruction: "Choose the most reliable source for each research purpose.",
+        parentTip: "Source evaluation is a critical literacy skill. Teach your child to ask: Who wrote this? When was it written? Why was it written? Is it fact or opinion?",
+        questions: [
+          { prompt: "For a report on the health of Australia's Great Barrier Reef:", options: ["A tourist brochure from a reef tour company", "The Australian Institute of Marine Science website", "A social media post from a scuba diver", "A cartoon about ocean animals"], answer: "The Australian Institute of Marine Science website" },
+          { prompt: "For a report on the recommended daily exercise for children:", options: ["An advertisement for a children's fitness app", "An article in a health magazine from 1985", "The Australian Department of Health and Aged Care guidelines", "A parenting forum post"], answer: "The Australian Department of Health and Aged Care guidelines" },
+        ],
+      },
+      // 68
+      {
+        type: "fill-in-blank" as const,
+        title: "Citing a Source",
+        instruction: "Fill in the blanks to complete the source citation correctly.",
+        sentences: [
+          { text: "According to _____ [author/organisation], _____.", blanks: [""] },
+          { text: "Research published by _____ in _____ [year] found that _____.", blanks: [""] },
+          { text: "The _____ [organisation] states that _____.", blanks: [""] },
+        ],
+      },
+      // 69
+      {
+        type: "open-response" as const,
+        title: "Paraphrase the Evidence",
+        instruction: "Read each direct quote. Rewrite it as a paraphrase — using your own words to express the same information.",
+        parentTip: "Paraphrasing rather than copying is a fundamental academic skill. Students who can paraphrase accurately understand the content they are writing about, rather than just reproducing it.",
+        prompts: [
+          { text: "DIRECT QUOTE: 'Globally, approximately one million plant and animal species are now threatened with extinction, many within decades.'\nMY PARAPHRASE:", type: "lines", lines: 3 },
+          { text: "DIRECT QUOTE: 'Children aged 6–17 should engage in at least 60 minutes of moderate to vigorous physical activity each day.'\nMY PARAPHRASE:", type: "lines", lines: 3 },
+        ],
+      },
+      // 70
+      {
+        type: "open-response" as const,
+        title: "Full Paragraph: Research-Based Writing",
+        instruction: "Using research notes you have made or information from a source your parent has helped you find, write a full expository paragraph on any topic from your curriculum. Include a cited source.",
+        parentTip: "Help your child find one reliable website or book for their topic. Working with real sources — even at Year 5 — builds habits of evidence-based thinking that last a lifetime.",
+        prompts: [{ text: "My research-based paragraph:", type: "box", lines: 12 }],
+      },
+      // 71
+      {
+        type: "multiple-choice" as const,
+        title: "Expository Paragraph: Self-Assessment",
+        instruction: "After writing a paragraph, use these questions to evaluate it.",
+        parentTip: "Self-assessment is more powerful than teacher assessment for developing independent writers. Help your child be honest about what is working and what needs improvement.",
+        questions: [
+          { prompt: "Which question should a writer ask to check their topic sentence?", options: ["Does it have good spelling?", "Does it clearly state the main idea of the paragraph?", "Does it begin with a transition word?", "Is it the longest sentence in the paragraph?"], answer: "Does it clearly state the main idea of the paragraph?" },
+          { prompt: "Which question should a writer ask to check their evidence?", options: ["Is the evidence a personal opinion or a verifiable fact?", "Is the evidence the same as the topic sentence?", "Does the evidence come after the concluding statement?", "Is the evidence about a different topic?"], answer: "Is the evidence a personal opinion or a verifiable fact?" },
+          { prompt: "Which question should a writer ask about transition words?", options: ["Did I use exactly three transition words?", "Did I use the same transition word in every sentence?", "Do the transition words accurately signal the relationship between ideas?", "Did I begin the paragraph with a transition word?"], answer: "Do the transition words accurately signal the relationship between ideas?" },
+        ],
+      },
+      // 72
+      {
+        type: "open-response" as const,
+        title: "Peer Edit Checklist",
+        instruction: "Swap your three-paragraph text with a sibling, friend or parent. Use this checklist to provide feedback. Write one specific improvement suggestion.",
+        prompts: [
+          { text: "CHECKLIST:\n☐ Each paragraph has a clear topic sentence\n☐ Each piece of evidence is specific and accurate\n☐ Each piece of evidence is followed by an explanation\n☐ Transition words are used accurately\n☐ Each paragraph has a concluding statement\n☐ The writing uses formal language (no contractions or slang)\n\nMy improvement suggestion:", type: "lines", lines: 4 },
+        ],
+      },
+      // 73
+      {
+        type: "true-false" as const,
+        title: "True or False: Writing Conventions",
+        instruction: "Mark each statement about expository writing conventions True or False.",
+        parentTip: "Writing conventions are the 'rules' that make writing easy to read and understand. Knowing them gives students confidence and makes editing more systematic.",
+        statements: [
+          { text: "Contractions such as 'don't' and 'it's' are appropriate in formal expository writing.", answer: false },
+          { text: "Capital letters are used for proper nouns such as 'Australia' and 'The Australian Institute of Marine Science'.", answer: true },
+          { text: "A new paragraph begins when the writer wants to introduce a new main idea.", answer: true },
+          { text: "It is acceptable to use slang in expository writing if the audience is young people.", answer: false },
+          { text: "Subheadings in an expository text should be written as complete sentences.", answer: false },
+        ],
+      },
+      // 74
+      {
+        type: "fill-in-blank" as const,
+        title: "Correcting Writing Errors",
+        instruction: "Each sentence contains a writing convention error. Identify and rewrite each sentence correctly.",
+        parentTip: "Error correction activities are most effective when students identify the error category (e.g. 'This uses a contraction' or 'This is informal language') before correcting it.",
+        sentences: [
+          { text: "It's really important that kids get enough sleep. CORRECTED: _____.", blanks: [""] },
+          { text: "I reckon the environment is in big trouble. CORRECTED: _____.", blanks: [""] },
+          { text: "the australian government has introduced new environmental policies. CORRECTED: _____.", blanks: [""] },
+        ],
+      },
+      // 75 — TIP
+      {
+        type: "tip" as const,
+        title: "Parent Tip: Building a Writing Portfolio",
+        content: "Consider keeping a writing portfolio — a folder or exercise book — where your child saves their best expository paragraphs and texts over the year. Looking back at earlier work and seeing the improvement is one of the most motivating things a young writer can experience. At the end of each term, choose one piece together and discuss: What has improved? What are you still working on? This builds metacognitive awareness of their own writing development.",
+      },
+      // 76
+      {
+        type: "open-response" as const,
+        title: "Rewrite in Formal Language",
+        instruction: "Rewrite this paragraph using formal language, removing contractions, slang and personal opinion.",
+        prompts: [
+          { text: "ORIGINAL: 'I reckon that it's really important to look after our oceans. There's heaps of plastic in the water and it's making fish sick. I think people should stop using plastic bags because they're bad for the environment.'\n\nMY REWRITE:", type: "box", lines: 8 },
+        ],
+      },
+      // 77
+      {
+        type: "matching" as const,
+        title: "Match the Editing Strategy to the Problem",
+        instruction: "Match each editing strategy to the writing problem it solves.",
+        parentTip: "Systematic editing is a sign of a mature writer. Teaching your child to edit in passes — one for structure, one for language, one for conventions — is more effective than trying to fix everything at once.",
+        left: ["Read the paragraph aloud", "Check every 'I think' or 'I believe'", "Underline every transition word", "Read only the first and last sentence of each paragraph", "Look up the spelling of any word you are unsure about"],
+        right: ["Replace personal opinion phrases with evidence-based statements", "Verify the topic sentence and concluding statement are strong and related", "Check that your ideas flow logically and that transitions are accurate", "Correct any spelling errors that reduce the credibility of your writing", "Identify sentences that sound awkward or do not flow naturally"],
+      },
+      // 78
+      {
+        type: "sequence" as const,
+        title: "Put the Writing Process in Order",
+        instruction: "Number these steps in the expository writing process from 1 (first) to 6 (last).",
+        items: [
+          { label: "Edit for language conventions — formal language, spelling, punctuation" },
+          { label: "Choose a topic and identify your main idea" },
+          { label: "Publish or present the final version" },
+          { label: "Research and take notes, recording your sources" },
+          { label: "Write the first draft using your plan" },
+          { label: "Plan the paragraph structure — topic sentence, evidence, explanation, conclusion" },
+        ],
+      },
+      // 79
+      {
+        type: "open-response" as const,
+        title: "Write a Self-Reflection on Your Progress",
+        instruction: "Look back at the expository paragraphs you have written in this worksheet. Answer the reflection questions below.",
+        prompts: [
+          { text: "Q1: What is one thing you have improved in your expository writing since starting this worksheet?", type: "lines", lines: 3 },
+          { text: "Q2: What is one area you would like to improve further?", type: "lines", lines: 3 },
+          { text: "Q3: Which activity challenged you the most? Why?", type: "lines", lines: 3 },
+        ],
+      },
+      // 80 — SPARK
+      {
+        type: "spark" as const,
+        title: "Spark: The Invisible Architecture of Great Writing",
+        content: "Every great piece of expository writing has an invisible architecture — a structure so clear and logical that the reader moves through it effortlessly without noticing the scaffolding. When you read an encyclopaedia entry, a science article or a documentary script and it feels easy to understand, that is not an accident. The writer has worked hard to create clarity. Now that you know the architecture — topic sentence, evidence, explanation, transition words, concluding statement — you will see it everywhere. Once you can see it, you can build it yourself. And once you can build it yourself, you can explain anything.",
+      },
+      // 81
+      {
+        type: "open-response" as const,
+        title: "Extension: Write an Expository Introduction",
+        instruction: "Write an introduction paragraph for a three-paragraph expository text on one of these topics: the importance of the ocean, how animals adapt to their environments, or the benefits of music education. An introduction should hook the reader, introduce the topic and briefly outline what the text will cover.",
+        parentTip: "A strong introduction is one of the hardest things to write — it needs to be engaging AND informative. Encourage your child to draft two different openings and choose the stronger one.",
+        prompts: [{ text: "My introduction paragraph:", type: "box", lines: 10 }],
+      },
+      // 82
+      {
+        type: "fill-in-blank" as const,
+        title: "Advanced Transition Phrases",
+        instruction: "Fill in each blank with an advanced transition phrase: notwithstanding, by contrast, it is worth noting that, this is significant because, a key implication of this is.",
+        sentences: [
+          { text: "Solar energy is growing rapidly. _____, coal-fired power stations still supply over 50% of Australia's electricity.", blanks: ["By contrast"] },
+          { text: "Bee populations are declining globally. _____ bees pollinate approximately one third of all food crops.", blanks: ["This is significant because"] },
+          { text: "The evidence supports the use of regular exercise in schools. _____, some schools still do not provide adequate physical education time.", blanks: ["Notwithstanding"] },
+          { text: "Ocean temperatures have risen by 0.5°C over the past century. _____ is that coral bleaching events are now occurring four times more frequently.", blanks: ["A key implication of this"] },
+          { text: "_____ Australians consume more plastic per capita than the global average, making domestic policy reform especially urgent.", blanks: ["It is worth noting that"] },
+        ],
+      },
+      // 83
+      {
+        type: "open-response" as const,
+        title: "Write a Conclusion Paragraph",
+        instruction: "Write a conclusion paragraph for the three-paragraph text you planned earlier. A conclusion should restate the main point, briefly summarise the key evidence and end with a thoughtful final statement.",
+        parentTip: "A conclusion is not just a repeated introduction. It should synthesise — bring together — the ideas explored in the body paragraphs and give the reader a sense of completion.",
+        prompts: [{ text: "My conclusion paragraph:", type: "box", lines: 10 }],
+      },
+      // 84
+      {
+        type: "multiple-choice" as const,
+        title: "Advanced Expository Techniques",
+        instruction: "Choose the best answer for each question about advanced expository writing.",
+        questions: [
+          { prompt: "What is the purpose of a rhetorical question in an expository text?", options: ["To ask the reader for their personal opinion", "To engage the reader and prompt them to think about the topic before it is explained", "To replace evidence in the paragraph", "To introduce new vocabulary"], answer: "To engage the reader and prompt them to think about the topic before it is explained" },
+          { prompt: "What does 'synthesising evidence' mean in expository writing?", options: ["Copying information from multiple sources without acknowledgement", "Collecting as many facts as possible and listing them in order", "Combining information from different sources to build a single, coherent argument", "Writing the conclusion before the introduction"], answer: "Combining information from different sources to build a single, coherent argument" },
+          { prompt: "What is the difference between a 'topic' and a 'thesis' in expository writing?", options: ["They mean exactly the same thing", "A topic is the broad subject; a thesis is a specific, arguable claim about that topic", "A thesis is always shorter than a topic", "A topic appears in the conclusion; a thesis appears in the introduction"], answer: "A topic is the broad subject; a thesis is a specific, arguable claim about that topic" },
+        ],
+      },
+      // 85
+      {
+        type: "open-response" as const,
+        title: "Develop a Thesis Statement",
+        instruction: "A thesis statement is a specific, focused claim about a topic that guides an entire expository text. Write a thesis statement for each topic below.",
+        parentTip: "A thesis statement is one of the most important skills in secondary school English and humanities. Starting at Year 5 gives your child a significant head start.",
+        prompts: [
+          { text: "TOPIC: Climate change\nTHESIS STATEMENT:", type: "lines", lines: 2 },
+          { text: "TOPIC: The value of reading\nTHESIS STATEMENT:", type: "lines", lines: 2 },
+          { text: "TOPIC: Ocean pollution\nTHESIS STATEMENT:", type: "lines", lines: 2 },
+        ],
+      },
+      // 86
+      {
+        type: "true-false" as const,
+        title: "True or False: Extended Expository Writing",
+        instruction: "Mark each statement True or False.",
+        statements: [
+          { text: "A thesis statement guides the reader and the writer by focusing the text on a specific claim.", answer: true },
+          { text: "In a five-paragraph essay, the introduction and conclusion paragraphs are the body paragraphs.", answer: false },
+          { text: "Each body paragraph in an essay should support the thesis statement with evidence.", answer: true },
+          { text: "An academic essay uses the same informal language as a personal narrative.", answer: false },
+          { text: "A strong concluding paragraph does more than just repeat the introduction — it synthesises the argument.", answer: true },
+        ],
+      },
+      // 87
+      {
+        type: "open-response" as const,
+        title: "Write a Body Paragraph Supporting a Thesis",
+        instruction: "Use this thesis statement to write one body paragraph with a topic sentence, evidence, explanation and concluding statement. THESIS: Daily reading has a profound and lasting impact on children's academic success.",
+        prompts: [{ text: "My body paragraph:", type: "box", lines: 12 }],
+      },
+      // 88
+      {
+        type: "sorting" as const,
+        title: "Sort the Essay Components",
+        instruction: "Sort each component into the correct part of a five-paragraph expository essay.",
+        parentTip: "Understanding essay structure at Year 5 prepares students for the analytical writing expected in secondary school. This is a genuine higher-order skill worth developing carefully.",
+        columns: ["Introduction", "Body paragraph", "Conclusion"],
+        items: [
+          { label: "Thesis statement" },
+          { label: "Hook — opening sentence to engage the reader" },
+          { label: "Overview of main points" },
+          { label: "Topic sentence supporting the thesis" },
+          { label: "Evidence and explanation" },
+          { label: "Linking sentence to next paragraph" },
+          { label: "Restatement of thesis" },
+          { label: "Summary of key evidence" },
+          { label: "Final thoughtful statement" },
+        ],
+      },
+      // 89
+      {
+        type: "open-response" as const,
+        title: "Write a Full Five-Part Expository Essay Plan",
+        instruction: "Plan a five-paragraph expository essay on a topic from your curriculum. Complete all five parts of the plan.",
+        parentTip: "Planning a five-paragraph essay is an advanced Year 5 skill. If your child completes this confidently, celebrate — they are working at secondary school level.",
+        prompts: [
+          { text: "Essay topic:", type: "lines", lines: 1 },
+          { text: "Thesis statement:", type: "lines", lines: 2 },
+          { text: "Body paragraph 1 topic sentence:", type: "lines", lines: 2 },
+          { text: "Body paragraph 2 topic sentence:", type: "lines", lines: 2 },
+          { text: "Body paragraph 3 topic sentence:", type: "lines", lines: 2 },
+          { text: "Conclusion — restatement of thesis:", type: "lines", lines: 2 },
+        ],
+      },
+      // 90 — TIP
+      {
+        type: "tip" as const,
+        title: "Parent Tip: The Value of the Long Game",
+        content: "Expository writing is a skill that develops over years, not weeks. If your child can write a well-structured single paragraph by the end of Year 5, they are well on track. If they can write a three-paragraph text with a clear argument and varied evidence, they are excelling. The goal is not perfection — it is the habit of structured thinking. Every paragraph they write, read, discuss and revise is building the neural pathways that will serve them throughout secondary school and beyond.",
+      },
+      // 91
+      {
+        type: "open-response" as const,
+        title: "Write Your Best Expository Paragraph",
+        instruction: "Write the best expository paragraph you can — this is your showcase piece. Choose a topic you know well, use strong evidence, careful explanation and polished language. Take your time.",
+        prompts: [{ text: "My showcase paragraph:", type: "box", lines: 14 }],
+      },
+      // 92
+      {
+        type: "multiple-choice" as const,
+        title: "Mastery Check: Expository Structure",
+        instruction: "Choose the best answer for each question to demonstrate your mastery of expository writing.",
+        questions: [
+          { prompt: "Which of these best describes the purpose of the explanation sentence in an expository paragraph?", options: ["To introduce a new piece of evidence", "To repeat the topic sentence in different words", "To tell the reader why the evidence supports the main idea", "To provide the transition between two paragraphs"], answer: "To tell the reader why the evidence supports the main idea" },
+          { prompt: "Which of these is the correct order for the parts of an expository paragraph?", options: ["Evidence → Topic sentence → Explanation → Concluding statement", "Topic sentence → Evidence → Explanation → Concluding statement", "Concluding statement → Topic sentence → Evidence → Explanation", "Topic sentence → Concluding statement → Evidence → Explanation"], answer: "Topic sentence → Evidence → Explanation → Concluding statement" },
+          { prompt: "What makes a concluding statement different from a topic sentence?", options: ["A concluding statement introduces a new idea while a topic sentence wraps up the old one", "A concluding statement provides more evidence while a topic sentence does not", "A concluding statement synthesises the paragraph's content rather than introducing the main idea", "They are the same — both state the main idea"], answer: "A concluding statement synthesises the paragraph's content rather than introducing the main idea" },
+        ],
+      },
+      // 93
+      {
+        type: "fill-in-blank" as const,
+        title: "Complete the Academic Paragraph",
+        instruction: "Fill in the blanks to complete this formal academic paragraph. Choose the most appropriate language for each gap.",
+        sentences: [
+          { text: "Climate change _____ [represents / is kind of] one of the most significant challenges of the twenty-first century.", blanks: ["represents"] },
+          { text: "According to the Intergovernmental Panel on Climate Change, global temperatures have _____ [risen / gone up] by approximately 1.1°C since pre-industrial times.", blanks: ["risen"] },
+          { text: "_____ [This is important because / Like, this means], continued warming is projected to increase the frequency of extreme weather events, threatening human settlements and ecosystems worldwide.", blanks: ["This is important because"] },
+          { text: "_____ [Overall / So basically], addressing climate change requires urgent, coordinated action from governments, industries and individuals.", blanks: ["Overall"] },
+        ],
+      },
+      // 94
+      {
+        type: "open-response" as const,
+        title: "Respond to a Non-Fiction Article",
+        instruction: "Read a short non-fiction article with your parent. Write an expository paragraph that explains the main idea of the article and evaluates the quality of the evidence used.",
+        parentTip: "Critical reading of non-fiction is a sophisticated skill. After reading together, ask: What is the writer claiming? What evidence do they use? Is it strong evidence? Would you change anything about how the argument is structured?",
+        prompts: [
+          { text: "Article title and source:", type: "lines", lines: 1 },
+          { text: "My response paragraph (include: main idea, key evidence, your evaluation):", type: "box", lines: 12 },
+        ],
+      },
+      // 95
+      {
+        type: "home-activity" as const,
+        title: "Home Activity: Expository Writer in the Wild",
+        instruction: "This week, look for expository writing in real life. Choose one example and complete the activity.",
+        parentTip: "Finding expository writing in the real world — cereal box nutritional panels, product instructions, encyclopaedia entries, news articles — shows children that expository writing is not just a school exercise. It is the dominant mode of professional communication.",
+        suggestions: [
+          "Find an expository text in a magazine, encyclopedia, science textbook or news website.",
+          "Identify the topic sentence and the main evidence in the text.",
+          "Circle all the transition words you can find.",
+          "Write three sentences explaining what the text is about, what evidence it uses and how well you think it is structured.",
+          "Share your findings with a family member and discuss: Is this text well-structured? What would you improve?",
+        ],
+      },
+      // 96
+      {
+        type: "open-response" as const,
+        title: "Teach It Back",
+        instruction: "Explain expository writing to someone who has never heard of it — a younger sibling, a grandparent or an imaginary student. Use your own words and include an example.",
+        parentTip: "Teaching back is the highest form of understanding. If a child can explain a concept in their own words, they own it. This activity also builds communication confidence.",
+        prompts: [{ text: "My explanation (as if teaching someone else):", type: "box", lines: 10 }],
+      },
+      // 97
+      {
+        type: "multiple-choice" as const,
+        title: "Mastery Challenge: Identify the Issue",
+        instruction: "Each paragraph below has one structural issue. Choose the issue.",
+        questions: [
+          { prompt: "PARAGRAPH: 'The Amazon rainforest is incredibly important. It is green. Many animals live there. Rainforests are nice.' What is the main problem?", options: ["The topic sentence is too specific", "The paragraph lacks evidence, explanation and a clear topic sentence", "There are too many transition words", "The concluding statement is missing"], answer: "The paragraph lacks evidence, explanation and a clear topic sentence" },
+          { prompt: "PARAGRAPH: 'Exercise is important for health. It builds strong muscles. Running is my favourite sport. Football teams train every week. Additionally, swimming is popular.' What is the main problem?", options: ["The evidence is not specific enough", "The paragraph has no topic sentence", "The paragraph lacks a clear focus — it jumps between unrelated ideas", "The transition words are incorrect"], answer: "The paragraph lacks a clear focus — it jumps between unrelated ideas" },
+          { prompt: "PARAGRAPH: 'Reducing plastic waste is essential for protecting our oceans. According to Ocean Watch Australia, over 130,000 tonnes of plastic enter Australian waterways each year. This damages marine ecosystems and harms wildlife.' What is missing?", options: ["A topic sentence", "An explanation sentence", "A concluding statement", "Evidence"], answer: "A concluding statement" },
+        ],
+      },
+      // 98
+      {
+        type: "open-response" as const,
+        title: "Fix the Broken Paragraph",
+        instruction: "This paragraph has several problems — a weak topic sentence, vague evidence and no explanation. Rewrite it as a strong expository paragraph.",
+        prompts: [
+          { text: "ORIGINAL: 'Water is really important. People use water a lot. Without water people would be bad. Lots of animals need water too. Water is good.'\n\nMY IMPROVED PARAGRAPH:", type: "box", lines: 10 },
+        ],
+      },
+      // 99
+      {
+        type: "open-response" as const,
+        title: "Write a Complete Expository Text: Your Choice",
+        instruction: "Write a complete three-paragraph expository text on any topic from your curriculum. This is your final masterpiece for this worksheet. Use everything you have learned: strong topic sentences, specific evidence, clear explanations, varied transition words and a thoughtful conclusion.",
+        parentTip: "This is the capstone activity. Do not rush it. Encourage your child to plan first (15 minutes), write (30 minutes) and edit (15 minutes). If they produce a well-structured three-paragraph text independently, that is an outstanding Year 5 achievement.",
+        prompts: [{ text: "My complete expository text:", type: "box", lines: 22 }],
+      },
+      // 100 — SPARK
+      {
+        type: "spark" as const,
+        title: "Spark: You Are Now an Expository Writer",
+        content: "You have completed 100 activities in expository writing. Think about where you started — and think about what you can do now. You can identify a topic sentence, choose and evaluate evidence, explain why evidence matters, use transition words precisely and structure a full multi-paragraph text. These are the exact same skills that journalists, scientists, historians and lawyers use every day. Non-fiction writing is how the world explains itself. You are now part of that tradition. The next time you want to explain something you care about — something you have researched and understood — you have the tools to do it clearly, precisely and powerfully. Write that text.",
       },
     ],
   },

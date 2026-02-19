@@ -3,9 +3,16 @@ import Link from "next/link";
 import { year10EnglishWorksheets } from "@/lib/worksheet-data-english-year10";
 
 export const metadata: Metadata = {
-  title: "Year 10 English Worksheets — Australian Home Schooling",
+  title: "Year 10 English Worksheets",
   description:
-    "Free printable Year 10 English worksheets aligned to the Australian Curriculum. Covering Language, Literature and Literacy strands.",
+    "Free printable Year 10 English worksheets aligned to the Australian Curriculum V9. Covering phonics, reading, writing, grammar and literature.",
+  keywords: ["Year 10 english worksheets", "Year 10 english Australia", "homeschool Year 10 english", "Australian Curriculum Year 10"],
+  alternates: { canonical: "/worksheets/english/year-10" },
+  openGraph: {
+    title: "Year 10 English Worksheets | Australian Home Schooling",
+    description: "Free printable Year 10 English worksheets covering phonics, reading, writing, grammar and literature.",
+    url: "/worksheets/english/year-10",
+  },
 };
 
 const strandColors: Record<string, string> = {

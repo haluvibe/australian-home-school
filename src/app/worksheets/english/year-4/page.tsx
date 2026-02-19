@@ -3,9 +3,16 @@ import Link from "next/link";
 import { year4EnglishWorksheets } from "@/lib/worksheet-data-english-year4";
 
 export const metadata: Metadata = {
-  title: "Year 4 English Worksheets — Australian Home Schooling",
+  title: "Year 4 English Worksheets",
   description:
-    "Free printable Year 4 English worksheets aligned to the Australian Curriculum. Covering language, literature and literacy including vocabulary, grammar, comprehension and creative writing.",
+    "Free printable Year 4 English worksheets aligned to the Australian Curriculum V9. Covering phonics, reading, writing, grammar and literature.",
+  keywords: ["Year 4 english worksheets", "Year 4 english Australia", "homeschool Year 4 english", "Australian Curriculum Year 4"],
+  alternates: { canonical: "/worksheets/english/year-4" },
+  openGraph: {
+    title: "Year 4 English Worksheets | Australian Home Schooling",
+    description: "Free printable Year 4 English worksheets covering phonics, reading, writing, grammar and literature.",
+    url: "/worksheets/english/year-4",
+  },
 };
 
 const strandColors: Record<string, string> = {

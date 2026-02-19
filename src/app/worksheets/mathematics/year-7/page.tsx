@@ -3,9 +3,16 @@ import Link from "next/link";
 import { year7MathsWorksheets } from "@/lib/worksheet-data-year7";
 
 export const metadata: Metadata = {
-  title: "Year 7 Mathematics Worksheets — Australian Home Schooling",
+  title: "Year 7 Mathematics Worksheets",
   description:
-    "Free printable Year 7 Mathematics worksheets aligned to the Australian Curriculum. Covering number, algebra, measurement, space, statistics and probability.",
+    "Free printable Year 7 Mathematics worksheets aligned to the Australian Curriculum V9. Covering number, algebra, measurement, space and statistics.",
+  keywords: ["Year 7 mathematics worksheets", "Year 7 mathematics Australia", "homeschool Year 7 mathematics", "Australian Curriculum Year 7"],
+  alternates: { canonical: "/worksheets/mathematics/year-7" },
+  openGraph: {
+    title: "Year 7 Mathematics Worksheets | Australian Home Schooling",
+    description: "Free printable Year 7 Mathematics worksheets covering number, algebra, measurement, space and statistics.",
+    url: "/worksheets/mathematics/year-7",
+  },
 };
 
 const strandColors: Record<string, string> = {

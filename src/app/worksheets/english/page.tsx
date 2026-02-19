@@ -2,9 +2,25 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "English Worksheets — Australian Home Schooling",
+  title: "Free Printable English Worksheets — Foundation to Year 10",
   description:
-    "Free printable English worksheets aligned to the Australian Curriculum. Choose your year level to get started.",
+    "Free printable English worksheets aligned to the Australian Curriculum V9. Phonics, reading, writing, grammar and literature for Foundation to Year 10.",
+  keywords: [
+    "free English worksheets Australia",
+    "printable English worksheets",
+    "Australian Curriculum English",
+    "homeschool English",
+    "phonics worksheets",
+    "reading comprehension worksheets",
+    "writing worksheets Australia",
+  ],
+  alternates: { canonical: "/worksheets/english" },
+  openGraph: {
+    title: "Free Printable English Worksheets — Foundation to Year 10",
+    description:
+      "Printable English worksheets for every year level, aligned to the Australian Curriculum V9.",
+    url: "/worksheets/english",
+  },
 };
 
 const yearLevels = [

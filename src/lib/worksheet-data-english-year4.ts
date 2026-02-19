@@ -5308,71 +5308,1262 @@ export const year4EnglishWorksheets: WorksheetItem[] = [
       ],
     },
     activities: [
+      // ── FOUNDATIONAL 1–20 ──────────────────────────────────────────────────
+      // 1
       {
-        type: "open-response",
-        title: "PEEL Planner",
-        instruction:
-          "Choose one of the topics below and complete the PEEL planner before writing your paragraph.",
-        prompts: [
+        type: "circle-correct" as const,
+        title: "What Makes a Good Opinion Sentence?",
+        instruction: "Circle the sentence that is the best opinion sentence (clear point of view, not a fact).",
+        questions: [
           {
-            text: "Choose a topic:\n  [ ] All children should have a pet.\n  [ ] Homework should be banned.\n  [ ] Schools should teach cooking.\n  [ ] My own topic:",
-            type: "lines",
-            lines: 1,
+            prompt: "Choose the best opinion sentence:",
+            options: [
+              "Dogs are mammals.",
+              "Dogs make the best pets of all animals.",
+              "Many people have dogs.",
+            ],
           },
-          { text: "P — My Point (opinion sentence):", type: "lines", lines: 2 },
-          { text: "E — Evidence or example:", type: "lines", lines: 2 },
-          { text: "E — Explanation (why does this matter?):", type: "lines", lines: 2 },
-          { text: "L — Link back to my point:", type: "lines", lines: 2 },
-        ],
-      },
-      {
-        type: "open-response",
-        title: "Write Your Opinion Paragraph",
-        instruction:
-          "Use your PEEL planner to write your full opinion paragraph here. Aim for 5 to 7 sentences.",
-        prompts: [{ text: "Write your paragraph:", type: "box", lines: 14 }],
-      },
-      {
-        type: "open-response",
-        title: "PEEL Self-check",
-        instruction:
-          "Check your paragraph against this list. Tick each box when you are happy with that part.",
-        prompts: [
           {
-            text: "  [ ] My first sentence clearly states my opinion.\n  [ ] I included at least one piece of evidence or example.\n  [ ] I explained why the evidence matters.\n  [ ] My last sentence links back to my main point.\n  [ ] I used at least one persuasive signal word such as firstly, furthermore, clearly or in conclusion.\n\nOne thing I could improve next time:",
-            type: "lines",
-            lines: 3,
+            prompt: "Choose the best opinion sentence:",
+            options: [
+              "Australia has beautiful beaches.",
+              "School uniforms should be compulsory in all Australian schools.",
+              "Some students wear uniforms.",
+            ],
           },
         ],
       },
+      // 2
+      {
+        type: "sorting" as const,
+        title: "Sort: Opinion Sentence or Fact?",
+        instruction: "Sort each sentence into Opinion sentence (suitable as a PEEL point) or Fact.",
+        columns: ["Opinion sentence (point)", "Fact"],
+        items: [
+          { label: "All children should learn to cook." },
+          { label: "Australia has 26 million people." },
+          { label: "Homework should be banned in primary school." },
+          { label: "The Sydney Opera House was built in 1973." },
+          { label: "Schools should have more sport." },
+          { label: "Kangaroos are marsupials." },
+          { label: "Every child deserves access to a library." },
+          { label: "The Murray-Darling is the longest river system in Australia." },
+        ],
+      },
+      // 3
+      {
+        type: "matching" as const,
+        title: "Match the PEEL Part to Its Purpose",
+        instruction: "Draw a line to match each PEEL part with what it does.",
+        parentTip: "Write PEEL on a piece of paper for reference before this activity.",
+        left: ["Point", "Evidence", "Explanation", "Link"],
+        right: [
+          "Explains why the evidence matters",
+          "States the main opinion clearly",
+          "Connects back to the original point",
+          "Provides a fact, statistic or example to support the point",
+        ],
+      },
+      // 4
       {
         type: "sequence" as const,
-        title: "Put the Persuasive Paragraph in Order",
-        instruction:
-          "These sentences belong to a PEEL paragraph but they are scrambled. Number them 1 to 5 in the correct order.",
-        parentTip:
-          "Ask your child to identify which sentence is the Point, Evidence, Explanation and Link.",
+        title: "Put the PEEL Paragraph in Order (Set A)",
+        instruction: "These sentences belong to a PEEL paragraph but are scrambled. Number them 1 to 4 in the correct order.",
+        parentTip: "Ask your child to identify which sentence is P, E, E or L before numbering.",
         items: [
           { label: "Research from health organisations confirms that physical activity improves concentration in children." },
           { label: "Clearly, daily exercise should be a non-negotiable part of every child's school day." },
           { label: "This is significant because a focused, healthy student is far better equipped to learn." },
           { label: "All primary school students should participate in at least 30 minutes of physical activity every day." },
-          { label: "Furthermore, when students move their bodies, they return to classwork refreshed and engaged." },
         ],
       },
+      // 5
+      {
+        type: "open-response" as const,
+        title: "PEEL Planner (Set A)",
+        instruction: "Choose a topic and complete the PEEL planner before writing your paragraph.",
+        prompts: [
+          { text: "Choose a topic:\n  [ ] All children should have a pet.\n  [ ] Homework should be banned.\n  [ ] Schools should teach cooking.\n  [ ] My own topic:", type: "lines" as const, lines: 1 },
+          { text: "P — My Point (opinion sentence):", type: "lines" as const, lines: 2 },
+          { text: "E — Evidence or example:", type: "lines" as const, lines: 2 },
+          { text: "E — Explanation (why does this matter?):", type: "lines" as const, lines: 2 },
+          { text: "L — Link back to my point:", type: "lines" as const, lines: 2 },
+        ],
+      },
+      // 6
+      {
+        type: "open-response" as const,
+        title: "Write Your PEEL Paragraph (Set A)",
+        instruction: "Use your PEEL planner to write your full opinion paragraph. Aim for 4–6 sentences.",
+        prompts: [{ text: "Write your paragraph:", type: "box" as const, lines: 10 }],
+      },
+      // 7
+      {
+        type: "true-false" as const,
+        title: "True or False: Persuasive Writing Rules",
+        instruction: "Circle True or False for each statement.",
+        statements: [
+          { text: "A PEEL paragraph always starts with a clear opinion sentence.", answer: true },
+          { text: "Evidence in a PEEL paragraph must always be a statistic.", answer: false },
+          { text: "The Link sentence restates the main opinion.", answer: true },
+          { text: "A persuasive paragraph needs at least one piece of evidence.", answer: true },
+          { text: "The Explanation sentence is not important and can be left out.", answer: false },
+        ],
+      },
+      // 8
+      {
+        type: "fill-in-blank" as const,
+        title: "Add the Persuasive Signal Words",
+        instruction: "Fill in the best signal word or phrase. Word bank: Firstly, Furthermore, In conclusion, Clearly, This is significant because.",
+        parentTip: "Signal words act as signposts — they help readers follow the argument.",
+        sentences: [
+          { text: "___, all children should have access to school libraries.", blanks: ["Clearly"] },
+          { text: "___, reading builds vocabulary and improves academic results.", blanks: ["Firstly"] },
+          { text: "___, students who read widely are better prepared for secondary school.", blanks: ["Furthermore"] },
+          { text: "___ it gives every student an equal opportunity to succeed.", blanks: ["This is significant because"] },
+          { text: "___, school libraries are essential to quality education.", blanks: ["In conclusion"] },
+        ],
+      },
+      // 9
+      {
+        type: "circle-correct" as const,
+        title: "Which Signal Word Fits?",
+        instruction: "Circle the best signal word or phrase for each blank.",
+        questions: [
+          { prompt: "___, animals should be protected from factory farming.", options: ["Clearly", "However", "Although"] },
+          { prompt: "___, studies show factory farming causes significant animal suffering.", options: ["Firstly", "In conclusion", "Despite"] },
+          { prompt: "___, the welfare of animals matters to the health of the whole food system.", options: ["Furthermore", "Unless", "Although"] },
+        ],
+      },
+      // 10
+      {
+        type: "sorting" as const,
+        title: "Sort Signal Words by Function",
+        instruction: "Sort these persuasive signal words by what they do.",
+        columns: ["Introduce a point", "Add more evidence", "Show contrast", "Conclude"],
+        items: [
+          { label: "Firstly" }, { label: "Furthermore" }, { label: "However" }, { label: "In conclusion" },
+          { label: "Clearly" }, { label: "Additionally" }, { label: "Although" }, { label: "Therefore" },
+          { label: "To begin with" }, { label: "Moreover" }, { label: "Despite this" }, { label: "Ultimately" },
+        ],
+      },
+      // 11
+      {
+        type: "open-response" as const,
+        title: "PEEL Self-Check",
+        instruction: "Use this checklist to evaluate your PEEL paragraph from Activity 6.",
+        prompts: [
+          {
+            text: "[ ] My first sentence clearly states my opinion.\n[ ] I included at least one piece of evidence or example.\n[ ] I explained why the evidence matters.\n[ ] My last sentence links back to my main point.\n[ ] I used at least one persuasive signal word.\n\nOne thing I will improve in my next paragraph:",
+            type: "lines" as const, lines: 3,
+          },
+        ],
+      },
+      // 12
+      {
+        type: "matching" as const,
+        title: "Match the Evidence Type to Its Example",
+        instruction: "Draw a line to match each type of evidence with its example.",
+        left: ["Statistic", "Expert opinion", "Personal example", "Anecdote", "Research finding"],
+        right: [
+          "Dr Chen, a child psychologist, argues that outdoor play is essential.",
+          "Studies show students who sleep eight hours score 20% higher on tests.",
+          "When I started walking to school, I felt more energetic in class.",
+          "A friend told me that cooking classes changed how she thought about food.",
+          "70% of Australian children do not meet recommended exercise guidelines.",
+        ],
+      },
+      // 13
+      {
+        type: "fill-in-blank" as const,
+        title: "Identify the PEEL Parts",
+        instruction: "Label each sentence P (Point), E (Evidence), E (Explanation) or L (Link).",
+        sentences: [
+          { text: "All primary school students should spend at least 30 minutes reading for pleasure each day. [P/E/E/L: ___]", blanks: ["P"] },
+          { text: "Research by the Australian Literacy Foundation shows that daily reading improves vocabulary by 40%. [P/E/E/L: ___]", blanks: ["E"] },
+          { text: "This matters because a strong vocabulary is the foundation of all learning. [P/E/E/L: ___]", blanks: ["E"] },
+          { text: "Therefore, daily reading is not optional — it is essential. [P/E/E/L: ___]", blanks: ["L"] },
+        ],
+      },
+      // 14
+      {
+        type: "open-response" as const,
+        title: "Write an Evidence Sentence",
+        instruction: "For each opinion, write one evidence sentence that supports it.",
+        prompts: [
+          { text: "Opinion: Children should eat less sugar.\nEvidence:", type: "lines" as const, lines: 2 },
+          { text: "Opinion: Schools need more art lessons.\nEvidence:", type: "lines" as const, lines: 2 },
+          { text: "Opinion: Australia should protect its native forests.\nEvidence:", type: "lines" as const, lines: 2 },
+        ],
+      },
+      // 15 — TIP
+      {
+        type: "tip" as const,
+        title: "Tip: What Makes Evidence Strong?",
+        content: "Not all evidence is equally convincing. The strongest evidence includes: specific statistics from reliable sources (e.g. 'According to the WHO, 70% of children...'), expert opinions that give the expert's credentials, and relevant research findings. Personal anecdotes are the weakest type of evidence because they only represent one person's experience. When you write persuasively, always aim for the strongest evidence you can find.",
+      },
+      // 16
+      {
+        type: "sorting" as const,
+        title: "Sort Evidence From Strongest to Weakest",
+        instruction: "Sort these types of evidence from strongest (most convincing) to weakest (least convincing).",
+        columns: ["Strongest", "Moderate", "Weakest"],
+        items: [
+          { label: "A peer-reviewed study of 10,000 children" },
+          { label: "A survey of 50 parents" },
+          { label: "My personal experience" },
+          { label: "Government health statistics" },
+          { label: "An expert quote from a named specialist" },
+          { label: "A friend's opinion" },
+        ],
+      },
+      // 17
+      {
+        type: "fill-in-blank" as const,
+        title: "Complete the PEEL Paragraph",
+        instruction: "Fill in the blank part of each PEEL step.",
+        sentences: [
+          { text: "P: Coding should be taught in all primary schools ___ [from an early age].", blanks: ["from an early age"] },
+          { text: "E: Research shows that students who learn coding develop ___ [problem-solving] skills.", blanks: ["problem-solving"] },
+          { text: "E: This is important because ___ [technology] skills are essential in today's world.", blanks: ["technology"] },
+          { text: "L: ___ [Clearly], coding is no longer optional — it is a vital 21st-century skill.", blanks: ["Clearly"] },
+        ],
+      },
+      // 18
+      {
+        type: "true-false" as const,
+        title: "True or False: Types of Evidence",
+        instruction: "Circle True or False.",
+        statements: [
+          { text: "A statistic is a strong type of evidence because it is measurable.", answer: true },
+          { text: "Personal anecdotes are the strongest type of evidence.", answer: false },
+          { text: "Expert opinions should include the expert's credentials.", answer: true },
+          { text: "Any evidence is equally convincing regardless of its source.", answer: false },
+          { text: "Research findings from reliable organisations are strong evidence.", answer: true },
+        ],
+      },
+      // 19
+      {
+        type: "open-response" as const,
+        title: "Write Your Own PEEL Paragraph (Set B)",
+        instruction: "Write a PEEL paragraph on the topic: 'Children should spend more time outdoors.' Aim for 5–7 sentences. Use at least one piece of evidence and one signal word.",
+        prompts: [
+          { text: "Your paragraph:", type: "box" as const, lines: 10 },
+        ],
+      },
+      // 20 — SPARK
+      {
+        type: "spark" as const,
+        title: "Spark: Persuade Your Family",
+        content: "Choose something you genuinely want to convince a family member about — it could be a new pet, a family holiday, a change to the household rules, or anything else. Write a full PEEL paragraph making your case. Read it aloud to your family. Did it work? Ask them to give you feedback on your evidence and explanation. Then revise your paragraph based on their feedback.",
+      },
+      // ── DEVELOPING 21–50 ──────────────────────────────────────────────────
+      // 21
+      {
+        type: "open-response" as const,
+        title: "Write a Strong Opening Sentence",
+        instruction: "Write three different opening sentences for the topic 'Schools should have a four-day week'. Try a question, a bold statement and a statistic.",
+        prompts: [
+          { text: "Question opener:", type: "lines" as const, lines: 1 },
+          { text: "Bold statement opener:", type: "lines" as const, lines: 1 },
+          { text: "Statistic opener:", type: "lines" as const, lines: 1 },
+          { text: "Which opener is most effective and why?", type: "lines" as const, lines: 2 },
+        ],
+      },
+      // 22
+      {
+        type: "fill-in-blank" as const,
+        title: "Explanation Sentences",
+        instruction: "An Explanation sentence says WHY the evidence matters. Fill in the best explanation.",
+        sentences: [
+          { text: "Evidence: Studies show daily exercise reduces anxiety in children.\nExplanation: This matters because ___ [mental health affects every part of a child's life].", blanks: ["mental health affects every part of a child's life"] },
+          { text: "Evidence: Research shows students who eat breakfast score 25% higher on memory tests.\nExplanation: This is significant because ___ [a nourished brain learns more effectively].", blanks: ["a nourished brain learns more effectively"] },
+        ],
+      },
+      // 23
+      {
+        type: "circle-correct" as const,
+        title: "Which Explanation Sentence Is Best?",
+        instruction: "Circle the best explanation sentence for each piece of evidence.",
+        questions: [
+          {
+            prompt: "Evidence: Students who sleep 8 hours score higher on tests.",
+            options: [
+              "This is because sleep is good.",
+              "This demonstrates that adequate sleep is foundational to academic performance.",
+              "Sleep matters a bit.",
+            ],
+          },
+          {
+            prompt: "Evidence: Schools with gardens show 30% improvement in student wellbeing.",
+            options: [
+              "Gardens are green and pretty.",
+              "This is significant because student wellbeing directly influences engagement and learning.",
+              "Being outside is good.",
+            ],
+          },
+        ],
+      },
+      // 24
+      {
+        type: "open-response" as const,
+        title: "PEEL Paragraph: Full Draft",
+        instruction: "Write a complete PEEL paragraph on a topic: libraries / school canteen / recess / animals in zoos / space exploration. Label each sentence P, E, E or L.",
+        prompts: [
+          { text: "My topic:", type: "lines" as const, lines: 1 },
+          { text: "My PEEL paragraph:", type: "box" as const, lines: 10 },
+        ],
+      },
+      // 25
+      {
+        type: "sorting" as const,
+        title: "Sort: Part of a PEEL Paragraph?",
+        instruction: "Sort each sentence into the PEEL part it belongs to.",
+        columns: ["Point", "Evidence", "Explanation", "Link"],
+        items: [
+          { label: "In conclusion, every Australian school should have a library." },
+          { label: "Studies show that access to books improves reading by 35%." },
+          { label: "This is important because reading ability affects every subject." },
+          { label: "School libraries are essential to quality education." },
+          { label: "Therefore, we must invest in school libraries now." },
+          { label: "Research confirms that library users achieve higher grades." },
+          { label: "This matters because equal access to books creates equal opportunities." },
+          { label: "Clearly, the evidence leaves no room for doubt." },
+        ],
+      },
+      // 26
+      {
+        type: "open-response" as const,
+        title: "Improve a Weak PEEL Paragraph",
+        instruction: "This PEEL paragraph is weak. Improve each part.",
+        prompts: [
+          { text: "WEAK VERSION:\nP: I think sport is good. E: Sport is fun. E: It helps you. L: So sport is good.\n\nImproved P:", type: "lines" as const, lines: 2 },
+          { text: "Improved E (with evidence/statistic):", type: "lines" as const, lines: 2 },
+          { text: "Improved E (with explanation):", type: "lines" as const, lines: 2 },
+          { text: "Improved L:", type: "lines" as const, lines: 2 },
+        ],
+      },
+      // 27
+      {
+        type: "multiple-choice" as const,
+        title: "Identify the Persuasive Technique",
+        instruction: "Choose the persuasive technique used in each sentence.",
+        questions: [
+          { prompt: "'Research by Harvard University shows...'", options: ["Repetition", "Expert authority", "Emotional appeal", "Rhetorical question"], answer: "Expert authority" },
+          { prompt: "'Don't our children deserve better than this?'", options: ["Statistic", "Rhetorical question", "Repetition", "Counter-argument"], answer: "Rhetorical question" },
+          { prompt: "'70% of parents agree that...'", options: ["Statistic", "Personal anecdote", "Emotional appeal", "Contrast"], answer: "Statistic" },
+          { prompt: "'Imagine a world where no child goes hungry...'", options: ["Statistic", "Counter-argument", "Emotional appeal", "Expert opinion"], answer: "Emotional appeal" },
+        ],
+      },
+      // 28
+      {
+        type: "sorting" as const,
+        title: "Sort: Persuasive Techniques",
+        instruction: "Sort each example into the persuasive technique it uses.",
+        columns: ["Statistic", "Rhetorical question", "Emotional appeal", "Expert opinion"],
+        items: [
+          { label: "Can we really afford to ignore this crisis?" },
+          { label: "Dr Patel, a leading nutritionist, argues..." },
+          { label: "9 in 10 dentists recommend..." },
+          { label: "Think of the children who go to bed hungry each night." },
+          { label: "Studies show a 40% increase in..." },
+          { label: "Professor Lee of Oxford University states..." },
+          { label: "Wouldn't you want the best for your family?" },
+          { label: "Picture the faces of those affected..." },
+        ],
+      },
+      // 29
+      {
+        type: "open-response" as const,
+        title: "Use a Persuasive Technique",
+        instruction: "Practise each persuasive technique by writing one sentence on the topic 'Reducing food waste'.",
+        prompts: [
+          { text: "Rhetorical question:", type: "lines" as const, lines: 1 },
+          { text: "Emotional appeal:", type: "lines" as const, lines: 1 },
+          { text: "Statistic (real or plausible):", type: "lines" as const, lines: 1 },
+          { text: "Expert opinion:", type: "lines" as const, lines: 1 },
+        ],
+      },
+      // 30 — TIP
+      {
+        type: "tip" as const,
+        title: "Tip: Rhetorical Questions",
+        content: "A rhetorical question is a question that you do not expect the reader to answer — it is designed to make them think or to lead them to agree with you. For example: 'Can we really afford to ignore climate change?' The expected answer is 'No' — and the reader feels the emotion of that. Rhetorical questions are most powerful at the beginning or end of a persuasive paragraph. Use them sparingly — too many and they lose impact.",
+      },
+      // 31
+      {
+        type: "fill-in-blank" as const,
+        title: "Write the Missing PEEL Part",
+        instruction: "Each paragraph is missing one PEEL part. Write the missing sentence.",
+        sentences: [
+          { text: "P: All students should learn a musical instrument at school.\nE: Studies show music education improves mathematical reasoning by up to 30%.\nE: ___ [Missing — write your own explanation].\nL: Clearly, music is not a luxury — it is an academic tool.", blanks: ["This matters because stronger mathematical skills benefit students in science, technology and everyday life."] },
+        ],
+      },
+      // 32
+      {
+        type: "open-response" as const,
+        title: "PEEL Paragraph: Environmental Topic",
+        instruction: "Write a PEEL paragraph arguing that plastic bags should be banned in Australia. Include a statistic or research finding as your evidence.",
+        prompts: [
+          { text: "PEEL Planner:\nP:", type: "lines" as const, lines: 1 },
+          { text: "E:", type: "lines" as const, lines: 1 },
+          { text: "E:", type: "lines" as const, lines: 1 },
+          { text: "L:", type: "lines" as const, lines: 1 },
+          { text: "Full paragraph:", type: "box" as const, lines: 8 },
+        ],
+      },
+      // 33
+      {
+        type: "sorting" as const,
+        title: "Sort: Strong or Weak Persuasive Sentences?",
+        instruction: "Sort each sentence into strong or weak persuasive writing.",
+        columns: ["Strong persuasive sentence", "Weak persuasive sentence"],
+        items: [
+          { label: "I think sport is good." },
+          { label: "Research by the AIS confirms that daily exercise reduces anxiety in children by 35%." },
+          { label: "Lots of people agree that libraries are nice." },
+          { label: "According to UNESCO, children with access to school libraries score 20% higher in literacy." },
+          { label: "It's obvious that junk food is bad." },
+          { label: "The World Health Organisation links excessive sugar consumption to childhood obesity rates of 25%." },
+        ],
+      },
+      // 34
+      {
+        type: "multiple-choice" as const,
+        title: "Which Sentence Is the Point?",
+        instruction: "In each group, choose the sentence that works best as the Point (P) of a PEEL paragraph.",
+        questions: [
+          {
+            prompt: "Topic: School uniforms",
+            options: [
+              "Many schools have uniforms.",
+              "School uniforms should be compulsory in all Australian primary schools.",
+              "Some students like uniforms and some don't.",
+            ],
+            answer: "School uniforms should be compulsory in all Australian primary schools.",
+          },
+          {
+            prompt: "Topic: Screen time",
+            options: [
+              "Children use devices a lot.",
+              "Daily screen time should be limited to two hours for primary school children.",
+              "There are many apps available for children.",
+            ],
+            answer: "Daily screen time should be limited to two hours for primary school children.",
+          },
+        ],
+      },
+      // 35
+      {
+        type: "open-response" as const,
+        title: "Persuasive Paragraph: School Life Topic",
+        instruction: "Choose your own school-related topic and write a full PEEL paragraph with all four parts. Use at least two persuasive signal words.",
+        prompts: [
+          { text: "My topic:", type: "lines" as const, lines: 1 },
+          { text: "My paragraph:", type: "box" as const, lines: 10 },
+          { text: "Signal words I used:", type: "lines" as const, lines: 1 },
+        ],
+      },
+      // 36
+      {
+        type: "fill-in-blank" as const,
+        title: "Persuasive Language: Degrees of Certainty",
+        instruction: "Fill in the signal phrase that matches the level of certainty shown.",
+        sentences: [
+          { text: "___ [It is clear/Research suggests] that exercise improves mental health. (CERTAIN)", blanks: ["It is clear"] },
+          { text: "___ [It appears/Without doubt] that reducing screen time benefits children. (PROBABLE)", blanks: ["It appears"] },
+          { text: "___ [It could be argued/Obviously] that homework helps students. (POSSIBLE)", blanks: ["It could be argued"] },
+          { text: "___ [Undeniably/Some evidence suggests], healthy food improves concentration. (STRONG)", blanks: ["Undeniably"] },
+        ],
+      },
+      // 37
+      {
+        type: "circle-correct" as const,
+        title: "Choose the Most Persuasive Sentence",
+        instruction: "Circle the most persuasive version of each sentence.",
+        questions: [
+          {
+            prompt: "Choose the most persuasive version:",
+            options: [
+              "A lot of people think animals should be protected.",
+              "Urgently and without exception, we must strengthen Australia's animal protection laws.",
+              "Animals need protection sometimes.",
+            ],
+          },
+          {
+            prompt: "Choose the most persuasive version:",
+            options: [
+              "The government should do something about this issue.",
+              "Can we honestly stand by while our children's mental health declines? The time for action is now.",
+              "Mental health is important for children.",
+            ],
+          },
+        ],
+      },
+      // 38
+      {
+        type: "open-response" as const,
+        title: "Counter-Argument and Refutation",
+        instruction: "Write a counter-argument and refutation for the topic: 'All schools should teach cooking.'",
+        prompts: [
+          { text: "Counter-argument (some people might say...):", type: "lines" as const, lines: 2 },
+          { text: "Refutation (however, the evidence shows...):", type: "lines" as const, lines: 2 },
+        ],
+      },
+      // 39
+      {
+        type: "sorting" as const,
+        title: "Sort: Counter-Argument or Refutation?",
+        instruction: "Sort each sentence into counter-argument (opposing view) or refutation (response to it).",
+        columns: ["Counter-argument", "Refutation"],
+        items: [
+          { label: "Some argue that zoos protect animals." },
+          { label: "However, studies show wild animals in captivity suffer significantly higher stress levels." },
+          { label: "Critics claim homework builds discipline." },
+          { label: "Yet research consistently shows excessive homework leads to anxiety and sleep deprivation." },
+          { label: "Some parents believe screen time is harmless in moderation." },
+          { label: "Nevertheless, the WHO recommends limits for good reason." },
+        ],
+      },
+      // 40 — SPARK
+      {
+        type: "spark" as const,
+        title: "Spark: Debate Yourself",
+        content: "Choose a topic you have a strong opinion about. Write a full PEEL paragraph arguing your position. Then write another full PEEL paragraph arguing the OPPOSITE position. Use different evidence for each side. Read both aloud to a family member. Which paragraph is more convincing — even if it is not your real opinion? What does this tell you about the power of evidence and argument structure?",
+      },
+      // ── CONSOLIDATING 41–80 ────────────────────────────────────────────────
+      // 41
+      {
+        type: "open-response" as const,
+        title: "Two-Paragraph Persuasive Writing",
+        instruction: "Write two PEEL paragraphs on 'All Australian schools should have vegetable gardens'. Paragraph 1: health and wellbeing argument. Paragraph 2: educational argument.",
+        prompts: [
+          { text: "Paragraph 1 (health/wellbeing):", type: "box" as const, lines: 8 },
+          { text: "Paragraph 2 (educational):", type: "box" as const, lines: 8 },
+        ],
+      },
+      // 42
+      {
+        type: "fill-in-blank" as const,
+        title: "Formal Persuasive Language",
+        instruction: "Replace the informal language in brackets with more formal persuasive language.",
+        sentences: [
+          { text: "___ [I think/It is evident that] all students deserve access to quality education.", blanks: ["It is evident that"] },
+          { text: "___ [Some people say/Critics argue] that screen time is harmless.", blanks: ["Critics argue"] },
+          { text: "The ___ [big/compelling] evidence suggests immediate action is required.", blanks: ["compelling"] },
+          { text: "___ [For this reason/So], the government must act without delay.", blanks: ["For this reason"] },
+        ],
+      },
+      // 43
+      {
+        type: "open-response" as const,
+        title: "Write a Persuasive Introduction",
+        instruction: "Write a two-sentence persuasive introduction for 'The importance of reading'. Sentence 1: a hook. Sentence 2: your thesis/main opinion.",
+        prompts: [
+          { text: "Hook sentence:", type: "lines" as const, lines: 2 },
+          { text: "Thesis (main opinion):", type: "lines" as const, lines: 2 },
+        ],
+      },
+      // 44
+      {
+        type: "true-false" as const,
+        title: "True or False: Persuasive Techniques",
+        instruction: "Circle True or False.",
+        statements: [
+          { text: "A rhetorical question is one the writer expects the reader to answer aloud.", answer: false },
+          { text: "Statistics are a strong form of evidence in persuasive writing.", answer: true },
+          { text: "A counter-argument weakens a persuasive essay.", answer: false },
+          { text: "Emotional appeals can make persuasive writing more powerful.", answer: true },
+          { text: "The PEEL structure only works for one type of argument.", answer: false },
+        ],
+      },
+      // 45 — TIP
+      {
+        type: "tip" as const,
+        title: "Tip: Varying Your Sentence Openings in Persuasive Writing",
+        content: "Persuasive writing that starts every sentence with 'I think' or 'I believe' becomes repetitive quickly. Vary your openers: 'Clearly, ...' / 'Research confirms ...' / 'Without doubt, ...' / 'Consider this: ...' / 'Imagine a world where ...' / 'The evidence is overwhelming: ...' These varied openings make your writing sound more authoritative and sophisticated, which in turn makes it more persuasive.",
+      },
+      // 46
+      {
+        type: "open-response" as const,
+        title: "Varied Sentence Openers in Persuasion",
+        instruction: "Rewrite each sentence using a more varied and persuasive opener.",
+        prompts: [
+          { text: "Original: I think we should have more trees in cities.\nRewritten:", type: "lines" as const, lines: 1 },
+          { text: "Original: I believe homework should be reduced.\nRewritten:", type: "lines" as const, lines: 1 },
+          { text: "Original: I think coding is important.\nRewritten:", type: "lines" as const, lines: 1 },
+        ],
+      },
+      // 47
+      {
+        type: "sorting" as const,
+        title: "Sort: Persuasive Openers by Effect",
+        instruction: "Sort these sentence openers by the effect they create.",
+        columns: ["Logical / evidence-based", "Emotional / empathetic", "Authoritative / confident"],
+        items: [
+          { label: "Research confirms that..." },
+          { label: "Imagine the relief of..." },
+          { label: "Without question, ..." },
+          { label: "Studies consistently show..." },
+          { label: "Consider the impact on the thousands of families who..." },
+          { label: "Clearly, the time for action is now." },
+          { label: "Data from the WHO indicates..." },
+          { label: "Every parent knows the feeling of..." },
+          { label: "The evidence is unambiguous:" },
+        ],
+      },
+      // 48
+      {
+        type: "open-response" as const,
+        title: "Edit for Persuasive Power",
+        instruction: "Rewrite this paragraph to make it more persuasive by adding signal words, a rhetorical question and stronger evidence.",
+        prompts: [
+          {
+            text: "ORIGINAL: Children do not exercise enough. Exercise is good for you. Schools should have more sport.\n\nYour persuasive version:",
+            type: "box" as const, lines: 8,
+          },
+        ],
+      },
+      // 49
+      {
+        type: "multiple-choice" as const,
+        title: "Which Version Is More Persuasive?",
+        instruction: "Choose the more persuasive version of each sentence.",
+        questions: [
+          {
+            prompt: "Choose the more persuasive version:",
+            options: [
+              "Libraries are useful.",
+              "Without school libraries, we are denying children the very foundation of literacy — and that is a cost no society can afford.",
+            ],
+            answer: "Without school libraries, we are denying children the very foundation of literacy — and that is a cost no society can afford.",
+          },
+          {
+            prompt: "Choose the more persuasive version:",
+            options: [
+              "The government should look at this.",
+              "The evidence demands immediate government action — delay is not an option.",
+            ],
+            answer: "The evidence demands immediate government action — delay is not an option.",
+          },
+        ],
+      },
+      // 50
       {
         type: "home-activity" as const,
         title: "Persuasion in Real Life",
-        instruction:
-          "Find and practise persuasion beyond the worksheet.",
-        parentTip:
-          "Persuasion is everywhere — recognising it builds critical thinking about what we read and hear.",
+        instruction: "Find and practise persuasion beyond the worksheet.",
+        parentTip: "Persuasion is everywhere — recognising it builds critical thinking about what we read and hear.",
         suggestions: [
           "Read a letter to the editor in a newspaper and identify the PEEL structure.",
-          "Choose something you want permission for and write a PEEL paragraph to persuade your parent.",
+          "Choose something you want permission for and write a PEEL paragraph to persuade a family member.",
           "Watch a TV advertisement and identify the persuasive techniques — emotion, statistics, celebrity, repetition.",
-          "Write a counter-argument to your own PEEL paragraph — then decide which side is more convincing.",
+          "Write a counter-argument paragraph — the same topic but arguing the opposite side. Then decide which side is more convincing.",
         ],
+      },
+      // 51
+      {
+        type: "open-response" as const,
+        title: "Two-Sided Argument Practice",
+        instruction: "Complete this planning table for the topic 'Children should not be allowed to have smartphones'.",
+        prompts: [
+          { text: "Three arguments FOR this rule:", type: "lines" as const, lines: 3 },
+          { text: "Three arguments AGAINST this rule:", type: "lines" as const, lines: 3 },
+          { text: "Which side do you find more convincing and why?", type: "lines" as const, lines: 2 },
+        ],
+      },
+      // 52
+      {
+        type: "fill-in-blank" as const,
+        title: "Linking Language in a Multi-Paragraph Argument",
+        instruction: "Fill in the best linking phrase to connect these paragraphs.",
+        sentences: [
+          { text: "___ [Firstly/In conclusion], exercise improves physical health.", blanks: ["Firstly"] },
+          { text: "___ [Furthermore/Although], regular activity also boosts mental wellbeing.", blanks: ["Furthermore"] },
+          { text: "___ [In addition/For example], studies show that active children concentrate better.", blanks: ["In addition"] },
+          { text: "___ [In conclusion/Firstly], daily exercise is essential for every child.", blanks: ["In conclusion"] },
+        ],
+      },
+      // 53
+      {
+        type: "open-response" as const,
+        title: "Write With a Rhetorical Question Hook",
+        instruction: "Write a full PEEL paragraph beginning with a powerful rhetorical question. Topic: 'The importance of sleep for children'.",
+        prompts: [
+          { text: "Rhetorical question hook:", type: "lines" as const, lines: 1 },
+          { text: "Full paragraph (P, E, E, L):", type: "box" as const, lines: 10 },
+        ],
+      },
+      // 54
+      {
+        type: "sorting" as const,
+        title: "Sort: Persuasive Paragraph Features",
+        instruction: "Sort each feature into essential (must have) or optional (adds impact but not always needed).",
+        columns: ["Essential feature", "Optional feature (adds impact)"],
+        items: [
+          { label: "A clear opinion sentence (Point)" },
+          { label: "A rhetorical question" },
+          { label: "At least one piece of evidence" },
+          { label: "Emotional appeal language" },
+          { label: "An explanation of why evidence matters" },
+          { label: "A counter-argument" },
+          { label: "A link sentence restating the opinion" },
+          { label: "Rule of three" },
+        ],
+      },
+      // 55
+      {
+        type: "open-response" as const,
+        title: "Use the Rule of Three",
+        instruction: "The 'Rule of Three' lists three things in a row for power and rhythm. Write three rule-of-three sentences on different topics.",
+        parentTip: "Famous examples: 'Life, liberty and the pursuit of happiness.' / 'Faster, higher, stronger.'",
+        prompts: [
+          { text: "Topic: benefits of reading: 'Reading develops _____, builds _____ and creates _____.'", type: "lines" as const, lines: 1 },
+          { text: "Topic: why exercise matters: 'Exercise _____, _____ and _____.'", type: "lines" as const, lines: 1 },
+          { text: "Topic: your choice — write a rule of three:", type: "lines" as const, lines: 2 },
+        ],
+      },
+      // 56
+      {
+        type: "circle-correct" as const,
+        title: "Which Is a Better Rule of Three?",
+        instruction: "Circle the more powerful rule-of-three phrase.",
+        questions: [
+          {
+            prompt: "Which rule of three sounds more powerful?",
+            options: [
+              "Reading is good, interesting and nice.",
+              "Reading expands minds, deepens empathy and opens worlds.",
+            ],
+          },
+          {
+            prompt: "Which rule of three sounds more powerful?",
+            options: [
+              "Exercise is fast, tiring and sweaty.",
+              "Exercise strengthens bodies, sharpens minds and lifts spirits.",
+            ],
+          },
+        ],
+      },
+      // 57
+      {
+        type: "open-response" as const,
+        title: "Persuasive Writing: Animal Topic",
+        instruction: "Write a full PEEL paragraph arguing that it is wrong to keep wild animals in zoos. Use the rule of three in your evidence or explanation sentence.",
+        prompts: [
+          { text: "Your paragraph:", type: "box" as const, lines: 10 },
+        ],
+      },
+      // 58
+      {
+        type: "fill-in-blank" as const,
+        title: "Concession Language",
+        instruction: "Fill in the best concession phrase.",
+        sentences: [
+          { text: "___ [While it is true that/In conclusion] some zoos do protect endangered species, the suffering of captive animals cannot be justified.", blanks: ["While it is true that"] },
+          { text: "___ [Although/Therefore] homework takes time, the evidence shows it builds independent learning skills.", blanks: ["Although"] },
+          { text: "___ [Critics argue that/In addition] screen time is harmless in moderation. ___ [However/Furthermore], the WHO recommends limits for good reason.", blanks: ["Critics argue that", "However"] },
+        ],
+      },
+      // 59
+      {
+        type: "sorting" as const,
+        title: "Sort: Concession Language",
+        instruction: "Sort these phrases into concession phrases (admitting the other side) or refutation phrases (arguing back).",
+        columns: ["Concession", "Refutation"],
+        items: [
+          { label: "While it is true that..." }, { label: "However, the evidence shows..." },
+          { label: "Although some argue..." }, { label: "Nevertheless, research confirms..." },
+          { label: "Critics may point out that..." }, { label: "Yet the data clearly demonstrates..." },
+          { label: "Despite this..." }, { label: "The counterargument overlooks the fact that..." },
+        ],
+      },
+      // 60 — TIP + SPARK
+      {
+        type: "tip" as const,
+        title: "Tip: Emotional Language in Persuasion",
+        content: "Emotional language helps readers feel connected to an argument. But there is a difference between appropriate emotional language and manipulation. Appropriate: 'Children deserve a safe, nurturing environment to grow.' Manipulative: 'Only a heartless person would disagree with this policy.' The first appeals to shared values; the second attacks readers who might disagree. The most effective persuasive writing combines emotional appeal with solid evidence.",
+      },
+      // 61 (SPARK at ~60)
+      {
+        type: "spark" as const,
+        title: "Spark: The Persuasion Campaign",
+        content: "Design a one-page persuasion campaign for a cause you care about. It should include: a headline, a PEEL paragraph, a statistic presented visually, a rhetorical question, and a call to action (what you want the reader to do). Design it to look like a real poster or pamphlet. Share it with your family and ask: 'Did this convince you? What was most effective?'",
+      },
+      // 62
+      {
+        type: "open-response" as const,
+        title: "Appropriate vs Manipulative Emotional Language",
+        instruction: "Rewrite each manipulative sentence to make it an appropriate emotional appeal.",
+        prompts: [
+          { text: "Manipulative: 'Only someone who doesn't care about children would oppose this policy.'\nAppropriate version:", type: "lines" as const, lines: 2 },
+          { text: "Manipulative: 'You would have to be heartless not to donate.'\nAppropriate version:", type: "lines" as const, lines: 2 },
+        ],
+      },
+      // 63
+      {
+        type: "fill-in-blank" as const,
+        title: "Persuasive Techniques: Labelling",
+        instruction: "Label each sentence with its persuasive technique: S (Statistic), RQ (Rhetorical question), EA (Emotional appeal), EO (Expert opinion), RT (Rule of three), CA (Counter-argument), R (Refutation).",
+        sentences: [
+          { text: "Research by UNICEF shows 1 in 4 children globally lack access to clean water. [Technique: ___]", blanks: ["S"] },
+          { text: "Can we truly call ourselves a fair society when so many are left behind? [Technique: ___]", blanks: ["RQ"] },
+          { text: "Professor Watts of Melbourne University argues that coding should be taught from Year 1. [Technique: ___]", blanks: ["EO"] },
+          { text: "Some say the cost is too high. Yet the cost of inaction is far greater. [Technique: ___]", blanks: ["CA/R"] },
+          { text: "Reading teaches compassion, builds knowledge and shapes futures. [Technique: ___]", blanks: ["RT"] },
+        ],
+      },
+      // 64
+      {
+        type: "open-response" as const,
+        title: "Write Using Multiple Persuasive Techniques",
+        instruction: "Write a PEEL paragraph about a topic of your choice. Use at least three different persuasive techniques and label each one in the margin.",
+        prompts: [
+          { text: "My topic:", type: "lines" as const, lines: 1 },
+          { text: "My paragraph:", type: "box" as const, lines: 10 },
+          { text: "Techniques I used:", type: "lines" as const, lines: 1 },
+        ],
+      },
+      // 65
+      {
+        type: "sorting" as const,
+        title: "Sort: Which Persuasive Technique Is Being Used?",
+        instruction: "Match each sentence to its persuasive technique.",
+        columns: ["Rhetorical question", "Emotional appeal", "Statistic", "Rule of three"],
+        items: [
+          { label: "How can we stand by while our planet is destroyed?" },
+          { label: "Every child deserves to feel safe, valued and heard." },
+          { label: "87% of teachers say class sizes directly impact learning quality." },
+          { label: "Education empowers individuals, strengthens communities and builds nations." },
+          { label: "Is this really the future we want for our children?" },
+          { label: "Families are struggling — facing debt, stress and uncertainty." },
+        ],
+      },
+      // 66
+      {
+        type: "open-response" as const,
+        title: "Write a Conclusion Paragraph",
+        instruction: "Write a conclusion paragraph for the essay topic 'Schools should ban sugary drinks'. It should restate the main argument, summarise key evidence and end with a call to action.",
+        prompts: [
+          { text: "Conclusion paragraph:", type: "box" as const, lines: 8 },
+        ],
+      },
+      // 67
+      {
+        type: "circle-correct" as const,
+        title: "Which Conclusion Is More Effective?",
+        instruction: "Circle the more effective conclusion sentence.",
+        questions: [
+          {
+            prompt: "Which is the better conclusion?",
+            options: [
+              "So that is why I think schools should have libraries.",
+              "The evidence is clear: school libraries are not a luxury but a necessity, and every child deserves one.",
+            ],
+          },
+          {
+            prompt: "Which is the better conclusion?",
+            options: [
+              "In conclusion, exercise is good and schools should have more sport.",
+              "The research is unambiguous. Daily exercise is essential — not optional — and our schools must prioritise it for the health and future of every child.",
+            ],
+          },
+        ],
+      },
+      // 68
+      {
+        type: "open-response" as const,
+        title: "Full Persuasive Essay Plan",
+        instruction: "Plan a full persuasive essay (introduction + two PEEL paragraphs + conclusion) on: 'Australia should do more to protect native wildlife.'",
+        prompts: [
+          { text: "Introduction hook:", type: "lines" as const, lines: 1 },
+          { text: "Thesis (main opinion):", type: "lines" as const, lines: 1 },
+          { text: "Paragraph 1 — Point:", type: "lines" as const, lines: 1 },
+          { text: "Paragraph 1 — Evidence:", type: "lines" as const, lines: 1 },
+          { text: "Paragraph 2 — Point:", type: "lines" as const, lines: 1 },
+          { text: "Paragraph 2 — Evidence:", type: "lines" as const, lines: 1 },
+          { text: "Conclusion — key idea and call to action:", type: "lines" as const, lines: 2 },
+        ],
+      },
+      // 69
+      {
+        type: "true-false" as const,
+        title: "True or False: Persuasive Essay Structure",
+        instruction: "Circle True or False.",
+        statements: [
+          { text: "A strong conclusion restates the main argument.", answer: true },
+          { text: "A persuasive essay can only have one PEEL paragraph.", answer: false },
+          { text: "A call to action tells readers what to do or think.", answer: true },
+          { text: "Using the same evidence in every paragraph makes an essay stronger.", answer: false },
+          { text: "A hook at the start of an essay engages the reader immediately.", answer: true },
+        ],
+      },
+      // 70
+      {
+        type: "home-activity" as const,
+        title: "Persuasive Writing in the World",
+        instruction: "Explore persuasive writing in real-world contexts this week.",
+        parentTip: "Identifying persuasive techniques in real media is one of the most powerful critical literacy activities.",
+        suggestions: [
+          "Find a real letter to the editor in a newspaper. Identify the PEEL structure and any persuasive techniques.",
+          "Write a letter to your local council about an issue in your community using the PEEL structure.",
+          "Watch a persuasive speech (TED Talk or school speech day) and identify three techniques used.",
+          "Create a persuasive poster for a cause you believe in — include a slogan, statistics and an emotional appeal.",
+        ],
+      },
+      // ── EXTENDING 71–100 ──────────────────────────────────────────────────
+      // 71
+      {
+        type: "open-response" as const,
+        title: "Write a Full Persuasive Essay",
+        instruction: "Write a full persuasive essay (introduction, two PEEL paragraphs, conclusion) on: 'All Australian children should learn a second language.' Use at least four different persuasive techniques.",
+        prompts: [
+          { text: "Your essay:", type: "box" as const, lines: 20 },
+        ],
+      },
+      // 72
+      {
+        type: "multiple-choice" as const,
+        title: "Analyse Persuasive Techniques",
+        instruction: "Choose the correct analysis for each persuasive technique.",
+        questions: [
+          { prompt: "Why is a rhetorical question effective at the end of a paragraph?", options: ["It confuses the reader", "It leaves the reader with something to think about and implies the answer", "It provides evidence"], answer: "It leaves the reader with something to think about and implies the answer" },
+          { prompt: "Why is a statistic stronger than a personal anecdote?", options: ["Statistics are always true", "Statistics represent larger samples and are more objective", "Personal anecdotes are boring"], answer: "Statistics represent larger samples and are more objective" },
+          { prompt: "What is the purpose of a counter-argument in a persuasive essay?", options: ["To admit the writer is wrong", "To show intellectual fairness and then strengthen the main argument", "To confuse the reader"], answer: "To show intellectual fairness and then strengthen the main argument" },
+        ],
+      },
+      // 73
+      {
+        type: "open-response" as const,
+        title: "Evaluate a Persuasive Text",
+        instruction: "Read a real persuasive text (editorial, letter to editor, advertisement or speech). Complete this analysis.",
+        prompts: [
+          { text: "Text and source:", type: "lines" as const, lines: 1 },
+          { text: "Main opinion (Point):", type: "lines" as const, lines: 1 },
+          { text: "Two pieces of evidence used:", type: "lines" as const, lines: 2 },
+          { text: "Two persuasive techniques identified:", type: "lines" as const, lines: 2 },
+          { text: "Is the argument convincing? Why or why not?", type: "lines" as const, lines: 2 },
+        ],
+      },
+      // 74
+      {
+        type: "fill-in-blank" as const,
+        title: "Sophisticated Persuasive Language",
+        instruction: "Replace the plain word in brackets with a more sophisticated persuasive alternative.",
+        sentences: [
+          { text: "The evidence ___ [shows] a direct link between literacy and life outcomes.", blanks: ["demonstrates conclusively"] },
+          { text: "This issue ___ [needs] immediate attention from all levels of government.", blanks: ["demands"] },
+          { text: "The ___ [bad] effects of screen time on young children are well-documented.", blanks: ["detrimental"] },
+          { text: "Schools that invest in reading programs ___ [get] significantly better outcomes.", blanks: ["achieve"] },
+        ],
+      },
+      // 75 — TIP
+      {
+        type: "tip" as const,
+        title: "Tip: Writing for Your Audience",
+        content: "Different audiences require different persuasive approaches. Writing to your local council: use formal language, specific evidence and policy-focused arguments. Writing to a newspaper: use accessible language, emotional appeal and statistics. Writing to a friend: use informal language, personal examples and humour. Always ask: who am I writing to, and what kind of evidence and language will convince THEM? Adjusting your register and evidence to suit your audience is one of the most advanced writing skills.",
+      },
+      // 76
+      {
+        type: "open-response" as const,
+        title: "Write for Different Audiences",
+        instruction: "Argue that your local park needs better facilities. Write your main point sentence in two versions — one for the local council (formal) and one for a school newsletter (informal/engaging).",
+        prompts: [
+          { text: "For the council (formal):", type: "lines" as const, lines: 2 },
+          { text: "For the school newsletter (informal/engaging):", type: "lines" as const, lines: 2 },
+          { text: "What changed between the two versions?", type: "lines" as const, lines: 2 },
+        ],
+      },
+      // 77
+      {
+        type: "sorting" as const,
+        title: "Sort: Formal or Informal Persuasive Language?",
+        instruction: "Sort each persuasive phrase by register.",
+        columns: ["Formal persuasive language", "Informal persuasive language"],
+        items: [
+          { label: "The evidence demonstrates conclusively that..." },
+          { label: "Come on, everyone knows that..." },
+          { label: "It is incumbent upon all stakeholders to..." },
+          { label: "You've got to admit, it's pretty obvious..." },
+          { label: "Research overwhelmingly supports the conclusion that..." },
+          { label: "Seriously, why aren't we doing something about this?" },
+          { label: "The data indicates a compelling case for..." },
+          { label: "Trust me, this really works." },
+        ],
+      },
+      // 78
+      {
+        type: "open-response" as const,
+        title: "Letter of Persuasion: Formal",
+        instruction: "Write a formal persuasive letter to your school principal arguing for one change at your school. Use full PEEL structure, formal language and at least two persuasive techniques.",
+        prompts: [
+          { text: "Your letter:", type: "box" as const, lines: 16 },
+        ],
+      },
+      // 79
+      {
+        type: "open-response" as const,
+        title: "Self-Evaluation: Persuasive Writing",
+        instruction: "Look at a persuasive piece you have written. Evaluate it honestly.",
+        prompts: [
+          { text: "Did you state your opinion clearly in the first sentence? Evidence:", type: "lines" as const, lines: 1 },
+          { text: "What type of evidence did you use? Was it strong enough?", type: "lines" as const, lines: 2 },
+          { text: "Did you include a counter-argument? If not, write one now:", type: "lines" as const, lines: 2 },
+          { text: "What persuasive techniques did you use?", type: "lines" as const, lines: 1 },
+          { text: "What would you improve if you rewrote this piece?", type: "lines" as const, lines: 2 },
+        ],
+      },
+      // 80 — SPARK
+      {
+        type: "spark" as const,
+        title: "Spark: The TED Talk",
+        content: "Write and deliver a two-minute persuasive speech on a topic you care about. Requirements: a hook opening, PEEL structure, at least three different persuasive techniques, a counter-argument and refutation, a powerful closing statement. Rehearse it at least twice, then deliver it to your family. Ask them: What was the most convincing part? What could be stronger? Then revise and deliver it again.",
+      },
+      // 81
+      {
+        type: "true-false" as const,
+        title: "True or False: Advanced Persuasion",
+        instruction: "Circle True or False.",
+        statements: [
+          { text: "Register (formal/informal) should match the intended audience.", answer: true },
+          { text: "A counter-argument always undermines the main argument.", answer: false },
+          { text: "A strong concluding sentence summarises and motivates.", answer: true },
+          { text: "Using only emotional appeals makes a persuasive essay more credible.", answer: false },
+          { text: "The most effective persuasive writing balances logic, evidence and emotion.", answer: true },
+        ],
+      },
+      // 82
+      {
+        type: "open-response" as const,
+        title: "Analyse Your Own Persuasive Techniques",
+        instruction: "Reread the persuasive essay you wrote in Activity 71. Complete this analysis.",
+        prompts: [
+          { text: "List every persuasive technique you used and give an example of each:", type: "lines" as const, lines: 4 },
+          { text: "Which technique do you think was most effective?", type: "lines" as const, lines: 1 },
+          { text: "Which would you add or change now?", type: "lines" as const, lines: 2 },
+        ],
+      },
+      // 83
+      {
+        type: "fill-in-blank" as const,
+        title: "Complete a Sophisticated Counter-Argument",
+        instruction: "Complete each counter-argument and refutation using formal language.",
+        sentences: [
+          { text: "CA: ___ [Some critics claim] that reducing homework will lower academic standards.", blanks: ["Some critics claim"] },
+          { text: "R: ___ [However, the research demonstrates] that moderate homework has no measurable benefit for primary students.", blanks: ["However, the research demonstrates"] },
+          { text: "CA: ___ [While it may be argued] that zoos protect endangered species...", blanks: ["While it may be argued"] },
+          { text: "R: ___ [Nevertheless, compelling evidence shows] that captive animals suffer significantly higher stress levels.", blanks: ["Nevertheless, compelling evidence shows"] },
+        ],
+      },
+      // 84
+      {
+        type: "open-response" as const,
+        title: "Two-Sided Essay: Introduction and Two Arguments",
+        instruction: "Write an introduction and two body paragraphs for a two-sided essay on 'Technology in the classroom'. Paragraph 1: FOR. Paragraph 2: AGAINST. Then state your own opinion at the end.",
+        prompts: [
+          { text: "Introduction:", type: "box" as const, lines: 4 },
+          { text: "FOR paragraph:", type: "box" as const, lines: 6 },
+          { text: "AGAINST paragraph:", type: "box" as const, lines: 6 },
+          { text: "My opinion:", type: "lines" as const, lines: 2 },
+        ],
+      },
+      // 85
+      {
+        type: "sorting" as const,
+        title: "Sort: Features of a Sophisticated Persuasive Essay",
+        instruction: "Sort each feature into basic (Year 3 level) or sophisticated (Year 4+ level).",
+        columns: ["Basic feature", "Sophisticated feature"],
+        items: [
+          { label: "A clear opinion sentence" },
+          { label: "A rhetorical question hook" },
+          { label: "One piece of evidence" },
+          { label: "A concession and refutation" },
+          { label: "Varied sentence openers" },
+          { label: "Signal words like firstly/in conclusion" },
+          { label: "Audience-appropriate register" },
+          { label: "A powerful call to action" },
+        ],
+      },
+      // 86
+      {
+        type: "multiple-choice" as const,
+        title: "Which Is the Most Sophisticated Persuasive Writing?",
+        instruction: "Choose the most sophisticated version.",
+        questions: [
+          {
+            prompt: "Most sophisticated persuasive opening:",
+            options: [
+              "I think schools should have sport every day.",
+              "When was the last time you watched a child light up with joy on a sports field? For many Australian students, that experience is becoming increasingly rare — and the consequences for their health and wellbeing are measurable.",
+              "Exercise is important. Schools should have more sport.",
+            ],
+            answer: "When was the last time you watched a child light up with joy on a sports field? For many Australian students, that experience is becoming increasingly rare — and the consequences for their health and wellbeing are measurable.",
+          },
+        ],
+      },
+      // 87
+      {
+        type: "open-response" as const,
+        title: "Peer Feedback on Persuasive Writing",
+        instruction: "Swap your persuasive essay with a sibling, parent or friend. Give each other feedback using these questions.",
+        prompts: [
+          { text: "What was the clearest, most convincing part of their essay?", type: "lines" as const, lines: 2 },
+          { text: "What evidence did they use? Was it strong?", type: "lines" as const, lines: 2 },
+          { text: "Did they include a counter-argument? If yes, was the refutation convincing?", type: "lines" as const, lines: 2 },
+          { text: "One specific suggestion for improvement:", type: "lines" as const, lines: 2 },
+        ],
+      },
+      // 88
+      {
+        type: "fill-in-blank" as const,
+        title: "Formal Transitions in a Multi-Paragraph Essay",
+        instruction: "Fill in the best transition to connect these paragraphs in a formal essay.",
+        sentences: [
+          { text: "___ [To begin with/In conclusion], the economic benefits of renewable energy are significant.", blanks: ["To begin with"] },
+          { text: "___ [Beyond this/However], the environmental advantages are even more compelling.", blanks: ["Beyond this"] },
+          { text: "___ [Furthermore/Although], communities that invest in renewable energy report higher wellbeing.", blanks: ["Furthermore"] },
+          { text: "___ [In light of this evidence/To begin with], policymakers must act without delay.", blanks: ["In light of this evidence"] },
+        ],
+      },
+      // 89
+      {
+        type: "open-response" as const,
+        title: "Final Extended Persuasive Essay",
+        instruction: "Write a complete five-paragraph persuasive essay on a topic of your choice. Include: introduction with hook and thesis, three body paragraphs (each PEEL), conclusion with call to action. Use at least five different persuasive techniques and label them.",
+        prompts: [
+          { text: "My topic:", type: "lines" as const, lines: 1 },
+          { text: "My essay:", type: "box" as const, lines: 22 },
+        ],
+      },
+      // 90 — TIP
+      {
+        type: "tip" as const,
+        title: "Tip: Editing Persuasive Writing",
+        content: "After writing a persuasive piece, always edit it using this checklist: Is my opinion clear from the very first sentence? Does every paragraph contain evidence? Have I explained WHY the evidence matters? Is my language precise and varied? Did I include a counter-argument? Is my conclusion strong enough to motivate action? Does my register match my audience? Editing is where good writing becomes great writing.",
+      },
+      // 91
+      {
+        type: "open-response" as const,
+        title: "Persuasive Writing Editing Checklist",
+        instruction: "Apply the editing checklist to the essay you wrote in Activity 89.",
+        prompts: [
+          {
+            text: "[ ] Opinion is clear in the first sentence.\n[ ] Every paragraph contains evidence.\n[ ] Evidence is explained (Explanation step).\n[ ] Language is precise and varied.\n[ ] At least one counter-argument is included.\n[ ] Conclusion motivates action.\n[ ] Register matches audience.\n\nWhat did you improve after editing?",
+            type: "lines" as const, lines: 3,
+          },
+        ],
+      },
+      // 92
+      {
+        type: "sorting" as const,
+        title: "Sort Persuasive Essays by Quality",
+        instruction: "Sort these essay features into strong essay or needs improvement.",
+        columns: ["Strong essay", "Needs improvement"],
+        items: [
+          { label: "Clear thesis in first sentence" },
+          { label: "Vague opening like 'I think this is important'" },
+          { label: "Evidence from a named reliable source" },
+          { label: "Evidence like 'people think'" },
+          { label: "Explanation of why evidence matters" },
+          { label: "Evidence with no explanation" },
+          { label: "Counter-argument addressed and refuted" },
+          { label: "Only one side of the argument presented" },
+        ],
+      },
+      // 93
+      {
+        type: "open-response" as const,
+        title: "Persuasive Vocabulary Builder",
+        instruction: "List ten sophisticated words or phrases you could use to strengthen persuasive writing. For each, write an example sentence.",
+        prompts: [
+          { text: "1. Word/phrase:                Example:", type: "lines" as const, lines: 1 },
+          { text: "2. Word/phrase:                Example:", type: "lines" as const, lines: 1 },
+          { text: "3. Word/phrase:                Example:", type: "lines" as const, lines: 1 },
+          { text: "4. Word/phrase:                Example:", type: "lines" as const, lines: 1 },
+          { text: "5. Word/phrase:                Example:", type: "lines" as const, lines: 1 },
+          { text: "6–10 (continue below):", type: "box" as const, lines: 5 },
+        ],
+      },
+      // 94
+      {
+        type: "true-false" as const,
+        title: "True or False: Final Persuasive Writing Mastery",
+        instruction: "Circle True or False.",
+        statements: [
+          { text: "Persuasive writing can be found in editorials, speeches, advertisements and letters.", answer: true },
+          { text: "A PEEL paragraph always needs exactly four sentences.", answer: false },
+          { text: "The most effective persuasive writers balance logic, evidence and emotional appeal.", answer: true },
+          { text: "A call to action tells readers what you want them to do or believe.", answer: true },
+          { text: "Using jargon always makes persuasive writing more effective.", answer: false },
+        ],
+      },
+      // 95
+      {
+        type: "open-response" as const,
+        title: "Reflection: What Makes Persuasive Writing Effective?",
+        instruction: "Reflect on everything you have learned about persuasive writing.",
+        prompts: [
+          { text: "What is PEEL and why is it a useful structure?", type: "lines" as const, lines: 2 },
+          { text: "Name three persuasive techniques and explain when you would use each:", type: "lines" as const, lines: 3 },
+          { text: "What is the most important thing you have learned about persuasion?", type: "lines" as const, lines: 2 },
+          { text: "How will you use these skills in your next persuasive piece?", type: "lines" as const, lines: 2 },
+        ],
+      },
+      // 96
+      {
+        type: "fill-in-blank" as const,
+        title: "Persuasive Essay Vocabulary",
+        instruction: "Fill in the correct persuasive vocabulary term.",
+        sentences: [
+          { text: "A ___ is a question asked for effect, not a real answer.", blanks: ["rhetorical question"] },
+          { text: "The ___ is the main opinion statement at the start of an essay.", blanks: ["thesis"] },
+          { text: "Listing three things together for emphasis is called the ___ of ___.", blanks: ["rule", "three"] },
+          { text: "Admitting the opposing view before arguing against it is a ___.", blanks: ["counter-argument"] },
+          { text: "A sentence that tells the reader what to do is called a ___ to action.", blanks: ["call"] },
+        ],
+      },
+      // 97
+      {
+        type: "matching" as const,
+        title: "Match the Persuasive Term to Its Definition",
+        instruction: "Draw a line to match each term with its definition.",
+        left: ["PEEL", "Rhetorical question", "Counter-argument", "Call to action", "Rule of three"],
+        right: [
+          "Listing three examples or ideas for emphasis",
+          "A question asked for effect, not a real answer",
+          "Point, Evidence, Explanation, Link paragraph structure",
+          "A sentence telling the reader what to do",
+          "Acknowledging the opposing view before arguing against it",
+        ],
+      },
+      // 98
+      {
+        type: "open-response" as const,
+        title: "Write a Persuasive Response to a Real Issue",
+        instruction: "Choose a real issue in your community or country. Write a full persuasive paragraph using PEEL. Label each part.",
+        prompts: [
+          { text: "Issue:", type: "lines" as const, lines: 1 },
+          { text: "PEEL paragraph (label P, E, E, L):", type: "box" as const, lines: 10 },
+        ],
+      },
+      // 99
+      {
+        type: "home-activity" as const,
+        title: "Advanced Persuasion Challenge",
+        instruction: "Apply everything you have learned about persuasive writing in the real world.",
+        parentTip: "Encourage your child to see persuasion as a life skill — used in letters, speeches, job applications and conversations.",
+        suggestions: [
+          "Write a letter to your local newspaper about an issue that matters to you — use full PEEL structure.",
+          "Give a two-minute persuasive speech at the dinner table and ask family members for critique.",
+          "Watch a real political or environmental speech online and identify five persuasive techniques.",
+          "Write a persuasive paragraph arguing BOTH sides of an issue — compare which side is easier to argue.",
+        ],
+      },
+      // 100 — SPARK
+      {
+        type: "spark" as const,
+        title: "Spark: The Ultimate Persuasion Project",
+        content: "Choose an issue you feel genuinely passionate about. Create a complete persuasion campaign: a formal letter to a decision-maker, a persuasive poster for display and a two-minute speech. Each piece should use the full range of persuasive techniques you have studied. Present your campaign to your family and ask them to vote on whether they are convinced. This is how real change happens!",
       },
     ],
   },
@@ -5445,8 +6636,9 @@ export const year4EnglishWorksheets: WorksheetItem[] = [
       ],
     },
     activities: [
+      // ── FOUNDATIONAL (1–20) ──────────────────────────────────────────────
       {
-        type: "sorting",
+        type: "sorting" as const,
         title: "Sort: Simile or Metaphor?",
         instruction: "Read each phrase and sort it into the correct column.",
         columns: ["Simile (uses like or as)", "Metaphor (says it IS something else)"],
@@ -5462,10 +6654,74 @@ export const year4EnglishWorksheets: WorksheetItem[] = [
         ],
       },
       {
-        type: "open-response",
-        title: "Read and Find Imagery",
-        instruction:
-          "Read the poem below. Find examples of imagery and write which sense each one appeals to.",
+        type: "circle-correct" as const,
+        title: "Simile or Metaphor? — Round 1",
+        instruction: "Circle whether each phrase is a simile or a metaphor.",
+        parentTip: "Remind your child: if the phrase uses 'like' or 'as', it is a simile; otherwise it is a metaphor.",
+        questions: [
+          { prompt: "The classroom was a beehive of noise.", options: ["Simile", "Metaphor"] },
+          { prompt: "She ran as fast as a cheetah.", options: ["Simile", "Metaphor"] },
+          { prompt: "His words were daggers.", options: ["Simile", "Metaphor"] },
+          { prompt: "The fog rolled in like a grey blanket.", options: ["Simile", "Metaphor"] },
+          { prompt: "Time is a river.", options: ["Simile", "Metaphor"] },
+          { prompt: "As quiet as a sleeping cat.", options: ["Simile", "Metaphor"] },
+        ],
+      },
+      {
+        type: "matching" as const,
+        title: "Match Figure of Speech to Example",
+        instruction: "Draw a line to match each type of figurative language to the correct example.",
+        parentTip: "Ask your child to explain the comparison in each example — what two things are being compared?",
+        left: ["Simile", "Metaphor", "Imagery (sight)", "Imagery (sound)", "Imagery (touch)"],
+        right: [
+          "The bonfire crackled and spat into the night.",
+          "Her hair was spun gold in the afternoon light.",
+          "The leaves shivered in the icy wind.",
+          "As brave as a lion.",
+          "The ocean is a restless giant.",
+        ],
+      },
+      {
+        type: "fill-in-blank" as const,
+        title: "Complete the Simile",
+        instruction: "Fill in each blank to complete the simile using the word bank: feather, ice, thunder, silk, lightning.",
+        sentences: [
+          { text: "Her voice was as smooth as ___ .", blanks: ["silk"] },
+          { text: "The cold water felt like ___ against my skin.", blanks: ["ice"] },
+          { text: "The horse galloped as fast as ___ .", blanks: ["lightning"] },
+          { text: "His footsteps were as loud as ___ .", blanks: ["thunder"] },
+          { text: "The blanket was as light as a ___ .", blanks: ["feather"] },
+        ],
+      },
+      {
+        type: "true-false" as const,
+        title: "True or False: Simile or Metaphor?",
+        instruction: "Decide if each statement about the phrase is true or false.",
+        parentTip: "Encourage your child to say the phrase aloud — hearing it often reveals the comparison more clearly.",
+        statements: [
+          { text: "'The moon is a lantern' is a metaphor.", answer: true },
+          { text: "'As cold as ice' is a metaphor.", answer: false },
+          { text: "'Life is a journey' uses 'like' or 'as'.", answer: false },
+          { text: "'He ran like a rocket' is a simile.", answer: true },
+          { text: "'She is as wise as an owl' is a simile.", answer: true },
+        ],
+      },
+      {
+        type: "multiple-choice" as const,
+        title: "Name the Figurative Language",
+        instruction: "Choose the correct label for each phrase.",
+        questions: [
+          { prompt: "'The garden was a painting in the morning light.'", options: ["Simile", "Metaphor", "Personification"], answer: "Metaphor" },
+          { prompt: "'The rain pattered like tiny fingers on the roof.'", options: ["Simile", "Metaphor", "Alliteration"], answer: "Simile" },
+          { prompt: "'As fierce as a dragon.'", options: ["Metaphor", "Simile", "Hyperbole"], answer: "Simile" },
+          { prompt: "'Silence is a golden thread.'", options: ["Simile", "Metaphor", "Onomatopoeia"], answer: "Metaphor" },
+        ],
+      },
+      {
+        type: "open-response" as const,
+        title: "Identify Imagery in a Poem",
+        instruction: "Read the poem. Find three examples of imagery and write which sense each one appeals to.",
+        parentTip: "Work through the first example together before your child attempts the others independently.",
         prompts: [
           {
             text: "POEM — After the Storm\nThe garden exhaled a green breath after the rain,\npuddles glittered like scattered mirrors on the path,\nthe air tasted of fresh earth and iron,\nand the first bird dared a trembling note\nthat unspooled in the silence like silver thread.\n\n1. Example:                                              Sense:",
@@ -5477,63 +6733,892 @@ export const year4EnglishWorksheets: WorksheetItem[] = [
         ],
       },
       {
-        type: "open-response",
-        title: "Write Your Own Poem",
-        instruction:
-          "Write a 6 to 8 line poem about one of the topics below. Include at least one simile, one metaphor and two examples of sensory imagery. Label each in the margin — S for simile, M for metaphor, I for imagery.",
-        prompts: [
-          {
-            text: "Choose a topic:\n  [ ] A thunderstorm   [ ] The ocean   [ ] A busy market   [ ] My own:",
-            type: "lines",
-            lines: 1,
-          },
-          { text: "My poem:", type: "box", lines: 12 },
+        type: "sorting" as const,
+        title: "Sort Imagery by Sense",
+        instruction: "Sort each phrase into the sense it most strongly appeals to.",
+        parentTip: "If a phrase appeals to more than one sense, ask your child which sense is strongest.",
+        columns: ["Sight", "Sound", "Touch", "Smell", "Taste"],
+        items: [
+          { label: "The thunder boomed across the valley." },
+          { label: "The lemon was sharp and electric on my tongue." },
+          { label: "Velvet shadows draped the hillside." },
+          { label: "Rain-soaked earth filled the air with a mossy sweetness." },
+          { label: "The icy water stung my fingers." },
+          { label: "Crickets chirped their nightly chorus." },
+          { label: "Smoke curled in grey ribbons above the chimney." },
+          { label: "The chilli burned a trail from my lips to my stomach." },
         ],
       },
       {
-        type: "home-activity",
-        title: "Poet in Residence",
-        instruction:
-          "Try these activities to keep exploring poetry this week.",
-        parentTip:
-          "Leave a poetry book in the bathroom or on the kitchen table — casual exposure is one of the best ways to build a love of language.",
-        suggestions: [
-          "Find a poem by an Australian poet and read it aloud three times — each time listen for something new.",
-          "Write a two-line poem called a couplet about something you can see right now, using a metaphor.",
-          "Describe your breakfast using only the five senses — no telling us what food it was, only what it looked, smelled, tasted, felt and sounded like!",
-        ],
-      },
-      {
-        type: "matching" as const,
-        title: "Match the Figure of Speech to Its Example",
-        instruction:
-          "Draw a line to match each type of figurative language to the correct example.",
-        parentTip:
-          "Ask your child to explain the comparison in each metaphor or simile — who or what is being compared to what?",
-        left: ["Simile", "Metaphor", "Imagery (sight)", "Imagery (sound)", "Imagery (touch)"],
-        right: [
-          "The bonfire crackled and spat into the night.",
-          "Her hair was spun gold in the afternoon light.",
-          "The leaves shivered in the icy wind.",
-          "As brave as a lion.",
-          "The ocean is a restless giant.",
+        type: "fill-in-blank" as const,
+        title: "Write the Missing Half of Each Metaphor",
+        instruction: "Complete each metaphor by filling in the blank.",
+        sentences: [
+          { text: "The sun was a ___ blazing in the sky.", blanks: ["golden coin / furnace / lantern"] },
+          { text: "Her voice was ___ , wrapping around the room.", blanks: ["velvet / honey / silk"] },
+          { text: "The city at night was a ___ of a thousand lights.", blanks: ["galaxy / diamond sea / constellation"] },
+          { text: "His anger was a ___ ready to erupt.", blanks: ["volcano / storm / fire"] },
         ],
       },
       {
         type: "circle-correct" as const,
-        title: "Simile or Metaphor?",
-        instruction:
-          "Read each phrase. Circle whether it is a simile (uses like/as) or a metaphor (says it IS something else).",
-        parentTip:
-          "The key test: does the phrase use 'like' or 'as'? If yes, it's a simile. If not, it's a metaphor.",
+        title: "Which Sense Does This Appeal To?",
+        instruction: "Circle the sense most strongly evoked by each phrase.",
         questions: [
-          { prompt: "The classroom was a beehive of noise.", options: ["Simile", "Metaphor"] },
-          { prompt: "She ran as fast as a cheetah.", options: ["Simile", "Metaphor"] },
-          { prompt: "His words were daggers.", options: ["Simile", "Metaphor"] },
-          { prompt: "The fog rolled in like a grey blanket.", options: ["Simile", "Metaphor"] },
-          { prompt: "Time is a river.", options: ["Simile", "Metaphor"] },
-          { prompt: "As quiet as a sleeping cat.", options: ["Simile", "Metaphor"] },
+          { prompt: "'The bread smelled of warm butter and morning.'", options: ["Sight", "Smell", "Touch"] },
+          { prompt: "'The velvet curtains muffled every sound.'", options: ["Sound", "Taste", "Touch"] },
+          { prompt: "'Sunlight spilled like honey across the floorboards.'", options: ["Sight", "Smell", "Taste"] },
+          { prompt: "'A bitter tang of smoke hit the back of my throat.'", options: ["Touch", "Taste", "Sound"] },
+          { prompt: "'The kettle screamed its shrill warning.'", options: ["Sound", "Sight", "Touch"] },
         ],
+      },
+      {
+        type: "multiple-choice" as const,
+        title: "Best Simile for the Sentence",
+        instruction: "Choose the simile that creates the most vivid image.",
+        parentTip: "Discuss with your child why the best option creates the clearest picture in their mind.",
+        questions: [
+          { prompt: "The swimmer cut through the water ___.", options: ["like a fish", "like a fast thing", "like a good swimmer"], answer: "like a fish" },
+          { prompt: "The old man's hands were ___ .", options: ["like nice things", "like crumpled paper maps", "like something old"], answer: "like crumpled paper maps" },
+          { prompt: "The thunder rolled across the sky ___ .", options: ["like a big sound", "like bowling balls across a giant floor", "like noise"], answer: "like bowling balls across a giant floor" },
+        ],
+      },
+      {
+        type: "open-response" as const,
+        title: "Write Five Original Similes",
+        instruction: "Write five original similes about things you can see or experience right now. Try to avoid clichés — no 'fast as lightning' or 'quiet as a mouse'!",
+        prompts: [
+          { text: "1.", type: "lines", lines: 2 },
+          { text: "2.", type: "lines", lines: 2 },
+          { text: "3.", type: "lines", lines: 2 },
+          { text: "4.", type: "lines", lines: 2 },
+          { text: "5.", type: "lines", lines: 2 },
+        ],
+      },
+      {
+        type: "matching" as const,
+        title: "Match Metaphor to Its Meaning",
+        instruction: "Match each metaphor on the left to its meaning on the right.",
+        parentTip: "Metaphors often carry emotional meaning — ask your child how each one makes them feel.",
+        left: [
+          "Life is a rollercoaster.",
+          "She is a shining star.",
+          "He has a heart of gold.",
+          "The world is a stage.",
+          "Time is money.",
+        ],
+        right: [
+          "Everyone is performing a role.",
+          "He is very generous and kind.",
+          "She is brilliant and admired.",
+          "Time should not be wasted.",
+          "Life has many ups and downs.",
+        ],
+      },
+      {
+        type: "true-false" as const,
+        title: "Imagery: True or False?",
+        instruction: "Read each statement and decide if it is true or false.",
+        statements: [
+          { text: "Imagery only appeals to the sense of sight.", answer: false },
+          { text: "A metaphor uses 'like' or 'as' to compare two things.", answer: false },
+          { text: "Sensory imagery helps readers picture what is happening.", answer: true },
+          { text: "You can use imagery in poetry but not in prose.", answer: false },
+          { text: "A simile compares two unlike things using 'like' or 'as'.", answer: true },
+        ],
+      },
+      {
+        type: "fill-in-blank" as const,
+        title: "Label the Figurative Language",
+        instruction: "Fill in each blank with 'simile', 'metaphor' or 'imagery'.",
+        parentTip: "Read each sentence aloud together and ask your child to identify the technique before writing.",
+        sentences: [
+          { text: "'The sky was a violet bruise at dusk.' — This is a ___ .", blanks: ["metaphor"] },
+          { text: "'He ran as swiftly as a deer.' — This is a ___ .", blanks: ["simile"] },
+          { text: "'The salt air stung her lips and tangled her hair.' — This is ___ .", blanks: ["imagery"] },
+          { text: "'The moon is a silent guardian.' — This is a ___ .", blanks: ["metaphor"] },
+          { text: "'Her laughter bubbled up like a brook.' — This is a ___ .", blanks: ["simile"] },
+        ],
+      },
+      {
+        type: "tip" as const,
+        title: "Tip: Fresh vs Clichéd Figurative Language",
+        content: "A cliché is a comparison that has been used so often it has lost its power — 'as brave as a lion', 'heart of gold'. Challenge yourself to invent fresh comparisons that no one has used before. The more specific and surprising, the more vivid the image!",
+      },
+      {
+        type: "sorting" as const,
+        title: "Fresh or Clichéd Simile?",
+        instruction: "Sort each simile into 'Fresh and original' or 'Clichéd and overused'.",
+        columns: ["Fresh and original", "Clichéd and overused"],
+        items: [
+          { label: "As brave as a lion." },
+          { label: "Her grief spread like ink through paper." },
+          { label: "As quiet as a mouse." },
+          { label: "His smile was a crack in a stone wall — unexpected and wide." },
+          { label: "Fast as lightning." },
+          { label: "The fog crept in like a shy child hiding behind curtains." },
+        ],
+      },
+      {
+        type: "open-response" as const,
+        title: "Rewrite the Cliché",
+        instruction: "Each phrase below is a clichéd simile. Rewrite it using a fresh, original comparison on the same idea.",
+        parentTip: "Encourage your child to think of something specific and personal — something only they would compare it to.",
+        prompts: [
+          { text: "Cliché: 'As happy as a clam.'\nMy version:", type: "lines", lines: 2 },
+          { text: "Cliché: 'Like a bull in a china shop.'\nMy version:", type: "lines", lines: 2 },
+          { text: "Cliché: 'As white as snow.'\nMy version:", type: "lines", lines: 2 },
+          { text: "Cliché: 'Sleep like a log.'\nMy version:", type: "lines", lines: 2 },
+        ],
+      },
+      {
+        type: "multiple-choice" as const,
+        title: "What Makes This Imagery Effective?",
+        instruction: "Read each piece of imagery and choose the best explanation of why it works.",
+        questions: [
+          {
+            prompt: "'The old photograph had curled at its edges like a shy secret trying to hide itself.'",
+            options: [
+              "It uses the word 'like'.",
+              "It compares the photograph to a hiding secret, making it feel personal and emotional.",
+              "It mentions a photograph.",
+            ],
+            answer: "It compares the photograph to a hiding secret, making it feel personal and emotional.",
+          },
+          {
+            prompt: "'Silence roared through the empty school hallway.'",
+            options: [
+              "It uses a loud word — 'roared' — to describe silence, creating a powerful contrast.",
+              "It describes a school hallway.",
+              "It uses long sentences.",
+            ],
+            answer: "It uses a loud word — 'roared' — to describe silence, creating a powerful contrast.",
+          },
+        ],
+      },
+      {
+        type: "home-activity" as const,
+        title: "Imagery Notebook",
+        instruction: "Start an imagery notebook this week — collect vivid language you notice in books, conversations and the world around you.",
+        parentTip: "Model the habit yourself: share a piece of language that struck you during the day and discuss why it was effective.",
+        suggestions: [
+          "Write down one striking piece of figurative language from a book you are reading this week.",
+          "Describe your walk to the letterbox or garden using three different sensory images.",
+          "Find a poem by an Australian poet (Banjo Paterson, Judith Wright, Steven Herrick) and underline every simile and metaphor.",
+        ],
+      },
+      {
+        type: "spark" as const,
+        title: "Spark: The Five-Senses Challenge",
+        content: "Sit somewhere interesting — a garden, a kitchen, a playground. Write one sentence for each of the five senses describing exactly where you are. Then read all five sentences together. That is sensory imagery!",
+      },
+      // ── DEVELOPING (21–50) ──────────────────────────────────────────────
+      {
+        type: "open-response" as const,
+        title: "Write Five Original Metaphors",
+        instruction: "Write five original metaphors about emotions or abstract ideas — happiness, fear, hope, boredom, excitement. Do not use 'like' or 'as'.",
+        parentTip: "Prompt your child: 'What object or creature does this emotion remind you of? How does it behave?'",
+        prompts: [
+          { text: "Happiness is ...", type: "lines", lines: 2 },
+          { text: "Fear is ...", type: "lines", lines: 2 },
+          { text: "Hope is ...", type: "lines", lines: 2 },
+          { text: "Boredom is ...", type: "lines", lines: 2 },
+          { text: "Excitement is ...", type: "lines", lines: 2 },
+        ],
+      },
+      {
+        type: "fill-in-blank" as const,
+        title: "Sensory Imagery — Complete the Sentence",
+        instruction: "Fill in each blank with a vivid sensory word or phrase to complete the imagery.",
+        sentences: [
+          { text: "The market smelled of ___ and frying oil.", blanks: ["spices / cardamom / garlic"] },
+          { text: "The hail battered the tin roof with a sound like ___ .", blanks: ["applause / marbles / drumming"] },
+          { text: "The silk was ___ against her palm.", blanks: ["cool and smooth / slippery / liquid-soft"] },
+          { text: "Ripe mangoes sat in a golden heap, their sweetness ___ in the heat.", blanks: ["thick / humming / hanging"] },
+        ],
+      },
+      {
+        type: "circle-correct" as const,
+        title: "Which Is the More Vivid Image?",
+        instruction: "Circle the sentence that creates a more vivid, specific image.",
+        parentTip: "Ask your child: which sentence makes you see, hear, feel or smell something more clearly?",
+        questions: [
+          {
+            prompt: "The storm was bad.",
+            options: [
+              "The storm was bad.",
+              "The storm hurled tiles from rooftops and turned streets into rushing rivers.",
+            ],
+          },
+          {
+            prompt: "The food tasted good.",
+            options: [
+              "The chocolate was rich and bitter, melting into a warm flood on her tongue.",
+              "The food tasted good.",
+            ],
+          },
+          {
+            prompt: "He walked into the room.",
+            options: [
+              "He walked into the room.",
+              "He pushed through the door like a weather front — heavy, inevitable, changing the temperature of everything.",
+            ],
+          },
+        ],
+      },
+      {
+        type: "multiple-choice" as const,
+        title: "Identify Extended Metaphor",
+        instruction: "Read the passage and choose the best description of its figurative language.",
+        parentTip: "An extended metaphor maintains a single comparison across several sentences or a whole passage.",
+        questions: [
+          {
+            prompt: "The mind is a garden. Some thoughts are flowers we tend carefully. Others are weeds that take over if we are not watchful. We must decide what to water.",
+            options: [
+              "Four separate similes.",
+              "An extended metaphor comparing the mind to a garden.",
+              "A list of facts about gardens.",
+            ],
+            answer: "An extended metaphor comparing the mind to a garden.",
+          },
+        ],
+      },
+      {
+        type: "open-response" as const,
+        title: "Write an Extended Metaphor",
+        instruction: "Choose one of the topics below. Write 4–5 sentences developing a single extended metaphor across the whole passage.",
+        prompts: [
+          {
+            text: "Topics:\n  [ ] School is a jungle.\n  [ ] A family is an orchestra.\n  [ ] A friendship is a garden.\n  [ ] My own:\nMy extended metaphor:",
+            type: "box",
+            lines: 8,
+          },
+        ],
+      },
+      {
+        type: "sorting" as const,
+        title: "Sort: Literal or Figurative?",
+        instruction: "Sort each sentence into 'Literal (states a fact)' or 'Figurative (uses figurative language)'.",
+        parentTip: "Literal language says exactly what it means; figurative language creates an image or comparison.",
+        columns: ["Literal", "Figurative"],
+        items: [
+          { label: "The cat sat on the mat." },
+          { label: "She was drowning in a sea of paperwork." },
+          { label: "It rained for three days." },
+          { label: "His temper was a match waiting for a spark." },
+          { label: "The tree lost its leaves in autumn." },
+          { label: "Her tears carved rivers down her dusty cheeks." },
+          { label: "The dog barked twice." },
+          { label: "The library was a cathedral of whispered knowledge." },
+        ],
+      },
+      {
+        type: "fill-in-blank" as const,
+        title: "Figurative Language in Context",
+        instruction: "Choose the best figurative word or phrase to fill each blank: blazed, skeleton, lullaby, swallowed, armour.",
+        parentTip: "Encourage your child to read the full sentence before choosing — context determines the best fit.",
+        sentences: [
+          { text: "The winter tree was a ___ against the white sky.", blanks: ["skeleton"] },
+          { text: "The sun ___ above the red desert.", blanks: ["blazed"] },
+          { text: "The heavy fog ___ the harbour whole.", blanks: ["swallowed"] },
+          { text: "Rain pattered a soft ___ on the tent roof.", blanks: ["lullaby"] },
+          { text: "She wore her cheerfulness like ___ .", blanks: ["armour"] },
+        ],
+      },
+      {
+        type: "true-false" as const,
+        title: "Figurative Language: Deeper Knowledge",
+        instruction: "Read each statement and circle true or false.",
+        statements: [
+          { text: "Personification gives human qualities to non-human things.", answer: true },
+          { text: "Similes always use the word 'like', never 'as'.", answer: false },
+          { text: "An extended metaphor is sustained across several sentences or a whole text.", answer: true },
+          { text: "Imagery only describes what something looks like.", answer: false },
+          { text: "Figurative language is only used in poetry, not in prose.", answer: false },
+        ],
+      },
+      {
+        type: "matching" as const,
+        title: "Match Technique to Definition",
+        instruction: "Match each figurative language technique to its definition.",
+        left: ["Simile", "Metaphor", "Personification", "Imagery", "Extended metaphor"],
+        right: [
+          "Language that appeals to the five senses.",
+          "Compares two things using 'like' or 'as'.",
+          "A single comparison maintained across an entire passage.",
+          "Gives human qualities to non-human things.",
+          "Says one thing IS another without using 'like' or 'as'.",
+        ],
+      },
+      {
+        type: "tip" as const,
+        title: "Tip: Personification — Bringing the World to Life",
+        content: "Personification is a type of metaphor where you give human qualities to something non-human. 'The wind whispered through the trees' — the wind cannot whisper, but this gives it a voice. 'The sun stretched its warm arms across the valley' — the sun has no arms, but we can feel the warmth. Personification is one of the most powerful forms of imagery.",
+      },
+      {
+        type: "circle-correct" as const,
+        title: "Identify Personification",
+        instruction: "Circle 'Yes' if the phrase uses personification, 'No' if it does not.",
+        questions: [
+          { prompt: "The stars danced in the midnight sky.", options: ["Yes — personification", "No"] },
+          { prompt: "The river ran quickly to the sea.", options: ["Yes — personification", "No"] },
+          { prompt: "Fear knocked at his door every night.", options: ["Yes — personification", "No"] },
+          { prompt: "The leaves were orange and gold.", options: ["Yes — personification", "No"] },
+          { prompt: "The old house groaned with the weight of memories.", options: ["Yes — personification", "No"] },
+          { prompt: "Three magpies sat on the fence.", options: ["Yes — personification", "No"] },
+        ],
+      },
+      {
+        type: "open-response" as const,
+        title: "Write Five Personification Sentences",
+        instruction: "Write five sentences using personification. Give a human quality to something in nature or the world around you.",
+        parentTip: "Suggest starting with: 'The _____ [verb usually used for a person]...'",
+        prompts: [
+          { text: "1. The moon ...", type: "lines", lines: 2 },
+          { text: "2. The storm ...", type: "lines", lines: 2 },
+          { text: "3. The old book ...", type: "lines", lines: 2 },
+          { text: "4. The night ...", type: "lines", lines: 2 },
+          { text: "5. The road ...", type: "lines", lines: 2 },
+        ],
+      },
+      {
+        type: "fill-in-blank" as const,
+        title: "Complete the Personification",
+        instruction: "Fill in each blank with a human action to complete the personification.",
+        sentences: [
+          { text: "The mountains ___ over the valley like ancient guardians.", blanks: ["stood / loomed / watched"] },
+          { text: "The autumn leaves ___ goodbye as they fell.", blanks: ["whispered / sighed / waved"] },
+          { text: "The thunder ___ its displeasure across the sky.", blanks: ["growled / bellowed / grumbled"] },
+          { text: "The flowers ___ their petals to greet the morning sun.", blanks: ["stretched / opened / offered"] },
+          { text: "The wind ___ through the keyhole all night.", blanks: ["moaned / sang / whistled"] },
+        ],
+      },
+      {
+        type: "multiple-choice" as const,
+        title: "Purpose of Figurative Language",
+        instruction: "For each example, choose the best explanation of the effect the figurative language creates.",
+        parentTip: "Understanding WHY writers use figurative language is as important as identifying WHAT it is.",
+        questions: [
+          {
+            prompt: "'The knife-cold wind cut through his jacket.' Why does the writer use this metaphor?",
+            options: [
+              "To show the reader the wind was cold and sharp, making us feel the physical discomfort.",
+              "To describe knives.",
+              "To tell us the man had a jacket.",
+            ],
+            answer: "To show the reader the wind was cold and sharp, making us feel the physical discomfort.",
+          },
+          {
+            prompt: "'She carried her sadness like a stone in her chest.' Why does the writer use this simile?",
+            options: [
+              "To describe stones.",
+              "To make the sadness feel physical — heavy, solid and unavoidable.",
+              "To say she is carrying something.",
+            ],
+            answer: "To make the sadness feel physical — heavy, solid and unavoidable.",
+          },
+        ],
+      },
+      {
+        type: "open-response" as const,
+        title: "Analyse a Poem Stanza",
+        instruction: "Read the stanza. Identify two techniques used and explain the effect each creates.",
+        prompts: [
+          {
+            text: "STANZA:\nThe last train breathed a sigh of steam\nand pulled its silver body through the dark,\na needle threading night from seam to seam,\ncarrying its cargo of the lonely-hearted.\n\nTechnique 1 and effect:",
+            type: "lines",
+            lines: 3,
+          },
+          { text: "Technique 2 and effect:", type: "lines", lines: 3 },
+        ],
+      },
+      {
+        type: "sorting" as const,
+        title: "Sort by Figurative Language Technique",
+        instruction: "Sort each phrase into the correct column.",
+        parentTip: "Some phrases may use more than one technique — ask your child to identify the dominant one.",
+        columns: ["Simile", "Metaphor", "Personification", "Imagery"],
+        items: [
+          { label: "The kettle sang an impatient tune." },
+          { label: "His hands were maps of a long life." },
+          { label: "As gentle as a morning mist." },
+          { label: "The damp earth smelled of secrets." },
+          { label: "Regret is a locked door." },
+          { label: "The old clock ticked like a patient heart." },
+          { label: "Night pulled its dark curtain across the window." },
+          { label: "Pine needles carpeted the forest floor in amber and green." },
+        ],
+      },
+      {
+        type: "home-activity" as const,
+        title: "Poetry Walk",
+        instruction: "Go on a walk and look at the world through a poet's eyes.",
+        parentTip: "Join your child on the walk. Model how to notice small details — the texture of bark, the colour of a shadow — and turn them into images.",
+        suggestions: [
+          "On a 10-minute walk, collect five images — one for each sense. Write them in a notebook.",
+          "Choose one object you see and write three different figurative comparisons for it — a simile, a metaphor and a personification.",
+          "Write a four-line poem about one thing you observed on the walk, using at least two figurative techniques.",
+        ],
+      },
+      {
+        type: "spark" as const,
+        title: "Spark: Transform a Dull Sentence",
+        content: "Take the most boring sentence you can think of — 'The dog sat in the garden' — and transform it using simile, metaphor, personification and sensory imagery. Keep the same basic event, but make it come alive on the page.",
+      },
+      {
+        type: "fill-in-blank" as const,
+        title: "Figurative Language in Narrative",
+        instruction: "Each sentence is from a narrative. Fill in the blank with appropriate figurative language.",
+        sentences: [
+          { text: "She stepped onto the stage, her heart beating ___ .", blanks: ["like a trapped bird / like thunder / like a drum"] },
+          { text: "The old shed stood at the end of the garden, a ___ of forgotten things.", blanks: ["museum / graveyard / archive"] },
+          { text: "He opened the letter slowly, as if it might ___ at him.", blanks: ["snarl / bite / leap"] },
+          { text: "The morning light ___ across the rooftops, turning everything gold.", blanks: ["spilled / stretched / poured"] },
+        ],
+      },
+      {
+        type: "multiple-choice" as const,
+        title: "Which Word Creates the Strongest Image?",
+        instruction: "Choose the word that creates the most vivid, specific image.",
+        questions: [
+          { prompt: "The river ___ over the rocks.", options: ["went", "tumbled", "moved"], answer: "tumbled" },
+          { prompt: "The old woman ___ across the room.", options: ["shuffled", "walked", "went"], answer: "shuffled" },
+          { prompt: "Light ___ through the curtains.", options: ["came", "moved", "filtered"], answer: "filtered" },
+          { prompt: "The children ___ across the playground.", options: ["ran", "sprinted", "moved"], answer: "sprinted" },
+        ],
+      },
+      {
+        type: "open-response" as const,
+        title: "Upgrade the Paragraph",
+        instruction: "The paragraph below uses only literal language. Rewrite it using at least four figurative techniques — simile, metaphor, personification, and sensory imagery. Keep the same events.",
+        parentTip: "Read the original aloud first, then encourage your child to close their eyes and picture the scene before rewriting.",
+        prompts: [
+          {
+            text: "ORIGINAL:\nIt was a hot day. Jack walked to the beach. The sand was very warm. The waves were big. The water was cold when he got in.\n\nMy rewrite:",
+            type: "box",
+            lines: 10,
+          },
+        ],
+      },
+      {
+        type: "tip" as const,
+        title: "Tip: Show, Don't Tell",
+        content: "'Show, don't tell' means instead of saying 'she was nervous', you show the reader physical signs of nervousness: 'Her hands shook. She checked the door handle three times. Every sound made her flinch.' Figurative language helps you show instead of tell — it draws the reader into the experience rather than announcing it.",
+      },
+      {
+        type: "circle-correct" as const,
+        title: "Show or Tell?",
+        instruction: "Circle whether each sentence 'shows' or 'tells' the emotion or situation.",
+        questions: [
+          { prompt: "She was very happy.", options: ["Shows", "Tells"] },
+          { prompt: "She laughed until her sides ached and tears streamed down her face.", options: ["Shows", "Tells"] },
+          { prompt: "He was afraid.", options: ["Shows", "Tells"] },
+          { prompt: "His mouth went dry and his palms prickled with sweat.", options: ["Shows", "Tells"] },
+          { prompt: "The house was old.", options: ["Shows", "Tells"] },
+          { prompt: "Paint flaked from the windowsills and the hinges wept rust.", options: ["Shows", "Tells"] },
+        ],
+      },
+      // ── CONSOLIDATING (51–80) ──────────────────────────────────────────
+      {
+        type: "open-response" as const,
+        title: "'Show, Don't Tell' Practice",
+        instruction: "Transform each 'tell' sentence into a 'show' passage using figurative language and sensory imagery. Write 2–3 sentences for each.",
+        parentTip: "Discuss the physical sensations associated with each emotion before your child writes.",
+        prompts: [
+          { text: "Tell: He was embarrassed.\nShow:", type: "box", lines: 4 },
+          { text: "Tell: The kitchen smelled amazing.\nShow:", type: "box", lines: 4 },
+          { text: "Tell: She felt proud.\nShow:", type: "box", lines: 4 },
+        ],
+      },
+      {
+        type: "matching" as const,
+        title: "Match 'Tell' Sentence to 'Show' Passage",
+        instruction: "Match each 'tell' sentence on the left to the 'show' passage that conveys the same meaning.",
+        left: [
+          "He was furious.",
+          "She was exhausted.",
+          "The room was messy.",
+          "It was very cold.",
+        ],
+        right: [
+          "Her eyelids were lead weights and her feet dragged across the floor.",
+          "His jaw clenched and his eyes narrowed to slits. A vein pulsed at his temple.",
+          "Frost painted white ferns on the windowpane and every breath hung visible in the air.",
+          "Clothes avalanched from the chair; three cereal bowls competed for space on the desk.",
+        ],
+      },
+      {
+        type: "fill-in-blank" as const,
+        title: "Figurative Language: Literary Analysis",
+        instruction: "Complete each analytical sentence with the correct term or explanation.",
+        sentences: [
+          { text: "The phrase 'the wind screamed' uses ___ because the wind is given a human action.", blanks: ["personification"] },
+          { text: "A writer uses vivid ___ to help the reader experience the scene through all five senses.", blanks: ["imagery"] },
+          { text: "When a comparison continues across an entire poem or passage, it is called an ___ metaphor.", blanks: ["extended"] },
+          { text: "The word 'like' or 'as' always signals a ___ .", blanks: ["simile"] },
+        ],
+      },
+      {
+        type: "open-response" as const,
+        title: "Write a Nature Poem",
+        instruction: "Write a poem of 8–10 lines about a feature of the Australian natural environment — beach, bush, outback, rainforest. Include at least: two similes, one metaphor, one personification, and two sensory images. Label each technique in the margin.",
+        parentTip: "If your child is stuck, ask them to start by just listing ten things they notice about the environment they are describing — details will fuel the figurative language.",
+        prompts: [
+          { text: "My environment:", type: "lines", lines: 1 },
+          { text: "My poem:", type: "box", lines: 12 },
+        ],
+      },
+      {
+        type: "true-false" as const,
+        title: "Advanced Figurative Language: True or False?",
+        instruction: "Read each statement and decide if it is true or false.",
+        parentTip: "These require deeper thinking — encourage your child to explain their reasoning aloud.",
+        statements: [
+          { text: "All metaphors involve an emotion.", answer: false },
+          { text: "Effective imagery is specific and concrete rather than vague and general.", answer: true },
+          { text: "A writer can use personification without using any similes.", answer: true },
+          { text: "The 'show, don't tell' technique is only useful in poetry.", answer: false },
+          { text: "Figurative language works best when it is familiar and expected.", answer: false },
+        ],
+      },
+      {
+        type: "multiple-choice" as const,
+        title: "Effect of Figurative Language on Tone",
+        instruction: "Read each passage and choose how the figurative language affects the tone.",
+        questions: [
+          {
+            prompt: "'The sun was a furnace. Every blade of grass had given up and lay flat against the cracked earth.'",
+            options: [
+              "Creates a joyful, celebratory tone.",
+              "Creates a harsh, oppressive and exhausted tone.",
+              "Creates a mysterious and suspenseful tone.",
+            ],
+            answer: "Creates a harsh, oppressive and exhausted tone.",
+          },
+          {
+            prompt: "'Dawn crept in on tiptoe, painting the rooftops pink, whispering the day awake.'",
+            options: [
+              "Creates a threatening, dangerous tone.",
+              "Creates a gentle, peaceful and tender tone.",
+              "Creates a sad and mournful tone.",
+            ],
+            answer: "Creates a gentle, peaceful and tender tone.",
+          },
+        ],
+      },
+      {
+        type: "open-response" as const,
+        title: "Figurative Language Toolkit: Self-Assessment",
+        instruction: "Review your understanding of each technique by completing the chart.",
+        prompts: [
+          { text: "Simile — write your own definition and give an example you created today:", type: "lines", lines: 3 },
+          { text: "Metaphor — write your own definition and give an example you created today:", type: "lines", lines: 3 },
+          { text: "Personification — write your own definition and give an example you created today:", type: "lines", lines: 3 },
+          { text: "Imagery — write your own definition and give an example you created today:", type: "lines", lines: 3 },
+        ],
+      },
+      {
+        type: "sorting" as const,
+        title: "Sort by Effect",
+        instruction: "Sort each piece of figurative language by its primary effect on the reader.",
+        columns: ["Creates a strong visual image", "Appeals to emotion", "Creates atmosphere/mood"],
+        items: [
+          { label: "'Stars lay scattered like spilled salt across the dark cloth of the sky.'" },
+          { label: "'She carried her grief like an old stone, worn smooth by time.'" },
+          { label: "'The house exhaled dust and the smell of years.'" },
+          { label: "'The sea was a crumpled sheet of silver.'" },
+          { label: "'His anger was a fire that burned without warmth.'" },
+          { label: "'Rain hissed on hot pavement, filling the evening with its grey murmur.'" },
+        ],
+      },
+      {
+        type: "fill-in-blank" as const,
+        title: "Techniques in a Model Text",
+        instruction: "Read the passage. Fill in each blank in the analysis with the correct term.",
+        parentTip: "Analytical writing identifies what the technique IS and what effect it creates — not just one or the other.",
+        sentences: [
+          { text: "In 'The moon wore a crown of clouds', the moon is given a crown, which is an example of ___ .", blanks: ["personification / metaphor"] },
+          { text: "In 'The door creaked like an old man's knees', the comparison uses ___ because it includes 'like'.", blanks: ["a simile"] },
+          { text: "The phrase 'the damp wool smell of the sheep pens' appeals to the sense of ___ .", blanks: ["smell"] },
+          { text: "When the author writes about the storm as 'a fist striking the tin roof', this is a ___ .", blanks: ["metaphor"] },
+        ],
+      },
+      {
+        type: "tip" as const,
+        title: "Tip: Figurative Language in Non-fiction",
+        content: "Figurative language is not just for poetry and fiction! Non-fiction writers use it too — to explain complex ideas (the brain is like a computer), to make writing engaging (the city was a living organism), and to help readers connect emotionally. Skilled readers notice these techniques in all types of texts.",
+      },
+      {
+        type: "circle-correct" as const,
+        title: "Figurative Language in Non-fiction Texts",
+        instruction: "Circle 'Yes' if the sentence uses figurative language, 'No' if it uses only literal language.",
+        questions: [
+          { prompt: "The human heart pumps around 70 times per minute.", options: ["Yes — figurative", "No — literal"] },
+          { prompt: "The heart is the engine of the body, keeping everything running.", options: ["Yes — figurative", "No — literal"] },
+          { prompt: "Australia is a continent in the southern hemisphere.", options: ["Yes — figurative", "No — literal"] },
+          { prompt: "Australia is an ancient, sun-scorched island continent.", options: ["Yes — figurative", "No — literal"] },
+          { prompt: "The Great Barrier Reef stretches for 2,300 kilometres.", options: ["Yes — figurative", "No — literal"] },
+          { prompt: "The Great Barrier Reef is a living cathedral beneath the sea.", options: ["Yes — figurative", "No — literal"] },
+        ],
+      },
+      {
+        type: "open-response" as const,
+        title: "Figurative Language in Your Own Non-fiction",
+        instruction: "Choose a topic you know well — an animal, a place, a sport. Write a paragraph of non-fiction about it that includes at least two figurative techniques. The writing must still be accurate and informative.",
+        parentTip: "Good non-fiction is both accurate and engaging. Figurative language should illuminate the facts, not replace them.",
+        prompts: [
+          { text: "My topic:", type: "lines", lines: 1 },
+          { text: "My paragraph:", type: "box", lines: 8 },
+        ],
+      },
+      {
+        type: "matching" as const,
+        title: "Match the Opening Line to the Mood",
+        instruction: "Match each opening line to the mood the figurative language creates.",
+        parentTip: "Discuss how specific word choices and comparisons help create mood even in a single sentence.",
+        left: [
+          "'Morning broke softly, like an egg, spilling yellow light across the kitchen floor.'",
+          "'Night clamped down like a jaw over the valley.'",
+          "'Spring crept back into the garden, tentative as a child returning from a scolding.'",
+          "'The sea roared its contempt at the cliffs, flinging itself against stone hour after hour.'",
+        ],
+        right: [
+          "Defiant and powerful — conflict between nature and solid things.",
+          "Gentle, hopeful and hesitant — new beginnings.",
+          "Warm, soft and peaceful — a calm start.",
+          "Dark, threatening and oppressive — a sense of being trapped.",
+        ],
+      },
+      {
+        type: "open-response" as const,
+        title: "Write a Story Opening",
+        instruction: "Write the opening paragraph of a story (5–7 sentences). Your opening must use figurative language to establish the setting and mood before any character appears. Use at least three different techniques.",
+        parentTip: "Great story openings make readers feel the setting before they are told about it. Model one technique together before your child writes independently.",
+        prompts: [
+          {
+            text: "Setting (tick one):\n  [ ] A deserted school at night\n  [ ] A market on a summer morning\n  [ ] An outback road at dusk\n  [ ] My own:\n\nMy opening paragraph:",
+            type: "box",
+            lines: 10,
+          },
+        ],
+      },
+      {
+        type: "home-activity" as const,
+        title: "Author Study",
+        instruction: "Read a chapter of a novel you enjoy and hunt for figurative language like a detective.",
+        parentTip: "Read a chapter alongside your child and share one piece of figurative language each that you noticed. Discuss why you think the author chose it.",
+        suggestions: [
+          "Find two similes, two metaphors and one example of personification in a chapter of your current book.",
+          "Write out one piece of figurative language you found and explain in two sentences why it is effective.",
+          "Try replacing one figurative phrase you found with a more literal version — then compare. Which version is stronger?",
+        ],
+      },
+      {
+        type: "spark" as const,
+        title: "Spark: One Object, Six Senses",
+        content: "Choose one ordinary object — a mug of tea, a pencil, a shoe. Write one description for each of the five senses, then add a sixth: the emotional sense. What feeling does this object evoke? This is how poets and novelists build the world from the ground up.",
+      },
+      {
+        type: "multiple-choice" as const,
+        title: "Figurative Language: Spotting the Technique in Context",
+        instruction: "Read each passage and identify the technique described.",
+        parentTip: "Train your child to read slowly when analysing — underlining unfamiliar or striking phrases before labelling them.",
+        questions: [
+          {
+            prompt: "'Grief is a long corridor with no windows.' What technique is used?",
+            options: ["Simile", "Metaphor", "Onomatopoeia"],
+            answer: "Metaphor",
+          },
+          {
+            prompt: "'The sea called to her every morning, and she always answered.' What technique is used?",
+            options: ["Simile", "Personification", "Hyperbole"],
+            answer: "Personification",
+          },
+          {
+            prompt: "'The new city was as foreign to him as a language he had never studied.' What technique is used?",
+            options: ["Metaphor", "Simile", "Imagery"],
+            answer: "Simile",
+          },
+        ],
+      },
+      {
+        type: "open-response" as const,
+        title: "Paragraph Analysis",
+        instruction: "Read the paragraph below. Identify all figurative language techniques used and explain the effect each creates for the reader.",
+        prompts: [
+          {
+            text: "PASSAGE:\nThe library was a sleeping giant — vast, silent, breathing through its yellowed pages. Dust motes drifted like tiny planets in the shaft of afternoon light. Every shelf was a time machine, each spine a doorway. She moved through it slowly, reverently, as if walking through a forest of old growth trees.\n\nTechnique 1 and effect:",
+            type: "lines",
+            lines: 3,
+          },
+          { text: "Technique 2 and effect:", type: "lines", lines: 3 },
+          { text: "Technique 3 and effect:", type: "lines", lines: 3 },
+        ],
+      },
+      // ── EXTENDING (81–100) ───────────────────────────────────────────────
+      {
+        type: "tip" as const,
+        title: "Tip: Synaesthesia in Language",
+        content: "Synaesthesia is mixing the senses — describing a colour as loud, a sound as sharp and blue, a smell as scratchy. This unusual technique creates startling, memorable imagery. Poets like Keats and Rimbaud used it deliberately. You can too!",
+      },
+      {
+        type: "open-response" as const,
+        title: "Synaesthesia Sentences",
+        instruction: "Write five sentences that mix the senses — describe a sound as a colour, a smell as a texture, a taste as a sound. Be bold and unexpected.",
+        parentTip: "This is deliberately strange — celebrate the weirdness. The goal is to create an image so unexpected that it makes the reader stop and think.",
+        prompts: [
+          { text: "1. That sound is the colour ...", type: "lines", lines: 2 },
+          { text: "2. The smell of rain feels like ...", type: "lines", lines: 2 },
+          { text: "3. Her laughter tasted like ...", type: "lines", lines: 2 },
+          { text: "4. The music looked like ...", type: "lines", lines: 2 },
+          { text: "5. Silence smells like ...", type: "lines", lines: 2 },
+        ],
+      },
+      {
+        type: "multiple-choice" as const,
+        title: "Figurative Language: Effect and Purpose",
+        instruction: "For each passage, select the best analysis of what the figurative language achieves.",
+        parentTip: "Push your child to think about WHY a writer made specific choices, not just WHAT technique was used.",
+        questions: [
+          {
+            prompt: "'Australia stretched before the first explorers like a vast, indifferent question.' (from a history text)",
+            options: [
+              "The simile shows Australia was small and knowable.",
+              "The simile suggests the continent was immense and mysterious — possibly unanswerable — giving the reader a sense of awe and uncertainty.",
+              "The metaphor says Australia was literally a question.",
+            ],
+            answer: "The simile suggests the continent was immense and mysterious — possibly unanswerable — giving the reader a sense of awe and uncertainty.",
+          },
+          {
+            prompt: "'Memory is a faulty film projector — it drops frames, reverses scenes, adds light where there was shadow.'",
+            options: [
+              "The extended metaphor makes the abstract idea of memory concrete and helps the reader understand how unreliable memories can be.",
+              "The simile compares memory to a film.",
+              "The sentence describes a literal projector.",
+            ],
+            answer: "The extended metaphor makes the abstract idea of memory concrete and helps the reader understand how unreliable memories can be.",
+          },
+        ],
+      },
+      {
+        type: "open-response" as const,
+        title: "Write a Personal Essay Opening Using Figurative Language",
+        instruction: "Write the opening of a personal essay about a significant memory — a place, an event, a person who matters to you. Use figurative language deliberately to convey emotion as well as description. Write 8–10 sentences.",
+        parentTip: "A personal essay opening should make the reader feel something immediately. Encourage your child to think about what emotion they want the reader to experience first.",
+        prompts: [
+          { text: "My memory:", type: "lines", lines: 1 },
+          { text: "My essay opening:", type: "box", lines: 12 },
+        ],
+      },
+      {
+        type: "true-false" as const,
+        title: "Critical Thinking: Figurative Language",
+        instruction: "Consider each statement carefully and decide true or false.",
+        parentTip: "Some of these require your child to think critically about when and why figurative language can fail — an important advanced skill.",
+        statements: [
+          { text: "Using too much figurative language in a single paragraph can overwhelm the reader.", answer: true },
+          { text: "The purpose of figurative language is always to make writing more complicated.", answer: false },
+          { text: "A metaphor that is extended inconsistently can confuse rather than illuminate.", answer: true },
+          { text: "Figurative language is a tool — choosing not to use it can sometimes be the most powerful choice.", answer: true },
+          { text: "Any figurative language is better than no figurative language.", answer: false },
+        ],
+      },
+      {
+        type: "open-response" as const,
+        title: "Peer Review: Evaluate Figurative Language",
+        instruction: "Read the passage. Write a detailed evaluation: what figurative techniques are used, how effective each is, and what you would change or strengthen if you were the editor.",
+        parentTip: "Encourage your child to be specific and constructive — not just 'it is good' but 'the metaphor in line 2 works because ...'",
+        prompts: [
+          {
+            text: "PASSAGE:\nThe city was loud. Cars honked like angry geese. The office building stood tall. Workers moved like ants in and out of the doors. At lunchtime the plaza filled with people and noise.\n\nMy evaluation:",
+            type: "box",
+            lines: 10,
+          },
+        ],
+      },
+      {
+        type: "open-response" as const,
+        title: "Rewrite the Passage with Elevated Figurative Language",
+        instruction: "Take the same passage from the previous activity and rewrite it with richer, more sophisticated figurative language. Keep the same content and events — only improve the language.",
+        prompts: [
+          { text: "My improved version:", type: "box", lines: 12 },
+        ],
+      },
+      {
+        type: "sorting" as const,
+        title: "Rank the Figurative Language by Effectiveness",
+        instruction: "Sort these descriptions of a sunrise from 'Least effective' to 'Most effective' and explain your ranking on the lines below.",
+        parentTip: "Discuss the criteria for effectiveness: specificity, originality, how strongly it evokes a sensory or emotional response.",
+        columns: ["Less effective", "More effective"],
+        items: [
+          { label: "The sun came up. It was pretty." },
+          { label: "The sun rose like a big orange ball." },
+          { label: "The sun rose slowly and beautifully over the hills." },
+          { label: "Dawn bled red across the hills, the sun climbing hand over hand through the clouds." },
+        ],
+      },
+      {
+        type: "open-response" as const,
+        title: "Write a Complete Poem: Your Choice",
+        instruction: "Write a poem of 12–16 lines on any topic you choose. Your poem must include: at least two similes, at least two metaphors, at least one example of personification, at least three distinct sensory images, and at least one fresh comparison that avoids all clichés. Label each technique.",
+        parentTip: "This is the culminating piece — allow time and space. Read the finished poem aloud together. Celebrate the craft.",
+        prompts: [
+          { text: "My topic:", type: "lines", lines: 1 },
+          { text: "My poem:", type: "box", lines: 18 },
+        ],
+      },
+      {
+        type: "home-activity" as const,
+        title: "Poet in Residence — Extended Project",
+        instruction: "Spend the week creating a small illustrated poetry collection of three poems using all the figurative language techniques from this unit.",
+        parentTip: "Display the finished collection proudly. Writing for an audience — even just family — transforms how students approach craft.",
+        suggestions: [
+          "Write one poem about an Australian place or animal, using at least four figurative techniques.",
+          "Write one poem about an emotion, using only metaphors — no similes allowed.",
+          "Write one poem using personification throughout — give a whole ecosystem (forest, reef, outback) a human voice.",
+          "Illustrate each poem with a drawing or collage inspired by the imagery.",
+          "Read all three poems aloud to a family member and ask them to identify their favourite image from each.",
+        ],
+      },
+      {
+        type: "multiple-choice" as const,
+        title: "Literary Analysis: Figurative Language in Australian Writing",
+        instruction: "Read the passage from an Australian text and choose the best analysis.",
+        parentTip: "Reading Australian literature specifically builds cultural literacy alongside language skills.",
+        questions: [
+          {
+            prompt: "'The plains rolled like a tawny sea to the horizon — dry, endless, unhurried.' What does the simile achieve?",
+            options: [
+              "It helps the reader visualise the vast, flat landscape by comparing it to something equally vast and moving — the sea.",
+              "It says the plains are literally the sea.",
+              "It uses 'like' to show the plains were wet.",
+            ],
+            answer: "It helps the reader visualise the vast, flat landscape by comparing it to something equally vast and moving — the sea.",
+          },
+        ],
+      },
+      {
+        type: "open-response" as const,
+        title: "Create an Imagery Glossary",
+        instruction: "Create a personal glossary of 10 figurative language examples from your own writing this unit. For each, write: the example, the technique, and what effect you were trying to create.",
+        parentTip: "A personal glossary of favourite figurative language helps writers build a repertoire they can draw on in future writing.",
+        prompts: [
+          { text: "1. Example | Technique | Effect:", type: "lines", lines: 2 },
+          { text: "2. Example | Technique | Effect:", type: "lines", lines: 2 },
+          { text: "3. Example | Technique | Effect:", type: "lines", lines: 2 },
+          { text: "4. Example | Technique | Effect:", type: "lines", lines: 2 },
+          { text: "5. Example | Technique | Effect:", type: "lines", lines: 2 },
+          { text: "6. Example | Technique | Effect:", type: "lines", lines: 2 },
+          { text: "7. Example | Technique | Effect:", type: "lines", lines: 2 },
+          { text: "8. Example | Technique | Effect:", type: "lines", lines: 2 },
+          { text: "9. Example | Technique | Effect:", type: "lines", lines: 2 },
+          { text: "10. Example | Technique | Effect:", type: "lines", lines: 2 },
+        ],
+      },
+      {
+        type: "spark" as const,
+        title: "Spark: The Unexpected Comparison",
+        content: "The best figurative language surprises you. Challenge: write five comparisons that no one has ever written before. They must be completely original — specific to your life, your world, the things only you have noticed. These are your unique images. Keep them.",
       },
     ],
   },
@@ -5601,11 +7686,11 @@ export const year4EnglishWorksheets: WorksheetItem[] = [
       ],
     },
     activities: [
+      // ── FOUNDATIONAL (1–20) ──────────────────────────────────────────────
       {
-        type: "circle-correct",
-        title: "Choose the Correct Verb",
-        instruction:
-          "Circle the verb form that agrees with the subject pronoun.",
+        type: "circle-correct" as const,
+        title: "Choose the Correct Verb — Round 1",
+        instruction: "Circle the verb form that agrees with the subject pronoun.",
         questions: [
           { prompt: "She ___ to school every day.", options: ["walk", "walks", "walking"] },
           { prompt: "They ___ finished their lunch.", options: ["has", "have", "having"] },
@@ -5615,31 +7700,37 @@ export const year4EnglishWorksheets: WorksheetItem[] = [
         ],
       },
       {
-        type: "open-response",
-        title: "Fix the Errors",
-        instruction:
-          "Each sentence has a pronoun–verb agreement error. Rewrite the sentence correctly.",
-        prompts: [
-          { text: "1. They was at the park all afternoon.\nAnswer:", type: "lines", lines: 2 },
-          { text: "2. She don't like broccoli.\nAnswer:", type: "lines", lines: 2 },
-          { text: "3. He have a pet lizard named Spike.\nAnswer:", type: "lines", lines: 2 },
-          { text: "4. We was late for the movie.\nAnswer:", type: "lines", lines: 2 },
+        type: "fill-in-blank" as const,
+        title: "Pronoun–Verb Agreement Chart",
+        instruction: "Complete each sentence by filling in the correct form of the verb 'be' (am / is / are).",
+        parentTip: "Make a reference chart together: I am, you are, he/she/it is, we/they are. Keep it visible.",
+        sentences: [
+          { text: "I ___ ready for school.", blanks: ["am"] },
+          { text: "She ___ my best friend.", blanks: ["is"] },
+          { text: "They ___ playing outside.", blanks: ["are"] },
+          { text: "He ___ the tallest student.", blanks: ["is"] },
+          { text: "We ___ going to the museum.", blanks: ["are"] },
+          { text: "It ___ a very hot day.", blanks: ["is"] },
         ],
       },
       {
-        type: "open-response",
-        title: "Write Your Own",
-        instruction:
-          "Write a short paragraph (5 to 6 sentences) about a typical day at your home. Use at least five different subject pronouns — I, you, he, she, we, they. Underline each pronoun and circle the matching verb.",
-        prompts: [{ text: "My paragraph:", type: "box", lines: 10 }],
+        type: "true-false" as const,
+        title: "Correct or Incorrect?",
+        instruction: "Read each sentence. Circle true if the pronoun–verb agreement is correct, false if it is wrong.",
+        parentTip: "Read each sentence aloud — incorrect agreement usually sounds wrong when spoken.",
+        statements: [
+          { text: "'She run every morning.' — This is grammatically correct.", answer: false },
+          { text: "'They are at the library.' — This is grammatically correct.", answer: true },
+          { text: "'He have a dog named Rex.' — This is grammatically correct.", answer: false },
+          { text: "'We were late for school.' — This is grammatically correct.", answer: true },
+          { text: "'I am going to the park.' — This is grammatically correct.", answer: true },
+          { text: "'They was watching television.' — This is grammatically correct.", answer: false },
+        ],
       },
       {
         type: "circle-correct" as const,
-        title: "Pronoun–Verb Agreement Quick-fire",
-        instruction:
-          "Circle the correct verb form for each pronoun.",
-        parentTip:
-          "Read each option aloud — the correct one should sound natural in spoken English.",
+        title: "Choose the Correct Verb — Round 2",
+        instruction: "Circle the verb form that agrees with the subject pronoun.",
         questions: [
           { prompt: "I ___ going to the shops.", options: ["am", "is", "are"] },
           { prompt: "She ___ finished her homework.", options: ["have", "has", "had"] },
@@ -5650,18 +7741,713 @@ export const year4EnglishWorksheets: WorksheetItem[] = [
         ],
       },
       {
-        type: "home-activity" as const,
-        title: "Grammar in the Wild",
-        instruction:
-          "Find and fix pronoun–verb agreement in everyday language.",
-        parentTip:
-          "Gentle correction through modelling — repeating the correct form naturally — is more effective than direct correction.",
-        suggestions: [
-          "Listen to conversations during the day — do you ever hear a pronoun–verb agreement error? What would the correct form be?",
-          "Write five sentences about your family using a different pronoun each time (I, you, he, she, we, they).",
-          "Find a paragraph in a library book and underline every pronoun — then check each verb agrees.",
-          "Make up ten deliberately incorrect sentences and challenge a family member to find and fix them all.",
+        type: "multiple-choice" as const,
+        title: "Which Sentence Is Correct?",
+        instruction: "Choose the sentence with correct pronoun–verb agreement.",
+        questions: [
+          { prompt: "Which is correct?", options: ["She don't like spinach.", "She doesn't like spinach.", "She not like spinach."], answer: "She doesn't like spinach." },
+          { prompt: "Which is correct?", options: ["They was at the beach.", "They were at the beach.", "They be at the beach."], answer: "They were at the beach." },
+          { prompt: "Which is correct?", options: ["He have a pet turtle.", "He has a pet turtle.", "He having a pet turtle."], answer: "He has a pet turtle." },
+          { prompt: "Which is correct?", options: ["I are hungry.", "I is hungry.", "I am hungry."], answer: "I am hungry." },
         ],
+      },
+      {
+        type: "open-response" as const,
+        title: "Fix the Errors — Round 1",
+        instruction: "Each sentence has a pronoun–verb agreement error. Rewrite the sentence correctly.",
+        parentTip: "Ask your child to find the pronoun first, then check whether the verb matches.",
+        prompts: [
+          { text: "1. They was at the park all afternoon.\nCorrect:", type: "lines", lines: 2 },
+          { text: "2. She don't like broccoli.\nCorrect:", type: "lines", lines: 2 },
+          { text: "3. He have a pet lizard named Spike.\nCorrect:", type: "lines", lines: 2 },
+          { text: "4. We was late for the movie.\nCorrect:", type: "lines", lines: 2 },
+        ],
+      },
+      {
+        type: "fill-in-blank" as const,
+        title: "Verb 'Have' — Correct Form",
+        instruction: "Fill in the correct form of 'have' (have / has) for each pronoun.",
+        sentences: [
+          { text: "I ___ three pets.", blanks: ["have"] },
+          { text: "She ___ a red bicycle.", blanks: ["has"] },
+          { text: "They ___ finished the game.", blanks: ["have"] },
+          { text: "He ___ a cold today.", blanks: ["has"] },
+          { text: "We ___ a new neighbour.", blanks: ["have"] },
+          { text: "It ___ been raining all week.", blanks: ["has"] },
+        ],
+      },
+      {
+        type: "sorting" as const,
+        title: "Sort: Singular or Plural Pronoun?",
+        instruction: "Sort each pronoun into 'Singular' or 'Plural'.",
+        parentTip: "Understanding singular vs plural is the foundation of pronoun–verb agreement.",
+        columns: ["Singular", "Plural"],
+        items: [
+          { label: "I" },
+          { label: "we" },
+          { label: "she" },
+          { label: "they" },
+          { label: "he" },
+          { label: "you (one person)" },
+          { label: "you (a group)" },
+          { label: "it" },
+        ],
+      },
+      {
+        type: "circle-correct" as const,
+        title: "Verb 'Do' / 'Does' — Choose Correctly",
+        instruction: "Circle the correct form of 'do' or 'does' for each pronoun.",
+        questions: [
+          { prompt: "She ___ her homework every afternoon.", options: ["do", "does"] },
+          { prompt: "They ___ not agree.", options: ["do", "does"] },
+          { prompt: "He ___ the washing up after dinner.", options: ["do", "does"] },
+          { prompt: "We ___ our best each day.", options: ["do", "does"] },
+          { prompt: "It ___ not matter.", options: ["do", "does"] },
+          { prompt: "I ___ not know the answer.", options: ["do", "does"] },
+        ],
+      },
+      {
+        type: "open-response" as const,
+        title: "Pronoun–Verb Agreement: Write Your Own Sentences",
+        instruction: "Write one correct sentence for each pronoun. The sentence must show clear pronoun–verb agreement.",
+        prompts: [
+          { text: "I ...", type: "lines", lines: 2 },
+          { text: "She ...", type: "lines", lines: 2 },
+          { text: "He ...", type: "lines", lines: 2 },
+          { text: "We ...", type: "lines", lines: 2 },
+          { text: "They ...", type: "lines", lines: 2 },
+          { text: "It ...", type: "lines", lines: 2 },
+        ],
+      },
+      {
+        type: "fill-in-blank" as const,
+        title: "Past Tense Agreement — 'Was' or 'Were'?",
+        instruction: "Fill in 'was' or 'were' to complete each sentence correctly.",
+        parentTip: "A simple rule: 'was' goes with I / he / she / it; 'were' goes with you / we / they.",
+        sentences: [
+          { text: "She ___ at school yesterday.", blanks: ["was"] },
+          { text: "They ___ very excited about the carnival.", blanks: ["were"] },
+          { text: "I ___ tired after the long walk.", blanks: ["was"] },
+          { text: "We ___ the first family to arrive.", blanks: ["were"] },
+          { text: "He ___ the winner of the race.", blanks: ["was"] },
+          { text: "You ___ right about the weather.", blanks: ["were"] },
+        ],
+      },
+      {
+        type: "multiple-choice" as const,
+        title: "Present Tense Agreement",
+        instruction: "Choose the correct present tense verb.",
+        questions: [
+          { prompt: "She ___ in Year 4.", options: ["study", "studies", "studying"], answer: "studies" },
+          { prompt: "They ___ to school by bus.", options: ["go", "goes", "going"], answer: "go" },
+          { prompt: "He ___ his dog every morning.", options: ["walk", "walks", "walking"], answer: "walks" },
+          { prompt: "We ___ lunch at noon.", options: ["eat", "eats", "eating"], answer: "eat" },
+          { prompt: "It ___ a lot in April.", options: ["rain", "rains", "raining"], answer: "rains" },
+        ],
+      },
+      {
+        type: "open-response" as const,
+        title: "Error Hospital — Find and Fix",
+        instruction: "Read the paragraph. Find every pronoun–verb agreement error and rewrite the paragraph correctly below.",
+        parentTip: "Ask your child to underline every pronoun first, then check each matching verb.",
+        prompts: [
+          {
+            text: "ERROR PARAGRAPH:\nMy sister and I loves going to the beach. She always run into the water first. I am more careful and checks the waves before going in. We was there last Saturday and the waves was enormous. They was crashing so loudly that we couldn't hear each other speak.\n\nCorrected paragraph:",
+            type: "box",
+            lines: 8,
+          },
+        ],
+      },
+      {
+        type: "true-false" as const,
+        title: "Pronoun–Verb Agreement Rules: True or False?",
+        instruction: "Read each grammar rule and decide if it is true or false.",
+        statements: [
+          { text: "Singular pronouns (he, she, it) use the -s form in the present tense: 'she runs'.", answer: true },
+          { text: "'They was' is correct Standard Australian English.", answer: false },
+          { text: "'I am' and 'you are' are both correct in Standard Australian English.", answer: true },
+          { text: "'He do' is the correct form in formal writing.", answer: false },
+          { text: "The pronoun 'it' uses 'is' in the present tense.", answer: true },
+        ],
+      },
+      {
+        type: "tip" as const,
+        title: "Tip: The -s Rule for He, She and It",
+        content: "In the present tense, when the subject is 'he', 'she' or 'it', add -s (or -es) to the verb: she runs, he watches, it goes. But with 'I', 'you', 'we' or 'they', do NOT add -s: I run, you watch, they go. This is one of the most common error patterns in written English.",
+      },
+      {
+        type: "fill-in-blank" as const,
+        title: "Apply the -s Rule",
+        instruction: "Fill in the correct present tense form of the verb in brackets.",
+        sentences: [
+          { text: "She ___ [read] for one hour every night.", blanks: ["reads"] },
+          { text: "They ___ [play] tennis on Saturdays.", blanks: ["play"] },
+          { text: "He ___ [catch] the bus at 8 a.m.", blanks: ["catches"] },
+          { text: "We ___ [finish] school at 3 p.m.", blanks: ["finish"] },
+          { text: "It ___ [take] twenty minutes to walk there.", blanks: ["takes"] },
+          { text: "I ___ [love] Wednesdays.", blanks: ["love"] },
+        ],
+      },
+      {
+        type: "circle-correct" as const,
+        title: "Perfect Tense: Has or Have?",
+        instruction: "Circle the correct form of 'has' or 'have' to form the perfect tense.",
+        questions: [
+          { prompt: "She ___ already eaten.", options: ["has", "have"] },
+          { prompt: "They ___ gone to the museum.", options: ["has", "have"] },
+          { prompt: "I ___ finished my work.", options: ["has", "have"] },
+          { prompt: "He ___ won the competition.", options: ["has", "have"] },
+          { prompt: "We ___ never seen the ocean.", options: ["has", "have"] },
+          { prompt: "It ___ been a long day.", options: ["has", "have"] },
+        ],
+      },
+      {
+        type: "open-response" as const,
+        title: "Write a Paragraph About Your Day",
+        instruction: "Write a short paragraph (5–6 sentences) about a typical day. Use at least five different subject pronouns — I, you, he, she, we, they. Underline each pronoun and circle the matching verb.",
+        parentTip: "This lets you see at a glance which pronouns your child is confident with and which they avoid.",
+        prompts: [{ text: "My paragraph:", type: "box", lines: 10 }],
+      },
+      {
+        type: "home-activity" as const,
+        title: "Grammar in the Wild — Week 1",
+        instruction: "Hunt for pronoun–verb agreement patterns in everyday language.",
+        parentTip: "Gentle modelling is more effective than correction. If your child makes an error in speech, echo the correct form naturally in your reply.",
+        suggestions: [
+          "Listen for pronoun–verb agreement errors in TV shows, conversations or books. Jot down any you hear.",
+          "Write five sentences about your family members using a different pronoun each time.",
+          "Find a paragraph in a library book and underline every pronoun — then verify each verb is correct.",
+        ],
+      },
+      {
+        type: "spark" as const,
+        title: "Spark: The Agreement Anchor Chart",
+        content: "Create a colourful reference chart for your wall. In the centre write 'Subject–Verb Agreement'. Then write each pronoun with its correct forms of 'be', 'have' and 'do' in different colours. Decorate it and keep it visible as you write!",
+      },
+      // ── DEVELOPING (21–50) ──────────────────────────────────────────────
+      {
+        type: "open-response" as const,
+        title: "Fix the Errors — Round 2",
+        instruction: "Each sentence has a pronoun–verb agreement error. Rewrite it correctly.",
+        parentTip: "By now your child should be diagnosing the error before rewriting — ask them to explain what is wrong first.",
+        prompts: [
+          { text: "1. It have been a difficult week.\nCorrect:", type: "lines", lines: 2 },
+          { text: "2. You is coming to the party, aren't you?\nCorrect:", type: "lines", lines: 2 },
+          { text: "3. She don't understand fractions.\nCorrect:", type: "lines", lines: 2 },
+          { text: "4. We was supposed to bring our own lunch.\nCorrect:", type: "lines", lines: 2 },
+          { text: "5. They has decided to build a cubby house.\nCorrect:", type: "lines", lines: 2 },
+          { text: "6. He were the only one who knew the answer.\nCorrect:", type: "lines", lines: 2 },
+        ],
+      },
+      {
+        type: "sorting" as const,
+        title: "Sort: Correct or Incorrect Agreement?",
+        instruction: "Sort each sentence into 'Correct agreement' or 'Incorrect agreement'.",
+        columns: ["Correct agreement", "Incorrect agreement"],
+        items: [
+          { label: "She has three older brothers." },
+          { label: "They was playing chess." },
+          { label: "He doesn't eat meat." },
+          { label: "We am going on holiday." },
+          { label: "I am the youngest in my family." },
+          { label: "It don't matter." },
+          { label: "They have finished the project." },
+          { label: "She were chosen as team captain." },
+        ],
+      },
+      {
+        type: "fill-in-blank" as const,
+        title: "Mixed Verb Forms",
+        instruction: "Fill in the correct form of the verb in brackets.",
+        sentences: [
+          { text: "She ___ [be – past tense] the winner.", blanks: ["was"] },
+          { text: "They ___ [go – present tense] to gymnastics on Tuesdays.", blanks: ["go"] },
+          { text: "I ___ [have – perfect tense] never tried surfing.", blanks: ["have"] },
+          { text: "He ___ [do – present tense] not enjoy maths.", blanks: ["does"] },
+          { text: "We ___ [be – past tense] away for two weeks.", blanks: ["were"] },
+          { text: "It ___ [be – present tense] important to be kind.", blanks: ["is"] },
+        ],
+      },
+      {
+        type: "multiple-choice" as const,
+        title: "Pronoun–Verb Agreement in Questions",
+        instruction: "Choose the correctly formed question.",
+        parentTip: "In questions, the verb often comes before the subject — remind your child the same agreement rules apply.",
+        questions: [
+          { prompt: "Choose the correct question:", options: ["Does she like music?", "Do she like music?", "Doing she like music?"], answer: "Does she like music?" },
+          { prompt: "Choose the correct question:", options: ["Were they at home?", "Was they at home?", "Be they at home?"], answer: "Were they at home?" },
+          { prompt: "Choose the correct question:", options: ["Have you finished?", "Has you finished?", "Having you finished?"], answer: "Have you finished?" },
+          { prompt: "Choose the correct question:", options: ["Does it hurt?", "Do it hurt?", "Is it hurt?"], answer: "Does it hurt?" },
+        ],
+      },
+      {
+        type: "open-response" as const,
+        title: "Pronoun–Verb Agreement in Questions",
+        instruction: "Write four questions — one for each pronoun given. Make sure the verb agrees.",
+        prompts: [
+          { text: "A question with 'she' as subject:", type: "lines", lines: 2 },
+          { text: "A question with 'they' as subject:", type: "lines", lines: 2 },
+          { text: "A question with 'he' as subject:", type: "lines", lines: 2 },
+          { text: "A question with 'it' as subject:", type: "lines", lines: 2 },
+        ],
+      },
+      {
+        type: "circle-correct" as const,
+        title: "Negative Sentences: Choose Correctly",
+        instruction: "Circle the correct negative form.",
+        questions: [
+          { prompt: "She ___ eat meat.", options: ["don't", "doesn't", "aren't"] },
+          { prompt: "They ___ finished yet.", options: ["hasn't", "haven't", "isn't"] },
+          { prompt: "He ___ understand.", options: ["don't", "doesn't", "didn't understand"] },
+          { prompt: "We ___ agree.", options: ["doesn't", "don't", "isn't"] },
+          { prompt: "It ___ matter.", options: ["don't", "doesn't", "aren't"] },
+        ],
+      },
+      {
+        type: "fill-in-blank" as const,
+        title: "Irregular Verbs — Agreement",
+        instruction: "Fill in the correct present tense form of each irregular verb.",
+        parentTip: "Irregular verbs don't follow the standard -s pattern — they must be learned. Have fun practising them!",
+        sentences: [
+          { text: "She ___ [go] to karate on Fridays.", blanks: ["goes"] },
+          { text: "He ___ [have] a gecko as a pet.", blanks: ["has"] },
+          { text: "They ___ [do] their best.", blanks: ["do"] },
+          { text: "She ___ [be] very organised.", blanks: ["is"] },
+          { text: "It ___ [make] a loud humming noise.", blanks: ["makes"] },
+          { text: "We ___ [know] the answer.", blanks: ["know"] },
+        ],
+      },
+      {
+        type: "true-false" as const,
+        title: "Negatives and Questions: True or False?",
+        instruction: "Read each statement about pronoun–verb agreement in negatives and questions.",
+        statements: [
+          { text: "'She doesn't' is the correct negative for 'she + do'.", answer: true },
+          { text: "'They doesn't know' is correct.", answer: false },
+          { text: "In a question, the verb must still agree with the pronoun subject.", answer: true },
+          { text: "'Does he?' and 'Do they?' are both correct question forms.", answer: true },
+          { text: "'I doesn't' is ever correct in Standard Australian English.", answer: false },
+        ],
+      },
+      {
+        type: "tip" as const,
+        title: "Tip: Standard and Non-standard English",
+        content: "You might hear people say 'they was', 'she don't' or 'we was' in informal conversation — these are examples of non-standard English. They are understood perfectly, but in formal writing (school work, letters, essays), Standard Australian English requires correct pronoun–verb agreement. Both forms have their place — knowing which to use is a key skill.",
+      },
+      {
+        type: "sorting" as const,
+        title: "Standard or Non-standard English?",
+        instruction: "Sort each sentence into 'Standard English' or 'Non-standard English'.",
+        parentTip: "Discuss that neither is 'wrong' in all contexts — formal writing requires standard forms.",
+        columns: ["Standard English", "Non-standard English"],
+        items: [
+          { label: "We were late for the bus." },
+          { label: "We was late for the bus." },
+          { label: "She doesn't like tomatoes." },
+          { label: "She don't like tomatoes." },
+          { label: "They have already eaten." },
+          { label: "They has already eaten." },
+          { label: "He is very tall." },
+          { label: "He are very tall." },
+        ],
+      },
+      {
+        type: "open-response" as const,
+        title: "Proofread Your Own Writing",
+        instruction: "Take a piece of writing you have done recently. Read through it and underline every pronoun. For each one, check the verb agrees. List any errors you find and their corrections below.",
+        prompts: [
+          { text: "Source text (title or description):", type: "lines", lines: 1 },
+          { text: "Errors I found and corrections:", type: "box", lines: 8 },
+          { text: "Total errors found:", type: "lines", lines: 1 },
+        ],
+      },
+      {
+        type: "circle-correct" as const,
+        title: "Agreement in Longer Sentences",
+        instruction: "Circle the correct verb. Watch out — the subject and verb may be separated by other words.",
+        parentTip: "The trick is to find the SUBJECT first, ignoring any words between subject and verb.",
+        questions: [
+          { prompt: "The team of students ___ working very hard.", options: ["is", "are"] },
+          { prompt: "My friend, along with her cousins, ___ coming to the party.", options: ["is", "are"] },
+          { prompt: "The box of chocolates ___ disappeared overnight.", options: ["has", "have"] },
+          { prompt: "The dogs in the park ___ barking at the birds.", options: ["was", "were"] },
+          { prompt: "Everyone in the class ___ finished the test.", options: ["has", "have"] },
+        ],
+      },
+      {
+        type: "multiple-choice" as const,
+        title: "Tricky Subjects: Collective Nouns",
+        instruction: "Choose the correct verb for these tricky subject types.",
+        parentTip: "Collective nouns (team, class, family) are usually treated as singular in Australian English.",
+        questions: [
+          { prompt: "The class ___ on a field trip today.", options: ["are", "is", "were"], answer: "is" },
+          { prompt: "The family ___ arrived at the airport.", options: ["have", "has", "were"], answer: "has" },
+          { prompt: "The flock of birds ___ flying south.", options: ["are", "is", "were"], answer: "is" },
+          { prompt: "A group of students ___ waiting outside.", options: ["are", "is", "was"], answer: "is" },
+        ],
+      },
+      {
+        type: "open-response" as const,
+        title: "Error Hospital — Paragraph Level",
+        instruction: "Read the paragraph. Find every pronoun–verb agreement error and rewrite the paragraph correctly.",
+        prompts: [
+          {
+            text: "PARAGRAPH:\nLast weekend my friends and I goes to the science museum. It were fantastic. She — that is my friend Maya — have never seen the dinosaur exhibition before. We was there for three hours and doesn't want to leave. Even the security guard, who usually don't smile, were laughing at the interactive volcano display.\n\nCorrected paragraph:",
+            type: "box",
+            lines: 10,
+          },
+        ],
+      },
+      {
+        type: "fill-in-blank" as const,
+        title: "Future Tense Agreement",
+        instruction: "Fill in 'will' or the correct 'going to' form for each sentence.",
+        sentences: [
+          { text: "She ___ visit her grandparents next week.", blanks: ["will"] },
+          { text: "They ___ compete in the swimming carnival.", blanks: ["will"] },
+          { text: "He is ___ to study medicine.", blanks: ["going"] },
+          { text: "We ___ need more time.", blanks: ["will"] },
+          { text: "It ___ be a warm day tomorrow.", blanks: ["will"] },
+        ],
+      },
+      {
+        type: "home-activity" as const,
+        title: "Grammar in the Wild — Week 2",
+        instruction: "Continue hunting for pronoun–verb agreement in the texts and conversations around you.",
+        parentTip: "Challenge yourselves to find an example of both correct and non-standard agreement in real-world language this week.",
+        suggestions: [
+          "Write ten sentences about your favourite sports team or hobby — vary the pronouns and tenses.",
+          "Watch a TV programme and note three sentences where the presenter uses clear pronoun–verb agreement.",
+          "Create a mini quiz: write five sentences with errors and five without. Test a family member.",
+        ],
+      },
+      {
+        type: "spark" as const,
+        title: "Spark: Deliberate Errors",
+        content: "Write a short story — 5 sentences — that is completely WRONG. Every pronoun must have the wrong verb. Then swap with a family member and race to find and fix every error. Who is the fastest proofreader?",
+      },
+      // ── CONSOLIDATING (51–80) ──────────────────────────────────────────
+      {
+        type: "open-response" as const,
+        title: "Write a Narrative Using All Six Pronouns",
+        instruction: "Write a short narrative (8–10 sentences) that includes all six subject pronouns: I, you, he, she, we, they. Each pronoun must be used with a correctly agreeing verb. Underline each pronoun–verb pair.",
+        parentTip: "This is harder than it sounds — getting all six pronouns naturally into one passage requires planning. Discuss the scenario together first.",
+        prompts: [{ text: "My narrative:", type: "box", lines: 12 }],
+      },
+      {
+        type: "fill-in-blank" as const,
+        title: "Agreement Across Tenses",
+        instruction: "Fill in the correct verb form. Each sentence specifies the tense.",
+        sentences: [
+          { text: "[Present] She ___ the piano every evening.", blanks: ["plays"] },
+          { text: "[Past] They ___ at the cinema on Saturday.", blanks: ["were"] },
+          { text: "[Perfect] He ___ eaten breakfast.", blanks: ["has"] },
+          { text: "[Present] We ___ not agree.", blanks: ["do"] },
+          { text: "[Past] I ___ the last one to arrive.", blanks: ["was"] },
+          { text: "[Perfect] They ___ not yet decided.", blanks: ["have"] },
+        ],
+      },
+      {
+        type: "circle-correct" as const,
+        title: "Indefinite Pronoun Agreement",
+        instruction: "Circle the correct verb for each indefinite pronoun subject.",
+        parentTip: "Indefinite pronouns like 'everyone', 'nobody', 'each', 'anyone' are usually treated as singular.",
+        questions: [
+          { prompt: "Everyone ___ welcome.", options: ["is", "are"] },
+          { prompt: "Nobody ___ the answer.", options: ["know", "knows"] },
+          { prompt: "Each student ___ a pen.", options: ["need", "needs"] },
+          { prompt: "Someone ___ left their bag in the hall.", options: ["have", "has"] },
+          { prompt: "Anything ___ better than nothing.", options: ["are", "is"] },
+        ],
+      },
+      {
+        type: "multiple-choice" as const,
+        title: "Complex Agreement — Choose Correctly",
+        instruction: "Choose the sentence with correct pronoun–verb agreement.",
+        questions: [
+          {
+            prompt: "Which sentence is correct?",
+            options: [
+              "Neither she nor he were ready.",
+              "Neither she nor he was ready.",
+              "Neither she nor he are ready.",
+            ],
+            answer: "Neither she nor he was ready.",
+          },
+          {
+            prompt: "Which sentence is correct?",
+            options: [
+              "Either she or they is coming.",
+              "Either she or they are coming.",
+              "Either she or they was coming.",
+            ],
+            answer: "Either she or they are coming.",
+          },
+        ],
+      },
+      {
+        type: "true-false" as const,
+        title: "Pronoun–Verb Agreement: Advanced Rules",
+        instruction: "Read each rule and decide if it is true or false.",
+        statements: [
+          { text: "Indefinite pronouns like 'everyone' and 'nobody' take singular verbs.", answer: true },
+          { text: "When two subjects are joined by 'or', the verb agrees with the nearer subject.", answer: true },
+          { text: "Collective nouns always take plural verbs in Australian English.", answer: false },
+          { text: "Pronoun–verb agreement applies in questions and negative sentences.", answer: true },
+          { text: "'She doesn't' is correct but 'they doesn't' is also correct.", answer: false },
+        ],
+      },
+      {
+        type: "open-response" as const,
+        title: "Write a Formal Letter Using Correct Agreement",
+        instruction: "Write a short formal letter (6–8 sentences) to a community organisation asking for information about one of their programmes. Use at least four different pronouns and ensure all verbs agree. Include a greeting and a closing.",
+        parentTip: "Formal letters are an excellent context for practising standard English — the stakes feel real.",
+        prompts: [{ text: "My formal letter:", type: "box", lines: 12 }],
+      },
+      {
+        type: "sorting" as const,
+        title: "Sort Sentences by Tense",
+        instruction: "Sort each sentence into the correct tense column.",
+        columns: ["Present tense", "Past tense", "Perfect tense"],
+        items: [
+          { label: "She has been studying all afternoon." },
+          { label: "They were at the pool." },
+          { label: "He goes to rugby training." },
+          { label: "We have arrived early." },
+          { label: "I am the tallest in the class." },
+          { label: "You were very kind." },
+        ],
+      },
+      {
+        type: "tip" as const,
+        title: "Tip: Pronoun–Verb Agreement in Your Own Editing",
+        content: "When you proofread your writing, do a 'pronoun sweep': read through once and underline every pronoun. Then for each underlined pronoun, read just the pronoun and its verb aloud. Does it sound right? This single-focus editing technique catches agreement errors that are easy to miss in a full read.",
+      },
+      {
+        type: "fill-in-blank" as const,
+        title: "Pronoun–Verb in Reported Speech",
+        instruction: "Fill in the correct verb form in these reported speech sentences.",
+        parentTip: "In reported speech, the verb often changes tense — but agreement with the pronoun must still be correct.",
+        sentences: [
+          { text: "She said that she ___ tired.", blanks: ["was"] },
+          { text: "He told us that they ___ not coming.", blanks: ["were"] },
+          { text: "I explained that we ___ already finished.", blanks: ["had"] },
+          { text: "She reported that it ___ been a mistake.", blanks: ["had"] },
+          { text: "He announced that she ___ won the prize.", blanks: ["had"] },
+        ],
+      },
+      {
+        type: "open-response" as const,
+        title: "Error Analysis: Explain the Error",
+        instruction: "For each incorrect sentence, explain what the agreement error is and why it is wrong. Then write the correct form.",
+        prompts: [
+          { text: "'He don't play sport.'\nExplanation:\nCorrect form:", type: "lines", lines: 3 },
+          { text: "'They was the last team to finish.'\nExplanation:\nCorrect form:", type: "lines", lines: 3 },
+          { text: "'I are going to the library.'\nExplanation:\nCorrect form:", type: "lines", lines: 3 },
+          { text: "'She have three cats.'\nExplanation:\nCorrect form:", type: "lines", lines: 3 },
+        ],
+      },
+      {
+        type: "multiple-choice" as const,
+        title: "Pronoun–Verb Agreement in Academic Writing",
+        instruction: "Choose the correctly formed academic sentence.",
+        parentTip: "Academic writing — essays, reports — requires consistently correct agreement. Model academic phrasing together.",
+        questions: [
+          {
+            prompt: "Which is correct in an essay?",
+            options: [
+              "Research suggests that exercise improves focus.",
+              "Research suggest that exercise improve focus.",
+              "Research are suggesting that exercise improves focus.",
+            ],
+            answer: "Research suggests that exercise improves focus.",
+          },
+          {
+            prompt: "Which is correct in a report?",
+            options: [
+              "The results shows that students benefited.",
+              "The results show that students benefited.",
+              "The results showing that students benefited.",
+            ],
+            answer: "The results show that students benefited.",
+          },
+        ],
+      },
+      {
+        type: "open-response" as const,
+        title: "Pronoun–Verb Agreement: Explain a Rule to a Younger Student",
+        instruction: "Imagine you are explaining pronoun–verb agreement to a Year 2 student. Write a simple explanation (4–5 sentences) using examples that a younger child would understand.",
+        parentTip: "Explaining something clearly to others is one of the best ways to consolidate understanding.",
+        prompts: [{ text: "My explanation:", type: "box", lines: 8 }],
+      },
+      {
+        type: "home-activity" as const,
+        title: "Grammar Detective — Advanced Hunt",
+        instruction: "Go on an advanced grammar detective hunt through a non-fiction text.",
+        parentTip: "Non-fiction texts provide excellent models of consistent, correct pronoun–verb agreement in formal written English.",
+        suggestions: [
+          "Find a newspaper article and identify every pronoun–verb pair. Are they all correct?",
+          "Write a 10-sentence paragraph about a topic from your curriculum using every pronoun at least once.",
+          "Create a matching card game: pronouns on one card, correct present tense verb forms on another. Shuffle and match.",
+          "Make up a silly story where you deliberately use ONLY 'she' and 'he' — and make all verbs agree!",
+        ],
+      },
+      {
+        type: "spark" as const,
+        title: "Spark: The Grammar Game Show",
+        content: "Create your own game show called 'Does It Agree?' Write 10 question cards — each has a pronoun and a verb. The contestant must say 'Agree!' or 'Error!' and give the correction. Play it with a family member. Award a point for each correct answer!",
+      },
+      // ── EXTENDING (81–100) ───────────────────────────────────────────────
+      {
+        type: "open-response" as const,
+        title: "Write a Dialogue Using Correct Agreement Throughout",
+        instruction: "Write a dialogue between three characters (give them names) of 10–12 lines. Every pronoun must have a correctly agreeing verb. Include questions, negatives and at least two different tenses.",
+        parentTip: "Dialogue is particularly good for practising questions and negatives — both of which require pronoun–verb agreement.",
+        prompts: [{ text: "My dialogue:", type: "box", lines: 14 }],
+      },
+      {
+        type: "fill-in-blank" as const,
+        title: "Subject–Verb Agreement: Complex Sentences",
+        instruction: "Fill in the correct verb form in each complex sentence.",
+        parentTip: "In complex sentences, subordinate clauses may contain additional pronouns — each must agree with its own verb.",
+        sentences: [
+          { text: "Although she ___ tired, she completed the assignment.", blanks: ["was"] },
+          { text: "They ___ finished before he ___ even started.", blanks: ["had", "had"] },
+          { text: "Whenever it ___, the garden floods.", blanks: ["rains"] },
+          { text: "I ___ always careful, even when they ___ not.", blanks: ["am", "are"] },
+        ],
+      },
+      {
+        type: "multiple-choice" as const,
+        title: "Pronoun–Verb Agreement Across Word Types",
+        instruction: "Choose the correct option in each sentence.",
+        questions: [
+          {
+            prompt: "She is one of those students who ___ every challenge.",
+            options: ["embraces", "embrace", "embracing"],
+            answer: "embrace",
+          },
+          {
+            prompt: "It is the teachers who ___ made the biggest difference.",
+            options: ["has", "have", "having"],
+            answer: "have",
+          },
+          {
+            prompt: "The reason she left ___ unknown.",
+            options: ["remain", "remains", "remaining"],
+            answer: "remains",
+          },
+        ],
+      },
+      {
+        type: "true-false" as const,
+        title: "Subject–Verb Agreement in Complex Contexts",
+        instruction: "Read each statement about grammar in complex sentences.",
+        statements: [
+          { text: "A relative clause (who, which, that) takes a verb that agrees with its own subject.", answer: true },
+          { text: "In the sentence 'It is the students who make this school great', 'make' agrees with 'students'.", answer: true },
+          { text: "A parenthetical phrase (e.g. 'along with her friends') changes the number of the main subject.", answer: false },
+          { text: "'The news are good' is correct because 'news' sounds plural.", answer: false },
+          { text: "In formal writing, 'data' is often treated as a plural noun (the data show).", answer: true },
+        ],
+      },
+      {
+        type: "open-response" as const,
+        title: "Edit a Passage for Agreement Errors",
+        instruction: "The passage below contains five pronoun–verb agreement errors. Find them all, explain each error, and write the corrected version.",
+        parentTip: "Editing for a specific error type — rather than general editing — is a highly effective skill-building technique.",
+        prompts: [
+          {
+            text: "PASSAGE:\nMy grandmother have always been my greatest inspiration. She were the first woman in her family to attend university. Every evening she sits at the kitchen table and she read to me from her favourite books. She say that stories is the most important things a person can collect. I thinks she is right.\n\nErrors found (list each one):",
+            type: "box",
+            lines: 8,
+          },
+          { text: "Corrected passage:", type: "box", lines: 8 },
+        ],
+      },
+      {
+        type: "tip" as const,
+        title: "Tip: Why Agreement Matters in Formal Writing",
+        content: "Pronoun–verb agreement errors in formal writing can undermine the reader's confidence in the writer — even when the ideas are excellent. Editors at newspapers, publishers and government agencies specifically look for agreement errors. The good news: once you understand the patterns, a 'pronoun sweep' during editing takes less than a minute and catches almost all of them.",
+      },
+      {
+        type: "open-response" as const,
+        title: "Self-Assessment: What I Know About Pronoun–Verb Agreement",
+        instruction: "Write a clear explanation of pronoun–verb agreement in your own words. Include: the basic rule, three examples of common errors and their corrections, and one advanced rule.",
+        prompts: [{ text: "My self-assessment:", type: "box", lines: 12 }],
+      },
+      {
+        type: "circle-correct" as const,
+        title: "Final Review — Choose Correctly",
+        instruction: "Read each sentence and circle the option with correct pronoun–verb agreement.",
+        parentTip: "Use this as a formal review — have your child attempt it independently before checking together.",
+        questions: [
+          { prompt: "She ___ three awards this year.", options: ["have won", "has won", "had won already"] },
+          { prompt: "Everybody ___ a seat for the assembly.", options: ["need", "needs", "needing"] },
+          { prompt: "The news ___ quite alarming.", options: ["are", "is", "were"] },
+          { prompt: "It is the students who ___ kept this school running.", options: ["has", "have", "is"] },
+          { prompt: "They ___ worked hard on this project.", options: ["has", "have", "having"] },
+          { prompt: "Nobody ___ the answer.", options: ["know", "knows", "knowing"] },
+        ],
+      },
+      {
+        type: "open-response" as const,
+        title: "Write an Argument Paragraph With Perfect Agreement",
+        instruction: "Write a paragraph (6–8 sentences) arguing for or against a school rule that you feel strongly about. Use at least four different pronouns and ensure every pronoun–verb pair is correct. This is your best, most polished work.",
+        parentTip: "A persuasive paragraph is a great context for formal writing practice. Encourage careful proofreading before submission.",
+        prompts: [{ text: "My argument paragraph:", type: "box", lines: 10 }],
+      },
+      {
+        type: "multiple-choice" as const,
+        title: "Mastery Check: Pronoun–Verb Agreement",
+        instruction: "This is your final mastery check. Choose the correctly formed sentence in each group.",
+        questions: [
+          {
+            prompt: "Group 1",
+            options: [
+              "She don't know the answer.",
+              "She doesn't know the answer.",
+              "She doesn't knows the answer.",
+            ],
+            answer: "She doesn't know the answer.",
+          },
+          {
+            prompt: "Group 2",
+            options: [
+              "They has been very patient.",
+              "They have been very patient.",
+              "They having been very patient.",
+            ],
+            answer: "They have been very patient.",
+          },
+          {
+            prompt: "Group 3",
+            options: [
+              "Everyone have their own opinion.",
+              "Everyone has their own opinion.",
+              "Everyone is having their own opinion.",
+            ],
+            answer: "Everyone has their own opinion.",
+          },
+        ],
+      },
+      {
+        type: "home-activity" as const,
+        title: "Grammar Portfolio: Pronoun–Verb Agreement",
+        instruction: "Compile a grammar portfolio showing your mastery of pronoun–verb agreement.",
+        parentTip: "A portfolio is motivating because it shows growth. Keep work from the beginning of this unit alongside the final piece to see the improvement.",
+        suggestions: [
+          "Write a one-page story using all six subject pronouns correctly across multiple tenses.",
+          "Create a reference card for each type of tricky agreement: indefinite pronouns, collective nouns, complex sentences.",
+          "Find three examples of pronoun–verb agreement in a non-fiction text and explain in writing why each is correct.",
+          "Write a letter to your future self about what you have learned — using perfect pronoun–verb agreement throughout.",
+          "Teach the basic rule to a younger sibling or cousin, using examples you create yourself.",
+        ],
+      },
+      {
+        type: "spark" as const,
+        title: "Spark: Grammar Is Everywhere",
+        content: "For one whole day, notice pronoun–verb agreement everywhere you encounter language: in books, online, on signs, in conversations, on TV. Keep a tally of correct and incorrect uses. What patterns do you notice? When is non-standard agreement most common, and why?",
       },
     ],
   },

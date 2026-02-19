@@ -3,9 +3,16 @@ import Link from "next/link";
 import { year6MathsWorksheets } from "@/lib/worksheet-data-year6";
 
 export const metadata: Metadata = {
-  title: "Year 6 Mathematics Worksheets — Australian Home Schooling",
+  title: "Year 6 Mathematics Worksheets",
   description:
-    "Free printable Year 6 Mathematics worksheets aligned to the Australian Curriculum. Covering number, algebra, measurement, space, statistics and probability.",
+    "Free printable Year 6 Mathematics worksheets aligned to the Australian Curriculum V9. Covering number, algebra, measurement, space and statistics.",
+  keywords: ["Year 6 mathematics worksheets", "Year 6 mathematics Australia", "homeschool Year 6 mathematics", "Australian Curriculum Year 6"],
+  alternates: { canonical: "/worksheets/mathematics/year-6" },
+  openGraph: {
+    title: "Year 6 Mathematics Worksheets | Australian Home Schooling",
+    description: "Free printable Year 6 Mathematics worksheets covering number, algebra, measurement, space and statistics.",
+    url: "/worksheets/mathematics/year-6",
+  },
 };
 
 const strandColors: Record<string, string> = {

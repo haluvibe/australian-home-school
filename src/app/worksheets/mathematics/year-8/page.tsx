@@ -3,9 +3,16 @@ import Link from "next/link";
 import { year8MathsWorksheets } from "@/lib/worksheet-data-year8";
 
 export const metadata: Metadata = {
-  title: "Year 8 Mathematics Worksheets — Australian Home Schooling",
+  title: "Year 8 Mathematics Worksheets",
   description:
-    "Free printable Year 8 Mathematics worksheets aligned to the Australian Curriculum. Covering number, algebra, measurement, space, statistics and probability.",
+    "Free printable Year 8 Mathematics worksheets aligned to the Australian Curriculum V9. Covering number, algebra, measurement, space and statistics.",
+  keywords: ["Year 8 mathematics worksheets", "Year 8 mathematics Australia", "homeschool Year 8 mathematics", "Australian Curriculum Year 8"],
+  alternates: { canonical: "/worksheets/mathematics/year-8" },
+  openGraph: {
+    title: "Year 8 Mathematics Worksheets | Australian Home Schooling",
+    description: "Free printable Year 8 Mathematics worksheets covering number, algebra, measurement, space and statistics.",
+    url: "/worksheets/mathematics/year-8",
+  },
 };
 
 const strandColors: Record<string, string> = {

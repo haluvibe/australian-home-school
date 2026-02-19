@@ -2,9 +2,24 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Mathematics Worksheets — Australian Home Schooling",
+  title: "Free Printable Mathematics Worksheets — Foundation to Year 10",
   description:
-    "Free printable Mathematics worksheets aligned to the Australian Curriculum. Choose your year level to get started.",
+    "Free printable Mathematics worksheets aligned to the Australian Curriculum V9. Number, Algebra, Measurement, Space and Statistics for Foundation to Year 10.",
+  keywords: [
+    "free maths worksheets Australia",
+    "printable mathematics worksheets",
+    "Australian Curriculum maths worksheets",
+    "homeschool maths",
+    "Foundation maths worksheets",
+    "Year 10 maths worksheets",
+  ],
+  alternates: { canonical: "/worksheets/mathematics" },
+  openGraph: {
+    title: "Free Printable Mathematics Worksheets — Foundation to Year 10",
+    description:
+      "Printable Mathematics worksheets for every year level, aligned to the Australian Curriculum V9.",
+    url: "/worksheets/mathematics",
+  },
 };
 
 const yearLevels = [

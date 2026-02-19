@@ -3,9 +3,25 @@ import FAQAccordion from "@/components/FAQAccordion";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "FAQ",
+  title: "Homeschooling Australia FAQ — Registration, Curriculum & State Rules",
   description:
-    "Frequently asked questions about homeschooling in Australia. Learn about registration, curriculum requirements, state regulations, and more.",
+    "Frequently asked questions about homeschooling in Australia. Learn about registration, curriculum requirements, state and territory regulations, and how to get started.",
+  keywords: [
+    "homeschooling Australia FAQ",
+    "homeschool registration Australia",
+    "homeschooling laws Australia",
+    "home education requirements",
+    "homeschooling NSW",
+    "homeschooling VIC",
+    "homeschooling QLD",
+  ],
+  alternates: { canonical: "/faq" },
+  openGraph: {
+    title: "Homeschooling Australia FAQ — Registration, Curriculum & State Rules",
+    description:
+      "Answers to the most common questions about homeschooling in Australia, including registration, state regulations and curriculum requirements.",
+    url: "/faq",
+  },
 };
 
 const faqItems = [

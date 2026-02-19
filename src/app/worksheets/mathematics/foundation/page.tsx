@@ -5,7 +5,14 @@ import { foundationMathsWorksheets } from "@/lib/worksheet-data";
 export const metadata: Metadata = {
   title: "Foundation Mathematics Worksheets",
   description:
-    "Free printable Foundation Mathematics worksheets aligned to the Australian Curriculum. Covering number, algebra, measurement, space and statistics.",
+    "Free printable Foundation Mathematics worksheets aligned to the Australian Curriculum V9. Covering number, algebra, measurement, space and statistics.",
+  keywords: ["Foundation maths worksheets", "kindergarten maths Australia", "Foundation mathematics", "early maths worksheets", "Australian Curriculum Foundation"],
+  alternates: { canonical: "/worksheets/mathematics/foundation" },
+  openGraph: {
+    title: "Foundation Mathematics Worksheets | Australian Home Schooling",
+    description: "Free printable Foundation Mathematics worksheets covering number, algebra, measurement, space and statistics.",
+    url: "/worksheets/mathematics/foundation",
+  },
 };
 
 const strandColors: Record<string, string> = {

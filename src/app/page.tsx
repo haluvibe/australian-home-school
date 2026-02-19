@@ -1,4 +1,29 @@
+import type { Metadata } from "next";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Australian Home Schooling — Free Curriculum, Worksheets & Lesson Plans",
+  description:
+    "Australia's #1 homeschooling resource. Browse free printable worksheets, Australian Curriculum V9 guides and lesson plans for Foundation to Year 10. Trusted by Australian families.",
+  keywords: [
+    "homeschooling Australia",
+    "free worksheets Australia",
+    "Australian Curriculum V9",
+    "home education",
+    "printable worksheets",
+    "homeschool lesson plans",
+    "Foundation worksheets",
+    "Year 1 worksheets",
+    "Year 10 worksheets",
+  ],
+  alternates: { canonical: "/" },
+  openGraph: {
+    title: "Australian Home Schooling — Free Curriculum, Worksheets & Lesson Plans",
+    description:
+      "Free printable worksheets, Australian Curriculum V9 guides and lesson plans for homeschooling families. Foundation to Year 10.",
+    url: "/",
+  },
+};
 import { foundationMathsWorksheets } from "@/lib/worksheet-data";
 import { year1MathsWorksheets } from "@/lib/worksheet-data-year1";
 import { year2MathsWorksheets } from "@/lib/worksheet-data-year2";

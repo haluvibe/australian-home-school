@@ -3,9 +3,16 @@ import Link from "next/link";
 import { year6EnglishWorksheets } from "@/lib/worksheet-data-english-year6";
 
 export const metadata: Metadata = {
-  title: "Year 6 English Worksheets — Australian Home Schooling",
+  title: "Year 6 English Worksheets",
   description:
-    "Free printable Year 6 English worksheets aligned to the Australian Curriculum. Covering language, literature and literacy strands.",
+    "Free printable Year 6 English worksheets aligned to the Australian Curriculum V9. Covering phonics, reading, writing, grammar and literature.",
+  keywords: ["Year 6 english worksheets", "Year 6 english Australia", "homeschool Year 6 english", "Australian Curriculum Year 6"],
+  alternates: { canonical: "/worksheets/english/year-6" },
+  openGraph: {
+    title: "Year 6 English Worksheets | Australian Home Schooling",
+    description: "Free printable Year 6 English worksheets covering phonics, reading, writing, grammar and literature.",
+    url: "/worksheets/english/year-6",
+  },
 };
 
 const strandColors: Record<string, string> = {

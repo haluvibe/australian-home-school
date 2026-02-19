@@ -3,9 +3,16 @@ import Link from "next/link";
 import { year3EnglishWorksheets } from "@/lib/worksheet-data-english-year3";
 
 export const metadata: Metadata = {
-  title: "Year 3 English Worksheets — Australian Home Schooling",
+  title: "Year 3 English Worksheets",
   description:
-    "Free printable Year 3 English worksheets aligned to the Australian Curriculum V9. Covering spelling strategies, grammar, punctuation, reading comprehension, text types and creative writing.",
+    "Free printable Year 3 English worksheets aligned to the Australian Curriculum V9. Covering phonics, reading, writing, grammar and literature.",
+  keywords: ["Year 3 english worksheets", "Year 3 english Australia", "homeschool Year 3 english", "Australian Curriculum Year 3"],
+  alternates: { canonical: "/worksheets/english/year-3" },
+  openGraph: {
+    title: "Year 3 English Worksheets | Australian Home Schooling",
+    description: "Free printable Year 3 English worksheets covering phonics, reading, writing, grammar and literature.",
+    url: "/worksheets/english/year-3",
+  },
 };
 
 const strandColors: Record<string, string> = {

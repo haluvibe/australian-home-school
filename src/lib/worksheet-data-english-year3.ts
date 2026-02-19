@@ -5918,6 +5918,152 @@ export const year3EnglishWorksheets: WorksheetItem[] = [
           { text: "What I noticed about the difference: ___", type: "lines", lines: 2 },
         ],
       },
+      {
+        type: "circle-correct",
+        title: "Contractions Final Accuracy Round",
+        instruction: "Circle the correctly written version in each pair.",
+        parentTip: "Final accuracy round — this can be used as an informal assessment.",
+        questions: [
+          { prompt: "A) we're   B) we're", options: ["A", "B"] },
+          { prompt: "A) they'v   B) they've", options: ["A", "B"] },
+          { prompt: "A) couldn't   B) could'nt", options: ["A", "B"] },
+          { prompt: "A) won't   B) wont'", options: ["A", "B"] },
+          { prompt: "A) I'ld   B) I'd", options: ["A", "B"] },
+          { prompt: "A) she'll   B) she'ull", options: ["A", "B"] },
+        ],
+      },
+      {
+        type: "sorting",
+        title: "Sort: Contractions to Their Word Categories",
+        instruction: "Sort these contractions by which verb they are built from.",
+        columns: ["Built from 'not'", "Built from 'am/is/are'", "Built from 'will/shall'", "Built from 'have/had/would'"],
+        items: [
+          { label: "don't" },
+          { label: "I'm" },
+          { label: "he'll" },
+          { label: "she'd" },
+          { label: "won't" },
+          { label: "they're" },
+          { label: "we'll" },
+          { label: "I've" },
+          { label: "can't" },
+          { label: "you're" },
+          { label: "I'd" },
+          { label: "shan't" },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Contractions: Write a Scene Using All Types",
+        instruction:
+          "Write a short scene (5–6 sentences) that uses at least one contraction from EACH category: 'not', 'am/is/are', 'will', and 'have/had/would'. Label each one in brackets.",
+        prompts: [
+          { text: "My scene:", type: "lines", lines: 6 },
+          { text: "Contractions from each category I used: ___", type: "lines", lines: 2 },
+        ],
+      },
+      {
+        type: "matching",
+        title: "Match: Contraction to the Correct Full Form",
+        instruction: "Draw a line from each contraction to its correct full form. Watch out — some are tricky!",
+        left: ["won't", "shan't", "I'd", "we've", "they'd"],
+        right: [
+          "we have",
+          "they would / they had",
+          "will not",
+          "I would / I had",
+          "shall not",
+        ],
+      },
+      {
+        type: "home-activity",
+        title: "Contraction Mastery: Final Self-Check",
+        instruction:
+          "Test yourself on contractions! Write out the full form for 10 contractions from memory, then check your answers.",
+        parentTip: "Self-testing (retrieval practice) is one of the most effective learning strategies. Make this low-stakes and fun.",
+        suggestions: [
+          "Write 10 contractions from memory",
+          "Write the full form of each",
+          "Check your answers against a reference",
+          "Circle any you got wrong",
+          "Write the correct form three times for each error",
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Contractions Mastery Reflection",
+        instruction:
+          "Write a final reflection on what you have learned about apostrophes in contractions. Include: what you found easy, what was challenging, and one goal for your future writing.",
+        prompts: [
+          { text: "What I found easy about contractions: ___", type: "lines", lines: 2 },
+          { text: "What was challenging: ___", type: "lines", lines: 2 },
+          { text: "My goal for using contractions correctly in my writing: ___", type: "lines", lines: 2 },
+        ],
+      },
+      {
+        type: "sequence",
+        title: "Order: Steps to Check a Contraction in Your Writing",
+        instruction: "Put these proofreading steps in the correct order for checking a contraction.",
+        items: [
+          { label: "Spot a word with an apostrophe in your writing" },
+          { label: "Ask: is this a contraction or possession?" },
+          { label: "If contraction: write out the two full words" },
+          { label: "Check the apostrophe is where the letters were removed" },
+          { label: "Read the sentence aloud to confirm it sounds right" },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Spark: Contractions Expert Certificate",
+        instruction:
+          "Write a paragraph that would deserve a 'Contractions Expert Certificate'. It must use 12 or more contractions correctly, be natural-sounding, and demonstrate real understanding of when contractions belong in writing.",
+        parentTip: "This final task is a celebration of achievement. Display the finished work and read it aloud together.",
+        prompts: [
+          { text: "My expert paragraph:", type: "lines", lines: 8 },
+          { text: "Contractions I used (list all 12+): ___", type: "lines", lines: 2 },
+          { text: "I am proud of this because: ___", type: "lines", lines: 1 },
+        ],
+      },
+      {
+        type: "sorting",
+        title: "Sort: Contraction Use — Correct Context or Wrong Context?",
+        instruction: "Sort these into CORRECT CONTEXT (contractions are appropriate) or WRONG CONTEXT (formal — contractions shouldn't be used).",
+        columns: ["Correct context for contractions", "Wrong context (too formal)"],
+        items: [
+          { label: "A text message to a friend" },
+          { label: "A formal letter to the school board" },
+          { label: "Dialogue in a story between friends" },
+          { label: "A scientific report for a competition" },
+          { label: "A personal journal entry" },
+          { label: "An official complaint letter" },
+          { label: "A friendly email to a pen pal" },
+          { label: "A speech at a formal ceremony" },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Contractions in Published Books: Correct or Error?",
+        instruction: "In each made-up sentence 'from a book', circle CORRECT or ERROR for the apostrophe use.",
+        questions: [
+          { prompt: "'Don't you dare,' she said softly.", options: ["correct", "error"] },
+          { prompt: "'I ca'nt believe it!' he gasped.", options: ["correct", "error"] },
+          { prompt: "'They're going to be late,' she sighed.", options: ["correct", "error"] },
+          { prompt: "'We've been walking for hours,' he groaned.", options: ["correct", "error"] },
+          { prompt: "'She would'nt listen to anyone.'", options: ["correct", "error"] },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Contractions: My Personal Dictionary Page",
+        instruction:
+          "Create a personal dictionary page for contractions. Choose 8 contractions you use most often. For each, write the full form, the contraction, a sentence showing correct use, and mark it as formal or informal.",
+        parentTip: "Personal dictionaries built by the learner are far more memorable than reference charts they haven't made themselves.",
+        prompts: [
+          { text: "Contractions 1–4 (full form, contraction, sentence, formal/informal):", type: "lines", lines: 4 },
+          { text: "Contractions 5–8:", type: "lines", lines: 4 },
+          { text: "The contraction I use most in my writing: ___", type: "lines", lines: 1 },
+        ],
+      },
     ],
   },
 
@@ -7180,6 +7326,251 @@ export const year3EnglishWorksheets: WorksheetItem[] = [
           { text: "Inference 4 and 5: ___", type: "lines", lines: 3 },
         ],
       },
+      {
+        type: "circle-correct",
+        title: "Inference: Which Clue is Most Relevant?",
+        instruction: "Circle the text clue that BEST supports each inference.",
+        questions: [
+          {
+            prompt: "Inference: The character is wealthy. Which is the strongest clue?",
+            options: ["He wore clean clothes.", "He arrived in a chauffeur-driven car and wore a gold watch.", "He smiled at people."],
+          },
+          {
+            prompt: "Inference: The character is exhausted. Best clue?",
+            options: ["She sat down.", "She dragged her feet and her eyes kept closing.", "She was quiet."],
+          },
+          {
+            prompt: "Inference: The setting is a hospital. Best clue?",
+            options: ["The building was large.", "There were white coats, beeping monitors, and the smell of antiseptic.", "There were many people."],
+          },
+        ],
+      },
+      {
+        type: "sorting",
+        title: "Sort: Inference Clue Types",
+        instruction: "Sort these text clues by the type of inference they help you make.",
+        columns: ["Character feeling", "Setting", "Time period"],
+        items: [
+          { label: "She wiped her eyes and looked away." },
+          { label: "There were no cars, only horses and carts." },
+          { label: "Tall ferns and a silver waterfall filled the valley." },
+          { label: "He grinned so widely his cheeks ached." },
+          { label: "Women wore long dresses and men carried top hats." },
+          { label: "The room smelled of pine and rain." },
+          { label: "She twisted her fingers nervously." },
+          { label: "The newspaper on the table said 1942." },
+          { label: "The library was quiet and cool." },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Inference Practice: The Abandoned House",
+        instruction:
+          "Read this: 'The gate hung open on one hinge. Weeds had swallowed the garden. Windows were dark. On the doorstep, an old milk bottle still waited.' Write 4 inferences about this place and the text evidence for each.",
+        prompts: [
+          { text: "Inference 1: ___  Evidence: ___", type: "lines", lines: 2 },
+          { text: "Inference 2: ___  Evidence: ___", type: "lines", lines: 2 },
+          { text: "Inference 3: ___  Evidence: ___", type: "lines", lines: 2 },
+          { text: "Inference 4: ___  Evidence: ___", type: "lines", lines: 2 },
+        ],
+      },
+      {
+        type: "matching",
+        title: "Match: Inference Strength to Quality of Evidence",
+        instruction: "Draw a line to match each inference to how well it is supported.",
+        left: [
+          "She was crying — she must be upset. (Strong evidence: tears)",
+          "He smiled once — he must be the happiest person alive.",
+          "The room was cold and dark — it was probably abandoned.",
+          "She wore a red jumper — she must love sport.",
+          "The dog barked at the door — someone was approaching.",
+        ],
+        right: [
+          "Very strong — direct physical evidence",
+          "Strong — logical and well-supported",
+          "Moderate — reasonable but not certain",
+          "Weak — very little evidence",
+          "Very weak — almost no logical connection",
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Inference Across Texts: Compare Two Passages",
+        instruction:
+          "Read two sentences: A) 'The classroom was completely silent.' B) 'The classroom was completely silent when the principal walked in.' Write what you can infer from each. How does the extra detail in B change the inference?",
+        prompts: [
+          { text: "Inference from A: ___", type: "lines", lines: 2 },
+          { text: "Inference from B: ___", type: "lines", lines: 2 },
+          { text: "How the added detail changes the inference: ___", type: "lines", lines: 2 },
+        ],
+      },
+      {
+        type: "sorting",
+        title: "Sort: I Can Infer vs I Cannot Infer",
+        instruction: "Read this text: 'Mia arrived at school without her bag. Her hair was wet. She looked at the floor when the teacher spoke.' Sort these statements into what you CAN and CANNOT infer.",
+        columns: ["I can infer this (supported)", "I cannot infer this (not supported)"],
+        items: [
+          { label: "Mia was in a hurry this morning." },
+          { label: "Mia hates school." },
+          { label: "Mia is probably feeling embarrassed." },
+          { label: "Mia forgot her bag at home." },
+          { label: "Mia's teacher is unkind." },
+          { label: "Something went wrong with Mia's morning routine." },
+        ],
+      },
+      {
+        type: "home-activity",
+        title: "Inference Thinking Partner: Read Together",
+        instruction:
+          "Read a book together with a family member. Take turns: one person reads a paragraph, the other makes an inference from it and explains the evidence. Then swap.",
+        parentTip: "Turn-taking inference conversations are one of the most powerful reading comprehension activities for children. Even 10 minutes makes a difference.",
+        suggestions: [
+          "Choose a book you are currently reading",
+          "Read one paragraph together",
+          "Person A: make an inference and state the evidence",
+          "Person B: agree, disagree or add a different inference",
+          "Swap roles for the next paragraph",
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Inference Final Mastery: Full Passage Response",
+        instruction:
+          "Read this: 'Sam didn't speak at breakfast. He left early without saying goodbye. His mother found his lucky stone left on the windowsill.' Write your best response: what do you infer about Sam, and what is the evidence for each inference?",
+        prompts: [
+          { text: "My inferences about Sam (at least 3): ___", type: "lines", lines: 4 },
+          { text: "Text evidence for each: ___", type: "lines", lines: 3 },
+          { text: "What I am least certain about and why: ___", type: "lines", lines: 2 },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Inference in Non-Fiction: Fact or Inference?",
+        instruction: "Non-fiction readers also make inferences. Circle whether each statement is a FACT (stated directly) or an INFERENCE (worked out from evidence).",
+        questions: [
+          { prompt: "The article says deforestation has increased by 40% this decade.", options: ["fact", "inference"] },
+          { prompt: "Based on this data, local wildlife populations will be affected.", options: ["fact", "inference"] },
+          { prompt: "The survey found 7 out of 10 children prefer outdoor activities.", options: ["fact", "inference"] },
+          { prompt: "This suggests that children need more outdoor time in schools.", options: ["fact", "inference"] },
+          { prompt: "The temperature dropped to -5°C.", options: ["fact", "inference"] },
+          { prompt: "The pipes probably froze that night.", options: ["fact", "inference"] },
+        ],
+      },
+      {
+        type: "sequence",
+        title: "Order: Writing an Inference Answer for a Reading Test",
+        instruction: "Put these steps in the best order for answering an inference question in a test.",
+        items: [
+          { label: "Read the question — what exactly are you being asked to infer?" },
+          { label: "Reread the relevant section of the text" },
+          { label: "Find the clue(s) in the text" },
+          { label: "Think: what background knowledge do I need?" },
+          { label: "Form your inference" },
+          { label: "Write your answer: 'I can infer ___ because the text says ___.'" },
+          { label: "Read back your answer — is it clearly supported?" },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Inference Mastery: Design Your Own Quiz",
+        instruction:
+          "Write a short paragraph (4–5 sentences) about a character or scene. Then write 3 inference questions for a friend to answer about your paragraph. Include the intended answers.",
+        parentTip: "Writing questions requires a deeper understanding of inference than answering them. This is an advanced metacognitive task.",
+        prompts: [
+          { text: "My paragraph: ___", type: "lines", lines: 5 },
+          { text: "Question 1: ___  Answer: ___", type: "lines", lines: 2 },
+          { text: "Question 2: ___  Answer: ___", type: "lines", lines: 2 },
+          { text: "Question 3: ___  Answer: ___", type: "lines", lines: 2 },
+        ],
+      },
+      {
+        type: "home-activity",
+        title: "Spark: Inference Scavenger Hunt in Any Book",
+        instruction:
+          "Open any book to a random page. Find 3 inferences the author expects readers to make. Write each inference and the text clue. This shows you can infer independently.",
+        parentTip: "Independent inference from self-selected text is the ultimate goal of this skill. Celebrate every successful inference your child finds.",
+        suggestions: [
+          "Open any book to a random page",
+          "Read one paragraph carefully",
+          "Find 3 inferences the author expects you to make",
+          "Write each inference and the clue that supports it",
+          "Share your best inference with a family member",
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Inference Mastery Reflection",
+        instruction:
+          "Write your final reflection on your inference learning journey. What can you do now that you couldn't do before? What is your next reading goal?",
+        prompts: [
+          { text: "Before this unit, my reading was: ___", type: "lines", lines: 2 },
+          { text: "Now I can: ___", type: "lines", lines: 2 },
+          { text: "The most useful strategy I learned: ___", type: "lines", lines: 2 },
+          { text: "My next reading goal: ___", type: "lines", lines: 2 },
+        ],
+      },
+      {
+        type: "sorting",
+        title: "Sort: Inference Evidence — Strong to Weak",
+        instruction: "Sort these inference justifications from STRONGEST evidence to WEAKEST.",
+        columns: ["Strong evidence", "Moderate evidence", "Weak evidence"],
+        items: [
+          { label: "The text directly says she cried — I infer she's upset." },
+          { label: "She was quiet — she might be upset (but maybe just tired)." },
+          { label: "She has a red pen — she must be angry." },
+          { label: "He shook hands firmly — he seems confident." },
+          { label: "She smiled — she could be happy, polite, or hiding something." },
+          { label: "He owns a dog — he must love all animals." },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Inference: Apply It to Your Current Reading Book",
+        instruction:
+          "Choose a book you are reading right now. Find one place where the author expects you to make an inference. Write the passage, the inference, and the evidence.",
+        parentTip: "Applying inference skills to self-chosen reading is the highest-level transfer of this skill. Any book the child is currently reading will work.",
+        prompts: [
+          { text: "Book title: ___  Page: ___", type: "lines", lines: 1 },
+          { text: "Passage (copy or paraphrase): ___", type: "lines", lines: 2 },
+          { text: "My inference: ___", type: "lines", lines: 2 },
+          { text: "My evidence: ___", type: "lines", lines: 2 },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Inference: Does the Evidence Support It?",
+        instruction: "Circle whether the evidence given DOES or DOES NOT support the inference.",
+        questions: [
+          {
+            prompt: "Inference: She is frightened. Evidence: She hid under the table when she heard the noise.",
+            options: ["does support", "does not support"],
+          },
+          {
+            prompt: "Inference: He is wealthy. Evidence: He wore clean shoes.",
+            options: ["does support", "does not support"],
+          },
+          {
+            prompt: "Inference: The building is abandoned. Evidence: Windows were broken and weeds grew through the floor.",
+            options: ["does support", "does not support"],
+          },
+          {
+            prompt: "Inference: She loves reading. Evidence: She owns one book.",
+            options: ["does support", "does not support"],
+          },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Inference Grand Final: Write, Infer, Reflect",
+        instruction:
+          "Write a short 5-sentence passage designed to make a reader make a specific inference. Then state the inference you intended. Finally, reflect on how you planted the clues.",
+        parentTip: "Designing inference clues requires the deepest understanding of how inference works. This is a genuine challenge for Year 3.",
+        prompts: [
+          { text: "My passage (designed for inference): ___", type: "lines", lines: 5 },
+          { text: "Intended inference: ___", type: "lines", lines: 2 },
+          { text: "Clues I planted in the text: ___", type: "lines", lines: 2 },
+        ],
+      },
     ],
   },
 
@@ -8375,6 +8766,259 @@ export const year3EnglishWorksheets: WorksheetItem[] = [
           "Week 3: Write a recount about a challenge",
           "Week 4: Write your best recount yet",
           "End of month: Read all four. What improved? What would you change?",
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Recount Vocabulary: Which Time Connective Fits?",
+        instruction: "Circle the best time connective for each sentence in a recount.",
+        parentTip: "Varying time connectives is a key step toward more sophisticated recount writing.",
+        questions: [
+          {
+            prompt: "___ we arrived at the beach, we set up our towels.",
+            options: ["As soon as", "Therefore", "However"],
+          },
+          {
+            prompt: "We swam for an hour. ___, we had lunch in the shade.",
+            options: ["After that", "Instead", "Although"],
+          },
+          {
+            prompt: "The journey took all morning. ___, we reached the summit just before noon.",
+            options: ["As a result", "Finally", "Even so"],
+          },
+          {
+            prompt: "___ the sun set, we packed up and headed back.",
+            options: ["Just as", "Despite", "Whereas"],
+          },
+        ],
+      },
+      {
+        type: "sorting",
+        title: "Sort: Recount Time Connectives by Sophistication",
+        instruction: "Sort these time connectives from SIMPLE to SOPHISTICATED.",
+        columns: ["Simple", "Developing", "Sophisticated"],
+        items: [
+          { label: "first" },
+          { label: "then" },
+          { label: "as soon as we arrived" },
+          { label: "next" },
+          { label: "after that" },
+          { label: "by the time the afternoon ended" },
+          { label: "and" },
+          { label: "later that morning" },
+          { label: "just as the light began to fade" },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Recount: A Nature Experience",
+        instruction:
+          "Write a recount about a time you experienced something in nature (a storm, a sunset, finding an animal, a rainy day, a walk in the bush). Use sensory details in every paragraph.",
+        prompts: [
+          { text: "My nature experience: ___", type: "lines", lines: 1 },
+          { text: "Orientation:", type: "lines", lines: 2 },
+          { text: "Events with time connectives:", type: "lines", lines: 5 },
+          { text: "Reflection:", type: "lines", lines: 2 },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Recount: Identify the Weak Spot",
+        instruction: "Read each recount extract and circle what is MISSING or WEAK.",
+        questions: [
+          {
+            prompt: "'We went to the zoo. We saw animals. It was good. The end.'",
+            options: ["no orientation", "no time connectives", "no reflection", "all of these"],
+          },
+          {
+            prompt: "'Last Tuesday I visited the museum with my class. There were interesting exhibits. I enjoyed it.'",
+            options: ["no orientation", "no specific events listed", "no past tense", "no personal pronouns"],
+          },
+          {
+            prompt: "'On Saturday morning, Mum and I go to the market. We buy fruit. It is very busy.'",
+            options: ["no time connectives", "wrong tense (present not past)", "no orientation", "no reflection"],
+          },
+        ],
+      },
+      {
+        type: "matching",
+        title: "Match: Recount Opening Lines to Their Orientation Type",
+        instruction: "Draw a line from each recount opening to what orientation information it provides.",
+        left: [
+          "Last summer, our family drove to the coast.",
+          "On a rainy Friday in March, my class went on an excursion.",
+          "During the school holidays, I stayed with my grandparents in the country.",
+          "It was my eighth birthday when everything went wrong.",
+        ],
+        right: [
+          "who + when + where + hint of event",
+          "when + who + event type",
+          "when + who + where",
+          "when + who + foreshadowing",
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Recount: Write a News-Style Recount",
+        instruction:
+          "Write a short news-style recount (4–5 sentences) of a school or community event. Use third person (he/she/they) and a formal tone — but keep it in past tense with clear time ordering.",
+        parentTip: "News recounts differ from personal ones in voice and formality. This task builds awareness of audience and purpose in writing.",
+        prompts: [
+          { text: "Event: ___  Date: ___", type: "lines", lines: 1 },
+          { text: "My news recount:", type: "lines", lines: 5 },
+          { text: "Differences from a personal recount I noticed: ___", type: "lines", lines: 2 },
+        ],
+      },
+      {
+        type: "home-activity",
+        title: "Recount Reading Hunt: Find Features in Real Books",
+        instruction:
+          "Open an autobiography, memoir, or narrative non-fiction book. Find one recount passage. List all the recount features it uses.",
+        parentTip: "Autobiographies are essentially extended personal recounts. Famous examples: 'Angela's Ashes', 'My Brilliant Career', children's autobiographies by authors like Morris Gleitzman.",
+        suggestions: [
+          "Find a recount passage in any autobiography or memoir",
+          "List the recount features you can find",
+          "Note: does it use first or third person?",
+          "Copy down the best time connective you find",
+          "Share your favourite line from the passage",
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Recount: Cross-Curriculum — Recount a Science Experiment",
+        instruction:
+          "Write a recount of a science activity or experiment you have done. Use past tense, first person, time connectives, and a reflection on what you discovered.",
+        parentTip: "Science experiment recounts are a real-world application of this text type. They are also excellent practise for structured writing.",
+        prompts: [
+          { text: "Experiment name / topic: ___", type: "lines", lines: 1 },
+          { text: "Orientation: ___", type: "lines", lines: 2 },
+          { text: "Events (what we did step by step): ___", type: "lines", lines: 4 },
+          { text: "Reflection (what I discovered): ___", type: "lines", lines: 2 },
+        ],
+      },
+      {
+        type: "sorting",
+        title: "Sort: Recount Reflection Quality",
+        instruction: "Sort these recount endings from WEAKEST to STRONGEST reflection.",
+        columns: ["Weak", "Developing", "Strong"],
+        items: [
+          { label: "Then we went home." },
+          { label: "It was fun." },
+          { label: "It was the best day of my holidays." },
+          { label: "I felt proud and tired but very happy when I finally crossed the finish line." },
+          { label: "Looking back, I realise that day changed how I think about trying new things." },
+          { label: "The end." },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Recount: Upgrade the Reflection",
+        instruction:
+          "Here are three weak recount reflections. Upgrade each one to make it more thoughtful and specific: 1) 'It was fun.' 2) 'I liked it.' 3) 'Then we went home and that was the end.'",
+        prompts: [
+          { text: "Upgraded reflection 1: ___", type: "lines", lines: 2 },
+          { text: "Upgraded reflection 2: ___", type: "lines", lines: 2 },
+          { text: "Upgraded reflection 3: ___", type: "lines", lines: 2 },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Recount Grammar Check: Right or Wrong?",
+        instruction: "Circle whether each recount sentence uses grammar CORRECTLY for this text type.",
+        questions: [
+          { prompt: "We walked to the park and played for two hours. (past tense, first person)", options: ["correct", "incorrect"] },
+          { prompt: "The birds are singing in the trees all morning. (present tense)", options: ["correct", "incorrect"] },
+          { prompt: "After that, I felt happier than I had in weeks. (past tense, first person)", options: ["correct", "incorrect"] },
+          { prompt: "Finally, they go home and eat dinner. (present tense)", options: ["correct", "incorrect"] },
+          { prompt: "First, we arrived at the beach and set up our spot.", options: ["correct", "incorrect"] },
+        ],
+      },
+      {
+        type: "sequence",
+        title: "Order: The Events of a School Excursion Recount",
+        instruction: "Put these recount sentences in the most logical chronological order.",
+        items: [
+          { label: "On Tuesday morning, our class boarded the bus to the science museum." },
+          { label: "After that, we watched a 20-minute film about the solar system." },
+          { label: "First, we explored the interactive technology exhibition." },
+          { label: "Then we ate lunch in the courtyard." },
+          { label: "Finally, we piled back onto the bus for the trip home." },
+          { label: "It was one of the most interesting excursions we have ever had." },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Recount: Write About Something You've Never Recounted Before",
+        instruction:
+          "Write a recount about an event you've never written about before — something small but memorable: the day you learned something difficult, a funny moment, or a quiet, perfect afternoon.",
+        parentTip: "Small, personal moments often make the richest recounts. Encourage your child to pick something specific rather than something 'big'.",
+        prompts: [
+          { text: "My memory: ___", type: "lines", lines: 1 },
+          { text: "My recount:", type: "lines", lines: 8 },
+          { text: "Why I chose this memory: ___", type: "lines", lines: 2 },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Recount Mastery: Final Reflection",
+        instruction:
+          "Write your final reflection on what you now know and can do with recount writing. Be specific about what you have improved and what you will do differently next time.",
+        prompts: [
+          { text: "My best recount skill is: ___", type: "lines", lines: 2 },
+          { text: "I used to struggle with ___ but now I: ___", type: "lines", lines: 2 },
+          { text: "Next time I write a recount, I will: ___", type: "lines", lines: 2 },
+          { text: "One piece of recount advice I would give to a friend: ___", type: "lines", lines: 2 },
+        ],
+      },
+      {
+        type: "home-activity",
+        title: "Spark: Recount Your Day, Every Day for a Week",
+        instruction:
+          "Each evening this week, write a 3–5 sentence recount of your day. Focus on: one key event, a clear time sequence, and a personal reflection. At the end of the week, read back and choose your favourite.",
+        parentTip: "Daily recount practice builds automaticity with the text type. The short length makes it sustainable. Five days of practice will have a significant impact.",
+        suggestions: [
+          "Day 1: Recount a moment from this morning",
+          "Day 2: Recount something new you tried today",
+          "Day 3: Recount a conversation or interaction",
+          "Day 4: Recount something you saw or noticed",
+          "Day 5: Recount your favourite moment of the week — then pick your best recount",
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Recount: The Moment That Changed Something",
+        instruction:
+          "Write a recount about a small moment that changed how you thought or felt about something — learning to ride a bike, helping someone, making a mistake. Show the before and after.",
+        parentTip: "Reflective recounts that show a moment of change are some of the most powerful personal writing. Encourage honesty and specificity.",
+        prompts: [
+          { text: "The moment: ___", type: "lines", lines: 1 },
+          { text: "Orientation: ___", type: "lines", lines: 2 },
+          { text: "Events: ___", type: "lines", lines: 4 },
+          { text: "Reflection — how it changed me: ___", type: "lines", lines: 3 },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Recount Editing: Find the Tense Error",
+        instruction: "Circle the verb that is in the WRONG tense for a personal recount (should be past tense).",
+        parentTip: "Consistency in past tense is one of the most important editing skills for recount writing.",
+        questions: [
+          {
+            prompt: "We arrived at the beach, then runs down to the water.",
+            options: ["arrived (correct)", "runs (incorrect — should be 'ran')"],
+          },
+          {
+            prompt: "She felt nervous but decided to try anyway.",
+            options: ["felt (correct)", "decided (correct — both are past tense)"],
+          },
+          {
+            prompt: "After lunch, we walked to the park and play on the equipment.",
+            options: ["walked (correct)", "play (incorrect — should be 'played')"],
+          },
+          {
+            prompt: "First, I woke up early. Then I pack my bag in a hurry.",
+            options: ["woke (correct)", "pack (incorrect — should be 'packed')"],
+          },
         ],
       },
     ],
@@ -9610,6 +10254,221 @@ export const year3EnglishWorksheets: WorksheetItem[] = [
           { text: "My topic / genre: ___", type: "lines", lines: 1 },
           { text: "My masterpiece:", type: "lines", lines: 10 },
           { text: "List sentences I'm most proud of: ___", type: "lines", lines: 2 },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Comma Lists in Published Writing: Correct?",
+        instruction: "In these made-up 'published' sentences, circle CORRECT or INCORRECT for the comma use.",
+        questions: [
+          { prompt: "The market was full of spices, silks, lanterns and laughter.", options: ["correct", "incorrect"] },
+          { prompt: "She gathered her courage her bag and her best friend.", options: ["correct", "incorrect"] },
+          { prompt: "He was kind, patient, wise and deeply loved by everyone.", options: ["correct", "incorrect"] },
+          { prompt: "We ate noodles dumplings, rice and vegetables.", options: ["correct", "incorrect"] },
+          { prompt: "The river ran cold, clear and fast over the smooth grey stones.", options: ["correct", "incorrect"] },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Comma Lists: Write a Vivid Setting Description",
+        instruction:
+          "Write a 4–5 sentence description of a setting using at least 3 list sentences with commas. Try to use lists of: sights, sounds, and feelings.",
+        parentTip: "Sensory lists are a powerful descriptive technique. Encourage your child to think about each sense separately.",
+        prompts: [
+          { text: "Setting: ___", type: "lines", lines: 1 },
+          { text: "Sight list: ___", type: "lines", lines: 1 },
+          { text: "Sound list: ___", type: "lines", lines: 1 },
+          { text: "Feeling / touch list: ___", type: "lines", lines: 1 },
+          { text: "Full description combining all three: ___", type: "lines", lines: 4 },
+        ],
+      },
+      {
+        type: "sorting",
+        title: "Sort: Lists That Need Commas vs Lists That Are Just Two Items",
+        instruction: "Sort these into lists that NEED commas and lists that DO NOT (only two items).",
+        columns: ["Needs commas (3+ items)", "No commas needed (2 items only)"],
+        items: [
+          { label: "cats and dogs" },
+          { label: "apples, oranges, pears and grapes" },
+          { label: "sunny and warm" },
+          { label: "brave, kind, clever and funny" },
+          { label: "bread and butter" },
+          { label: "ran, jumped and spun" },
+          { label: "tall and quiet" },
+          { label: "red, orange, yellow and green" },
+        ],
+      },
+      {
+        type: "matching",
+        title: "Match: List Sentence to the Number of Commas It Needs",
+        instruction: "Draw a line from each sentence to the number of commas it needs.",
+        left: [
+          "She bought bread and milk.",
+          "He packed a hat, sunscreen and water.",
+          "They visited Rome, Paris and London.",
+          "We need eggs, flour, butter and sugar.",
+          "The sky was blue, pink, orange, purple and gold.",
+        ],
+        right: [
+          "0 commas",
+          "1 comma",
+          "1 comma",
+          "2 commas",
+          "4 commas",
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Comma List Rewrite Challenge",
+        instruction:
+          "Rewrite these list sentences by adding more interesting, specific items — and make sure the commas are perfect: 1) 'She ate fruit and food.' 2) 'He saw animals at the zoo.' 3) 'I did activities on the weekend.'",
+        parentTip: "Replacing vague words with specific ones is a key vocabulary-building and editing skill.",
+        prompts: [
+          { text: "Better version of 1: ___", type: "lines", lines: 1 },
+          { text: "Better version of 2: ___", type: "lines", lines: 1 },
+          { text: "Better version of 3: ___", type: "lines", lines: 1 },
+        ],
+      },
+      {
+        type: "home-activity",
+        title: "Comma List Writing: Real-Life Application",
+        instruction:
+          "Write a real shopping list as a series of sentences with commas. For example: 'From the fruit section, we need apples, bananas, mangoes and grapes.' Write at least 4 shopping list sentences.",
+        parentTip: "Shopping lists as comma list sentences is an authentic real-world application of this grammar skill.",
+        suggestions: [
+          "Choose a real upcoming shopping trip",
+          "Write each section of the shop as a list sentence",
+          "Use correct commas in each sentence",
+          "Check: does each sentence have 'and' before the last item?",
+          "Read the sentences aloud — does it sound right?",
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Comma Before 'And': Needed or Not?",
+        instruction: "In Australian English, the Oxford comma (before 'and') is optional. But commas BETWEEN items are required. Circle which version is CLEARER.",
+        questions: [
+          {
+            prompt: "A) We invited the politicians, the teachers and the students. B) We invited the politicians, the teachers, and the students.",
+            options: ["A (no Oxford comma)", "B (Oxford comma)", "both are correct"],
+          },
+          {
+            prompt: "A) She cooked pasta, salad and dessert. B) She cooked pasta salad and dessert.",
+            options: ["A (commas between items)", "B (no commas)", "both are correct"],
+          },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Comma Lists in My Writing: Before and After",
+        instruction:
+          "Find a paragraph you have written recently (or write one now without paying attention to commas). Then edit it to add correct commas to every list. Compare the before and after versions.",
+        prompts: [
+          { text: "Before (my original paragraph): ___", type: "lines", lines: 4 },
+          { text: "After (with correct comma lists): ___", type: "lines", lines: 4 },
+          { text: "What I fixed: ___", type: "lines", lines: 2 },
+        ],
+      },
+      {
+        type: "sequence",
+        title: "Order: Improving a Sentence with a Comma List",
+        instruction: "Put these steps in order to improve a plain sentence by adding a comma list.",
+        items: [
+          { label: "Read the original plain sentence" },
+          { label: "Identify the noun or verb that could have more detail" },
+          { label: "Brainstorm 4+ specific words to list" },
+          { label: "Write the list with commas between items" },
+          { label: "Add 'and' before the final item" },
+          { label: "Read the improved sentence aloud" },
+        ],
+      },
+      {
+        type: "sorting",
+        title: "Sort: Comma List Types in Different Writing Styles",
+        instruction: "Sort these list sentences by the writing style they suit best.",
+        columns: ["Creative / narrative writing", "Factual / information writing", "Persuasive / argument writing"],
+        items: [
+          { label: "The sea was silver, cold, endless and wild." },
+          { label: "Whales are found in the Pacific, Atlantic, Indian and Southern oceans." },
+          { label: "Students should have access to art, music, sport and technology." },
+          { label: "She laughed, cried, gasped and sighed all in one minute." },
+          { label: "The report covered health, education, housing and transport." },
+          { label: "Our school offers sustainability, innovation, creativity and teamwork." },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Comma Lists: Teach the Rule Using Your Own Examples",
+        instruction:
+          "Create 5 original list sentences (one of each type: nouns, adjectives, verbs, places, feelings). Make sure every comma is in the right place. Then write ONE rule about commas in lists in your own words.",
+        prompts: [
+          { text: "Noun list: ___", type: "lines", lines: 1 },
+          { text: "Adjective list: ___", type: "lines", lines: 1 },
+          { text: "Verb list: ___", type: "lines", lines: 1 },
+          { text: "Place list: ___", type: "lines", lines: 1 },
+          { text: "Feeling list: ___", type: "lines", lines: 1 },
+          { text: "My comma-in-lists rule in my own words: ___", type: "lines", lines: 2 },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Comma Lists: Write a List Poem About Yourself",
+        instruction:
+          "Write a 'list poem' about yourself using 6 or more list sentences with commas. Each line should reveal something interesting about you — your loves, your skills, your memories, your dreams.",
+        parentTip: "List poems about self are a beautiful combination of literacy and identity. Display the finished poem.",
+        prompts: [
+          { text: "My list poem title: ___", type: "lines", lines: 1 },
+          { text: "My poem:", type: "lines", lines: 8 },
+          { text: "Comma lists in my poem: ___", type: "lines", lines: 2 },
+        ],
+      },
+      {
+        type: "home-activity",
+        title: "Comma List Challenge: One Week of List Sentences",
+        instruction:
+          "Each day this week, write ONE list sentence about something from your day. Make sure every comma is correct. By Friday, you will have 5 perfectly written list sentences.",
+        parentTip: "Daily short tasks build habits more effectively than one long task. This 5-minute daily activity is excellent for consolidation.",
+        suggestions: [
+          "Monday: List 4 things you saw today",
+          "Tuesday: List 4 things you did today",
+          "Wednesday: List 4 adjectives describing how you felt today",
+          "Thursday: List 4 places you went (real or imaginary)",
+          "Friday: Write your favourite list sentence of the week and explain why",
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Commas in Lists: Final Mastery Reflection",
+        instruction:
+          "Write a final reflection on what you have learned about using commas in lists. What do you know confidently? What still trips you up? What will you do differently in your writing?",
+        prompts: [
+          { text: "What I understand confidently about list commas: ___", type: "lines", lines: 2 },
+          { text: "What still trips me up: ___", type: "lines", lines: 2 },
+          { text: "How I will apply this in my writing: ___", type: "lines", lines: 2 },
+          { text: "My advice to someone just learning this rule: ___", type: "lines", lines: 2 },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Spark: Comma List Creative Challenge — No Verbs Allowed",
+        instruction:
+          "Write a paragraph describing any scene using ONLY noun groups and comma lists — no action verbs at all. This is extremely difficult and forces creative precision.",
+        parentTip: "This advanced creative constraint is inspired by the work of Robbe-Grillet and other writers who use lists of things to create atmosphere. It is genuinely challenging — celebrate the attempt.",
+        prompts: [
+          { text: "My scene (noun-only, list-heavy paragraph):", type: "lines", lines: 6 },
+          { text: "What I found difficult or interesting about this: ___", type: "lines", lines: 2 },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Commas in Lists: Grand Final — Show What You Know",
+        instruction:
+          "Write a final paragraph (6–8 sentences) that brings together everything you know about commas in lists. Use at least 4 list sentences of different types (nouns, verbs, adjectives, and phrases). Every comma must be perfect.",
+        parentTip: "This culminating task asks the child to demonstrate mastery independently. Celebrate the achievement of completing all 100 activities.",
+        prompts: [
+          { text: "My final paragraph:", type: "lines", lines: 8 },
+          { text: "Types of lists I used (nouns, verbs, adjectives, phrases): ___", type: "lines", lines: 2 },
+          { text: "I am proud of this because: ___", type: "lines", lines: 2 },
         ],
       },
     ],

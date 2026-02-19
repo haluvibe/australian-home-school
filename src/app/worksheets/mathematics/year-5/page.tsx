@@ -3,9 +3,16 @@ import Link from "next/link";
 import { year5MathsWorksheets } from "@/lib/worksheet-data-year5";
 
 export const metadata: Metadata = {
-  title: "Year 5 Mathematics Worksheets — Australian Home Schooling",
+  title: "Year 5 Mathematics Worksheets",
   description:
-    "Free printable Year 5 Mathematics worksheets aligned to the Australian Curriculum. Covering number, algebra, measurement, space, statistics and probability.",
+    "Free printable Year 5 Mathematics worksheets aligned to the Australian Curriculum V9. Covering number, algebra, measurement, space and statistics.",
+  keywords: ["Year 5 mathematics worksheets", "Year 5 mathematics Australia", "homeschool Year 5 mathematics", "Australian Curriculum Year 5"],
+  alternates: { canonical: "/worksheets/mathematics/year-5" },
+  openGraph: {
+    title: "Year 5 Mathematics Worksheets | Australian Home Schooling",
+    description: "Free printable Year 5 Mathematics worksheets covering number, algebra, measurement, space and statistics.",
+    url: "/worksheets/mathematics/year-5",
+  },
 };
 
 const strandColors: Record<string, string> = {

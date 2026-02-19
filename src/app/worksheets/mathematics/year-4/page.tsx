@@ -3,9 +3,16 @@ import Link from "next/link";
 import { year4MathsWorksheets } from "@/lib/worksheet-data-year4";
 
 export const metadata: Metadata = {
-  title: "Year 4 Mathematics Worksheets — Australian Home Schooling",
+  title: "Year 4 Mathematics Worksheets",
   description:
-    "Free printable Year 4 Mathematics worksheets aligned to the Australian Curriculum. Covering number, algebra, measurement, space, statistics and probability.",
+    "Free printable Year 4 Mathematics worksheets aligned to the Australian Curriculum V9. Covering number, algebra, measurement, space and statistics.",
+  keywords: ["Year 4 mathematics worksheets", "Year 4 mathematics Australia", "homeschool Year 4 mathematics", "Australian Curriculum Year 4"],
+  alternates: { canonical: "/worksheets/mathematics/year-4" },
+  openGraph: {
+    title: "Year 4 Mathematics Worksheets | Australian Home Schooling",
+    description: "Free printable Year 4 Mathematics worksheets covering number, algebra, measurement, space and statistics.",
+    url: "/worksheets/mathematics/year-4",
+  },
 };
 
 const strandColors: Record<string, string> = {

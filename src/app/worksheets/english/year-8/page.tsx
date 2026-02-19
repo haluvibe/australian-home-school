@@ -3,9 +3,16 @@ import Link from "next/link";
 import { year8EnglishWorksheets } from "@/lib/worksheet-data-english-year8";
 
 export const metadata: Metadata = {
-  title: "Year 8 English Worksheets — Australian Home Schooling",
+  title: "Year 8 English Worksheets",
   description:
-    "Free printable Year 8 English worksheets aligned to the Australian Curriculum. Covering language analysis, literature, analytical writing, and research skills",
+    "Free printable Year 8 English worksheets aligned to the Australian Curriculum V9. Covering phonics, reading, writing, grammar and literature.",
+  keywords: ["Year 8 english worksheets", "Year 8 english Australia", "homeschool Year 8 english", "Australian Curriculum Year 8"],
+  alternates: { canonical: "/worksheets/english/year-8" },
+  openGraph: {
+    title: "Year 8 English Worksheets | Australian Home Schooling",
+    description: "Free printable Year 8 English worksheets covering phonics, reading, writing, grammar and literature.",
+    url: "/worksheets/english/year-8",
+  },
 };
 
 const strandColors: Record<string, string> = {

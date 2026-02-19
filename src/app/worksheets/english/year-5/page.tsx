@@ -3,9 +3,16 @@ import Link from "next/link";
 import { year5EnglishWorksheets } from "@/lib/worksheet-data-english-year5";
 
 export const metadata: Metadata = {
-  title: "Year 5 English Worksheets — Australian Home Schooling",
+  title: "Year 5 English Worksheets",
   description:
-    "Free printable Year 5 English worksheets aligned to the Australian Curriculum. Covering language, literature and literacy including figurative language, expository writing and media literacy.",
+    "Free printable Year 5 English worksheets aligned to the Australian Curriculum V9. Covering phonics, reading, writing, grammar and literature.",
+  keywords: ["Year 5 english worksheets", "Year 5 english Australia", "homeschool Year 5 english", "Australian Curriculum Year 5"],
+  alternates: { canonical: "/worksheets/english/year-5" },
+  openGraph: {
+    title: "Year 5 English Worksheets | Australian Home Schooling",
+    description: "Free printable Year 5 English worksheets covering phonics, reading, writing, grammar and literature.",
+    url: "/worksheets/english/year-5",
+  },
 };
 
 const strandColors: Record<string, string> = {

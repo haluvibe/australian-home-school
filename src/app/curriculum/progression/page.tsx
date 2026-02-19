@@ -4,9 +4,23 @@ import { subjects } from "@/lib/curriculum-data";
 import type { StrandItem, StrandObjectives, YearLevelData } from "@/lib/curriculum-data";
 
 export const metadata: Metadata = {
-  title: "Maths Progression Map — Australian Home Schooling",
+  title: "Maths Progression Map — Foundation to Year 10",
   description:
-    "See how mathematical concepts build from Foundation to Year 10 across every strand.",
+    "See how mathematical concepts build year by year from Foundation to Year 10. Browse every strand: Number, Algebra, Measurement, Space, Statistics and Probability.",
+  keywords: [
+    "maths progression",
+    "mathematics scope and sequence",
+    "Australian Curriculum maths",
+    "homeschool maths progression",
+    "Foundation to Year 10 maths",
+  ],
+  alternates: { canonical: "/curriculum/progression" },
+  openGraph: {
+    title: "Maths Progression Map — Foundation to Year 10 | Australian Home Schooling",
+    description:
+      "How mathematical concepts build year by year across Number, Algebra, Measurement, Space, Statistics and Probability.",
+    url: "/curriculum/progression",
+  },
 };
 
 // ─── Types ───────────────────────────────────────────────────────────────────

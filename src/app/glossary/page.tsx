@@ -5,9 +5,24 @@ import mathsGlossaryRaw from "@/../curriculum/mathematics/glossary.json";
 import englishGlossaryRaw from "@/../curriculum/english/glossary.json";
 
 export const metadata: Metadata = {
-  title: "Maths & English Glossary — Australian Home Schooling",
+  title: "Maths & English Glossary",
   description:
-    "Plain-English definitions of mathematical and English terms from the Australian Curriculum.",
+    "Plain-English definitions of mathematical and English terms from the Australian Curriculum V9. A quick reference for homeschooling parents and students Foundation to Year 10.",
+  keywords: [
+    "maths glossary",
+    "English glossary",
+    "Australian Curriculum terms",
+    "homeschool glossary",
+    "mathematics definitions",
+    "literacy terms",
+  ],
+  alternates: { canonical: "/glossary" },
+  openGraph: {
+    title: "Maths & English Glossary | Australian Home Schooling",
+    description:
+      "Plain-English definitions of mathematical and English terms from the Australian Curriculum V9.",
+    url: "/glossary",
+  },
 };
 
 function buildEntries(
