@@ -6998,6 +6998,102 @@ export const year9EnglishWorksheets: WorksheetItem[] = [
       ],
     },
     activities: [
+      // ── FOUNDATIONAL 1–20 ──────────────────────────────────────────────────
+      // 1
+      {
+        type: "true-false",
+        title: "Formal Speaking: True or False?",
+        instruction: "Mark each statement about formal presentations and debate as true or false.",
+        statements: [
+          { text: "A formal presentation should begin with 'Hi, um, I am going to talk about...'", answer: false },
+          { text: "Formal spoken English requires more planning and structure than everyday conversation.", answer: true },
+          { text: "In structured debate, speakers must engage with what the other side actually says.", answer: true },
+          { text: "Signposting language (e.g. 'My first point is...') is unnecessary in formal presentations.", answer: false },
+          { text: "Delivery elements such as pace, volume, and eye contact affect how an audience receives a presentation.", answer: true },
+          { text: "The Affirmative team in a debate argues against the proposition.", answer: false },
+        ],
+      },
+      // 2
+      {
+        type: "matching",
+        title: "Formal Speaking Vocabulary",
+        instruction: "Match each term to its correct definition.",
+        left: [
+          "Proposition",
+          "Rebuttal",
+          "Signposting",
+          "Steelmanning",
+          "Adjudicator",
+          "Floor",
+        ],
+        right: [
+          "The person who evaluates the debate and decides the winner",
+          "Engaging with the strongest possible version of an opposing argument",
+          "The statement or motion being debated",
+          "Using phrases to guide the audience through the structure of a presentation",
+          "The space open to questions from the audience after a presentation",
+          "Directly responding to and countering an opposing argument",
+        ],
+      },
+      // 3
+      {
+        type: "multiple-choice",
+        title: "The Four Elements of a Formal Presentation",
+        instruction: "Choose the best answer for each question about presentation structure.",
+        parentTip: "The four-element structure gives students a reliable scaffold for any formal presentation. Once they know it well, they can adapt and vary it creatively.",
+        questions: [
+          {
+            prompt: "Which of the following is the best way to open a formal presentation?",
+            options: [
+              "'Good afternoon. Today I will talk about social media.'",
+              "'Um, so, I'm going to try to explain why I think social media is bad.'",
+              "'What if the way we communicate online is slowly making us worse at communicating in person?'",
+              "'My presentation has three points. The first one is about social media.'",
+            ],
+            answer: "'What if the way we communicate online is slowly making us worse at communicating in person?'",
+          },
+          {
+            prompt: "What is the purpose of signposting language in a formal presentation?",
+            options: [
+              "To add length to the presentation",
+              "To guide the audience through the structure and signal where the presentation is going",
+              "To repeat the thesis multiple times",
+              "To show off vocabulary",
+            ],
+            answer: "To guide the audience through the structure and signal where the presentation is going",
+          },
+          {
+            prompt: "What distinguishes a strong presentation close from a weak one?",
+            options: [
+              "The strong close is longer",
+              "The strong close ends with impact — returning to the opening and restating the argument more powerfully",
+              "The strong close introduces a new argument",
+              "The strong close simply thanks the audience",
+            ],
+            answer: "The strong close ends with impact — returning to the opening and restating the argument more powerfully",
+          },
+        ],
+      },
+      // 4
+      {
+        type: "sorting",
+        title: "Signposting Language",
+        instruction: "Sort each phrase into the correct part of a presentation it is most useful for.",
+        columns: ["Opening", "Main Body", "Rebuttal", "Close"],
+        items: [
+          { label: "\"I want to begin with a question...\"" },
+          { label: "\"My first point concerns...\"" },
+          { label: "\"While it is true that..., I would argue...\"" },
+          { label: "\"To return to where we started...\"" },
+          { label: "\"Consider this: in 2024, more than...\"" },
+          { label: "\"Building on this...\"" },
+          { label: "\"Those who oppose this view claim... However...\"" },
+          { label: "\"In short, the evidence shows...\"" },
+          { label: "\"Moving on to my second point...\"" },
+          { label: "\"I hope I have convinced you today that...\"" },
+        ],
+      },
+      // 5
       {
         type: "open-response",
         title: "Planning Your Presentation",
@@ -7033,6 +7129,72 @@ export const year9EnglishWorksheets: WorksheetItem[] = [
           },
         ],
       },
+      // 6
+      {
+        type: "fill-in-blank",
+        title: "Debate Roles and Responsibilities",
+        instruction: "Fill in the blank with the correct debate term or role.",
+        sentences: [
+          { text: "In a standard two-team debate, the _______ team argues for the proposition.", blanks: ["Affirmative"] },
+          { text: "The _______ team argues against the proposition.", blanks: ["Negative"] },
+          { text: "The first speaker's role includes _______ key terms and outlining the team's case.", blanks: ["defining"] },
+          { text: "Second speakers _______ the main arguments with evidence.", blanks: ["develop"] },
+          { text: "Third speakers _______ the other team's case and summarise.", blanks: ["rebut"] },
+        ],
+      },
+      // 7
+      {
+        type: "circle-correct",
+        title: "Effective vs. Ineffective Rebuttal",
+        instruction: "For each rebuttal attempt, circle whether it is effective or ineffective.",
+        questions: [
+          {
+            prompt: "'The previous speaker said that social media damages relationships. That\u2019s just wrong.'",
+            options: ["Effective rebuttal", "Ineffective rebuttal"],
+          },
+          {
+            prompt: "'While the Affirmative team correctly notes that social media can isolate individuals, the evidence also shows that for many people — particularly in rural and remote areas — it is the primary means of maintaining social connection.'",
+            options: ["Effective rebuttal", "Ineffective rebuttal"],
+          },
+          {
+            prompt: "'My opponent is clearly uninformed about this issue.'",
+            options: ["Effective rebuttal", "Ineffective rebuttal"],
+          },
+          {
+            prompt: "'The previous speaker raised the point about cost. This is a genuine concern. However, when we compare the cost of the proposed solution with the cost of inaction, the balance shifts significantly.'",
+            options: ["Effective rebuttal", "Ineffective rebuttal"],
+          },
+        ],
+      },
+      // 8
+      {
+        type: "multiple-choice",
+        title: "Evidence in Formal Speaking",
+        instruction: "Choose the best answer for each question about using evidence in presentations and debate.",
+        questions: [
+          {
+            prompt: "Which type of evidence is generally most persuasive in a formal presentation?",
+            options: [
+              "Personal opinion",
+              "Hearsay from a friend",
+              "Verifiable statistics or expert opinion from credible sources",
+              "Examples from television programmes",
+            ],
+            answer: "Verifiable statistics or expert opinion from credible sources",
+          },
+          {
+            prompt: "What is the danger of relying only on statistics in a formal presentation?",
+            options: [
+              "Statistics are always wrong",
+              "Statistics without context or analysis can mislead; stories and examples help make them meaningful",
+              "Audiences always distrust statistics",
+              "Statistics make presentations too long",
+            ],
+            answer: "Statistics without context or analysis can mislead; stories and examples help make them meaningful",
+          },
+        ],
+      },
+      // 9
       {
         type: "open-response",
         title: "Rebuttal Practice",
@@ -7053,6 +7215,54 @@ export const year9EnglishWorksheets: WorksheetItem[] = [
           },
         ],
       },
+      // 10
+      {
+        type: "matching",
+        title: "Logical Fallacies",
+        instruction: "Match each logical fallacy to its definition. (These are errors in reasoning you should recognise and avoid in debate.)",
+        parentTip: "Being able to identify logical fallacies is a significant intellectual skill. When a debate opponent commits a fallacy, a skilled debater can name it and explain why it weakens their argument.",
+        left: [
+          "Ad hominem",
+          "Straw man",
+          "False dichotomy",
+          "Appeal to authority",
+          "Slippery slope",
+        ],
+        right: [
+          "Attacking the person making the argument rather than the argument itself",
+          "Claiming that if A happens, B, C, D, and eventually Z must inevitably follow",
+          "Misrepresenting someone's argument to make it easier to attack",
+          "Presenting only two options when others exist",
+          "Arguing something is true or right because an authority figure said so",
+        ],
+      },
+      // 11
+      {
+        type: "true-false",
+        title: "Delivery Skills: True or False?",
+        instruction: "Mark each statement about delivery skills as true or false.",
+        statements: [
+          { text: "Eye contact with different parts of the room helps speakers connect with their whole audience.", answer: true },
+          { text: "Speaking faster always makes you sound more confident.", answer: false },
+          { text: "Pausing before a key point can create emphasis and give the audience time to absorb it.", answer: true },
+          { text: "Reading directly from notes throughout a presentation is ideal delivery.", answer: false },
+          { text: "Vocal variety — changing pitch, pace, and volume — helps maintain audience attention.", answer: true },
+          { text: "Nervous energy can be channelled into enthusiasm and energy in delivery.", answer: true },
+        ],
+      },
+      // 12
+      {
+        type: "fill-in-blank",
+        title: "Formal Language Register",
+        instruction: "Rewrite each informal phrase in a more formal register suitable for a formal presentation or debate.",
+        sentences: [
+          { text: "Informal: 'I think this is really important and people need to get this.' Formal: '_______'", blanks: ["This issue is of considerable significance and merits careful consideration."] },
+          { text: "Informal: 'The other side is wrong about this.' Formal: '_______'", blanks: ["The previous speaker's argument, while understandable, overlooks a key factor."] },
+          { text: "Informal: 'Loads of research shows...' Formal: '_______'", blanks: ["Substantial evidence indicates... / Research consistently demonstrates..."] },
+          { text: "Informal: 'And that's basically my point.' Formal: '_______'", blanks: ["In summary, the evidence clearly supports the conclusion that..."] },
+        ],
+      },
+      // 13
       {
         type: "open-response",
         title: "Delivery Self-Evaluation",
@@ -7078,10 +7288,1392 @@ export const year9EnglishWorksheets: WorksheetItem[] = [
           },
         ],
       },
+      // 14
+      {
+        type: "sorting",
+        title: "Debate Topics: Sorting Sides",
+        instruction: "For the topic 'Artificial intelligence should be regulated by governments', sort each argument into Affirmative or Negative.",
+        columns: ["Affirmative (For regulation)", "Negative (Against regulation)"],
+        items: [
+          { label: "AI systems can cause significant harm if deployed without safety standards." },
+          { label: "Government regulation stifles innovation and competitive advantage." },
+          { label: "Without oversight, AI developers face no accountability for bias or errors." },
+          { label: "Industry self-regulation is faster and more technically informed than government." },
+          { label: "Governments lack the technical expertise to regulate AI effectively." },
+          { label: "Regulation creates consistent safety standards that build public trust." },
+          { label: "International AI regulation creates a level playing field across nations." },
+          { label: "Overly restrictive regulation could drive AI development to less regulated countries." },
+        ],
+      },
+      // 15
+      {
+        type: "tip",
+        title: "Tip: Steelman, Don't Strawman",
+        content: "The most common mistake in debate and argument is the straw man: misrepresenting the opposing argument in a weaker form to make it easier to attack. The opposite technique — steelmanning — involves engaging with the strongest possible version of the opposing argument. Steelmanning is harder, but it is more honest and ultimately more persuasive, because it shows the audience you understand the issue deeply enough to engage with its most challenging dimensions. When preparing for debate, ask: what is the best possible case my opponent could make? Then prepare to meet that case.",
+      },
+      // 16
+      {
+        type: "multiple-choice",
+        title: "Debate Format and Conventions",
+        instruction: "Choose the best answer for each question about formal debate conventions.",
+        questions: [
+          {
+            prompt: "In a formal school debate, what is the role of the third speaker?",
+            options: [
+              "To introduce new arguments not covered by earlier speakers",
+              "To rebut the opposing team's case and provide a summary of the team's arguments",
+              "To give a short speech of thanks",
+              "To ask questions of the other team",
+            ],
+            answer: "To rebut the opposing team's case and provide a summary of the team's arguments",
+          },
+          {
+            prompt: "What does it mean to 'define the terms' in a debate?",
+            options: [
+              "To look up words in a dictionary",
+              "To clarify what key words in the proposition mean for the purposes of the debate",
+              "To limit the debate to only certain topics",
+              "To disagree with the proposition's wording",
+            ],
+            answer: "To clarify what key words in the proposition mean for the purposes of the debate",
+          },
+          {
+            prompt: "Which quality is most important in a debate adjudicator's decision?",
+            options: [
+              "Which team spoke more loudly",
+              "Which team's speakers had better presentation style",
+              "Which team better proved their case through logical argument, evidence, and rebuttal",
+              "Which team was more agreeable",
+            ],
+            answer: "Which team better proved their case through logical argument, evidence, and rebuttal",
+          },
+        ],
+      },
+      // 17
+      {
+        type: "open-response",
+        title: "Identifying Logical Fallacies",
+        instruction: "Read the following debate extracts and identify the logical fallacy in each. Explain why it weakens the argument.",
+        parentTip: "Fallacy identification is a transferable skill: it applies in debates, in reading media, and in everyday reasoning. Once students can name fallacies, they notice them everywhere.",
+        prompts: [
+          {
+            text: "Extract: 'We can't trust my opponent's argument about climate policy because she once said she liked driving fast cars.' What fallacy? Why does it weaken the argument?",
+            type: "lines",
+            lines: 3,
+          },
+          {
+            text: "Extract: 'If we allow any form of censorship online, we will soon live in a totalitarian state where all speech is controlled.' What fallacy? Why does it weaken the argument?",
+            type: "lines",
+            lines: 3,
+          },
+          {
+            text: "Extract: 'You\u2019re either with us on this or you\u2019re against protecting children. There is no middle ground.' What fallacy? Why does it weaken the argument?",
+            type: "lines",
+            lines: 3,
+          },
+        ],
+      },
+      // 18
+      {
+        type: "fill-in-blank",
+        title: "Transition Phrases for Debate Rebuttal",
+        instruction: "Fill in the blank with an appropriate rebuttal transition phrase.",
+        sentences: [
+          { text: "_______ the previous speaker's argument is compelling in theory, it ignores the practical realities.", blanks: ["While / Although"] },
+          { text: "My opponent correctly points out that... _______: this point actually supports our case because...", blanks: ["However / But"] },
+          { text: "The Affirmative team's evidence is _______ but does not account for the broader picture.", blanks: ["accurate / valid / relevant"] },
+          { text: "I would like to _______ the claim that...", blanks: ["address / challenge / rebut"] },
+          { text: "This argument, while understandable, _______ a crucial piece of evidence.", blanks: ["overlooks / ignores / misses"] },
+        ],
+      },
+      // 19
+      {
+        type: "circle-correct",
+        title: "Appropriate Register",
+        instruction: "For each context, circle which language register is most appropriate.",
+        questions: [
+          {
+            prompt: "Delivering a formal presentation to a school assembly",
+            options: ["Formal and structured", "Casual and colloquial"],
+          },
+          {
+            prompt: "Asking a question from the floor during a formal debate",
+            options: ["Formal: 'I have a question for the affirmative team regarding...'", "Casual: 'Yeah so I was wondering about that point you made'"],
+          },
+          {
+            prompt: "Opening a three-minute timed speech",
+            options: ["'Today I'm gonna talk about...'", "'Consider for a moment what it would mean if...'"],
+          },
+          {
+            prompt: "Conceding a point during a debate",
+            options: ["'Okay, fair enough, you got me.'", "'I concede that the data presented is valid; however...'"],
+          },
+        ],
+      },
+      // 20
+      {
+        type: "spark",
+        title: "Spark: The Art of Listening",
+        content: "Most preparation for public speaking focuses on what to say. But skilled speakers and debaters are also skilled listeners — they hear the exact words the other side uses, not the words they expected to hear. In debate, the difference between a good rebuttal and a great one is often whether you are actually engaging with what was said, or with what you assumed would be said. The next time you are in a disagreement, try this: pause before responding and ask yourself: what exactly did they just say? What did they actually mean? What is the strongest version of their point? This habit is both an intellectual virtue and a practical debate skill.",
+      },
+      // ── DEVELOPING 21–50 ──────────────────────────────────────────────────
+      // 21
+      {
+        type: "open-response",
+        title: "Preparing Both Sides",
+        instruction: "Choose a debate topic from the list or propose one of your own. Research and prepare the three strongest arguments for BOTH the Affirmative and Negative sides before deciding which position to argue. This is standard preparation for competitive debaters.",
+        parentTip: "The discipline of preparing both sides is one of the most valuable intellectual habits a student can develop. It prevents confirmation bias, deepens understanding of the issue, and makes the eventual argument much stronger because it is built with full knowledge of the opposition.",
+        prompts: [
+          { text: "Your debate topic:", type: "lines", lines: 1 },
+          { text: "Three strongest Affirmative arguments:", type: "lines", lines: 5 },
+          { text: "Three strongest Negative arguments:", type: "lines", lines: 5 },
+          { text: "Which side do you find more convincing and why?", type: "lines", lines: 3 },
+        ],
+      },
+      // 22
+      {
+        type: "true-false",
+        title: "The Importance of Body Language in Presentations",
+        instruction: "Mark each statement as true or false.",
+        statements: [
+          { text: "Body language (posture, gesture, movement) contributes significantly to how an audience receives a speaker.", answer: true },
+          { text: "Standing completely still is always the best choice during a formal presentation.", answer: false },
+          { text: "Deliberate pausing is a weakness that should be eliminated.", answer: false },
+          { text: "Hand gestures, when natural and purposeful, can reinforce key points.", answer: true },
+          { text: "Looking at the floor or ceiling while speaking undermines credibility.", answer: true },
+        ],
+      },
+      // 23
+      {
+        type: "multiple-choice",
+        title: "Question Time and the Floor",
+        instruction: "Choose the best answer for each question about handling questions during or after a formal presentation.",
+        questions: [
+          {
+            prompt: "What is the most effective strategy when asked a question you cannot fully answer?",
+            options: [
+              "Pretend you know the answer and improvise",
+              "Refuse to engage with the question",
+              "Acknowledge the limits of your knowledge honestly while addressing what you do know",
+              "Attack the questioner for asking a difficult question",
+            ],
+            answer: "Acknowledge the limits of your knowledge honestly while addressing what you do know",
+          },
+          {
+            prompt: "A hostile or aggressive question is best handled by:",
+            options: [
+              "Becoming aggressive in return",
+              "Refusing to answer",
+              "Pausing, acknowledging the challenge, and responding calmly and logically",
+              "Immediately conceding the questioner's point",
+            ],
+            answer: "Pausing, acknowledging the challenge, and responding calmly and logically",
+          },
+        ],
+      },
+      // 24
+      {
+        type: "open-response",
+        title: "Speed Debate Practice",
+        instruction: "Choose a simple topic (e.g. 'Homework should be abolished' or 'Zoos do more good than harm'). Spend 5 minutes preparing, then deliver a 1-minute speech — either for or against — without notes. After delivering it, reflect below.",
+        parentTip: "Speed debate builds spontaneous argumentation skills. One minute is harder than five — every sentence must do work. Time the speech with a timer and be strict about the limit.",
+        prompts: [
+          { text: "Topic and your position:", type: "lines", lines: 1 },
+          { text: "Your three key points (written AFTER the speech, from memory):", type: "lines", lines: 4 },
+          { text: "What was the hardest part of speaking without notes?", type: "lines", lines: 3 },
+        ],
+      },
+      // 25
+      {
+        type: "sorting",
+        title: "Argument Strength",
+        instruction: "Sort each type of evidence or argument from strongest to weakest for use in a formal debate. (Place in the Strongest or Weakest column.)",
+        columns: ["Strongest Evidence", "Weakest Evidence"],
+        items: [
+          { label: "Peer-reviewed research findings with sample size and methodology stated" },
+          { label: "'My friend told me that...'" },
+          { label: "Government statistics from a reputable national body" },
+          { label: "A celebrity's opinion shared on social media" },
+          { label: "A historical case study that directly parallels the proposition" },
+          { label: "'It just seems obvious that...'" },
+          { label: "Expert testimony from a credentialed specialist in the relevant field" },
+          { label: "An anecdote from a TV programme" },
+        ],
+      },
+      // 26
+      {
+        type: "fill-in-blank",
+        title: "Rhetorical Devices in Formal Speaking",
+        instruction: "Fill in the blank with the correct rhetorical device being demonstrated.",
+        sentences: [
+          { text: "'We will not stop. We will not rest. We will not give up.' — This uses _______ (repetition at the start of successive clauses).", blanks: ["anaphora"] },
+          { text: "'Shall we remain silent while this injustice continues?' — This is a _______ question, asked for effect rather than an actual answer.", blanks: ["rhetorical"] },
+          { text: "'The choice is simple: act now, or pay later.' — This is a direct example of _______.", blanks: ["antithesis"] },
+          { text: "'Think of the children who will inherit this decision.' — This appeals primarily to _______ (emotion).", blanks: ["pathos"] },
+          { text: "'Research from the Australian Academy of Science confirms that...' — This appeals primarily to _______ (credibility/authority).", blanks: ["ethos / logos"] },
+        ],
+      },
+      // 27
+      {
+        type: "open-response",
+        title: "Using Rhetorical Devices",
+        instruction: "Write a 4–6 sentence excerpt from a formal presentation that uses at least three rhetorical devices (e.g. anaphora, rhetorical question, antithesis, metaphor, rule of three). Label each device in brackets after you use it.",
+        parentTip: "Rhetorical devices are tools, not decorations. Each should serve the argument — not be added for its own sake. Encourage your student to use each device purposefully and to evaluate whether it actually strengthens the passage.",
+        prompts: [
+          { text: "Your excerpt with labelled devices:", type: "box" },
+          {
+            text: "Which device was most effective and why?",
+            type: "lines",
+            lines: 3,
+          },
+        ],
+      },
+      // 28
+      {
+        type: "circle-correct",
+        title: "Assessing Argument Quality",
+        instruction: "For each argument, circle whether it is strong or weak, and be ready to explain why.",
+        questions: [
+          {
+            prompt: "Argument: 'Social media should be banned for under-16s because it causes anxiety.' (No evidence provided.)",
+            options: ["Strong argument", "Weak — needs evidence"],
+          },
+          {
+            prompt: "Argument: 'A 2023 Australian Institute of Family Studies report found that 62% of teenagers who used social media more than 3 hours daily reported higher anxiety. This suggests that usage limits, not a complete ban, may be the appropriate policy response.'",
+            options: ["Strong argument", "Weak — needs evidence"],
+          },
+          {
+            prompt: "Argument: 'Anyone who disagrees with social media regulation clearly doesn\u2019t care about children\u2019s mental health.'",
+            options: ["Strong argument", "Weak — ad hominem fallacy"],
+          },
+          {
+            prompt: "Argument: 'While regulation of social media use presents implementation challenges, the documented links between unrestricted use and adolescent mental health decline justify exploring evidence-based policies.'",
+            options: ["Strong argument", "Weak — needs evidence"],
+          },
+        ],
+      },
+      // 29
+      {
+        type: "multiple-choice",
+        title: "Concession in Debate",
+        instruction: "Choose the best answer for each question about the art of concession in debate.",
+        parentTip: "Appropriate concession is a sign of intellectual maturity. It is not weakness — it actually strengthens a debater's credibility by showing they are engaging honestly rather than just trying to win.",
+        questions: [
+          {
+            prompt: "What is an appropriate concession in debate?",
+            options: [
+              "Giving up the argument entirely",
+              "Agreeing with the opposing team's entire case",
+              "Acknowledging a valid point made by the opposition before explaining why it does not undermine your overall position",
+              "Admitting defeat before the debate is finished",
+            ],
+            answer: "Acknowledging a valid point made by the opposition before explaining why it does not undermine your overall position",
+          },
+          {
+            prompt: "Why does graceful concession often strengthen a debater's position?",
+            options: [
+              "It shortens the debate",
+              "It demonstrates intellectual honesty and builds credibility with the audience and adjudicator",
+              "It confuses the opposition",
+              "It fulfils a formal rule about concessions",
+            ],
+            answer: "It demonstrates intellectual honesty and builds credibility with the audience and adjudicator",
+          },
+        ],
+      },
+      // 30
+      {
+        type: "tip",
+        title: "Tip: Pace and the Pause",
+        content: "One of the most consistent problems in student presentations is pace: speaking too quickly, often driven by nerves. The solution is to practise deliberate pausing. A pause before your key point signals to the audience that something important is coming. A pause after gives them time to absorb it. Skilled speakers use silence as a tool — it commands attention in a way that a continuous flow of words does not. When practising your presentation, deliberately insert three pauses and hold each one for two to three seconds. This feels unnatural at first, but to an audience it reads as confidence and control.",
+      },
+      // 31
+      {
+        type: "open-response",
+        title: "Case Summary Writing",
+        instruction: "Write a 100–150 word summary of the case you would put as first speaker for one side of the following debate: 'Australia should become a republic.' Begin with a definition of key terms, state your team's position clearly, and outline the three main points your team will argue.",
+        parentTip: "The first speaker's case summary is the most important speech in a debate — it sets up everything that follows. A clear, well-structured case summary makes the second and third speakers' jobs easier and gives the audience a framework for evaluating the whole debate.",
+        prompts: [
+          { text: "Your side (circle):", type: "lines", lines: 1 },
+          { text: "Case summary:", type: "box" },
+        ],
+      },
+      // 32
+      {
+        type: "true-false",
+        title: "Competitive Debate: True or False?",
+        instruction: "Mark each statement as true or false.",
+        statements: [
+          { text: "In competitive debate, teams are often assigned their side randomly, regardless of personal belief.", answer: true },
+          { text: "Introducing entirely new material in the rebuttal speech is good debate practice.", answer: false },
+          { text: "Winning a debate depends more on the strength of the argument than on speaking volume.", answer: true },
+          { text: "A team can win a debate even if they lose most of the minor arguments, provided they win the central argument.", answer: true },
+          { text: "Defining terms narrowly or unusually to exclude the opposition's arguments is called 'squirrelling' and is considered poor practice.", answer: true },
+        ],
+      },
+      // 33
+      {
+        type: "fill-in-blank",
+        title: "Types of Argument",
+        instruction: "Fill in the blank with the correct type of argument or appeal.",
+        sentences: [
+          { text: "An appeal based on the speaker's credibility, expertise, or good character is called an appeal to _______.", blanks: ["ethos"] },
+          { text: "An appeal to the audience's emotions — their fear, sympathy, or hope — is called an appeal to _______.", blanks: ["pathos"] },
+          { text: "An appeal based on logic, reasoning, and evidence is called an appeal to _______.", blanks: ["logos"] },
+          { text: "An argument that uses a real-world example to illustrate a principle is called an _______ argument.", blanks: ["illustrative / case study / analogical"] },
+          { text: "An argument that shows a proposition leads to contradictory conclusions is called a _______ argument.", blanks: ["reductio ad absurdum / reductio"] },
+        ],
+      },
+      // 34
+      {
+        type: "matching",
+        title: "Famous Speeches and Speakers",
+        instruction: "Match each speaker to the speech or context they are known for.",
+        left: [
+          "Nelson Mandela",
+          "Greta Thunberg",
+          "Noel Pearson",
+          "Malala Yousafzai",
+          "Paul Keating",
+        ],
+        right: [
+          "United Nations Climate Action Summit 2019 speech condemning world leaders' inaction",
+          "Australian Prime Minister's 1992 Redfern Speech acknowledging the impact of colonisation on Aboriginal people",
+          "UN speech on girls' right to education following an assassination attempt",
+          "'I Am Prepared to Die' — statement from the dock at the Rivonia Trial, 1964",
+          "2000 Sydney Olympic Games opening ceremony speech on Aboriginal culture and pride",
+        ],
+      },
+      // 35
+      {
+        type: "open-response",
+        title: "Speech Analysis: A Famous Speech",
+        instruction: "Choose one of the speeches from Activity 34 (or another famous speech of your choice) and analyse it using the questions below. Listen to it if possible; otherwise read a transcript.",
+        parentTip: "Listening to great speeches is one of the best ways to understand the craft of formal speaking. Keating's Redfern Speech and Thunberg's UN speech are particularly powerful and appropriate for Year 9. Play them together if possible.",
+        prompts: [
+          { text: "Speaker and speech title:", type: "lines", lines: 1 },
+          { text: "What is the central argument of the speech?", type: "lines", lines: 3 },
+          { text: "Identify two rhetorical devices used. Give an example of each and explain its effect:", type: "lines", lines: 5 },
+          { text: "What made this speech effective for its particular audience and moment?", type: "lines", lines: 3 },
+        ],
+      },
+      // 36
+      {
+        type: "multiple-choice",
+        title: "Proposition Wording and Scope",
+        instruction: "Choose the best answer for each question about how propositions shape debates.",
+        questions: [
+          {
+            prompt: "Why does the precise wording of a debate proposition matter?",
+            options: [
+              "It doesn't — any wording will do",
+              "It defines the scope and limits of the debate, affecting what arguments are relevant and what counts as proof",
+              "It determines which team speaks first",
+              "It is only important to the adjudicator",
+            ],
+            answer: "It defines the scope and limits of the debate, affecting what arguments are relevant and what counts as proof",
+          },
+          {
+            prompt: "The proposition 'Social media does more harm than good' differs from 'All social media should be banned' in that:",
+            options: [
+              "They are identical propositions",
+              "The first requires weighing overall harm and benefit; the second requires arguing for a specific policy",
+              "The first is about young people and the second is about adults",
+              "Only the second requires evidence",
+            ],
+            answer: "The first requires weighing overall harm and benefit; the second requires arguing for a specific policy",
+          },
+        ],
+      },
+      // 37
+      {
+        type: "open-response",
+        title: "Spontaneous Speaking: Point of Information",
+        instruction: "A Point of Information (POI) is a brief interjection offered during a formal debate — a question or statement made while the opposing speaker is still on their feet. Write three effective POIs you could offer in a debate on the proposition 'Australia should introduce a wealth tax on billionaires'.",
+        parentTip: "POIs must be brief (15 seconds maximum), relevant, and genuinely challenging. Encourage your student to make POIs that expose a weakness in the other team's logic rather than simply restating their own team's argument.",
+        prompts: [
+          { text: "POI 1:", type: "lines", lines: 2 },
+          { text: "POI 2:", type: "lines", lines: 2 },
+          { text: "POI 3:", type: "lines", lines: 2 },
+        ],
+      },
+      // 38
+      {
+        type: "sorting",
+        title: "Debate Preparation Steps",
+        instruction: "Put the following debate preparation steps in the most effective order (sort them from first to last).",
+        columns: ["Early preparation", "Later preparation"],
+        items: [
+          { label: "Research the topic from multiple credible sources" },
+          { label: "Assign speaking roles within the team" },
+          { label: "Prepare arguments for both sides to understand the full scope" },
+          { label: "Practise delivering your speech out loud and time it" },
+          { label: "Draft your own team's case based on research" },
+          { label: "Anticipate and prepare rebuttals for the opposing team's arguments" },
+          { label: "Clarify the proposition and define key terms" },
+          { label: "Revise and tighten your speech based on practice delivery" },
+        ],
+      },
+      // 39
+      {
+        type: "open-response",
+        title: "Five-Minute Debate",
+        instruction: "With a partner (parent, sibling, or friend), conduct a simple 5-minute debate on a topic of your choice. Each person speaks for 90 seconds, then each has 60 seconds for rebuttal. After the debate, complete the self-evaluation below.",
+        parentTip: "Even a simple 5-minute debate is enormously valuable. Take the opposing side yourself — this models steelmanning, makes the debate genuine, and gives your student the experience of arguing against someone who actually disagrees. After, debrief: what worked? What would you change?",
+        prompts: [
+          { text: "Topic and your position:", type: "lines", lines: 1 },
+          { text: "How did your actual argument compare to your planned argument?", type: "lines", lines: 3 },
+          { text: "What was the most effective rebuttal made (by either side)?", type: "lines", lines: 3 },
+          { text: "What will you do differently next time?", type: "lines", lines: 3 },
+        ],
+      },
+      // 40
+      {
+        type: "spark",
+        title: "Spark: Argument Is a Gift",
+        content: "In many families and cultures, direct disagreement is considered impolite. But the intellectual traditions that have produced democracy, science, and law are all built on the assumption that argument — rigorous, good-faith disagreement — is a gift. When someone argues with you, genuinely and respectfully, they are taking your ideas seriously enough to contest them. The philosopher Karl Popper argued that ideas can only be tested through falsification — through genuine attempts to disprove them. What would it mean to treat every challenge to your ideas as a gift? How would that change how you argue, and how you listen?",
+      },
+      // ── CONSOLIDATING 51–80 ──────────────────────────────────────────────────
+      // 41
+      {
+        type: "open-response",
+        title: "Extended Presentation Plan",
+        instruction: "Plan a five-minute formal presentation on a topic of genuine interest to you. Your plan should include: a compelling opening, three developed main points each with evidence, a rebuttal section acknowledging the strongest counter-argument, and a strong close.",
+        parentTip: "Five minutes is substantially more challenging than three. The main difficulty is maintaining development rather than repetition — making sure each main point genuinely adds something new rather than restating the thesis in different words.",
+        prompts: [
+          { text: "Topic and thesis:", type: "lines", lines: 2 },
+          { text: "Opening (write the exact first sentence):", type: "lines", lines: 2 },
+          { text: "Main point 1 + evidence:", type: "lines", lines: 3 },
+          { text: "Main point 2 + evidence:", type: "lines", lines: 3 },
+          { text: "Main point 3 + evidence:", type: "lines", lines: 3 },
+          { text: "Rebuttal (strongest counter-argument + your response):", type: "lines", lines: 3 },
+          { text: "Close (write the exact last sentence):", type: "lines", lines: 2 },
+        ],
+      },
+      // 42
+      {
+        type: "multiple-choice",
+        title: "Oral Language in Australian Curriculum Year 9",
+        instruction: "Choose the best answer for each question about what the Australian Curriculum expects at Year 9 for formal oral language.",
+        questions: [
+          {
+            prompt: "At Year 9, the Australian Curriculum expects students to engage in formal oral presentations that:",
+            options: [
+              "Use only informal language and personal anecdote",
+              "Present sustained, coherent arguments with evidence, appropriate register, and effective delivery",
+              "Are delivered from a fully written script read aloud",
+              "Avoid any form of rebuttal or engagement with opposing views",
+            ],
+            answer: "Present sustained, coherent arguments with evidence, appropriate register, and effective delivery",
+          },
+          {
+            prompt: "Which of the following is an appropriate criterion for assessing a Year 9 formal presentation?",
+            options: [
+              "Length in number of words",
+              "Clarity of argument, use of evidence, effective signposting, and delivery skills",
+              "Number of rhetorical devices used",
+              "Volume of voice",
+            ],
+            answer: "Clarity of argument, use of evidence, effective signposting, and delivery skills",
+          },
+        ],
+      },
+      // 43
+      {
+        type: "open-response",
+        title: "Developing a Case with Evidence",
+        instruction: "Choose a significant contemporary issue (e.g. climate change policy, housing affordability, Indigenous land rights, artificial intelligence governance). Write a developed argument (150–200 words) that includes: a clear position statement, three pieces of evidence from credible sources, analysis connecting the evidence to the argument, and a strong concluding sentence.",
+        parentTip: "Encourage your student to use specific, current evidence rather than vague generalisations. 'Research shows' is much weaker than 'A 2024 CSIRO report found that...' — specificity signals credibility.",
+        prompts: [
+          { text: "Your developed argument:", type: "box" },
+          {
+            text: "How would you respond if an opponent questioned the reliability of one of your sources?",
+            type: "lines",
+            lines: 3,
+          },
+        ],
+      },
+      // 44
+      {
+        type: "matching",
+        title: "Presentation Evaluation Criteria",
+        instruction: "Match each evaluation criterion to the question it asks the assessor to consider.",
+        left: [
+          "Content and argument",
+          "Use of evidence",
+          "Delivery",
+          "Register and language",
+          "Responsiveness",
+        ],
+        right: [
+          "Is the formal language appropriate? Does the speaker avoid slang or colloquialisms?",
+          "Does the speaker engage with questions or rebuttal thoughtfully and accurately?",
+          "Is the central argument clear, coherent, and well-developed?",
+          "Does the speaker use appropriate pace, volume, eye contact, and pausing?",
+          "Is the evidence specific, credible, and connected to the argument?",
+        ],
+      },
+      // 45
+      {
+        type: "tip",
+        title: "Tip: The Power of Specificity",
+        content: "In both presentations and debate, specific evidence almost always outperforms general claims. Compare: 'Studies show that social media is harmful to teenagers' with 'A longitudinal study published in the Journal of Adolescent Health in 2023, tracking 14,000 Australian teenagers over five years, found that daily social media use exceeding three hours was associated with a 40% increased risk of clinical depression.' The second is twelve times more convincing, because it gives the audience something concrete to think with. When preparing evidence, always ask: can I be more specific about who conducted this study, when, and what exactly they found?",
+      },
+      // 46
+      {
+        type: "open-response",
+        title: "Responding to Difficult Questions",
+        instruction: "Write your responses to the following challenging questions that might be asked after a presentation arguing that 'Australia should adopt a four-day working week'.",
+        parentTip: "Question time is where presentations can unravel. Practising responses to adversarial questions is essential preparation. Note the strategy: acknowledge, pivot, respond. Never simply defend — add new information or reframe.",
+        prompts: [
+          {
+            text: "Q: 'But what about service industries like hospitals and retail? You can\u2019t just cut their hours.'",
+            type: "lines",
+            lines: 4,
+          },
+          {
+            text: "Q: 'You haven\u2019t addressed the economic impact on small businesses. Isn\u2019t this just a policy for big corporations?'",
+            type: "lines",
+            lines: 4,
+          },
+          {
+            text: "Q: 'Can you name one country where this has actually worked at a national scale?'",
+            type: "lines",
+            lines: 4,
+          },
+        ],
+      },
+      // 47
+      {
+        type: "sorting",
+        title: "Elements of a Persuasive Formal Speech",
+        instruction: "Sort each element into 'Essential' (should always be present) or 'Optional' (can strengthen but is not always necessary).",
+        columns: ["Essential", "Optional"],
+        items: [
+          { label: "A clear statement of position" },
+          { label: "A personal anecdote" },
+          { label: "At least one piece of verifiable evidence" },
+          { label: "A quotation from a literary source" },
+          { label: "Acknowledgment of the strongest counter-argument" },
+          { label: "At least three rhetorical devices" },
+          { label: "A compelling opening that earns audience attention" },
+          { label: "Visual aids or slides" },
+          { label: "A strong, impactful close" },
+          { label: "Signposting language throughout" },
+        ],
+      },
+      // 48
+      {
+        type: "open-response",
+        title: "Full Debate Speech: First Speaker",
+        instruction: "Write a full first speaker's debate speech (200–250 words) for the proposition 'Schools should not assign homework'. Define key terms, state your team's position, and outline three main arguments you will develop. Use formal register and signposting language throughout.",
+        parentTip: "Writing out a full speech before delivering it builds confidence and allows the student to check structure and language. The goal is not to memorise it word for word — it is to know the argument thoroughly enough to deliver it naturally from brief notes.",
+        prompts: [
+          { text: "Your full speech:", type: "box" },
+          {
+            text: "After writing, identify two places where you could strengthen the argument. What would you add or change?",
+            type: "lines",
+            lines: 4,
+          },
+        ],
+      },
+      // 49
+      {
+        type: "true-false",
+        title: "Evaluating Your Own Formal Speaking",
+        instruction: "Mark each statement about self-evaluation of formal speaking as true or false.",
+        statements: [
+          { text: "'I was nervous' is a useful piece of self-evaluation for improving presentation skills.", answer: false },
+          { text: "Specific, actionable feedback ('I need to slow down in the first 30 seconds') is more useful than general feedback ('I need to be more confident').", answer: true },
+          { text: "Recording yourself and watching back is a useful tool for identifying specific areas to improve.", answer: true },
+          { text: "You should aim for a completely different personality on stage than in everyday life.", answer: false },
+          { text: "The most reliable sign of improvement in formal speaking is measurable change in specific behaviours.", answer: true },
+        ],
+      },
+      // 50
+      {
+        type: "open-response",
+        title: "Analysing a Debate: Adjudicator's Report",
+        instruction: "Watch or listen to a structured debate — either a school debate, a political debate, a parliamentary exchange, or a formal debate on a platform such as Intelligence Squared. Write a brief adjudicator's report (150–200 words) evaluating both sides.",
+        parentTip: "Taking the adjudicator's perspective requires synthesising argument quality, evidence use, rebuttal effectiveness, and delivery skills. It is also a useful model for how your student will one day be evaluated. If no live debate is available, use a transcript or video of a formal parliamentary exchange.",
+        prompts: [
+          { text: "Debate watched:", type: "lines", lines: 1 },
+          { text: "Affirmative/one side: strengths and weaknesses:", type: "lines", lines: 4 },
+          { text: "Negative/other side: strengths and weaknesses:", type: "lines", lines: 4 },
+          { text: "Decision and reasoning (who won and why?):", type: "lines", lines: 3 },
+        ],
+      },
+      // 51
+      {
+        type: "open-response",
+        title: "Delivering a Five-Minute Presentation",
+        instruction: "Deliver the five-minute presentation you planned in Activity 41. Deliver it to a real audience (parent, sibling, or friend). Time it. Do not read from a script — use only brief notes. Then complete the self-evaluation below.",
+        parentTip: "The single most important thing you can do to improve formal speaking is to actually speak formally, in front of people. One delivered presentation teaches more than ten written plans. After the delivery, give specific and honest feedback — not just reassurance.",
+        prompts: [
+          { text: "What element of your delivery was strongest?", type: "lines", lines: 3 },
+          { text: "What element was most difficult?", type: "lines", lines: 3 },
+          { text: "What will you specifically change in your next presentation?", type: "lines", lines: 3 },
+        ],
+      },
+      // 52
+      {
+        type: "multiple-choice",
+        title: "Parliamentary Debate and Formal Debate Formats",
+        instruction: "Choose the best answer for each question.",
+        questions: [
+          {
+            prompt: "In Australian parliamentary style debate, the speaking order is typically:",
+            options: [
+              "Affirmative 1, Affirmative 2, Affirmative 3, then Negative 1, 2, 3",
+              "Affirmative 1, Negative 1, Affirmative 2, Negative 2, Affirmative 3, Negative 3",
+              "Negative 1, Affirmative 1, Negative 2, Affirmative 2",
+              "Adjudicator opens, then both teams simultaneously",
+            ],
+            answer: "Affirmative 1, Negative 1, Affirmative 2, Negative 2, Affirmative 3, Negative 3",
+          },
+          {
+            prompt: "What is the Oxford-style debate format?",
+            options: [
+              "A debate with no time limits",
+              "A debate where the audience votes before and after, and the result is determined by which side gained more votes",
+              "A debate with only two speakers per side",
+              "A debate on literature and philosophy only",
+            ],
+            answer: "A debate where the audience votes before and after, and the result is determined by which side gained more votes",
+          },
+        ],
+      },
+      // 53
+      {
+        type: "fill-in-blank",
+        title: "Effective Closings",
+        instruction: "Fill in the blank with language that would create a powerful closing for each presentation type.",
+        sentences: [
+          { text: "A closing that returns to the opening: 'I began by asking you to consider... I hope I have convinced you that...'  This technique is called a _______ structure.", blanks: ["circular / bookend"] },
+          { text: "A call to action close says: 'The question is not whether this matters. The question is what _______ will do about it.'", blanks: ["we / you"] },
+          { text: "A closing that ends with a memorable image or statement is called a _______.", blanks: ["clincher / kicker / punchline"] },
+          { text: "The final word or phrase of a speech often carries the most _______, so choose it carefully.", blanks: ["weight / impact / emphasis"] },
+        ],
+      },
+      // 54
+      {
+        type: "open-response",
+        title: "Debate Preparation: Full Case",
+        instruction: "Prepare a full team case for one side of the following debate: 'Australia should ban single-use plastics entirely.' Include: definition of terms, team line (overall argument that all speakers will reinforce), three main arguments with evidence, anticipated oppositions and rebuttals.",
+        parentTip: "A team case should have a team line — a single, memorable statement that captures the whole team's position. All three speakers reinforce this line in different ways. This creates coherence and is much more persuasive than three speakers making three unrelated arguments.",
+        prompts: [
+          { text: "Your side:", type: "lines", lines: 1 },
+          { text: "Definition of key terms:", type: "lines", lines: 2 },
+          { text: "Team line (one memorable sentence capturing your team\u2019s core position):", type: "lines", lines: 2 },
+          { text: "Argument 1 + evidence:", type: "lines", lines: 3 },
+          { text: "Argument 2 + evidence:", type: "lines", lines: 3 },
+          { text: "Argument 3 + evidence:", type: "lines", lines: 3 },
+          { text: "Anticipated opposition + prepared rebuttal:", type: "lines", lines: 4 },
+        ],
+      },
+      // 55
+      {
+        type: "true-false",
+        title: "Debate Ethics and Intellectual Honesty",
+        instruction: "Mark each statement as true or false.",
+        statements: [
+          { text: "It is acceptable in debate to cite fabricated statistics if they support your argument.", answer: false },
+          { text: "Conceding a point strengthens credibility if done with skill.", answer: true },
+          { text: "Deliberately misrepresenting your opponent's argument to make it easier to rebut is considered poor debate practice.", answer: true },
+          { text: "The goal of debate is to win at any cost, including using misleading arguments.", answer: false },
+          { text: "Good faith debate requires genuine engagement with the strongest version of opposing arguments.", answer: true },
+        ],
+      },
+      // 56
+      {
+        type: "open-response",
+        title: "Listening and Note-Taking During a Debate",
+        instruction: "During a debate (live or recorded), practise taking systematic notes on both sides. Use the structure below to record arguments as they are made — this simulates what a skilled debater does while the other team speaks.",
+        parentTip: "Effective note-taking during debate is a skill in itself. Debaters use shorthand and symbols to capture the other team's arguments quickly enough to respond. Encourage your student to focus on capturing the structure of the argument (point + evidence) rather than writing every word.",
+        prompts: [
+          { text: "Affirmative arguments (point + evidence for each):", type: "lines", lines: 5 },
+          { text: "Negative arguments (point + evidence for each):", type: "lines", lines: 5 },
+          { text: "Which argument from either side did you find most compelling? Why?", type: "lines", lines: 3 },
+          { text: "What rebuttal could have been made that wasn\u2019t?", type: "lines", lines: 3 },
+        ],
+      },
+      // 57
+      {
+        type: "multiple-choice",
+        title: "Audience and Context in Formal Speaking",
+        instruction: "Choose the best answer for each question.",
+        questions: [
+          {
+            prompt: "How does the composition of an audience affect a formal presentation?",
+            options: [
+              "It doesn't — a good presentation is good for any audience",
+              "It affects what background knowledge can be assumed, what examples will resonate, and what level of formality is appropriate",
+              "It only affects the length of the presentation",
+              "It determines whether the speaker uses notes or not",
+            ],
+            answer: "It affects what background knowledge can be assumed, what examples will resonate, and what level of formality is appropriate",
+          },
+          {
+            prompt: "What is the most important thing to consider when adapting a presentation for a younger audience?",
+            options: [
+              "Using more jokes",
+              "Speaking more slowly",
+              "Assuming less background knowledge and using more concrete examples and accessible language",
+              "Making it shorter",
+            ],
+            answer: "Assuming less background knowledge and using more concrete examples and accessible language",
+          },
+        ],
+      },
+      // 58
+      {
+        type: "open-response",
+        title: "Adapting a Speech for a Different Audience",
+        instruction: "Take your presentation plan from Activity 41 and adapt it for a younger audience (e.g. Year 6 students). Rewrite the opening and one main point using more accessible language, simpler examples, and more concrete evidence.",
+        parentTip: "Adapting register for different audiences is a sophisticated communication skill. The content may be the same, but the vocabulary, examples, and assumed knowledge must shift. A student who can explain a complex idea to a younger child understands it more deeply themselves.",
+        prompts: [
+          { text: "Adapted opening:", type: "lines", lines: 3 },
+          { text: "Adapted main point 1:", type: "lines", lines: 5 },
+          { text: "What did you change and why?", type: "lines", lines: 3 },
+        ],
+      },
+      // 59
+      {
+        type: "circle-correct",
+        title: "Strong or Weak: Debate Moments",
+        instruction: "For each debate moment, circle whether it is a strong or weak choice.",
+        questions: [
+          {
+            prompt: "First speaker spends 90 seconds defining terms precisely, so the debate has clear parameters.",
+            options: ["Strong", "Weak"],
+          },
+          {
+            prompt: "Third speaker introduces a brand-new argument never raised by first or second speaker.",
+            options: ["Strong", "Weak"],
+          },
+          {
+            prompt: "Second speaker says: 'The opposing team claimed that all teenagers are harmed by social media. This is not what the research shows — and our opponents know it.'",
+            options: ["Strong", "Weak"],
+          },
+          {
+            prompt: "Speaker says: 'I acknowledge that the evidence my opponents cited is genuine. However, it measures short-term effects only, and the long-term data tells a different story.'",
+            options: ["Strong", "Weak"],
+          },
+          {
+            prompt: "Speaker says: 'Anyone who disagrees with us obviously doesn\u2019t care about the environment.'",
+            options: ["Strong", "Weak"],
+          },
+        ],
+      },
+      // 60
+      {
+        type: "spark",
+        title: "Spark: What Do You Actually Believe?",
+        content: "Formal debate often requires arguing a position assigned to you, not one you chose. But there is a more fundamental question underneath: what do you actually believe, and can you defend it? The philosopher Socrates spent his life asking people what they believed and why — and most of them, on examination, could not give a coherent account. The Socratic method is not about being right; it is about thinking carefully. Pick one strong belief you hold — about education, the environment, technology, society — and try to answer these questions: Why do I believe this? What would change my mind? What is the strongest argument against it?",
+      },
+      // ── EXTENDING 81–100 ──────────────────────────────────────────────────
+      // 61
+      {
+        type: "open-response",
+        title: "Parliamentary-Style Debate: Full Preparation",
+        instruction: "Prepare for a full Parliamentary-style debate on the proposition: 'The voting age in Australia should be lowered to 16.' Prepare as if you are first speaker for the Affirmative. Write a full 3-minute speech (approximately 400 words).",
+        parentTip: "A 3-minute speech at normal speaking pace is approximately 400–450 words. If your student writes more than 500 words, they will need to speak faster than is ideal. This is a useful exercise in calibrating word count to delivery time.",
+        prompts: [
+          { text: "Your full 3-minute speech:", type: "box" },
+        ],
+      },
+      // 62
+      {
+        type: "open-response",
+        title: "Cross-Examination: Questions and Responses",
+        instruction: "In some debate formats (e.g. British Parliamentary), speakers can be questioned briefly after their speech. Write three challenging cross-examination questions you would ask the Negative team after they argued against lowering the voting age to 16. Then write how you would respond to them if they were asked of you.",
+        parentTip: "Cross-examination questions should expose a weakness or inconsistency in the opposition's argument. They should be precise and specific — a vague question is easy to dodge. The best questions are those where any answer helps your case.",
+        prompts: [
+          { text: "Cross-examination Q1 (you would ask this):", type: "lines", lines: 2 },
+          { text: "If asked of you, your response to Q1:", type: "lines", lines: 3 },
+          { text: "Cross-examination Q2:", type: "lines", lines: 2 },
+          { text: "Your response:", type: "lines", lines: 3 },
+          { text: "Cross-examination Q3:", type: "lines", lines: 2 },
+          { text: "Your response:", type: "lines", lines: 3 },
+        ],
+      },
+      // 63
+      {
+        type: "matching",
+        title: "Debate Vocabulary: Advanced Terms",
+        instruction: "Match each advanced debate term to its definition.",
+        left: [
+          "Burden of proof",
+          "Status quo",
+          "Definitional challenge",
+          "Whip speech",
+          "Matter, manner, method",
+        ],
+        right: [
+          "The three criteria often used by adjudicators to assess debate speeches",
+          "The obligation to prove a claim — generally rests with the Affirmative team",
+          "A final summary speech that draws together the team's case and rebuts the opposition",
+          "The existing state of affairs, which the Affirmative typically argues should be changed",
+          "When the Negative team contests the Affirmative's definition of key terms",
+        ],
+      },
+      // 64
+      {
+        type: "fill-in-blank",
+        title: "Extended Argument Structures",
+        instruction: "Fill in the blank to complete each description of an argument structure.",
+        sentences: [
+          { text: "In the PEEL structure, P stands for Point, E for Evidence, E for _______, and L for Link.", blanks: ["Explain / Elaboration"] },
+          { text: "A _______ argument uses a side-by-side comparison of two things to show that one is better than the other.", blanks: ["comparative"] },
+          { text: "An argument from _______ shows that if the proposition is not adopted, negative consequences will follow.", blanks: ["consequence / harm"] },
+          { text: "An argument from _______ shows that the proposition produces a measurable improvement.", blanks: ["benefit / principle / value"] },
+          { text: "The 'clash' in debate refers to the direct _______ between the core arguments of each team.", blanks: ["conflict / tension / engagement"] },
+        ],
+      },
+      // 65
+      {
+        type: "open-response",
+        title: "Oral Submission: A Local Issue",
+        instruction: "Write a 3-minute oral submission (approximately 400 words) to an imagined local government committee on an issue that matters in your community. Structure it formally: state your name and interest, present your position with evidence, and make a specific recommendation.",
+        parentTip: "The oral submission is a real-world application of formal speaking. Young people can genuinely submit to local government, school boards, or community consultations. This activity prepares students for civic participation, which is a genuine purpose of literacy education.",
+        prompts: [
+          { text: "Your issue and recommendation:", type: "lines", lines: 2 },
+          { text: "Your oral submission:", type: "box" },
+        ],
+      },
+      // 66
+      {
+        type: "multiple-choice",
+        title: "Ethics of Persuasion",
+        instruction: "Choose the best answer for each question about the ethical dimensions of persuasive speaking.",
+        questions: [
+          {
+            prompt: "What distinguishes legitimate persuasion from manipulation?",
+            options: [
+              "Legitimate persuasion uses emotion; manipulation uses logic",
+              "Legitimate persuasion provides accurate information and sound reasoning; manipulation exploits biases, fears, or uses false information",
+              "They are the same — all persuasion is manipulation",
+              "Manipulation is faster, so it is preferred in debate",
+            ],
+            answer: "Legitimate persuasion provides accurate information and sound reasoning; manipulation exploits biases, fears, or uses false information",
+          },
+          {
+            prompt: "A speaker who deliberately uses misleading statistics to win a debate is:",
+            options: [
+              "Using a legitimate debate strategy",
+              "Acting unethically and undermining the integrity of the debate",
+              "Simply being competitive",
+              "Technically allowed if the opponent doesn't notice",
+            ],
+            answer: "Acting unethically and undermining the integrity of the debate",
+          },
+        ],
+      },
+      // 67
+      {
+        type: "open-response",
+        title: "Impromptu Speaking",
+        instruction: "Impromptu speaking — speaking on a topic with little or no preparation — is a critical skill. Choose one of the following topics and deliver a 90-second impromptu speech (to a parent, sibling, or recorded). Topics: 'The most important thing I have learned this year', 'What schools should teach that they don't', 'The value of disagreement'.",
+        parentTip: "For impromptu speaking, suggest this structure: 1. State your position. 2. Give one example or piece of evidence. 3. Explain why it matters. 4. Return to your opening. This gives any 90-second speech a shape. Practise this formula until it becomes automatic.",
+        prompts: [
+          { text: "Your topic:", type: "lines", lines: 1 },
+          { text: "Brief notes (30 seconds to jot these before speaking):", type: "lines", lines: 3 },
+          { text: "Self-evaluation after delivery:", type: "lines", lines: 4 },
+        ],
+      },
+      // 68
+      {
+        type: "sorting",
+        title: "What Makes a Debate Speech Excellent?",
+        instruction: "Sort each quality into 'Excellent' (consistently seen in the best debate speeches) or 'Adequate' (present in competent but not excellent speeches).",
+        columns: ["Excellent", "Adequate"],
+        items: [
+          { label: "Clear team line that is reinforced across all three speakers" },
+          { label: "Arguments are present and organised" },
+          { label: "Evidence is highly specific, sourced, and contextualised" },
+          { label: "Evidence is present but vague" },
+          { label: "Rebuttal directly engages with the strongest opposition argument" },
+          { label: "Rebuttal says 'the other team is wrong'" },
+          { label: "Delivery is confident, varied, and commands the room" },
+          { label: "Delivery is clear and audible" },
+          { label: "Concedes strategically, turning the concession to the team's advantage" },
+          { label: "Signposting language is present" },
+        ],
+      },
+      // 69
+      {
+        type: "open-response",
+        title: "A Persuasive Speech on a Value",
+        instruction: "Write a persuasive speech (300–400 words) arguing for the importance of a core value — e.g. honesty, courage, compassion, intellectual humility, persistence. This speech should be passionate and personal, using both personal example and broader argument. It is not a debate; it is advocacy.",
+        parentTip: "Advocacy differs from debate — it is not adversarial but passionate assertion of what matters. Speeches by figures like Malala Yousafzai, Noel Pearson, or Martin Luther King demonstrate this form. They blend personal testimony, historical evidence, and moral argument.",
+        prompts: [
+          { text: "Your value:", type: "lines", lines: 1 },
+          { text: "Your speech:", type: "box" },
+        ],
+      },
+      // 70
+      {
+        type: "multiple-choice",
+        title: "Listening and Critical Engagement",
+        instruction: "Choose the best answer for each question about listening skills in formal speaking contexts.",
+        questions: [
+          {
+            prompt: "What does 'active listening' mean in a formal debate context?",
+            options: [
+              "Listening while doing something else at the same time",
+              "Nodding to show agreement",
+              "Carefully tracking the argument being made, noting its structure and evidence, and identifying points to address in rebuttal",
+              "Waiting politely for your turn to speak",
+            ],
+            answer: "Carefully tracking the argument being made, noting its structure and evidence, and identifying points to address in rebuttal",
+          },
+          {
+            prompt: "A speaker who listens carefully to the opposition and responds to their actual arguments (rather than anticipated arguments) demonstrates:",
+            options: [
+              "Weakness — they are following the opposition's lead",
+              "Intellectual rigour and good faith — they are genuinely engaging rather than delivering a rehearsed performance",
+              "Poor preparation",
+              "Lack of confidence in their own argument",
+            ],
+            answer: "Intellectual rigour and good faith — they are genuinely engaging rather than delivering a rehearsed performance",
+          },
+        ],
+      },
+      // 71
+      {
+        type: "fill-in-blank",
+        title: "Famous Australian Speeches: Key Terms",
+        instruction: "Fill in the blank with the correct word or phrase.",
+        sentences: [
+          { text: "Paul Keating's 1992 Redfern Speech acknowledged that it was _______ who had brought the diseases, the alcohol, and the despair to Aboriginal people.", blanks: ["we / non-Aboriginal Australians / Europeans"] },
+          { text: "Gough Whitlam's famous 1972 campaign speech used the phrase 'It\u2019s _______ for Australia' to signal the need for change.", blanks: ["Time"] },
+          { text: "Lowitja O\u2019Donoghue, delivering the 2000 Reconciliation Convention opening speech, called for an acknowledgment of _______ as the foundation of reconciliation.", blanks: ["truth / history / the past"] },
+          { text: "The Apology speech by Prime Minister Kevin Rudd in 2008 formally apologised to the _______ and their families for the policies of forced separation.", blanks: ["Stolen Generations"] },
+        ],
+      },
+      // 72
+      {
+        type: "open-response",
+        title: "Presenting Complex Ideas Accessibly",
+        instruction: "Choose a complex idea or concept from a subject you are studying (it need not be English). Write and deliver a 2-minute explanation of this idea to a non-specialist audience (your parent or sibling) using no jargon. Use analogies, examples, and plain language.",
+        parentTip: "The ability to explain complex ideas simply and clearly is one of the highest intellectual skills. Einstein reportedly said that if you can\u2019t explain it simply, you don\u2019t understand it well enough. This exercise tests depth of understanding as much as speaking skill.",
+        prompts: [
+          { text: "Your complex idea:", type: "lines", lines: 1 },
+          { text: "Key analogies or examples you used:", type: "lines", lines: 3 },
+          { text: "Did your audience understand it? What confused them, if anything?", type: "lines", lines: 3 },
+        ],
+      },
+      // 73
+      {
+        type: "circle-correct",
+        title: "Evaluating a Presentation: Checklist",
+        instruction: "Evaluate a presentation you have given or observed by circling Yes or No for each criterion.",
+        questions: [
+          {
+            prompt: "Did the presentation begin with something that earned the audience's attention (not 'Today I will talk about...')?",
+            options: ["Yes", "No"],
+          },
+          {
+            prompt: "Were all main points clearly supported by specific evidence?",
+            options: ["Yes", "No"],
+          },
+          {
+            prompt: "Was the strongest opposing argument acknowledged and rebutted?",
+            options: ["Yes", "No"],
+          },
+          {
+            prompt: "Did the presentation use signposting language to guide the audience through the structure?",
+            options: ["Yes", "No"],
+          },
+          {
+            prompt: "Did the closing land with impact — returning to the opening or ending with a memorable line?",
+            options: ["Yes", "No"],
+          },
+          {
+            prompt: "Was the delivery clear, varied in pace and volume, and making appropriate eye contact?",
+            options: ["Yes", "No"],
+          },
+        ],
+      },
+      // 74
+      {
+        type: "open-response",
+        title: "Structured Academic Controversy",
+        instruction: "Structured Academic Controversy (SAC) is a cooperative learning strategy where two pairs work on the same topic: Pair A argues one position, then Pair B argues the opposite, then both pairs work together to find the most defensible position. Simulate this individually: argue both sides of the proposition 'Australia should introduce a national curriculum for all schools', then write your own synthesised, balanced position.",
+        parentTip: "SAC is designed to separate the discipline of argumentation from personal conviction — students practise making the strongest possible case regardless of what they believe. The synthesis stage is the most intellectually demanding: finding a position that accounts for the best arguments on both sides.",
+        prompts: [
+          { text: "Affirmative case (200 words):", type: "box" },
+          { text: "Negative case (200 words):", type: "box" },
+          { text: "Synthesised position (100 words):", type: "box" },
+        ],
+      },
+      // 75
+      {
+        type: "tip",
+        title: "Tip: Your Voice Is an Instrument",
+        content: "Your voice is the primary instrument of formal speaking — and like any instrument, it can be developed, tuned, and played with greater skill through practice. Three areas to focus on: resonance (project from your chest, not your throat — this creates a fuller, more commanding sound); articulation (open your mouth fully, especially on vowels); and variation (change your pitch, pace, and volume deliberately rather than letting them flatten). Record yourself delivering one minute of speech, listen back, and identify which of these three areas needs most work. Then practise that area deliberately for five minutes. Repeat weekly.",
+      },
+      // 76
+      {
+        type: "open-response",
+        title: "The Humane Disagreement: Responding to Personal Attacks",
+        instruction: "In real debates and public life, speakers sometimes make personal attacks or use inflammatory language. Write three model responses that address the substance of an argument without responding to the personal attack itself — demonstrating intellectual maturity and redirecting to the evidence.",
+        parentTip: "Responding to personal attacks calmly, with intellectual focus on the argument rather than the attack, is a mark of significant maturity. This skill is increasingly valuable in public life, where much public discourse has become ad hominem. Model this yourself in family discussions.",
+        prompts: [
+          {
+            text: "Attack: 'You\u2019re just saying that because you\u2019re young and naive.' Your response:",
+            type: "lines",
+            lines: 3,
+          },
+          {
+            text: "Attack: 'Anyone who argues for that position is clearly biased.' Your response:",
+            type: "lines",
+            lines: 3,
+          },
+          {
+            text: "Attack: 'I can\u2019t take this argument seriously.' Your response:",
+            type: "lines",
+            lines: 3,
+          },
+        ],
+      },
+      // 77
+      {
+        type: "true-false",
+        title: "Formal Speaking: Year 9 Final Review",
+        instruction: "Mark each statement as true or false.",
+        statements: [
+          { text: "The Australian Curriculum expects Year 9 students to engage with structured argument, evidence, and formal register in oral presentations.", answer: true },
+          { text: "A great debate speaker wins by being the most aggressive and confrontational speaker.", answer: false },
+          { text: "Adapting your presentation for a specific audience is a mark of skill, not compromise.", answer: true },
+          { text: "The purpose of rebuttal is to destroy your opponent's reputation.", answer: false },
+          { text: "Impromptu speaking is a skill that can be developed through regular practice.", answer: true },
+          { text: "Steelmanning strengthens a debater's overall argument by demonstrating engagement with the best opposing case.", answer: true },
+        ],
+      },
+      // 78
+      {
+        type: "open-response",
+        title: "Written Reflection on Your Development as a Formal Speaker",
+        instruction: "Write a reflective essay (200–300 words) on your development as a formal speaker across this worksheet. What has changed in how you think about formal speaking? What specific skills have you developed? What is your most significant area for continued growth?",
+        parentTip: "Metacognitive reflection on skill development is a powerful learning tool. It is also a common task in senior school and university portfolios — developing the habit now is valuable. Encourage specificity over vague self-praise.",
+        prompts: [
+          { text: "Your reflective essay:", type: "box" },
+        ],
+      },
+      // 79
+      {
+        type: "multiple-choice",
+        title: "Connecting Oral and Written Argument",
+        instruction: "Choose the best answer for each question about the relationship between formal speaking and analytical writing.",
+        questions: [
+          {
+            prompt: "How are formal spoken argument and formal analytical writing similar?",
+            options: [
+              "They are identical and can be used interchangeably",
+              "Both require clear structure, evidence, and engagement with opposing views",
+              "Both require the same length and format",
+              "Neither requires evidence or rebuttal",
+            ],
+            answer: "Both require clear structure, evidence, and engagement with opposing views",
+          },
+          {
+            prompt: "How does preparing a formal presentation improve written analytical essays?",
+            options: [
+              "It doesn't — speaking and writing use completely different skills",
+              "It forces the student to organise their argument for a live audience, which develops clarity and structure that transfers to writing",
+              "It trains the student to write quickly",
+              "It helps with spelling and grammar",
+            ],
+            answer: "It forces the student to organise their argument for a live audience, which develops clarity and structure that transfers to writing",
+          },
+        ],
+      },
+      // 80
+      {
+        type: "spark",
+        title: "Spark: Speaking Up",
+        content: "There is a difference between having views and being able to express them clearly, fairly, and persuasively in a public or formal setting. The skills in this worksheet — argumentation, evidence, rebuttal, formal register, listening, steelmanning — are not just academic skills. They are civic skills. They are the skills of democratic participation: what you need to engage in community meetings, advocate for a cause, challenge a decision, or simply make your case to someone who disagrees with you. Every time you practise speaking formally and arguing well, you are preparing to participate fully in the life of your community. Use that capacity.",
+      },
+      // 81
+      {
+        type: "home-activity",
+        title: "Beyond the Worksheet: Speaking and Debate in the World",
+        instruction: "Choose one or more of the following activities to extend your formal speaking and debate skills beyond this worksheet.",
+        parentTip: "Formal speaking skills develop through practice with real audiences and real stakes. Even informal practice at home — regular structured discussions, watching and analysing speeches, attending a community event — builds the skills and confidence that worksheets alone cannot provide.",
+        suggestions: [
+          "Watch a full parliamentary question time (available on the Australian Parliament House website or YouTube). Identify three debate techniques used by speakers on either side.",
+          "Join or start a debating club or speaking group — local youth groups, Rostrum (a public speaking organisation with youth programs), or online communities.",
+          "Watch three TED or TEDx talks on topics that interest you. For each, identify: the central argument, the evidence used, and one delivery technique you could adopt.",
+          "Attend a local council meeting, school board meeting, or community forum. Observe how formal public speaking is used in real civic contexts.",
+          "Challenge yourself to make one formal point per week in a family discussion — structure it as a proper argument with evidence, not just an opinion. Track how your family responds.",
+        ],
+      },
+      // 82
+      {
+        type: "open-response",
+        title: "Final Debate: Full Participation",
+        instruction: "Participate in a full structured debate with a family member or friend on a topic of your choice. Each speaker has 3 minutes for their main speech and 90 seconds for rebuttal. An observer (if available) acts as adjudicator. Complete the evaluation below after.",
+        parentTip: "A full structured debate, even between two people, is the capstone activity for this worksheet. Take it seriously: maintain formal register, time the speeches, and give genuine adjudication feedback afterward. If you can, record it for self-review.",
+        prompts: [
+          { text: "Topic and your position:", type: "lines", lines: 1 },
+          { text: "Key arguments you made:", type: "lines", lines: 4 },
+          { text: "Most effective rebuttal you made:", type: "lines", lines: 3 },
+          { text: "One argument you wish you had made better — and how:", type: "lines", lines: 3 },
+        ],
+      },
+      // 83
+      {
+        type: "open-response",
+        title: "Adjudicator's Report on Your Own Debate",
+        instruction: "Write an adjudicator's report (150 words) on the debate you participated in during Activity 82. Evaluate both sides as if you were an independent assessor — acknowledge strengths and weaknesses on both sides, and explain your decision.",
+        parentTip: "Writing an adjudicator's report on your own debate requires stepping outside your own perspective — a genuinely difficult and valuable intellectual exercise. The willingness to identify your own weaknesses and the opposition's strengths honestly is a mark of intellectual maturity.",
+        prompts: [
+          { text: "Your adjudicator's report:", type: "box" },
+        ],
+      },
+      // 84
+      {
+        type: "fill-in-blank",
+        title: "Formal Speaking: Final Vocabulary Review",
+        instruction: "Fill in the blank with the correct term.",
+        sentences: [
+          { text: "The _______ team argues for the proposition; the _______ team argues against it.", blanks: ["Affirmative", "Negative"] },
+          { text: "A deliberate _______ — a brief pause — before a key point creates emphasis and attention.", blanks: ["pause"] },
+          { text: "Acknowledging a valid point made by the opposition before explaining why it does not undermine your position is called _______.", blanks: ["concession / graceful concession"] },
+          { text: "Ethos, pathos, and logos are the three appeals identified by the ancient Greek philosopher _______.", blanks: ["Aristotle"] },
+          { text: "The technique of engaging with the strongest possible version of the opposing argument is called _______.", blanks: ["steelmanning"] },
+        ],
+      },
+      // 85
+      {
+        type: "true-false",
+        title: "Ultimate Review: Formal Presentations and Debate",
+        instruction: "Mark each statement as true or false — a final review of all key concepts.",
+        statements: [
+          { text: "Ethos refers to an appeal to the audience's emotions.", answer: false },
+          { text: "A straw man fallacy involves misrepresenting an opponent's argument to make it easier to attack.", answer: true },
+          { text: "The burden of proof in a debate typically rests with the Affirmative team.", answer: true },
+          { text: "Eye contact with only one member of the audience is effective presentation technique.", answer: false },
+          { text: "Reading directly from a script for an entire presentation is ideal delivery practice.", answer: false },
+          { text: "Matter, manner, and method are the three criteria often used in debate adjudication.", answer: true },
+        ],
+      },
+      // 86
+      {
+        type: "open-response",
+        title: "A Speech for a Real Occasion",
+        instruction: "Identify a real occasion coming up in your life where you could deliver a short speech — a family event, a community gathering, a farewell, a celebration, or a formal school occasion. Write and practise a 2-minute speech for that occasion. Deliver it when the occasion comes.",
+        parentTip: "The most powerful learning happens when skills are applied in real contexts. If there is any opportunity for your student to deliver a speech to a real audience — at a family gathering, at a local event, in a home-school group — encourage and support that. Real audiences teach more than any worksheet can.",
+        prompts: [
+          { text: "The occasion and audience:", type: "lines", lines: 2 },
+          { text: "Your 2-minute speech:", type: "box" },
+        ],
+      },
+      // 87
+      {
+        type: "matching",
+        title: "Connecting Debate Skills to Real-World Contexts",
+        instruction: "Match each formal speaking skill to the real-world context where it is most directly applied.",
+        left: [
+          "Rebuttal",
+          "Concession",
+          "Signposting",
+          "Evidence with sources",
+          "Formal register",
+        ],
+        right: [
+          "Academic research presentations, journalism, and scientific communication",
+          "Legal cross-examination, mediation, and negotiation",
+          "Job interviews, formal meetings, and professional communication",
+          "Mediation, negotiation, and conflict resolution",
+          "Teaching, guided tours, and any long public explanation",
+        ],
+      },
+      // 88
+      {
+        type: "circle-correct",
+        title: "Debate Propositions: Appropriate or Not?",
+        instruction: "For each debate proposition, circle whether it is appropriately worded for formal debate (clear, arguable, balanced) or needs revision.",
+        questions: [
+          {
+            prompt: "'Australia should introduce a sugar tax on sweetened beverages.'",
+            options: ["Appropriately worded", "Needs revision"],
+          },
+          {
+            prompt: "'Dogs are obviously better than cats and everyone knows it.'",
+            options: ["Appropriately worded", "Needs revision"],
+          },
+          {
+            prompt: "'The Australian government should increase funding for renewable energy research.'",
+            options: ["Appropriately worded", "Needs revision"],
+          },
+          {
+            prompt: "'It is totally wrong to eat meat and anyone who does is bad.'",
+            options: ["Appropriately worded", "Needs revision"],
+          },
+          {
+            prompt: "'Australia should adopt an indigenous Voice to Parliament as a constitutional body.'",
+            options: ["Appropriately worded", "Needs revision"],
+          },
+        ],
+      },
+      // 89
+      {
+        type: "open-response",
+        title: "Goal-Setting: My Next Steps as a Formal Speaker",
+        instruction: "Write a personal plan (150 words) for your continued development as a formal speaker over the next three months. Include: three specific skills you will practise, how you will practise them, and how you will know if you have improved.",
+        parentTip: "Specific, time-bound goals are far more effective than vague intentions. Help your student identify one specific skill to focus on first — something concrete and measurable. 'I will maintain eye contact with the audience for at least 70% of a 2-minute speech' is more useful than 'I will get better at presentations.'",
+        prompts: [
+          { text: "Your personal development plan:", type: "box" },
+        ],
+      },
+      // 90
+      {
+        type: "tip",
+        title: "Tip: Every Conversation Is Practice",
+        content: "Formal speaking does not only develop in formal settings. Every conversation is an opportunity to practise the underlying skills: listening carefully, structuring your response, providing evidence for your claims, acknowledging the other person's point before disagreeing, choosing your words deliberately. The most skilled formal speakers are people who bring the habits of mind of good speaking — clarity, precision, good faith, preparation — to every conversation they have. The worksheet is a structure for learning; conversation is where the skills live.",
+      },
+      // 91
+      {
+        type: "open-response",
+        title: "Comparative Analysis: Two Speeches",
+        instruction: "Choose two speeches on related topics from different contexts (e.g. Keating's Redfern Speech and Rudd's Apology; Thunberg's UN speech and a speech by an Australian environment minister). Write a comparative analysis (200–250 words) examining how each speaker constructs their argument and uses delivery to serve their purpose.",
+        parentTip: "Comparative analysis of speeches is excellent preparation for senior English essay tasks, which frequently require comparison of texts. Encourage your student to go beyond surface features (both use rhetorical questions) to deeper analysis (what work does the rhetorical question do in each context?).",
+        prompts: [
+          { text: "Speech 1:", type: "lines", lines: 1 },
+          { text: "Speech 2:", type: "lines", lines: 1 },
+          { text: "Your comparative analysis:", type: "box" },
+        ],
+      },
+      // 92
+      {
+        type: "open-response",
+        title: "Formal Speaking Across Cultures",
+        instruction: "Norms for formal speaking vary significantly across cultures. Research or reflect on how formal public speaking works in one non-Western cultural context (e.g. Indigenous Australian oratory, formal Japanese speech, West African griot tradition, Indigenous Pacific speaking traditions). Write 150–200 words on what this reveals about the cultural assumptions underlying Western formal debate conventions.",
+        parentTip: "This activity develops cultural awareness alongside communication skills. The assumptions built into Western formal debate — adversarial structure, the primacy of logic over relationship, direct assertion over indirection — are not universal. Understanding this makes students more adaptable and respectful communicators.",
+        prompts: [
+          { text: "Your cultural context:", type: "lines", lines: 1 },
+          { text: "Your reflection:", type: "box" },
+        ],
+      },
+      // 93
+      {
+        type: "fill-in-blank",
+        title: "Formal Speaking: Connecting to the Curriculum",
+        instruction: "Fill in the blank to complete each statement about formal speaking in the Australian Curriculum.",
+        sentences: [
+          { text: "At Year 9, students are expected to analyse and evaluate the _______ and _______ of spoken texts, including presentations and debates.", blanks: ["language", "structure / content"] },
+          { text: "The Australian Curriculum identifies _______ as a core element of oral language, requiring students to engage with ideas, evidence, and opposing views.", blanks: ["argumentation / critical thinking"] },
+          { text: "Formal presentations at Year 9 should demonstrate _______ register and appropriate language for the specific audience and purpose.", blanks: ["formal"] },
+          { text: "The ability to listen critically, identify _______, and respond to the content of spoken texts is a key Year 9 literacy skill.", blanks: ["argument / structure / main ideas"] },
+        ],
+      },
+      // 94
+      {
+        type: "multiple-choice",
+        title: "Formal Speaking in Higher Education and Work",
+        instruction: "Choose the best answer for each question about why formal speaking skills matter beyond school.",
+        questions: [
+          {
+            prompt: "Which of the following is the most important formal speaking skill for success in university seminars?",
+            options: [
+              "The ability to speak loudly",
+              "The ability to articulate a well-structured argument, engage with others' views, and respond thoughtfully to challenge",
+              "The ability to memorise facts",
+              "The ability to speak without preparation",
+            ],
+            answer: "The ability to articulate a well-structured argument, engage with others' views, and respond thoughtfully to challenge",
+          },
+          {
+            prompt: "In the workplace, formal speaking skills are most directly relevant when:",
+            options: [
+              "Sending emails",
+              "Writing reports",
+              "Presenting proposals, leading meetings, negotiating, and making cases to stakeholders",
+              "Completing administrative tasks",
+            ],
+            answer: "Presenting proposals, leading meetings, negotiating, and making cases to stakeholders",
+          },
+        ],
+      },
+      // 95
+      {
+        type: "open-response",
+        title: "Final Self-Assessment: Formal Speaking",
+        instruction: "Complete a final self-assessment of your formal speaking and debate skills at the end of this worksheet. Rate yourself on each skill (1 = developing, 2 = competent, 3 = strong), and write a specific example to justify each rating.",
+        parentTip: "Honest self-assessment is a metacognitive skill that improves with practice. Help your student be specific rather than globally positive or negative — 'I am a 3 in structuring arguments because I can reliably use signposting language' is far more useful than 'I think I\u2019m okay at this.'",
+        prompts: [
+          { text: "Structuring a formal argument (1–3) and why:", type: "lines", lines: 2 },
+          { text: "Using evidence effectively (1–3) and why:", type: "lines", lines: 2 },
+          { text: "Rebuttal and engaging with opposing views (1–3) and why:", type: "lines", lines: 2 },
+          { text: "Formal register and language (1–3) and why:", type: "lines", lines: 2 },
+          { text: "Delivery skills (1–3) and why:", type: "lines", lines: 2 },
+          { text: "Your single most important next goal:", type: "lines", lines: 2 },
+        ],
+      },
+      // 96
+      {
+        type: "home-activity",
+        title: "Debate at Home: Family Forum",
+        instruction: "Host a regular 'family forum' — a short structured discussion on a topic of family interest. Each person has 2 minutes to speak (uninterrupted), then open discussion. Topics could include: screen time rules, family decisions, current events, or a question from a book you are reading together.",
+        parentTip: "A regular family forum serves multiple purposes: it practises formal speaking in a low-stakes setting, models intellectual respect for disagreement, and builds the habit of structured discussion. Rotate who introduces the topic. Over time, raise the bar: require evidence, challenge generalisations, model graceful concession.",
+        suggestions: [
+          "Choose a topic together once a week — let everyone have a say in the topic.",
+          "Set a two-minute timer for each speaker and stick to it.",
+          "At the end, summarise: what were the strongest arguments? Did anyone change their view?",
+          "Try arguing for the position you disagree with once a month — steelmanning at home.",
+          "After three months, reflect: has your family's quality of discussion improved?",
+        ],
+      },
+      // 97
+      {
+        type: "open-response",
+        title: "Portfolio: Showcase Presentation",
+        instruction: "Prepare and deliver a 4-minute showcase presentation on a topic you have researched deeply and care about. This is your best work — bring everything together: a compelling opening, developed arguments with specific evidence, rebuttal, rhetorical devices, and a strong close. If possible, record it.",
+        parentTip: "The showcase presentation is the culminating performance task for this worksheet. It should feel like a genuine occasion — set up the room, have your student dress formally if they wish, and give your full attention as audience. Provide genuine, specific feedback afterward. This is the kind of experience that builds real confidence.",
+        prompts: [
+          { text: "Your topic and thesis:", type: "lines", lines: 2 },
+          { text: "Brief planning notes:", type: "lines", lines: 5 },
+          { text: "Self-evaluation after delivery:", type: "lines", lines: 5 },
+        ],
+      },
+      // 98
+      {
+        type: "true-false",
+        title: "Final Review: Formal Presentations and Debate",
+        instruction: "A final review of key concepts. Mark each statement as true or false.",
+        statements: [
+          { text: "The ability to argue a position you do not personally hold is an intellectual skill, not dishonesty.", answer: true },
+          { text: "A debate is won primarily by speaking for longer than the other side.", answer: false },
+          { text: "Formal spoken English and everyday conversation use identical language and structure.", answer: false },
+          { text: "Specific, sourced evidence is more persuasive than vague general claims.", answer: true },
+          { text: "The purpose of formal debate as a school activity is purely competitive.", answer: false },
+          { text: "Formal speaking skills have direct applications in university, civic participation, and professional life.", answer: true },
+        ],
+      },
+      // 99
+      {
+        type: "open-response",
+        title: "Your Speaking Identity",
+        instruction: "Write a short reflective statement (100–150 words) on your identity as a speaker. What kind of speaker are you becoming? What do you sound like at your best? What makes your formal voice distinctive? This is a statement of who you are — and who you are becoming — as a communicator.",
+        parentTip: "Identity as a communicator is worth thinking about and naming. Students who have a clear sense of their own communicative strengths — their particular clarity, their warmth, their precision, their passion — develop confidence faster than those who compare themselves to an abstract ideal. Help your student see their genuine strengths.",
+        prompts: [
+          { text: "Your speaking identity statement:", type: "box" },
+        ],
+      },
+      // 100
+      {
+        type: "spark",
+        title: "Spark: Your Voice in the World",
+        content: "Every generation needs people who can speak clearly, argue fairly, and make a compelling case for what they believe. The skills you have developed in this worksheet — structuring argument, marshalling evidence, rebutting with intellectual honesty, using language purposefully, listening with genuine attention — are not just exam skills. They are the skills of citizenship, of leadership, of any life lived in genuine engagement with other people and with the questions that matter. Your voice in the world is worth developing. Use it.",
+      },
     ],
     nextSteps: [
       "Deliver your presentation to a larger audience if possible — another family member, a friend, or a home-school group.",
       "Prepare a structured debate on a topic of current relevance, with a family member taking the opposing side.",
+      "Watch two major Australian speeches (Keating's Redfern Speech and Rudd's Apology) and compare their argumentative strategies.",
+      "Join a speaking or debating organisation such as Rostrum Youth or a local debating club.",
     ],
   },
 

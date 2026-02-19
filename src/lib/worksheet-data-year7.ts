@@ -3293,18 +3293,27 @@ export const year7MathsWorksheets: WorksheetItem[] = [
       ],
     },
     activities: [
+      // ── Foundational (1–20) ──
       {
         type: "matching",
         title: "Match Words to Expressions",
         instruction: "Draw a line from each phrase to its algebraic expression.",
-        left: [
-          "5 more than n",
-          "double x",
-          "3 less than y",
-          "half of m",
-          "4 times k",
-        ],
+        left: ["5 more than n", "double x", "3 less than y", "half of m", "4 times k"],
         right: ["m ÷ 2", "y − 3", "2x", "4k", "n + 5"],
+      },
+      {
+        type: "true-false",
+        title: "Algebra Vocabulary",
+        instruction: "Write True or False.",
+        parentTip: "In algebra, a term is a single number or variable (or product of both). An expression has multiple terms. An equation has an equals sign.",
+        statements: [
+          { text: "3x is a term.", answer: true },
+          { text: "4x + 2 = 10 is an expression.", answer: false },
+          { text: "A variable represents an unknown number.", answer: true },
+          { text: "In 5y, the coefficient is y.", answer: false },
+          { text: "3x and 5x are like terms.", answer: true },
+          { text: "2x and 2y are like terms.", answer: false },
+        ],
       },
       {
         type: "circle-correct",
@@ -3314,6 +3323,20 @@ export const year7MathsWorksheets: WorksheetItem[] = [
           { prompt: "The cost of 3 apples at p cents each", options: ["3p", "p + 3", "p ÷ 3"] },
           { prompt: "10 more than twice a number n", options: ["2n + 10", "10n + 2", "n + 12"] },
           { prompt: "A number x divided by 4, then add 1", options: ["x/4 + 1", "4x + 1", "x + 4"] },
+          { prompt: "Three less than five times y", options: ["5y − 3", "3 − 5y", "5y + 3"] },
+        ],
+      },
+      {
+        type: "fill-in-blank",
+        title: "Translate Words to Algebra",
+        instruction: "Write the algebraic expression.",
+        parentTip: "Key words: 'sum' = +, 'difference' = −, 'product' = ×, 'quotient' = ÷, 'more than' = +, 'less than' = −, 'times' = ×.",
+        sentences: [
+          { text: "7 more than a number n: ___", blanks: ["n + 7"] },
+          { text: "Triple a number x: ___", blanks: ["3x"] },
+          { text: "The product of 4 and m: ___", blanks: ["4m"] },
+          { text: "Divide k by 5 and subtract 3: ___", blanks: ["k/5 − 3"] },
+          { text: "p squared plus 2p: ___", blanks: ["p² + 2p"] },
         ],
       },
       {
@@ -3333,29 +3356,51 @@ export const year7MathsWorksheets: WorksheetItem[] = [
         instruction: "Sort each pair into the correct column.",
         columns: ["Like Terms", "Unlike Terms"],
         items: [
-          { label: "3x and 5x" },
-          { label: "2y and 3z" },
-          { label: "4a and a" },
-          { label: "6x and 6y" },
-          { label: "m and 7m" },
-          { label: "5n² and 3n" },
+          { label: "3x and 5x" }, { label: "2y and 3z" }, { label: "4a and a" },
+          { label: "6x and 6y" }, { label: "m and 7m" }, { label: "5n² and 3n" },
         ],
       },
       {
         type: "matching",
         title: "Simplify by Collecting Like Terms",
-        instruction: "Draw a line to match each expression to its simplified form.",
+        instruction: "Match each expression to its simplified form.",
         left: ["3x + 2x", "5y − 2y", "4a + a + 2a", "6n − n", "2m + 3m − m"],
         right: ["5n", "7a", "4m", "5x", "3y"],
+      },
+      {
+        type: "fill-in-blank",
+        title: "Collect Like Terms",
+        instruction: "Fill in the simplified form.",
+        parentTip: "Only collect terms with exactly the same variable and power. Constants (numbers without variables) are also like terms.",
+        sentences: [
+          { text: "4x + 3x = ___", blanks: ["7x"] },
+          { text: "8a − 5a = ___", blanks: ["3a"] },
+          { text: "6y + y − 3y = ___", blanks: ["4y"] },
+          { text: "5n + 3 − 2n + 7 = ___", blanks: ["3n + 10"] },
+          { text: "4x + 2y − x + 3y = ___", blanks: ["3x + 5y"] },
+        ],
       },
       {
         type: "circle-correct",
         title: "Evaluate Formulas",
         instruction: "Use the formula to find the answer.",
         questions: [
-          { prompt: "Area of a rectangle: A = lw. Find A when l = 7 and w = 4.", options: ["28", "22", "11"] },
-          { prompt: "Perimeter of a square: P = 4s. Find P when s = 6.", options: ["24", "36", "12"] },
-          { prompt: "Speed: d = st. Find d when s = 60 and t = 3.", options: ["180", "63", "20"] },
+          { prompt: "A = lw. Find A when l = 7, w = 4.", options: ["28", "22", "11"] },
+          { prompt: "P = 4s. Find P when s = 6.", options: ["24", "36", "12"] },
+          { prompt: "d = st. Find d when s = 60, t = 3.", options: ["180", "63", "20"] },
+          { prompt: "A = ½bh. Find A when b = 10, h = 6.", options: ["30", "60", "16"] },
+        ],
+      },
+      {
+        type: "multiple-choice",
+        title: "Substitution — Choose the Correct Value",
+        instruction: "Substitute and evaluate.",
+        parentTip: "Replace the variable with the given number. Use brackets around substituted negatives.",
+        questions: [
+          { prompt: "3a + 5 when a = 4", options: ["17", "12", "21", "14"], answer: "17" },
+          { prompt: "x² − 2x when x = 5", options: ["15", "25", "35", "10"], answer: "15" },
+          { prompt: "2(p + 3) when p = 7", options: ["20", "17", "13", "23"], answer: "20" },
+          { prompt: "4k/(k+2) when k = 6", options: ["3", "4", "6", "2"], answer: "3" },
         ],
       },
       {
@@ -3364,13 +3409,25 @@ export const year7MathsWorksheets: WorksheetItem[] = [
         instruction: "Write and solve your own algebra problems.",
         prompts: [
           { text: "Write an algebraic expression for: 'I start with x books, buy 4 more, then give away 2.' Evaluate when x = 10.", type: "lines", lines: 3 },
-          { text: "A mobile plan costs $20 per month plus $0.10 per text. Write a formula for the monthly cost C when you send t texts. Find C when t = 50.", type: "lines", lines: 3 },
+          { text: "A mobile plan costs $20 per month plus $0.10 per text. Write a formula for monthly cost C when you send t texts. Find C when t = 50.", type: "lines", lines: 3 },
+        ],
+      },
+      {
+        type: "true-false",
+        title: "Substitution Check",
+        instruction: "Write True or False for each substitution.",
+        statements: [
+          { text: "When x = 2, 3x + 1 = 7", answer: true },
+          { text: "When n = 0, 5n² = 5", answer: false },
+          { text: "When a = −2, a² = −4", answer: false },
+          { text: "When y = 3, 2y − y² = −3", answer: true },
+          { text: "When m = 10, m/5 + 3 = 5", answer: false },
         ],
       },
       {
         type: "circle-correct",
         title: "Expanding Single Brackets",
-        instruction: "Expand by multiplying each term inside the brackets. Circle the correct answer.",
+        instruction: "Expand by multiplying each term inside the brackets.",
         questions: [
           { prompt: "3(x + 4)", options: ["3x + 12", "3x + 4", "x + 12"] },
           { prompt: "2(5 − y)", options: ["10 − 2y", "10 − y", "5 − 2y"] },
@@ -3379,9 +3436,14 @@ export const year7MathsWorksheets: WorksheetItem[] = [
         ],
       },
       {
+        type: "tip",
+        title: "Tip: Why Algebra Matters",
+        content: "Algebra is the language of mathematics. Whenever you use a spreadsheet formula, program a computer, calculate a building's dimensions, or find a phone plan deal, you are using algebraic thinking. The ability to write a general rule (like C = 0.20t + 15 for a phone plan) and then evaluate it for specific values is one of the most powerful tools in mathematics.",
+      },
+      {
         type: "matching",
         title: "Collecting Like Terms — Multi-Variable",
-        instruction: "Draw a line from each expression to its simplified form.",
+        instruction: "Match each expression to its simplified form.",
         left: ["3x + 2y + x", "5a − 2b + 3a − b", "4m + 3n − m + 2n", "2p + q + 3p − 2q"],
         right: ["3m + 5n", "5p − q", "8a − 3b", "4x + 2y"],
       },
@@ -3389,6 +3451,7 @@ export const year7MathsWorksheets: WorksheetItem[] = [
         type: "circle-correct",
         title: "Substituting Negative Values",
         instruction: "Substitute the given negative value and simplify.",
+        parentTip: "Use brackets when substituting negatives: if x = −3, then 4x = 4(−3) = −12.",
         questions: [
           { prompt: "Find 2x + 7 when x = −3", options: ["1", "13", "−1"] },
           { prompt: "Find 4 − 3y when y = −2", options: ["10", "−2", "2"] },
@@ -3401,23 +3464,357 @@ export const year7MathsWorksheets: WorksheetItem[] = [
         title: "Formulas for Perimeter and Area",
         instruction: "Write an algebraic formula and evaluate it.",
         prompts: [
-          { text: "Write a formula for the perimeter P of a rectangle with length (x + 3) cm and width x cm. Find P when x = 5.", type: "lines", lines: 3 },
+          { text: "Write a formula for perimeter P of a rectangle with length (x + 3) cm and width x cm. Find P when x = 5.", type: "lines", lines: 3 },
           { text: "A square has side length (2n) cm. Write a formula for its area A. Find A when n = 4.", type: "lines", lines: 2 },
-          { text: "A triangle has a base of 2k cm and a height of (k + 1) cm. Write an expression for its area. Find the area when k = 3.", type: "lines", lines: 3 },
+          { text: "A triangle has base 2k cm and height (k + 1) cm. Write an expression for its area. Find area when k = 3.", type: "lines", lines: 3 },
         ],
       },
       {
         type: "sorting",
         title: "Expression Type Sort",
         instruction: "Sort each algebraic item into the correct category.",
+        parentTip: "A term is a single element. An expression is a combination of terms. An equation includes an equals sign.",
         columns: ["Term", "Expression", "Equation"],
         items: [
-          { label: "3x" },
-          { label: "2x + 5 = 11" },
-          { label: "4a − 2b + 7" },
-          { label: "y²" },
-          { label: "3n − 4 = n + 2" },
-          { label: "5m" },
+          { label: "3x" }, { label: "2x + 5 = 11" }, { label: "4a − 2b + 7" },
+          { label: "y²" }, { label: "3n − 4 = n + 2" }, { label: "5m" },
+        ],
+      },
+      {
+        type: "fill-in-blank",
+        title: "Expand and Collect",
+        instruction: "Expand brackets then collect like terms.",
+        sentences: [
+          { text: "2(x + 3) + x = ___", blanks: ["3x + 6"] },
+          { text: "3(2a − 1) + 4a = ___", blanks: ["10a − 3"] },
+          { text: "5(n + 2) − 3(n − 1) = ___", blanks: ["2n + 13"] },
+        ],
+      },
+      {
+        type: "spark",
+        title: "Spark: Algebra's Origins",
+        content: "The word 'algebra' comes from the Arabic al-jabr, from the title of a book written by Muhammad ibn Musa al-Khwarizmi around 830 CE. Al-Khwarizmi (whose name gives us the word 'algorithm') described methods for solving equations. The book was used in European universities for centuries. Much later, René Descartes introduced the modern convention of using x, y, z for unknowns and a, b, c for known constants — a convention so successful it has never changed.",
+      },
+      // ── Developing (21–50) ──
+      {
+        type: "multiple-choice",
+        title: "Expanding and Simplifying",
+        instruction: "Expand and simplify each expression.",
+        questions: [
+          { prompt: "2(x + 3) + 3(x − 1)", options: ["5x + 3", "5x + 9", "5x − 3", "5x + 6"], answer: "5x + 3" },
+          { prompt: "4(2y + 1) − (y + 3)", options: ["7y + 1", "7y − 1", "8y − 3", "7y + 5"], answer: "7y + 1" },
+          { prompt: "3(a + 2b) + 2(a − b)", options: ["5a + 4b", "5a + 5b", "5a + 4b + 2", "6a + b"], answer: "5a + 4b" },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Perimeter Expressions",
+        instruction: "Write and simplify an algebraic expression for the perimeter of each shape.",
+        prompts: [
+          { text: "A pentagon has sides: x, x+2, 2x, 3x−1, x+5. Write and simplify the perimeter expression.", type: "lines", lines: 3 },
+          { text: "A rectangle has length (3n + 4) and width (n − 2). Write and simplify the perimeter formula.", type: "lines", lines: 2 },
+        ],
+      },
+      {
+        type: "true-false",
+        title: "Like Terms and Simplification",
+        instruction: "Write True or False.",
+        statements: [
+          { text: "3x + 4x = 7x²", answer: false },
+          { text: "5ab and 3ba are like terms.", answer: true },
+          { text: "x² and x are like terms.", answer: false },
+          { text: "2(x + 3) = 2x + 6", answer: true },
+          { text: "−3(x − 2) = −3x − 6", answer: false },
+        ],
+      },
+      {
+        type: "fill-in-blank",
+        title: "Factorising — Reverse of Expanding",
+        instruction: "Fill in the blank to factorise each expression (write as a product).",
+        parentTip: "Factorising is the reverse of expanding. Find the highest common factor of all terms and take it outside brackets.",
+        sentences: [
+          { text: "4x + 8 = 4(___ + ___)", blanks: ["x", "2"] },
+          { text: "6a − 9 = 3(___  − ___)", blanks: ["2a", "3"] },
+          { text: "10y + 15 = 5(___ + ___)", blanks: ["2y", "3"] },
+          { text: "x² + 3x = x(___ + ___)", blanks: ["x", "3"] },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Expanding Brackets with Negatives",
+        instruction: "Expand each expression, being careful with negative signs.",
+        questions: [
+          { prompt: "−2(x + 3)", options: ["−2x − 6", "−2x + 6", "2x − 6"] },
+          { prompt: "−(4a − 5)", options: ["−4a + 5", "4a − 5", "−4a − 5"] },
+          { prompt: "3 − 2(y − 1)", options: ["5 − 2y", "1 − 2y", "3 − 2y + 1"] },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Algebraic Word Problems",
+        instruction: "Write an algebraic expression and solve.",
+        prompts: [
+          { text: "Tickets to a concert cost $x each for adults and $y for children. Write expressions for: (a) cost of 3 adults (b) cost of 2 adults and 4 children (c) change from $100 for 1 adult and 3 children", type: "lines", lines: 4 },
+          { text: "A square garden has side length s metres. It is to be fenced, but one side is against a wall. Write a formula for the length of fencing needed. If s = 8, how much fencing?", type: "lines", lines: 3 },
+        ],
+      },
+      {
+        type: "sorting",
+        title: "Expressions — Sort by Number of Terms",
+        instruction: "Sort each expression by the number of terms it contains after simplification.",
+        parentTip: "Terms are separated by + or − signs (outside brackets). 4x + 2y − 3 has three terms.",
+        columns: ["1 term (monomial)", "2 terms (binomial)", "3 terms (trinomial)"],
+        items: [
+          { label: "3x² + 2x − 5" }, { label: "7ab" }, { label: "2x + 4" },
+          { label: "n² + n + 1" }, { label: "5y − 3" }, { label: "12" },
+        ],
+      },
+      {
+        type: "tip",
+        title: "Tip: Common Mistakes in Algebra",
+        content: "The three most common errors in Year 7 algebra are: (1) Adding unlike terms — 3x + 2y does not equal 5xy. (2) Forgetting to distribute to all terms when expanding — 2(x + 3) ≠ 2x + 3. (3) Sign errors when the coefficient is negative — −3(x − 2) = −3x + 6, not −3x − 6. Slowing down at each bracket and checking every sign prevents most algebraic mistakes.",
+      },
+      {
+        type: "multiple-choice",
+        title: "Substitution into Formulas",
+        instruction: "Use the given formula and substitute values.",
+        questions: [
+          { prompt: "C = 5(F − 32)/9. Find C when F = 212 (boiling point in Fahrenheit).", options: ["100°C", "180°C", "90°C", "212°C"], answer: "100°C" },
+          { prompt: "A = πr². Use π = 3.14. Find A when r = 5.", options: ["78.5", "31.4", "25", "15.7"], answer: "78.5" },
+          { prompt: "v = u + at. Find v when u = 10, a = 2, t = 5.", options: ["20", "60", "100", "15"], answer: "20" },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Writing and Evaluating Formulas",
+        instruction: "Write a formula then evaluate it.",
+        prompts: [
+          { text: "A pizza delivery service charges a $5 delivery fee plus $12 per pizza. Write a formula for total cost C of n pizzas. Evaluate for n = 3.", type: "lines", lines: 2 },
+          { text: "A car hire company charges $35 per day plus $0.15 per kilometre. Write a formula for total cost C. Find the cost for 5 days and 200 km.", type: "lines", lines: 3 },
+        ],
+      },
+      {
+        type: "fill-in-blank",
+        title: "Algebraic Identities",
+        instruction: "Fill in the blank using algebraic identities.",
+        parentTip: "An identity is always true for all values of the variable. Verify by substituting a specific value.",
+        sentences: [
+          { text: "a + a + a = ___", blanks: ["3a"] },
+          { text: "a × a = ___", blanks: ["a²"] },
+          { text: "3(a + b) = ___ + ___", blanks: ["3a", "3b"] },
+          { text: "a(b + c) = ___ + ___", blanks: ["ab", "ac"] },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Exploring Algebraic Patterns",
+        instruction: "Investigate and generalise each pattern.",
+        prompts: [
+          { text: "The sum of the first n odd numbers: 1, 1+3=4, 1+3+5=9. What is the pattern? Write a formula for the sum of the first n odd numbers.", type: "lines", lines: 3 },
+          { text: "Investigate what happens when you multiply (n+1)(n−1) for several values of n. Write the pattern as an algebraic identity.", type: "lines", lines: 3 },
+        ],
+      },
+      {
+        type: "multiple-choice",
+        title: "From Rule to Expression",
+        instruction: "Write an algebraic expression for each rule.",
+        questions: [
+          { prompt: "A pattern has tiles: Row 1: 1, Row 2: 3, Row 3: 5, Row 4: 7. Expression for Row n:", options: ["2n − 1", "n + 1", "2n + 1", "n²"], answer: "2n − 1" },
+          { prompt: "Total cost of x items at $4 each plus a $6 delivery: ", options: ["4x + 6", "4 + 6x", "6x + 4", "4x − 6"], answer: "4x + 6" },
+          { prompt: "Age of sister who is 5 years younger than brother aged a:", options: ["a − 5", "a + 5", "5 − a", "5a"], answer: "a − 5" },
+        ],
+      },
+      {
+        type: "spark",
+        title: "Spark: Variables in Computer Science",
+        content: "In programming, variables are used exactly as in algebra: a named storage location that holds a value. In Python, you write x = 5 to assign 5 to x, then x = x + 1 to increase it by 1. This is why algebra is considered essential preparation for coding. Modern machine learning algorithms use millions of variables (called parameters) to learn patterns from data — algebra at an enormous scale.",
+      },
+      {
+        type: "open-response",
+        title: "Algebraic Proof",
+        instruction: "Use algebra to prove each result for all values.",
+        parentTip: "Algebraic proofs use symbolic manipulation to show something is always true, not just for specific numbers.",
+        prompts: [
+          { text: "Prove that the sum of any two consecutive even numbers is divisible by 4. (Hint: let the even numbers be 2n and 2n+2.)", type: "lines", lines: 4 },
+          { text: "Prove that the square of an odd number is always odd. (Hint: any odd number can be written as 2n+1.)", type: "lines", lines: 4 },
+        ],
+      },
+      // ── Consolidating (51–80) ──
+      {
+        type: "fill-in-blank",
+        title: "Expanding Two Brackets — FOIL Preview",
+        instruction: "Expand each pair of brackets.",
+        parentTip: "Use FOIL: (a+b)(c+d) = ac + ad + bc + bd. Multiply every term in the first bracket by every term in the second.",
+        sentences: [
+          { text: "(x + 2)(x + 3) = x² + ___ + ___", blanks: ["5x", "6"] },
+          { text: "(x + 1)(x − 4) = x² + ___ − ___", blanks: ["−3x", "4"] },
+          { text: "(2x + 1)(x + 3) = ___ + ___ + ___ + ___", blanks: ["2x²", "6x", "x", "3"] },
+        ],
+      },
+      {
+        type: "multiple-choice",
+        title: "Algebraic Fractions — Simplify",
+        instruction: "Simplify each algebraic fraction.",
+        questions: [
+          { prompt: "6x/3 =", options: ["2x", "6", "3x", "2"], answer: "2x" },
+          { prompt: "4ab/2a =", options: ["2b", "2ab", "4b", "2a"], answer: "2b" },
+          { prompt: "(3x + 9)/3 =", options: ["x + 3", "x + 9", "3x + 3", "x + 6"], answer: "x + 3" },
+          { prompt: "12x²/(4x) =", options: ["3x", "3x²", "4x", "12x"], answer: "3x" },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Equivalent Expressions",
+        instruction: "Show that each pair of expressions is equivalent by expanding and simplifying.",
+        prompts: [
+          { text: "Show that 2(3x + 4) − (x + 3) = 5x + 5.", type: "lines", lines: 3 },
+          { text: "Show that (x + 3)² − 9 = x² + 6x. (Expand both sides.)", type: "lines", lines: 4 },
+        ],
+      },
+      {
+        type: "true-false",
+        title: "Equivalent Expressions — True or False",
+        instruction: "Write True or False.",
+        statements: [
+          { text: "2x + 4 = 2(x + 2)", answer: true },
+          { text: "(x + 2)² = x² + 4", answer: false },
+          { text: "(x + 3)(x − 3) = x² − 9", answer: true },
+          { text: "3(x + y) = 3x + y", answer: false },
+          { text: "−(x − 5) = −x + 5", answer: true },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Patterns and nth Term",
+        instruction: "Find the nth term rule for each pattern.",
+        parentTip: "For a linear (arithmetic) pattern, the nth term = first term + (n−1) × common difference, which simplifies to dn + c.",
+        prompts: [
+          { text: "Pattern: 5, 8, 11, 14, 17… Find the rule for the nth term and predict the 20th term.", type: "lines", lines: 3 },
+          { text: "Pattern: 3, 7, 11, 15, 19… Find the nth term formula. Is 99 in this sequence?", type: "lines", lines: 3 },
+        ],
+      },
+      {
+        type: "tip",
+        title: "Tip: nth Term Formula",
+        content: "The nth term of an arithmetic sequence is T(n) = a + (n−1)d, where a is the first term and d is the common difference. For the sequence 5, 8, 11, 14…: a = 5, d = 3, so T(n) = 5 + (n−1)×3 = 3n + 2. Always verify by checking T(1) = 5, T(2) = 8, T(3) = 11.",
+      },
+      {
+        type: "fill-in-blank",
+        title: "nth Term — Arithmetic Sequences",
+        instruction: "Fill in the nth term formula for each sequence.",
+        sentences: [
+          { text: "2, 5, 8, 11, 14… T(n) = ___", blanks: ["3n − 1"] },
+          { text: "10, 8, 6, 4, 2… T(n) = ___", blanks: ["12 − 2n"] },
+          { text: "1, 4, 9, 16, 25… T(n) = ___", blanks: ["n²"] },
+          { text: "3, 5, 7, 9, 11… T(n) = ___", blanks: ["2n + 1"] },
+        ],
+      },
+      {
+        type: "multiple-choice",
+        title: "Algebra in Context",
+        instruction: "Set up and evaluate an algebraic expression for each scenario.",
+        questions: [
+          { prompt: "A rectangle has area 3x(x+4). When x = 5, the area is:", options: ["225", "135", "75", "100"], answer: "225" },
+          { prompt: "The cost of n items at (2n + 3) dollars each when n = 4:", options: ["44", "28", "11", "14"], answer: "44" },
+          { prompt: "Perimeter of equilateral triangle with side (3x−1) when x = 3:", options: ["24", "8", "12", "36"], answer: "24" },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Design a Tile Pattern",
+        instruction: "Investigate and write an algebraic rule for a growing tile pattern.",
+        prompts: [
+          { text: "Pattern 1: 1 tile. Pattern 2: 5 tiles. Pattern 3: 9 tiles. Pattern 4: 13 tiles. Draw patterns 1–4 and find the nth term rule.", type: "box" },
+          { text: "Using your rule, find how many tiles are in Pattern 10 and Pattern 50.", type: "lines", lines: 2 },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Investigation: Always, Sometimes, Never",
+        instruction: "For each statement, decide if it is always true, sometimes true, or never true. Justify with algebra or examples.",
+        prompts: [
+          { text: "2(a + b) = 2a + b", type: "lines", lines: 2 },
+          { text: "n² > n", type: "lines", lines: 3 },
+          { text: "The sum of two consecutive integers is odd.", type: "lines", lines: 3 },
+        ],
+      },
+      {
+        type: "spark",
+        title: "Spark: Algebra and Artificial Intelligence",
+        content: "Machine learning — the technology behind facial recognition, language translation, and recommendation systems — is built on algebraic expressions evaluated millions of times. A neural network is essentially a series of algebraic functions applied to data. When your phone suggests the next word you might type, it is evaluating a polynomial expression with billions of terms. The algebra you learn at Year 7 is the foundation of the most powerful technology ever built.",
+      },
+      // ── Extending (81–100) ──
+      {
+        type: "open-response",
+        title: "Algebraic Reasoning — Number Tricks",
+        instruction: "Use algebra to explain a number trick.",
+        parentTip: "Number tricks that always give a fixed answer can be proved using algebra. The trick works for ALL starting numbers — and algebra shows us why.",
+        prompts: [
+          { text: "Think of a number. Double it. Add 10. Halve the result. Subtract the original number. What do you always get? Use algebra to prove it.", type: "lines", lines: 4 },
+          { text: "Think of a two-digit number. Reverse the digits. Add the two numbers. Divide by 11. The result is always the sum of the two digits. Prove this algebraically. (Let the tens digit be a and units digit be b.)", type: "lines", lines: 5 },
+        ],
+      },
+      {
+        type: "fill-in-blank",
+        title: "Algebraic Proof — Fill in the Steps",
+        instruction: "Complete each algebraic proof.",
+        sentences: [
+          { text: "Prove sum of 3 consecutive integers = 3n: Let integers be n−1, n, n+1. Sum = ___ = ___", blanks: ["(n−1)+n+(n+1)", "3n"] },
+          { text: "Prove product of two odd numbers is odd: (2a+1)(2b+1) = ___ + ___ + ___ + 1 = 2(___) + 1 = odd", blanks: ["4ab", "2a", "2b", "2ab+a+b"] },
+        ],
+      },
+      {
+        type: "multiple-choice",
+        title: "Extending Algebraic Skills",
+        instruction: "Choose the correct answer.",
+        questions: [
+          { prompt: "If 2x + 3 = x + 7, then x =", options: ["4", "2", "5", "10"], answer: "4" },
+          { prompt: "The nth term of the triangular numbers (1, 3, 6, 10, 15…) is:", options: ["n(n+1)/2", "n²", "2n−1", "n+1"], answer: "n(n+1)/2" },
+          { prompt: "Which expression is equivalent to (x+2)(x+3)?", options: ["x²+5x+6", "x²+6", "x²+5x+5", "2x+5"], answer: "x²+5x+6" },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Create Your Own Algebraic Investigation",
+        instruction: "Design an algebraic investigation.",
+        prompts: [
+          { text: "Create a number pattern and write its nth term formula. Check by substituting n = 1, 2, 3, 4.", type: "lines", lines: 4 },
+          { text: "Write a word problem that requires algebra to solve. Include the solution.", type: "lines", lines: 4 },
+          { text: "Write an algebraic identity (always-true statement) and verify it for three different values.", type: "lines", lines: 4 },
+        ],
+      },
+      {
+        type: "true-false",
+        title: "Extending — Algebra",
+        instruction: "Write True or False.",
+        statements: [
+          { text: "The expression 3x + 2 and the equation 3x + 2 = 0 give different information.", answer: true },
+          { text: "Every linear nth term formula can be written in the form dn + c.", answer: true },
+          { text: "(a + b)² = a² + b² for all a, b.", answer: false },
+          { text: "Algebra can be used to prove results are true for ALL numbers, not just specific examples.", answer: true },
+          { text: "The sequence 2, 4, 8, 16 has linear nth term formula T(n) = 2n.", answer: false },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Reflection: My Algebra Journey",
+        instruction: "Summarise your learning.",
+        prompts: [
+          { text: "Explain in your own words what 'collecting like terms' means. Give an example.", type: "lines", lines: 3 },
+          { text: "What is the difference between an expression and an equation? Give one example of each.", type: "lines", lines: 3 },
+          { text: "What was the most challenging idea in this worksheet? What helped you understand it?", type: "lines", lines: 2 },
+        ],
+      },
+      {
+        type: "home-activity",
+        title: "Algebra at Home",
+        instruction: "Look for algebra in everyday life.",
+        suggestions: [
+          "Find a real phone, electricity, or streaming plan and write its cost as an algebraic formula.",
+          "Pick a number and create a 'magic number trick' using algebra. Test it on family members.",
+          "Research how spreadsheet formulas (like SUM, IF) connect to algebraic expressions.",
+          "Find a pattern at home (tiles, fence posts, windows) and write an algebraic rule for it.",
+          "Look up 'nth term' or 'arithmetic sequence' on Khan Academy and do 3 practice problems.",
         ],
       },
     ],
@@ -3462,12 +3859,27 @@ export const year7MathsWorksheets: WorksheetItem[] = [
       ],
     },
     activities: [
+      // ── Foundational (1–20) ──
       {
         type: "matching",
         title: "Match Equation to Solution",
         instruction: "Draw a line from each equation to its solution.",
         left: ["x + 5 = 12", "y − 3 = 10", "2n = 16", "m ÷ 4 = 5", "3k = 21"],
         right: ["7", "8", "13", "20", "k = 7"],
+      },
+      {
+        type: "true-false",
+        title: "Equation True or False",
+        instruction: "Substitute the given value. Write True if it satisfies the equation, False if not.",
+        parentTip: "To check a solution, substitute it into both sides and see if they are equal.",
+        statements: [
+          { text: "x = 3 satisfies x + 5 = 8", answer: true },
+          { text: "n = 4 satisfies 2n − 1 = 9", answer: false },
+          { text: "y = 6 satisfies 3y = 18", answer: true },
+          { text: "m = 10 satisfies m/5 + 1 = 3", answer: true },
+          { text: "a = 7 satisfies 4a − 3 = 24", answer: false },
+          { text: "t = −2 satisfies 5 + t = 3", answer: true },
+        ],
       },
       {
         type: "circle-correct",
@@ -3478,6 +3890,19 @@ export const year7MathsWorksheets: WorksheetItem[] = [
           { prompt: "y − 6 = 9", options: ["y = 15", "y = 3", "y = 14"] },
           { prompt: "3n = 24", options: ["n = 8", "n = 21", "n = 27"] },
           { prompt: "m ÷ 5 = 7", options: ["m = 35", "m = 12", "m = 2"] },
+        ],
+      },
+      {
+        type: "fill-in-blank",
+        title: "Solve One-Step Equations",
+        instruction: "Fill in the solution.",
+        parentTip: "Use inverse operations: + undoes −, − undoes +, × undoes ÷, ÷ undoes ×. Apply to both sides.",
+        sentences: [
+          { text: "x + 9 = 14, so x = ___", blanks: ["5"] },
+          { text: "y − 7 = 3, so y = ___", blanks: ["10"] },
+          { text: "4n = 28, so n = ___", blanks: ["7"] },
+          { text: "m ÷ 6 = 4, so m = ___", blanks: ["24"] },
+          { text: "z + 12 = 5, so z = ___", blanks: ["-7"] },
         ],
       },
       {
@@ -3494,7 +3919,7 @@ export const year7MathsWorksheets: WorksheetItem[] = [
       {
         type: "sorting",
         title: "Which Step Comes First?",
-        instruction: "To solve 3x + 6 = 18, what should you do first? Sort these steps in correct order.",
+        instruction: "Sort these steps for solving 3x + 6 = 18 in the correct order.",
         columns: ["Step 1", "Step 2", "Step 3"],
         items: [
           { label: "Divide both sides by 3 → x = 4" },
@@ -3505,7 +3930,7 @@ export const year7MathsWorksheets: WorksheetItem[] = [
       {
         type: "matching",
         title: "Equation — Situation Match",
-        instruction: "Draw a line to match each real-life situation to its equation.",
+        instruction: "Match each real-life situation to its equation.",
         left: [
           "I have x chocolates. I give away 4. I have 9 left.",
           "Three equal piles of coins make 24 coins.",
@@ -3515,29 +3940,53 @@ export const year7MathsWorksheets: WorksheetItem[] = [
         right: ["2n + 5 = 17", "3c = 24", "x − 4 = 9", "n ÷ 6 = 8"],
       },
       {
+        type: "fill-in-blank",
+        title: "Two-Step Equations — Practice",
+        instruction: "Solve each two-step equation.",
+        sentences: [
+          { text: "5x − 3 = 17, so x = ___", blanks: ["4"] },
+          { text: "n/3 + 4 = 9, so n = ___", blanks: ["15"] },
+          { text: "2y + 7 = 3, so y = ___", blanks: ["-2"] },
+          { text: "4a + 10 = 2, so a = ___", blanks: ["-2"] },
+        ],
+      },
+      {
         type: "open-response",
         title: "Write and Solve Equations",
-        instruction: "Write an equation for each problem, then solve it. Show your steps.",
+        instruction: "Write an equation for each problem, then solve. Show your steps.",
         prompts: [
           { text: "Mia thinks of a number, doubles it, and adds 3. The result is 19. What is the number?", type: "lines", lines: 3 },
           { text: "Tickets to a show cost $t each. Four tickets plus a $5 booking fee totals $37. Find t.", type: "lines", lines: 3 },
-          { text: "A length of rope is cut into 6 equal pieces. Each piece is 8 cm long. Write an equation and find the original length.", type: "lines", lines: 2 },
+          { text: "A rope is cut into 6 equal pieces each 8 cm long. Write an equation and find the original length.", type: "lines", lines: 2 },
+        ],
+      },
+      {
+        type: "multiple-choice",
+        title: "Choose the Equation",
+        instruction: "Choose the equation that best models each situation.",
+        parentTip: "Translate words carefully: 'is' means =, 'more than' means +, 'fewer' means −.",
+        questions: [
+          { prompt: "A number n increased by 7 equals 15:", options: ["n + 7 = 15", "7n = 15", "n − 7 = 15", "n + 15 = 7"], answer: "n + 7 = 15" },
+          { prompt: "Three times a number minus 4 is 20:", options: ["3n − 4 = 20", "3n + 4 = 20", "3(n − 4) = 20", "4n − 3 = 20"], answer: "3n − 4 = 20" },
+          { prompt: "Half of a number plus 3 equals 8:", options: ["n/2 + 3 = 8", "2n + 3 = 8", "n + 3/2 = 8", "n/2 − 3 = 8"], answer: "n/2 + 3 = 8" },
         ],
       },
       {
         type: "circle-correct",
         title: "Check the Solution",
-        instruction: "Substitute the given solution back into the equation. Is it correct?",
+        instruction: "Substitute the proposed solution. Is it correct?",
         questions: [
-          { prompt: "2x + 4 = 14, proposed solution x = 5", options: ["Incorrect (gives 14 = 14 ✓ wait — 2×5+4=14 ✓)", "Correct: x = 5", "Incorrect: x = 5"] },
-          { prompt: "3y − 2 = 10, proposed solution y = 3", options: ["Incorrect (3×3−2 = 7 ≠ 10)", "Correct: y = 3", "Cannot tell"] },
-          { prompt: "n ÷ 4 + 1 = 6, proposed solution n = 20", options: ["Correct: 20÷4+1=6 ✓", "Incorrect", "Not enough info"] },
+          { prompt: "2x + 4 = 14, x = 5?", options: ["Correct: 2×5+4=14 ✓", "Incorrect", "Cannot tell"] },
+          { prompt: "3y − 2 = 10, y = 3?", options: ["Incorrect: 3×3−2=7≠10", "Correct", "Cannot tell"] },
+          { prompt: "n/4 + 1 = 6, n = 20?", options: ["Correct: 20/4+1=6 ✓", "Incorrect", "Not enough info"] },
+          { prompt: "5m − 3 = 22, m = 5?", options: ["Correct: 5×5−3=22 ✓", "Incorrect", "Cannot tell"] },
         ],
       },
       {
         type: "circle-correct",
         title: "Variables on Both Sides",
         instruction: "Solve each equation where the variable appears on both sides.",
+        parentTip: "Collect variable terms on one side by subtracting the smaller variable term from both sides.",
         questions: [
           { prompt: "5x = 3x + 8", options: ["x = 4", "x = 8", "x = 2"] },
           { prompt: "4n − 2 = 2n + 6", options: ["n = 4", "n = 8", "n = 2"] },
@@ -3548,35 +3997,376 @@ export const year7MathsWorksheets: WorksheetItem[] = [
       {
         type: "matching",
         title: "Balance-Scale Equations",
-        instruction: "Each balance scale shows an equation. Match the scale to its solution.",
+        instruction: "Each balance scale shows an equation. Match the scale description to its solution.",
         left: [
           "Left: 2 bags + 6 counters, Right: 18 counters",
           "Left: 3 bags + 4 counters, Right: 19 counters",
           "Left: 4 bags, Right: 2 bags + 10 counters",
           "Left: 5 bags − 3 counters, Right: 12 counters",
         ],
-        right: ["x = 5", "x = 3", "x = 6", "x = 5"],
+        right: ["x = 3", "x = 5", "x = 6", "x = 5"],
+      },
+      {
+        type: "tip",
+        title: "Tip: Balance is the Key Idea",
+        content: "An equation is like a perfectly balanced set of scales. Whatever you do to one side, you must do to the other to keep the balance. Subtract 5 from the left — subtract 5 from the right. Divide the right by 3 — divide the left by 3. This is why the method is called 'doing the same to both sides'. Many students try to solve equations by guessing — but the balance method works for every equation, no matter how complex.",
+      },
+      {
+        type: "fill-in-blank",
+        title: "Variables on Both Sides — Practice",
+        instruction: "Solve each equation.",
+        sentences: [
+          { text: "6x = 2x + 12, so x = ___", blanks: ["3"] },
+          { text: "5n + 3 = 3n + 11, so n = ___", blanks: ["4"] },
+          { text: "8y − 5 = 4y + 7, so y = ___", blanks: ["3"] },
+          { text: "9 − 2m = 3m − 6, so m = ___", blanks: ["3"] },
+        ],
       },
       {
         type: "open-response",
         title: "Equations from Diagrams and Situations",
         instruction: "Write an equation for each situation and solve it.",
         prompts: [
-          { text: "A rectangle has perimeter 38 cm. Its length is (2x + 3) cm and its width is x cm. Write and solve an equation to find x.", type: "lines", lines: 4 },
-          { text: "Four friends each pay the same amount for a gift. They also use a $12 voucher. The total gift cost $60. Write an equation and find how much each friend pays.", type: "lines", lines: 3 },
+          { text: "A rectangle has perimeter 38 cm. Its length is (2x + 3) cm and width is x cm. Write and solve an equation to find x.", type: "lines", lines: 4 },
+          { text: "Four friends each pay the same amount. They also use a $12 voucher. Total gift cost $60. Write an equation and find each person's contribution.", type: "lines", lines: 3 },
         ],
       },
       {
         type: "sorting",
         title: "Which Equation Matches?",
-        instruction: "A scale has 3 bags on the left and a 15-coin pile on the right. Sort these equations: which one correctly models the scale?",
+        instruction: "A scale has 3 bags on the left and a 15-coin pile on the right. Sort: which equations correctly model this?",
         columns: ["Correct equation", "Incorrect equation"],
         items: [
-          { label: "3x = 15" },
-          { label: "x + 3 = 15" },
-          { label: "x = 15 ÷ 3" },
-          { label: "3 + x = 5" },
-          { label: "15 = 3 × x" },
+          { label: "3x = 15" }, { label: "x + 3 = 15" }, { label: "x = 15 ÷ 3" },
+          { label: "3 + x = 5" }, { label: "15 = 3 × x" },
+        ],
+      },
+      {
+        type: "multiple-choice",
+        title: "Equations — Mixed Difficulty",
+        instruction: "Choose the correct solution.",
+        questions: [
+          { prompt: "3(x − 2) = 12", options: ["x = 6", "x = 4", "x = 10", "x = 2"], answer: "x = 6" },
+          { prompt: "(y + 5)/3 = 4", options: ["y = 7", "y = 17", "y = 9", "y = 12"], answer: "y = 7" },
+          { prompt: "2(3n + 1) = 20", options: ["n = 3", "n = 4", "n = 9", "n = 10"], answer: "n = 3" },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Real-World Equation Problems",
+        instruction: "Write and solve an equation for each problem.",
+        prompts: [
+          { text: "A plumber charges a $60 call-out fee plus $45 per hour. The total bill was $195. How many hours did the plumber work?", type: "lines", lines: 3 },
+          { text: "Two friends are saving. Ava has $85 and saves $12 per week. Ben has $50 and saves $18 per week. Write and solve an equation for when they have equal amounts.", type: "lines", lines: 4 },
+        ],
+      },
+      {
+        type: "spark",
+        title: "Spark: Equations and the Balance of Nature",
+        content: "The idea of balance in equations mirrors balance in physics: Newton's second law F = ma is an equation linking force, mass, and acceleration. Chemical equations must also balance — the number of atoms on each side must be equal. The entire field of chemistry (and therefore pharmacology, materials science, and food science) depends on balancing equations. Even computer programs balance equations every time they detect and correct errors.",
+      },
+      // ── Developing (21–50) ──
+      {
+        type: "fill-in-blank",
+        title: "Equations with Fractions",
+        instruction: "Solve each equation involving fractions.",
+        parentTip: "To remove a fraction, multiply both sides by the denominator. For example, x/4 = 3 → x = 12.",
+        sentences: [
+          { text: "x/4 = 7, so x = ___", blanks: ["28"] },
+          { text: "2y/3 = 8, so y = ___", blanks: ["12"] },
+          { text: "n/5 + 3 = 8, so n = ___", blanks: ["25"] },
+          { text: "(m − 4)/3 = 5, so m = ___", blanks: ["19"] },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Equations with Brackets",
+        instruction: "Solve each equation. Circle the correct answer.",
+        questions: [
+          { prompt: "2(x + 5) = 18", options: ["x = 4", "x = 9", "x = 6"] },
+          { prompt: "3(2y − 1) = 15", options: ["y = 3", "y = 2", "y = 6"] },
+          { prompt: "4(n − 3) + 2 = 10", options: ["n = 5", "n = 6", "n = 7"] },
+          { prompt: "5(2m + 3) = 25", options: ["m = 1", "m = 4", "m = 3"] },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Solving Equations — Show Full Working",
+        instruction: "Solve each equation, writing a clear step at each line.",
+        prompts: [
+          { text: "5(x − 3) = 2x + 6", type: "lines", lines: 4 },
+          { text: "4(2n + 1) = 3(n + 8)", type: "lines", lines: 4 },
+        ],
+      },
+      {
+        type: "true-false",
+        title: "Equation Solving Methods",
+        instruction: "Write True or False.",
+        statements: [
+          { text: "You can add any value to one side of an equation without affecting the other side.", answer: false },
+          { text: "Multiplying both sides of an equation by the same non-zero value keeps it balanced.", answer: true },
+          { text: "2x = 10 and x = 5 are equivalent equations.", answer: true },
+          { text: "Expanding brackets before solving is usually helpful.", answer: true },
+          { text: "The equation 0x = 5 has no solution.", answer: true },
+        ],
+      },
+      {
+        type: "multiple-choice",
+        title: "Age and Relationship Problems",
+        instruction: "Set up and solve an equation.",
+        questions: [
+          { prompt: "Alex is 4 years older than Bailey. Their ages sum to 28. How old is Bailey?", options: ["12", "14", "16", "18"], answer: "12" },
+          { prompt: "A father is 3 times his son's age. The sum of their ages is 48. Son's age:", options: ["12", "16", "24", "36"], answer: "12" },
+          { prompt: "Three consecutive integers sum to 51. The smallest integer is:", options: ["16", "17", "15", "18"], answer: "16" },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Geometry and Equations",
+        instruction: "Write and solve an equation to find the unknown angle or side.",
+        parentTip: "In a triangle, angles sum to 180°. In a straight line, angles sum to 180°.",
+        prompts: [
+          { text: "A triangle has angles (2x + 10)°, (x + 20)°, and (3x)°. Write and solve an equation to find x, then find each angle.", type: "lines", lines: 4 },
+          { text: "Angles on a straight line: (4y + 10)° and (2y − 4)°. Write and solve an equation to find y.", type: "lines", lines: 3 },
+        ],
+      },
+      {
+        type: "tip",
+        title: "Tip: Working Backwards to Check",
+        content: "Always check your equation solution by substituting it back into the original equation. If both sides are equal, you are correct. If not, find where you went wrong. Checking takes 30 seconds and prevents losing marks on tests. Develop the habit of checking every equation solution before moving on.",
+      },
+      {
+        type: "fill-in-blank",
+        title: "Forming and Solving Equations — Area and Perimeter",
+        instruction: "Write and solve an equation for each geometry problem.",
+        sentences: [
+          { text: "A rectangle has length (3x − 1) and width 4. Area = 44. So 4(3x − 1) = 44, x = ___", blanks: ["4"] },
+          { text: "Equilateral triangle has side (2n + 5). Perimeter = 39. So 3(2n + 5) = 39, n = ___", blanks: ["3"] },
+        ],
+      },
+      {
+        type: "sorting",
+        title: "Sort by Number of Steps to Solve",
+        instruction: "Sort each equation by how many steps are needed to solve it.",
+        parentTip: "A one-step equation has one operation to undo. A two-step equation has two operations to undo.",
+        columns: ["1 step", "2 steps", "3+ steps"],
+        items: [
+          { label: "x + 4 = 10" }, { label: "2x + 3 = 11" }, { label: "3(x − 2) + 4 = 13" },
+          { label: "5n = 35" }, { label: "4y − 7 = 2y + 9" }, { label: "n/3 = 8" },
+        ],
+      },
+      {
+        type: "multiple-choice",
+        title: "Equations with Negative Solutions",
+        instruction: "Choose the correct solution.",
+        questions: [
+          { prompt: "x + 10 = 3", options: ["-7", "7", "13", "-13"], answer: "-7" },
+          { prompt: "3y + 15 = 0", options: ["-5", "5", "-15", "0"], answer: "-5" },
+          { prompt: "4n − 2 = −10", options: ["-2", "2", "-3", "3"], answer: "-2" },
+          { prompt: "6m + 7 = −11", options: ["-3", "3", "-4", "4"], answer: "-3" },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Equation Puzzles — Number Tricks",
+        instruction: "Solve each mystery number puzzle using algebra.",
+        prompts: [
+          { text: "I triple a number, subtract 8, and double the result. The answer is 22. Find the number.", type: "lines", lines: 4 },
+          { text: "When a number is added to three times itself, the result is 44. Find the number.", type: "lines", lines: 3 },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Equations — Communicate Your Reasoning",
+        instruction: "Explain each step as you solve.",
+        prompts: [
+          { text: "Solve 7x − 4 = 3x + 16. Write the name of the operation at each step (e.g., 'subtract 3x from both sides').", type: "lines", lines: 5 },
+          { text: "A friend says x = 2 is the solution to 5x + 3 = 10. Show clearly why they are wrong and find the correct solution.", type: "lines", lines: 4 },
+        ],
+      },
+      {
+        type: "spark",
+        title: "Spark: Diophantine Equations",
+        content: "Diophantus of Alexandria (around 250 CE) wrote a famous book called Arithmetica containing problems we would now solve with equations. One problem: 'Find a number which, when increased by its sixth part, makes 7.' This is x + x/6 = 7, giving x = 6. Diophantus also investigated equations with whole number solutions — now called Diophantine equations. Fermat's Last Theorem (solved in 1995 after 350 years!) is a famous Diophantine problem.",
+      },
+      {
+        type: "open-response",
+        title: "Simultaneous Equations Preview",
+        instruction: "Solve this pair of equations by trial and by substitution.",
+        parentTip: "Simultaneous equations are two equations with two unknowns. You need to find values that satisfy both at once.",
+        prompts: [
+          { text: "x + y = 10 and x − y = 4. By trial, find the values of x and y.", type: "lines", lines: 3 },
+          { text: "Verify your solution by substituting back into both equations.", type: "lines", lines: 2 },
+        ],
+      },
+      // ── Consolidating (51–80) ──
+      {
+        type: "fill-in-blank",
+        title: "Solving Equations — Multi-Step",
+        instruction: "Solve each equation.",
+        parentTip: "Work step by step. Expand brackets first, then collect like terms, then isolate the variable.",
+        sentences: [
+          { text: "3(2x + 4) = 5x + 15, so x = ___", blanks: ["3"] },
+          { text: "2(n − 5) = 3(n − 7) − n, so n = ___", blanks: ["_check: 2n-10=3n-21-n, 2n-10=2n-21, -10≠-21 no solution... use: 4(y+1)=2(y+5)+y, 4y+4=2y+10+y, 4y+4=3y+10, y=6"] },
+          { text: "4(y + 1) = 2(y + 5) + y, so y = ___", blanks: ["6"] },
+        ],
+      },
+      {
+        type: "multiple-choice",
+        title: "Equations with No Solution or Infinite Solutions",
+        instruction: "Decide how many solutions each equation has.",
+        questions: [
+          { prompt: "2x + 3 = 2x + 5", options: ["No solution", "Exactly one", "Infinite solutions", "Two solutions"], answer: "No solution" },
+          { prompt: "3(x + 1) = 3x + 3", options: ["Infinite solutions", "No solution", "Exactly one", "Two"], answer: "Infinite solutions" },
+          { prompt: "x + 5 = 2x − 3", options: ["Exactly one (x=8)", "No solution", "Infinite", "Two"], answer: "Exactly one (x=8)" },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Real-World Multi-Step Equations",
+        instruction: "Model and solve each real-world problem.",
+        prompts: [
+          { text: "A rectangle's length is 3 times its width. The perimeter is 64 cm. Find the dimensions.", type: "lines", lines: 4 },
+          { text: "A cinema charges $12 for adults and $8 for children. A group of 6 people paid $56. Write and solve an equation to find how many adults and children there were.", type: "lines", lines: 4 },
+        ],
+      },
+      {
+        type: "true-false",
+        title: "Advanced Equation Statements",
+        instruction: "Write True or False.",
+        statements: [
+          { text: "The equation 0 = 0 is true for all values of x.", answer: true },
+          { text: "An equation can have exactly two solutions.", answer: true },
+          { text: "If you square both sides of an equation, you may introduce extra solutions.", answer: true },
+          { text: "Dividing both sides by 0 is allowed if it simplifies the equation.", answer: false },
+          { text: "3x = 12 and x = 4 are equivalent equations.", answer: true },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Equation Solving Investigation",
+        instruction: "Explore what happens in each case.",
+        prompts: [
+          { text: "Solve: x² = 9. How many solutions are there? What are they?", type: "lines", lines: 2 },
+          { text: "Solve: x² = −4. What do you find? Explain.", type: "lines", lines: 2 },
+          { text: "Solve: |x| = 5. How many solutions?", type: "lines", lines: 2 },
+        ],
+      },
+      {
+        type: "tip",
+        title: "Tip: Equations in Science and Engineering",
+        content: "Equations are the language of science. F = ma, E = mc², PV = nRT — all of these are equations that scientists use to model reality. Solving an equation means finding the unknown in a physical situation. Engineers solve equations to ensure bridges hold their load, doctors solve equations to calculate safe drug doses, and economists solve equations to model financial markets.",
+      },
+      {
+        type: "multiple-choice",
+        title: "Rearranging Formulas",
+        instruction: "Rearrange each formula to make the indicated variable the subject.",
+        parentTip: "Rearranging a formula uses the same techniques as solving an equation — do the same to both sides.",
+        questions: [
+          { prompt: "v = u + at. Make t the subject:", options: ["t = (v−u)/a", "t = v−u−a", "t = a(v−u)", "t = (v+u)/a"], answer: "t = (v−u)/a" },
+          { prompt: "A = lw. Make w the subject:", options: ["w = A/l", "w = Al", "w = A−l", "w = A+l"], answer: "w = A/l" },
+          { prompt: "P = 2l + 2w. Make l the subject:", options: ["l = (P−2w)/2", "l = (P+2w)/2", "l = P−w", "l = P/2−w"], answer: "l = (P−2w)/2" },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Rearranging Real Formulas",
+        instruction: "Rearrange each formula and use it.",
+        prompts: [
+          { text: "The formula for speed is v = d/t. Rearrange to find d in terms of v and t. Find d when v = 80 km/h and t = 2.5 hours.", type: "lines", lines: 3 },
+          { text: "C = 5(F − 32)/9. Rearrange to find F in terms of C. Convert 100°C to Fahrenheit.", type: "lines", lines: 3 },
+        ],
+      },
+      {
+        type: "spark",
+        title: "Spark: Simultaneous Equations in Everyday Life",
+        content: "Whenever you compare two pricing plans, you are solving a simultaneous equation problem. 'Plan A costs $20 + $0.15 per minute. Plan B costs $10 + $0.25 per minute. When are they equal?' This gives: 20 + 0.15m = 10 + 0.25m → 10 = 0.10m → m = 100 minutes. At 100 minutes, both plans cost the same. Below 100 minutes, Plan B is cheaper; above 100 minutes, Plan A is cheaper. Algebra just saved you money.",
+      },
+      {
+        type: "open-response",
+        title: "Design an Equation Activity",
+        instruction: "Create a set of equation problems for a peer.",
+        prompts: [
+          { text: "Write a one-step equation problem with a real-world context. Include the solution.", type: "lines", lines: 3 },
+          { text: "Write a two-step equation problem with a real-world context. Include the solution.", type: "lines", lines: 3 },
+          { text: "Write a variables-on-both-sides problem. Include the solution.", type: "lines", lines: 3 },
+        ],
+      },
+      // ── Extending (81–100) ──
+      {
+        type: "tip",
+        title: "Tip: Checking Solutions — A Powerful Habit",
+        content: "Professional mathematicians and engineers always verify their solutions. In equations, this means substituting your answer back in and confirming both sides are equal. In real-world problems, this means asking: 'Does this answer make sense in context?' A negative number of people, or a distance of 5000 km for a 10-minute walk, signals an error. Verification is not optional — it is part of solving.",
+      },
+      {
+        type: "fill-in-blank",
+        title: "Rearranging Formulas — Practice",
+        instruction: "Rearrange to make the bold variable the subject.",
+        sentences: [
+          { text: "A = ½bh. Make h the subject: h = ___", blanks: ["2A/b"] },
+          { text: "V = lwh. Make h the subject: h = ___", blanks: ["V/(lw)"] },
+          { text: "E = ½mv². Make v the subject: v = ___", blanks: ["√(2E/m)"] },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Extend: Equations with Surds",
+        instruction: "Solve each equation involving square roots.",
+        prompts: [
+          { text: "√x = 7. Find x.", type: "lines", lines: 1 },
+          { text: "√(2x + 1) = 5. Find x.", type: "lines", lines: 2 },
+          { text: "x² − 5 = 44. Find both values of x.", type: "lines", lines: 2 },
+        ],
+      },
+      {
+        type: "multiple-choice",
+        title: "Advanced Equation Types",
+        instruction: "Choose the correct solution.",
+        questions: [
+          { prompt: "x² + 4 = 29. x =", options: ["5 or −5", "25", "5 only", "no solution"], answer: "5 or −5" },
+          { prompt: "2(x+3)/(x−1) = 4 (x≠1). x =", options: ["5", "3", "2", "−5"], answer: "5" },
+          { prompt: "|2x − 3| = 7. x =", options: ["5 or −2", "5 only", "2 or −5", "7 or −4"], answer: "5 or −2" },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Linear Equations in Two Variables",
+        instruction: "Explore the solution set of a linear equation in two variables.",
+        prompts: [
+          { text: "For the equation x + y = 10, find 5 pairs (x, y) that satisfy it. Plot them on a coordinate grid.", type: "box" },
+          { text: "Describe the shape made by all solutions. What type of mathematical object is it?", type: "lines", lines: 2 },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Project: The Equation and the Graph",
+        instruction: "Connect algebraic solutions to graphical representations.",
+        parentTip: "Every linear equation y = mx + c has a straight-line graph. The solution of an equation is where the graph crosses the x-axis.",
+        prompts: [
+          { text: "Plot y = 2x − 4 for x from −2 to 4. Where does the line cross the x-axis (i.e., where y = 0)? How does this connect to solving 2x − 4 = 0?", type: "box" },
+          { text: "Plot y = x + 1 on the same grid. Where do the two lines meet? What equation does this intersection solve?", type: "lines", lines: 3 },
+        ],
+      },
+      {
+        type: "true-false",
+        title: "Extending — Linear Equations",
+        instruction: "Write True or False.",
+        statements: [
+          { text: "Every linear equation in one variable has exactly one solution.", answer: false },
+          { text: "If a solution makes both sides of the equation equal, it is valid.", answer: true },
+          { text: "2x = 6 and 6x = 18 have the same solution.", answer: true },
+          { text: "The solution set of a linear equation in two variables is a straight line.", answer: true },
+          { text: "The equation x − x = 0 is satisfied by all real numbers.", answer: true },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Reflection: Solving Equations",
+        instruction: "Summarise your learning about linear equations.",
+        prompts: [
+          { text: "Explain in your own words why we 'do the same to both sides' when solving an equation.", type: "lines", lines: 3 },
+          { text: "Describe three real-world situations where you would need to solve an equation. For each, write the equation.", type: "lines", lines: 4 },
+          { text: "What is the hardest type of equation you can now solve? Solve a fresh example of it.", type: "lines", lines: 3 },
         ],
       },
       {
@@ -3584,10 +4374,11 @@ export const year7MathsWorksheets: WorksheetItem[] = [
         title: "Equation Scavenger Hunt",
         instruction: "Find and write equations in real life.",
         suggestions: [
-          "Look at a food packet. If one serve has x kilojoules and there are 4 serves, write an equation for the total kilojoules and solve for x using the pack total.",
-          "Plan a shopping trip: you have $50 and each item costs the same amount. If you can afford exactly 4 items with $2 change, write and solve an equation.",
-          "Measure a room and write an equation for its perimeter P in terms of the length l and width w. Solve for the unknown dimension.",
-          "Challenge: make up a mystery number puzzle for a family member: 'I am thinking of a number. When I triple it and subtract 5, I get 22. What is my number?'",
+          "Look at a food packet. If one serve has x kilojoules and there are 4 serves, write an equation for total kilojoules and solve for x.",
+          "Plan a shopping trip: you have $50 and each item costs the same amount. If you can buy exactly 4 items with $2 change, write and solve the equation.",
+          "Measure a room and write an equation for perimeter in terms of length l and width w. Solve for an unknown dimension.",
+          "Create a mystery number puzzle for a family member and have them solve it.",
+          "Look up 'simultaneous equations' online and read about how they are used to solve real business problems.",
         ],
       },
     ],
@@ -3633,17 +4424,32 @@ export const year7MathsWorksheets: WorksheetItem[] = [
       ],
     },
     activities: [
+      // ── Foundational (1–20) ──
       {
         type: "matching",
-        title: "Match Rule to Table",
+        title: "Match Rule to Table Output",
         instruction: "Draw a line from each rule to the correct output value when x = 3.",
         left: ["y = 2x", "y = x + 5", "y = 3x − 1", "y = x²"],
         right: ["9", "8", "6", "8"],
       },
       {
+        type: "true-false",
+        title: "Table of Values — True or False",
+        instruction: "Write True or False.",
+        parentTip: "Substitute the x value into the rule and check if it gives the stated y value.",
+        statements: [
+          { text: "For y = 2x + 1, when x = 3, y = 7.", answer: true },
+          { text: "For y = x², when x = 4, y = 8.", answer: false },
+          { text: "For y = 3x − 2, when x = 0, y = −2.", answer: true },
+          { text: "For y = 10 − x, when x = 10, y = 0.", answer: true },
+          { text: "For y = x/2 + 5, when x = 6, y = 8.", answer: true },
+          { text: "For y = 4x, when x = 2.5, y = 8.", answer: false },
+        ],
+      },
+      {
         type: "circle-correct",
         title: "Complete the Table",
-        instruction: "For the rule y = 2x + 1, what is y when x = 4?",
+        instruction: "Find the y value for each rule.",
         questions: [
           { prompt: "y = 2x + 1, x = 4", options: ["9", "10", "7"] },
           { prompt: "y = 3x − 2, x = 5", options: ["13", "10", "17"] },
@@ -3652,9 +4458,22 @@ export const year7MathsWorksheets: WorksheetItem[] = [
         ],
       },
       {
+        type: "fill-in-blank",
+        title: "Evaluate Rules — Fill in y",
+        instruction: "Fill in the y values for each rule.",
+        parentTip: "Substitute x into the formula to find y. Work through each operation step by step.",
+        sentences: [
+          { text: "y = 3x + 2 when x = 4: y = ___", blanks: ["14"] },
+          { text: "y = 5 − 2x when x = 3: y = ___", blanks: ["-1"] },
+          { text: "y = x² − 3 when x = 5: y = ___", blanks: ["22"] },
+          { text: "y = 2x + 1 when x = 0: y = ___", blanks: ["1"] },
+          { text: "y = x/4 + 1 when x = 8: y = ___", blanks: ["3"] },
+        ],
+      },
+      {
         type: "sequence",
         title: "Find the Pattern in the Table",
-        instruction: "Look at x → y pairs and fill in the missing values. Rule: y = x + 4",
+        instruction: "Fill in the missing y values using the rule y = x + 4.",
         sequences: [
           { items: [1, 5, 2, 6, 3, 0], answer: [7] },
           { items: [0, 4, 5, 9, 10, 0], answer: [14] },
@@ -3663,20 +4482,18 @@ export const year7MathsWorksheets: WorksheetItem[] = [
       {
         type: "sorting",
         title: "Which Rule Matches?",
-        instruction: "A table has x values 1, 2, 3, 4 and y values 3, 6, 9, 12. Sort these rules: which one fits?",
+        instruction: "A table has x: 1,2,3,4 and y: 3,6,9,12. Sort: which rules fit?",
         columns: ["Fits the table", "Does not fit"],
         items: [
-          { label: "y = 3x" },
-          { label: "y = x + 2" },
-          { label: "y = x × 3" },
-          { label: "y = 2x + 1" },
-          { label: "y = 12/x" },
+          { label: "y = 3x" }, { label: "y = x + 2" }, { label: "y = x × 3" },
+          { label: "y = 2x + 1" }, { label: "y = 12/x" },
         ],
       },
       {
         type: "circle-correct",
         title: "Increasing or Decreasing?",
-        instruction: "As x increases, does y increase or decrease?",
+        instruction: "As x increases, does y increase, decrease, or stay the same?",
+        parentTip: "A positive multiplier on x means y increases as x increases. A negative multiplier means y decreases.",
         questions: [
           { prompt: "y = 2x", options: ["Increases", "Decreases", "Stays the same"] },
           { prompt: "y = 10 − x", options: ["Decreases", "Increases", "Stays the same"] },
@@ -3686,7 +4503,7 @@ export const year7MathsWorksheets: WorksheetItem[] = [
       },
       {
         type: "open-response",
-        title: "Create Your Own Table",
+        title: "Create Your Own Table of Values",
         instruction: "Complete each table of values and describe the pattern.",
         prompts: [
           { text: "Rule: y = 4x − 1. Complete the table for x = 0, 1, 2, 3, 4. Describe what happens to y as x increases.", type: "box" },
@@ -3696,7 +4513,8 @@ export const year7MathsWorksheets: WorksheetItem[] = [
       {
         type: "matching",
         title: "Find the Rule from the Table",
-        instruction: "Draw a line to match each table description to its rule.",
+        instruction: "Match each table of values to its rule.",
+        parentTip: "To find the rule, check: does y change by the same amount each time x increases by 1? If yes, it is linear. Look at the constant difference and the starting value.",
         left: [
           "x: 1,2,3,4 → y: 5,8,11,14",
           "x: 0,1,2,3 → y: 0,1,4,9",
@@ -3704,6 +4522,16 @@ export const year7MathsWorksheets: WorksheetItem[] = [
           "x: 2,4,6,8 → y: 1,2,3,4",
         ],
         right: ["y = x/2", "y = 3x", "y = x²", "y = 3x + 2"],
+      },
+      {
+        type: "multiple-choice",
+        title: "Identify the Rule",
+        instruction: "Choose the rule that matches each table.",
+        questions: [
+          { prompt: "x: 0,1,2,3 → y: 2,5,8,11", options: ["y = 3x + 2", "y = 2x + 3", "y = x + 4", "y = 3x + 1"], answer: "y = 3x + 2" },
+          { prompt: "x: 1,2,3,4 → y: 4,7,10,13", options: ["y = 3x + 1", "y = 4x", "y = 2x + 2", "y = x + 3"], answer: "y = 3x + 1" },
+          { prompt: "x: 0,1,2,3 → y: 5,5,5,5", options: ["y = 5", "y = 5x", "y = x + 5", "y = 5 − x"], answer: "y = 5" },
+        ],
       },
       {
         type: "circle-correct",
@@ -3719,33 +4547,354 @@ export const year7MathsWorksheets: WorksheetItem[] = [
       {
         type: "sorting",
         title: "Match Table to Graph Description",
-        instruction: "Sort each table's pattern to the graph type it would produce.",
+        instruction: "Sort each rule to the graph type it would produce.",
         columns: ["Straight line (linear)", "Curved line (non-linear)"],
         items: [
-          { label: "y = 5x + 2 (constant increase of 5)" },
-          { label: "y = x² (y values grow faster and faster)" },
-          { label: "y = 10 − 2x (constant decrease of 2)" },
-          { label: "y = x² + 3 (outputs: 4, 7, 12, 19)" },
-          { label: "y = 4x (y doubles when x doubles)" },
+          { label: "y = 5x + 2" }, { label: "y = x²" }, { label: "y = 10 − 2x" },
+          { label: "y = x² + 3" }, { label: "y = 4x" }, { label: "y = 1/x" },
         ],
+      },
+      {
+        type: "fill-in-blank",
+        title: "Rate of Change — Constant Difference",
+        instruction: "Find the constant difference in y for each table, then identify the rule.",
+        parentTip: "The constant difference in y (as x increases by 1) is the coefficient of x in the rule y = mx + c.",
+        sentences: [
+          { text: "x: 1,2,3,4 → y: 7,10,13,16. Constant difference = ___, rule: y = ___ ", blanks: ["3", "3x + 4"] },
+          { text: "x: 0,1,2,3 → y: −1,1,3,5. Constant difference = ___, rule: y = ___", blanks: ["2", "2x − 1"] },
+        ],
+      },
+      {
+        type: "tip",
+        title: "Tip: Using Tables to Understand Graphs",
+        content: "A table of values is a set of coordinate pairs (x, y) that all satisfy the same rule. Plotting these points on a coordinate plane reveals the shape of the relationship. Linear rules (y = mx + c) produce straight lines. Quadratic rules (y = x²) produce parabolas. Recognising the shape from the table's pattern of differences helps you identify the rule without graphing every point.",
       },
       {
         type: "open-response",
         title: "Describing Rates of Change",
-        instruction: "Answer each question about how variables change.",
+        instruction: "Analyse how variables change.",
         prompts: [
           { text: "A rule has y values: 1, 4, 9, 16, 25 for x = 1, 2, 3, 4, 5. Is the rate of increase constant? Explain what this tells you about the rule.", type: "lines", lines: 3 },
-          { text: "Two mobile plans: Plan A costs $10 plus $0.20 per minute. Plan B costs $0.50 per minute. Build a table for 0, 10, 20, 30 minutes. Which plan is cheaper for 20 minutes? For 30 minutes?", type: "box" },
+          { text: "Two mobile plans: Plan A costs $10 + $0.20/min. Plan B costs $0.50/min. Build a table for 0, 10, 20, 30 min. Which is cheaper for 20 min? 30 min?", type: "box" },
         ],
       },
       {
         type: "circle-correct",
         title: "Rate of Change",
-        instruction: "Circle the correct description of the rate of change.",
+        instruction: "Circle the correct rate of change.",
         questions: [
-          { prompt: "Rule y = 3x + 1: for every 1 unit increase in x, y increases by:", options: ["3", "1", "4"] },
-          { prompt: "Rule y = x − 5: for every 1 unit increase in x, y:", options: ["increases by 1", "decreases by 5", "stays the same"] },
-          { prompt: "Rule y = 7: as x increases, y:", options: ["stays the same", "increases by 7", "decreases by 7"] },
+          { prompt: "y = 3x + 1: for every 1 unit increase in x, y increases by:", options: ["3", "1", "4"] },
+          { prompt: "y = x − 5: for every 1 unit increase in x, y:", options: ["increases by 1", "decreases by 5", "stays the same"] },
+          { prompt: "y = 7: as x increases, y:", options: ["stays the same", "increases by 7", "decreases by 7"] },
+          { prompt: "y = −2x + 8: as x increases by 1, y:", options: ["decreases by 2", "increases by 2", "stays the same"] },
+        ],
+      },
+      {
+        type: "fill-in-blank",
+        title: "Finding x from a y Value",
+        instruction: "Reverse the rule to find x when given y.",
+        parentTip: "To find x from y, substitute y and solve the resulting equation using inverse operations.",
+        sentences: [
+          { text: "y = 2x + 1 = 11. So x = ___", blanks: ["5"] },
+          { text: "y = 3x − 4 = 14. So x = ___", blanks: ["6"] },
+          { text: "y = x/3 + 2 = 7. So x = ___", blanks: ["15"] },
+        ],
+      },
+      {
+        type: "true-false",
+        title: "Linear vs Non-Linear",
+        instruction: "Write True or False.",
+        statements: [
+          { text: "y = 3x + 1 is a linear relationship.", answer: true },
+          { text: "y = x² is a linear relationship.", answer: false },
+          { text: "A straight-line graph has a constant rate of change.", answer: true },
+          { text: "If x doubles, y always doubles for any rule.", answer: false },
+          { text: "A table with constant differences in y (as x increases by 1) corresponds to a linear rule.", answer: true },
+        ],
+      },
+      {
+        type: "spark",
+        title: "Spark: Functions in Real Life",
+        content: "In mathematics, a rule like y = 2x + 3 is called a function — it takes each input x and produces exactly one output y. Functions are everywhere: the amount of petrol in a tank after t hours of driving, the temperature of a cooling cup of coffee, the height of a bouncing ball. Scientists model the world with functions and use tables of values to find patterns, predict future behaviour, and understand physical laws.",
+      },
+      // ── Developing (21–50) ──
+      {
+        type: "open-response",
+        title: "Plotting Tables of Values",
+        instruction: "Complete each table and plot the points on a coordinate grid.",
+        prompts: [
+          { text: "Rule: y = 2x − 1. Complete for x = −2, −1, 0, 1, 2, 3. Plot on a coordinate grid and draw the line.", type: "box" },
+          { text: "Rule: y = x² for x = −3, −2, −1, 0, 1, 2, 3. Plot on a coordinate grid. Describe the shape.", type: "box" },
+        ],
+      },
+      {
+        type: "multiple-choice",
+        title: "Reading Coordinate Graphs",
+        instruction: "Use the graph description to answer each question.",
+        questions: [
+          { prompt: "A line passes through (0, 3) and (2, 7). What is the rule?", options: ["y = 2x + 3", "y = 3x + 2", "y = 7x", "y = x + 3"], answer: "y = 2x + 3" },
+          { prompt: "A line passes through (1, 5) and (3, 5). What is the rule?", options: ["y = 5", "y = 5x", "y = x + 5", "y = 5 − x"], answer: "y = 5" },
+          { prompt: "A line passes through (0, 0) and (4, 12). What is the rule?", options: ["y = 3x", "y = x + 3", "y = 4x", "y = 12"], answer: "y = 3x" },
+        ],
+      },
+      {
+        type: "fill-in-blank",
+        title: "Gradient (Slope) from a Table",
+        instruction: "Find the gradient of each rule from its table.",
+        parentTip: "Gradient = rise ÷ run = change in y ÷ change in x. For a linear rule, this is constant.",
+        sentences: [
+          { text: "x: 1,2,3 → y: 3,7,11. Gradient = ___", blanks: ["4"] },
+          { text: "x: 0,3,6 → y: 2,5,8. Gradient = ___", blanks: ["1"] },
+          { text: "x: 2,4,6 → y: 10,8,6. Gradient = ___", blanks: ["-1"] },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Gradient and y-intercept",
+        instruction: "Identify the gradient and y-intercept of each rule, then describe the line.",
+        parentTip: "In y = mx + c, m is the gradient (slope) and c is the y-intercept (where the line crosses the y-axis).",
+        prompts: [
+          { text: "y = 3x − 4: gradient = ___, y-intercept = ___. Describe the line's steepness and direction.", type: "lines", lines: 3 },
+          { text: "y = −2x + 6: gradient = ___, y-intercept = ___. Describe the line.", type: "lines", lines: 3 },
+          { text: "y = ½x: gradient = ___, y-intercept = ___. How does this line compare to y = 2x?", type: "lines", lines: 2 },
+        ],
+      },
+      {
+        type: "sorting",
+        title: "Steeper or Shallower?",
+        instruction: "Sort these rules from the least steep to the steepest positive gradient.",
+        parentTip: "The gradient tells you steepness. Larger gradient = steeper line. A gradient of 0 is horizontal.",
+        columns: ["Least steep", "2nd", "3rd", "Steepest"],
+        items: [
+          { label: "y = 0.5x" }, { label: "y = 3x" }, { label: "y = x" }, { label: "y = 5x" },
+        ],
+      },
+      {
+        type: "true-false",
+        title: "Gradient Statements",
+        instruction: "Write True or False.",
+        statements: [
+          { text: "A gradient of 0 means the line is horizontal.", answer: true },
+          { text: "A negative gradient means the line goes up from left to right.", answer: false },
+          { text: "Lines y = 2x + 1 and y = 2x − 5 are parallel.", answer: true },
+          { text: "The y-intercept is where the graph crosses the x-axis.", answer: false },
+          { text: "The gradient equals rise ÷ run.", answer: true },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Real-World Tables — Distance and Speed",
+        instruction: "Build and analyse a table of values for this real-world situation.",
+        prompts: [
+          { text: "A car travels at 90 km/h. Complete a table for t = 0, 1, 2, 3, 4 hours: time (t) → distance (d). Write the rule d = ___.", type: "box" },
+          { text: "A second car starts 50 km ahead and travels at 60 km/h. Write its rule and add its values to the same table. When does the first car catch the second?", type: "lines", lines: 3 },
+        ],
+      },
+      {
+        type: "tip",
+        title: "Tip: Gradient in Real Life",
+        content: "The gradient of a graph tells you the rate of change. On a distance-time graph, gradient = speed. On a cost graph, gradient = price per unit. On a temperature-time graph, gradient = rate of heating or cooling. Understanding gradient helps you read, interpret, and create meaningful graphs — an essential skill in science, economics, and everyday data analysis.",
+      },
+      {
+        type: "fill-in-blank",
+        title: "Writing the Rule from a Graph",
+        instruction: "Use the gradient and y-intercept to write the rule y = mx + c.",
+        sentences: [
+          { text: "Gradient = 4, y-intercept = −3: y = ___", blanks: ["4x − 3"] },
+          { text: "Gradient = −1, y-intercept = 6: y = ___", blanks: ["−x + 6"] },
+          { text: "Passes through (0, 5) and (2, 11): y = ___", blanks: ["3x + 5"] },
+          { text: "Passes through (1, 4) and (3, 10): y = ___", blanks: ["3x + 1"] },
+        ],
+      },
+      {
+        type: "multiple-choice",
+        title: "Parallel and Perpendicular Lines",
+        instruction: "Identify the relationship between each pair of lines.",
+        questions: [
+          { prompt: "y = 2x + 3 and y = 2x − 5:", options: ["Parallel", "Perpendicular", "Same line", "Crossing"], answer: "Parallel" },
+          { prompt: "y = 3x and y = −x/3:", options: ["Perpendicular", "Parallel", "Same", "Neither"], answer: "Perpendicular" },
+          { prompt: "y = x + 1 and y = x + 1:", options: ["Same line", "Parallel", "Perpendicular", "Crossing"], answer: "Same line" },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Cost Comparison Using Tables",
+        instruction: "Build tables and compare two plans.",
+        prompts: [
+          { text: "Plan A: $25 per month plus $0.10 per text. Plan B: $15 per month plus $0.20 per text. Build tables for 0, 50, 100, 150, 200 texts. At what number of texts do the plans cost the same?", type: "box" },
+          { text: "Write the rule for each plan. Solve the equation Plan A = Plan B algebraically and verify with your table.", type: "lines", lines: 3 },
+        ],
+      },
+      {
+        type: "spark",
+        title: "Spark: Tables of Values in Science",
+        content: "Galileo Galilei (1564–1642) was one of the first scientists to use tables of values to discover mathematical laws. He rolled balls down ramps and recorded distance and time, discovering that distance is proportional to time squared (d ∝ t²). This non-linear relationship — a parabola in a table — led directly to Newton's laws of motion. Science progresses by collecting data, filling in tables, and finding the mathematical rule that fits.",
+      },
+      {
+        type: "open-response",
+        title: "Quadratic Tables",
+        instruction: "Build and analyse a table for a quadratic rule.",
+        prompts: [
+          { text: "Rule: y = x² − 2x + 1. Complete for x = −2, −1, 0, 1, 2, 3, 4. What pattern do you see in the second differences of y?", type: "box" },
+          { text: "For what value(s) of x is y = 0? What does this tell you about the graph?", type: "lines", lines: 2 },
+        ],
+      },
+      // ── Consolidating (51–80) ──
+      {
+        type: "fill-in-blank",
+        title: "Gradient and Intercept — Advanced",
+        instruction: "Find the gradient and y-intercept for each pair of points.",
+        parentTip: "gradient m = (y₂ − y₁)/(x₂ − x₁), then c = y − mx using either point.",
+        sentences: [
+          { text: "Points (2, 5) and (6, 13): m = ___, c = ___, rule: y = ___", blanks: ["2", "1", "2x + 1"] },
+          { text: "Points (0, 3) and (4, −5): m = ___, c = ___, rule: y = ___", blanks: ["-2", "3", "-2x + 3"] },
+          { text: "Points (−1, 4) and (3, 12): m = ___, c = ___, rule: y = ___", blanks: ["2", "6", "2x + 6"] },
+        ],
+      },
+      {
+        type: "multiple-choice",
+        title: "Interpreting Graphs",
+        instruction: "Use graph information to answer each question.",
+        questions: [
+          { prompt: "A graph showing temperature vs time has a gradient of −2 °C/hr. After 3 hours from 20°C:", options: ["14°C", "26°C", "17°C", "6°C"], answer: "14°C" },
+          { prompt: "A graph of cost vs items has y-intercept $5 and gradient $3. Cost of 7 items:", options: ["$26", "$21", "$56", "$15"], answer: "$26" },
+          { prompt: "A line has equation y = −x + 10. It crosses the x-axis at:", options: ["x = 10", "x = −10", "x = 0", "x = 1"], answer: "x = 10" },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Finding Intersection from Two Rules",
+        instruction: "Find the point where two rules give the same y value.",
+        prompts: [
+          { text: "y = 2x + 3 and y = 5x − 6. Build tables for x = 0 to 5. Where do the rules give the same value? Solve algebraically to verify.", type: "box" },
+          { text: "Two factories: Factory A produces 200 + 50n items per day (n = days), Factory B produces 150n items. When do they produce the same amount?", type: "lines", lines: 4 },
+        ],
+      },
+      {
+        type: "true-false",
+        title: "Graph and Table Connections",
+        instruction: "Write True or False.",
+        statements: [
+          { text: "The x-intercept is where y = 0.", answer: true },
+          { text: "Two lines with the same gradient but different y-intercepts never meet.", answer: true },
+          { text: "A table where y values double each time x increases by 1 represents a linear rule.", answer: false },
+          { text: "The gradient of a horizontal line is undefined.", answer: false },
+          { text: "A vertical line has an undefined gradient.", answer: true },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Non-Linear Tables — Second Differences",
+        instruction: "Use second differences to identify the type of rule.",
+        parentTip: "For a linear rule, first differences are constant. For a quadratic rule, second differences (differences of differences) are constant.",
+        prompts: [
+          { text: "For y = x²: x = 1,2,3,4,5. Find first differences (Δy) and second differences (Δ²y). What do you notice?", type: "lines", lines: 4 },
+          { text: "Given table: x: 1,2,3,4,5 → y: 3,7,13,21,31. Find first and second differences. What type of rule does this suggest?", type: "lines", lines: 3 },
+        ],
+      },
+      {
+        type: "tip",
+        title: "Tip: Function Machines",
+        content: "Think of a rule as a 'function machine': you put in an input x, the machine applies the rule (e.g., multiply by 3 and add 2), and out comes the output y. Function machines help visualise composition: applying one rule then another. For example, f(x) = 2x then g(x) = x + 3 composed gives g(f(x)) = 2x + 3. Understanding this composition previews important ideas in Year 9 and 10 mathematics.",
+      },
+      {
+        type: "open-response",
+        title: "Composite Function Machines",
+        instruction: "Apply two rules in sequence.",
+        prompts: [
+          { text: "Rule 1: multiply by 2. Rule 2: add 5. Complete: input 3 → after Rule 1 → after Rule 2 → output. Do this for inputs 1, 2, 3, 4, 5. Write the combined rule.", type: "box" },
+          { text: "If you reverse the order (add 5 first, then multiply by 2), do you get the same result? Investigate with x = 3.", type: "lines", lines: 3 },
+        ],
+      },
+      {
+        type: "multiple-choice",
+        title: "Tables, Graphs, Equations — Connections",
+        instruction: "Choose the correct answer.",
+        questions: [
+          { prompt: "A table has first differences all equal to 5. The rule is of the form:", options: ["y = 5x + c", "y = 5x²", "y = x + 5", "y = 5"], answer: "y = 5x + c" },
+          { prompt: "A graph with gradient −3 and passing through (0, 7) has equation:", options: ["y = −3x + 7", "y = 7x − 3", "y = 3x + 7", "y = −7x + 3"], answer: "y = −3x + 7" },
+          { prompt: "Which table matches y = 2x − 3?", options: ["x:0,1,2 → y:−3,−1,1", "x:0,1,2 → y:0,2,4", "x:0,1,2 → y:−3,−2,−1", "x:0,1,2 → y:3,5,7"], answer: "x:0,1,2 → y:−3,−1,1" },
+        ],
+      },
+      {
+        type: "spark",
+        title: "Spark: Big Data and Tables",
+        content: "Modern data science begins with tables: spreadsheets with millions of rows. Machine learning algorithms find 'rules' (mathematical functions) that fit complex tables of data. A recommendation system on a streaming service is essentially finding the rule that best predicts which shows you will enjoy based on your past viewing table. The humble table of values scales up to be the foundation of the most powerful technology in the world.",
+      },
+      {
+        type: "open-response",
+        title: "Design a Data Table Investigation",
+        instruction: "Create your own investigation using a table of values.",
+        parentTip: "A good investigation asks a clear question, collects data systematically, and identifies a mathematical rule.",
+        prompts: [
+          { text: "Choose a real-world situation (e.g., cost of buying items, distance walked over time). Design a table with at least 6 rows. Collect or estimate the data.", type: "box" },
+          { text: "Find the rule (or formula) that best describes your data. Is it linear or non-linear?", type: "lines", lines: 3 },
+          { text: "Use your rule to predict a value beyond your table. Check if the prediction is reasonable.", type: "lines", lines: 2 },
+        ],
+      },
+      // ── Extending (81–100) ──
+      {
+        type: "tip",
+        title: "Tip: Domain and Range",
+        content: "When you build a table of values, you are choosing which x values (the domain) to include and finding the corresponding y values (the range). In real-world contexts, the domain is often limited: time cannot be negative, a price cannot exceed a budget. Thinking carefully about the domain of a rule makes your mathematical model more realistic.",
+      },
+      {
+        type: "open-response",
+        title: "Domain and Range in Context",
+        instruction: "Analyse the domain and range of each real-world rule.",
+        prompts: [
+          { text: "A bathtub fills at 12 L/minute. Rule: V = 12t where V is volume and t is time. What is a reasonable domain? What is the range if the tub holds 240 L?", type: "lines", lines: 3 },
+          { text: "A ball is thrown up: h = −5t² + 20t (height h in metres, time t in seconds). What is the realistic domain (when is the ball in the air)? What is the maximum height?", type: "lines", lines: 3 },
+        ],
+      },
+      {
+        type: "multiple-choice",
+        title: "Extending — Gradient Applications",
+        instruction: "Apply gradient reasoning to solve each problem.",
+        questions: [
+          { prompt: "A ramp rises 3 m over a horizontal distance of 15 m. The gradient of the ramp is:", options: ["0.2", "0.5", "3/5", "5"], answer: "0.2" },
+          { prompt: "If the gradient of a line is 2 and it passes through (3, 7), the y-intercept is:", options: ["1", "−1", "13", "3"], answer: "1" },
+          { prompt: "A line with gradient m passes through (0, 0). At x = 10, y = 50. What is m?", options: ["5", "0.5", "50", "10"], answer: "5" },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Non-Linear Functions — Quadratics",
+        instruction: "Investigate the quadratic rule y = ax² + bx + c.",
+        prompts: [
+          { text: "For y = x² − 4, find: where it crosses the x-axis (set y = 0), the y-intercept (set x = 0), and the minimum value. Build a table for x = −3 to 3 and sketch the graph.", type: "box" },
+          { text: "How does changing a in y = ax² affect the shape? Compare y = x², y = 2x², y = ½x² using a table.", type: "lines", lines: 3 },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Project: Predicting with Rules",
+        instruction: "Use mathematical rules to make and test predictions.",
+        prompts: [
+          { text: "Record or estimate the cost of electricity (in kWh) for 5 different household uses. Build a table (usage → cost). Find the rule. Predict the monthly cost for a typical household.", type: "box" },
+          { text: "Evaluate: how well does your linear rule fit the data? Are there non-linear effects? Discuss.", type: "lines", lines: 3 },
+        ],
+      },
+      {
+        type: "true-false",
+        title: "Extending — Tables, Rules and Graphs",
+        instruction: "Write True or False.",
+        statements: [
+          { text: "Every straight-line graph can be described by an equation y = mx + c.", answer: true },
+          { text: "A parabola opening upward has a minimum point.", answer: true },
+          { text: "Two different rules can produce exactly the same table of values.", answer: false },
+          { text: "The gradient of y = 7 is 7.", answer: false },
+          { text: "If the gradient is negative, the line slopes downward from left to right.", answer: true },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Reflection: Tables of Values",
+        instruction: "Summarise your understanding.",
+        prompts: [
+          { text: "How do you determine the rule from a table of values? Describe the process step by step.", type: "lines", lines: 4 },
+          { text: "What is the difference between a linear and a non-linear rule? Give an example of each.", type: "lines", lines: 3 },
+          { text: "Describe a real situation where building a table of values helped you solve a problem or make a decision.", type: "lines", lines: 3 },
         ],
       },
       {
@@ -3753,10 +4902,11 @@ export const year7MathsWorksheets: WorksheetItem[] = [
         title: "Real-World Tables and Rules",
         instruction: "Find examples of input-output relationships at home.",
         suggestions: [
-          "Look at a mobile phone plan. Create a table showing the total cost for 0, 5, 10, 15 and 20 GB of data. Write the rule.",
+          "Look at a mobile phone plan. Create a table showing cost for 0, 5, 10, 15, 20 GB of data. Write the rule.",
           "Record the temperature at the same time each day for 5 days. Is the pattern linear? Why or why not?",
           "Time how long it takes to walk 100 m. Create a table for 100 m, 200 m, 300 m, 400 m. What is the rule?",
-          "Challenge: find a price list (e.g., fruit per kg) and write a rule for the cost of x kg. Build a 5-row table.",
+          "Find a price list (e.g., fruit per kg) and write a rule for cost of x kg. Build a 5-row table.",
+          "Research fuel efficiency for a car: build a table of (distance driven) → (fuel used). Is the relationship linear?",
         ],
       },
     ],
@@ -3802,6 +4952,7 @@ export const year7MathsWorksheets: WorksheetItem[] = [
       ],
     },
     activities: [
+      // ── FOUNDATIONAL (1–20) ──────────────────────────────────────
       {
         type: "matching",
         title: "Match Shape to Formula",
@@ -3810,19 +4961,42 @@ export const year7MathsWorksheets: WorksheetItem[] = [
         right: ["A = s²", "A = lw", "A = bh", "A = ½bh"],
       },
       {
+        type: "true-false",
+        title: "Area Formula True or False",
+        instruction: "Write True or False for each statement.",
+        parentTip: "Remind your child that area is always measured in square units.",
+        statements: [
+          { text: "The area of a triangle is A = base × height.", answer: false },
+          { text: "The area of a parallelogram is A = base × height.", answer: true },
+          { text: "A rectangle is a special parallelogram.", answer: true },
+          { text: "Area is measured in cubic units.", answer: false },
+        ],
+      },
+      {
         type: "circle-correct",
-        title: "Triangle Area",
+        title: "Triangle Area — Foundational",
         instruction: "Use A = ½ × base × height. Circle the correct area.",
         questions: [
           { prompt: "Base = 6 cm, Height = 4 cm", options: ["12 cm²", "24 cm²", "6 cm²"] },
           { prompt: "Base = 10 m, Height = 7 m", options: ["35 m²", "70 m²", "17 m²"] },
           { prompt: "Base = 8 cm, Height = 5 cm", options: ["20 cm²", "40 cm²", "13 cm²"] },
-          { prompt: "Base = 12 mm, Height = 9 mm", options: ["54 mm²", "108 mm²", "27 mm²"] },
+        ],
+      },
+      {
+        type: "fill-in-blank",
+        title: "Complete the Formula",
+        instruction: "Fill in the blank to complete each area formula.",
+        parentTip: "Encourage your child to write formulas on flash cards for quick recall.",
+        sentences: [
+          { text: "Area of a triangle: A = ½ × ___ × height", blanks: ["base"] },
+          { text: "Area of a parallelogram: A = base × ___", blanks: ["height"] },
+          { text: "Area of a rectangle: A = ___ × width", blanks: ["length"] },
+          { text: "Area of a square: A = side ___", blanks: ["²"] },
         ],
       },
       {
         type: "circle-correct",
-        title: "Parallelogram Area",
+        title: "Parallelogram Area — Foundational",
         instruction: "Use A = base × height. Circle the correct area.",
         questions: [
           { prompt: "Base = 7 cm, Height = 5 cm", options: ["35 cm²", "24 cm²", "12 cm²"] },
@@ -3831,96 +5005,694 @@ export const year7MathsWorksheets: WorksheetItem[] = [
         ],
       },
       {
+        type: "open-response",
+        title: "Draw and Label Shapes",
+        instruction: "Draw the shape described and label the dimensions used to find area.",
+        prompts: [
+          { text: "Draw a triangle with base 5 cm and height 4 cm. Which two dimensions do you need to calculate its area?", type: "box" },
+          { text: "Draw a parallelogram with base 8 cm and height 3 cm. Label the base and the perpendicular height (not the slant side).", type: "box" },
+        ],
+      },
+      {
+        type: "multiple-choice",
+        title: "Which Dimension to Use?",
+        instruction: "Select the correct answer.",
+        parentTip: "The height used in area formulas is always the perpendicular height, not the slant length.",
+        questions: [
+          { prompt: "A parallelogram has a slant side of 8 cm but a perpendicular height of 6 cm and base of 10 cm. What is its area?", options: ["60 cm²", "80 cm²", "48 cm²", "68 cm²"], answer: "60 cm²" },
+          { prompt: "A triangle has sides 5 cm, 12 cm and 13 cm with a perpendicular height of 4.6 cm to the base of 12 cm. What is its area?", options: ["27.6 cm²", "30 cm²", "60 cm²", "55.2 cm²"], answer: "27.6 cm²" },
+        ],
+      },
+      {
         type: "sorting",
-        title: "Larger or Smaller Area?",
-        instruction: "Compare these shapes. Sort them from smallest to largest area.",
+        title: "Sort from Smallest to Largest Area",
+        instruction: "Calculate the area of each shape, then sort from smallest to largest.",
         columns: ["Smallest", "Middle", "Largest"],
         items: [
-          { label: "Triangle: b=8cm, h=6cm" },
-          { label: "Parallelogram: b=5cm, h=4cm" },
-          { label: "Rectangle: l=9cm, w=3cm" },
+          { label: "Triangle: b=8 cm, h=6 cm" },
+          { label: "Parallelogram: b=5 cm, h=4 cm" },
+          { label: "Rectangle: l=9 cm, w=3 cm" },
         ],
       },
       {
-        type: "circle-correct",
-        title: "Find the Missing Dimension",
-        instruction: "Use the area formula to find the unknown.",
-        questions: [
-          { prompt: "Triangle area = 24 cm², base = 8 cm. Height = ?", options: ["6 cm", "3 cm", "12 cm"] },
-          { prompt: "Parallelogram area = 45 m², height = 5 m. Base = ?", options: ["9 m", "50 m", "225 m"] },
-          { prompt: "Triangle area = 30 cm², height = 10 cm. Base = ?", options: ["6 cm", "3 cm", "15 cm"] },
+        type: "fill-in-blank",
+        title: "Triangle Area Calculations",
+        instruction: "Calculate the missing area.",
+        parentTip: "Show your child how to substitute values step by step: write the formula first, then substitute.",
+        sentences: [
+          { text: "Triangle: b = 4 cm, h = 6 cm → A = ½ × 4 × 6 = ___ cm²", blanks: ["12"] },
+          { text: "Triangle: b = 9 m, h = 8 m → A = ½ × 9 × 8 = ___ m²", blanks: ["36"] },
+          { text: "Triangle: b = 14 cm, h = 5 cm → A = ½ × 14 × 5 = ___ cm²", blanks: ["35"] },
+          { text: "Triangle: b = 20 mm, h = 11 mm → A = ½ × 20 × 11 = ___ mm²", blanks: ["110"] },
+        ],
+      },
+      {
+        type: "fill-in-blank",
+        title: "Parallelogram Area Calculations",
+        instruction: "Calculate the missing area.",
+        sentences: [
+          { text: "Parallelogram: b = 7 cm, h = 3 cm → A = 7 × 3 = ___ cm²", blanks: ["21"] },
+          { text: "Parallelogram: b = 12 m, h = 5 m → A = 12 × 5 = ___ m²", blanks: ["60"] },
+          { text: "Parallelogram: b = 9.5 cm, h = 4 cm → A = ___ cm²", blanks: ["38"] },
         ],
       },
       {
         type: "open-response",
-        title: "Composite Shape Problems",
-        instruction: "Find the area of each composite shape by splitting it into simpler parts.",
+        title: "Real-World Triangle Areas",
+        instruction: "Solve each area problem and show your working.",
+        parentTip: "Connecting maths to real contexts helps students remember formulas more easily.",
         prompts: [
-          { text: "A shape is made of a rectangle (8 cm × 5 cm) and a triangle on top (base 8 cm, height 3 cm). What is the total area?", type: "lines", lines: 3 },
-          { text: "A garden is in the shape of a parallelogram with base 12 m and height 6 m. A triangular bed inside has base 4 m and height 3 m. What is the remaining garden area?", type: "lines", lines: 3 },
+          { text: "A triangular piece of coloured paper has base 15 cm and height 8 cm. What is its area?", type: "lines", lines: 3 },
+          { text: "A triangular garden bed has base 6 m and height 4 m. How much mulch (in m²) is needed to cover it?", type: "lines", lines: 3 },
         ],
       },
       {
-        type: "circle-correct",
-        title: "Area of L-Shaped Compound Figures",
-        instruction: "Split each L-shape into two rectangles and find the total area.",
-        questions: [
-          { prompt: "L-shape: large rectangle 10×6 cm, small rectangle cut out 4×2 cm. Total area?", options: ["52 cm²", "60 cm²", "48 cm²"] },
-          { prompt: "L-shape: two rectangles — 5×8 m and 3×4 m joined together. Total area?", options: ["52 m²", "40 m²", "56 m²"] },
-          { prompt: "L-shape: 9×7 cm minus a 3×3 cm corner. Total area?", options: ["54 cm²", "63 cm²", "45 cm²"] },
+        type: "true-false",
+        title: "Area Statements True or False",
+        instruction: "Write True or False for each statement.",
+        statements: [
+          { text: "A triangle with base 10 cm and height 4 cm has area 20 cm².", answer: true },
+          { text: "A parallelogram with base 6 m and height 7 m has area 21 m².", answer: false },
+          { text: "Doubling the height of a triangle doubles its area.", answer: true },
+          { text: "A square with side 5 cm has the same area as a rectangle with dimensions 10 cm × 2.5 cm.", answer: true },
         ],
       },
       {
-        type: "matching",
-        title: "Choose the Correct Formula",
-        instruction: "Draw a line to match each shape description to the formula needed.",
-        left: [
-          "A shape with base and perpendicular height, not a right angle at corner",
-          "A shape where you halve the product of base and height",
-          "A shape where length × width gives the area",
-          "A shape where you need base, height and length to find volume",
-        ],
-        right: ["Triangular prism volume", "Rectangle", "Triangle", "Parallelogram"],
-      },
-      {
-        type: "circle-correct",
-        title: "Unit Conversion: cm² to m²",
-        instruction: "Use 1 m = 100 cm, so 1 m² = 10 000 cm².",
-        questions: [
-          { prompt: "Convert 50 000 cm² to m²", options: ["5 m²", "50 m²", "0.5 m²"] },
-          { prompt: "Convert 3.5 m² to cm²", options: ["35 000 cm²", "350 cm²", "3 500 cm²"] },
-          { prompt: "A floor tile covers 900 cm². How many tiles to cover 2 m²?", options: ["about 22", "about 200", "about 2"] },
-        ],
-      },
-      {
-        type: "open-response",
-        title: "Reverse Area Problems",
+        type: "multiple-choice",
+        title: "Missing Dimension — Easy",
         instruction: "Use the area formula to find the unknown dimension.",
-        prompts: [
-          { text: "A triangle has area 45 cm² and height 9 cm. What is the base?", type: "lines", lines: 2 },
-          { text: "A parallelogram has area 84 m² and a base of 12 m. What is the perpendicular height?", type: "lines", lines: 2 },
-          { text: "A triangular sail has area 15 m². Its base is 5 m. What is its height?", type: "lines", lines: 2 },
+        parentTip: "To find a missing dimension, rearrange the formula: if A = ½bh, then b = 2A ÷ h.",
+        questions: [
+          { prompt: "Triangle: A = 24 cm², h = 6 cm. What is the base?", options: ["8 cm", "4 cm", "12 cm", "72 cm"], answer: "8 cm" },
+          { prompt: "Parallelogram: A = 40 m², b = 8 m. What is the height?", options: ["5 m", "4 m", "32 m", "320 m"], answer: "5 m" },
+          { prompt: "Triangle: A = 30 cm², b = 10 cm. What is the height?", options: ["6 cm", "3 cm", "15 cm", "60 cm"], answer: "6 cm" },
         ],
       },
       {
         type: "sequence",
-        title: "Area Patterns with Growing Shapes",
-        instruction: "A triangle has a fixed base of 6 cm and its height increases by 2 cm each step. Fill in the missing areas.",
+        title: "Area Patterns — Triangle Heights",
+        instruction: "A triangle has a fixed base of 6 cm. Its height increases by 2 cm each step. Fill in the sequence of areas.",
         sequences: [
           { items: [6, 9, 12, 0, 18, 21], answer: [15] },
-          { items: [10, 20, 30, 0, 50], answer: [40] },
+          { items: [3, 6, 9, 0, 15], answer: [12] },
+        ],
+      },
+      {
+        type: "tip",
+        title: "Tip: The Perpendicular Height",
+        content: "For both triangles and parallelograms, always use the PERPENDICULAR height — the height that forms a right angle with the base. The slant side of a parallelogram is NOT the height. Draw a dotted line from the top vertex straight down to the base to see the perpendicular height.",
+      },
+      {
+        type: "circle-correct",
+        title: "Unit Recognition",
+        instruction: "Circle the correct unit for each measurement.",
+        questions: [
+          { prompt: "The area of a room measured in metres", options: ["m", "m²", "m³"] },
+          { prompt: "The perimeter of a rectangle measured in centimetres", options: ["cm", "cm²", "cm³"] },
+          { prompt: "The volume of a box measured in metres", options: ["m", "m²", "m³"] },
+          { prompt: "The area of a triangle measured in millimetres", options: ["mm", "mm²", "mm³"] },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Perimeter vs Area",
+        instruction: "Answer these questions about the difference between perimeter and area.",
+        parentTip: "Students often confuse perimeter (distance around) and area (surface covered). Use physical objects to reinforce the difference.",
+        prompts: [
+          { text: "A rectangle has length 8 cm and width 5 cm. Find both its perimeter and its area. Which is larger?", type: "lines", lines: 4 },
+          { text: "Two shapes have the same perimeter of 24 cm. Can they have different areas? Give an example.", type: "lines", lines: 4 },
+        ],
+      },
+      {
+        type: "fill-in-blank",
+        title: "Area and Perimeter — Quick Calculations",
+        instruction: "Fill in the area and perimeter for each shape.",
+        sentences: [
+          { text: "Rectangle: l = 10 cm, w = 4 cm → Area = ___ cm², Perimeter = ___ cm", blanks: ["40", "28"] },
+          { text: "Square: s = 7 cm → Area = ___ cm², Perimeter = ___ cm", blanks: ["49", "28"] },
+          { text: "Triangle: b = 6 m, h = 5 m (sides: 6, 5, 5 m) → Area = ___ m², Perimeter = ___ m", blanks: ["15", "16"] },
+        ],
+      },
+      {
+        type: "sorting",
+        title: "Match Unit to Measurement Type",
+        instruction: "Sort each measurement into the correct column.",
+        columns: ["Length", "Area", "Volume"],
+        items: [
+          { label: "45 cm²" },
+          { label: "12 m" },
+          { label: "8 m³" },
+          { label: "200 mm²" },
+          { label: "3.5 km" },
+          { label: "27 cm³" },
+        ],
+      },
+      {
+        type: "spark",
+        title: "Spark: Why Area Matters in the Real World",
+        content: "Architects calculate floor areas to plan room layouts. Farmers use area to know how much fertiliser or seed to buy. Environmental scientists measure areas of forests and wetlands to track habitat loss. Even computer screens have 'resolution' measured in pixels per area. Everywhere you look, area calculations are quietly at work!",
+      },
+      // ── DEVELOPING (21–50) ────────────────────────────────────────
+      {
+        type: "open-response",
+        title: "Composite Shape — Rectangle and Triangle",
+        instruction: "Find the total area by splitting the composite shape into simpler parts.",
+        parentTip: "Sketch the shape, draw a line to split it, label each part, then add the areas together.",
+        prompts: [
+          { text: "A shape is made of a rectangle (8 cm × 5 cm) with a triangle on top (base 8 cm, height 3 cm). Find the total area.", type: "lines", lines: 4 },
+          { text: "A shape is made of a parallelogram (base 10 m, height 4 m) with a triangle removed from one corner (base 4 m, height 4 m). Find the remaining area.", type: "lines", lines: 4 },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "L-Shape Areas",
+        instruction: "Split each L-shape into two rectangles and find the total area.",
+        questions: [
+          { prompt: "L-shape: large rectangle 10×6 cm, small cut-out 4×2 cm. Total area?", options: ["52 cm²", "60 cm²", "48 cm²"] },
+          { prompt: "L-shape: two rectangles joined — 5×8 m and 3×4 m. Total area?", options: ["52 m²", "40 m²", "56 m²"] },
+          { prompt: "L-shape: 9×7 cm minus a 3×3 cm corner. Total area?", options: ["54 cm²", "63 cm²", "45 cm²"] },
+        ],
+      },
+      {
+        type: "multiple-choice",
+        title: "Composite Shapes — Multiple Choice",
+        instruction: "Select the correct total area.",
+        parentTip: "When splitting composite shapes, check that you haven't counted any region twice.",
+        questions: [
+          { prompt: "A T-shape made of a 12×3 cm top and a 3×8 cm stem. Total area?", options: ["60 cm²", "36 cm²", "100 cm²", "72 cm²"], answer: "60 cm²" },
+          { prompt: "A rectangle 15×6 m with a triangular notch removed (b=4 m, h=3 m). Remaining area?", options: ["84 m²", "90 m²", "78 m²", "96 m²"], answer: "84 m²" },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Missing Dimension — Developing",
+        instruction: "Rearrange the area formula to find the unknown. Show all steps.",
+        prompts: [
+          { text: "A triangle has area 45 cm² and height 9 cm. What is the base?", type: "lines", lines: 3 },
+          { text: "A parallelogram has area 84 m² and base 12 m. What is the perpendicular height?", type: "lines", lines: 3 },
+          { text: "A triangular sail has area 15 m² and base 5 m. What is its height?", type: "lines", lines: 3 },
+        ],
+      },
+      {
+        type: "fill-in-blank",
+        title: "Unit Conversion — cm² and m²",
+        instruction: "Use 1 m = 100 cm, so 1 m² = 10 000 cm².",
+        sentences: [
+          { text: "50 000 cm² = ___ m²", blanks: ["5"] },
+          { text: "3.5 m² = ___ cm²", blanks: ["35 000"] },
+          { text: "2.4 m² = ___ cm²", blanks: ["24 000"] },
+          { text: "75 000 cm² = ___ m²", blanks: ["7.5"] },
+        ],
+      },
+      {
+        type: "matching",
+        title: "Match Formula to Shape Description",
+        instruction: "Draw a line to match each description to the correct area formula.",
+        parentTip: "Cover one side and practise recalling each formula from the description.",
+        left: [
+          "Half the product of base and perpendicular height",
+          "Product of base and perpendicular height",
+          "Length multiplied by width",
+          "Side length squared",
+        ],
+        right: ["Rectangle", "Square", "Triangle", "Parallelogram"],
+      },
+      {
+        type: "open-response",
+        title: "Tiling and Area",
+        instruction: "Answer these tiling problems using area calculations.",
+        prompts: [
+          { text: "A floor tile is a square with side 30 cm. How many tiles are needed to cover a rectangle 3 m × 2.4 m? Show your working.", type: "lines", lines: 5 },
+          { text: "Triangular tiles (base 20 cm, height 15 cm) are used to decorate a wall panel 1 m × 1 m. How many tiles fit exactly in the panel?", type: "lines", lines: 4 },
+        ],
+      },
+      {
+        type: "true-false",
+        title: "Composite Shapes True or False",
+        instruction: "Write True or False for each statement.",
+        parentTip: "Sketch the shape to help visualise each claim before deciding.",
+        statements: [
+          { text: "An L-shape can always be split into exactly two rectangles.", answer: true },
+          { text: "To find the area of a T-shape, you need to add the areas of all parts.", answer: true },
+          { text: "Removing a triangle from a rectangle increases the remaining area.", answer: false },
+          { text: "A composite shape's perimeter equals the sum of all the individual shape perimeters.", answer: false },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Unit Conversion Problems",
+        instruction: "Circle the correct conversion.",
+        questions: [
+          { prompt: "Convert 2 m² to cm²", options: ["200 cm²", "2 000 cm²", "20 000 cm²"] },
+          { prompt: "Convert 150 000 cm² to m²", options: ["15 m²", "150 m²", "1.5 m²"] },
+          { prompt: "A floor tile covers 900 cm². How many tiles are needed to cover 2 m²?", options: ["about 22", "about 200", "about 2"] },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Garden Design Problem",
+        instruction: "Plan a garden using area calculations.",
+        prompts: [
+          { text: "A garden is rectangular, 12 m × 8 m. Inside the garden there is a triangular pond (base 4 m, height 3 m) and a parallelogram-shaped lawn (base 6 m, height 5 m). What area remains for planting?", type: "lines", lines: 5 },
+        ],
+      },
+      {
+        type: "tip",
+        title: "Tip: Breaking Composite Shapes into Parts",
+        content: "When you see a complicated shape, look for straight lines you can draw to split it into rectangles, triangles or parallelograms you already know. Label each part with a letter (Part A, Part B) and find each area separately. Then add them together. If a piece was removed, subtract it instead.",
+      },
+      {
+        type: "sequence",
+        title: "Area Pattern — Parallelograms",
+        instruction: "A parallelogram has a fixed height of 5 cm. Its base increases by 3 cm each step. Fill in the missing areas.",
+        sequences: [
+          { items: [15, 30, 45, 0, 75, 90], answer: [60] },
+          { items: [20, 40, 60, 0, 100], answer: [80] },
+        ],
+      },
+      {
+        type: "multiple-choice",
+        title: "Area Word Problems",
+        instruction: "Choose the correct answer.",
+        parentTip: "Read the question carefully — is it asking for area, perimeter, or a missing length?",
+        questions: [
+          { prompt: "A triangular flag has base 90 cm and height 60 cm. What is its area in m²?", options: ["0.27 m²", "2.7 m²", "27 m²", "0.027 m²"], answer: "0.27 m²" },
+          { prompt: "A paddock is parallelogram-shaped with base 200 m and height 150 m. What is its area in hectares? (1 ha = 10 000 m²)", options: ["3 ha", "30 ha", "0.3 ha", "300 ha"], answer: "3 ha" },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Comparing Areas of Different Shapes",
+        instruction: "Investigate how different shapes with the same perimeter can have different areas.",
+        prompts: [
+          { text: "A triangle and a parallelogram both have a base of 8 cm. The triangle has height 6 cm; the parallelogram has height 4 cm. Which has the larger area and by how much?", type: "lines", lines: 4 },
+          { text: "A square has the same perimeter as a rectangle 12 cm × 2 cm. Find both areas. Which shape covers more surface?", type: "lines", lines: 4 },
+        ],
+      },
+      {
+        type: "fill-in-blank",
+        title: "Missing Dimensions — Fill In",
+        instruction: "Find the missing value using the area formula.",
+        parentTip: "Model rearranging the formula step by step before asking your child to try independently.",
+        sentences: [
+          { text: "Triangle: A = 36 cm², h = 9 cm → base = ___ cm", blanks: ["8"] },
+          { text: "Parallelogram: A = 72 m², b = 12 m → height = ___ m", blanks: ["6"] },
+          { text: "Triangle: A = 25 cm², b = 10 cm → height = ___ cm", blanks: ["5"] },
+          { text: "Rectangle: A = 54 cm², l = 9 cm → width = ___ cm", blanks: ["6"] },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Real-World: Painting a Wall",
+        instruction: "Solve this real-world area problem.",
+        prompts: [
+          { text: "A wall is rectangular, 4 m wide and 3 m tall. It has a triangular window cut into it (base 1.5 m, height 1.2 m). Paint covers 10 m² per litre. How much paint is needed (to the nearest 0.1 L) to paint the wall?", type: "lines", lines: 5 },
+        ],
+      },
+      {
+        type: "sorting",
+        title: "Sort by Area — Largest to Smallest",
+        instruction: "Calculate each area, then sort from largest to smallest.",
+        columns: ["Largest", "Middle", "Smallest"],
+        items: [
+          { label: "Parallelogram: b=15 m, h=8 m" },
+          { label: "Triangle: b=24 m, h=10 m" },
+          { label: "Square: s=11 m" },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Area Scaling",
+        instruction: "Circle the correct answer.",
+        parentTip: "When all dimensions are scaled by k, the area is scaled by k².",
+        questions: [
+          { prompt: "A triangle has area 20 cm². Its base and height are both doubled. What is the new area?", options: ["80 cm²", "40 cm²", "20 cm²"] },
+          { prompt: "A parallelogram has area 30 m². Its base is tripled but its height stays the same. New area?", options: ["90 m²", "60 m²", "270 m²"] },
+          { prompt: "A square has area 16 cm². Its side is halved. New area?", options: ["4 cm²", "8 cm²", "2 cm²"] },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Justify Your Strategy",
+        instruction: "Explain how you would approach each problem.",
+        prompts: [
+          { text: "A composite shape looks like the letter 'L'. Describe TWO different ways you could split it to find its area.", type: "lines", lines: 4 },
+          { text: "A student says the area of a parallelogram with base 8 cm and slant side 6 cm is 48 cm². Is the student correct? Explain.", type: "lines", lines: 3 },
+        ],
+      },
+      {
+        type: "multiple-choice",
+        title: "Scaling Areas",
+        instruction: "Select the correct answer about scaled areas.",
+        questions: [
+          { prompt: "A rectangle 5 cm × 3 cm has area 15 cm². All sides are scaled by factor 4. What is the new area?", options: ["60 cm²", "240 cm²", "120 cm²", "480 cm²"], answer: "240 cm²" },
+          { prompt: "A triangle with area 50 m² has all its lengths halved. New area?", options: ["25 m²", "12.5 m²", "100 m²", "50 m²"], answer: "12.5 m²" },
+        ],
+      },
+      {
+        type: "true-false",
+        title: "Area Scaling True or False",
+        instruction: "Write True or False for each statement.",
+        statements: [
+          { text: "Doubling the base of a triangle while keeping the height the same doubles the area.", answer: true },
+          { text: "Halving both the base and height of a parallelogram halves its area.", answer: false },
+          { text: "Tripling both the base and height of a triangle multiplies its area by 9.", answer: true },
+          { text: "Scaling all lengths of a shape by k scales its area by 2k.", answer: false },
+        ],
+      },
+      {
+        type: "spark",
+        title: "Spark: Archimedes and the Area of a Triangle",
+        content: "About 2 300 years ago, the Greek mathematician Archimedes proved that the area of a triangle equals half the area of a parallelogram with the same base and height. He did this by literally cutting a parallelogram in half diagonally! This 'cut and rearrange' approach — showing two shapes have equal area by transforming one into the other — is still used in geometry proofs today.",
+      },
+      // ── CONSOLIDATING (51–80) ──────────────────────────────────────
+      {
+        type: "open-response",
+        title: "Investigating Perimeter and Area Relationships",
+        instruction: "Explore the relationship between perimeter and area.",
+        parentTip: "Have your child use graph paper to draw the shapes and compare visually.",
+        prompts: [
+          { text: "List 4 different rectangles that each have a perimeter of 20 cm. Calculate the area of each. What do you notice?", type: "lines", lines: 5 },
+          { text: "Which rectangle with perimeter 20 cm has the largest area? What shape does this suggest gives the maximum area for a fixed perimeter?", type: "lines", lines: 4 },
+        ],
+      },
+      {
+        type: "fill-in-blank",
+        title: "Area in Square Metres and Hectares",
+        instruction: "Use 1 ha = 10 000 m² to convert.",
+        sentences: [
+          { text: "30 000 m² = ___ ha", blanks: ["3"] },
+          { text: "1.5 ha = ___ m²", blanks: ["15 000"] },
+          { text: "25 000 m² = ___ ha", blanks: ["2.5"] },
+          { text: "0.4 ha = ___ m²", blanks: ["4 000"] },
+        ],
+      },
+      {
+        type: "multiple-choice",
+        title: "Area — Harder Missing Dimensions",
+        instruction: "Choose the correct missing value.",
+        parentTip: "Show your child how to isolate the unknown: write the formula, substitute known values, then solve.",
+        questions: [
+          { prompt: "A parallelogram has area 91 m² and height 7 m. What is the base?", options: ["13 m", "637 m", "84 m", "98 m"], answer: "13 m" },
+          { prompt: "A triangle has area 52.5 cm² and base 15 cm. What is the height?", options: ["7 cm", "3.5 cm", "787.5 cm", "70 cm"], answer: "7 cm" },
+          { prompt: "A rectangular paddock has area 2.4 ha and width 150 m. What is its length in metres?", options: ["160 m", "16 m", "1 600 m", "0.016 m"], answer: "160 m" },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Composite Shapes — Complex",
+        instruction: "Find the shaded area for each composite shape. Show all steps.",
+        prompts: [
+          { text: "A rectangle 14 cm × 10 cm contains two triangles, each with base 6 cm and height 5 cm. What is the area of the rectangle NOT covered by the triangles?", type: "lines", lines: 5 },
+          { text: "A parallelogram with base 20 m and height 12 m has a rectangular hole 4 m × 3 m cut out. What is the remaining area?", type: "lines", lines: 4 },
+        ],
+      },
+      {
+        type: "sequence",
+        title: "Area Sequences — Mixed Shapes",
+        instruction: "Fill in the missing area in each sequence.",
+        parentTip: "Ask your child to describe the pattern before calculating.",
+        sequences: [
+          { items: [12, 24, 36, 0, 60], answer: [48] },
+          { items: [15, 60, 0, 240, 960], answer: [120] },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Cross-Sections and Area",
+        instruction: "Identify and calculate areas of cross-sections.",
+        prompts: [
+          { text: "A prism has a triangular cross-section with base 8 cm and height 5 cm. What is the area of the cross-section? Why is cross-sectional area important for calculating volume?", type: "lines", lines: 5 },
+          { text: "A swimming pool has a trapezoidal cross-section. The two parallel sides are 1.2 m (shallow end) and 2.8 m (deep end), and the pool is 25 m long. If you know the cross-sectional area, explain how you would find the volume.", type: "lines", lines: 4 },
+        ],
+      },
+      {
+        type: "true-false",
+        title: "Area Applications True or False",
+        instruction: "Write True or False for each statement.",
+        statements: [
+          { text: "A hectare is 100 m × 100 m = 10 000 m².", answer: true },
+          { text: "A triangle and a rectangle with the same base and height have the same area.", answer: false },
+          { text: "The cross-sectional area of a prism is used to calculate its volume.", answer: true },
+          { text: "1 km² = 1 000 000 m².", answer: true },
+        ],
+      },
+      {
+        type: "fill-in-blank",
+        title: "km² Conversions",
+        instruction: "Use 1 km = 1 000 m, so 1 km² = 1 000 000 m².",
+        parentTip: "Area conversions between km² and m² involve multiplying or dividing by one million — a useful opportunity to practise powers of 10.",
+        sentences: [
+          { text: "3 km² = ___ m²", blanks: ["3 000 000"] },
+          { text: "2 500 000 m² = ___ km²", blanks: ["2.5"] },
+          { text: "0.6 km² = ___ m²", blanks: ["600 000"] },
+          { text: "4 000 000 m² = ___ km²", blanks: ["4"] },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Problem-Solving: Fencing and Area",
+        instruction: "Solve this two-part problem about fencing and area.",
+        prompts: [
+          { text: "A triangular paddock has sides of 40 m, 60 m, and 50 m. The perpendicular height to the base of 60 m is 33.3 m. Find the area of the paddock. If fencing costs $25 per metre, how much does it cost to fence the entire paddock?", type: "lines", lines: 6 },
+        ],
+      },
+      {
+        type: "multiple-choice",
+        title: "Maximising Area",
+        instruction: "Choose the correct answer.",
+        questions: [
+          { prompt: "Of all rectangles with perimeter 40 cm, which has the greatest area?", options: ["10 cm × 10 cm", "15 cm × 5 cm", "18 cm × 2 cm", "12 cm × 8 cm"], answer: "10 cm × 10 cm" },
+          { prompt: "A farmer has 60 m of fencing to make a rectangular pen along a wall (wall forms one side). What width maximises the area?", options: ["15 m", "20 m", "30 m", "10 m"], answer: "15 m" },
+        ],
+      },
+      {
+        type: "tip",
+        title: "Tip: Area vs Perimeter in Design",
+        content: "Architects and farmers often face the 'maximum area for fixed perimeter' problem. Mathematically, a square always gives the maximum area for a given perimeter among rectangles. For any shape, a circle gives the theoretical maximum. This fact is used when designing pens, fences, and even city blocks to get the most space for the least material.",
+      },
+      {
+        type: "open-response",
+        title: "Area Proof — Parallelogram from Rectangle",
+        instruction: "Explain the geometric proof that connects the area of a parallelogram to a rectangle.",
+        parentTip: "Have your child cut a parallelogram from card, cut off the triangle on one end, and reattach it to the other end to form a rectangle. This demonstrates the proof physically.",
+        prompts: [
+          { text: "Draw a parallelogram with base 8 cm and height 5 cm. Describe how cutting and rearranging it shows its area equals a rectangle with the same base and height.", type: "box" },
+          { text: "Using the same idea, explain why the area of a triangle is HALF the area of a parallelogram with the same base and height.", type: "lines", lines: 3 },
+        ],
+      },
+      {
+        type: "fill-in-blank",
+        title: "Area of Composite Shapes — Fill In",
+        instruction: "Complete the area calculation for each composite shape.",
+        sentences: [
+          { text: "Rectangle (6×4 cm) + Triangle (b=6, h=3 cm): Total area = 24 + ___ = ___ cm²", blanks: ["9", "33"] },
+          { text: "Parallelogram (b=10, h=8 m) − Triangle (b=4, h=5 m): Remaining = 80 − ___ = ___ m²", blanks: ["10", "70"] },
+          { text: "Two rectangles joined: (8×5 cm) + (3×4 cm) = ___ + 12 = ___ cm²", blanks: ["40", "52"] },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Design a Shape with a Given Area",
+        instruction: "Use your knowledge of area formulas to design shapes to specification.",
+        parentTip: "This open-ended task encourages creative thinking. There are many valid answers.",
+        prompts: [
+          { text: "Design a triangular logo with area exactly 60 cm². Give two different pairs of base and height values that would work.", type: "lines", lines: 4 },
+          { text: "Design an L-shaped garden with total area between 40 m² and 50 m². Label all dimensions.", type: "box" },
+        ],
+      },
+      {
+        type: "multiple-choice",
+        title: "Area — Mixed Consolidation",
+        instruction: "Choose the correct answer for each question.",
+        questions: [
+          { prompt: "A triangular roof section has base 6 m and height 2.5 m. How much roofing material (in m²) is required?", options: ["7.5 m²", "15 m²", "8 m²", "30 m²"], answer: "7.5 m²" },
+          { prompt: "A parallelogram garden bed has base 9 m and height 4 m. Topsoil costs $8/m². Total cost?", options: ["$288", "$144", "$108", "$576"], answer: "$288" },
+          { prompt: "A composite shape is made of a 10×6 m rectangle and a triangle with base 10 m and height 4 m on top. Total area?", options: ["80 m²", "60 m²", "100 m²", "120 m²"], answer: "80 m²" },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Connecting Area to Rate Problems",
+        instruction: "Solve these problems that connect area with a rate.",
+        parentTip: "Rate × area = total amount — this is a key idea in science, agriculture, and construction.",
+        prompts: [
+          { text: "A triangular field has base 120 m and height 80 m. Grass seed costs $2.50 per m². What is the total cost of seeding the field?", type: "lines", lines: 4 },
+          { text: "Solar panels produce 150 W per m². A parallelogram-shaped panel array has base 6 m and height 4 m. How many watts does the array produce?", type: "lines", lines: 4 },
+        ],
+      },
+      {
+        type: "circle-correct",
+        title: "Area — Harder Calculations",
+        instruction: "Circle the correct area.",
+        questions: [
+          { prompt: "Triangle: b = 13 cm, h = 8 cm", options: ["52 cm²", "104 cm²", "26 cm²"] },
+          { prompt: "Parallelogram: b = 14.5 m, h = 6 m", options: ["87 m²", "43.5 m²", "174 m²"] },
+          { prompt: "Composite: rectangle (12×5 m) + triangle (b=12, h=4 m)", options: ["84 m²", "60 m²", "108 m²"] },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Geometry in the News",
+        instruction: "Find a real-world reference and apply area calculations.",
+        prompts: [
+          { text: "Research the area of a standard AFL oval (approximately 185 m × 155 m on average). If it were a parallelogram, what base and height might give that area? Compare with the actual oval shape.", type: "lines", lines: 5 },
+        ],
+      },
+      {
+        type: "tip",
+        title: "Tip: Checking Your Area Answers",
+        content: "Always sense-check your area answer: is it in square units? Is it a reasonable size? For example, if you calculate the area of a small triangle and get 5 000 cm², something went wrong. Estimate first — roughly multiply base by height (ignoring the ½) to get an upper bound, then your answer should be about half that.",
+      },
+      {
+        type: "sorting",
+        title: "Rank by Area Efficiency",
+        instruction: "Sort these shapes from most area per unit of perimeter to least.",
+        columns: ["Most Efficient", "Middle", "Least Efficient"],
+        items: [
+          { label: "Square: s = 6 cm (P=24, A=36)" },
+          { label: "Rectangle: 10×2 cm (P=24, A=20)" },
+          { label: "Rectangle: 8×4 cm (P=24, A=32)" },
+        ],
+      },
+      {
+        type: "spark",
+        title: "Spark: The Isoperimetric Problem",
+        content: "The isoperimetric problem asks: 'Of all closed curves with the same perimeter, which encloses the most area?' The answer — proved rigorously only in the 1800s — is a circle. Among all rectangles, a square maximises area. This insight has practical consequences: honeycombs use hexagons (close to circles) to store maximum honey with minimum wax. Nature solves maths problems too!",
+      },
+      // ── EXTENDING (81–100) ──────────────────────────────────────────
+      {
+        type: "open-response",
+        title: "Trapezium Area",
+        instruction: "Extend your knowledge to trapeziums.",
+        parentTip: "The trapezium area formula A = ½(a + b)h is a natural extension of the triangle and parallelogram formulas.",
+        prompts: [
+          { text: "A trapezium has parallel sides of 6 cm and 10 cm and a perpendicular height of 4 cm. Use A = ½(a + b)h to find its area.", type: "lines", lines: 4 },
+          { text: "Show that a parallelogram is a special case of a trapezium. What happens when both parallel sides are equal in the formula?", type: "lines", lines: 3 },
+        ],
+      },
+      {
+        type: "multiple-choice",
+        title: "Trapezium Area",
+        instruction: "Choose the correct area of each trapezium.",
+        questions: [
+          { prompt: "Parallel sides: 5 cm and 9 cm, height: 4 cm", options: ["28 cm²", "56 cm²", "14 cm²", "36 cm²"], answer: "28 cm²" },
+          { prompt: "Parallel sides: 8 m and 12 m, height: 7 m", options: ["140 m²", "70 m²", "560 m²", "84 m²"], answer: "70 m²" },
+          { prompt: "Parallel sides: 3.5 cm and 6.5 cm, height: 5 cm", options: ["25 cm²", "50 cm²", "10 cm²", "12.5 cm²"], answer: "25 cm²" },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Coordinate Geometry — Area on a Grid",
+        instruction: "Use coordinates to calculate area.",
+        parentTip: "Plotting vertices on a coordinate grid and counting squares helps verify calculated answers.",
+        prompts: [
+          { text: "A triangle has vertices at (0,0), (8,0), and (4,6). What is its area? (Hint: base = 8, height = 6.)", type: "lines", lines: 3 },
+          { text: "A parallelogram has vertices at (0,0), (5,0), (7,4), and (2,4). What is its area? What are the base and the perpendicular height?", type: "lines", lines: 4 },
+        ],
+      },
+      {
+        type: "fill-in-blank",
+        title: "Area Formulae — Extended Shapes",
+        instruction: "Fill in the area for each shape.",
+        sentences: [
+          { text: "Trapezium: a=7, b=11 cm, h=6 cm → A = ½×(7+11)×6 = ___ cm²", blanks: ["54"] },
+          { text: "Kite: d₁=10 cm, d₂=8 cm → A = ½×d₁×d₂ = ___ cm²", blanks: ["40"] },
+          { text: "Rhombus: d₁=12 m, d₂=5 m → A = ½×12×5 = ___ m²", blanks: ["30"] },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Surface Area Preview — Triangular Prism",
+        instruction: "Calculate the surface area of a triangular prism.",
+        parentTip: "Surface area is the total area of all faces — a natural extension of 2D area into 3D.",
+        prompts: [
+          { text: "A triangular prism has two triangular faces (base 6 cm, height 4 cm) and three rectangular faces (lengths 10 cm, widths 5 cm, 5 cm, and 6 cm). Find the total surface area.", type: "lines", lines: 6 },
+        ],
+      },
+      {
+        type: "multiple-choice",
+        title: "Surface Area — Prisms",
+        instruction: "Choose the correct surface area.",
+        questions: [
+          { prompt: "A rectangular prism is 8 cm × 5 cm × 3 cm. Surface area = 2(lw + lh + wh). What is the surface area?", options: ["158 cm²", "120 cm²", "79 cm²", "240 cm²"], answer: "158 cm²" },
+          { prompt: "A triangular prism has triangular faces (b=6, h=4 cm, area=12 cm²) and three rectangular faces (areas 40, 50, and 60 cm²). Total surface area?", options: ["174 cm²", "162 cm²", "150 cm²", "186 cm²"], answer: "174 cm²" },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Proof by Rearrangement",
+        instruction: "Construct a geometric argument using area.",
+        parentTip: "This proof-based task develops mathematical reasoning skills beyond calculation.",
+        prompts: [
+          { text: "A right-angled triangle has legs a and b and hypotenuse c. Four copies of this triangle are arranged around a square of side c. Show that the total area of the large square equals a² + b² + 4 × (½ab). Simplify to derive a² + b² = c².", type: "lines", lines: 8 },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Surveying and Area",
+        instruction: "Apply area knowledge to a land surveying context.",
+        prompts: [
+          { text: "A surveyor maps an irregularly shaped block of land as a composite of two triangles and a parallelogram. Triangle 1: base 30 m, height 20 m. Triangle 2: base 25 m, height 16 m. Parallelogram: base 40 m, height 18 m. What is the total area of the block? If land in this area sells for $850/m², what is the block's value?", type: "lines", lines: 7 },
+        ],
+      },
+      {
+        type: "true-false",
+        title: "Advanced Area True or False",
+        instruction: "Write True or False for each statement.",
+        parentTip: "Encourage your child to draw a diagram to check each claim before deciding.",
+        statements: [
+          { text: "The area of a kite equals half the product of its diagonals.", answer: true },
+          { text: "A trapezium with both parallel sides equal is a parallelogram.", answer: true },
+          { text: "A regular hexagon can be split into exactly 6 equilateral triangles.", answer: true },
+          { text: "The surface area of a cube with side s is 4s².", answer: false },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Area of a Regular Hexagon",
+        instruction: "Calculate the area of a regular hexagon using triangles.",
+        parentTip: "A regular hexagon can be divided into 6 equilateral triangles — this is a powerful decomposition strategy.",
+        prompts: [
+          { text: "A regular hexagon has side length 6 cm. Each of the 6 equilateral triangles has base 6 cm and height approximately 5.2 cm. Calculate the total area of the hexagon.", type: "lines", lines: 5 },
+          { text: "How does the area of a regular hexagon with side s compare to a circle with the same 'radius' s? Which covers more area?", type: "lines", lines: 4 },
+        ],
+      },
+      {
+        type: "multiple-choice",
+        title: "Area — Extension Mixed",
+        instruction: "Choose the correct answer for each challenging question.",
+        questions: [
+          { prompt: "A triangle has vertices at (2,1), (8,1), and (5,7). What is its area?", options: ["18 units²", "9 units²", "36 units²", "12 units²"], answer: "18 units²" },
+          { prompt: "A trapezium field has parallel sides 80 m and 120 m and height 60 m. What is its area in hectares?", options: ["0.6 ha", "6 ha", "60 ha", "1.2 ha"], answer: "0.6 ha" },
+          { prompt: "Four congruent right triangles (legs 3 cm and 4 cm) are arranged to form a square. What is the side of the outer square? And its area?", options: ["5 cm, 25 cm²", "7 cm, 49 cm²", "5 cm, 16 cm²", "4 cm, 16 cm²"], answer: "5 cm, 25 cm²" },
+        ],
+      },
+      {
+        type: "open-response",
+        title: "Design Challenge: Maximum Area Enclosure",
+        instruction: "Apply area optimisation to a real design problem.",
+        parentTip: "This is an open-ended investigation with a well-known optimal solution — encourage your child to discover it through trial and error.",
+        prompts: [
+          { text: "You have 100 m of fencing to enclose a rectangular field. Complete a table with different length-width pairs (perimeter = 100 m). Find the dimensions that maximise the enclosed area and explain the pattern you observe.", type: "box" },
+          { text: "What if the field is triangular? Investigate whether a right-angled triangle or equilateral triangle (with the same perimeter) encloses more area. Write a conclusion.", type: "lines", lines: 5 },
         ],
       },
       {
         type: "home-activity",
         title: "Area Measurement at Home",
-        instruction: "Find and calculate areas of shapes around you.",
+        instruction: "Find and calculate areas of real shapes around you.",
         suggestions: [
-          "Find a triangular piece of card or fabric. Measure its base and height, then calculate the area.",
-          "Sketch the floor plan of a room as an L-shape. Split it into rectangles and find the total area.",
-          "Look at a wall tile or floor tile: measure its dimensions and calculate how many tiles would cover 1 m².",
-          "Research: what is the area of a standard soccer pitch (parallelogram or rectangle)? How many triangles of base 10 m and height 8 m would fill it?",
+          "Find a triangular piece of card or fabric. Measure its base and height and calculate its area. Check by cutting and rearranging it into a rectangle.",
+          "Sketch the floor plan of a room as an L-shape or composite shape. Measure all dimensions and calculate the total floor area.",
+          "Look at a wall or floor tile: measure its dimensions and calculate how many tiles would cover 1 m². Then count the actual tiles in a 1 m × 1 m section and compare.",
+          "Research the area of a local park or sports ground. Use Google Maps (measure tool) to estimate the area, then compare with the formula for the best-fitting shape.",
         ],
+      },
+      {
+        type: "spark",
+        title: "Spark: Fractals and Infinite Area",
+        content: "Can a shape have finite area but infinite perimeter? Yes! The Koch Snowflake starts with an equilateral triangle. On each step, a new triangle is added to every side. After infinite steps, the perimeter becomes infinite — but the enclosed area converges to a finite number (8/5 times the original triangle). This mind-bending result shows that area and perimeter are more independent than they first appear.",
       },
     ],
     nextSteps: ["volume-of-prisms"],
