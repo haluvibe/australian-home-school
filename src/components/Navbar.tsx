@@ -286,6 +286,7 @@ export default function Navbar() {
                 <Link
                   href={item.href}
                   className="rounded-lg px-3.5 py-2 text-[15px] font-medium text-charcoal-light transition-colors hover:text-charcoal"
+                  {...(item.href.startsWith("https://") ? { target: "_blank", rel: "noopener noreferrer" } : {})}
                 >
                   {item.label}
                 </Link>
@@ -603,6 +604,7 @@ export default function Navbar() {
                   href={item.href}
                   className="block rounded-lg px-3 py-3 text-[15px] font-medium text-charcoal-light transition-colors hover:text-charcoal"
                   onClick={() => setMobileOpen(false)}
+                  {...(item.href.startsWith("https://") ? { target: "_blank", rel: "noopener noreferrer" } : {})}
                 >
                   {item.label}
                 </Link>
