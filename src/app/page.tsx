@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "AI Native School — Free Curriculum, Worksheets & Lesson Plans",
   description:
-    "Australia's #1 homeschooling resource. Browse free printable worksheets, Australian Curriculum V9 guides and lesson plans for Foundation to Year 10. Trusted by Australian families.",
+    "Australia's first AI-generated homeschooling resource for parents. Free printable worksheets, Australian Curriculum V9 guides and lesson plans for Foundation to Year 10.",
   keywords: [
     "homeschooling Australia",
     "free worksheets Australia",
