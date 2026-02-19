@@ -1,16 +1,34 @@
 "use client";
 
 import { useState, useEffect, useCallback, useRef } from 'react';
-import type React from 'react';
 
-// ── Types ──────────────────────────────────────────────────────────────────
+/*
+  ⚡ DOT DASH: LIGHTNING REFLEXES SUBITISING GAME ⚡
 
-type GameScreen = 'intro' | 'playing' | 'reveal' | 'result' | 'speedRound' | 'levelUp' | 'gameOver';
+  A WarioWare-style rapid-fire micro-challenge game.
+  Dots FLASH on screen in recognizable patterns.
+  Player DRAGS the correct number orb to the target zone.
+  Combo system, power-ups, boss rounds, and cosmic visual spectacle.
 
-interface DotPattern {
-  dots: { x: number; y: number }[];
-  count: number;
-  type: 'dice' | 'tenframe' | 'random' | 'finger';
+  Learning: Subitising (instantly recognising quantities without counting)
+  Target: Foundation Maths
+*/
+
+// =============== TYPES ===============
+
+interface DotDashProps {
+  onExit?: () => void;
+}
+
+type GameScreen = 'intro' | 'playing' | 'gameover';
+
+type Phase = 'flash' | 'fade' | 'answer' | 'result' | 'boss-intro' | 'boss-flash' | 'boss-answer' | 'boss-result';
+
+type PowerUpType = 'slowtime' | 'double' | 'shield';
+
+interface DotPos {
+  x: number;
+  y: number;
 }
 
 interface Particle {
@@ -23,218 +41,182 @@ interface Particle {
   maxLife: number;
   size: number;
   hue: number;
-  type: 'sparkle' | 'burst' | 'streak' | 'electric';
+  type: 'spark' | 'confetti' | 'lightning' | 'shockwave' | 'star' | 'trail';
 }
 
-interface FloatingScore {
+interface FloatingText {
   id: number;
   x: number;
   y: number;
-  value: number;
+  text: string;
+  color: string;
+  life: number;
+  size: number;
+}
+
+interface PowerUp {
+  id: number;
+  type: PowerUpType;
+  x: number;
+  y: number;
   life: number;
 }
 
-interface BackgroundStar {
+interface BgStar {
   x: number;
   y: number;
   size: number;
   speed: number;
-  opacity: number;
-  twinkleOffset: number;
+  brightness: number;
+  twinklePhase: number;
 }
 
-interface Sticker {
-  emoji: string;
-  name: string;
+interface DragState {
+  orbValue: number;
+  startX: number;
+  startY: number;
+  currentX: number;
+  currentY: number;
+  active: boolean;
 }
 
-interface DotDashProps {
-  onExit?: () => void;
-}
-
-// ── Constants ──────────────────────────────────────────────────────────────
-
-const STICKERS: Sticker[] = [
-  { emoji: '🦉', name: 'Owl' },
-  { emoji: '🦊', name: 'Fox' },
-  { emoji: '🐨', name: 'Koala' },
-  { emoji: '🦜', name: 'Parrot' },
-  { emoji: '🐙', name: 'Octopus' },
-  { emoji: '🦋', name: 'Butterfly' },
-  { emoji: '🐸', name: 'Frog' },
-  { emoji: '🦄', name: 'Unicorn' },
-  { emoji: '🐬', name: 'Dolphin' },
-  { emoji: '🦎', name: 'Gecko' },
-  { emoji: '🐢', name: 'Turtle' },
-  { emoji: '🦩', name: 'Flamingo' },
-];
-
-const DOT_COLORS = [
-  { fill: '#f43f5e', shadow: '#be123c' },  // rose
-  { fill: '#8b5cf6', shadow: '#6d28d9' },  // violet
-  { fill: '#3b82f6', shadow: '#1d4ed8' },  // blue
-  { fill: '#10b981', shadow: '#059669' },  // emerald
-  { fill: '#f59e0b', shadow: '#d97706' },  // amber
-  { fill: '#ec4899', shadow: '#be185d' },  // pink
-  { fill: '#06b6d4', shadow: '#0891b2' },  // cyan
-  { fill: '#ef4444', shadow: '#dc2626' },  // red
-];
+// =============== CONSTANTS ===============
 
 const LIVES_MAX = 3;
+const ROUNDS_PER_BOSS = 10;
+const BOSS_SEQUENCE_LENGTH = 3;
+const TARGET_ZONE_Y_PERCENT = 25; // % from top where target zone sits
 
-// ── Dot Pattern Generators ─────────────────────────────────────────────────
+const STREAK_NAMES: Record<number, { name: string; color: string }> = {
+  3: { name: 'LIGHTNING STREAK!', color: '#fbbf24' },
+  5: { name: 'THUNDER STREAK!', color: '#f97316' },
+  10: { name: 'SUPERNOVA!', color: '#ec4899' },
+  15: { name: 'COSMIC FURY!', color: '#a855f7' },
+  20: { name: 'GODLIKE!', color: '#ef4444' },
+};
 
-function getDicePattern(count: number): { x: number; y: number }[] {
-  // Normalized 0-1 positions for classic dice faces
-  const layouts: Record<number, { x: number; y: number }[]> = {
-    1: [{ x: 0.5, y: 0.5 }],
-    2: [{ x: 0.25, y: 0.25 }, { x: 0.75, y: 0.75 }],
-    3: [{ x: 0.25, y: 0.25 }, { x: 0.5, y: 0.5 }, { x: 0.75, y: 0.75 }],
-    4: [{ x: 0.25, y: 0.25 }, { x: 0.75, y: 0.25 }, { x: 0.25, y: 0.75 }, { x: 0.75, y: 0.75 }],
-    5: [{ x: 0.25, y: 0.25 }, { x: 0.75, y: 0.25 }, { x: 0.5, y: 0.5 }, { x: 0.25, y: 0.75 }, { x: 0.75, y: 0.75 }],
-    6: [{ x: 0.25, y: 0.2 }, { x: 0.75, y: 0.2 }, { x: 0.25, y: 0.5 }, { x: 0.75, y: 0.5 }, { x: 0.25, y: 0.8 }, { x: 0.75, y: 0.8 }],
-  };
-  return layouts[count] || layouts[6];
+function getStreakName(streak: number): { name: string; color: string } | null {
+  const thresholds = [20, 15, 10, 5, 3];
+  for (const t of thresholds) {
+    if (streak >= t) return STREAK_NAMES[t];
+  }
+  return null;
 }
 
-function getTenFramePattern(count: number): { x: number; y: number }[] {
-  // 2 rows x 5 columns, fill left to right, top to bottom
-  const dots: { x: number; y: number }[] = [];
-  for (let i = 0; i < Math.min(count, 10); i++) {
-    const col = i % 5;
-    const row = Math.floor(i / 5);
-    dots.push({
-      x: 0.12 + col * 0.19,
-      y: 0.3 + row * 0.4,
-    });
-  }
-  // Overflow beyond 10 goes into a small row below
-  for (let i = 10; i < count; i++) {
-    const col = (i - 10) % 5;
-    dots.push({
-      x: 0.12 + col * 0.19,
-      y: 0.85,
-    });
-  }
+const POWERUP_INFO: Record<PowerUpType, { symbol: string; label: string; color: string }> = {
+  slowtime: { symbol: '🕐', label: 'SLOW TIME', color: '#38bdf8' },
+  double: { symbol: '✕2', label: 'DOUBLE PTS', color: '#fbbf24' },
+  shield: { symbol: '🛡️', label: 'SHIELD', color: '#4ade80' },
+};
+
+const ORB_COLORS = [
+  { bg: 'linear-gradient(135deg, #ff6b9d, #c44569)', glow: 'rgba(255,107,157,0.6)', hue: 340 },
+  { bg: 'linear-gradient(135deg, #ffa726, #fb8c00)', glow: 'rgba(255,167,38,0.6)', hue: 35 },
+  { bg: 'linear-gradient(135deg, #66bb6a, #43a047)', glow: 'rgba(102,187,106,0.6)', hue: 120 },
+  { bg: 'linear-gradient(135deg, #42a5f5, #1e88e5)', glow: 'rgba(66,165,245,0.6)', hue: 210 },
+  { bg: 'linear-gradient(135deg, #ab47bc, #8e24aa)', glow: 'rgba(171,71,188,0.6)', hue: 290 },
+  { bg: 'linear-gradient(135deg, #ef5350, #e53935)', glow: 'rgba(239,83,80,0.6)', hue: 0 },
+  { bg: 'linear-gradient(135deg, #26c6da, #00acc1)', glow: 'rgba(38,198,218,0.6)', hue: 185 },
+  { bg: 'linear-gradient(135deg, #ffca28, #ffa000)', glow: 'rgba(255,202,40,0.6)', hue: 45 },
+  { bg: 'linear-gradient(135deg, #ec407a, #d81b60)', glow: 'rgba(236,64,122,0.6)', hue: 330 },
+  { bg: 'linear-gradient(135deg, #7e57c2, #5e35b1)', glow: 'rgba(126,87,194,0.6)', hue: 260 },
+];
+
+// =============== PATTERN GENERATORS ===============
+
+function getDicePattern(count: number): DotPos[] {
+  const layouts: Record<number, DotPos[]> = {
+    1: [{ x: 0.5, y: 0.5 }],
+    2: [{ x: 0.3, y: 0.3 }, { x: 0.7, y: 0.7 }],
+    3: [{ x: 0.3, y: 0.3 }, { x: 0.5, y: 0.5 }, { x: 0.7, y: 0.7 }],
+    4: [{ x: 0.3, y: 0.3 }, { x: 0.7, y: 0.3 }, { x: 0.3, y: 0.7 }, { x: 0.7, y: 0.7 }],
+    5: [{ x: 0.3, y: 0.3 }, { x: 0.7, y: 0.3 }, { x: 0.5, y: 0.5 }, { x: 0.3, y: 0.7 }, { x: 0.7, y: 0.7 }],
+    6: [{ x: 0.3, y: 0.25 }, { x: 0.7, y: 0.25 }, { x: 0.3, y: 0.5 }, { x: 0.7, y: 0.5 }, { x: 0.3, y: 0.75 }, { x: 0.7, y: 0.75 }],
+  };
+  return layouts[Math.min(count, 6)] || layouts[6];
+}
+
+function getDominoPattern(count: number): DotPos[] {
+  if (count <= 6) return getDicePattern(count);
+  // Two groups for 7-10
+  const left = Math.ceil(count / 2);
+  const right = count - left;
+  const dots: DotPos[] = [];
+  const leftDots = getDicePattern(left);
+  const rightDots = getDicePattern(right);
+  for (const d of leftDots) dots.push({ x: d.x * 0.45 + 0.02, y: d.y });
+  for (const d of rightDots) dots.push({ x: d.x * 0.45 + 0.53, y: d.y });
   return dots;
 }
 
-function getRandomPattern(count: number): { x: number; y: number }[] {
-  const dots: { x: number; y: number }[] = [];
+function getScatterPattern(count: number): DotPos[] {
+  const dots: DotPos[] = [];
   for (let i = 0; i < count; i++) {
-    let x: number, y: number;
-    let attempts = 0;
+    let x: number, y: number, attempts = 0;
     do {
       x = 0.15 + Math.random() * 0.7;
       y = 0.15 + Math.random() * 0.7;
       attempts++;
-    } while (
-      attempts < 50 &&
-      dots.some(d => Math.hypot(d.x - x, d.y - y) < 0.14)
-    );
+    } while (attempts < 80 && dots.some(d => Math.hypot(d.x - x, d.y - y) < 0.13));
     dots.push({ x, y });
   }
   return dots;
 }
 
-function getFingerPattern(count: number): { x: number; y: number }[] {
-  // Arrange dots like fingers on a hand — spread across top
-  const dots: { x: number; y: number }[] = [];
-  const maxInRow = Math.min(count, 5);
-  const startX = 0.5 - (maxInRow - 1) * 0.1;
-  for (let i = 0; i < maxInRow; i++) {
-    dots.push({
-      x: startX + i * 0.2,
-      y: 0.35 + (i === 0 || i === 4 ? 0.08 : i === 2 ? -0.05 : 0),
-    });
+function generateDots(count: number, level: number): DotPos[] {
+  if (count <= 6 && level <= 3) return getDicePattern(count);
+  if (count <= 6) {
+    const r = Math.random();
+    if (r < 0.5) return getDicePattern(count);
+    return getScatterPattern(count);
   }
-  // Second hand for 6-10
-  if (count > 5) {
-    const remaining = count - 5;
-    const startX2 = 0.5 - (remaining - 1) * 0.1;
-    for (let i = 0; i < remaining; i++) {
-      dots.push({
-        x: startX2 + i * 0.2,
-        y: 0.68 + (i === 0 || i === 4 ? 0.08 : i === 2 ? -0.05 : 0),
-      });
-    }
+  if (count <= 10) {
+    const r = Math.random();
+    if (r < 0.4) return getDominoPattern(count);
+    return getScatterPattern(count);
   }
-  return dots;
+  return getScatterPattern(count);
 }
 
-function generatePattern(count: number, level: number): DotPattern {
-  let type: DotPattern['type'];
-  let dots: { x: number; y: number }[];
-
-  if (level <= 2 && count <= 6) {
-    type = 'dice';
-    dots = getDicePattern(count);
-  } else if (level >= 5 && count <= 12) {
-    const roll = Math.random();
-    if (roll < 0.4) {
-      type = 'tenframe';
-      dots = getTenFramePattern(count);
-    } else if (roll < 0.7) {
-      type = 'random';
-      dots = getRandomPattern(count);
-    } else {
-      type = 'finger';
-      dots = getFingerPattern(count);
-    }
-  } else if (level >= 3) {
-    const roll = Math.random();
-    if (roll < 0.3 && count <= 6) {
-      type = 'dice';
-      dots = getDicePattern(count);
-    } else if (roll < 0.6) {
-      type = 'finger';
-      dots = getFingerPattern(count);
-    } else {
-      type = 'random';
-      dots = getRandomPattern(count);
-    }
-  } else {
-    type = 'dice';
-    dots = count <= 6 ? getDicePattern(count) : getRandomPattern(count);
-  }
-
-  return { dots, count, type };
-}
-
-function getFlashDuration(level: number, isSpeedRound: boolean): number {
-  if (isSpeedRound) return Math.max(600, 1600 - level * 100);
-  if (level <= 2) return 2000;
-  if (level <= 4) return 1500;
-  if (level <= 6) return 1100;
-  return Math.max(700, 1000 - (level - 7) * 50);
+function getFlashDuration(level: number, slowTime: boolean): number {
+  const base = level <= 2 ? 2000 : level <= 4 ? 1500 : level <= 6 ? 1000 : level <= 8 ? 700 : 500;
+  return slowTime ? base * 1.8 : base;
 }
 
 function getMaxQuantity(level: number): number {
   if (level <= 2) return 5;
-  if (level <= 4) return 8;
+  if (level <= 4) return 7;
   if (level <= 6) return 10;
-  return 12;
+  if (level <= 8) return 15;
+  return 20;
+}
+
+function getMinQuantity(level: number): number {
+  if (level <= 2) return 1;
+  if (level <= 4) return 2;
+  if (level <= 6) return 3;
+  return 4;
 }
 
 function generateOptions(correct: number, level: number): number[] {
-  const numOptions = level >= 5 ? 4 : 3;
+  const numOptions = level >= 6 ? 6 : level >= 3 ? 5 : 4;
   const options = new Set<number>([correct]);
-  const max = getMaxQuantity(level);
+  const maxQ = getMaxQuantity(level);
+  const minQ = getMinQuantity(level);
 
   while (options.size < numOptions) {
-    // Nearby distractors
     let distractor: number;
     if (Math.random() < 0.6) {
-      distractor = correct + (Math.random() < 0.5 ? 1 : -1) * (1 + Math.floor(Math.random() * 2));
+      const off = Math.random() < 0.5 ? 1 : -1;
+      distractor = correct + off * (1 + Math.floor(Math.random() * 2));
     } else {
-      distractor = 1 + Math.floor(Math.random() * max);
+      distractor = minQ + Math.floor(Math.random() * (maxQ - minQ + 1));
     }
-    if (distractor >= 1 && distractor <= max && distractor !== correct) {
+    if (distractor >= 1 && distractor <= maxQ && distractor !== correct) {
       options.add(distractor);
     }
   }
 
-  // Shuffle
   const arr = Array.from(options);
   for (let i = arr.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
@@ -243,248 +225,350 @@ function generateOptions(correct: number, level: number): number[] {
   return arr;
 }
 
-// ── Particle counter ───────────────────────────────────────────────────────
+// =============== ID COUNTER ===============
 
-let particleIdCounter = 0;
-const nextParticleId = () => ++particleIdCounter;
-let floatScoreId = 0;
-const nextFloatId = () => ++floatScoreId;
+let _idCounter = 0;
+const nextId = () => ++_idCounter;
 
-// ── Main Component ─────────────────────────────────────────────────────────
+// =============== MAIN COMPONENT ===============
 
 export default function DotDash({ onExit }: DotDashProps = {}) {
-  // Game state
   const [screen, setScreen] = useState<GameScreen>('intro');
+  const [phase, setPhase] = useState<Phase>('flash');
   const [level, setLevel] = useState(1);
   const [score, setScore] = useState(0);
   const [lives, setLives] = useState(LIVES_MAX);
   const [streak, setStreak] = useState(0);
   const [bestStreak, setBestStreak] = useState(0);
-  const [round, setRound] = useState(0);
+  const [combo, setCombo] = useState(0);
+  const [multiplier, setMultiplier] = useState(1);
+  const [totalRounds, setTotalRounds] = useState(0);
+  const [totalCorrect, setTotalCorrect] = useState(0);
   const [roundsInLevel, setRoundsInLevel] = useState(0);
-  const [isSpeedRound, setIsSpeedRound] = useState(false);
-  const [speedRoundCount, setSpeedRoundCount] = useState(0);
+  const [highScore, setHighScore] = useState(0);
 
-  // Current challenge state
-  const [pattern, setPattern] = useState<DotPattern | null>(null);
+  // Current challenge
+  const [dots, setDots] = useState<DotPos[]>([]);
+  const [correctAnswer, setCorrectAnswer] = useState(0);
   const [options, setOptions] = useState<number[]>([]);
   const [showDots, setShowDots] = useState(false);
+  const [flashIntensity, setFlashIntensity] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState<number | null>(null);
-  const [correctAnswer, setCorrectAnswer] = useState<number>(0);
   const [isCorrect, setIsCorrect] = useState<boolean | null>(null);
-  const [sticker, setSticker] = useState<Sticker | null>(null);
-  const [cardFlipped, setCardFlipped] = useState(false);
-  const [timerProgress, setTimerProgress] = useState(1);
-  const [dotsRevealed, setDotsRevealed] = useState(0);
-  const [shakeCard, setShakeCard] = useState(false);
+  const [shakeScreen, setShakeScreen] = useState(false);
 
-  // Particles and effects
+  // Boss round
+  const [isBossRound, setIsBossRound] = useState(false);
+  const [bossSequence, setBossSequence] = useState<number[]>([]);
+  const [bossCurrentIndex, setBossCurrentIndex] = useState(0);
+  const [bossAnswered, setBossAnswered] = useState<number[]>([]);
+
+  // Power-ups
+  const [activePowerUps, setActivePowerUps] = useState<PowerUp[]>([]);
+  const [hasSlowTime, setHasSlowTime] = useState(false);
+  const [hasDoublePoints, setHasDoublePoints] = useState(false);
+  const [hasShield, setHasShield] = useState(false);
+
+  // Drag state
+  const [drag, setDrag] = useState<DragState | null>(null);
+
+  // Visual effects
   const [particles, setParticles] = useState<Particle[]>([]);
-  const [floatingScores, setFloatingScores] = useState<FloatingScore[]>([]);
-  const [backgroundStars] = useState<BackgroundStar[]>(() =>
-    Array.from({ length: 40 }, () => ({
+  const [floatingTexts, setFloatingTexts] = useState<FloatingText[]>([]);
+  const [streakAnnouncement, setStreakAnnouncement] = useState<string | null>(null);
+  const [streakAnnouncementColor, setStreakAnnouncementColor] = useState('#fbbf24');
+  const [comboFlash, setComboFlash] = useState(false);
+  const [targetZonePulse, setTargetZonePulse] = useState(false);
+  const [energyLevel, setEnergyLevel] = useState(0);
+  const [timerProgress, setTimerProgress] = useState(1);
+
+  const [bgStars] = useState<BgStar[]>(() =>
+    Array.from({ length: 80 }, () => ({
       x: Math.random() * 100,
       y: Math.random() * 100,
-      size: 1 + Math.random() * 3,
-      speed: 0.2 + Math.random() * 0.5,
-      opacity: 0.2 + Math.random() * 0.6,
-      twinkleOffset: Math.random() * Math.PI * 2,
+      size: 0.5 + Math.random() * 3,
+      speed: 0.1 + Math.random() * 0.4,
+      brightness: 0.15 + Math.random() * 0.7,
+      twinklePhase: Math.random() * Math.PI * 2,
     }))
   );
 
   // Refs
   const containerRef = useRef<HTMLDivElement>(null);
-  const animationRef = useRef<number | null>(null);
-  const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
-  const answerTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
-  const timeStartRef = useRef(0);
-  const flashDurationRef = useRef(2000);
-  const answerDurationRef = useRef(5000);
+  const playAreaRef = useRef<HTMLDivElement>(null);
+  const animRef = useRef<number | null>(null);
   const lastFrameRef = useRef(0);
-  const collectionsUsedRef = useRef<number[]>([]);
+  const phaseTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const answerTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const flashStartRef = useRef(0);
+  const answerStartRef = useRef(0);
+  const answerDurationRef = useRef(5000);
   const startNewRoundRef = useRef<() => void>(() => {});
+  const recentCountsRef = useRef<number[]>([]);
 
-  // ── Particle system ────────────────────────────────────────────────────
+  // =============== PARTICLE SYSTEM ===============
 
-  const spawnParticles = useCallback((x: number, y: number, count: number, hue: number, type: Particle['type'] = 'sparkle') => {
-    const newParticles: Particle[] = [];
+  const spawnParticles = useCallback((cx: number, cy: number, count: number, hue: number, type: Particle['type'] = 'spark') => {
+    const newP: Particle[] = [];
     for (let i = 0; i < count; i++) {
-      const angle = (Math.PI * 2 * i) / count + (Math.random() - 0.5) * 0.5;
-      const speed = type === 'burst' ? 3 + Math.random() * 5 : 1 + Math.random() * 3;
-      newParticles.push({
-        id: nextParticleId(),
-        x,
-        y,
-        vx: Math.cos(angle) * speed,
-        vy: Math.sin(angle) * speed,
+      const angle = (Math.PI * 2 * i) / count + (Math.random() - 0.5) * 0.8;
+      const speed = type === 'shockwave' ? 0.5 : type === 'lightning' ? 4 + Math.random() * 6 : 2 + Math.random() * 5;
+      newP.push({
+        id: nextId(),
+        x: cx, y: cy,
+        vx: Math.cos(angle) * speed + (Math.random() - 0.5) * 2,
+        vy: Math.sin(angle) * speed + (Math.random() - 0.5) * 2,
         life: 1,
-        maxLife: type === 'electric' ? 0.5 + Math.random() * 0.3 : 0.8 + Math.random() * 0.5,
-        size: type === 'electric' ? 2 + Math.random() * 3 : 3 + Math.random() * 5,
-        hue,
+        maxLife: type === 'shockwave' ? 0.6 : type === 'lightning' ? 0.3 + Math.random() * 0.2 : 0.5 + Math.random() * 0.5,
+        size: type === 'shockwave' ? 40 : type === 'lightning' ? 2 + Math.random() * 3 : type === 'confetti' ? 4 + Math.random() * 4 : 2 + Math.random() * 4,
+        hue: type === 'confetti' ? Math.random() * 360 : hue,
         type,
       });
     }
-    setParticles(prev => [...prev, ...newParticles]);
+    setParticles(prev => [...prev, ...newP]);
   }, []);
 
-  const spawnFloatingScore = useCallback((x: number, y: number, value: number) => {
-    setFloatingScores(prev => [...prev, {
-      id: nextFloatId(),
-      x,
-      y,
-      value,
-      life: 1,
-    }]);
+  const spawnFloatingText = useCallback((x: number, y: number, text: string, color: string, size = 1.2) => {
+    setFloatingTexts(prev => [...prev, { id: nextId(), x, y, text, color, life: 1, size }]);
   }, []);
 
-  // ── Animation loop ─────────────────────────────────────────────────────
+  // =============== ANIMATION LOOP ===============
 
   useEffect(() => {
-    const animate = (timestamp: number) => {
-      if (!lastFrameRef.current) lastFrameRef.current = timestamp;
-      const dt = Math.min((timestamp - lastFrameRef.current) / 1000, 0.05);
-      lastFrameRef.current = timestamp;
+    const animate = (ts: number) => {
+      if (!lastFrameRef.current) lastFrameRef.current = ts;
+      const dt = Math.min((ts - lastFrameRef.current) / 1000, 0.05);
+      lastFrameRef.current = ts;
 
-      // Update particles
       setParticles(prev => {
+        if (prev.length === 0) return prev;
         const updated = prev.map(p => ({
           ...p,
-          x: p.x + p.vx,
-          y: p.y + p.vy,
-          vy: p.vy + 0.1,
-          vx: p.vx * 0.98,
+          x: p.type === 'shockwave' ? p.x : p.x + p.vx,
+          y: p.type === 'shockwave' ? p.y : p.y + p.vy + 0.3,
+          vx: p.vx * 0.96,
+          vy: p.vy * 0.96,
           life: p.life - dt / p.maxLife,
+          size: p.type === 'shockwave' ? p.size + 3 : p.size,
         })).filter(p => p.life > 0);
-        return updated.length === prev.length && updated.every((p, i) => p.life === prev[i].life) ? prev : updated;
-      });
-
-      // Update floating scores
-      setFloatingScores(prev => {
-        const updated = prev.map(f => ({
-          ...f,
-          y: f.y - 1.5,
-          life: f.life - dt * 1.2,
-        })).filter(f => f.life > 0);
         return updated;
       });
 
-      // Update timer during playing phase (flash countdown) and reveal phase (answer countdown)
-      if ((screen === 'playing' || screen === 'reveal') && timeStartRef.current > 0) {
-        const elapsed = timestamp - timeStartRef.current;
-        const duration = screen === 'playing' ? flashDurationRef.current : answerDurationRef.current;
-        const remaining = Math.max(0, 1 - elapsed / duration);
+      setFloatingTexts(prev => {
+        if (prev.length === 0) return prev;
+        return prev.map(f => ({
+          ...f,
+          y: f.y - 1.2,
+          life: f.life - dt * 1.5,
+        })).filter(f => f.life > 0);
+      });
+
+      // Timer progress during answer phase
+      if ((phase === 'answer' || phase === 'boss-answer') && answerStartRef.current > 0) {
+        const elapsed = ts - answerStartRef.current;
+        const remaining = Math.max(0, 1 - elapsed / answerDurationRef.current);
         setTimerProgress(remaining);
       }
 
-      animationRef.current = requestAnimationFrame(animate);
+      // Flash intensity fade
+      setFlashIntensity(prev => Math.max(0, prev - dt * 3));
+
+      animRef.current = requestAnimationFrame(animate);
     };
+    animRef.current = requestAnimationFrame(animate);
+    return () => { if (animRef.current) cancelAnimationFrame(animRef.current); };
+  }, [phase]);
 
-    animationRef.current = requestAnimationFrame(animate);
-    return () => {
-      if (animationRef.current) cancelAnimationFrame(animationRef.current);
-    };
-  }, [screen]);
+  // =============== GAME FLOW ===============
 
-  // ── Game flow ──────────────────────────────────────────────────────────
+  const triggerPowerUp = useCallback(() => {
+    // Random chance to spawn a power-up (15% chance after round 5)
+    if (totalRounds < 5 || Math.random() > 0.15) return;
+    const types: PowerUpType[] = ['slowtime', 'double', 'shield'];
+    const type = types[Math.floor(Math.random() * types.length)];
+    const x = 20 + Math.random() * 60;
+    const y = 40 + Math.random() * 20;
+    setActivePowerUps(prev => [...prev, { id: nextId(), type, x, y, life: 5 }]);
+  }, [totalRounds]);
 
-  const revealDotsOneByOne = useCallback(() => {
-    if (!pattern) return;
-    let i = 0;
+  const startBossRound = useCallback((lvl: number) => {
+    const seqLen = Math.min(BOSS_SEQUENCE_LENGTH + Math.floor(lvl / 4), 5);
+    const maxQ = getMaxQuantity(lvl);
+    const minQ = getMinQuantity(lvl);
+    const seq: number[] = [];
+    for (let i = 0; i < seqLen; i++) {
+      seq.push(minQ + Math.floor(Math.random() * (maxQ - minQ + 1)));
+    }
+    setBossSequence(seq);
+    setBossCurrentIndex(0);
+    setBossAnswered([]);
+    setIsBossRound(true);
+    setPhase('boss-intro');
+
+    setTimeout(() => {
+      // Show first pattern
+      showBossPattern(seq, 0, lvl);
+    }, 2000);
+  }, []);
+
+  const showBossPattern = useCallback((seq: number[], idx: number, lvl: number) => {
+    if (idx >= seq.length) {
+      // All shown, now answer phase
+      setPhase('boss-answer');
+      setOptions(generateOptions(seq[0], lvl));
+      setBossCurrentIndex(0);
+      answerStartRef.current = performance.now();
+      answerDurationRef.current = 8000;
+      setTimerProgress(1);
+      return;
+    }
+
+    const count = seq[idx];
+    const newDots = generateDots(count, lvl);
+    setDots(newDots);
+    setCorrectAnswer(count);
     setShowDots(true);
-    const interval = setInterval(() => {
-      i++;
-      setDotsRevealed(i);
-      if (i >= pattern.count) {
-        clearInterval(interval);
-        setTimeout(() => {
-          setLives(currentLives => {
-            if (currentLives > 0) {
-              startNewRoundRef.current();
-            }
-            return currentLives;
-          });
-        }, 1500);
-      }
-    }, 300);
-  }, [pattern]);
+    setFlashIntensity(1);
+    setPhase('boss-flash');
 
-  const handleTimeout = useCallback(() => {
-    if (answerTimerRef.current) clearTimeout(answerTimerRef.current);
-    setIsCorrect(false);
-    setShakeCard(true);
-    setStreak(0);
-    setLives(prev => {
-      const newLives = prev - 1;
-      if (newLives <= 0) {
-        setTimeout(() => setScreen('gameOver'), 2000);
-      }
-      return newLives;
-    });
-    // Show counting animation
-    revealDotsOneByOne();
-  }, [revealDotsOneByOne]);
+    const flashMs = getFlashDuration(lvl, false) * 0.7;
+    setTimeout(() => {
+      setShowDots(false);
+      setTimeout(() => {
+        showBossPattern(seq, idx + 1, lvl);
+      }, 400);
+    }, flashMs);
+  }, []);
 
   const startNewRound = useCallback(() => {
-    // Clear any pending timers
-    if (timerRef.current) clearTimeout(timerRef.current);
+    if (phaseTimerRef.current) clearTimeout(phaseTimerRef.current);
     if (answerTimerRef.current) clearTimeout(answerTimerRef.current);
 
+    // Check for boss round
+    if (totalRounds > 0 && totalRounds % ROUNDS_PER_BOSS === 0 && !isBossRound) {
+      startBossRound(level);
+      return;
+    }
+
+    setIsBossRound(false);
+    setBossSequence([]);
+    setBossCurrentIndex(0);
+    setBossAnswered([]);
+
+    // Remove expired power-ups
+    setActivePowerUps(prev => prev.filter(p => p.life > 0));
+
     const maxQ = getMaxQuantity(level);
+    const minQ = getMinQuantity(level);
     let count: number;
-    // Avoid repeating last 3 numbers
     let attempts = 0;
     do {
-      count = 1 + Math.floor(Math.random() * maxQ);
+      count = minQ + Math.floor(Math.random() * (maxQ - minQ + 1));
       attempts++;
-    } while (collectionsUsedRef.current.includes(count) && attempts < 20);
-    collectionsUsedRef.current.push(count);
-    if (collectionsUsedRef.current.length > 3) collectionsUsedRef.current.shift();
+    } while (recentCountsRef.current.includes(count) && attempts < 30);
+    recentCountsRef.current.push(count);
+    if (recentCountsRef.current.length > 4) recentCountsRef.current.shift();
 
-    const newPattern = generatePattern(count, level);
+    const newDots = generateDots(count, level);
     const newOptions = generateOptions(count, level);
-    const flashMs = getFlashDuration(level, isSpeedRound);
-    flashDurationRef.current = flashMs;
+    const flashMs = getFlashDuration(level, hasSlowTime);
 
-    setPattern(newPattern);
-    setOptions(newOptions);
+    setDots(newDots);
     setCorrectAnswer(count);
+    setOptions(newOptions);
     setSelectedAnswer(null);
     setIsCorrect(null);
-    setSticker(null);
-    setCardFlipped(false);
     setShowDots(true);
-    setTimerProgress(1);
-    setDotsRevealed(0);
-    setShakeCard(false);
+    setFlashIntensity(1);
+    setDrag(null);
+    setShakeScreen(false);
+    setTargetZonePulse(false);
+    setPhase('flash');
+    flashStartRef.current = performance.now();
 
-    // Flash phase -> reveal phase (hide dots, show options)
-    timeStartRef.current = performance.now();
-    setScreen('playing');
-
-    const answerTime = isSpeedRound ? 3000 : 5000;
-    answerDurationRef.current = answerTime;
-
-    timerRef.current = setTimeout(() => {
+    // Flash -> fade -> answer
+    phaseTimerRef.current = setTimeout(() => {
+      setPhase('fade');
       setShowDots(false);
-      setScreen('reveal');
-      timeStartRef.current = performance.now();
-      setTimerProgress(1);
 
-      // Answer timer — time to respond
-      answerTimerRef.current = setTimeout(() => {
-        // Timeout — treat as wrong
-        handleTimeout();
-      }, answerTime);
+      setTimeout(() => {
+        setPhase('answer');
+        answerStartRef.current = performance.now();
+        const answerTime = hasSlowTime ? 7000 : 5000;
+        answerDurationRef.current = answerTime;
+        setTimerProgress(1);
+
+        answerTimerRef.current = setTimeout(() => {
+          handleTimeout();
+        }, answerTime);
+      }, 300);
     }, flashMs);
-  }, [level, isSpeedRound, handleTimeout]);
 
-  // Keep ref in sync
+    triggerPowerUp();
+  }, [level, hasSlowTime, totalRounds, isBossRound, startBossRound, triggerPowerUp]);
+
   useEffect(() => {
     startNewRoundRef.current = startNewRound;
   }, [startNewRound]);
 
+  const handleTimeout = useCallback(() => {
+    if (answerTimerRef.current) clearTimeout(answerTimerRef.current);
+    if (hasShield) {
+      setHasShield(false);
+      spawnFloatingText(50, 50, 'SHIELD USED!', '#4ade80', 1.4);
+      spawnParticles(50, 50, 12, 120, 'spark');
+      setTimeout(() => startNewRoundRef.current(), 1000);
+      return;
+    }
+    setIsCorrect(false);
+    setShakeScreen(true);
+    setStreak(0);
+    setCombo(0);
+    setMultiplier(1);
+    setLives(prev => {
+      const newLives = prev - 1;
+      if (newLives <= 0) {
+        setTimeout(() => {
+          setScore(s => {
+            setHighScore(h => Math.max(h, s));
+            return s;
+          });
+          setScreen('gameover');
+        }, 1500);
+      }
+      return newLives;
+    });
+    spawnParticles(50, 50, 15, 0, 'spark');
+    setPhase('result');
+    setShowDots(true); // Show correct answer
+    setTimeout(() => {
+      setLives(currentLives => {
+        if (currentLives > 0) {
+          startNewRoundRef.current();
+        }
+        return currentLives;
+      });
+    }, 2000);
+  }, [hasShield, spawnParticles, spawnFloatingText]);
+
+  const collectPowerUp = useCallback((pu: PowerUp) => {
+    setActivePowerUps(prev => prev.filter(p => p.id !== pu.id));
+    const info = POWERUP_INFO[pu.type];
+    spawnFloatingText(pu.x, pu.y, info.label, info.color, 1.3);
+    spawnParticles(pu.x, pu.y, 15, pu.type === 'slowtime' ? 200 : pu.type === 'double' ? 45 : 120, 'confetti');
+
+    if (pu.type === 'slowtime') setHasSlowTime(true);
+    else if (pu.type === 'double') setHasDoublePoints(true);
+    else if (pu.type === 'shield') setHasShield(true);
+
+    setTimeout(() => {
+      if (pu.type === 'slowtime') setHasSlowTime(false);
+      else if (pu.type === 'double') setHasDoublePoints(false);
+    }, 15000);
+  }, [spawnParticles, spawnFloatingText]);
+
   const handleAnswer = useCallback((answer: number) => {
-    if (selectedAnswer !== null || screen !== 'reveal') return;
+    if (selectedAnswer !== null) return;
     if (answerTimerRef.current) clearTimeout(answerTimerRef.current);
 
     setSelectedAnswer(answer);
@@ -492,150 +576,306 @@ export default function DotDash({ onExit }: DotDashProps = {}) {
     setIsCorrect(correct);
 
     if (correct) {
-      // Points: base + streak bonus + speed bonus
-      const streakBonus = streak * 5;
-      const speedBonus = Math.round(timerProgress * 20);
-      const levelBonus = level * 2;
-      const roundPoints = 10 + streakBonus + speedBonus + levelBonus;
-      setScore(prev => prev + roundPoints);
-      setStreak(prev => {
-        const newStreak = prev + 1;
-        if (newStreak > bestStreak) setBestStreak(newStreak);
-        return newStreak;
-      });
-      setRound(prev => prev + 1);
+      const streakVal = streak + 1;
+      const comboVal = combo + 1;
+      const mult = Math.min(1 + Math.floor(streakVal / 3) * 0.5, 5);
+      const speedBonus = Math.round(timerProgress * 30);
+      const levelBonus = level * 3;
+      const basePoints = 10 + speedBonus + levelBonus;
+      const totalPoints = Math.round(basePoints * mult * (hasDoublePoints ? 2 : 1));
+
+      setScore(prev => prev + totalPoints);
+      setStreak(streakVal);
+      setCombo(comboVal);
+      setMultiplier(mult);
+      setTotalRounds(prev => prev + 1);
+      setTotalCorrect(prev => prev + 1);
       setRoundsInLevel(prev => prev + 1);
+      if (streakVal > bestStreak) setBestStreak(streakVal);
+      setEnergyLevel(prev => Math.min(prev + 0.1, 1));
 
-      if (isSpeedRound) {
-        setSpeedRoundCount(prev => prev + 1);
+      // Visual effects
+      spawnParticles(50, 30, 25, 120, 'confetti');
+      spawnParticles(50, 30, 8, 45, 'spark');
+      spawnFloatingText(50, 35, `+${totalPoints}`, '#4ade80', 1.6);
+
+      if (mult > 1) {
+        spawnFloatingText(50, 42, `${mult}x MULTIPLIER`, '#fbbf24', 1);
       }
 
-      // Pick a random sticker
-      const stickerIndex = Math.floor(Math.random() * STICKERS.length);
-      setSticker(STICKERS[stickerIndex]);
-
-      // Flip card to reveal sticker
-      setCardFlipped(true);
-
-      // Spawn celebration particles
-      spawnParticles(50, 50, 20, 120, 'burst');
-      spawnFloatingScore(50, 40, roundPoints);
-
-      // Electric streak effects for big streaks
-      if (streak >= 2) {
-        spawnParticles(50, 50, 10, 50, 'electric');
+      // Streak announcement
+      const streakInfo = getStreakName(streakVal);
+      if (streakInfo && (streakVal === 3 || streakVal === 5 || streakVal === 10 || streakVal === 15 || streakVal === 20)) {
+        setStreakAnnouncement(streakInfo.name);
+        setStreakAnnouncementColor(streakInfo.color);
+        spawnParticles(50, 50, 30, streakVal >= 10 ? 300 : 50, 'lightning');
+        spawnParticles(50, 50, 4, 50, 'shockwave');
+        setComboFlash(true);
+        setTimeout(() => setComboFlash(false), 600);
+        setTimeout(() => setStreakAnnouncement(null), 2000);
       }
 
-      // Move to next round after celebration
+      setTargetZonePulse(true);
+      setTimeout(() => setTargetZonePulse(false), 500);
+
+      setPhase('result');
+
+      // Level up check
+      const roundsNeeded = level <= 2 ? 5 : level <= 5 ? 7 : 8;
       setTimeout(() => {
-        const roundsNeeded = 5;
-        if (isSpeedRound && speedRoundCount + 1 >= roundsNeeded) {
-          // End speed round
-          setIsSpeedRound(false);
-          setSpeedRoundCount(0);
+        if (roundsInLevel + 1 >= roundsNeeded) {
           setLevel(prev => prev + 1);
           setRoundsInLevel(0);
-          setScreen('levelUp');
-        } else if (!isSpeedRound && roundsInLevel + 1 >= 5) {
-          // Check if speed round should trigger (every 3 levels)
-          if ((level) % 3 === 0) {
-            setRoundsInLevel(0);
-            setScreen('speedRound');
-          } else {
-            setLevel(prev => prev + 1);
-            setRoundsInLevel(0);
-            setScreen('levelUp');
-          }
-        } else {
-          startNewRoundRef.current();
+          recentCountsRef.current = [];
+          spawnFloatingText(50, 50, `LEVEL ${level + 1}!`, '#fbbf24', 2);
+          spawnParticles(50, 50, 40, 45, 'confetti');
+          spawnParticles(50, 50, 6, 45, 'shockwave');
         }
-      }, 1800);
+        startNewRoundRef.current();
+      }, 1200);
+
     } else {
-      // Wrong answer
-      setShakeCard(true);
+      // Wrong
+      if (hasShield) {
+        setHasShield(false);
+        spawnFloatingText(50, 50, 'SHIELD SAVED YOU!', '#4ade80', 1.4);
+        spawnParticles(50, 50, 12, 120, 'star');
+        setPhase('result');
+        setShowDots(true);
+        setTimeout(() => startNewRoundRef.current(), 1500);
+        return;
+      }
+
+      setShakeScreen(true);
       setStreak(0);
+      setCombo(0);
+      setMultiplier(1);
+      setEnergyLevel(prev => Math.max(0, prev - 0.3));
+      setTotalRounds(prev => prev + 1);
       setLives(prev => {
         const newLives = prev - 1;
         if (newLives <= 0) {
-          setTimeout(() => setScreen('gameOver'), 2500);
+          setTimeout(() => {
+            setScore(s => {
+              setHighScore(h => Math.max(h, s));
+              return s;
+            });
+            setScreen('gameover');
+          }, 2000);
         }
         return newLives;
       });
 
-      // Red burst
-      spawnParticles(50, 50, 12, 0, 'burst');
+      spawnParticles(50, 50, 20, 0, 'spark');
+      spawnFloatingText(50, 40, `It was ${correctAnswer}`, '#ef4444', 1.2);
+      setPhase('result');
+      setShowDots(true);
 
-      // Show the correct answer with counting
-      revealDotsOneByOne();
+      setTimeout(() => {
+        setLives(currentLives => {
+          if (currentLives > 0) startNewRoundRef.current();
+          return currentLives;
+        });
+      }, 2000);
     }
-  }, [selectedAnswer, screen, correctAnswer, streak, bestStreak, timerProgress, level, isSpeedRound,
-    speedRoundCount, roundsInLevel, spawnParticles, spawnFloatingScore, revealDotsOneByOne, lives]);
+  }, [selectedAnswer, correctAnswer, streak, combo, level, timerProgress, hasDoublePoints, hasShield,
+    bestStreak, roundsInLevel, spawnParticles, spawnFloatingText]);
+
+  // Boss answer handler
+  const handleBossAnswer = useCallback((answer: number) => {
+    if (!isBossRound || phase !== 'boss-answer') return;
+
+    const expected = bossSequence[bossCurrentIndex];
+    if (answer === expected) {
+      const newAnswered = [...bossAnswered, answer];
+      setBossAnswered(newAnswered);
+      spawnParticles(50, 50, 15, 120, 'confetti');
+      spawnFloatingText(50, 40, 'CORRECT!', '#4ade80', 1.4);
+
+      if (newAnswered.length >= bossSequence.length) {
+        // Boss defeated!
+        const bossBonus = 100 * level;
+        setScore(prev => prev + bossBonus);
+        spawnParticles(50, 50, 50, 45, 'confetti');
+        spawnParticles(50, 50, 8, 290, 'shockwave');
+        spawnParticles(50, 50, 30, 300, 'lightning');
+        spawnFloatingText(50, 30, `BOSS DEFEATED! +${bossBonus}`, '#fbbf24', 1.8);
+        setStreakAnnouncement('BOSS DEFEATED!');
+        setStreakAnnouncementColor('#fbbf24');
+        setTimeout(() => setStreakAnnouncement(null), 3000);
+
+        setIsBossRound(false);
+        setTotalRounds(prev => prev + 1);
+        setTotalCorrect(prev => prev + 1);
+        setTimeout(() => startNewRoundRef.current(), 2500);
+      } else {
+        // Next in sequence
+        const nextIdx = bossCurrentIndex + 1;
+        setBossCurrentIndex(nextIdx);
+        setOptions(generateOptions(bossSequence[nextIdx], level));
+      }
+    } else {
+      // Boss wrong answer
+      if (hasShield) {
+        setHasShield(false);
+        spawnFloatingText(50, 50, 'SHIELD!', '#4ade80', 1.3);
+        return;
+      }
+      setShakeScreen(true);
+      setStreak(0);
+      setCombo(0);
+      setMultiplier(1);
+      spawnParticles(50, 50, 20, 0, 'spark');
+      setLives(prev => {
+        const newLives = prev - 1;
+        if (newLives <= 0) {
+          setTimeout(() => {
+            setScore(s => { setHighScore(h => Math.max(h, s)); return s; });
+            setScreen('gameover');
+          }, 2000);
+        }
+        return newLives;
+      });
+      setIsBossRound(false);
+      setTotalRounds(prev => prev + 1);
+      setTimeout(() => {
+        setLives(cl => { if (cl > 0) startNewRoundRef.current(); return cl; });
+      }, 2000);
+    }
+  }, [isBossRound, phase, bossSequence, bossCurrentIndex, bossAnswered, level, hasShield, spawnParticles, spawnFloatingText]);
+
+  // =============== DRAG HANDLING ===============
+
+  const getRelativePos = useCallback((clientX: number, clientY: number) => {
+    if (!playAreaRef.current) return { x: 0, y: 0 };
+    const rect = playAreaRef.current.getBoundingClientRect();
+    return {
+      x: ((clientX - rect.left) / rect.width) * 100,
+      y: ((clientY - rect.top) / rect.height) * 100,
+    };
+  }, []);
+
+  const handleDragStart = useCallback((value: number, clientX: number, clientY: number) => {
+    if (phase !== 'answer' && phase !== 'boss-answer') return;
+    const pos = getRelativePos(clientX, clientY);
+    setDrag({
+      orbValue: value,
+      startX: pos.x,
+      startY: pos.y,
+      currentX: pos.x,
+      currentY: pos.y,
+      active: true,
+    });
+  }, [phase, getRelativePos]);
+
+  const handleDragMove = useCallback((clientX: number, clientY: number) => {
+    if (!drag || !drag.active) return;
+    const pos = getRelativePos(clientX, clientY);
+    setDrag(prev => prev ? { ...prev, currentX: pos.x, currentY: pos.y } : null);
+  }, [drag, getRelativePos]);
+
+  const handleDragEnd = useCallback(() => {
+    if (!drag || !drag.active) return;
+
+    // Check if dragged to target zone (top 30% of play area)
+    if (drag.currentY < TARGET_ZONE_Y_PERCENT + 10) {
+      // Dropped in target zone - submit answer
+      if (isBossRound && phase === 'boss-answer') {
+        handleBossAnswer(drag.orbValue);
+      } else if (phase === 'answer') {
+        handleAnswer(drag.orbValue);
+      }
+    }
+
+    // Check if dragged over a power-up
+    for (const pu of activePowerUps) {
+      const dx = drag.currentX - pu.x;
+      const dy = drag.currentY - pu.y;
+      if (Math.sqrt(dx * dx + dy * dy) < 8) {
+        collectPowerUp(pu);
+        break;
+      }
+    }
+
+    setDrag(null);
+  }, [drag, phase, isBossRound, handleAnswer, handleBossAnswer, activePowerUps, collectPowerUp]);
+
+  // Touch/mouse event listeners for drag
+  useEffect(() => {
+    const onMove = (e: MouseEvent | TouchEvent) => {
+      e.preventDefault();
+      const clientX = 'touches' in e ? e.touches[0].clientX : e.clientX;
+      const clientY = 'touches' in e ? e.touches[0].clientY : e.clientY;
+      handleDragMove(clientX, clientY);
+    };
+    const onEnd = () => handleDragEnd();
+
+    if (drag?.active) {
+      window.addEventListener('mousemove', onMove);
+      window.addEventListener('mouseup', onEnd);
+      window.addEventListener('touchmove', onMove, { passive: false });
+      window.addEventListener('touchend', onEnd);
+      return () => {
+        window.removeEventListener('mousemove', onMove);
+        window.removeEventListener('mouseup', onEnd);
+        window.removeEventListener('touchmove', onMove);
+        window.removeEventListener('touchend', onEnd);
+      };
+    }
+  }, [drag, handleDragMove, handleDragEnd]);
+
+  // =============== GAME START ===============
 
   const startGame = useCallback(() => {
+    setScreen('playing');
     setLevel(1);
     setScore(0);
     setLives(LIVES_MAX);
     setStreak(0);
     setBestStreak(0);
-    setRound(0);
+    setCombo(0);
+    setMultiplier(1);
+    setTotalRounds(0);
+    setTotalCorrect(0);
     setRoundsInLevel(0);
-    setIsSpeedRound(false);
-    setSpeedRoundCount(0);
-    collectionsUsedRef.current = [];
-    setScreen('playing');
-    // Defer so state has flushed before startNewRound reads it
-    setTimeout(() => startNewRoundRef.current(), 0);
-  }, []);
-
-  const startSpeedRound = useCallback(() => {
-    setIsSpeedRound(true);
-    setSpeedRoundCount(0);
-    setRoundsInLevel(0);
-    setTimeout(() => startNewRoundRef.current(), 0);
-  }, []);
-
-  const continueAfterLevelUp = useCallback(() => {
-    collectionsUsedRef.current = [];
-    setTimeout(() => startNewRoundRef.current(), 0);
+    setIsBossRound(false);
+    setActivePowerUps([]);
+    setHasSlowTime(false);
+    setHasDoublePoints(false);
+    setHasShield(false);
+    setEnergyLevel(0);
+    setStreakAnnouncement(null);
+    recentCountsRef.current = [];
+    setTimeout(() => startNewRoundRef.current(), 500);
   }, []);
 
   const goToMenu = useCallback(() => {
-    if (timerRef.current) clearTimeout(timerRef.current);
+    if (phaseTimerRef.current) clearTimeout(phaseTimerRef.current);
     if (answerTimerRef.current) clearTimeout(answerTimerRef.current);
-    if (onExit) {
-      onExit();
-    } else {
-      setScreen('intro');
-    }
+    if (onExit) onExit();
+    else setScreen('intro');
   }, [onExit]);
 
-  // ── Cleanup timers on unmount ──────────────────────────────────────────
-
+  // Cleanup
   useEffect(() => {
     return () => {
-      if (timerRef.current) clearTimeout(timerRef.current);
+      if (phaseTimerRef.current) clearTimeout(phaseTimerRef.current);
       if (answerTimerRef.current) clearTimeout(answerTimerRef.current);
     };
   }, []);
 
-  // ── Render helpers ─────────────────────────────────────────────────────
+  // =============== RENDER ===============
 
-  const renderBackgroundStars = () => (
+  const renderBgStars = () => (
     <div className="dd-bg-stars">
-      {backgroundStars.map((star, i) => (
-        <div
-          key={i}
-          className="dd-star"
-          style={{
-            left: `${star.x}%`,
-            top: `${star.y}%`,
-            width: star.size,
-            height: star.size,
-            opacity: star.opacity,
-            animationDelay: `${star.twinkleOffset}s`,
-            animationDuration: `${2 + star.speed * 3}s`,
-          }}
-        />
+      {bgStars.map((star, i) => (
+        <div key={i} className="dd-star" style={{
+          left: `${star.x}%`, top: `${star.y}%`,
+          width: star.size, height: star.size,
+          opacity: star.brightness,
+          animationDelay: `${star.twinklePhase}s`,
+          animationDuration: `${3 + star.speed * 5}s`,
+        }} />
       ))}
     </div>
   );
@@ -643,276 +883,83 @@ export default function DotDash({ onExit }: DotDashProps = {}) {
   const renderParticles = () => (
     <div className="dd-particles">
       {particles.map(p => (
-        <div
-          key={p.id}
-          className={`dd-particle dd-particle-${p.type}`}
-          style={{
-            left: `${p.x}%`,
-            top: `${p.y}%`,
-            width: p.size,
-            height: p.size,
-            opacity: p.life,
-            '--p-hue': p.hue,
-            transform: `scale(${p.life})`,
-          } as React.CSSProperties}
-        />
+        <div key={p.id} className={`dd-particle dd-p-${p.type}`} style={{
+          left: `${p.x}%`, top: `${p.y}%`,
+          width: p.size, height: p.size,
+          opacity: p.life * p.life,
+          '--p-hue': p.hue,
+          transform: `scale(${p.type === 'shockwave' ? 1 : p.life})`,
+        } as React.CSSProperties} />
       ))}
-      {floatingScores.map(f => (
-        <div
-          key={f.id}
-          className="dd-floating-score"
-          style={{
-            left: `${f.x}%`,
-            top: `${f.y}%`,
-            opacity: f.life,
-            transform: `scale(${0.5 + f.life * 0.5})`,
-          }}
-        >
-          +{f.value}
-        </div>
+      {floatingTexts.map(f => (
+        <div key={f.id} className="dd-float-text" style={{
+          left: `${f.x}%`, top: `${f.y}%`,
+          opacity: f.life,
+          fontSize: `${f.size}rem`,
+          color: f.color,
+          transform: `translate(-50%, -50%) scale(${0.5 + f.life * 0.5})`,
+        }}>{f.text}</div>
       ))}
     </div>
   );
 
-  const renderLives = () => (
-    <div className="dd-lives">
-      {Array.from({ length: LIVES_MAX }, (_, i) => (
-        <div key={i} className={`dd-life ${i < lives ? 'dd-life-active' : 'dd-life-lost'}`}>
-          {i < lives ? '⚡' : '💔'}
-        </div>
-      ))}
-    </div>
-  );
-
-  const renderStreak = () => {
-    if (streak < 2) return null;
-    return (
-      <div className={`dd-streak ${streak >= 5 ? 'dd-streak-fire' : ''} ${streak >= 8 ? 'dd-streak-legendary' : ''}`}>
-        <span className="dd-streak-bolt">⚡</span>
-        <span className="dd-streak-count">{streak}x</span>
-        <span className="dd-streak-label">STREAK</span>
-        {streak >= 5 && <div className="dd-streak-glow" />}
-      </div>
-    );
-  };
-
-  const renderCard = () => {
-    if (!pattern) return null;
-
-    const dotColor = DOT_COLORS[correctAnswer % DOT_COLORS.length];
-
-    return (
-      <div className={`dd-card-wrapper ${shakeCard ? 'dd-shake' : ''}`}>
-        <div className={`dd-card ${cardFlipped ? 'dd-card-flipped' : ''}`}>
-          {/* Front — dots */}
-          <div className="dd-card-face dd-card-front">
-            {/* Ten-frame grid lines */}
-            {pattern.type === 'tenframe' && (
-              <div className="dd-tenframe-grid">
-                {Array.from({ length: 10 }, (_, i) => (
-                  <div key={i} className="dd-tenframe-cell" />
-                ))}
-              </div>
-            )}
-
-            {/* Dots */}
-            {pattern.dots.map((dot, i) => {
-              const isRevealing = isCorrect === false && dotsRevealed > 0;
-              const isVisible = showDots || (isRevealing && i < dotsRevealed);
-              return (
-                <div
-                  key={i}
-                  className={`dd-dot ${isVisible ? 'dd-dot-visible' : 'dd-dot-hidden'}`}
-                  style={{
-                    left: `${dot.x * 100}%`,
-                    top: `${dot.y * 100}%`,
-                    animationDelay: `${i * 0.05}s`,
-                    '--dot-fill': dotColor.fill,
-                    '--dot-shadow': dotColor.shadow,
-                  } as React.CSSProperties}
-                >
-                  {isRevealing && i < dotsRevealed && (
-                    <span className="dd-dot-number">{i + 1}</span>
-                  )}
-                </div>
-              );
-            })}
-
-            {/* Pattern type indicator */}
-            <div className="dd-pattern-badge">
-              {pattern.type === 'dice' && '🎲'}
-              {pattern.type === 'tenframe' && '🔟'}
-              {pattern.type === 'random' && '✨'}
-              {pattern.type === 'finger' && '🖐️'}
-            </div>
-          </div>
-
-          {/* Back — sticker reveal */}
-          <div className="dd-card-face dd-card-back">
-            {sticker && (
-              <div className="dd-sticker-reveal">
-                <div className="dd-sticker-emoji">{sticker.emoji}</div>
-                <div className="dd-sticker-name">{sticker.name}</div>
-                <div className="dd-sticker-sparkles">
-                  {Array.from({ length: 8 }, (_, i) => (
-                    <div
-                      key={i}
-                      className="dd-sticker-spark"
-                      style={{
-                        '--spark-angle': `${i * 45}deg`,
-                        '--spark-delay': `${i * 0.05}s`,
-                      } as React.CSSProperties}
-                    />
-                  ))}
-                </div>
-              </div>
-            )}
-          </div>
-        </div>
-      </div>
-    );
-  };
-
-  const renderTimer = () => {
-    if (screen !== 'reveal' && screen !== 'playing') return null;
-
-    const radius = 28;
-    const circumference = 2 * Math.PI * radius;
-    const offset = circumference * (1 - timerProgress);
-    const timerColor = timerProgress > 0.5 ? '#4ade80' : timerProgress > 0.25 ? '#fbbf24' : '#ef4444';
-    const isPulsing = timerProgress < 0.3;
-
-    return (
-      <div className={`dd-timer ${isPulsing ? 'dd-timer-pulse' : ''}`}>
-        <svg width="72" height="72" viewBox="0 0 72 72">
-          <circle cx="36" cy="36" r={radius} fill="none" stroke="rgba(255,255,255,0.1)" strokeWidth="5" />
-          <circle
-            cx="36"
-            cy="36"
-            r={radius}
-            fill="none"
-            stroke={timerColor}
-            strokeWidth="5"
-            strokeLinecap="round"
-            strokeDasharray={circumference}
-            strokeDashoffset={offset}
-            transform="rotate(-90 36 36)"
-            style={{ transition: 'stroke 0.3s ease' }}
-          />
-        </svg>
-        <div className="dd-timer-icon" style={{ color: timerColor }}>
-          {screen === 'playing' ? '👁️' : '🤔'}
-        </div>
-      </div>
-    );
-  };
-
-  const renderOptions = () => {
-    if (screen !== 'reveal' || options.length === 0) return null;
-
-    return (
-      <div className="dd-options">
-        {options.map((opt) => {
-          let optClass = 'dd-option';
-          if (selectedAnswer !== null) {
-            if (opt === correctAnswer) optClass += ' dd-option-correct';
-            else if (opt === selectedAnswer) optClass += ' dd-option-wrong';
-            else optClass += ' dd-option-dim';
-          }
-          return (
-            <button
-              key={opt}
-              className={optClass}
-              onClick={() => handleAnswer(opt)}
-              disabled={selectedAnswer !== null}
-            >
-              {opt}
-            </button>
-          );
-        })}
-      </div>
-    );
-  };
-
-  // ── Screens ────────────────────────────────────────────────────────────
-
+  // ---- INTRO SCREEN ----
   if (screen === 'intro') {
     return (
       <div className="dd-root">
         <style>{styles}</style>
         <div className="dd-intro">
-          {renderBackgroundStars()}
-          <div className="dd-intro-decorations">
-            {Array.from({ length: 6 }, (_, i) => (
-              <div
-                key={i}
-                className="dd-floating-card"
-                style={{
-                  left: `${10 + i * 15}%`,
-                  top: `${20 + (i % 3) * 20}%`,
-                  animationDelay: `${i * 0.4}s`,
-                  animationDuration: `${3 + Math.random() * 2}s`,
-                }}
-              >
-                <div className="dd-mini-dots">
-                  {getDicePattern(1 + (i % 6)).map((d, j) => (
-                    <div
-                      key={j}
-                      className="dd-mini-dot"
-                      style={{ left: `${d.x * 100}%`, top: `${d.y * 100}%` }}
-                    />
-                  ))}
-                </div>
+          {renderBgStars()}
+          <div className="dd-nebula dd-nebula-1" />
+          <div className="dd-nebula dd-nebula-2" />
+
+          <div className="dd-intro-orbs">
+            {[1, 2, 3, 4, 5].map(n => (
+              <div key={n} className="dd-intro-orb" style={{
+                left: `${15 + n * 14}%`,
+                top: `${30 + (n % 2 === 0 ? -8 : 8)}%`,
+                animationDelay: `${n * 0.3}s`,
+                background: ORB_COLORS[n % ORB_COLORS.length].bg,
+                boxShadow: `0 0 30px ${ORB_COLORS[n % ORB_COLORS.length].glow}, 0 0 60px ${ORB_COLORS[n % ORB_COLORS.length].glow}`,
+              }}>
+                <div className="dd-orb-shine" />
+                <span className="dd-orb-num">{n}</span>
               </div>
             ))}
           </div>
 
           <div className="dd-intro-content">
-            <div className="dd-logo">
-              <span className="dd-logo-icon dd-logo-brain">🧠</span>
-              <h1>Dot Dash</h1>
-              <span className="dd-logo-icon dd-logo-bolt">⚡</span>
+            <div className="dd-logo-area">
+              <div className="dd-logo-flash">⚡</div>
+              <h1 className="dd-title">DOT DASH</h1>
+              <div className="dd-logo-flash dd-logo-flash-r">⚡</div>
             </div>
-            <p className="dd-tagline">See It. Know It. Instant!</p>
+            <p className="dd-tagline">Lightning Reflexes Subitising</p>
 
-            <div className="dd-instructions-card">
+            <div className="dd-how-to-play">
               <h3>How to Play</h3>
-              <div className="dd-instruction">
-                <div className="dd-instruction-visual">
-                  <div className="dd-mini-flashcard">
-                    <div className="dd-mini-dot-group">
-                      {getDicePattern(4).map((d, i) => (
-                        <div key={i} className="dd-mini-dot" style={{ left: `${d.x * 100}%`, top: `${d.y * 100}%` }} />
-                      ))}
-                    </div>
-                  </div>
-                  <span className="dd-instruction-arrow">→</span>
-                  <span className="dd-instruction-icon">👁️</span>
-                </div>
-                <p>Dot patterns <span className="dd-hl dd-hl-flash">FLASH</span> on the card — look quickly!</p>
+              <div className="dd-how-step">
+                <span className="dd-step-icon">💥</span>
+                <p>Dots <strong>FLASH</strong> on screen in a burst of light</p>
               </div>
-              <div className="dd-instruction">
-                <div className="dd-instruction-visual">
-                  <span className="dd-mini-btn">3</span>
-                  <span className="dd-mini-btn dd-mini-btn-correct">4</span>
-                  <span className="dd-mini-btn">5</span>
-                </div>
-                <p>Tap the <span className="dd-hl dd-hl-correct">CORRECT</span> number of dots!</p>
+              <div className="dd-how-step">
+                <span className="dd-step-icon">🧠</span>
+                <p>Instantly <strong>RECOGNISE</strong> how many dots you saw</p>
               </div>
-              <div className="dd-instruction">
-                <div className="dd-instruction-visual">
-                  <span className="dd-instruction-icon">⚡</span>
-                  <span className="dd-instruction-icon">⚡</span>
-                  <span className="dd-instruction-icon">⚡</span>
-                </div>
-                <p>Build a <span className="dd-hl dd-hl-streak">LIGHTNING STREAK</span> for bonus points!</p>
+              <div className="dd-how-step">
+                <span className="dd-step-icon">👆</span>
+                <p><strong>DRAG</strong> the correct number orb to the target zone</p>
+              </div>
+              <div className="dd-how-step">
+                <span className="dd-step-icon">⚡</span>
+                <p>Build <strong>COMBOS</strong> for massive score multipliers!</p>
               </div>
             </div>
 
             <button className="dd-start-btn" onClick={startGame}>
-              <span className="dd-btn-icon">⚡</span>
-              Start Subitising
-              <span className="dd-btn-icon">⚡</span>
+              <span className="dd-btn-flash">⚡</span>
+              START GAME
+              <span className="dd-btn-flash">⚡</span>
             </button>
           </div>
         </div>
@@ -920,98 +967,48 @@ export default function DotDash({ onExit }: DotDashProps = {}) {
     );
   }
 
-  if (screen === 'speedRound') {
-    return (
-      <div className="dd-root">
-        <style>{styles}</style>
-        <div className="dd-speed-intro">
-          {renderBackgroundStars()}
-          <div className="dd-speed-bg-pulse" />
-          <div className="dd-speed-content">
-            <div className="dd-speed-bolt">⚡</div>
-            <h1 className="dd-speed-title">SPEED ROUND</h1>
-            <p className="dd-speed-sub">Quick-fire flashes for bonus points!</p>
-            <p className="dd-speed-detail">5 rapid rounds — think fast!</p>
-            <button className="dd-start-btn dd-speed-go" onClick={startSpeedRound}>
-              GO!
-            </button>
-          </div>
-        </div>
-      </div>
-    );
-  }
-
-  if (screen === 'levelUp') {
-    return (
-      <div className="dd-root">
-        <style>{styles}</style>
-        <div className="dd-levelup">
-          {renderBackgroundStars()}
-          <div className="dd-levelup-content">
-            <div className="dd-levelup-stars">
-              {['⭐', '🌟', '⭐'].map((s, i) => (
-                <span key={i} className="dd-levelup-star" style={{ animationDelay: `${i * 0.2}s` }}>{s}</span>
-              ))}
-            </div>
-            <h1 className="dd-levelup-title">Level {level}!</h1>
-            <div className="dd-levelup-stats">
-              <div className="dd-stat">
-                <span className="dd-stat-label">Score</span>
-                <span className="dd-stat-value">{score}</span>
-              </div>
-              <div className="dd-stat">
-                <span className="dd-stat-label">Best Streak</span>
-                <span className="dd-stat-value">⚡{bestStreak}x</span>
-              </div>
-            </div>
-            <div className="dd-levelup-info">
-              {level <= 2 && <p>Quantities 1-5 with familiar dice patterns</p>}
-              {level > 2 && level <= 4 && <p>Quantities up to 8 with mixed patterns</p>}
-              {level > 4 && level <= 6 && <p>Quantities up to 10 — ten-frame patterns appear!</p>}
-              {level > 6 && <p>Quantities up to 12 — very fast flashes!</p>}
-            </div>
-            <button className="dd-start-btn" onClick={continueAfterLevelUp}>
-              Continue
-            </button>
-            <button className="dd-menu-btn" onClick={goToMenu}>Main Menu</button>
-          </div>
-        </div>
-      </div>
-    );
-  }
-
-  if (screen === 'gameOver') {
+  // ---- GAME OVER SCREEN ----
+  if (screen === 'gameover') {
     return (
       <div className="dd-root">
         <style>{styles}</style>
         <div className="dd-gameover">
-          {renderBackgroundStars()}
-          <div className="dd-gameover-content">
-            <div className="dd-gameover-emoji">🧠</div>
-            <h1 className="dd-gameover-title">Great Effort!</h1>
-            <p className="dd-gameover-sub">Your subitising skills are growing!</p>
-            <div className="dd-gameover-stats">
-              <div className="dd-stat">
-                <span className="dd-stat-label">Final Score</span>
-                <span className="dd-stat-value dd-stat-big">{score}</span>
+          {renderBgStars()}
+          <div className="dd-nebula dd-nebula-1" />
+          <div className="dd-go-content">
+            <div className="dd-go-icon">🧠</div>
+            <h1 className="dd-go-title">MISSION COMPLETE</h1>
+            <p className="dd-go-sub">Your subitising powers are growing!</p>
+
+            <div className="dd-go-stats">
+              <div className="dd-go-stat dd-go-stat-big">
+                <span className="dd-go-stat-label">SCORE</span>
+                <span className="dd-go-stat-val dd-go-score">{score}</span>
               </div>
-              <div className="dd-stat">
-                <span className="dd-stat-label">Level Reached</span>
-                <span className="dd-stat-value">{level}</span>
+              <div className="dd-go-stat">
+                <span className="dd-go-stat-label">LEVEL</span>
+                <span className="dd-go-stat-val">{level}</span>
               </div>
-              <div className="dd-stat">
-                <span className="dd-stat-label">Rounds Won</span>
-                <span className="dd-stat-value">{round}</span>
+              <div className="dd-go-stat">
+                <span className="dd-go-stat-label">CORRECT</span>
+                <span className="dd-go-stat-val">{totalCorrect}/{totalRounds}</span>
               </div>
-              <div className="dd-stat">
-                <span className="dd-stat-label">Best Streak</span>
-                <span className="dd-stat-value">⚡{bestStreak}x</span>
+              <div className="dd-go-stat">
+                <span className="dd-go-stat-label">BEST STREAK</span>
+                <span className="dd-go-stat-val">⚡{bestStreak}</span>
               </div>
+              {highScore > 0 && (
+                <div className="dd-go-stat">
+                  <span className="dd-go-stat-label">HIGH SCORE</span>
+                  <span className="dd-go-stat-val dd-go-high">{highScore}</span>
+                </div>
+              )}
             </div>
+
             <button className="dd-start-btn" onClick={startGame}>
-              <span className="dd-btn-icon">🔄</span>
-              Play Again
-              <span className="dd-btn-icon">⚡</span>
+              <span className="dd-btn-flash">🔄</span>
+              PLAY AGAIN
+              <span className="dd-btn-flash">⚡</span>
             </button>
             <button className="dd-menu-btn" onClick={goToMenu}>Main Menu</button>
           </div>
@@ -1020,80 +1017,253 @@ export default function DotDash({ onExit }: DotDashProps = {}) {
     );
   }
 
-  // ── Playing / Reveal screens ───────────────────────────────────────────
+  // ---- MAIN GAME SCREEN ----
+  const isFlashing = phase === 'flash' || phase === 'boss-flash';
+  const isAnswering = phase === 'answer' || phase === 'boss-answer';
+  const isResult = phase === 'result' || phase === 'boss-result';
+  const streakInfo = getStreakName(streak);
 
   return (
     <div className="dd-root" ref={containerRef}>
       <style>{styles}</style>
-      <div className={`dd-game ${isSpeedRound ? 'dd-game-speed' : ''}`}>
-        {renderBackgroundStars()}
-        {isSpeedRound && <div className="dd-speed-border" />}
+      <div className={`dd-game ${shakeScreen ? 'dd-screen-shake' : ''} ${comboFlash ? 'dd-combo-flash' : ''}`}>
+        {renderBgStars()}
+        <div className="dd-nebula dd-nebula-1" />
+
+        {/* Flash overlay */}
+        {flashIntensity > 0 && (
+          <div className="dd-flash-overlay" style={{ opacity: flashIntensity * 0.7 }} />
+        )}
+
+        {/* Energy border based on streak */}
+        {streak >= 3 && (
+          <div className="dd-energy-border" style={{
+            '--e-color': streakInfo?.color || '#fbbf24',
+            '--e-intensity': Math.min(streak / 10, 1),
+          } as React.CSSProperties} />
+        )}
+
         {renderParticles()}
 
-        {/* Header */}
-        <div className="dd-header">
-          <div className="dd-header-left">
+        {/* HUD */}
+        <div className="dd-hud">
+          <div className="dd-hud-left">
             <button className="dd-back-btn" onClick={goToMenu}>{'←'}</button>
             <div className="dd-level-badge">
-              {isSpeedRound && <span className="dd-speed-indicator">⚡</span>}
-              Level {level}
+              {isBossRound && <span className="dd-boss-indicator">👑</span>}
+              LVL {level}
             </div>
           </div>
-          <div className="dd-header-center">
-            {renderLives()}
+          <div className="dd-hud-center">
+            <div className="dd-lives-row">
+              {Array.from({ length: LIVES_MAX }, (_, i) => (
+                <div key={i} className={`dd-heart ${i < lives ? 'dd-heart-on' : 'dd-heart-off'}`}>
+                  {i < lives ? '❤️' : '🖤'}
+                </div>
+              ))}
+            </div>
           </div>
-          <div className="dd-header-right">
-            <div className="dd-score-badge">
-              <span className="dd-score-icon">⭐</span>
-              <span>{score}</span>
+          <div className="dd-hud-right">
+            <div className="dd-score-display">
+              <span className="dd-score-star">⭐</span>
+              <span className="dd-score-num">{score}</span>
             </div>
           </div>
         </div>
 
-        {/* Streak indicator */}
-        {renderStreak()}
+        {/* Streak / Multiplier bar */}
+        {streak >= 2 && (
+          <div className="dd-streak-bar" style={{ '--streak-color': streakInfo?.color || '#fbbf24' } as React.CSSProperties}>
+            <span className="dd-streak-bolt">⚡</span>
+            <span className="dd-streak-num">{streak}x</span>
+            <span className="dd-streak-label">{streakInfo?.name || 'STREAK'}</span>
+            {multiplier > 1 && <span className="dd-mult-badge">{multiplier}x PTS</span>}
+          </div>
+        )}
 
-        {/* Main content */}
-        <div className="dd-main">
-          {renderTimer()}
-          {renderCard()}
+        {/* Streak announcement */}
+        {streakAnnouncement && (
+          <div className="dd-streak-announce" style={{ color: streakAnnouncementColor }}>
+            {streakAnnouncement}
+          </div>
+        )}
 
-          {/* Phase label */}
-          <div className="dd-phase-label">
-            {screen === 'playing' && showDots && (
-              <span className="dd-phase-look">
-                <span className="dd-eye-icon">👁️</span> Look at the dots!
-              </span>
-            )}
-            {screen === 'reveal' && selectedAnswer === null && (
-              <span className="dd-phase-answer">How many dots?</span>
-            )}
-            {isCorrect === true && (
-              <span className="dd-phase-correct">Correct! ⚡</span>
-            )}
-            {isCorrect === false && (
-              <span className="dd-phase-wrong">
-                The answer is {correctAnswer}
-              </span>
+        {/* Boss intro */}
+        {phase === 'boss-intro' && (
+          <div className="dd-boss-intro">
+            <div className="dd-boss-crown">👑</div>
+            <h2 className="dd-boss-title">BOSS ROUND!</h2>
+            <p className="dd-boss-sub">Remember the sequence of {bossSequence.length} patterns!</p>
+          </div>
+        )}
+
+        {/* Main play area */}
+        <div className="dd-play-area" ref={playAreaRef}>
+          {/* Target zone */}
+          <div className={`dd-target-zone ${targetZonePulse ? 'dd-tz-pulse' : ''} ${isAnswering && drag ? 'dd-tz-active' : ''}`}>
+            <div className="dd-tz-ring" />
+            <div className="dd-tz-ring dd-tz-ring-2" />
+            <span className="dd-tz-label">
+              {isAnswering ? 'DROP HERE' : phase === 'flash' || phase === 'boss-flash' ? 'LOOK!' : ''}
+            </span>
+            {/* Boss sequence progress */}
+            {isBossRound && phase === 'boss-answer' && (
+              <div className="dd-boss-progress">
+                {bossSequence.map((_, i) => (
+                  <div key={i} className={`dd-boss-dot ${i < bossAnswered.length ? 'dd-boss-dot-done' : i === bossCurrentIndex ? 'dd-boss-dot-current' : ''}`} />
+                ))}
+              </div>
             )}
           </div>
 
-          {renderOptions()}
+          {/* Dot display area */}
+          <div className="dd-dot-area">
+            {dots.map((dot, i) => (
+              <div
+                key={i}
+                className={`dd-dot ${showDots ? 'dd-dot-show' : 'dd-dot-hide'} ${isResult && isCorrect === false ? 'dd-dot-reveal' : ''}`}
+                style={{
+                  left: `${dot.x * 100}%`,
+                  top: `${dot.y * 100}%`,
+                  animationDelay: `${i * 0.03}s`,
+                  '--dot-hue': (correctAnswer * 30 + 180) % 360,
+                } as React.CSSProperties}
+              >
+                <div className="dd-dot-glow" />
+                <div className="dd-dot-core" />
+                {isResult && isCorrect === false && (
+                  <span className="dd-dot-count">{i + 1}</span>
+                )}
+              </div>
+            ))}
+          </div>
+
+          {/* Timer arc */}
+          {isAnswering && (
+            <div className="dd-timer-wrap">
+              <svg className="dd-timer-svg" viewBox="0 0 80 80">
+                <circle cx="40" cy="40" r="34" fill="none" stroke="rgba(255,255,255,0.08)" strokeWidth="5" />
+                <circle
+                  cx="40" cy="40" r="34" fill="none"
+                  stroke={timerProgress > 0.5 ? '#4ade80' : timerProgress > 0.25 ? '#fbbf24' : '#ef4444'}
+                  strokeWidth="5" strokeLinecap="round"
+                  strokeDasharray={`${2 * Math.PI * 34}`}
+                  strokeDashoffset={`${2 * Math.PI * 34 * (1 - timerProgress)}`}
+                  transform="rotate(-90 40 40)"
+                />
+              </svg>
+              <span className="dd-timer-icon">{isFlashing ? '👁️' : '🤔'}</span>
+            </div>
+          )}
+
+          {/* Phase text */}
+          <div className="dd-phase-text">
+            {isFlashing && <span className="dd-pt-flash">⚡ LOOK! ⚡</span>}
+            {phase === 'fade' && <span className="dd-pt-fade">How many dots?</span>}
+            {isAnswering && !drag && selectedAnswer === null && <span className="dd-pt-answer">DRAG the number up!</span>}
+            {isResult && isCorrect && <span className="dd-pt-correct">⚡ CORRECT! ⚡</span>}
+            {isResult && isCorrect === false && <span className="dd-pt-wrong">The answer was {correctAnswer}</span>}
+          </div>
+
+          {/* Power-ups floating in play area */}
+          {activePowerUps.map(pu => (
+            <div
+              key={pu.id}
+              className="dd-powerup"
+              style={{ left: `${pu.x}%`, top: `${pu.y}%`, '--pu-color': POWERUP_INFO[pu.type].color } as React.CSSProperties}
+              onClick={() => collectPowerUp(pu)}
+            >
+              <div className="dd-pu-glow" />
+              <span className="dd-pu-icon">{POWERUP_INFO[pu.type].symbol}</span>
+            </div>
+          ))}
+
+          {/* Active powerup indicators */}
+          <div className="dd-active-pus">
+            {hasSlowTime && <div className="dd-apu" style={{ background: 'rgba(56,189,248,0.3)', borderColor: '#38bdf8' }}>🕐</div>}
+            {hasDoublePoints && <div className="dd-apu" style={{ background: 'rgba(251,191,36,0.3)', borderColor: '#fbbf24' }}>x2</div>}
+            {hasShield && <div className="dd-apu" style={{ background: 'rgba(74,222,128,0.3)', borderColor: '#4ade80' }}>🛡️</div>}
+          </div>
+
+          {/* Dragging orb ghost */}
+          {drag && drag.active && (
+            <div className="dd-drag-ghost" style={{
+              left: `${drag.currentX}%`,
+              top: `${drag.currentY}%`,
+              background: ORB_COLORS[(drag.orbValue - 1) % ORB_COLORS.length].bg,
+              boxShadow: `0 0 30px ${ORB_COLORS[(drag.orbValue - 1) % ORB_COLORS.length].glow}, 0 0 60px ${ORB_COLORS[(drag.orbValue - 1) % ORB_COLORS.length].glow}`,
+            }}>
+              <div className="dd-orb-shine" />
+              <span className="dd-drag-num">{drag.orbValue}</span>
+            </div>
+          )}
+
+          {/* Drag trail */}
+          {drag && drag.active && drag.currentY < TARGET_ZONE_Y_PERCENT + 15 && (
+            <div className="dd-drag-trail" style={{
+              left: `${drag.currentX}%`,
+              top: `${drag.currentY + 5}%`,
+              height: `${Math.max(0, 85 - drag.currentY)}%`,
+            }} />
+          )}
+        </div>
+
+        {/* Number orbs row */}
+        <div className={`dd-orbs-row ${isAnswering ? 'dd-orbs-show' : 'dd-orbs-hide'}`}>
+          {options.map((opt) => {
+            const orbColor = ORB_COLORS[(opt - 1) % ORB_COLORS.length];
+            const isSelected = selectedAnswer === opt;
+            const isCorrectOpt = isResult && opt === correctAnswer;
+            const isWrongOpt = isResult && selectedAnswer === opt && !isCorrect;
+            const isDimmed = isResult && selectedAnswer !== null && opt !== correctAnswer && opt !== selectedAnswer;
+
+            return (
+              <div
+                key={opt}
+                className={`dd-orb ${isSelected ? 'dd-orb-selected' : ''} ${isCorrectOpt ? 'dd-orb-correct' : ''} ${isWrongOpt ? 'dd-orb-wrong' : ''} ${isDimmed ? 'dd-orb-dim' : ''}`}
+                style={{
+                  background: orbColor.bg,
+                  boxShadow: `0 8px 25px ${orbColor.glow}, inset 0 -8px 15px rgba(0,0,0,0.2)`,
+                }}
+                onMouseDown={(e) => {
+                  e.preventDefault();
+                  if (selectedAnswer !== null) return;
+                  handleDragStart(opt, e.clientX, e.clientY);
+                }}
+                onTouchStart={(e) => {
+                  e.preventDefault();
+                  if (selectedAnswer !== null) return;
+                  handleDragStart(opt, e.touches[0].clientX, e.touches[0].clientY);
+                }}
+                onClick={() => {
+                  if (selectedAnswer !== null) return;
+                  // Fallback: tap to answer
+                  if (isBossRound && phase === 'boss-answer') handleBossAnswer(opt);
+                  else if (phase === 'answer') handleAnswer(opt);
+                }}
+              >
+                <div className="dd-orb-shine" />
+                <div className="dd-orb-inner-glow" />
+                <span className="dd-orb-num">{opt}</span>
+                {isCorrectOpt && <div className="dd-orb-ring-correct" />}
+                {isWrongOpt && <div className="dd-orb-ring-wrong" />}
+              </div>
+            );
+          })}
         </div>
 
         {/* Bottom bar */}
-        <div className="dd-bottom-bar">
-          <span className="dd-round-counter">Round {round + 1}</span>
-          {isSpeedRound && (
-            <span className="dd-speed-counter">Speed: {speedRoundCount + 1}/5</span>
-          )}
+        <div className="dd-bottom">
+          <span className="dd-round-info">Round {totalRounds + 1}</span>
+          {isBossRound && <span className="dd-boss-tag">👑 BOSS</span>}
+          <span className="dd-hint">Drag orb up to answer</span>
         </div>
       </div>
     </div>
   );
 }
 
-// ── Styles ──────────────────────────────────────────────────────────────────
+// =============== STYLES ===============
 
 const styles = `
   @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap');
@@ -1101,1039 +1271,862 @@ const styles = `
   * { box-sizing: border-box; margin: 0; padding: 0; user-select: none; -webkit-user-select: none; }
 
   .dd-root {
-    width: 100%;
-    height: 100%;
+    width: 100%; height: 100%;
     font-family: 'Nunito', sans-serif;
     overflow: hidden;
-    background: linear-gradient(160deg, #1a0a2e 0%, #16213e 40%, #0f3460 80%, #1a1a40 100%);
+    background: #050816;
   }
 
-  /* ── Background stars ── */
+  /* ===== BACKGROUND ===== */
 
   .dd-bg-stars { position: absolute; inset: 0; overflow: hidden; pointer-events: none; z-index: 0; }
 
   .dd-star {
-    position: absolute;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0) 70%);
-    animation: ddTwinkle 3s ease-in-out infinite;
+    position: absolute; border-radius: 50%;
+    background: radial-gradient(circle, rgba(255,255,255,0.95) 0%, rgba(200,220,255,0.3) 40%, transparent 70%);
+    animation: ddTwinkle 4s ease-in-out infinite;
   }
 
   @keyframes ddTwinkle {
-    0%, 100% { opacity: 0.2; transform: scale(0.8); }
-    50% { opacity: 1; transform: scale(1.2); }
+    0%, 100% { opacity: 0.15; transform: scale(0.7); }
+    50% { opacity: 1; transform: scale(1.3); }
   }
 
-  /* ── Particles ── */
-
-  .dd-particles { position: absolute; inset: 0; pointer-events: none; z-index: 100; }
-
-  .dd-particle {
-    position: absolute;
-    border-radius: 50%;
-    pointer-events: none;
-    transform-origin: center;
+  .dd-nebula {
+    position: absolute; border-radius: 50%; pointer-events: none; z-index: 0;
+    filter: blur(80px);
   }
 
-  .dd-particle-sparkle {
-    background: radial-gradient(circle, hsl(var(--p-hue), 100%, 75%) 0%, transparent 70%);
-    box-shadow: 0 0 6px hsl(var(--p-hue), 100%, 60%);
+  .dd-nebula-1 {
+    width: 400px; height: 400px; top: -100px; right: -100px;
+    background: radial-gradient(circle, rgba(99,102,241,0.12) 0%, rgba(168,85,247,0.06) 50%, transparent 70%);
+    animation: ddNebulaFloat 20s ease-in-out infinite;
   }
 
-  .dd-particle-burst {
-    background: radial-gradient(circle, hsl(var(--p-hue), 100%, 80%) 0%, hsl(var(--p-hue), 80%, 50%) 100%);
-    box-shadow: 0 0 10px hsl(var(--p-hue), 100%, 60%);
+  .dd-nebula-2 {
+    width: 350px; height: 350px; bottom: -80px; left: -80px;
+    background: radial-gradient(circle, rgba(236,72,153,0.1) 0%, rgba(239,68,68,0.05) 50%, transparent 70%);
+    animation: ddNebulaFloat 25s ease-in-out infinite reverse;
   }
 
-  .dd-particle-electric {
+  @keyframes ddNebulaFloat {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    33% { transform: translate(30px, -20px) scale(1.1); }
+    66% { transform: translate(-20px, 30px) scale(0.95); }
+  }
+
+  /* ===== PARTICLES ===== */
+
+  .dd-particles { position: absolute; inset: 0; pointer-events: none; z-index: 200; overflow: hidden; }
+
+  .dd-particle { position: absolute; border-radius: 50%; pointer-events: none; }
+
+  .dd-p-spark {
+    background: radial-gradient(circle, hsl(var(--p-hue), 100%, 80%) 0%, hsl(var(--p-hue), 90%, 50%) 100%);
+    box-shadow: 0 0 8px hsl(var(--p-hue), 100%, 60%);
+  }
+
+  .dd-p-confetti {
+    background: hsl(var(--p-hue), 90%, 65%);
+    border-radius: 2px;
+    box-shadow: 0 0 6px hsl(var(--p-hue), 100%, 70%);
+  }
+
+  .dd-p-lightning {
     background: #fef08a;
-    box-shadow: 0 0 8px #fef08a, 0 0 16px #facc15;
+    box-shadow: 0 0 12px #fef08a, 0 0 24px #facc15, 0 0 40px rgba(250,204,21,0.3);
     border-radius: 1px;
   }
 
-  .dd-particle-streak {
+  .dd-p-shockwave {
+    background: transparent;
+    border: 3px solid hsl(var(--p-hue), 80%, 60%);
+    box-shadow: 0 0 20px hsl(var(--p-hue), 80%, 60%), inset 0 0 20px hsl(var(--p-hue), 80%, 60%);
+    border-radius: 50%;
+    transform-origin: center;
+  }
+
+  .dd-p-star {
+    background: radial-gradient(circle, rgba(255,255,255,0.9) 0%, rgba(255,215,0,0.5) 50%, transparent 100%);
+    box-shadow: 0 0 10px rgba(255,215,0,0.5);
+  }
+
+  .dd-p-trail {
     background: linear-gradient(90deg, hsl(var(--p-hue), 100%, 70%), transparent);
     border-radius: 2px;
-    width: 12px !important;
-    height: 2px !important;
+    width: 15px !important; height: 2px !important;
   }
 
-  .dd-floating-score {
-    position: absolute;
-    transform: translate(-50%, -50%);
-    font-size: 1.6rem;
-    font-weight: 900;
-    color: #4ade80;
-    text-shadow: 0 0 10px rgba(74, 222, 128, 0.6), 0 2px 4px rgba(0,0,0,0.3);
+  .dd-float-text {
+    position: absolute; transform: translate(-50%, -50%);
+    font-weight: 900; pointer-events: none;
+    text-shadow: 0 0 15px currentColor, 0 2px 8px rgba(0,0,0,0.5);
+    white-space: nowrap;
+  }
+
+  /* ===== FLASH OVERLAY ===== */
+
+  .dd-flash-overlay {
+    position: absolute; inset: 0; z-index: 150;
+    background: radial-gradient(circle at center, rgba(255,255,255,0.9) 0%, rgba(200,220,255,0.4) 40%, transparent 70%);
     pointer-events: none;
+    animation: ddFlashPulse 0.3s ease-out;
   }
 
-  /* ── Intro screen ── */
-
-  .dd-intro, .dd-speed-intro, .dd-levelup, .dd-gameover {
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    overflow: hidden;
+  @keyframes ddFlashPulse {
+    0% { transform: scale(0.8); opacity: 1; }
+    100% { transform: scale(1.2); opacity: 0; }
   }
 
-  .dd-intro-decorations { position: absolute; inset: 0; pointer-events: none; z-index: 1; }
+  /* ===== ENERGY BORDER ===== */
 
-  .dd-floating-card {
-    position: absolute;
-    width: 60px;
-    height: 70px;
-    background: rgba(255,255,255,0.06);
-    border: 2px solid rgba(255,255,255,0.1);
-    border-radius: 12px;
-    animation: ddFloatCard 4s ease-in-out infinite;
-    backdrop-filter: blur(4px);
+  .dd-energy-border {
+    position: absolute; inset: 0; z-index: 100; pointer-events: none;
+    border: 3px solid var(--e-color);
+    box-shadow: inset 0 0 30px color-mix(in srgb, var(--e-color) 30%, transparent),
+                0 0 20px color-mix(in srgb, var(--e-color) 20%, transparent);
+    opacity: var(--e-intensity);
+    animation: ddEnergyPulse 1.5s ease-in-out infinite;
   }
 
-  @keyframes ddFloatCard {
-    0%, 100% { transform: translateY(0) rotate(-3deg); }
-    50% { transform: translateY(-20px) rotate(3deg); }
+  @keyframes ddEnergyPulse {
+    0%, 100% { opacity: calc(var(--e-intensity) * 0.5); }
+    50% { opacity: var(--e-intensity); }
   }
 
-  .dd-mini-dots {
-    position: relative;
-    width: 100%;
-    height: 100%;
+  /* ===== SCREEN SHAKE ===== */
+
+  .dd-screen-shake { animation: ddScreenShake 0.5s ease-in-out; }
+
+  @keyframes ddScreenShake {
+    0%, 100% { transform: translate(0, 0) rotate(0deg); }
+    10% { transform: translate(-6px, 3px) rotate(-1deg); }
+    20% { transform: translate(5px, -4px) rotate(1deg); }
+    30% { transform: translate(-4px, 5px) rotate(-0.5deg); }
+    40% { transform: translate(3px, -2px) rotate(0.5deg); }
+    50% { transform: translate(-3px, 3px); }
+    60% { transform: translate(2px, -2px); }
+    70% { transform: translate(-1px, 1px); }
   }
 
-  .dd-mini-dot {
-    position: absolute;
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: rgba(255,255,255,0.5);
-    transform: translate(-50%, -50%);
+  .dd-combo-flash { animation: ddComboFlash 0.6s ease-out; }
+
+  @keyframes ddComboFlash {
+    0% { filter: brightness(1.8) saturate(1.5); }
+    100% { filter: brightness(1) saturate(1); }
   }
 
-  .dd-intro-content, .dd-speed-content, .dd-levelup-content, .dd-gameover-content {
-    position: relative;
-    z-index: 10;
-    text-align: center;
-    padding: 2rem;
-    max-width: 500px;
+  /* ===== INTRO ===== */
+
+  .dd-intro, .dd-gameover {
+    height: 100%; display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    position: relative; overflow: hidden;
   }
 
-  .dd-logo {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
+  .dd-intro-orbs { position: absolute; inset: 0; pointer-events: none; z-index: 1; }
+
+  .dd-intro-orb {
+    position: absolute; width: 70px; height: 70px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    animation: ddIntroOrbFloat 4s ease-in-out infinite;
+  }
+
+  @keyframes ddIntroOrbFloat {
+    0%, 100% { transform: translateY(0) scale(1); }
+    50% { transform: translateY(-25px) scale(1.08); }
+  }
+
+  .dd-intro-content, .dd-go-content {
+    position: relative; z-index: 10; text-align: center;
+    padding: 1.5rem; max-width: 480px; width: 100%;
+  }
+
+  .dd-logo-area {
+    display: flex; align-items: center; justify-content: center; gap: 0.8rem;
     margin-bottom: 0.5rem;
   }
 
-  .dd-logo h1 {
-    font-size: clamp(2.2rem, 8vw, 3.5rem);
-    font-weight: 900;
-    background: linear-gradient(135deg, #fbbf24, #f59e0b, #ef4444, #ec4899);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-
-  .dd-logo-icon {
+  .dd-logo-flash {
     font-size: 2.5rem;
-    display: inline-block;
+    animation: ddBoltPulse 1.5s ease-in-out infinite;
+    filter: drop-shadow(0 0 10px rgba(251,191,36,0.6));
   }
 
-  .dd-logo-brain { animation: ddBrainPulse 2s ease-in-out infinite; }
-  .dd-logo-bolt { animation: ddBoltFlash 1.5s ease-in-out infinite; }
+  .dd-logo-flash-r { animation-delay: 0.3s; }
 
-  @keyframes ddBrainPulse {
-    0%, 100% { transform: scale(1) rotate(0deg); }
-    50% { transform: scale(1.15) rotate(-5deg); }
+  @keyframes ddBoltPulse {
+    0%, 100% { transform: translateY(0) scale(1); opacity: 0.8; }
+    50% { transform: translateY(-8px) scale(1.2); opacity: 1; }
   }
 
-  @keyframes ddBoltFlash {
-    0%, 100% { transform: translateY(0) scale(1); filter: brightness(1); }
-    50% { transform: translateY(-8px) scale(1.2); filter: brightness(1.5); }
+  .dd-title {
+    font-size: clamp(2.5rem, 10vw, 4rem); font-weight: 900;
+    background: linear-gradient(135deg, #fbbf24, #f59e0b, #ef4444, #ec4899, #a855f7);
+    background-size: 200% 100%;
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: ddTitleShimmer 4s ease-in-out infinite;
+    letter-spacing: 0.05em;
+    text-shadow: none;
+  }
+
+  @keyframes ddTitleShimmer {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
   }
 
   .dd-tagline {
-    color: #94a3b8;
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
-    font-weight: 600;
+    color: #94a3b8; font-size: 1.1rem; font-weight: 600;
+    margin-bottom: 1.5rem; letter-spacing: 0.15em; text-transform: uppercase;
   }
 
-  .dd-instructions-card {
-    background: rgba(255,255,255,0.05);
-    border: 2px solid rgba(255,255,255,0.1);
-    border-radius: 24px;
-    padding: 1.5rem;
-    margin-bottom: 2rem;
-    backdrop-filter: blur(10px);
+  .dd-how-to-play {
+    background: rgba(255,255,255,0.04);
+    border: 2px solid rgba(255,255,255,0.08);
+    border-radius: 24px; padding: 1.3rem;
+    margin-bottom: 1.5rem; backdrop-filter: blur(10px);
   }
 
-  .dd-instructions-card h3 {
-    color: white;
-    font-size: 1.2rem;
-    margin-bottom: 1.5rem;
+  .dd-how-to-play h3 {
+    color: white; font-size: 1.1rem; margin-bottom: 1rem; letter-spacing: 0.05em;
   }
 
-  .dd-instruction { margin-bottom: 1.5rem; }
-  .dd-instruction:last-child { margin-bottom: 0; }
-
-  .dd-instruction-visual {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.7rem;
-    margin-bottom: 0.5rem;
+  .dd-how-step {
+    display: flex; align-items: center; gap: 0.8rem;
+    margin-bottom: 0.8rem; text-align: left;
   }
 
-  .dd-mini-flashcard {
-    position: relative;
-    width: 50px;
-    height: 60px;
-    background: rgba(255,255,255,0.1);
-    border: 2px solid rgba(255,255,255,0.2);
-    border-radius: 8px;
-  }
+  .dd-how-step:last-child { margin-bottom: 0; }
 
-  .dd-mini-dot-group {
-    position: relative;
-    width: 100%;
-    height: 100%;
-  }
+  .dd-step-icon { font-size: 1.6rem; min-width: 2rem; text-align: center; }
 
-  .dd-instruction-arrow { color: #64748b; font-size: 1.3rem; }
-  .dd-instruction-icon { font-size: 1.8rem; }
+  .dd-how-step p { color: #cbd5e1; font-size: 0.9rem; line-height: 1.3; }
+  .dd-how-step strong { color: #fbbf24; }
 
-  .dd-mini-btn {
-    width: 38px;
-    height: 38px;
-    border-radius: 12px;
-    background: rgba(255,255,255,0.1);
-    border: 2px solid rgba(255,255,255,0.2);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 800;
-    color: white;
-    font-size: 1.1rem;
-  }
-
-  .dd-mini-btn-correct {
-    background: rgba(74, 222, 128, 0.3);
-    border-color: #4ade80;
-    color: #4ade80;
-  }
-
-  .dd-instruction p { color: #cbd5e1; font-size: 0.95rem; }
-
-  .dd-hl { font-weight: 800; }
-  .dd-hl-flash { color: #fbbf24; }
-  .dd-hl-correct { color: #4ade80; }
-  .dd-hl-streak { color: #f59e0b; }
-
-  .dd-start-btn, .dd-speed-go {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.8rem;
-    padding: 1rem 2.5rem;
-    font-family: 'Nunito', sans-serif;
-    font-size: 1.2rem;
-    font-weight: 800;
-    color: white;
-    background: linear-gradient(135deg, #f59e0b, #ef4444);
-    border: none;
-    border-radius: 50px;
-    cursor: pointer;
+  .dd-start-btn {
+    display: inline-flex; align-items: center; gap: 0.8rem;
+    padding: 1rem 2.5rem; font-family: 'Nunito', sans-serif;
+    font-size: 1.2rem; font-weight: 900; color: white;
+    background: linear-gradient(135deg, #f59e0b, #ef4444, #ec4899);
+    background-size: 200% 100%;
+    border: none; border-radius: 50px; cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: 0 10px 40px rgba(245, 158, 11, 0.4);
+    box-shadow: 0 10px 40px rgba(239,68,68,0.4);
+    letter-spacing: 0.08em;
+    animation: ddBtnShimmer 3s ease-in-out infinite;
+  }
+
+  @keyframes ddBtnShimmer {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
   }
 
   .dd-start-btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 15px 50px rgba(245, 158, 11, 0.5);
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 15px 50px rgba(239,68,68,0.5);
   }
 
-  .dd-btn-icon { font-size: 1.4rem; }
+  .dd-start-btn:active { transform: translateY(0) scale(0.98); }
 
-  /* ── Speed round intro ── */
-
-  .dd-speed-bg-pulse {
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(ellipse at center, rgba(245, 158, 11, 0.15) 0%, transparent 70%);
-    animation: ddSpeedPulse 1s ease-in-out infinite;
-  }
-
-  @keyframes ddSpeedPulse {
-    0%, 100% { transform: scale(1); opacity: 0.6; }
-    50% { transform: scale(1.1); opacity: 1; }
-  }
-
-  .dd-speed-bolt {
-    font-size: 5rem;
-    animation: ddBoltFlash 0.8s ease-in-out infinite;
-    margin-bottom: 1rem;
-  }
-
-  .dd-speed-title {
-    font-size: clamp(2rem, 8vw, 3rem);
-    font-weight: 900;
-    color: #fbbf24;
-    text-shadow: 0 0 30px rgba(251, 191, 36, 0.5);
-    margin-bottom: 0.5rem;
-    letter-spacing: 0.1em;
-  }
-
-  .dd-speed-sub {
-    color: #f59e0b;
-    font-size: 1.1rem;
-    font-weight: 600;
-    margin-bottom: 0.5rem;
-  }
-
-  .dd-speed-detail {
-    color: #94a3b8;
-    font-size: 0.95rem;
-    margin-bottom: 2rem;
-  }
-
-  .dd-speed-go {
-    font-size: 1.8rem;
-    padding: 1rem 3rem;
-    animation: ddSpeedGoPulse 1.2s ease-in-out infinite;
-  }
-
-  @keyframes ddSpeedGoPulse {
-    0%, 100% { box-shadow: 0 10px 40px rgba(245, 158, 11, 0.4); }
-    50% { box-shadow: 0 10px 60px rgba(245, 158, 11, 0.8); transform: scale(1.05); }
-  }
-
-  /* ── Level up ── */
-
-  .dd-levelup-stars {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    margin-bottom: 1rem;
-  }
-
-  .dd-levelup-star {
-    font-size: 3rem;
-    animation: ddStarPop 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55) both;
-  }
-
-  @keyframes ddStarPop {
-    0% { transform: scale(0) rotate(-30deg); opacity: 0; }
-    100% { transform: scale(1) rotate(0deg); opacity: 1; }
-  }
-
-  .dd-levelup-title {
-    font-size: clamp(2rem, 7vw, 2.8rem);
-    font-weight: 900;
-    background: linear-gradient(135deg, #fbbf24, #f59e0b);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    margin-bottom: 1.5rem;
-  }
-
-  .dd-levelup-stats, .dd-gameover-stats {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    margin-bottom: 1.5rem;
-    flex-wrap: wrap;
-  }
-
-  .dd-stat {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .dd-stat-label {
-    font-size: 0.8rem;
-    color: #64748b;
-    margin-bottom: 0.2rem;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-  }
-
-  .dd-stat-value {
-    font-size: 1.8rem;
-    font-weight: 900;
-    color: white;
-  }
-
-  .dd-stat-big { font-size: 2.5rem; color: #fbbf24; }
-
-  .dd-levelup-info {
-    margin-bottom: 2rem;
-  }
-
-  .dd-levelup-info p {
-    color: #94a3b8;
-    font-size: 0.95rem;
-    background: rgba(255,255,255,0.05);
-    border-radius: 12px;
-    padding: 0.8rem 1.2rem;
-    display: inline-block;
-  }
+  .dd-btn-flash { font-size: 1.3rem; }
 
   .dd-menu-btn {
-    display: block;
-    margin: 1rem auto 0;
-    padding: 0.7rem 2rem;
-    font-family: 'Nunito', sans-serif;
-    font-size: 0.95rem;
-    font-weight: 700;
-    color: #94a3b8;
-    background: transparent;
-    border: 2px solid rgba(255,255,255,0.15);
-    border-radius: 30px;
-    cursor: pointer;
-    transition: all 0.2s ease;
+    display: block; margin: 1rem auto 0;
+    padding: 0.7rem 2rem; font-family: 'Nunito', sans-serif;
+    font-size: 0.95rem; font-weight: 700; color: #64748b;
+    background: transparent; border: 2px solid rgba(255,255,255,0.1);
+    border-radius: 30px; cursor: pointer; transition: all 0.2s ease;
   }
 
-  .dd-menu-btn:hover { border-color: rgba(255,255,255,0.3); color: white; }
+  .dd-menu-btn:hover { border-color: rgba(255,255,255,0.3); color: #94a3b8; }
 
-  /* ── Game over ── */
+  /* ===== GAME OVER ===== */
 
-  .dd-gameover-emoji {
-    font-size: 5rem;
-    margin-bottom: 1rem;
-    animation: ddBrainPulse 2s ease-in-out infinite;
+  .dd-go-icon { font-size: 5rem; margin-bottom: 0.5rem; animation: ddGoBrain 2s ease-in-out infinite; }
+
+  @keyframes ddGoBrain {
+    0%, 100% { transform: scale(1) rotate(0deg); }
+    25% { transform: scale(1.1) rotate(-5deg); }
+    75% { transform: scale(1.1) rotate(5deg); }
   }
 
-  .dd-gameover-title {
-    font-size: clamp(2rem, 7vw, 2.8rem);
-    font-weight: 900;
-    color: white;
-    margin-bottom: 0.5rem;
+  .dd-go-title {
+    font-size: clamp(1.8rem, 7vw, 2.5rem); font-weight: 900; color: white;
+    margin-bottom: 0.3rem; letter-spacing: 0.05em;
   }
 
-  .dd-gameover-sub {
-    color: #94a3b8;
-    font-size: 1rem;
-    margin-bottom: 2rem;
+  .dd-go-sub { color: #94a3b8; font-size: 1rem; margin-bottom: 1.5rem; }
+
+  .dd-go-stats {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem;
+    margin-bottom: 1.5rem;
   }
 
-  .dd-gameover-stats {
-    margin-bottom: 2rem;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
+  .dd-go-stat {
+    display: flex; flex-direction: column; align-items: center;
+    padding: 0.6rem; background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08); border-radius: 16px;
   }
 
-  /* ── Game screen ── */
+  .dd-go-stat-big { grid-column: 1 / -1; padding: 1rem; }
+
+  .dd-go-stat-label { font-size: 0.7rem; color: #64748b; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.2rem; }
+  .dd-go-stat-val { font-size: 1.6rem; font-weight: 900; color: white; }
+  .dd-go-score { font-size: 2.5rem; color: #fbbf24; text-shadow: 0 0 20px rgba(251,191,36,0.4); }
+  .dd-go-high { color: #a855f7; }
+
+  /* ===== MAIN GAME ===== */
 
   .dd-game {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    overflow: hidden;
+    height: 100%; display: flex; flex-direction: column;
+    position: relative; overflow: hidden;
+    background: linear-gradient(180deg, #050816 0%, #0a1628 30%, #0d1f3c 60%, #050816 100%);
   }
 
-  .dd-game-speed {
-    background: linear-gradient(160deg, #2d1b00 0%, #1a0a00 40%, #0f0600 100%);
+  /* ===== HUD ===== */
+
+  .dd-hud {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 0.6rem 0.8rem; background: rgba(0,0,0,0.5);
+    z-index: 50; position: relative;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
   }
 
-  .dd-speed-border {
-    position: absolute;
-    inset: 0;
-    border: 3px solid transparent;
-    border-image: linear-gradient(90deg, #f59e0b, #ef4444, #f59e0b) 1;
-    animation: ddSpeedBorder 1s linear infinite;
-    pointer-events: none;
-    z-index: 50;
-  }
-
-  @keyframes ddSpeedBorder {
-    0% { opacity: 0.4; }
-    50% { opacity: 1; }
-    100% { opacity: 0.4; }
-  }
-
-  /* ── Header ── */
-
-  .dd-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0.8rem 1rem;
-    background: rgba(0,0,0,0.4);
-    z-index: 50;
-    position: relative;
-  }
-
-  .dd-header-left, .dd-header-right { display: flex; align-items: center; gap: 0.8rem; }
-  .dd-header-center { display: flex; align-items: center; }
+  .dd-hud-left, .dd-hud-right { display: flex; align-items: center; gap: 0.6rem; }
+  .dd-hud-center { display: flex; align-items: center; }
 
   .dd-back-btn {
-    width: 40px;
-    height: 40px;
-    background: rgba(255,255,255,0.1);
-    border: none;
-    border-radius: 12px;
-    color: white;
-    font-size: 1.2rem;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    width: 36px; height: 36px;
+    background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 10px; color: white; font-size: 1.1rem;
+    cursor: pointer; transition: all 0.2s ease;
+    display: flex; align-items: center; justify-content: center;
   }
 
-  .dd-back-btn:hover { background: rgba(255,255,255,0.2); }
+  .dd-back-btn:hover { background: rgba(255,255,255,0.15); }
 
   .dd-level-badge {
-    padding: 0.5rem 1rem;
-    background: linear-gradient(135deg, #f59e0b, #ef4444);
-    border-radius: 20px;
-    font-weight: 700;
-    color: white;
-    display: flex;
-    align-items: center;
-    gap: 0.3rem;
+    padding: 0.35rem 0.8rem;
+    background: linear-gradient(135deg, rgba(99,102,241,0.3), rgba(168,85,247,0.3));
+    border: 1px solid rgba(139,92,246,0.3);
+    border-radius: 16px; font-weight: 800; color: #c4b5fd;
+    font-size: 0.85rem; display: flex; align-items: center; gap: 0.3rem;
   }
 
-  .dd-speed-indicator {
-    animation: ddBoltFlash 0.6s ease-in-out infinite;
-  }
+  .dd-boss-indicator { animation: ddBoltPulse 0.8s ease-in-out infinite; }
 
-  .dd-lives {
-    display: flex;
-    gap: 0.3rem;
-  }
+  .dd-lives-row { display: flex; gap: 0.2rem; }
 
-  .dd-life {
-    font-size: 1.4rem;
-    transition: all 0.3s ease;
-  }
+  .dd-heart { font-size: 1.3rem; transition: all 0.3s ease; }
+  .dd-heart-on { animation: ddHeartBeat 2s ease-in-out infinite; }
+  .dd-heart-off { opacity: 0.25; filter: grayscale(1); transform: scale(0.75); }
 
-  .dd-life-active { animation: ddLifePulse 2s ease-in-out infinite; }
-  .dd-life-lost { opacity: 0.3; filter: grayscale(1); transform: scale(0.8); }
-
-  @keyframes ddLifePulse {
+  @keyframes ddHeartBeat {
     0%, 100% { transform: scale(1); }
     50% { transform: scale(1.1); }
   }
 
-  .dd-score-badge {
-    display: flex;
-    align-items: center;
-    gap: 0.4rem;
-    padding: 0.5rem 1rem;
-    background: rgba(251,191,36,0.2);
-    border-radius: 20px;
-    color: #fbbf24;
-    font-weight: 700;
-    font-size: 1rem;
+  .dd-score-display {
+    display: flex; align-items: center; gap: 0.3rem;
+    padding: 0.35rem 0.8rem;
+    background: rgba(251,191,36,0.15); border: 1px solid rgba(251,191,36,0.2);
+    border-radius: 16px; font-weight: 800; color: #fbbf24; font-size: 0.95rem;
   }
 
-  .dd-score-icon { font-size: 1.1rem; }
+  .dd-score-star { font-size: 1rem; }
+  .dd-score-num { min-width: 2rem; text-align: right; }
 
-  /* ── Streak ── */
+  /* ===== STREAK BAR ===== */
 
-  .dd-streak {
-    position: absolute;
-    top: 65px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 60;
-    display: flex;
-    align-items: center;
-    gap: 0.3rem;
-    padding: 0.3rem 1rem;
-    background: rgba(245, 158, 11, 0.2);
-    border: 2px solid rgba(245, 158, 11, 0.4);
+  .dd-streak-bar {
+    position: absolute; top: 52px; left: 50%; transform: translateX(-50%);
+    z-index: 60; display: flex; align-items: center; gap: 0.4rem;
+    padding: 0.25rem 1rem;
+    background: rgba(0,0,0,0.6);
+    border: 2px solid var(--streak-color);
     border-radius: 20px;
+    box-shadow: 0 0 15px color-mix(in srgb, var(--streak-color) 40%, transparent);
     animation: ddStreakPulse 1s ease-in-out infinite;
-  }
-
-  .dd-streak-fire {
-    background: rgba(239, 68, 68, 0.2);
-    border-color: rgba(239, 68, 68, 0.6);
-    box-shadow: 0 0 20px rgba(239, 68, 68, 0.3);
-  }
-
-  .dd-streak-legendary {
-    background: linear-gradient(135deg, rgba(168, 85, 247, 0.3), rgba(236, 72, 153, 0.3));
-    border-color: rgba(168, 85, 247, 0.6);
-    box-shadow: 0 0 30px rgba(168, 85, 247, 0.4);
   }
 
   @keyframes ddStreakPulse {
     0%, 100% { transform: translateX(-50%) scale(1); }
-    50% { transform: translateX(-50%) scale(1.05); }
+    50% { transform: translateX(-50%) scale(1.04); }
   }
 
-  .dd-streak-bolt { font-size: 1.2rem; animation: ddBoltFlash 0.8s ease-in-out infinite; }
+  .dd-streak-bolt { animation: ddBoltPulse 0.6s ease-in-out infinite; font-size: 1rem; }
+  .dd-streak-num { font-weight: 900; color: var(--streak-color); font-size: 1rem; }
+  .dd-streak-label { font-size: 0.65rem; font-weight: 700; color: var(--streak-color); letter-spacing: 0.1em; text-transform: uppercase; }
 
-  .dd-streak-count {
-    font-size: 1.1rem;
-    font-weight: 900;
-    color: #fbbf24;
+  .dd-mult-badge {
+    padding: 0.1rem 0.5rem; background: rgba(251,191,36,0.2);
+    border: 1px solid rgba(251,191,36,0.3); border-radius: 10px;
+    font-size: 0.65rem; font-weight: 800; color: #fbbf24;
   }
 
-  .dd-streak-fire .dd-streak-count { color: #ef4444; }
-  .dd-streak-legendary .dd-streak-count { color: #c084fc; }
+  /* ===== STREAK ANNOUNCEMENT ===== */
 
-  .dd-streak-label {
-    font-size: 0.7rem;
-    font-weight: 700;
-    color: #f59e0b;
-    letter-spacing: 0.1em;
+  .dd-streak-announce {
+    position: absolute; top: 35%; left: 50%; transform: translate(-50%, -50%);
+    z-index: 300; font-size: clamp(1.8rem, 6vw, 3rem); font-weight: 900;
+    text-shadow: 0 0 30px currentColor, 0 0 60px currentColor, 0 4px 8px rgba(0,0,0,0.5);
+    animation: ddStreakAnnounce 2s ease-out forwards;
+    white-space: nowrap; letter-spacing: 0.08em;
   }
 
-  .dd-streak-glow {
-    position: absolute;
-    inset: -5px;
-    border-radius: 25px;
-    background: radial-gradient(circle, rgba(245, 158, 11, 0.2), transparent);
-    animation: ddStreakGlow 1s ease-in-out infinite;
-    pointer-events: none;
+  @keyframes ddStreakAnnounce {
+    0% { transform: translate(-50%, -50%) scale(0.3); opacity: 0; }
+    15% { transform: translate(-50%, -50%) scale(1.3); opacity: 1; }
+    30% { transform: translate(-50%, -50%) scale(1); }
+    80% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+    100% { transform: translate(-50%, -60%) scale(1.1); opacity: 0; }
   }
 
-  @keyframes ddStreakGlow {
-    0%, 100% { opacity: 0.5; transform: scale(1); }
-    50% { opacity: 1; transform: scale(1.15); }
+  /* ===== BOSS INTRO ===== */
+
+  .dd-boss-intro {
+    position: absolute; top: 30%; left: 50%; transform: translate(-50%, -50%);
+    z-index: 250; text-align: center;
+    animation: ddBossIntro 2s ease-out;
   }
 
-  /* ── Main area ── */
-
-  .dd-main {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 1.2rem;
-    padding: 1rem;
-    position: relative;
-    z-index: 10;
-  }
-
-  /* ── Timer ── */
-
-  .dd-timer {
-    position: relative;
-    width: 72px;
-    height: 72px;
-  }
-
-  .dd-timer-pulse {
-    animation: ddTimerPulse 0.5s ease-in-out infinite;
-  }
-
-  @keyframes ddTimerPulse {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.1); }
-  }
-
-  .dd-timer-icon {
-    position: absolute;
-    inset: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.5rem;
-  }
-
-  /* ── Card ── */
-
-  .dd-card-wrapper {
-    perspective: 800px;
-    width: min(300px, 80vw);
-    height: min(340px, 50vh);
-  }
-
-  .dd-shake {
-    animation: ddShake 0.5s ease-in-out;
-  }
-
-  @keyframes ddShake {
-    0%, 100% { transform: translateX(0); }
-    10%, 50%, 90% { transform: translateX(-8px); }
-    30%, 70% { transform: translateX(8px); }
-  }
-
-  .dd-card {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    transform-style: preserve-3d;
-    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-
-  .dd-card-flipped {
-    transform: rotateY(180deg);
-  }
-
-  .dd-card-face {
-    position: absolute;
-    inset: 0;
-    backface-visibility: hidden;
-    border-radius: 24px;
-    overflow: hidden;
-  }
-
-  .dd-card-front {
-    background: linear-gradient(145deg, rgba(255,255,255,0.12) 0%, rgba(255,255,255,0.04) 100%);
-    border: 3px solid rgba(255,255,255,0.15);
-    box-shadow:
-      0 20px 60px rgba(0,0,0,0.4),
-      inset 0 1px 0 rgba(255,255,255,0.1);
-    backdrop-filter: blur(10px);
-  }
-
-  .dd-card-back {
-    background: linear-gradient(145deg, #4ade80 0%, #22c55e 50%, #16a34a 100%);
-    border: 3px solid rgba(255,255,255,0.3);
-    box-shadow: 0 20px 60px rgba(74, 222, 128, 0.3);
-    transform: rotateY(180deg);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  /* ── Ten-frame grid ── */
-
-  .dd-tenframe-grid {
-    position: absolute;
-    inset: 15%;
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    gap: 4px;
-    pointer-events: none;
-  }
-
-  .dd-tenframe-cell {
-    border: 2px solid rgba(255,255,255,0.08);
-    border-radius: 6px;
-  }
-
-  /* ── Dots ── */
-
-  .dd-dot {
-    position: absolute;
-    width: 40px;
-    height: 40px;
-    transform: translate(-50%, -50%);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
-  }
-
-  .dd-dot-visible {
-    background: radial-gradient(circle at 35% 30%,
-      color-mix(in srgb, var(--dot-fill) 100%, white 30%) 0%,
-      var(--dot-fill) 50%,
-      var(--dot-shadow) 100%);
-    box-shadow:
-      0 4px 12px rgba(0,0,0,0.3),
-      0 0 20px color-mix(in srgb, var(--dot-fill) 60%, transparent),
-      inset 0 -3px 6px rgba(0,0,0,0.2),
-      inset 0 2px 4px rgba(255,255,255,0.3);
-    animation: ddDotPop 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55) both;
-    opacity: 1;
-    transform: translate(-50%, -50%) scale(1);
-  }
-
-  .dd-dot-hidden {
-    opacity: 0;
-    transform: translate(-50%, -50%) scale(0.3);
-    background: transparent;
-    box-shadow: none;
-  }
-
-  @keyframes ddDotPop {
+  @keyframes ddBossIntro {
     0% { transform: translate(-50%, -50%) scale(0); opacity: 0; }
-    60% { transform: translate(-50%, -50%) scale(1.2); opacity: 1; }
+    20% { transform: translate(-50%, -50%) scale(1.2); opacity: 1; }
+    40% { transform: translate(-50%, -50%) scale(1); }
     100% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
   }
 
-  .dd-dot-number {
-    font-size: 0.85rem;
-    font-weight: 900;
-    color: white;
-    text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+  .dd-boss-crown { font-size: 4rem; animation: ddBoltPulse 1s ease-in-out infinite; margin-bottom: 0.5rem; }
+
+  .dd-boss-title {
+    font-size: 2.2rem; font-weight: 900; color: #fbbf24;
+    text-shadow: 0 0 20px rgba(251,191,36,0.5); letter-spacing: 0.1em;
+    margin-bottom: 0.3rem;
   }
 
-  .dd-pattern-badge {
+  .dd-boss-sub { color: #94a3b8; font-size: 1rem; }
+
+  /* ===== PLAY AREA ===== */
+
+  .dd-play-area {
+    flex: 1; position: relative; overflow: hidden;
+    touch-action: none; z-index: 10;
+  }
+
+  /* ===== TARGET ZONE ===== */
+
+  .dd-target-zone {
+    position: absolute; top: 5%; left: 50%; transform: translateX(-50%);
+    width: 180px; height: 60px;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    z-index: 20;
+  }
+
+  .dd-tz-ring {
+    position: absolute; inset: -5px;
+    border: 2px dashed rgba(255,255,255,0.12);
+    border-radius: 20px;
+    animation: ddTzSpin 12s linear infinite;
+  }
+
+  .dd-tz-ring-2 {
+    inset: -12px;
+    border-color: rgba(255,255,255,0.06);
+    animation-direction: reverse;
+    animation-duration: 18s;
+  }
+
+  @keyframes ddTzSpin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+  .dd-tz-active .dd-tz-ring {
+    border-color: rgba(74,222,128,0.5);
+    box-shadow: 0 0 20px rgba(74,222,128,0.2);
+  }
+
+  .dd-tz-pulse .dd-tz-ring {
+    animation: ddTzPulseRing 0.5s ease-out;
+  }
+
+  @keyframes ddTzPulseRing {
+    0% { transform: scale(1); border-color: rgba(74,222,128,0.8); }
+    100% { transform: scale(1.5); border-color: transparent; }
+  }
+
+  .dd-tz-label {
+    font-size: 0.8rem; font-weight: 700; color: rgba(255,255,255,0.3);
+    letter-spacing: 0.15em; text-transform: uppercase;
+  }
+
+  .dd-tz-active .dd-tz-label { color: #4ade80; }
+
+  .dd-boss-progress {
+    display: flex; gap: 0.4rem; margin-top: 0.3rem;
+  }
+
+  .dd-boss-dot {
+    width: 10px; height: 10px; border-radius: 50%;
+    background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.2);
+    transition: all 0.3s ease;
+  }
+
+  .dd-boss-dot-done { background: #4ade80; border-color: #4ade80; box-shadow: 0 0 8px rgba(74,222,128,0.5); }
+  .dd-boss-dot-current { background: #fbbf24; border-color: #fbbf24; box-shadow: 0 0 8px rgba(251,191,36,0.5); animation: ddBossDotPulse 0.8s ease-in-out infinite; }
+
+  @keyframes ddBossDotPulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.3); }
+  }
+
+  /* ===== DOT DISPLAY ===== */
+
+  .dd-dot-area {
     position: absolute;
-    bottom: 8px;
-    right: 10px;
-    font-size: 1.2rem;
-    opacity: 0.4;
+    top: 15%; left: 10%; width: 80%; height: 50%;
+    z-index: 15;
   }
 
-  /* ── Sticker reveal ── */
-
-  .dd-sticker-reveal {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
+  .dd-dot {
+    position: absolute; width: 36px; height: 36px;
+    transform: translate(-50%, -50%);
+    display: flex; align-items: center; justify-content: center;
+    transition: opacity 0.25s ease, transform 0.25s ease;
   }
 
-  .dd-sticker-emoji {
-    font-size: 5rem;
-    animation: ddStickerBounce 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55) both;
+  .dd-dot-show { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+  .dd-dot-hide { opacity: 0; transform: translate(-50%, -50%) scale(0.2); }
+
+  .dd-dot-show .dd-dot-core {
+    animation: ddDotAppear 0.2s cubic-bezier(0.34, 1.56, 0.64, 1) both;
   }
 
-  @keyframes ddStickerBounce {
-    0% { transform: scale(0) rotate(-20deg); }
-    60% { transform: scale(1.3) rotate(5deg); }
-    100% { transform: scale(1) rotate(0deg); }
+  @keyframes ddDotAppear {
+    0% { transform: scale(0); }
+    100% { transform: scale(1); }
   }
 
-  .dd-sticker-name {
-    font-size: 1.2rem;
-    font-weight: 800;
-    color: white;
-    margin-top: 0.5rem;
-    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  .dd-dot-glow {
+    position: absolute; inset: -12px; border-radius: 50%;
+    background: radial-gradient(circle,
+      hsla(var(--dot-hue), 90%, 65%, 0.5) 0%,
+      hsla(var(--dot-hue), 80%, 50%, 0.15) 50%,
+      transparent 70%);
+    animation: ddDotGlow 1.5s ease-in-out infinite;
   }
 
-  .dd-sticker-sparkles {
-    position: absolute;
-    inset: -30px;
+  @keyframes ddDotGlow {
+    0%, 100% { transform: scale(1); opacity: 0.7; }
+    50% { transform: scale(1.15); opacity: 1; }
   }
 
-  .dd-sticker-spark {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 6px;
-    height: 6px;
-    background: white;
-    border-radius: 50%;
-    animation: ddSparkFly 0.8s cubic-bezier(0.4, 0, 0.2, 1) both;
-    animation-delay: var(--spark-delay);
-    box-shadow: 0 0 8px rgba(255,255,255,0.8);
+  .dd-dot-core {
+    width: 100%; height: 100%; border-radius: 50%;
+    background: radial-gradient(circle at 35% 30%,
+      hsla(var(--dot-hue), 90%, 85%, 1) 0%,
+      hsla(var(--dot-hue), 85%, 60%, 1) 40%,
+      hsla(var(--dot-hue), 80%, 45%, 1) 100%);
+    box-shadow:
+      0 0 15px hsla(var(--dot-hue), 90%, 60%, 0.6),
+      0 0 30px hsla(var(--dot-hue), 80%, 50%, 0.3),
+      inset 0 -4px 8px hsla(var(--dot-hue), 90%, 30%, 0.3),
+      inset 0 2px 4px rgba(255,255,255,0.4);
   }
 
-  @keyframes ddSparkFly {
-    0% { transform: translate(-50%, -50%) rotate(var(--spark-angle)) translateY(0) scale(0); opacity: 0; }
-    50% { opacity: 1; transform: translate(-50%, -50%) rotate(var(--spark-angle)) translateY(-50px) scale(1); }
-    100% { opacity: 0; transform: translate(-50%, -50%) rotate(var(--spark-angle)) translateY(-70px) scale(0); }
+  .dd-dot-reveal .dd-dot-core {
+    animation: ddDotReveal 0.3s ease both;
   }
 
-  /* ── Phase label ── */
-
-  .dd-phase-label {
-    font-size: 1.2rem;
-    font-weight: 700;
-    min-height: 2rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .dd-phase-look {
-    color: #fbbf24;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    animation: ddLookPulse 0.8s ease-in-out infinite;
-  }
-
-  @keyframes ddLookPulse {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.6; }
-  }
-
-  .dd-eye-icon { font-size: 1.5rem; }
-
-  .dd-phase-answer {
-    color: #94a3b8;
-    animation: ddFadeIn 0.3s ease;
-  }
-
-  .dd-phase-correct {
-    color: #4ade80;
-    font-size: 1.4rem;
-    animation: ddCorrectPop 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55) both;
-  }
-
-  @keyframes ddCorrectPop {
-    0% { transform: scale(0.5); opacity: 0; }
-    60% { transform: scale(1.2); }
+  @keyframes ddDotReveal {
+    0% { transform: scale(0.5); opacity: 0.3; }
+    50% { transform: scale(1.2); }
     100% { transform: scale(1); opacity: 1; }
   }
 
-  .dd-phase-wrong {
+  .dd-dot-count {
+    position: absolute; font-size: 0.75rem; font-weight: 900;
+    color: white; text-shadow: 0 1px 3px rgba(0,0,0,0.8);
+    z-index: 5;
+  }
+
+  /* ===== TIMER ===== */
+
+  .dd-timer-wrap {
+    position: absolute; top: 8%; right: 8%;
+    width: 52px; height: 52px; z-index: 30;
+  }
+
+  .dd-timer-svg { width: 100%; height: 100%; }
+
+  .dd-timer-icon {
+    position: absolute; inset: 0;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.2rem;
+  }
+
+  /* ===== PHASE TEXT ===== */
+
+  .dd-phase-text {
+    position: absolute; bottom: 8%; left: 50%; transform: translateX(-50%);
+    z-index: 30; text-align: center;
+    font-size: 1.1rem; font-weight: 700;
+  }
+
+  .dd-pt-flash {
+    color: #fbbf24; animation: ddFlashText 0.6s ease-in-out infinite;
+    font-size: 1.3rem;
+  }
+
+  @keyframes ddFlashText {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.6; transform: scale(1.05); }
+  }
+
+  .dd-pt-fade { color: #94a3b8; animation: ddFadeIn 0.3s ease; }
+
+  .dd-pt-answer {
+    color: #c4b5fd;
+    animation: ddAnswerBounce 1.5s ease-in-out infinite;
+  }
+
+  @keyframes ddAnswerBounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+  }
+
+  .dd-pt-correct {
+    color: #4ade80; font-size: 1.4rem;
+    animation: ddCorrectPop 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+    text-shadow: 0 0 15px rgba(74,222,128,0.5);
+  }
+
+  @keyframes ddCorrectPop {
+    0% { transform: scale(0.3); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+  }
+
+  .dd-pt-wrong {
     color: #ef4444;
     animation: ddFadeIn 0.3s ease;
   }
 
   @keyframes ddFadeIn {
-    0% { opacity: 0; transform: translateY(10px); }
+    0% { opacity: 0; transform: translateY(8px); }
     100% { opacity: 1; transform: translateY(0); }
   }
 
-  /* ── Options ── */
+  /* ===== POWER-UPS ===== */
 
-  .dd-options {
-    display: flex;
-    gap: 0.8rem;
-    justify-content: center;
-    flex-wrap: wrap;
-    animation: ddFadeIn 0.4s ease both;
+  .dd-powerup {
+    position: absolute; width: 44px; height: 44px;
+    transform: translate(-50%, -50%); z-index: 25; cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    animation: ddPuFloat 2s ease-in-out infinite;
   }
 
-  .dd-option {
-    width: 72px;
-    height: 72px;
-    border-radius: 20px;
-    background: rgba(255,255,255,0.08);
-    border: 3px solid rgba(255,255,255,0.2);
-    color: white;
-    font-family: 'Nunito', sans-serif;
-    font-size: 1.8rem;
-    font-weight: 900;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    backdrop-filter: blur(4px);
+  @keyframes ddPuFloat {
+    0%, 100% { transform: translate(-50%, -50%) translateY(0); }
+    50% { transform: translate(-50%, -50%) translateY(-8px); }
   }
 
-  .dd-option:hover:not(:disabled) {
-    background: rgba(255,255,255,0.15);
-    border-color: rgba(255,255,255,0.4);
-    transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+  .dd-pu-glow {
+    position: absolute; inset: -10px; border-radius: 50%;
+    background: radial-gradient(circle, color-mix(in srgb, var(--pu-color) 30%, transparent) 0%, transparent 70%);
+    animation: ddPuGlowPulse 1.5s ease-in-out infinite;
   }
 
-  .dd-option:active:not(:disabled) {
-    transform: translateY(0);
+  @keyframes ddPuGlowPulse {
+    0%, 100% { transform: scale(1); opacity: 0.5; }
+    50% { transform: scale(1.3); opacity: 1; }
   }
 
-  .dd-option-correct {
-    background: rgba(74, 222, 128, 0.3) !important;
-    border-color: #4ade80 !important;
-    color: #4ade80 !important;
-    box-shadow: 0 0 20px rgba(74, 222, 128, 0.4) !important;
-    animation: ddOptionCorrect 0.5s ease;
+  .dd-pu-icon {
+    font-size: 1.6rem; z-index: 2;
+    filter: drop-shadow(0 0 6px var(--pu-color));
   }
 
-  @keyframes ddOptionCorrect {
+  .dd-active-pus {
+    position: absolute; top: 8%; left: 8%; z-index: 30;
+    display: flex; flex-direction: column; gap: 0.3rem;
+  }
+
+  .dd-apu {
+    width: 32px; height: 32px; border-radius: 10px;
+    border: 2px solid; display: flex; align-items: center; justify-content: center;
+    font-size: 0.85rem; font-weight: 800; color: white;
+    animation: ddApuPulse 2s ease-in-out infinite;
+  }
+
+  @keyframes ddApuPulse {
+    0%, 100% { opacity: 0.8; }
+    50% { opacity: 1; }
+  }
+
+  /* ===== DRAG GHOST ===== */
+
+  .dd-drag-ghost {
+    position: absolute; width: 76px; height: 76px;
+    border-radius: 50%; transform: translate(-50%, -50%);
+    display: flex; align-items: center; justify-content: center;
+    z-index: 500; pointer-events: none;
+    animation: ddDragPulse 0.5s ease-in-out infinite;
+    transition: none;
+  }
+
+  @keyframes ddDragPulse {
+    0%, 100% { transform: translate(-50%, -50%) scale(1); }
+    50% { transform: translate(-50%, -50%) scale(1.06); }
+  }
+
+  .dd-drag-num {
+    font-size: 2rem; font-weight: 900; color: white;
+    text-shadow: 0 2px 6px rgba(0,0,0,0.5); z-index: 2;
+  }
+
+  .dd-drag-trail {
+    position: absolute; width: 3px; transform: translateX(-50%);
+    background: linear-gradient(180deg, rgba(255,255,255,0.3), transparent);
+    pointer-events: none; z-index: 400; border-radius: 2px;
+  }
+
+  /* ===== NUMBER ORBS ROW ===== */
+
+  .dd-orbs-row {
+    display: flex; justify-content: center; gap: 0.6rem;
+    padding: 0.8rem 1rem; flex-wrap: wrap;
+    background: rgba(0,0,0,0.6);
+    border-top: 1px solid rgba(255,255,255,0.05);
+    z-index: 50; position: relative;
+    transition: all 0.3s ease;
+  }
+
+  .dd-orbs-show { opacity: 1; transform: translateY(0); }
+  .dd-orbs-hide { opacity: 0; transform: translateY(20px); pointer-events: none; }
+
+  .dd-orb {
+    width: 64px; height: 64px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    cursor: grab; position: relative; touch-action: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .dd-orb:hover {
+    transform: translateY(-4px) scale(1.08);
+  }
+
+  .dd-orb:active { cursor: grabbing; transform: scale(0.95); }
+
+  .dd-orb-shine {
+    position: absolute; top: 12%; left: 22%; width: 35%; height: 25%;
+    background: radial-gradient(ellipse, rgba(255,255,255,0.5) 0%, transparent 70%);
+    border-radius: 50%; pointer-events: none;
+  }
+
+  .dd-orb-inner-glow {
+    position: absolute; inset: 3px; border-radius: 50%;
+    background: radial-gradient(circle at 40% 35%, rgba(255,255,255,0.15) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  .dd-orb-num {
+    font-size: 1.7rem; font-weight: 900; color: white;
+    text-shadow: 0 2px 6px rgba(0,0,0,0.4); z-index: 2;
+    pointer-events: none;
+  }
+
+  .dd-orb-selected { transform: scale(0.9); opacity: 0.6; pointer-events: none; }
+
+  .dd-orb-correct {
+    transform: scale(1.15) !important; opacity: 1 !important;
+    box-shadow: 0 0 30px rgba(74,222,128,0.7), 0 0 60px rgba(74,222,128,0.3) !important;
+    animation: ddOrbCorrect 0.5s ease;
+  }
+
+  @keyframes ddOrbCorrect {
     0% { transform: scale(1); }
-    30% { transform: scale(1.15); }
-    100% { transform: scale(1); }
+    40% { transform: scale(1.25); }
+    100% { transform: scale(1.15); }
   }
 
-  .dd-option-wrong {
-    background: rgba(239, 68, 68, 0.3) !important;
-    border-color: #ef4444 !important;
-    color: #ef4444 !important;
-    box-shadow: 0 0 20px rgba(239, 68, 68, 0.4) !important;
-    animation: ddShake 0.4s ease;
+  .dd-orb-ring-correct {
+    position: absolute; inset: -6px; border: 3px solid #4ade80; border-radius: 50%;
+    animation: ddOrbRingPulse 0.8s ease-in-out infinite;
   }
 
-  .dd-option-dim {
-    opacity: 0.3;
+  @keyframes ddOrbRingPulse {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.15); opacity: 0.5; }
   }
 
-  /* ── Bottom bar ── */
-
-  .dd-bottom-bar {
-    padding: 0.8rem;
-    background: rgba(0,0,0,0.4);
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    z-index: 50;
-    position: relative;
+  .dd-orb-wrong {
+    box-shadow: 0 0 25px rgba(239,68,68,0.6), 0 0 50px rgba(239,68,68,0.2) !important;
+    animation: ddOrbWrong 0.4s ease;
   }
 
-  .dd-round-counter {
-    font-size: 0.85rem;
-    color: #64748b;
-    font-weight: 600;
+  @keyframes ddOrbWrong {
+    0%, 100% { transform: translateX(0); }
+    20% { transform: translateX(-6px); }
+    40% { transform: translateX(6px); }
+    60% { transform: translateX(-4px); }
+    80% { transform: translateX(4px); }
   }
 
-  .dd-speed-counter {
-    font-size: 0.85rem;
-    color: #f59e0b;
-    font-weight: 700;
+  .dd-orb-ring-wrong {
+    position: absolute; inset: -6px; border: 3px solid #ef4444; border-radius: 50%;
   }
 
-  /* ── Responsive ── */
+  .dd-orb-dim { opacity: 0.2; transform: scale(0.85); pointer-events: none; }
+
+  /* ===== BOTTOM BAR ===== */
+
+  .dd-bottom {
+    padding: 0.5rem 1rem;
+    background: rgba(0,0,0,0.5);
+    display: flex; justify-content: center; align-items: center; gap: 1.5rem;
+    z-index: 50; position: relative;
+    border-top: 1px solid rgba(255,255,255,0.03);
+  }
+
+  .dd-round-info { font-size: 0.8rem; color: #475569; font-weight: 600; }
+  .dd-boss-tag { font-size: 0.8rem; color: #fbbf24; font-weight: 700; }
+  .dd-hint { font-size: 0.75rem; color: #334155; font-weight: 600; }
+
+  /* ===== RESPONSIVE ===== */
 
   @media (max-width: 600px) {
-    .dd-card-wrapper {
-      width: min(260px, 75vw);
-      height: min(290px, 42vh);
-    }
-
-    .dd-dot {
-      width: 32px;
-      height: 32px;
-    }
-
-    .dd-option {
-      width: 60px;
-      height: 60px;
-      font-size: 1.5rem;
-      border-radius: 16px;
-    }
-
-    .dd-timer {
-      width: 56px;
-      height: 56px;
-    }
-
-    .dd-timer svg {
-      width: 56px;
-      height: 56px;
-    }
-
-    .dd-timer-icon { font-size: 1.2rem; }
-
-    .dd-phase-label { font-size: 1rem; }
-
-    .dd-header-center { display: none; }
-
-    .dd-streak {
-      top: auto;
-      bottom: 55px;
-      padding: 0.2rem 0.7rem;
-    }
-
-    .dd-streak-count { font-size: 0.9rem; }
-    .dd-streak-label { font-size: 0.6rem; }
+    .dd-orb { width: 54px; height: 54px; }
+    .dd-orb-num { font-size: 1.4rem; }
+    .dd-orbs-row { gap: 0.4rem; padding: 0.6rem; }
+    .dd-drag-ghost { width: 64px; height: 64px; }
+    .dd-drag-num { font-size: 1.6rem; }
+    .dd-dot { width: 30px; height: 30px; }
+    .dd-dot-glow { inset: -8px; }
+    .dd-hud-center { display: none; }
+    .dd-streak-bar { top: 48px; padding: 0.2rem 0.7rem; }
+    .dd-streak-num { font-size: 0.85rem; }
+    .dd-streak-label { font-size: 0.55rem; }
+    .dd-timer-wrap { width: 42px; height: 42px; }
+    .dd-timer-icon { font-size: 1rem; }
+    .dd-phase-text { font-size: 0.95rem; }
+    .dd-target-zone { width: 140px; height: 48px; }
+    .dd-tz-label { font-size: 0.7rem; }
   }
 
   @media (max-width: 400px) {
-    .dd-card-wrapper {
-      width: min(220px, 70vw);
-      height: min(250px, 38vh);
-    }
-
-    .dd-dot {
-      width: 26px;
-      height: 26px;
-    }
-
-    .dd-option {
-      width: 52px;
-      height: 52px;
-      font-size: 1.3rem;
-    }
+    .dd-orb { width: 46px; height: 46px; }
+    .dd-orb-num { font-size: 1.2rem; }
+    .dd-dot { width: 24px; height: 24px; }
+    .dd-dot-glow { inset: -6px; }
+    .dd-drag-ghost { width: 54px; height: 54px; }
+    .dd-drag-num { font-size: 1.3rem; }
   }
 
   @media (min-height: 800px) {
-    .dd-main { gap: 1.5rem; }
+    .dd-dot-area { height: 55%; }
+    .dd-dot { width: 40px; height: 40px; }
+    .dd-dot-glow { inset: -14px; }
   }
 `;

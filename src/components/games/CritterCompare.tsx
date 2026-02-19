@@ -1,46 +1,57 @@
 "use client";
 
-import { useState, useEffect, useCallback, useRef } from "react";
+import { useState, useEffect, useCallback, useRef } from 'react';
+import type React from 'react';
 
 // ============================================================
-// CRITTER COMPARE  --  Number Comparison Game
-// Foundation Mathematics
-// Curriculum: "Compare the size of collections to at least 20"
-//             "Use subitising and counting strategies to
-//              quantify collections"
+// CRITTER COMPARE  --  Drag-the-Symbol Comparison Game
+// Foundation / Year 1 Mathematics
+// "Compare groups: more than, fewer than, equal to"
 // ============================================================
 
 interface CritterCompareProps {
   onExit?: () => void;
 }
 
-type GameScreen = "intro" | "playing" | "levelComplete" | "gameOver";
-type CompareMode = "more" | "fewer" | "equal";
+type GameScreen = 'intro' | 'playing' | 'complete';
+type ComparisonSymbol = '>' | '<' | '=';
 
-interface CritterPos {
+interface AnimalEntry {
+  emoji: string;
+  name: string;
+}
+
+const AUSSIE_ANIMALS: AnimalEntry[] = [
+  { emoji: '🦘', name: 'Kangaroo' },
+  { emoji: '🐨', name: 'Koala' },
+  { emoji: '🦙', name: 'Llama' },
+  { emoji: '🦎', name: 'Lizard' },
+  { emoji: '🐊', name: 'Croc' },
+];
+
+interface AnimalInPaddock {
+  id: number;
+  emoji: string;
   x: number;
   y: number;
-  delay: number;
-  size: number;
-  wobble: number;
+  enterDelay: number;
+  entered: boolean;
+  bouncePhase: number;
+  bounceSpeed: number;
   flip: boolean;
 }
 
-interface CritterGroup {
-  emoji: string;
-  name: string;
-  count: number;
-  positions: CritterPos[];
+interface DragState {
+  symbol: ComparisonSymbol;
+  startX: number;
+  startY: number;
+  currentX: number;
+  currentY: number;
+  offsetX: number;
+  offsetY: number;
 }
 
-interface CompareChallenge {
-  left: CritterGroup;
-  right: CritterGroup;
-  mode: CompareMode;
-  correctAnswer: "left" | "right" | "equal";
-}
-
-interface DustParticle {
+interface Particle {
   id: number;
   x: number;
   y: number;
@@ -48,805 +59,528 @@ interface DustParticle {
   vy: number;
   size: number;
   opacity: number;
+  hue: number;
   life: number;
   maxLife: number;
 }
 
-interface StarBurst {
+interface LeafParticle {
   id: number;
   x: number;
   y: number;
-  angle: number;
-  speed: number;
+  vx: number;
+  vy: number;
+  rotation: number;
+  rotSpeed: number;
   size: number;
   opacity: number;
   hue: number;
 }
 
-// Australian animals with animation hints
-const AUSSIE_CRITTERS = [
-  { emoji: "\uD83E\uDD98", name: "Kangaroo", anim: "hop" },
-  { emoji: "\uD83D\uDC28", name: "Koala", anim: "sway" },
-  { emoji: "\uD83E\uDD86", name: "Duck", anim: "waddle" },
-  { emoji: "\uD83D\uDC0A", name: "Croc", anim: "snap" },
-  { emoji: "\uD83E\uDD9C", name: "Parrot", anim: "flap" },
-  { emoji: "\uD83D\uDC22", name: "Turtle", anim: "crawl" },
-  { emoji: "\uD83D\uDC1B", name: "Bug", anim: "wiggle" },
-  { emoji: "\uD83E\uDD8B", name: "Butterfly", anim: "flutter" },
-  { emoji: "\uD83D\uDC0C", name: "Snail", anim: "crawl" },
-  { emoji: "\uD83D\uDC1D", name: "Bee", anim: "buzz" },
-];
+interface DustPuff {
+  id: number;
+  x: number;
+  y: number;
+  size: number;
+  opacity: number;
+  born: number;
+}
 
-const MODE_PROMPTS: Record<CompareMode, string> = {
-  more: "Which group has MORE?",
-  fewer: "Which group has FEWER?",
-  equal: "Are the groups EQUAL?",
-};
+interface RoundData {
+  leftCount: number;
+  rightCount: number;
+  leftAnimal: AnimalEntry;
+  rightAnimal: AnimalEntry;
+  correctSymbol: ComparisonSymbol;
+  leftAnimals: AnimalInPaddock[];
+  rightAnimals: AnimalInPaddock[];
+}
 
-const MODE_EMOJIS: Record<CompareMode, string> = {
-  more: "\u2B06\uFE0F",
-  fewer: "\u2B07\uFE0F",
-  equal: "\u2696\uFE0F",
-};
+interface GameStats {
+  correct: number;
+  wrong: number;
+  totalRounds: number;
+  bestStreak: number;
+}
 
-let dustIdCounter = 0;
+let idCounter = 0;
+const nextId = (): number => ++idCounter;
+
+const TOTAL_ROUNDS = 12;
+
+function generateAnimalPositions(count: number, paddockW: number, paddockH: number, emoji: string): AnimalInPaddock[] {
+  const animals: AnimalInPaddock[] = [];
+  const margin = 20;
+  const cellSize = 70;
+  const cols = Math.max(1, Math.floor((paddockW - margin * 2) / cellSize));
+
+  for (let i = 0; i < count; i++) {
+    const col = i % cols;
+    const row = Math.floor(i / cols);
+    const baseX = margin + col * cellSize + cellSize / 2;
+    const baseY = margin + 15 + row * cellSize + cellSize / 2;
+    animals.push({
+      id: nextId(),
+      emoji,
+      x: baseX + (Math.random() - 0.5) * 20,
+      y: Math.min(baseY + (Math.random() - 0.5) * 15, paddockH - 30),
+      enterDelay: i * 180 + Math.random() * 100,
+      entered: false,
+      bouncePhase: Math.random() * Math.PI * 2,
+      bounceSpeed: 0.8 + Math.random() * 0.6,
+      flip: Math.random() > 0.5,
+    });
+  }
+  return animals;
+}
+
+function generateRound(roundNum: number): RoundData {
+  const difficulty = Math.min(Math.floor(roundNum / 4), 2);
+  let maxCount: number;
+  let equalChance: number;
+
+  if (difficulty === 0) {
+    maxCount = 5;
+    equalChance = 0.2;
+  } else if (difficulty === 1) {
+    maxCount = 7;
+    equalChance = 0.25;
+  } else {
+    maxCount = 10;
+    equalChance = 0.3;
+  }
+
+  const isEqual = Math.random() < equalChance;
+  let leftCount: number;
+  let rightCount: number;
+
+  if (isEqual) {
+    leftCount = 1 + Math.floor(Math.random() * maxCount);
+    rightCount = leftCount;
+  } else {
+    leftCount = 1 + Math.floor(Math.random() * maxCount);
+    do {
+      rightCount = 1 + Math.floor(Math.random() * maxCount);
+    } while (rightCount === leftCount);
+  }
+
+  const correctSymbol: ComparisonSymbol = leftCount > rightCount ? '>' : leftCount < rightCount ? '<' : '=';
+
+  // Pick two different animals
+  const shuffled = [...AUSSIE_ANIMALS].sort(() => Math.random() - 0.5);
+  const leftAnimal = shuffled[0];
+  const rightAnimal = shuffled[1];
+
+  const paddockW = 260;
+  const paddockH = 280;
+
+  return {
+    leftCount,
+    rightCount,
+    leftAnimal,
+    rightAnimal,
+    correctSymbol,
+    leftAnimals: generateAnimalPositions(leftCount, paddockW, paddockH, leftAnimal.emoji),
+    rightAnimals: generateAnimalPositions(rightCount, paddockW, paddockH, rightAnimal.emoji),
+  };
+}
 
 export default function CritterCompare({ onExit }: CritterCompareProps) {
-  const [screen, setScreen] = useState<GameScreen>("intro");
-  const [level, setLevel] = useState(1);
+  const [gameScreen, setGameScreen] = useState<GameScreen>('intro');
+  const [round, setRound] = useState<RoundData | null>(null);
+  const [roundNum, setRoundNum] = useState(0);
   const [score, setScore] = useState(0);
-  const [lives, setLives] = useState(3);
-  const [challenge, setChallenge] = useState<CompareChallenge | null>(null);
-  const [comparesCompleted, setComparesCompleted] = useState(0);
-  const [comparesNeeded, setComparesNeeded] = useState(6);
-  const [showResult, setShowResult] = useState<"correct" | "wrong" | null>(null);
   const [streak, setStreak] = useState(0);
-  const [bestStreak, setBestStreak] = useState(0);
-  const [showCounts, setShowCounts] = useState(false);
-  const [shakeScreen, setShakeScreen] = useState(false);
-  const [timer, setTimer] = useState(0);
-  const [timerMax, setTimerMax] = useState(0);
-  const [selectedGroup, setSelectedGroup] = useState<"left" | "right" | null>(null);
-  const [symbolAnim, setSymbolAnim] = useState(false);
-  const [celebrationParticles, setCelebrationParticles] = useState<DustParticle[]>([]);
-  const [starBursts, setStarBursts] = useState<StarBurst[]>([]);
-  const [countAnim, setCountAnim] = useState({ left: 0, right: 0 });
-  const [introAnimPhase, setIntroAnimPhase] = useState(0);
+  const [stats, setStats] = useState<GameStats>({ correct: 0, wrong: 0, totalRounds: 0, bestStreak: 0 });
+  const [dragState, setDragState] = useState<DragState | null>(null);
+  const [feedback, setFeedback] = useState<'correct' | 'wrong' | null>(null);
+  const [equationDisplay, setEquationDisplay] = useState<string | null>(null);
+  const [shakeSymbol, setShakeSymbol] = useState<ComparisonSymbol | null>(null);
+  const [celebrationParticles, setCelebrationParticles] = useState<Particle[]>([]);
+  const [dustPuffs, setDustPuffs] = useState<DustPuff[]>([]);
+  const [leaves, setLeaves] = useState<LeafParticle[]>([]);
+  const [animalsEntered, setAnimalsEntered] = useState(false);
+  const [paddockGlow, setPaddockGlow] = useState<'none' | 'correct' | 'wrong'>('none');
+  const [joyJump, setJoyJump] = useState(false);
+  const [introPhase, setIntroPhase] = useState(0);
 
-  const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
-  const canvasRef = useRef<HTMLCanvasElement | null>(null);
-  const animFrameRef = useRef<number | null>(null);
-  const dustParticlesRef = useRef<DustParticle[]>([]);
-  const cloudOffsetRef = useRef(0);
-  const grassTimeRef = useRef(0);
-  const containerRef = useRef<HTMLDivElement | null>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const animRef = useRef<number | null>(null);
+  const timeRef = useRef(0);
+  const symbolRefs = useRef<Record<string, HTMLDivElement | null>>({ '<': null, '=': null, '>': null });
+  const dropZoneRef = useRef<HTMLDivElement>(null);
+  const roundStartTimeRef = useRef(0);
 
-  // Ambient animation loop for outback atmosphere
+  // Floating leaves ambient effect
   useEffect(() => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-    const ctx = canvas.getContext("2d");
-    if (!ctx) return;
-
-    const resize = () => {
-      const parent = canvas.parentElement;
-      if (parent) {
-        canvas.width = parent.clientWidth;
-        canvas.height = parent.clientHeight;
-      }
-    };
-    resize();
-    window.addEventListener("resize", resize);
-
-    // Seed ambient dust
-    if (dustParticlesRef.current.length === 0) {
-      for (let i = 0; i < 40; i++) {
-        dustParticlesRef.current.push({
-          id: ++dustIdCounter,
-          x: Math.random() * canvas.width,
-          y: Math.random() * canvas.height,
-          vx: (Math.random() - 0.3) * 0.4,
-          vy: -Math.random() * 0.2 - 0.05,
-          size: 1 + Math.random() * 2.5,
-          opacity: 0.1 + Math.random() * 0.3,
-          life: Math.random() * 500,
-          maxLife: 400 + Math.random() * 400,
-        });
-      }
-    }
-
-    const draw = () => {
-      const W = canvas.width;
-      const H = canvas.height;
-      ctx.clearRect(0, 0, W, H);
-
-      // Day/night tint overlay based on level
-      const nightFactor = Math.min((level - 1) / 10, 0.5);
-      if (nightFactor > 0) {
-        ctx.fillStyle = `rgba(20, 10, 40, ${nightFactor * 0.3})`;
-        ctx.fillRect(0, 0, W, H);
-      }
-
-      // Distant hills
-      drawHills(ctx, W, H);
-
-      // Heat shimmer at horizon
-      drawHeatShimmer(ctx, W, H);
-
-      // Eucalyptus silhouettes
-      drawTrees(ctx, W, H);
-
-      // Ground with grass tufts
-      drawGround(ctx, W, H);
-
-      // Floating dust particles
-      drawDustParticles(ctx, W, H);
-
-      // Animated clouds
-      drawClouds(ctx, W, H);
-
-      cloudOffsetRef.current += 0.15;
-      grassTimeRef.current += 0.02;
-
-      animFrameRef.current = requestAnimationFrame(draw);
-    };
-
-    animFrameRef.current = requestAnimationFrame(draw);
-
-    return () => {
-      window.removeEventListener("resize", resize);
-      if (animFrameRef.current) cancelAnimationFrame(animFrameRef.current);
-    };
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [level]);
-
-  const drawHills = (ctx: CanvasRenderingContext2D, W: number, H: number) => {
-    // Far hills
-    ctx.beginPath();
-    ctx.moveTo(0, H * 0.55);
-    for (let x = 0; x <= W; x += 2) {
-      const y = H * 0.55 + Math.sin(x * 0.004) * 25 + Math.sin(x * 0.008 + 1) * 15;
-      ctx.lineTo(x, y);
-    }
-    ctx.lineTo(W, H);
-    ctx.lineTo(0, H);
-    ctx.closePath();
-    ctx.fillStyle = "rgba(120, 60, 30, 0.25)";
-    ctx.fill();
-
-    // Uluru-like rock formation
-    ctx.beginPath();
-    const rockX = W * 0.7;
-    const rockW = W * 0.12;
-    const rockH = H * 0.08;
-    const rockY = H * 0.52;
-    ctx.moveTo(rockX - rockW, rockY + rockH);
-    ctx.quadraticCurveTo(rockX - rockW * 0.8, rockY - rockH * 0.3, rockX - rockW * 0.3, rockY - rockH);
-    ctx.quadraticCurveTo(rockX, rockY - rockH * 1.2, rockX + rockW * 0.3, rockY - rockH);
-    ctx.quadraticCurveTo(rockX + rockW * 0.8, rockY - rockH * 0.3, rockX + rockW, rockY + rockH);
-    ctx.closePath();
-    ctx.fillStyle = "rgba(180, 80, 30, 0.3)";
-    ctx.fill();
-
-    // Near hills
-    ctx.beginPath();
-    ctx.moveTo(0, H * 0.65);
-    for (let x = 0; x <= W; x += 2) {
-      const y = H * 0.65 + Math.sin(x * 0.006 + 2) * 20 + Math.sin(x * 0.012 + 3) * 10;
-      ctx.lineTo(x, y);
-    }
-    ctx.lineTo(W, H);
-    ctx.lineTo(0, H);
-    ctx.closePath();
-    ctx.fillStyle = "rgba(100, 50, 20, 0.3)";
-    ctx.fill();
-  };
-
-  const drawHeatShimmer = (ctx: CanvasRenderingContext2D, W: number, H: number) => {
-    const shimmerY = H * 0.56;
-    const time = Date.now() * 0.001;
-    ctx.save();
-    ctx.globalAlpha = 0.06;
-    for (let x = 0; x < W; x += 3) {
-      const offset = Math.sin(x * 0.02 + time * 2) * 3 + Math.sin(x * 0.01 + time * 1.5) * 2;
-      ctx.fillStyle = "rgba(255, 200, 100, 0.8)";
-      ctx.fillRect(x, shimmerY + offset, 3, 2);
-    }
-    ctx.restore();
-  };
-
-  const drawTrees = (ctx: CanvasRenderingContext2D, W: number, H: number) => {
-    const time = grassTimeRef.current;
-    const treePositions = [
-      { x: W * 0.03, y: H * 0.62, scale: 0.8 },
-      { x: W * 0.93, y: H * 0.6, scale: 0.9 },
-      { x: W * 0.08, y: H * 0.68, scale: 0.6 },
-      { x: W * 0.95, y: H * 0.66, scale: 0.7 },
-    ];
-
-    treePositions.forEach(({ x, y, scale }) => {
-      ctx.save();
-      ctx.translate(x, y);
-      ctx.scale(scale, scale);
-
-      // Trunk
-      ctx.fillStyle = "rgba(60, 30, 15, 0.6)";
-      ctx.fillRect(-3, -60, 6, 70);
-
-      // Branches with sway
-      const sway = Math.sin(time + x * 0.01) * 3;
-      ctx.fillStyle = "rgba(40, 70, 30, 0.5)";
-
-      // Left branch cluster
-      ctx.beginPath();
-      ctx.ellipse(-18 + sway, -55, 22, 14, -0.3, 0, Math.PI * 2);
-      ctx.fill();
-
-      // Right branch cluster
-      ctx.beginPath();
-      ctx.ellipse(15 + sway * 0.7, -62, 20, 12, 0.2, 0, Math.PI * 2);
-      ctx.fill();
-
-      // Top cluster
-      ctx.beginPath();
-      ctx.ellipse(sway * 0.5, -72, 16, 10, 0, 0, Math.PI * 2);
-      ctx.fill();
-
-      // Droopy leaves
-      ctx.strokeStyle = "rgba(40, 70, 30, 0.4)";
-      ctx.lineWidth = 1.5;
-      for (let i = 0; i < 5; i++) {
-        const lx = -20 + i * 10 + sway * (0.5 + i * 0.1);
-        const ly = -50 - i * 5;
-        ctx.beginPath();
-        ctx.moveTo(lx, ly);
-        ctx.quadraticCurveTo(lx + 5, ly + 15, lx - 3 + sway, ly + 25);
-        ctx.stroke();
-      }
-
-      ctx.restore();
-    });
-  };
-
-  const drawGround = (ctx: CanvasRenderingContext2D, W: number, H: number) => {
-    const groundY = H * 0.78;
-    const time = grassTimeRef.current;
-
-    // Red dirt base
-    const grd = ctx.createLinearGradient(0, groundY, 0, H);
-    grd.addColorStop(0, "rgba(140, 65, 25, 0.35)");
-    grd.addColorStop(0.5, "rgba(120, 55, 20, 0.4)");
-    grd.addColorStop(1, "rgba(80, 40, 15, 0.5)");
-    ctx.fillStyle = grd;
-    ctx.fillRect(0, groundY, W, H - groundY);
-
-    // Dirt texture dots
-    ctx.fillStyle = "rgba(100, 50, 20, 0.15)";
-    for (let i = 0; i < 60; i++) {
-      const dx = (i * 137.5) % W;
-      const dy = groundY + 5 + ((i * 73.3) % (H - groundY - 10));
-      ctx.beginPath();
-      ctx.arc(dx, dy, 1 + (i % 3), 0, Math.PI * 2);
-      ctx.fill();
-    }
-
-    // Grass tufts
-    ctx.strokeStyle = "rgba(80, 120, 40, 0.4)";
-    ctx.lineWidth = 1.5;
-    const grassPositions = [];
-    for (let i = 0; i < 25; i++) {
-      grassPositions.push({
-        x: (i * W) / 25 + ((i * 47) % 30),
-        y: groundY - 2 + ((i * 31) % 8),
+    const initialLeaves: LeafParticle[] = [];
+    for (let i = 0; i < 8; i++) {
+      initialLeaves.push({
+        id: nextId(),
+        x: Math.random() * 100,
+        y: Math.random() * 100,
+        vx: 0.02 + Math.random() * 0.04,
+        vy: 0.01 + Math.random() * 0.03,
+        rotation: Math.random() * 360,
+        rotSpeed: (Math.random() - 0.5) * 2,
+        size: 8 + Math.random() * 12,
+        opacity: 0.15 + Math.random() * 0.25,
+        hue: 80 + Math.random() * 40,
       });
     }
+    setLeaves(initialLeaves);
+  }, []);
 
-    grassPositions.forEach(({ x, y }) => {
-      const sway = Math.sin(time * 1.5 + x * 0.01) * 3;
-      for (let b = -2; b <= 2; b++) {
-        ctx.beginPath();
-        ctx.moveTo(x + b * 2, y);
-        ctx.quadraticCurveTo(
-          x + b * 3 + sway,
-          y - 8,
-          x + b * 4 + sway * 1.5,
-          y - 12 - Math.abs(b) * 2
-        );
-        ctx.stroke();
-      }
+  // Leaf animation loop
+  useEffect(() => {
+    const updateLeaves = () => {
+      setLeaves(prev => prev.map(leaf => {
+        let { x, y, rotation } = leaf;
+        x += leaf.vx;
+        y += leaf.vy + Math.sin(timeRef.current * 0.5 + leaf.id) * 0.01;
+        rotation += leaf.rotSpeed;
+        if (x > 105) x = -5;
+        if (y > 105) { y = -5; x = Math.random() * 100; }
+        return { ...leaf, x, y, rotation };
+      }));
+      timeRef.current += 0.016;
+      animRef.current = requestAnimationFrame(updateLeaves);
+    };
+    animRef.current = requestAnimationFrame(updateLeaves);
+    return () => { if (animRef.current) cancelAnimationFrame(animRef.current); };
+  }, []);
+
+  // Dust puff cleanup
+  useEffect(() => {
+    if (dustPuffs.length === 0) return;
+    const timeout = setTimeout(() => {
+      setDustPuffs(prev => prev.filter(p => Date.now() - p.born < 800));
+    }, 900);
+    return () => clearTimeout(timeout);
+  }, [dustPuffs]);
+
+  // Celebration particle cleanup
+  useEffect(() => {
+    if (celebrationParticles.length === 0) return;
+    const interval = setInterval(() => {
+      setCelebrationParticles(prev => {
+        const updated = prev.map(p => ({
+          ...p,
+          x: p.x + p.vx,
+          y: p.y + p.vy,
+          vy: p.vy + 0.15,
+          life: p.life + 1,
+          opacity: Math.max(0, p.opacity - 0.02),
+        })).filter(p => p.life < p.maxLife && p.opacity > 0);
+        if (updated.length === 0) clearInterval(interval);
+        return updated;
+      });
+    }, 30);
+    return () => clearInterval(interval);
+  }, [celebrationParticles.length > 0]); // eslint-disable-line react-hooks/exhaustive-deps
+
+  // Animal entrance animation
+  useEffect(() => {
+    if (!round || animalsEntered) return;
+    const maxDelay = Math.max(
+      ...round.leftAnimals.map(a => a.enterDelay),
+      ...round.rightAnimals.map(a => a.enterDelay)
+    );
+    const timers: ReturnType<typeof setTimeout>[] = [];
+
+    [...round.leftAnimals, ...round.rightAnimals].forEach(animal => {
+      const t = setTimeout(() => {
+        setRound(prev => {
+          if (!prev) return prev;
+          const updateList = (list: AnimalInPaddock[]) =>
+            list.map(a => a.id === animal.id ? { ...a, entered: true } : a);
+          // Create dust puff
+          setDustPuffs(dp => [...dp, {
+            id: nextId(),
+            x: animal.x,
+            y: animal.y,
+            size: 15 + Math.random() * 10,
+            opacity: 0.6,
+            born: Date.now(),
+          }]);
+          return {
+            ...prev,
+            leftAnimals: updateList(prev.leftAnimals),
+            rightAnimals: updateList(prev.rightAnimals),
+          };
+        });
+      }, animal.enterDelay);
+      timers.push(t);
     });
-  };
 
-  const drawDustParticles = (ctx: CanvasRenderingContext2D, W: number, H: number) => {
-    dustParticlesRef.current.forEach((p) => {
-      p.x += p.vx;
-      p.y += p.vy;
-      p.life += 1;
+    const finalTimer = setTimeout(() => setAnimalsEntered(true), maxDelay + 200);
+    timers.push(finalTimer);
 
-      // Fade in and out
-      const lifeRatio = p.life / p.maxLife;
-      let alpha = p.opacity;
-      if (lifeRatio < 0.1) alpha *= lifeRatio / 0.1;
-      if (lifeRatio > 0.8) alpha *= (1 - lifeRatio) / 0.2;
+    return () => timers.forEach(clearTimeout);
+  }, [round?.leftAnimals[0]?.id]); // eslint-disable-line react-hooks/exhaustive-deps
 
-      // Wrap around
-      if (p.x < -10) p.x = W + 10;
-      if (p.x > W + 10) p.x = -10;
-      if (p.y < -10 || p.life > p.maxLife) {
-        p.y = H * 0.6 + Math.random() * H * 0.4;
-        p.x = Math.random() * W;
-        p.life = 0;
-        p.maxLife = 400 + Math.random() * 400;
-      }
-
-      ctx.beginPath();
-      ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(210, 170, 120, ${alpha})`;
-      ctx.fill();
-    });
-  };
-
-  const drawClouds = (ctx: CanvasRenderingContext2D, W: number, H: number) => {
-    const offset = cloudOffsetRef.current;
-    ctx.save();
-    ctx.globalAlpha = 0.12;
-
-    const clouds = [
-      { x: 0.15, y: 0.08, w: 80, h: 25 },
-      { x: 0.45, y: 0.12, w: 100, h: 30 },
-      { x: 0.75, y: 0.06, w: 70, h: 20 },
-      { x: 0.3, y: 0.18, w: 55, h: 18 },
-    ];
-
-    clouds.forEach((cloud) => {
-      const cx = ((cloud.x * W + offset * (0.5 + cloud.y)) % (W + 200)) - 100;
-      const cy = cloud.y * H;
-
-      ctx.fillStyle = "rgba(255, 240, 220, 0.8)";
-      ctx.beginPath();
-      ctx.ellipse(cx, cy, cloud.w, cloud.h, 0, 0, Math.PI * 2);
-      ctx.fill();
-      ctx.beginPath();
-      ctx.ellipse(cx - cloud.w * 0.4, cy + 5, cloud.w * 0.6, cloud.h * 0.7, 0, 0, Math.PI * 2);
-      ctx.fill();
-      ctx.beginPath();
-      ctx.ellipse(cx + cloud.w * 0.35, cy + 3, cloud.w * 0.5, cloud.h * 0.6, 0, 0, Math.PI * 2);
-      ctx.fill();
-    });
-
-    ctx.restore();
-  };
-
-  // Celebration dust burst
-  const spawnCelebration = useCallback((side: "left" | "right" | "center", isCorrect: boolean) => {
-    const baseX = side === "left" ? 25 : side === "right" ? 75 : 50;
-    const particles: DustParticle[] = [];
-    const count = isCorrect ? 30 : 15;
-
-    for (let i = 0; i < count; i++) {
-      const angle = (Math.PI * 2 * i) / count + Math.random() * 0.3;
-      const speed = 1 + Math.random() * 3;
+  const spawnCelebration = useCallback((centerX: number, centerY: number) => {
+    const particles: Particle[] = [];
+    for (let i = 0; i < 40; i++) {
+      const angle = (Math.PI * 2 * i) / 40 + (Math.random() - 0.5) * 0.5;
+      const speed = 2 + Math.random() * 6;
       particles.push({
-        id: ++dustIdCounter,
-        x: baseX,
-        y: 50,
+        id: nextId(),
+        x: centerX,
+        y: centerY,
         vx: Math.cos(angle) * speed,
-        vy: Math.sin(angle) * speed,
-        size: 2 + Math.random() * 4,
-        opacity: isCorrect ? 0.8 : 0.5,
+        vy: Math.sin(angle) * speed - 2,
+        size: 4 + Math.random() * 8,
+        opacity: 1,
+        hue: Math.random() * 360,
         life: 0,
-        maxLife: 60 + Math.random() * 40,
+        maxLife: 40 + Math.random() * 30,
       });
     }
     setCelebrationParticles(particles);
-    setTimeout(() => setCelebrationParticles([]), 1500);
-
-    if (isCorrect) {
-      const stars: StarBurst[] = [];
-      for (let i = 0; i < 12; i++) {
-        const angle = (Math.PI * 2 * i) / 12;
-        stars.push({
-          id: ++dustIdCounter,
-          x: baseX,
-          y: 45,
-          angle,
-          speed: 2 + Math.random() * 2,
-          size: 8 + Math.random() * 12,
-          opacity: 1,
-          hue: 40 + Math.random() * 30,
-        });
-      }
-      setStarBursts(stars);
-      setTimeout(() => setStarBursts([]), 1200);
-    }
   }, []);
 
-  // Count animation
-  const animateCount = useCallback((leftTarget: number, rightTarget: number) => {
-    setCountAnim({ left: 0, right: 0 });
-    const maxCount = Math.max(leftTarget, rightTarget);
-    const duration = Math.min(maxCount * 80, 800);
-    const startTime = Date.now();
-
-    const tick = () => {
-      const elapsed = Date.now() - startTime;
-      const progress = Math.min(elapsed / duration, 1);
-      const eased = 1 - Math.pow(1 - progress, 3);
-      setCountAnim({
-        left: Math.round(eased * leftTarget),
-        right: Math.round(eased * rightTarget),
-      });
-      if (progress < 1) requestAnimationFrame(tick);
-    };
-    requestAnimationFrame(tick);
+  const startNewRound = useCallback((num: number) => {
+    const newRound = generateRound(num);
+    setRound(newRound);
+    setFeedback(null);
+    setEquationDisplay(null);
+    setPaddockGlow('none');
+    setJoyJump(false);
+    setAnimalsEntered(false);
+    setShakeSymbol(null);
+    setDragState(null);
+    setDustPuffs([]);
+    setCelebrationParticles([]);
+    roundStartTimeRef.current = Date.now();
   }, []);
-
-  const generatePositions = useCallback(
-    (count: number): CritterPos[] => {
-      const positions: CritterPos[] = [];
-      // Natural cluster layout with varied sizing
-      const cols = Math.ceil(Math.sqrt(count * 1.5));
-      const cellW = 75 / cols;
-      const cellH = 70 / Math.ceil(count / cols);
-
-      for (let i = 0; i < count; i++) {
-        const col = i % cols;
-        const row = Math.floor(i / cols);
-        // Add randomness for natural clustering
-        const jitterX = (Math.random() - 0.5) * cellW * 0.7;
-        const jitterY = (Math.random() - 0.5) * cellH * 0.5;
-        positions.push({
-          x: 12 + col * cellW + cellW * 0.5 + jitterX,
-          y: 8 + row * cellH + cellH * 0.5 + jitterY,
-          delay: i * 0.07 + Math.random() * 0.05,
-          size: 0.8 + Math.random() * 0.4,
-          wobble: Math.random() * Math.PI * 2,
-          flip: Math.random() > 0.5,
-        });
-      }
-      return positions;
-    },
-    []
-  );
-
-  const generateChallenge = useCallback(
-    (lvl: number): CompareChallenge => {
-      const maxCount = Math.min(5 + lvl * 2, 20);
-      const minCount = Math.max(1, Math.floor(lvl / 2));
-
-      const shuffled = [...AUSSIE_CRITTERS].sort(() => Math.random() - 0.5);
-      const leftCritter = shuffled[0];
-      const rightCritter = shuffled[1];
-
-      const modes: CompareMode[] =
-        lvl <= 2 ? ["more", "fewer"] : ["more", "fewer", "equal"];
-      const mode = modes[Math.floor(Math.random() * modes.length)];
-
-      let leftCount: number;
-      let rightCount: number;
-
-      if (mode === "equal") {
-        leftCount = minCount + Math.floor(Math.random() * (maxCount - minCount));
-        rightCount = leftCount;
-      } else {
-        leftCount = minCount + Math.floor(Math.random() * (maxCount - minCount));
-        do {
-          rightCount = minCount + Math.floor(Math.random() * (maxCount - minCount));
-        } while (rightCount === leftCount);
-      }
-
-      let correctAnswer: "left" | "right" | "equal";
-      if (mode === "equal") {
-        correctAnswer = "equal";
-      } else if (mode === "more") {
-        correctAnswer = leftCount > rightCount ? "left" : "right";
-      } else {
-        correctAnswer = leftCount < rightCount ? "left" : "right";
-      }
-
-      return {
-        left: {
-          emoji: leftCritter.emoji,
-          name: leftCritter.name,
-          count: leftCount,
-          positions: generatePositions(leftCount),
-        },
-        right: {
-          emoji: rightCritter.emoji,
-          name: rightCritter.name,
-          count: rightCount,
-          positions: generatePositions(rightCount),
-        },
-        mode,
-        correctAnswer,
-      };
-    },
-    [generatePositions]
-  );
-
-  const startTimer = useCallback((lvl: number) => {
-    if (lvl < 3) {
-      setTimerMax(0);
-      setTimer(0);
-      return;
-    }
-    const maxTime = Math.max(5, 15 - lvl);
-    setTimerMax(maxTime);
-    setTimer(maxTime);
-    if (timerRef.current) clearInterval(timerRef.current);
-    timerRef.current = setInterval(() => {
-      setTimer((prev) => Math.max(0, prev - 0.1));
-    }, 100);
-  }, []);
-
-  const initLevel = useCallback(
-    (lvl: number) => {
-      const needed = Math.min(6 + Math.floor(lvl / 2), 12);
-      setComparesNeeded(needed);
-      setComparesCompleted(0);
-      setShowResult(null);
-      setShowCounts(false);
-      setShakeScreen(false);
-      setSelectedGroup(null);
-      setSymbolAnim(false);
-      setCelebrationParticles([]);
-      setStarBursts([]);
-
-      const ch = generateChallenge(lvl);
-      setChallenge(ch);
-      startTimer(lvl);
-    },
-    [generateChallenge, startTimer]
-  );
 
   const startGame = () => {
-    setScreen("playing");
-    setLevel(1);
+    setGameScreen('playing');
     setScore(0);
-    setLives(3);
     setStreak(0);
-    setBestStreak(0);
-    initLevel(1);
+    setRoundNum(1);
+    setStats({ correct: 0, wrong: 0, totalRounds: 0, bestStreak: 0 });
+    startNewRound(1);
   };
 
-  const nextLevel = () => {
-    const newLevel = level + 1;
-    setLevel(newLevel);
-    setScreen("playing");
-    initLevel(newLevel);
-  };
+  const handleAnswer = useCallback((symbol: ComparisonSymbol) => {
+    if (!round || feedback) return;
 
-  const advanceToNext = useCallback(() => {
-    const newCompleted = comparesCompleted + 1;
-    setComparesCompleted(newCompleted);
+    if (symbol === round.correctSymbol) {
+      // Correct!
+      const streakBonus = streak >= 3 ? 20 : streak >= 2 ? 10 : 0;
+      const timeBonus = Math.max(0, Math.floor((10000 - (Date.now() - roundStartTimeRef.current)) / 1000)) * 5;
+      const points = 50 + streakBonus + timeBonus;
+      setScore(s => s + points);
+      setStreak(s => s + 1);
+      setStats(prev => ({
+        ...prev,
+        correct: prev.correct + 1,
+        totalRounds: prev.totalRounds + 1,
+        bestStreak: Math.max(prev.bestStreak, streak + 1),
+      }));
+      setFeedback('correct');
+      setPaddockGlow('correct');
+      setJoyJump(true);
+      setEquationDisplay(`${round.leftCount} ${round.correctSymbol} ${round.rightCount}`);
 
-    if (newCompleted >= comparesNeeded) {
-      if (timerRef.current) clearInterval(timerRef.current);
-      setTimeout(() => setScreen("levelComplete"), 600);
-    } else {
-      setTimeout(() => {
-        setShowResult(null);
-        setShowCounts(false);
-        setSelectedGroup(null);
-        setSymbolAnim(false);
-        const ch = generateChallenge(level);
-        setChallenge(ch);
-        startTimer(level);
-      }, 1500);
-    }
-  }, [comparesCompleted, comparesNeeded, generateChallenge, level, startTimer]);
-
-  // Timer reaching zero
-  useEffect(() => {
-    if (screen !== "playing" || !challenge || timerMax === 0) return;
-    if (timer <= 0) {
-      if (timerRef.current) clearInterval(timerRef.current);
-      setShowResult("wrong");
-      setShowCounts(true);
-      if (challenge) {
-        animateCount(challenge.left.count, challenge.right.count);
+      // Spawn celebration
+      if (containerRef.current) {
+        const rect = containerRef.current.getBoundingClientRect();
+        spawnCelebration(rect.width / 2, rect.height / 2);
       }
-      setShakeScreen(true);
-      setTimeout(() => setShakeScreen(false), 500);
-      spawnCelebration("center", false);
-      setStreak(0);
-      setLives((l) => {
-        const newL = l - 1;
-        if (newL <= 0) {
-          setTimeout(() => setScreen("gameOver"), 1200);
+
+      // Next round after delay
+      setTimeout(() => {
+        if (roundNum >= TOTAL_ROUNDS) {
+          setStats(prev => ({
+            ...prev,
+            bestStreak: Math.max(prev.bestStreak, streak + 1),
+          }));
+          setGameScreen('complete');
+        } else {
+          const next = roundNum + 1;
+          setRoundNum(next);
+          startNewRound(next);
         }
-        return newL;
-      });
+      }, 2200);
+    } else {
+      // Wrong
+      setStreak(0);
+      setStats(prev => ({
+        ...prev,
+        wrong: prev.wrong + 1,
+        totalRounds: prev.totalRounds + 1,
+      }));
+      setFeedback('wrong');
+      setPaddockGlow('wrong');
+      setShakeSymbol(symbol);
+
       setTimeout(() => {
-        if (lives > 1) advanceToNext();
-      }, 1500);
+        setFeedback(null);
+        setPaddockGlow('none');
+        setShakeSymbol(null);
+      }, 1200);
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [timer]);
+  }, [round, feedback, streak, roundNum, spawnCelebration, startNewRound]);
 
-  const handleAnswer = useCallback(
-    (answer: "left" | "right" | "equal") => {
-      if (showResult || !challenge) return;
-      if (timerRef.current) clearInterval(timerRef.current);
+  // Drag handlers
+  const handleDragStart = (
+    e: React.MouseEvent<HTMLDivElement> | React.TouchEvent<HTMLDivElement>,
+    symbol: ComparisonSymbol
+  ) => {
+    if (feedback) return;
+    e.preventDefault();
+    e.stopPropagation();
 
-      setSelectedGroup(answer === "equal" ? null : answer);
-      setShowCounts(true);
-      animateCount(challenge.left.count, challenge.right.count);
+    const el = symbolRefs.current[symbol];
+    if (!el || !containerRef.current) return;
 
-      setTimeout(() => setSymbolAnim(true), 400);
+    const containerRect = containerRef.current.getBoundingClientRect();
+    const elRect = el.getBoundingClientRect();
+    const clientX = 'touches' in e ? e.touches[0].clientX : e.clientX;
+    const clientY = 'touches' in e ? e.touches[0].clientY : e.clientY;
 
-      if (answer === challenge.correctAnswer) {
-        const timeBonus = timerMax > 0 ? Math.floor(timer * 3) : 0;
-        const streakBonus = streak * 3;
-        setScore((s) => s + 15 + timeBonus + streakBonus);
-        setShowResult("correct");
-        const newStreak = streak + 1;
-        setStreak(newStreak);
-        if (newStreak > bestStreak) setBestStreak(newStreak);
+    const centerX = elRect.left + elRect.width / 2 - containerRect.left;
+    const centerY = elRect.top + elRect.height / 2 - containerRect.top;
 
-        const celebSide = challenge.correctAnswer === "equal" ? "center" : challenge.correctAnswer;
-        spawnCelebration(celebSide, true);
-        advanceToNext();
-      } else {
-        setShowResult("wrong");
-        setShakeScreen(true);
-        setTimeout(() => setShakeScreen(false), 500);
-        setStreak(0);
-        spawnCelebration("center", false);
-        setLives((l) => {
-          const newL = l - 1;
-          if (newL <= 0) {
-            setTimeout(() => setScreen("gameOver"), 1200);
-          }
-          return newL;
-        });
-        setTimeout(() => {
-          if (lives > 1) advanceToNext();
-        }, 1500);
-      }
-    },
-    [showResult, challenge, timer, timerMax, streak, bestStreak, lives, advanceToNext, animateCount, spawnCelebration]
-  );
-
-  // Cleanup
-  useEffect(() => {
-    return () => {
-      if (timerRef.current) clearInterval(timerRef.current);
-      if (animFrameRef.current) cancelAnimationFrame(animFrameRef.current);
-    };
-  }, []);
-
-  // Intro animation phases
-  useEffect(() => {
-    if (screen !== "intro") return;
-    const t1 = setTimeout(() => setIntroAnimPhase(1), 300);
-    const t2 = setTimeout(() => setIntroAnimPhase(2), 800);
-    const t3 = setTimeout(() => setIntroAnimPhase(3), 1300);
-    return () => {
-      clearTimeout(t1);
-      clearTimeout(t2);
-      clearTimeout(t3);
-    };
-  }, [screen]);
-
-  const livesDisplay = Array.from({ length: 3 }, (_, i) =>
-    i < lives ? "\u2764\uFE0F" : "\uD83E\uDD0D"
-  );
-
-  const timerPercent = timerMax > 0 ? (timer / timerMax) * 100 : 100;
-
-  const getComparisonSymbol = () => {
-    if (!challenge) return "=";
-    if (challenge.left.count > challenge.right.count) return ">";
-    if (challenge.left.count < challenge.right.count) return "<";
-    return "=";
+    setDragState({
+      symbol,
+      startX: centerX,
+      startY: centerY,
+      currentX: centerX,
+      currentY: centerY,
+      offsetX: clientX - containerRect.left - centerX,
+      offsetY: clientY - containerRect.top - centerY,
+    });
   };
 
-  // Sun position based on timer (sinks as timer runs out)
-  const sunY = timerMax > 0 ? 8 + (100 - timerPercent) * 0.25 : 12;
+  const handleDragMove = useCallback((e: MouseEvent | TouchEvent) => {
+    if (!dragState || !containerRef.current) return;
+    e.preventDefault();
+    const rect = containerRef.current.getBoundingClientRect();
+    const clientX = 'touches' in e ? e.touches[0].clientX : e.clientX;
+    const clientY = 'touches' in e ? e.touches[0].clientY : e.clientY;
+    const newX = clientX - rect.left - dragState.offsetX;
+    const newY = clientY - rect.top - dragState.offsetY;
+    setDragState(prev => prev ? { ...prev, currentX: newX, currentY: newY } : null);
+  }, [dragState]);
 
-  // ===================== INTRO =====================
-  if (screen === "intro") {
+  const handleDragEnd = useCallback(() => {
+    if (!dragState || !dropZoneRef.current || !containerRef.current) {
+      setDragState(null);
+      return;
+    }
+
+    const containerRect = containerRef.current.getBoundingClientRect();
+    const dzRect = dropZoneRef.current.getBoundingClientRect();
+    const dzCenterX = dzRect.left + dzRect.width / 2 - containerRect.left;
+    const dzCenterY = dzRect.top + dzRect.height / 2 - containerRect.top;
+    const dx = dragState.currentX - dzCenterX;
+    const dy = dragState.currentY - dzCenterY;
+    const dist = Math.sqrt(dx * dx + dy * dy);
+
+    if (dist < 80) {
+      handleAnswer(dragState.symbol);
+    }
+
+    setDragState(null);
+  }, [dragState, handleAnswer]);
+
+  // Global drag listeners
+  useEffect(() => {
+    if (!dragState) return;
+    const move = (e: MouseEvent | TouchEvent) => handleDragMove(e);
+    const end = () => handleDragEnd();
+    window.addEventListener('mousemove', move);
+    window.addEventListener('mouseup', end);
+    window.addEventListener('touchmove', move, { passive: false });
+    window.addEventListener('touchend', end);
+    return () => {
+      window.removeEventListener('mousemove', move);
+      window.removeEventListener('mouseup', end);
+      window.removeEventListener('touchmove', move);
+      window.removeEventListener('touchend', end);
+    };
+  }, [dragState, handleDragMove, handleDragEnd]);
+
+  // Intro animation
+  useEffect(() => {
+    if (gameScreen !== 'intro') return;
+    const timers = [
+      setTimeout(() => setIntroPhase(1), 300),
+      setTimeout(() => setIntroPhase(2), 800),
+      setTimeout(() => setIntroPhase(3), 1300),
+    ];
+    return () => timers.forEach(clearTimeout);
+  }, [gameScreen]);
+
+  const accuracy = stats.totalRounds > 0 ? Math.round((stats.correct / stats.totalRounds) * 100) : 0;
+
+  // INTRO SCREEN
+  if (gameScreen === 'intro') {
     return (
-      <div className="cc-game" ref={containerRef}>
-        <style>{ccStyles}</style>
-        <canvas ref={canvasRef} className="cc-ambient-canvas" />
-        <div className="cc-intro">
-          <div className="cc-intro-bg">
-            {/* Parade of critters walking across */}
-            {AUSSIE_CRITTERS.slice(0, 8).map((c, i) => (
-              <div
-                key={i}
-                className="cc-bg-critter-parade"
-                style={{
-                  animationDelay: `${i * 1.2}s`,
-                  bottom: `${12 + (i % 3) * 6}%`,
-                  animationDuration: `${10 + i * 0.5}s`,
-                }}
-              >
-                {c.emoji}
-              </div>
+      <div className="critter-compare">
+        <style>{styles}</style>
+        <div className="intro-screen">
+          <div className="intro-bg">
+            {/* Sunset sky gradient is in CSS */}
+            <div className="intro-ground" />
+            <div className="intro-silhouette tree1" />
+            <div className="intro-silhouette tree2" />
+            <div className="intro-silhouette tree3" />
+            {/* Floating clouds */}
+            <div className="intro-cloud cloud1" />
+            <div className="intro-cloud cloud2" />
+            <div className="intro-cloud cloud3" />
+            {/* Ambient leaves */}
+            {leaves.map(leaf => (
+              <div key={leaf.id} className="ambient-leaf" style={{
+                left: `${leaf.x}%`,
+                top: `${leaf.y}%`,
+                width: leaf.size,
+                height: leaf.size,
+                opacity: leaf.opacity,
+                transform: `rotate(${leaf.rotation}deg)`,
+                background: `hsl(${leaf.hue}, 50%, 35%)`,
+              }} />
             ))}
-            {/* Animated sunset clouds */}
-            {[...Array(5)].map((_, i) => (
-              <div
-                key={`cloud-${i}`}
-                className="cc-intro-cloud"
-                style={{
-                  top: `${5 + i * 7}%`,
-                  animationDelay: `${i * 2}s`,
-                  animationDuration: `${18 + i * 4}s`,
-                  opacity: 0.15 + i * 0.03,
-                }}
-              />
-            ))}
-            {/* Boomerang decorations */}
-            <div className="cc-boomerang cc-boomerang-1">
-              <svg viewBox="0 0 60 40" width="60" height="40">
-                <path d="M5,35 Q10,5 30,8 Q50,10 55,30" stroke="rgba(200,150,80,0.3)" strokeWidth="4" fill="none" strokeLinecap="round"/>
-              </svg>
-            </div>
-            <div className="cc-boomerang cc-boomerang-2">
-              <svg viewBox="0 0 60 40" width="50" height="33">
-                <path d="M5,35 Q10,5 30,8 Q50,10 55,30" stroke="rgba(200,150,80,0.25)" strokeWidth="4" fill="none" strokeLinecap="round"/>
-              </svg>
-            </div>
           </div>
-          <div className={`cc-intro-content ${introAnimPhase >= 1 ? "cc-intro-visible" : ""}`}>
-            <div className="cc-logo">
-              <span className="cc-logo-icon">{"\uD83E\uDD98"}</span>
+          <div className="intro-content">
+            <div className={`intro-title ${introPhase >= 1 ? 'visible' : ''}`}>
+              <div className="intro-critters">
+                <span className="intro-emoji bounce-1">🦘</span>
+                <span className="intro-emoji bounce-2">🐨</span>
+                <span className="intro-emoji bounce-3">🐊</span>
+              </div>
               <h1>Critter Compare</h1>
-              <span className="cc-logo-icon">{"\uD83D\uDC28"}</span>
+              <p className="intro-subtitle">Australian Outback Adventure</p>
             </div>
-            <p className="cc-tagline">Count the critters in the Australian outback!</p>
-            <div className={`cc-instructions-card ${introAnimPhase >= 2 ? "cc-card-visible" : ""}`}>
-              <h3>How to Play</h3>
-              <div className="cc-instruction">
-                <div className="cc-instruction-visual">
-                  <span className="cc-mini-group-box">
-                    <span className="cc-mini-critter">{"\uD83E\uDD98"}</span>
-                    <span className="cc-mini-critter">{"\uD83E\uDD98"}</span>
-                    <span className="cc-mini-critter">{"\uD83E\uDD98"}</span>
-                  </span>
-                  <span className="cc-vs-intro">vs</span>
-                  <span className="cc-mini-group-box">
-                    <span className="cc-mini-critter">{"\uD83D\uDC28"}</span>
-                    <span className="cc-mini-critter">{"\uD83D\uDC28"}</span>
-                  </span>
+
+            <div className={`intro-instructions ${introPhase >= 2 ? 'visible' : ''}`}>
+              <div className="instruction-row">
+                <div className="instruction-visual">
+                  <span className="mini-paddock">🦘🦘🦘</span>
+                  <span className="symbol-preview">&gt;</span>
+                  <span className="mini-paddock">🐨🐨</span>
                 </div>
-                <p>
-                  Two groups of <span className="cc-hl-green">CRITTERS</span> appear
-                  in paddocks!
-                </p>
+                <p><strong>DRAG</strong> the right symbol: <span className="sym-highlight">&gt;</span> <span className="sym-highlight">&lt;</span> <span className="sym-highlight">=</span></p>
               </div>
-              <div className="cc-instruction">
-                <div className="cc-instruction-visual">
-                  <span className="cc-wooden-sign-mini">
-                    {"\u2B06\uFE0F"} Which has MORE?
-                  </span>
+              <div className="instruction-row">
+                <div className="instruction-visual">
+                  <span className="mini-paddock">🦎🦎</span>
+                  <span className="symbol-preview">=</span>
+                  <span className="mini-paddock">🐊🐊</span>
                 </div>
-                <p>
-                  <strong>TAP</strong> the group that answers the{" "}
-                  <span className="cc-hl-yellow">QUESTION</span>!
-                </p>
-              </div>
-              <div className="cc-instruction">
-                <div className="cc-instruction-visual">
-                  <span className="cc-symbol-preview">{">"}</span>
-                  <span className="cc-symbol-preview">{"<"}</span>
-                  <span className="cc-symbol-preview">{"="}</span>
-                </div>
-                <p>
-                  Learn <span className="cc-hl-blue">GREATER THAN</span>,{" "}
-                  <span className="cc-hl-blue">LESS THAN</span>, and{" "}
-                  <span className="cc-hl-blue">EQUAL</span>!
-                </p>
+                <p>Compare the groups in each <span className="paddock-word">paddock</span></p>
               </div>
             </div>
-            <button className={`cc-start-btn ${introAnimPhase >= 3 ? "cc-btn-visible" : ""}`} onClick={startGame}>
-              <span className="cc-btn-hat">{"\uD83E\uDEB6"}</span>
-              Start Counting!
-              <span className="cc-btn-hat">{"\uD83E\uDD98"}</span>
+
+            <button className={`start-btn ${introPhase >= 3 ? 'visible' : ''}`} onClick={startGame}>
+              <span className="btn-icon">🌅</span>
+              Start Adventure
+              <span className="btn-icon">🦘</span>
             </button>
           </div>
         </div>
@@ -854,115 +588,69 @@ export default function CritterCompare({ onExit }: CritterCompareProps) {
     );
   }
 
-  // ===================== LEVEL COMPLETE =====================
-  if (screen === "levelComplete") {
+  // GAME COMPLETE SCREEN
+  if (gameScreen === 'complete') {
     return (
-      <div className="cc-game" ref={containerRef}>
-        <style>{ccStyles}</style>
-        <canvas ref={canvasRef} className="cc-ambient-canvas" />
-        <div className="cc-complete">
-          <div className="cc-complete-bg">
-            {/* Golden star shower */}
-            {[...Array(20)].map((_, i) => (
-              <div
-                key={i}
-                className="cc-falling-star"
-                style={{
-                  left: `${5 + Math.random() * 90}%`,
-                  animationDelay: `${Math.random() * 3}s`,
-                  animationDuration: `${2 + Math.random() * 2}s`,
-                }}
-              >
-                {"\u2B50"}
+      <div className="critter-compare">
+        <style>{styles}</style>
+        <div className="complete-screen">
+          <div className="complete-bg">
+            {AUSSIE_ANIMALS.map((animal, i) => (
+              <div key={animal.name} className="floating-animal" style={{
+                left: `${10 + i * 18}%`,
+                animationDelay: `${i * 0.4}s`,
+              }}>
+                {animal.emoji}
               </div>
             ))}
+            {/* Stars */}
+            {[...Array(20)].map((_, i) => (
+              <div key={i} className="bg-star" style={{
+                left: `${Math.random() * 100}%`,
+                top: `${Math.random() * 60}%`,
+                animationDelay: `${Math.random() * 3}s`,
+                width: 2 + Math.random() * 4,
+                height: 2 + Math.random() * 4,
+              }} />
+            ))}
           </div>
-          <div className="cc-complete-content">
-            <h1 className="cc-complete-title">
-              {"\uD83C\uDF1F"} Level {level} Complete! {"\uD83E\uDD98"}
-            </h1>
-            <div className="cc-critter-parade-complete">
-              {AUSSIE_CRITTERS.slice(0, 5).map((c, i) => (
-                <span
-                  key={i}
-                  className="cc-parade-critter"
-                  style={{ animationDelay: `${i * 0.15}s` }}
-                >
-                  {c.emoji}
-                </span>
-              ))}
-            </div>
-            <div className="cc-score-card">
-              <div className="cc-score-item">
-                <span className="cc-score-label">Score</span>
-                <span className="cc-score-value">{score}</span>
+          <div className="complete-content">
+            <h1 className="complete-title">Adventure Complete!</h1>
+            <div className="complete-stats">
+              <div className="stat-card">
+                <span className="stat-icon">🎯</span>
+                <span className="stat-value">{accuracy}%</span>
+                <span className="stat-label">Accuracy</span>
               </div>
-              <div className="cc-score-item">
-                <span className="cc-score-label">Best Streak</span>
-                <span className="cc-score-value">{bestStreak}</span>
+              <div className="stat-card">
+                <span className="stat-icon">⭐</span>
+                <span className="stat-value">{score}</span>
+                <span className="stat-label">Score</span>
+              </div>
+              <div className="stat-card">
+                <span className="stat-icon">🔥</span>
+                <span className="stat-value">{stats.bestStreak}</span>
+                <span className="stat-label">Best Streak</span>
+              </div>
+              <div className="stat-card">
+                <span className="stat-icon">✅</span>
+                <span className="stat-value">{stats.correct}/{stats.totalRounds}</span>
+                <span className="stat-label">Correct</span>
               </div>
             </div>
-            <div className="cc-complete-buttons">
-              <button className="cc-next-btn" onClick={nextLevel}>
-                Level {level + 1} {"\u2192"}
+            <div className="complete-rating">
+              {accuracy >= 90 ? '🌟🌟🌟 Outstanding!' :
+               accuracy >= 70 ? '🌟🌟 Great Job!' :
+               accuracy >= 50 ? '🌟 Good Try!' : 'Keep Practising!'}
+            </div>
+            <div className="complete-buttons">
+              <button className="start-btn visible" onClick={startGame}>
+                <span className="btn-icon">🔄</span>
+                Play Again
+                <span className="btn-icon">🦘</span>
               </button>
-              <button
-                className="cc-menu-btn"
-                onClick={() => (onExit ? onExit() : setScreen("intro"))}
-              >
-                Main Menu
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    );
-  }
-
-  // ===================== GAME OVER =====================
-  if (screen === "gameOver") {
-    return (
-      <div className="cc-game" ref={containerRef}>
-        <style>{ccStyles}</style>
-        <canvas ref={canvasRef} className="cc-ambient-canvas" />
-        <div className="cc-complete">
-          <div className="cc-complete-content">
-            <h1 className="cc-complete-title cc-gameover-title">
-              {"\uD83D\uDE22"} The critters ran away!
-            </h1>
-            <div className="cc-gameover-critters">
-              {AUSSIE_CRITTERS.slice(0, 4).map((c, i) => (
-                <span
-                  key={i}
-                  className="cc-scatter-critter"
-                  style={{ animationDelay: `${i * 0.2}s` }}
-                >
-                  {c.emoji}
-                </span>
-              ))}
-            </div>
-            <p className="cc-gameover-subtitle">
-              You compared {comparesCompleted} groups on Level {level}
-            </p>
-            <div className="cc-score-card">
-              <div className="cc-score-item">
-                <span className="cc-score-label">Final Score</span>
-                <span className="cc-score-value">{score}</span>
-              </div>
-              <div className="cc-score-item">
-                <span className="cc-score-label">Best Streak</span>
-                <span className="cc-score-value">{bestStreak}</span>
-              </div>
-            </div>
-            <div className="cc-complete-buttons">
-              <button className="cc-next-btn" onClick={startGame}>
-                Try Again {"\uD83D\uDD04"}
-              </button>
-              <button
-                className="cc-menu-btn"
-                onClick={() => (onExit ? onExit() : setScreen("intro"))}
-              >
-                Main Menu
+              <button className="menu-btn" onClick={() => onExit ? onExit() : setGameScreen('intro')}>
+                Back to Games
               </button>
             </div>
           </div>
@@ -971,1300 +659,1549 @@ export default function CritterCompare({ onExit }: CritterCompareProps) {
     );
   }
 
-  // ===================== PLAYING =====================
+  // PLAYING SCREEN
+  if (!round) return null;
+
+  const getSymbolTransform = (sym: ComparisonSymbol): React.CSSProperties => {
+    if (dragState && dragState.symbol === sym) {
+      return {
+        position: 'absolute' as const,
+        left: dragState.currentX,
+        top: dragState.currentY,
+        transform: 'translate(-50%, -50%) scale(1.2)',
+        zIndex: 200,
+        cursor: 'grabbing',
+        transition: 'none',
+      };
+    }
+    if (shakeSymbol === sym) {
+      return { animation: 'symbolShake 0.4s ease-in-out' };
+    }
+    return {};
+  };
+
+  const isSymbolBeingDragged = (sym: ComparisonSymbol): boolean =>
+    dragState?.symbol === sym;
+
+  const isOverDropZone = (): boolean => {
+    if (!dragState || !dropZoneRef.current || !containerRef.current) return false;
+    const containerRect = containerRef.current.getBoundingClientRect();
+    const dzRect = dropZoneRef.current.getBoundingClientRect();
+    const dzCenterX = dzRect.left + dzRect.width / 2 - containerRect.left;
+    const dzCenterY = dzRect.top + dzRect.height / 2 - containerRect.top;
+    const dx = dragState.currentX - dzCenterX;
+    const dy = dragState.currentY - dzCenterY;
+    return Math.sqrt(dx * dx + dy * dy) < 80;
+  };
+
   return (
-    <div className="cc-game" ref={containerRef}>
-      <style>{ccStyles}</style>
-      <canvas ref={canvasRef} className="cc-ambient-canvas" />
+    <div className="critter-compare" ref={containerRef}>
+      <style>{styles}</style>
+      <div className="game-screen">
+        {/* Outback background layers */}
+        <div className="game-bg">
+          <div className="sky-layer" />
+          <div className="sun-orb" />
+          <div className="hills-far" />
+          <div className="hills-near" />
+          <div className="ground-layer" />
+          <div className="tree-sil left-tree" />
+          <div className="tree-sil right-tree" />
+          {/* Ambient leaves */}
+          {leaves.map(leaf => (
+            <div key={leaf.id} className="ambient-leaf" style={{
+              left: `${leaf.x}%`,
+              top: `${leaf.y}%`,
+              width: leaf.size,
+              height: leaf.size,
+              opacity: leaf.opacity,
+              transform: `rotate(${leaf.rotation}deg)`,
+              background: `hsl(${leaf.hue}, 50%, 35%)`,
+            }} />
+          ))}
+          {/* Floating clouds */}
+          <div className="game-cloud gc1" />
+          <div className="game-cloud gc2" />
+        </div>
 
-      {/* Sun indicator (timer visual) */}
-      <div
-        className="cc-sun"
-        style={{
-          top: `${sunY}%`,
-          opacity: timerMax > 0 ? 0.7 + (timerPercent / 100) * 0.3 : 0.9,
-          filter: `hue-rotate(${timerPercent < 30 ? 20 : 0}deg)`,
-        }}
-      >
-        <div className="cc-sun-core" />
-        <div className="cc-sun-glow" />
-        <div className="cc-sun-rays" />
-      </div>
-
-      <div className={`cc-play ${shakeScreen ? "cc-shake" : ""}`}>
         {/* Header */}
-        <div className="cc-header">
-          <div className="cc-header-left">
-            <button
-              className="cc-back-btn"
-              onClick={() => {
-                if (timerRef.current) clearInterval(timerRef.current);
-                onExit ? onExit() : setScreen("intro");
-              }}
-            >
-              {"\u2190"}
-            </button>
-            <div className="cc-level-badge">Level {level}</div>
+        <div className="game-header">
+          <div className="header-left">
+            <button className="back-btn" onClick={() => onExit ? onExit() : setGameScreen('intro')}>&#8592;</button>
+            <div className="round-badge">Round {roundNum}/{TOTAL_ROUNDS}</div>
           </div>
-          <div className="cc-header-center">
-            <span className="cc-lives">{livesDisplay.join(" ")}</span>
-            {streak >= 2 && (
-              <span className={`cc-streak-badge ${streak >= 5 ? "cc-streak-fire" : ""}`}>
-                {"\uD83D\uDD25"} {streak}
-              </span>
+          <div className="header-center">
+            <div className="prompt-badge">
+              {feedback === 'correct' ? '✅ Correct!' :
+               feedback === 'wrong' ? '❌ Try Again!' :
+               'Drag the right symbol!'}
+            </div>
+          </div>
+          <div className="header-right">
+            <div className="streak-badge" style={{ opacity: streak > 0 ? 1 : 0.4 }}>
+              <span className="streak-icon">🔥</span>
+              <span>{streak}</span>
+            </div>
+            <div className="score-badge">
+              <span className="score-icon">⭐</span>
+              <span>{score}</span>
+            </div>
+          </div>
+        </div>
+
+        {/* Main game area */}
+        <div className="game-area">
+          {/* Left Paddock */}
+          <div className={`paddock left-paddock ${paddockGlow === 'correct' ? 'glow-correct' : ''} ${paddockGlow === 'wrong' ? 'glow-wrong' : ''}`}>
+            <div className="fence-top" />
+            <div className="fence-left" />
+            <div className="fence-right" />
+            <div className="fence-bottom" />
+            <div className="fence-post fp1" />
+            <div className="fence-post fp2" />
+            <div className="fence-post fp3" />
+            <div className="fence-post fp4" />
+            <div className="paddock-ground" />
+            <div className="paddock-label">{round.leftAnimal.name}s</div>
+            <div className="animals-container">
+              {round.leftAnimals.map(animal => (
+                <div
+                  key={animal.id}
+                  className={`animal ${animal.entered ? 'entered' : ''} ${joyJump && feedback === 'correct' ? 'joy-jump' : ''}`}
+                  style={{
+                    left: animal.x,
+                    top: animal.y,
+                    animationDelay: `${animal.bouncePhase * 200}ms`,
+                    transform: `scaleX(${animal.flip ? -1 : 1})`,
+                  }}
+                >
+                  <span className="animal-emoji">{animal.emoji}</span>
+                </div>
+              ))}
+              {/* Dust puffs in left paddock */}
+              {dustPuffs.filter((_, i) => i < round.leftCount).map(puff => (
+                <div key={puff.id} className="dust-puff" style={{
+                  left: puff.x,
+                  top: puff.y,
+                  width: puff.size * 2,
+                  height: puff.size * 2,
+                }} />
+              ))}
+            </div>
+            {(feedback === 'correct' || animalsEntered) && (
+              <div className="count-display">{round.leftCount}</div>
             )}
           </div>
-          <div className="cc-header-right">
-            <div className="cc-score-badge">
-              {"\u2B50"} {score}
-            </div>
-          </div>
-        </div>
 
-        {/* Timer bar */}
-        {timerMax > 0 && (
-          <div className="cc-timer-bar">
+          {/* Center: Drop Zone & Symbols */}
+          <div className="center-column">
+            {/* Equation display on correct answer */}
+            {equationDisplay && (
+              <div className="equation-display">
+                <span className="eq-text">{equationDisplay}</span>
+              </div>
+            )}
+
+            {/* Drop Zone */}
             <div
-              className={`cc-timer-fill ${timerPercent < 30 ? "cc-timer-danger" : timerPercent < 60 ? "cc-timer-warn" : ""}`}
-              style={{ width: `${timerPercent}%` }}
-            />
-          </div>
-        )}
+              ref={dropZoneRef}
+              className={`drop-zone ${dragState ? 'active' : ''} ${isOverDropZone() ? 'hover' : ''} ${feedback === 'correct' ? 'correct' : ''}`}
+            >
+              {feedback === 'correct' ? (
+                <span className="drop-symbol placed">{round.correctSymbol}</span>
+              ) : (
+                <span className="drop-hint">?</span>
+              )}
+            </div>
 
-        {/* Progress */}
-        <div className="cc-progress">
-          <div className="cc-progress-dots">
-            {Array.from({ length: comparesNeeded }, (_, i) => (
-              <div
-                key={i}
-                className={`cc-progress-dot ${i < comparesCompleted ? "cc-dot-done" : i === comparesCompleted ? "cc-dot-current" : ""}`}
-              />
-            ))}
+            {/* Symbol buttons */}
+            <div className="symbols-tray">
+              {(['<', '=', '>'] as ComparisonSymbol[]).map(sym => (
+                <div
+                  key={sym}
+                  ref={el => { symbolRefs.current[sym] = el; }}
+                  className={`symbol-token ${isSymbolBeingDragged(sym) ? 'dragging' : ''} ${feedback ? 'disabled' : ''}`}
+                  style={getSymbolTransform(sym)}
+                  onMouseDown={(e) => handleDragStart(e, sym)}
+                  onTouchStart={(e) => handleDragStart(e, sym)}
+                >
+                  <div className="symbol-shine" />
+                  <span className="symbol-text">{sym}</span>
+                  <div className="symbol-glow" />
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Right Paddock */}
+          <div className={`paddock right-paddock ${paddockGlow === 'correct' ? 'glow-correct' : ''} ${paddockGlow === 'wrong' ? 'glow-wrong' : ''}`}>
+            <div className="fence-top" />
+            <div className="fence-left" />
+            <div className="fence-right" />
+            <div className="fence-bottom" />
+            <div className="fence-post fp1" />
+            <div className="fence-post fp2" />
+            <div className="fence-post fp3" />
+            <div className="fence-post fp4" />
+            <div className="paddock-ground" />
+            <div className="paddock-label">{round.rightAnimal.name}s</div>
+            <div className="animals-container">
+              {round.rightAnimals.map(animal => (
+                <div
+                  key={animal.id}
+                  className={`animal ${animal.entered ? 'entered' : ''} ${joyJump && feedback === 'correct' ? 'joy-jump' : ''}`}
+                  style={{
+                    left: animal.x,
+                    top: animal.y,
+                    animationDelay: `${animal.bouncePhase * 200}ms`,
+                    transform: `scaleX(${animal.flip ? -1 : 1})`,
+                  }}
+                >
+                  <span className="animal-emoji">{animal.emoji}</span>
+                </div>
+              ))}
+            </div>
+            {(feedback === 'correct' || animalsEntered) && (
+              <div className="count-display">{round.rightCount}</div>
+            )}
           </div>
         </div>
 
-        {/* Question prompt - wooden sign style */}
-        {challenge && (
-          <div className="cc-prompt-sign">
-            <div className="cc-sign-post cc-sign-post-left" />
-            <div className="cc-sign-board">
-              <span className="cc-prompt-emoji">{MODE_EMOJIS[challenge.mode]}</span>
-              <span className="cc-prompt-text">{MODE_PROMPTS[challenge.mode]}</span>
-            </div>
-            <div className="cc-sign-post cc-sign-post-right" />
-          </div>
-        )}
+        {/* Celebration particles */}
+        {celebrationParticles.map(p => (
+          <div key={p.id} className="celebration-particle" style={{
+            left: p.x,
+            top: p.y,
+            width: p.size,
+            height: p.size,
+            opacity: p.opacity,
+            background: `hsl(${p.hue}, 80%, 60%)`,
+            borderRadius: Math.random() > 0.5 ? '50%' : '2px',
+          }} />
+        ))}
 
-        {/* Comparison area */}
-        {challenge && (
-          <div className="cc-compare-area">
-            {/* Left paddock */}
-            <button
-              className={`cc-paddock ${
-                showResult && challenge.correctAnswer === "left"
-                  ? "cc-paddock-correct"
-                  : showResult && challenge.correctAnswer !== "left" && challenge.correctAnswer !== "equal"
-                    ? "cc-paddock-wrong"
-                    : ""
-              } ${selectedGroup === "left" ? "cc-paddock-selected" : ""}`}
-              onClick={() => handleAnswer("left")}
-              disabled={showResult !== null}
-            >
-              <div className="cc-fence-top" />
-              <div className="cc-paddock-ground" />
-              <div className="cc-paddock-critters">
-                {challenge.left.positions.map((pos, i) => (
-                  <div
-                    key={i}
-                    className={`cc-critter ${
-                      showResult === "correct" && challenge.correctAnswer === "left"
-                        ? "cc-critter-celebrate"
-                        : showResult === "wrong" && challenge.correctAnswer !== "left"
-                          ? "cc-critter-sad"
-                          : ""
-                    }`}
-                    style={{
-                      left: `${pos.x}%`,
-                      top: `${pos.y}%`,
-                      animationDelay: `${pos.delay}s`,
-                      ["--wobble" as string]: `${pos.wobble}rad`,
-                      ["--critter-size" as string]: pos.size,
-                      transform: `scale(${pos.size})${pos.flip ? " scaleX(-1)" : ""}`,
-                    }}
-                  >
-                    {challenge.left.emoji}
-                  </div>
-                ))}
-              </div>
-              {showCounts && (
-                <div className={`cc-count-badge ${showResult === "correct" && challenge.correctAnswer === "left" ? "cc-count-correct" : ""}`}>
-                  {countAnim.left}
-                </div>
-              )}
-              <div className="cc-paddock-label">{challenge.left.name}s</div>
-              <div className="cc-fence-posts" />
-            </button>
-
-            {/* Center VS / Symbol area */}
-            <div className="cc-center-column">
-              {!showCounts ? (
-                <div className="cc-vs-badge">
-                  <span className="cc-vs-text">VS</span>
-                </div>
-              ) : symbolAnim ? (
-                <div className={`cc-symbol-fly-in ${showResult === "correct" ? "cc-symbol-correct" : "cc-symbol-wrong"}`}>
-                  <span className="cc-comparison-symbol">{getComparisonSymbol()}</span>
-                </div>
-              ) : (
-                <div className="cc-vs-badge cc-vs-counting">
-                  <span className="cc-counting-dots">...</span>
-                </div>
-              )}
-
-              {/* Result indicator */}
-              {showResult && (
-                <div className={`cc-result-indicator ${showResult}`}>
-                  {showResult === "correct" ? "\u2705" : "\u274C"}
-                </div>
-              )}
-            </div>
-
-            {/* Right paddock */}
-            <button
-              className={`cc-paddock ${
-                showResult && challenge.correctAnswer === "right"
-                  ? "cc-paddock-correct"
-                  : showResult && challenge.correctAnswer !== "right" && challenge.correctAnswer !== "equal"
-                    ? "cc-paddock-wrong"
-                    : ""
-              } ${selectedGroup === "right" ? "cc-paddock-selected" : ""}`}
-              onClick={() => handleAnswer("right")}
-              disabled={showResult !== null}
-            >
-              <div className="cc-fence-top" />
-              <div className="cc-paddock-ground" />
-              <div className="cc-paddock-critters">
-                {challenge.right.positions.map((pos, i) => (
-                  <div
-                    key={i}
-                    className={`cc-critter ${
-                      showResult === "correct" && challenge.correctAnswer === "right"
-                        ? "cc-critter-celebrate"
-                        : showResult === "wrong" && challenge.correctAnswer !== "right"
-                          ? "cc-critter-sad"
-                          : ""
-                    }`}
-                    style={{
-                      left: `${pos.x}%`,
-                      top: `${pos.y}%`,
-                      animationDelay: `${pos.delay}s`,
-                      ["--wobble" as string]: `${pos.wobble}rad`,
-                      ["--critter-size" as string]: pos.size,
-                      transform: `scale(${pos.size})${pos.flip ? " scaleX(-1)" : ""}`,
-                    }}
-                  >
-                    {challenge.right.emoji}
-                  </div>
-                ))}
-              </div>
-              {showCounts && (
-                <div className={`cc-count-badge ${showResult === "correct" && challenge.correctAnswer === "right" ? "cc-count-correct" : ""}`}>
-                  {countAnim.right}
-                </div>
-              )}
-              <div className="cc-paddock-label">{challenge.right.name}s</div>
-              <div className="cc-fence-posts" />
-            </button>
-          </div>
-        )}
-
-        {/* Equal button (only for equal mode) */}
-        {challenge && challenge.mode === "equal" && (
-          <div className="cc-equal-area">
-            <button
-              className={`cc-equal-btn ${
-                showResult && challenge.correctAnswer === "equal"
-                  ? "cc-equal-correct"
-                  : showResult && challenge.correctAnswer !== "equal"
-                    ? "cc-equal-wrong"
-                    : ""
-              }`}
-              onClick={() => handleAnswer("equal")}
-              disabled={showResult !== null}
-            >
-              {"\u2696\uFE0F"} They are EQUAL!
-            </button>
-          </div>
-        )}
-
-        {/* Symbol reveal row */}
-        {showCounts && challenge && symbolAnim && (
-          <div className="cc-symbol-reveal">
-            <span className={`cc-reveal-num ${challenge.correctAnswer === "left" && showResult === "correct" ? "cc-num-winner" : ""}`}>
-              {countAnim.left}
-            </span>
-            <span className={`cc-reveal-symbol ${showResult === "correct" ? "cc-symbol-glow-correct" : "cc-symbol-glow-wrong"}`}>
-              {getComparisonSymbol()}
-            </span>
-            <span className={`cc-reveal-num ${challenge.correctAnswer === "right" && showResult === "correct" ? "cc-num-winner" : ""}`}>
-              {countAnim.right}
-            </span>
-          </div>
-        )}
-
-        {/* Celebration particles overlay */}
-        {celebrationParticles.length > 0 && (
-          <div className="cc-celebration-overlay">
-            {celebrationParticles.map((p) => (
-              <div
-                key={p.id}
-                className={`cc-dust-particle ${p.opacity > 0.6 ? "cc-dust-bright" : ""}`}
-                style={{
-                  left: `${p.x}%`,
-                  top: `${p.y}%`,
-                  ["--dx" as string]: `${p.vx * 40}px`,
-                  ["--dy" as string]: `${p.vy * 40}px`,
-                  width: p.size,
-                  height: p.size,
-                }}
-              />
+        {/* Bottom hint bar */}
+        <div className="bottom-bar">
+          <span className="hint-text">Drag a symbol to the centre</span>
+          <div className="progress-dots">
+            {[...Array(TOTAL_ROUNDS)].map((_, i) => (
+              <div key={i} className={`dot ${i < roundNum - 1 ? 'completed' : ''} ${i === roundNum - 1 ? 'current' : ''}`} />
             ))}
           </div>
-        )}
-
-        {/* Star bursts */}
-        {starBursts.length > 0 && (
-          <div className="cc-celebration-overlay">
-            {starBursts.map((s) => (
-              <div
-                key={s.id}
-                className="cc-star-burst"
-                style={{
-                  left: `${s.x}%`,
-                  top: `${s.y}%`,
-                  ["--sx" as string]: `${Math.cos(s.angle) * s.speed * 50}px`,
-                  ["--sy" as string]: `${Math.sin(s.angle) * s.speed * 50}px`,
-                  fontSize: s.size,
-                }}
-              >
-                {"\u2B50"}
-              </div>
-            ))}
-          </div>
-        )}
+        </div>
       </div>
     </div>
   );
 }
 
-const ccStyles = `
+// ============================================================
+// STYLES — All CSS-in-JS, no Tailwind
+// ============================================================
+
+const styles = `
   @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap');
 
   * { box-sizing: border-box; margin: 0; padding: 0; user-select: none; -webkit-user-select: none; }
 
-  .cc-game {
-    width: 100%; height: 100%;
-    font-family: 'Nunito', sans-serif;
-    overflow: hidden;
-    position: relative;
-    background: linear-gradient(
-      180deg,
-      #1a0a2e 0%,
-      #3d1155 4%,
-      #c0392b 8%,
-      #e74c3c 14%,
-      #f39c12 22%,
-      #f5b041 30%,
-      #fad7a0 38%,
-      #fdebd0 44%,
-      #d4a76a 52%,
-      #c08040 60%,
-      #a0602a 68%,
-      #8b5020 74%,
-      #704018 80%,
-      #3d5c1e 88%,
-      #2d4a15 94%,
-      #1a3008 100%
-    );
-  }
-
-  .cc-ambient-canvas {
-    position: absolute;
-    inset: 0;
+  .critter-compare {
     width: 100%;
     height: 100%;
-    pointer-events: none;
-    z-index: 1;
-  }
-
-  /* ============ SUN ============ */
-  .cc-sun {
-    position: absolute;
-    right: 12%;
-    z-index: 2;
-    width: 60px;
-    height: 60px;
-    transition: top 0.5s ease, opacity 0.5s ease;
-    pointer-events: none;
-  }
-
-  .cc-sun-core {
-    position: absolute;
-    inset: 10px;
-    border-radius: 50%;
-    background: radial-gradient(circle, #fff8e0 0%, #ffd700 40%, #ff8c00 100%);
-    box-shadow: 0 0 30px rgba(255, 200, 0, 0.6), 0 0 60px rgba(255, 150, 0, 0.3);
-  }
-
-  .cc-sun-glow {
-    position: absolute;
-    inset: -15px;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(255,200,50,0.3) 0%, transparent 70%);
-    animation: ccSunPulse 4s ease-in-out infinite;
-  }
-
-  .cc-sun-rays {
-    position: absolute;
-    inset: -20px;
-    border-radius: 50%;
-    background: conic-gradient(
-      from 0deg,
-      transparent 0deg, rgba(255,200,50,0.15) 10deg, transparent 20deg,
-      transparent 30deg, rgba(255,200,50,0.12) 40deg, transparent 50deg,
-      transparent 60deg, rgba(255,200,50,0.15) 70deg, transparent 80deg,
-      transparent 90deg, rgba(255,200,50,0.12) 100deg, transparent 110deg,
-      transparent 120deg, rgba(255,200,50,0.15) 130deg, transparent 140deg,
-      transparent 150deg, rgba(255,200,50,0.12) 160deg, transparent 170deg,
-      transparent 180deg, rgba(255,200,50,0.15) 190deg, transparent 200deg,
-      transparent 210deg, rgba(255,200,50,0.12) 220deg, transparent 230deg,
-      transparent 240deg, rgba(255,200,50,0.15) 250deg, transparent 260deg,
-      transparent 270deg, rgba(255,200,50,0.12) 280deg, transparent 290deg,
-      transparent 300deg, rgba(255,200,50,0.15) 310deg, transparent 320deg,
-      transparent 330deg, rgba(255,200,50,0.12) 340deg, transparent 350deg,
-      transparent 360deg
-    );
-    animation: ccSunRaysSpin 30s linear infinite;
-  }
-
-  @keyframes ccSunPulse {
-    0%, 100% { transform: scale(1); opacity: 0.8; }
-    50% { transform: scale(1.15); opacity: 1; }
-  }
-
-  @keyframes ccSunRaysSpin {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
-  }
-
-  /* ============ INTRO ============ */
-  .cc-intro, .cc-complete {
-    height: 100%; display: flex; align-items: center; justify-content: center;
-    position: relative; overflow: hidden; z-index: 5;
-  }
-
-  .cc-intro-bg { position: absolute; inset: 0; overflow: hidden; pointer-events: none; }
-
-  .cc-bg-critter-parade {
-    position: absolute;
-    font-size: 2.5rem;
-    animation: ccParadeWalk linear infinite;
-    opacity: 0.25;
-    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
-  }
-
-  @keyframes ccParadeWalk {
-    0% { left: -10%; transform: translateY(0); }
-    10% { transform: translateY(-8px); }
-    20% { transform: translateY(0); }
-    30% { transform: translateY(-8px); }
-    40% { transform: translateY(0); }
-    50% { left: 50%; transform: translateY(-8px); }
-    60% { transform: translateY(0); }
-    70% { transform: translateY(-8px); }
-    80% { transform: translateY(0); }
-    90% { transform: translateY(-8px); }
-    100% { left: 110%; transform: translateY(0); }
-  }
-
-  .cc-intro-cloud {
-    position: absolute;
-    width: 200px;
-    height: 50px;
-    background: radial-gradient(ellipse, rgba(255,240,220,0.4) 0%, transparent 70%);
-    border-radius: 50%;
-    animation: ccCloudDrift linear infinite;
-  }
-
-  @keyframes ccCloudDrift {
-    0% { left: -15%; }
-    100% { left: 115%; }
-  }
-
-  .cc-boomerang {
-    position: absolute;
-    opacity: 0.3;
-    pointer-events: none;
-  }
-
-  .cc-boomerang-1 {
-    top: 12%;
-    left: 8%;
-    animation: ccBoomerangSpin 8s linear infinite;
-  }
-
-  .cc-boomerang-2 {
-    bottom: 25%;
-    right: 10%;
-    animation: ccBoomerangSpin 10s linear infinite reverse;
-  }
-
-  @keyframes ccBoomerangSpin {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
-  }
-
-  .cc-intro-content, .cc-complete-content {
-    position: relative; z-index: 10; text-align: center; padding: 1.5rem; max-width: 480px;
-    transform: translateY(20px);
-    opacity: 0;
-    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-  }
-
-  .cc-intro-content.cc-intro-visible {
-    transform: translateY(0);
-    opacity: 1;
-  }
-
-  .cc-complete-content {
-    transform: translateY(0);
-    opacity: 1;
-  }
-
-  .cc-logo {
-    display: flex; align-items: center; justify-content: center; gap: 0.8rem; margin-bottom: 0.5rem;
-  }
-
-  .cc-logo h1 {
-    font-size: clamp(1.8rem, 7vw, 2.8rem); font-weight: 900;
-    background: linear-gradient(135deg, #ffd700, #ff8c00, #ff6347);
-    -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
-    text-shadow: none;
-    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
-  }
-
-  .cc-logo-icon { font-size: 2.5rem; animation: ccLogoHop 2s ease-in-out infinite; }
-  .cc-logo-icon:last-child { animation-delay: 0.4s; }
-
-  @keyframes ccLogoHop {
-    0%, 100% { transform: translateY(0) rotate(0deg); }
-    30% { transform: translateY(-14px) rotate(-5deg); }
-    50% { transform: translateY(-18px) rotate(3deg); }
-    70% { transform: translateY(-10px) rotate(-2deg); }
-  }
-
-  .cc-tagline { color: #fde68a; font-size: 1.05rem; margin-bottom: 1.8rem; text-shadow: 0 1px 3px rgba(0,0,0,0.3); }
-
-  .cc-instructions-card {
-    background: rgba(0,0,0,0.25);
-    border: 2px solid rgba(200,150,80,0.4);
-    border-radius: 20px;
-    padding: 1.3rem;
-    margin-bottom: 1.8rem;
-    backdrop-filter: blur(12px);
-    box-shadow: 0 8px 32px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.05);
-    transform: translateY(20px);
-    opacity: 0;
-    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.2s;
-  }
-
-  .cc-instructions-card.cc-card-visible {
-    transform: translateY(0);
-    opacity: 1;
-  }
-
-  .cc-instructions-card h3 { color: #fde68a; font-size: 1.1rem; margin-bottom: 1rem; }
-
-  .cc-instruction { margin-bottom: 1rem; }
-  .cc-instruction:last-child { margin-bottom: 0; }
-
-  .cc-instruction-visual {
-    display: flex; align-items: center; justify-content: center; gap: 0.6rem; margin-bottom: 0.4rem;
-  }
-
-  .cc-mini-group-box {
-    display: inline-flex; gap: 2px;
-    padding: 4px 8px;
-    background: rgba(255,255,255,0.08);
-    border: 1px solid rgba(255,255,255,0.15);
-    border-radius: 10px;
-  }
-
-  .cc-mini-critter { font-size: 1.3rem; }
-  .cc-vs-intro { color: #c08040; font-weight: 900; font-size: 0.85rem; }
-
-  .cc-wooden-sign-mini {
-    display: inline-block;
-    padding: 4px 12px;
-    background: linear-gradient(180deg, #a0703c 0%, #8b5e34 50%, #7a5230 100%);
-    border: 2px solid #6b4226;
-    border-radius: 6px;
-    color: #fde68a;
-    font-weight: 700;
-    font-size: 0.85rem;
-    box-shadow: 0 3px 6px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.1);
-  }
-
-  .cc-symbol-preview {
-    display: inline-flex; align-items: center; justify-content: center;
-    width: 36px; height: 36px;
-    background: linear-gradient(135deg, rgba(255,200,50,0.3), rgba(255,150,0,0.3));
-    border: 2px solid rgba(255,200,50,0.5);
-    border-radius: 50%;
-    color: #ffd700; font-weight: 900; font-size: 1.3rem;
-    text-shadow: 0 1px 3px rgba(0,0,0,0.4);
-  }
-
-  .cc-instruction p { color: #e8d8c0; font-size: 0.9rem; }
-  .cc-hl-green { color: #86efac; font-weight: 700; }
-  .cc-hl-yellow { color: #fde68a; font-weight: 700; }
-  .cc-hl-blue { color: #93c5fd; font-weight: 700; }
-
-  .cc-start-btn, .cc-next-btn {
-    display: inline-flex; align-items: center; gap: 0.8rem;
-    padding: 0.9rem 2.2rem; font-family: 'Nunito', sans-serif;
-    font-size: 1.15rem; font-weight: 800; color: white;
-    background: linear-gradient(135deg, #e67e22, #d35400);
-    border: 3px solid #a04000;
-    border-radius: 50px; cursor: pointer;
-    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-    box-shadow: 0 6px 20px rgba(211,84,0,0.4), 0 2px 4px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.2);
-    transform: translateY(30px);
-    opacity: 0;
-    text-shadow: 0 1px 2px rgba(0,0,0,0.3);
-  }
-
-  .cc-start-btn.cc-btn-visible, .cc-next-btn {
-    transform: translateY(0);
-    opacity: 1;
-  }
-
-  .cc-start-btn:hover, .cc-next-btn:hover {
-    transform: translateY(-3px) scale(1.03);
-    box-shadow: 0 12px 30px rgba(211,84,0,0.5), 0 4px 8px rgba(0,0,0,0.2);
-  }
-
-  .cc-start-btn:active, .cc-next-btn:active {
-    transform: translateY(1px) scale(0.98);
-  }
-
-  .cc-btn-hat { font-size: 1.3rem; }
-
-  /* ============ LEVEL COMPLETE ============ */
-  .cc-complete-bg { position: absolute; inset: 0; overflow: hidden; pointer-events: none; z-index: 1; }
-
-  .cc-falling-star {
-    position: absolute;
-    top: -20px;
-    font-size: 1.2rem;
-    animation: ccFallStar linear infinite;
-    filter: drop-shadow(0 0 6px rgba(255,200,0,0.5));
-  }
-
-  @keyframes ccFallStar {
-    0% { transform: translateY(-20px) rotate(0deg); opacity: 0; }
-    10% { opacity: 1; }
-    90% { opacity: 1; }
-    100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
-  }
-
-  .cc-complete-title {
-    font-size: clamp(1.5rem, 5vw, 2.2rem); color: white; margin-bottom: 1rem;
-    text-shadow: 0 2px 8px rgba(0,0,0,0.4);
-    animation: ccTitleBounce 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-  }
-
-  @keyframes ccTitleBounce {
-    0% { transform: scale(0.5); opacity: 0; }
-    60% { transform: scale(1.08); }
-    100% { transform: scale(1); opacity: 1; }
-  }
-
-  .cc-critter-parade-complete {
-    display: flex; justify-content: center; gap: 0.6rem; margin-bottom: 1.5rem;
-  }
-
-  .cc-parade-critter {
-    font-size: 2.5rem;
-    animation: ccCritterHop 0.7s ease infinite;
-    filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));
-  }
-
-  @keyframes ccCritterHop {
-    0%, 100% { transform: translateY(0) rotate(0deg); }
-    25% { transform: translateY(-12px) rotate(-5deg); }
-    50% { transform: translateY(-16px) rotate(3deg); }
-    75% { transform: translateY(-8px) rotate(-2deg); }
-  }
-
-  .cc-gameover-title { color: #fca5a5; }
-
-  .cc-gameover-critters {
-    display: flex; justify-content: center; gap: 1rem; margin-bottom: 1rem;
-  }
-
-  .cc-scatter-critter {
-    font-size: 2.2rem;
-    animation: ccScatter 2s ease-in-out infinite;
-  }
-
-  @keyframes ccScatter {
-    0%, 100% { transform: translateX(0) translateY(0) rotate(0deg); }
-    25% { transform: translateX(-8px) translateY(-4px) rotate(-10deg); }
-    50% { transform: translateX(6px) translateY(-6px) rotate(5deg); }
-    75% { transform: translateX(-4px) translateY(-2px) rotate(-3deg); }
-  }
-
-  .cc-gameover-subtitle {
-    color: #d4a88a; font-size: 1rem; margin-bottom: 1.5rem;
-    text-shadow: 0 1px 3px rgba(0,0,0,0.3);
-  }
-
-  .cc-score-card {
-    display: flex; justify-content: center; gap: 2rem; margin-bottom: 1.8rem; flex-wrap: wrap;
-  }
-  .cc-score-item { display: flex; flex-direction: column; align-items: center; }
-  .cc-score-label { font-size: 0.85rem; color: #fde68a; margin-bottom: 0.3rem; }
-  .cc-score-value {
-    font-size: 2rem; font-weight: 900; color: white;
-    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
-  }
-
-  .cc-complete-buttons { display: flex; flex-direction: column; gap: 0.8rem; align-items: center; }
-
-  .cc-menu-btn {
-    padding: 0.7rem 1.8rem; font-family: 'Nunito', sans-serif;
-    font-size: 0.95rem; font-weight: 700; color: #d4a88a;
-    background: transparent; border: 2px solid rgba(200,150,80,0.3);
-    border-radius: 30px; cursor: pointer; transition: all 0.2s ease;
-  }
-  .cc-menu-btn:hover { border-color: rgba(200,150,80,0.6); color: #fde68a; }
-
-  /* ============ PLAYING ============ */
-  .cc-play {
-    height: 100%; display: flex; flex-direction: column;
-    position: relative; z-index: 5;
-  }
-
-  .cc-play.cc-shake { animation: ccShake 0.5s ease; }
-
-  @keyframes ccShake {
-    0%, 100% { transform: translateX(0) rotate(0deg); }
-    15% { transform: translateX(-6px) rotate(-0.5deg); }
-    30% { transform: translateX(6px) rotate(0.5deg); }
-    45% { transform: translateX(-5px) rotate(-0.3deg); }
-    60% { transform: translateX(5px) rotate(0.3deg); }
-    75% { transform: translateX(-3px); }
-    90% { transform: translateX(2px); }
-  }
-
-  .cc-header {
-    display: flex; justify-content: space-between; align-items: center;
-    padding: 0.5rem 0.7rem;
-    background: linear-gradient(180deg, rgba(60,30,10,0.6) 0%, rgba(60,30,10,0.3) 100%);
-    border-bottom: 1px solid rgba(200,150,80,0.2);
-    z-index: 50;
-  }
-
-  .cc-header-left, .cc-header-right { display: flex; align-items: center; gap: 0.5rem; }
-  .cc-header-center { display: flex; align-items: center; gap: 0.5rem; }
-
-  .cc-back-btn {
-    width: 36px; height: 36px;
-    background: rgba(200,150,80,0.15);
-    border: 1px solid rgba(200,150,80,0.3);
-    border-radius: 10px; color: #fde68a; font-size: 1.1rem;
-    cursor: pointer; transition: all 0.2s ease;
-  }
-
-  .cc-back-btn:hover { background: rgba(200,150,80,0.3); }
-
-  .cc-level-badge {
-    padding: 0.35rem 0.7rem;
-    background: linear-gradient(135deg, #e67e22, #d35400);
-    border: 1px solid #a04000;
-    border-radius: 14px; font-weight: 700; color: white; font-size: 0.8rem;
-    box-shadow: 0 2px 6px rgba(211,84,0,0.3);
-  }
-
-  .cc-lives { font-size: 0.9rem; }
-
-  .cc-streak-badge {
-    padding: 0.25rem 0.5rem;
-    background: rgba(251,146,60,0.25);
-    border: 1px solid rgba(251,146,60,0.4);
-    border-radius: 10px; font-size: 0.75rem; color: #fb923c; font-weight: 700;
-    animation: ccStreakPulse 0.6s ease;
-  }
-
-  .cc-streak-fire {
-    background: rgba(239,68,68,0.25);
-    border-color: rgba(239,68,68,0.5);
-    color: #fca5a5;
-    animation: ccStreakPulse 0.4s ease, ccStreakGlow 1s ease-in-out infinite;
-  }
-
-  @keyframes ccStreakPulse {
-    0% { transform: scale(0.5); }
-    50% { transform: scale(1.2); }
-    100% { transform: scale(1); }
-  }
-
-  @keyframes ccStreakGlow {
-    0%, 100% { box-shadow: 0 0 8px rgba(239,68,68,0.3); }
-    50% { box-shadow: 0 0 16px rgba(239,68,68,0.6); }
-  }
-
-  .cc-score-badge {
-    display: flex; align-items: center; gap: 0.3rem;
-    padding: 0.35rem 0.7rem;
-    background: rgba(255,200,50,0.15);
-    border: 1px solid rgba(255,200,50,0.3);
-    border-radius: 14px; color: #ffd700; font-weight: 700; font-size: 0.8rem;
-  }
-
-  /* Timer */
-  .cc-timer-bar {
-    height: 5px;
-    background: rgba(0,0,0,0.3);
-    position: relative;
-    overflow: hidden;
-  }
-
-  .cc-timer-fill {
-    height: 100%;
-    background: linear-gradient(90deg, #86efac, #4ade80);
-    transition: width 0.1s linear;
-    border-radius: 0 3px 3px 0;
-    box-shadow: 0 0 8px rgba(74,222,128,0.4);
-  }
-
-  .cc-timer-warn {
-    background: linear-gradient(90deg, #fde68a, #facc15) !important;
-    box-shadow: 0 0 8px rgba(250,204,21,0.4) !important;
-  }
-
-  .cc-timer-danger {
-    background: linear-gradient(90deg, #fca5a5, #ef4444) !important;
-    box-shadow: 0 0 8px rgba(239,68,68,0.4) !important;
-    animation: ccTimerPulse 0.5s ease-in-out infinite;
-  }
-
-  @keyframes ccTimerPulse {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.6; }
-  }
-
-  /* Progress dots */
-  .cc-progress {
-    text-align: center; padding: 0.4rem 0.5rem;
-  }
-
-  .cc-progress-dots {
-    display: flex; justify-content: center; gap: 4px; flex-wrap: wrap;
-  }
-
-  .cc-progress-dot {
-    width: 8px; height: 8px; border-radius: 50%;
-    background: rgba(200,150,80,0.2);
-    border: 1px solid rgba(200,150,80,0.3);
-    transition: all 0.3s ease;
-  }
-
-  .cc-dot-done {
-    background: #4ade80;
-    border-color: #22c55e;
-    box-shadow: 0 0 4px rgba(74,222,128,0.4);
-  }
-
-  .cc-dot-current {
-    background: #fbbf24;
-    border-color: #f59e0b;
-    box-shadow: 0 0 6px rgba(251,191,36,0.5);
-    animation: ccDotPulse 1s ease-in-out infinite;
-  }
-
-  @keyframes ccDotPulse {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.4); }
-  }
-
-  /* Prompt - wooden sign */
-  .cc-prompt-sign {
-    display: flex; align-items: flex-end; justify-content: center;
-    padding: 0.3rem 1rem 0;
-    animation: ccSignDrop 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-  }
-
-  @keyframes ccSignDrop {
-    0% { transform: translateY(-30px) rotate(-3deg); opacity: 0; }
-    60% { transform: translateY(3px) rotate(1deg); }
-    100% { transform: translateY(0) rotate(0deg); opacity: 1; }
-  }
-
-  .cc-sign-post {
-    width: 6px; height: 18px;
-    background: linear-gradient(180deg, #7a5230, #5c3d20);
-    border-radius: 2px;
-  }
-
-  .cc-sign-board {
-    display: flex; align-items: center; gap: 0.5rem;
-    padding: 0.5rem 1.2rem;
-    background: linear-gradient(180deg, #b8834a 0%, #9a6b3a 30%, #8a5e32 70%, #7a5230 100%);
-    border: 2px solid #5c3d20;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.1), inset 0 -2px 0 rgba(0,0,0,0.1);
-    position: relative;
-  }
-
-  .cc-sign-board::before {
-    content: '';
-    position: absolute;
-    inset: 3px;
-    border: 1px solid rgba(255,255,255,0.06);
-    border-radius: 5px;
-    pointer-events: none;
-  }
-
-  .cc-prompt-emoji {
-    font-size: 1.2rem;
-    animation: ccPromptEmojiBounce 1.5s ease-in-out infinite;
-  }
-
-  @keyframes ccPromptEmojiBounce {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-4px); }
-  }
-
-  .cc-prompt-text {
-    font-size: 1rem; font-weight: 800; color: #fef3c7;
-    text-shadow: 0 1px 2px rgba(0,0,0,0.4);
-  }
-
-  /* ============ COMPARE AREA ============ */
-  .cc-compare-area {
-    flex: 1; display: flex; gap: 0; padding: 0.4rem;
-    align-items: stretch; min-height: 180px;
-  }
-
-  /* Paddock containers */
-  .cc-paddock {
-    flex: 1; position: relative;
-    background:
-      linear-gradient(180deg, rgba(120,80,30,0.15) 0%, rgba(100,65,20,0.25) 60%, rgba(80,50,15,0.35) 100%);
-    border: 3px solid rgba(140,100,50,0.35);
-    border-radius: 16px;
-    cursor: pointer;
-    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-    overflow: hidden;
     font-family: 'Nunito', sans-serif;
-    display: flex; flex-direction: column;
-    box-shadow: inset 0 -4px 12px rgba(0,0,0,0.15);
+    overflow: hidden;
+    background: #1a0a00;
+    position: relative;
   }
 
-  .cc-paddock:hover:not(:disabled) {
-    border-color: rgba(200,150,80,0.6);
-    background:
-      linear-gradient(180deg, rgba(140,100,40,0.2) 0%, rgba(120,80,30,0.3) 60%, rgba(100,65,20,0.4) 100%);
-    transform: scale(1.02);
-    box-shadow: 0 0 20px rgba(200,150,80,0.15), inset 0 -4px 12px rgba(0,0,0,0.15);
+  /* ═══════════════════════════════════════
+     INTRO SCREEN
+     ═══════════════════════════════════════ */
+
+  .intro-screen {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
   }
 
-  .cc-paddock:active:not(:disabled) { transform: scale(0.98); }
-  .cc-paddock:disabled { cursor: default; }
-
-  .cc-paddock-correct {
-    border-color: #4ade80 !important;
-    background: rgba(74,222,128,0.12) !important;
-    box-shadow: 0 0 25px rgba(74,222,128,0.2), inset 0 0 20px rgba(74,222,128,0.08) !important;
-  }
-
-  .cc-paddock-wrong {
-    border-color: rgba(239,68,68,0.4) !important;
-    opacity: 0.5;
-  }
-
-  .cc-paddock-selected {
-    border-color: rgba(251,191,36,0.6);
-    box-shadow: 0 0 20px rgba(251,191,36,0.2);
-  }
-
-  /* Fence decoration */
-  .cc-fence-top {
-    height: 4px;
-    background: repeating-linear-gradient(
-      90deg,
-      rgba(140,100,50,0.4) 0px,
-      rgba(140,100,50,0.4) 8px,
-      transparent 8px,
-      transparent 12px
-    );
-  }
-
-  .cc-fence-posts {
+  .intro-bg {
     position: absolute;
-    top: 0; bottom: 0; left: 0; right: 0;
-    pointer-events: none;
-    background:
-      linear-gradient(90deg, rgba(100,70,30,0.15) 0px, transparent 3px) left/3px 100% no-repeat,
-      linear-gradient(90deg, transparent calc(100% - 3px), rgba(100,70,30,0.15) 100%) right/3px 100% no-repeat;
+    inset: 0;
+    background: linear-gradient(
+      180deg,
+      #1a0533 0%,
+      #4a1942 15%,
+      #c2442d 35%,
+      #e8832a 50%,
+      #f5b041 60%,
+      #d4a056 70%,
+      #8b4513 80%,
+      #5c2e0e 100%
+    );
+    overflow: hidden;
   }
 
-  .cc-paddock-ground {
+  .intro-ground {
     position: absolute;
     bottom: 0;
     left: 0;
     right: 0;
-    height: 25%;
-    background: linear-gradient(180deg, transparent, rgba(80,50,15,0.2));
-    pointer-events: none;
+    height: 30%;
+    background: linear-gradient(180deg, #8b4513 0%, #6b3410 40%, #4a2308 100%);
+    border-top: 2px solid rgba(210, 150, 80, 0.3);
   }
 
-  .cc-paddock-critters {
-    flex: 1; position: relative; min-height: 100px;
-  }
-
-  /* Critter animations */
-  .cc-critter {
+  .intro-silhouette {
     position: absolute;
-    font-size: clamp(1.1rem, 3vw, 1.7rem);
-    animation: ccCritterAppear 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
-    filter: drop-shadow(0 3px 6px rgba(0,0,0,0.3));
-    transition: filter 0.3s ease;
+    bottom: 28%;
+    background: rgba(30, 15, 5, 0.7);
   }
 
-  @keyframes ccCritterAppear {
-    0% { transform: scale(0) translateY(20px); opacity: 0; }
-    50% { transform: scale(1.2) translateY(-5px); }
-    70% { transform: scale(0.9) translateY(2px); }
-    100% { transform: scale(var(--critter-size, 1)) translateY(0); opacity: 1; }
+  .intro-silhouette.tree1 {
+    left: 5%;
+    width: 8px;
+    height: 120px;
+    border-radius: 3px;
   }
-
-  .cc-critter::after {
+  .intro-silhouette.tree1::before {
     content: '';
-    display: block;
     position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    bottom: -2px;
-    width: 70%;
-    height: 3px;
-    background: radial-gradient(ellipse, rgba(0,0,0,0.15) 0%, transparent 70%);
+    top: -30px;
+    left: -25px;
+    width: 60px;
+    height: 50px;
+    background: rgba(30, 50, 20, 0.6);
+    border-radius: 50%;
+  }
+  .intro-silhouette.tree1::after {
+    content: '';
+    position: absolute;
+    top: -15px;
+    left: -15px;
+    width: 40px;
+    height: 35px;
+    background: rgba(30, 50, 20, 0.5);
+    border-radius: 50%;
+  }
+
+  .intro-silhouette.tree2 {
+    right: 8%;
+    width: 6px;
+    height: 100px;
+    border-radius: 3px;
+  }
+  .intro-silhouette.tree2::before {
+    content: '';
+    position: absolute;
+    top: -25px;
+    left: -20px;
+    width: 50px;
+    height: 40px;
+    background: rgba(30, 50, 20, 0.6);
+    border-radius: 50%;
+  }
+
+  .intro-silhouette.tree3 {
+    left: 15%;
+    width: 5px;
+    height: 70px;
+    border-radius: 2px;
+  }
+  .intro-silhouette.tree3::before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: -15px;
+    width: 35px;
+    height: 30px;
+    background: rgba(30, 50, 20, 0.5);
+    border-radius: 50%;
+  }
+
+  .intro-cloud {
+    position: absolute;
+    background: rgba(255, 200, 150, 0.15);
+    border-radius: 50%;
+    filter: blur(8px);
+  }
+
+  .intro-cloud.cloud1 {
+    top: 8%;
+    left: 10%;
+    width: 120px;
+    height: 40px;
+    animation: cloudDrift 25s linear infinite;
+  }
+  .intro-cloud.cloud2 {
+    top: 14%;
+    left: 60%;
+    width: 90px;
+    height: 30px;
+    animation: cloudDrift 30s linear infinite;
+    animation-delay: -10s;
+  }
+  .intro-cloud.cloud3 {
+    top: 5%;
+    left: 35%;
+    width: 100px;
+    height: 35px;
+    animation: cloudDrift 22s linear infinite;
+    animation-delay: -5s;
+  }
+
+  @keyframes cloudDrift {
+    0% { transform: translateX(-30px); }
+    100% { transform: translateX(30px); }
+  }
+
+  .ambient-leaf {
+    position: absolute;
+    border-radius: 0 50% 50% 50%;
     pointer-events: none;
+    z-index: 5;
   }
 
-  /* Idle animations vary by delay to look natural */
-  .cc-paddock:not(:disabled) .cc-critter {
-    animation: ccCritterAppear 0.5s cubic-bezier(0.16, 1, 0.3, 1) both, ccCritterIdle 2s ease-in-out infinite 0.6s;
-  }
-
-  @keyframes ccCritterIdle {
-    0%, 100% { transform: scale(var(--critter-size, 1)) translateY(0) rotate(0deg); }
-    20% { transform: scale(var(--critter-size, 1)) translateY(-4px) rotate(-2deg); }
-    40% { transform: scale(var(--critter-size, 1)) translateY(-7px) rotate(1deg); }
-    60% { transform: scale(var(--critter-size, 1)) translateY(-3px) rotate(-1deg); }
-    80% { transform: scale(var(--critter-size, 1)) translateY(-1px) rotate(0.5deg); }
-  }
-
-  /* Celebration hop */
-  .cc-critter-celebrate {
-    animation: ccCritterCelebrate 0.4s ease infinite !important;
-    filter: drop-shadow(0 3px 6px rgba(0,0,0,0.3)) drop-shadow(0 0 8px rgba(74,222,128,0.4)) !important;
-  }
-
-  @keyframes ccCritterCelebrate {
-    0%, 100% { transform: scale(var(--critter-size, 1)) translateY(0) rotate(0deg); }
-    25% { transform: scale(calc(var(--critter-size, 1) * 1.15)) translateY(-14px) rotate(-8deg); }
-    50% { transform: scale(var(--critter-size, 1)) translateY(-18px) rotate(6deg); }
-    75% { transform: scale(calc(var(--critter-size, 1) * 1.1)) translateY(-8px) rotate(-3deg); }
-  }
-
-  /* Sad scatter */
-  .cc-critter-sad {
-    animation: ccCritterSad 0.6s ease both !important;
-    filter: drop-shadow(0 3px 6px rgba(0,0,0,0.3)) brightness(0.7) !important;
-  }
-
-  @keyframes ccCritterSad {
-    0% { transform: scale(var(--critter-size, 1)); }
-    20% { transform: scale(calc(var(--critter-size, 1) * 0.8)) rotate(-10deg); }
-    40% { transform: scale(calc(var(--critter-size, 1) * 0.85)) rotate(8deg) translateX(5px); }
-    60% { transform: scale(calc(var(--critter-size, 1) * 0.8)) rotate(-5deg) translateX(-4px); }
-    80% { transform: scale(calc(var(--critter-size, 1) * 0.9)) rotate(2deg); }
-    100% { transform: scale(calc(var(--critter-size, 1) * 0.85)) translateY(3px); }
-  }
-
-  /* Count badge */
-  .cc-count-badge {
-    position: absolute; top: 8px; right: 8px;
-    width: 40px; height: 40px; border-radius: 50%;
-    background: rgba(0,0,0,0.65);
-    border: 2px solid rgba(255,255,255,0.2);
-    display: flex; align-items: center; justify-content: center;
-    font-size: 1.15rem; font-weight: 900; color: white;
-    animation: ccCountRoll 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-    backdrop-filter: blur(4px);
+  .intro-content {
+    position: relative;
     z-index: 10;
+    text-align: center;
+    padding: 1.5rem;
+    max-width: 520px;
   }
 
-  .cc-count-correct {
-    background: rgba(74,222,128,0.3) !important;
-    border-color: #4ade80 !important;
-    color: #86efac !important;
-    box-shadow: 0 0 12px rgba(74,222,128,0.3) !important;
+  .intro-title {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+  .intro-title.visible {
+    opacity: 1;
+    transform: translateY(0);
   }
 
-  @keyframes ccCountRoll {
-    0% { transform: scale(0) rotate(-180deg); opacity: 0; }
-    60% { transform: scale(1.2) rotate(10deg); }
-    100% { transform: scale(1) rotate(0deg); opacity: 1; }
+  .intro-critters {
+    display: flex;
+    justify-content: center;
+    gap: 1.2rem;
+    margin-bottom: 0.5rem;
   }
 
-  .cc-paddock-label {
-    text-align: center; padding: 0.25rem; font-size: 0.7rem;
-    color: rgba(253,232,168,0.6); font-weight: 600;
-    text-shadow: 0 1px 2px rgba(0,0,0,0.3);
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
+  .intro-emoji {
+    font-size: 3.5rem;
+    display: inline-block;
+    filter: drop-shadow(0 4px 12px rgba(0,0,0,0.4));
   }
 
-  /* Center column */
-  .cc-center-column {
-    display: flex; flex-direction: column; align-items: center; justify-content: center;
-    width: 50px; gap: 0.5rem; flex-shrink: 0;
+  .bounce-1 { animation: introBounce 2s ease-in-out infinite; }
+  .bounce-2 { animation: introBounce 2s ease-in-out infinite 0.3s; }
+  .bounce-3 { animation: introBounce 2s ease-in-out infinite 0.6s; }
+
+  @keyframes introBounce {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    25% { transform: translateY(-15px) rotate(-5deg); }
+    75% { transform: translateY(5px) rotate(3deg); }
   }
 
-  .cc-vs-badge {
-    width: 40px; height: 40px; border-radius: 50%;
-    background: rgba(200,150,80,0.2);
-    border: 2px solid rgba(200,150,80,0.3);
-    display: flex; align-items: center; justify-content: center;
+  .intro-title h1 {
+    font-size: clamp(2rem, 7vw, 3rem);
+    font-weight: 900;
+    background: linear-gradient(135deg, #ffd700, #ff8c00, #ff6347);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    filter: drop-shadow(0 3px 6px rgba(0,0,0,0.3));
+    margin-bottom: 0.3rem;
   }
 
-  .cc-vs-text {
-    font-size: 0.8rem; font-weight: 900; color: #c08040;
-    text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+  .intro-subtitle {
+    color: rgba(255, 220, 180, 0.8);
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
   }
 
-  .cc-vs-counting {
-    animation: ccVsCountPulse 0.6s ease-in-out infinite;
+  .intro-instructions {
+    background: rgba(0, 0, 0, 0.4);
+    border: 2px solid rgba(255, 180, 100, 0.2);
+    border-radius: 24px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    backdrop-filter: blur(10px);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s ease;
+  }
+  .intro-instructions.visible {
+    opacity: 1;
+    transform: translateY(0);
   }
 
-  .cc-counting-dots {
-    color: #fde68a; font-weight: 900; font-size: 0.9rem;
-    animation: ccDotsAnim 1s steps(3) infinite;
+  .instruction-row {
+    margin-bottom: 1.2rem;
+  }
+  .instruction-row:last-child { margin-bottom: 0; }
+
+  .instruction-visual {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    margin-bottom: 0.4rem;
   }
 
-  @keyframes ccVsCountPulse {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.1); }
-  }
-
-  @keyframes ccDotsAnim {
-    0% { opacity: 0.3; }
-    50% { opacity: 1; }
-    100% { opacity: 0.3; }
-  }
-
-  /* Flying symbol */
-  .cc-symbol-fly-in {
-    width: 44px; height: 44px; border-radius: 50%;
-    display: flex; align-items: center; justify-content: center;
-    animation: ccSymbolFlyIn 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-  }
-
-  .cc-symbol-correct {
-    background: rgba(74,222,128,0.25);
-    border: 2px solid rgba(74,222,128,0.5);
-    box-shadow: 0 0 15px rgba(74,222,128,0.3);
-  }
-
-  .cc-symbol-wrong {
-    background: rgba(239,68,68,0.2);
-    border: 2px solid rgba(239,68,68,0.4);
-    box-shadow: 0 0 15px rgba(239,68,68,0.2);
-  }
-
-  @keyframes ccSymbolFlyIn {
-    0% { transform: scale(0) translateY(-40px) rotate(-180deg); opacity: 0; }
-    60% { transform: scale(1.3) translateY(5px) rotate(10deg); }
-    80% { transform: scale(0.9) translateY(-2px) rotate(-3deg); }
-    100% { transform: scale(1) translateY(0) rotate(0deg); opacity: 1; }
-  }
-
-  .cc-comparison-symbol {
-    font-size: 1.4rem; font-weight: 900; color: #ffd700;
-    text-shadow: 0 1px 3px rgba(0,0,0,0.4);
-  }
-
-  .cc-result-indicator {
+  .mini-paddock {
     font-size: 1.5rem;
-    animation: ccResultPop 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-    filter: drop-shadow(0 2px 6px rgba(0,0,0,0.3));
+    padding: 0.3rem 0.6rem;
+    background: rgba(139, 69, 19, 0.4);
+    border: 2px solid rgba(210, 150, 80, 0.5);
+    border-radius: 8px;
   }
 
-  .cc-result-indicator.correct {
-    animation: ccResultPop 0.4s cubic-bezier(0.16, 1, 0.3, 1), ccResultGlow 1s ease-in-out infinite 0.4s;
+  .symbol-preview {
+    width: 40px;
+    height: 40px;
+    background: radial-gradient(circle at 35% 35%, #ffd700, #e8832a, #c2442d);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    font-weight: 900;
+    color: white;
+    box-shadow: 0 4px 15px rgba(232, 131, 42, 0.5);
   }
 
-  @keyframes ccResultPop {
-    0% { transform: scale(0); }
-    60% { transform: scale(1.4); }
-    100% { transform: scale(1); }
+  .instruction-row p {
+    color: rgba(255, 220, 180, 0.85);
+    font-size: 0.95rem;
   }
 
-  @keyframes ccResultGlow {
-    0%, 100% { filter: drop-shadow(0 2px 6px rgba(0,0,0,0.3)); }
-    50% { filter: drop-shadow(0 2px 12px rgba(74,222,128,0.6)); }
-  }
-
-  /* Equal button */
-  .cc-equal-area {
-    padding: 0.3rem 0.8rem;
-  }
-
-  .cc-equal-btn {
-    width: 100%; padding: 0.7rem;
-    background: linear-gradient(180deg, rgba(200,150,80,0.12) 0%, rgba(200,150,80,0.06) 100%);
-    border: 2px solid rgba(200,150,80,0.3);
-    border-radius: 14px; font-family: 'Nunito', sans-serif;
-    font-size: 0.95rem; font-weight: 800; color: #fde68a;
-    cursor: pointer; transition: all 0.25s ease;
-    text-shadow: 0 1px 2px rgba(0,0,0,0.3);
-  }
-
-  .cc-equal-btn:hover:not(:disabled) {
-    border-color: rgba(251,191,36,0.6);
-    background: rgba(251,191,36,0.15);
-    box-shadow: 0 0 15px rgba(251,191,36,0.15);
-    transform: translateY(-2px);
-  }
-
-  .cc-equal-btn:active:not(:disabled) { transform: translateY(1px); }
-  .cc-equal-btn:disabled { opacity: 0.6; cursor: default; }
-
-  .cc-equal-correct {
-    border-color: #4ade80 !important;
-    background: rgba(74,222,128,0.15) !important;
-    color: #86efac !important;
-    box-shadow: 0 0 15px rgba(74,222,128,0.2) !important;
-  }
-
-  .cc-equal-wrong {
-    border-color: rgba(239,68,68,0.4) !important;
-    opacity: 0.5;
-  }
-
-  /* Symbol reveal row */
-  .cc-symbol-reveal {
-    display: flex; align-items: center; justify-content: center; gap: 0.8rem;
-    padding: 0.5rem;
-    animation: ccRevealSlide 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-  }
-
-  @keyframes ccRevealSlide {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-
-  .cc-reveal-num {
-    font-size: 1.6rem; font-weight: 900; color: rgba(255,255,255,0.8);
-    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
-    transition: all 0.3s ease;
-  }
-
-  .cc-num-winner {
-    color: #86efac !important;
-    text-shadow: 0 0 10px rgba(74,222,128,0.4), 0 2px 4px rgba(0,0,0,0.3) !important;
-    transform: scale(1.15);
-  }
-
-  .cc-reveal-symbol {
-    font-size: 2.2rem; font-weight: 900;
+  .sym-highlight {
     color: #ffd700;
-    animation: ccSymbolEntry 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-    text-shadow: 0 2px 6px rgba(0,0,0,0.4);
+    font-weight: 800;
+    font-size: 1.1rem;
   }
 
-  .cc-symbol-glow-correct {
-    filter: drop-shadow(0 0 8px rgba(74,222,128,0.5));
-    color: #86efac;
+  .paddock-word {
+    color: #8bc34a;
+    font-weight: 700;
   }
 
-  .cc-symbol-glow-wrong {
-    filter: drop-shadow(0 0 8px rgba(239,68,68,0.4));
-    color: #fca5a5;
+  .start-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 1rem 2.5rem;
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: white;
+    background: linear-gradient(135deg, #e8832a, #c2442d);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 40px rgba(232, 131, 42, 0.5);
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  .start-btn.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .start-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 50px rgba(232, 131, 42, 0.6);
+  }
+  .start-btn:active {
+    transform: translateY(0) scale(0.97);
   }
 
-  @keyframes ccSymbolEntry {
-    0% { transform: scale(0) rotate(-360deg); }
-    50% { transform: scale(1.5) rotate(15deg); }
-    70% { transform: scale(0.85) rotate(-5deg); }
-    100% { transform: scale(1) rotate(0deg); }
-  }
+  .btn-icon { font-size: 1.5rem; }
 
-  /* ============ CELEBRATION EFFECTS ============ */
-  .cc-celebration-overlay {
-    position: absolute; inset: 0; pointer-events: none; z-index: 100;
+  /* ═══════════════════════════════════════
+     COMPLETE SCREEN
+     ═══════════════════════════════════════ */
+
+  .complete-screen {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
     overflow: hidden;
   }
 
-  .cc-dust-particle {
-    position: absolute; border-radius: 50%;
-    background: rgba(210, 170, 100, 0.7);
-    animation: ccDustBurst 1.2s ease-out forwards;
-  }
-
-  .cc-dust-bright {
-    background: rgba(255, 200, 80, 0.8);
-    box-shadow: 0 0 4px rgba(255, 200, 80, 0.4);
-  }
-
-  @keyframes ccDustBurst {
-    0% { transform: translate(0, 0) scale(1); opacity: 0.8; }
-    100% { transform: translate(var(--dx, 20px), var(--dy, -20px)) scale(0); opacity: 0; }
-  }
-
-  .cc-star-burst {
+  .complete-bg {
     position: absolute;
-    animation: ccStarFly 1s ease-out forwards;
-    filter: drop-shadow(0 0 4px rgba(255,200,0,0.5));
+    inset: 0;
+    background: linear-gradient(180deg, #0a001a 0%, #1a0533 30%, #2d1b4e 60%, #1a0a00 100%);
+    overflow: hidden;
   }
 
-  @keyframes ccStarFly {
-    0% { transform: translate(0, 0) scale(0) rotate(0deg); opacity: 1; }
-    30% { transform: translate(calc(var(--sx) * 0.5), calc(var(--sy) * 0.5)) scale(1.2) rotate(180deg); opacity: 1; }
-    100% { transform: translate(var(--sx), var(--sy)) scale(0.3) rotate(720deg); opacity: 0; }
+  .floating-animal {
+    position: absolute;
+    top: 15%;
+    font-size: 4rem;
+    animation: floatAnimal 3s ease-in-out infinite;
+    filter: drop-shadow(0 4px 12px rgba(0,0,0,0.4));
   }
 
-  /* ============ RESPONSIVE ============ */
-  @media (max-width: 600px) {
-    .cc-critter { font-size: 1rem !important; }
-    .cc-compare-area { padding: 0.2rem; }
-    .cc-paddock { border-radius: 12px; }
-    .cc-prompt-text { font-size: 0.85rem; }
-    .cc-center-column { width: 36px; }
-    .cc-symbol-fly-in { width: 32px; height: 32px; }
-    .cc-comparison-symbol { font-size: 1.1rem; }
-    .cc-header-center .cc-lives { font-size: 0.8rem; }
-    .cc-sun { width: 40px; height: 40px; right: 8%; }
+  @keyframes floatAnimal {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(5deg); }
   }
 
-  @media (max-width: 380px) {
-    .cc-prompt-sign { padding: 0.2rem 0.5rem 0; }
-    .cc-sign-board { padding: 0.3rem 0.8rem; }
-    .cc-progress-dot { width: 6px; height: 6px; }
+  .bg-star {
+    position: absolute;
+    background: white;
+    border-radius: 50%;
+    animation: twinkle 2s ease-in-out infinite;
+  }
+
+  @keyframes twinkle {
+    0%, 100% { opacity: 0.3; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.5); }
+  }
+
+  .complete-content {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    padding: 2rem;
+    max-width: 550px;
+  }
+
+  .complete-title {
+    font-size: clamp(1.8rem, 6vw, 2.5rem);
+    font-weight: 900;
+    background: linear-gradient(135deg, #ffd700, #ff8c00);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 2rem;
+    animation: titlePulse 2s ease-in-out infinite;
+  }
+
+  @keyframes titlePulse {
+    0%, 100% { filter: brightness(1); }
+    50% { filter: brightness(1.2); }
+  }
+
+  .complete-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .stat-card {
+    background: rgba(255, 255, 255, 0.08);
+    border: 2px solid rgba(255, 180, 100, 0.2);
+    border-radius: 20px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.3rem;
+    animation: statSlide 0.6s ease backwards;
+  }
+  .stat-card:nth-child(1) { animation-delay: 0.1s; }
+  .stat-card:nth-child(2) { animation-delay: 0.2s; }
+  .stat-card:nth-child(3) { animation-delay: 0.3s; }
+  .stat-card:nth-child(4) { animation-delay: 0.4s; }
+
+  @keyframes statSlide {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .stat-icon { font-size: 1.8rem; }
+  .stat-value { font-size: 1.8rem; font-weight: 900; color: white; }
+  .stat-label { font-size: 0.8rem; color: rgba(255, 200, 150, 0.6); }
+
+  .complete-rating {
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: #ffd700;
+    margin-bottom: 2rem;
+    animation: ratingBounce 1s ease-in-out infinite;
+  }
+
+  @keyframes ratingBounce {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+  }
+
+  .complete-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  .menu-btn {
+    padding: 0.8rem 2rem;
+    font-family: 'Nunito', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: rgba(255, 200, 150, 0.7);
+    background: transparent;
+    border: 2px solid rgba(255, 180, 100, 0.25);
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  .menu-btn:hover {
+    border-color: rgba(255, 180, 100, 0.5);
+    color: white;
+  }
+
+  /* ═══════════════════════════════════════
+     GAME SCREEN
+     ═══════════════════════════════════════ */
+
+  .game-screen {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Background layers */
+  .game-bg {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .sky-layer {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      180deg,
+      #2d1b4e 0%,
+      #6b2fa0 10%,
+      #c2442d 30%,
+      #e8832a 45%,
+      #f5b041 55%,
+      #e8c170 65%,
+      #d4a056 75%,
+      #8b4513 85%,
+      #5c2e0e 100%
+    );
+  }
+
+  .sun-orb {
+    position: absolute;
+    top: 18%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 50% 50%, #fff7e0, #ffd700, #ff8c00, transparent);
+    box-shadow: 0 0 60px 20px rgba(255, 200, 50, 0.3), 0 0 120px 60px rgba(255, 140, 0, 0.15);
+    animation: sunPulse 4s ease-in-out infinite;
+  }
+
+  @keyframes sunPulse {
+    0%, 100% { box-shadow: 0 0 60px 20px rgba(255,200,50,0.3), 0 0 120px 60px rgba(255,140,0,0.15); }
+    50% { box-shadow: 0 0 80px 30px rgba(255,200,50,0.4), 0 0 150px 80px rgba(255,140,0,0.2); }
+  }
+
+  .hills-far {
+    position: absolute;
+    bottom: 35%;
+    left: 0;
+    right: 0;
+    height: 80px;
+    background:
+      radial-gradient(ellipse 200px 60px at 20% 100%, rgba(120,60,30,0.5) 0%, transparent 70%),
+      radial-gradient(ellipse 300px 70px at 50% 100%, rgba(100,50,25,0.4) 0%, transparent 70%),
+      radial-gradient(ellipse 180px 50px at 80% 100%, rgba(140,70,35,0.5) 0%, transparent 70%);
+  }
+
+  .hills-near {
+    position: absolute;
+    bottom: 28%;
+    left: 0;
+    right: 0;
+    height: 60px;
+    background:
+      radial-gradient(ellipse 250px 55px at 30% 100%, rgba(139,69,19,0.6) 0%, transparent 70%),
+      radial-gradient(ellipse 200px 50px at 70% 100%, rgba(160,80,30,0.5) 0%, transparent 70%);
+  }
+
+  .ground-layer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 32%;
+    background: linear-gradient(180deg, #8b4513 0%, #6b3410 40%, #4a2308 100%);
+    border-top: 2px solid rgba(210, 150, 80, 0.2);
+  }
+
+  .tree-sil {
+    position: absolute;
+    bottom: 30%;
+    width: 6px;
+    height: 80px;
+    background: rgba(30, 15, 5, 0.6);
+    border-radius: 2px;
+  }
+  .tree-sil::before {
+    content: '';
+    position: absolute;
+    background: rgba(25, 50, 15, 0.5);
+    border-radius: 50%;
+  }
+  .tree-sil::after {
+    content: '';
+    position: absolute;
+    background: rgba(25, 50, 15, 0.4);
+    border-radius: 50%;
+  }
+  .tree-sil.left-tree {
+    left: 3%;
+  }
+  .tree-sil.left-tree::before {
+    top: -25px;
+    left: -22px;
+    width: 50px;
+    height: 40px;
+    animation: treeSway 5s ease-in-out infinite;
+  }
+  .tree-sil.left-tree::after {
+    top: -10px;
+    left: -12px;
+    width: 30px;
+    height: 25px;
+    animation: treeSway 5s ease-in-out infinite 0.5s;
+  }
+  .tree-sil.right-tree {
+    right: 3%;
+  }
+  .tree-sil.right-tree::before {
+    top: -20px;
+    left: -18px;
+    width: 45px;
+    height: 35px;
+    animation: treeSway 6s ease-in-out infinite 1s;
+  }
+  .tree-sil.right-tree::after {
+    top: -8px;
+    left: -10px;
+    width: 28px;
+    height: 22px;
+    animation: treeSway 6s ease-in-out infinite 1.5s;
+  }
+
+  @keyframes treeSway {
+    0%, 100% { transform: translateX(0) rotate(0deg); }
+    50% { transform: translateX(4px) rotate(2deg); }
+  }
+
+  .game-cloud {
+    position: absolute;
+    background: rgba(255, 200, 150, 0.1);
+    border-radius: 50%;
+    filter: blur(6px);
+  }
+  .game-cloud.gc1 {
+    top: 6%;
+    left: 15%;
+    width: 100px;
+    height: 30px;
+    animation: cloudDrift 20s linear infinite;
+  }
+  .game-cloud.gc2 {
+    top: 10%;
+    right: 20%;
+    width: 80px;
+    height: 25px;
+    animation: cloudDrift 28s linear infinite;
+    animation-delay: -8s;
+  }
+
+  /* Header */
+  .game-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.6rem 0.8rem;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(8px);
+    z-index: 50;
+    position: relative;
+  }
+
+  .header-left, .header-right {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+
+  .back-btn {
+    width: 38px;
+    height: 38px;
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    border-radius: 12px;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Nunito', sans-serif;
+  }
+  .back-btn:hover { background: rgba(255,255,255,0.2); }
+
+  .round-badge {
+    padding: 0.4rem 0.8rem;
+    background: linear-gradient(135deg, #e8832a, #c2442d);
+    border-radius: 20px;
+    font-weight: 700;
+    color: white;
+    font-size: 0.85rem;
+  }
+
+  .header-center { flex: 1; text-align: center; }
+
+  .prompt-badge {
+    display: inline-block;
+    padding: 0.4rem 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    color: white;
+    font-weight: 700;
+    font-size: 0.9rem;
+    animation: promptPulse 2s ease-in-out infinite;
+  }
+
+  @keyframes promptPulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+  }
+
+  .streak-badge {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    padding: 0.4rem 0.7rem;
+    background: rgba(255, 100, 0, 0.2);
+    border-radius: 20px;
+    color: #ff8c00;
+    font-weight: 700;
+    font-size: 0.85rem;
+    transition: opacity 0.3s ease;
+  }
+  .streak-icon { font-size: 1rem; }
+
+  .score-badge {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    padding: 0.4rem 0.7rem;
+    background: rgba(255, 215, 0, 0.2);
+    border-radius: 20px;
+    color: #ffd700;
+    font-weight: 700;
+    font-size: 0.85rem;
+  }
+  .score-icon { font-size: 1rem; }
+
+  /* ═══════════════════════════════════════
+     GAME AREA — Paddocks & Center
+     ═══════════════════════════════════════ */
+
+  .game-area {
+    flex: 1;
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    gap: 0;
+    padding: 0.8rem;
+    position: relative;
+    z-index: 10;
+    touch-action: none;
+    overflow: visible;
+    min-height: 0;
+  }
+
+  /* Paddock */
+  .paddock {
+    position: relative;
+    flex: 1;
+    max-width: 280px;
+    min-width: 160px;
+    background: rgba(139, 90, 43, 0.25);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .paddock.glow-correct {
+    box-shadow: 0 0 30px rgba(76, 175, 80, 0.6), inset 0 0 20px rgba(76, 175, 80, 0.2);
+    border-color: #4caf50;
+  }
+
+  .paddock.glow-wrong {
+    box-shadow: 0 0 20px rgba(244, 67, 54, 0.4), inset 0 0 15px rgba(244, 67, 54, 0.15);
+    animation: paddockShake 0.4s ease-in-out;
+  }
+
+  @keyframes paddockShake {
+    0%, 100% { transform: translateX(0); }
+    20% { transform: translateX(-6px); }
+    40% { transform: translateX(6px); }
+    60% { transform: translateX(-4px); }
+    80% { transform: translateX(4px); }
+  }
+
+  /* Fence rendering */
+  .fence-top, .fence-bottom {
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 6px;
+    z-index: 15;
+  }
+  .fence-top {
+    top: 0;
+    background: linear-gradient(90deg, #8b6914, #c9a04a, #a07830, #c9a04a, #8b6914);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  }
+  .fence-top::after {
+    content: '';
+    position: absolute;
+    top: 8px;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #8b6914, #c9a04a, #a07830, #c9a04a, #8b6914);
+    opacity: 0.6;
+  }
+  .fence-bottom {
+    bottom: 0;
+    background: linear-gradient(90deg, #8b6914, #c9a04a, #a07830, #c9a04a, #8b6914);
+    box-shadow: 0 -2px 4px rgba(0,0,0,0.3);
+  }
+  .fence-bottom::after {
+    content: '';
+    position: absolute;
+    bottom: 8px;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #8b6914, #c9a04a, #a07830, #c9a04a, #8b6914);
+    opacity: 0.6;
+  }
+
+  .fence-left, .fence-right {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 6px;
+    z-index: 15;
+  }
+  .fence-left {
+    left: 0;
+    background: linear-gradient(180deg, #8b6914, #c9a04a, #a07830, #c9a04a, #8b6914);
+    box-shadow: 2px 0 4px rgba(0,0,0,0.3);
+  }
+  .fence-left::after {
+    content: '';
+    position: absolute;
+    left: 8px;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: linear-gradient(180deg, #8b6914, #c9a04a, #a07830, #c9a04a, #8b6914);
+    opacity: 0.6;
+  }
+  .fence-right {
+    right: 0;
+    background: linear-gradient(180deg, #8b6914, #c9a04a, #a07830, #c9a04a, #8b6914);
+    box-shadow: -2px 0 4px rgba(0,0,0,0.3);
+  }
+  .fence-right::after {
+    content: '';
+    position: absolute;
+    right: 8px;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: linear-gradient(180deg, #8b6914, #c9a04a, #a07830, #c9a04a, #8b6914);
+    opacity: 0.6;
+  }
+
+  /* Fence posts */
+  .fence-post {
+    position: absolute;
+    width: 10px;
+    height: 100%;
+    background: linear-gradient(90deg, #6b4a14, #8b6914, #6b4a14);
+    z-index: 16;
+    border-radius: 2px;
+    box-shadow: 2px 0 4px rgba(0,0,0,0.2);
+  }
+  .fence-post::before {
+    content: '';
+    position: absolute;
+    top: -6px;
+    left: -3px;
+    width: 16px;
+    height: 10px;
+    background: linear-gradient(180deg, #a07830, #8b6914);
+    border-radius: 4px 4px 0 0;
+  }
+  .fence-post.fp1 { left: 0; }
+  .fence-post.fp2 { left: calc(50% - 5px); }
+  .fence-post.fp3 { right: 0; }
+  .fence-post.fp4 { left: calc(25% - 5px); }
+
+  .paddock-ground {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    background: linear-gradient(
+      180deg,
+      rgba(139, 90, 43, 0.1) 0%,
+      rgba(139, 90, 43, 0.2) 50%,
+      rgba(120, 70, 30, 0.35) 100%
+    );
+    z-index: 1;
+  }
+
+  .paddock-label {
+    position: absolute;
+    top: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: rgba(255, 220, 180, 0.7);
+    z-index: 20;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    white-space: nowrap;
+  }
+
+  .animals-container {
+    position: relative;
+    flex: 1;
+    z-index: 10;
+    overflow: visible;
+  }
+
+  /* Animals */
+  .animal {
+    position: absolute;
+    transform-origin: bottom center;
+    opacity: 0;
+    transform: scale(0) translateY(30px);
+    transition: none;
+  }
+  .animal.entered {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+    animation: animalEnter 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards,
+               animalIdle 3s ease-in-out infinite 0.5s;
+  }
+
+  @keyframes animalEnter {
+    0% { opacity: 0; transform: scale(0) translateY(40px); }
+    60% { opacity: 1; transform: scale(1.2) translateY(-10px); }
+    100% { opacity: 1; transform: scale(1) translateY(0); }
+  }
+
+  @keyframes animalIdle {
+    0%, 100% { transform: scale(1) translateY(0); }
+    30% { transform: scale(1.03) translateY(-4px); }
+    60% { transform: scale(0.98) translateY(2px); }
+  }
+
+  .animal.joy-jump {
+    animation: joyJump 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) infinite !important;
+  }
+
+  @keyframes joyJump {
+    0%, 100% { transform: scale(1) translateY(0) rotate(0deg); }
+    25% { transform: scale(1.1) translateY(-20px) rotate(-8deg); }
+    50% { transform: scale(0.95) translateY(0) rotate(0deg); }
+    75% { transform: scale(1.1) translateY(-15px) rotate(8deg); }
+  }
+
+  .animal-emoji {
+    font-size: 50px;
+    display: block;
+    filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));
+    line-height: 1;
+  }
+
+  .dust-puff {
+    position: absolute;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(180,140,80,0.6) 0%, rgba(180,140,80,0) 70%);
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    animation: dustPuffAnim 0.8s ease-out forwards;
+    z-index: 5;
+  }
+
+  @keyframes dustPuffAnim {
+    0% { transform: translate(-50%,-50%) scale(0.3); opacity: 0.7; }
+    100% { transform: translate(-50%,-50%) scale(2.5); opacity: 0; }
+  }
+
+  .count-display {
+    position: absolute;
+    bottom: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.8rem;
+    font-weight: 900;
+    color: white;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+    z-index: 25;
+    background: rgba(0,0,0,0.4);
+    padding: 0.2rem 0.8rem;
+    border-radius: 15px;
+    animation: countPop 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  @keyframes countPop {
+    0% { transform: translateX(-50%) scale(0); }
+    100% { transform: translateX(-50%) scale(1); }
+  }
+
+  /* ═══════════════════════════════════════
+     CENTER COLUMN — Symbols & Drop Zone
+     ═══════════════════════════════════════ */
+
+  .center-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.2rem;
+    padding: 0.5rem;
+    min-width: 100px;
+    z-index: 30;
+  }
+
+  .equation-display {
+    animation: eqPop 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  @keyframes eqPop {
+    0% { transform: scale(0); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+  }
+
+  .eq-text {
+    display: inline-block;
+    padding: 0.6rem 1.2rem;
+    background: linear-gradient(135deg, #4caf50, #2e7d32);
+    border-radius: 20px;
+    font-size: 1.6rem;
+    font-weight: 900;
+    color: white;
+    box-shadow: 0 8px 25px rgba(76, 175, 80, 0.5);
+    white-space: nowrap;
+  }
+
+  /* Drop Zone */
+  .drop-zone {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 4px dashed rgba(255, 200, 100, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    background: rgba(0, 0, 0, 0.2);
+    position: relative;
+  }
+
+  .drop-zone.active {
+    border-color: rgba(255, 200, 100, 0.6);
+    background: rgba(255, 180, 100, 0.1);
+    animation: dropZonePulse 1s ease-in-out infinite;
+  }
+
+  .drop-zone.hover {
+    border-color: #ffd700;
+    background: rgba(255, 215, 0, 0.2);
+    transform: scale(1.15);
+    box-shadow: 0 0 30px rgba(255, 215, 0, 0.4);
+  }
+
+  .drop-zone.correct {
+    border-style: solid;
+    border-color: #4caf50;
+    background: rgba(76, 175, 80, 0.3);
+    box-shadow: 0 0 25px rgba(76, 175, 80, 0.5);
+  }
+
+  @keyframes dropZonePulse {
+    0%, 100% { box-shadow: 0 0 10px rgba(255,200,100,0.2); }
+    50% { box-shadow: 0 0 25px rgba(255,200,100,0.4); }
+  }
+
+  .drop-hint {
+    font-size: 2rem;
+    font-weight: 900;
+    color: rgba(255, 200, 100, 0.3);
+  }
+
+  .drop-symbol {
+    font-size: 2.2rem;
+    font-weight: 900;
+    color: white;
+  }
+  .drop-symbol.placed {
+    animation: symbolPlace 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  @keyframes symbolPlace {
+    0% { transform: scale(0) rotate(-180deg); }
+    100% { transform: scale(1) rotate(0deg); }
+  }
+
+  /* Symbols tray */
+  .symbols-tray {
+    display: flex;
+    gap: 0.8rem;
+    align-items: center;
+  }
+
+  .symbol-token {
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 35% 35%,
+      #ffd700 0%,
+      #e8832a 40%,
+      #c2442d 80%,
+      #a0331d 100%
+    );
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: grab;
+    position: relative;
+    box-shadow:
+      0 8px 25px rgba(232, 131, 42, 0.5),
+      inset 0 -6px 15px rgba(0, 0, 0, 0.2),
+      inset 0 2px 8px rgba(255, 255, 255, 0.2);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    z-index: 20;
+    animation: symbolFloat 3s ease-in-out infinite;
+  }
+  .symbol-token:nth-child(1) { animation-delay: 0s; }
+  .symbol-token:nth-child(2) { animation-delay: 1s; }
+  .symbol-token:nth-child(3) { animation-delay: 2s; }
+
+  @keyframes symbolFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+  }
+
+  .symbol-token:hover {
+    transform: translateY(-4px) scale(1.08);
+    box-shadow:
+      0 12px 35px rgba(232, 131, 42, 0.6),
+      inset 0 -6px 15px rgba(0, 0, 0, 0.2),
+      inset 0 2px 8px rgba(255, 255, 255, 0.2);
+  }
+
+  .symbol-token.dragging {
+    cursor: grabbing;
+    animation: none;
+    box-shadow:
+      0 20px 50px rgba(232, 131, 42, 0.7),
+      0 0 40px rgba(255, 215, 0, 0.4),
+      inset 0 -6px 15px rgba(0, 0, 0, 0.2);
+  }
+
+  .symbol-token.disabled {
+    opacity: 0.4;
+    pointer-events: none;
+    animation: none;
+  }
+
+  .symbol-shine {
+    position: absolute;
+    top: 12%;
+    left: 18%;
+    width: 35%;
+    height: 25%;
+    background: radial-gradient(ellipse, rgba(255, 255, 255, 0.6) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+  }
+
+  .symbol-text {
+    font-size: 1.8rem;
+    font-weight: 900;
+    color: white;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    z-index: 2;
+    pointer-events: none;
+  }
+
+  .symbol-glow {
+    position: absolute;
+    inset: -8px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255, 215, 0, 0.15) 0%, transparent 70%);
+    pointer-events: none;
+    animation: symbolGlowPulse 2s ease-in-out infinite;
+  }
+
+  @keyframes symbolGlowPulse {
+    0%, 100% { opacity: 0.5; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.1); }
+  }
+
+  @keyframes symbolShake {
+    0%, 100% { transform: translateX(0) rotate(0deg); }
+    15% { transform: translateX(-10px) rotate(-5deg); }
+    30% { transform: translateX(10px) rotate(5deg); }
+    45% { transform: translateX(-8px) rotate(-3deg); }
+    60% { transform: translateX(8px) rotate(3deg); }
+    75% { transform: translateX(-4px) rotate(-1deg); }
+    90% { transform: translateX(4px) rotate(1deg); }
+  }
+
+  /* Celebration particles */
+  .celebration-particle {
+    position: absolute;
+    pointer-events: none;
+    z-index: 100;
+    box-shadow: 0 0 6px currentColor;
+  }
+
+  /* Bottom bar */
+  .bottom-bar {
+    padding: 0.5rem 1rem;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(8px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 50;
+  }
+
+  .hint-text {
+    font-size: 0.8rem;
+    color: rgba(255, 200, 150, 0.5);
+    font-weight: 600;
+  }
+
+  .progress-dots {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+  }
+
+  .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.15);
+    transition: all 0.3s ease;
+  }
+  .dot.completed {
+    background: #4caf50;
+    box-shadow: 0 0 6px rgba(76, 175, 80, 0.5);
+  }
+  .dot.current {
+    background: #ffd700;
+    box-shadow: 0 0 8px rgba(255, 215, 0, 0.6);
+    animation: dotPulse 1s ease-in-out infinite;
+  }
+
+  @keyframes dotPulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.4); }
+  }
+
+  /* ═══════════════════════════════════════
+     RESPONSIVE
+     ═══════════════════════════════════════ */
+
+  @media (max-width: 650px) {
+    .game-area {
+      flex-direction: column;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.4rem;
+    }
+
+    .paddock {
+      max-width: 100%;
+      min-width: unset;
+      width: 100%;
+      max-height: 35%;
+    }
+
+    .center-column {
+      flex-direction: row;
+      gap: 0.6rem;
+      min-width: unset;
+      padding: 0.3rem;
+    }
+
+    .symbol-token {
+      width: 52px;
+      height: 52px;
+    }
+    .symbol-text { font-size: 1.4rem; }
+
+    .drop-zone {
+      width: 60px;
+      height: 60px;
+    }
+    .drop-hint { font-size: 1.5rem; }
+
+    .animal-emoji { font-size: 38px; }
+
+    .count-display { font-size: 1.3rem; }
+
+    .equation-display .eq-text { font-size: 1.2rem; padding: 0.4rem 0.8rem; }
+
+    .header-center { display: none; }
+
+    .progress-dots { gap: 3px; }
+    .dot { width: 6px; height: 6px; }
+  }
+
+  @media (max-width: 400px) {
+    .animal-emoji { font-size: 30px; }
+    .symbol-token { width: 44px; height: 44px; }
+    .symbol-text { font-size: 1.2rem; }
+  }
+
+  @media (min-width: 900px) {
+    .animal-emoji { font-size: 60px; }
+    .symbol-token { width: 75px; height: 75px; }
+    .symbol-text { font-size: 2.2rem; }
+    .drop-zone { width: 90px; height: 90px; }
+    .drop-hint { font-size: 2.5rem; }
   }
 `;

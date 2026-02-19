@@ -4,23 +4,60 @@ import { useState, useEffect, useCallback, useRef } from 'react';
 
 // ── Types ──────────────────────────────────────────────────────────────────────
 
-type MeasurementType = 'mass' | 'capacity' | 'length' | 'duration';
-type GameScreen = 'intro' | 'playing' | 'demo' | 'complete' | 'levelComplete';
-type Comparison = 'heavier' | 'lighter' | 'more' | 'less' | 'longer' | 'shorter' | 'longerTime' | 'quickerTime';
+type MeasurementType = 'mass' | 'capacity' | 'length' | 'speed';
+type GameScreen = 'intro' | 'playing' | 'result' | 'levelComplete';
 
 interface KitchenItem {
   name: string;
   emoji: string;
-  value: number; // abstract measurement value for comparison
+  value: number;
 }
 
-interface RoundData {
+interface Challenge {
   type: MeasurementType;
   itemA: KitchenItem;
   itemB: KitchenItem;
   question: string;
-  comparison: Comparison;
   correctAnswer: 'A' | 'B';
+}
+
+interface ScalePhysics {
+  angle: number;
+  velocity: number;
+  targetAngle: number;
+  settled: boolean;
+  itemAPlaced: boolean;
+  itemBPlaced: boolean;
+  itemADropY: number;
+  itemBDropY: number;
+}
+
+interface LiquidPhysics {
+  fillA: number;
+  fillB: number;
+  pouringA: boolean;
+  pouringB: boolean;
+  waveA: number;
+  waveB: number;
+  donePouring: boolean;
+}
+
+interface LengthPhysics {
+  wormPosA: number;
+  wormPosB: number;
+  wormDone: boolean;
+  wormBounceA: number;
+  wormBounceB: number;
+}
+
+interface SpeedPhysics {
+  posA: number;
+  posB: number;
+  raceStarted: boolean;
+  raceFinished: boolean;
+  winnerDeclared: boolean;
+  finishTimeA: number;
+  finishTimeB: number;
 }
 
 interface Particle {
@@ -30,27 +67,24 @@ interface Particle {
   vx: number;
   vy: number;
   size: number;
-  opacity: number;
   life: number;
   maxLife: number;
-  type: 'steam' | 'flour' | 'sparkle' | 'celebration';
-}
-
-interface RecipeIngredient {
-  name: string;
-  emoji: string;
-  collected: boolean;
+  color: string;
+  type: 'steam' | 'sparkle' | 'food' | 'confetti' | 'flour';
+  rotation: number;
+  rotSpeed: number;
+  emoji?: string;
 }
 
 interface MeasurementKitchenProps {
   onExit?: () => void;
 }
 
-// ── Item pools ─────────────────────────────────────────────────────────────────
+// ── Data ───────────────────────────────────────────────────────────────────────
 
 const MASS_ITEMS: KitchenItem[] = [
-  { name: 'Watermelon', emoji: '🍉', value: 9 },
-  { name: 'Pumpkin', emoji: '🎃', value: 8 },
+  { name: 'Watermelon', emoji: '🍉', value: 10 },
+  { name: 'Pumpkin', emoji: '🎃', value: 9 },
   { name: 'Pineapple', emoji: '🍍', value: 7 },
   { name: 'Coconut', emoji: '🥥', value: 6 },
   { name: 'Apple', emoji: '🍎', value: 4 },
@@ -59,79 +93,66 @@ const MASS_ITEMS: KitchenItem[] = [
   { name: 'Egg', emoji: '🥚', value: 1.5 },
   { name: 'Strawberry', emoji: '🍓', value: 0.8 },
   { name: 'Grape', emoji: '🍇', value: 0.5 },
-  { name: 'Blueberry', emoji: '🫐', value: 0.2 },
   { name: 'Cherry', emoji: '🍒', value: 0.3 },
+  { name: 'Blueberry', emoji: '🫐', value: 0.2 },
 ];
 
 const CAPACITY_ITEMS: KitchenItem[] = [
   { name: 'Big Pot', emoji: '🍲', value: 10 },
   { name: 'Mixing Bowl', emoji: '🥣', value: 8 },
+  { name: 'Bucket', emoji: '🪣', value: 9 },
   { name: 'Jug', emoji: '🫗', value: 6 },
+  { name: 'Bottle', emoji: '🍶', value: 5 },
   { name: 'Mug', emoji: '☕', value: 4 },
   { name: 'Glass', emoji: '🥛', value: 3 },
   { name: 'Cup', emoji: '🍵', value: 2.5 },
   { name: 'Egg Cup', emoji: '🥤', value: 1.5 },
   { name: 'Spoon', emoji: '🥄', value: 0.5 },
-  { name: 'Bottle', emoji: '🍶', value: 5 },
-  { name: 'Bucket', emoji: '🪣', value: 9 },
 ];
 
 const LENGTH_ITEMS: KitchenItem[] = [
-  { name: 'Rolling Pin', emoji: '🪈', value: 9 },
-  { name: 'Baguette', emoji: '🥖', value: 8 },
+  { name: 'Baguette', emoji: '🥖', value: 9 },
+  { name: 'Celery', emoji: '🥬', value: 7.5 },
   { name: 'Cucumber', emoji: '🥒', value: 6 },
+  { name: 'Corn', emoji: '🌽', value: 5.5 },
   { name: 'Carrot', emoji: '🥕', value: 5 },
   { name: 'Banana', emoji: '🍌', value: 4 },
   { name: 'Fork', emoji: '🍴', value: 3.5 },
   { name: 'Spoon', emoji: '🥄', value: 3 },
   { name: 'Cookie', emoji: '🍪', value: 1.5 },
-  { name: 'Corn', emoji: '🌽', value: 5.5 },
-  { name: 'Celery', emoji: '🥬', value: 7 },
+  { name: 'Olive', emoji: '🫒', value: 1 },
 ];
 
-const DURATION_ITEMS: KitchenItem[] = [
-  { name: 'Bake a Cake', emoji: '🎂', value: 10 },
-  { name: 'Roast Chicken', emoji: '🍗', value: 9 },
-  { name: 'Cook Pasta', emoji: '🍝', value: 6 },
-  { name: 'Boil an Egg', emoji: '🥚', value: 5 },
-  { name: 'Make Toast', emoji: '🍞', value: 3 },
-  { name: 'Heat Soup', emoji: '🍜', value: 4 },
-  { name: 'Pop Popcorn', emoji: '🍿', value: 2 },
-  { name: 'Melt Butter', emoji: '🧈', value: 1.5 },
-  { name: 'Boil Water', emoji: '💧', value: 3.5 },
-  { name: 'Make a Pizza', emoji: '🍕', value: 8 },
+const SPEED_ITEMS: KitchenItem[] = [
+  { name: 'Popcorn', emoji: '🍿', value: 9 },
+  { name: 'Melt Butter', emoji: '🧈', value: 8 },
+  { name: 'Toast Bread', emoji: '🍞', value: 7 },
+  { name: 'Heat Soup', emoji: '🍜', value: 5 },
+  { name: 'Boil Egg', emoji: '🥚', value: 4 },
+  { name: 'Cook Pasta', emoji: '🍝', value: 3 },
+  { name: 'Bake a Pie', emoji: '🥧', value: 2 },
+  { name: 'Roast Chicken', emoji: '🍗', value: 1.5 },
+  { name: 'Bake Cake', emoji: '🎂', value: 1 },
 ];
 
-const RECIPE_SETS: RecipeIngredient[][] = [
-  [
-    { name: 'Flour', emoji: '🌾', collected: false },
-    { name: 'Egg', emoji: '🥚', collected: false },
-    { name: 'Milk', emoji: '🥛', collected: false },
-    { name: 'Sugar', emoji: '🍬', collected: false },
-  ],
-  [
-    { name: 'Tomato', emoji: '🍅', collected: false },
-    { name: 'Cheese', emoji: '🧀', collected: false },
-    { name: 'Dough', emoji: '🫓', collected: false },
-    { name: 'Basil', emoji: '🌿', collected: false },
-    { name: 'Olive Oil', emoji: '🫒', collected: false },
-  ],
-  [
-    { name: 'Chocolate', emoji: '🍫', collected: false },
-    { name: 'Cream', emoji: '🍦', collected: false },
-    { name: 'Strawberry', emoji: '🍓', collected: false },
-    { name: 'Cookie', emoji: '🍪', collected: false },
-    { name: 'Sprinkles', emoji: '✨', collected: false },
-    { name: 'Cherry', emoji: '🍒', collected: false },
-  ],
+const CHEF_RANKS = [
+  'Dishwasher', 'Sous Chef', 'Line Cook', 'Chef', 'Head Chef',
+  'Executive Chef', 'Master Chef', 'Iron Chef', 'Legendary Chef', 'Kitchen God'
 ];
 
-const RECIPE_NAMES = ['Pancakes', 'Pizza', 'Sundae', 'Cupcakes', 'Soup', 'Pie'];
+const RECIPE_NAMES = [
+  'Pancakes', 'Pizza', 'Chocolate Cake', 'Cookie Platter', 'Rainbow Smoothie',
+  'Sushi Roll', 'Ice Cream Sundae', 'Apple Pie', 'Pasta Primavera', 'Chef\'s Special'
+];
+
+const RECIPE_EMOJIS = ['🥞', '🍕', '🎂', '🍪', '🥤', '🍣', '🍨', '🥧', '🍝', '🌟'];
+
+const FOOD_EMOJIS = ['🍕', '🌮', '🍔', '🍟', '🧁', '🍩', '🍰', '🥐', '🍪', '🧇', '🥞', '🍫'];
 
 // ── Helpers ────────────────────────────────────────────────────────────────────
 
-let particleIdCounter = 0;
-const nextParticleId = (): number => ++particleIdCounter;
+let particleId = 0;
+const nextId = () => ++particleId;
 
 function pickTwo(items: KitchenItem[], minDiff: number): [KitchenItem, KitchenItem] {
   const shuffled = [...items].sort(() => Math.random() - 0.5);
@@ -147,244 +168,273 @@ function pickTwo(items: KitchenItem[], minDiff: number): [KitchenItem, KitchenIt
   return [shuffled[0], shuffled[1]];
 }
 
-function generateRound(level: number, forcedType?: MeasurementType): RoundData {
-  const types: MeasurementType[] = ['mass', 'capacity', 'length', 'duration'];
-  const type = forcedType || types[Math.floor(Math.random() * types.length)];
-
-  // Difficulty scaling: lower minDiff at higher levels
+function generateChallenge(level: number, forceType?: MeasurementType): Challenge {
+  const types: MeasurementType[] = ['mass', 'capacity', 'length', 'speed'];
+  const type = forceType || types[Math.floor(Math.random() * types.length)];
   const minDiff = level <= 3 ? 3 : level <= 6 ? 1.5 : 0.5;
 
   let itemA: KitchenItem, itemB: KitchenItem;
   let question: string;
-  let comparison: Comparison;
+  let correctAnswer: 'A' | 'B';
 
   switch (type) {
     case 'mass': {
       [itemA, itemB] = pickTwo(MASS_ITEMS, minDiff);
       const askHeavier = Math.random() > 0.3;
-      if (askHeavier) {
-        question = 'Which is HEAVIER?';
-        comparison = 'heavier';
-      } else {
-        question = 'Which is LIGHTER?';
-        comparison = 'lighter';
-      }
+      question = askHeavier ? 'Which is HEAVIER?' : 'Which is LIGHTER?';
+      correctAnswer = askHeavier
+        ? (itemA.value >= itemB.value ? 'A' : 'B')
+        : (itemA.value <= itemB.value ? 'A' : 'B');
       break;
     }
     case 'capacity': {
       [itemA, itemB] = pickTwo(CAPACITY_ITEMS, minDiff);
       const askMore = Math.random() > 0.3;
-      if (askMore) {
-        question = 'Which holds MORE?';
-        comparison = 'more';
-      } else {
-        question = 'Which holds LESS?';
-        comparison = 'less';
-      }
+      question = askMore ? 'Which holds MORE?' : 'Which holds LESS?';
+      correctAnswer = askMore
+        ? (itemA.value >= itemB.value ? 'A' : 'B')
+        : (itemA.value <= itemB.value ? 'A' : 'B');
       break;
     }
     case 'length': {
       [itemA, itemB] = pickTwo(LENGTH_ITEMS, minDiff);
       const askLonger = Math.random() > 0.3;
-      if (askLonger) {
-        question = 'Which is LONGER?';
-        comparison = 'longer';
-      } else {
-        question = 'Which is SHORTER?';
-        comparison = 'shorter';
-      }
+      question = askLonger ? 'Which is LONGER?' : 'Which is SHORTER?';
+      correctAnswer = askLonger
+        ? (itemA.value >= itemB.value ? 'A' : 'B')
+        : (itemA.value <= itemB.value ? 'A' : 'B');
       break;
     }
-    case 'duration': {
-      [itemA, itemB] = pickTwo(DURATION_ITEMS, minDiff);
-      const askLongerTime = Math.random() > 0.3;
-      if (askLongerTime) {
-        question = 'Which takes LONGER?';
-        comparison = 'longerTime';
-      } else {
-        question = 'Which is QUICKER?';
-        comparison = 'quickerTime';
-      }
+    case 'speed': {
+      [itemA, itemB] = pickTwo(SPEED_ITEMS, minDiff);
+      const askFaster = Math.random() > 0.3;
+      question = askFaster ? 'Which is QUICKER to cook?' : 'Which takes LONGER to cook?';
+      correctAnswer = askFaster
+        ? (itemA.value >= itemB.value ? 'A' : 'B')
+        : (itemA.value <= itemB.value ? 'A' : 'B');
       break;
     }
   }
 
-  const wantsHigher = ['heavier', 'more', 'longer', 'longerTime'].includes(comparison);
-  const correctAnswer: 'A' | 'B' = wantsHigher
-    ? (itemA.value >= itemB.value ? 'A' : 'B')
-    : (itemA.value <= itemB.value ? 'A' : 'B');
-
-  return { type, itemA, itemB, question, comparison, correctAnswer };
-}
-
-function getMeasurementLabel(type: MeasurementType): string {
-  switch (type) {
-    case 'mass': return 'Mass';
-    case 'capacity': return 'Capacity';
-    case 'length': return 'Length';
-    case 'duration': return 'Duration';
-  }
-}
-
-function getMeasurementIcon(type: MeasurementType): string {
-  switch (type) {
-    case 'mass': return '⚖️';
-    case 'capacity': return '🫗';
-    case 'length': return '📏';
-    case 'duration': return '⏱️';
-  }
+  return { type, itemA, itemB, question, correctAnswer };
 }
 
 // ── Component ──────────────────────────────────────────────────────────────────
 
 export default function MeasurementKitchen({ onExit }: MeasurementKitchenProps = {}) {
-  const [gameScreen, setGameScreen] = useState<GameScreen>('intro');
-  const [level, setLevel] = useState<number>(1);
-  const [score, setScore] = useState<number>(0);
-  const [streak, setStreak] = useState<number>(0);
-  const [round, setRound] = useState<RoundData | null>(null);
-  const [roundIndex, setRoundIndex] = useState<number>(0);
+  const [screen, setScreen] = useState<GameScreen>('intro');
+  const [level, setLevel] = useState(1);
+  const [score, setScore] = useState(0);
+  const [combo, setCombo] = useState(0);
+  const [maxCombo, setMaxCombo] = useState(0);
+  const [stars, setStars] = useState(3);
+  const [challenge, setChallenge] = useState<Challenge | null>(null);
+  const [challengeIndex, setChallengeIndex] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState<'A' | 'B' | null>(null);
   const [isCorrect, setIsCorrect] = useState<boolean | null>(null);
-  const [recipe, setRecipe] = useState<RecipeIngredient[]>([]);
-  const [recipeName, setRecipeName] = useState<string>('Pancakes');
+  const [showResult, setShowResult] = useState(false);
   const [particles, setParticles] = useState<Particle[]>([]);
-  const [shakeScreen, setShakeScreen] = useState<boolean>(false);
+  const [chefExpression, setChefExpression] = useState('😊');
+  const [introFloat, setIntroFloat] = useState(0);
 
-  // Animation state for demonstrations
-  const [scaleAngle, setScaleAngle] = useState<number>(0);
-  const [scaleTargetAngle, setScaleTargetAngle] = useState<number>(0);
-  const [liquidFillA, setLiquidFillA] = useState<number>(0);
-  const [liquidFillB, setLiquidFillB] = useState<number>(0);
-  const [rulerExtendA, setRulerExtendA] = useState<number>(0);
-  const [rulerExtendB, setRulerExtendB] = useState<number>(0);
-  const [clockAngleA, setClockAngleA] = useState<number>(0);
-  const [clockAngleB, setClockAngleB] = useState<number>(0);
-  const [demoPhase, setDemoPhase] = useState<number>(0);
-  const [introFloat, setIntroFloat] = useState<number>(0);
+  // Physics states
+  const [scalePhysics, setScalePhysics] = useState<ScalePhysics>({
+    angle: 0, velocity: 0, targetAngle: 0, settled: false,
+    itemAPlaced: false, itemBPlaced: false, itemADropY: -80, itemBDropY: -80,
+  });
+  const [liquidPhysics, setLiquidPhysics] = useState<LiquidPhysics>({
+    fillA: 0, fillB: 0, pouringA: false, pouringB: false,
+    waveA: 0, waveB: 0, donePouring: false,
+  });
+  const [lengthPhysics, setLengthPhysics] = useState<LengthPhysics>({
+    wormPosA: 0, wormPosB: 0, wormDone: false, wormBounceA: 0, wormBounceB: 0,
+  });
+  const [speedPhysics, setSpeedPhysics] = useState<SpeedPhysics>({
+    posA: 0, posB: 0, raceStarted: false, raceFinished: false,
+    winnerDeclared: false, finishTimeA: 0, finishTimeB: 0,
+  });
 
-  const animationRef = useRef<number | null>(null);
-  const lastTimeRef = useRef<number>(0);
+  const [demoTimer, setDemoTimer] = useState(0);
+  const [canAnswer, setCanAnswer] = useState(false);
+
+  const animRef = useRef<number | null>(null);
+  const lastTimeRef = useRef(0);
   const containerRef = useRef<HTMLDivElement>(null);
 
   // ── Particle system ────────────────────────────────────────────────────────
 
-  const spawnParticles = useCallback((type: Particle['type'], x: number, y: number, count: number) => {
-    const newParticles: Particle[] = [];
+  const spawnParticles = useCallback((
+    type: Particle['type'], x: number, y: number, count: number,
+    opts?: { colors?: string[]; emojis?: string[]; spread?: number; speed?: number }
+  ) => {
+    const newP: Particle[] = [];
+    const colors = opts?.colors || ['#FFD700', '#FF6B35', '#FF4444', '#4CAF50', '#2196F3'];
+    const spread = opts?.spread || 80;
+    const speed = opts?.speed || 3;
     for (let i = 0; i < count; i++) {
-      const life = 60 + Math.random() * 120;
-      newParticles.push({
-        id: nextParticleId(),
-        x: x + (Math.random() - 0.5) * 60,
-        y: y + (Math.random() - 0.5) * 60,
-        vx: (Math.random() - 0.5) * 2,
-        vy: type === 'steam' ? -(0.5 + Math.random() * 1.5) : (Math.random() - 0.5) * 3,
-        size: type === 'sparkle' ? 3 + Math.random() * 5 : type === 'celebration' ? 4 + Math.random() * 8 : 2 + Math.random() * 4,
-        opacity: 0.6 + Math.random() * 0.4,
+      const life = 60 + Math.random() * 100;
+      newP.push({
+        id: nextId(),
+        x: x + (Math.random() - 0.5) * spread,
+        y: y + (Math.random() - 0.5) * spread * 0.5,
+        vx: (Math.random() - 0.5) * speed,
+        vy: type === 'steam' ? -(0.5 + Math.random() * 1.5)
+          : type === 'confetti' ? -(1 + Math.random() * 4)
+          : (Math.random() - 0.5) * speed,
+        size: type === 'sparkle' ? 2 + Math.random() * 4
+          : type === 'confetti' ? 4 + Math.random() * 6
+          : type === 'food' ? 16 + Math.random() * 12
+          : 3 + Math.random() * 5,
         life,
         maxLife: life,
+        color: colors[Math.floor(Math.random() * colors.length)],
         type,
+        rotation: Math.random() * 360,
+        rotSpeed: (Math.random() - 0.5) * 10,
+        emoji: opts?.emojis ? opts.emojis[Math.floor(Math.random() * opts.emojis.length)] : undefined,
       });
     }
-    setParticles(prev => [...prev, ...newParticles]);
+    setParticles(prev => [...prev, ...newP]);
   }, []);
 
   // ── Level initialization ───────────────────────────────────────────────────
 
   const initLevel = useCallback((lvl: number) => {
-    const recipeSet = RECIPE_SETS[(lvl - 1) % RECIPE_SETS.length];
-    const name = RECIPE_NAMES[(lvl - 1) % RECIPE_NAMES.length];
-    setRecipe(recipeSet.map(r => ({ ...r, collected: false })));
-    setRecipeName(name);
-    setRoundIndex(0);
+    setChallengeIndex(0);
     setSelectedAnswer(null);
     setIsCorrect(null);
-    setDemoPhase(0);
+    setShowResult(false);
+    setCanAnswer(false);
+    setDemoTimer(0);
+    setChefExpression('😊');
 
-    // For levels 1-3, force a single measurement type
-    const types: MeasurementType[] = ['mass', 'capacity', 'length', 'duration'];
-    const forcedType = lvl <= 3 ? types[(lvl - 1) % types.length] : undefined;
-    setRound(generateRound(lvl, forcedType));
+    const types: MeasurementType[] = ['mass', 'capacity', 'length', 'speed'];
+    const forceType = lvl <= 4 ? types[(lvl - 1) % types.length] : undefined;
+    const ch = generateChallenge(lvl, forceType);
+    setChallenge(ch);
+
+    // Reset physics
+    setScalePhysics({
+      angle: 0, velocity: 0, targetAngle: 0, settled: false,
+      itemAPlaced: false, itemBPlaced: false, itemADropY: -80, itemBDropY: -80,
+    });
+    setLiquidPhysics({
+      fillA: 0, fillB: 0, pouringA: false, pouringB: false,
+      waveA: 0, waveB: 0, donePouring: false,
+    });
+    setLengthPhysics({
+      wormPosA: 0, wormPosB: 0, wormDone: false, wormBounceA: 0, wormBounceB: 0,
+    });
+    setSpeedPhysics({
+      posA: 0, posB: 0, raceStarted: false, raceFinished: false,
+      winnerDeclared: false, finishTimeA: 0, finishTimeB: 0,
+    });
   }, []);
 
   const startGame = useCallback(() => {
     setLevel(1);
     setScore(0);
-    setStreak(0);
-    setGameScreen('playing');
+    setCombo(0);
+    setMaxCombo(0);
+    setStars(3);
+    setScreen('playing');
     initLevel(1);
   }, [initLevel]);
 
   const nextLevel = useCallback(() => {
-    const newLevel = level + 1;
-    setLevel(newLevel);
-    setGameScreen('playing');
-    initLevel(newLevel);
+    const nl = level + 1;
+    setLevel(nl);
+    setStars(3);
+    setScreen('playing');
+    initLevel(nl);
   }, [level, initLevel]);
 
   // ── Answer handling ────────────────────────────────────────────────────────
 
   const handleAnswer = useCallback((answer: 'A' | 'B') => {
-    if (selectedAnswer !== null || !round) return;
+    if (selectedAnswer !== null || !challenge || !canAnswer) return;
     setSelectedAnswer(answer);
-    const correct = answer === round.correctAnswer;
+    const correct = answer === challenge.correctAnswer;
     setIsCorrect(correct);
+    setShowResult(true);
 
     if (correct) {
-      setScore(prev => prev + 10 + streak * 5);
-      setStreak(prev => prev + 1);
-      // Collect next recipe ingredient
-      setRecipe(prev => {
-        const next = [...prev];
-        const uncollected = next.findIndex(r => !r.collected);
-        if (uncollected >= 0) next[uncollected] = { ...next[uncollected], collected: true };
-        return next;
+      const comboBonus = combo * 5;
+      setScore(prev => prev + 20 + comboBonus);
+      setCombo(prev => {
+        const nc = prev + 1;
+        setMaxCombo(mc => Math.max(mc, nc));
+        return nc;
       });
-      spawnParticles('celebration', 400, 300, 15);
+      setChefExpression('🥳');
+      // Celebration explosion
+      const cx = typeof window !== 'undefined' ? window.innerWidth / 2 : 400;
+      spawnParticles('confetti', cx, 200, 25, {
+        colors: ['#FFD700', '#FF6B35', '#4CAF50', '#E91E63', '#2196F3', '#FF9800'],
+        speed: 5,
+        spread: 200,
+      });
+      spawnParticles('food', cx, 200, 8, {
+        emojis: FOOD_EMOJIS,
+        speed: 4,
+        spread: 300,
+      });
+      spawnParticles('sparkle', cx, 150, 15, {
+        colors: ['#FFD700', '#FFF', '#FFEB3B'],
+        speed: 3,
+        spread: 250,
+      });
     } else {
-      setStreak(0);
-      setShakeScreen(true);
-      setTimeout(() => setShakeScreen(false), 500);
+      setStars(prev => Math.max(0, prev - 1));
+      setCombo(0);
+      setChefExpression('😅');
+      // Flour poof
+      const cx = typeof window !== 'undefined' ? window.innerWidth / 2 : 400;
+      spawnParticles('flour', cx, 300, 20, {
+        colors: ['#FFF8E1', '#FFECB3', '#FFF3E0', '#E0E0E0'],
+        speed: 2,
+        spread: 120,
+      });
     }
 
-    // Start demonstration phase
-    setGameScreen('demo');
-    setDemoPhase(1);
+    // Advance after delay
+    setTimeout(() => {
+      const nextIdx = challengeIndex + 1;
+      if (nextIdx >= 5) {
+        setScreen('levelComplete');
+        return;
+      }
+      setChallengeIndex(nextIdx);
+      setSelectedAnswer(null);
+      setIsCorrect(null);
+      setShowResult(false);
+      setCanAnswer(false);
+      setDemoTimer(0);
+      setChefExpression('😊');
 
-    // Reset demo animation values
-    setScaleAngle(0);
-    setScaleTargetAngle(0);
-    setLiquidFillA(0);
-    setLiquidFillB(0);
-    setRulerExtendA(0);
-    setRulerExtendB(0);
-    setClockAngleA(0);
-    setClockAngleB(0);
-  }, [selectedAnswer, round, streak, spawnParticles]);
+      const types: MeasurementType[] = ['mass', 'capacity', 'length', 'speed'];
+      const forceType = level <= 4 ? types[(level - 1) % types.length] : undefined;
+      const ch = generateChallenge(level, forceType);
+      setChallenge(ch);
 
-  const advanceRound = useCallback(() => {
-    if (!round) return;
-
-    // Check if recipe is complete
-    const allCollected = recipe.every(r => r.collected);
-    if (allCollected) {
-      setGameScreen('levelComplete');
-      spawnParticles('celebration', 400, 300, 30);
-      return;
-    }
-
-    const newIndex = roundIndex + 1;
-    setRoundIndex(newIndex);
-    setSelectedAnswer(null);
-    setIsCorrect(null);
-    setDemoPhase(0);
-    setGameScreen('playing');
-
-    // For levels 1-3, force a single type per level
-    const types: MeasurementType[] = ['mass', 'capacity', 'length', 'duration'];
-    const forcedType = level <= 3 ? types[(level - 1) % types.length] : undefined;
-    setRound(generateRound(level, forcedType));
-  }, [round, roundIndex, recipe, level, spawnParticles]);
+      // Reset physics for next challenge
+      setScalePhysics({
+        angle: 0, velocity: 0, targetAngle: 0, settled: false,
+        itemAPlaced: false, itemBPlaced: false, itemADropY: -80, itemBDropY: -80,
+      });
+      setLiquidPhysics({
+        fillA: 0, fillB: 0, pouringA: false, pouringB: false,
+        waveA: 0, waveB: 0, donePouring: false,
+      });
+      setLengthPhysics({
+        wormPosA: 0, wormPosB: 0, wormDone: false, wormBounceA: 0, wormBounceB: 0,
+      });
+      setSpeedPhysics({
+        posA: 0, posB: 0, raceStarted: false, raceFinished: false,
+        winnerDeclared: false, finishTimeA: 0, finishTimeB: 0,
+      });
+    }, 2200);
+  }, [selectedAnswer, challenge, canAnswer, combo, challengeIndex, level, spawnParticles]);
 
   // ── Animation loop ─────────────────────────────────────────────────────────
 
@@ -394,421 +444,269 @@ export default function MeasurementKitchen({ onExit }: MeasurementKitchenProps =
       const dt = Math.min((timestamp - lastTimeRef.current) / 16.67, 3);
       lastTimeRef.current = timestamp;
 
-      // Intro float animation
-      if (gameScreen === 'intro') {
-        setIntroFloat(prev => prev + 0.02 * dt);
+      // Intro floating
+      if (screen === 'intro') {
+        setIntroFloat(prev => prev + 0.025 * dt);
       }
 
       // Update particles
       setParticles(prev => {
         if (prev.length === 0) return prev;
-        const updated = prev
+        return prev
           .map(p => ({
             ...p,
             x: p.x + p.vx * dt,
-            y: p.y + p.vy * dt,
+            y: p.y + p.vy * dt + (p.type === 'confetti' ? 0.15 * dt : 0),
+            vy: p.vy + (p.type === 'confetti' ? 0.08 * dt : p.type === 'food' ? 0.12 * dt : 0),
             life: p.life - dt,
-            opacity: Math.max(0, (p.life / p.maxLife) * p.opacity),
+            rotation: p.rotation + p.rotSpeed * dt,
           }))
           .filter(p => p.life > 0);
-        return updated;
       });
 
-      // Demo animations
-      if (gameScreen === 'demo' && round && demoPhase > 0) {
-        const valA = round.itemA.value;
-        const valB = round.itemB.value;
-
-        switch (round.type) {
-          case 'mass': {
-            // Balance scale tips toward heavier side
-            const target = valA > valB ? -18 : valA < valB ? 18 : 0;
-            setScaleTargetAngle(target);
-            setScaleAngle(prev => {
-              const diff = target - prev;
-              // Spring physics: wobble then settle
-              const spring = 0.06;
-              const damping = 0.92;
-              const velocity = diff * spring;
-              return prev + velocity * dt * damping + Math.sin(timestamp * 0.008) * Math.max(0, 3 - demoPhase * 0.5);
-            });
-            break;
-          }
-          case 'capacity': {
-            // Fill containers at rate proportional to value
-            const maxFill = 0.95;
-            const fillRate = 0.012;
-            setLiquidFillA(prev => Math.min(maxFill, prev + fillRate * (valA / 10) * dt));
-            setLiquidFillB(prev => Math.min(maxFill, prev + fillRate * (valB / 10) * dt));
-            break;
-          }
-          case 'length': {
-            // Extend rulers proportional to value
-            const extendRate = 0.015;
-            setRulerExtendA(prev => Math.min(1, prev + extendRate * (valA / 10) * dt));
-            setRulerExtendB(prev => Math.min(1, prev + extendRate * (valB / 10) * dt));
-            break;
-          }
-          case 'duration': {
-            // Clock hands sweep proportional to value
-            const clockRate = 2.0;
-            setClockAngleA(prev => Math.min(360 * (valA / 10), prev + clockRate * (valA / 10) * dt));
-            setClockAngleB(prev => Math.min(360 * (valB / 10), prev + clockRate * (valB / 10) * dt));
-            break;
-          }
-        }
-
-        setDemoPhase(prev => prev + 0.02 * dt);
-      }
-
-      // Background steam particles when playing
-      if ((gameScreen === 'playing' || gameScreen === 'demo') && Math.random() < 0.03) {
+      // Ambient steam
+      if ((screen === 'playing' || screen === 'result') && Math.random() < 0.025) {
         setParticles(prev => {
-          if (prev.length > 60) return prev;
+          if (prev.length > 80) return prev;
           const life = 80 + Math.random() * 80;
           return [...prev, {
-            id: nextParticleId(),
-            x: 50 + Math.random() * 100,
-            y: 350 + Math.random() * 50,
-            vx: (Math.random() - 0.5) * 0.5,
-            vy: -(0.3 + Math.random() * 0.8),
-            size: 3 + Math.random() * 6,
-            opacity: 0.15 + Math.random() * 0.15,
-            life,
-            maxLife: life,
+            id: nextId(),
+            x: 30 + Math.random() * 70,
+            y: (typeof window !== 'undefined' ? window.innerHeight : 600) * 0.7 + Math.random() * 60,
+            vx: (Math.random() - 0.5) * 0.3,
+            vy: -(0.3 + Math.random() * 0.6),
+            size: 4 + Math.random() * 8,
+            life, maxLife: life,
+            color: 'rgba(255,255,255,0.12)',
             type: 'steam' as const,
+            rotation: 0,
+            rotSpeed: 0,
           }];
         });
       }
 
-      animationRef.current = requestAnimationFrame(animate);
+      // Physics for each challenge type during playing
+      if (screen === 'playing' && challenge && !showResult) {
+        setDemoTimer(prev => {
+          const newT = prev + dt;
+
+          switch (challenge.type) {
+            case 'mass': {
+              setScalePhysics(sp => {
+                let { angle, velocity, targetAngle, settled, itemAPlaced, itemBPlaced, itemADropY, itemBDropY } = sp;
+
+                // Drop items onto scale with timing
+                if (newT > 20 && !itemAPlaced) {
+                  itemADropY = Math.min(itemADropY + 4 * dt, 0);
+                  if (itemADropY >= 0) {
+                    itemAPlaced = true;
+                    // Set partial target (only A placed)
+                    targetAngle = -12;
+                    velocity = 3;
+                  }
+                }
+                if (newT > 55 && !itemBPlaced) {
+                  itemBDropY = Math.min(itemBDropY + 4 * dt, 0);
+                  if (itemBDropY >= 0) {
+                    itemBPlaced = true;
+                    // Now both placed, set final target
+                    const diff = challenge.itemA.value - challenge.itemB.value;
+                    targetAngle = Math.max(-22, Math.min(22, -diff * 3));
+                    velocity = 4;
+                  }
+                }
+
+                // Spring physics for scale beam
+                if (itemAPlaced || itemBPlaced) {
+                  const spring = 0.035;
+                  const damping = 0.94;
+                  const force = (targetAngle - angle) * spring;
+                  velocity = (velocity + force * dt) * damping;
+                  angle += velocity * dt;
+
+                  if (Math.abs(velocity) < 0.05 && Math.abs(angle - targetAngle) < 0.3) {
+                    settled = true;
+                  }
+                }
+
+                // Enable answer after scale settles
+                if (settled && itemAPlaced && itemBPlaced && newT > 90) {
+                  setCanAnswer(true);
+                }
+
+                return { angle, velocity, targetAngle, settled, itemAPlaced, itemBPlaced, itemADropY, itemBDropY };
+              });
+              break;
+            }
+
+            case 'capacity': {
+              setLiquidPhysics(lp => {
+                let { fillA, fillB, pouringA, pouringB, waveA, waveB, donePouring } = lp;
+
+                // Start pouring at different times
+                if (newT > 20) pouringA = true;
+                if (newT > 30) pouringB = true;
+
+                const fillRate = 0.006;
+                const maxFillA = challenge.itemA.value / 10;
+                const maxFillB = challenge.itemB.value / 10;
+
+                if (pouringA && fillA < maxFillA) {
+                  fillA = Math.min(maxFillA, fillA + fillRate * dt);
+                  waveA += 0.15 * dt;
+                }
+                if (pouringB && fillB < maxFillB) {
+                  fillB = Math.min(maxFillB, fillB + fillRate * dt);
+                  waveB += 0.12 * dt;
+                }
+
+                if (fillA >= maxFillA - 0.01 && fillB >= maxFillB - 0.01 && !donePouring) {
+                  donePouring = true;
+                }
+
+                if (donePouring && newT > 100) {
+                  setCanAnswer(true);
+                }
+
+                return { fillA, fillB, pouringA, pouringB, waveA, waveB, donePouring };
+              });
+              break;
+            }
+
+            case 'length': {
+              setLengthPhysics(lp => {
+                let { wormPosA, wormPosB, wormDone, wormBounceA, wormBounceB } = lp;
+
+                const maxA = challenge.itemA.value / 10;
+                const maxB = challenge.itemB.value / 10;
+                const speed = 0.008;
+
+                if (newT > 15) {
+                  wormPosA = Math.min(maxA, wormPosA + speed * dt);
+                  wormBounceA += 0.2 * dt;
+                }
+                if (newT > 15) {
+                  wormPosB = Math.min(maxB, wormPosB + speed * dt);
+                  wormBounceB += 0.18 * dt;
+                }
+
+                if (wormPosA >= maxA - 0.01 && wormPosB >= maxB - 0.01 && !wormDone) {
+                  wormDone = true;
+                }
+
+                if (wormDone && newT > 90) {
+                  setCanAnswer(true);
+                }
+
+                return { wormPosA, wormPosB, wormDone, wormBounceA, wormBounceB };
+              });
+              break;
+            }
+
+            case 'speed': {
+              setSpeedPhysics(sp => {
+                let { posA, posB, raceStarted, raceFinished, winnerDeclared, finishTimeA, finishTimeB } = sp;
+
+                if (newT > 30 && !raceStarted) {
+                  raceStarted = true;
+                }
+
+                if (raceStarted && !raceFinished) {
+                  // Speed = value (higher = finishes faster)
+                  const speedA = challenge.itemA.value * 0.009;
+                  const speedB = challenge.itemB.value * 0.009;
+                  posA = Math.min(1, posA + speedA * dt);
+                  posB = Math.min(1, posB + speedB * dt);
+
+                  if (posA >= 1 && finishTimeA === 0) finishTimeA = newT;
+                  if (posB >= 1 && finishTimeB === 0) finishTimeB = newT;
+
+                  if (posA >= 1 && posB >= 1 && !winnerDeclared) {
+                    raceFinished = true;
+                    winnerDeclared = true;
+                  }
+                }
+
+                if (raceFinished && newT > 120) {
+                  setCanAnswer(true);
+                }
+
+                return { posA, posB, raceStarted, raceFinished, winnerDeclared, finishTimeA, finishTimeB };
+              });
+              break;
+            }
+          }
+
+          return newT;
+        });
+      }
+
+      animRef.current = requestAnimationFrame(animate);
     };
 
-    animationRef.current = requestAnimationFrame(animate);
-    return () => {
-      if (animationRef.current) cancelAnimationFrame(animationRef.current);
-    };
-  }, [gameScreen, round, demoPhase]);
+    animRef.current = requestAnimationFrame(animate);
+    return () => { if (animRef.current) cancelAnimationFrame(animRef.current); };
+  }, [screen, challenge, showResult]);
 
-  // ── Render helpers ─────────────────────────────────────────────────────────
+  // ── Render: Intro ──────────────────────────────────────────────────────────
 
-  const renderBalanceScale = () => {
-    if (!round) return null;
-    const angle = scaleAngle;
-
-    return (
-      <div className="mk-demo-visual">
-        <svg viewBox="0 0 400 280" className="mk-scale-svg">
-          {/* Base */}
-          <rect x="175" y="240" width="50" height="20" rx="4" fill="#8B6914" />
-          <rect x="190" y="140" width="20" height="100" rx="3" fill="#A67C1E" />
-          {/* Fulcrum triangle */}
-          <polygon points="200,125 185,140 215,140" fill="#C4951A" />
-
-          {/* Beam */}
-          <g transform={`rotate(${angle}, 200, 125)`}>
-            <rect x="40" y="120" width="320" height="10" rx="5" fill="#D4A530" />
-
-            {/* Left pan */}
-            <g>
-              {/* Chains */}
-              <line x1="80" y1="130" x2="60" y2="170" stroke="#A67C1E" strokeWidth="2" />
-              <line x1="80" y1="130" x2="100" y2="170" stroke="#A67C1E" strokeWidth="2" />
-              {/* Pan */}
-              <ellipse cx="80" cy="178" rx="40" ry="10" fill="#B8860B" />
-              <ellipse cx="80" cy="175" rx="40" ry="10" fill="#DAA520" />
-              {/* Item emoji positioned above pan */}
-              <text x="80" y="165" textAnchor="middle" fontSize="36" dominantBaseline="central">
-                {round.itemA.emoji}
-              </text>
-            </g>
-
-            {/* Right pan */}
-            <g>
-              <line x1="320" y1="130" x2="300" y2="170" stroke="#A67C1E" strokeWidth="2" />
-              <line x1="320" y1="130" x2="340" y2="170" stroke="#A67C1E" strokeWidth="2" />
-              <ellipse cx="320" cy="178" rx="40" ry="10" fill="#B8860B" />
-              <ellipse cx="320" cy="175" rx="40" ry="10" fill="#DAA520" />
-              <text x="320" y="165" textAnchor="middle" fontSize="36" dominantBaseline="central">
-                {round.itemB.emoji}
-              </text>
-            </g>
-          </g>
-        </svg>
-      </div>
-    );
-  };
-
-  const renderLiquidContainers = () => {
-    if (!round) return null;
-    const waveOffset = Date.now() * 0.003;
+  if (screen === 'intro') {
+    const fY = Math.sin(introFloat) * 10;
+    const fY2 = Math.sin(introFloat * 1.3 + 1) * 8;
+    const fY3 = Math.sin(introFloat * 0.7 + 2) * 12;
 
     return (
-      <div className="mk-demo-visual mk-liquid-demo">
-        <div className="mk-liquid-pair">
-          {/* Container A */}
-          <div className="mk-container-wrap">
-            <svg viewBox="0 0 120 160" className="mk-container-svg">
-              {/* Glass outline */}
-              <path d="M25,20 L15,140 Q15,150 30,150 L90,150 Q105,150 105,140 L95,20 Z"
-                fill="rgba(200,230,255,0.15)" stroke="rgba(200,230,255,0.4)" strokeWidth="2" />
-              {/* Liquid fill */}
-              <clipPath id="containerClipA">
-                <path d="M25,20 L15,140 Q15,150 30,150 L90,150 Q105,150 105,140 L95,20 Z" />
-              </clipPath>
-              <g clipPath="url(#containerClipA)">
-                <rect x="10" y={150 - liquidFillA * 130} width="110" height={liquidFillA * 130 + 5}
-                  fill="url(#liquidGradA)" />
-                {/* Wave surface */}
-                <path
-                  d={`M10,${150 - liquidFillA * 130} Q35,${148 - liquidFillA * 130 + Math.sin(waveOffset) * 4} 60,${150 - liquidFillA * 130} Q85,${148 - liquidFillA * 130 - Math.sin(waveOffset) * 4} 110,${150 - liquidFillA * 130}`}
-                  fill="rgba(100,180,255,0.3)" />
-                {/* Bubbles */}
-                {liquidFillA > 0.1 && <>
-                  <circle cx={40 + Math.sin(waveOffset * 2) * 5} cy={150 - liquidFillA * 60} r="3" fill="rgba(255,255,255,0.3)" />
-                  <circle cx={70 + Math.cos(waveOffset * 1.5) * 8} cy={150 - liquidFillA * 80} r="2" fill="rgba(255,255,255,0.25)" />
-                  <circle cx={55 + Math.sin(waveOffset * 3) * 4} cy={150 - liquidFillA * 40} r="2.5" fill="rgba(255,255,255,0.2)" />
-                </>}
-              </g>
-              <defs>
-                <linearGradient id="liquidGradA" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%" stopColor="#60A5FA" />
-                  <stop offset="100%" stopColor="#2563EB" />
-                </linearGradient>
-              </defs>
-              {/* Shine */}
-              <path d="M30,25 L28,100" stroke="rgba(255,255,255,0.2)" strokeWidth="3" strokeLinecap="round" />
-            </svg>
-            <div className="mk-container-label">{round.itemA.emoji} {round.itemA.name}</div>
-          </div>
-
-          {/* Container B */}
-          <div className="mk-container-wrap">
-            <svg viewBox="0 0 120 160" className="mk-container-svg">
-              <path d="M25,20 L15,140 Q15,150 30,150 L90,150 Q105,150 105,140 L95,20 Z"
-                fill="rgba(200,230,255,0.15)" stroke="rgba(200,230,255,0.4)" strokeWidth="2" />
-              <clipPath id="containerClipB">
-                <path d="M25,20 L15,140 Q15,150 30,150 L90,150 Q105,150 105,140 L95,20 Z" />
-              </clipPath>
-              <g clipPath="url(#containerClipB)">
-                <rect x="10" y={150 - liquidFillB * 130} width="110" height={liquidFillB * 130 + 5}
-                  fill="url(#liquidGradB)" />
-                <path
-                  d={`M10,${150 - liquidFillB * 130} Q35,${148 - liquidFillB * 130 - Math.sin(waveOffset + 1) * 4} 60,${150 - liquidFillB * 130} Q85,${148 - liquidFillB * 130 + Math.sin(waveOffset + 1) * 4} 110,${150 - liquidFillB * 130}`}
-                  fill="rgba(255,180,100,0.3)" />
-                {liquidFillB > 0.1 && <>
-                  <circle cx={45 + Math.sin(waveOffset * 2 + 1) * 5} cy={150 - liquidFillB * 60} r="3" fill="rgba(255,255,255,0.3)" />
-                  <circle cx={75 + Math.cos(waveOffset * 1.5 + 1) * 8} cy={150 - liquidFillB * 80} r="2" fill="rgba(255,255,255,0.25)" />
-                </>}
-              </g>
-              <defs>
-                <linearGradient id="liquidGradB" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%" stopColor="#FB923C" />
-                  <stop offset="100%" stopColor="#EA580C" />
-                </linearGradient>
-              </defs>
-              <path d="M30,25 L28,100" stroke="rgba(255,255,255,0.2)" strokeWidth="3" strokeLinecap="round" />
-            </svg>
-            <div className="mk-container-label">{round.itemB.emoji} {round.itemB.name}</div>
-          </div>
-        </div>
-      </div>
-    );
-  };
-
-  const renderRulerMeasure = () => {
-    if (!round) return null;
-    const maxWidth = 280;
-    const widthA = rulerExtendA * maxWidth * (round.itemA.value / 10);
-    const widthB = rulerExtendB * maxWidth * (round.itemB.value / 10);
-
-    return (
-      <div className="mk-demo-visual mk-ruler-demo">
-        <svg viewBox="0 0 400 220" className="mk-ruler-svg">
-          {/* Ruler background */}
-          <rect x="50" y="30" width="320" height="25" rx="3" fill="#F5DEB3" stroke="#D2B48C" strokeWidth="1" />
-          {/* Tick marks */}
-          {Array.from({ length: 17 }).map((_, i) => (
-            <g key={i}>
-              <line x1={50 + i * 20} y1="30" x2={50 + i * 20} y2={i % 5 === 0 ? 55 : 45} stroke="#8B7355" strokeWidth={i % 5 === 0 ? 1.5 : 0.8} />
-              {i % 5 === 0 && <text x={50 + i * 20} y="68" textAnchor="middle" fontSize="10" fill="#8B7355">{i}</text>}
-            </g>
-          ))}
-
-          {/* Item A bar */}
-          <g>
-            <text x="25" y="115" textAnchor="middle" fontSize="28">{round.itemA.emoji}</text>
-            <rect x="50" y="100" width={widthA} height="20" rx="6" fill="url(#barGradA)" opacity="0.9">
-              <animate attributeName="opacity" values="0.85;1;0.85" dur="2s" repeatCount="indefinite" />
-            </rect>
-            {widthA > 10 && (
-              <text x={55 + widthA} y="115" fontSize="12" fontWeight="bold" fill="#3B82F6">
-                {round.itemA.name}
-              </text>
-            )}
-          </g>
-
-          {/* Item B bar */}
-          <g>
-            <text x="25" y="165" textAnchor="middle" fontSize="28">{round.itemB.emoji}</text>
-            <rect x="50" y="150" width={widthB} height="20" rx="6" fill="url(#barGradB)" opacity="0.9">
-              <animate attributeName="opacity" values="0.85;1;0.85" dur="2s" repeatCount="indefinite" begin="0.5s" />
-            </rect>
-            {widthB > 10 && (
-              <text x={55 + widthB} y="165" fontSize="12" fontWeight="bold" fill="#F97316">
-                {round.itemB.name}
-              </text>
-            )}
-          </g>
-
-          <defs>
-            <linearGradient id="barGradA" x1="0" y1="0" x2="1" y2="0">
-              <stop offset="0%" stopColor="#60A5FA" />
-              <stop offset="100%" stopColor="#3B82F6" />
-            </linearGradient>
-            <linearGradient id="barGradB" x1="0" y1="0" x2="1" y2="0">
-              <stop offset="0%" stopColor="#FBBF24" />
-              <stop offset="100%" stopColor="#F97316" />
-            </linearGradient>
-          </defs>
-        </svg>
-      </div>
-    );
-  };
-
-  const renderClockTimer = () => {
-    if (!round) return null;
-
-    const renderClock = (angle: number, color: string, item: KitchenItem) => (
-      <div className="mk-clock-wrap">
-        <svg viewBox="0 0 120 120" className="mk-clock-svg">
-          {/* Clock face */}
-          <circle cx="60" cy="60" r="55" fill="#1e293b" stroke={color} strokeWidth="3" />
-          <circle cx="60" cy="60" r="50" fill="#0f172a" />
-          {/* Hour markers */}
-          {Array.from({ length: 12 }).map((_, i) => {
-            const a = (i * 30 - 90) * Math.PI / 180;
-            const x1 = 60 + Math.cos(a) * 42;
-            const y1 = 60 + Math.sin(a) * 42;
-            const x2 = 60 + Math.cos(a) * 48;
-            const y2 = 60 + Math.sin(a) * 48;
-            return <line key={i} x1={x1} y1={y1} x2={x2} y2={y2} stroke="#64748b" strokeWidth={i % 3 === 0 ? 2.5 : 1} />;
-          })}
-          {/* Sweep arc to show elapsed time */}
-          {angle > 0 && (() => {
-            const startA = -90;
-            const endA = startA + angle;
-            const rad1 = (startA * Math.PI) / 180;
-            const rad2 = (endA * Math.PI) / 180;
-            const x1 = 60 + Math.cos(rad1) * 38;
-            const y1 = 60 + Math.sin(rad1) * 38;
-            const x2 = 60 + Math.cos(rad2) * 38;
-            const y2 = 60 + Math.sin(rad2) * 38;
-            const largeArc = angle > 180 ? 1 : 0;
-            return (
-              <path
-                d={`M60,60 L${x1},${y1} A38,38 0 ${largeArc},1 ${x2},${y2} Z`}
-                fill={color}
-                opacity="0.2"
-              />
-            );
-          })()}
-          {/* Hand */}
-          {(() => {
-            const handAngle = (angle - 90) * Math.PI / 180;
-            const hx = 60 + Math.cos(handAngle) * 38;
-            const hy = 60 + Math.sin(handAngle) * 38;
-            return <line x1="60" y1="60" x2={hx} y2={hy} stroke={color} strokeWidth="3" strokeLinecap="round" />;
-          })()}
-          {/* Center dot */}
-          <circle cx="60" cy="60" r="4" fill={color} />
-        </svg>
-        <div className="mk-clock-label" style={{ color }}>{item.emoji} {item.name}</div>
-      </div>
-    );
-
-    return (
-      <div className="mk-demo-visual mk-clock-demo">
-        <div className="mk-clock-pair">
-          {renderClock(clockAngleA, '#60A5FA', round.itemA)}
-          {renderClock(clockAngleB, '#FB923C', round.itemB)}
-        </div>
-      </div>
-    );
-  };
-
-  const renderDemoVisual = () => {
-    if (!round) return null;
-    switch (round.type) {
-      case 'mass': return renderBalanceScale();
-      case 'capacity': return renderLiquidContainers();
-      case 'length': return renderRulerMeasure();
-      case 'duration': return renderClockTimer();
-    }
-  };
-
-  // ── Screen renders ─────────────────────────────────────────────────────────
-
-  if (gameScreen === 'intro') {
-    const floatY = Math.sin(introFloat) * 8;
-    const floatY2 = Math.sin(introFloat * 1.3 + 1) * 6;
-    const floatY3 = Math.sin(introFloat * 0.8 + 2) * 10;
-
-    return (
-      <div className="mk-root">
+      <div className="mk">
         <style>{styles}</style>
         <div className="mk-intro">
           <div className="mk-intro-bg">
-            {/* Animated steam wisps */}
-            {[...Array(12)].map((_, i) => (
-              <div key={i} className="mk-steam-wisp" style={{
-                left: `${10 + Math.random() * 80}%`,
-                bottom: `${Math.random() * 30}%`,
-                animationDelay: `${Math.random() * 6}s`,
-                animationDuration: `${5 + Math.random() * 5}s`,
-                opacity: 0.1 + Math.random() * 0.15,
+            {[...Array(15)].map((_, i) => (
+              <div key={i} className="mk-steam" style={{
+                left: `${5 + Math.random() * 90}%`,
+                bottom: `${Math.random() * 25}%`,
+                animationDelay: `${Math.random() * 8}s`,
+                animationDuration: `${6 + Math.random() * 6}s`,
               }} />
             ))}
-            {/* Floating kitchen items */}
-            <div className="mk-float-item" style={{ left: '10%', top: '15%', transform: `translateY(${floatY}px)` }}>🍳</div>
-            <div className="mk-float-item" style={{ left: '85%', top: '20%', transform: `translateY(${floatY2}px)` }}>🧁</div>
-            <div className="mk-float-item" style={{ left: '75%', top: '70%', transform: `translateY(${floatY3}px)` }}>🥄</div>
-            <div className="mk-float-item" style={{ left: '15%', top: '75%', transform: `translateY(${floatY2}px)` }}>⚖️</div>
-            <div className="mk-float-item" style={{ left: '50%', top: '80%', transform: `translateY(${floatY}px)` }}>📏</div>
-            <div className="mk-float-item" style={{ left: '90%', top: '50%', transform: `translateY(${floatY3}px)` }}>⏱️</div>
+            <div className="mk-float-bg" style={{ left: '8%', top: '12%', transform: `translateY(${fY}px)` }}>⚖️</div>
+            <div className="mk-float-bg" style={{ left: '88%', top: '18%', transform: `translateY(${fY2}px)` }}>🫗</div>
+            <div className="mk-float-bg" style={{ left: '78%', top: '72%', transform: `translateY(${fY3}px)` }}>📏</div>
+            <div className="mk-float-bg" style={{ left: '12%', top: '68%', transform: `translateY(${fY2}px)` }}>🏃</div>
+            <div className="mk-float-bg" style={{ left: '50%', top: '82%', transform: `translateY(${fY}px)` }}>🍳</div>
+            <div className="mk-float-bg" style={{ left: '35%', top: '10%', transform: `translateY(${fY3}px)` }}>🧁</div>
           </div>
           <div className="mk-intro-content">
-            <div className="mk-logo-row">
-              <span className="mk-logo-icon" style={{ transform: `translateY(${floatY}px)` }}>👨‍🍳</span>
+            <div className="mk-logo">
+              <span className="mk-logo-chef" style={{ transform: `translateY(${fY}px)` }}>👨‍🍳</span>
               <h1 className="mk-title">Measurement Kitchen</h1>
-              <span className="mk-logo-icon" style={{ transform: `translateY(${floatY2}px)` }}>🍰</span>
+              <span className="mk-logo-chef" style={{ transform: `translateY(${fY2}px)` }}>🍰</span>
             </div>
-            <p className="mk-tagline">Compare, Measure & Cook!</p>
-            <div className="mk-instructions-card">
+            <p className="mk-subtitle">A Physics Cooking Adventure!</p>
+
+            <div className="mk-how">
               <h3>How to Play</h3>
-              <div className="mk-instruction">
-                <div className="mk-inst-icons">
-                  <span>⚖️</span><span>🫗</span><span>📏</span><span>⏱️</span>
-                </div>
-                <p>Compare items by <span className="mk-hl mass">mass</span>, <span className="mk-hl capacity">capacity</span>, <span className="mk-hl length">length</span> and <span className="mk-hl duration">duration</span></p>
+              <div className="mk-how-item">
+                <div className="mk-how-icons"><span>⚖️</span></div>
+                <p>Watch the <strong className="mk-hl-mass">balance scale</strong> tip to find the heavier item!</p>
               </div>
-              <div className="mk-instruction">
-                <div className="mk-inst-icons">
-                  <span>🍉</span><span className="mk-vs">vs</span><span>🍇</span>
-                </div>
-                <p><strong>Tap</strong> the correct answer to each measurement question!</p>
+              <div className="mk-how-item">
+                <div className="mk-how-icons"><span>🫗</span></div>
+                <p>Watch water <strong className="mk-hl-cap">pour into containers</strong> to compare capacity!</p>
               </div>
-              <div className="mk-instruction">
-                <div className="mk-inst-icons">
-                  <span>🥚</span><span>🥛</span><span>🌾</span><span className="mk-arrow-icon">→</span><span>🎂</span>
-                </div>
-                <p>Collect ingredients to <span className="mk-hl recipe">complete a recipe</span> each level!</p>
+              <div className="mk-how-item">
+                <div className="mk-how-icons"><span>🐛</span></div>
+                <p>A measuring worm <strong className="mk-hl-len">stretches along</strong> items to compare length!</p>
+              </div>
+              <div className="mk-how-item">
+                <div className="mk-how-icons"><span>🏃</span></div>
+                <p>Watch items <strong className="mk-hl-spd">race</strong> to see which cooks faster!</p>
               </div>
             </div>
+
             <button className="mk-start-btn" onClick={startGame}>
               <span>🍳</span>
-              Start Cooking
-              <span>🍳</span>
+              Start Cooking!
+              <span>🔥</span>
             </button>
           </div>
         </div>
@@ -816,42 +714,62 @@ export default function MeasurementKitchen({ onExit }: MeasurementKitchenProps =
     );
   }
 
-  if (gameScreen === 'levelComplete') {
+  // ── Render: Level Complete ─────────────────────────────────────────────────
+
+  if (screen === 'levelComplete') {
+    const rankIdx = Math.min(level - 1, CHEF_RANKS.length - 1);
+    const recipeName = RECIPE_NAMES[(level - 1) % RECIPE_NAMES.length];
+    const recipeEmoji = RECIPE_EMOJIS[(level - 1) % RECIPE_EMOJIS.length];
+
     return (
-      <div className="mk-root">
+      <div className="mk">
         <style>{styles}</style>
-        <div className="mk-level-complete">
-          <div className="mk-complete-bg">
-            {recipe.map((item, i) => (
-              <div key={i} className="mk-float-celebrate" style={{ left: `${15 + i * 16}%`, animationDelay: `${i * 0.2}s` }}>
-                {item.emoji}
+        <div className="mk-complete">
+          <div className="mk-complete-decor">
+            {[...Array(8)].map((_, i) => (
+              <div key={i} className="mk-complete-float" style={{
+                left: `${10 + i * 12}%`,
+                animationDelay: `${i * 0.2}s`,
+              }}>
+                {FOOD_EMOJIS[i % FOOD_EMOJIS.length]}
               </div>
             ))}
           </div>
-          <div className="mk-complete-content">
-            <h1 className="mk-complete-title">Level {level} Complete!</h1>
-            <div className="mk-recipe-done">
-              <div className="mk-recipe-done-icon">🎂</div>
-              <p className="mk-recipe-done-text">You made {recipeName}!</p>
-              <div className="mk-recipe-done-items">
-                {recipe.map((item, i) => (
-                  <span key={i} className="mk-recipe-done-emoji">{item.emoji}</span>
-                ))}
+          <div className="mk-complete-inner">
+            <div className="mk-complete-banner">Recipe Complete!</div>
+            <div className="mk-complete-dish">{recipeEmoji}</div>
+            <div className="mk-complete-recipe">You made {recipeName}!</div>
+
+            <div className="mk-complete-stars">
+              {[...Array(3)].map((_, i) => (
+                <span key={i} className={`mk-complete-star ${i < stars ? 'mk-star-earned' : 'mk-star-empty'}`}>
+                  {i < stars ? '⭐' : '☆'}
+                </span>
+              ))}
+            </div>
+
+            <div className="mk-complete-stats">
+              <div className="mk-stat">
+                <span className="mk-stat-label">Score</span>
+                <span className="mk-stat-value">{score}</span>
+              </div>
+              <div className="mk-stat">
+                <span className="mk-stat-label">Best Combo</span>
+                <span className="mk-stat-value">{maxCombo}x</span>
+              </div>
+              <div className="mk-stat">
+                <span className="mk-stat-label">Chef Rank</span>
+                <span className="mk-stat-value mk-rank">{CHEF_RANKS[rankIdx]}</span>
               </div>
             </div>
-            <div className="mk-score-card">
-              <div className="mk-score-item">
-                <span className="mk-score-label">Score</span>
-                <span className="mk-score-value">{score}</span>
-              </div>
-              <div className="mk-score-item">
-                <span className="mk-score-label">Best Streak</span>
-                <span className="mk-score-value">{streak}</span>
-              </div>
-            </div>
-            <div className="mk-complete-buttons">
-              <button className="mk-next-btn" onClick={nextLevel}>Level {level + 1} →</button>
-              <button className="mk-menu-btn" onClick={() => onExit ? onExit() : setGameScreen('intro')}>Main Menu</button>
+
+            <div className="mk-complete-btns">
+              <button className="mk-next-btn" onClick={nextLevel}>
+                Next Recipe: {RECIPE_NAMES[level % RECIPE_NAMES.length]} →
+              </button>
+              <button className="mk-exit-btn" onClick={() => onExit ? onExit() : setScreen('intro')}>
+                Main Menu
+              </button>
             </div>
           </div>
         </div>
@@ -859,154 +777,563 @@ export default function MeasurementKitchen({ onExit }: MeasurementKitchenProps =
     );
   }
 
-  // Playing / Demo screens
+  // ── Render: Playing ────────────────────────────────────────────────────────
+
+  const renderMassChallenge = () => {
+    if (!challenge) return null;
+    const { angle, itemAPlaced, itemBPlaced, itemADropY, itemBDropY } = scalePhysics;
+
+    return (
+      <div className="mk-visual mk-mass-visual">
+        <svg viewBox="0 0 500 320" className="mk-scale-svg" preserveAspectRatio="xMidYMid meet">
+          {/* Base - ornate wooden stand */}
+          <defs>
+            <linearGradient id="baseGrad" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stopColor="#C49A3C" />
+              <stop offset="50%" stopColor="#8B6914" />
+              <stop offset="100%" stopColor="#6B4E0A" />
+            </linearGradient>
+            <linearGradient id="beamGrad" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stopColor="#E8C547" />
+              <stop offset="40%" stopColor="#D4A530" />
+              <stop offset="100%" stopColor="#B8860B" />
+            </linearGradient>
+            <linearGradient id="panGradA" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stopColor="#E8C547" />
+              <stop offset="100%" stopColor="#B8860B" />
+            </linearGradient>
+            <linearGradient id="panGradB" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stopColor="#DAA520" />
+              <stop offset="100%" stopColor="#8B6914" />
+            </linearGradient>
+            <radialGradient id="woodGrain" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stopColor="rgba(255,255,255,0.05)" />
+              <stop offset="100%" stopColor="rgba(0,0,0,0.1)" />
+            </radialGradient>
+            <filter id="scaleShadow">
+              <feDropShadow dx="0" dy="4" stdDeviation="6" floodColor="rgba(0,0,0,0.3)" />
+            </filter>
+          </defs>
+
+          {/* Base platform */}
+          <rect x="190" y="275" width="120" height="20" rx="5" fill="url(#baseGrad)" filter="url(#scaleShadow)" />
+          <rect x="190" y="275" width="120" height="20" rx="5" fill="url(#woodGrain)" />
+          {/* Ornamental base details */}
+          <circle cx="210" cy="285" r="3" fill="#6B4E0A" opacity="0.5" />
+          <circle cx="290" cy="285" r="3" fill="#6B4E0A" opacity="0.5" />
+
+          {/* Pillar */}
+          <rect x="240" y="165" width="20" height="112" rx="4" fill="url(#baseGrad)" />
+          <rect x="244" y="170" width="3" height="100" rx="1" fill="rgba(255,255,255,0.08)" />
+
+          {/* Fulcrum - ornate triangle */}
+          <polygon points="250,148 232,168 268,168" fill="#D4A530" stroke="#B8860B" strokeWidth="1.5" />
+          <circle cx="250" cy="158" r="4" fill="#E8C547" stroke="#B8860B" strokeWidth="1" />
+
+          {/* Beam group - rotates based on physics */}
+          <g transform={`rotate(${angle}, 250, 150)`}>
+            {/* Main beam */}
+            <rect x="60" y="143" width="380" height="14" rx="7" fill="url(#beamGrad)" filter="url(#scaleShadow)" />
+            {/* Beam highlight */}
+            <rect x="65" y="145" width="370" height="4" rx="2" fill="rgba(255,255,255,0.15)" />
+            {/* Beam ornamental dots */}
+            <circle cx="100" cy="150" r="3" fill="#6B4E0A" opacity="0.4" />
+            <circle cx="400" cy="150" r="3" fill="#6B4E0A" opacity="0.4" />
+
+            {/* Left chain links */}
+            <line x1="110" y1="157" x2="90" y2="195" stroke="#C49A3C" strokeWidth="2.5" />
+            <line x1="110" y1="157" x2="130" y2="195" stroke="#C49A3C" strokeWidth="2.5" />
+            <circle cx="110" cy="157" r="3" fill="#DAA520" />
+            <circle cx="90" cy="195" r="2.5" fill="#DAA520" />
+            <circle cx="130" cy="195" r="2.5" fill="#DAA520" />
+
+            {/* Left pan */}
+            <ellipse cx="110" cy="210" rx="50" ry="12" fill="url(#panGradB)" />
+            <ellipse cx="110" cy="205" rx="50" ry="12" fill="url(#panGradA)" />
+            <ellipse cx="110" cy="205" rx="45" ry="9" fill="rgba(139,105,20,0.6)" />
+            {/* Highlight on pan */}
+            <ellipse cx="95" cy="202" rx="15" ry="4" fill="rgba(255,255,255,0.1)" />
+
+            {/* Item A on left pan */}
+            <text x="110" y={195 + itemADropY} textAnchor="middle" fontSize="42" dominantBaseline="central"
+              opacity={itemAPlaced ? 1 : Math.max(0, 1 + itemADropY / 80)}>
+              {challenge.itemA.emoji}
+            </text>
+
+            {/* Right chain links */}
+            <line x1="390" y1="157" x2="370" y2="195" stroke="#C49A3C" strokeWidth="2.5" />
+            <line x1="390" y1="157" x2="410" y2="195" stroke="#C49A3C" strokeWidth="2.5" />
+            <circle cx="390" cy="157" r="3" fill="#DAA520" />
+            <circle cx="370" cy="195" r="2.5" fill="#DAA520" />
+            <circle cx="410" cy="195" r="2.5" fill="#DAA520" />
+
+            {/* Right pan */}
+            <ellipse cx="390" cy="210" rx="50" ry="12" fill="url(#panGradB)" />
+            <ellipse cx="390" cy="205" rx="50" ry="12" fill="url(#panGradA)" />
+            <ellipse cx="390" cy="205" rx="45" ry="9" fill="rgba(139,105,20,0.6)" />
+            <ellipse cx="375" cy="202" rx="15" ry="4" fill="rgba(255,255,255,0.1)" />
+
+            {/* Item B on right pan */}
+            <text x="390" y={195 + itemBDropY} textAnchor="middle" fontSize="42" dominantBaseline="central"
+              opacity={itemBPlaced ? 1 : Math.max(0, 1 + itemBDropY / 80)}>
+              {challenge.itemB.emoji}
+            </text>
+          </g>
+
+          {/* Labels below */}
+          <text x="110" y="305" textAnchor="middle" fontSize="13" fontWeight="bold" fill="#D7CCC8" fontFamily="Nunito, sans-serif">
+            {challenge.itemA.name}
+          </text>
+          <text x="390" y="305" textAnchor="middle" fontSize="13" fontWeight="bold" fill="#D7CCC8" fontFamily="Nunito, sans-serif">
+            {challenge.itemB.name}
+          </text>
+        </svg>
+      </div>
+    );
+  };
+
+  const renderCapacityChallenge = () => {
+    if (!challenge) return null;
+    const { fillA, fillB, waveA, waveB, pouringA, pouringB } = liquidPhysics;
+
+    return (
+      <div className="mk-visual mk-cap-visual">
+        <div className="mk-cap-pair">
+          {/* Faucet */}
+          <div className="mk-faucet">
+            <svg viewBox="0 0 300 40" className="mk-faucet-svg">
+              <rect x="0" y="10" width="300" height="12" rx="6" fill="#888" />
+              <rect x="0" y="10" width="300" height="5" rx="3" fill="#aaa" />
+              {/* Left drip */}
+              {pouringA && (
+                <g>
+                  <rect x="72" y="22" width="6" height="18" rx="3" fill="#60A5FA" opacity="0.7">
+                    <animate attributeName="height" values="14;20;14" dur="0.8s" repeatCount="indefinite" />
+                  </rect>
+                  <circle cx="75" cy="42" r="3" fill="#60A5FA" opacity="0.5">
+                    <animate attributeName="cy" values="38;48;38" dur="0.6s" repeatCount="indefinite" />
+                    <animate attributeName="opacity" values="0.6;0;0.6" dur="0.6s" repeatCount="indefinite" />
+                  </circle>
+                </g>
+              )}
+              {/* Right drip */}
+              {pouringB && (
+                <g>
+                  <rect x="222" y="22" width="6" height="18" rx="3" fill="#FB923C" opacity="0.7">
+                    <animate attributeName="height" values="14;20;14" dur="0.7s" repeatCount="indefinite" />
+                  </rect>
+                  <circle cx="225" cy="42" r="3" fill="#FB923C" opacity="0.5">
+                    <animate attributeName="cy" values="38;48;38" dur="0.5s" repeatCount="indefinite" />
+                    <animate attributeName="opacity" values="0.6;0;0.6" dur="0.5s" repeatCount="indefinite" />
+                  </circle>
+                </g>
+              )}
+            </svg>
+          </div>
+
+          {/* Container A */}
+          <div className="mk-container-col">
+            <svg viewBox="0 0 140 180" className="mk-container-svg">
+              <defs>
+                <clipPath id="clipA">
+                  <path d="M30,15 L18,155 Q18,170 35,170 L105,170 Q122,170 122,155 L110,15 Z" />
+                </clipPath>
+                <linearGradient id="liqA" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stopColor="#60A5FA" />
+                  <stop offset="100%" stopColor="#2563EB" />
+                </linearGradient>
+              </defs>
+              {/* Glass */}
+              <path d="M30,15 L18,155 Q18,170 35,170 L105,170 Q122,170 122,155 L110,15 Z"
+                fill="rgba(200,230,255,0.1)" stroke="rgba(200,230,255,0.35)" strokeWidth="2" />
+              {/* Liquid */}
+              <g clipPath="url(#clipA)">
+                <rect x="10" y={170 - fillA * 155} width="130" height={fillA * 155 + 5} fill="url(#liqA)" opacity="0.85" />
+                {/* Wave surface */}
+                <path
+                  d={`M10,${170 - fillA * 155} Q40,${168 - fillA * 155 + Math.sin(waveA) * 5} 70,${170 - fillA * 155} Q100,${168 - fillA * 155 - Math.sin(waveA) * 5} 130,${170 - fillA * 155}`}
+                  fill="rgba(100,180,255,0.35)"
+                />
+                {/* Bubbles */}
+                {fillA > 0.05 && <>
+                  <circle cx={45 + Math.sin(waveA * 2) * 6} cy={170 - fillA * 70} r="3" fill="rgba(255,255,255,0.3)">
+                    <animate attributeName="cy" values={`${170 - fillA * 70};${170 - fillA * 90};${170 - fillA * 70}`} dur="1.5s" repeatCount="indefinite" />
+                  </circle>
+                  <circle cx={80 + Math.cos(waveA * 1.5) * 8} cy={170 - fillA * 90} r="2" fill="rgba(255,255,255,0.25)">
+                    <animate attributeName="cy" values={`${170 - fillA * 90};${170 - fillA * 110};${170 - fillA * 90}`} dur="1.8s" repeatCount="indefinite" />
+                  </circle>
+                  <circle cx={60 + Math.sin(waveA * 3) * 4} cy={170 - fillA * 50} r="2.5" fill="rgba(255,255,255,0.2)" />
+                </>}
+              </g>
+              {/* Glass shine */}
+              <path d="M35,20 L33,120" stroke="rgba(255,255,255,0.15)" strokeWidth="3" strokeLinecap="round" />
+            </svg>
+            <div className="mk-cap-label">{challenge.itemA.emoji} {challenge.itemA.name}</div>
+          </div>
+
+          {/* Container B */}
+          <div className="mk-container-col">
+            <svg viewBox="0 0 140 180" className="mk-container-svg">
+              <defs>
+                <clipPath id="clipB">
+                  <path d="M30,15 L18,155 Q18,170 35,170 L105,170 Q122,170 122,155 L110,15 Z" />
+                </clipPath>
+                <linearGradient id="liqB" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stopColor="#FB923C" />
+                  <stop offset="100%" stopColor="#EA580C" />
+                </linearGradient>
+              </defs>
+              <path d="M30,15 L18,155 Q18,170 35,170 L105,170 Q122,170 122,155 L110,15 Z"
+                fill="rgba(200,230,255,0.1)" stroke="rgba(200,230,255,0.35)" strokeWidth="2" />
+              <g clipPath="url(#clipB)">
+                <rect x="10" y={170 - fillB * 155} width="130" height={fillB * 155 + 5} fill="url(#liqB)" opacity="0.85" />
+                <path
+                  d={`M10,${170 - fillB * 155} Q40,${168 - fillB * 155 - Math.sin(waveB + 1) * 5} 70,${170 - fillB * 155} Q100,${168 - fillB * 155 + Math.sin(waveB + 1) * 5} 130,${170 - fillB * 155}`}
+                  fill="rgba(255,180,100,0.35)"
+                />
+                {fillB > 0.05 && <>
+                  <circle cx={50 + Math.sin(waveB * 2 + 1) * 6} cy={170 - fillB * 70} r="3" fill="rgba(255,255,255,0.3)">
+                    <animate attributeName="cy" values={`${170 - fillB * 70};${170 - fillB * 90};${170 - fillB * 70}`} dur="1.4s" repeatCount="indefinite" />
+                  </circle>
+                  <circle cx={85 + Math.cos(waveB * 1.5 + 1) * 8} cy={170 - fillB * 90} r="2" fill="rgba(255,255,255,0.25)" />
+                </>}
+              </g>
+              <path d="M35,20 L33,120" stroke="rgba(255,255,255,0.15)" strokeWidth="3" strokeLinecap="round" />
+            </svg>
+            <div className="mk-cap-label">{challenge.itemB.emoji} {challenge.itemB.name}</div>
+          </div>
+        </div>
+      </div>
+    );
+  };
+
+  const renderLengthChallenge = () => {
+    if (!challenge) return null;
+    const { wormPosA, wormPosB, wormBounceA, wormBounceB } = lengthPhysics;
+    const maxBarWidth = 280;
+    const barA = wormPosA * maxBarWidth;
+    const barB = wormPosB * maxBarWidth;
+
+    return (
+      <div className="mk-visual mk-len-visual">
+        <svg viewBox="0 0 420 260" className="mk-len-svg" preserveAspectRatio="xMidYMid meet">
+          <defs>
+            <linearGradient id="rulerGrad" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stopColor="#FFF3E0" />
+              <stop offset="100%" stopColor="#D7CCC8" />
+            </linearGradient>
+            <linearGradient id="barA" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%" stopColor="#60A5FA" />
+              <stop offset="100%" stopColor="#3B82F6" />
+            </linearGradient>
+            <linearGradient id="barB" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%" stopColor="#FBBF24" />
+              <stop offset="100%" stopColor="#F97316" />
+            </linearGradient>
+          </defs>
+
+          {/* Ruler */}
+          <rect x="50" y="15" width="340" height="30" rx="4" fill="url(#rulerGrad)" stroke="#BCAAA4" strokeWidth="1" />
+          {Array.from({ length: 18 }).map((_, i) => (
+            <g key={i}>
+              <line x1={50 + i * 20} y1="15" x2={50 + i * 20} y2={i % 5 === 0 ? 45 : 35}
+                stroke="#8D6E63" strokeWidth={i % 5 === 0 ? 1.5 : 0.7} />
+              {i % 5 === 0 && (
+                <text x={50 + i * 20} y="58" textAnchor="middle" fontSize="10" fill="#8D6E63" fontFamily="Nunito, sans-serif">
+                  {i}
+                </text>
+              )}
+            </g>
+          ))}
+
+          {/* Item A row */}
+          <text x="25" y="110" textAnchor="middle" fontSize="32" dominantBaseline="central">
+            {challenge.itemA.emoji}
+          </text>
+          {/* Bar A */}
+          <rect x="50" y="95" width={barA} height="24" rx="8" fill="url(#barA)" opacity="0.9" />
+          {barA > 5 && (
+            <rect x="50" y="95" width={barA} height="8" rx="4" fill="rgba(255,255,255,0.15)" />
+          )}
+          {/* Worm A at end of bar */}
+          {wormPosA > 0 && (
+            <text x={55 + barA} y={110 + Math.sin(wormBounceA * 6) * 3} fontSize="20" dominantBaseline="central">
+              🐛
+            </text>
+          )}
+          <text x={70 + barA} y="85" fontSize="11" fontWeight="bold" fill="#60A5FA" fontFamily="Nunito, sans-serif">
+            {challenge.itemA.name}
+          </text>
+
+          {/* Item B row */}
+          <text x="25" y="180" textAnchor="middle" fontSize="32" dominantBaseline="central">
+            {challenge.itemB.emoji}
+          </text>
+          {/* Bar B */}
+          <rect x="50" y="165" width={barB} height="24" rx="8" fill="url(#barB)" opacity="0.9" />
+          {barB > 5 && (
+            <rect x="50" y="165" width={barB} height="8" rx="4" fill="rgba(255,255,255,0.15)" />
+          )}
+          {/* Worm B */}
+          {wormPosB > 0 && (
+            <text x={55 + barB} y={180 + Math.sin(wormBounceB * 6) * 3} fontSize="20" dominantBaseline="central">
+              🐛
+            </text>
+          )}
+          <text x={70 + barB} y="155" fontSize="11" fontWeight="bold" fill="#F97316" fontFamily="Nunito, sans-serif">
+            {challenge.itemB.name}
+          </text>
+        </svg>
+      </div>
+    );
+  };
+
+  const renderSpeedChallenge = () => {
+    if (!challenge) return null;
+    const { posA, posB, raceStarted, raceFinished } = speedPhysics;
+
+    return (
+      <div className="mk-visual mk-speed-visual">
+        <svg viewBox="0 0 420 220" className="mk-speed-svg" preserveAspectRatio="xMidYMid meet">
+          <defs>
+            <linearGradient id="trackGrad" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stopColor="rgba(255,255,255,0.08)" />
+              <stop offset="100%" stopColor="rgba(255,255,255,0.02)" />
+            </linearGradient>
+          </defs>
+
+          {/* Track A */}
+          <rect x="30" y="40" width="360" height="55" rx="10" fill="url(#trackGrad)" stroke="rgba(255,255,255,0.1)" strokeWidth="1" />
+          {/* Lane markings */}
+          {Array.from({ length: 8 }).map((_, i) => (
+            <line key={`a${i}`} x1={70 + i * 45} y1="67" x2={80 + i * 45} y2="67"
+              stroke="rgba(255,255,255,0.1)" strokeWidth="2" strokeDasharray="4,4" />
+          ))}
+          {/* Finish line A */}
+          <rect x="378" y="42" width="10" height="51" rx="2" fill="rgba(255,255,255,0.1)" />
+          <text x="383" y="67" textAnchor="middle" fontSize="10" fill="rgba(255,255,255,0.3)" fontFamily="Nunito, sans-serif">
+            🏁
+          </text>
+          {/* Racer A */}
+          <text x={40 + posA * 330} y="72" fontSize="36" dominantBaseline="central" textAnchor="middle">
+            {challenge.itemA.emoji}
+          </text>
+          {/* Speed lines A */}
+          {raceStarted && posA < 1 && <>
+            <line x1={25 + posA * 330} y1="60" x2={15 + posA * 330} y2="60"
+              stroke="rgba(96,165,250,0.3)" strokeWidth="2" />
+            <line x1={25 + posA * 330} y1="75" x2={10 + posA * 330} y2="75"
+              stroke="rgba(96,165,250,0.2)" strokeWidth="1.5" />
+          </>}
+          {/* Name A */}
+          <text x={40 + posA * 330} y="38" textAnchor="middle" fontSize="10" fontWeight="bold" fill="#60A5FA" fontFamily="Nunito, sans-serif">
+            {challenge.itemA.name}
+          </text>
+
+          {/* Track B */}
+          <rect x="30" y="125" width="360" height="55" rx="10" fill="url(#trackGrad)" stroke="rgba(255,255,255,0.1)" strokeWidth="1" />
+          {Array.from({ length: 8 }).map((_, i) => (
+            <line key={`b${i}`} x1={70 + i * 45} y1="152" x2={80 + i * 45} y2="152"
+              stroke="rgba(255,255,255,0.1)" strokeWidth="2" strokeDasharray="4,4" />
+          ))}
+          <rect x="378" y="127" width="10" height="51" rx="2" fill="rgba(255,255,255,0.1)" />
+          <text x="383" y="152" textAnchor="middle" fontSize="10" fill="rgba(255,255,255,0.3)" fontFamily="Nunito, sans-serif">
+            🏁
+          </text>
+          {/* Racer B */}
+          <text x={40 + posB * 330} y="157" fontSize="36" dominantBaseline="central" textAnchor="middle">
+            {challenge.itemB.emoji}
+          </text>
+          {raceStarted && posB < 1 && <>
+            <line x1={25 + posB * 330} y1="145" x2={15 + posB * 330} y2="145"
+              stroke="rgba(251,146,60,0.3)" strokeWidth="2" />
+            <line x1={25 + posB * 330} y1="160" x2={10 + posB * 330} y2="160"
+              stroke="rgba(251,146,60,0.2)" strokeWidth="1.5" />
+          </>}
+          <text x={40 + posB * 330} y="123" textAnchor="middle" fontSize="10" fontWeight="bold" fill="#FB923C" fontFamily="Nunito, sans-serif">
+            {challenge.itemB.name}
+          </text>
+
+          {/* Start / Finish text */}
+          {!raceStarted && (
+            <text x="210" y="200" textAnchor="middle" fontSize="18" fontWeight="bold" fill="#FBBF24" fontFamily="Nunito, sans-serif"
+              opacity={Math.abs(Math.sin(demoTimer * 0.08))}>
+              Ready... Set...
+            </text>
+          )}
+          {raceStarted && !raceFinished && (
+            <text x="210" y="200" textAnchor="middle" fontSize="18" fontWeight="bold" fill="#4CAF50" fontFamily="Nunito, sans-serif">
+              GO! 🏃
+            </text>
+          )}
+          {raceFinished && (
+            <text x="210" y="205" textAnchor="middle" fontSize="16" fontWeight="bold" fill="#FFD700" fontFamily="Nunito, sans-serif">
+              Race Complete! 🏆
+            </text>
+          )}
+        </svg>
+      </div>
+    );
+  };
+
+  const renderChallengeVisual = () => {
+    if (!challenge) return null;
+    switch (challenge.type) {
+      case 'mass': return renderMassChallenge();
+      case 'capacity': return renderCapacityChallenge();
+      case 'length': return renderLengthChallenge();
+      case 'speed': return renderSpeedChallenge();
+    }
+  };
+
+  const getTypeIcon = (type: MeasurementType) => {
+    switch (type) {
+      case 'mass': return '⚖️';
+      case 'capacity': return '🫗';
+      case 'length': return '📏';
+      case 'speed': return '🏃';
+    }
+  };
+
+  const getTypeLabel = (type: MeasurementType) => {
+    switch (type) {
+      case 'mass': return 'Mass';
+      case 'capacity': return 'Capacity';
+      case 'length': return 'Length';
+      case 'speed': return 'Speed';
+    }
+  };
+
   return (
-    <div className="mk-root" ref={containerRef}>
+    <div className="mk" ref={containerRef}>
       <style>{styles}</style>
-      <div className={`mk-game ${shakeScreen ? 'mk-shake' : ''}`}>
+      <div className="mk-game">
         {/* Header */}
-        <div className="mk-header">
-          <div className="mk-header-left">
-            <button className="mk-back-btn" onClick={() => onExit ? onExit() : setGameScreen('intro')}>←</button>
-            <div className="mk-level-badge">Level {level}</div>
+        <div className="mk-hdr">
+          <div className="mk-hdr-left">
+            <button className="mk-back" onClick={() => onExit ? onExit() : setScreen('intro')}>←</button>
+            <div className="mk-lvl">Recipe {level}</div>
           </div>
-          <div className="mk-header-center">
-            {round && (
-              <div className="mk-type-badge">
-                <span>{getMeasurementIcon(round.type)}</span>
-                <span>{getMeasurementLabel(round.type)}</span>
+          <div className="mk-hdr-mid">
+            {challenge && (
+              <div className="mk-type-pill">
+                <span>{getTypeIcon(challenge.type)}</span>
+                <span>{getTypeLabel(challenge.type)}</span>
               </div>
             )}
           </div>
-          <div className="mk-header-right">
-            <div className="mk-score-badge">
-              <span className="mk-star">⭐</span>
-              <span>{score}</span>
-            </div>
-            {streak > 1 && (
-              <div className="mk-streak-badge">
-                🔥 {streak}
-              </div>
-            )}
+          <div className="mk-hdr-right">
+            <div className="mk-score-pill">⭐ {score}</div>
+            {combo > 1 && <div className="mk-combo-pill">🔥 {combo}x</div>}
           </div>
         </div>
 
-        {/* Recipe progress */}
-        <div className="mk-recipe-bar">
-          <div className="mk-recipe-label">📋 {recipeName}:</div>
-          <div className="mk-recipe-items">
-            {recipe.map((item, i) => (
-              <div key={i} className={`mk-recipe-slot ${item.collected ? 'mk-collected' : ''}`}>
-                <span className="mk-recipe-emoji">{item.emoji}</span>
-                {item.collected && <span className="mk-recipe-check">✓</span>}
+        {/* Progress dots */}
+        <div className="mk-progress">
+          <div className="mk-progress-label">
+            📋 {RECIPE_NAMES[(level - 1) % RECIPE_NAMES.length]}:
+          </div>
+          <div className="mk-dots">
+            {[...Array(5)].map((_, i) => (
+              <div key={i} className={`mk-dot ${i < challengeIndex ? 'mk-dot-done' : i === challengeIndex ? 'mk-dot-active' : ''}`}>
+                {i < challengeIndex ? '✓' : i + 1}
               </div>
+            ))}
+          </div>
+          <div className="mk-stars-row">
+            {[...Array(3)].map((_, i) => (
+              <span key={i} className="mk-star-mini">{i < stars ? '⭐' : '☆'}</span>
             ))}
           </div>
         </div>
 
-        {/* Main game area */}
-        <div className="mk-game-area">
+        {/* Main area */}
+        <div className="mk-main">
           {/* Particles */}
           {particles.map(p => (
-            <div key={p.id} className={`mk-particle mk-particle-${p.type}`} style={{
-              left: p.x,
-              top: p.y,
-              width: p.size,
-              height: p.size,
-              opacity: p.opacity * (p.life / p.maxLife),
-            }} />
+            <div key={p.id}
+              className={`mk-p mk-p-${p.type}`}
+              style={{
+                left: p.x,
+                top: p.y,
+                width: p.size,
+                height: p.size,
+                opacity: (p.life / p.maxLife),
+                transform: `rotate(${p.rotation}deg)`,
+                background: p.emoji ? 'none' : undefined,
+                fontSize: p.emoji ? p.size : undefined,
+                color: p.color,
+              }}
+            >
+              {p.emoji || ''}
+            </div>
           ))}
 
-          {/* Kitchen background decorations */}
-          <div className="mk-kitchen-bg">
-            <div className="mk-shelf" />
-            <div className="mk-pot">🍲</div>
+          {/* Kitchen BG */}
+          <div className="mk-kitchen">
+            <div className="mk-counter" />
+            <div className="mk-tiles" />
           </div>
 
-          {round && gameScreen === 'playing' && (
+          {challenge && (
             <>
-              {/* Question */}
-              <div className="mk-question-area">
-                <div className="mk-question-bubble">
-                  <span className="mk-question-chef">👨‍🍳</span>
-                  <div className="mk-question-text">{round.question}</div>
+              {/* Chef + Question */}
+              <div className="mk-question-row">
+                <div className="mk-chef-bubble">
+                  <span className="mk-chef">{chefExpression}</span>
+                  <div className="mk-q-text">{challenge.question}</div>
                 </div>
               </div>
 
-              {/* Two item choices */}
-              <div className="mk-choices">
+              {/* Visual demo */}
+              {renderChallengeVisual()}
+
+              {/* Answer buttons */}
+              <div className={`mk-answers ${canAnswer ? 'mk-answers-ready' : 'mk-answers-waiting'}`}>
                 <button
-                  className={`mk-choice mk-choice-a ${selectedAnswer === 'A' ? (isCorrect ? 'mk-correct' : 'mk-wrong') : ''}`}
+                  className={`mk-ans mk-ans-a ${selectedAnswer === 'A' ? (isCorrect ? 'mk-ans-right' : 'mk-ans-wrong') : ''} ${selectedAnswer === 'B' && isCorrect ? '' : selectedAnswer === 'B' && !isCorrect ? 'mk-ans-reveal' : ''}`}
                   onClick={() => handleAnswer('A')}
-                  disabled={selectedAnswer !== null}
+                  disabled={!canAnswer || selectedAnswer !== null}
                 >
-                  <div className="mk-choice-emoji">{round.itemA.emoji}</div>
-                  <div className="mk-choice-name">{round.itemA.name}</div>
-                  <div className="mk-choice-glow" />
+                  <div className="mk-ans-emoji">{challenge.itemA.emoji}</div>
+                  <div className="mk-ans-name">{challenge.itemA.name}</div>
+                  {!canAnswer && <div className="mk-ans-lock">⏳</div>}
+                  <div className="mk-ans-glow" />
                 </button>
 
-                <div className="mk-vs-divider">
-                  <span className="mk-vs-text">VS</span>
+                <div className="mk-vs">
+                  <span className="mk-vs-txt">VS</span>
                 </div>
 
                 <button
-                  className={`mk-choice mk-choice-b ${selectedAnswer === 'B' ? (isCorrect ? 'mk-correct' : 'mk-wrong') : ''}`}
+                  className={`mk-ans mk-ans-b ${selectedAnswer === 'B' ? (isCorrect ? 'mk-ans-right' : 'mk-ans-wrong') : ''} ${selectedAnswer === 'A' && isCorrect ? '' : selectedAnswer === 'A' && !isCorrect ? 'mk-ans-reveal' : ''}`}
                   onClick={() => handleAnswer('B')}
-                  disabled={selectedAnswer !== null}
+                  disabled={!canAnswer || selectedAnswer !== null}
                 >
-                  <div className="mk-choice-emoji">{round.itemB.emoji}</div>
-                  <div className="mk-choice-name">{round.itemB.name}</div>
-                  <div className="mk-choice-glow" />
+                  <div className="mk-ans-emoji">{challenge.itemB.emoji}</div>
+                  <div className="mk-ans-name">{challenge.itemB.name}</div>
+                  {!canAnswer && <div className="mk-ans-lock">⏳</div>}
+                  <div className="mk-ans-glow" />
                 </button>
               </div>
+
+              {/* Result overlay */}
+              {showResult && (
+                <div className={`mk-result-pop ${isCorrect ? 'mk-pop-right' : 'mk-pop-wrong'}`}>
+                  <span className="mk-result-emoji">{isCorrect ? '🎉' : '💨'}</span>
+                  <span className="mk-result-word">{isCorrect ? 'Delicious!' : 'Oops!'}</span>
+                  {isCorrect && combo > 1 && <span className="mk-result-combo">🔥 {combo}x Combo!</span>}
+                </div>
+              )}
             </>
-          )}
-
-          {round && gameScreen === 'demo' && (
-            <div className="mk-demo-area">
-              {/* Result banner */}
-              <div className={`mk-result-banner ${isCorrect ? 'mk-result-correct' : 'mk-result-wrong'}`}>
-                <span className="mk-result-icon">{isCorrect ? '🎉' : '😅'}</span>
-                <span className="mk-result-text">{isCorrect ? 'Correct!' : 'Not quite!'}</span>
-              </div>
-
-              {/* Animated demonstration */}
-              {renderDemoVisual()}
-
-              {/* Explanation */}
-              <div className="mk-explanation">
-                {(() => {
-                  const winner = round.itemA.value > round.itemB.value ? round.itemA : round.itemB;
-                  const loser = round.itemA.value > round.itemB.value ? round.itemB : round.itemA;
-                  switch (round.type) {
-                    case 'mass':
-                      return <p>{winner.emoji} <strong>{winner.name}</strong> is heavier than {loser.emoji} {loser.name}</p>;
-                    case 'capacity':
-                      return <p>{winner.emoji} <strong>{winner.name}</strong> holds more than {loser.emoji} {loser.name}</p>;
-                    case 'length':
-                      return <p>{winner.emoji} <strong>{winner.name}</strong> is longer than {loser.emoji} {loser.name}</p>;
-                    case 'duration':
-                      return <p>{winner.emoji} <strong>{winner.name}</strong> takes longer than {loser.emoji} {loser.name}</p>;
-                  }
-                })()}
-              </div>
-
-              {/* Continue button */}
-              <button className="mk-continue-btn" onClick={advanceRound}>
-                {recipe.every(r => r.collected) ? 'See Results →' : 'Next Question →'}
-              </button>
-            </div>
           )}
         </div>
 
-        {/* Bottom hints */}
-        <div className="mk-bottom-bar">
-          <div className="mk-hint-row">
-            <span className="mk-hint">⚖️ Mass</span>
-            <span className="mk-hint">🫗 Capacity</span>
-            <span className="mk-hint">📏 Length</span>
-            <span className="mk-hint">⏱️ Duration</span>
-          </div>
+        {/* Bottom */}
+        <div className="mk-bottom">
+          <span className="mk-bottom-hint">
+            {!canAnswer ? 'Watch the demo...' : 'Tap your answer!'}
+          </span>
         </div>
       </div>
     </div>
@@ -1020,1024 +1347,642 @@ const styles = `
 
   * { box-sizing: border-box; margin: 0; padding: 0; user-select: none; -webkit-user-select: none; }
 
-  .mk-root {
-    width: 100%;
-    height: 100%;
+  .mk {
+    width: 100%; height: 100%;
     font-family: 'Nunito', sans-serif;
     overflow: hidden;
     background: linear-gradient(180deg, #3E2723 0%, #4E342E 30%, #5D4037 60%, #6D4C41 100%);
+    position: relative;
   }
 
-  /* ── Kitchen background texture ───────────────────────────────────────── */
-
-  .mk-root::before {
+  /* Tile texture overlay */
+  .mk::before {
     content: '';
-    position: absolute;
-    inset: 0;
+    position: absolute; inset: 0;
     background:
-      repeating-linear-gradient(
-        0deg,
-        transparent,
-        transparent 39px,
-        rgba(255,255,255,0.03) 39px,
-        rgba(255,255,255,0.03) 40px
-      ),
-      repeating-linear-gradient(
-        90deg,
-        transparent,
-        transparent 39px,
-        rgba(255,255,255,0.03) 39px,
-        rgba(255,255,255,0.03) 40px
-      );
-    pointer-events: none;
-    z-index: 0;
+      repeating-linear-gradient(0deg, transparent, transparent 39px, rgba(255,255,255,0.02) 39px, rgba(255,255,255,0.02) 40px),
+      repeating-linear-gradient(90deg, transparent, transparent 39px, rgba(255,255,255,0.02) 39px, rgba(255,255,255,0.02) 40px);
+    pointer-events: none; z-index: 0;
   }
 
-  /* ── Intro screen ─────────────────────────────────────────────────────── */
+  /* ── Intro ────────────────────────────────────────────────────────────── */
 
   .mk-intro {
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    overflow: hidden;
+    height: 100%; display: flex; align-items: center; justify-content: center;
+    position: relative; overflow: hidden;
   }
 
-  .mk-intro-bg {
+  .mk-intro-bg { position: absolute; inset: 0; overflow: hidden; }
+
+  .mk-steam {
     position: absolute;
-    inset: 0;
-    overflow: hidden;
+    width: 50px; height: 70px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(255,255,255,0.12), transparent 70%);
+    animation: mkSteamUp 8s ease-in-out infinite;
+    filter: blur(10px);
   }
 
-  .mk-steam-wisp {
-    position: absolute;
-    width: 40px;
-    height: 60px;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(255,255,255,0.15), transparent 70%);
-    animation: mkSteamFloat 8s ease-in-out infinite;
-    filter: blur(8px);
-  }
-
-  @keyframes mkSteamFloat {
+  @keyframes mkSteamUp {
     0% { transform: translateY(0) scale(1); opacity: 0; }
-    20% { opacity: 0.3; }
-    50% { transform: translateY(-80px) scale(1.5); opacity: 0.2; }
-    100% { transform: translateY(-160px) scale(2); opacity: 0; }
+    15% { opacity: 0.25; }
+    50% { transform: translateY(-100px) scale(1.6); opacity: 0.15; }
+    100% { transform: translateY(-200px) scale(2.2); opacity: 0; }
   }
 
-  .mk-float-item {
-    position: absolute;
-    font-size: 2.5rem;
-    opacity: 0.3;
-    transition: transform 0.3s ease;
-    pointer-events: none;
+  .mk-float-bg {
+    position: absolute; font-size: 2.5rem; opacity: 0.25;
+    transition: transform 0.3s ease; pointer-events: none;
   }
 
   .mk-intro-content {
-    position: relative;
-    z-index: 10;
-    text-align: center;
-    padding: 2rem;
-    max-width: 520px;
+    position: relative; z-index: 10; text-align: center;
+    padding: 1.5rem; max-width: 520px;
   }
 
-  .mk-logo-row {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
-    margin-bottom: 0.5rem;
+  .mk-logo {
+    display: flex; align-items: center; justify-content: center;
+    gap: 0.8rem; margin-bottom: 0.3rem;
   }
 
-  .mk-logo-icon {
-    font-size: 2.5rem;
-    transition: transform 0.3s ease;
-  }
+  .mk-logo-chef { font-size: 2.5rem; transition: transform 0.3s ease; }
 
   .mk-title {
-    font-size: clamp(1.8rem, 6vw, 2.8rem);
-    font-weight: 900;
+    font-size: clamp(1.6rem, 6vw, 2.6rem); font-weight: 900;
     background: linear-gradient(135deg, #FFCC02, #FF9800, #FF5722);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
     background-clip: text;
   }
 
-  .mk-tagline {
-    color: #BCAAA4;
-    font-size: 1.15rem;
-    margin-bottom: 2rem;
-  }
+  .mk-subtitle { color: #BCAAA4; font-size: 1.1rem; margin-bottom: 1.5rem; }
 
-  .mk-instructions-card {
+  .mk-how {
     background: rgba(255,255,255,0.06);
     border: 2px solid rgba(255,255,255,0.1);
-    border-radius: 24px;
-    padding: 1.5rem;
-    margin-bottom: 2rem;
-    backdrop-filter: blur(12px);
+    border-radius: 20px; padding: 1.2rem; margin-bottom: 1.8rem;
+    backdrop-filter: blur(10px);
   }
 
-  .mk-instructions-card h3 {
-    color: white;
-    font-size: 1.2rem;
-    margin-bottom: 1.2rem;
-  }
+  .mk-how h3 { color: white; font-size: 1.1rem; margin-bottom: 1rem; }
 
-  .mk-instruction {
-    margin-bottom: 1.2rem;
+  .mk-how-item {
+    display: flex; align-items: center; gap: 0.8rem;
+    margin-bottom: 0.8rem; text-align: left;
   }
+  .mk-how-item:last-child { margin-bottom: 0; }
 
-  .mk-instruction:last-child { margin-bottom: 0; }
+  .mk-how-icons { font-size: 1.6rem; flex-shrink: 0; width: 40px; text-align: center; }
 
-  .mk-inst-icons {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.6rem;
-    font-size: 1.6rem;
-    margin-bottom: 0.4rem;
-  }
+  .mk-how-item p { color: #D7CCC8; font-size: 0.9rem; line-height: 1.4; }
 
-  .mk-vs {
-    font-size: 0.9rem;
-    font-weight: 800;
-    color: #FF9800;
-  }
-
-  .mk-arrow-icon {
-    font-size: 1.2rem;
-    color: #BCAAA4;
-  }
-
-  .mk-instruction p {
-    color: #D7CCC8;
-    font-size: 0.95rem;
-    line-height: 1.4;
-  }
-
-  .mk-hl {
-    font-weight: 700;
-  }
-  .mk-hl.mass { color: #FFC107; }
-  .mk-hl.capacity { color: #29B6F6; }
-  .mk-hl.length { color: #66BB6A; }
-  .mk-hl.duration { color: #EF5350; }
-  .mk-hl.recipe { color: #FF9800; }
+  .mk-hl-mass { color: #FFC107; font-weight: 700; }
+  .mk-hl-cap { color: #29B6F6; font-weight: 700; }
+  .mk-hl-len { color: #66BB6A; font-weight: 700; }
+  .mk-hl-spd { color: #EF5350; font-weight: 700; }
 
   .mk-start-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.8rem;
-    padding: 1rem 2.5rem;
-    font-family: 'Nunito', sans-serif;
-    font-size: 1.2rem;
-    font-weight: 800;
-    color: white;
+    display: inline-flex; align-items: center; gap: 0.8rem;
+    padding: 1rem 2.5rem; font-family: 'Nunito', sans-serif;
+    font-size: 1.2rem; font-weight: 800; color: white;
     background: linear-gradient(135deg, #FF9800, #F44336);
-    border: none;
-    border-radius: 50px;
-    cursor: pointer;
+    border: none; border-radius: 50px; cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: 0 10px 40px rgba(244,67,54,0.4);
+    box-shadow: 0 8px 30px rgba(244,67,54,0.4);
+    animation: mkBtnPulse 2s ease-in-out infinite;
+  }
+
+  @keyframes mkBtnPulse {
+    0%, 100% { box-shadow: 0 8px 30px rgba(244,67,54,0.4); }
+    50% { box-shadow: 0 12px 45px rgba(244,67,54,0.6); }
   }
 
   .mk-start-btn:hover {
     transform: translateY(-3px);
-    box-shadow: 0 15px 50px rgba(244,67,54,0.5);
+    box-shadow: 0 14px 50px rgba(244,67,54,0.55);
   }
 
   /* ── Game screen ──────────────────────────────────────────────────────── */
 
   .mk-game {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    transition: transform 0.05s ease;
+    height: 100%; display: flex; flex-direction: column;
+    position: relative; z-index: 1;
   }
 
-  .mk-shake {
-    animation: mkShake 0.4s ease;
+  .mk-hdr {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 0.6rem 0.8rem; background: rgba(0,0,0,0.5);
+    z-index: 50; backdrop-filter: blur(8px); flex-shrink: 0;
   }
 
-  @keyframes mkShake {
-    0%, 100% { transform: translateX(0); }
-    10% { transform: translateX(-6px); }
-    30% { transform: translateX(6px); }
-    50% { transform: translateX(-4px); }
-    70% { transform: translateX(4px); }
-    90% { transform: translateX(-2px); }
+  .mk-hdr-left, .mk-hdr-right { display: flex; align-items: center; gap: 0.5rem; }
+
+  .mk-back {
+    width: 36px; height: 36px; background: rgba(255,255,255,0.1);
+    border: none; border-radius: 10px; color: white; font-size: 1.1rem;
+    cursor: pointer; transition: all 0.2s ease;
   }
+  .mk-back:hover { background: rgba(255,255,255,0.2); }
 
-  /* Header */
-  .mk-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0.7rem 1rem;
-    background: rgba(0,0,0,0.5);
-    z-index: 50;
-    backdrop-filter: blur(8px);
-  }
-
-  .mk-header-left, .mk-header-right {
-    display: flex;
-    align-items: center;
-    gap: 0.6rem;
-  }
-
-  .mk-back-btn {
-    width: 38px;
-    height: 38px;
-    background: rgba(255,255,255,0.1);
-    border: none;
-    border-radius: 12px;
-    color: white;
-    font-size: 1.2rem;
-    cursor: pointer;
-    transition: all 0.2s ease;
-  }
-
-  .mk-back-btn:hover { background: rgba(255,255,255,0.2); }
-
-  .mk-level-badge {
-    padding: 0.4rem 0.9rem;
+  .mk-lvl {
+    padding: 0.35rem 0.8rem;
     background: linear-gradient(135deg, #FF9800, #F44336);
-    border-radius: 20px;
-    font-weight: 700;
-    color: white;
-    font-size: 0.9rem;
+    border-radius: 16px; font-weight: 700; color: white; font-size: 0.85rem;
   }
 
-  .mk-type-badge {
-    display: flex;
-    align-items: center;
-    gap: 0.4rem;
-    padding: 0.4rem 1rem;
-    background: rgba(255,255,255,0.1);
-    border-radius: 20px;
-    color: white;
-    font-weight: 600;
-    font-size: 0.85rem;
+  .mk-type-pill {
+    display: flex; align-items: center; gap: 0.3rem;
+    padding: 0.35rem 0.8rem; background: rgba(255,255,255,0.1);
+    border-radius: 16px; color: white; font-weight: 600; font-size: 0.8rem;
   }
 
-  .mk-score-badge {
-    display: flex;
-    align-items: center;
-    gap: 0.3rem;
-    padding: 0.4rem 0.9rem;
+  .mk-score-pill {
+    padding: 0.35rem 0.8rem;
     background: rgba(251,191,36,0.2);
-    border-radius: 20px;
-    color: #FBBF24;
-    font-weight: 700;
-    font-size: 0.9rem;
+    border-radius: 16px; color: #FBBF24; font-weight: 700; font-size: 0.85rem;
   }
 
-  .mk-streak-badge {
-    padding: 0.4rem 0.8rem;
+  .mk-combo-pill {
+    padding: 0.35rem 0.7rem;
     background: rgba(239,83,80,0.25);
-    border-radius: 20px;
-    color: #EF5350;
-    font-weight: 700;
-    font-size: 0.85rem;
-    animation: mkPulse 1s ease-in-out infinite;
+    border-radius: 16px; color: #EF5350; font-weight: 700; font-size: 0.8rem;
+    animation: mkComboPop 0.5s ease;
   }
 
-  @keyframes mkPulse {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.08); }
+  @keyframes mkComboPop {
+    0% { transform: scale(0.5); opacity: 0; }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); opacity: 1; }
   }
 
-  /* Recipe bar */
-  .mk-recipe-bar {
-    display: flex;
-    align-items: center;
-    gap: 0.8rem;
-    padding: 0.6rem 1rem;
-    background: rgba(0,0,0,0.3);
-    overflow-x: auto;
+  /* Progress bar */
+  .mk-progress {
+    display: flex; align-items: center; gap: 0.6rem;
+    padding: 0.5rem 0.8rem; background: rgba(0,0,0,0.3);
+    flex-shrink: 0; overflow-x: auto;
   }
 
-  .mk-recipe-label {
-    color: #BCAAA4;
-    font-weight: 700;
-    font-size: 0.85rem;
-    white-space: nowrap;
+  .mk-progress-label {
+    color: #BCAAA4; font-weight: 700; font-size: 0.8rem; white-space: nowrap;
   }
 
-  .mk-recipe-items {
-    display: flex;
-    gap: 0.5rem;
-  }
+  .mk-dots { display: flex; gap: 0.4rem; }
 
-  .mk-recipe-slot {
-    position: relative;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  .mk-dot {
+    width: 30px; height: 30px; display: flex; align-items: center; justify-content: center;
     background: rgba(255,255,255,0.06);
     border: 2px solid rgba(255,255,255,0.12);
-    border-radius: 12px;
-    transition: all 0.4s ease;
+    border-radius: 8px; font-size: 0.7rem; font-weight: 700;
+    color: rgba(255,255,255,0.3); transition: all 0.3s ease;
   }
 
-  .mk-recipe-slot.mk-collected {
-    background: rgba(76,175,80,0.2);
-    border-color: #4CAF50;
+  .mk-dot-done {
+    background: rgba(76,175,80,0.2); border-color: #4CAF50;
+    color: #4CAF50;
   }
 
-  .mk-recipe-emoji {
-    font-size: 1.3rem;
-    transition: transform 0.3s ease;
+  .mk-dot-active {
+    background: rgba(255,152,0,0.2); border-color: #FF9800;
+    color: #FF9800; animation: mkDotPulse 1.5s ease-in-out infinite;
   }
 
-  .mk-collected .mk-recipe-emoji {
-    transform: scale(1.1);
+  @keyframes mkDotPulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
   }
 
-  .mk-recipe-check {
-    position: absolute;
-    top: -4px;
-    right: -4px;
-    width: 16px;
-    height: 16px;
-    background: #4CAF50;
-    border-radius: 50%;
-    color: white;
-    font-size: 0.6rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 900;
+  .mk-stars-row { display: flex; gap: 0.15rem; margin-left: auto; }
+  .mk-star-mini { font-size: 0.9rem; }
+
+  /* Main game area */
+  .mk-main {
+    flex: 1; position: relative; display: flex; flex-direction: column;
+    align-items: center; justify-content: flex-start;
+    overflow: hidden; padding: 0.3rem 0.5rem;
+    min-height: 0;
   }
 
-  /* Game area */
-  .mk-game-area {
-    flex: 1;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    padding: 0.5rem;
+  /* Kitchen background */
+  .mk-kitchen { position: absolute; inset: 0; pointer-events: none; z-index: 0; }
+
+  .mk-counter {
+    position: absolute; bottom: 0; left: 0; right: 0; height: 40%;
+    background: linear-gradient(180deg,
+      rgba(121,85,72,0.15) 0%,
+      rgba(93,64,55,0.25) 60%,
+      rgba(62,39,35,0.4) 100%);
+    border-top: 2px solid rgba(255,255,255,0.05);
   }
 
-  /* Kitchen background decorations */
-  .mk-kitchen-bg {
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    z-index: 0;
-  }
-
-  .mk-shelf {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 8px;
-    background: linear-gradient(180deg, #5D4037 0%, #795548 100%);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-  }
-
-  .mk-pot {
-    position: absolute;
-    bottom: 10px;
-    left: 20px;
-    font-size: 2.5rem;
-    opacity: 0.2;
+  .mk-tiles {
+    position: absolute; top: 0; left: 0; right: 0; height: 30%;
+    background:
+      repeating-linear-gradient(0deg,
+        transparent, transparent 24px,
+        rgba(255,255,255,0.015) 24px, rgba(255,255,255,0.015) 25px),
+      repeating-linear-gradient(90deg,
+        transparent, transparent 24px,
+        rgba(255,255,255,0.015) 24px, rgba(255,255,255,0.015) 25px);
   }
 
   /* Particles */
-  .mk-particle {
-    position: absolute;
+  .mk-p {
+    position: absolute; pointer-events: none; z-index: 2;
+  }
+
+  .mk-p-steam {
     border-radius: 50%;
-    pointer-events: none;
-    z-index: 1;
+    background: radial-gradient(circle, rgba(255,255,255,0.2), transparent 70%);
+    filter: blur(4px);
   }
 
-  .mk-particle-steam {
-    background: radial-gradient(circle, rgba(255,255,255,0.3), transparent 70%);
-    filter: blur(3px);
+  .mk-p-sparkle {
+    border-radius: 50%;
+    background: radial-gradient(circle, currentColor 0%, transparent 70%);
+    filter: blur(1px);
   }
 
-  .mk-particle-flour {
-    background: radial-gradient(circle, rgba(255,248,225,0.6), transparent 70%);
-  }
-
-  .mk-particle-sparkle {
-    background: radial-gradient(circle, rgba(255,215,0,0.8), transparent 60%);
-  }
-
-  .mk-particle-celebration {
+  .mk-p-confetti {
     border-radius: 2px;
-    animation: mkConfettiFall 1s ease forwards;
+    background: currentColor;
   }
 
-  .mk-particle-celebration:nth-child(odd) { background: #FF9800; }
-  .mk-particle-celebration:nth-child(even) { background: #4CAF50; }
-  .mk-particle-celebration:nth-child(3n) { background: #2196F3; }
-  .mk-particle-celebration:nth-child(4n) { background: #E91E63; }
+  .mk-p-flour {
+    border-radius: 50%;
+    background: radial-gradient(circle, currentColor 0%, transparent 70%);
+    filter: blur(5px);
+  }
 
-  @keyframes mkConfettiFall {
-    0% { transform: rotate(0deg) scale(1); }
-    100% { transform: rotate(360deg) scale(0); }
+  .mk-p-food {
+    display: flex; align-items: center; justify-content: center;
+    background: none !important;
+    filter: none;
   }
 
   /* Question area */
-  .mk-question-area {
-    position: relative;
-    z-index: 10;
-    margin-bottom: 1.5rem;
+  .mk-question-row {
+    position: relative; z-index: 10; width: 100%; text-align: center;
+    margin-bottom: 0.3rem; flex-shrink: 0;
   }
 
-  .mk-question-bubble {
-    display: flex;
-    align-items: center;
-    gap: 0.8rem;
-    padding: 0.8rem 1.5rem;
+  .mk-chef-bubble {
+    display: inline-flex; align-items: center; gap: 0.6rem;
+    padding: 0.5rem 1.2rem;
     background: rgba(255,255,255,0.08);
     border: 2px solid rgba(255,255,255,0.15);
-    border-radius: 24px;
-    backdrop-filter: blur(12px);
-    animation: mkQuestionBounce 2s ease-in-out infinite;
+    border-radius: 20px; backdrop-filter: blur(10px);
+    animation: mkChefBob 2.5s ease-in-out infinite;
   }
 
-  @keyframes mkQuestionBounce {
+  @keyframes mkChefBob {
     0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-4px); }
+    50% { transform: translateY(-3px); }
   }
 
-  .mk-question-chef {
-    font-size: 2rem;
+  .mk-chef { font-size: 1.8rem; }
+
+  .mk-q-text {
+    font-size: clamp(1rem, 3.5vw, 1.4rem); font-weight: 800;
+    color: white; text-shadow: 0 2px 8px rgba(0,0,0,0.4);
   }
 
-  .mk-question-text {
-    font-size: clamp(1.2rem, 4vw, 1.6rem);
-    font-weight: 800;
-    color: white;
-    text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+  /* Visual area */
+  .mk-visual {
+    position: relative; z-index: 5; width: 100%;
+    display: flex; align-items: center; justify-content: center;
+    flex: 1; min-height: 0;
   }
 
-  /* Choices */
-  .mk-choices {
-    position: relative;
-    z-index: 10;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
-    width: 100%;
-    max-width: 600px;
+  .mk-scale-svg { width: 100%; max-width: 500px; height: auto; max-height: 100%; }
+
+  .mk-cap-visual { flex-direction: column; }
+
+  .mk-faucet { width: 100%; max-width: 320px; }
+  .mk-faucet-svg { width: 100%; height: auto; }
+
+  .mk-cap-pair {
+    display: flex; gap: 1.5rem; align-items: flex-end; justify-content: center;
   }
 
-  .mk-choice {
-    flex: 1;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.6rem;
-    padding: 1.5rem 1rem;
+  .mk-container-col {
+    display: flex; flex-direction: column; align-items: center; gap: 0.3rem;
+  }
+
+  .mk-container-svg { width: 110px; height: 150px; }
+
+  .mk-cap-label {
+    font-size: 0.75rem; font-weight: 700; color: #D7CCC8; text-align: center;
+  }
+
+  .mk-len-visual { }
+  .mk-len-svg { width: 100%; max-width: 440px; height: auto; max-height: 100%; }
+
+  .mk-speed-visual { }
+  .mk-speed-svg { width: 100%; max-width: 440px; height: auto; max-height: 100%; }
+
+  /* Answer buttons */
+  .mk-answers {
+    position: relative; z-index: 10;
+    display: flex; align-items: center; justify-content: center;
+    gap: 0.6rem; width: 100%; max-width: 500px;
+    transition: all 0.5s ease; flex-shrink: 0;
+    padding: 0.3rem 0;
+  }
+
+  .mk-answers-waiting { opacity: 0.5; filter: grayscale(0.5); }
+  .mk-answers-ready {
+    opacity: 1; filter: none;
+    animation: mkAnswersReady 0.5s ease;
+  }
+
+  @keyframes mkAnswersReady {
+    0% { transform: scale(0.95); opacity: 0.5; }
+    50% { transform: scale(1.03); }
+    100% { transform: scale(1); opacity: 1; }
+  }
+
+  .mk-ans {
+    flex: 1; position: relative; display: flex; flex-direction: column;
+    align-items: center; gap: 0.3rem;
+    padding: 0.8rem 0.5rem;
     background: rgba(255,255,255,0.07);
     border: 3px solid rgba(255,255,255,0.15);
-    border-radius: 24px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    overflow: hidden;
-    font-family: 'Nunito', sans-serif;
-    color: white;
+    border-radius: 20px; cursor: pointer;
+    transition: all 0.3s ease; overflow: hidden;
+    font-family: 'Nunito', sans-serif; color: white;
   }
 
-  .mk-choice:hover:not(:disabled) {
-    transform: translateY(-4px) scale(1.03);
+  .mk-ans:hover:not(:disabled) {
+    transform: translateY(-3px) scale(1.02);
     border-color: rgba(255,255,255,0.35);
     background: rgba(255,255,255,0.12);
   }
 
-  .mk-choice:active:not(:disabled) {
-    transform: scale(0.97);
+  .mk-ans:active:not(:disabled) { transform: scale(0.96); }
+  .mk-ans:disabled { cursor: default; }
+
+  .mk-ans-emoji {
+    font-size: clamp(2.2rem, 8vw, 3.5rem);
+    transition: transform 0.3s ease;
   }
 
-  .mk-choice:disabled {
-    cursor: default;
+  .mk-ans-name {
+    font-size: clamp(0.75rem, 2.5vw, 0.95rem);
+    font-weight: 700; color: #D7CCC8;
   }
 
-  .mk-choice-a:hover:not(:disabled) .mk-choice-glow {
+  .mk-ans-lock {
+    position: absolute; top: 4px; right: 6px;
+    font-size: 0.8rem; opacity: 0.5;
+  }
+
+  .mk-ans-glow {
+    position: absolute; inset: -20px;
+    opacity: 0; transition: opacity 0.3s ease; pointer-events: none;
+  }
+
+  .mk-ans-a:hover:not(:disabled) .mk-ans-glow {
     opacity: 1;
-    background: radial-gradient(circle, rgba(96,165,250,0.15), transparent 70%);
+    background: radial-gradient(circle, rgba(96,165,250,0.12), transparent 70%);
   }
 
-  .mk-choice-b:hover:not(:disabled) .mk-choice-glow {
+  .mk-ans-b:hover:not(:disabled) .mk-ans-glow {
     opacity: 1;
-    background: radial-gradient(circle, rgba(251,146,60,0.15), transparent 70%);
+    background: radial-gradient(circle, rgba(251,146,60,0.12), transparent 70%);
   }
 
-  .mk-choice-glow {
-    position: absolute;
-    inset: -20px;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    pointer-events: none;
-  }
-
-  .mk-choice.mk-correct {
+  .mk-ans-right {
     border-color: #4CAF50 !important;
-    background: rgba(76,175,80,0.2) !important;
-    animation: mkCorrectPop 0.5s ease;
+    background: rgba(76,175,80,0.25) !important;
+    animation: mkCorrect 0.5s ease;
   }
 
-  @keyframes mkCorrectPop {
+  @keyframes mkCorrect {
     0% { transform: scale(1); }
-    30% { transform: scale(1.08); }
-    60% { transform: scale(0.97); }
+    25% { transform: scale(1.08); }
+    50% { transform: scale(0.97); }
     100% { transform: scale(1); }
   }
 
-  .mk-choice.mk-wrong {
+  .mk-ans-wrong {
     border-color: #EF5350 !important;
-    background: rgba(239,83,80,0.2) !important;
-    animation: mkWrongWobble 0.5s ease;
+    background: rgba(239,83,80,0.25) !important;
+    animation: mkWrong 0.5s ease;
   }
 
-  @keyframes mkWrongWobble {
+  @keyframes mkWrong {
     0%, 100% { transform: translateX(0); }
-    20% { transform: translateX(-8px); }
-    40% { transform: translateX(8px); }
-    60% { transform: translateX(-4px); }
-    80% { transform: translateX(4px); }
+    15% { transform: translateX(-8px); }
+    30% { transform: translateX(8px); }
+    45% { transform: translateX(-5px); }
+    60% { transform: translateX(5px); }
+    75% { transform: translateX(-2px); }
   }
 
-  .mk-choice-emoji {
-    font-size: clamp(3rem, 10vw, 4.5rem);
-    transition: transform 0.3s ease;
-    animation: mkItemIdle 3s ease-in-out infinite;
+  .mk-ans-reveal {
+    border-color: #4CAF50 !important;
+    background: rgba(76,175,80,0.15) !important;
   }
 
-  @keyframes mkItemIdle {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-5px); }
+  .mk-vs {
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0;
   }
 
-  .mk-choice-name {
-    font-size: clamp(0.9rem, 3vw, 1.1rem);
-    font-weight: 700;
-    color: #D7CCC8;
+  .mk-vs-txt {
+    font-size: 1rem; font-weight: 900; color: #FF9800;
+    text-shadow: 0 0 16px rgba(255,152,0,0.4);
+    animation: mkVsBeat 1.5s ease-in-out infinite;
   }
 
-  .mk-vs-divider {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-  }
-
-  .mk-vs-text {
-    font-size: 1.2rem;
-    font-weight: 900;
-    color: #FF9800;
-    text-shadow: 0 0 20px rgba(255,152,0,0.4);
-    animation: mkVsBounce 1.5s ease-in-out infinite;
-  }
-
-  @keyframes mkVsBounce {
+  @keyframes mkVsBeat {
     0%, 100% { transform: scale(1); }
     50% { transform: scale(1.15); }
   }
 
-  /* Demo area */
-  .mk-demo-area {
-    position: relative;
-    z-index: 10;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.8rem;
-    width: 100%;
-    max-width: 500px;
-    animation: mkDemoFadeIn 0.5s ease;
+  /* Result popup */
+  .mk-result-pop {
+    position: absolute; top: 30%; left: 50%; transform: translate(-50%, -50%);
+    z-index: 100;
+    display: flex; flex-direction: column; align-items: center; gap: 0.3rem;
+    padding: 1rem 2rem; border-radius: 24px;
+    animation: mkResultPop 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
   }
 
-  @keyframes mkDemoFadeIn {
-    0% { opacity: 0; transform: translateY(20px); }
-    100% { opacity: 1; transform: translateY(0); }
+  @keyframes mkResultPop {
+    0% { transform: translate(-50%, -50%) scale(0) rotate(-10deg); opacity: 0; }
+    60% { transform: translate(-50%, -50%) scale(1.15) rotate(2deg); }
+    100% { transform: translate(-50%, -50%) scale(1) rotate(0); opacity: 1; }
   }
 
-  .mk-result-banner {
-    display: flex;
-    align-items: center;
-    gap: 0.6rem;
-    padding: 0.6rem 1.5rem;
-    border-radius: 30px;
-    animation: mkBannerPop 0.4s ease;
+  .mk-pop-right {
+    background: linear-gradient(135deg, rgba(76,175,80,0.9), rgba(56,142,60,0.9));
+    border: 3px solid #81C784;
+    box-shadow: 0 12px 40px rgba(76,175,80,0.5);
   }
 
-  @keyframes mkBannerPop {
-    0% { transform: scale(0); opacity: 0; }
-    50% { transform: scale(1.15); }
-    100% { transform: scale(1); opacity: 1; }
+  .mk-pop-wrong {
+    background: linear-gradient(135deg, rgba(141,110,99,0.9), rgba(93,64,55,0.9));
+    border: 3px solid #A1887F;
+    box-shadow: 0 12px 40px rgba(93,64,55,0.5);
   }
 
-  .mk-result-correct {
-    background: linear-gradient(135deg, rgba(76,175,80,0.3), rgba(129,199,132,0.2));
-    border: 2px solid #4CAF50;
+  .mk-result-emoji { font-size: 2.5rem; }
+  .mk-result-word { font-size: 1.4rem; font-weight: 900; color: white; }
+  .mk-result-combo {
+    font-size: 1rem; font-weight: 800; color: #FFD700;
+    animation: mkComboFlash 0.5s ease;
   }
 
-  .mk-result-wrong {
-    background: linear-gradient(135deg, rgba(239,83,80,0.3), rgba(229,115,115,0.2));
-    border: 2px solid #EF5350;
-  }
-
-  .mk-result-icon { font-size: 1.5rem; }
-  .mk-result-text { font-size: 1.2rem; font-weight: 800; color: white; }
-
-  /* Demo visuals */
-  .mk-demo-visual {
-    width: 100%;
-    max-width: 440px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 160px;
-  }
-
-  .mk-scale-svg {
-    width: 100%;
-    max-width: 400px;
-    height: auto;
-  }
-
-  /* Liquid demo */
-  .mk-liquid-demo { padding: 0 1rem; }
-
-  .mk-liquid-pair {
-    display: flex;
-    gap: 2rem;
-    align-items: flex-end;
-    justify-content: center;
-    width: 100%;
-  }
-
-  .mk-container-wrap {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.4rem;
-  }
-
-  .mk-container-svg {
-    width: 100px;
-    height: 140px;
-  }
-
-  .mk-container-label {
-    font-size: 0.8rem;
-    font-weight: 700;
-    color: #D7CCC8;
-    text-align: center;
-  }
-
-  /* Ruler demo */
-  .mk-ruler-demo { padding: 0 0.5rem; }
-
-  .mk-ruler-svg {
-    width: 100%;
-    max-width: 420px;
-    height: auto;
-  }
-
-  /* Clock demo */
-  .mk-clock-demo { padding: 0 1rem; }
-
-  .mk-clock-pair {
-    display: flex;
-    gap: 2rem;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-  }
-
-  .mk-clock-wrap {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.4rem;
-  }
-
-  .mk-clock-svg {
-    width: 100px;
-    height: 100px;
-  }
-
-  .mk-clock-label {
-    font-size: 0.8rem;
-    font-weight: 700;
-    text-align: center;
-  }
-
-  /* Explanation */
-  .mk-explanation {
-    padding: 0.6rem 1.2rem;
-    background: rgba(255,255,255,0.06);
-    border-radius: 16px;
-    text-align: center;
-  }
-
-  .mk-explanation p {
-    color: #D7CCC8;
-    font-size: 1rem;
-    line-height: 1.5;
-  }
-
-  .mk-explanation strong {
-    color: white;
-  }
-
-  /* Continue button */
-  .mk-continue-btn {
-    padding: 0.8rem 2rem;
-    font-family: 'Nunito', sans-serif;
-    font-size: 1.1rem;
-    font-weight: 800;
-    color: white;
-    background: linear-gradient(135deg, #FF9800, #F44336);
-    border: none;
-    border-radius: 30px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 8px 25px rgba(244,67,54,0.35);
-  }
-
-  .mk-continue-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 12px 35px rgba(244,67,54,0.45);
+  @keyframes mkComboFlash {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
   }
 
   /* Bottom bar */
-  .mk-bottom-bar {
-    padding: 0.6rem;
-    background: rgba(0,0,0,0.4);
-    backdrop-filter: blur(4px);
+  .mk-bottom {
+    padding: 0.5rem; background: rgba(0,0,0,0.4);
+    text-align: center; backdrop-filter: blur(4px); flex-shrink: 0;
   }
 
-  .mk-hint-row {
-    display: flex;
-    justify-content: center;
-    gap: 1.2rem;
-    font-size: 0.75rem;
-    color: #8D6E63;
+  .mk-bottom-hint { font-size: 0.8rem; color: #8D6E63; font-weight: 600; }
+
+  /* ── Level complete ─────────────────────────────────────────────────── */
+
+  .mk-complete {
+    height: 100%; display: flex; align-items: center; justify-content: center;
+    position: relative; overflow: hidden;
   }
 
-  .mk-hint {
-    opacity: 0.7;
+  .mk-complete-decor { position: absolute; inset: 0; overflow: hidden; }
+
+  .mk-complete-float {
+    position: absolute; top: 12%; font-size: 3rem;
+    animation: mkFloatCeleb 3s ease-in-out infinite;
   }
 
-  /* ── Level complete screen ────────────────────────────────────────────── */
-
-  .mk-level-complete {
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .mk-complete-bg {
-    position: absolute;
-    inset: 0;
-    overflow: hidden;
-  }
-
-  .mk-float-celebrate {
-    position: absolute;
-    top: 15%;
-    font-size: 3.5rem;
-    animation: mkCelebFloat 3s ease-in-out infinite;
-  }
-
-  @keyframes mkCelebFloat {
+  @keyframes mkFloatCeleb {
     0%, 100% { transform: translateY(0) rotate(-5deg); }
     50% { transform: translateY(-25px) rotate(5deg); }
   }
 
-  .mk-complete-content {
-    position: relative;
-    z-index: 10;
-    text-align: center;
-    padding: 2rem;
-    max-width: 500px;
+  .mk-complete-inner {
+    position: relative; z-index: 10; text-align: center;
+    padding: 1.5rem; max-width: 450px;
   }
 
-  .mk-complete-title {
-    font-size: clamp(1.8rem, 6vw, 2.5rem);
-    font-weight: 900;
-    color: white;
-    margin-bottom: 1.5rem;
+  .mk-complete-banner {
+    font-size: clamp(1.6rem, 5vw, 2.2rem); font-weight: 900;
+    color: white; margin-bottom: 1rem;
+    animation: mkBannerIn 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
   }
 
-  .mk-recipe-done {
-    margin-bottom: 1.5rem;
+  @keyframes mkBannerIn {
+    0% { transform: scale(0) rotate(-5deg); opacity: 0; }
+    100% { transform: scale(1) rotate(0); opacity: 1; }
   }
 
-  .mk-recipe-done-icon {
-    font-size: 4rem;
-    margin-bottom: 0.5rem;
-    animation: mkRecipeBounce 1s ease infinite;
+  .mk-complete-dish {
+    font-size: 5rem; margin-bottom: 0.5rem;
+    animation: mkDishBounce 1s ease infinite;
   }
 
-  @keyframes mkRecipeBounce {
+  @keyframes mkDishBounce {
     0%, 100% { transform: translateY(0) scale(1); }
     50% { transform: translateY(-10px) scale(1.05); }
   }
 
-  .mk-recipe-done-text {
-    color: #FFCC02;
-    font-size: 1.3rem;
-    font-weight: 800;
-    margin-bottom: 0.8rem;
+  .mk-complete-recipe {
+    font-size: 1.2rem; font-weight: 800; color: #FFCC02; margin-bottom: 1.2rem;
   }
 
-  .mk-recipe-done-items {
-    display: flex;
-    justify-content: center;
-    gap: 0.6rem;
+  .mk-complete-stars {
+    display: flex; justify-content: center; gap: 0.6rem; margin-bottom: 1.5rem;
   }
 
-  .mk-recipe-done-emoji {
-    font-size: 2rem;
-    animation: mkIngredientPop 0.6s ease;
+  .mk-complete-star { font-size: 2.5rem; }
+
+  .mk-star-earned {
+    animation: mkStarPop 0.5s ease;
+  }
+  .mk-star-earned:nth-child(2) { animation-delay: 0.15s; }
+  .mk-star-earned:nth-child(3) { animation-delay: 0.3s; }
+
+  @keyframes mkStarPop {
+    0% { transform: scale(0) rotate(-30deg); }
+    60% { transform: scale(1.3) rotate(10deg); }
+    100% { transform: scale(1) rotate(0); }
   }
 
-  .mk-recipe-done-emoji:nth-child(2) { animation-delay: 0.1s; }
-  .mk-recipe-done-emoji:nth-child(3) { animation-delay: 0.2s; }
-  .mk-recipe-done-emoji:nth-child(4) { animation-delay: 0.3s; }
-  .mk-recipe-done-emoji:nth-child(5) { animation-delay: 0.4s; }
-  .mk-recipe-done-emoji:nth-child(6) { animation-delay: 0.5s; }
+  .mk-star-empty { opacity: 0.3; font-size: 2.5rem; color: #8D6E63; }
 
-  @keyframes mkIngredientPop {
-    0% { transform: scale(0) rotate(-20deg); }
-    60% { transform: scale(1.2) rotate(5deg); }
-    100% { transform: scale(1) rotate(0deg); }
+  .mk-complete-stats {
+    display: flex; justify-content: center; gap: 1.5rem;
+    margin-bottom: 1.5rem; flex-wrap: wrap;
   }
 
-  .mk-score-card {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    margin-bottom: 2rem;
-  }
+  .mk-stat { display: flex; flex-direction: column; align-items: center; }
+  .mk-stat-label { font-size: 0.8rem; color: #8D6E63; margin-bottom: 0.2rem; }
+  .mk-stat-value { font-size: 1.5rem; font-weight: 900; color: white; }
+  .mk-rank { font-size: 1rem; color: #FFD700; }
 
-  .mk-score-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .mk-score-label {
-    font-size: 0.85rem;
-    color: #8D6E63;
-    margin-bottom: 0.3rem;
-  }
-
-  .mk-score-value {
-    font-size: 2rem;
-    font-weight: 900;
-    color: white;
-  }
-
-  .mk-complete-buttons {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    align-items: center;
+  .mk-complete-btns {
+    display: flex; flex-direction: column; gap: 0.8rem; align-items: center;
   }
 
   .mk-next-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.6rem;
-    padding: 1rem 2.5rem;
-    font-family: 'Nunito', sans-serif;
-    font-size: 1.2rem;
-    font-weight: 800;
-    color: white;
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    padding: 0.9rem 2rem; font-family: 'Nunito', sans-serif;
+    font-size: 1.1rem; font-weight: 800; color: white;
     background: linear-gradient(135deg, #FF9800, #F44336);
-    border: none;
-    border-radius: 50px;
-    cursor: pointer;
+    border: none; border-radius: 40px; cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: 0 10px 40px rgba(244,67,54,0.4);
+    box-shadow: 0 8px 30px rgba(244,67,54,0.4);
   }
 
   .mk-next-btn:hover {
     transform: translateY(-3px);
-    box-shadow: 0 15px 50px rgba(244,67,54,0.5);
+    box-shadow: 0 14px 45px rgba(244,67,54,0.55);
   }
 
-  .mk-menu-btn {
-    padding: 0.8rem 2rem;
-    font-family: 'Nunito', sans-serif;
-    font-size: 1rem;
-    font-weight: 700;
-    color: #BCAAA4;
-    background: transparent;
-    border: 2px solid rgba(255,255,255,0.2);
-    border-radius: 30px;
-    cursor: pointer;
-    transition: all 0.2s ease;
+  .mk-exit-btn {
+    padding: 0.7rem 1.8rem; font-family: 'Nunito', sans-serif;
+    font-size: 0.95rem; font-weight: 700; color: #BCAAA4;
+    background: transparent; border: 2px solid rgba(255,255,255,0.2);
+    border-radius: 30px; cursor: pointer; transition: all 0.2s ease;
   }
 
-  .mk-menu-btn:hover {
-    border-color: rgba(255,255,255,0.4);
-    color: white;
-  }
+  .mk-exit-btn:hover { border-color: rgba(255,255,255,0.4); color: white; }
 
-  /* ── Responsive ───────────────────────────────────────────────────────── */
+  /* ── Responsive ─────────────────────────────────────────────────────── */
 
   @media (max-width: 600px) {
-    .mk-choices {
-      flex-direction: column;
-      gap: 0.8rem;
-    }
-
-    .mk-vs-divider {
-      margin: -0.3rem 0;
-    }
-
-    .mk-choice {
-      padding: 1rem 0.8rem;
-    }
-
-    .mk-choice-emoji {
-      font-size: 3rem;
-    }
-
-    .mk-question-text {
-      font-size: 1.1rem;
-    }
-
-    .mk-hint-row {
-      flex-wrap: wrap;
-      gap: 0.5rem;
-    }
-
-    .mk-header-center {
-      display: none;
-    }
-
-    .mk-liquid-pair, .mk-clock-pair {
-      gap: 1rem;
-    }
-
-    .mk-container-svg {
-      width: 80px;
-      height: 110px;
-    }
-
-    .mk-clock-svg {
-      width: 80px;
-      height: 80px;
-    }
-
-    .mk-recipe-bar {
-      padding: 0.5rem 0.8rem;
-      gap: 0.5rem;
-    }
-
-    .mk-recipe-slot {
-      width: 34px;
-      height: 34px;
-    }
-
-    .mk-recipe-emoji {
-      font-size: 1.1rem;
-    }
+    .mk-answers { flex-direction: column; gap: 0.4rem; }
+    .mk-vs { margin: -0.2rem 0; }
+    .mk-ans { padding: 0.6rem 0.5rem; flex-direction: row; gap: 0.5rem; }
+    .mk-ans-emoji { font-size: 2.2rem; }
+    .mk-hdr-mid { display: none; }
+    .mk-cap-pair { gap: 0.8rem; }
+    .mk-container-svg { width: 85px; height: 120px; }
+    .mk-progress { padding: 0.4rem 0.6rem; gap: 0.4rem; }
+    .mk-dot { width: 26px; height: 26px; font-size: 0.6rem; }
+    .mk-main { padding: 0.2rem 0.3rem; }
+    .mk-chef-bubble { padding: 0.4rem 0.8rem; }
+    .mk-chef { font-size: 1.4rem; }
+    .mk-q-text { font-size: 1rem; }
   }
 
   @media (max-width: 380px) {
-    .mk-choice-emoji {
-      font-size: 2.5rem;
-    }
+    .mk-ans-emoji { font-size: 1.8rem; }
+    .mk-ans-name { font-size: 0.7rem; }
+    .mk-container-svg { width: 70px; height: 100px; }
+    .mk-scale-svg { max-width: 340px; }
+    .mk-len-svg, .mk-speed-svg { max-width: 320px; }
+  }
 
-    .mk-choice-name {
-      font-size: 0.8rem;
-    }
-
-    .mk-container-svg {
-      width: 65px;
-      height: 90px;
-    }
-
-    .mk-clock-svg {
-      width: 65px;
-      height: 65px;
-    }
+  @media (max-height: 600px) {
+    .mk-question-row { margin-bottom: 0.1rem; }
+    .mk-progress { padding: 0.3rem 0.6rem; }
+    .mk-dot { width: 24px; height: 24px; }
+    .mk-chef-bubble { padding: 0.3rem 0.6rem; }
+    .mk-answers { padding: 0.1rem 0; }
+    .mk-ans { padding: 0.4rem; }
   }
 `;

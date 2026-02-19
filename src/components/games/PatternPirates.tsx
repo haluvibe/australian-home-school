@@ -1,9 +1,10 @@
 "use client";
 
 import { useState, useEffect, useCallback, useRef } from "react";
+import type React from "react";
 
 // ============================================================
-// PATTERN PIRATES  --  Repeating Pattern Game
+// PATTERN PIRATES  --  Repeating Pattern Game (DRAG Edition)
 // Foundation / Year 1 Mathematics
 // Curriculum: "Copy and continue repeating patterns"
 //             "Create skip counting and repeating patterns,
@@ -14,347 +15,246 @@ interface PatternPiratesProps {
   onExit?: () => void;
 }
 
-type GameScreen = "intro" | "playing" | "levelComplete" | "gameOver";
+type GameScreen = "intro" | "playing" | "levelComplete" | "gameComplete";
 
-interface PatternSymbol {
-  emoji: string;
+// Gem definitions — rendered with CSS gradients, no emojis
+interface GemDef {
+  id: string;
   name: string;
-  color: string;
+  baseColor: string;
+  lightColor: string;
+  darkColor: string;
+  glowColor: string;
+  borderRadius: string; // shape variant
 }
 
-interface PatternChallenge {
-  pattern: PatternSymbol[];
-  displayed: (PatternSymbol | null)[];
+const GEM_DEFS: GemDef[] = [
+  { id: "red",    name: "Ruby",     baseColor: "#e11d48", lightColor: "#fda4af", darkColor: "#9f1239", glowColor: "rgba(225,29,72,0.6)",  borderRadius: "50% 50% 50% 50% / 60% 60% 40% 40%" },
+  { id: "blue",   name: "Sapphire", baseColor: "#2563eb", lightColor: "#93c5fd", darkColor: "#1e3a8a", glowColor: "rgba(37,99,235,0.6)",  borderRadius: "50% 50% 50% 50% / 55% 55% 45% 45%" },
+  { id: "green",  name: "Emerald",  baseColor: "#16a34a", lightColor: "#86efac", darkColor: "#14532d", glowColor: "rgba(22,163,74,0.6)",  borderRadius: "45% 55% 55% 45% / 55% 45% 55% 45%" },
+  { id: "gold",   name: "Topaz",    baseColor: "#d97706", lightColor: "#fde68a", darkColor: "#92400e", glowColor: "rgba(217,119,6,0.6)",  borderRadius: "50% 50% 45% 55% / 60% 40% 60% 40%" },
+  { id: "purple", name: "Amethyst", baseColor: "#9333ea", lightColor: "#d8b4fe", darkColor: "#581c87", glowColor: "rgba(147,51,234,0.6)", borderRadius: "55% 45% 50% 50% / 50% 50% 50% 50%" },
+  { id: "silver", name: "Diamond",  baseColor: "#94a3b8", lightColor: "#f1f5f9", darkColor: "#475569", glowColor: "rgba(148,163,184,0.6)", borderRadius: "50%" },
+];
+
+// Pattern types by difficulty
+type PatternType = "AB" | "ABB" | "ABC" | "AABB" | "ABCD";
+
+interface PatternLevel {
+  patternType: PatternType;
+  unit: GemDef[];
+  sequence: GemDef[];
   blanks: number[];
-  currentBlank: number;
-  options: PatternSymbol[];
+  options: GemDef[];
+}
+
+interface DragState {
+  gemId: string;
+  originIndex: number; // index in options tray
+  startX: number;
+  startY: number;
+  currentX: number;
+  currentY: number;
+  offsetX: number;
+  offsetY: number;
+}
+
+interface Particle {
+  id: number;
+  x: number;
+  y: number;
+  vx: number;
+  vy: number;
+  life: number;
+  maxLife: number;
+  type: "coin" | "sparkle" | "ray";
+  rotation: number;
+  rotSpeed: number;
+  scale: number;
+  hue: number;
 }
 
 interface Star {
   x: number;
   y: number;
   size: number;
-  speed: number;
   brightness: number;
   phase: number;
-}
-
-interface WavePt {
-  x: number;
-  baseY: number;
-  amplitude: number;
-  frequency: number;
-  phase: number;
-}
-
-interface Debris {
-  x: number;
-  y: number;
-  emoji: string;
   speed: number;
-  bobPhase: number;
-  bobAmp: number;
-  rotation: number;
-  rotSpeed: number;
-  scale: number;
 }
 
-interface GemParticle {
-  id: number;
-  x: number;
-  y: number;
-  vx: number;
-  vy: number;
-  emoji: string;
-  life: number;
-  maxLife: number;
-  rotation: number;
-  rotSpeed: number;
-  scale: number;
-}
-
-interface Sparkle {
-  id: number;
-  x: number;
-  y: number;
-  vy: number;
-  life: number;
-  maxLife: number;
-  size: number;
-}
-
-// Symbol sets grouped by theme
-const PIRATE_FLAGS: PatternSymbol[] = [
-  { emoji: "\uD83C\uDFF4\u200D\u2620\uFE0F", name: "Pirate Flag", color: "#1a1a2e" },
-  { emoji: "\u2693", name: "Anchor", color: "#3b82f6" },
-  { emoji: "\uD83E\uDE99", name: "Coin", color: "#f59e0b" },
-  { emoji: "\uD83D\uDC8E", name: "Gem", color: "#a855f7" },
-  { emoji: "\u2694\uFE0F", name: "Swords", color: "#ef4444" },
-  { emoji: "\uD83D\uDC19", name: "Octopus", color: "#ec4899" },
-];
-
-const TREASURE_ITEMS: PatternSymbol[] = [
-  { emoji: "\uD83D\uDD31", name: "Trident", color: "#06b6d4" },
-  { emoji: "\uD83E\uDEF7", name: "Shell", color: "#f472b6" },
-  { emoji: "\u2B50", name: "Star", color: "#fbbf24" },
-  { emoji: "\uD83D\uDD11", name: "Key", color: "#a3a3a3" },
-  { emoji: "\uD83D\uDC0D", name: "Parrot", color: "#22c55e" },
-  { emoji: "\uD83C\uDF0A", name: "Wave", color: "#38bdf8" },
-];
-
-const SHAPE_SYMBOLS: PatternSymbol[] = [
-  { emoji: "\uD83D\uDD34", name: "Red Circle", color: "#ef4444" },
-  { emoji: "\uD83D\uDD35", name: "Blue Circle", color: "#3b82f6" },
-  { emoji: "\uD83D\uDFE2", name: "Green Circle", color: "#22c55e" },
-  { emoji: "\uD83D\uDFE1", name: "Yellow Circle", color: "#eab308" },
-  { emoji: "\uD83D\uDFE3", name: "Purple Circle", color: "#a855f7" },
-  { emoji: "\uD83D\uDFE0", name: "Orange Circle", color: "#f97316" },
-];
-
-const ALL_SYMBOL_SETS = [PIRATE_FLAGS, TREASURE_ITEMS, SHAPE_SYMBOLS];
-
-const GEM_EMOJIS = ["\uD83D\uDC8E", "\uD83E\uDE99", "\u2B50", "\uD83D\uDD31", "\uD83D\uDD11"];
-const DEBRIS_EMOJIS = ["\uD83E\uDEA3", "\uD83D\uDEE2\uFE0F", "\uD83E\uDEB5", "\u2693"];
+let particleCounter = 0;
 
 export default function PatternPirates({ onExit }: PatternPiratesProps) {
   const [screen, setScreen] = useState<GameScreen>("intro");
   const [level, setLevel] = useState(1);
   const [score, setScore] = useState(0);
-  const [lives, setLives] = useState(3);
-  const [challenge, setChallenge] = useState<PatternChallenge | null>(null);
-  const [patternsCompleted, setPatternsCompleted] = useState(0);
-  const [patternsNeeded, setPatternsNeeded] = useState(4);
-  const [showResult, setShowResult] = useState<"correct" | "wrong" | null>(null);
-  const [treasureCount, setTreasureCount] = useState(0);
-  const [shakeScreen, setShakeScreen] = useState(false);
-  const [showPatternUnit, setShowPatternUnit] = useState(false);
-  const [filledCell, setFilledCell] = useState<number | null>(null);
-  const [wrongCell, setWrongCell] = useState<number | null>(null);
+  const [currentLevel, setCurrentLevel] = useState<PatternLevel | null>(null);
+  const [filledSlots, setFilledSlots] = useState<Record<number, GemDef>>({});
+  const [currentBlankIndex, setCurrentBlankIndex] = useState(0);
+  const [dragState, setDragState] = useState<DragState | null>(null);
+  const [particles, setParticles] = useState<Particle[]>([]);
   const [chestOpen, setChestOpen] = useState(false);
-  const [gemParticles, setGemParticles] = useState<GemParticle[]>([]);
-  const [sparkles, setSparkles] = useState<Sparkle[]>([]);
-  const [smokePuffs, setSmokePuffs] = useState<{ id: number; x: number; y: number }[]>([]);
-  const [scrollUnfurl, setScrollUnfurl] = useState(false);
-  const [introShipX, setIntroShipX] = useState(-15);
+  const [wrongShake, setWrongShake] = useState(false);
+  const [lockFlash, setLockFlash] = useState(false);
+  const [showResult, setShowResult] = useState<"correct" | "wrong" | null>(null);
+  const [levelStars, setLevelStars] = useState(0);
+  const [mistakes, setMistakes] = useState(0);
+  const [completedLevels, setCompletedLevels] = useState<number[]>([]);
 
-  // Ambient animation state
-  const starsRef = useRef<Star[]>([]);
-  const wavePtsRef = useRef<WavePt[]>([]);
-  const debrisRef = useRef<Debris[]>([]);
+  const containerRef = useRef<HTMLDivElement>(null);
   const animFrameRef = useRef<number | null>(null);
-  const timeRef = useRef(0);
+  const starsRef = useRef<Star[]>([]);
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
-  const containerRef = useRef<HTMLDivElement | null>(null);
-  const particleIdRef = useRef(0);
+  const timeRef = useRef(0);
+  const dropZoneRefs = useRef<Record<number, HTMLDivElement | null>>({});
+  const gemTrayRef = useRef<HTMLDivElement | null>(null);
 
-  // Initialize ambient world
-  const initAmbient = useCallback(() => {
+  // Initialize background stars
+  useEffect(() => {
     const stars: Star[] = [];
-    for (let i = 0; i < 80; i++) {
+    for (let i = 0; i < 100; i++) {
       stars.push({
         x: Math.random() * 100,
-        y: Math.random() * 55,
-        size: 0.5 + Math.random() * 2,
-        speed: 0.3 + Math.random() * 0.7,
-        brightness: 0.3 + Math.random() * 0.7,
+        y: Math.random() * 50,
+        size: 0.5 + Math.random() * 2.5,
+        brightness: 0.2 + Math.random() * 0.8,
         phase: Math.random() * Math.PI * 2,
+        speed: 0.3 + Math.random() * 0.8,
       });
     }
     starsRef.current = stars;
-
-    const wavePts: WavePt[] = [];
-    for (let i = 0; i <= 30; i++) {
-      wavePts.push({
-        x: (i / 30) * 100,
-        baseY: 78 + Math.random() * 3,
-        amplitude: 1.5 + Math.random() * 2,
-        frequency: 0.8 + Math.random() * 0.6,
-        phase: Math.random() * Math.PI * 2,
-      });
-    }
-    wavePtsRef.current = wavePts;
-
-    const debris: Debris[] = [];
-    for (let i = 0; i < 5; i++) {
-      debris.push({
-        x: Math.random() * 110 - 5,
-        y: 80 + Math.random() * 8,
-        emoji: DEBRIS_EMOJIS[Math.floor(Math.random() * DEBRIS_EMOJIS.length)],
-        speed: 0.1 + Math.random() * 0.2,
-        bobPhase: Math.random() * Math.PI * 2,
-        bobAmp: 0.3 + Math.random() * 0.8,
-        rotation: Math.random() * 360,
-        rotSpeed: (Math.random() - 0.5) * 0.5,
-        scale: 0.6 + Math.random() * 0.5,
-      });
-    }
-    debrisRef.current = debris;
   }, []);
 
-  // Ambient animation loop using canvas for stars/waves
+  // Canvas background animation: stars, moon, ocean, palm trees
   useEffect(() => {
-    initAmbient();
-
     const animate = (timestamp: number) => {
-      const dt = timestamp - timeRef.current;
-      timeRef.current = timestamp;
       const time = timestamp / 1000;
-
+      timeRef.current = timestamp;
       const canvas = canvasRef.current;
-      if (!canvas) {
-        animFrameRef.current = requestAnimationFrame(animate);
-        return;
-      }
-
+      if (!canvas) { animFrameRef.current = requestAnimationFrame(animate); return; }
       const ctx = canvas.getContext("2d");
-      if (!ctx) {
-        animFrameRef.current = requestAnimationFrame(animate);
-        return;
-      }
+      if (!ctx) { animFrameRef.current = requestAnimationFrame(animate); return; }
 
       const w = canvas.width;
       const h = canvas.height;
       ctx.clearRect(0, 0, w, h);
 
-      // Draw stars
+      // Stars
       for (const star of starsRef.current) {
         const twinkle = Math.sin(time * star.speed + star.phase) * 0.5 + 0.5;
         const alpha = star.brightness * (0.3 + twinkle * 0.7);
         const sx = (star.x / 100) * w;
         const sy = (star.y / 100) * h;
         const r = star.size * (0.8 + twinkle * 0.4);
-
         ctx.beginPath();
         ctx.arc(sx, sy, r, 0, Math.PI * 2);
         ctx.fillStyle = `rgba(255, 248, 220, ${alpha})`;
         ctx.fill();
-
-        // Glow
-        if (star.size > 1.2) {
+        if (star.size > 1.5) {
+          const grad = ctx.createRadialGradient(sx, sy, 0, sx, sy, r * 3);
+          grad.addColorStop(0, `rgba(255, 248, 220, ${alpha * 0.25})`);
+          grad.addColorStop(1, "rgba(255, 248, 220, 0)");
           ctx.beginPath();
           ctx.arc(sx, sy, r * 3, 0, Math.PI * 2);
-          const grad = ctx.createRadialGradient(sx, sy, 0, sx, sy, r * 3);
-          grad.addColorStop(0, `rgba(255, 248, 220, ${alpha * 0.3})`);
-          grad.addColorStop(1, "rgba(255, 248, 220, 0)");
           ctx.fillStyle = grad;
           ctx.fill();
         }
       }
 
-      // Draw moon
-      const moonX = w * 0.82;
-      const moonY = h * 0.12;
-      const moonR = Math.min(w, h) * 0.06;
-      const moonGrad = ctx.createRadialGradient(moonX, moonY, 0, moonX, moonY, moonR * 4);
-      moonGrad.addColorStop(0, "rgba(255, 248, 220, 0.15)");
-      moonGrad.addColorStop(0.3, "rgba(255, 248, 220, 0.05)");
-      moonGrad.addColorStop(1, "rgba(255, 248, 220, 0)");
+      // Moon
+      const moonX = w * 0.85;
+      const moonY = h * 0.1;
+      const moonR = Math.min(w, h) * 0.055;
+      const moonGlow = ctx.createRadialGradient(moonX, moonY, 0, moonX, moonY, moonR * 5);
+      moonGlow.addColorStop(0, "rgba(255, 248, 220, 0.12)");
+      moonGlow.addColorStop(0.4, "rgba(255, 248, 220, 0.04)");
+      moonGlow.addColorStop(1, "rgba(255, 248, 220, 0)");
       ctx.beginPath();
-      ctx.arc(moonX, moonY, moonR * 4, 0, Math.PI * 2);
-      ctx.fillStyle = moonGrad;
+      ctx.arc(moonX, moonY, moonR * 5, 0, Math.PI * 2);
+      ctx.fillStyle = moonGlow;
       ctx.fill();
-
       ctx.beginPath();
       ctx.arc(moonX, moonY, moonR, 0, Math.PI * 2);
       const moonFill = ctx.createRadialGradient(moonX - moonR * 0.3, moonY - moonR * 0.3, 0, moonX, moonY, moonR);
       moonFill.addColorStop(0, "rgba(255, 252, 240, 0.95)");
-      moonFill.addColorStop(1, "rgba(255, 240, 200, 0.8)");
+      moonFill.addColorStop(1, "rgba(255, 240, 200, 0.75)");
       ctx.fillStyle = moonFill;
       ctx.fill();
 
-      // Draw water surface
-      const waveBaseY = h * 0.78;
-      ctx.beginPath();
-      ctx.moveTo(0, h);
+      // Palm tree silhouettes (left side)
+      drawPalmTree(ctx, w * 0.05, h * 0.62, h * 0.22, time, 0);
+      drawPalmTree(ctx, w * 0.12, h * 0.65, h * 0.18, time, 0.5);
+      // Right side
+      drawPalmTree(ctx, w * 0.88, h * 0.63, h * 0.2, time, 1.0);
+      drawPalmTree(ctx, w * 0.95, h * 0.66, h * 0.16, time, 1.5);
 
-      for (let x = 0; x <= w; x += 3) {
+      // Ocean waves
+      const waveBaseY = h * 0.72;
+      ctx.beginPath();
+      for (let x = 0; x <= w; x += 2) {
         const xp = x / w;
         let y = waveBaseY;
-        y += Math.sin(xp * 8 + time * 0.8) * 4;
-        y += Math.sin(xp * 12 + time * 1.2 + 1) * 2;
-        y += Math.sin(xp * 4 + time * 0.5 + 2) * 6;
-        if (x === 0) {
-          ctx.moveTo(x, y);
-        } else {
-          ctx.lineTo(x, y);
-        }
+        y += Math.sin(xp * 8 + time * 0.7) * 5;
+        y += Math.sin(xp * 13 + time * 1.1 + 1) * 3;
+        y += Math.sin(xp * 4 + time * 0.4 + 2) * 7;
+        if (x === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
       }
-
       ctx.lineTo(w, h);
       ctx.lineTo(0, h);
       ctx.closePath();
-
       const waterGrad = ctx.createLinearGradient(0, waveBaseY, 0, h);
-      waterGrad.addColorStop(0, "rgba(15, 40, 80, 0.85)");
-      waterGrad.addColorStop(0.3, "rgba(10, 30, 70, 0.9)");
-      waterGrad.addColorStop(1, "rgba(5, 15, 40, 0.95)");
+      waterGrad.addColorStop(0, "rgba(10, 35, 75, 0.85)");
+      waterGrad.addColorStop(0.4, "rgba(8, 25, 60, 0.92)");
+      waterGrad.addColorStop(1, "rgba(4, 12, 35, 0.97)");
       ctx.fillStyle = waterGrad;
       ctx.fill();
 
-      // Water surface highlight
+      // Wave surface highlight
       ctx.beginPath();
-      for (let x = 0; x <= w; x += 3) {
+      for (let x = 0; x <= w; x += 2) {
         const xp = x / w;
         let y = waveBaseY;
-        y += Math.sin(xp * 8 + time * 0.8) * 4;
-        y += Math.sin(xp * 12 + time * 1.2 + 1) * 2;
-        y += Math.sin(xp * 4 + time * 0.5 + 2) * 6;
-        if (x === 0) ctx.moveTo(x, y);
-        else ctx.lineTo(x, y);
+        y += Math.sin(xp * 8 + time * 0.7) * 5;
+        y += Math.sin(xp * 13 + time * 1.1 + 1) * 3;
+        y += Math.sin(xp * 4 + time * 0.4 + 2) * 7;
+        if (x === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
       }
-      ctx.strokeStyle = "rgba(150, 200, 255, 0.15)";
+      ctx.strokeStyle = "rgba(130, 200, 255, 0.12)";
       ctx.lineWidth = 2;
       ctx.stroke();
 
-      // Second wave layer
+      // Second wave
       ctx.beginPath();
-      for (let x = 0; x <= w; x += 3) {
+      for (let x = 0; x <= w; x += 2) {
         const xp = x / w;
-        let y = waveBaseY + 12;
-        y += Math.sin(xp * 6 + time * 0.6 + 3) * 3;
-        y += Math.sin(xp * 10 + time * 1.0 + 0.5) * 2;
-        if (x === 0) ctx.moveTo(x, y);
-        else ctx.lineTo(x, y);
+        let y = waveBaseY + 15;
+        y += Math.sin(xp * 6 + time * 0.5 + 3) * 4;
+        y += Math.sin(xp * 11 + time * 0.9 + 0.5) * 2;
+        if (x === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
       }
-      ctx.strokeStyle = "rgba(100, 180, 255, 0.08)";
+      ctx.strokeStyle = "rgba(100, 180, 255, 0.07)";
       ctx.lineWidth = 1.5;
       ctx.stroke();
 
-      // Moon reflection on water
-      const refX = moonX;
-      const refStartY = waveBaseY + 5;
-      for (let i = 0; i < 8; i++) {
-        const ry = refStartY + i * 8;
-        const width = 15 + Math.sin(time * 0.7 + i * 0.5) * 8;
-        const alpha = 0.12 - i * 0.012;
+      // Moon reflection
+      for (let i = 0; i < 10; i++) {
+        const ry = waveBaseY + 8 + i * 7;
+        const rw = 12 + Math.sin(time * 0.6 + i * 0.4) * 8;
+        const alpha = 0.1 - i * 0.009;
         ctx.beginPath();
-        ctx.ellipse(refX + Math.sin(time * 0.4 + i) * 3, ry, width, 1.5, 0, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(255, 248, 220, ${alpha})`;
+        ctx.ellipse(moonX + Math.sin(time * 0.35 + i) * 4, ry, rw, 1.5, 0, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(255, 248, 220, ${Math.max(0, alpha)})`;
         ctx.fill();
-      }
-
-      // Fog layers
-      for (let layer = 0; layer < 3; layer++) {
-        const fogY = waveBaseY - 20 + layer * 15;
-        const fogAlpha = 0.03 + layer * 0.01;
-        const fogGrad = ctx.createLinearGradient(0, fogY - 20, 0, fogY + 20);
-        fogGrad.addColorStop(0, "rgba(100, 150, 200, 0)");
-        fogGrad.addColorStop(0.5, `rgba(100, 150, 200, ${fogAlpha})`);
-        fogGrad.addColorStop(1, "rgba(100, 150, 200, 0)");
-        ctx.fillStyle = fogGrad;
-        ctx.fillRect(0, fogY - 20, w, 40);
       }
 
       animFrameRef.current = requestAnimationFrame(animate);
     };
-
     animFrameRef.current = requestAnimationFrame(animate);
-    return () => {
-      if (animFrameRef.current) cancelAnimationFrame(animFrameRef.current);
-    };
-  }, [initAmbient]);
+    return () => { if (animFrameRef.current) cancelAnimationFrame(animFrameRef.current); };
+  }, []);
 
-  // Resize canvas to container
+  // Canvas resize
   useEffect(() => {
     const resize = () => {
       const canvas = canvasRef.current;
@@ -368,373 +268,405 @@ export default function PatternPirates({ onExit }: PatternPiratesProps) {
     return () => window.removeEventListener("resize", resize);
   }, []);
 
-  // Intro ship animation
+  // Particle physics loop
   useEffect(() => {
-    if (screen !== "intro") return;
-    setIntroShipX(-15);
+    if (particles.length === 0) return;
     let frame: number;
-    const startTime = performance.now();
-    const animateShip = (now: number) => {
-      const elapsed = (now - startTime) / 1000;
-      // Sail from left to center over 3 seconds
-      const progress = Math.min(elapsed / 3, 1);
-      const eased = 1 - Math.pow(1 - progress, 3);
-      setIntroShipX(-15 + eased * 55);
-      if (progress < 1) {
-        frame = requestAnimationFrame(animateShip);
-      }
-    };
-    frame = requestAnimationFrame(animateShip);
-    return () => cancelAnimationFrame(frame);
-  }, [screen]);
-
-  // Gem particle animation
-  useEffect(() => {
-    if (gemParticles.length === 0) return;
-    let frame: number;
-    const animate = () => {
-      setGemParticles((prev) =>
-        prev
-          .map((p) => ({
-            ...p,
-            x: p.x + p.vx,
-            y: p.y + p.vy,
-            vy: p.vy + 0.15,
-            life: p.life - 1,
-            rotation: p.rotation + p.rotSpeed,
-          }))
-          .filter((p) => p.life > 0)
+    const tick = () => {
+      setParticles(prev =>
+        prev.map(p => ({
+          ...p,
+          x: p.x + p.vx,
+          y: p.y + p.vy,
+          vy: p.vy + (p.type === "coin" ? 0.18 : p.type === "sparkle" ? -0.02 : 0),
+          life: p.life - 1,
+          rotation: p.rotation + p.rotSpeed,
+          scale: p.scale * (p.type === "ray" ? 1.02 : 1),
+        })).filter(p => p.life > 0)
       );
-      frame = requestAnimationFrame(animate);
+      frame = requestAnimationFrame(tick);
     };
-    frame = requestAnimationFrame(animate);
+    frame = requestAnimationFrame(tick);
     return () => cancelAnimationFrame(frame);
-  }, [gemParticles.length > 0]);
+  }, [particles.length > 0]); // eslint-disable-line react-hooks/exhaustive-deps
 
-  // Sparkle animation
-  useEffect(() => {
-    if (sparkles.length === 0) return;
-    let frame: number;
-    const animate = () => {
-      setSparkles((prev) =>
-        prev
-          .map((s) => ({ ...s, y: s.y + s.vy, life: s.life - 1 }))
-          .filter((s) => s.life > 0)
-      );
-      frame = requestAnimationFrame(animate);
-    };
-    frame = requestAnimationFrame(animate);
-    return () => cancelAnimationFrame(frame);
-  }, [sparkles.length > 0]);
-
-  const spawnGemBurst = useCallback((cx: number, cy: number) => {
-    const particles: GemParticle[] = [];
-    for (let i = 0; i < 12; i++) {
-      const angle = (Math.PI * 2 * i) / 12 + (Math.random() - 0.5) * 0.5;
-      const speed = 3 + Math.random() * 5;
-      particles.push({
-        id: ++particleIdRef.current,
-        x: cx,
-        y: cy,
-        vx: Math.cos(angle) * speed,
-        vy: Math.sin(angle) * speed - 3,
-        emoji: GEM_EMOJIS[Math.floor(Math.random() * GEM_EMOJIS.length)],
-        life: 40 + Math.floor(Math.random() * 20),
-        maxLife: 60,
-        rotation: Math.random() * 360,
-        rotSpeed: (Math.random() - 0.5) * 15,
-        scale: 0.5 + Math.random() * 0.8,
-      });
+  function drawPalmTree(ctx: CanvasRenderingContext2D, baseX: number, baseY: number, trunkH: number, time: number, phaseOffset: number) {
+    const sway = Math.sin(time * 0.5 + phaseOffset) * 3;
+    const topX = baseX + sway;
+    const topY = baseY - trunkH;
+    // Trunk
+    ctx.beginPath();
+    ctx.moveTo(baseX - 4, baseY);
+    ctx.quadraticCurveTo(baseX + sway * 0.5 - 3, baseY - trunkH * 0.5, topX - 3, topY);
+    ctx.lineTo(topX + 3, topY);
+    ctx.quadraticCurveTo(baseX + sway * 0.5 + 3, baseY - trunkH * 0.5, baseX + 4, baseY);
+    ctx.closePath();
+    ctx.fillStyle = "rgba(20, 15, 10, 0.7)";
+    ctx.fill();
+    // Fronds
+    const frondCount = 5;
+    for (let i = 0; i < frondCount; i++) {
+      const angle = ((i / frondCount) * Math.PI * 1.5) - Math.PI * 0.75;
+      const frondSway = Math.sin(time * 0.7 + phaseOffset + i * 0.8) * 5;
+      const frondLen = trunkH * 0.6 + Math.sin(i * 1.2) * 10;
+      const endX = topX + Math.cos(angle) * frondLen + frondSway;
+      const endY = topY + Math.sin(angle) * frondLen * 0.5 + Math.abs(Math.cos(angle)) * 15;
+      const cpX = topX + Math.cos(angle) * frondLen * 0.5 + frondSway * 0.5;
+      const cpY = topY + Math.sin(angle) * frondLen * 0.2 - 10;
+      ctx.beginPath();
+      ctx.moveTo(topX, topY);
+      ctx.quadraticCurveTo(cpX, cpY, endX, endY);
+      ctx.strokeStyle = "rgba(15, 30, 15, 0.65)";
+      ctx.lineWidth = 3;
+      ctx.stroke();
     }
-    setGemParticles((prev) => [...prev, ...particles]);
+  }
+
+  // Generate a level
+  const generateLevel = useCallback((lvl: number): PatternLevel => {
+    const patternTypes: PatternType[] = ["AB", "AB", "ABB", "ABC", "ABB", "ABC", "AABB", "AABB", "ABCD", "ABCD"];
+    const pType = patternTypes[Math.min(lvl - 1, patternTypes.length - 1)];
+
+    const shuffled = [...GEM_DEFS].sort(() => Math.random() - 0.5);
+    let unit: GemDef[];
+    let reps: number;
+
+    switch (pType) {
+      case "AB":   unit = shuffled.slice(0, 2); reps = 3; break;
+      case "ABB":  unit = [shuffled[0], shuffled[1], shuffled[1]]; reps = 2; break;
+      case "ABC":  unit = shuffled.slice(0, 3); reps = 2; break;
+      case "AABB": unit = [shuffled[0], shuffled[0], shuffled[1], shuffled[1]]; reps = 2; break;
+      case "ABCD": unit = shuffled.slice(0, 4); reps = 2; break;
+      default:     unit = shuffled.slice(0, 2); reps = 3;
+    }
+
+    const sequence: GemDef[] = [];
+    for (let r = 0; r < reps; r++) {
+      for (const g of unit) sequence.push(g);
+    }
+
+    // Determine blank positions (in the last repetition, 1-2 blanks)
+    const unitLen = unit.length;
+    const numBlanks = lvl <= 3 ? 1 : Math.min(2, unitLen);
+    const lastRepStart = sequence.length - unitLen;
+    const possiblePositions: number[] = [];
+    for (let i = lastRepStart; i < sequence.length; i++) possiblePositions.push(i);
+    const shuffledPos = possiblePositions.sort(() => Math.random() - 0.5);
+    const blanks = shuffledPos.slice(0, numBlanks).sort((a, b) => a - b);
+
+    // Build options: correct answers + distractors
+    const correctGems = blanks.map(b => sequence[b]);
+    const correctIds = new Set(correctGems.map(g => g.id));
+    const distractors = GEM_DEFS.filter(g => !correctIds.has(g.id))
+      .sort(() => Math.random() - 0.5)
+      .slice(0, Math.min(3, GEM_DEFS.length - correctIds.size));
+
+    const uniqueMap = new Map<string, GemDef>();
+    for (const g of [...correctGems, ...distractors]) uniqueMap.set(g.id, g);
+    const options = [...uniqueMap.values()].sort(() => Math.random() - 0.5);
+
+    return { patternType: pType, unit, sequence, blanks, options };
   }, []);
 
-  const spawnSparkles = useCallback((cx: number, cy: number, count = 8) => {
-    const s: Sparkle[] = [];
-    for (let i = 0; i < count; i++) {
-      s.push({
-        id: ++particleIdRef.current,
-        x: cx + (Math.random() - 0.5) * 60,
-        y: cy + (Math.random() - 0.5) * 20,
-        vy: -(0.5 + Math.random() * 2),
-        life: 30 + Math.floor(Math.random() * 20),
-        maxLife: 50,
-        size: 8 + Math.random() * 14,
-      });
-    }
-    setSparkles((prev) => [...prev, ...s]);
-  }, []);
-
-  const spawnSmoke = useCallback((cx: number, cy: number) => {
-    const puffs = [];
-    for (let i = 0; i < 5; i++) {
-      puffs.push({ id: ++particleIdRef.current, x: cx + (Math.random() - 0.5) * 40, y: cy + (Math.random() - 0.5) * 20 });
-    }
-    setSmokePuffs(puffs);
-    setTimeout(() => setSmokePuffs([]), 800);
-  }, []);
-
-  const generateChallenge = useCallback(
-    (lvl: number): PatternChallenge => {
-      const symbolSet = ALL_SYMBOL_SETS[lvl % ALL_SYMBOL_SETS.length];
-      const unitLength = Math.min(2 + Math.floor(lvl / 3), 4);
-      const shuffled = [...symbolSet].sort(() => Math.random() - 0.5);
-      const pattern = shuffled.slice(0, unitLength);
-      const reps = Math.min(3 + Math.floor(lvl / 4), 5);
-      const fullSequence: PatternSymbol[] = [];
-      for (let r = 0; r < reps; r++) {
-        for (const sym of pattern) {
-          fullSequence.push(sym);
-        }
-      }
-
-      const numBlanks = Math.min(1 + Math.floor(lvl / 3), 4);
-      const startIdx = Math.max(unitLength, Math.floor(fullSequence.length / 2));
-      const possiblePositions: number[] = [];
-      for (let i = startIdx; i < fullSequence.length; i++) {
-        possiblePositions.push(i);
-      }
-
-      const blanks: number[] = [];
-      const shuffledPositions = possiblePositions.sort(() => Math.random() - 0.5);
-      for (let i = 0; i < Math.min(numBlanks, shuffledPositions.length); i++) {
-        blanks.push(shuffledPositions[i]);
-      }
-      blanks.sort((a, b) => a - b);
-
-      const displayed: (PatternSymbol | null)[] = fullSequence.map((sym, i) =>
-        blanks.includes(i) ? null : sym
-      );
-
-      const correctAnswers = blanks.map((b) => fullSequence[b]);
-      const allSymbols = symbolSet.filter(
-        (s) => !correctAnswers.some((c) => c.emoji === s.emoji)
-      );
-      const distractors = allSymbols
-        .sort(() => Math.random() - 0.5)
-        .slice(0, Math.min(3, allSymbols.length));
-
-      const options = [
-        ...new Map(
-          [...correctAnswers, ...distractors].map((s) => [s.emoji, s])
-        ).values(),
-      ].sort(() => Math.random() - 0.5);
-
-      return { pattern, displayed, blanks, currentBlank: 0, options };
-    },
-    []
-  );
-
-  const initLevel = useCallback(
-    (lvl: number) => {
-      const needed = Math.min(4 + Math.floor(lvl / 2), 8);
-      setPatternsNeeded(needed);
-      setPatternsCompleted(0);
-      setShowResult(null);
-      setShakeScreen(false);
-      setShowPatternUnit(false);
-      setFilledCell(null);
-      setWrongCell(null);
-      setChestOpen(false);
-      setGemParticles([]);
-      setSparkles([]);
-      setSmokePuffs([]);
-      setScrollUnfurl(false);
-
-      const ch = generateChallenge(lvl);
-      setChallenge(ch);
-
-      // Trigger scroll unfurl animation
-      setTimeout(() => setScrollUnfurl(true), 100);
-    },
-    [generateChallenge]
-  );
+  const initLevel = useCallback((lvl: number) => {
+    const patternLevel = generateLevel(lvl);
+    setCurrentLevel(patternLevel);
+    setFilledSlots({});
+    setCurrentBlankIndex(0);
+    setChestOpen(false);
+    setWrongShake(false);
+    setLockFlash(false);
+    setShowResult(null);
+    setMistakes(0);
+    setParticles([]);
+    dropZoneRefs.current = {};
+  }, [generateLevel]);
 
   const startGame = () => {
     setScreen("playing");
     setLevel(1);
     setScore(0);
-    setLives(3);
-    setTreasureCount(0);
+    setCompletedLevels([]);
     initLevel(1);
   };
 
   const nextLevel = () => {
-    const newLevel = level + 1;
-    setLevel(newLevel);
+    const newLvl = level + 1;
+    setLevel(newLvl);
     setScreen("playing");
-    initLevel(newLevel);
+    initLevel(newLvl);
   };
 
-  const handleOptionTap = useCallback(
-    (option: PatternSymbol) => {
-      if (!challenge || showResult) return;
+  // Spawn celebration particles
+  const spawnCelebration = useCallback((cx: number, cy: number) => {
+    const newParticles: Particle[] = [];
+    // Gold coins
+    for (let i = 0; i < 15; i++) {
+      const angle = (Math.PI * 2 * i) / 15 + (Math.random() - 0.5) * 0.5;
+      const speed = 3 + Math.random() * 6;
+      newParticles.push({
+        id: ++particleCounter,
+        x: cx, y: cy,
+        vx: Math.cos(angle) * speed,
+        vy: Math.sin(angle) * speed - 5,
+        life: 50 + Math.floor(Math.random() * 30),
+        maxLife: 80,
+        type: "coin",
+        rotation: Math.random() * 360,
+        rotSpeed: (Math.random() - 0.5) * 20,
+        scale: 0.6 + Math.random() * 0.6,
+        hue: 35 + Math.random() * 20,
+      });
+    }
+    // Sparkles
+    for (let i = 0; i < 20; i++) {
+      newParticles.push({
+        id: ++particleCounter,
+        x: cx + (Math.random() - 0.5) * 120,
+        y: cy + (Math.random() - 0.5) * 80,
+        vx: (Math.random() - 0.5) * 2,
+        vy: -(1 + Math.random() * 3),
+        life: 30 + Math.floor(Math.random() * 30),
+        maxLife: 60,
+        type: "sparkle",
+        rotation: 0,
+        rotSpeed: 0,
+        scale: 0.5 + Math.random() * 1,
+        hue: Math.random() * 60,
+      });
+    }
+    // Light rays
+    for (let i = 0; i < 8; i++) {
+      const angle = (Math.PI * 2 * i) / 8;
+      newParticles.push({
+        id: ++particleCounter,
+        x: cx, y: cy,
+        vx: Math.cos(angle) * 1.5,
+        vy: Math.sin(angle) * 1.5,
+        life: 25,
+        maxLife: 25,
+        type: "ray",
+        rotation: (angle * 180) / Math.PI,
+        rotSpeed: 0,
+        scale: 1,
+        hue: 45,
+      });
+    }
+    setParticles(prev => [...prev, ...newParticles]);
+  }, []);
 
-      const blankIdx = challenge.blanks[challenge.currentBlank];
-      const correctSymbol = challenge.pattern[blankIdx % challenge.pattern.length];
+  // Handle correct gem placement
+  const handleCorrectPlacement = useCallback((blankPos: number, gem: GemDef) => {
+    setFilledSlots(prev => ({ ...prev, [blankPos]: gem }));
+    const nextIdx = currentBlankIndex + 1;
 
-      if (option.emoji === correctSymbol.emoji) {
-        // Correct!
-        const newDisplayed = [...challenge.displayed];
-        newDisplayed[blankIdx] = option;
-        setFilledCell(blankIdx);
-        setTimeout(() => setFilledCell(null), 600);
-        spawnSparkles(50, 50, 6);
+    if (!currentLevel) return;
 
-        const nextBlank = challenge.currentBlank + 1;
+    if (nextIdx >= currentLevel.blanks.length) {
+      // Level complete!
+      const stars = mistakes === 0 ? 3 : mistakes === 1 ? 2 : 1;
+      setLevelStars(stars);
+      setScore(s => s + 50 * level * stars);
+      setChestOpen(true);
+      setShowResult("correct");
 
-        if (nextBlank >= challenge.blanks.length) {
-          // Pattern complete!
-          setScore((s) => s + 25 * level);
-          setTreasureCount((t) => t + 1);
-          setShowResult("correct");
-          setShowPatternUnit(true);
-          setChestOpen(true);
-          spawnGemBurst(50, 40);
-
-          const newCompleted = patternsCompleted + 1;
-          setPatternsCompleted(newCompleted);
-
-          setChallenge((prev) =>
-            prev ? { ...prev, displayed: newDisplayed, currentBlank: nextBlank } : null
-          );
-
-          setTimeout(() => {
-            setChestOpen(false);
-            if (newCompleted >= patternsNeeded) {
-              setScreen("levelComplete");
-            } else {
-              setShowResult(null);
-              setShowPatternUnit(false);
-              setScrollUnfurl(false);
-              const ch = generateChallenge(level);
-              setChallenge(ch);
-              setTimeout(() => setScrollUnfurl(true), 100);
-            }
-          }, 1800);
-        } else {
-          setChallenge({
-            ...challenge,
-            displayed: newDisplayed,
-            currentBlank: nextBlank,
-          });
-        }
-      } else {
-        // Wrong!
-        setWrongCell(blankIdx);
-        setShakeScreen(true);
-        spawnSmoke(50, 50);
-        setTimeout(() => {
-          setShakeScreen(false);
-          setWrongCell(null);
-        }, 500);
-        setLives((l) => {
-          const newL = l - 1;
-          if (newL <= 0) {
-            setTimeout(() => setScreen("gameOver"), 600);
-          }
-          return newL;
-        });
+      // Get chest position for particles
+      const container = containerRef.current;
+      if (container) {
+        const rect = container.getBoundingClientRect();
+        spawnCelebration(rect.width / 2, rect.height * 0.35);
       }
-    },
-    [challenge, showResult, level, patternsCompleted, patternsNeeded, generateChallenge, spawnGemBurst, spawnSparkles, spawnSmoke]
-  );
 
-  const livesDisplay = Array.from({ length: 3 }, (_, i) =>
-    i < lives ? "\u2764\uFE0F" : "\uD83E\uDD0D"
-  );
+      setCompletedLevels(prev => [...prev, level]);
 
-  // Shared ocean background used across all screens
-  const OceanBg = (
-    <div className="pp-ocean-bg" ref={containerRef}>
-      <canvas ref={canvasRef} className="pp-canvas" />
-      {/* Ship silhouette */}
-      <div className="pp-ship-silhouette">
-        <div className="pp-ship-body">
-          <span className="pp-ship-emoji">{"\u26F5"}</span>
-        </div>
-      </div>
-      {/* Floating debris */}
-      {debrisRef.current.map((d, i) => (
-        <div
-          key={i}
-          className="pp-debris"
-          style={{
-            left: `${d.x}%`,
-            top: `${d.y}%`,
-            transform: `scale(${d.scale})`,
-            animationDelay: `${i * 0.7}s`,
-            animationDuration: `${3 + i * 0.5}s`,
-          }}
-        >
-          {d.emoji}
-        </div>
-      ))}
-      {/* Lantern glow */}
-      <div className="pp-lantern-glow" />
+      setTimeout(() => {
+        if (level >= 10) {
+          setScreen("gameComplete");
+        } else {
+          setScreen("levelComplete");
+        }
+      }, 2200);
+    } else {
+      setCurrentBlankIndex(nextIdx);
+    }
+  }, [currentBlankIndex, currentLevel, level, mistakes, spawnCelebration]);
+
+  // Handle wrong gem placement
+  const handleWrongPlacement = useCallback(() => {
+    setWrongShake(true);
+    setLockFlash(true);
+    setMistakes(m => m + 1);
+    setTimeout(() => { setWrongShake(false); setLockFlash(false); }, 600);
+  }, []);
+
+  // Drag handlers
+  const handleDragStart = (
+    e: React.MouseEvent<HTMLDivElement> | React.TouchEvent<HTMLDivElement>,
+    gem: GemDef,
+    optionIndex: number
+  ) => {
+    e.preventDefault();
+    e.stopPropagation();
+    const container = containerRef.current;
+    if (!container) return;
+    const rect = container.getBoundingClientRect();
+    const clientX = "touches" in e ? e.touches[0].clientX : e.clientX;
+    const clientY = "touches" in e ? e.touches[0].clientY : e.clientY;
+    const x = clientX - rect.left;
+    const y = clientY - rect.top;
+    setDragState({
+      gemId: gem.id,
+      originIndex: optionIndex,
+      startX: x,
+      startY: y,
+      currentX: x,
+      currentY: y,
+      offsetX: 0,
+      offsetY: 0,
+    });
+  };
+
+  const handleDragMove = useCallback((e: MouseEvent | TouchEvent) => {
+    if (!dragState || !containerRef.current) return;
+    e.preventDefault();
+    const rect = containerRef.current.getBoundingClientRect();
+    const clientX = "touches" in e ? e.touches[0].clientX : e.clientX;
+    const clientY = "touches" in e ? e.touches[0].clientY : e.clientY;
+    const x = clientX - rect.left;
+    const y = clientY - rect.top;
+    setDragState(prev => prev ? { ...prev, currentX: x, currentY: y } : null);
+  }, [dragState]);
+
+  const handleDragEnd = useCallback(() => {
+    if (!dragState || !currentLevel || !containerRef.current) {
+      setDragState(null);
+      return;
+    }
+
+    const currentBlankPos = currentLevel.blanks[currentBlankIndex];
+    const dropZone = dropZoneRefs.current[currentBlankPos];
+    const container = containerRef.current;
+
+    if (dropZone && container) {
+      const containerRect = container.getBoundingClientRect();
+      const dropRect = dropZone.getBoundingClientRect();
+      const dropCenterX = dropRect.left + dropRect.width / 2 - containerRect.left;
+      const dropCenterY = dropRect.top + dropRect.height / 2 - containerRect.top;
+      const dx = dragState.currentX - dropCenterX;
+      const dy = dragState.currentY - dropCenterY;
+      const dist = Math.sqrt(dx * dx + dy * dy);
+
+      if (dist < 70) {
+        // Dropped on target
+        const draggedGem = GEM_DEFS.find(g => g.id === dragState.gemId);
+        const correctGem = currentLevel.sequence[currentBlankPos];
+        if (draggedGem && draggedGem.id === correctGem.id) {
+          handleCorrectPlacement(currentBlankPos, draggedGem);
+        } else {
+          handleWrongPlacement();
+        }
+        setDragState(null);
+        return;
+      }
+    }
+
+    // Dropped outside target - bounce back
+    setDragState(null);
+  }, [dragState, currentLevel, currentBlankIndex, handleCorrectPlacement, handleWrongPlacement]);
+
+  // Drag event listeners
+  useEffect(() => {
+    if (!dragState) return;
+    const move = (e: MouseEvent | TouchEvent) => handleDragMove(e);
+    const end = () => handleDragEnd();
+    window.addEventListener("mousemove", move);
+    window.addEventListener("mouseup", end);
+    window.addEventListener("touchmove", move, { passive: false });
+    window.addEventListener("touchend", end);
+    return () => {
+      window.removeEventListener("mousemove", move);
+      window.removeEventListener("mouseup", end);
+      window.removeEventListener("touchmove", move);
+      window.removeEventListener("touchend", end);
+    };
+  }, [dragState, handleDragMove, handleDragEnd]);
+
+  // Render a CSS gem
+  const renderGem = (gem: GemDef, size: number, isDragging = false, extraClass = "") => (
+    <div
+      className={`pp-gem ${isDragging ? "dragging" : ""} ${extraClass}`}
+      style={{
+        width: size,
+        height: size,
+        borderRadius: gem.borderRadius,
+        background: `radial-gradient(circle at 35% 30%, ${gem.lightColor} 0%, ${gem.baseColor} 45%, ${gem.darkColor} 100%)`,
+        boxShadow: `0 6px 20px ${gem.glowColor}, inset 0 -6px 15px ${gem.darkColor}40, inset 0 2px 8px ${gem.lightColor}80`,
+        "--gem-glow": gem.glowColor,
+      } as React.CSSProperties}
+    >
+      <div className="pp-gem-shine" />
+      <div className="pp-gem-facet" />
     </div>
   );
 
   // ===================== INTRO =====================
   if (screen === "intro") {
     return (
-      <div className="pp-game">
+      <div className="pp-game" ref={containerRef}>
         <style>{ppStyles}</style>
-        {OceanBg}
+        <canvas ref={canvasRef} className="pp-canvas" />
         <div className="pp-intro">
           <div className="pp-intro-content">
-            {/* Animated ship sailing in */}
-            <div
-              className="pp-intro-ship"
-              style={{ left: `${introShipX}%` }}
-            >
-              <span className="pp-big-ship">{"\u26F5"}</span>
+            <div className="pp-intro-chest">
+              <div className="pp-chest-large">
+                <div className="pp-chest-lid" />
+                <div className="pp-chest-body-box" />
+                <div className="pp-chest-lock-deco" />
+              </div>
+              <div className="pp-intro-gems">
+                {GEM_DEFS.slice(0, 4).map((gem, i) => (
+                  <div key={gem.id} className="pp-intro-gem" style={{ animationDelay: `${i * 0.2}s` }}>
+                    {renderGem(gem, 40)}
+                  </div>
+                ))}
+              </div>
             </div>
             <div className="pp-logo">
-              <span className="pp-logo-icon">{"\u2620\uFE0F"}</span>
               <h1>Pattern Pirates</h1>
-              <span className="pp-logo-icon">{"\uD83C\uDFF4\u200D\u2620\uFE0F"}</span>
             </div>
-            <p className="pp-tagline">Crack the code, find the treasure!</p>
+            <p className="pp-tagline">Crack the Pattern, Unlock the Treasure!</p>
             <div className="pp-instructions-card">
-              <h3>How to Plunder</h3>
+              <h3>How to Play</h3>
               <div className="pp-instruction">
                 <div className="pp-instruction-visual">
-                  <span className="pp-coin-cell">{"\uD83D\uDD34"}</span>
-                  <span className="pp-coin-cell">{"\uD83D\uDD35"}</span>
-                  <span className="pp-coin-cell">{"\uD83D\uDD34"}</span>
-                  <span className="pp-coin-cell">{"\uD83D\uDD35"}</span>
-                  <span className="pp-coin-cell blank">?</span>
+                  {renderGem(GEM_DEFS[0], 32)}
+                  {renderGem(GEM_DEFS[1], 32)}
+                  {renderGem(GEM_DEFS[0], 32)}
+                  {renderGem(GEM_DEFS[1], 32)}
+                  <div className="pp-blank-preview">?</div>
                 </div>
-                <p>
-                  Spot the <span className="pp-hl-gold">REPEATING PATTERN</span>
-                </p>
+                <p>Spot the <span className="pp-hl-gold">REPEATING PATTERN</span></p>
               </div>
               <div className="pp-instruction">
                 <div className="pp-instruction-visual">
-                  <span className="pp-coin-cell blank">?</span>
-                  <span className="pp-arrow">{"\u2192"}</span>
-                  <span className="pp-coin-cell">{"\uD83D\uDD34"}</span>
+                  {renderGem(GEM_DEFS[0], 32)}
+                  <span className="pp-drag-arrow">DRAG</span>
+                  <div className="pp-blank-preview filled">
+                    <div className="pp-blank-fill" />
+                  </div>
                 </div>
-                <p>
-                  <strong>TAP</strong> the right symbol to{" "}
-                  <span className="pp-hl-green">FILL</span> the gaps!
-                </p>
+                <p><strong>DRAG</strong> the correct gem to <span className="pp-hl-green">FILL</span> the gap!</p>
               </div>
               <div className="pp-instruction">
                 <div className="pp-instruction-visual">
-                  <span className="pp-treasure-icons">{"\uD83D\uDC8E"}{"\uD83E\uDE99"}{"\uD83D\uDD11"}</span>
+                  <div className="pp-mini-chest" />
+                  <span className="pp-burst-icon">TREASURE</span>
                 </div>
-                <p>
-                  Complete patterns to unlock{" "}
-                  <span className="pp-hl-gold">TREASURE!</span>
-                </p>
+                <p>Unlock the <span className="pp-hl-gold">TREASURE CHEST!</span></p>
               </div>
             </div>
             <button className="pp-start-btn" onClick={startGame}>
-              <span className="pp-btn-icon">{"\u2693"}</span>
               Set Sail!
-              <span className="pp-btn-icon">{"\u2693"}</span>
             </button>
           </div>
         </div>
@@ -745,33 +677,26 @@ export default function PatternPirates({ onExit }: PatternPiratesProps) {
   // ===================== LEVEL COMPLETE =====================
   if (screen === "levelComplete") {
     return (
-      <div className="pp-game">
+      <div className="pp-game" ref={containerRef}>
         <style>{ppStyles}</style>
-        {OceanBg}
+        <canvas ref={canvasRef} className="pp-canvas" />
         <div className="pp-complete">
           <div className="pp-complete-content">
-            <div className="pp-treasure-island">
-              <span className="pp-island-emoji">{"\uD83C\uDFDD\uFE0F"}</span>
+            <div className="pp-chest-celebration">
+              <div className="pp-chest-large open">
+                <div className="pp-chest-lid" />
+                <div className="pp-chest-body-box" />
+                <div className="pp-chest-glow-rays" />
+              </div>
             </div>
-            <h1 className="pp-complete-title">
-              {"\uD83C\uDFF4\u200D\u2620\uFE0F"} Treasure Found! {"\uD83D\uDC8E"}
-            </h1>
-            <p className="pp-complete-subtitle">Level {level} Complete!</p>
-            <div className="pp-treasure-chest-area">
-              <div className="pp-big-chest open">
-                <span className="pp-chest-emoji">{"\uD83E\uDDF0"}</span>
-              </div>
-              <div className="pp-treasure-display">
-                {Array.from({ length: Math.min(treasureCount, 12) }, (_, i) => (
-                  <span
-                    key={i}
-                    className="pp-treasure-piece"
-                    style={{ animationDelay: `${i * 0.08}s` }}
-                  >
-                    {GEM_EMOJIS[i % GEM_EMOJIS.length]}
-                  </span>
-                ))}
-              </div>
+            <h1 className="pp-complete-title">Treasure Unlocked!</h1>
+            <p className="pp-complete-subtitle">Level {level} Complete</p>
+            <div className="pp-stars-display">
+              {[1, 2, 3].map(s => (
+                <div key={s} className={`pp-star ${s <= levelStars ? "earned" : "empty"}`} style={{ animationDelay: `${s * 0.2}s` }}>
+                  <div className="pp-star-shape" />
+                </div>
+              ))}
             </div>
             <div className="pp-score-card">
               <div className="pp-score-item">
@@ -779,18 +704,15 @@ export default function PatternPirates({ onExit }: PatternPiratesProps) {
                 <span className="pp-score-value">{score}</span>
               </div>
               <div className="pp-score-item">
-                <span className="pp-score-label">Treasure</span>
-                <span className="pp-score-value">{treasureCount}</span>
+                <span className="pp-score-label">Level Stars</span>
+                <span className="pp-score-value">{levelStars}/3</span>
               </div>
             </div>
             <div className="pp-complete-buttons">
               <button className="pp-next-btn" onClick={nextLevel}>
-                Level {level + 1} {"\u2192"}
+                Level {level + 1}
               </button>
-              <button
-                className="pp-menu-btn"
-                onClick={() => (onExit ? onExit() : setScreen("intro"))}
-              >
+              <button className="pp-menu-btn" onClick={() => (onExit ? onExit() : setScreen("intro"))}>
                 Main Menu
               </button>
             </div>
@@ -800,41 +722,42 @@ export default function PatternPirates({ onExit }: PatternPiratesProps) {
     );
   }
 
-  // ===================== GAME OVER =====================
-  if (screen === "gameOver") {
+  // ===================== GAME COMPLETE =====================
+  if (screen === "gameComplete") {
+    const totalStars = completedLevels.length * 2 + levelStars; // approximate
     return (
-      <div className="pp-game">
+      <div className="pp-game" ref={containerRef}>
         <style>{ppStyles}</style>
-        {OceanBg}
+        <canvas ref={canvasRef} className="pp-canvas" />
         <div className="pp-complete">
           <div className="pp-complete-content">
-            <div className="pp-sunk-ship">
-              <span className="pp-sunk-emoji">{"\u26F5"}</span>
+            <div className="pp-crown-area">
+              <div className="pp-crown" />
             </div>
-            <h1 className="pp-complete-title">
-              {"\u2693"} Ship Sunk!
-            </h1>
-            <p className="pp-complete-subtitle">
-              You completed {patternsCompleted} patterns on Level {level}
-            </p>
+            <h1 className="pp-complete-title">Master Pirate!</h1>
+            <p className="pp-complete-subtitle">All 10 Levels Complete!</p>
+            <div className="pp-final-gems">
+              {GEM_DEFS.map((gem, i) => (
+                <div key={gem.id} className="pp-final-gem" style={{ animationDelay: `${i * 0.15}s` }}>
+                  {renderGem(gem, 50)}
+                </div>
+              ))}
+            </div>
             <div className="pp-score-card">
               <div className="pp-score-item">
                 <span className="pp-score-label">Final Score</span>
                 <span className="pp-score-value">{score}</span>
               </div>
               <div className="pp-score-item">
-                <span className="pp-score-label">Treasure Found</span>
-                <span className="pp-score-value">{treasureCount}</span>
+                <span className="pp-score-label">Total Stars</span>
+                <span className="pp-score-value">{totalStars}</span>
               </div>
             </div>
             <div className="pp-complete-buttons">
               <button className="pp-next-btn" onClick={startGame}>
-                Set Sail Again {"\uD83D\uDD04"}
+                Play Again
               </button>
-              <button
-                className="pp-menu-btn"
-                onClick={() => (onExit ? onExit() : setScreen("intro"))}
-              >
+              <button className="pp-menu-btn" onClick={() => (onExit ? onExit() : setScreen("intro"))}>
                 Main Menu
               </button>
             </div>
@@ -845,186 +768,140 @@ export default function PatternPirates({ onExit }: PatternPiratesProps) {
   }
 
   // ===================== PLAYING =====================
+  if (!currentLevel) return null;
+
+  const currentBlankPos = currentLevel.blanks[currentBlankIndex] ?? -1;
+  const draggedGemDef = dragState ? GEM_DEFS.find(g => g.id === dragState.gemId) : null;
+
   return (
-    <div className="pp-game">
+    <div className="pp-game" ref={containerRef}>
       <style>{ppStyles}</style>
-      {OceanBg}
-      <div className={`pp-play ${shakeScreen ? "pp-shake" : ""}`}>
+      <canvas ref={canvasRef} className="pp-canvas" />
+      <div className={`pp-play ${wrongShake ? "pp-shake" : ""}`}>
         {/* Header */}
         <div className="pp-header">
           <div className="pp-header-left">
-            <button
-              className="pp-back-btn"
-              onClick={() => (onExit ? onExit() : setScreen("intro"))}
-            >
-              {"\u2190"}
+            <button className="pp-back-btn" onClick={() => (onExit ? onExit() : setScreen("intro"))}>
+              &larr;
             </button>
-            <div className="pp-level-badge">
-              {"\u2693"} Level {level}
-            </div>
+            <div className="pp-level-badge">Level {level}</div>
           </div>
           <div className="pp-header-center">
-            <span className="pp-lives">{livesDisplay.join(" ")}</span>
+            <div className="pp-pattern-label">{currentLevel.patternType} Pattern</div>
           </div>
           <div className="pp-header-right">
-            <div className="pp-treasure-badge">
-              {"\uD83E\uDDF0"} {treasureCount}
+            <div className="pp-score-badge-play">{score}</div>
+          </div>
+        </div>
+
+        {/* Island + Chest Area */}
+        <div className="pp-island-area">
+          <div className="pp-island-ground" />
+          <div className="pp-island-palm left">
+            <div className="pp-palm-trunk" />
+            <div className="pp-palm-fronds" />
+          </div>
+          <div className="pp-island-palm right">
+            <div className="pp-palm-trunk" />
+            <div className="pp-palm-fronds" />
+          </div>
+
+          {/* Treasure Chest */}
+          <div className={`pp-game-chest ${chestOpen ? "open" : ""} ${lockFlash ? "lock-flash" : ""}`}>
+            <div className="pp-chest-lid" />
+            <div className="pp-chest-body-box" />
+            <div className="pp-chest-lock-plate">
+              <div className="pp-lock-keyhole" />
             </div>
-            <div className="pp-score-badge-play">
-              {"\u2B50"} {score}
+            {chestOpen && <div className="pp-chest-glow-rays" />}
+            {chestOpen && <div className="pp-chest-light-beam" />}
+          </div>
+
+          {/* Pattern Chain around chest */}
+          <div className="pp-pattern-chain">
+            <div className="pp-chain-line" />
+            <div className="pp-pattern-gems">
+              {currentLevel.sequence.map((gem, i) => {
+                const isBlank = currentLevel.blanks.includes(i);
+                const isCurrent = i === currentBlankPos;
+                const isFilled = filledSlots[i] !== undefined;
+                const filledGem = filledSlots[i];
+                const showResult_ = showResult === "correct";
+
+                return (
+                  <div
+                    key={i}
+                    className={`pp-chain-slot ${isBlank && !isFilled ? "blank" : "filled"} ${isCurrent && !isFilled ? "active" : ""} ${showResult_ ? "all-correct" : ""}`}
+                    ref={el => { if (isBlank && !isFilled) dropZoneRefs.current[i] = el; }}
+                  >
+                    {!isBlank && renderGem(gem, 52)}
+                    {isBlank && isFilled && filledGem && renderGem(filledGem, 52, false, "just-placed")}
+                    {isBlank && !isFilled && (
+                      <div className={`pp-empty-slot ${isCurrent ? "pulse" : ""}`}>
+                        <span className="pp-slot-question">?</span>
+                      </div>
+                    )}
+                    {isBlank && !isFilled && isCurrent && <div className="pp-drop-indicator" />}
+                  </div>
+                );
+              })}
             </div>
           </div>
         </div>
 
-        {/* Progress bar */}
-        <div className="pp-progress-bar">
-          <div className="pp-progress-fill" style={{ width: `${(patternsCompleted / patternsNeeded) * 100}%` }} />
-          <span className="pp-progress-text">
-            {patternsCompleted} / {patternsNeeded} maps decoded
-          </span>
+        {/* Gem Tray */}
+        <div className="pp-gem-tray" ref={gemTrayRef}>
+          <p className="pp-tray-label">Drag the correct gem:</p>
+          <div className="pp-tray-gems">
+            {currentLevel.options.map((gem, i) => {
+              const isBeingDragged = dragState?.gemId === gem.id;
+              return (
+                <div
+                  key={gem.id}
+                  className={`pp-tray-gem ${isBeingDragged ? "dragging-source" : ""}`}
+                  onMouseDown={(e) => handleDragStart(e, gem, i)}
+                  onTouchStart={(e) => handleDragStart(e, gem, i)}
+                >
+                  {renderGem(gem, 70)}
+                  <span className="pp-gem-name">{gem.name}</span>
+                </div>
+              );
+            })}
+          </div>
         </div>
 
-        {/* Treasure chest indicator */}
-        <div className={`pp-chest-indicator ${chestOpen ? "open" : ""}`}>
-          <span className="pp-chest-icon">{chestOpen ? "\uD83E\uDDF0" : "\uD83E\uDDF0"}</span>
-          {chestOpen && <div className="pp-chest-rays" />}
-        </div>
+        {/* Dragged gem overlay */}
+        {dragState && draggedGemDef && (
+          <div
+            className="pp-drag-ghost"
+            style={{
+              left: dragState.currentX,
+              top: dragState.currentY,
+            }}
+          >
+            {renderGem(draggedGemDef, 80, true)}
+          </div>
+        )}
 
-        {/* Gem particles */}
-        {gemParticles.map((p) => (
+        {/* Particles */}
+        {particles.map(p => (
           <div
             key={p.id}
-            className="pp-gem-particle"
+            className={`pp-particle pp-particle-${p.type}`}
             style={{
-              left: `${p.x}%`,
-              top: `${p.y}%`,
+              left: p.x,
+              top: p.y,
               transform: `rotate(${p.rotation}deg) scale(${p.scale * (p.life / p.maxLife)})`,
               opacity: p.life / p.maxLife,
             }}
-          >
-            {p.emoji}
-          </div>
-        ))}
-
-        {/* Sparkles */}
-        {sparkles.map((s) => (
-          <div
-            key={s.id}
-            className="pp-sparkle"
-            style={{
-              left: `${s.x}%`,
-              top: `${s.y}%`,
-              fontSize: `${s.size}px`,
-              opacity: s.life / s.maxLife,
-            }}
-          >
-            {"\u2728"}
-          </div>
-        ))}
-
-        {/* Smoke puffs */}
-        {smokePuffs.map((p) => (
-          <div
-            key={p.id}
-            className="pp-smoke-puff"
-            style={{ left: `${p.x}%`, top: `${p.y}%` }}
           />
         ))}
 
-        {/* Main pattern area */}
-        {challenge && (
-          <div className="pp-pattern-area">
-            {/* Treasure map / scroll */}
-            <div className={`pp-scroll ${scrollUnfurl ? "unfurled" : ""}`}>
-              <div className="pp-scroll-top-rod" />
-              <div className="pp-scroll-body">
-                <div className="pp-scroll-header">
-                  <span className="pp-map-x">{"\u2620\uFE0F"}</span>
-                  <span className="pp-map-title">Decode the Map</span>
-                  <span className="pp-map-x">{"\u2620\uFE0F"}</span>
-                </div>
-
-                {/* Pattern display as golden coins */}
-                <div className="pp-pattern-strip">
-                  {challenge.displayed.map((sym, i) => {
-                    const isBlank = sym === null;
-                    const isCurrentBlank =
-                      isBlank && challenge.blanks[challenge.currentBlank] === i;
-                    const isFutureBlank = isBlank && !isCurrentBlank;
-                    const isFilled = filledCell === i;
-                    const isWrong = wrongCell === i;
-
-                    return (
-                      <div
-                        key={i}
-                        className={`pp-coin ${isBlank ? "blank" : "filled"} ${
-                          isCurrentBlank ? "active" : ""
-                        } ${isFutureBlank ? "future" : ""} ${
-                          isFilled ? "just-filled" : ""
-                        } ${isWrong ? "wrong" : ""} ${
-                          showResult === "correct" ? "all-correct" : ""
-                        }`}
-                      >
-                        <div className="pp-coin-inner">
-                          {sym ? (
-                            <span className="pp-coin-emoji">{sym.emoji}</span>
-                          ) : (
-                            <span className="pp-coin-question">?</span>
-                          )}
-                        </div>
-                        {isFilled && <div className="pp-coin-flash" />}
-                      </div>
-                    );
-                  })}
-                </div>
-
-                {/* Pattern unit reveal */}
-                {showPatternUnit && challenge.pattern && (
-                  <div className="pp-unit-reveal">
-                    <span className="pp-unit-label">{"\uD83D\uDD04"} Repeating unit:</span>
-                    <div className="pp-unit-symbols">
-                      {challenge.pattern.map((sym, i) => (
-                        <span key={i} className="pp-unit-sym">{sym.emoji}</span>
-                      ))}
-                    </div>
-                    <div className="pp-unit-arrows">
-                      {challenge.pattern.map((_, i) => (
-                        <span key={i} className="pp-unit-arrow">{"\u2191"}</span>
-                      ))}
-                    </div>
-                  </div>
-                )}
-              </div>
-              <div className="pp-scroll-bottom-rod" />
-            </div>
-
-            {/* Options as treasure items */}
-            <div className="pp-options">
-              <p className="pp-options-label">{"\uD83E\uDE99"} Choose the missing piece:</p>
-              <div className="pp-options-grid">
-                {challenge.options.map((opt) => (
-                  <button
-                    key={opt.emoji}
-                    className="pp-option-btn"
-                    onClick={() => handleOptionTap(opt)}
-                    disabled={showResult !== null}
-                  >
-                    <div className="pp-option-crate">
-                      <span className="pp-option-emoji">{opt.emoji}</span>
-                    </div>
-                    <span className="pp-option-name">{opt.name}</span>
-                  </button>
-                ))}
-              </div>
-            </div>
-
-            {/* Result overlay */}
-            {showResult === "correct" && (
-              <div className="pp-result-correct">
-                <div className="pp-result-burst" />
-                <span className="pp-result-text">{"\uD83C\uDF89"} Treasure Unlocked! {"\uD83D\uDC8E"}</span>
-              </div>
-            )}
+        {/* Result overlay */}
+        {showResult === "correct" && (
+          <div className="pp-result-overlay">
+            <div className="pp-result-burst" />
+            <span className="pp-result-text">Treasure Unlocked!</span>
           </div>
         )}
       </div>
@@ -1042,69 +919,69 @@ const ppStyles = `
     font-family: 'Nunito', sans-serif;
     overflow: hidden;
     position: relative;
-    background: linear-gradient(180deg, #030818 0%, #0a1628 30%, #0c1e3a 60%, #0a1628 100%);
-  }
-
-  /* ==================== OCEAN BACKGROUND ==================== */
-
-  .pp-ocean-bg {
-    position: absolute; inset: 0; pointer-events: none; z-index: 0; overflow: hidden;
+    background: linear-gradient(180deg, #020715 0%, #071428 30%, #0a1e3a 55%, #051020 100%);
   }
 
   .pp-canvas {
-    position: absolute; inset: 0; width: 100%; height: 100%;
+    position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0;
   }
 
-  .pp-ship-silhouette {
-    position: absolute; bottom: 18%; left: 12%;
-    animation: ppShipRock 4s ease-in-out infinite;
-    transform-origin: center bottom;
-    opacity: 0.25;
-    filter: brightness(0.3);
+  /* ==================== GEM RENDERING ==================== */
+
+  .pp-gem {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    cursor: grab;
+    flex-shrink: 0;
   }
 
-  .pp-ship-emoji { font-size: clamp(2.5rem, 6vw, 4rem); }
-
-  @keyframes ppShipRock {
-    0%, 100% { transform: rotate(-2deg) translateY(0px); }
-    25% { transform: rotate(1deg) translateY(-3px); }
-    50% { transform: rotate(-1deg) translateY(2px); }
-    75% { transform: rotate(2deg) translateY(-2px); }
+  .pp-gem:hover {
+    transform: scale(1.08);
   }
 
-  .pp-debris {
-    position: absolute; font-size: 1.2rem; opacity: 0.2;
-    animation: ppDebrisFloat 5s ease-in-out infinite;
+  .pp-gem.dragging {
+    cursor: grabbing;
+    transform: scale(1.2);
+    filter: brightness(1.2);
+    z-index: 1000;
+  }
+
+  .pp-gem-shine {
+    position: absolute;
+    top: 12%;
+    left: 18%;
+    width: 35%;
+    height: 22%;
+    background: radial-gradient(ellipse, rgba(255,255,255,0.7) 0%, rgba(255,255,255,0.2) 50%, transparent 80%);
+    border-radius: 50%;
     pointer-events: none;
   }
 
-  @keyframes ppDebrisFloat {
-    0%, 100% { transform: translateY(0) rotate(0deg); }
-    25% { transform: translateY(-4px) rotate(3deg); }
-    50% { transform: translateY(2px) rotate(-2deg); }
-    75% { transform: translateY(-2px) rotate(1deg); }
-  }
-
-  .pp-lantern-glow {
-    position: absolute; top: 5%; left: 50%; transform: translateX(-50%);
-    width: 80%; height: 50%;
-    background: radial-gradient(ellipse at 50% 20%,
-      rgba(251, 191, 36, 0.04) 0%,
-      rgba(251, 191, 36, 0.01) 40%,
-      transparent 70%
-    );
+  .pp-gem-facet {
+    position: absolute;
+    bottom: 18%;
+    right: 15%;
+    width: 20%;
+    height: 15%;
+    background: radial-gradient(ellipse, rgba(255,255,255,0.25) 0%, transparent 70%);
+    border-radius: 50%;
     pointer-events: none;
-    animation: ppLanternFlicker 3s ease-in-out infinite;
   }
 
-  @keyframes ppLanternFlicker {
-    0%, 100% { opacity: 0.8; }
-    30% { opacity: 1; }
-    50% { opacity: 0.7; }
-    70% { opacity: 0.95; }
+  .pp-gem.just-placed {
+    animation: ppGemPlace 0.5s ease;
   }
 
-  /* ==================== INTRO SCREEN ==================== */
+  @keyframes ppGemPlace {
+    0% { transform: scale(0.3) rotate(-30deg); opacity: 0; }
+    50% { transform: scale(1.25) rotate(5deg); opacity: 1; }
+    100% { transform: scale(1) rotate(0deg); opacity: 1; }
+  }
+
+  /* ==================== INTRO ==================== */
 
   .pp-intro {
     position: relative; z-index: 10;
@@ -1113,85 +990,314 @@ const ppStyles = `
   }
 
   .pp-intro-content {
-    position: relative; z-index: 10; text-align: center; padding: 2rem; max-width: 500px;
+    position: relative; z-index: 10; text-align: center;
+    padding: 1.5rem; max-width: 480px; width: 100%;
   }
 
-  .pp-intro-ship {
-    position: absolute; top: 10%;
-    transition: left 0.1s linear;
-    font-size: 1rem;
-    animation: ppIntroShipBob 3s ease-in-out infinite;
+  .pp-intro-chest {
+    margin-bottom: 1rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .pp-intro-gems {
+    display: flex;
+    justify-content: center;
+    gap: 0.6rem;
+    margin-top: -10px;
+    position: relative;
     z-index: 5;
   }
 
-  .pp-big-ship { font-size: clamp(3rem, 8vw, 5rem); filter: drop-shadow(0 0 20px rgba(251, 191, 36, 0.3)); }
-
-  @keyframes ppIntroShipBob {
-    0%, 100% { transform: translateY(0) rotate(-2deg); }
-    50% { transform: translateY(-8px) rotate(2deg); }
+  .pp-intro-gem {
+    animation: ppIntroGemFloat 3s ease-in-out infinite;
   }
+
+  @keyframes ppIntroGemFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+
+  /* ==================== TREASURE CHEST (CSS) ==================== */
+
+  .pp-chest-large {
+    width: 180px;
+    height: 130px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: ppChestIdle 4s ease-in-out infinite;
+  }
+
+  @keyframes ppChestIdle {
+    0%, 100% { transform: rotate(-0.5deg); }
+    50% { transform: rotate(0.5deg); }
+  }
+
+  .pp-chest-lid {
+    width: 100%;
+    height: 40%;
+    background: linear-gradient(180deg, #c67a28 0%, #a05a15 30%, #8b4513 60%, #6d3410 100%);
+    border-radius: 12px 12px 0 0;
+    position: relative;
+    z-index: 2;
+    box-shadow: inset 0 2px 4px rgba(255, 200, 100, 0.3), inset 0 -3px 6px rgba(0, 0, 0, 0.3);
+    transition: transform 0.4s ease;
+    transform-origin: center bottom;
+  }
+
+  .pp-chest-lid::before {
+    content: '';
+    position: absolute;
+    top: 4px; left: 8px; right: 8px; height: 3px;
+    background: linear-gradient(90deg, transparent, rgba(255, 200, 100, 0.4), transparent);
+    border-radius: 2px;
+  }
+
+  .pp-chest-lid::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    right: 5%;
+    height: 6px;
+    background: linear-gradient(90deg,
+      #b8860b 0%, #daa520 15%, #b8860b 30%, #daa520 50%, #b8860b 70%, #daa520 85%, #b8860b 100%);
+    border-radius: 3px;
+    transform: translateY(-50%);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+  }
+
+  .pp-chest-large.open .pp-chest-lid {
+    transform: rotateX(-110deg) translateY(-10px);
+  }
+
+  .pp-chest-body-box {
+    width: 100%;
+    flex: 1;
+    background: linear-gradient(180deg, #8b4513 0%, #6d3410 40%, #5a2a0c 100%);
+    border-radius: 0 0 8px 8px;
+    position: relative;
+    box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.4), 0 8px 25px rgba(0, 0, 0, 0.5);
+  }
+
+  .pp-chest-body-box::before {
+    content: '';
+    position: absolute;
+    bottom: 6px; left: 5%; right: 5%; height: 6px;
+    background: linear-gradient(90deg,
+      #b8860b 0%, #daa520 15%, #b8860b 30%, #daa520 50%, #b8860b 70%, #daa520 85%, #b8860b 100%);
+    border-radius: 3px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+  }
+
+  .pp-chest-body-box::after {
+    content: '';
+    position: absolute;
+    top: 3px; left: 3px; right: 3px; bottom: 3px;
+    border: 1px solid rgba(255, 200, 100, 0.08);
+    border-radius: 0 0 6px 6px;
+    background: repeating-linear-gradient(
+      90deg,
+      transparent 0px,
+      transparent 18px,
+      rgba(0, 0, 0, 0.08) 18px,
+      rgba(0, 0, 0, 0.08) 20px
+    );
+    pointer-events: none;
+  }
+
+  .pp-chest-lock-deco {
+    position: absolute;
+    bottom: 42%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 28px;
+    height: 22px;
+    background: radial-gradient(circle at 50% 40%, #fde68a, #b8860b);
+    border-radius: 6px;
+    z-index: 5;
+    box-shadow: 0 2px 8px rgba(184, 134, 11, 0.5);
+  }
+
+  .pp-chest-lock-deco::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -40%);
+    width: 6px;
+    height: 8px;
+    background: #5a2a0c;
+    border-radius: 0 0 3px 3px;
+  }
+
+  .pp-chest-glow-rays {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255, 215, 0, 0.5) 0%, rgba(255, 215, 0, 0.15) 40%, transparent 70%);
+    animation: ppGlowPulse 1.5s ease-in-out infinite;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  @keyframes ppGlowPulse {
+    0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.8; }
+    50% { transform: translate(-50%, -50%) scale(1.3); opacity: 1; }
+  }
+
+  .pp-chest-light-beam {
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 100px;
+    background: linear-gradient(180deg, rgba(255, 215, 0, 0.6) 0%, transparent 100%);
+    clip-path: polygon(30% 100%, 70% 100%, 100% 0%, 0% 0%);
+    animation: ppBeamShimmer 2s ease-in-out infinite;
+    pointer-events: none;
+    z-index: 3;
+  }
+
+  @keyframes ppBeamShimmer {
+    0%, 100% { opacity: 0.6; transform: translateX(-50%) scaleX(1); }
+    50% { opacity: 1; transform: translateX(-50%) scaleX(1.3); }
+  }
+
+  .pp-chest-lock-plate {
+    position: absolute;
+    bottom: 38%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 32px;
+    height: 26px;
+    background: radial-gradient(circle at 50% 40%, #fde68a, #b8860b);
+    border-radius: 6px;
+    z-index: 5;
+    box-shadow: 0 2px 8px rgba(184, 134, 11, 0.5);
+    transition: all 0.3s ease;
+  }
+
+  .pp-lock-keyhole {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -30%);
+    width: 8px;
+    height: 10px;
+    background: #5a2a0c;
+    border-radius: 50% 50% 2px 2px;
+  }
+
+  .pp-game-chest.lock-flash .pp-chest-lock-plate {
+    background: radial-gradient(circle at 50% 40%, #fca5a5, #ef4444);
+    box-shadow: 0 0 20px rgba(239, 68, 68, 0.8);
+  }
+
+  /* ==================== LOGO ==================== */
 
   .pp-logo {
     display: flex; align-items: center; justify-content: center; gap: 0.8rem; margin-bottom: 0.5rem;
   }
 
   .pp-logo h1 {
-    font-size: clamp(1.8rem, 7vw, 2.8rem); font-weight: 900;
+    font-size: clamp(2rem, 7vw, 3rem); font-weight: 900;
     background: linear-gradient(135deg, #fde68a, #fbbf24, #d97706);
     -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
-    text-shadow: none;
     filter: drop-shadow(0 2px 4px rgba(251, 191, 36, 0.3));
   }
 
-  .pp-logo-icon { font-size: 2.5rem; animation: ppBounce 2s ease-in-out infinite; }
-  .pp-logo-icon:last-child { animation-delay: 0.3s; }
-
-  @keyframes ppBounce {
-    0%, 100% { transform: translateY(0) rotate(-5deg); }
-    50% { transform: translateY(-8px) rotate(5deg); }
+  .pp-tagline {
+    color: #fde68a; font-size: 1.05rem; margin-bottom: 1.5rem;
+    text-shadow: 0 0 20px rgba(251, 191, 36, 0.3);
   }
 
-  .pp-tagline { color: #fde68a; font-size: 1.1rem; margin-bottom: 2rem; text-shadow: 0 0 20px rgba(251, 191, 36, 0.3); }
+  /* ==================== INSTRUCTIONS CARD ==================== */
 
   .pp-instructions-card {
-    background: rgba(15, 25, 50, 0.7);
-    border: 2px solid rgba(251, 191, 36, 0.25);
-    border-radius: 24px; padding: 1.5rem; margin-bottom: 2rem;
+    background: rgba(10, 20, 45, 0.75);
+    border: 2px solid rgba(251, 191, 36, 0.2);
+    border-radius: 24px; padding: 1.2rem; margin-bottom: 1.5rem;
     backdrop-filter: blur(12px);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(251, 191, 36, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(251, 191, 36, 0.08);
   }
 
   .pp-instructions-card h3 {
-    color: #fde68a; font-size: 1.2rem; margin-bottom: 1rem;
-    text-shadow: 0 0 10px rgba(251, 191, 36, 0.2);
+    color: #fde68a; font-size: 1.1rem; margin-bottom: 1rem;
   }
 
-  .pp-instruction { margin-bottom: 1.2rem; }
+  .pp-instruction { margin-bottom: 1rem; }
   .pp-instruction:last-child { margin-bottom: 0; }
 
   .pp-instruction-visual {
-    display: flex; align-items: center; justify-content: center; gap: 0.4rem; margin-bottom: 0.4rem;
+    display: flex; align-items: center; justify-content: center; gap: 0.5rem; margin-bottom: 0.4rem;
   }
 
-  .pp-coin-cell {
-    width: 40px; height: 40px; display: flex; align-items: center; justify-content: center;
-    font-size: 1.4rem; border-radius: 50%;
-    background: radial-gradient(circle at 35% 35%, #fde68a, #d97706);
-    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3), inset 0 1px 2px rgba(255, 255, 255, 0.3);
+  .pp-blank-preview {
+    width: 32px; height: 32px; border-radius: 50%;
+    border: 3px dashed rgba(251, 191, 36, 0.5);
+    display: flex; align-items: center; justify-content: center;
+    color: #fbbf24; font-weight: 800; font-size: 0.9rem;
+    background: rgba(251, 191, 36, 0.08);
   }
 
-  .pp-coin-cell.blank {
+  .pp-blank-preview.filled {
+    border-style: solid;
+    border-color: #4ade80;
+    background: rgba(74, 222, 128, 0.15);
+  }
+
+  .pp-blank-fill {
+    width: 16px; height: 16px; border-radius: 50%;
+    background: linear-gradient(135deg, #e11d48, #9f1239);
+  }
+
+  .pp-drag-arrow {
+    color: #fbbf24; font-weight: 900; font-size: 0.75rem;
     background: rgba(251, 191, 36, 0.15);
-    border: 2px dashed rgba(251, 191, 36, 0.5);
-    color: #fbbf24; font-weight: 700; font-size: 1rem;
-    box-shadow: 0 0 12px rgba(251, 191, 36, 0.15);
+    padding: 0.2rem 0.5rem; border-radius: 8px;
+    animation: ppDragPulse 1.5s ease-in-out infinite;
   }
 
-  .pp-arrow { color: #64748b; font-size: 1.2rem; }
-  .pp-treasure-icons { font-size: 1.5rem; letter-spacing: 0.3rem; }
-  .pp-instruction p { color: #cbd5e1; font-size: 0.95rem; }
+  @keyframes ppDragPulse {
+    0%, 100% { transform: translateX(0); }
+    50% { transform: translateX(6px); }
+  }
+
+  .pp-mini-chest {
+    width: 36px; height: 28px;
+    background: linear-gradient(180deg, #a05a15, #6d3410);
+    border-radius: 4px 4px 3px 3px;
+    position: relative;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.4);
+  }
+
+  .pp-mini-chest::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0; height: 40%;
+    background: linear-gradient(180deg, #c67a28, #8b4513);
+    border-radius: 4px 4px 0 0;
+  }
+
+  .pp-burst-icon {
+    color: #fbbf24; font-weight: 900; font-size: 0.75rem;
+    text-shadow: 0 0 10px rgba(251, 191, 36, 0.5);
+  }
+
+  .pp-instruction p { color: #cbd5e1; font-size: 0.9rem; }
   .pp-hl-gold { color: #fbbf24; font-weight: 700; }
   .pp-hl-green { color: #4ade80; font-weight: 700; }
+
+  /* ==================== START / NEXT BUTTONS ==================== */
 
   .pp-start-btn, .pp-next-btn {
     display: inline-flex; align-items: center; gap: 0.8rem;
@@ -1200,95 +1306,33 @@ const ppStyles = `
     background: linear-gradient(135deg, #fde68a, #fbbf24, #d97706);
     border: none; border-radius: 50px; cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: 0 10px 40px rgba(251, 191, 36, 0.3), 0 0 60px rgba(251, 191, 36, 0.1);
+    box-shadow: 0 8px 30px rgba(251, 191, 36, 0.3), 0 0 50px rgba(251, 191, 36, 0.08);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .pp-start-btn::before, .pp-next-btn::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent 40%, rgba(255,255,255,0.3) 50%, transparent 60%);
+    animation: ppBtnShine 3s ease-in-out infinite;
+  }
+
+  @keyframes ppBtnShine {
+    0% { transform: translateX(-100%) rotate(45deg); }
+    100% { transform: translateX(100%) rotate(45deg); }
   }
 
   .pp-start-btn:hover, .pp-next-btn:hover {
     transform: translateY(-3px) scale(1.02);
-    box-shadow: 0 15px 50px rgba(251, 191, 36, 0.4), 0 0 80px rgba(251, 191, 36, 0.15);
+    box-shadow: 0 12px 40px rgba(251, 191, 36, 0.4), 0 0 70px rgba(251, 191, 36, 0.12);
   }
 
   .pp-start-btn:active, .pp-next-btn:active { transform: scale(0.97); }
-
-  .pp-btn-icon { font-size: 1.2rem; }
-
-  /* ==================== COMPLETE SCREEN ==================== */
-
-  .pp-complete {
-    position: relative; z-index: 10;
-    height: 100%; display: flex; align-items: center; justify-content: center;
-    overflow: hidden;
-  }
-
-  .pp-complete-content {
-    position: relative; z-index: 10; text-align: center; padding: 2rem; max-width: 500px;
-  }
-
-  .pp-treasure-island { margin-bottom: 0.5rem; }
-  .pp-island-emoji { font-size: 4rem; animation: ppIslandBounce 2s ease-in-out infinite; display: inline-block; }
-
-  @keyframes ppIslandBounce {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
-  }
-
-  .pp-complete-title {
-    font-size: clamp(1.6rem, 6vw, 2.3rem); color: white; margin-bottom: 0.3rem;
-    text-shadow: 0 0 30px rgba(251, 191, 36, 0.3);
-  }
-
-  .pp-complete-subtitle {
-    color: #fde68a; font-size: 1.1rem; margin-bottom: 1.5rem;
-    text-shadow: 0 0 10px rgba(251, 191, 36, 0.2);
-  }
-
-  .pp-treasure-chest-area { margin-bottom: 1.5rem; }
-
-  .pp-big-chest { margin-bottom: 0.5rem; }
-  .pp-big-chest.open .pp-chest-emoji {
-    font-size: 3rem; display: inline-block;
-    animation: ppChestBounce 1s ease-in-out infinite;
-  }
-
-  @keyframes ppChestBounce {
-    0%, 100% { transform: scale(1) rotate(0deg); }
-    25% { transform: scale(1.1) rotate(-3deg); }
-    50% { transform: scale(1) rotate(0deg); }
-    75% { transform: scale(1.1) rotate(3deg); }
-  }
-
-  .pp-treasure-display {
-    display: flex; justify-content: center; gap: 0.3rem; flex-wrap: wrap;
-  }
-
-  .pp-treasure-piece {
-    font-size: 1.8rem; display: inline-block;
-    animation: ppTreasureFly 0.6s ease-out both;
-  }
-
-  @keyframes ppTreasureFly {
-    0% { transform: translateY(30px) scale(0) rotate(-180deg); opacity: 0; }
-    60% { transform: translateY(-10px) scale(1.2) rotate(10deg); opacity: 1; }
-    100% { transform: translateY(0) scale(1) rotate(0deg); opacity: 1; }
-  }
-
-  .pp-score-card {
-    display: flex; justify-content: center; gap: 2rem; margin-bottom: 2rem; flex-wrap: wrap;
-  }
-
-  .pp-score-item {
-    display: flex; flex-direction: column; align-items: center;
-    background: rgba(255, 255, 255, 0.05); border-radius: 16px; padding: 0.8rem 1.5rem;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-  }
-
-  .pp-score-label { font-size: 0.85rem; color: #94a3b8; margin-bottom: 0.3rem; }
-  .pp-score-value {
-    font-size: 2rem; font-weight: 900; color: white;
-    text-shadow: 0 0 10px rgba(251, 191, 36, 0.3);
-  }
-
-  .pp-complete-buttons { display: flex; flex-direction: column; gap: 1rem; align-items: center; }
 
   .pp-menu-btn {
     padding: 0.8rem 2rem; font-family: 'Nunito', sans-serif;
@@ -1297,25 +1341,134 @@ const ppStyles = `
     border-radius: 30px; cursor: pointer; transition: all 0.2s ease;
   }
 
-  .pp-menu-btn:hover { border-color: rgba(255, 255, 255, 0.4); color: white; background: rgba(255, 255, 255, 0.1); }
+  .pp-menu-btn:hover { border-color: rgba(255, 255, 255, 0.35); color: white; background: rgba(255, 255, 255, 0.08); }
 
-  .pp-sunk-ship { margin-bottom: 1rem; }
-  .pp-sunk-emoji {
-    font-size: 3.5rem; display: inline-block;
-    animation: ppSinkShip 2s ease-in-out infinite;
-    filter: hue-rotate(180deg) brightness(0.7);
+  /* ==================== COMPLETE SCREENS ==================== */
+
+  .pp-complete {
+    position: relative; z-index: 10;
+    height: 100%; display: flex; align-items: center; justify-content: center;
+    overflow: hidden;
   }
 
-  @keyframes ppSinkShip {
-    0%, 100% { transform: translateY(0) rotate(-5deg); }
-    50% { transform: translateY(10px) rotate(5deg); }
+  .pp-complete-content {
+    position: relative; z-index: 10; text-align: center;
+    padding: 1.5rem; max-width: 480px; width: 100%;
+  }
+
+  .pp-chest-celebration {
+    margin-bottom: 1rem;
+    position: relative;
+    display: flex; justify-content: center;
+  }
+
+  .pp-complete-title {
+    font-size: clamp(1.8rem, 6vw, 2.5rem); font-weight: 900; color: white;
+    margin-bottom: 0.3rem;
+    text-shadow: 0 0 30px rgba(251, 191, 36, 0.4);
+    animation: ppTitleGlow 2s ease-in-out infinite;
+  }
+
+  @keyframes ppTitleGlow {
+    0%, 100% { text-shadow: 0 0 20px rgba(251, 191, 36, 0.3); }
+    50% { text-shadow: 0 0 40px rgba(251, 191, 36, 0.6), 0 0 80px rgba(251, 191, 36, 0.2); }
+  }
+
+  .pp-complete-subtitle {
+    color: #fde68a; font-size: 1.1rem; margin-bottom: 1.5rem;
+  }
+
+  /* ==================== STARS ==================== */
+
+  .pp-stars-display {
+    display: flex; justify-content: center; gap: 1rem; margin-bottom: 1.5rem;
+  }
+
+  .pp-star {
+    width: 50px; height: 50px;
+    animation: ppStarPop 0.5s ease both;
+  }
+
+  .pp-star-shape {
+    width: 100%; height: 100%;
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    transition: all 0.3s ease;
+  }
+
+  .pp-star.earned .pp-star-shape {
+    background: linear-gradient(135deg, #fde68a, #fbbf24, #d97706);
+    box-shadow: 0 0 15px rgba(251, 191, 36, 0.5);
+    animation: ppStarShine 2s ease-in-out infinite;
+  }
+
+  .pp-star.empty .pp-star-shape {
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  @keyframes ppStarPop {
+    0% { transform: scale(0) rotate(-45deg); opacity: 0; }
+    60% { transform: scale(1.3) rotate(10deg); opacity: 1; }
+    100% { transform: scale(1) rotate(0deg); opacity: 1; }
+  }
+
+  @keyframes ppStarShine {
+    0%, 100% { filter: brightness(1); }
+    50% { filter: brightness(1.3); }
+  }
+
+  .pp-score-card {
+    display: flex; justify-content: center; gap: 1.5rem; margin-bottom: 1.5rem; flex-wrap: wrap;
+  }
+
+  .pp-score-item {
+    display: flex; flex-direction: column; align-items: center;
+    background: rgba(255, 255, 255, 0.05); border-radius: 16px; padding: 0.8rem 1.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .pp-score-label { font-size: 0.8rem; color: #94a3b8; margin-bottom: 0.2rem; }
+  .pp-score-value {
+    font-size: 1.8rem; font-weight: 900; color: white;
+    text-shadow: 0 0 10px rgba(251, 191, 36, 0.3);
+  }
+
+  .pp-complete-buttons { display: flex; flex-direction: column; gap: 0.8rem; align-items: center; }
+
+  /* Crown for game complete */
+  .pp-crown-area { margin-bottom: 1rem; }
+  .pp-crown {
+    width: 80px; height: 60px; margin: 0 auto;
+    background: linear-gradient(180deg, #fde68a 0%, #d97706 100%);
+    clip-path: polygon(0% 100%, 10% 30%, 25% 70%, 40% 0%, 50% 50%, 60% 0%, 75% 70%, 90% 30%, 100% 100%);
+    animation: ppCrownBounce 2s ease-in-out infinite;
+    filter: drop-shadow(0 4px 12px rgba(251, 191, 36, 0.5));
+  }
+
+  @keyframes ppCrownBounce {
+    0%, 100% { transform: translateY(0) rotate(-2deg); }
+    50% { transform: translateY(-8px) rotate(2deg); }
+  }
+
+  .pp-final-gems {
+    display: flex; justify-content: center; gap: 0.5rem; margin-bottom: 1.5rem; flex-wrap: wrap;
+  }
+
+  .pp-final-gem {
+    animation: ppFinalGemPop 0.6s ease both;
+  }
+
+  @keyframes ppFinalGemPop {
+    0% { transform: scale(0) translateY(20px); opacity: 0; }
+    60% { transform: scale(1.2) translateY(-5px); opacity: 1; }
+    100% { transform: scale(1) translateY(0); opacity: 1; }
   }
 
   /* ==================== PLAYING SCREEN ==================== */
 
   .pp-play {
     position: relative; z-index: 10;
-    height: 100%; display: flex; flex-direction: column; overflow-y: auto;
+    height: 100%; display: flex; flex-direction: column;
+    overflow: hidden;
   }
 
   .pp-play.pp-shake { animation: ppShake 0.5s ease; }
@@ -1324,21 +1477,22 @@ const ppStyles = `
     0%, 100% { transform: translateX(0); }
     10% { transform: translateX(-8px) rotate(-0.5deg); }
     30% { transform: translateX(8px) rotate(0.5deg); }
-    50% { transform: translateX(-6px) rotate(-0.3deg); }
-    70% { transform: translateX(6px) rotate(0.3deg); }
+    50% { transform: translateX(-6px); }
+    70% { transform: translateX(6px); }
     90% { transform: translateX(-3px); }
   }
 
+  /* Header */
   .pp-header {
     display: flex; justify-content: space-between; align-items: center;
     padding: 0.6rem 0.8rem;
-    background: linear-gradient(180deg, rgba(5, 10, 30, 0.8) 0%, rgba(5, 10, 30, 0.4) 100%);
+    background: linear-gradient(180deg, rgba(5, 10, 30, 0.85) 0%, rgba(5, 10, 30, 0.4) 100%);
     border-bottom: 1px solid rgba(251, 191, 36, 0.1);
     z-index: 50;
   }
 
   .pp-header-left, .pp-header-right { display: flex; align-items: center; gap: 0.5rem; }
-  .pp-header-center { display: flex; align-items: center; gap: 0.5rem; }
+  .pp-header-center { display: flex; align-items: center; }
 
   .pp-back-btn {
     width: 36px; height: 36px;
@@ -1357,366 +1511,337 @@ const ppStyles = `
     border-radius: 16px; font-weight: 700; color: #fde68a; font-size: 0.85rem;
   }
 
-  .pp-lives { font-size: 1rem; }
-
-  .pp-treasure-badge, .pp-score-badge-play {
-    display: flex; align-items: center; gap: 0.3rem;
-    padding: 0.4rem 0.8rem; border-radius: 16px;
-    font-weight: 700; font-size: 0.85rem;
-  }
-
-  .pp-treasure-badge {
-    background: rgba(168, 85, 247, 0.15);
-    border: 1px solid rgba(168, 85, 247, 0.3);
-    color: #c4b5fd;
+  .pp-pattern-label {
+    padding: 0.3rem 0.7rem;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    color: #94a3b8; font-size: 0.75rem; font-weight: 600;
   }
 
   .pp-score-badge-play {
+    padding: 0.4rem 0.8rem;
     background: rgba(251, 191, 36, 0.15);
     border: 1px solid rgba(251, 191, 36, 0.3);
-    color: #fde68a;
+    border-radius: 16px; font-weight: 700; color: #fde68a; font-size: 0.85rem;
   }
 
-  /* Progress bar */
-  .pp-progress-bar {
-    position: relative; margin: 0.4rem 1rem; height: 22px;
-    background: rgba(255, 255, 255, 0.06);
-    border-radius: 11px; overflow: hidden;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-  }
+  /* ==================== ISLAND AREA ==================== */
 
-  .pp-progress-fill {
-    position: absolute; left: 0; top: 0; bottom: 0;
-    background: linear-gradient(90deg, #d97706, #fbbf24, #fde68a);
-    border-radius: 11px;
-    transition: width 0.5s ease;
-    box-shadow: 0 0 12px rgba(251, 191, 36, 0.3);
-  }
-
-  .pp-progress-text {
-    position: relative; z-index: 2; display: flex; align-items: center; justify-content: center;
-    height: 100%; font-size: 0.7rem; font-weight: 700; color: white;
-    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
-  }
-
-  /* Chest indicator */
-  .pp-chest-indicator {
-    text-align: center; padding: 0.3rem; position: relative;
-  }
-
-  .pp-chest-icon { font-size: 1.8rem; display: inline-block; transition: transform 0.3s ease; }
-
-  .pp-chest-indicator.open .pp-chest-icon {
-    animation: ppChestOpenPop 0.6s ease;
-  }
-
-  .pp-chest-rays {
-    position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
-    width: 120px; height: 120px; border-radius: 50%;
-    background: radial-gradient(circle, rgba(251, 191, 36, 0.4) 0%, transparent 70%);
-    animation: ppRaysPulse 0.8s ease-out forwards;
-    pointer-events: none;
-  }
-
-  @keyframes ppChestOpenPop {
-    0% { transform: scale(1); }
-    30% { transform: scale(1.4) rotate(-10deg); }
-    60% { transform: scale(1.1) rotate(5deg); }
-    100% { transform: scale(1) rotate(0deg); }
-  }
-
-  @keyframes ppRaysPulse {
-    0% { transform: translate(-50%, -50%) scale(0.3); opacity: 1; }
-    100% { transform: translate(-50%, -50%) scale(2); opacity: 0; }
-  }
-
-  /* Gem particles */
-  .pp-gem-particle {
-    position: absolute; font-size: 1.3rem; pointer-events: none; z-index: 100;
-  }
-
-  /* Sparkles */
-  .pp-sparkle {
-    position: absolute; pointer-events: none; z-index: 100;
-  }
-
-  /* Smoke puffs */
-  .pp-smoke-puff {
-    position: absolute; width: 40px; height: 40px; border-radius: 50%;
-    background: radial-gradient(circle, rgba(100, 100, 100, 0.6) 0%, transparent 70%);
-    pointer-events: none; z-index: 100;
-    animation: ppSmokeExpand 0.8s ease-out forwards;
-  }
-
-  @keyframes ppSmokeExpand {
-    0% { transform: scale(0.3); opacity: 1; }
-    100% { transform: scale(3); opacity: 0; }
-  }
-
-  /* ==================== SCROLL / TREASURE MAP ==================== */
-
-  .pp-pattern-area {
-    flex: 1; display: flex; flex-direction: column; padding: 0.5rem 1rem 1rem;
-    gap: 0.8rem; justify-content: center;
-  }
-
-  .pp-scroll {
-    transform: scaleY(0);
-    transform-origin: top center;
-    transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
-  }
-
-  .pp-scroll.unfurled { transform: scaleY(1); }
-
-  .pp-scroll-top-rod, .pp-scroll-bottom-rod {
-    height: 8px; margin: 0 1rem;
-    background: linear-gradient(180deg, #8B6914, #d4a543, #8B6914);
-    border-radius: 4px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-  }
-
-  .pp-scroll-body {
-    background: linear-gradient(135deg, #f5e6c8 0%, #e8d5a8 30%, #f0dbb8 50%, #e0c898 80%, #d4b880 100%);
-    margin: 0 1.5rem; padding: 1rem;
-    border-left: 3px solid rgba(139, 105, 20, 0.3);
-    border-right: 3px solid rgba(139, 105, 20, 0.3);
+  .pp-island-area {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     position: relative;
-    box-shadow: inset 0 0 30px rgba(139, 105, 20, 0.15);
+    padding: 0.5rem;
+    min-height: 0;
   }
 
-  /* Burnt edge effect */
-  .pp-scroll-body::before {
-    content: '';
-    position: absolute; top: 0; left: 0; right: 0; bottom: 0;
-    background:
-      radial-gradient(ellipse at 0% 0%, rgba(100, 60, 10, 0.2) 0%, transparent 40%),
-      radial-gradient(ellipse at 100% 0%, rgba(100, 60, 10, 0.15) 0%, transparent 35%),
-      radial-gradient(ellipse at 100% 100%, rgba(100, 60, 10, 0.2) 0%, transparent 40%),
-      radial-gradient(ellipse at 0% 100%, rgba(100, 60, 10, 0.15) 0%, transparent 35%);
+  .pp-island-ground {
+    position: absolute;
+    bottom: -5%;
+    left: 10%;
+    right: 10%;
+    height: 40%;
+    background: radial-gradient(ellipse at 50% 90%, rgba(194, 165, 105, 0.12) 0%, transparent 70%);
+    border-radius: 50%;
     pointer-events: none;
   }
 
-  .pp-scroll-header {
-    display: flex; align-items: center; justify-content: center; gap: 0.5rem;
+  .pp-island-palm {
+    position: absolute;
+    bottom: 30%;
+    width: 40px;
+    height: 80px;
+    pointer-events: none;
+  }
+
+  .pp-island-palm.left { left: 5%; }
+  .pp-island-palm.right { right: 5%; }
+
+  .pp-palm-trunk {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 6px;
+    height: 60px;
+    background: linear-gradient(180deg, #5a3a1a, #3d2510);
+    border-radius: 3px;
+  }
+
+  .pp-palm-fronds {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 30px;
+    background: radial-gradient(ellipse at 50% 100%, rgba(34, 90, 34, 0.6) 0%, transparent 70%);
+    border-radius: 50%;
+    animation: ppFrondSway 4s ease-in-out infinite;
+  }
+
+  .pp-island-palm.right .pp-palm-fronds { animation-delay: 0.7s; }
+
+  @keyframes ppFrondSway {
+    0%, 100% { transform: translateX(-50%) rotate(-3deg); }
+    50% { transform: translateX(-50%) rotate(3deg); }
+  }
+
+  /* ==================== GAME CHEST ==================== */
+
+  .pp-game-chest {
+    width: 200px;
+    height: 145px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     margin-bottom: 0.8rem;
+    z-index: 5;
+    animation: ppChestBob 5s ease-in-out infinite;
   }
 
-  .pp-map-x { font-size: 1.2rem; }
-  .pp-map-title { font-size: 0.9rem; font-weight: 800; color: #5c3d10; letter-spacing: 0.05em; }
-
-  /* ==================== PATTERN COINS ==================== */
-
-  .pp-pattern-strip {
-    display: flex; justify-content: center; gap: 0.4rem; flex-wrap: wrap;
-    padding: 0.5rem;
+  @keyframes ppChestBob {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-4px); }
   }
 
-  .pp-coin {
-    width: 52px; height: 52px; border-radius: 50%; position: relative;
-    display: flex; align-items: center; justify-content: center;
+  .pp-game-chest.open .pp-chest-lid {
+    transform: rotateX(-110deg) translateY(-10px);
+  }
+
+  /* ==================== PATTERN CHAIN ==================== */
+
+  .pp-pattern-chain {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0.3rem;
+    z-index: 10;
+  }
+
+  .pp-chain-line {
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    right: 5%;
+    height: 4px;
+    background: linear-gradient(90deg,
+      transparent 0%,
+      #b8860b 5%,
+      #daa520 15%,
+      #b8860b 25%,
+      #daa520 35%,
+      #b8860b 45%,
+      #daa520 55%,
+      #b8860b 65%,
+      #daa520 75%,
+      #b8860b 85%,
+      #daa520 95%,
+      transparent 100%);
+    border-radius: 2px;
+    transform: translateY(-50%);
+    box-shadow: 0 1px 4px rgba(184, 134, 11, 0.4);
+    z-index: 0;
+  }
+
+  .pp-pattern-gems {
+    display: flex;
+    justify-content: center;
+    gap: 0.3rem;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 2;
+  }
+
+  .pp-chain-slot {
+    width: 58px;
+    height: 58px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
     transition: all 0.3s ease;
   }
 
-  .pp-coin-inner {
-    width: 100%; height: 100%; border-radius: 50%;
-    display: flex; align-items: center; justify-content: center;
-    position: relative; z-index: 2;
+  .pp-chain-slot.all-correct .pp-gem {
+    animation: ppAllCorrectBounce 0.6s ease;
   }
 
-  .pp-coin.filled .pp-coin-inner {
-    background: radial-gradient(circle at 35% 35%, #fde68a 0%, #d4a543 50%, #b8860b 100%);
-    box-shadow:
-      0 3px 8px rgba(0, 0, 0, 0.3),
-      inset 0 1px 3px rgba(255, 255, 255, 0.4),
-      inset 0 -2px 4px rgba(0, 0, 0, 0.15),
-      0 0 12px rgba(251, 191, 36, 0.2);
-    border: 2px solid rgba(184, 134, 11, 0.5);
-  }
-
-  .pp-coin.blank .pp-coin-inner {
-    background: rgba(139, 105, 20, 0.15);
-    border: 3px dashed rgba(139, 105, 20, 0.4);
-  }
-
-  .pp-coin.active .pp-coin-inner {
-    border-color: #d97706;
-    background: rgba(251, 191, 36, 0.2);
-    animation: ppActivePulse 1.2s ease-in-out infinite;
-    box-shadow: 0 0 20px rgba(251, 191, 36, 0.4), 0 0 40px rgba(251, 191, 36, 0.15);
-  }
-
-  @keyframes ppActivePulse {
-    0%, 100% { transform: scale(1); box-shadow: 0 0 20px rgba(251, 191, 36, 0.4); }
-    50% { transform: scale(1.08); box-shadow: 0 0 30px rgba(251, 191, 36, 0.6), 0 0 60px rgba(251, 191, 36, 0.2); }
-  }
-
-  .pp-coin.future .pp-coin-inner { opacity: 0.4; }
-
-  .pp-coin.just-filled {
-    animation: ppCoinFlip 0.5s ease;
-  }
-
-  @keyframes ppCoinFlip {
-    0% { transform: rotateY(0deg) scale(1); }
-    50% { transform: rotateY(90deg) scale(1.2); }
-    100% { transform: rotateY(0deg) scale(1); }
-  }
-
-  .pp-coin-flash {
-    position: absolute; inset: -8px; border-radius: 50%;
-    background: radial-gradient(circle, rgba(251, 191, 36, 0.8) 0%, transparent 70%);
-    animation: ppFlashOut 0.6s ease-out forwards;
-    pointer-events: none; z-index: 1;
-  }
-
-  @keyframes ppFlashOut {
-    0% { transform: scale(0.5); opacity: 1; }
-    100% { transform: scale(2.5); opacity: 0; }
-  }
-
-  .pp-coin.wrong .pp-coin-inner {
-    animation: ppWrongShake 0.4s ease;
-    border-color: #ef4444;
-    box-shadow: 0 0 15px rgba(239, 68, 68, 0.5);
-  }
-
-  @keyframes ppWrongShake {
-    0%, 100% { transform: translateX(0); }
-    25% { transform: translateX(-5px); }
-    75% { transform: translateX(5px); }
-  }
-
-  .pp-coin.all-correct .pp-coin-inner {
-    box-shadow: 0 0 15px rgba(74, 222, 128, 0.4), 0 3px 8px rgba(0, 0, 0, 0.3);
-  }
-
-  .pp-coin-emoji { font-size: 1.5rem; }
-
-  .pp-coin-question {
-    font-size: 1.3rem; font-weight: 900; color: #8B6914;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
-  }
-
-  /* ==================== PATTERN UNIT REVEAL ==================== */
-
-  .pp-unit-reveal {
-    display: flex; flex-direction: column; align-items: center; gap: 0.3rem;
-    padding: 0.5rem 1rem; margin-top: 0.5rem;
-    background: rgba(74, 222, 128, 0.1);
-    border: 1px solid rgba(74, 222, 128, 0.2);
-    border-radius: 12px;
-    animation: ppUnitFade 0.4s ease;
-  }
-
-  @keyframes ppUnitFade {
-    from { opacity: 0; transform: translateY(8px) scaleY(0.8); }
-    to { opacity: 1; transform: translateY(0) scaleY(1); }
-  }
-
-  .pp-unit-label { color: #4ade80; font-size: 0.8rem; font-weight: 600; }
-  .pp-unit-symbols { display: flex; gap: 0.4rem; }
-  .pp-unit-sym {
-    font-size: 1.3rem;
-    animation: ppUnitSymPop 0.3s ease both;
-  }
-  .pp-unit-sym:nth-child(2) { animation-delay: 0.1s; }
-  .pp-unit-sym:nth-child(3) { animation-delay: 0.2s; }
-  .pp-unit-sym:nth-child(4) { animation-delay: 0.3s; }
-
-  @keyframes ppUnitSymPop {
-    0% { transform: scale(0); }
-    60% { transform: scale(1.3); }
+  @keyframes ppAllCorrectBounce {
+    0% { transform: scale(1); }
+    40% { transform: scale(1.2); }
     100% { transform: scale(1); }
   }
 
-  .pp-unit-arrows { display: flex; gap: 0.4rem; }
-  .pp-unit-arrow {
-    color: #4ade80; font-size: 0.8rem; font-weight: 800;
-    animation: ppArrowBounce 0.8s ease-in-out infinite;
-  }
-  .pp-unit-arrow:nth-child(2) { animation-delay: 0.15s; }
-  .pp-unit-arrow:nth-child(3) { animation-delay: 0.3s; }
-  .pp-unit-arrow:nth-child(4) { animation-delay: 0.45s; }
-
-  @keyframes ppArrowBounce {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-3px); }
+  .pp-empty-slot {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    border: 3px dashed rgba(251, 191, 36, 0.4);
+    background: rgba(251, 191, 36, 0.06);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
   }
 
-  /* ==================== OPTIONS / TREASURE ITEMS ==================== */
-
-  .pp-options { text-align: center; }
-  .pp-options-label { color: #cbd5e1; font-size: 0.85rem; margin-bottom: 0.6rem; }
-
-  .pp-options-grid {
-    display: flex; justify-content: center; gap: 0.6rem; flex-wrap: wrap;
+  .pp-empty-slot.pulse {
+    border-color: #fbbf24;
+    background: rgba(251, 191, 36, 0.12);
+    animation: ppSlotPulse 1.2s ease-in-out infinite;
+    box-shadow: 0 0 20px rgba(251, 191, 36, 0.3);
   }
 
-  .pp-option-btn {
-    display: flex; flex-direction: column; align-items: center; gap: 0.3rem;
-    padding: 0.6rem 0.8rem;
-    background: rgba(15, 25, 50, 0.6);
-    border: 2px solid rgba(251, 191, 36, 0.2);
-    border-radius: 16px;
-    cursor: pointer; transition: all 0.25s ease;
-    font-family: 'Nunito', sans-serif; min-width: 72px;
-    backdrop-filter: blur(4px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  @keyframes ppSlotPulse {
+    0%, 100% { transform: scale(1); box-shadow: 0 0 15px rgba(251, 191, 36, 0.2); }
+    50% { transform: scale(1.08); box-shadow: 0 0 30px rgba(251, 191, 36, 0.5); }
   }
 
-  .pp-option-crate {
-    width: 48px; height: 48px; border-radius: 12px;
-    background: linear-gradient(180deg, rgba(139, 105, 20, 0.3) 0%, rgba(100, 70, 10, 0.4) 100%);
-    border: 2px solid rgba(139, 105, 20, 0.4);
-    display: flex; align-items: center; justify-content: center;
-    position: relative;
-    box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.1), 0 2px 4px rgba(0, 0, 0, 0.2);
-    transition: all 0.2s ease;
+  .pp-slot-question {
+    font-size: 1.4rem; font-weight: 900; color: #fbbf24;
+    text-shadow: 0 0 8px rgba(251, 191, 36, 0.3);
   }
 
-  /* Plank texture lines on crate */
-  .pp-option-crate::before {
-    content: '';
-    position: absolute; inset: 2px;
-    border-radius: 10px;
-    background:
-      linear-gradient(0deg, transparent 45%, rgba(139, 105, 20, 0.15) 45%, rgba(139, 105, 20, 0.15) 55%, transparent 55%);
+  .pp-drop-indicator {
+    position: absolute;
+    inset: -6px;
+    border: 2px solid rgba(251, 191, 36, 0.4);
+    border-radius: 50%;
+    animation: ppDropRing 1.5s ease-in-out infinite;
     pointer-events: none;
   }
 
-  .pp-option-btn:hover:not(:disabled) {
-    border-color: #fbbf24;
-    transform: translateY(-3px) scale(1.05);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4), 0 0 20px rgba(251, 191, 36, 0.2);
+  @keyframes ppDropRing {
+    0%, 100% { transform: scale(1); opacity: 0.5; }
+    50% { transform: scale(1.2); opacity: 1; }
   }
 
-  .pp-option-btn:hover:not(:disabled) .pp-option-crate {
-    box-shadow: 0 0 15px rgba(251, 191, 36, 0.3), inset 0 1px 2px rgba(255, 255, 255, 0.15);
-    border-color: rgba(251, 191, 36, 0.6);
+  /* ==================== GEM TRAY ==================== */
+
+  .pp-gem-tray {
+    padding: 0.8rem;
+    background: linear-gradient(0deg, rgba(5, 10, 30, 0.9) 0%, rgba(5, 10, 30, 0.5) 100%);
+    border-top: 1px solid rgba(251, 191, 36, 0.1);
+    text-align: center;
+    z-index: 40;
   }
 
-  .pp-option-btn:active:not(:disabled) { transform: scale(0.95); }
-  .pp-option-btn:disabled { opacity: 0.5; cursor: default; }
+  .pp-tray-label {
+    color: #94a3b8; font-size: 0.8rem; margin-bottom: 0.5rem; font-weight: 600;
+  }
 
-  .pp-option-emoji { font-size: 1.6rem; }
-  .pp-option-name { font-size: 0.65rem; color: #94a3b8; font-weight: 600; }
+  .pp-tray-gems {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
 
-  /* ==================== RESULT OVERLAYS ==================== */
+  .pp-tray-gem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.3rem;
+    padding: 0.5rem;
+    background: rgba(255, 255, 255, 0.04);
+    border: 2px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    cursor: grab;
+    transition: all 0.25s ease;
+    touch-action: none;
+  }
 
-  .pp-result-correct {
+  .pp-tray-gem:hover {
+    border-color: rgba(251, 191, 36, 0.4);
+    background: rgba(251, 191, 36, 0.06);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  }
+
+  .pp-tray-gem:active {
+    cursor: grabbing;
+    transform: scale(0.95);
+  }
+
+  .pp-tray-gem.dragging-source {
+    opacity: 0.3;
+    transform: scale(0.9);
+  }
+
+  .pp-gem-name {
+    font-size: 0.65rem; color: #64748b; font-weight: 600;
+  }
+
+  /* ==================== DRAG GHOST ==================== */
+
+  .pp-drag-ghost {
+    position: absolute;
+    z-index: 500;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    filter: brightness(1.15);
+    animation: ppDragAppear 0.15s ease;
+  }
+
+  @keyframes ppDragAppear {
+    from { transform: translate(-50%, -50%) scale(0.5); opacity: 0; }
+    to { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+  }
+
+  /* ==================== PARTICLES ==================== */
+
+  .pp-particle {
+    position: absolute;
+    pointer-events: none;
+    z-index: 200;
+  }
+
+  .pp-particle-coin {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 35% 30%, #fde68a, #d97706);
+    box-shadow: 0 2px 6px rgba(217, 119, 6, 0.5);
+  }
+
+  .pp-particle-sparkle {
+    width: 8px;
+    height: 8px;
+    background: radial-gradient(circle, #fff 0%, #fde68a 50%, transparent 100%);
+    border-radius: 50%;
+  }
+
+  .pp-particle-ray {
+    width: 40px;
+    height: 4px;
+    background: linear-gradient(90deg, rgba(255, 215, 0, 0.8), transparent);
+    border-radius: 2px;
+    transform-origin: left center;
+  }
+
+  /* ==================== RESULT OVERLAY ==================== */
+
+  .pp-result-overlay {
     position: absolute; inset: 0;
     display: flex; align-items: center; justify-content: center;
-    pointer-events: none; z-index: 200;
+    pointer-events: none; z-index: 300;
   }
 
   .pp-result-burst {
     position: absolute;
     width: 200px; height: 200px; border-radius: 50%;
-    background: radial-gradient(circle, rgba(251, 191, 36, 0.5) 0%, transparent 70%);
-    animation: ppBurstExpand 0.8s ease-out forwards;
+    background: radial-gradient(circle, rgba(255, 215, 0, 0.5) 0%, transparent 70%);
+    animation: ppResultBurst 1s ease-out forwards;
   }
 
-  @keyframes ppBurstExpand {
+  @keyframes ppResultBurst {
     0% { transform: scale(0); opacity: 1; }
     100% { transform: scale(5); opacity: 0; }
   }
@@ -1724,14 +1849,14 @@ const ppStyles = `
   .pp-result-text {
     position: relative; z-index: 5;
     padding: 0.8rem 1.8rem;
-    background: linear-gradient(135deg, rgba(251, 191, 36, 0.9), rgba(217, 119, 6, 0.9));
+    background: linear-gradient(135deg, rgba(255, 215, 0, 0.95), rgba(217, 119, 6, 0.95));
     border-radius: 30px;
-    font-size: 1.2rem; font-weight: 900; color: #1e1b4b;
-    box-shadow: 0 10px 40px rgba(251, 191, 36, 0.5), 0 0 60px rgba(251, 191, 36, 0.2);
-    animation: ppResultPop 0.5s ease;
+    font-size: 1.3rem; font-weight: 900; color: #1e1b4b;
+    box-shadow: 0 10px 40px rgba(255, 215, 0, 0.5), 0 0 60px rgba(255, 215, 0, 0.2);
+    animation: ppResultTextPop 0.5s ease;
   }
 
-  @keyframes ppResultPop {
+  @keyframes ppResultTextPop {
     0% { transform: scale(0) rotate(-10deg); opacity: 0; }
     60% { transform: scale(1.2) rotate(3deg); opacity: 1; }
     100% { transform: scale(1) rotate(0deg); opacity: 1; }
@@ -1740,23 +1865,28 @@ const ppStyles = `
   /* ==================== RESPONSIVE ==================== */
 
   @media (max-width: 600px) {
-    .pp-coin { width: 42px; height: 42px; }
-    .pp-coin-emoji { font-size: 1.2rem; }
-    .pp-coin-question { font-size: 1rem; }
-    .pp-option-btn { padding: 0.5rem 0.6rem; min-width: 60px; }
-    .pp-option-crate { width: 40px; height: 40px; }
-    .pp-option-emoji { font-size: 1.3rem; }
-    .pp-scroll-body { padding: 0.8rem 0.5rem; margin: 0 0.5rem; }
-    .pp-scroll-top-rod, .pp-scroll-bottom-rod { margin: 0 0.5rem; }
+    .pp-chain-slot { width: 48px; height: 48px; }
+    .pp-empty-slot { width: 42px; height: 42px; }
+    .pp-slot-question { font-size: 1.1rem; }
+    .pp-game-chest { width: 160px; height: 120px; }
+    .pp-tray-gems { gap: 0.6rem; }
+    .pp-tray-gem { padding: 0.4rem; }
+    .pp-pattern-gems { gap: 0.2rem; }
     .pp-header-center { display: none; }
-    .pp-pattern-strip { gap: 0.3rem; }
-    .pp-intro-ship { display: none; }
+    .pp-gem-name { display: none; }
+    .pp-island-palm { display: none; }
   }
 
   @media (max-width: 400px) {
-    .pp-coin { width: 36px; height: 36px; }
-    .pp-coin-emoji { font-size: 1rem; }
-    .pp-option-crate { width: 36px; height: 36px; }
-    .pp-option-emoji { font-size: 1.1rem; }
+    .pp-chain-slot { width: 40px; height: 40px; }
+    .pp-empty-slot { width: 36px; height: 36px; }
+    .pp-game-chest { width: 130px; height: 100px; }
+  }
+
+  @media (max-height: 600px) {
+    .pp-game-chest { width: 140px; height: 100px; margin-bottom: 0.4rem; }
+    .pp-chest-large { width: 140px; height: 100px; }
+    .pp-island-area { padding: 0; }
+    .pp-gem-tray { padding: 0.5rem; }
   }
 `;

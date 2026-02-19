@@ -1,6 +1,16 @@
 "use client";
 
 import { useState, useEffect, useCallback, useRef } from 'react';
+import type React from 'react';
+
+// Physics constants
+const FRICTION = 0.985;
+const BOUNCE = 0.6;
+const MERGE_DISTANCE = 90;
+const FLOAT_SPEED_BASE = 0.25;
+const WOBBLE_AMOUNT = 0.4;
+const MAGNETIC_DISTANCE = 160;
+const MAGNETIC_STRENGTH = 0.08;
 
 // Number words lookup
 const NUMBER_WORDS: Record<number, string> = {
@@ -12,17 +22,6 @@ const NUMBER_WORDS: Record<number, string> = {
 
 // Balloon color palette (HSL hues)
 const BALLOON_HUES = [0, 25, 45, 120, 180, 210, 260, 300, 330, 350, 15, 55, 90, 150, 195, 240, 275, 315, 340, 30, 70];
-
-// Dot shapes for quantity balloons
-const DOT_LAYOUTS: Record<number, { cols: number; size: number }> = {
-  0: { cols: 1, size: 6 }, 1: { cols: 1, size: 8 }, 2: { cols: 2, size: 7 },
-  3: { cols: 3, size: 6 }, 4: { cols: 2, size: 6 }, 5: { cols: 3, size: 5 },
-  6: { cols: 3, size: 5 }, 7: { cols: 4, size: 4 }, 8: { cols: 4, size: 4 },
-  9: { cols: 3, size: 4 }, 10: { cols: 4, size: 4 }, 11: { cols: 4, size: 3 },
-  12: { cols: 4, size: 3 }, 13: { cols: 4, size: 3 }, 14: { cols: 4, size: 3 },
-  15: { cols: 4, size: 3 }, 16: { cols: 4, size: 3 }, 17: { cols: 5, size: 3 },
-  18: { cols: 5, size: 3 }, 19: { cols: 5, size: 3 }, 20: { cols: 5, size: 3 },
-};
 
 type BalloonType = 'numeral' | 'word' | 'dots';
 
@@ -36,16 +35,23 @@ interface Balloon {
   vy: number;
   radius: number;
   hue: number;
-  rotation: number;
-  rotationSpeed: number;
   wobblePhase: number;
   wobbleSpeed: number;
-  wobbleAmount: number;
   spawnTime: number;
-  popping: boolean;
-  popTime: number;
-  selected: boolean;
-  matchId: number | null; // id of the balloon this should match with
+}
+
+interface DraggedBalloon extends Balloon {
+  offsetX: number;
+  offsetY: number;
+}
+
+interface PopEffect {
+  id: number;
+  x: number;
+  y: number;
+  hue: number;
+  value: number;
+  particles: PopParticle[];
 }
 
 interface PopParticle {
@@ -56,37 +62,26 @@ interface PopParticle {
   vy: number;
   size: number;
   hue: number;
-  life: number;
-  maxLife: number;
-  type: 'confetti' | 'spark' | 'ring';
   rotation: number;
-  rotationSpeed: number;
+  type: 'confetti' | 'spark' | 'ring';
 }
 
-interface Cloud {
+interface RejectEffect {
   id: number;
   x: number;
   y: number;
-  scale: number;
-  speed: number;
-  opacity: number;
 }
 
-interface Bird {
+interface ComboText {
   id: number;
   x: number;
   y: number;
-  speed: number;
-  wingPhase: number;
-  wingSpeed: number;
-  scale: number;
+  text: string;
 }
 
-interface ScreenShake {
-  active: boolean;
-  intensity: number;
-  startTime: number;
-  duration: number;
+interface ContainerSize {
+  width: number;
+  height: number;
 }
 
 type GameScreen = 'intro' | 'playing' | 'levelComplete' | 'gameOver';
@@ -100,239 +95,289 @@ const getNewId = (): number => ++balloonIdCounter;
 
 export default function NumberBalloons({ onExit }: NumberBalloonsProps = {}) {
   const [gameState, setGameState] = useState<GameScreen>('intro');
-  const [level, setLevel] = useState(1);
-  const [score, setScore] = useState(0);
-  const [lives, setLives] = useState(5);
-  const [combo, setCombo] = useState(0);
-  const [maxCombo, setMaxCombo] = useState(0);
-  const [matchesMade, setMatchesMade] = useState(0);
-  const [matchesNeeded, setMatchesNeeded] = useState(0);
-  const [selectedBalloon, setSelectedBalloon] = useState<Balloon | null>(null);
-  const [wrongMatch, setWrongMatch] = useState(false);
-  const [comboText, setComboText] = useState<{ text: string; x: number; y: number; id: number } | null>(null);
+  const [balloons, setBalloons] = useState<Balloon[]>([]);
+  const [score, setScore] = useState<number>(0);
+  const [level, setLevel] = useState<number>(1);
+  const [lives, setLives] = useState<number>(5);
+  const [combo, setCombo] = useState<number>(0);
+  const [maxCombo, setMaxCombo] = useState<number>(0);
+  const [matchesMade, setMatchesMade] = useState<number>(0);
+  const [matchesNeeded, setMatchesNeeded] = useState<number>(0);
+  const [popEffect, setPopEffect] = useState<PopEffect | null>(null);
+  const [rejectEffect, setRejectEffect] = useState<RejectEffect | null>(null);
+  const [comboText, setComboText] = useState<ComboText | null>(null);
+  const [draggedBalloon, setDraggedBalloon] = useState<DraggedBalloon | null>(null);
+  const [nearbyMatch, setNearbyMatch] = useState<Balloon | null>(null);
 
-  const balloonsRef = useRef<Balloon[]>([]);
-  const particlesRef = useRef<PopParticle[]>([]);
-  const cloudsRef = useRef<Cloud[]>([]);
-  const birdsRef = useRef<Bird[]>([]);
-  const shakeRef = useRef<ScreenShake>({ active: false, intensity: 0, startTime: 0, duration: 0 });
-
-  const canvasRef = useRef<HTMLCanvasElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const animationRef = useRef<number | null>(null);
-  const lastTimeRef = useRef(0);
-  const spawnTimerRef = useRef(0);
-  const gameStateRef = useRef(gameState);
-  const levelRef = useRef(level);
-  const scoreRef = useRef(score);
-  const livesRef = useRef(lives);
-  const comboRef = useRef(combo);
-  const matchesMadeRef = useRef(matchesMade);
-  const matchesNeededRef = useRef(matchesNeeded);
-  const selectedBalloonRef = useRef<Balloon | null>(null);
-  const pairCounterRef = useRef(0);
-  const containerSizeRef = useRef({ width: 800, height: 600 });
+  const lastTimeRef = useRef<number>(0);
+  const spawnTimerRef = useRef<number>(0);
+  const pairCounterRef = useRef<number>(0);
+  const balloonsRef = useRef<Balloon[]>(balloons);
+  const livesRef = useRef<number>(lives);
+  const matchesMadeRef = useRef<number>(matchesMade);
+  const matchesNeededRef = useRef<number>(matchesNeeded);
 
-  // Sync refs with state
-  useEffect(() => { gameStateRef.current = gameState; }, [gameState]);
-  useEffect(() => { levelRef.current = level; }, [level]);
-  useEffect(() => { scoreRef.current = score; }, [score]);
+  useEffect(() => { balloonsRef.current = balloons; }, [balloons]);
   useEffect(() => { livesRef.current = lives; }, [lives]);
-  useEffect(() => { comboRef.current = combo; }, [combo]);
   useEffect(() => { matchesMadeRef.current = matchesMade; }, [matchesMade]);
   useEffect(() => { matchesNeededRef.current = matchesNeeded; }, [matchesNeeded]);
-  useEffect(() => { selectedBalloonRef.current = selectedBalloon; }, [selectedBalloon]);
+
+  const getContainerSize = useCallback((): ContainerSize => {
+    if (containerRef.current) {
+      return {
+        width: containerRef.current.offsetWidth,
+        height: containerRef.current.offsetHeight,
+      };
+    }
+    return { width: 800, height: 600 };
+  }, []);
 
   // Get the number range for the current level
   const getNumberRange = useCallback((lvl: number): [number, number] => {
-    if (lvl <= 3) return [0, 10];
-    if (lvl <= 6) return [0, 15];
+    if (lvl <= 2) return [0, 5];
+    if (lvl <= 4) return [0, 10];
     return [0, 20];
   }, []);
 
-  // Get max simultaneous balloons for current level
-  const getMaxBalloons = useCallback((lvl: number): number => {
-    return Math.min(4 + Math.floor(lvl * 0.8), 12);
-  }, []);
-
-  // Get balloon float speed for current level
-  const getFloatSpeed = useCallback((lvl: number): number => {
-    return 0.3 + lvl * 0.08;
-  }, []);
-
-  // Get spawn interval (ms) for current level
-  const getSpawnInterval = useCallback((lvl: number): number => {
-    return Math.max(1800 - lvl * 100, 800);
-  }, []);
-
-  // Get matches needed for current level
-  const getLevelMatches = useCallback((lvl: number): number => {
-    return Math.min(4 + Math.floor(lvl * 1.2), 12);
-  }, []);
-
-  // Pick the type pairing for a balloon pair
+  // Get balloon type pairing for a level
   const pickPairTypes = useCallback((lvl: number): [BalloonType, BalloonType] => {
-    // Levels 1-2: only numeral <-> word
-    // Levels 3-4: numeral <-> word or numeral <-> dots
-    // Levels 5+: any combination
     if (lvl <= 2) return ['numeral', 'word'];
     if (lvl <= 4) {
       return Math.random() < 0.5 ? ['numeral', 'word'] : ['numeral', 'dots'];
     }
     const r = Math.random();
-    if (r < 0.4) return ['numeral', 'word'];
-    if (r < 0.8) return ['numeral', 'dots'];
+    if (r < 0.35) return ['numeral', 'word'];
+    if (r < 0.7) return ['numeral', 'dots'];
     return ['word', 'dots'];
   }, []);
 
-  // Create a balloon pair
+  // Get spawn interval for current level
+  const getSpawnInterval = useCallback((lvl: number): number => {
+    return Math.max(2200 - lvl * 150, 900);
+  }, []);
+
+  // Get max simultaneous balloons
+  const getMaxBalloons = useCallback((lvl: number): number => {
+    return Math.min(6 + Math.floor(lvl * 0.8), 14);
+  }, []);
+
+  // Get matches needed for level
+  const getLevelMatches = useCallback((lvl: number): number => {
+    return Math.min(4 + Math.floor(lvl * 1.2), 12);
+  }, []);
+
+  // Get float speed for level
+  const getFloatSpeed = useCallback((lvl: number): number => {
+    return FLOAT_SPEED_BASE + lvl * 0.06;
+  }, []);
+
+  // Spawn a pair of matching balloons
   const spawnPair = useCallback((lvl: number): Balloon[] => {
     const [minNum, maxNum] = getNumberRange(lvl);
     const value = minNum + Math.floor(Math.random() * (maxNum - minNum + 1));
     const [typeA, typeB] = pickPairTypes(lvl);
     const hue = BALLOON_HUES[value % BALLOON_HUES.length];
-    const size = containerSizeRef.current;
-    const pairId = ++pairCounterRef.current;
-
-    const baseRadius = 38;
-    const wordRadius = typeA === 'word' || typeB === 'word' ? 44 : baseRadius;
-    const dotsRadius = 42;
+    const size = getContainerSize();
+    const floatSpeed = getFloatSpeed(lvl);
 
     const getRadius = (type: BalloonType) => {
-      if (type === 'word') return wordRadius;
-      if (type === 'dots') return dotsRadius;
-      return baseRadius;
+      if (type === 'word') return 52;
+      if (type === 'dots') return 48;
+      return 45;
     };
 
-    const floatSpeed = getFloatSpeed(lvl);
-    const makeOne = (type: BalloonType, xBias: number): Balloon => {
+    const makeOne = (type: BalloonType, xRegion: number): Balloon => {
       const radius = getRadius(type);
+      const regionWidth = size.width / 3;
+      const x = radius + regionWidth * xRegion + Math.random() * (regionWidth - radius * 2);
       return {
         id: getNewId(),
         value,
         type,
-        x: radius + Math.random() * (size.width - radius * 2) * xBias + (size.width * (1 - xBias) * (1 - xBias)),
-        y: size.height + radius + Math.random() * 60,
-        vx: 0,
-        vy: -(floatSpeed + Math.random() * floatSpeed * 0.6),
+        x,
+        y: size.height + radius + Math.random() * 80,
+        vx: (Math.random() - 0.5) * 0.8,
+        vy: -(floatSpeed + Math.random() * floatSpeed * 0.5),
         radius,
         hue: hue + (type === 'word' ? 30 : type === 'dots' ? -30 : 0),
-        rotation: (Math.random() - 0.5) * 8,
-        rotationSpeed: (Math.random() - 0.5) * 0.3,
         wobblePhase: Math.random() * Math.PI * 2,
-        wobbleSpeed: 1.5 + Math.random() * 1.5,
-        wobbleAmount: 0.3 + Math.random() * 0.5,
+        wobbleSpeed: 1.2 + Math.random() * 1.5,
         spawnTime: Date.now(),
-        popping: false,
-        popTime: 0,
-        selected: false,
-        matchId: pairId,
       };
     };
 
-    // Spawn balloons on different sides to spread them out
-    const a = makeOne(typeA, 0.5);
-    const b = makeOne(typeB, 0.5);
-    // Offset spawns slightly in time by offsetting y
-    b.y += 30 + Math.random() * 80;
-    // Give them the same matchId (pair id) but we link them via value + different types
+    const regionA = Math.random() < 0.5 ? 0 : 2;
+    const regionB = regionA === 0 ? 2 : 0;
+    const a = makeOne(typeA, regionA);
+    const b = makeOne(typeB, regionB);
+    b.y += 40 + Math.random() * 60;
     return [a, b];
-  }, [getNumberRange, pickPairTypes, getFloatSpeed]);
-
-  // Initialize clouds
-  const initClouds = useCallback((): Cloud[] => {
-    const clouds: Cloud[] = [];
-    for (let i = 0; i < 6; i++) {
-      clouds.push({
-        id: i,
-        x: Math.random() * containerSizeRef.current.width,
-        y: 30 + Math.random() * containerSizeRef.current.height * 0.35,
-        scale: 0.5 + Math.random() * 1.0,
-        speed: 0.1 + Math.random() * 0.2,
-        opacity: 0.15 + Math.random() * 0.2,
-      });
-    }
-    return clouds;
-  }, []);
-
-  // Initialize birds
-  const initBirds = useCallback((): Bird[] => {
-    const birds: Bird[] = [];
-    for (let i = 0; i < 3; i++) {
-      birds.push({
-        id: i,
-        x: Math.random() * containerSizeRef.current.width,
-        y: 40 + Math.random() * 120,
-        speed: 0.3 + Math.random() * 0.4,
-        wingPhase: Math.random() * Math.PI * 2,
-        wingSpeed: 3 + Math.random() * 2,
-        scale: 0.4 + Math.random() * 0.3,
-      });
-    }
-    return birds;
-  }, []);
+  }, [getNumberRange, pickPairTypes, getContainerSize, getFloatSpeed]);
 
   // Create pop particles
-  const createPopParticles = useCallback((x: number, y: number, hue: number, count: number): PopParticle[] => {
+  const createPopParticles = useCallback((x: number, y: number, hue: number): PopParticle[] => {
     const particles: PopParticle[] = [];
+    const count = 20;
     for (let i = 0; i < count; i++) {
       const angle = (Math.PI * 2 / count) * i + (Math.random() - 0.5) * 0.5;
-      const speed = 2 + Math.random() * 5;
-      const type: PopParticle['type'] = i < count * 0.4 ? 'confetti' : i < count * 0.7 ? 'spark' : 'ring';
+      const speed = 3 + Math.random() * 6;
+      const type: PopParticle['type'] = i < count * 0.5 ? 'confetti' : i < count * 0.75 ? 'spark' : 'ring';
       particles.push({
         id: getNewId(),
-        x, y,
+        x: x + Math.cos(angle) * 10,
+        y: y + Math.sin(angle) * 10,
         vx: Math.cos(angle) * speed,
         vy: Math.sin(angle) * speed - 2,
-        size: type === 'confetti' ? 4 + Math.random() * 6 : type === 'spark' ? 2 + Math.random() * 3 : 15 + Math.random() * 10,
-        hue: hue + (Math.random() - 0.5) * 40,
-        life: 1.0,
-        maxLife: 0.6 + Math.random() * 0.5,
-        type,
+        size: type === 'confetti' ? 5 + Math.random() * 7 : type === 'spark' ? 2 + Math.random() * 4 : 20 + Math.random() * 15,
+        hue: hue + (Math.random() - 0.5) * 60,
         rotation: Math.random() * 360,
-        rotationSpeed: (Math.random() - 0.5) * 15,
+        type,
       });
     }
     return particles;
   }, []);
 
-  // Trigger screen shake
-  const triggerShake = useCallback((intensity: number, duration: number) => {
-    shakeRef.current = { active: true, intensity, startTime: Date.now(), duration };
+  // Find nearby matching balloon while dragging
+  const findNearbyMatch = useCallback((balloon: Balloon): Balloon | null => {
+    if (!balloon) return null;
+    let closest: Balloon | null = null;
+    let closestDist = Infinity;
+
+    balloonsRef.current.forEach(other => {
+      if (other.id === balloon.id) return;
+      if (other.value !== balloon.value) return;
+      if (other.type === balloon.type) return;
+      const dx = balloon.x - other.x;
+      const dy = balloon.y - other.y;
+      const dist = Math.sqrt(dx * dx + dy * dy);
+      if (dist < MAGNETIC_DISTANCE && dist < closestDist) {
+        closest = other;
+        closestDist = dist;
+      }
+    });
+    return closest;
   }, []);
 
-  // Start a new level
-  const initLevel = useCallback((lvl: number) => {
-    balloonsRef.current = [];
-    particlesRef.current = [];
-    spawnTimerRef.current = 0;
-    pairCounterRef.current = 0;
-    selectedBalloonRef.current = null;
-    setSelectedBalloon(null);
-    setMatchesMade(0);
+  // Check if two balloons are close enough to merge
+  const checkMerge = useCallback((a: Balloon, b: Balloon): boolean => {
+    const dx = a.x - b.x;
+    const dy = a.y - b.y;
+    const dist = Math.sqrt(dx * dx + dy * dy);
+    return dist < MERGE_DISTANCE;
+  }, []);
+
+  // Perform match
+  const performMatch = useCallback((balloonA: Balloon, balloonB: Balloon): void => {
+    const midX = (balloonA.x + balloonB.x) / 2;
+    const midY = (balloonA.y + balloonB.y) / 2;
+    const hue = balloonA.hue;
+
+    setPopEffect({
+      id: Date.now(),
+      x: midX,
+      y: midY,
+      hue,
+      value: balloonA.value,
+      particles: createPopParticles(midX, midY, hue),
+    });
+    setTimeout(() => setPopEffect(null), 1000);
+
+    setBalloons(prev => prev.filter(b => b.id !== balloonA.id && b.id !== balloonB.id));
+
+    setCombo(prev => {
+      const newCombo = prev + 1;
+      const multiplier = Math.min(newCombo, 5);
+      const points = 100 * multiplier;
+      setScore(s => s + points);
+      if (newCombo > maxCombo) setMaxCombo(newCombo);
+
+      if (newCombo >= 2) {
+        setComboText({
+          id: Date.now(),
+          x: midX,
+          y: midY - 50,
+          text: newCombo >= 5 ? `${multiplier}x INCREDIBLE!` : newCombo >= 4 ? `${multiplier}x AMAZING!` : newCombo >= 3 ? `${multiplier}x GREAT!` : `${multiplier}x COMBO!`,
+        });
+        setTimeout(() => setComboText(null), 1200);
+      }
+      return newCombo;
+    });
+
+    setMatchesMade(prev => {
+      const newMM = prev + 1;
+      if (newMM >= matchesNeededRef.current) {
+        setTimeout(() => setGameState('levelComplete'), 800);
+      }
+      return newMM;
+    });
+    setNearbyMatch(null);
+  }, [createPopParticles, maxCombo]);
+
+  // Perform wrong match rejection
+  const performReject = useCallback((balloonA: Balloon, balloonB: Balloon): void => {
+    const midX = (balloonA.x + balloonB.x) / 2;
+    const midY = (balloonA.y + balloonB.y) / 2;
+
+    setRejectEffect({ id: Date.now(), x: midX, y: midY });
+    setTimeout(() => setRejectEffect(null), 500);
+
+    // Repel balloons apart
+    const dx = balloonA.x - balloonB.x;
+    const dy = balloonA.y - balloonB.y;
+    const dist = Math.sqrt(dx * dx + dy * dy) || 1;
+    const repelForce = 8;
+
+    setBalloons(prev => prev.map(b => {
+      if (b.id === balloonA.id) {
+        return { ...b, vx: (dx / dist) * repelForce, vy: (dy / dist) * repelForce };
+      }
+      if (b.id === balloonB.id) {
+        return { ...b, vx: -(dx / dist) * repelForce, vy: -(dy / dist) * repelForce };
+      }
+      return b;
+    }));
+
     setCombo(0);
-    setWrongMatch(false);
+    setLives(prev => {
+      const newLives = prev - 1;
+      if (newLives <= 0) {
+        setTimeout(() => setGameState('gameOver'), 500);
+      }
+      return newLives;
+    });
+  }, []);
+
+  const initLevel = useCallback((lvl: number): void => {
+    const size = getContainerSize();
+    setPopEffect(null);
+    setRejectEffect(null);
     setComboText(null);
+    setDraggedBalloon(null);
+    setNearbyMatch(null);
+    setCombo(0);
+    pairCounterRef.current = 0;
+    spawnTimerRef.current = 0;
+
     const needed = getLevelMatches(lvl);
     setMatchesNeeded(needed);
-    matchesNeededRef.current = needed;
-    matchesMadeRef.current = 0;
+    setMatchesMade(0);
 
-    // Spawn initial pairs
+    // Spawn initial balloon pairs
     const initialPairs = Math.min(2 + Math.floor(lvl * 0.3), 4);
     const initialBalloons: Balloon[] = [];
     for (let i = 0; i < initialPairs; i++) {
       const pair = spawnPair(lvl);
-      // Stagger vertical positions
-      pair[0].y = containerSizeRef.current.height * (0.5 + i * 0.15);
-      pair[1].y = containerSizeRef.current.height * (0.6 + i * 0.15);
+      // Place initial balloons on screen (not below)
+      pair[0].y = size.height * (0.35 + i * 0.15);
+      pair[1].y = size.height * (0.45 + i * 0.15);
       initialBalloons.push(...pair);
     }
-    balloonsRef.current = initialBalloons;
-  }, [getLevelMatches, spawnPair]);
+    setBalloons(initialBalloons);
+  }, [getContainerSize, getLevelMatches, spawnPair]);
 
-  // Start the game
-  const startGame = useCallback(() => {
+  const startGame = (): void => {
     setGameState('playing');
     setLevel(1);
     setScore(0);
@@ -340,804 +385,296 @@ export default function NumberBalloons({ onExit }: NumberBalloonsProps = {}) {
     setCombo(0);
     setMaxCombo(0);
     setMatchesMade(0);
-    livesRef.current = 5;
-    scoreRef.current = 0;
-    comboRef.current = 0;
-    levelRef.current = 1;
-    cloudsRef.current = initClouds();
-    birdsRef.current = initBirds();
     initLevel(1);
-  }, [initLevel, initClouds, initBirds]);
+  };
 
-  // Next level
-  const nextLevel = useCallback(() => {
+  const nextLevel = (): void => {
     const newLevel = level + 1;
     setLevel(newLevel);
-    levelRef.current = newLevel;
     setGameState('playing');
     initLevel(newLevel);
-  }, [level, initLevel]);
+  };
 
-  // Handle canvas resize
-  useEffect(() => {
-    const handleResize = () => {
-      if (containerRef.current && canvasRef.current) {
-        const rect = containerRef.current.getBoundingClientRect();
-        const dpr = window.devicePixelRatio || 1;
-        canvasRef.current.width = rect.width * dpr;
-        canvasRef.current.height = rect.height * dpr;
-        canvasRef.current.style.width = `${rect.width}px`;
-        canvasRef.current.style.height = `${rect.height}px`;
-        containerSizeRef.current = { width: rect.width, height: rect.height };
-
-        const ctx = canvasRef.current.getContext('2d');
-        if (ctx) ctx.scale(dpr, dpr);
-      }
-    };
-
-    handleResize();
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, [gameState]);
-
-  // Draw a cloud
-  const drawCloud = useCallback((ctx: CanvasRenderingContext2D, cloud: Cloud) => {
-    ctx.save();
-    ctx.globalAlpha = cloud.opacity;
-    ctx.fillStyle = '#ffffff';
-    const s = cloud.scale;
-    const cx = cloud.x;
-    const cy = cloud.y;
-
-    // Cloud made of overlapping circles
-    ctx.beginPath();
-    ctx.arc(cx, cy, 20 * s, 0, Math.PI * 2);
-    ctx.arc(cx + 18 * s, cy - 5 * s, 16 * s, 0, Math.PI * 2);
-    ctx.arc(cx - 16 * s, cy + 2 * s, 14 * s, 0, Math.PI * 2);
-    ctx.arc(cx + 8 * s, cy + 8 * s, 12 * s, 0, Math.PI * 2);
-    ctx.arc(cx - 8 * s, cy - 8 * s, 15 * s, 0, Math.PI * 2);
-    ctx.arc(cx + 25 * s, cy + 5 * s, 13 * s, 0, Math.PI * 2);
-    ctx.fill();
-    ctx.restore();
-  }, []);
-
-  // Draw a bird
-  const drawBird = useCallback((ctx: CanvasRenderingContext2D, bird: Bird, time: number) => {
-    ctx.save();
-    ctx.translate(bird.x, bird.y);
-    ctx.scale(bird.scale, bird.scale);
-    ctx.strokeStyle = '#334155';
-    ctx.lineWidth = 1.5;
-    ctx.lineCap = 'round';
-
-    const wingY = Math.sin(time * bird.wingSpeed + bird.wingPhase) * 6;
-
-    // Left wing
-    ctx.beginPath();
-    ctx.moveTo(0, 0);
-    ctx.quadraticCurveTo(-6, wingY - 3, -12, wingY);
-    ctx.stroke();
-
-    // Right wing
-    ctx.beginPath();
-    ctx.moveTo(0, 0);
-    ctx.quadraticCurveTo(6, wingY - 3, 12, wingY);
-    ctx.stroke();
-
-    ctx.restore();
-  }, []);
-
-  // Draw dots pattern inside balloon
-  const drawDots = useCallback((ctx: CanvasRenderingContext2D, value: number, cx: number, cy: number, radius: number) => {
-    if (value === 0) return;
-    const layout = DOT_LAYOUTS[value] || { cols: 5, size: 3 };
-    const cols = layout.cols;
-    const rows = Math.ceil(value / cols);
-    const dotSize = layout.size;
-    const spacing = dotSize * 2.4;
-    const totalW = (cols - 1) * spacing;
-    const totalH = (rows - 1) * spacing;
-    const startX = cx - totalW / 2;
-    const startY = cy - totalH / 2;
-
-    let count = 0;
-    for (let r = 0; r < rows && count < value; r++) {
-      const rowCols = Math.min(cols, value - count);
-      const rowOffset = (cols - rowCols) * spacing / 2;
-      for (let c = 0; c < rowCols && count < value; c++) {
-        const dx = startX + rowOffset + c * spacing;
-        const dy = startY + r * spacing;
-
-        ctx.beginPath();
-        ctx.arc(dx, dy, dotSize, 0, Math.PI * 2);
-        ctx.fillStyle = 'rgba(255,255,255,0.95)';
-        ctx.fill();
-        ctx.strokeStyle = 'rgba(0,0,0,0.15)';
-        ctx.lineWidth = 0.5;
-        ctx.stroke();
-        count++;
-      }
-    }
-  }, []);
-
-  // Draw a balloon
-  const drawBalloon = useCallback((ctx: CanvasRenderingContext2D, balloon: Balloon, time: number) => {
-    const { x, y, radius, hue, rotation, type, value, selected, popping, popTime } = balloon;
-
-    // Pop animation
-    let popScale = 1;
-    let popAlpha = 1;
-    if (popping) {
-      const elapsed = (Date.now() - popTime) / 400;
-      if (elapsed > 1) return; // fully popped
-      popScale = 1 + elapsed * 0.8;
-      popAlpha = 1 - elapsed;
-    }
-
-    ctx.save();
-    ctx.translate(x, y);
-    ctx.rotate((rotation + Math.sin(time * 2 + balloon.wobblePhase) * 3) * Math.PI / 180);
-    ctx.scale(popScale, popScale);
-    ctx.globalAlpha = popAlpha;
-
-    // String
-    if (!popping) {
-      ctx.beginPath();
-      ctx.moveTo(0, radius);
-      const stringLen = 25;
-      const wobble = Math.sin(time * 1.5 + balloon.wobblePhase) * 4;
-      ctx.quadraticCurveTo(wobble, radius + stringLen / 2, wobble * 0.5, radius + stringLen);
-      ctx.strokeStyle = `hsla(${hue}, 40%, 40%, 0.5)`;
-      ctx.lineWidth = 1.5;
-      ctx.stroke();
-
-      // Knot
-      ctx.beginPath();
-      ctx.arc(0, radius + 2, 3, 0, Math.PI * 2);
-      ctx.fillStyle = `hsl(${hue}, 60%, 35%)`;
-      ctx.fill();
-    }
-
-    // Balloon body - gradient
-    const grad = ctx.createRadialGradient(-radius * 0.25, -radius * 0.25, radius * 0.1, 0, 0, radius);
-    grad.addColorStop(0, `hsla(${hue}, 85%, 75%, 0.95)`);
-    grad.addColorStop(0.4, `hsla(${hue}, 80%, 60%, 0.95)`);
-    grad.addColorStop(0.8, `hsla(${hue}, 70%, 48%, 0.95)`);
-    grad.addColorStop(1, `hsla(${hue}, 65%, 38%, 0.95)`);
-
-    // Slightly oval shape (taller than wide)
-    ctx.beginPath();
-    ctx.ellipse(0, 0, radius * 0.92, radius, 0, 0, Math.PI * 2);
-    ctx.fillStyle = grad;
-    ctx.fill();
-
-    // Glossy highlight
-    ctx.beginPath();
-    ctx.ellipse(-radius * 0.2, -radius * 0.3, radius * 0.25, radius * 0.18, -0.4, 0, Math.PI * 2);
-    ctx.fillStyle = 'rgba(255,255,255,0.45)';
-    ctx.fill();
-
-    // Secondary highlight
-    ctx.beginPath();
-    ctx.ellipse(-radius * 0.1, -radius * 0.55, radius * 0.12, radius * 0.08, -0.3, 0, Math.PI * 2);
-    ctx.fillStyle = 'rgba(255,255,255,0.3)';
-    ctx.fill();
-
-    // Selection glow
-    if (selected && !popping) {
-      ctx.beginPath();
-      ctx.ellipse(0, 0, radius * 0.92 + 6, radius + 6, 0, 0, Math.PI * 2);
-      ctx.strokeStyle = `hsla(50, 100%, 70%, ${0.6 + Math.sin(time * 5) * 0.3})`;
-      ctx.lineWidth = 3;
-      ctx.stroke();
-
-      // Outer pulsing ring
-      const pulseR = radius + 10 + Math.sin(time * 4) * 5;
-      ctx.beginPath();
-      ctx.ellipse(0, 0, pulseR * 0.92, pulseR, 0, 0, Math.PI * 2);
-      ctx.strokeStyle = `hsla(50, 100%, 70%, ${0.3 + Math.sin(time * 4) * 0.15})`;
-      ctx.lineWidth = 2;
-      ctx.setLineDash([4, 4]);
-      ctx.stroke();
-      ctx.setLineDash([]);
-    }
-
-    // Content
-    ctx.textAlign = 'center';
-    ctx.textBaseline = 'middle';
-
-    if (type === 'numeral') {
-      ctx.font = `900 ${radius * 0.9}px 'Nunito', sans-serif`;
-      ctx.fillStyle = 'rgba(0,0,0,0.15)';
-      ctx.fillText(String(value), 2, 3);
-      ctx.fillStyle = '#ffffff';
-      ctx.shadowColor = 'rgba(0,0,0,0.3)';
-      ctx.shadowBlur = 3;
-      ctx.shadowOffsetY = 2;
-      ctx.fillText(String(value), 0, 0);
-      ctx.shadowBlur = 0;
-      ctx.shadowOffsetY = 0;
-    } else if (type === 'word') {
-      const word = NUMBER_WORDS[value] || String(value);
-      const fontSize = word.length > 7 ? radius * 0.38 : word.length > 5 ? radius * 0.42 : radius * 0.5;
-      ctx.font = `800 ${fontSize}px 'Nunito', sans-serif`;
-      ctx.fillStyle = 'rgba(0,0,0,0.15)';
-      ctx.fillText(word, 1, 2);
-      ctx.fillStyle = '#ffffff';
-      ctx.shadowColor = 'rgba(0,0,0,0.3)';
-      ctx.shadowBlur = 2;
-      ctx.shadowOffsetY = 1;
-      ctx.fillText(word, 0, 0);
-      ctx.shadowBlur = 0;
-      ctx.shadowOffsetY = 0;
-    } else {
-      // dots
-      drawDots(ctx, value, 0, 0, radius);
-    }
-
-    ctx.restore();
-  }, [drawDots]);
-
-  // Draw particles
-  const drawParticle = useCallback((ctx: CanvasRenderingContext2D, p: PopParticle) => {
-    ctx.save();
-    ctx.globalAlpha = p.life;
-    ctx.translate(p.x, p.y);
-    ctx.rotate(p.rotation * Math.PI / 180);
-
-    if (p.type === 'confetti') {
-      ctx.fillStyle = `hsl(${p.hue}, 80%, 60%)`;
-      ctx.fillRect(-p.size / 2, -p.size / 4, p.size, p.size / 2);
-    } else if (p.type === 'spark') {
-      ctx.fillStyle = `hsl(${p.hue}, 90%, 80%)`;
-      ctx.beginPath();
-      ctx.arc(0, 0, p.size, 0, Math.PI * 2);
-      ctx.fill();
-    } else {
-      // ring
-      ctx.strokeStyle = `hsl(${p.hue}, 80%, 70%)`;
-      ctx.lineWidth = 2;
-      ctx.beginPath();
-      ctx.arc(0, 0, p.size * (1 - p.life + 0.3), 0, Math.PI * 2);
-      ctx.stroke();
-    }
-    ctx.restore();
-  }, []);
-
-  // Draw sun with rays
-  const drawSun = useCallback((ctx: CanvasRenderingContext2D, time: number, width: number) => {
-    const sunX = width - 70;
-    const sunY = 60;
-    const sunR = 30;
-
-    // Rays
-    ctx.save();
-    ctx.translate(sunX, sunY);
-    ctx.rotate(time * 0.2);
-    for (let i = 0; i < 12; i++) {
-      const angle = (Math.PI * 2 / 12) * i;
-      const rayLen = 18 + Math.sin(time * 2 + i) * 5;
-      ctx.beginPath();
-      ctx.moveTo(Math.cos(angle) * (sunR + 4), Math.sin(angle) * (sunR + 4));
-      ctx.lineTo(Math.cos(angle) * (sunR + rayLen), Math.sin(angle) * (sunR + rayLen));
-      ctx.strokeStyle = 'rgba(251,191,36,0.4)';
-      ctx.lineWidth = 3;
-      ctx.lineCap = 'round';
-      ctx.stroke();
-    }
-    ctx.restore();
-
-    // Sun body
-    const sunGrad = ctx.createRadialGradient(sunX, sunY, 0, sunX, sunY, sunR);
-    sunGrad.addColorStop(0, 'rgba(253,224,71,0.9)');
-    sunGrad.addColorStop(0.6, 'rgba(251,191,36,0.7)');
-    sunGrad.addColorStop(1, 'rgba(245,158,11,0.3)');
-    ctx.beginPath();
-    ctx.arc(sunX, sunY, sunR, 0, Math.PI * 2);
-    ctx.fillStyle = sunGrad;
-    ctx.fill();
-
-    // Sun glow
-    const glowGrad = ctx.createRadialGradient(sunX, sunY, sunR, sunX, sunY, sunR * 3);
-    glowGrad.addColorStop(0, 'rgba(253,224,71,0.15)');
-    glowGrad.addColorStop(1, 'rgba(253,224,71,0)');
-    ctx.beginPath();
-    ctx.arc(sunX, sunY, sunR * 3, 0, Math.PI * 2);
-    ctx.fillStyle = glowGrad;
-    ctx.fill();
-  }, []);
-
-  // Draw background
-  const drawBackground = useCallback((ctx: CanvasRenderingContext2D, width: number, height: number, time: number) => {
-    // Sky gradient
-    const skyGrad = ctx.createLinearGradient(0, 0, 0, height);
-    skyGrad.addColorStop(0, '#87CEEB');
-    skyGrad.addColorStop(0.3, '#B0E0F0');
-    skyGrad.addColorStop(0.6, '#D4F0FC');
-    skyGrad.addColorStop(1, '#F0F9FF');
-    ctx.fillStyle = skyGrad;
-    ctx.fillRect(0, 0, width, height);
-
-    // Sun
-    drawSun(ctx, time, width);
-
-    // Clouds
-    for (const cloud of cloudsRef.current) {
-      drawCloud(ctx, cloud);
-    }
-
-    // Birds
-    for (const bird of birdsRef.current) {
-      drawBird(ctx, bird, time);
-    }
-
-    // Ground (gentle green hill)
-    ctx.beginPath();
-    ctx.moveTo(0, height);
-    ctx.quadraticCurveTo(width * 0.25, height - 30, width * 0.5, height - 15);
-    ctx.quadraticCurveTo(width * 0.75, height, width, height - 20);
-    ctx.lineTo(width, height);
-    ctx.closePath();
-    const groundGrad = ctx.createLinearGradient(0, height - 30, 0, height);
-    groundGrad.addColorStop(0, '#86efac');
-    groundGrad.addColorStop(1, '#4ade80');
-    ctx.fillStyle = groundGrad;
-    ctx.fill();
-  }, [drawCloud, drawBird, drawSun]);
-
-  // Draw HUD
-  const drawHUD = useCallback((ctx: CanvasRenderingContext2D, width: number) => {
-    const lvl = levelRef.current;
-    const sc = scoreRef.current;
-    const lv = livesRef.current;
-    const cb = comboRef.current;
-    const mm = matchesMadeRef.current;
-    const mn = matchesNeededRef.current;
-
-    // Top bar background
-    ctx.fillStyle = 'rgba(0,0,0,0.25)';
-    ctx.fillRect(0, 0, width, 52);
-
-    // Level badge
-    ctx.font = '700 14px "Nunito", sans-serif';
-    ctx.fillStyle = '#ffffff';
-    ctx.textAlign = 'left';
-    ctx.textBaseline = 'middle';
-
-    // Level pill
-    const lvlText = `Level ${lvl}`;
-    const lvlW = ctx.measureText(lvlText).width + 20;
-    ctx.beginPath();
-    ctx.roundRect(12, 12, lvlW, 28, 14);
-    ctx.fillStyle = 'rgba(59,130,246,0.8)';
-    ctx.fill();
-    ctx.fillStyle = '#ffffff';
-    ctx.fillText(lvlText, 22, 26);
-
-    // Score
-    ctx.textAlign = 'right';
-    const scoreText = `${sc}`;
-    ctx.font = '800 16px "Nunito", sans-serif';
-    ctx.fillStyle = '#fbbf24';
-    ctx.fillText(scoreText, width - 16, 26);
-    ctx.font = '600 10px "Nunito", sans-serif';
-    ctx.fillStyle = 'rgba(251,191,36,0.7)';
-    ctx.fillText('SCORE', width - 16, 14);
-
-    // Lives (hearts)
-    ctx.textAlign = 'center';
-    ctx.font = '16px sans-serif';
-    const heartsStr = '';
-    const heartsTotalW = lv * 22;
-    const heartsStartX = width / 2 - heartsTotalW / 2;
-    for (let i = 0; i < 5; i++) {
-      ctx.globalAlpha = i < lv ? 1 : 0.2;
-      ctx.fillText(i < lv ? '\u2764\uFE0F' : '\u{1F5A4}', heartsStartX + i * 22 + 10, 20);
-    }
-    ctx.globalAlpha = 1;
-
-    // Match progress bar
-    const barW = Math.min(width * 0.4, 200);
-    const barH = 8;
-    const barX = width / 2 - barW / 2;
-    const barY = 36;
-    ctx.beginPath();
-    ctx.roundRect(barX, barY, barW, barH, 4);
-    ctx.fillStyle = 'rgba(255,255,255,0.15)';
-    ctx.fill();
-
-    const progress = mn > 0 ? mm / mn : 0;
-    if (progress > 0) {
-      ctx.beginPath();
-      ctx.roundRect(barX, barY, barW * Math.min(progress, 1), barH, 4);
-      ctx.fillStyle = '#4ade80';
-      ctx.fill();
-    }
-
-    ctx.font = '600 9px "Nunito", sans-serif';
-    ctx.fillStyle = 'rgba(255,255,255,0.6)';
-    ctx.textAlign = 'center';
-    ctx.fillText(`${mm} / ${mn} matches`, width / 2, barY + barH + 10);
-
-    // Combo display
-    if (cb >= 2) {
-      ctx.font = `800 ${14 + cb * 2}px "Nunito", sans-serif`;
-      const comboGrad = ctx.createLinearGradient(width / 2 - 40, 0, width / 2 + 40, 0);
-      comboGrad.addColorStop(0, '#f97316');
-      comboGrad.addColorStop(0.5, '#fbbf24');
-      comboGrad.addColorStop(1, '#f97316');
-      ctx.fillStyle = comboGrad;
-      ctx.textAlign = 'center';
-
-      // Fire effect at high combos
-      if (cb >= 4) {
-        ctx.shadowColor = '#f97316';
-        ctx.shadowBlur = 15;
-      }
-      // Positioned just below the top bar
-      // Not drawn here -- using DOM overlay for combo text
-      ctx.shadowBlur = 0;
-    }
-  }, []);
-
-  // Handle balloon tap/click
-  const handleCanvasClick = useCallback((e: React.MouseEvent<HTMLCanvasElement> | React.TouchEvent<HTMLCanvasElement>) => {
-    if (gameStateRef.current !== 'playing') return;
-
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-    const rect = canvas.getBoundingClientRect();
-    const clientX = 'touches' in e ? e.touches[0].clientX : e.clientX;
-    const clientY = 'touches' in e ? e.touches[0].clientY : e.clientY;
-    const mx = clientX - rect.left;
-    const my = clientY - rect.top;
-
-    // Find clicked balloon
-    let clicked: Balloon | null = null;
-    for (const b of balloonsRef.current) {
-      if (b.popping) continue;
-      const dx = mx - b.x;
-      const dy = my - b.y;
-      if (Math.sqrt(dx * dx + dy * dy) < b.radius + 5) {
-        clicked = b;
-        break;
-      }
-    }
-
-    if (!clicked) {
-      // Deselect if clicking empty space
-      if (selectedBalloonRef.current) {
-        balloonsRef.current = balloonsRef.current.map(b => ({ ...b, selected: false }));
-        setSelectedBalloon(null);
-        selectedBalloonRef.current = null;
-      }
-      return;
-    }
-
-    const sel = selectedBalloonRef.current;
-
-    if (!sel) {
-      // First selection
-      clicked.selected = true;
-      balloonsRef.current = balloonsRef.current.map(b =>
-        b.id === clicked!.id ? { ...b, selected: true } : b
-      );
-      setSelectedBalloon(clicked);
-      selectedBalloonRef.current = clicked;
-    } else if (sel.id === clicked.id) {
-      // Tapped same balloon -- deselect
-      balloonsRef.current = balloonsRef.current.map(b => ({ ...b, selected: false }));
-      setSelectedBalloon(null);
-      selectedBalloonRef.current = null;
-    } else {
-      // Second selection -- check for match
-      const isMatch = sel.value === clicked.value && sel.type !== clicked.type;
-
-      if (isMatch) {
-        // MATCH! Pop both balloons
-        const midX = (sel.x + clicked.x) / 2;
-        const midY = (sel.y + clicked.y) / 2;
-
-        // Mark as popping
-        balloonsRef.current = balloonsRef.current.map(b => {
-          if (b.id === sel.id || b.id === clicked!.id) {
-            return { ...b, popping: true, popTime: Date.now(), selected: false };
-          }
-          return { ...b, selected: false };
-        });
-
-        // Create pop particles
-        particlesRef.current = [
-          ...particlesRef.current,
-          ...createPopParticles(sel.x, sel.y, sel.hue, 15),
-          ...createPopParticles(clicked.x, clicked.y, clicked.hue, 15),
-          ...createPopParticles(midX, midY, 50, 8), // gold confetti
-        ];
-
-        // Update score with combo multiplier
-        const newCombo = comboRef.current + 1;
-        const multiplier = Math.min(newCombo, 5);
-        const points = 100 * multiplier;
-        setCombo(newCombo);
-        comboRef.current = newCombo;
-        if (newCombo > maxCombo) setMaxCombo(newCombo);
-        setScore(prev => prev + points);
-        scoreRef.current += points;
-
-        // Combo text
-        if (newCombo >= 2) {
-          setComboText({
-            text: newCombo >= 5 ? `${multiplier}x INCREDIBLE!` : newCombo >= 4 ? `${multiplier}x AMAZING!` : newCombo >= 3 ? `${multiplier}x GREAT!` : `${multiplier}x COMBO!`,
-            x: midX,
-            y: midY - 40,
-            id: Date.now(),
-          });
-          setTimeout(() => setComboText(null), 1200);
-        }
-
-        // Update matches
-        const newMM = matchesMadeRef.current + 1;
-        setMatchesMade(newMM);
-        matchesMadeRef.current = newMM;
-
-        // Remove popped balloons after animation
-        setTimeout(() => {
-          balloonsRef.current = balloonsRef.current.filter(
-            b => b.id !== sel.id && b.id !== clicked!.id
-          );
-        }, 400);
-
-        // Check level complete
-        if (newMM >= matchesNeededRef.current) {
-          setTimeout(() => {
-            setGameState('levelComplete');
-          }, 600);
-        }
-
-        setSelectedBalloon(null);
-        selectedBalloonRef.current = null;
-      } else {
-        // WRONG MATCH
-        setWrongMatch(true);
-        triggerShake(4, 300);
-        setCombo(0);
-        comboRef.current = 0;
-        setLives(prev => {
-          const newLives = prev - 1;
-          livesRef.current = newLives;
-          if (newLives <= 0) {
-            setTimeout(() => setGameState('gameOver'), 500);
-          }
-          return newLives;
-        });
-
-        // Flash and deselect
-        setTimeout(() => {
-          setWrongMatch(false);
-          balloonsRef.current = balloonsRef.current.map(b => ({ ...b, selected: false }));
-        }, 400);
-
-        setSelectedBalloon(null);
-        selectedBalloonRef.current = null;
-      }
-    }
-  }, [createPopParticles, triggerShake, maxCombo]);
-
-  // Main animation loop
+  // Physics loop
   useEffect(() => {
     if (gameState !== 'playing') {
       if (animationRef.current) cancelAnimationFrame(animationRef.current);
       return;
     }
 
-    lastTimeRef.current = 0;
-    spawnTimerRef.current = 0;
-
-    const update = (timestamp: number) => {
+    const updatePhysics = (timestamp: number): void => {
       if (!lastTimeRef.current) lastTimeRef.current = timestamp;
       const rawDelta = timestamp - lastTimeRef.current;
-      const delta = Math.min(rawDelta, 50) / 16.67; // normalize to ~60fps
+      const delta = Math.min(rawDelta / 16, 3);
       lastTimeRef.current = timestamp;
-
+      const size = getContainerSize();
       const time = timestamp / 1000;
-      const size = containerSizeRef.current;
-      const canvas = canvasRef.current;
-      if (!canvas) { animationRef.current = requestAnimationFrame(update); return; }
-      const ctx = canvas.getContext('2d');
-      if (!ctx) { animationRef.current = requestAnimationFrame(update); return; }
 
-      // Reset transform for this frame
-      const dpr = window.devicePixelRatio || 1;
-      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      setBalloons(prev => {
+        let changed = false;
+        const escapedIds = new Set<number>();
 
-      // Screen shake
-      let shakeX = 0;
-      let shakeY = 0;
-      if (shakeRef.current.active) {
-        const elapsed = Date.now() - shakeRef.current.startTime;
-        if (elapsed > shakeRef.current.duration) {
-          shakeRef.current.active = false;
-        } else {
-          const progress = elapsed / shakeRef.current.duration;
-          const decay = 1 - progress;
-          shakeX = (Math.random() - 0.5) * shakeRef.current.intensity * decay * 2;
-          shakeY = (Math.random() - 0.5) * shakeRef.current.intensity * decay * 2;
-        }
-      }
+        const updated = prev.map(balloon => {
+          if (draggedBalloon?.id === balloon.id) return balloon;
 
-      ctx.save();
-      ctx.translate(shakeX, shakeY);
+          let { x, y, vx, vy, radius, wobblePhase, wobbleSpeed } = balloon;
 
-      // Draw background
-      drawBackground(ctx, size.width, size.height, time);
+          // Upward float
+          y += vy * delta;
 
-      // Update clouds
-      for (const cloud of cloudsRef.current) {
-        cloud.x += cloud.speed * delta;
-        if (cloud.x > size.width + 60) {
-          cloud.x = -60;
-          cloud.y = 30 + Math.random() * size.height * 0.3;
-        }
-      }
+          // Wobble
+          wobblePhase += wobbleSpeed * delta * 0.02;
+          x += Math.sin(wobblePhase) * WOBBLE_AMOUNT * delta;
 
-      // Update birds
-      for (const bird of birdsRef.current) {
-        bird.x += bird.speed * delta;
-        if (bird.x > size.width + 30) {
-          bird.x = -30;
-          bird.y = 40 + Math.random() * 120;
-        }
-      }
+          // Drift
+          vx += (Math.random() - 0.5) * 0.03 * delta;
+          x += vx * delta;
+          vx *= FRICTION;
 
-      // Update balloons
-      const lvl = levelRef.current;
-      const floatSpeed = 0.3 + lvl * 0.08;
+          // Wall bounce
+          if (x < radius) { x = radius; vx = Math.abs(vx) * BOUNCE; changed = true; }
+          if (x > size.width - radius) { x = size.width - radius; vx = -Math.abs(vx) * BOUNCE; changed = true; }
 
-      for (const balloon of balloonsRef.current) {
-        if (balloon.popping) continue;
+          // Check if floated off top
+          if (y < -radius - 40) {
+            escapedIds.add(balloon.id);
+            changed = true;
+          }
 
-        // Float upward
-        balloon.y += balloon.vy * delta;
+          if (x !== balloon.x || y !== balloon.y || vx !== balloon.vx) changed = true;
 
-        // Lateral wobble (sine wave)
-        balloon.wobblePhase += balloon.wobbleSpeed * delta * 0.02;
-        balloon.x += Math.sin(balloon.wobblePhase) * balloon.wobbleAmount * delta;
+          return { ...balloon, x, y, vx, vy, wobblePhase };
+        });
 
-        // Slight rotation
-        balloon.rotation += balloon.rotationSpeed * delta;
-
-        // Gentle random lateral drift
-        balloon.vx += (Math.random() - 0.5) * 0.02 * delta;
-        balloon.x += balloon.vx * delta;
-        balloon.vx *= 0.99;
-
-        // Keep horizontal bounds
-        if (balloon.x < balloon.radius) {
-          balloon.x = balloon.radius;
-          balloon.vx = Math.abs(balloon.vx);
-        }
-        if (balloon.x > size.width - balloon.radius) {
-          balloon.x = size.width - balloon.radius;
-          balloon.vx = -Math.abs(balloon.vx);
-        }
-      }
-
-      // Check for balloons that floated off the top
-      const escaped = balloonsRef.current.filter(b => !b.popping && b.y < -b.radius - 30);
-      if (escaped.length > 0) {
-        // Remove escaped balloons
-        const escapedIds = new Set(escaped.map(b => b.id));
-        balloonsRef.current = balloonsRef.current.filter(b => !escapedIds.has(b.id));
-
-        // Lose a life for each escaped balloon (but cap at one life per frame)
-        if (escaped.length > 0) {
+        // Handle escaped balloons
+        if (escapedIds.size > 0) {
           setLives(prev => {
             const newLives = Math.max(0, prev - 1);
-            livesRef.current = newLives;
             if (newLives <= 0) {
               setTimeout(() => setGameState('gameOver'), 300);
             }
             return newLives;
           });
+          return updated.filter(b => !escapedIds.has(b.id));
         }
-      }
+
+        return updated;
+      });
 
       // Spawn new pairs
       spawnTimerRef.current += rawDelta;
+      const lvl = level;
       const spawnInterval = getSpawnInterval(lvl);
       const maxBalloons = getMaxBalloons(lvl);
 
       if (spawnTimerRef.current >= spawnInterval &&
-          balloonsRef.current.filter(b => !b.popping).length < maxBalloons &&
+          balloonsRef.current.length < maxBalloons &&
           matchesMadeRef.current < matchesNeededRef.current) {
         spawnTimerRef.current = 0;
         const pair = spawnPair(lvl);
-        balloonsRef.current = [...balloonsRef.current, ...pair];
+        setBalloons(prev => [...prev, ...pair]);
       }
 
-      // Draw balloons (sorted by y so higher ones are behind)
-      const sortedBalloons = [...balloonsRef.current].sort((a, b) => a.y - b.y);
-      for (const balloon of sortedBalloons) {
-        drawBalloon(ctx, balloon, time);
-      }
-
-      // Update and draw particles
-      particlesRef.current = particlesRef.current.filter(p => {
-        p.x += p.vx * delta;
-        p.y += p.vy * delta;
-        p.vy += 0.15 * delta; // gravity
-        p.rotation += p.rotationSpeed * delta;
-        p.life -= (1 / (p.maxLife * 60)) * delta;
-        if (p.life <= 0) return false;
-        drawParticle(ctx, p);
-        return true;
-      });
-
-      // Wrong match red flash overlay
-      if (shakeRef.current.active) {
-        const elapsed = Date.now() - shakeRef.current.startTime;
-        const progress = elapsed / shakeRef.current.duration;
-        ctx.fillStyle = `rgba(239, 68, 68, ${0.15 * (1 - progress)})`;
-        ctx.fillRect(0, 0, size.width, size.height);
-      }
-
-      // Draw HUD on top
-      drawHUD(ctx, size.width);
-
-      ctx.restore();
-
-      animationRef.current = requestAnimationFrame(update);
+      animationRef.current = requestAnimationFrame(updatePhysics);
     };
 
-    animationRef.current = requestAnimationFrame(update);
-    return () => {
-      if (animationRef.current) cancelAnimationFrame(animationRef.current);
-    };
-  }, [gameState, drawBackground, drawBalloon, drawParticle, drawHUD, spawnPair, getSpawnInterval, getMaxBalloons, getFloatSpeed]);
+    animationRef.current = requestAnimationFrame(updatePhysics);
+    return () => { if (animationRef.current) cancelAnimationFrame(animationRef.current); };
+  }, [gameState, draggedBalloon, getContainerSize, level, getSpawnInterval, getMaxBalloons, spawnPair]);
 
-  // Prevent default touch behavior on the canvas
+  // Drag handlers
+  const handleDragStart = (
+    e: React.MouseEvent<HTMLDivElement> | React.TouchEvent<HTMLDivElement>,
+    balloon: Balloon
+  ): void => {
+    e.preventDefault();
+    e.stopPropagation();
+    const rect = containerRef.current!.getBoundingClientRect();
+    const clientX = 'touches' in e ? e.touches[0].clientX : e.clientX;
+    const clientY = 'touches' in e ? e.touches[0].clientY : e.clientY;
+    setDraggedBalloon({
+      ...balloon,
+      offsetX: clientX - rect.left - balloon.x,
+      offsetY: clientY - rect.top - balloon.y,
+    });
+    setNearbyMatch(findNearbyMatch(balloon));
+  };
+
+  const handleDragMove = useCallback((e: MouseEvent | TouchEvent): void => {
+    if (!draggedBalloon || !containerRef.current) return;
+    e.preventDefault();
+    const rect = containerRef.current.getBoundingClientRect();
+    const clientX = 'touches' in e ? e.touches[0].clientX : e.clientX;
+    const clientY = 'touches' in e ? e.touches[0].clientY : e.clientY;
+    const newX = Math.max(30, Math.min(rect.width - 30, clientX - rect.left - draggedBalloon.offsetX));
+    const newY = Math.max(30, Math.min(rect.height - 30, clientY - rect.top - draggedBalloon.offsetY));
+
+    const updatedBalloon: Balloon = { ...draggedBalloon, x: newX, y: newY };
+    const nearby = findNearbyMatch(updatedBalloon);
+    setNearbyMatch(nearby);
+
+    // Magnetic pull toward matching balloon
+    if (nearby) {
+      const dx = nearby.x - newX;
+      const dy = nearby.y - newY;
+      const dist = Math.sqrt(dx * dx + dy * dy);
+      if (dist < MERGE_DISTANCE) {
+        // Close enough to merge
+        const isCorrectMatch = updatedBalloon.value === nearby.value && updatedBalloon.type !== nearby.type;
+        if (isCorrectMatch) {
+          performMatch(updatedBalloon, nearby);
+          setDraggedBalloon(null);
+          return;
+        }
+      }
+    }
+
+    setBalloons(prev => prev.map(b =>
+      b.id === draggedBalloon.id ? { ...b, x: newX, y: newY, vx: 0, vy: b.vy } : b
+    ));
+  }, [draggedBalloon, findNearbyMatch, performMatch]);
+
+  const handleDragEnd = useCallback((): void => {
+    if (!draggedBalloon) return;
+    setNearbyMatch(null);
+
+    const currentBalloon = balloonsRef.current.find(b => b.id === draggedBalloon.id);
+    if (!currentBalloon) { setDraggedBalloon(null); return; }
+
+    // Check for close balloon to merge/reject
+    let closestBalloon: Balloon | null = null;
+    let minDist = MERGE_DISTANCE * 1.2;
+
+    balloonsRef.current.forEach(other => {
+      if (other.id === currentBalloon.id) return;
+      const dx = currentBalloon.x - other.x;
+      const dy = currentBalloon.y - other.y;
+      const dist = Math.sqrt(dx * dx + dy * dy);
+      if (dist < minDist) {
+        minDist = dist;
+        closestBalloon = other;
+      }
+    });
+
+    if (closestBalloon) {
+      const cb = closestBalloon as Balloon;
+      const isMatch = currentBalloon.value === cb.value && currentBalloon.type !== cb.type;
+      if (isMatch) {
+        performMatch(currentBalloon, cb);
+        setDraggedBalloon(null);
+        return;
+      } else {
+        // Wrong match or same type
+        performReject(currentBalloon, cb);
+        setDraggedBalloon(null);
+        return;
+      }
+    }
+
+    // Just release with some drift
+    setBalloons(prev => prev.map(b =>
+      b.id === currentBalloon.id
+        ? { ...b, vx: (Math.random() - 0.5) * 2, vy: b.vy }
+        : b
+    ));
+    setDraggedBalloon(null);
+  }, [draggedBalloon, performMatch, performReject]);
+
+  // Drag event listeners
   useEffect(() => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-    const handler = (e: TouchEvent) => e.preventDefault();
-    canvas.addEventListener('touchstart', handler, { passive: false });
-    canvas.addEventListener('touchmove', handler, { passive: false });
+    if (!draggedBalloon) return;
+    const moveHandler = (e: MouseEvent | TouchEvent): void => handleDragMove(e);
+    const endHandler = (): void => handleDragEnd();
+    window.addEventListener('mousemove', moveHandler);
+    window.addEventListener('mouseup', endHandler);
+    window.addEventListener('touchmove', moveHandler, { passive: false });
+    window.addEventListener('touchend', endHandler);
     return () => {
-      canvas.removeEventListener('touchstart', handler);
-      canvas.removeEventListener('touchmove', handler);
+      window.removeEventListener('mousemove', moveHandler);
+      window.removeEventListener('mouseup', endHandler);
+      window.removeEventListener('touchmove', moveHandler);
+      window.removeEventListener('touchend', endHandler);
     };
-  }, [gameState]);
+  }, [draggedBalloon, handleDragMove, handleDragEnd]);
 
-  // ---- RENDER ----
+  // Render dots for a balloon
+  const renderDots = (value: number, radius: number): React.ReactNode => {
+    if (value === 0) return null;
+    const dots: React.ReactNode[] = [];
+    const cols = value <= 3 ? value : value <= 6 ? 3 : value <= 10 ? 4 : 5;
+    const rows = Math.ceil(value / cols);
+    const dotSize = value <= 5 ? 7 : value <= 10 ? 5.5 : 4;
+    const spacing = dotSize * 2.6;
+    const totalW = (cols - 1) * spacing;
+    const totalH = (rows - 1) * spacing;
 
+    let count = 0;
+    for (let r = 0; r < rows && count < value; r++) {
+      const rowCols = Math.min(cols, value - count);
+      const rowOffset = (cols - rowCols) * spacing / 2;
+      for (let c = 0; c < rowCols && count < value; c++) {
+        const dx = -totalW / 2 + rowOffset + c * spacing;
+        const dy = -totalH / 2 + r * spacing;
+        dots.push(
+          <div
+            key={count}
+            className="balloon-dot"
+            style={{
+              position: 'absolute',
+              left: `calc(50% + ${dx}px)`,
+              top: `calc(50% + ${dy}px)`,
+              width: dotSize * 2,
+              height: dotSize * 2,
+              transform: 'translate(-50%, -50%)',
+            }}
+          />
+        );
+        count++;
+      }
+    }
+    return <>{dots}</>;
+  };
+
+  // Get balloon content
+  const getBalloonContent = (balloon: Balloon): React.ReactNode => {
+    if (balloon.type === 'numeral') {
+      return <div className="balloon-numeral">{balloon.value}</div>;
+    }
+    if (balloon.type === 'word') {
+      const word = NUMBER_WORDS[balloon.value] || String(balloon.value);
+      return <div className={`balloon-word ${word.length > 7 ? 'long' : word.length > 5 ? 'med' : ''}`}>{word}</div>;
+    }
+    return <div className="balloon-dots-container">{renderDots(balloon.value, balloon.radius)}</div>;
+  };
+
+  const progress = matchesNeeded > 0 ? matchesMade / matchesNeeded : 0;
+
+  // ---- INTRO SCREEN ----
   if (gameState === 'intro') {
     return (
       <div className="number-balloons">
         <style>{styles}</style>
         <div className="intro-screen">
           <div className="intro-sky">
-            {/* Floating decorative balloons */}
-            {[...Array(14)].map((_, i) => (
+            {[...Array(16)].map((_, i) => (
               <div key={i} className="deco-balloon" style={{
-                left: `${5 + (i * 7) % 90}%`,
-                bottom: `${-10 - Math.random() * 20}%`,
+                left: `${5 + (i * 6.5) % 90}%`,
+                bottom: `${-15 - Math.random() * 15}%`,
                 '--deco-hue': BALLOON_HUES[i % BALLOON_HUES.length],
-                '--deco-delay': `${i * 0.6}s`,
-                '--deco-duration': `${8 + Math.random() * 6}s`,
-                '--deco-wobble': `${3 + Math.random() * 4}s`,
-                '--deco-size': `${30 + Math.random() * 25}px`,
+                '--deco-delay': `${i * 0.5}s`,
+                '--deco-duration': `${9 + Math.random() * 6}s`,
+                '--deco-wobble': `${3 + Math.random() * 3}s`,
+                '--deco-size': `${35 + Math.random() * 30}px`,
               } as React.CSSProperties} />
             ))}
-            {/* Clouds */}
             {[...Array(5)].map((_, i) => (
               <div key={`cloud-${i}`} className="intro-cloud" style={{
-                top: `${10 + i * 12}%`,
-                left: `${-20 + i * 25}%`,
-                '--cloud-speed': `${20 + i * 8}s`,
-                '--cloud-scale': 0.6 + i * 0.15,
+                top: `${8 + i * 14}%`,
+                left: `${-20 + i * 22}%`,
+                '--cloud-speed': `${22 + i * 7}s`,
+                '--cloud-scale': 0.5 + i * 0.18,
               } as React.CSSProperties} />
             ))}
-            {/* Sun */}
             <div className="intro-sun">
               <div className="sun-rays" />
               <div className="sun-body" />
@@ -1157,11 +694,11 @@ export default function NumberBalloons({ onExit }: NumberBalloonsProps = {}) {
               <div className="intro-instruction">
                 <div className="inst-visual">
                   <span className="inst-balloon numeral">7</span>
-                  <span className="inst-arrow">+</span>
+                  <span className="inst-arrow">&#8594;</span>
                   <span className="inst-balloon word">seven</span>
-                  <span className="inst-result">= POP!</span>
+                  <span className="inst-result">POP!</span>
                 </div>
-                <p><strong>TAP</strong> two balloons with the <span className="hl match">same number</span></p>
+                <p><strong>DRAG</strong> a balloon to its <span className="hl match">matching pair</span></p>
               </div>
               <div className="intro-instruction">
                 <div className="inst-visual">
@@ -1189,7 +726,7 @@ export default function NumberBalloons({ onExit }: NumberBalloonsProps = {}) {
             </button>
             {onExit && (
               <button className="back-link" onClick={onExit}>
-                ← Back to games
+                &#8592; Back to games
               </button>
             )}
           </div>
@@ -1198,20 +735,28 @@ export default function NumberBalloons({ onExit }: NumberBalloonsProps = {}) {
     );
   }
 
+  // ---- LEVEL COMPLETE ----
   if (gameState === 'levelComplete') {
-    const stars = combo >= 3 ? 3 : combo >= 1 ? 2 : matchesMade >= matchesNeeded ? 1 : 0;
+    const stars = maxCombo >= 4 ? 3 : maxCombo >= 2 ? 2 : 1;
     return (
       <div className="number-balloons">
         <style>{styles}</style>
         <div className="complete-screen">
           <div className="complete-sky">
-            {[...Array(20)].map((_, i) => (
+            {[...Array(24)].map((_, i) => (
               <div key={i} className="confetti-piece" style={{
                 left: `${Math.random() * 100}%`,
                 '--conf-hue': Math.random() * 360,
                 '--conf-delay': `${Math.random() * 2}s`,
                 '--conf-duration': `${2 + Math.random() * 3}s`,
-                '--conf-drift': `${(Math.random() - 0.5) * 100}px`,
+                '--conf-drift': `${(Math.random() - 0.5) * 120}px`,
+              } as React.CSSProperties} />
+            ))}
+            {[...Array(8)].map((_, i) => (
+              <div key={`spark-${i}`} className="complete-sparkle" style={{
+                left: `${10 + Math.random() * 80}%`,
+                top: `${10 + Math.random() * 80}%`,
+                '--sparkle-delay': `${Math.random() * 3}s`,
               } as React.CSSProperties} />
             ))}
           </div>
@@ -1219,9 +764,9 @@ export default function NumberBalloons({ onExit }: NumberBalloonsProps = {}) {
             <h1 className="complete-title">Level {level} Complete!</h1>
             <div className="stars-row">
               {[1, 2, 3].map(i => (
-                <span key={i} className={`star ${i <= stars + 1 ? 'earned' : 'empty'}`}
+                <span key={i} className={`star ${i <= stars ? 'earned' : 'empty'}`}
                   style={{ '--star-delay': `${i * 0.2}s` } as React.CSSProperties}>
-                  {i <= stars + 1 ? '\u2B50' : '\u2606'}
+                  {i <= stars ? '\u2B50' : '\u2606'}
                 </span>
               ))}
             </div>
@@ -1245,7 +790,7 @@ export default function NumberBalloons({ onExit }: NumberBalloonsProps = {}) {
             </div>
             <div className="complete-buttons">
               <button className="next-btn" onClick={nextLevel}>
-                Level {level + 1} →
+                Level {level + 1} &#8594;
               </button>
               <button className="menu-btn" onClick={() => onExit ? onExit() : setGameState('intro')}>
                 Main Menu
@@ -1257,13 +802,19 @@ export default function NumberBalloons({ onExit }: NumberBalloonsProps = {}) {
     );
   }
 
+  // ---- GAME OVER ----
   if (gameState === 'gameOver') {
     return (
       <div className="number-balloons">
         <style>{styles}</style>
         <div className="gameover-screen">
           <div className="gameover-content">
-            <span className="gameover-emoji">😢</span>
+            <div className="gameover-balloon-burst">
+              <div className="burst-ring r1" />
+              <div className="burst-ring r2" />
+              <div className="burst-ring r3" />
+            </div>
+            <span className="gameover-emoji">💨</span>
             <h1 className="gameover-title">Game Over</h1>
             <p className="gameover-sub">You reached Level {level}</p>
             <div className="complete-stats">
@@ -1294,29 +845,180 @@ export default function NumberBalloons({ onExit }: NumberBalloonsProps = {}) {
     );
   }
 
-  // Playing state
+  // ---- PLAYING STATE ----
   return (
-    <div className="number-balloons" ref={containerRef}>
+    <div className="number-balloons">
       <style>{styles}</style>
-      <div className="game-canvas-wrap">
-        <canvas
-          ref={canvasRef}
-          className="game-canvas"
-          onClick={handleCanvasClick}
-          onTouchStart={handleCanvasClick}
-        />
-        {/* Combo text overlay */}
-        {comboText && (
-          <div
-            key={comboText.id}
-            className="combo-popup"
-            style={{ left: comboText.x, top: comboText.y }}
-          >
-            {comboText.text}
+      <div className="game-screen">
+        <div className="game-header">
+          <div className="header-left">
+            <button className="back-btn" onClick={() => onExit ? onExit() : setGameState('intro')}>&#8592;</button>
+            <div className="level-badge">Level {level}</div>
           </div>
-        )}
-        {/* Wrong match flash overlay */}
-        {wrongMatch && <div className="wrong-flash" />}
+          <div className="header-center">
+            <div className="lives-display">
+              {[...Array(5)].map((_, i) => (
+                <span key={i} className={`heart ${i < lives ? 'alive' : 'dead'}`}>
+                  {i < lives ? '\u2764\uFE0F' : '\uD83D\uDDA4'}
+                </span>
+              ))}
+            </div>
+            <div className="progress-bar-wrap">
+              <div className="progress-bar-bg">
+                <div className="progress-bar-fill" style={{ width: `${Math.min(progress * 100, 100)}%` }} />
+              </div>
+              <span className="progress-text">{matchesMade} / {matchesNeeded}</span>
+            </div>
+          </div>
+          <div className="header-right">
+            <div className="score-badge">
+              <span className="score-icon">&#11088;</span>
+              <span>{score}</span>
+            </div>
+          </div>
+        </div>
+
+        <div className="balloon-container" ref={containerRef}>
+          {/* Background clouds */}
+          <div className="game-clouds">
+            {[...Array(4)].map((_, i) => (
+              <div key={i} className="game-cloud" style={{
+                top: `${5 + i * 20}%`,
+                '--cloud-speed': `${25 + i * 10}s`,
+                '--cloud-scale': 0.5 + i * 0.2,
+                '--cloud-start': `${-15 + i * 20}%`,
+              } as React.CSSProperties} />
+            ))}
+          </div>
+
+          {/* Sun */}
+          <div className="game-sun">
+            <div className="sun-rays" />
+            <div className="sun-body" />
+          </div>
+
+          {/* Connection line between dragged balloon and nearby match */}
+          {draggedBalloon && nearbyMatch && (() => {
+            const dragB = balloons.find(b => b.id === draggedBalloon.id);
+            if (!dragB) return null;
+            return (
+              <svg className="connection-line">
+                <defs>
+                  <linearGradient id="matchLineGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stopColor="#4ade80" />
+                    <stop offset="100%" stopColor="#22c55e" />
+                  </linearGradient>
+                </defs>
+                <line
+                  x1={dragB.x}
+                  y1={dragB.y}
+                  x2={nearbyMatch.x}
+                  y2={nearbyMatch.y}
+                  stroke="url(#matchLineGrad)"
+                  strokeWidth="3"
+                  strokeDasharray="8,4"
+                  opacity="0.7"
+                />
+              </svg>
+            );
+          })()}
+
+          {/* Balloons */}
+          {balloons.map(balloon => {
+            const isDragging = draggedBalloon?.id === balloon.id;
+            const isNearby = nearbyMatch?.id === balloon.id;
+            return (
+              <div
+                key={balloon.id}
+                className={`balloon ${isDragging ? 'dragging' : ''} ${isNearby ? 'nearby-match' : ''}`}
+                style={{
+                  left: balloon.x,
+                  top: balloon.y,
+                  width: balloon.radius * 2,
+                  height: balloon.radius * 2.15,
+                  '--balloon-hue': balloon.hue,
+                } as React.CSSProperties}
+                onMouseDown={(e) => handleDragStart(e, balloon)}
+                onTouchStart={(e) => handleDragStart(e, balloon)}
+              >
+                <div className="balloon-body">
+                  <div className="balloon-shine" />
+                  <div className="balloon-shine-secondary" />
+                  {getBalloonContent(balloon)}
+                  {isNearby && <div className="balloon-match-ring" />}
+                </div>
+                <div className="balloon-knot" />
+                <div className="balloon-string">
+                  <svg viewBox="0 0 10 30" className="string-svg">
+                    <path d="M5 0 Q8 10 3 20 Q6 25 5 30" stroke={`hsla(${balloon.hue}, 40%, 40%, 0.5)`} strokeWidth="1.5" fill="none" />
+                  </svg>
+                </div>
+              </div>
+            );
+          })}
+
+          {/* Pop effect */}
+          {popEffect && (
+            <div key={popEffect.id} className="pop-effect" style={{ left: popEffect.x, top: popEffect.y }}>
+              <div className="pop-burst-ring" style={{ '--pop-hue': popEffect.hue } as React.CSSProperties} />
+              <div className="pop-burst-ring ring-2" style={{ '--pop-hue': popEffect.hue } as React.CSSProperties} />
+              <div className="pop-value">{popEffect.value} = {NUMBER_WORDS[popEffect.value]}</div>
+              {popEffect.particles.map(p => (
+                <div
+                  key={p.id}
+                  className={`pop-particle ${p.type}`}
+                  style={{
+                    '--px': `${p.vx * 25}px`,
+                    '--py': `${p.vy * 25}px`,
+                    '--psize': `${p.size}px`,
+                    '--phue': p.hue,
+                    '--protation': `${p.rotation}deg`,
+                  } as React.CSSProperties}
+                />
+              ))}
+            </div>
+          )}
+
+          {/* Reject effect */}
+          {rejectEffect && (
+            <div key={rejectEffect.id} className="reject-effect" style={{ left: rejectEffect.x, top: rejectEffect.y }}>
+              <div className="reject-x">&#10006;</div>
+              <div className="reject-ring" />
+            </div>
+          )}
+
+          {/* Combo text */}
+          {comboText && (
+            <div key={comboText.id} className="combo-popup" style={{ left: comboText.x, top: comboText.y }}>
+              {comboText.text}
+            </div>
+          )}
+
+          {/* Combo display */}
+          {combo >= 2 && (
+            <div className="combo-badge">
+              <span className="combo-fire">{combo >= 4 ? '🔥' : '✨'}</span>
+              <span className="combo-count">{combo}x</span>
+            </div>
+          )}
+
+          {/* Ground */}
+          <div className="game-ground" />
+
+          {/* Empty hint */}
+          {balloons.length === 0 && matchesMade < matchesNeeded && (
+            <div className="empty-hint"><p>Balloons incoming...</p></div>
+          )}
+        </div>
+
+        <div className="bottom-bar">
+          <div className="hint-text">
+            <span className="hint-drag">🎈 Drag to match</span>
+            <span className="hint-types">
+              {level <= 2 ? 'Numeral ↔ Word' : level <= 4 ? 'Numeral ↔ Word/Dots' : 'All types'}
+            </span>
+          </div>
+        </div>
       </div>
     </div>
   );
@@ -1332,7 +1034,7 @@ const styles = `
     height: 100%;
     font-family: 'Nunito', sans-serif;
     overflow: hidden;
-    background: #87CEEB;
+    background: linear-gradient(180deg, #87CEEB 0%, #B0E0F0 40%, #D4F0FC 70%, #F0F9FF 100%);
     position: relative;
   }
 
@@ -1366,10 +1068,12 @@ const styles = `
       hsla(var(--deco-hue), 75%, 55%, 0.9) 50%,
       hsla(var(--deco-hue), 65%, 40%, 0.9)
     );
+    box-shadow:
+      0 8px 20px hsla(var(--deco-hue), 70%, 50%, 0.3),
+      inset 0 -8px 15px hsla(var(--deco-hue), 80%, 30%, 0.2);
     animation:
       decoFloat var(--deco-duration) ease-in-out var(--deco-delay) infinite,
       decoWobble var(--deco-wobble) ease-in-out var(--deco-delay) infinite;
-    filter: drop-shadow(0 4px 8px rgba(0,0,0,0.1));
   }
 
   .deco-balloon::before {
@@ -1380,30 +1084,30 @@ const styles = `
     width: 28%;
     height: 18%;
     border-radius: 50%;
-    background: rgba(255,255,255,0.4);
+    background: rgba(255,255,255,0.45);
   }
 
   .deco-balloon::after {
     content: '';
     position: absolute;
-    bottom: -15px;
+    bottom: -18px;
     left: 50%;
     transform: translateX(-50%);
     width: 1.5px;
-    height: 15px;
-    background: rgba(0,0,0,0.2);
+    height: 18px;
+    background: linear-gradient(to bottom, hsla(var(--deco-hue), 40%, 40%, 0.5), transparent);
   }
 
   @keyframes decoFloat {
     0% { transform: translateY(0); }
-    50% { transform: translateY(calc(-100vh - 100px)); }
+    50% { transform: translateY(calc(-100vh - 120px)); }
     50.1%, 100% { transform: translateY(0); }
   }
 
   @keyframes decoWobble {
     0%, 100% { margin-left: 0; }
-    25% { margin-left: 15px; }
-    75% { margin-left: -15px; }
+    25% { margin-left: 18px; }
+    75% { margin-left: -18px; }
   }
 
   /* Intro clouds */
@@ -1411,7 +1115,7 @@ const styles = `
     position: absolute;
     width: calc(80px * var(--cloud-scale));
     height: calc(30px * var(--cloud-scale));
-    background: rgba(255,255,255,0.5);
+    background: rgba(255,255,255,0.55);
     border-radius: 50px;
     animation: cloudDrift var(--cloud-speed) linear infinite;
   }
@@ -1420,7 +1124,7 @@ const styles = `
   .intro-cloud::after {
     content: '';
     position: absolute;
-    background: rgba(255,255,255,0.5);
+    background: rgba(255,255,255,0.55);
     border-radius: 50%;
   }
 
@@ -1439,31 +1143,33 @@ const styles = `
   }
 
   @keyframes cloudDrift {
-    0% { transform: translateX(-120px); }
-    100% { transform: translateX(calc(100vw + 120px)); }
+    0% { transform: translateX(-150px); }
+    100% { transform: translateX(calc(100vw + 150px)); }
   }
 
   /* Intro sun */
-  .intro-sun {
+  .intro-sun, .game-sun {
     position: absolute;
-    top: 40px;
-    right: 60px;
+    top: 35px;
+    right: 55px;
   }
 
   .sun-body {
-    width: 60px;
-    height: 60px;
+    width: 55px;
+    height: 55px;
     border-radius: 50%;
     background: radial-gradient(circle at 40% 40%, #fde047, #f59e0b);
-    box-shadow: 0 0 40px rgba(253,224,71,0.5), 0 0 80px rgba(251,191,36,0.2);
+    box-shadow: 0 0 35px rgba(253,224,71,0.5), 0 0 70px rgba(251,191,36,0.2);
+    position: relative;
+    z-index: 2;
   }
 
   .sun-rays {
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 100px;
-    height: 100px;
+    width: 90px;
+    height: 90px;
     transform: translate(-50%, -50%);
     background: conic-gradient(
       from 0deg,
@@ -1483,6 +1189,7 @@ const styles = `
     );
     border-radius: 50%;
     animation: spinSlow 30s linear infinite;
+    z-index: 1;
   }
 
   @keyframes spinSlow {
@@ -1513,12 +1220,17 @@ const styles = `
 
   .logo-emoji.flip {
     transform: scaleX(-1);
-    animation: logoBob 2s ease-in-out 0.3s infinite;
+    animation: logoBobFlip 2s ease-in-out 0.3s infinite;
   }
 
   @keyframes logoBob {
     0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-8px); }
+    50% { transform: translateY(-10px); }
+  }
+
+  @keyframes logoBobFlip {
+    0%, 100% { transform: scaleX(-1) translateY(0); }
+    50% { transform: scaleX(-1) translateY(-10px); }
   }
 
   .intro-title {
@@ -1545,8 +1257,8 @@ const styles = `
   }
 
   .intro-card {
-    background: rgba(255,255,255,0.7);
-    border: 2px solid rgba(255,255,255,0.8);
+    background: rgba(255,255,255,0.75);
+    border: 2px solid rgba(255,255,255,0.85);
     border-radius: 24px;
     padding: 1.5rem;
     margin-bottom: 1.8rem;
@@ -1591,6 +1303,7 @@ const styles = `
     border-radius: 50% 50% 50% 50% / 55% 55% 45% 45%;
     background: radial-gradient(circle at 35% 30%, #60a5fa, #3b82f6 60%, #2563eb);
     font-size: 1.2rem;
+    box-shadow: 0 4px 12px rgba(59,130,246,0.3);
   }
 
   .inst-balloon.numeral.sm {
@@ -1606,6 +1319,7 @@ const styles = `
     border-radius: 20px / 22px;
     background: radial-gradient(circle at 35% 30%, #f472b6, #ec4899 60%, #db2777);
     font-size: 0.85rem;
+    box-shadow: 0 4px 12px rgba(236,72,153,0.3);
   }
 
   .inst-balloon.dots-demo {
@@ -1619,6 +1333,7 @@ const styles = `
     justify-content: center;
     gap: 3px;
     padding: 8px;
+    box-shadow: 0 4px 12px rgba(34,197,94,0.3);
   }
 
   .demo-dot {
@@ -1636,9 +1351,15 @@ const styles = `
   }
 
   .inst-result {
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     font-weight: 800;
     color: #f59e0b;
+    animation: popPulse 1.5s ease infinite;
+  }
+
+  @keyframes popPulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
   }
 
   .inst-combo {
@@ -1702,28 +1423,519 @@ const styles = `
 
   .back-link:hover { color: #334155; }
 
-  /* ───────── GAME CANVAS ───────── */
+  /* ───────── GAME SCREEN ───────── */
 
-  .game-canvas-wrap {
+  .game-screen { height: 100%; display: flex; flex-direction: column; position: relative; }
+
+  .game-header {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 0.6rem 1rem; background: rgba(255,255,255,0.35);
+    backdrop-filter: blur(10px);
+    z-index: 50; border-bottom: 1px solid rgba(255,255,255,0.3);
+  }
+
+  .header-left, .header-right { display: flex; align-items: center; gap: 0.6rem; }
+
+  .header-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.3rem;
+  }
+
+  .back-btn {
+    width: 36px; height: 36px; background: rgba(0,0,0,0.08);
+    border: none; border-radius: 10px; color: #475569; font-size: 1.1rem;
+    cursor: pointer; transition: all 0.2s ease;
+    font-weight: 700;
+  }
+
+  .back-btn:hover { background: rgba(0,0,0,0.15); }
+
+  .level-badge {
+    padding: 0.4rem 0.9rem; background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+    border-radius: 16px; font-weight: 700; color: white; font-size: 0.85rem;
+    box-shadow: 0 3px 10px rgba(59,130,246,0.3);
+  }
+
+  .lives-display {
+    display: flex;
+    gap: 0.2rem;
+  }
+
+  .heart {
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+  }
+
+  .heart.dead {
+    opacity: 0.2;
+    filter: grayscale(1);
+  }
+
+  .heart.alive {
+    animation: heartBeat 2s ease infinite;
+  }
+
+  .heart.alive:nth-child(2) { animation-delay: 0.1s; }
+  .heart.alive:nth-child(3) { animation-delay: 0.2s; }
+  .heart.alive:nth-child(4) { animation-delay: 0.3s; }
+  .heart.alive:nth-child(5) { animation-delay: 0.4s; }
+
+  @keyframes heartBeat {
+    0%, 100% { transform: scale(1); }
+    5% { transform: scale(1.15); }
+    10% { transform: scale(1); }
+  }
+
+  .progress-bar-wrap {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .progress-bar-bg {
+    width: 100px;
+    height: 6px;
+    background: rgba(0,0,0,0.1);
+    border-radius: 3px;
+    overflow: hidden;
+  }
+
+  .progress-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #4ade80, #22c55e);
+    border-radius: 3px;
+    transition: width 0.5s ease;
+  }
+
+  .progress-text {
+    font-size: 0.7rem;
+    color: #64748b;
+    font-weight: 600;
+  }
+
+  .score-badge {
+    display: flex; align-items: center; gap: 0.3rem;
+    padding: 0.4rem 0.8rem; background: rgba(251,191,36,0.15);
+    border-radius: 16px; color: #b45309; font-weight: 800; font-size: 0.9rem;
+    box-shadow: 0 2px 8px rgba(251,191,36,0.15);
+  }
+
+  .score-icon { font-size: 1rem; }
+
+  /* ───────── BALLOON CONTAINER ───────── */
+
+  .balloon-container {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+    touch-action: none;
+    background: linear-gradient(180deg, #87CEEB 0%, #B0E0F0 35%, #D4F0FC 65%, #E8F8F0 85%, #d1fae5 100%);
+  }
+
+  /* Game clouds */
+  .game-clouds { position: absolute; inset: 0; pointer-events: none; z-index: 1; }
+
+  .game-cloud {
+    position: absolute;
+    width: calc(85px * var(--cloud-scale));
+    height: calc(28px * var(--cloud-scale));
+    background: rgba(255,255,255,0.45);
+    border-radius: 50px;
+    animation: cloudDrift var(--cloud-speed) linear infinite;
+    left: var(--cloud-start);
+  }
+
+  .game-cloud::before,
+  .game-cloud::after {
+    content: '';
+    position: absolute;
+    background: rgba(255,255,255,0.45);
+    border-radius: 50%;
+  }
+
+  .game-cloud::before {
+    width: calc(38px * var(--cloud-scale));
+    height: calc(38px * var(--cloud-scale));
+    top: calc(-16px * var(--cloud-scale));
+    left: calc(12px * var(--cloud-scale));
+  }
+
+  .game-cloud::after {
+    width: calc(28px * var(--cloud-scale));
+    height: calc(28px * var(--cloud-scale));
+    top: calc(-10px * var(--cloud-scale));
+    left: calc(38px * var(--cloud-scale));
+  }
+
+  /* Game sun */
+  .game-sun {
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  .game-sun .sun-body {
+    width: 40px;
+    height: 40px;
+  }
+
+  .game-sun .sun-rays {
+    width: 70px;
+    height: 70px;
+  }
+
+  /* Ground */
+  .game-ground {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 25px;
+    background: linear-gradient(180deg, #86efac 0%, #4ade80 100%);
+    border-radius: 100% 100% 0 0 / 60% 60% 0 0;
+    z-index: 2;
+    pointer-events: none;
+  }
+
+  /* Connection line */
+  .connection-line {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 5;
+    width: 100%;
+    height: 100%;
+  }
+
+  /* ───────── BALLOONS ───────── */
+
+  .balloon {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    cursor: grab;
+    transition: filter 0.2s ease;
+    animation: balloonSpawn 0.5s ease-out;
+  }
+
+  @keyframes balloonSpawn {
+    0% { transform: translate(-50%, -50%) scale(0.3); opacity: 0; }
+    60% { transform: translate(-50%, -50%) scale(1.1); }
+    100% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+  }
+
+  .balloon:hover {
+    z-index: 20;
+    filter: brightness(1.08);
+  }
+
+  .balloon.dragging {
+    cursor: grabbing;
+    transform: translate(-50%, -50%) scale(1.15);
+    z-index: 100;
+    filter: brightness(1.1);
+  }
+
+  .balloon.dragging .balloon-body {
+    box-shadow:
+      0 20px 50px hsla(var(--balloon-hue), 70%, 50%, 0.5),
+      inset 0 -10px 20px hsla(var(--balloon-hue), 80%, 30%, 0.25);
+  }
+
+  .balloon.nearby-match .balloon-body {
+    box-shadow:
+      0 0 25px rgba(74,222,128,0.7),
+      0 10px 30px hsla(var(--balloon-hue), 70%, 50%, 0.4),
+      inset 0 -10px 20px hsla(var(--balloon-hue), 80%, 30%, 0.25);
+  }
+
+  .balloon-body {
+    width: 100%;
+    height: 100%;
+    border-radius: 50% 50% 50% 50% / 55% 55% 45% 45%;
+    background: radial-gradient(
+      circle at 30% 28%,
+      hsla(var(--balloon-hue), 85%, 75%, 0.95) 0%,
+      hsla(var(--balloon-hue), 78%, 58%, 0.95) 40%,
+      hsla(var(--balloon-hue), 68%, 45%, 0.95) 80%,
+      hsla(var(--balloon-hue), 60%, 35%, 0.95) 100%
+    );
+    box-shadow:
+      0 10px 30px hsla(var(--balloon-hue), 70%, 50%, 0.35),
+      inset 0 -10px 20px hsla(var(--balloon-hue), 80%, 30%, 0.25);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    animation: balloonBob 3s ease-in-out infinite;
+  }
+
+  @keyframes balloonBob {
+    0%, 100% { transform: translateY(0) rotate(-1deg); }
+    50% { transform: translateY(-4px) rotate(1deg); }
+  }
+
+  .balloon-shine {
+    position: absolute;
+    top: 14%;
+    left: 18%;
+    width: 30%;
+    height: 20%;
+    background: radial-gradient(ellipse, rgba(255,255,255,0.55) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+  }
+
+  .balloon-shine-secondary {
+    position: absolute;
+    top: 8%;
+    left: 28%;
+    width: 14%;
+    height: 10%;
+    background: radial-gradient(ellipse, rgba(255,255,255,0.35) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+  }
+
+  .balloon-match-ring {
+    position: absolute;
+    inset: -8px;
+    border: 3px solid #4ade80;
+    border-radius: 50%;
+    animation: matchRing 0.8s ease-in-out infinite;
+    pointer-events: none;
+  }
+
+  @keyframes matchRing {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.12); opacity: 0.5; }
+  }
+
+  .balloon-knot {
+    position: absolute;
+    bottom: -3px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 8px;
+    height: 6px;
+    background: hsla(var(--balloon-hue), 60%, 38%, 0.9);
+    border-radius: 0 0 50% 50%;
+    z-index: 3;
+  }
+
+  .balloon-string {
+    position: absolute;
+    bottom: -32px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 10px;
+    height: 30px;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .string-svg {
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+  }
+
+  /* Balloon content */
+  .balloon-numeral {
+    font-size: 1.8rem;
+    font-weight: 900;
+    color: white;
+    text-shadow: 0 2px 5px rgba(0,0,0,0.25);
+    z-index: 2;
+    position: relative;
+    line-height: 1;
+  }
+
+  .balloon-word {
+    font-size: 0.85rem;
+    font-weight: 800;
+    color: white;
+    text-shadow: 0 1px 4px rgba(0,0,0,0.25);
+    z-index: 2;
+    position: relative;
+    line-height: 1.1;
+    text-align: center;
+    padding: 0 4px;
+  }
+
+  .balloon-word.med { font-size: 0.75rem; }
+  .balloon-word.long { font-size: 0.62rem; }
+
+  .balloon-dots-container {
     position: relative;
     width: 100%;
     height: 100%;
+    z-index: 2;
   }
 
-  .game-canvas {
-    display: block;
-    width: 100%;
-    height: 100%;
-    cursor: pointer;
-    touch-action: none;
+  .balloon-dot {
+    border-radius: 50%;
+    background: rgba(255,255,255,0.92);
+    box-shadow: 0 1px 2px rgba(0,0,0,0.12);
   }
+
+  /* ───────── POP EFFECT ───────── */
+
+  .pop-effect {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 200;
+  }
+
+  .pop-burst-ring {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80px;
+    height: 80px;
+    border: 4px solid hsl(var(--pop-hue), 80%, 60%);
+    border-radius: 50%;
+    animation: burstRingExpand 0.7s ease-out forwards;
+  }
+
+  .pop-burst-ring.ring-2 {
+    width: 50px;
+    height: 50px;
+    border-width: 3px;
+    animation-delay: 0.1s;
+    border-color: hsl(var(--pop-hue), 70%, 70%);
+  }
+
+  @keyframes burstRingExpand {
+    0% { transform: translate(-50%, -50%) scale(0.3); opacity: 1; }
+    100% { transform: translate(-50%, -50%) scale(2.5); opacity: 0; }
+  }
+
+  .pop-value {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    white-space: nowrap;
+    font-size: 1.3rem;
+    font-weight: 900;
+    color: white;
+    padding: 0.5rem 1.2rem;
+    background: linear-gradient(135deg, #4ade80, #22c55e);
+    border-radius: 30px;
+    box-shadow: 0 8px 25px rgba(34,197,94,0.4);
+    animation: popValueAnim 0.9s ease forwards;
+    z-index: 5;
+  }
+
+  @keyframes popValueAnim {
+    0% { transform: translate(-50%, -50%) scale(0); opacity: 0; }
+    25% { transform: translate(-50%, -50%) scale(1.3); opacity: 1; }
+    60% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+    100% { transform: translate(-50%, -100%) scale(0.9); opacity: 0; }
+  }
+
+  .pop-particle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    animation: particleBurst 0.7s ease-out forwards;
+  }
+
+  .pop-particle.confetti {
+    width: var(--psize);
+    height: calc(var(--psize) * 0.5);
+    background: hsl(var(--phue), 80%, 60%);
+    border-radius: 2px;
+    transform: rotate(var(--protation));
+  }
+
+  .pop-particle.spark {
+    width: var(--psize);
+    height: var(--psize);
+    background: hsl(var(--phue), 90%, 80%);
+    border-radius: 50%;
+  }
+
+  .pop-particle.ring {
+    width: var(--psize);
+    height: var(--psize);
+    border: 2px solid hsl(var(--phue), 80%, 70%);
+    border-radius: 50%;
+    background: transparent;
+  }
+
+  @keyframes particleBurst {
+    0% { transform: translate(0, 0) scale(1); opacity: 1; }
+    100% { transform: translate(var(--px), var(--py)) scale(0.3); opacity: 0; }
+  }
+
+  /* ───────── REJECT EFFECT ───────── */
+
+  .reject-effect {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 200;
+    animation: rejectShake 0.4s ease-out;
+  }
+
+  @keyframes rejectShake {
+    0% { transform: translate(-50%, -50%); }
+    15% { transform: translate(calc(-50% + 6px), -50%); }
+    30% { transform: translate(calc(-50% - 6px), -50%); }
+    45% { transform: translate(calc(-50% + 4px), -50%); }
+    60% { transform: translate(calc(-50% - 4px), -50%); }
+    75% { transform: translate(calc(-50% + 2px), -50%); }
+    100% { transform: translate(-50%, -50%); }
+  }
+
+  .reject-x {
+    font-size: 3rem;
+    color: #ef4444;
+    font-weight: 900;
+    animation: rejectXPop 0.5s ease forwards;
+    text-shadow: 0 3px 10px rgba(239,68,68,0.4);
+  }
+
+  @keyframes rejectXPop {
+    0% { transform: scale(0) rotate(-20deg); opacity: 0; }
+    30% { transform: scale(1.4) rotate(5deg); opacity: 1; }
+    100% { transform: scale(1) rotate(0deg); opacity: 0; }
+  }
+
+  .reject-ring {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    border: 3px solid #ef4444;
+    border-radius: 50%;
+    animation: rejectRingExpand 0.5s ease-out forwards;
+  }
+
+  @keyframes rejectRingExpand {
+    0% { transform: translate(-50%, -50%) scale(0.5); opacity: 0.8; }
+    100% { transform: translate(-50%, -50%) scale(2); opacity: 0; }
+  }
+
+  /* ───────── COMBO ───────── */
 
   .combo-popup {
     position: absolute;
     transform: translate(-50%, -50%);
     pointer-events: none;
     font-family: 'Nunito', sans-serif;
-    font-size: 1.6rem;
+    font-size: 1.5rem;
     font-weight: 900;
     background: linear-gradient(90deg, #f97316, #fbbf24, #f97316);
     background-size: 200% 100%;
@@ -1731,10 +1943,9 @@ const styles = `
     -webkit-text-fill-color: transparent;
     background-clip: text;
     animation: comboPopIn 1.2s ease forwards, rainbowShift 1s ease infinite;
-    text-shadow: none;
-    z-index: 100;
+    z-index: 150;
     white-space: nowrap;
-    filter: drop-shadow(0 2px 8px rgba(249,115,22,0.6));
+    filter: drop-shadow(0 2px 8px rgba(249,115,22,0.5));
   }
 
   @keyframes comboPopIn {
@@ -1744,18 +1955,72 @@ const styles = `
     100% { transform: translate(-50%, -80%) scale(0.8); opacity: 0; }
   }
 
-  .wrong-flash {
+  .combo-badge {
     position: absolute;
-    inset: 0;
-    background: rgba(239, 68, 68, 0.2);
-    pointer-events: none;
-    animation: wrongFlash 0.4s ease forwards;
-    z-index: 90;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    padding: 0.3rem 0.8rem;
+    background: rgba(249,115,22,0.15);
+    border: 2px solid rgba(249,115,22,0.3);
+    border-radius: 16px;
+    z-index: 50;
+    animation: comboBadgePulse 0.8s ease-in-out infinite;
   }
 
-  @keyframes wrongFlash {
-    0% { opacity: 1; }
-    100% { opacity: 0; }
+  @keyframes comboBadgePulse {
+    0%, 100% { transform: translateX(-50%) scale(1); }
+    50% { transform: translateX(-50%) scale(1.08); }
+  }
+
+  .combo-fire { font-size: 1.1rem; }
+
+  .combo-count {
+    font-size: 1rem;
+    font-weight: 900;
+    color: #ea580c;
+  }
+
+  /* ───────── BOTTOM BAR ───────── */
+
+  .bottom-bar {
+    padding: 0.6rem;
+    background: rgba(255,255,255,0.3);
+    backdrop-filter: blur(8px);
+    text-align: center;
+    border-top: 1px solid rgba(255,255,255,0.3);
+  }
+
+  .hint-text {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    font-size: 0.8rem;
+    color: #64748b;
+    font-weight: 600;
+  }
+
+  .hint-drag { color: #3b82f6; }
+  .hint-types { color: #8b5cf6; }
+
+  .empty-hint {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #94a3b8;
+    font-size: 1rem;
+    font-weight: 600;
+    animation: emptyPulse 2s ease-in-out infinite;
+    z-index: 5;
+  }
+
+  @keyframes emptyPulse {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 1; }
   }
 
   /* ───────── LEVEL COMPLETE SCREEN ───────── */
@@ -1798,6 +2063,20 @@ const styles = `
     100% { transform: translateY(100vh) translateX(var(--conf-drift)) rotate(720deg); opacity: 0.3; }
   }
 
+  .complete-sparkle {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: #fbbf24;
+    border-radius: 50%;
+    animation: sparkleFlash 1.5s ease-in-out var(--sparkle-delay) infinite;
+  }
+
+  @keyframes sparkleFlash {
+    0%, 100% { transform: scale(0); opacity: 0; }
+    50% { transform: scale(1.5); opacity: 1; }
+  }
+
   .complete-content, .gameover-content {
     position: relative;
     z-index: 10;
@@ -1811,6 +2090,37 @@ const styles = `
     font-weight: 900;
     color: #1e293b;
     margin-bottom: 1rem;
+    animation: titleSlideIn 0.6s ease-out;
+  }
+
+  @keyframes titleSlideIn {
+    0% { transform: translateY(-30px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+  }
+
+  .gameover-balloon-burst {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 1rem;
+  }
+
+  .burst-ring {
+    position: absolute;
+    inset: 0;
+    border: 3px solid #ef4444;
+    border-radius: 50%;
+    animation: burstRingExpand 2s ease-out infinite;
+  }
+
+  .burst-ring.r2 {
+    animation-delay: 0.4s;
+    border-color: #f97316;
+  }
+
+  .burst-ring.r3 {
+    animation-delay: 0.8s;
+    border-color: #fbbf24;
   }
 
   .gameover-emoji {
@@ -1966,6 +2276,15 @@ const styles = `
 
     .complete-stats { gap: 1rem; }
     .stat-value { font-size: 1.5rem; }
+
+    .header-center .lives-display { gap: 0.1rem; }
+    .heart { font-size: 0.8rem; }
+    .progress-bar-bg { width: 70px; }
+    .hint-text { flex-direction: column; gap: 0.2rem; }
+    .balloon-numeral { font-size: 1.5rem; }
+    .balloon-word { font-size: 0.75rem; }
+    .balloon-word.med { font-size: 0.65rem; }
+    .balloon-word.long { font-size: 0.55rem; }
   }
 
   @media (max-height: 500px) {
@@ -1975,5 +2294,7 @@ const styles = `
     .intro-logo { margin-bottom: 0; }
     .intro-tagline { margin-bottom: 0.8rem; font-size: 0.9rem; }
     .logo-emoji { font-size: 1.8rem; }
+    .game-header { padding: 0.4rem 0.8rem; }
+    .bottom-bar { padding: 0.4rem; }
   }
 `;
