@@ -1140,10 +1140,10 @@ export default function SoundSafari({ onExit }: SoundSafariProps) {
   // Render highlighted instruction text
   const renderInstructionText = (text: string, highlights: { word: string; color: string }[]) => {
     if (!text) return null;
-    let result: (string | JSX.Element)[] = [displayedText || text];
+    let result: (string | React.ReactElement)[] = [displayedText || text];
 
     for (const h of highlights) {
-      const newResult: (string | JSX.Element)[] = [];
+      const newResult: (string | React.ReactElement)[] = [];
       for (const part of result) {
         if (typeof part === 'string') {
           const regex = new RegExp(`(${h.word.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'gi');
