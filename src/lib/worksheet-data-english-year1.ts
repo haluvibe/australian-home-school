@@ -315,17 +315,17 @@ export const year1EnglishWorksheets: WorksheetItem[] = [
         script:
           "We are going to play some games with these words! First, let us sort them into ones we know really well and ones we need to practise more. Then we will play a game with the practice ones.",
         action:
-          "Sort sight word cards into 'know it' and 'need practice' piles. Then play Snap, Memory or Go Fish using only the practice pile cards.",
+          "Sort sight word cards into 'know it' and 'need practice' piles. For the practice pile, try three game options: (1) Snap — make two copies of each card and play matching Snap. (2) Memory — lay cards face down and flip two at a time to find matching pairs. (3) Sight Word Bingo — draw a 3x3 grid, write one sight word per square, then call out words and cross them off. Spend 5 minutes on the game, then re-flash the practice pile. Words that are now instant move to the 'know it' pile.",
       },
       wrapUp: {
         title: "Use Them in Sentences",
         script:
-          "Now for the real test! You are going to pick 3 sight words and write each one in a sentence. Your sentence has to make sense — and remember your capital letter at the start and a full stop at the end!",
+          "Now for the real test! You are going to pick 3 sight words and write each one in a sentence. Your sentence has to make sense — and remember your capital letter at the start and a full stop at the end! Here is my example: I picked 'she'. My sentence is: 'She can run fast.' Now you try!",
         action:
-          "Your child selects 3 sight words and writes a sentence for each. Provide line-ruled paper for support.",
+          "Your child selects 3 sight words and writes a sentence for each. Provide line-ruled paper for support. If they struggle, offer a sentence starter: 'The cat is...' or 'I can...'",
       },
       parentTip:
-        "10 minutes of daily sight word practice is far more effective than one long weekly session. Use spare moments — breakfast, car rides — to flash 5 to 6 cards. Once a word is instant, retire it and introduce a new one.",
+        "10 minutes of daily sight word practice is far more effective than one long weekly session. Use spare moments — breakfast, car rides — to flash 5 to 6 cards. Once a word is instant, retire it and introduce a new one. Common misconception: children sometimes try to sound out irregular sight words letter by letter — saying /s/ /a/ /i/ /d/ for 'said' and getting confused because the sounds do not match. Explain: 'Some words are tricky — they do not follow the normal sound rules. We just have to remember what they look like. Said is one of those tricky words.' Another common issue is reversing 'was' and 'saw' because the letters are the same in reverse order. Point this out explicitly: 'Look — was and saw use the same letters but in a different order. Was starts with w.' Your child is ready for the worksheet when they can: (1) read at least 10 of the 15 target sight words within 2 seconds each, (2) write at least 5 sight words from memory, and (3) use a sight word correctly in a spoken or written sentence.",
       extension:
         "Go on a sight word hunt in a favourite book. Tally how many times you find 'the', 'and', 'is' and 'said'. Which appeared most often? This covers AC V9 Year 1 — reading an increasing number of high-frequency words.",
       resources: [
@@ -594,17 +594,17 @@ export const year1EnglishWorksheets: WorksheetItem[] = [
         script:
           "I have written some sentences but I forgot the capitals and full stops — oh dear! Can you be the editor and fix them for me? Read each one, decide what type of ending it needs, and add the correct punctuation.",
         action:
-          "Write 5 to 6 sentences missing their capitals and end punctuation on paper. Your child fixes them with a red pencil.",
+          "Write 5 to 6 sentences on paper with capitals and end punctuation missing. For example: 'the cat sat on the mat' (needs capital T and full stop), 'is it raining today' (needs capital I and question mark), 'my dog is big and fluffy' (needs capital M and full stop). Give your child a red pencil and say: 'You are the editor now — find what is missing and fix it!' After each correction, ask: 'Why did you put a capital there? What does the full stop tell the reader?'",
       },
       wrapUp: {
         title: "Write Your Own",
         script:
-          "Now you are going to write your own sentences. I want to see your best handwriting AND your best punctuation. Three sentences — ready, set, go!",
+          "Now you are going to write your own sentences. I want to see your best handwriting AND your best punctuation. Three sentences about your favourite animal — ready, set, go! Remember: capital letter at the start, full stop at the end.",
         action:
-          "Your child writes 3 original sentences from a prompt (e.g. 'Write about your favourite animal'). Check for capital letters and full stops together.",
+          "Your child writes 3 original sentences. Before they start, brainstorm ideas orally: 'What is your favourite animal? What does it look like? What can it do?' After writing, check together using the 'finger test': point to the start of each sentence (is there a capital?) and the end (is there a full stop or question mark?).",
       },
       parentTip:
-        "When proofreading your child's writing, focus on one convention at a time — first capital letters, then full stops. Do not overwhelm with too many corrections at once. Ask: 'Does every sentence start with a capital? Where is the full stop?'",
+        "When proofreading your child's writing, focus on one convention at a time — first capital letters, then full stops. Do not overwhelm with too many corrections at once. Ask: 'Does every sentence start with a capital? Where is the full stop?' Common misconception: children often put a capital letter after every full stop but also randomly capitalise words in the middle of sentences — especially important-sounding words like 'Dog' or 'Mum'. Explain: 'Capitals only go at the start of a sentence and for special names — like your name or a place.' Another common issue is that children write one very long sentence joined by 'and': 'I have a cat and she is fluffy and she likes fish and she sleeps on my bed.' Help them see where to break it up: 'Each new idea gets its own sentence. I have a cat. She is fluffy.' Your child is ready for the worksheet when they can: (1) identify the capital letter and full stop in a printed sentence, (2) correctly add a capital and full stop to at least 3 out of 5 unpunctuated sentences, and (3) write at least one original sentence with correct boundary punctuation without prompting.",
       extension:
         "Play 'Sentence Surgeon': write jumbled words on strips of paper and ask your child to rearrange them into a sensible sentence with correct punctuation. This covers AC V9 Year 1 — writing simple sentences with sentence boundary punctuation.",
       resources: [

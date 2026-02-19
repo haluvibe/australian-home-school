@@ -46,7 +46,7 @@ export const year4EnglishWorksheets: WorksheetItem[] = [
           "Help your child start a My Favourite Words notebook page with today's words.",
       },
       parentTip:
-        "Read a picture book or chapter together and pause to ask: Could the author have used a different word here? What would change? This reinforces vocabulary in a natural, low-pressure way.",
+        "Read a picture book or chapter together and pause to ask: Could the author have used a different word here? What would change? This reinforces vocabulary in a natural, low-pressure way. Common misconception: children often think synonyms must mean exactly the same thing — they may reject 'happy' and 'glad' as synonyms because 'glad is not as strong as happy'. Explain that synonyms are words with similar meanings, not identical meanings, and that choosing between them is about finding the best fit. Another common error is confusing antonyms with unrelated words — a child might say the antonym of 'hot' is 'blue' rather than 'cold'. Remind them: antonyms are opposites, not just different. Your child is ready for the worksheet when they can: (1) suggest at least one synonym for a given word without help, (2) identify the antonym of a common adjective, and (3) explain that synonyms are words with similar meanings while antonyms are words with opposite meanings.",
       extension:
         "Challenge your child to rewrite a paragraph from a recent piece of their own writing, replacing at least four words with stronger synonyms from a thesaurus.",
       resources: [
@@ -1221,7 +1221,7 @@ export const year4EnglishWorksheets: WorksheetItem[] = [
           "Sit together with a recent writing sample and make two improvements together.",
       },
       parentTip:
-        "When reading aloud together, pause at long sentences and ask: Can you spot the main idea and the extra bit? This builds the habit of noticing sentence structure in real texts.",
+        "When reading aloud together, pause at long sentences and ask: Can you spot the main idea and the extra bit? This builds the habit of noticing sentence structure in real texts. Common misconception: children often confuse subordinating conjunctions (because, when, although, if) with coordinating conjunctions (and, but, or). The key difference is that subordinating conjunctions create a dependent clause that cannot stand alone — 'because it was raining' is not a complete sentence on its own. Also, children frequently place commas incorrectly — the rule is: when the dependent clause comes FIRST, use a comma before the main clause ('When it rained, we stayed inside'), but when the main clause comes first, no comma is needed ('We stayed inside when it rained'). Your child is ready for the worksheet when they can: (1) identify the main clause and the subordinate clause in a complex sentence, (2) use at least two different subordinating conjunctions correctly (e.g. when, because, although, if), and (3) write a complex sentence where the dependent clause comes first, with correct comma placement.",
       extension:
         "Challenge your child to write a paragraph about their favourite animal using at least five different conjunctions. Highlight each conjunction in a different colour.",
       resources: [
@@ -2530,7 +2530,7 @@ export const year4EnglishWorksheets: WorksheetItem[] = [
           "Review your child's dialogue together, marking any missing or incorrect punctuation gently.",
       },
       parentTip:
-        "Play caption this with photographs from a magazine — take turns writing a speech bubble for the person in the photo and then converting it to proper dialogue with speech marks.",
+        "Play caption this with photographs from a magazine — take turns writing a speech bubble for the person in the photo and then converting it to proper dialogue with speech marks. Common misconception: children often place the speech marks around the entire sentence including the 'said' attribution — writing: 'The cat is hungry said Tom.' instead of 'The cat is hungry,' said Tom. Teach the rule: speech marks go only around the exact words the person spoke. Another common error is forgetting to start a new line for each new speaker in dialogue. Also, children often omit the comma before the closing speech marks when the sentence continues after the dialogue. Your child is ready for the worksheet when they can: (1) correctly place speech marks around the spoken words only (not the attribution), (2) use a comma before the closing speech marks when the sentence continues, and (3) start a new line for each new speaker.",
       extension:
         "Ask your child to write a scene from their favourite book in play-script format, then convert it back to prose with proper speech marks. Discuss how the formats feel different.",
       resources: [
@@ -3895,7 +3895,7 @@ export const year4EnglishWorksheets: WorksheetItem[] = [
           "Read a short editorial or opinion piece together. Ask: What does the author want us to think? What facts do they use to support their opinion?",
       },
       parentTip:
-        "Watch a short news report together and ask your child to say fact or opinion after each major statement. This builds real-world media literacy.",
+        "Watch a short news report together and ask your child to say fact or opinion after each major statement. This builds real-world media literacy. Common misconception: children often believe that if something sounds authoritative or appears in a book, it must be a fact. Help them understand that facts can be checked and verified, while opinions express personal views even when stated confidently. Another tricky area is statements that blend fact and opinion — 'Australia is the best country in the world and has over 25 million people.' The second part is a fact; the first is an opinion. Children need practice separating these. Signal words help: opinions often contain 'best', 'worst', 'should', 'beautiful', 'I think', 'everyone knows'. Your child is ready for the worksheet when they can: (1) correctly classify at least 4 out of 5 statements as fact or opinion, (2) explain WHY a statement is a fact (it can be checked) or an opinion (it is someone's view), and (3) identify at least one signal word that suggests a statement is an opinion.",
       extension:
         "Ask your child to write a short paragraph about their favourite hobby — first as pure facts, then as pure opinion, then as a mix of both. Compare all three versions.",
       resources: [
@@ -5284,7 +5284,7 @@ export const year4EnglishWorksheets: WorksheetItem[] = [
           "Use the PEEL checklist on the worksheet to review your child's paragraph together.",
       },
       parentTip:
-        "Look at letters to the editor in a local newspaper together. Ask your child to identify the PEEL structure — does the writer use it? Are some letters more convincing than others? Why?",
+        "Look at letters to the editor in a local newspaper together. Ask your child to identify the PEEL structure — does the writer use it? Are some letters more convincing than others? Why? Common misconception: children often confuse 'being persuasive' with 'having a strong opinion'. They may write passionate opinions without supporting reasons or evidence — 'Dogs are the best pets ever!' is an opinion, not persuasion. Persuasion requires reasons and evidence that support the opinion. Another common issue is that children write reasons that are actually just restatements of their opinion in different words. Help them ask: 'Does this sentence give a NEW reason, or am I just saying the same thing again?' Your child is ready for the worksheet when they can: (1) state a clear opinion on a given topic, (2) provide at least two distinct reasons that support their opinion, (3) use at least one persuasive technique (rhetorical question, emotive language, or evidence), and (4) structure their paragraph with a clear opening statement and supporting sentences.",
       extension:
         "Challenge your child to write a counter-argument paragraph — the same topic but arguing the opposite side. Then discuss: which paragraph is more convincing, and why?",
       resources: [
@@ -9218,7 +9218,7 @@ export const year4EnglishWorksheets: WorksheetItem[] = [
           "Provide blank A4 paper or use the design grid on the worksheet. Display the finished page.",
       },
       parentTip:
-        "Encourage your child to read a non-fiction book by using its text features first — table of contents, headings, diagrams — before reading body text. This builds real research skills.",
+        "Encourage your child to read a non-fiction book by using its text features first — table of contents, headings, diagrams — before reading body text. This builds real research skills. Common misconception: children often skip text features entirely when reading non-fiction — they jump straight to the body text as if it were a story, missing the headings, captions, diagrams and glossary that carry essential meaning. Another common issue is confusing the table of contents with the index — the contents shows topics in page order, while the index lists topics alphabetically. Children may also not realise that bold or italicised words in a text signal important vocabulary. Your child is ready for the worksheet when they can: (1) name at least 4 common non-fiction text features (heading, subheading, caption, diagram, glossary, index, table of contents, bold text), (2) explain the purpose of each one, and (3) use a table of contents or index to locate specific information in a non-fiction text.",
       extension:
         "Research a topic using three different sources — a book, a website and an encyclopedia. Compare how each one uses text features differently and present your findings.",
       resources: [

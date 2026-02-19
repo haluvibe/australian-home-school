@@ -46,7 +46,7 @@ export const year5EnglishWorksheets: WorksheetItem[] = [
           "Help your child create a root word spider diagram in their notebook. Keep it as a reference for future writing.",
       },
       parentTip:
-        "When your child encounters an unfamiliar word in their reading, pause before reaching for the dictionary and ask: Can you see a root, prefix or suffix you recognise? This builds independent vocabulary strategies.",
+        "When your child encounters an unfamiliar word in their reading, pause before reaching for the dictionary and ask: Can you see a root, prefix or suffix you recognise? This builds independent vocabulary strategies. Common misconception: children often interpret figurative language literally — when they read 'it was raining cats and dogs', they may genuinely picture animals falling from the sky, or they may recognise it is not literal but be unable to explain what it actually means. Help them by always asking: 'What picture does this create? What is the author really trying to say?' For etymology, children sometimes assume words have always had their current meaning — learning that 'nice' once meant 'foolish' or that 'awful' originally meant 'full of awe' helps them see language as alive and changing. Your child is ready for the worksheet when they can: (1) identify at least 3 types of figurative language (simile, metaphor, personification, idiom, hyperbole), (2) explain the meaning of an unfamiliar figurative expression in their own words, and (3) make a reasonable guess about a word's meaning based on its root or origin.",
       extension:
         "Research five words that came into English from another language — French, Italian, Japanese or any language your family has a connection to. Present your findings as a word origin mini-poster.",
       resources: [
@@ -1340,7 +1340,7 @@ export const year5EnglishWorksheets: WorksheetItem[] = [
           "Sit with your child and review one paragraph of their writing together for tense consistency.",
       },
       parentTip:
-        "When watching a film or TV show together, ask: Is this story told in past tense or present tense? How can you tell? This builds metalinguistic awareness in a fun, low-stakes context.",
+        "When watching a film or TV show together, ask: Is this story told in past tense or present tense? How can you tell? This builds metalinguistic awareness in a fun, low-stakes context. Common misconception: children often shift tenses mid-paragraph without realising — they start writing in past tense ('The dog ran to the park') and suddenly switch to present ('He runs around and barks'). This is the most common tense error at Year 5 and beyond. Another issue is confusion between simple past and past continuous — 'I walked' vs 'I was walking'. Both are past tense, but they describe different types of action. Children also sometimes use present tense for storytelling because it feels more exciting, which is actually a valid stylistic choice in creative writing — but they need to be consistent. Your child is ready for the worksheet when they can: (1) identify the tense of a written paragraph (past, present, or future), (2) spot at least one tense inconsistency in a piece of writing, and (3) rewrite a short paragraph maintaining a single consistent tense throughout.",
       extension:
         "Rewrite the same short scene (4 to 5 sentences) three times — once in simple past, once in simple present and once using past continuous throughout. Compare how each version feels.",
       resources: [
@@ -2655,7 +2655,7 @@ export const year5EnglishWorksheets: WorksheetItem[] = [
           "Play three rounds each and review the relative clauses for correctness and whether commas were needed.",
       },
       parentTip:
-        "During everyday conversation, occasionally rephrase a simple sentence into one with a relative clause and ask your child to notice. For example: We saw a koala at the park — I can also say: We saw a koala, which was sleeping in a eucalyptus tree, at the park.",
+        "During everyday conversation, occasionally rephrase a simple sentence into one with a relative clause and ask your child to notice. For example: We saw a koala at the park — I can also say: We saw a koala, which was sleeping in a eucalyptus tree, at the park. Common misconception: children often confuse relative clauses with other types of subordinate clauses. The key identifier is the relative pronoun: who, which, that, whose, where, when. A relative clause always refers back to a noun — 'The dog, which was old, sat quietly.' Children also struggle with comma placement: defining relative clauses (essential information) do not use commas ('The boy who wore a red hat'), while non-defining clauses (extra information) do ('My brother, who is 12, plays football'). At Year 5, focus on correct pronoun choice rather than comma rules. Your child is ready for the worksheet when they can: (1) identify the relative clause in a sentence, (2) correctly use 'who' for people and 'which' for things, and (3) add a relative clause to expand a simple sentence.",
       extension:
         "Find five relative clauses in a novel or non-fiction book. Write them down, identify whether they are defining or non-defining, and explain how removing the clause changes the meaning.",
       resources: [
@@ -5203,7 +5203,7 @@ export const year5EnglishWorksheets: WorksheetItem[] = [
           "Check the paragraph together using the checklist on the worksheet.",
       },
       parentTip:
-        "Ask your child to explain how something works — a recipe, a sport, a science concept — as a spoken explanation before writing. Verbalising helps organise thinking before the pen hits the paper.",
+        "Ask your child to explain how something works — a recipe, a sport, a science concept — as a spoken explanation before writing. Verbalising helps organise thinking before the pen hits the paper. Common misconception: children often confuse expository writing with persuasive writing — they include opinions and emotive language when the task requires neutral, informative explanation. Help them understand: expository writing explains HOW or WHY without trying to convince. Another common issue is that children write everything they know about a topic in no particular order. Strong expository writing needs a clear structure: introduction, body paragraphs (each covering one aspect), and conclusion. Your child is ready for the worksheet when they can: (1) distinguish between an expository text and a persuasive text, (2) write an informative paragraph that explains a process or concept without stating personal opinions, (3) organise their writing with a clear topic sentence and supporting details, and (4) use linking words like 'firstly', 'in addition', 'for example', and 'in conclusion'.",
       extension:
         "Write a three-paragraph expository piece on a topic of your choice. Each paragraph should have its own topic sentence, and the paragraphs should flow together using linking sentences.",
       resources: [
@@ -6372,7 +6372,7 @@ export const year5EnglishWorksheets: WorksheetItem[] = [
           "Spend three to five minutes in a playful spoken debate on the topic your child wrote about.",
       },
       parentTip:
-        "Watch a short debate clip from a children's program or current affairs show together. Pause to identify: What is the argument? What is the counterargument? Who makes the stronger rebuttal?",
+        "Watch a short debate clip from a children's program or current affairs show together. Pause to identify: What is the argument? What is the counterargument? Who makes the stronger rebuttal? Common misconception: children often think a counterargument means agreeing with the other side. In fact, addressing a counterargument means acknowledging what someone might argue against your position, then explaining why your view is still stronger. Children also tend to pick the weakest possible counterargument to dismiss easily ('Some people say homework is bad because it takes time from TV') rather than engaging with the strongest opposing view. Encourage them to find the best argument against their position and address it honestly. Your child is ready for the worksheet when they can: (1) state a clear argument with at least two supporting reasons, (2) identify one counterargument to their position, (3) write a rebuttal that acknowledges the counterargument and explains why their original position is still stronger, and (4) use discourse markers like 'however', 'on the other hand', and 'nevertheless'.",
       extension:
         "Write a full four-paragraph persuasive text — introduction, two argument paragraphs (each with counterargument and rebuttal), and a conclusion. Aim for a formal, confident tone throughout.",
       resources: [
@@ -7551,7 +7551,7 @@ export const year5EnglishWorksheets: WorksheetItem[] = [
           "Provide blank A4 paper and coloured pencils. Display the finished design alongside the written explanation.",
       },
       parentTip:
-        "Next time you watch a film together, notice the visual choices at the opening scene — colour grading, camera angle, music. Ask: What mood do these choices create before anyone speaks? This extends media literacy into screen texts.",
+        "Next time you watch a film together, notice the visual choices at the opening scene — colour grading, camera angle, music. Ask: What mood do these choices create before anyone speaks? This extends media literacy into screen texts. Common misconception: children often assume that photographs in media are objective records of reality — they do not realise that framing, angle, lighting, cropping and selection all shape the message. A photograph of a crowd can look enormous or tiny depending on the angle. Another common issue is that children focus on the written text in media and ignore the visual elements, when in fact images, colours, and layout often carry the primary message. Your child is ready for the worksheet when they can: (1) identify at least 3 visual techniques used in media (colour, framing, size, placement, font choice, contrast), (2) explain how a visual choice influences the audience's response, and (3) describe how the same topic could be presented differently through different visual choices.",
       extension:
         "Analyse the design of your favourite website or app. Write a media critique (one page) explaining five design choices and evaluating how effectively they target the intended audience.",
       resources: [
@@ -8768,7 +8768,7 @@ export const year5EnglishWorksheets: WorksheetItem[] = [
           "Discuss the author's purpose of the worksheet text together and compare it to the purpose of two other texts your child has read this week.",
       },
       parentTip:
-        "Subscribe to a free children's news service such as Behind the News from ABC Education. Reading short, real-world informational texts regularly is the most effective way to build comprehension skills.",
+        "Subscribe to a free children's news service such as Behind the News from ABC Education. Reading short, real-world informational texts regularly is the most effective way to build comprehension skills. Common misconception: children often answer comprehension questions by copying large chunks of text directly from the passage rather than paraphrasing in their own words. Teach them to read the relevant section, close the text, and then write their answer. If they cannot explain it without looking, they have not truly understood it. Another common issue is confusing 'what the text says' (literal comprehension) with 'what the text means' (inferential comprehension). Year 5 students need to practise both. Your child is ready for the worksheet when they can: (1) locate specific information in an informational text using text features, (2) answer a literal question by paraphrasing rather than copying, and (3) make at least one inference about the author's purpose or an implied meaning.",
       extension:
         "Choose three informational texts on the same topic from different sources. Evaluate each for author purpose and reliability. Identify any differences in the facts they present and explain why they might differ.",
       resources: [
