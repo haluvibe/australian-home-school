@@ -158,6 +158,7 @@ const navItems = [
   { label: "Home", href: "/" },
   { label: "Curriculum", href: "#", hasDropdown: true },
   { label: "Worksheets", href: "#", hasDropdown: true },
+  { label: "Games", href: "/games" },
   { label: "Guides & Tools", href: "#", hasDropdown: true },
   { label: "External Resources", href: "#", hasDropdown: true },
   { label: "FAQ", href: "/faq" },
