@@ -2679,83 +2679,56 @@ export const year5EnglishWorksheets: WorksheetItem[] = [
       ],
     },
     activities: [
+      // ── FOUNDATIONAL 1–20 ──────────────────────────────────────────────────
+      // 1
       {
         type: "circle-correct" as const,
-        title: "Choose Who, Which or That",
-        instruction:
-          "Circle the correct relative pronoun to complete each sentence.",
+        title: "Choose Who, Which or That (Set A)",
+        instruction: "Circle the correct relative pronoun to complete each sentence.",
         questions: [
-          {
-            prompt: "The scientist ___ discovered penicillin was Alexander Fleming.",
-            options: ["who", "which", "what"],
-          },
-          {
-            prompt: "The book ___ I borrowed from the library was fascinating.",
-            options: ["who", "which", "what"],
-          },
-          {
-            prompt: "The children ___ finished early were allowed to read.",
-            options: ["which", "who", "what"],
-          },
-          {
-            prompt: "The bridge ___ was built in 1932 is still standing.",
-            options: ["who", "which", "what"],
-          },
-          {
-            prompt: "Is this the dog ___ won the competition?",
-            options: ["who", "that", "what"],
-          },
+          { prompt: "The scientist ___ discovered penicillin was Alexander Fleming.", options: ["who", "which", "what"] },
+          { prompt: "The book ___ I borrowed from the library was fascinating.", options: ["who", "which", "what"] },
+          { prompt: "The children ___ finished early were allowed to read.", options: ["which", "who", "what"] },
+          { prompt: "The bridge ___ was built in 1932 is still standing.", options: ["who", "which", "what"] },
+          { prompt: "Is this the dog ___ won the competition?", options: ["who", "that", "what"] },
         ],
       },
+      // 2
       {
-        type: "open-response" as const,
-        title: "Combine the Sentences",
-        instruction:
-          "Combine each pair of sentences into one sentence using a relative clause with who, which or that.",
-        prompts: [
-          {
-            text: "1. The woman won the race. She had been training for a year.\nAnswer:",
-            type: "lines",
-            lines: 3,
-          },
-          {
-            text: "2. The laptop belongs to my dad. It has a cracked screen.\nAnswer:",
-            type: "lines",
-            lines: 3,
-          },
-          {
-            text: "3. The building was demolished last year. It used to be a cinema.\nAnswer:",
-            type: "lines",
-            lines: 3,
-          },
-          {
-            text: "4. My neighbour keeps chickens. She gives us eggs every week.\nAnswer:",
-            type: "lines",
-            lines: 3,
-          },
+        type: "true-false" as const,
+        title: "True or False: Relative Clause Basics",
+        instruction: "Circle True or False for each statement.",
+        statements: [
+          { text: "A relative clause adds information about a noun.", answer: true },
+          { text: "'Who' is used as a relative pronoun for things.", answer: false },
+          { text: "'Which' is used as a relative pronoun for things.", answer: true },
+          { text: "'That' can be used for both people and things.", answer: true },
+          { text: "A relative clause can stand alone as a complete sentence.", answer: false },
+          { text: "Relative pronouns include who, which, that, whose and whom.", answer: true },
         ],
       },
+      // 3
       {
-        type: "open-response" as const,
-        title: "Write Your Own Relative Clauses",
-        instruction:
-          "Write six sentences about people or places you know. Each sentence must contain a relative clause using who, which or that. Label each clause in the margin — D for defining or ND for non-defining.",
-        prompts: [
-          { text: "1.", type: "lines", lines: 2 },
-          { text: "2.", type: "lines", lines: 2 },
-          { text: "3.", type: "lines", lines: 2 },
-          { text: "4.", type: "lines", lines: 2 },
-          { text: "5.", type: "lines", lines: 2 },
-          { text: "6.", type: "lines", lines: 2 },
+        type: "matching" as const,
+        title: "Match the Relative Pronoun to Its Use",
+        instruction: "Draw a line to match each relative pronoun with its correct use.",
+        parentTip: "Keep this rule simple: who = people, which = things, that = people or things (in defining clauses), whose = possession.",
+        left: ["who", "which", "that", "whose", "where", "when"],
+        right: [
+          "Used for time (the year __ they met)",
+          "Used for people",
+          "Used for things, especially non-defining",
+          "Used for possession (the girl __ cat is missing)",
+          "Used for things or people in defining clauses",
+          "Used for places",
         ],
       },
+      // 4
       {
         type: "sorting" as const,
-        title: "Sort: Defining or Non-defining?",
-        instruction:
-          "Sort each sentence into the correct column. Defining relative clauses tell us which specific person or thing — no commas needed. Non-defining relative clauses add extra information — commas required.",
-        parentTip:
-          "A useful test: if you can remove the clause and still know which person or thing is meant, it is likely non-defining. If removing it makes the sentence unclear, it is defining.",
+        title: "Sort: Defining or Non-defining? (Set A)",
+        instruction: "Sort each sentence into the correct column. Defining relative clauses tell us which specific person or thing — no commas needed. Non-defining relative clauses add extra information — commas required.",
+        parentTip: "A useful test: if you can remove the clause and still know which person or thing is meant, it is likely non-defining. If removing it makes the sentence unclear, it is defining.",
         columns: ["Defining (no commas)", "Non-defining (uses commas)"],
         items: [
           { label: "The car that is parked outside belongs to our neighbour." },
@@ -2766,35 +2739,1138 @@ export const year5EnglishWorksheets: WorksheetItem[] = [
           { label: "Our dog, which we rescued two years ago, loves the beach." },
         ],
       },
+      // 5
+      {
+        type: "fill-in-blank" as const,
+        title: "Fill in the Relative Pronoun (Set A)",
+        instruction: "Fill in the blank with the correct relative pronoun: who, which, that, whose or where.",
+        parentTip: "When your child is unsure, ask: Is the noun a person or a thing? Then apply the rule: person = who, thing = which or that.",
+        sentences: [
+          { text: "The book ___ I read last week was excellent.", blanks: ["that / which"] },
+          { text: "The woman ___ gave us directions was very helpful.", blanks: ["who"] },
+          { text: "The park ___ we used to play has been redeveloped.", blanks: ["where"] },
+          { text: "I found the keys ___ were missing.", blanks: ["that / which"] },
+          { text: "The student ___ work was chosen will receive a prize.", blanks: ["whose"] },
+        ],
+      },
+      // 6
       {
         type: "open-response" as const,
-        title: "Expand and Improve",
-        instruction:
-          "Rewrite each simple sentence by adding a relative clause to make it more precise and interesting. Choose who, which or that correctly and decide whether commas are needed.",
-        parentTip:
-          "Remind your child that a relative clause should add meaningful information — not just any clause. Ask: Does this clause help the reader understand more clearly?",
+        title: "Combine the Sentences (Set A)",
+        instruction: "Combine each pair of sentences into one using a relative clause with who, which or that.",
         prompts: [
+          { text: "1. The woman won the race. She had been training for a year.\nAnswer:", type: "lines", lines: 3 },
+          { text: "2. The laptop belongs to my dad. It has a cracked screen.\nAnswer:", type: "lines", lines: 3 },
+          { text: "3. The building was demolished last year. It used to be a cinema.\nAnswer:", type: "lines", lines: 3 },
+          { text: "4. My neighbour keeps chickens. She gives us eggs every week.\nAnswer:", type: "lines", lines: 3 },
+        ],
+      },
+      // 7
+      {
+        type: "circle-correct" as const,
+        title: "Does This Sentence Need Commas?",
+        instruction: "Circle Yes (needs commas — non-defining) or No (no commas — defining) for each sentence.",
+        questions: [
+          { prompt: "The dog that bit the postman was taken to a vet.", options: ["Yes — add commas", "No — no commas needed"] },
+          { prompt: "My sister who lives in Adelaide is a doctor.", options: ["Yes — add commas (if only one sister)", "No — no commas needed"] },
+          { prompt: "The house that we lived in has been sold.", options: ["Yes — add commas", "No — no commas needed"] },
+          { prompt: "Sydney which is Australia's largest city is on the east coast.", options: ["Yes — add commas", "No — no commas needed"] },
+          { prompt: "Students who complete the extension task will earn a bonus point.", options: ["Yes — add commas", "No — no commas needed"] },
+        ],
+      },
+      // 8
+      {
+        type: "open-response" as const,
+        title: "Expand and Improve (Set A)",
+        instruction: "Rewrite each simple sentence by adding a relative clause to make it more precise and interesting. Choose the correct relative pronoun and decide whether commas are needed.",
+        parentTip: "Remind your child that a relative clause should add meaningful information. Ask: Does this clause help the reader understand more clearly?",
+        prompts: [
+          { text: "1. The explorer made an important discovery.\nExpanded:", type: "lines", lines: 3 },
+          { text: "2. The library has a new reading room.\nExpanded:", type: "lines", lines: 3 },
+          { text: "3. My teacher gave us extra homework.\nExpanded:", type: "lines", lines: 3 },
+          { text: "4. The documentary was very interesting.\nExpanded:", type: "lines", lines: 3 },
+        ],
+      },
+      // 9
+      {
+        type: "matching" as const,
+        title: "Match: Which Relative Pronoun Is Used?",
+        instruction: "Read each sentence. Draw a line to the relative pronoun used in it.",
+        left: [
+          "The house where I grew up has been painted.",
+          "The year when she was born was very cold.",
+          "The friend whose book I borrowed has moved away.",
+          "The cat that climbed the tree refused to come down.",
+          "My uncle, who is a chef, visited us last week.",
+        ],
+        right: ["that", "who", "whose", "where", "when"],
+      },
+      // 10
+      {
+        type: "fill-in-blank" as const,
+        title: "Add the Missing Relative Clause",
+        instruction: "Each sentence below is missing a relative clause. Fill in the blank with a suitable clause that adds meaningful detail.",
+        sentences: [
+          { text: "The teacher ___ had a calm, encouraging manner that everyone appreciated.", blanks: ["who taught Year 5"] },
+          { text: "The book ___ was full of exciting adventures and unexpected twists.", blanks: ["that I borrowed"] },
+          { text: "The park ___ was always full of families on weekends.", blanks: ["where we used to play"] },
+          { text: "The scientist ___ received the Nobel Prize last year.", blanks: ["who made the discovery"] },
+        ],
+      },
+      // 11
+      {
+        type: "circle-correct" as const,
+        title: "Relative Pronoun or Something Else?",
+        instruction: "In each sentence, decide whether the underlined word is used as a relative pronoun or in a different way.",
+        questions: [
+          { prompt: "The book THAT she read was excellent.", options: ["Relative pronoun", "Conjunction", "Demonstrative pronoun"] },
+          { prompt: "WHAT he said surprised everyone.", options: ["Relative pronoun", "Interrogative pronoun", "Demonstrative pronoun"] },
+          { prompt: "The scientist WHO won the prize was very humble.", options: ["Relative pronoun", "Interrogative pronoun", "Conjunction"] },
+          { prompt: "WHICH way did they go?", options: ["Relative pronoun", "Interrogative adjective", "Conjunction"] },
+          { prompt: "The letter WHICH arrived this morning was from overseas.", options: ["Relative pronoun", "Interrogative pronoun", "Conjunction"] },
+        ],
+      },
+      // 12
+      {
+        type: "open-response" as const,
+        title: "Write Your Own Relative Clauses (Set A)",
+        instruction: "Write six sentences about people or places you know. Each sentence must contain a relative clause using who, which or that. Label each clause — D for defining or ND for non-defining.",
+        prompts: [
+          { text: "1.", type: "lines", lines: 2 },
+          { text: "2.", type: "lines", lines: 2 },
+          { text: "3.", type: "lines", lines: 2 },
+          { text: "4.", type: "lines", lines: 2 },
+          { text: "5.", type: "lines", lines: 2 },
+          { text: "6.", type: "lines", lines: 2 },
+        ],
+      },
+      // 13
+      {
+        type: "multiple-choice" as const,
+        title: "Defining or Non-defining: What Changes?",
+        instruction: "Read each pair of sentences. Answer the question about how the comma changes the meaning.",
+        parentTip: "The comma rule for relative clauses is one of the most commonly misapplied punctuation rules in English. Spending time on it now will pay dividends in all future writing.",
+        questions: [
           {
-            text: "1. The explorer made an important discovery.\nExpanded:",
-            type: "lines",
-            lines: 3,
+            prompt: "Sentence A: My brother who lives in Brisbane is a teacher.\nSentence B: My brother, who lives in Brisbane, is a teacher.\nWhat does the comma in Sentence B imply?",
+            options: ["The speaker has only one brother and is adding extra information about him", "The speaker has more than one brother and is specifying which one", "There is no difference in meaning", "The comma is a grammar error"],
+            answer: "The speaker has only one brother and is adding extra information about him",
           },
           {
-            text: "2. The library has a new reading room.\nExpanded:",
-            type: "lines",
-            lines: 3,
-          },
-          {
-            text: "3. My teacher gave us extra homework.\nExpanded:",
-            type: "lines",
-            lines: 3,
-          },
-          {
-            text: "4. The documentary was very interesting.\nExpanded:",
-            type: "lines",
-            lines: 3,
+            prompt: "Which sentence implies the speaker has more than one sister?",
+            options: ["My sister, who works as a nurse, visited us.", "My sister who works as a nurse visited us."],
+            answer: "My sister who works as a nurse visited us.",
           },
         ],
+      },
+      // 14
+      {
+        type: "sequence" as const,
+        title: "Build a Sentence with a Relative Clause",
+        instruction: "Rearrange each set of words and phrases into a grammatically correct sentence containing a relative clause.",
+        items: [
+          { label: "the dog / that / barked all night / belongs to / our new neighbours" },
+          { label: "the painting / which / hangs in the hall / was / a gift from my grandmother" },
+          { label: "the student / who / studied hardest / won / the science prize" },
+          { label: "Mount Kosciuszko / which / is the highest peak in Australia / is in / New South Wales" },
+        ],
+      },
+      // 15 — TIP
+      {
+        type: "tip" as const,
+        title: "Tip: The Comma Test for Relative Clauses",
+        content: "Here is a quick test to decide if commas are needed in a relative clause. Try removing the clause. If the sentence still makes complete sense and refers to a specific noun, use commas (non-defining). If removing the clause makes the sentence vague or unclear, no commas are needed (defining). Example: 'My cat, which is orange, loves tuna' — you know which cat (there is only one), so commas are needed. 'The cat that lives next door is friendly' — removing 'that lives next door' makes it unclear which cat, so no commas.",
+      },
+      // 16
+      {
+        type: "fill-in-blank" as const,
+        title: "Relative Pronouns: Whose and Where",
+        instruction: "Fill in the blank with whose or where.",
+        sentences: [
+          { text: "The girl ___ dog won first prize was very proud.", blanks: ["whose"] },
+          { text: "The town ___ I was born is small but beautiful.", blanks: ["where"] },
+          { text: "The author ___ book became a film is Australian.", blanks: ["whose"] },
+          { text: "The restaurant ___ we had lunch last year has closed down.", blanks: ["where"] },
+          { text: "He is the kind of person ___ generosity inspires everyone around him.", blanks: ["whose"] },
+        ],
+      },
+      // 17
+      {
+        type: "sorting" as const,
+        title: "Sort: Who, Which, That, Whose or Where?",
+        instruction: "Sort each sentence into the column that shows which relative pronoun would complete it.",
+        columns: ["who", "which", "that / who", "whose", "where"],
+        items: [
+          { label: "The teacher ___ taught me Year 4 was very patient." },
+          { label: "The letter ___ arrived this morning was from the school." },
+          { label: "The park ___ we walk our dog is nearby." },
+          { label: "The child ___ painting won first prize was delighted." },
+          { label: "That is the film ___ won three awards." },
+          { label: "The city ___ she was born has changed a lot." },
+          { label: "The player ___ scored the winning goal celebrated with her team." },
+          { label: "Australia, ___ has a unique biodiversity, is home to many native species." },
+        ],
+      },
+      // 18
+      {
+        type: "open-response" as const,
+        title: "Relative Clauses in Descriptive Writing",
+        instruction: "Write a descriptive paragraph (6 to 8 sentences) about a place you know well — your home, your local park, your favourite room. Include at least three relative clauses. Label each one in the margin.",
+        prompts: [
+          { text: "My place:", type: "lines", lines: 1 },
+          { text: "My paragraph:", type: "box", lines: 14 },
+        ],
+      },
+      // 19
+      {
+        type: "true-false" as const,
+        title: "True or False: Relative Clauses in Use",
+        instruction: "Circle True or False.",
+        statements: [
+          { text: "Defining relative clauses are enclosed by commas.", answer: false },
+          { text: "You can use 'that' in non-defining relative clauses.", answer: false },
+          { text: "The relative pronoun can sometimes be omitted in defining clauses when it is the object.", answer: true },
+          { text: "'Whose' is used to show possession in a relative clause.", answer: true },
+          { text: "'Where' can be used as a relative pronoun to refer to a place.", answer: true },
+          { text: "A non-defining relative clause changes which person or thing we are talking about.", answer: false },
+        ],
+      },
+      // 20 — SPARK
+      {
+        type: "spark" as const,
+        title: "Spark: The Relative Clause Challenge",
+        content: "Open any novel to a random page and find five sentences that contain relative clauses. For each one: write the sentence, underline the clause, identify the relative pronoun used, and decide if it is defining or non-defining. Then write your own five sentences on the same topic as the book, each containing a different type of relative clause. Can you use all five relative pronouns — who, which, that, whose, where — at least once?",
+      },
+      // ── DEVELOPING 21–50 ──────────────────────────────────────────────────
+      // 21
+      {
+        type: "multiple-choice" as const,
+        title: "Omitting the Relative Pronoun",
+        instruction: "In defining relative clauses, the relative pronoun can sometimes be omitted when it is the object of the clause. Identify which sentences allow omission.",
+        parentTip: "The pronoun can be dropped only when it is the object of the relative clause, not the subject. 'The book that I read' → 'The book I read' (pronoun is object). 'The book that won the prize' — cannot drop 'that' (it is the subject).",
+        questions: [
+          { prompt: "Can you omit the relative pronoun? 'The letter that I wrote was never sent.'", options: ["Yes — 'The letter I wrote was never sent.'", "No — the pronoun must stay"], answer: "Yes — 'The letter I wrote was never sent.'" },
+          { prompt: "Can you omit the relative pronoun? 'The scientist who discovered penicillin was Fleming.'", options: ["Yes", "No — 'who' is the subject of the clause"], answer: "No — 'who' is the subject of the clause" },
+          { prompt: "Can you omit the relative pronoun? 'The film that we watched last night was brilliant.'", options: ["Yes — 'The film we watched last night was brilliant.'", "No — the pronoun must stay"], answer: "Yes — 'The film we watched last night was brilliant.'" },
+        ],
+      },
+      // 22
+      {
+        type: "fill-in-blank" as const,
+        title: "Relative Clauses with Whom",
+        instruction: "Fill in the blank with who or whom. Use whom when the relative pronoun is the object of the clause.",
+        parentTip: "A simple test: replace the relative pronoun with he/she (→ use who) or him/her (→ use whom). 'The person who/whom I admire' — I admire him → whom.",
+        sentences: [
+          { text: "The author ___ I most admire is Jane Austen.", blanks: ["whom"] },
+          { text: "The teacher ___ taught me most was Mr Carlisle.", blanks: ["who"] },
+          { text: "The volunteer ___ we thanked was deeply moved.", blanks: ["whom"] },
+          { text: "The scientist ___ won the Nobel Prize gave a speech.", blanks: ["who"] },
+        ],
+      },
+      // 23
+      {
+        type: "open-response" as const,
+        title: "Combine Four Sentences Using Relative Clauses",
+        instruction: "Combine these four short sentences into one or two longer, fluent sentences using relative clauses. You may use any relative pronoun.",
+        prompts: [
+          {
+            text: "The ancient library was built in 1890. It stood on the corner of King Street. Many famous writers studied there. It was demolished last year.\n\nCombined:",
+            type: "box",
+            lines: 6,
+          },
+          {
+            text: "Our science teacher is Mrs Hadley. She studied at Melbourne University. She wrote a book about native birds. The book was awarded a prize.\n\nCombined:",
+            type: "box",
+            lines: 6,
+          },
+        ],
+      },
+      // 24
+      {
+        type: "sorting" as const,
+        title: "Sort: Relative Clause Position",
+        instruction: "A relative clause can appear in different positions in a sentence. Sort each sentence by where the relative clause appears.",
+        columns: ["Clause after the subject noun", "Clause after the object noun", "Clause after a preposition phrase"],
+        items: [
+          { label: "The girl who won the race trained every day." },
+          { label: "I gave the trophy to the student who worked hardest." },
+          { label: "She lived in the house that stood at the end of the lane." },
+          { label: "The dog that barked all night finally fell asleep." },
+          { label: "He handed the envelope to the person whose name was written on it." },
+          { label: "We visited the museum where the exhibition was held." },
+        ],
+      },
+      // 25
+      {
+        type: "open-response" as const,
+        title: "Relative Clauses and Sentence Variety",
+        instruction: "Rewrite this passage to add at least four relative clauses. The passage should become more detailed and precise. Label each relative clause you add.",
+        parentTip: "Adding relative clauses is one of the most effective ways to increase sentence complexity without losing clarity. Read the finished passage aloud to check it flows well.",
+        prompts: [
+          {
+            text: "ORIGINAL PASSAGE:\nThe bakery is on Main Street. It is run by a woman. She bakes bread early every morning. The bread sells out by nine o'clock. The bakery has a cat. It sleeps in the window.\n\nRewritten passage with relative clauses:",
+            type: "box",
+            lines: 12,
+          },
+        ],
+      },
+      // 26
+      {
+        type: "true-false" as const,
+        title: "True or False: Using Relative Clauses Well",
+        instruction: "Circle True or False.",
+        statements: [
+          { text: "Overusing relative clauses can make sentences too long and hard to follow.", answer: true },
+          { text: "A relative clause always comes immediately after the noun it modifies.", answer: true },
+          { text: "You can use a relative clause to replace an entire sentence.", answer: true },
+          { text: "Relative clauses improve writing only in formal texts.", answer: false },
+          { text: "A well-placed relative clause can eliminate the need for a separate sentence.", answer: true },
+          { text: "Non-defining relative clauses are more common in spoken English than written English.", answer: true },
+        ],
+      },
+      // 27
+      {
+        type: "circle-correct" as const,
+        title: "Choose Who, Which or That (Set B)",
+        instruction: "Circle the correct relative pronoun.",
+        questions: [
+          { prompt: "Australia is a country ___ has a unique range of wildlife.", options: ["who", "which", "what"] },
+          { prompt: "The surgeon ___ operated on her was highly experienced.", options: ["which", "who", "what"] },
+          { prompt: "They stayed in a hotel ___ had a rooftop pool.", options: ["who", "which", "what"] },
+          { prompt: "She is the type of person ___ always makes time for others.", options: ["which", "who", "what"] },
+          { prompt: "Is this the road ___ leads to the lighthouse?", options: ["who", "that", "what"] },
+          { prompt: "The reason ___ she was late is still unclear.", options: ["why", "which", "who"] },
+        ],
+      },
+      // 28
+      {
+        type: "fill-in-blank" as const,
+        title: "Relative Clauses with Prepositions",
+        instruction: "Some relative clauses use a preposition before the relative pronoun. Fill in the blank with the correct preposition + relative pronoun combination.",
+        sentences: [
+          { text: "The company ___ I work has recently expanded. (for which / that I work for)", blanks: ["for which"] },
+          { text: "The friend ___ I told you has moved to Perth. (of whom / that I told you about)", blanks: ["of whom"] },
+          { text: "The issue ___ they were debating was resolved. (about which / that they were debating)", blanks: ["about which"] },
+          { text: "The teacher ___ she had the most respect was kind and patient. (for whom)", blanks: ["for whom"] },
+        ],
+      },
+      // 29
+      {
+        type: "open-response" as const,
+        title: "Relative Clauses in Information Writing",
+        instruction: "Write a short informational paragraph (6 to 8 sentences) about an animal, a historical figure or a natural landmark. Include at least three relative clauses. Your relative clauses must add genuinely useful information.",
+        parentTip: "Information writing with relative clauses reads more fluidly than lists of short sentences. Compare a version with relative clauses to the original short-sentence version to show the difference.",
+        prompts: [
+          { text: "My topic:", type: "lines", lines: 1 },
+          { text: "My paragraph:", type: "box", lines: 12 },
+        ],
+      },
+      // 30 — TIP
+      {
+        type: "tip" as const,
+        title: "Tip: Relative Clauses and Sentence Complexity",
+        content: "One of the easiest ways to make your writing sound more mature is to combine short sentences using relative clauses. 'Mary Shelley wrote Frankenstein. She was only eighteen when she wrote it.' These two sentences can become: 'Mary Shelley, who was only eighteen when she wrote it, created Frankenstein.' One sentence, more information, better flow. Practise combining at least five pairs of simple sentences every week.",
+      },
+      // 31
+      {
+        type: "multiple-choice" as const,
+        title: "Identify the Error in the Relative Clause",
+        instruction: "Each sentence contains an error in the relative clause. Choose the correct version.",
+        questions: [
+          { prompt: "ERROR: The dog which is next door always barks at night.", options: ["The dog who is next door always barks at night.", "The dog that is next door always barks at night.", "The dog which, is next door, always barks at night."], answer: "The dog that is next door always barks at night." },
+          { prompt: "ERROR: My sister, which is a nurse, works night shifts.", options: ["My sister, who is a nurse, works night shifts.", "My sister who is a nurse works night shifts.", "My sister that is a nurse works night shifts."], answer: "My sister, who is a nurse, works night shifts." },
+          { prompt: "ERROR: The town which I was born is very small.", options: ["The town where I was born is very small.", "The town that I was born is very small.", "The town who I was born is very small."], answer: "The town where I was born is very small." },
+        ],
+      },
+      // 32
+      {
+        type: "sorting" as const,
+        title: "Sort: Correct or Incorrect Use of Relative Pronoun?",
+        instruction: "Sort each sentence into the correct column.",
+        columns: ["Correct", "Incorrect — wrong relative pronoun"],
+        items: [
+          { label: "The scientist which discovered penicillin was Fleming." },
+          { label: "The scientist who discovered penicillin was Fleming." },
+          { label: "The city where she was born has changed a lot." },
+          { label: "The city which she was born has changed a lot." },
+          { label: "The student whose work won the prize was delighted." },
+          { label: "The student which work won the prize was delighted." },
+        ],
+      },
+      // 33
+      {
+        type: "open-response" as const,
+        title: "Correct the Relative Clause Errors",
+        instruction: "Each sentence below has an error in its relative clause. Identify the error and rewrite the correct sentence.",
+        parentTip: "Identifying and explaining errors is harder than writing correctly from scratch — it requires metalinguistic awareness. Praise careful reasoning.",
+        prompts: [
+          { text: "1. The house which my grandparents live is on a hill.\nError: _______________\nCorrected:", type: "lines", lines: 3 },
+          { text: "2. The student which won the prize was very surprised.\nError: _______________\nCorrected:", type: "lines", lines: 3 },
+          { text: "3. She is a person who's ideas are always interesting.\nError: _______________\nCorrected:", type: "lines", lines: 3 },
+          { text: "4. The film, that we saw last week, was brilliant.\nError: _______________\nCorrected:", type: "lines", lines: 3 },
+        ],
+      },
+      // 34
+      {
+        type: "fill-in-blank" as const,
+        title: "Complete the Non-defining Relative Clause",
+        instruction: "Complete each non-defining relative clause by adding suitable information. Remember to use commas correctly.",
+        sentences: [
+          { text: "My favourite book, ___, has been made into a film.", blanks: ["which I have read three times"] },
+          { text: "Our science teacher, ___, has won several teaching awards.", blanks: ["who has a PhD in biology"] },
+          { text: "The Sydney Opera House, ___, is one of Australia's most recognisable landmarks.", blanks: ["which was completed in 1973"] },
+          { text: "My next-door neighbour, ___, always brings us produce from her garden.", blanks: ["who grows her own vegetables"] },
+        ],
+      },
+      // 35
+      {
+        type: "open-response" as const,
+        title: "Relative Clauses in a Persuasive Argument",
+        instruction: "Write a persuasive paragraph (6 to 8 sentences) arguing for or against a cause you care about. Include at least three relative clauses to add precision and detail to your argument.",
+        parentTip: "Relative clauses in persuasive writing allow writers to pack precise, relevant detail into their arguments without writing very long sentences. They signal a sophisticated writer.",
+        prompts: [
+          { text: "My argument (for or against what?):", type: "lines", lines: 1 },
+          { text: "My persuasive paragraph:", type: "box", lines: 12 },
+          { text: "Relative clauses I used (underline in your paragraph and list here):", type: "lines", lines: 3 },
+        ],
+      },
+      // 36
+      {
+        type: "multiple-choice" as const,
+        title: "Which Relative Clause Is More Precise?",
+        instruction: "Read each pair of sentences. Choose the one that uses a relative clause more precisely and effectively.",
+        questions: [
+          { prompt: "Which is more precise?", options: ["The man came to the door. He was wearing a coat.", "The man who came to the door was wearing a heavy navy coat."] },
+          { prompt: "Which flows better as one sentence?", options: ["She is a person who works hard and she always helps others.", "She is a person who works hard and always helps others."] },
+          { prompt: "Which relative clause adds more useful information?", options: ["The town, which exists, has a market.", "The town, which dates back to the 1860s, hosts a weekly market."] },
+        ],
+      },
+      // 37
+      {
+        type: "true-false" as const,
+        title: "True or False: Relative Clauses in Different Text Types",
+        instruction: "Circle True or False.",
+        statements: [
+          { text: "Relative clauses are used only in formal writing.", answer: false },
+          { text: "In spoken English, people often use 'that' where formal grammar requires 'who'.", answer: true },
+          { text: "News articles often use defining relative clauses to identify specific people and places.", answer: true },
+          { text: "Adding too many relative clauses to a single sentence always improves it.", answer: false },
+          { text: "Non-defining relative clauses are more common in written than spoken English.", answer: true },
+          { text: "A relative clause can be used to define, identify, or add background information about a noun.", answer: true },
+        ],
+      },
+      // 38
+      {
+        type: "open-response" as const,
+        title: "Spot and Collect: Relative Clauses in Published Texts",
+        instruction: "Find five relative clauses in newspapers, non-fiction books or novels. Copy each sentence, underline the relative clause, and identify whether it is defining or non-defining.",
+        prompts: [
+          { text: "1. Source and sentence (with clause underlined), defining or non-defining:", type: "lines", lines: 3 },
+          { text: "2.", type: "lines", lines: 3 },
+          { text: "3.", type: "lines", lines: 3 },
+          { text: "4.", type: "lines", lines: 3 },
+          { text: "5.", type: "lines", lines: 3 },
+        ],
+      },
+      // 39
+      {
+        type: "circle-correct" as const,
+        title: "Punctuate the Relative Clause Correctly",
+        instruction: "Read each sentence. Circle the correctly punctuated version.",
+        questions: [
+          { prompt: "Choose the correctly punctuated version:", options: ["The Eiffel Tower which is in Paris attracts millions of tourists.", "The Eiffel Tower, which is in Paris, attracts millions of tourists."] },
+          { prompt: "Choose the correctly punctuated version:", options: ["Students, who study regularly, tend to perform better.", "Students who study regularly tend to perform better."] },
+          { prompt: "Choose the correctly punctuated version:", options: ["The car that I drive needs a service.", "The car, that I drive, needs a service."] },
+          { prompt: "Choose the correctly punctuated version:", options: ["My grandfather, who was born in 1942, still loves cricket.", "My grandfather who was born in 1942 still loves cricket."] },
+        ],
+      },
+      // 40 — SPARK
+      {
+        type: "spark" as const,
+        title: "Spark: The Art of the Long Sentence",
+        content: "Some of the most beautiful sentences in English literature contain multiple relative clauses. Find a sentence in any novel that contains at least two relative clauses. Copy it out, label each clause, and analyse why the author chose to build such a complex sentence rather than writing several short ones. Then write your own complex sentence — at least 40 words long — containing three relative clauses. Read it aloud and revise until it flows naturally.",
+      },
+      // ── CONSOLIDATING 51–80 ──────────────────────────────────────────────
+      // 41
+      {
+        type: "fill-in-blank" as const,
+        title: "Relative Clauses Across Text Types",
+        instruction: "Complete each sentence with a suitable relative clause. Match the style to the text type given.",
+        sentences: [
+          { text: "(Formal report) The data, ___, suggests a significant improvement.", blanks: ["which was collected over six months"] },
+          { text: "(Narrative) The old house ___ stood at the end of the road had dark, shuttered windows.", blanks: ["that / which"] },
+          { text: "(Persuasive essay) Students ___ participate in regular physical activity perform better academically.", blanks: ["who"] },
+          { text: "(News article) The councillor, ___, announced a new community grant.", blanks: ["who chairs the planning committee"] },
+        ],
+      },
+      // 42
+      {
+        type: "multiple-choice" as const,
+        title: "Relative Clauses vs Participial Phrases",
+        instruction: "A participial phrase can sometimes replace a relative clause. Choose the correct alternative.",
+        parentTip: "Participial phrases (-ing or -ed) can be elegant alternatives to relative clauses. 'The dog that was barking' → 'The barking dog'. Introducing this variation expands your child's stylistic options.",
+        questions: [
+          { prompt: "Which participial phrase replaces 'the letter that was written in haste'?", options: ["The writing letter", "The letter written in haste", "The letter that writes in haste"], answer: "The letter written in haste" },
+          { prompt: "Which participial phrase replaces 'the child who was crying in the corner'?", options: ["The crying child in the corner", "The child cried in the corner", "The child who cries"], answer: "The crying child in the corner" },
+          { prompt: "Which relative clause does 'the award-winning scientist' expand to?", options: ["The scientist who was awarded", "The scientist who won the award", "The scientist whose award"], answer: "The scientist who won the award" },
+        ],
+      },
+      // 43
+      {
+        type: "open-response" as const,
+        title: "Transform: Relative Clause to Participial Phrase",
+        instruction: "Rewrite each sentence by replacing the relative clause with a participial phrase. Discuss with your parent whether the new version sounds better, worse or just different.",
+        parentTip: "There is no single right answer here — the goal is awareness of stylistic choice. Both versions may be equally correct; the question is which is more appropriate for the context.",
+        prompts: [
+          { text: "1. The dog that was barking at the gate finally quietened down.\nParticipial phrase version:", type: "lines", lines: 2 },
+          { text: "2. The student who had passed the exam was congratulated.\nParticipial phrase version:", type: "lines", lines: 2 },
+          { text: "3. The house that was built in the 1920s is now a heritage site.\nParticipial phrase version:", type: "lines", lines: 2 },
+          { text: "4. The team that was training for the championships worked incredibly hard.\nParticipial phrase version:", type: "lines", lines: 2 },
+        ],
+      },
+      // 44
+      {
+        type: "sorting" as const,
+        title: "Sort: Relative Clause or Participial Phrase?",
+        instruction: "Sort each sentence modifier into the correct column.",
+        columns: ["Relative clause (who/which/that/whose/where)", "Participial phrase (-ing or -ed)"],
+        items: [
+          { label: "...who discovered the vaccine..." },
+          { label: "...covered in mud..." },
+          { label: "...which was awarded a prize..." },
+          { label: "...running towards the finish line..." },
+          { label: "...whose research changed medicine..." },
+          { label: "...exhausted after the long journey..." },
+        ],
+      },
+      // 45 — TIP
+      {
+        type: "tip" as const,
+        title: "Tip: Avoiding the 'Dangling Relative Clause'",
+        content: "A relative clause must be placed immediately after the noun it modifies. If it is separated from its noun, the meaning becomes unclear or even absurd. For example: 'She gave the book to her friend that she had read twice' — this implies the friend was read twice! The correct version is: 'She gave her friend the book that she had read twice.' Always check: is my relative clause right next to the noun it describes?",
+      },
+      // 46
+      {
+        type: "circle-correct" as const,
+        title: "Misplaced Relative Clause: Find the Error",
+        instruction: "Each sentence has a misplaced relative clause. Circle the version that corrects it.",
+        questions: [
+          { prompt: "ERROR: I found a coin in the park that was very old.", options: ["I found a very old coin in the park.", "I found a coin that was very old in the park.", "In the park, I found a coin that was very old."] },
+          { prompt: "ERROR: She bought a vase from the antique shop which was cracked.", options: ["From the antique shop, she bought a vase which was cracked.", "She bought a cracked vase from the antique shop.", "She bought a vase which was cracked from the antique shop."] },
+          { prompt: "ERROR: He gave the medal to his father, who had worked so hard, at the ceremony.", options: ["He gave the medal, which his father had worked so hard for, to him at the ceremony.", "At the ceremony, he gave the medal to his father, who had worked so hard.", "He gave his father, who had worked so hard, the medal at the ceremony."] },
+        ],
+      },
+      // 47
+      {
+        type: "open-response" as const,
+        title: "Fix the Misplaced Relative Clauses",
+        instruction: "Rewrite each sentence to fix the misplaced relative clause so the meaning is clear.",
+        prompts: [
+          { text: "1. She gave a cake to her teacher that was covered in chocolate.\nFixed:", type: "lines", lines: 2 },
+          { text: "2. I saw a dog in the street which had only three legs.\nFixed:", type: "lines", lines: 2 },
+          { text: "3. He lent his umbrella to a stranger that he never saw again.\nFixed:", type: "lines", lines: 2 },
+          { text: "4. We watched a film about a scientist which lasted three hours.\nFixed:", type: "lines", lines: 2 },
+        ],
+      },
+      // 48
+      {
+        type: "multiple-choice" as const,
+        title: "Relative Clauses in Literature",
+        instruction: "Read each sentence from a published text. Answer the question about the relative clause.",
+        questions: [
+          { prompt: "Sentence: 'It was the best of times, it was the worst of times... it was the spring of hope, it was the winter of despair...' (Dickens) — What grammatical feature does 'It was the spring of hope' use that is related to relative clause structure?", options: ["Defining relative clause", "Metaphor used as an appositive (noun phrase describing a noun)", "Non-defining relative clause", "Conditional clause"], answer: "Metaphor used as an appositive (noun phrase describing a noun)" },
+          { prompt: "Sentence: 'The old man, whose hands were brown and weathered, sat at the window.' What type of relative clause is 'whose hands were brown and weathered'?", options: ["Defining", "Non-defining", "Neither — it is a participial phrase", "A conditional clause"], answer: "Non-defining" },
+        ],
+      },
+      // 49
+      {
+        type: "true-false" as const,
+        title: "True or False: Relative Clauses at Higher Level",
+        instruction: "Circle True or False.",
+        statements: [
+          { text: "Stacking too many relative clauses in one sentence is usually considered poor style.", answer: true },
+          { text: "A reduced relative clause is a full relative clause that has been shortened (e.g. 'the book written by her' instead of 'the book that was written by her').", answer: true },
+          { text: "Relative clauses can never be used to describe time or reason.", answer: false },
+          { text: "The relative pronoun 'why' can be used to describe a reason: 'the reason why she left'.", answer: true },
+          { text: "In very formal English, 'whom' is still widely used as the object form of 'who'.", answer: true },
+          { text: "Misplacing a relative clause can completely change the meaning of a sentence.", answer: true },
+        ],
+      },
+      // 50
+      {
+        type: "open-response" as const,
+        title: "Write a Character Description Using Relative Clauses",
+        instruction: "Write a character description of a person you invent or know. The description should be 8 to 10 sentences long and include at least four relative clauses — at least two defining and at least two non-defining. Label each one in the margin.",
+        parentTip: "Character descriptions are an excellent context for relative clauses: 'She was the kind of person who never forgot a birthday...' 'Her house, which she had inherited from her grandmother, was full of books...'",
+        prompts: [
+          { text: "My character:", type: "box", lines: 16 },
+        ],
+      },
+      // ── CONSOLIDATING continued 51–80 ─────────────────────────────────────
+      // 51
+      {
+        type: "sorting" as const,
+        title: "Sort: Relative Clause or Subordinate Clause?",
+        instruction: "Sort each underlined clause into the correct column.",
+        columns: ["Relative clause (introduced by relative pronoun)", "Subordinate clause (introduced by conjunction: because, although, if, when, etc.)"],
+        items: [
+          { label: "The student who studied every day passed the test." },
+          { label: "She passed the test because she studied every day." },
+          { label: "The book which she read changed her life." },
+          { label: "Although it was raining, they went for a walk." },
+          { label: "The park where they used to play has been redeveloped." },
+          { label: "If she studies hard, she will succeed." },
+        ],
+      },
+      // 52
+      {
+        type: "fill-in-blank" as const,
+        title: "Embed Relative Clauses into Complex Sentences",
+        instruction: "Expand each kernel sentence into a complex sentence by adding both a relative clause AND a subordinate clause.",
+        sentences: [
+          { text: "The scientist ___ (relative clause) announced new findings ___ (subordinate clause).", blanks: ["who led the research", "although they were controversial"] },
+          { text: "The library ___ (relative clause) was closed for renovation ___ (subordinate clause).", blanks: ["which stood on King Street", "because the roof needed repairs"] },
+        ],
+      },
+      // 53
+      {
+        type: "multiple-choice" as const,
+        title: "Relative Clauses in Formal Writing",
+        instruction: "In formal writing, certain conventions apply to relative clauses. Choose the most appropriate version for each formal context.",
+        parentTip: "In formal writing, 'which' is preferred over 'that' for non-defining clauses, and 'whom' is used as the object form of 'who'. Knowing these conventions gives your child an edge in formal assessments.",
+        questions: [
+          { prompt: "Formal academic writing — which is more appropriate?", options: ["The study that was conducted by Smith found...", "The study, which was conducted by Smith, found..."] },
+          { prompt: "Which version is most formal?", options: ["The person that I was speaking to agreed.", "The person with whom I was speaking agreed.", "The person who I spoke to agreed."] },
+          { prompt: "Which uses the correct relative pronoun for a thing in formal writing?", options: ["The policy which the government introduced has been effective.", "The policy that the government introduced has been effective.", "Both are acceptable in formal writing"], answer: "Both are acceptable in formal writing" },
+        ],
+      },
+      // 54
+      {
+        type: "open-response" as const,
+        title: "Relative Clauses and Sentence Rhythm",
+        instruction: "Read these two versions of the same paragraph. Then answer the analysis questions.",
+        prompts: [
+          {
+            text: "VERSION A (no relative clauses):\nThe museum was built in 1895. It stands on Flinders Street. It houses over 10,000 artefacts. These artefacts document the history of Victoria. The curator is a woman. She has worked there for thirty years.\n\nVERSION B (with relative clauses):\nThe museum, which was built in 1895, stands on Flinders Street and houses over 10,000 artefacts that document the history of Victoria. The curator, who has worked there for thirty years, oversees the entire collection.\n\n1. Which version is easier to read and why?",
+            type: "lines",
+            lines: 4,
+          },
+          { text: "2. How many relative clauses are in Version B? List them.", type: "lines", lines: 3 },
+          { text: "3. Are the relative clauses in Version B defining or non-defining? Explain.", type: "lines", lines: 3 },
+        ],
+      },
+      // 55
+      {
+        type: "circle-correct" as const,
+        title: "Choose the Best Relative Clause for the Context",
+        instruction: "Read each sentence. Circle the relative clause that best completes it in terms of precision, relevance and style.",
+        questions: [
+          { prompt: "The award was given to the student ___.", options: ["who was nice", "who demonstrated exceptional creativity and commitment throughout the year", "that existed"] },
+          { prompt: "The new park, ___, has become a popular community gathering space.", options: ["which is green", "which replaced a former industrial site, has been planted with native species and", "which is outside"] },
+          { prompt: "She consulted a specialist ___ before making a final decision.", options: ["who was there", "who had published extensively on the topic", "that she liked"] },
+        ],
+      },
+      // 56
+      {
+        type: "fill-in-blank" as const,
+        title: "Relative Clauses and Appositives",
+        instruction: "An appositive is a noun phrase that renames or describes a nearby noun — similar to a non-defining relative clause. Convert each appositive into a non-defining relative clause.",
+        sentences: [
+          { text: "Marie Curie, a pioneering scientist, won two Nobel Prizes.\nConverted (use 'who'): Marie Curie, _______, won two Nobel Prizes.", blanks: ["who was a pioneering scientist"] },
+          { text: "The Great Wall, a 21,000 km fortification, was built over many centuries.\nConverted (use 'which'): The Great Wall, _______, was built over many centuries.", blanks: ["which stretches over 21,000 km"] },
+        ],
+      },
+      // 57
+      {
+        type: "open-response" as const,
+        title: "Relative Clauses in an Analytical Essay Paragraph",
+        instruction: "Write a formal analytical paragraph (6 to 8 sentences) about a topic you have studied. Use at least three relative clauses to add precision and detail. Aim for the kind of sentence complexity expected at secondary school level.",
+        prompts: [
+          { text: "My topic:", type: "lines", lines: 1 },
+          { text: "My analytical paragraph:", type: "box", lines: 14 },
+          { text: "Relative clauses I used (list them):", type: "lines", lines: 3 },
+        ],
+      },
+      // 58
+      {
+        type: "multiple-choice" as const,
+        title: "Relative Clause vs Appositive: What Is the Difference?",
+        instruction: "Choose the best answer for each question.",
+        questions: [
+          { prompt: "What is an appositive?", options: ["A type of verb form", "A noun phrase that renames or describes the noun beside it", "A clause introduced by a relative pronoun", "A type of adverb"], answer: "A noun phrase that renames or describes the noun beside it" },
+          { prompt: "Which sentence uses an appositive (not a relative clause)?", options: ["The river, which flows through the city, is often flooded.", "The river, Australia's longest waterway, flows through the city.", "The river that flows through the city is often flooded."], answer: "The river, Australia's longest waterway, flows through the city." },
+          { prompt: "What do relative clauses and appositives have in common?", options: ["Both must use relative pronouns", "Both can add non-essential information about a noun, set off by commas", "Both must be defining", "Neither can be used in formal writing"], answer: "Both can add non-essential information about a noun, set off by commas" },
+        ],
+      },
+      // 59
+      {
+        type: "true-false" as const,
+        title: "True or False: Relative Clauses Mastery Check",
+        instruction: "Circle True or False.",
+        statements: [
+          { text: "You can use 'that' in a non-defining relative clause.", answer: false },
+          { text: "In very formal or literary English, 'whom' is correct when the relative pronoun is the object.", answer: true },
+          { text: "A reduced relative clause often uses a past participle: 'the book written by her'.", answer: true },
+          { text: "A relative clause and its noun must always appear in the same sentence.", answer: true },
+          { text: "Participial phrases are completely unrelated to relative clauses.", answer: false },
+          { text: "In informal speech, people often drop the relative pronoun: 'The book I read was great'.", answer: true },
+        ],
+      },
+      // 60 — TIP
+      {
+        type: "tip" as const,
+        title: "Tip: Relative Clauses as a Sentence Variety Tool",
+        content: "Skilled writers vary their sentence structures deliberately. If you notice that all your sentences begin with the subject followed by a verb, try starting with a relative clause or embedding one in the middle of a sentence. For example: 'The explorer, who had spent three years in the jungle, finally returned home' starts with the noun but creates interest by nesting information inside. Variety in sentence structure is one of the most important features of sophisticated writing.",
+      },
+      // 61 — SPARK
+      {
+        type: "spark" as const,
+        title: "Spark: Relative Clause Investigation",
+        content: "Investigate how relative clauses are used differently in news writing, literary fiction and academic writing. Find one paragraph from each text type. In each paragraph, highlight every relative clause and count them. Write a short report (one page) comparing: the frequency of relative clauses in each text type, whether defining or non-defining clauses are more common in each, and what this tells us about the purpose and audience of each text type.",
+      },
+      // 62
+      {
+        type: "open-response" as const,
+        title: "Write Using All Five Relative Pronouns",
+        instruction: "Write a paragraph of 8 to 10 sentences on any topic. In your paragraph, use all five relative pronouns at least once: who, which, that, whose, where. Underline each relative pronoun.",
+        prompts: [
+          { text: "My topic:", type: "lines", lines: 1 },
+          { text: "My paragraph:", type: "box", lines: 14 },
+          { text: "Which pronoun was hardest to use naturally? Why?", type: "lines", lines: 2 },
+        ],
+      },
+      // 63
+      {
+        type: "sorting" as const,
+        title: "Sort: Sentence Complexity Level",
+        instruction: "Sort each sentence from least to most complex based on its use of relative clauses and other embedded information.",
+        columns: ["Simple (no embedded clauses)", "Moderate (one relative clause)", "Complex (two or more embedded clauses)"],
+        items: [
+          { label: "The dog barked." },
+          { label: "The dog that lives next door barked all night." },
+          { label: "The dog, which belongs to our neighbour who recently moved in, barked all night despite the cold." },
+          { label: "She read." },
+          { label: "She read the book that won the prize." },
+          { label: "She read the book that won the Booker Prize, which is awarded annually to the best novel published in English." },
+        ],
+      },
+      // 64
+      {
+        type: "fill-in-blank" as const,
+        title: "Relative Clauses in Scientific Writing",
+        instruction: "Science writing often uses relative clauses to define and classify. Fill in the correct relative pronoun for each sentence.",
+        sentences: [
+          { text: "A mammal is an animal ___ is warm-blooded and feeds its young on milk.", blanks: ["that / which"] },
+          { text: "The stratosphere, ___ lies above the troposphere, contains the ozone layer.", blanks: ["which"] },
+          { text: "Scientists ___ study marine biology often work in remote coastal locations.", blanks: ["who"] },
+          { text: "The reef ecosystem, ___ biodiversity is remarkable, supports thousands of species.", blanks: ["whose"] },
+          { text: "A black hole is a region of space ___ gravity is so strong that even light cannot escape.", blanks: ["where"] },
+        ],
+      },
+      // 65
+      {
+        type: "circle-correct" as const,
+        title: "Formal vs Informal: Which Relative Clause Form?",
+        instruction: "Circle the more formal version of each relative clause.",
+        questions: [
+          { prompt: "Which is more formal?", options: ["The person that I was talking to agreed.", "The person to whom I was speaking agreed."] },
+          { prompt: "Which is more formal?", options: ["The policy which the council introduced was controversial.", "The policy that the council brought in was controversial."] },
+          { prompt: "Which is more formal?", options: ["The researcher who wrote the report also led the study.", "The researcher that did the report also ran the study."] },
+          { prompt: "Which is more formal for academic writing?", options: ["The issue which researchers have studied is complex.", "The issue that researchers have looked at is complex."] },
+        ],
+      },
+      // 66
+      {
+        type: "open-response" as const,
+        title: "Rewrite the Passage at Two Complexity Levels",
+        instruction: "Rewrite the passage below twice: once as a simple text (short sentences, no relative clauses) for a Year 2 reader, and once as a complex text (with relative clauses and embedded information) for a secondary school reader.",
+        parentTip: "This exercise teaches your child to consciously match sentence complexity to audience — one of the most important writing skills there is.",
+        prompts: [
+          { text: "ORIGINAL PASSAGE:\nMigrating birds travel long distances. Some travel thousands of kilometres. They use the stars to navigate. They also use the Earth's magnetic field. Some species have been doing this for millions of years.\n\nSimple version (Year 2):", type: "box", lines: 6 },
+          { text: "Complex version (secondary level):", type: "box", lines: 6 },
+        ],
+      },
+      // 67
+      {
+        type: "multiple-choice" as const,
+        title: "Relative Clauses and Literary Analysis",
+        instruction: "Answer these questions about how authors use relative clauses in published literature.",
+        questions: [
+          { prompt: "Why might an author prefer a non-defining relative clause for describing a main character?", options: ["To save space", "To add a biographical detail that enriches the reader's understanding without changing who the character is", "Because it is grammatically required", "To confuse the reader"], answer: "To add a biographical detail that enriches the reader's understanding without changing who the character is" },
+          { prompt: "An author writes: 'The house, which had stood empty for a century, seemed to breathe.' What does the non-defining relative clause add?", options: ["It identifies which house is meant", "It adds atmospheric history that deepens the mood and setting", "It corrects a factual error", "It changes the subject of the sentence"], answer: "It adds atmospheric history that deepens the mood and setting" },
+        ],
+      },
+      // 68
+      {
+        type: "open-response" as const,
+        title: "Peer Review: Assess a Paragraph for Relative Clause Use",
+        instruction: "Read the paragraph below. Write a peer review commenting on: how well relative clauses are used, whether they are correctly punctuated, whether they add value, and any improvements you would suggest.",
+        prompts: [
+          {
+            text: "STUDENT PARAGRAPH:\nAustralia, who has a population of about 26 million, is a large country. The country, that has many unique animals, is known for kangaroos and koalas. The Great Barrier Reef which is a coral reef is in Queensland. Scientists that study the reef say it is under threat from climate change, which is a big problem.\n\nYour peer review:",
+            type: "box",
+            lines: 12,
+          },
+        ],
+      },
+      // 69
+      {
+        type: "fill-in-blank" as const,
+        title: "Reduced Relative Clauses",
+        instruction: "A reduced relative clause shortens a full relative clause by removing the relative pronoun and 'be'. Reduce each relative clause.",
+        sentences: [
+          { text: "The document that was signed by both parties is legally binding.\nReduced: The document _______ by both parties is legally binding.", blanks: ["signed"] },
+          { text: "The student who was sitting at the back asked a question.\nReduced: The student _______ at the back asked a question.", blanks: ["sitting"] },
+          { text: "The money that was raised by the event went to charity.\nReduced: The money _______ by the event went to charity.", blanks: ["raised"] },
+        ],
+      },
+      // 70
+      {
+        type: "home-activity" as const,
+        title: "Relative Clause Hunt and Build",
+        instruction: "Try these activities to practise relative clauses in everyday life.",
+        parentTip: "The more your child encounters and uses relative clauses in real contexts, the more natural they will feel. Celebrate every genuine use in conversation.",
+        suggestions: [
+          "Describe five objects in your house using a sentence that contains a defining relative clause for each. For example: 'The mug that has the blue handle belongs to Dad.'",
+          "Read a newspaper article and highlight every relative clause you can find. Classify each as defining or non-defining. Count which type is more common.",
+          "In conversation with a family member, try to use at least five relative clauses naturally. Ask your family member to count how many you used. Discuss whether they sounded natural or awkward.",
+        ],
+      },
+      // ── EXTENDING 71–100 ─────────────────────────────────────────────────
+      // 71
+      {
+        type: "multiple-choice" as const,
+        title: "Relative Clauses: Advanced Analysis",
+        instruction: "Choose the best answer to each advanced question.",
+        questions: [
+          { prompt: "What is a 'sentential relative clause'?", options: ["A relative clause that refers to a whole idea or sentence, not just a noun", "A relative clause in the middle of a sentence", "A reduced relative clause", "A relative clause using 'that'"], answer: "A relative clause that refers to a whole idea or sentence, not just a noun" },
+          { prompt: "Example: 'She arrived late, which surprised everyone.' What does 'which' refer to?", options: ["Her", "Arriving late (the whole action)", "Everyone", "Surprise"], answer: "Arriving late (the whole action)" },
+          { prompt: "In formal written English, which version is preferred?", options: ["The committee that I reported to was supportive.", "The committee to which I reported was supportive.", "The committee which I reported to was supportive."], answer: "The committee to which I reported was supportive." },
+        ],
+      },
+      // 72
+      {
+        type: "open-response" as const,
+        title: "Write a Profile Using Relative Clauses",
+        instruction: "Write a 12 to 15 sentence profile of a real or invented person — a scientist, artist, athlete or historical figure. Use at least six relative clauses of different types (defining, non-defining, with whose, where, and one reduced relative clause). Label each one in the margin.",
+        parentTip: "Profiles are excellent authentic writing contexts for relative clauses. If your child has a favourite historical figure or athlete, this task will feel personally meaningful.",
+        prompts: [
+          { text: "Profile subject:", type: "lines", lines: 1 },
+          { text: "My profile:", type: "box", lines: 20 },
+          { text: "Relative clauses used (list them):", type: "lines", lines: 5 },
+        ],
+      },
+      // 73
+      {
+        type: "sorting" as const,
+        title: "Sort: Effect of Relative Clause Placement",
+        instruction: "Each sentence has the relative clause in a different position. Sort them from the version that flows most naturally to least naturally.",
+        columns: ["Flows most naturally", "Acceptable but slightly awkward", "Awkward or unclear"],
+        items: [
+          { label: "The explorer who had spent years in the Amazon finally published her findings." },
+          { label: "The explorer finally published her findings who had spent years in the Amazon." },
+          { label: "Her findings, which were published last year, changed how scientists understand the rainforest." },
+          { label: "Her findings which changed how scientists understand the rainforest were published last year." },
+        ],
+      },
+      // 74
+      {
+        type: "true-false" as const,
+        title: "True or False: Relative Clauses at Secondary School Level",
+        instruction: "Circle True or False.",
+        statements: [
+          { text: "In secondary school English essays, relative clauses are an important tool for demonstrating analytical depth.", answer: true },
+          { text: "Secondary school teachers expect students to use only short, simple sentences.", answer: false },
+          { text: "Embedding a non-defining relative clause mid-sentence is a sign of sophisticated sentence control.", answer: true },
+          { text: "Using too many relative clauses in a formal essay always improves it.", answer: false },
+          { text: "A relative clause can help a writer avoid repetition by combining two separate facts into one sentence.", answer: true },
+          { text: "The formal written standard requires 'whom' in all cases where 'who' is used as an object.", answer: true },
+        ],
+      },
+      // 75 — TIP
+      {
+        type: "tip" as const,
+        title: "Tip: Using Relative Clauses in Analytical and Argumentative Writing",
+        content: "In analytical and argumentative essays, relative clauses help you add evidence and clarification smoothly without breaking the flow of your argument. Instead of: 'The scientist was Fleming. He discovered penicillin. He worked in the early 20th century.' You can write: 'Alexander Fleming, who discovered penicillin in 1928, was working at St Mary's Hospital in London.' One sentence, all the relevant information, maintained argumentative flow. Practise embedding background information this way in every formal paragraph you write.",
+      },
+      // 76
+      {
+        type: "fill-in-blank" as const,
+        title: "Relative Clauses in Poetry and Figurative Writing",
+        instruction: "Fill in the blank to complete each sentence from a figurative or poetic context with a suitable relative clause.",
+        sentences: [
+          { text: "The oak tree, ___, had witnessed every joy and sorrow of the house it guarded.", blanks: ["whose roots ran deeper than memory"] },
+          { text: "She was a woman ___ carried her grief like a stone in a pocket — heavy, always present, rarely spoken of.", blanks: ["who"] },
+          { text: "The city, ___, breathed a different air at midnight.", blanks: ["which never truly slept"] },
+          { text: "He returned to the town ___ as if the years between had been nothing more than a long dream.", blanks: ["where he was born"] },
+        ],
+      },
+      // 77
+      {
+        type: "open-response" as const,
+        title: "Write with Intentional Sentence Variety",
+        instruction: "Write a descriptive passage of 10 to 14 sentences about a natural or urban environment. Deliberately vary your sentence structures: use short sentences for impact, long sentences with relative clauses for detail, and at least one sentence that begins with a relative clause mid-structure. Mark each sentence type in the margin.",
+        parentTip: "Reading the passage aloud is the best way to check sentence variety. If every sentence sounds the same length and rhythm, more variation is needed.",
+        prompts: [
+          { text: "My setting:", type: "lines", lines: 1 },
+          { text: "My passage:", type: "box", lines: 20 },
+        ],
+      },
+      // 78
+      {
+        type: "multiple-choice" as const,
+        title: "Relative Clauses and Pronoun Reference",
+        instruction: "Relative pronouns must refer clearly to the noun they modify. Choose the version that avoids ambiguity.",
+        questions: [
+          { prompt: "Which sentence is clearer?", options: ["She sent the letter to her mother that she had written last year.", "She sent her mother the letter that she had written last year."] },
+          { prompt: "Which version is unambiguous?", options: ["The coach told the player who had missed training that she was dropped.", "The coach, who had told the player about the training, said she was dropped."] },
+          { prompt: "Which version avoids the dangling relative clause?", options: ["He gave the book to his friend, which had a torn cover.", "He gave his friend the book, which had a torn cover."] },
+        ],
+      },
+      // 79
+      {
+        type: "circle-correct" as const,
+        title: "Advanced Relative Clause Selection",
+        instruction: "Circle the most precise and grammatically correct option for each formal sentence.",
+        questions: [
+          { prompt: "The report was written by the committee ___.", options: ["that oversees environmental policy", "which oversees environmental policy", "Both are correct in this context"] },
+          { prompt: "The prime minister, ___, addressed the nation.", options: ["who had just returned from overseas", "which had just returned from overseas", "that had just returned from overseas"] },
+          { prompt: "She cited the scientist ___ research changed the field.", options: ["that", "whose", "who"] },
+          { prompt: "The year ___ the discovery was made was 1953.", options: ["when", "where", "which"] },
+        ],
+      },
+      // 80 — SPARK
+      {
+        type: "spark" as const,
+        title: "Spark: Write a Sentence of 100 Words",
+        content: "The longest sentence in published English literature runs over 13,000 words. This is not a goal — but control of long sentences IS. Challenge yourself to write one grammatically correct sentence of at least 100 words that contains at least four relative clauses, uses correct punctuation throughout, and still makes complete, clear sense when read aloud. Read it to a family member. Can they follow it? If not, revise. If yes, you have demonstrated genuine sentence mastery.",
+      },
+      // 81
+      {
+        type: "open-response" as const,
+        title: "Comparative Analysis: Relative Clause Use in Two Texts",
+        instruction: "Find one paragraph from a novel and one from a formal essay or report on the same topic. Analyse how each uses relative clauses: frequency, type, purpose and effect. Write a comparative analysis paragraph.",
+        parentTip: "Comparative analysis is a secondary school skill that can be introduced effectively at upper primary. Keep the expectations realistic: look for patterns rather than exhaustive analysis.",
+        prompts: [
+          { text: "Novel source and paragraph:", type: "box", lines: 6 },
+          { text: "Essay/report source and paragraph:", type: "box", lines: 6 },
+          { text: "Comparative analysis — how does each text use relative clauses and why?", type: "box", lines: 8 },
+        ],
+      },
+      // 82
+      {
+        type: "fill-in-blank" as const,
+        title: "Embedding Relative Clauses in Formal Argument",
+        instruction: "Complete each formal argument sentence with a precise, relevant relative clause.",
+        sentences: [
+          { text: "The research, ___, demonstrates a clear link between reading habits and vocabulary development.", blanks: ["which was conducted over five years"] },
+          { text: "Students ___ read widely for pleasure consistently outperform those who do not.", blanks: ["who"] },
+          { text: "The school's new library, ___, has already increased borrowing rates by 40%.", blanks: ["which opened in March"] },
+          { text: "The policy ___ the council introduced last year has been widely praised.", blanks: ["that / which"] },
+        ],
+      },
+      // 83
+      {
+        type: "multiple-choice" as const,
+        title: "Mastery Questions: Relative Clauses",
+        instruction: "Choose the best answer for each mastery-level question.",
+        questions: [
+          { prompt: "What is the key difference between a defining and a non-defining relative clause in terms of punctuation and meaning?", options: ["Defining clauses use commas; non-defining do not", "Non-defining clauses use commas and add extra information; defining clauses do not use commas and identify which noun is meant", "There is no difference in meaning", "Defining clauses can use 'that'; non-defining clauses cannot use 'that'"], answer: "Non-defining clauses use commas and add extra information; defining clauses do not use commas and identify which noun is meant" },
+          { prompt: "Why should 'that' not be used in non-defining relative clauses?", options: ["Because 'that' is informal", "Because 'that' is only used in defining clauses; using it in non-defining clauses is a grammatical error in formal English", "Because 'that' refers only to people", "Because 'that' always needs a comma"], answer: "Because 'that' is only used in defining clauses; using it in non-defining clauses is a grammatical error in formal English" },
+        ],
+      },
+      // 84
+      {
+        type: "sorting" as const,
+        title: "Sort: Strong or Weak Use of Relative Clauses?",
+        instruction: "Sort each example based on whether the relative clause adds meaningful precision or is unnecessary.",
+        columns: ["Strong — adds genuine precision or detail", "Weak — unnecessary or vague"],
+        items: [
+          { label: "The ocean, which is wet, covers most of the Earth." },
+          { label: "Marie Curie, who was the first woman to win a Nobel Prize, changed the field of chemistry." },
+          { label: "The park, which exists, is near our house." },
+          { label: "The treaty, which was signed in 1648, ended the Thirty Years War." },
+          { label: "She gave it to the person that was there." },
+          { label: "She gave the award to the student whose work had shown the most remarkable improvement over the year." },
+        ],
+      },
+      // 85
+      {
+        type: "open-response" as const,
+        title: "Edit a Student Essay for Relative Clause Errors",
+        instruction: "This student paragraph has five errors involving relative clauses (wrong pronouns, missing or misplaced commas, dangling placement). Find all five, explain each error, and rewrite the corrected paragraph.",
+        prompts: [
+          {
+            text: "STUDENT PARAGRAPH:\nFrederick Douglass was an American leader who's autobiography became a classic. He escaped from slavery in 1838 which was a life-threatening act. The book, that he published in 1845, shocked readers with its vivid honesty. Douglass became a speaker who he inspired thousands. He met Abraham Lincoln, which was the President, twice during the Civil War.\n\nList the five errors and explain each:",
+            type: "box",
+            lines: 10,
+          },
+          { text: "Corrected paragraph:", type: "box", lines: 10 },
+        ],
+      },
+      // 86
+      {
+        type: "true-false" as const,
+        title: "True or False: Relative Clauses in Australian Curriculum Year 5",
+        instruction: "Circle True or False.",
+        statements: [
+          { text: "The Australian Curriculum expects Year 5 students to use subordinate and relative clauses to add precision.", answer: true },
+          { text: "Relative clauses are only assessed in Year 7 and above.", answer: false },
+          { text: "Correctly punctuating non-defining relative clauses with commas is a Year 5 expectation.", answer: true },
+          { text: "Using complex sentences that include relative clauses is a marker of developing writing proficiency.", answer: true },
+          { text: "Identifying defining and non-defining clauses is above Year 5 level.", answer: false },
+          { text: "Year 5 students are expected to understand how relative clauses help expand noun groups.", answer: true },
+        ],
+      },
+      // 87
+      {
+        type: "circle-correct" as const,
+        title: "Relative Clauses: Final Review (Set A)",
+        instruction: "Choose the best answer for each question.",
+        questions: [
+          { prompt: "Which sentence is grammatically correct?", options: ["The student who's work was chosen received a prize.", "The student whose work was chosen received a prize.", "The student which work was chosen received a prize."] },
+          { prompt: "Which sentence uses commas correctly?", options: ["Australia which is in the southern hemisphere, has a hot summer.", "Australia, which is in the southern hemisphere, has a hot summer.", "Australia, which is in the southern hemisphere has a hot summer."] },
+          { prompt: "Which sentence correctly omits the relative pronoun?", options: ["The song I heard last night was beautiful.", "The singer who I heard last night was beautiful.", "The song that was written last night I heard was beautiful."] },
+          { prompt: "Which sentence uses 'whom' correctly?", options: ["The author whom I admire most is Tim Winton.", "The author who I admire most is Tim Winton.", "Both are correct in informal writing"] },
+        ],
+      },
+      // 88
+      {
+        type: "open-response" as const,
+        title: "Reflection: Relative Clauses in My Writing",
+        instruction: "Choose a piece of your own writing from the past month. Analyse it for relative clause use and then revise it.",
+        prompts: [
+          { text: "Title of my piece:", type: "lines", lines: 1 },
+          { text: "How many relative clauses did I use? List them:", type: "lines", lines: 3 },
+          { text: "Were they correctly punctuated? What errors did I find?", type: "lines", lines: 3 },
+          { text: "Revised version of one paragraph (improved using relative clauses):", type: "box", lines: 10 },
+        ],
+      },
+      // 89
+      {
+        type: "home-activity" as const,
+        title: "Extended Project: Relative Clauses Across Subjects",
+        instruction: "Investigate how relative clauses function in the academic writing of different subjects.",
+        parentTip: "This cross-curricular task shows your child that grammar is not just an English skill — it matters in every subject. Connect it to whatever non-fiction writing your child is doing across their studies.",
+        suggestions: [
+          "Choose a topic from science, history or geography. Write three different paragraphs about it — one using no relative clauses, one using three defining relative clauses, and one using three non-defining relative clauses. Compare how each version reads and discuss with a family member which version is most appropriate for an academic report.",
+          "Find an academic article or textbook chapter on a topic you have studied this year. Count the relative clauses in three consecutive paragraphs. Are more of them defining or non-defining? What does this tell you about academic writing conventions?",
+          "Create a reference card titled 'Relative Clauses at a Glance' that summarises the key rules, gives examples of each type, and lists two common errors to avoid. Keep it in your writing folder.",
+        ],
+      },
+      // 90 — TIP
+      {
+        type: "tip" as const,
+        title: "Tip: Relative Clauses — A Checklist for Your Writing",
+        content: "Before submitting any piece of formal writing, check your relative clauses using this five-point checklist: 1. Have I used 'who' for people and 'which' for things? 2. Have I used commas around non-defining clauses? 3. Have I avoided using 'that' in non-defining clauses? 4. Is each relative clause placed immediately after the noun it modifies? 5. Have I considered whether a participial phrase would be more elegant than a full relative clause? A minute spent on this checklist will improve every formal piece you write.",
+      },
+      // 91
+      {
+        type: "multiple-choice" as const,
+        title: "Relative Clauses: Final Review (Set B)",
+        instruction: "Choose the best answer.",
+        questions: [
+          { prompt: "What is the most important difference between 'Students who work hard succeed' and 'Students, who work hard, succeed'?", options: ["No difference", "The first implies only hardworking students succeed; the second implies all students work hard and all succeed", "The second has a grammatical error", "The first uses a non-defining clause"], answer: "The first implies only hardworking students succeed; the second implies all students work hard and all succeed" },
+          { prompt: "Which statement about reduced relative clauses is correct?", options: ["They always use relative pronouns", "They shorten the full clause by removing the relative pronoun and the verb 'be'", "They are only possible with defining clauses", "They always come at the end of a sentence"], answer: "They shorten the full clause by removing the relative pronoun and the verb 'be'" },
+          { prompt: "In the sentence 'It was the kind of day that makes you glad to be alive', what type of clause is 'that makes you glad to be alive'?", options: ["Non-defining relative clause", "Defining relative clause", "Adverbial clause", "Participial phrase"], answer: "Defining relative clause" },
+        ],
+      },
+      // 92
+      {
+        type: "fill-in-blank" as const,
+        title: "Relative Clauses Mastery: Complex Sentences",
+        instruction: "Complete each complex academic sentence with the most precise and grammatically appropriate relative clause.",
+        sentences: [
+          { text: "The Industrial Revolution, ___, transformed the economic and social landscape of the 19th century.", blanks: ["which began in Britain in the late 18th century"] },
+          { text: "Charles Darwin, ___, published On the Origin of Species in 1859.", blanks: ["whose theory of evolution changed how humans understood life on Earth"] },
+          { text: "The Amazon Rainforest, ___, is estimated to contain 10% of all species on Earth.", blanks: ["which covers over 5.5 million square kilometres"] },
+        ],
+      },
+      // 93
+      {
+        type: "open-response" as const,
+        title: "Write a Research Summary Using Relative Clauses",
+        instruction: "Choose a topic you have researched this year. Write a 10 to 12 sentence research summary. Include at least five relative clauses of different types. Your summary should be accurate, formally written and demonstrate full control of relative clause punctuation.",
+        parentTip: "A research summary is an authentic academic writing task. If your child has recently completed a topic in history, science or geography, this is the ideal moment to write a polished summary of what they have learned.",
+        prompts: [
+          { text: "Research topic:", type: "lines", lines: 1 },
+          { text: "My research summary:", type: "box", lines: 20 },
+        ],
+      },
+      // 94
+      {
+        type: "circle-correct" as const,
+        title: "Choose the Most Effective Sentence",
+        instruction: "Read each set of options. Circle the sentence that uses a relative clause most effectively for the given purpose.",
+        questions: [
+          { prompt: "Purpose: to write a formal biography opening.", options: ["Nelson Mandela was a person who was very important.", "Nelson Mandela, who spent 27 years in prison before becoming South Africa's first democratically elected president, is one of the 20th century's most significant figures.", "Nelson Mandela did important things."] },
+          { prompt: "Purpose: to write a scientific definition.", options: ["A volcano is a hole in the ground.", "A volcano is a geological formation where molten rock from the Earth's mantle erupts through the surface.", "A volcano that is dangerous erupts."] },
+          { prompt: "Purpose: to write an engaging story opening.", options: ["There was a house on a hill.", "At the end of the lane stood a house whose windows seemed to watch the road below.", "A house that was there had windows."] },
+        ],
+      },
+      // 95
+      {
+        type: "true-false" as const,
+        title: "True or False: Final Mastery Check",
+        instruction: "Circle True or False.",
+        statements: [
+          { text: "Using relative clauses well is a significant marker of writing maturity.", answer: true },
+          { text: "Non-defining relative clauses always use commas.", answer: true },
+          { text: "Defining relative clauses can use either 'that' or 'which'.", answer: true },
+          { text: "In Australian Curriculum terms, relative clauses fall under the strand of Language: Grammar.", answer: true },
+          { text: "The only purpose of relative clauses is to make sentences longer.", answer: false },
+          { text: "Relative clauses serve the purpose of adding information, precision and descriptive depth.", answer: true },
+        ],
+      },
+      // 96
+      {
+        type: "open-response" as const,
+        title: "Create a Relative Clause Teaching Poster",
+        instruction: "Create a teaching poster that explains relative clauses to a Year 3 student. Your poster should include: a clear definition, examples of defining and non-defining clauses, the rules for when to use commas, and at least three examples from real published texts.",
+        parentTip: "Creating a teaching resource requires the deepest level of understanding — your child must explain clearly, simply and accurately. Display the finished poster in your learning space.",
+        prompts: [
+          { text: "Rough draft of my teaching poster (plan the layout and content here):", type: "box", lines: 20 },
+        ],
+      },
+      // 97
+      {
+        type: "multiple-choice" as const,
+        title: "Relative Clauses and Thinking About Language",
+        instruction: "Answer these higher-order questions about language and relative clauses.",
+        questions: [
+          { prompt: "Why might understanding relative clauses help you read more difficult texts?", options: ["Because knowing grammar makes you smarter", "Because recognising the structure of complex sentences helps you understand long, embedded information without getting confused", "Because relative clauses appear in every sentence", "Because grammar rules are tested in exams"], answer: "Because recognising the structure of complex sentences helps you understand long, embedded information without getting confused" },
+          { prompt: "How does using relative clauses make your writing more precise?", options: ["They add length", "They allow you to add specific identifying or descriptive information directly next to the noun it describes, avoiding vagueness", "They replace adjectives", "They make every sentence formal"], answer: "They allow you to add specific identifying or descriptive information directly next to the noun it describes, avoiding vagueness" },
+        ],
+      },
+      // 98
+      {
+        type: "home-activity" as const,
+        title: "Relative Clause Mastery Project",
+        instruction: "Complete this two-week mastery project to consolidate your relative clause skills.",
+        parentTip: "This project asks your child to write, collect and reflect — three complementary learning modes. Discuss each stage as you go rather than leaving feedback until the end.",
+        suggestions: [
+          "Week 1 — Collection: Collect 10 sentences containing relative clauses from published texts (novels, newspapers, textbooks). Classify each as defining or non-defining, identify the relative pronoun used, and rate the sentence as 'simple', 'moderate' or 'complex'. Display your collection with annotations.",
+          "Week 2 — Production: Write an original piece of at least 20 sentences on any topic of your choice. Deliberately include at least eight relative clauses using a variety of pronouns and clause types. Colour-code them in the finished piece (different colours for defining vs non-defining).",
+          "Reflection: Write a half-page personal reflection answering: What did I learn about relative clauses this week? What was hardest? How will I use relative clauses more intentionally in my future writing?",
+        ],
+      },
+      // 99
+      {
+        type: "open-response" as const,
+        title: "Reflection: Relative Clauses and My Voice as a Writer",
+        instruction: "Reflect carefully on what you have learned about relative clauses through this worksheet.",
+        prompts: [
+          { text: "Which type of relative clause (defining or non-defining) do you find most useful in your own writing? Why?", type: "lines", lines: 4 },
+          { text: "What was the most challenging concept to master? How did you work through it?", type: "lines", lines: 4 },
+          { text: "How will you use relative clauses differently in your writing from now on?", type: "lines", lines: 3 },
+          { text: "Name one text type where relative clauses are especially important and explain why.", type: "lines", lines: 3 },
+        ],
+      },
+      // 100 — SPARK
+      {
+        type: "spark" as const,
+        title: "Spark: Infinite Nesting",
+        content: "Here is a famous linguistic thought experiment: can you create a grammatically correct sentence by infinitely nesting relative clauses? Try starting with 'This is the cat' and build — 'This is the cat that ate the rat that lived in the house that Jack built' — and keep going as far as you can. At what point does the sentence become impossible to follow? Write the sentence, mark where understanding breaks down, and write a short paragraph reflecting on what this reveals about the limits of language and memory.",
       },
     ],
   },
