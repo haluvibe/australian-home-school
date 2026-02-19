@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   keywords: ["Year 9 english worksheets", "Year 9 english Australia", "homeschool Year 9 english", "Australian Curriculum Year 9"],
   alternates: { canonical: "/worksheets/english/year-9" },
   openGraph: {
-    title: "Year 9 English Worksheets | Australian Home Schooling",
+    title: "Year 9 English Worksheets | AI Native School",
     description: "Free printable Year 9 English worksheets covering phonics, reading, writing, grammar and literature.",
     url: "/worksheets/english/year-9",
   },

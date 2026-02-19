@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   keywords: ["Year 9 mathematics worksheets", "Year 9 mathematics Australia", "homeschool Year 9 mathematics", "Australian Curriculum Year 9"],
   alternates: { canonical: "/worksheets/mathematics/year-9" },
   openGraph: {
-    title: "Year 9 Mathematics Worksheets | Australian Home Schooling",
+    title: "Year 9 Mathematics Worksheets | AI Native School",
     description: "Free printable Year 9 Mathematics worksheets covering number, algebra, measurement, space and statistics.",
     url: "/worksheets/mathematics/year-9",
   },

@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   keywords: ["Foundation English worksheets", "Foundation phonics worksheets", "kindergarten English Australia", "Foundation literacy", "Australian Curriculum Foundation English"],
   alternates: { canonical: "/worksheets/english/foundation" },
   openGraph: {
-    title: "Foundation English Worksheets | Australian Home Schooling",
+    title: "Foundation English Worksheets | AI Native School",
     description: "Free printable Foundation English worksheets covering phonological awareness, phonics, vocabulary, literature and literacy.",
     url: "/worksheets/english/foundation",
   },

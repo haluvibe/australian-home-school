@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: "/planner" },
   openGraph: {
-    title: "Weekly Lesson Planner | Australian Home Schooling",
+    title: "Weekly Lesson Planner | AI Native School",
     description:
       "Plan your homeschool week with our free interactive lesson planner. Organise subjects, activities and goals for Foundation to Year 10.",
     url: "/planner",

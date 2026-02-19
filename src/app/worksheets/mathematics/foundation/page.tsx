@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   keywords: ["Foundation maths worksheets", "kindergarten maths Australia", "Foundation mathematics", "early maths worksheets", "Australian Curriculum Foundation"],
   alternates: { canonical: "/worksheets/mathematics/foundation" },
   openGraph: {
-    title: "Foundation Mathematics Worksheets | Australian Home Schooling",
+    title: "Foundation Mathematics Worksheets | AI Native School",
     description: "Free printable Foundation Mathematics worksheets covering number, algebra, measurement, space and statistics.",
     url: "/worksheets/mathematics/foundation",
   },

@@ -23,13 +23,22 @@ const COMPACT_TYPES = new Set([
   "shape-trace",
 ]);
 
+function isCompactActivity(activity: ActivityData): boolean {
+  if (activity.type === "circle-correct") {
+    // Use full width when options contain long text (sentences/phrases)
+    const maxLen = Math.max(...activity.questions.flatMap((q) => q.options.map((o) => o.length)));
+    return maxLen <= 15;
+  }
+  return COMPACT_TYPES.has(activity.type);
+}
+
 interface Props {
   activity: ActivityData;
   number: number;
 }
 
 export default function ActivityRenderer({ activity, number }: Props) {
-  const isCompact = COMPACT_TYPES.has(activity.type);
+  const isCompact = isCompactActivity(activity);
 
   let content: React.ReactNode;
   switch (activity.type) {

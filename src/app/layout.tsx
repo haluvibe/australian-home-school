@@ -16,13 +16,13 @@ const outfit = Outfit({
   display: "swap",
 });
 
-const siteUrl = "https://www.australianhomeschooling.com.au";
+const siteUrl = "https://ainative.school";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Australian Home Schooling — Nurture Curiosity, Grow Together",
-    template: "%s | Australian Home Schooling",
+    default: "AI Native School — Nurture Curiosity, Grow Together",
+    template: "%s | AI Native School",
   },
   description:
     "Australia's trusted homeschooling platform. Free printable worksheets, Australian Curriculum V9 guides, lesson plans and community support for families educating Foundation to Year 10.",
@@ -36,9 +36,9 @@ export const metadata: Metadata = {
     "homeschool resources",
     "Foundation to Year 10",
   ],
-  authors: [{ name: "Australian Home Schooling" }],
-  creator: "Australian Home Schooling",
-  publisher: "Australian Home Schooling",
+  authors: [{ name: "AI Native School" }],
+  creator: "AI Native School",
+  publisher: "AI Native School",
   robots: {
     index: true,
     follow: true,
@@ -52,15 +52,15 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_AU",
-    siteName: "Australian Home Schooling",
-    title: "Australian Home Schooling — Nurture Curiosity, Grow Together",
+    siteName: "AI Native School",
+    title: "AI Native School — Nurture Curiosity, Grow Together",
     description:
       "Free printable worksheets, Australian Curriculum V9 guides and lesson plans for homeschooling families. Foundation to Year 10.",
     url: siteUrl,
   },
   twitter: {
     card: "summary_large_image",
-    title: "Australian Home Schooling",
+    title: "AI Native School",
     description:
       "Free printable worksheets, curriculum guides and lesson plans for Australian homeschooling families.",
   },

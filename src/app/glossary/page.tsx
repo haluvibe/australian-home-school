@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: "/glossary" },
   openGraph: {
-    title: "Maths & English Glossary | Australian Home Schooling",
+    title: "Maths & English Glossary | AI Native School",
     description:
       "Plain-English definitions of mathematical and English terms from the Australian Curriculum V9.",
     url: "/glossary",

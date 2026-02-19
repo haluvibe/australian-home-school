@@ -158,5 +158,5 @@ function addPageNumber(pdf: InstanceType<typeof import("jspdf").jsPDF>, pageNum:
   pdf.setFontSize(9);
   pdf.setTextColor(160, 160, 160);
   pdf.text(`Page ${pageNum}`, pageWidth / 2, pageHeight - 6, { align: "center" });
-  pdf.text("Australian Home Schooling", pageWidth - marginX, pageHeight - 6, { align: "right" });
+  pdf.text("AI Native School", pageWidth - marginX, pageHeight - 6, { align: "right" });
 }

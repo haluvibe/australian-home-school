@@ -240,7 +240,7 @@ export default function Navbar() {
             </svg>
           </div>
           <span className="font-display text-lg font-semibold tracking-tight text-charcoal">
-            Australian Home Schooling
+            AI Native School
           </span>
         </Link>
 

@@ -8737,6 +8737,96 @@ export const year9EnglishWorksheets: WorksheetItem[] = [
       ],
     },
     activities: [
+      // ── FOUNDATIONAL 1–20 ──────────────────────────────────────────────────
+      // 1
+      {
+        type: "true-false",
+        title: "Extended Analytical Response: True or False?",
+        instruction: "Mark each statement about extended analytical writing as true or false.",
+        statements: [
+          { text: "An extended analytical response is typically longer and more complex than a standard five-paragraph essay.", answer: true },
+          { text: "The thesis statement in an extended essay should be vague to allow for maximum flexibility.", answer: false },
+          { text: "Each body paragraph in an extended response should make a distinct but related argument.", answer: true },
+          { text: "A conclusion that simply repeats the introduction is a mark of a strong extended essay.", answer: false },
+          { text: "Planning is more important in extended writing than in shorter writing.", answer: true },
+          { text: "The TEEL structure (Topic sentence, Evidence, Explanation, Link) is a common paragraph framework.", answer: true },
+        ],
+      },
+      // 2
+      {
+        type: "matching",
+        title: "Extended Essay Vocabulary",
+        instruction: "Match each term to its correct definition.",
+        left: [
+          "Thesis",
+          "Argument",
+          "Analysis",
+          "Synthesis",
+          "Cohesion",
+          "Nuance",
+        ],
+        right: [
+          "The quality of an essay holding together as a unified whole, with all parts connected",
+          "The central, arguable claim of an essay that all paragraphs support",
+          "Combining multiple ideas, sources, or perspectives into a new understanding",
+          "A line of reasoning supported by evidence to prove a point",
+          "Breaking down a text or idea to understand how it works and what it means",
+          "Subtle complexity and acknowledgment of complication or ambiguity",
+        ],
+      },
+      // 3
+      {
+        type: "multiple-choice",
+        title: "What Makes an Extended Response Extended?",
+        instruction: "Choose the best answer for each question.",
+        parentTip: "The key difference between a short essay and an extended response is not just length — it is depth, nuance, and the capacity to sustain a complex argument across multiple paragraphs without losing coherence.",
+        questions: [
+          {
+            prompt: "An extended analytical response typically differs from a five-paragraph essay in that it:",
+            options: [
+              "Uses more paragraphs and longer sentences",
+              "Sustains a more nuanced, complex argument across more paragraphs, with greater development and cohesion",
+              "Has a longer introduction",
+              "Does not need a thesis",
+            ],
+            answer: "Sustains a more nuanced, complex argument across more paragraphs, with greater development and cohesion",
+          },
+          {
+            prompt: "What is the most common structural problem in extended responses?",
+            options: [
+              "Too many paragraphs",
+              "Drift — where later paragraphs lose connection to the central thesis",
+              "Too much evidence",
+              "The introduction is too long",
+            ],
+            answer: "Drift — where later paragraphs lose connection to the central thesis",
+          },
+          {
+            prompt: "Which technique best prevents drift in an extended essay?",
+            options: [
+              "Repeating the thesis word for word at the start of every paragraph",
+              "Beginning each paragraph with a topic sentence that explicitly connects to the thesis, and ending with a link sentence that ties back to the central argument",
+              "Using the same evidence in every paragraph",
+              "Writing each paragraph as a self-contained mini-essay",
+            ],
+            answer: "Beginning each paragraph with a topic sentence that explicitly connects to the thesis, and ending with a link sentence that ties back to the central argument",
+          },
+        ],
+      },
+      // 4
+      {
+        type: "fill-in-blank",
+        title: "The TEEL Paragraph Structure",
+        instruction: "Fill in the blank with the correct element of the TEEL structure.",
+        sentences: [
+          { text: "T stands for _______ sentence — the opening sentence of each body paragraph that states the central claim of that paragraph.", blanks: ["Topic"] },
+          { text: "The first E stands for _______ — a quotation, statistic, example, or reference that supports the topic sentence.", blanks: ["Evidence"] },
+          { text: "The second E stands for _______ — the analysis that unpacks what the evidence shows and how it connects to the thesis.", blanks: ["Explanation"] },
+          { text: "L stands for _______ sentence — the closing sentence of the paragraph that connects back to the central argument.", blanks: ["Link"] },
+          { text: "The _______ section of a paragraph should always be longer than the evidence section in a strong analytical essay.", blanks: ["Explanation"] },
+        ],
+      },
+      // 5
       {
         type: "open-response",
         title: "Extended Essay Planning",
@@ -8767,6 +8857,76 @@ export const year9EnglishWorksheets: WorksheetItem[] = [
           },
         ],
       },
+      // 6
+      {
+        type: "sorting",
+        title: "Paragraph Types in an Extended Essay",
+        instruction: "Sort each sentence type into the correct paragraph position it typically occupies.",
+        columns: ["Topic sentence (opening)", "Link sentence (closing)"],
+        items: [
+          { label: "\"This technique reinforces the essay's central argument that...\"" },
+          { label: "\"[Author] also explores [theme] through the use of [technique]...\"" },
+          { label: "\"Ultimately, this evidence confirms that the text constructs...\"" },
+          { label: "\"A further way in which [text] represents [theme] is through...\"" },
+          { label: "\"This analysis therefore supports the argument that...\"" },
+          { label: "\"The text's treatment of [theme] is most clearly demonstrated in...\"" },
+          { label: "\"In this way, the use of [technique] serves the broader purpose of...\"" },
+          { label: "\"[Author] constructs [character] as [claim], which is evident when...\"" },
+        ],
+      },
+      // 7
+      {
+        type: "circle-correct",
+        title: "Strong vs. Weak Thesis Statements",
+        instruction: "For each thesis statement, circle whether it is strong (specific, arguable, analytical) or weak (too vague or descriptive).",
+        questions: [
+          {
+            prompt: "'This essay will discuss the themes of power and identity in the text.'",
+            options: ["Strong thesis", "Weak thesis"],
+          },
+          {
+            prompt: "'Through the sustained use of free indirect discourse and unreliable narration, the text positions power not as a stable possession but as a condition that is perpetually contested.'",
+            options: ["Strong thesis", "Weak thesis"],
+          },
+          {
+            prompt: "'The author uses many techniques to explore important ideas in the novel.'",
+            options: ["Strong thesis", "Weak thesis"],
+          },
+          {
+            prompt: "'The construction of the protagonist as both complicit in and resistant to systemic oppression challenges simplistic readings of agency, revealing power as distributed rather than centralised.'",
+            options: ["Strong thesis", "Weak thesis"],
+          },
+        ],
+      },
+      // 8
+      {
+        type: "multiple-choice",
+        title: "Evidence Integration",
+        instruction: "Choose the best answer for each question about integrating evidence into analytical essays.",
+        questions: [
+          {
+            prompt: "Which is the best way to integrate a quotation into an analytical paragraph?",
+            options: [
+              "Drop the quotation in and let it speak for itself",
+              "Introduce it, quote it, then analyse it — explaining what the quotation shows and how it connects to the thesis",
+              "Use only very long quotations",
+              "Put the quotation at the end of the paragraph",
+            ],
+            answer: "Introduce it, quote it, then analyse it — explaining what the quotation shows and how it connects to the thesis",
+          },
+          {
+            prompt: "What is the purpose of analysis after a quotation?",
+            options: [
+              "To repeat what the quotation says in different words",
+              "To summarise the plot around the quotation",
+              "To explain what the quotation shows, how the technique works, and what it reveals about the text's meaning",
+              "To quote a second passage immediately after",
+            ],
+            answer: "To explain what the quotation shows, how the technique works, and what it reveals about the text's meaning",
+          },
+        ],
+      },
+      // 9
       {
         type: "open-response",
         title: "Drafting Two Body Paragraphs",
@@ -8784,6 +8944,61 @@ export const year9EnglishWorksheets: WorksheetItem[] = [
           },
         ],
       },
+      // 10
+      {
+        type: "fill-in-blank",
+        title: "Connective Phrases for Extended Writing",
+        instruction: "Fill in the blank with an appropriate connective phrase that shows how paragraphs relate to each other.",
+        sentences: [
+          { text: "_______ this analysis of [character], the text also explores [theme] through...", blanks: ["Building on"] },
+          { text: "_______ [previous point], the text also suggests that...", blanks: ["While"] },
+          { text: "This connects to the broader argument that [claim] by demonstrating...", blanks: ["(no blank — full sentence given)"] },
+          { text: "A _______ consideration is the way in which [technique] positions the reader to...", blanks: ["further"] },
+          { text: "This is consistent with the pattern established in [previous paragraph], where...", blanks: ["(no blank — full sentence given)"] },
+        ],
+      },
+      // 11
+      {
+        type: "true-false",
+        title: "Essay Structure: True or False?",
+        instruction: "Mark each statement as true or false.",
+        statements: [
+          { text: "A strong extended essay introduction typically moves from a broad contextual statement to a specific thesis.", answer: true },
+          { text: "The conclusion of an extended essay should introduce substantial new evidence.", answer: false },
+          { text: "Paragraphs in an extended response should be ordered so that the argument develops and deepens, not repeats.", answer: true },
+          { text: "A thesis statement should name specific techniques and themes, not just state a general topic.", answer: true },
+          { text: "The body paragraphs of an extended essay can be in any order with no effect on the argument.", answer: false },
+        ],
+      },
+      // 12
+      {
+        type: "multiple-choice",
+        title: "Introduction and Conclusion",
+        instruction: "Choose the best answer for each question about introductions and conclusions in extended essays.",
+        questions: [
+          {
+            prompt: "What does a strong extended essay introduction do?",
+            options: [
+              "Lists all the techniques the essay will discuss",
+              "Begins broadly with context, identifies the text and author, and narrows to a specific, arguable thesis",
+              "Begins with 'In this essay, I will argue that...'",
+              "Summarises each body paragraph",
+            ],
+            answer: "Begins broadly with context, identifies the text and author, and narrows to a specific, arguable thesis",
+          },
+          {
+            prompt: "A strong conclusion for an extended essay:",
+            options: [
+              "Introduces a new argument for the first time",
+              "Simply repeats the thesis and body paragraph topics",
+              "Synthesises the argument and arrives at an insight — making the reader feel the essay has arrived somewhere",
+              "Ends with a quotation from the text",
+            ],
+            answer: "Synthesises the argument and arrives at an insight — making the reader feel the essay has arrived somewhere",
+          },
+        ],
+      },
+      // 13
       {
         type: "open-response",
         title: "Introduction and Conclusion",
@@ -8804,10 +9019,1300 @@ export const year9EnglishWorksheets: WorksheetItem[] = [
           },
         ],
       },
+      // 14
+      {
+        type: "matching",
+        title: "Analytical Language: Verbs and Phrases",
+        instruction: "Match each analytical verb or phrase to what it is most appropriate for doing in an essay.",
+        left: [
+          "Constructs",
+          "Positions",
+          "Interrogates",
+          "Subverts",
+          "Reinforces",
+          "Foregrounds",
+        ],
+        right: [
+          "Challenges or undermines a convention, expectation, or power structure",
+          "Shapes or creates (a character, identity, theme) through deliberate choices",
+          "Brings to the foreground, emphasises, highlights",
+          "Questions, examines, or challenges an assumption or ideology",
+          "Influences where the reader stands in relation to a character or situation",
+          "Strengthens, confirms, or deepens a theme, idea, or argument",
+        ],
+      },
+      // 15
+      {
+        type: "tip",
+        title: "Tip: The Essay Is a Journey",
+        content: "Think of your extended essay as a journey rather than a list. In a list, the order of items is arbitrary — they could be in any sequence. In a journey, each step takes you somewhere the previous step made possible. Your essay's conclusion should feel like an arrival at an insight that was not fully visible at the start. If you read your introduction and conclusion together and they say essentially the same thing, the essay is circular, not progressive. Ask: where has this essay gone? What has it discovered? The answer to those questions is your real argument.",
+      },
+      // 16
+      {
+        type: "circle-correct",
+        title: "Analysis vs. Summary",
+        instruction: "For each excerpt from a student essay, circle whether it is analysis or summary.",
+        questions: [
+          {
+            prompt: "'In Chapter 3, the protagonist discovers a letter. He reads it carefully and realises his mother has been keeping a secret from him.'",
+            options: ["Analysis", "Summary"],
+          },
+          {
+            prompt: "'The protagonist\u2019s discovery of the letter is rendered in slow, fragmented syntax — a formal choice that enacts the breakdown of his settled self-understanding, positioning the reader to experience the revelation as cognitive dislocation.'",
+            options: ["Analysis", "Summary"],
+          },
+          {
+            prompt: "'The novel ends with the two characters reconciling after years apart.'",
+            options: ["Analysis", "Summary"],
+          },
+          {
+            prompt: "'The novel\u2019s final reconciliation scene refuses sentimental resolution — the dialogue remains indirect and elliptical, constructing repair as partial and ongoing rather than complete.'",
+            options: ["Analysis", "Summary"],
+          },
+        ],
+      },
+      // 17
+      {
+        type: "open-response",
+        title: "Unpacking a Quotation",
+        instruction: "Choose a quotation from a text you are studying (or use a quotation from any literary text). Write three sentences of analytical unpacking after the quotation. Your analysis should explain: (a) what technique is being used, (b) what effect it creates, and (c) how it connects to a broader theme or argument.",
+        parentTip: "Quotation unpacking is the core analytical skill in literary essay writing. Three sentences should be the minimum — students often stop after identifying a technique, but the most important part is the 'so what?' — the connection to the text's broader meaning.",
+        prompts: [
+          { text: "Your quotation:", type: "lines", lines: 2 },
+          { text: "Your three-sentence analysis:", type: "lines", lines: 6 },
+        ],
+      },
+      // 18
+      {
+        type: "fill-in-blank",
+        title: "Literary Terms for Extended Analysis",
+        instruction: "Fill in the blank with the correct literary or analytical term.",
+        sentences: [
+          { text: "When a narrative's structure — the order in which events are revealed — differs from the chronological order of events, this is called narrative _______.", blanks: ["manipulation"] },
+          { text: "An _______ narrator is one whose version of events cannot be fully trusted, often because of limited knowledge, bias, or self-deception.", blanks: ["unreliable"] },
+          { text: "The _______ perspective controls what information the reader has access to at any point in the narrative.", blanks: ["focalisation"] },
+          { text: "When an author gives the reader information that a character does not have, creating tension or irony, this is called dramatic _______.", blanks: ["irony"] },
+          { text: "Writing that presents a character's thoughts in the third person but in the character's own voice is called _______ indirect style.", blanks: ["free"] },
+        ],
+      },
+      // 19
+      {
+        type: "sorting",
+        title: "Essay Planning: Order of Operations",
+        instruction: "Sort each essay-writing step into 'Before drafting' or 'During or After drafting'.",
+        columns: ["Before drafting", "During or After drafting"],
+        items: [
+          { label: "Identify the key argument in each body paragraph" },
+          { label: "Write topic sentences for each paragraph" },
+          { label: "Draft the conclusion" },
+          { label: "Craft your thesis statement" },
+          { label: "Revise for cohesion and connection to thesis" },
+          { label: "Select and annotate key quotations" },
+          { label: "Check that analysis section outweighs evidence in each paragraph" },
+          { label: "Decide the order of your body paragraphs" },
+          { label: "Proofread for spelling and grammar" },
+          { label: "Formulate the essay question or prompt" },
+        ],
+      },
+      // 20
+      {
+        type: "spark",
+        title: "Spark: The Essay as Interpretation",
+        content: "There is no single correct reading of a literary text. Two thoughtful essays on the same text, asking the same question, can arrive at different — even contradictory — conclusions, and both can be intellectually valid. What makes an essay argument valid is not that it is 'right' but that it is well-reasoned, well-evidenced, and internally consistent. Your job as an analytical writer is not to find the correct interpretation but to make the most compelling and coherent case for your particular reading. Own your argument. Trust your analysis. The essay is yours.",
+      },
+      // ── DEVELOPING 21–50 ──────────────────────────────────────────────────
+      // 21
+      {
+        type: "multiple-choice",
+        title: "Developing a Nuanced Argument",
+        instruction: "Choose the best answer for each question about complexity and nuance in extended essays.",
+        parentTip: "Nuance in an essay does not mean vagueness — it means acknowledging complexity. A nuanced argument can still be strong and clear; it simply recognises that the text is not doing one simple thing.",
+        questions: [
+          {
+            prompt: "What does it mean to 'complicate' your argument in an extended essay?",
+            options: [
+              "Make the essay harder to follow",
+              "Acknowledge moments where the text does something unexpected or more complex than the thesis initially suggests — then account for these in your analysis",
+              "Change your thesis halfway through",
+              "Use more technical literary vocabulary",
+            ],
+            answer: "Acknowledge moments where the text does something unexpected or more complex than the thesis initially suggests — then account for these in your analysis",
+          },
+          {
+            prompt: "How should a paragraph that acknowledges a counterpoint or complication be structured?",
+            options: [
+              "State the counterpoint and then end the paragraph",
+              "Ignore counterpoints — they undermine your argument",
+              "Acknowledge the counterpoint, then explain how it actually supports or complicates rather than undermines your central thesis",
+              "Put all counterpoints in the conclusion",
+            ],
+            answer: "Acknowledge the counterpoint, then explain how it actually supports or complicates rather than undermines your central thesis",
+          },
+        ],
+      },
+      // 22
+      {
+        type: "open-response",
+        title: "Writing a Paragraph That Acknowledges Complexity",
+        instruction: "Write a body paragraph (8–12 sentences) that: (a) opens with a clear topic sentence connected to your thesis, (b) provides specific textual evidence, (c) analyses it, (d) acknowledges a moment where the text complicates the simple version of your argument, and (e) closes with a link that shows how this complexity actually strengthens rather than undermines your thesis.",
+        parentTip: "This is a high-level analytical move — acknowledging a counterpoint and turning it to your advantage. It shows the examiner that you are reading the text with genuine attention rather than selectively marshalling evidence. It is the mark of a mature literary thinker.",
+        prompts: [
+          { text: "Your paragraph:", type: "box" },
+        ],
+      },
+      // 23
+      {
+        type: "true-false",
+        title: "Using Quotations Effectively",
+        instruction: "Mark each statement about quotation use as true or false.",
+        statements: [
+          { text: "A quotation should never be longer than is necessary for your analytical point.", answer: true },
+          { text: "You can use square brackets [...] to indicate where you have cut words from a quotation.", answer: true },
+          { text: "Every quotation should be followed by substantial analysis before any further quotation is introduced.", answer: true },
+          { text: "Using many quotations without analysis is a sign of strong analytical writing.", answer: false },
+          { text: "The best essays use quotations as a launching pad for analysis, not as the destination.", answer: true },
+          { text: "It is acceptable to distort the meaning of a quotation to make it fit your argument.", answer: false },
+        ],
+      },
+      // 24
+      {
+        type: "matching",
+        title: "Analytical Frameworks",
+        instruction: "Match each analytical framework or critical lens to its description.",
+        left: [
+          "Feminist criticism",
+          "Postcolonial criticism",
+          "Marxist criticism",
+          "Reader-response criticism",
+          "New Criticism",
+        ],
+        right: [
+          "Focuses on how the text creates meaning through its internal structure, language, and form — close reading",
+          "Examines how the text constructs or challenges gender, patriarchy, and the representation of women",
+          "Examines how the reader's own background and position shapes their interpretation of the text",
+          "Examines how the text represents class, economic power, and social inequality",
+          "Examines how texts from colonised or formerly colonised nations represent identity, power, and the legacies of colonialism",
+        ],
+      },
+      // 25
+      {
+        type: "open-response",
+        title: "Applying an Analytical Framework",
+        instruction: "Choose one critical lens (feminist, postcolonial, Marxist, or reader-response) and apply it to a text you are studying. Write a paragraph (8–12 sentences) that reads a specific moment in the text through that lens.",
+        parentTip: "Critical lenses are not the only way to read a text, but they provide useful tools for unlocking aspects that might otherwise be invisible. A feminist reading of a text written by a man, or a postcolonial reading of a canonical British novel, often reveals assumptions buried in the text's apparently universal perspective.",
+        prompts: [
+          { text: "Your chosen framework:", type: "lines", lines: 1 },
+          { text: "Your paragraph:", type: "box" },
+          {
+            text: "What does this lens reveal about the text that a simple close reading would not?",
+            type: "lines",
+            lines: 3,
+          },
+        ],
+      },
+      // 26
+      {
+        type: "fill-in-blank",
+        title: "Embedding Quotations",
+        instruction: "Complete each sentence to embed the quotation more smoothly.",
+        sentences: [
+          { text: "The author\u2019s choice of \u2018shattered\u2019 _______ the character\u2019s psychological state as fractured beyond easy repair.", blanks: ["constructs"] },
+          { text: "Her stark declaration \u2018I refuse\u2019 _______ the reader to understand her as a conscious agent of resistance.", blanks: ["positions"] },
+          { text: "The metaphor of \u2018the silence was enormous\u2019 _______ absence as a physical presence, suggesting grief is inescapable.", blanks: ["renders"] },
+        ],
+      },
+      // 27
+      {
+        type: "open-response",
+        title: "Developing a Paragraph from Planning to Draft",
+        instruction: "Take one body paragraph from your essay plan (Activity 5) and develop it in three stages: (1) Write the topic sentence only. (2) Select and embed your evidence. (3) Write 4–6 sentences of analysis and a link sentence.",
+        parentTip: "Breaking paragraph construction into stages helps students who feel overwhelmed by trying to do everything at once. Once they are confident, they can collapse the stages — but learning each stage separately builds understanding of what each element does.",
+        prompts: [
+          { text: "Stage 1 — Topic sentence only:", type: "lines", lines: 2 },
+          { text: "Stage 2 — Evidence integrated:", type: "lines", lines: 3 },
+          { text: "Stage 3 — Full paragraph with analysis and link:", type: "box" },
+        ],
+      },
+      // 28
+      {
+        type: "sorting",
+        title: "Paragraph Quality: Sorting Evidence",
+        instruction: "Sort each piece of evidence by its quality for supporting a literary analytical argument.",
+        columns: ["Strong analytical evidence", "Weak analytical evidence"],
+        items: [
+          { label: "A precise, brief quotation with a specific technique identified" },
+          { label: "A plot summary of what happened in the chapter" },
+          { label: "A quotation with analysis of its connotations and tone" },
+          { label: "A reference to your own feelings about the characters" },
+          { label: "A specific example of imagery that reinforces the theme" },
+          { label: "A structural example connecting technique to meaning" },
+          { label: "A broad statement: 'Everyone knows this book is about [theme]'" },
+          { label: "A claim supported only by personal preference" },
+        ],
+      },
+      // 29
+      {
+        type: "multiple-choice",
+        title: "Sustained Argument Across Paragraphs",
+        instruction: "Choose the best answer for each question about maintaining argument across an extended essay.",
+        questions: [
+          {
+            prompt: "What does it mean for an essay to be 'cohesive'?",
+            options: [
+              "All sentences are the same length",
+              "All paragraphs use identical structure",
+              "The whole essay holds together as a unified argument — ideas connect, build on each other, and all relate to the thesis",
+              "The essay covers as many topics as possible",
+            ],
+            answer: "The whole essay holds together as a unified argument — ideas connect, build on each other, and all relate to the thesis",
+          },
+          {
+            prompt: "Which connective strategy is most effective for linking paragraphs in an extended essay?",
+            options: [
+              "Starting every paragraph with 'Another example of this is...'",
+              "Using connective phrases that show the logical relationship between paragraphs",
+              "Leaving the reader to infer the connections",
+              "Repeating the thesis statement at the start of every paragraph",
+            ],
+            answer: "Using connective phrases that show the logical relationship between paragraphs",
+          },
+        ],
+      },
+      // 30
+      {
+        type: "tip",
+        title: "Tip: Analysis Is Not Description",
+        content: "The most common weakness in Year 9 analytical essays is description masquerading as analysis. Description tells the reader what a text says or does. Analysis tells the reader how it does it and what it means. When you catch yourself writing plot summary or retelling what happened, stop and ask: what technique is being used? What effect does it create? How does this connect to the text's broader argument or meaning? Every sentence in an analytical paragraph should be answering those questions, not the question 'What happens next?'",
+      },
+      // 31
+      {
+        type: "open-response",
+        title: "Identifying Drift",
+        instruction: "Read the following essay paragraph extract and identify where it drifts from the thesis. Rewrite the drifting section to restore the analytical focus.",
+        parentTip: "Identifying drift in sample text develops the skill of identifying it in one's own writing. After completing this activity, ask your student to re-read one of their own recent essay paragraphs and identify any drift.",
+        prompts: [
+          {
+            text: "Sample paragraph: 'The protagonist\u2019s relationship with power is shown through his confrontation in Chapter 4. He refuses to comply. The author uses strong verbs to show resistance. The scene then moves to the protagonist returning home, where he has a conversation with his sister about their childhood. Their relationship is complicated. Eventually he goes to sleep and dreams about the past.' Identify the drift and explain where analysis loses connection to the thesis:",
+            type: "lines",
+            lines: 4,
+          },
+          {
+            text: "Rewrite the drifting section to restore analytical focus on power and resistance:",
+            type: "lines",
+            lines: 5,
+          },
+        ],
+      },
+      // 32
+      {
+        type: "true-false",
+        title: "Extended Response Writing: True or False?",
+        instruction: "Mark each statement as true or false.",
+        statements: [
+          { text: "A sophisticated thesis names both the techniques and the themes being argued.", answer: true },
+          { text: "The purpose of the link sentence is to introduce new evidence.", answer: false },
+          { text: "Paraphrasing a quotation in your own words can sometimes be more analytically effective than quoting directly.", answer: true },
+          { text: "Using the author's name rather than 'the author' signals analytical sophistication.", answer: true },
+          { text: "All body paragraphs in an extended essay should be identical in length.", answer: false },
+          { text: "An essay that acknowledges complexity and counterpoints is generally stronger than one that ignores them.", answer: true },
+        ],
+      },
+      // 33
+      {
+        type: "fill-in-blank",
+        title: "Vocabulary for Analytical Writing",
+        instruction: "Fill in the blank with an appropriate analytical verb or phrase.",
+        sentences: [
+          { text: "Through the use of [technique], [author] _______ the reader to understand [character] as an agent of [theme].", blanks: ["positions"] },
+          { text: "The repeated motif of [image] _______ the text's central concern with [theme].", blanks: ["reinforces"] },
+          { text: "[Author]\u2019s choice to [structural decision] _______ any comfortable or singular reading of [theme].", blanks: ["resists"] },
+          { text: "The juxtaposition of [A] and [B] _______ a critique of [idea or value].", blanks: ["constructs"] },
+          { text: "This passage _______ the reader\u2019s sympathy toward [character] by...", blanks: ["solicits"] },
+        ],
+      },
+      // 34
+      {
+        type: "matching",
+        title: "Structural Techniques and Their Analytical Uses",
+        instruction: "Match each structural technique to the kind of argument it allows you to make.",
+        left: [
+          "Non-linear narrative",
+          "Epistolary form",
+          "Multiple narrators",
+          "Frame narrative",
+          "Circular structure",
+        ],
+        right: [
+          "Reveals how memory, trauma, or meaning is shaped retrospectively rather than lived linearly",
+          "Allows the text to explore how different subjects construct the same events differently — interrogating truth and reliability",
+          "Creates layers of storytelling that raise questions about whose story is told and why",
+          "A return to the opening that can suggest resolution, entrapment, or ironic commentary on the narrative's progress",
+          "The form itself constructs character voice and intimacy while also limiting perspective and raising questions of authenticity",
+        ],
+      },
+      // 35
+      {
+        type: "open-response",
+        title: "Arguing About Structure",
+        instruction: "Choose a structural feature of the text you are studying (e.g. the narrative perspective, the arrangement of chapters, a fragmented form, or a recurring structural device) and write a paragraph (8–12 sentences) that argues how this structural choice serves the text's thematic or ideological purposes.",
+        parentTip: "Arguing about structure is often neglected in favour of analysis of language. But structural choices — who tells the story, in what order, from what vantage point — are among the most significant interpretive choices a writer makes. Encourage your student to think of structure as an argument about how meaning is made.",
+        prompts: [
+          { text: "Structural feature you are analysing:", type: "lines", lines: 1 },
+          { text: "Your analytical paragraph:", type: "box" },
+        ],
+      },
+      // 36
+      {
+        type: "multiple-choice",
+        title: "Context in Analytical Writing",
+        instruction: "Choose the best answer for each question about contextualising textual analysis.",
+        questions: [
+          {
+            prompt: "How should context (historical, cultural, biographical) be used in an analytical essay?",
+            options: [
+              "Context should replace close textual analysis",
+              "Context should inform and enrich the analysis of the text itself — showing how historical or cultural factors shape the text's construction and meaning",
+              "Context is irrelevant to analytical essay writing",
+              "Context should appear only in the introduction",
+            ],
+            answer: "Context should inform and enrich the analysis of the text itself — showing how historical or cultural factors shape the text's construction and meaning",
+          },
+          {
+            prompt: "What is the risk of using too much contextual information in an analytical essay?",
+            options: [
+              "The essay becomes too long",
+              "The essay shifts from analysis of the text to a history lesson — losing focus on how the text itself works",
+              "The essay becomes too persuasive",
+              "The context distracts the reader with interesting facts",
+            ],
+            answer: "The essay shifts from analysis of the text to a history lesson — losing focus on how the text itself works",
+          },
+        ],
+      },
+      // 37
+      {
+        type: "open-response",
+        title: "Integrating Context into Analysis",
+        instruction: "Write a paragraph (8–12 sentences) that integrates contextual information (historical, cultural, or biographical) into a close reading of a specific moment in your text. The context should illuminate the text — not replace it.",
+        parentTip: "The rule of thumb: context should be in service of analysis, not the other way around. A sentence that says 'The industrial revolution changed working conditions. This is seen in the text when...' is different from 'The text encodes the anxieties of industrial capitalism in its imagery of machinery.'",
+        prompts: [
+          { text: "Your context:", type: "lines", lines: 2 },
+          { text: "Your paragraph:", type: "box" },
+        ],
+      },
+      // 38
+      {
+        type: "fill-in-blank",
+        title: "Introduction Writing: Key Moves",
+        instruction: "Fill in the blank to complete the description of each key move in an extended essay introduction.",
+        sentences: [
+          { text: "The opening of an introduction typically establishes the _______ or _______ of the text and the analytical question.", blanks: ["context", "significance"] },
+          { text: "After establishing context, the introduction identifies the _______ and, where relevant, the _______.", blanks: ["text", "author"] },
+          { text: "The introduction narrows from the general to the specific before arriving at the _______ statement at the end.", blanks: ["thesis"] },
+          { text: "An effective thesis statement is _______ (not everyone would agree), _______ (backed by close reading), and _______ (precise rather than vague).", blanks: ["arguable", "defensible", "specific"] },
+        ],
+      },
+      // 39
+      {
+        type: "open-response",
+        title: "Writing Multiple Introductions",
+        instruction: "Write two different introductions for the same essay question — one using a contextual opening, one using a close reading of a specific quotation as the opening. Then choose the stronger one and explain why.",
+        parentTip: "Having students write multiple versions of an introduction helps them understand that there are many legitimate ways to begin an essay, and that the choice of opening creates a particular kind of relationship with the reader.",
+        prompts: [
+          { text: "Essay question:", type: "lines", lines: 2 },
+          { text: "Introduction A (contextual opening):", type: "box" },
+          { text: "Introduction B (quotation-based opening):", type: "box" },
+          { text: "Which is stronger and why?", type: "lines", lines: 3 },
+        ],
+      },
+      // 40
+      {
+        type: "spark",
+        title: "Spark: Disagreeing with the Text",
+        content: "The best analytical essays often involve a kind of productive disagreement with the text — moments where the essay does not simply celebrate what the author has done but examines it with genuine critical independence. A text can be brilliant and still reproduce ideological assumptions. A character can be sympathetic and still act in ways that deserve scrutiny. A narrative can be beautifully written and still marginalise certain perspectives. The analytical essay is not a review or a celebration — it is a critical investigation. What is your text doing that deserves scrutiny, not just admiration?",
+      },
+      // ── CONSOLIDATING 51–80 ──────────────────────────────────────────────────
+      // 41
+      {
+        type: "open-response",
+        title: "Full Paragraph Sequence: Three Connected Paragraphs",
+        instruction: "Write three connected body paragraphs on the text you are studying. Each paragraph should: (a) open with a topic sentence explicitly connected to the thesis, (b) develop a distinct but related argument to the previous paragraph, (c) end with a link sentence, and (d) begin with a connective phrase that shows how it relates to the previous paragraph.",
+        parentTip: "Three connected paragraphs is the minimum for a genuine extended response. The key challenge is ensuring the sequence develops rather than repeats — each paragraph should add something new to the argument, building toward the conclusion.",
+        prompts: [
+          { text: "Your thesis (write it at the top as an anchor):", type: "lines", lines: 2 },
+          { text: "Paragraph 1:", type: "box" },
+          { text: "Paragraph 2:", type: "box" },
+          { text: "Paragraph 3:", type: "box" },
+        ],
+      },
+      // 42
+      {
+        type: "matching",
+        title: "Essay Assessment Criteria",
+        instruction: "Match each assessment criterion to the question it asks the assessor.",
+        left: [
+          "Argument",
+          "Evidence",
+          "Analysis",
+          "Cohesion",
+          "Expression",
+        ],
+        right: [
+          "Is the language accurate, varied, and appropriately formal? Is the writing clear and precise?",
+          "Does the essay sustain a clear, specific, and well-developed argument from thesis to conclusion?",
+          "Does the essay hold together? Do all parts connect to the thesis? Do paragraphs link to each other?",
+          "Is the evidence specific, relevant, and well-selected? Are quotations embedded and not over-used?",
+          "Does the analysis explain how the technique works and what it means, not just identify what it is?",
+        ],
+      },
+      // 43
+      {
+        type: "fill-in-blank",
+        title: "Conclusions: Advanced Techniques",
+        instruction: "Fill in the blank with appropriate language for a sophisticated extended essay conclusion.",
+        sentences: [
+          { text: "Rather than simply re-stating the thesis, the conclusion should _______ the argument — pulling together what the essay has established into a fuller understanding.", blanks: ["synthesise"] },
+          { text: "A conclusion that zooms out from the specific text to a broader _______ question gives the essay larger significance.", blanks: ["cultural"] },
+          { text: "A conclusion can acknowledge the _______ of the question by noting what the essay has not fully resolved.", blanks: ["complexity"] },
+          { text: "The final sentence of the conclusion often returns to a _______ from the introduction, creating structural symmetry.", blanks: ["image"] },
+        ],
+      },
+      // 44
+      {
+        type: "open-response",
+        title: "Writing a Sophisticated Conclusion",
+        instruction: "Write a conclusion (6–8 sentences) for the essay you have been developing. Your conclusion should: synthesise the argument (not summarise it), arrive at an insight not fully available in the introduction, acknowledge any complexity not fully resolved, and end with a sentence that carries weight.",
+        parentTip: "The test for a sophisticated conclusion is: does it say something the introduction could not have said? The introduction presents the thesis; the conclusion should be the enriched, deepened version of that thesis after the body paragraphs have done their work.",
+        prompts: [
+          { text: "Your sophisticated conclusion:", type: "box" },
+          {
+            text: "What does your conclusion say that your introduction could not have said?",
+            type: "lines",
+            lines: 3,
+          },
+        ],
+      },
+      // 45
+      {
+        type: "tip",
+        title: "Tip: The Rule of Three in Evidence",
+        content: "A reliable test for whether a body paragraph is making a genuine argument: can you find at least three pieces of evidence — three separate textual moments — that support the claim? If you can only find one, the claim may be too specific. If you have fifteen, the claim may be too general. Three to four well-chosen pieces of evidence per major argument is the analytical sweet spot — enough to establish a pattern without becoming a list. Remember: always prioritise depth of analysis over quantity of evidence.",
+      },
+      // 46
+      {
+        type: "open-response",
+        title: "Revision: Strengthening Analysis",
+        instruction: "Take one of your existing body paragraphs from earlier in this worksheet and revise it using the following checklist: (a) Is the topic sentence specific enough? (b) Is the evidence embedded smoothly? (c) Does the analysis section explain HOW the technique works and WHY it matters? (d) Does the link sentence connect to the thesis, not just restate the topic sentence?",
+        parentTip: "The revision process for analytical writing is where the real analytical thinking happens. The first draft gets ideas on the page; revision is where you interrogate those ideas and push them to their full analytical potential.",
+        prompts: [
+          { text: "Original paragraph:", type: "box" },
+          { text: "Revised paragraph:", type: "box" },
+          {
+            text: "List the three most significant improvements you made and why each makes the paragraph stronger:",
+            type: "lines",
+            lines: 5,
+          },
+        ],
+      },
+      // 47
+      {
+        type: "sorting",
+        title: "Evaluating Essay Paragraphs",
+        instruction: "Sort each paragraph element into 'Strengthens the paragraph' or 'Weakens the paragraph'.",
+        columns: ["Strengthens the paragraph", "Weakens the paragraph"],
+        items: [
+          { label: "A topic sentence that names a specific technique and connects to the thesis" },
+          { label: "A plot summary of what happens after the quotation" },
+          { label: "Four or five sentences of analysis unpacking one quotation's technique and effect" },
+          { label: "Three quotations in a row without any analysis between them" },
+          { label: "A link sentence that connects the paragraph's finding to the broader argument" },
+          { label: "Beginning the paragraph with 'Another example of this is...'" },
+          { label: "Acknowledging a moment of complexity and accounting for it analytically" },
+          { label: "Using vague phrases like 'This is clearly shown when...'" },
+        ],
+      },
+      // 48
+      {
+        type: "open-response",
+        title: "Sustained Draft: Four Paragraphs",
+        instruction: "Write four consecutive body paragraphs for your essay. Include a connecting phrase at the start of each paragraph (2, 3, and 4) that shows how it relates to the previous. After completing them, check: does the argument develop across all four? Or does it repeat?",
+        parentTip: "Four sustained paragraphs is a substantial writing task. Give your student extended, uninterrupted time. The goal is not perfection — it is practice in sustained analytical thinking. Problems of repetition and drift are often most visible at this length, which is precisely why writing at this length is valuable.",
+        prompts: [
+          { text: "Paragraph 1:", type: "box" },
+          { text: "Paragraph 2:", type: "box" },
+          { text: "Paragraph 3:", type: "box" },
+          { text: "Paragraph 4:", type: "box" },
+          {
+            text: "Does the argument develop across all four paragraphs? What is different in paragraph 4 from paragraph 1?",
+            type: "lines",
+            lines: 3,
+          },
+        ],
+      },
+      // 49
+      {
+        type: "true-false",
+        title: "Sophisticated Analytical Writing: True or False?",
+        instruction: "Mark each statement as true or false.",
+        statements: [
+          { text: "Using modal verbs ('suggests', 'implies', 'may construct') signals analytical sophistication and appropriate tentativeness.", answer: true },
+          { text: "Asserting that a reading is the only possible interpretation is a mark of confident analysis.", answer: false },
+          { text: "The best analytical essays acknowledge the text's complexity without losing clarity of argument.", answer: true },
+          { text: "An essay that analyses technique without connecting it to theme or meaning is incomplete.", answer: true },
+          { text: "Paraphrasing is always weaker than direct quotation in analytical writing.", answer: false },
+        ],
+      },
+      // 50
+      {
+        type: "open-response",
+        title: "Self-Assessment: Analytical Essay Audit",
+        instruction: "Conduct a paragraph-by-paragraph audit of the draft essay you have been developing. For each paragraph, assess it against the criteria below and note what needs improvement.",
+        parentTip: "A structured audit is more rigorous and useful than general re-reading. Ask your student to complete this honestly — the point is not to feel good about the essay but to understand exactly what it needs to become stronger.",
+        prompts: [
+          {
+            text: "Paragraph 1: Is the topic sentence connected to thesis? (Y/N) Analysis longer than evidence? (Y/N) What needs improving?",
+            type: "lines",
+            lines: 2,
+          },
+          {
+            text: "Paragraph 2: Is the topic sentence connected to thesis? (Y/N) Analysis longer than evidence? (Y/N) What needs improving?",
+            type: "lines",
+            lines: 2,
+          },
+          {
+            text: "Paragraph 3: Is the topic sentence connected to thesis? (Y/N) Analysis longer than evidence? (Y/N) What needs improving?",
+            type: "lines",
+            lines: 2,
+          },
+          {
+            text: "Paragraph 4: Is the topic sentence connected to thesis? (Y/N) Analysis longer than evidence? (Y/N) What needs improving?",
+            type: "lines",
+            lines: 2,
+          },
+          {
+            text: "Overall: Is there any drift from the thesis? What is the most significant structural or analytical problem to address in revision?",
+            type: "lines",
+            lines: 3,
+          },
+        ],
+      },
+      // 51
+      {
+        type: "open-response",
+        title: "Revising for Cohesion",
+        instruction: "Revise your full essay draft with a specific focus on cohesion. Add or improve: (a) the connecting phrases between paragraphs, (b) any topic or link sentences that have lost their connection to the thesis, and (c) any paragraphs that repeat rather than develop. Write out the revised connecting phrases and link sentences below.",
+        parentTip: "Cohesion is often the last thing students attend to in revision because they are focused on individual paragraphs. But it is one of the things most noticed by examiners — an essay that flows and builds is significantly more impressive than one whose paragraphs feel disconnected.",
+        prompts: [
+          { text: "Revised connecting phrase between paragraphs 1 and 2:", type: "lines", lines: 2 },
+          { text: "Revised connecting phrase between paragraphs 2 and 3:", type: "lines", lines: 2 },
+          { text: "Revised connecting phrase between paragraphs 3 and 4:", type: "lines", lines: 2 },
+          { text: "What paragraph did you most significantly revise for cohesion and why?", type: "lines", lines: 3 },
+        ],
+      },
+      // 52
+      {
+        type: "multiple-choice",
+        title: "Reading Critically as a Writer",
+        instruction: "Choose the best answer for each question about developing analytical writing through critical reading.",
+        questions: [
+          {
+            prompt: "Why do writing teachers advise students to read sample essays alongside their own writing?",
+            options: [
+              "To copy the sample essay's content",
+              "To identify the techniques, structures, and analytical moves that experienced writers use, and to assess their own work against a model",
+              "Because it is faster than practising independently",
+              "To avoid having to think independently",
+            ],
+            answer: "To identify the techniques, structures, and analytical moves that experienced writers use, and to assess their own work against a model",
+          },
+          {
+            prompt: "What is the most useful thing to notice when reading a high-quality sample essay?",
+            options: [
+              "How long it is",
+              "How many quotations it uses",
+              "The analytical moves it makes — how it introduces, analyses, and links evidence to the thesis",
+              "How difficult the vocabulary is",
+            ],
+            answer: "The analytical moves it makes — how it introduces, analyses, and links evidence to the thesis",
+          },
+        ],
+      },
+      // 53
+      {
+        type: "fill-in-blank",
+        title: "Australian Texts for Analysis: Key Works",
+        instruction: "Fill in the blank with the correct Australian author, title, or context.",
+        sentences: [
+          { text: "Christos Tsiolkas's novel 'The Slap' explores questions of parenting, class, and multiculturalism in contemporary _______.", blanks: ["Australia"] },
+          { text: "Kate Grenville's 'The Secret River' examines the historical and moral complexities of _______ settlement in colonial Australia.", blanks: ["European"] },
+          { text: "Alexis Wright's 'Carpentaria' is celebrated for its use of _______ storytelling traditions within a novelistic form.", blanks: ["Indigenous"] },
+          { text: "Year 9 students may study Australian texts through a _______ lens, examining how national identity is constructed and contested.", blanks: ["postcolonial"] },
+          { text: "First Nations writer Sally Morgan's memoir 'My Place' is an important text for Year 9 study of _______ and identity.", blanks: ["history"] },
+        ],
+      },
+      // 54
+      {
+        type: "open-response",
+        title: "Reading Like a Critic",
+        instruction: "Read a passage from the text you are studying (or a text you have read recently) with the eyes of a critic. Write 150–200 words of analytical annotation: what techniques do you notice? What meanings do they create? What is the text assuming, constructing, or challenging?",
+        parentTip: "Analytical annotation is a precursor to essay writing. Reading actively — asking 'how?' and 'what for?' rather than just 'what happens?' — is a habit of mind that transforms passive reading into critical engagement.",
+        prompts: [
+          { text: "Your passage or quotation:", type: "lines", lines: 3 },
+          { text: "Your analytical annotation:", type: "box" },
+        ],
+      },
+      // 55
+      {
+        type: "true-false",
+        title: "Extended Response: Planning and Drafting",
+        instruction: "Mark each statement as true or false.",
+        statements: [
+          { text: "A detailed plan takes more time but usually produces a stronger essay than starting to write immediately.", answer: true },
+          { text: "You should plan the conclusion before you begin drafting the body paragraphs.", answer: true },
+          { text: "Once you start writing an essay, you cannot change your thesis.", answer: false },
+          { text: "The order of body paragraphs should feel logical — like an argument that unfolds rather than a list.", answer: true },
+          { text: "Having a plan means the essay will automatically be good — planning substitutes for quality drafting.", answer: false },
+        ],
+      },
+      // 56
+      {
+        type: "open-response",
+        title: "The Opposing Interpretation",
+        instruction: "Identify a reading of your text that differs significantly from your own. Write a paragraph (6–8 sentences) that presents this alternative interpretation fairly and in its strongest form. Then write a second paragraph explaining why your own reading is more persuasive — without dismissing the alternative entirely.",
+        parentTip: "The ability to steelman an opposing reading is a sophisticated analytical skill. It shows the examiner that the student is a genuine reader of the text — not just a writer of an argument. Essays that engage with alternative interpretations are always more impressive than those that proceed as if only one reading exists.",
+        prompts: [
+          { text: "Alternative interpretation paragraph:", type: "box" },
+          { text: "Why your reading is more persuasive:", type: "box" },
+        ],
+      },
+      // 57
+      {
+        type: "multiple-choice",
+        title: "Essay Questions: Identifying Key Demands",
+        instruction: "For each essay question, choose the key analytical demand it makes.",
+        questions: [
+          {
+            prompt: "'How does [author] construct [character] as a product of their social environment?'",
+            options: [
+              "Summarise the character's biography",
+              "Analyse the techniques through which the text represents the relationship between individual identity and social context",
+              "Describe the social environment of the text",
+              "Argue whether the character is likeable or not",
+            ],
+            answer: "Analyse the techniques through which the text represents the relationship between individual identity and social context",
+          },
+          {
+            prompt: "'To what extent does [text] challenge the reader's comfortable assumptions about [theme]?'",
+            options: [
+              "Decide whether you personally felt challenged",
+              "Analyse how specific textual techniques position the reader and evaluate how effectively they challenge assumptions",
+              "List all the examples of the theme in the text",
+              "Argue that the text is either challenging or not challenging",
+            ],
+            answer: "Analyse how specific textual techniques position the reader and evaluate how effectively they challenge assumptions",
+          },
+        ],
+      },
+      // 58
+      {
+        type: "open-response",
+        title: "Deconstructing an Essay Question",
+        instruction: "Choose an essay question for the text you are studying (or write one). Break it down systematically: (a) what key terms need defining? (b) what techniques should be discussed? (c) what themes are central? (d) what kind of argument does it call for?",
+        parentTip: "Misreading the question is one of the most common causes of poor essay performance — students write excellent essays about the wrong topic. Systematic question deconstruction before planning is one of the most valuable study habits a student can develop.",
+        prompts: [
+          { text: "Your essay question:", type: "lines", lines: 2 },
+          { text: "(a) Key terms to define:", type: "lines", lines: 2 },
+          { text: "(b) Techniques to discuss:", type: "lines", lines: 2 },
+          { text: "(c) Central themes:", type: "lines", lines: 2 },
+          { text: "(d) Type of argument called for:", type: "lines", lines: 2 },
+          { text: "Draft thesis statement responding to this question:", type: "lines", lines: 3 },
+        ],
+      },
+      // 59
+      {
+        type: "open-response",
+        title: "Timed Writing: 30-Minute Essay Segment",
+        instruction: "Set a timer for 30 minutes. Write as much as you can of your extended essay — focusing on two or three body paragraphs. Do not stop to perfect. Write continuously. The goal is to experience sustained analytical writing under time pressure, which mirrors exam conditions.",
+        parentTip: "Timed writing is essential preparation for any formal examination. The skills practised in timed conditions — prioritising, maintaining structure under pressure, writing first drafts that are imperfect but continuous — are different from the skills practised in extended open-ended drafting. Both need to be developed.",
+        prompts: [
+          { text: "Your timed writing:", type: "box" },
+          {
+            text: "After the 30 minutes: what was hardest about writing under time pressure? What would you do differently in an exam?",
+            type: "lines",
+            lines: 4,
+          },
+        ],
+      },
+      // 60
+      {
+        type: "spark",
+        title: "Spark: Argue Against Yourself",
+        content: "The most powerful essays are often written by writers who genuinely tested their own argument — who tried as hard as they could to disprove their own thesis and then addressed what they found. Before submitting your next essay, try this: spend ten minutes deliberately trying to argue against your own thesis. What is the strongest possible case against your reading? What evidence would embarrass your argument? Then go back to your essay and address those challenges. Your thesis will be stronger for having been tested.",
+      },
+      // ── EXTENDING 81–100 ──────────────────────────────────────────────────
+      // 61
+      {
+        type: "open-response",
+        title: "Full Extended Essay Draft: Planning Stage",
+        instruction: "Produce a complete, detailed plan for a full extended analytical response (600–900 words) to a question on the text you have been studying. Your plan should include: thesis, introduction strategy, five to six body paragraphs with topic sentences and evidence, and conclusion insight.",
+        parentTip: "At this point in the worksheet, your student has all the skills needed to plan a full extended response. The plan should be detailed and specific — each paragraph topic should be described precisely enough that the actual writing of the paragraph is a matter of execution rather than invention.",
+        prompts: [
+          { text: "Essay question:", type: "lines", lines: 2 },
+          { text: "Thesis statement:", type: "lines", lines: 3 },
+          { text: "Introduction strategy:", type: "lines", lines: 2 },
+          { text: "Para 1 — Topic sentence + key evidence:", type: "lines", lines: 2 },
+          { text: "Para 2 — Topic sentence + key evidence:", type: "lines", lines: 2 },
+          { text: "Para 3 — Topic sentence + key evidence:", type: "lines", lines: 2 },
+          { text: "Para 4 — Topic sentence + key evidence:", type: "lines", lines: 2 },
+          { text: "Para 5 (optional) — Topic sentence + key evidence:", type: "lines", lines: 2 },
+          { text: "Conclusion insight:", type: "lines", lines: 2 },
+        ],
+      },
+      // 62
+      {
+        type: "open-response",
+        title: "Full Extended Essay Draft: Introduction and First Body Paragraph",
+        instruction: "Draft the introduction (4–6 sentences) and first body paragraph (8–12 sentences) of your extended essay. Aim for analytical precision: your thesis should be specific and arguable; your topic sentence should name a technique and connect to the thesis; your analysis should outweigh your evidence.",
+        parentTip: "The introduction and first body paragraph set the tone and analytical register for the whole essay. Encourage your student to take extra care with these — they signal to the reader what kind of essay this will be.",
+        prompts: [
+          { text: "Introduction:", type: "box" },
+          { text: "Body paragraph 1:", type: "box" },
+        ],
+      },
+      // 63
+      {
+        type: "open-response",
+        title: "Full Extended Essay Draft: Body Paragraphs 2, 3, and 4",
+        instruction: "Draft body paragraphs 2, 3, and 4. Begin each with a connective phrase that shows the logical relationship to the previous paragraph. Ensure each paragraph makes a distinct argument and advances rather than repeats the thesis.",
+        parentTip: "Three consecutive paragraphs without losing the thread is the core challenge of extended writing. If your student loses the thesis connection at any point, ask: what is this paragraph contributing to the argument that the previous one didn't? If the answer is 'more examples of the same point', the paragraph needs rethinking.",
+        prompts: [
+          { text: "Body paragraph 2:", type: "box" },
+          { text: "Body paragraph 3:", type: "box" },
+          { text: "Body paragraph 4:", type: "box" },
+        ],
+      },
+      // 64
+      {
+        type: "open-response",
+        title: "Full Extended Essay Draft: Conclusion",
+        instruction: "Write the conclusion of your extended essay (6–8 sentences). Synthesise the argument, arrive at an insight not available in the introduction, and end with a sentence that carries resonance and weight.",
+        parentTip: "After writing the conclusion, ask your student: read only the introduction and this conclusion together — does the conclusion feel like an arrival? If it essentially restates the introduction, it needs to be rethought from the perspective of what the essay has established.",
+        prompts: [
+          { text: "Your conclusion:", type: "box" },
+          {
+            text: "Read your introduction and conclusion together. What does the conclusion know that the introduction did not?",
+            type: "lines",
+            lines: 3,
+          },
+        ],
+      },
+      // 65
+      {
+        type: "open-response",
+        title: "Comprehensive Revision: Full Essay",
+        instruction: "Revise your complete extended essay draft using the following five-stage process: (1) Check thesis — is it specific, arguable, and named for technique and theme? (2) Check each topic sentence — does it connect to the thesis? (3) Check each paragraph — is analysis longer than evidence? (4) Check cohesion — do paragraphs connect to each other with explicit phrases? (5) Cut or improve anything that repeats, over-explains, or does not do necessary analytical work.",
+        parentTip: "Five-stage revision is more rigorous than general re-reading. Each stage targets a specific problem. After each stage, the essay should be measurably stronger. This is also excellent exam preparation: in a timed exam, even two minutes of targeted checking can significantly improve a response.",
+        prompts: [
+          { text: "Revised thesis (if changed):", type: "lines", lines: 2 },
+          { text: "Topic sentences that were revised:", type: "lines", lines: 4 },
+          { text: "Connecting phrases that were added or improved:", type: "lines", lines: 3 },
+          { text: "What did you cut and why?", type: "lines", lines: 3 },
+          { text: "Overall: what is the single most significant improvement made in revision?", type: "lines", lines: 2 },
+        ],
+      },
+      // 66
+      {
+        type: "true-false",
+        title: "Extended Essay: Advanced Review",
+        instruction: "Mark each statement as true or false.",
+        statements: [
+          { text: "An essay that argues for a nuanced, complex thesis is generally stronger than one that argues for a simple, single-point thesis.", answer: true },
+          { text: "Using the same connective phrase at the start of every paragraph is a sign of good cohesion.", answer: false },
+          { text: "The analysis in a body paragraph should explain the 'how' and 'so what' of the evidence, not just the 'what'.", answer: true },
+          { text: "A conclusion that opens new arguments is a sign of sophisticated writing.", answer: false },
+          { text: "Essays that integrate context into close reading are generally more sophisticated than those that treat them separately.", answer: true },
+          { text: "The quality of an essay is determined primarily by how many quotations it includes.", answer: false },
+        ],
+      },
+      // 67
+      {
+        type: "multiple-choice",
+        title: "Responding to Feedback",
+        instruction: "Choose the best response to each piece of feedback on an extended analytical response.",
+        questions: [
+          {
+            prompt: "Feedback: 'Your thesis is too general — it could apply to almost any novel.' Best response:",
+            options: [
+              "Argue that the thesis is fine as it is",
+              "Rewrite the thesis to name specific techniques, themes, and the particular argument your essay is making about how they relate",
+              "Remove the thesis from the essay",
+              "Add more adjectives to the thesis",
+            ],
+            answer: "Rewrite the thesis to name specific techniques, themes, and the particular argument your essay is making about how they relate",
+          },
+          {
+            prompt: "Feedback: 'Paragraph 3 repeats the same point as Paragraph 1 in different words.' Best response:",
+            options: [
+              "Delete Paragraph 3 entirely",
+              "Revise Paragraph 3 to make a new, distinct argument that builds on rather than repeats Paragraph 1",
+              "Move Paragraph 3 to the beginning",
+              "Leave it — repetition shows emphasis",
+            ],
+            answer: "Revise Paragraph 3 to make a new, distinct argument that builds on rather than repeats Paragraph 1",
+          },
+        ],
+      },
+      // 68
+      {
+        type: "open-response",
+        title: "Comparative Paragraph: Two Texts",
+        instruction: "Write a body paragraph (10–14 sentences) that compares how two texts handle the same theme or technique. Your topic sentence should state the comparison; your analysis should show how each text's approach differs and what the difference reveals.",
+        parentTip: "Comparative essays are a common and challenging format at senior level. The core skill is not just identifying similarities and differences but analysing what those differences reveal — about the texts, their contexts, their implied values and assumptions.",
+        prompts: [
+          { text: "Text 1:", type: "lines", lines: 1 },
+          { text: "Text 2:", type: "lines", lines: 1 },
+          { text: "Theme or technique being compared:", type: "lines", lines: 1 },
+          { text: "Your comparative paragraph:", type: "box" },
+        ],
+      },
+      // 69
+      {
+        type: "open-response",
+        title: "Exam Preparation: Practice Question",
+        instruction: "Under exam conditions (no access to notes or the text — rely on quotations from memory or approximate paraphrase), write a timed analytical response (400–500 words) to an essay question on the text you have been studying. Set a timer for 45 minutes. Begin with five minutes of planning.",
+        parentTip: "Memory-based exam writing is a genuinely different skill from open-book analytical writing. It requires having deeply internalised the text — not memorised pages of quotations, but developed a genuine understanding of how the text works. Approximate paraphrase (noting the technique and approximate location of evidence) is acceptable in exam conditions.",
+        prompts: [
+          { text: "Essay question:", type: "lines", lines: 2 },
+          { text: "5-minute plan:", type: "lines", lines: 5 },
+          { text: "Your timed response:", type: "box" },
+          {
+            text: "After writing: what was hardest? What did you wish you had memorised more carefully?",
+            type: "lines",
+            lines: 3,
+          },
+        ],
+      },
+      // 70
+      {
+        type: "open-response",
+        title: "Self-Evaluation: Extended Essay Final Draft",
+        instruction: "Evaluate your completed extended analytical response using the five-criterion rubric below. Give each criterion a rating of 1 (developing), 2 (competent), or 3 (strong), and write specific justification for each rating.",
+        parentTip: "Self-evaluation against criteria is excellent metacognitive practice. The key is specificity: 'I rate my argument a 2 because my thesis is clear but the final body paragraph drifts' is useful; 'I think it\u2019s good' is not. Consider evaluating it together with your student, comparing your independent ratings.",
+        prompts: [
+          { text: "Argument (thesis, development, coherence) — rating and justification:", type: "lines", lines: 3 },
+          { text: "Evidence (specific, embedded, well-selected) — rating and justification:", type: "lines", lines: 3 },
+          { text: "Analysis (explains how and why, not just what) — rating and justification:", type: "lines", lines: 3 },
+          { text: "Cohesion (connected, progressive, not drifting) — rating and justification:", type: "lines", lines: 3 },
+          { text: "Expression (precise, formal, varied) — rating and justification:", type: "lines", lines: 3 },
+        ],
+      },
+      // 71
+      {
+        type: "fill-in-blank",
+        title: "Extended Essay: Australian Curriculum Connections",
+        instruction: "Fill in the blank with the correct term or phrase from the Australian Curriculum v9.0.",
+        sentences: [
+          { text: "At Year 9, the Australian Curriculum expects students to create _______ texts that present complex ideas with precise language and appropriate textual features.", blanks: ["analytical"] },
+          { text: "Literary analysis at Year 9 involves understanding how texts use _______ for deliberate effect and how these choices position the reader.", blanks: ["language"] },
+          { text: "Students are expected to develop _______ reading — moving beyond surface-level comprehension to interpretation of how texts construct meaning.", blanks: ["critical"] },
+          { text: "The extended analytical response connects to the _______ strand of the Australian Curriculum English, which focuses on creating written texts.", blanks: ["Literacy"] },
+          { text: "Engagement with Australian texts and voices is embedded across the Year 9 _______ strand of the curriculum.", blanks: ["Literature"] },
+        ],
+      },
+      // 72
+      {
+        type: "multiple-choice",
+        title: "Building Toward Senior English",
+        instruction: "Choose the best answer for each question about how extended analytical writing prepares students for senior English.",
+        questions: [
+          {
+            prompt: "How does Year 9 extended analytical response writing prepare students for senior English?",
+            options: [
+              "It covers exactly the same content as Year 11 and 12",
+              "It builds the foundational skills — thesis construction, TEEL paragraphing, cohesion, quotation analysis — that senior analytical writing demands at greater length and complexity",
+              "It replaces the need for further practice in senior years",
+              "Senior English does not require analytical writing",
+            ],
+            answer: "It builds the foundational skills — thesis construction, TEEL paragraphing, cohesion, quotation analysis — that senior analytical writing demands at greater length and complexity",
+          },
+          {
+            prompt: "What is the key difference between Year 9 and Year 12 analytical writing?",
+            options: [
+              "Year 12 essays use more vocabulary",
+              "Year 12 essays are longer and require greater nuance, sophistication, and depth of analysis, but the fundamental skills are the same",
+              "Year 12 essays do not need a thesis",
+              "Year 12 essays are based on different texts",
+            ],
+            answer: "Year 12 essays are longer and require greater nuance, sophistication, and depth of analysis, but the fundamental skills are the same",
+          },
+        ],
+      },
+      // 73
+      {
+        type: "open-response",
+        title: "Peer Review: Evaluating a Sample Paragraph",
+        instruction: "Read the following student paragraph carefully and write a 100-word evaluative comment, identifying its strengths and one specific, actionable suggestion for improvement.\n\nSample: 'The author uses imagery in this part of the novel. There is a quote where it says the sky was dark. This shows that things are bad. The character feels sad. This is shown throughout the novel. In conclusion, the author uses imagery to show the theme.'",
+        parentTip: "Evaluating someone else's work develops the critical skills needed to evaluate one's own. Ask your student: what would you say to this student? Would you say the same things to yourself if you wrote a paragraph like this?",
+        prompts: [
+          { text: "Your evaluative comment:", type: "box" },
+        ],
+      },
+      // 74
+      {
+        type: "open-response",
+        title: "Rewriting the Sample Paragraph",
+        instruction: "Rewrite the weak sample paragraph from Activity 73 as a strong analytical paragraph. Keep the same general topic (imagery and mood) but transform it with a specific thesis connection, a specific embedded quotation, and genuine analysis of technique and effect.",
+        parentTip: "Rewriting a weak paragraph is one of the most effective analytical writing development tasks there is. It requires making every decision the student would need to make in their own writing. After completing it, ask: what did you have to add or change to make it strong?",
+        prompts: [
+          { text: "Your rewritten paragraph:", type: "box" },
+        ],
+      },
+      // 75
+      {
+        type: "tip",
+        title: "Tip: Write the Conclusion First",
+        content: "Counter-intuitively, writing your conclusion before you draft the body of the essay can dramatically improve coherence. The conclusion is where you articulate what the essay is ultimately arguing — the insight it has arrived at. If you write the conclusion first, you know exactly where the essay is going, and you can write each body paragraph with that destination in mind. The conclusion you draft first will change as the essay develops — that is fine. But having an intended destination prevents the most common problem in extended essays: not knowing where you are going until you get there.",
+      },
+      // 76
+      {
+        type: "open-response",
+        title: "Writing the Conclusion First",
+        instruction: "For your next essay (or a new question on the same text), try writing the conclusion first. Draft a 4–6 sentence conclusion before writing the introduction or any body paragraphs. Then reflect on how this changed your experience of planning.",
+        parentTip: "This technique is a genuine craft tool used by experienced writers — knowing the end before you begin changes everything about the journey. It is also excellent planning practice: if a student cannot write the conclusion before the body, they may not yet know what their argument is.",
+        prompts: [
+          { text: "Your essay question:", type: "lines", lines: 2 },
+          { text: "Conclusion (written first):", type: "box" },
+          {
+            text: "How did writing the conclusion first change your planning? What did it reveal about your argument?",
+            type: "lines",
+            lines: 4,
+          },
+        ],
+      },
+      // 77
+      {
+        type: "true-false",
+        title: "Extended Essay: Exam Skills",
+        instruction: "Mark each statement about analytical essay writing under exam conditions as true or false.",
+        statements: [
+          { text: "Spending 5–10 minutes planning in an exam is time well invested.", answer: true },
+          { text: "In an exam, you should write down every piece of evidence you know before deciding which to use.", answer: false },
+          { text: "Approximate paraphrase of a quotation is acceptable when the exact words are not remembered.", answer: true },
+          { text: "An essay that maintains a clear, specific argument across four paragraphs will generally outperform one that covers more points superficially.", answer: true },
+          { text: "In an exam essay, it is better to write a vague, general thesis than no thesis at all.", answer: false },
+          { text: "Revision in an exam (re-reading, improving) is worth doing even if you only have five minutes.", answer: true },
+        ],
+      },
+      // 78
+      {
+        type: "open-response",
+        title: "Annotating Your Own Essay",
+        instruction: "Print or write out your completed extended essay. Annotate it as if you were an examiner — highlight the thesis, label each topic sentence, circle any drift or repetition, note where analysis is strong and where it is thin. Then write a 100-word evaluative comment on your own essay.",
+        parentTip: "This activity develops the ability to read one's own work with critical distance — one of the most important and difficult skills for a developing writer. The student must simultaneously be the writer who made those choices and the reader who evaluates them.",
+        prompts: [
+          { text: "Your self-evaluative comment:", type: "box" },
+          {
+            text: "Based on your annotation, what is the single most important revision you should make?",
+            type: "lines",
+            lines: 3,
+          },
+        ],
+      },
+      // 79
+      {
+        type: "sorting",
+        title: "Extended Essay Skills: Year 9 to Senior",
+        instruction: "Sort each skill into 'Developed at Year 9' or 'Extended further at senior level'.",
+        columns: ["Developed at Year 9", "Extended further at senior level"],
+        items: [
+          { label: "Writing a specific, arguable thesis" },
+          { label: "Nuanced comparative analysis of multiple texts" },
+          { label: "TEEL paragraph structure" },
+          { label: "Sustained argument across 1,500+ word responses" },
+          { label: "Integrating embedded quotations" },
+          { label: "Engagement with multiple critical perspectives simultaneously" },
+          { label: "Writing a cohesive introduction and conclusion" },
+          { label: "Extended research essays drawing on academic secondary sources" },
+          { label: "Using connective phrases between paragraphs" },
+          { label: "Exam essays written under strict time conditions" },
+        ],
+      },
+      // 80
+      {
+        type: "spark",
+        title: "Spark: The Essay as Intellectual Life",
+        content: "The analytical essay is not just a school task. It is a form — one of the most demanding and satisfying forms of sustained thinking available to you. Every time you write an analytical essay with genuine care, you practise: holding a complex idea in mind across many paragraphs; finding the language to make an insight visible to someone else; testing your own understanding against the demands of evidence and logic. These are the skills of intellectual life, not just academic performance. The writers, thinkers, lawyers, scientists, and citizens who change things are almost always people who learned, somewhere, to make and sustain an argument with rigour and clarity. You are practising something that matters.",
+      },
+      // 81
+      {
+        type: "open-response",
+        title: "Final Essay: Planning and Draft",
+        instruction: "Plan and draft a complete extended analytical response (600–800 words) on the text you have been studying throughout this worksheet. This is your best analytical work — bring everything together: a specific thesis, five developed paragraphs, sophisticated quotation integration, cohesive connective phrases, and an arrival-point conclusion.",
+        parentTip: "This final essay is the capstone of the worksheet. Give your student the time and space to do it well — suggest working across two or three sessions if needed. Read the final draft together and give specific, honest feedback. If possible, compare it to the first paragraph or plan they wrote at the start of the worksheet: the growth in analytical skill should be visible.",
+        prompts: [
+          { text: "Essay question:", type: "lines", lines: 2 },
+          { text: "Brief plan:", type: "lines", lines: 8 },
+          { text: "Full essay draft:", type: "box" },
+        ],
+      },
+      // 82
+      {
+        type: "open-response",
+        title: "Final Essay: Comprehensive Revision",
+        instruction: "Revise your final essay draft from Activity 81 through three passes: Pass 1 — argument (thesis, topic sentences, logic); Pass 2 — evidence (specific, embedded, analysed); Pass 3 — cohesion and expression (connecting phrases, link sentences, formal language). Write the revised version.",
+        parentTip: "Three-pass revision is a professional writing technique. Each pass has a specific focus, which prevents the common problem of trying to fix everything at once and either overlooking things or feeling overwhelmed. Encourage your student to take a break between drafting and the first revision pass — distance improves critical reading.",
+        prompts: [
+          { text: "Revised essay:", type: "box" },
+          {
+            text: "What was improved in each pass?",
+            type: "lines",
+            lines: 5,
+          },
+        ],
+      },
+      // 83
+      {
+        type: "open-response",
+        title: "Reading Your Essay Aloud",
+        instruction: "Read your revised final essay aloud from start to finish. Mark any place where you stumble, re-read, or where something does not sound right. After reading, list five specific changes — word-level, sentence-level, or structural — suggested by the read-aloud.",
+        parentTip: "Reading aloud is one of the most reliable revision techniques because it engages the ear as well as the eye. Awkward phrasing, repeated words, clunky transitions, and unclear sentences that the eye skips over are almost always caught by the ear.",
+        prompts: [
+          { text: "Five changes suggested by the read-aloud:", type: "lines", lines: 8 },
+        ],
+      },
+      // 84
+      {
+        type: "fill-in-blank",
+        title: "Final Vocabulary and Craft Review",
+        instruction: "Fill in the blank with the correct term or phrase to complete each statement about extended analytical writing.",
+        sentences: [
+          { text: "A thesis that is _______ is one that not all reasonable readers would automatically agree with — it takes a position.", blanks: ["arguable"] },
+          { text: "The _______ sentence at the end of each body paragraph connects the paragraph's argument back to the central thesis.", blanks: ["link"] },
+          { text: "When the essay loses its connection to the thesis across later paragraphs, this is known as _______.", blanks: ["drift"] },
+          { text: "An essay that uses evidence as a launching pad for analysis demonstrates what examiners call analytical _______.", blanks: ["sophistication"] },
+          { text: "A conclusion that _______ — drawing the essay's insights together into a fuller understanding — is more sophisticated than one that simply summarises.", blanks: ["synthesises"] },
+        ],
+      },
+      // 85
+      {
+        type: "multiple-choice",
+        title: "Assessing Your Own Essay",
+        instruction: "Choose the best action in each scenario.",
+        questions: [
+          {
+            prompt: "You re-read your essay and realise your paragraph 2 makes essentially the same argument as paragraph 1. You should:",
+            options: [
+              "Keep both paragraphs — repetition shows emphasis",
+              "Delete paragraph 2 and write a paragraph that makes a genuinely different argument",
+              "Change the topic sentence of paragraph 2 but keep the same evidence and analysis",
+              "Leave it for the reader to see the subtle difference",
+            ],
+            answer: "Delete paragraph 2 and write a paragraph that makes a genuinely different argument",
+          },
+          {
+            prompt: "Your conclusion currently restates the introduction almost word for word. You should:",
+            options: [
+              "Add 'In conclusion...' to signal it is a conclusion",
+              "Rethink the conclusion entirely — ask what insight the body paragraphs have established that the introduction could not have stated",
+              "Shorten the conclusion to make the repetition less obvious",
+              "Move the conclusion to the beginning",
+            ],
+            answer: "Rethink the conclusion entirely — ask what insight the body paragraphs have established that the introduction could not have stated",
+          },
+        ],
+      },
+      // 86
+      {
+        type: "open-response",
+        title: "Portfolio: Best Analytical Paragraph",
+        instruction: "From all the analytical writing you have done in this worksheet, choose the single paragraph you are most proud of. Copy it here, and write a 100-word self-evaluation explaining what makes it strong and what you would still want to improve.",
+        parentTip: "Portfolio curation — selecting your best work and reflecting on why it is your best — is both a practical skill (needed for senior school portfolios) and a metacognitive one. It requires judgement about quality, not just completion.",
+        prompts: [
+          { text: "Your best paragraph:", type: "box" },
+          { text: "Your self-evaluation:", type: "box" },
+        ],
+      },
+      // 87
+      {
+        type: "home-activity",
+        title: "Beyond the Worksheet: Extended Writing in the World",
+        instruction: "Choose one or more activities to extend your analytical writing skills beyond this worksheet.",
+        parentTip: "Extended analytical writing develops through reading widely, writing regularly, and receiving honest feedback. These activities connect the skills practised in the worksheet to the broader intellectual life that makes writing meaningful.",
+        suggestions: [
+          "Read the introduction of a published academic essay (from JSTOR, a literary journal, or a reputable magazine like The Monthly or Overland). Identify the thesis and annotate how the introduction moves from broad context to specific argument.",
+          "Enter a school or state-level essay writing competition. The National History Challenge and various subject-specific competitions accept Year 9 entries.",
+          "Read a chapter from a book of literary criticism on a text you are studying. Note: how does the critic construct an argument? How do they handle quotations? What techniques do they use that you could adopt?",
+          "Write a second extended analytical response on a different text or a different question — applying the same skills to new material. This is how analytical writing ability genuinely develops.",
+          "Find an annotated model essay and compare its annotations to your own analytical choices. What did the model do that you could adopt?",
+        ],
+      },
+      // 88
+      {
+        type: "open-response",
+        title: "Reflection: Your Development as an Analytical Writer",
+        instruction: "Write a reflective piece (200–250 words) on your development as an analytical essay writer across this worksheet. What specific skills have you developed? What surprised you? What do you now understand about analytical writing that you did not understand at the beginning?",
+        parentTip: "This final reflection should be specific and honest. Vague praise ('I got better') is less useful than specific identification ('I now understand that analysis means explaining HOW and WHY, not just WHAT — and I can see this in my paragraph revision'). Encourage the latter.",
+        prompts: [
+          { text: "Your reflection:", type: "box" },
+        ],
+      },
+      // 89
+      {
+        type: "open-response",
+        title: "Your Essay Goals for the Next Three Months",
+        instruction: "Write a specific plan (100–150 words) for developing your analytical essay skills over the next three months. Include: three skills to focus on, how you will practise each, and how you will know if you have improved.",
+        parentTip: "Specific, time-bound goals are more effective than general intentions. Help your student identify one skill they can work on immediately — something that appears in their self-assessment as a current weakness and that they can address in the next essay they write.",
+        prompts: [
+          { text: "Your development plan:", type: "box" },
+        ],
+      },
+      // 90
+      {
+        type: "tip",
+        title: "Tip: Read More Than You Write",
+        content: "The single best investment you can make in your analytical writing is reading — widely, and with genuine attention. Read the texts you are studying closely. Read literary criticism. Read quality journalism and essays that argue carefully with evidence. Read the introductions to academic books on your subject. The patterns of analytical argumentation, the ways that skilled writers introduce and analyse evidence, the rhythms of sustained argument — all of this enters your writing unconsciously through sustained reading. You cannot write what you have not read. Read more than you think you need to.",
+      },
+      // 91
+      {
+        type: "true-false",
+        title: "Final Comprehensive Review: Extended Analytical Response",
+        instruction: "A final review of all key concepts. Mark each statement as true or false.",
+        statements: [
+          { text: "An extended analytical response at Year 9 is typically 600–900 words.", answer: true },
+          { text: "The thesis should be written after completing the body paragraphs, based on what you discovered.", answer: false },
+          { text: "Writing the conclusion first can help maintain a clear sense of where the essay is going.", answer: true },
+          { text: "Each body paragraph should make the same point as the others, with different evidence.", answer: false },
+          { text: "A 'cohesive' essay is one where all parts connect to the thesis and paragraphs link to each other.", answer: true },
+          { text: "Reading aloud is a useful final revision technique because the ear catches what the eye misses.", answer: true },
+        ],
+      },
+      // 92
+      {
+        type: "open-response",
+        title: "Final Essay: Polished Version",
+        instruction: "Produce the final polished version of your extended analytical response. Incorporate all revisions from Activities 82 and 83. This is your best analytical work at this point in your development.",
+        parentTip: "The polished final version is the student's demonstrably best effort — incorporating all revision work done in the worksheet. Read it together as a final activity. Celebrate what has been achieved, and identify one or two things to continue working on. Both matter.",
+        prompts: [
+          { text: "Your polished final essay:", type: "box" },
+        ],
+      },
+      // 93
+      {
+        type: "matching",
+        title: "Extended Essay: Connecting All Skills",
+        instruction: "Match each extended essay skill to the worksheet section where it was primarily developed.",
+        left: [
+          "Writing a specific, arguable thesis",
+          "TEEL paragraph structure",
+          "Recognising and fixing drift",
+          "Integrating evidence smoothly",
+          "Writing a synthesising conclusion",
+        ],
+        right: [
+          "Activities 31–32 (identifying and rewriting passages that drift from the thesis)",
+          "Activities 44–45 (sophisticated conclusions that arrive rather than repeat)",
+          "Activities 4–5 (the TEEL elements and their functions)",
+          "Activities 7–8 (distinguishing strong from weak theses)",
+          "Activities 26–28 (embedding quotations and practising analytical vocabulary)",
+        ],
+      },
+      // 94
+      {
+        type: "open-response",
+        title: "Letter to a Future Essay Writer",
+        instruction: "Write a letter (150–200 words) to a student who is about to start learning to write extended analytical responses for the first time. What do you wish someone had told you? What is the single most important thing you have learned?",
+        parentTip: "Writing advice to a hypothetical beginner consolidates learning through the act of teaching. It also reveals what the student genuinely understood — the things they articulate clearly are things they have truly internalised.",
+        prompts: [
+          { text: "Your letter:", type: "box" },
+        ],
+      },
+      // 95
+      {
+        type: "multiple-choice",
+        title: "Looking Forward: Senior Analytical Writing",
+        instruction: "Choose the best answer for each question about what analytical essay writing will look like at senior level.",
+        questions: [
+          {
+            prompt: "At Year 11 and 12, analytical essays are typically:",
+            options: [
+              "Shorter and simpler than Year 9 essays",
+              "Similar in structure but longer, with greater demands for nuance, depth, and independent critical reading",
+              "Written in a completely different form from Year 9 essays",
+              "No longer required — senior English focuses only on creative writing",
+            ],
+            answer: "Similar in structure but longer, with greater demands for nuance, depth, and independent critical reading",
+          },
+          {
+            prompt: "Which Year 9 skill is most directly transferable to senior analytical writing?",
+            options: [
+              "Being able to quote long passages from memory",
+              "Knowing many facts about the author's life",
+              "Constructing a specific thesis and sustaining a connected, developed argument across multiple paragraphs",
+              "Writing in exactly five paragraphs",
+            ],
+            answer: "Constructing a specific thesis and sustaining a connected, developed argument across multiple paragraphs",
+          },
+        ],
+      },
+      // 96
+      {
+        type: "fill-in-blank",
+        title: "Glossary: Extended Essay Terms",
+        instruction: "Complete the glossary by filling in the missing definitions.",
+        sentences: [
+          { text: "Thesis: the central _______ claim of an essay — the argument that all body paragraphs support.", blanks: ["arguable"] },
+          { text: "Cohesion: the quality of an essay _______ together as a unified argument.", blanks: ["holding"] },
+          { text: "Drift: when later paragraphs _______ connection to the central thesis.", blanks: ["lose"] },
+          { text: "Synthesis: pulling together the essay's insights into a _______ understanding in the conclusion.", blanks: ["fuller"] },
+          { text: "Analysis: explaining _______ a technique works and _______ it matters for the text's meaning.", blanks: ["how", "why"] },
+        ],
+      },
+      // 97
+      {
+        type: "open-response",
+        title: "Your Analytical Writing Identity",
+        instruction: "Write a short statement (100–150 words) about your identity as an analytical essay writer. What kind of analytical writer are you at your best? What are your genuine strengths? What makes your essays distinctive? This is not a task about humility — write about what you do well.",
+        parentTip: "Knowing your own strengths as a writer is as important as knowing your weaknesses. A student who knows their own strengths and specific areas for growth can deploy those strengths and monitor for that specific weakness. Self-knowledge is a writing tool.",
+        prompts: [
+          { text: "Your analytical writing identity statement:", type: "box" },
+        ],
+      },
+      // 98
+      {
+        type: "home-activity",
+        title: "Ongoing: The Essay Writing Practice",
+        instruction: "Extended analytical writing develops through sustained practice. Choose one of the following commitments and work toward it over the coming months.",
+        parentTip: "The analytical essay is one of the most demanding and rewarding forms of sustained thinking. A student who writes one extended analytical essay per month, receives honest feedback, and revises deliberately will develop extraordinary capacity. The skills built now will serve them throughout senior school, university, and professional life.",
+        suggestions: [
+          "Write one extended analytical response per month on the text you are currently studying. Focus on a different aspect of the text each time. Keep them in a portfolio and read back over earlier essays periodically.",
+          "Find a writing mentor — an older student, a teacher, or a parent with a background in humanities — who will read and give honest feedback on one analytical essay per term.",
+          "Study a published model essay in detail. Annotate how it constructs its argument. Then try to write a paragraph modelled on its analytical technique.",
+          "Enter an essay writing competition — state-based competitions and various subject-specific competitions accept Year 9 entries and provide valuable structured assessment.",
+          "Read literary criticism — a chapter from a book of essays on a text you love. Notice: how does the critic structure their argument? What do they notice that you did not? What would you argue differently?",
+        ],
+      },
+      // 99
+      {
+        type: "open-response",
+        title: "The Essay I Want to Write",
+        instruction: "Describe the essay you most want to write — not the essay you have been assigned, but the essay you would choose. What text would you choose? What question would you ask of it? What argument would you want to make? Write 150–200 words describing this ideal essay.",
+        parentTip: "This final open-ended reflection is about ownership — the student choosing their own intellectual territory. The most powerful analytical writing happens when the writer genuinely cares about the question. If this ideal essay is close enough to the curriculum, encourage your student to write it.",
+        prompts: [
+          { text: "The essay I want to write:", type: "box" },
+        ],
+      },
+      // 100
+      {
+        type: "spark",
+        title: "Spark: Your Argument, Your Voice",
+        content: "The extended analytical essay is, at its best, a place where your genuine thinking meets the text. Not a formula, not a performance of academic compliance — but a real encounter between a reader and a piece of writing, mediated through careful language. Every analytical skill you have developed in this worksheet — the specific thesis, the embedded quotation, the TEEL paragraph, the cohesive conclusion — is in service of this: making your thinking visible, shareable, and persuasive. The argument is yours. The voice is yours. The essay belongs to you.",
+      },
     ],
     nextSteps: [
       "Complete the full draft of your extended analytical response and submit it for feedback.",
       "Revisit the Critical Literacy worksheet to apply representation analysis in your extended response.",
+      "Write one extended analytical essay per month and keep them in a portfolio to track your development.",
+      "Read a chapter of published literary criticism on a text you are studying and annotate the analytical techniques used.",
     ],
   },
 ];

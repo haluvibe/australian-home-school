@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Maths Manipulatives Guide — Australian Home Schooling",
+  title: "Maths Manipulatives Guide — AI Native School",
   description:
     "What physical tools help at each stage, and how to improvise with everyday household items.",
 };

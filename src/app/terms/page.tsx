@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Terms of Service",
   description:
-    "Terms of service for Australian Home Schooling. Read our terms and conditions for using our website and services.",
+    "Terms of service for AI Native School. Read our terms and conditions for using our website and services.",
 };
 
 const lastUpdated = "17 February 2026";
@@ -42,7 +42,7 @@ export default function TermsPage() {
                 Agreement to Terms
               </h2>
               <p className="mt-3 text-base leading-relaxed text-charcoal-light/85">
-                By accessing or using the Australian Home Schooling website
+                By accessing or using the AI Native School website
                 (&quot;the Site&quot;), you agree to be bound by these Terms of
                 Service. If you do not agree to all the terms and conditions,
                 please do not use the Site.
@@ -54,7 +54,7 @@ export default function TermsPage() {
                 Description of Service
               </h2>
               <p className="mt-3 text-base leading-relaxed text-charcoal-light/85">
-                Australian Home Schooling provides educational information,
+                AI Native School provides educational information,
                 curriculum resources, community links, and tools to support
                 homeschooling families in Australia. Our services include curated
                 resource directories, curriculum breakdowns, lesson plan
@@ -168,7 +168,7 @@ export default function TermsPage() {
               </h2>
               <p className="mt-3 text-base leading-relaxed text-charcoal-light/85">
                 The Site and its original content, features, and functionality
-                are owned by Australian Home Schooling and are protected by
+                are owned by AI Native School and are protected by
                 Australian and international copyright, trademark, and other
                 intellectual property laws. Curriculum content referenced on the
                 Site is sourced from the Australian Curriculum, Assessment and
@@ -195,7 +195,7 @@ export default function TermsPage() {
                 Indemnification
               </h2>
               <p className="mt-3 text-base leading-relaxed text-charcoal-light/85">
-                You agree to indemnify and hold harmless Australian Home Schooling
+                You agree to indemnify and hold harmless AI Native School
                 and its operators from any claims, losses, or damages, including
                 legal fees, arising out of your use or misuse of the Site or your
                 violation of these Terms of Service.

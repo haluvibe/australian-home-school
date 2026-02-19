@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: "/curriculum/progression" },
   openGraph: {
-    title: "Maths Progression Map — Foundation to Year 10 | Australian Home Schooling",
+    title: "Maths Progression Map — Foundation to Year 10 | AI Native School",
     description:
       "How mathematical concepts build year by year across Number, Algebra, Measurement, Space, Statistics and Probability.",
     url: "/curriculum/progression",

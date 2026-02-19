@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Australian Home Schooling — Free Curriculum, Worksheets & Lesson Plans",
+  title: "AI Native School — Free Curriculum, Worksheets & Lesson Plans",
   description:
     "Australia's #1 homeschooling resource. Browse free printable worksheets, Australian Curriculum V9 guides and lesson plans for Foundation to Year 10. Trusted by Australian families.",
   keywords: [
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: "/" },
   openGraph: {
-    title: "Australian Home Schooling — Free Curriculum, Worksheets & Lesson Plans",
+    title: "AI Native School — Free Curriculum, Worksheets & Lesson Plans",
     description:
       "Free printable worksheets, Australian Curriculum V9 guides and lesson plans for homeschooling families. Foundation to Year 10.",
     url: "/",
