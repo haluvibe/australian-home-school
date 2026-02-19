@@ -344,7 +344,9 @@ export default function DataDetective({ onExit }: DataDetectiveProps = {}) {
 
   // Graph phase
   const [graphColumns, setGraphColumns] = useState<GraphColumn[]>([]);
-  const [, setGraphAnimating] = useState(false);
+  const [graphAnimating, setGraphAnimating] = useState(false);
+  // Keep graphAnimating available for future use
+  void graphAnimating;
 
   // Question phase
   const [questions, setQuestions] = useState<Question[]>([]);
